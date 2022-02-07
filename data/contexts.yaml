@@ -1,0 +1,45 @@
+common:
+  id: common
+  name: Common identifiers
+pii:
+  id: pii
+  name: Personally idenfiable information
+geo:
+  id: geo
+  name: Geographic identifiers
+medical:
+  id: medical
+  name: Medical/pharmaceutic identifiers
+finances:
+  id: finances
+  name: Finances and banking
+datetime:
+  id: datetime
+  name: Date and time
+government:
+  id: government
+  name: Government related
+science:
+  id: science
+  name: Science
+companies:
+  id: companies
+  name: Company/business/organizations
+internet:
+  id: internet
+  name: Internet
+identifiers:
+  id: identifiers
+  name: Unique universal identifiers
+objectids:
+  id: objectids
+  name: Objects identifiers
+crypto:
+  id: crypto
+  name: Cryptofraphic keys
+persons:
+  id: persons
+  name: Persons data
+vehicles:
+  id: vehicles
+  name: Vehicles

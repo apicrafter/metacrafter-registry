@@ -1,0 +1,9 @@
+common:
+  id: common
+  name: Common identifiers
+en:
+  id: en
+  name: English
+ru:
+  id: ru
+  name: Russian
