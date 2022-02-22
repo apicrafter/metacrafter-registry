@@ -647,7 +647,7 @@ kladr:
   doc: 'Russian unique codes assigned by Government Tax Service for every administrative address in Russian federation. Replaces by FIAS government system'
   id: kladr
   is_pii: false
-  langs:5
+  langs:
   - ru
   links:
   - type: ''
@@ -758,7 +758,7 @@ latitude:
 licaccount:
   contexts:
   - finances
-  doc: 'A personal account is an account for use by an individual for that person's own needs. It is a relative term to differentiate them from those accounts for business or corporate use.'
+  doc: 'A personal account is an account for use by an individual for that persons own needs. It is a relative term to differentiate them from those accounts for business or corporate use.'
   id: licaccount
   is_pii: false
   langs:
@@ -905,7 +905,7 @@ ogrn_ogrnip:
 okato:
   contexts:
   - geo
-  doc: 'Russian Classification on Objects of Administrative Division (Russian: Общеросси́йский классифика́тор объе́ктов администрати́вно-территориа́льного деле́ния), or OKATO (Russian: ОКАТО), also called All-Russian classification on units of administrative and territorial distribution in English, is one of several Russian national registers. OKATO's purpose is organization of information about structure of the administrative divisions of the federal subjects of Russia.'
+  doc: 'Russian Classification on Objects of Administrative Division (Russian: Общеросси́йский классифика́тор объе́ктов администрати́вно-территориа́льного деле́ния), or OKATO (Russian: ОКАТО), also called All-Russian classification on units of administrative and territorial distribution in English, is one of several Russian national registers. OKATOs purpose is organization of information about structure of the administrative divisions of the federal subjects of Russia.'
   id: okato
   is_pii: false
   langs:
@@ -1130,7 +1130,7 @@ okvname:
 orcid:
   contexts:
   - science
-  doc: 'The ORCID, Open Researcher and Contributor ID) is a nonproprietary alphanumeric code to uniquely identify authors and contributors of scholarly communication as well as ORCID's website and services to look up authors and their bibliographic output (and other user-supplied pieces of information).'
+  doc: 'The ORCID, Open Researcher and Contributor ID) is a nonproprietary alphanumeric code to uniquely identify authors and contributors of scholarly communication as well as ORCIDs website and services to look up authors and their bibliographic output (and other user-supplied pieces of information).'
   id: orcid
   is_pii: false
   langs:
