@@ -1,7 +1,7 @@
 # metacrafter-registry
 Registry of metadata identifier entities like UUID, GUID, person fullname, address and so on. Linked with other sources and to be converted to ontology in the future.
 
-It's created from list of identifiers in [Metacrafter](https://github.com/apicrafter/metacrafter ) tool  and list of data classes in [Datacrafter](https://data.apicrafter.ru/class) data catalog.
+It's created from list of identifiers in [Metacrafter](https://github.com/apicrafter/metacrafter ) tool  and list of data classes in [Datacrafter](https://datacrafter.ru/class) data catalog.
 
 # Data
 
