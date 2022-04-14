@@ -1,0 +1,19 @@
+categories:
+- persons
+- science
+doc: Academic degree title
+id: academicdegree
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Academic_degree
+name: Academic degree
+patterns:
+- rusdegree
+translations:
+  ru:
+    doc: Научная степень персоны на русском языке. Например, кандидат технических
+      наук
+    name: Научная степень (на русском)

@@ -1,0 +1,23 @@
+categories:
+- common
+country:
+- RU
+doc: 'Russian Classification of Territories of Municipal Formations (Russian: Общероссийский
+  классификатор территорий муниципальных образований), or OKTMO (Russian: ОКТМО),
+  is one of several Russian national registers. OKTMO organizes information about
+  the structure of the municipal divisions of Russia.'
+id: oktmo
+is_pii: 'False'
+langs:
+- ru
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/OKTMO
+name: Russian Classification of Territories of Municipal Formations (OKTMO) code
+translations:
+  ru:
+    doc: Общероссийский классификатор территорий муниципальных образований (сокращ.
+      ОКТМО) — классификатор объектов административно-территориального деления Российской
+      Федерации, входит в состав «Единой системы классификации и кодирования технико-экономической
+      и социальной информации Российской Федерации» (ЕСКК).
+    name: Код ОКТМО

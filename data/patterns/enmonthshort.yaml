@@ -1,0 +1,6 @@
+doc: Abbreviated short English name/abbreviation of month
+id: enmonthshort
+langs:
+- en
+name: Short name of month (English)
+semantic_type: month

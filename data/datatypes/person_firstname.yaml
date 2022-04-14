@@ -1,0 +1,11 @@
+categories:
+- persons
+- pii
+doc: First name of the person. For example, Donald or Vladimir or Jack
+id: person_firstname
+is_pii: 'True'
+langs:
+- common
+name: Person firstname
+patterns:
+- rusfirstname

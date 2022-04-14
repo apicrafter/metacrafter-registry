@@ -1,0 +1,16 @@
+categories:
+- government
+country:
+- RU
+doc: Budget codes issued by Ministry of Finances and Federal Treasury of Russia to
+  all government and local budgets.
+id: budgetcode
+is_pii: 'False'
+langs:
+- ru
+name: Russian government budget code
+translations:
+  ru:
+    doc: 'Уникальный код, присваеваемый каждому отдельному бюджету: федеральному,
+      субъекта федерации и муниципалитету в Российской Федерации.'
+    name: Код бюджета

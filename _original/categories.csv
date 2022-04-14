@@ -1,0 +1,18 @@
+common	Common
+pii	Personally idenfiable information
+geo	Geographic identifiers
+medical	Medical/pharma identifiers
+finances	Finances and banking
+datetime	Date and time
+government	Government related
+science	Scientific
+companies	Companies/business/organizations
+internet	Internet
+identifiers	Universal unique identifiers
+objectids	Objects identifiers
+cryptography	Cryptographic identifiers
+persons	Person related
+cryptocurrency	Cryptocurrency
+transport	Transportation
+values	All measurable values (percentage, amount and e.t.c)
+chemistry	Chemistry

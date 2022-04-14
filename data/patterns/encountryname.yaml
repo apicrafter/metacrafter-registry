@@ -1,0 +1,6 @@
+doc: Name of the country in English
+id: encountryname
+langs:
+- common
+name: Country name (English)
+semantic_type: country

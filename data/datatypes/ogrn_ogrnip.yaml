@@ -1,0 +1,16 @@
+categories:
+- companies
+country:
+- RU
+doc: Russian primary government identification number assigned by Tax Service to any
+  business entity (OGRN) in Russia and sole prprietors (OGRNIP)
+id: ogrn_ogrnip
+is_pii: 'False'
+langs:
+- ru
+name: Russian primary government identification number (OGRN and OGRNIP)
+translations:
+  ru:
+    doc: Основной государственный регистрационный номер индивидуального предпринимателя
+      или ОГРН (основной государственный регистрационный номер)
+    name: Код ОГРН или ОГРНИП

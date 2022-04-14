@@ -1,0 +1,10 @@
+categories:
+- cryptocurrency
+id: p2wshaddr
+is_pii: 'False'
+langs:
+- common
+links:
+  type: other
+  url: https://allprivatekeys.com/bitcoin-address-format
+name: P2WSH address

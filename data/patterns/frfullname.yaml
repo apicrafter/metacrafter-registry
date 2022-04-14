@@ -1,0 +1,8 @@
+country:
+- FR
+doc: Full name of the person written in French
+id: frfullname
+langs:
+- fr
+name: French full name of the person
+semantic_type: person_fullname

@@ -1,0 +1,8 @@
+categories:
+- common
+doc: File name with common notation like somefile.ext
+id: filename
+is_pii: 'False'
+langs:
+- common
+name: Name of the file

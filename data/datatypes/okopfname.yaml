@@ -1,0 +1,15 @@
+categories:
+- companies
+country:
+- RU
+doc: Type of business entity in Russia, classifier OKOPF
+id: okopfname
+is_pii: 'False'
+langs:
+- ru
+name: Type of business entity (Russian, OKOPF)
+translations:
+  ru:
+    doc: Наименование организационно-правовой формы юридического лица по справочнику
+      ОКОПФ
+    name: Организационно-правовая форма

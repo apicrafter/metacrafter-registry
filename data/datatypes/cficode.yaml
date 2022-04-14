@@ -1,0 +1,15 @@
+categories:
+- finances
+doc: ISO 10962, generally known as CFI (Classification of Financial Instruments) is
+  a six-letter-code used in the financial services industry to classify and describe
+  the structure and function of a financial instrument (in the form of security or
+  contract). It is an international standard approved by the International Organization
+  for Standardization (ISO)
+id: cficode
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_10962
+name: Classification of Financial Instruments (ISO 10962)

@@ -1,0 +1,12 @@
+categories:
+- transport
+doc: The International Maritime Organization (IMO) number is a unique identifier for
+  ships, registered ship owners and management companies.
+id: imonumber
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/IMO_number
+name: IMO Number

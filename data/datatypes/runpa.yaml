@@ -1,0 +1,14 @@
+categories:
+- government
+country:
+- RU
+doc: 'Russian regulatory legal act. For example: Executive order'
+id: runpa
+is_pii: 'False'
+langs:
+- ru
+name: Russian regulatory legal act
+translations:
+  ru:
+    doc: Нормативно-правовой документ в России. Например, постановление правительства
+    name: Нормативно-правовой документ

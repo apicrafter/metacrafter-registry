@@ -1,0 +1,12 @@
+categories:
+- objectids
+doc: 'Identifier for the Virtual International Authority File database [format: up
+  to 22 digits]'
+id: viafid
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P214
+name: VIAF ID

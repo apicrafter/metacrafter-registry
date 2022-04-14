@@ -1,0 +1,13 @@
+categories:
+- geo
+- pii
+- common
+doc: Name of the street, commonly used in address
+id: street
+is_pii: 'True'
+langs:
+- common
+name: Street
+patterns:
+- rustreet
+- russtreet

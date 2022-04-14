@@ -1,0 +1,6 @@
+doc: English written company/business/legal name of business entity
+id: encompanyname
+langs:
+- en
+name: Company/business name in English
+semantic_type: orgname

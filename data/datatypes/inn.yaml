@@ -1,0 +1,11 @@
+categories:
+- companies
+country:
+- RU
+doc: Russian organization/person tax identification number (INN) is unique for each
+  person and organization.
+id: inn
+is_pii: 'False'
+langs:
+- ru
+name: INN (Russian tax identifier)

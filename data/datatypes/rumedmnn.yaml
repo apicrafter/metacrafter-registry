@@ -1,0 +1,17 @@
+categories:
+- medical
+country:
+- RU
+doc: An international nonproprietary name (INN) is an official generic and non-proprietary
+  name given to a pharmaceutical drug or an active ingredient. (Russian)
+id: rumedmnn
+is_pii: 'False'
+langs:
+- ru
+name: International nonproprietary name (Russia)
+translations:
+  ru:
+    doc: Международное непатентованное наименование (МНН) — уникальное наименование
+      действующего вещества лекарственного средства, рекомендованное Всемирной организацией
+      здравоохранения (ВОЗ).
+    name: Международное непатентованное наименование

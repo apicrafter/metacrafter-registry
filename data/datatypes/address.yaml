@@ -1,0 +1,19 @@
+categories:
+- common
+- pii
+- geo
+doc: Geographic address, commonly consist of postindex, country, area, town, street
+  and building
+id: address
+is_pii: 'True'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Address
+name: Address (physical location)
+translations:
+  ru:
+    doc: Географический или административный адрес местонахождения. Может включать
+      почтовый индекс, название страны, региона, города, улицы и здания.
+    name: Адрес (физическое местонахождение)

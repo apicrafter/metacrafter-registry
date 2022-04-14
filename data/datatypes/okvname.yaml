@@ -1,0 +1,14 @@
+categories:
+- common
+country:
+- RU
+doc: Russian currency names (OKV classifier)
+id: okvname
+is_pii: 'False'
+langs:
+- ru
+name: Russian currency name
+translations:
+  ru:
+    doc: Название валюты по справочнику ОКВ (Общероссийский классификатор валют)
+    name: Название валюты по ОКВ

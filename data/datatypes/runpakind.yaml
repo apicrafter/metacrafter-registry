@@ -1,0 +1,14 @@
+categories:
+- government
+country:
+- RU
+doc: 'Type of the Russian legal document: order, executive order and so on'
+id: runpakind
+is_pii: 'False'
+langs:
+- ru
+name: Russian regulatory legal act type
+translations:
+  ru:
+    doc: 'Тип нормативного документа, например: указ, постановление, приказ'
+    name: Тип нормативного документа

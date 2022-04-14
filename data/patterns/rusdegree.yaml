@@ -1,0 +1,8 @@
+country:
+- RU
+doc: 'Academic degree title in Russian. '
+id: rusdegree
+langs:
+- ru
+name: Academic degree (Russian)
+semantic_type: academicdegree

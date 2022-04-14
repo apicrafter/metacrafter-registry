@@ -1,0 +1,12 @@
+categories:
+- internet
+doc: A domain name is an identification string that defines a realm of administrative
+  autonomy, authority or control within the Internet.
+id: domainname
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Domain_name
+name: Internet domain name

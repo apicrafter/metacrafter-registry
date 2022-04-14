@@ -1,0 +1,14 @@
+categories:
+- government
+country:
+- RU
+doc: Russian budget target item of expenditure code
+id: csrcode
+is_pii: 'False'
+langs:
+- ru
+name: Russian budget target item of expenditure code
+translations:
+  ru:
+    doc: Целевая статья расходов российского бюджета
+    name: Целевая статья расходов российского бюджета

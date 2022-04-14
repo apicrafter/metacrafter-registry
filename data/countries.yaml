@@ -1,0 +1,12 @@
+- id: RU
+  name: Russian Federation
+- id: GB
+  name: United Kingdom
+- id: US
+  name: United States
+- id: FR
+  name: France
+- id: ES
+  name: Spain
+- id: MX
+  name: Mexico

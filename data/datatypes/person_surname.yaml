@@ -1,0 +1,11 @@
+categories:
+- persons
+- pii
+doc: Last name of the person. For example, Smith or Ivanova
+id: person_surname
+is_pii: 'True'
+langs:
+- common
+name: Person surname/lastname
+patterns:
+- russurname

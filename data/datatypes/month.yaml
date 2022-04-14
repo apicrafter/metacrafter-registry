@@ -1,0 +1,11 @@
+categories:
+- datetime
+doc: Month as number since start of the year. Could be from 1 to 12
+id: month
+is_pii: 'False'
+langs:
+- common
+name: Month
+patterns:
+- enmonth
+- enmonthshort

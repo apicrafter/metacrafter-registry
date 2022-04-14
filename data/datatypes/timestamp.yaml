@@ -1,0 +1,13 @@
+categories:
+- datetime
+doc: Digital timestamp defined as Unix Time. It is a system for describing a point
+  in time. It is the number of seconds that have elapsed since the Unix epoch, excluding
+  leap seconds.
+id: timestamp
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Unix_time
+name: Digital timestamp (Unix time)

@@ -1,0 +1,27 @@
+categories:
+- geo
+doc: A country is a distinct territorial body or political entity. It may be an independent
+  sovereign state or part of a larger state,[2] as a non-sovereign or formerly sovereign
+  political division, a physical territory with a government, or a geographic region
+  associated with sets of previously independent or differently associated peoples
+  with distinct political characteristics.
+id: country
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Country
+name: Country code or name
+patterns:
+- ruscountryname
+- countrycode_alpha2
+- countrycode_alpha3
+- encountryname
+- countrycode_num
+translations:
+  ru:
+    doc: Страна — территория, имеющая политические, физико-географические, культурные
+      или исторические границы, которые могут быть как чётко определёнными и зафиксированными,
+      так и размытыми (в таком случае нередко говорят не о границах, а о «рубежах»).
+    name: Название или код страны

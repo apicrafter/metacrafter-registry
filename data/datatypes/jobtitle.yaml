@@ -1,0 +1,17 @@
+categories:
+- persons
+- companies
+country:
+- RU
+doc: Work positions / job title
+id: jobtitle
+is_pii: 'False'
+langs:
+- common
+name: Work position / Job title
+patterns:
+- rusworkposition
+translations:
+  ru:
+    doc: Должность персоны в организации
+    name: Должность

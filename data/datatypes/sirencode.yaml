@@ -1,0 +1,16 @@
+categories:
+- companies
+country:
+- FR
+doc: 'SIREN codes are given to French businesses and nonprofit associations, SIRET
+  codes to their establishments and facilities. SIREN codes are maintained by the
+  French INSEE. This is France-specific, and will not change during the lifetime of
+  the business. '
+id: sirencode
+is_pii: 'False'
+langs:
+- fr
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/SIREN_code
+name: SIREN Code

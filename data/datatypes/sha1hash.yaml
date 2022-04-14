@@ -1,0 +1,11 @@
+categories:
+- cryptography
+doc: SHA-1 hash from file or data. Sometimes used as unique id of the data record
+id: sha1hash
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/SHA-1
+name: SHA-1 hash

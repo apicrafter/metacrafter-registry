@@ -1,0 +1,16 @@
+categories:
+- geo
+doc: N/LOCODE, the United Nations Code for Trade and Transport Locations, is a geographic
+  coding scheme developed and maintained by United Nations Economic Commission for
+  Europe (UNECE). UN/LOCODE assigns codes to locations used in trade and transport
+  with functions such as seaports, rail and road terminals, airports, Postal Exchange
+  Office and border crossing points. The first issue in 1981 contained codes for 8,000
+  locations. The version from 2011 contained codes for about 82,000 locations.
+id: unlocode
+is_pii: 'False'
+langs:
+- en
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/UN/LOCODE
+name: UN/LOCODE

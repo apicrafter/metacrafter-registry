@@ -1,0 +1,15 @@
+categories:
+- science
+- persons
+doc: The ORCID, Open Researcher and Contributor ID) is a nonproprietary alphanumeric
+  code to uniquely identify authors and contributors of scholarly communication as
+  well as ORCIDs website and services to look up authors and their bibliographic output
+  (and other user-supplied pieces of information).
+id: orcid
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/ORCID
+name: Open Researcher and Contributor ID (ORCID)

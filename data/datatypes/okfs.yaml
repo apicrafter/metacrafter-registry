@@ -1,0 +1,15 @@
+categories:
+- common
+country:
+- RU
+doc: Russian classifier of forms of ownership, OKFS
+id: okfs
+is_pii: 'False'
+langs:
+- ru
+name: Russian form of ownership code
+translations:
+  ru:
+    doc: ОКФС — это общероссийский классификатор форм собственности, входящий в Единую
+      систему кодирования РФ
+    name: Код ОКФС

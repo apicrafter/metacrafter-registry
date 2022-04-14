@@ -1,0 +1,10 @@
+categories:
+- geo
+country:
+- US
+doc: Name or code of US County
+id: uscounty
+is_pii: 'False'
+langs:
+- en
+name: US County

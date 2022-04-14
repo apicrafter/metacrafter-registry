@@ -1,0 +1,14 @@
+categories:
+- government
+country:
+- RU
+doc: Unique code assigned to all government customers in Russian Federation
+id: ruikuiko
+is_pii: 'False'
+langs:
+- ru
+name: Russian government customers unique code
+translations:
+  ru:
+    doc: Код присваиваемый государственным заказчикам в Российской Федерации
+    name: Идентификационный код заказчика

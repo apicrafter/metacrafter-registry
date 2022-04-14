@@ -1,0 +1,12 @@
+categories:
+- datetime
+doc: Month day, numeric value from 1 to 31
+id: dayofmonth
+is_pii: 'False'
+langs:
+- common
+name: Day of month
+translations:
+  ru:
+    doc: День месяца в зн
+    name: День месяца

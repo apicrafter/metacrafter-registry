@@ -1,0 +1,13 @@
+categories:
+- objectids
+doc: An aircraft registration, alternatively called a tail number[citation needed],
+  is a code unique to a single aircraft, required by international convention to be
+  marked on the exterior of every civil aircraft.
+id: aircraftnumber
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Aircraft_registration
+name: Aircraft/tail number

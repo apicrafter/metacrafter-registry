@@ -1,0 +1,12 @@
+doc: An IATA airport code, also known as an IATA location identifier, IATA station
+  code, or simply a location identifier, is a three-letter geocode designating many
+  airports and metropolitan areas around the world, defined by the International Air
+  Transport Association (IATA)
+id: iatacode
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/IATA_airport_code
+name: IATA Airport code
+semantic_type: airport

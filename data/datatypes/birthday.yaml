@@ -1,0 +1,20 @@
+categories:
+- pii
+- datetime
+doc: A birthday is the anniversary of the birth of a person, or figuratively of an
+  institution. Birthdays of people are celebrated in numerous cultures, often with
+  birthday gifts, birthday cards, a birthday party, or a rite of passage.
+id: birthday
+is_pii: 'True'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Birthday
+name: Birthday
+parent:
+  type: date
+translations:
+  ru:
+    doc: 'День рождения — годовщина рождения, соответствует дате рождения человека. '
+    name: День рождения

@@ -1,0 +1,6 @@
+doc: English name of the month
+id: enmonth
+langs:
+- en
+name: Month name (English)
+semantic_type: month

@@ -1,0 +1,23 @@
+categories:
+- geo
+- pii
+- common
+doc: A city is a large human settlement. It can be defined as a permanent and densely
+  settled place with administratively defined boundaries whose members work primarily
+  on non-agricultural tasks.
+id: city
+is_pii: 'True'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/City
+name: City
+patterns:
+- ruscity
+- uscity
+translations:
+  ru:
+    doc: Го́род — крупный населённый пункт, жители которого заняты, как правило, не
+      сельским хозяйством.
+    name: Город

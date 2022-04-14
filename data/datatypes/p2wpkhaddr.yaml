@@ -1,0 +1,10 @@
+categories:
+- cryptocurrency
+id: p2wpkhaddr
+is_pii: 'False'
+langs:
+- common
+links:
+  type: other
+  url: https://allprivatekeys.com/bitcoin-address-format
+name: P2WPKH address

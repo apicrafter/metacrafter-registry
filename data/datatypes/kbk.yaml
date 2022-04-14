@@ -1,0 +1,17 @@
+categories:
+- government
+country:
+- RU
+doc: Russian budget classification code KBK (kod byudzhetnoy klassifikacii) identifiers
+  certain budget allocation of the federal or regional budget
+id: kbk
+is_pii: 'False'
+langs:
+- ru
+name: Russian budget classification code (KBK)
+translations:
+  ru:
+    doc: Код бюджетной классификации (КБК) используется в бюджетной системе РФ для
+      идентификации конкретной строки расхода федерального или регионального государственного
+      бюджета.
+    name: Код бюджетной классификации (КБК)

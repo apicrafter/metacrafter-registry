@@ -1,0 +1,18 @@
+categories:
+- pii
+- datetime
+doc: Date of death of the person
+id: deathday
+is_pii: 'True'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Death_anniversary
+name: Date of death
+parent:
+  type: date
+translations:
+  ru:
+    doc: Дата смерти человека
+    name: Дата смерти

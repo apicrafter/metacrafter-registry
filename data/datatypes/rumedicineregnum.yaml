@@ -1,0 +1,14 @@
+categories:
+- medical
+country:
+- RU
+doc: Russian medicine registration code
+id: rumedicineregnum
+is_pii: 'False'
+langs:
+- ru
+name: Registration code of medicine (Russian)
+translations:
+  ru:
+    doc: 'Код регистрации лекарственного средства в России. Реестр Росздравнадзора '
+    name: Код регистрации лекарственного средства в России

@@ -1,0 +1,8 @@
+country:
+- RU
+doc: Street name written in Russn
+id: russtreet
+langs:
+- ru
+name: Street name in Russian
+semantic_type: street

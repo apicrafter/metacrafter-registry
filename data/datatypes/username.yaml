@@ -1,0 +1,10 @@
+categories:
+- pii
+- persons
+doc: Name of the user or login, commonly used for authentication or user identification
+  purposes
+id: username
+is_pii: 'True'
+langs:
+- common
+name: Username

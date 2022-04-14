@@ -1,0 +1,16 @@
+categories:
+- government
+country:
+- RU
+doc: Russian public legal formation is a legal definition of public entity with right
+  of administration of its level budget
+id: pponame
+is_pii: 'False'
+langs:
+- ru
+name: Russian public legal formation name
+translations:
+  ru:
+    doc: Публично правовое образование - это организация/субъект федерации с правом
+      распоряжения бюджетом своего уровня
+    name: Наименование публично правового образования в РФ

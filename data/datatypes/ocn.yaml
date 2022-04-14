@@ -1,0 +1,17 @@
+categories:
+- objectids
+doc: OCLC assigns a unique control number (referred to as an "OCN" for "OCLC Control
+  Number") to each new bibliographic record in the WorldCat. Numbers are assigned
+  serially, and as of mid-2013 over a billion OCNs had been created. In September
+  2013, the OCLC declared these numbers to be in the public domain, removing a perceived
+  barrier to widespread use of OCNs outside OCLC itself.[42] The control numbers link
+  WorldCat's records to local library system records by providing a common reference
+  key for a record across libraries
+id: ocn
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/OCLC
+name: OCLC Control Number

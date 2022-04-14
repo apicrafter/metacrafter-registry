@@ -1,0 +1,16 @@
+categories:
+- common
+country:
+- RU
+doc: TN VED is a Russian classifier used to identify product groups for customs purposes
+  and international trade statistics.
+id: tnved
+is_pii: 'False'
+langs:
+- ru
+name: Russian TNVED code (product code)
+translations:
+  ru:
+    doc: Товарная номенклатура внешнеэкономической деятельности Евразийского экономического
+      союза
+    name: Код ТНВЭД

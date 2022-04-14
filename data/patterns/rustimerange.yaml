@@ -1,0 +1,8 @@
+country:
+- RU
+doc: Time range written in Russian
+id: rustimerange
+langs:
+- ru
+name: Time range (Russian)
+semantic_type: timerange

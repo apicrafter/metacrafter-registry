@@ -1,0 +1,8 @@
+country:
+- US
+doc: United States city name
+id: uscity
+langs:
+- en
+name: United States city
+semantic_type: city

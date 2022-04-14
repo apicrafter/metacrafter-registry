@@ -1,0 +1,14 @@
+categories:
+- common
+country:
+- RU
+doc: Moscow city (Russia) districts
+id: rumosdistricts
+is_pii: 'False'
+langs:
+- ru
+name: Moscow districts (Russia)
+translations:
+  ru:
+    doc: Округа города Москвы
+    name: Округа города Москвы

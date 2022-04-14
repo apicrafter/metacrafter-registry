@@ -1,0 +1,12 @@
+categories:
+- pii
+- persons
+doc: Person passport, usually unique personal information that should be shared online.
+  Identifies personal document issued to person by government authority
+id: passport
+is_pii: 'True'
+langs:
+- common
+name: Person passport number (universal)
+patterns:
+- ruintpassport

@@ -1,0 +1,20 @@
+categories:
+- medical
+doc: The Anatomical Therapeutic Chemical (ATC) Classification System is a drug classification
+  system that classifies the active ingredients of drugs according to the organ or
+  system on which they act and their therapeutic, pharmacological and chemical properties.
+  Its purpose is an aid to monitor drug use and for research to improve quality medication
+  use. It does not imply drug recommendation or efficacy.
+id: atccode
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Anatomical_Therapeutic_Chemical_Classification_System
+name: Anatomical Therapeutic Chemical (ATC) Classification System
+translations:
+  ru:
+    doc: Анатомо-терапевтическо-химическая классификация — международная система классификации
+      лекарственных средств.
+    name: Анатомо-терапевтическо-химическая классификация (АТХ)

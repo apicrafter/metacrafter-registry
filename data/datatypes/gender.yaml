@@ -1,0 +1,9 @@
+categories:
+- pii
+- persons
+doc: Gender flag and/or any other identification value
+id: gender
+is_pii: 'True'
+langs:
+- common
+name: Gender

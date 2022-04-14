@@ -1,0 +1,13 @@
+categories:
+- objectids
+doc: The International Standard Book Number (ISBN) is a numeric commercial book identifier
+  that is intended to be unique. Publishers purchase ISBNs from an affiliate of the
+  International ISBN Agency
+id: isbn10
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Standard_Book_Number
+name: International Standard Book Number 10-digits (ISBN10)

@@ -1,0 +1,8 @@
+categories:
+- datetime
+doc: Time of the day, like 12:00 or 10PM or 11:05
+id: time
+is_pii: 'False'
+langs:
+- common
+name: Time

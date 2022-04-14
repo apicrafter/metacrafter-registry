@@ -1,0 +1,14 @@
+categories:
+- companies
+doc: The Data Universal Numbering System, abbreviated as DUNS or D-U-N-S, is a proprietary
+  system developed and managed by Dun & Bradstreet (D&B) that assigns a unique numeric
+  identifier, referred to as a "DUNS number" to a single business entity. It was introduced
+  in 1963 to support D&B's credit reporting practice.
+id: duns
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Data_Universal_Numbering_System
+name: Data Universal Numbering System (DUNS)

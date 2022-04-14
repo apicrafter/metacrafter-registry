@@ -1,0 +1,15 @@
+categories:
+- government
+country:
+- RU
+doc: 3 digits code of the Russian direct government budget receiver and distributor.
+  Assigned to each government ministry, agency, service and some other budget distributor
+  organizations
+id: fedgrbs
+is_pii: 'False'
+langs:
+- ru
+name: Russian direct government budget receiver and distributor code
+translations:
+  ru:
+    name: Код главного распорядителя бюджетных средств

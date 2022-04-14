@@ -1,0 +1,8 @@
+country:
+- RU
+doc: Name of the country written in Russian language.
+id: ruscountryname
+langs:
+- ru
+name: Country name (Russian)
+semantic_type: country

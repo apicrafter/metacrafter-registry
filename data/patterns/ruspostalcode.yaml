@@ -1,0 +1,8 @@
+country:
+- RU
+doc: 6 digits postal codes used in Russian Federation
+id: ruspostalcode
+langs:
+- common
+name: Russian postal code
+semantic_type: postindex

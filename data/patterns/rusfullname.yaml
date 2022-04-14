@@ -1,0 +1,8 @@
+country:
+- RU
+doc: Fullname of the person in Russian
+id: rusfullname
+langs:
+- ru
+name: Fullname of the person in Russian
+semantic_type: person_fullname

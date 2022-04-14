@@ -1,0 +1,17 @@
+categories:
+- common
+country:
+- RU
+doc: Code or name of the region (federal subject) in Russia as it is in country Constitution
+id: rusregion
+is_pii: 'False'
+langs:
+- ru
+name: Russian region (federal subject) coce or name
+patterns:
+- rusregionname
+- rusregioncode
+translations:
+  ru:
+    doc: Код или наименование субъекта Российской Федерации по Конституции страны
+    name: Код или наименование субъекта Российской Федерации

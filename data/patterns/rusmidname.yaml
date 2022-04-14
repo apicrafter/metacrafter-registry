@@ -1,0 +1,8 @@
+country:
+- RU
+doc: Middle name in Russian
+id: rusmidname
+langs:
+- ru
+name: Middle name in Russian
+semantic_type: person_midname

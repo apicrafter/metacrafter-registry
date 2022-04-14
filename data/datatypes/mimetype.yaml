@@ -1,0 +1,13 @@
+categories:
+- common
+doc: 'Mime type of the file/content. Used to identify contents of the stream or file.
+  The MIME standard is specified in a series of requests for comments: RFC 2045, RFC
+  2046, RFC 2047, RFC 4288, RFC 4289 and RFC 2049.'
+id: mimetype
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/MIME
+name: Multipurpose Internet Mail Extensions (MIME)

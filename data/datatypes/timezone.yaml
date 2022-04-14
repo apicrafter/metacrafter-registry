@@ -1,0 +1,12 @@
+categories:
+- datetime
+doc: A time zone is an area that observes a uniform standard time for legal, commercial
+  and social purposes
+id: timezone
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Time_zone
+name: Time zone

@@ -1,0 +1,14 @@
+categories:
+- common
+country:
+- RU
+doc: Moscow city (Russia) administrative areas
+id: rumosadmareas
+is_pii: 'False'
+langs:
+- ru
+name: Moscow administrative areas (Russia)
+translations:
+  ru:
+    doc: Справочник районов города Москвы
+    name: Районы города Москвы

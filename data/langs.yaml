@@ -1,9 +1,12 @@
-common:
-  id: common
-  name: Common identifiers
-en:
-  id: en
-  name: English
-ru:
-  id: ru
+- id: ru
   name: Russian
+- id: common
+  name: Common to most languages
+- id: en
+  name: English
+- id: fr
+  name: French
+- id: es
+  name: Spanish
+- id: it
+  name: Italian

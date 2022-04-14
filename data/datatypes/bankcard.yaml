@@ -1,0 +1,19 @@
+categories:
+- pii
+- finances
+doc: A bank card is typically a plastic card issued by a bank to its clients that
+  performs one or more of a number of services that relate to giving the client access
+  to bank account.
+id: bankcard
+is_pii: 'True'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Bank_card
+name: Bank card (credit/debit card)
+translations:
+  ru:
+    doc: Ба́нковская ка́рта (англ. bank card) — пластиковая, металлическая или виртуальная
+      карта, обычно привязанная к одному или нескольким расчётным счетам в банке.
+    name: Банковская карта

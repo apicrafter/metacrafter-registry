@@ -1,0 +1,8 @@
+categories:
+- transport
+doc: Number of the vehicle (vehicle plate number)
+id: vehiclenumber
+is_pii: 'False'
+langs:
+- common
+name: Vehicle number

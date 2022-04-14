@@ -1,0 +1,14 @@
+categories:
+- common
+country:
+- RU
+doc: Name of the federal district of Russia. Full or short.
+id: rusfeddistrict
+is_pii: 'False'
+langs:
+- ru
+name: Russian federal district name
+translations:
+  ru:
+    doc: Наименование федерального округа России полное или сокращённое
+    name: Наименование федерального округа России

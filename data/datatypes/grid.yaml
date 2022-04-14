@@ -1,0 +1,13 @@
+categories:
+- science
+doc: Global Research Identifier Database (GRID) is a database of educational and research
+  organizations worldwide, created and maintained by Digital Science & Research Solutions
+  Ltd., part of the technology company Digital Science.
+id: grid
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Global_Research_Identifier_Database
+name: Global Research Identifier

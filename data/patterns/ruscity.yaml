@@ -1,0 +1,8 @@
+country:
+- RU
+doc: City name in Russian language
+id: ruscity
+langs:
+- ru
+name: City name (Russian)
+semantic_type: city

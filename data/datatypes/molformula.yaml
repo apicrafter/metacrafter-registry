@@ -1,0 +1,12 @@
+categories:
+- chemistry
+doc: Molecular formulae indicate the simple numbers of each type of atom in a molecule
+  of a molecular substance.
+id: molformula
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Chemical_formula
+name: Molecular Formula

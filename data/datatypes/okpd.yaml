@@ -1,0 +1,15 @@
+categories:
+- common
+country:
+- RU
+doc: Russian product code (OKPD) used for government procurement and budget planning
+  purposes
+id: okpd
+is_pii: 'False'
+langs:
+- ru
+name: Russian product code (OKPD)
+translations:
+  ru:
+    doc: Код по Общероссийскому классификатору продукции
+    name: Код ОКПД

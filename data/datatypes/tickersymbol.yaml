@@ -1,0 +1,12 @@
+categories:
+- finances
+doc: cker symbol or stock symbol is an abbreviation used to uniquely identify publicly
+  traded shares of a particular stock on a particular stock market.
+id: tickersymbol
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Ticker_symbol
+name: Stock ticker symbol

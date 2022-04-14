@@ -1,0 +1,36 @@
+- id: common
+  name: Common
+- id: pii
+  name: Personally idenfiable information
+- id: geo
+  name: Geographic identifiers
+- id: medical
+  name: Medical/pharma identifiers
+- id: finances
+  name: Finances and banking
+- id: datetime
+  name: Date and time
+- id: government
+  name: Government related
+- id: science
+  name: Scientific
+- id: companies
+  name: Companies/business/organizations
+- id: internet
+  name: Internet
+- id: identifiers
+  name: Universal unique identifiers
+- id: objectids
+  name: Objects identifiers
+- id: cryptography
+  name: Cryptographic identifiers
+- id: persons
+  name: Person related
+- id: cryptocurrency
+  name: Cryptocurrency
+- id: transport
+  name: Transportation
+- id: values
+  name: All measurable values (percentage, amount and e.t.c)
+- id: chemistry
+  name: Chemistry

@@ -1,0 +1,15 @@
+categories:
+- datetime
+doc: Date with one of known notations
+id: date
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation
+name: Date
+translations:
+  ru:
+    doc: Дата в одной из общепринятых нотаций
+    name: Дата

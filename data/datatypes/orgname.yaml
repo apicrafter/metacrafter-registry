@@ -1,0 +1,11 @@
+categories:
+- companies
+doc: Name of the organization/business/company in any language
+id: orgname
+is_pii: 'False'
+langs:
+- common
+name: Company name
+patterns:
+- encompanyname
+- rucompanyname

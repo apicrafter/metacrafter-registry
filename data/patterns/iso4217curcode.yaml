@@ -1,0 +1,9 @@
+doc: ISO 4217 Currency code
+id: iso4217curcode
+langs:
+- common
+links:
+  type: other
+  url: https://www.iso.org/iso-4217-currency-codes.html
+name: ISO 4217 Currency code
+semantic_type: currency

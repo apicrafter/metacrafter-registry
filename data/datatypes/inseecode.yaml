@@ -1,0 +1,15 @@
+categories:
+- geo
+country:
+- FR
+doc: 'The INSEE code is a numerical indexing code used by the French National Institute
+  for Statistics and Economic Studies (INSEE) to identify various entities, including
+  communes and départements. '
+id: inseecode
+is_pii: 'False'
+langs:
+- fr
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/INSEE_code
+name: INSEE code

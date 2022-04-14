@@ -1,0 +1,19 @@
+categories:
+- common
+doc: In computer science, the Boolean data type is a data type that has one of two
+  possible values (usually denoted true and false) which is intended to represent
+  the two truth values of logic and Boolean algebra.
+id: boolean
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Boolean_data_type
+name: Boolean
+translations:
+  ru:
+    doc: Логи́ческий тип да́нных, или булев тип, или булевый тип (от англ. Boolean
+      или logical data type) — примитивный тип данных в информатике, принимающий два
+      возможных значения, иногда называемых истиной (true) и ложью (false).
+    name: Логический тип

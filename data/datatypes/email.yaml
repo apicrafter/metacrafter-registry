@@ -1,0 +1,22 @@
+categories:
+- common
+- pii
+doc: Electronic mail (email or e-mail) is a method of exchanging messages ("mail")
+  between people using electronic devices. Email was thus conceived as the electronic
+  (digital) version of, or counterpart to, mail, at a time when "mail" meant only
+  physical mail (hence e- + mail).
+id: email
+is_pii: 'True'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Email
+name: Email (Electronic mail)
+translations:
+  ru:
+    doc: Электро́нная по́чта (англ. email, e-mail [iˈmeɪl], от англ. electronic mail)
+      — технология и служба по пересылке и получению электронных сообщений (называемых
+      «письма», «электронные письма» или «сообщения») между пользователями компьютерной
+      сети (в том числе — Интернета).
+    name: Электронная почта (email)

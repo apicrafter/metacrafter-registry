@@ -1,0 +1,15 @@
+categories:
+- geo
+country:
+- FR
+doc: 'The SIRET code (French: Système d’identification du répertoire des établissements),
+  or SIRET number,[1] is an INSEE code which allows the geographic identification
+  of any French establishment or business. '
+id: siretcode
+is_pii: 'False'
+langs:
+- fr
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/SIRET_code
+name: SIRET Code

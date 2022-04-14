@@ -1,0 +1,12 @@
+categories:
+- persons
+- pii
+doc: Full name of the person as combination of last, first, and sometimes middle name
+id: person_fullname
+is_pii: 'True'
+langs:
+- common
+name: Person fullname
+patterns:
+- rusfullname
+- frfullname

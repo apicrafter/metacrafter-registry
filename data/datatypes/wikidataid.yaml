@@ -1,0 +1,12 @@
+categories:
+- objectids
+doc: Wikidata makes use of identifiers for both internal organization of the knowledge
+  base and for its connection to other databases.
+id: wikidataid
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikidata
+  url: https://www.wikidata.org/wiki/Wikidata:Identifiers
+name: Wikidata Id

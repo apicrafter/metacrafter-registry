@@ -1,0 +1,29 @@
+categories:
+- geo
+country:
+- RU
+doc: 'Russian Classification on Objects of Administrative Division (Russian: Общеросси́йский
+  классифика́тор объе́ктов администрати́вно-территориа́льного деле́ния), or OKATO
+  (Russian: ОКАТО), also called All-Russian classification on units of administrative
+  and territorial distribution in English, is one of several Russian national registers.
+  OKATOs purpose is organization of information about structure of the administrative
+  divisions of the federal subjects of Russia.'
+id: okato
+is_pii: 'False'
+langs:
+- ru
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/OKATO
+name: OKATO (Russian Classification on Objects of Administrative Division)
+translations:
+  ru:
+    doc: ' Общероссийский классификатор объектов административно-территориального
+      деления (сокращ. ОКАТО — общероссийский классификатор административно-территориальных
+      образований) — классификатор объектов административно-территориального деления
+      Российской Федерации, входит в состав «Единой системы классификации и кодирования
+      технико-экономической и социальной информации Российской Федерации» (ЕСКК).
+      ОКАТО предназначен для обеспечения достоверности, сопоставимости и автоматизированной
+      обработки информации в разрезах административно-территориального деления в таких
+      сферах, как статистика, экономика и другие.'
+    name: Код ОКАТО

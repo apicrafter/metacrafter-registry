@@ -1,0 +1,19 @@
+categories:
+- geo
+doc: An IETF BCP 47 language tag is a standardized code or tag that is used to identify
+  human languages in the Internet. The tag structure has been standardized by the
+  Internet Engineering Task Force (IETF) in Best Current Practice (BCP) 47; the subtags
+  are maintained by the IANA Language Subtag Registry.
+id: languagetag
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/IETF_language_tag
+name: IETF language tag
+translations:
+  ru:
+    doc: Языковой код/тэг по стандарту IETF BCP 47 идентифицирующий конкретный человеческий
+      язык, стиль написания и тд.
+    name: Языковой код IETF

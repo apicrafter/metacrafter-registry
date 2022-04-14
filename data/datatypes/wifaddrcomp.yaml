@@ -1,0 +1,10 @@
+categories:
+- cryptocurrency
+id: wifaddrcomp
+is_pii: 'False'
+langs:
+- common
+links:
+  type: other
+  url: https://allprivatekeys.com/bitcoin-address-format
+name: WIF, compressed pubkey

@@ -1,0 +1,10 @@
+categories:
+- pii
+- persons
+doc: Nationality of the person from list of unique code from one of code lists or
+  defined somehow else.
+id: nationality
+is_pii: 'True'
+langs:
+- common
+name: Person nationality

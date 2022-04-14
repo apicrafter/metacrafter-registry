@@ -1,0 +1,16 @@
+categories:
+- finances
+doc: A personal account is an account for use by an individual for that persons own
+  needs. It is a relative term to differentiate them from those accounts for business
+  or corporate use.
+id: licaccount
+is_pii: 'False'
+langs:
+- common
+name: Personal account (Russian)
+translations:
+  ru:
+    doc: Лицевой счёт (англ. personal account) — бухгалтерский счёт для ведения учёта
+      расчетов с физическими и юридическими лицами, на котором отражаются все финансово-кредитные
+      операции с определенным клиентом, является документом аналитического учёта.
+    name: Лицевой счет

@@ -1,0 +1,9 @@
+categories:
+- identifiers
+doc: A universally unique identifier (UUID) is a 128-bit label used for information
+  in computer systems. The term globally unique identifier (GUID) is also used.
+id: guid
+is_pii: 'False'
+langs:
+- common
+name: GUID (Globally unique identifier)

@@ -1,0 +1,20 @@
+categories:
+- companies
+country:
+- RU
+doc: Russian primary government identification number assigned by Tax Service to any
+  business entity in Russia
+id: ogrn
+is_pii: 'False'
+langs:
+- ru
+name: Russian primary government identification number (OGRN)
+translations:
+  ru:
+    doc: ОГРН (основной государственный регистрационный номер) — государственный регистрационный
+      номер записи о создании юридического лица либо записи о первом представлении
+      в соответствии с федеральным законом Российской Федерации «О государственной
+      регистрации юридических лиц» сведений о юридическом лице, зарегистрированном
+      до введения в действие указанного Закона (пункт 8 Правил ведения Единого государственного
+      реестра юридических лиц).
+    name: Основной государственный регистрационный номер (ОГРН)

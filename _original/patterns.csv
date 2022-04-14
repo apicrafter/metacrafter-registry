@@ -1,0 +1,38 @@
+endayofweek	Day of week (in English)	Day of week writtern in English	dayofweek	Day of week	en				endayofweek, endayofweekknown
+rusdayofweek	Day of week (in Russian)	Day of week written in Russian language	dayofweek	Day of week	ru	RU			rusdayofweek
+rustimerange	Time range (Russian)	Time range written in Russian	timerange	Time range	ru	RU			rustimerangebypat
+enmonth	Month name (English)	English name of the month	month	Month	en				enmonth
+enmonthshort	Short name of month (English)	Abbreviated short English name/abbreviation of month	month	Month	en				enmonthshort
+ruintpassport	Russian passport number	Number of Russian internal passport	passport	Person passport number (universal)	ru	RU			
+ruscity	City name (Russian)	City name in Russian language	city	City	ru	RU			rucityknown, ruscities
+rustreet	Street name (Russian)	Street name writtern in Russian language	street	Street	ru	RU			
+ruscountryname	Country name (Russian)	Name of the country written in Russian language.	country	Country code or name	ru	RU			rucountryname
+rubankaccount	Bank account in Russia	A bank account is a financial account maintained by a bank or other financial institution in which the financial transactions between the bank and a customer are recorded.	bankaccount	Bank account	ru	RU			
+countrycode_alpha2	ISO 3166-1 Alpha2 country code	ISO 3166-1 alpha-2 codes are two-letter country codes defined in ISO 3166-1, part of the ISO 3166 standard published by the International Organization for Standardization (ISO), to represent countries, dependent territories, and special areas of geographical interest.	country	Country code or name	common		https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2	wikipedia	iso3166-alpha2imprecise, iso3166-alpha2
+countrycode_alpha3	ISO 3166-1 Alpha3 country code	ISO 3166-1 alpha-3 codes are three-letter country codes defined in ISO 3166-1, part of the ISO 3166 standard published by the International Organization for Standardization (ISO), to represent countries, dependent territories, and special areas of geographical interest.	country	Country code or name	common		https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3	wikipedia	iso3166-alpha3, iso3166-alpha3imprecise
+encountryname	Country name (English)	Name of the country in English	country	Country code or name	common				
+rusregionname	Russian region (federal subject) name	Name of the region (federal subject) in Russia as it is in country Constitution	rusregion	Russian region (federal subject) coce or name	ru	RU			rusregionnamebyknown, rusregionnamebypat
+rusregioncode	Russian region unique code	Russian unique code of country subdivision (regions/federal subjects)	rusregion	Russian region (federal subject) coce or name	ru	RU			ruregioncode
+uscity	United States city	United States city name	city	City	en	US			
+iso4217curcode	ISO 4217 Currency code	ISO 4217 Currency code	currency	Currency	common		https://www.iso.org/iso-4217-currency-codes.html	other	
+iso4217curname	ISO 4217 Currency name	ISO 4217 Currency name	currency	Currency	common		https://www.iso.org/iso-4217-currency-codes.html	other	
+icaocode	ICAO Airport code	The ICAO airport code or location indicator is a four-letter code designating aerodromes around the world. These codes, as defined by the International Civil Aviation Organization and published in ICAO Document 7910: Location Indicators, are used by air traffic control and airline operations such as flight planning. 	airport	Airport location identifier	common		https://en.wikipedia.org/wiki/ICAO_airport_code	wikipedia	
+iatacode	IATA Airport code	An IATA airport code, also known as an IATA location identifier, IATA station code, or simply a location identifier, is a three-letter geocode designating many airports and metropolitan areas around the world, defined by the International Air Transport Association (IATA)	airport	Airport location identifier	common		https://en.wikipedia.org/wiki/IATA_airport_code	wikipedia	
+faalid	FAA identifier	The Federal Aviation Administration location identifier (FAA LID) is a three- to five-character alphanumeric code identifying aviation related facilities inside the United States, though some codes are reserved for, and are managed by other entities.	airport	Airport location identifier	common	US	https://en.wikipedia.org/wiki/IATA_airport_code	wikipedia	
+countrycode_num	ISO 3166-1 Numeric country code	ISO 3166-1 numeric (or numeric-3) codes are three-digit country codes defined in ISO 3166-1, part of the ISO 3166 standard published by the International Organization for Standardization (ISO), to represent countries, dependent territories, and special areas of geographical interest.	country	Country code or name	common		https://en.wikipedia.org/wiki/ISO_3166-1_numeric	wikipedia	rucountrycode, rucountrycodepat
+ukpostalcode	UK Postal code	Postal codes used in the United Kingdom, British Overseas Territories and Crown dependencies are known as postcodes (originally, postal codes).	postindex	Postal code/index	en	GB	https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom	wikipedia	
+uszipcode	US Postal code	A ZIP Code is a postal code used by the United States Postal Service (USPS). Introduced in 1963, the basic format consisted of five digits. In 1983, an extended ZIP+4 code was introduced; it included the five digits of the ZIP Code, followed by a hyphen and four digits that designated a more specific location. 	postindex	Postal code/index	en	US	https://en.wikipedia.org/wiki/ZIP_Code	wikipedia	
+ruspostalcode	Russian postal code	6 digits postal codes used in Russian Federation	postindex	Postal code/index	common	RU			rupostindexbyknown, rupostindex
+rusdegree	Academic degree (Russian)	Academic degree title in Russian. 	academicdegree	Academic degree	ru	RU			russciencedegrees
+rusworkposition	Work position / Job title (Russian)	Work positions / job title common in Russia and writtern in Russian language.	jobtitle	Work position / Job title	ru	RU			ruspersonworkpositionsfield, ruspersonworkpositions
+encompanyname	Company/business name in English	English written company/business/legal name of business entity	orgname	Company name	en				encompanynamebypostfix
+rucompanyname	Company/business name in Russian	Russian written company/business name	orgname	Company name	ru	RU			ruorgname
+rusfirstname	First name in Russian	First name in Russian	person_firstname	Person firstname	ru	RU			rusfirstnames
+rusmidname	Middle name in Russian	Middle name in Russian	person_midname	Person middle name	ru	RU			rusmidnames
+russurname	Surname/Lastname in Russian	Surname/Lastname in Russian	person_surname	Person surname/lastname	ru	RU			russurnames
+rusfullname	Fullname of the person in Russian	Fullname of the person in Russian	person_fullname	Person fullname	ru	RU			rufullname, rupfioknown
+russtreet	Street name in Russian	Street name written in Russn	street	Street	ru	RU			rustreetknown
+frpostcode	French postal code	French postal code	postindex	Postal code/index	fr	FR			frpostalcode
+espostcode	Spanish postal code (by language)	Spanish postal code (by language)	postindex	Postal code/index	es	ES, MX			spanishpostalcodebyname
+frfullname	French full name of the person	Full name of the person written in French	person_fullname	Person fullname	fr	FR			frfullnamebyknown
+rusbankaccount	Bank account used in Russia	Russian  bank accounts	bankaccount	Bank account	ru	RU			rusbankaccount, rusbankaccountpat

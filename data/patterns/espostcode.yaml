@@ -1,0 +1,9 @@
+country:
+- ES
+- MX
+doc: Spanish postal code (by language)
+id: espostcode
+langs:
+- es
+name: Spanish postal code (by language)
+semantic_type: postindex

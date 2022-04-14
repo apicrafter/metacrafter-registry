@@ -1,0 +1,6 @@
+doc: Day of week writtern in English
+id: endayofweek
+langs:
+- en
+name: Day of week (in English)
+semantic_type: dayofweek

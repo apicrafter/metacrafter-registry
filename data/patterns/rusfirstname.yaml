@@ -1,0 +1,8 @@
+country:
+- RU
+doc: First name in Russian
+id: rusfirstname
+langs:
+- ru
+name: First name in Russian
+semantic_type: person_firstname

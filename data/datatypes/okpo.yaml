@@ -1,0 +1,14 @@
+categories:
+- companies
+country:
+- RU
+doc: Russian organizations statistical code (OKPO) issued by Rosstat
+id: okpo
+is_pii: 'False'
+langs:
+- ru
+name: Russian organization stat code
+translations:
+  ru:
+    doc: Код по Общероссийскому классификатору предприятий и организаций
+    name: Код ОКПО

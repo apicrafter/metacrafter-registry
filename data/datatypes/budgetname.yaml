@@ -1,0 +1,15 @@
+categories:
+- government
+country:
+- RU
+doc: Name of the budget of Russian government at federal, regional or local level
+id: budgetname
+is_pii: 'False'
+langs:
+- ru
+name: Russian government budget name
+translations:
+  ru:
+    doc: Название бюджета по справочнику наименований и кодов бюджета ведомом Минфином
+      России и Федеральным казначейством.
+    name: Наименование бюджета

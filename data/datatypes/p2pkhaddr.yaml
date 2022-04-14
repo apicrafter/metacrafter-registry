@@ -1,0 +1,15 @@
+categories:
+- cryptocurrency
+doc: 'A Bitcoin address is only a hash, so the sender can''t provide a full public
+  key in scriptPubKey. When redeeming coins that have been sent to a Bitcoin address,
+  the recipient provides both the signature and the public key. The script verifies
+  that the provided public key does hash to the hash in scriptPubKey, and then it
+  also checks the signature against the public key. '
+id: p2pkhaddr
+is_pii: 'False'
+langs:
+- common
+links:
+  type: other
+  url: https://allprivatekeys.com/bitcoin-address-format
+name: Pubkey hash (P2PKH address)

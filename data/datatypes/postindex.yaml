@@ -1,0 +1,20 @@
+categories:
+- geo
+- pii
+- common
+doc: Postal index/code, unique post identifier used in address
+id: postindex
+is_pii: 'True'
+langs:
+- common
+name: Postal code/index
+patterns:
+- ukpostalcode
+- uszipcode
+- ruspostalcode
+- frpostcode
+- espostcode
+translations:
+  ru:
+    doc: Индекс почтовой связи
+    name: Почтовый индекс

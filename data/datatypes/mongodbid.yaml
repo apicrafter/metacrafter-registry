@@ -1,0 +1,9 @@
+categories:
+- cryptography
+doc: MongoDB unique id assigned to each row of each collection in MongoDB as field
+  _id
+id: mongodbid
+is_pii: 'False'
+langs:
+- common
+name: MongoDB unique record ID

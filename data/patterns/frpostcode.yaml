@@ -1,0 +1,8 @@
+country:
+- FR
+doc: French postal code
+id: frpostcode
+langs:
+- fr
+name: French postal code
+semantic_type: postindex

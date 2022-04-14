@@ -1,0 +1,8 @@
+country:
+- RU
+doc: Russian unique code of country subdivision (regions/federal subjects)
+id: rusregioncode
+langs:
+- ru
+name: Russian region unique code
+semantic_type: rusregion

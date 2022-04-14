@@ -1,0 +1,8 @@
+categories:
+- geo
+doc: Geographic point as string with latitude and longitude
+id: geopoint
+is_pii: 'True'
+langs:
+- common
+name: Geopoint

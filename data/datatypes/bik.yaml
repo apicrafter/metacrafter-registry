@@ -1,0 +1,20 @@
+categories:
+- finances
+country:
+- RU
+doc: Russian bank identification code used as unique identifier of a credit organization
+  (bank) and issued by Bank of Russia
+id: bik
+is_pii: 'False'
+langs:
+- ru
+links:
+  type: wikipedia
+  url: https://ru.wikipedia.org/wiki/Банковский_идентификационный_код
+name: Russian bank identification code (BIK)
+translations:
+  ru:
+    doc: Банковский идентификационный код, БИК — уникальный идентификатор банка, используемый
+      в платежных документах (платёжное поручение, аккредитив) на территории России.
+      Классификатор БИКов ведёт Центробанк РФ (Банк России).
+    name: Банковский идентификационный код

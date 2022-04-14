@@ -1,0 +1,8 @@
+country:
+- RU
+doc: Surname/Lastname in Russian
+id: russurname
+langs:
+- ru
+name: Surname/Lastname in Russian
+semantic_type: person_surname

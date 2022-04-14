@@ -1,0 +1,11 @@
+categories:
+- persons
+- pii
+doc: Middle name of the person
+id: person_midname
+is_pii: 'True'
+langs:
+- common
+name: Person middle name
+patterns:
+- rusmidname

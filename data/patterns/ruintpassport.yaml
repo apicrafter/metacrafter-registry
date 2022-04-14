@@ -1,0 +1,8 @@
+country:
+- RU
+doc: Number of Russian internal passport
+id: ruintpassport
+langs:
+- ru
+name: Russian passport number
+semantic_type: passport

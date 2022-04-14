@@ -1,0 +1,9 @@
+categories:
+- internet
+- pii
+doc: Internet Protocol version 4 (IPv4) or Internet Protocol version 6 (IPv6) address
+id: ipaddr
+is_pii: 'True'
+langs:
+- common
+name: IPv4 or IPv6 address

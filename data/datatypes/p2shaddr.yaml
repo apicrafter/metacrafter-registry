@@ -1,0 +1,15 @@
+categories:
+- cryptocurrency
+doc: 'Pay to script hash (P2SH) transactions were standardised in BIP 16. They allow
+  transactions to be sent to a script hash (address starting with 3) instead of a
+  public key hash (addresses starting with 1). To spend bitcoins sent via P2SH, the
+  recipient must provide a script matching the script hash and data which makes the
+  script evaluate to true. '
+id: p2shaddr
+is_pii: 'False'
+langs:
+- common
+links:
+  type: other
+  url: https://allprivatekeys.com/bitcoin-address-format
+name: Script hash (P2SH address)

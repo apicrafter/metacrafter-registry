@@ -1,0 +1,13 @@
+categories:
+- finances
+doc: This International Standard specifies a universal method of identifying exchanges,
+  trading platforms, regulated or non-regulated markets and trade reporting facilities
+  as sources of prices and related information in order to facilitate automated processing
+id: miccode
+is_pii: 'False'
+langs:
+- common
+links:
+  type: other
+  url: https://www.iso20022.org/market-identifier-codes
+name: Market Identifier Code (ISO 10383)

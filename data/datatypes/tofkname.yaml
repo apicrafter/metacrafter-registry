@@ -1,0 +1,15 @@
+categories:
+- government
+country:
+- RU
+doc: Name of the Russian Federal treasury division
+id: tofkname
+is_pii: 'False'
+langs:
+- ru
+name: Russian Federal treasury division name
+translations:
+  ru:
+    doc: Наименование территориального управления Федерального казначейства РФ. Синхронизовано
+      с кодом территориального управления, ведомственный справочник.
+    name: Наименование территориального управления Федерального казначейства РФ

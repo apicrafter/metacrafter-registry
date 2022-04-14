@@ -1,0 +1,16 @@
+categories:
+- geo
+country:
+- RU
+doc: Russian land registry number (kadastroviy nomer, cadaster number) assigned to
+  each land, territory, building and other geographic administrative objects by Rosreestr
+id: rukadastr
+is_pii: 'False'
+langs:
+- ru
+name: Russian land registry number
+translations:
+  ru:
+    doc: Када́стровый но́мер — уникальный номер объекта недвижимости, присваиваемый
+      ему при осуществлении кадастрового и технического учёта.
+    name: Кадастровый номер

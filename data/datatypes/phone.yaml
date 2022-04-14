@@ -1,0 +1,9 @@
+categories:
+- pii
+- common
+doc: Number of phone/fax
+id: phone
+is_pii: 'True'
+langs:
+- common
+name: Phone number

@@ -1,0 +1,14 @@
+categories:
+- chemistry
+doc: PubChem is a database of chemical molecules and their activities against biological
+  assays. The system is maintained by the National Center for Biotechnology Information
+  (NCBI), a component of the National Library of Medicine, which is part of the United
+  States National Institutes of Health (NIH).
+id: pubchemid
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/PubChem
+name: PubChem ID

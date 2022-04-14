@@ -1,0 +1,8 @@
+categories:
+- datetime
+doc: Age of the person or organization in years
+id: age
+is_pii: 'True'
+langs:
+- common
+name: Age

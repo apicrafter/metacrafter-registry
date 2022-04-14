@@ -1,0 +1,11 @@
+categories:
+- geo
+doc: identifier in the GeoNames geographical database
+id: geonamesid
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1566
+name: Geonames ID

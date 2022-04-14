@@ -1,0 +1,8 @@
+country:
+- RU
+doc: Russian  bank accounts
+id: rusbankaccount
+langs:
+- ru
+name: Bank account used in Russia
+semantic_type: bankaccount

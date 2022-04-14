@@ -1,0 +1,10 @@
+categories:
+- government
+country:
+- RU
+doc: Russian government federal property unique ID (RNFI)
+id: rnfi
+is_pii: 'False'
+langs:
+- ru
+name: Russian government property ID (RNFI)

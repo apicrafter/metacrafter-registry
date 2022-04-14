@@ -1,0 +1,8 @@
+categories:
+- internet
+doc: Subnetwork of IPv4 addresses
+id: ipv4subnet
+is_pii: 'True'
+langs:
+- common
+name: IPv4 subnet

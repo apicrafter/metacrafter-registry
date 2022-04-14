@@ -1,0 +1,19 @@
+categories:
+- science
+doc: A digital object identifier (DOI) is a persistent identifier or handle used to
+  identify objects uniquely, standardized by the International Organization for Standardization
+  (ISO).
+id: doi
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Digital_object_identifier
+name: Digital Object Identifier (DOI)
+translations:
+  ru:
+    doc: Цифровой идентификатор объекта (англ. digital object identifier (DOI), дискретный
+      объекта идентификатор (ДОИ)) — основной элемент системы ДОИ, предназначенной
+      для обозначения объектов информационной деятельности.
+    name: Цифровой идентификатор объекта (DOI)

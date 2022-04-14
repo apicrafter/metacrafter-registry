@@ -1,0 +1,17 @@
+categories:
+- common
+country:
+- RU
+doc: Russian bibliographic classifier (UDK)
+id: udkindex
+is_pii: 'True'
+langs:
+- ru
+name: Russian bibliographic index (UDK)
+translations:
+  ru:
+    doc: ' Универса́льная десяти́чная классифика́ция — система классификации информации,
+      широко используется во всём мире для систематизации произведений науки, литературы
+      и искусства, периодической печати, различных видов документов и организации
+      картотек. '
+    name: Индекс УДК (универсальная десятичная классификация)

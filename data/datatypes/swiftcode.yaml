@@ -1,0 +1,15 @@
+categories:
+- finances
+country:
+- RU
+doc: ISO 9362 defines a standard format of Business Identifier Codes (also known as
+  SWIFT-BIC, BIC, SWIFT ID or SWIFT code) approved by the International Organization
+  for Standardization (ISO).
+id: swiftcode
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_9362
+name: Bank SWIFT code (ISO 9362)

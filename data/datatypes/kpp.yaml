@@ -1,0 +1,16 @@
+categories:
+- companies
+country:
+- RU
+doc: Russian company supplemental registration code (KPP). Used in combination with
+  Taxpayer INN code
+id: kpp
+is_pii: 'False'
+langs:
+- ru
+name: Russian company supplemental registration code (KPP)
+translations:
+  ru:
+    doc: Вспомогательный код используемый вместе с кодом ИНН для идентификации налоговой
+      принадлежности компании.
+    name: Код постановки на учёт (КПП)

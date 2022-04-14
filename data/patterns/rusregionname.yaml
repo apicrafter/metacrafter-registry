@@ -1,0 +1,8 @@
+country:
+- RU
+doc: Name of the region (federal subject) in Russia as it is in country Constitution
+id: rusregionname
+langs:
+- ru
+name: Russian region (federal subject) name
+semantic_type: rusregion
