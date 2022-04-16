@@ -1,7 +1,7 @@
 # metacrafter-registry
 Registry of metadata identifier entities like UUID, GUID, person fullname, address and so on. Linked with other sources and to be converted to ontology in the future.
 
-It's created from list of identifiers in [Metacrafter](https://github.com/apicrafter/metacrafter ) tool  and list of data classes in [Datacrafter](https://datacrafter.ru/class) data catalog.
+It's created from list of identifiers in [Metacrafter](https://github.com/apicrafter/metacrafter) tool  and list of data classes in [Datacrafter](https://datacrafter.ru/class) data catalog.
 
 # Data
 
@@ -50,4 +50,24 @@ Identification rules are regex, other pattern matching algorithms and code that 
 
 
 
+# Code
 
+* scripts/ - list of scripts to convert and process data types and related registry data
+* src/ - minimalistic server side code to run metadata server
+
+# Build registry
+
+**Under development**
+
+Current data update procedure:
+1. Edit YAML files in data directory
+2. Run builder.py script. It will to rebuild data/datatypes_latest.json and data/datatypes_latest.jsonl files from YAML files
+3. Run src/registry.py to see changes locally https://127.0.0.1:8089 
+4. Add, commit and push changed files
+
+TODO: Need Add github actions for automatic registry build, version control, release and validation.
+
+
+# Contacts
+
+Maintainer - Ivan Begtin (ivan@begtin.tech)

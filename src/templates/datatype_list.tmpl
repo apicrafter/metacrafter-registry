@@ -1,0 +1,31 @@
+{% extends "base.tmpl" %}
+{% block pagetitle %}Semantic data types registry{% endblock %}
+{% block content %}
+<h1>Semantic data types registry</h1>
+<p>Registry of metadata identifier entities like UUID, GUID, person fullname, address and so on. Linked with other sources and to be converted to the formal ontology in the near future.</p>
+<p>Download as <a href="/registry.json">JSON</a></a>.
+Raw code and data at <a href="https://github.com/apicrafter/metacrafter-registry">apicrafter/metacrafter-registry</a>
+
+</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for o in objects %}
+        <tr>
+          <td>{{ o.id }}</td>
+          <td><a href="/datatype/{{o.id}}">{{ o.name }}</a></td>
+          <td>{{o.doc}}</td>
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+
+{% endblock %}

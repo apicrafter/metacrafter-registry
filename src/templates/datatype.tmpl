@@ -1,0 +1,97 @@
+{% extends "base.tmpl" %}
+{% block pagetitle %}{{object.name}}{% endblock %}
+{% block content %}
+<div class="hero-sm bg-gray">
+  <div class="hero-body">
+    <h1>{{object.name}} ({{object.id}})</h1>
+    <p>{{object.doc}}</p>
+    <p><a href="/datatype/{{object.id}}.json">JSON</a></p>
+  </div>
+</div>
+<table class="table">
+<thead><th></th><th></th></thead>
+<tbody>
+<td>Is personal identifiable information (PII) ?</td><td>{{object.is_pii}}</td>
+{% if object.parent %}
+<tr>
+<td>Parent data type</td><td><a href="/datatype/{{object.parent.type}}">{{object.parent.type}}</td>
+</tr>
+{% endif %}
+{% if object.links %}
+<tr>
+<td>Source</td><td><a href="{{object.links.url}}">{{object.links.type}}</a></td>
+</tr>
+{% endif %}
+{% if object.categories %}
+<tr>
+<td>Categories</td>
+<td>
+<ul>
+  {% for c in object.categories %} 
+  <li>{{ c.id }} ({{ c.name }})</li>
+  {% endfor %}
+</ul>
+</td>
+</tr>
+{% endif %}
+{% if object.country %}
+<tr>
+<td>Countries</td>
+<td>
+<ul>
+  {% for c in object.country %} 
+  <li>{{ c.id }} ({{ c.name }})</li>
+  {% endfor %}
+</ul>
+</td>
+</tr>
+{% endif %}
+{% if object.langs %}
+<tr>
+<td>Languages</td>
+<td>
+<ul>
+  {% for c in object.langs %} 
+  <li>{{ c.id }} ({{ c.name }})</li>
+  {% endfor %}
+</ul>
+</td>
+</tr>
+{% endif %}
+</tbody>
+</table>
+{% if object.patterns %}
+<h3>Patterns</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>doc</th>
+        </tr>
+      </thead>
+      <tbody>
+{% for t in object.patterns %} 
+<tr><td>{{t.id}}</td><td>{{t.name}}</td><td>{{t.doc}}</td></tr>
+{% endfor %} 
+      </tbody>
+    </table>
+{% endif %}
+{% if object.translations %}
+<h3>Translations</h3>
+    <table class="table">
+      <thead>
+        <tr> 
+          <th></th>
+          <th>name</th>
+          <th>doc</th>
+        </tr>
+      </thead>
+      <tbody>
+{% for t in object.translations.items() %} 
+<tr><td>{{t[0]}}</td><td>{{t[1].name}}</td><td>{{t[1].doc}}</td></tr>
+{% endfor %}
+      </tbody>
+    </table>
+{% endif %}
+{% endblock %}
