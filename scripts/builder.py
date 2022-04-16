@@ -39,12 +39,18 @@ def update_by_dict(arr, adict):
 
 
 def yaml_to_jsonl():
+    output = {}
     countries = load_dict(os.path.join(DATA_PATH, 'countries.yaml'))
     categories = load_dict(os.path.join(DATA_PATH, 'categories.yaml'))
     langs = load_dict(os.path.join(DATA_PATH, 'langs.yaml'))
+
+    fjsonl = open(os.path.join(DATA_PATH, 'datatypes_latest.jsonl'), 'w', encoding='utf8')
+    f = open(os.path.join(DATA_PATH, 'datatypes_latest.json'), 'w', encoding='utf8')
+
     patterns = load_path(os.path.join(DATA_PATH, 'patterns'))
     pindex = {}
     for p in patterns:
+        p['type'] = 'pattern'
         if not p['semantic_type'] in pindex.keys():
             pindex[p['semantic_type']] = []
         if 'country' in p.keys():
@@ -52,12 +58,12 @@ def yaml_to_jsonl():
         if 'langs' in p.keys():
             p['langs'] = update_by_dict(p['langs'], langs)
         pindex[p['semantic_type']].append(p)
+        output[p['id']] = p
+        fjsonl.write(json.dumps(p, ensure_ascii=False) + '\n')
 
     datatypes = load_path(os.path.join(DATA_PATH, 'datatypes'))    
-    output = {}
-    fjsonl = open(os.path.join(DATA_PATH, 'datatypes_latest.jsonl'), 'w', encoding='utf8')
-    f = open(os.path.join(DATA_PATH, 'datatypes_latest.json'), 'w', encoding='utf8')
     for d in datatypes:
+        d['type'] = 'datatype'
         d['is_pii'] = True if d['is_pii'] == 'True' else False
         if d['id'] in pindex.keys():
             d['patterns'] = pindex[d['id']]

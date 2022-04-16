@@ -11,10 +11,17 @@
 <table class="table">
 <thead><th></th><th></th></thead>
 <tbody>
+<tr>
+<td>Type</td><td>{{object.type}} {% if object.type == "pattern" %}, related to <a href="/datatype/{{object.semantic_type}}">{{object.semantic_type}}</a>{% endif %}</td>
+</tr>
+{% if object.is_pii %}
+<tr>
 <td>Is personal identifiable information (PII) ?</td><td>{{object.is_pii}}</td>
+</tr>
+{% endif %}
 {% if object.parent %}
 <tr>
-<td>Parent data type</td><td><a href="/datatype/{{object.parent.type}}">{{object.parent.type}}</td>
+<td>Parent data type</td><td><a href="/datatype/{{object.parent.type}}">{{object.parent.type}}</a></td>
 </tr>
 {% endif %}
 {% if object.links %}
@@ -72,7 +79,7 @@
       </thead>
       <tbody>
 {% for t in object.patterns %} 
-<tr><td>{{t.id}}</td><td>{{t.name}}</td><td>{{t.doc}}</td></tr>
+<tr><td><a href="/datatype/{{t.id}}">{{t.id}}</a></td><td>{{t.name}}</td><td>{{t.doc}}</td></tr>
 {% endfor %} 
       </tbody>
     </table>

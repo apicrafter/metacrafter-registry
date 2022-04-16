@@ -3,6 +3,7 @@
 {% block content %}
 <h1>Semantic data types registry</h1>
 <p>Registry of metadata identifier entities like UUID, GUID, person fullname, address and so on. Linked with other sources and to be converted to the formal ontology in the near future.</p>
+<p>Registry include <em>semantic data types</em> that are some known meaningful entity and <em>patterns</em> that are one of semantic type representation.</p>
 
 <p>Download as <a href="/registry.json">JSON</a></a>.
 Raw code and data at <a href="https://github.com/apicrafter/metacrafter-registry">apicrafter/metacrafter-registry</a>.
@@ -13,6 +14,7 @@ Contact <a href="mailto:ivan@begtin.tech">ivan@begtin.tech</a> if you have any q
         <tr>
           <th>ID</th>
           <th>Name</th>
+          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
@@ -22,6 +24,7 @@ Contact <a href="mailto:ivan@begtin.tech">ivan@begtin.tech</a> if you have any q
         <tr>
           <td>{{ o.id }}</td>
           <td><a href="/datatype/{{o.id}}">{{ o.name }}</a></td>
+          <td>{{ o.type }}</td>
           <td>{{o.doc}}</td>
         </tr>
         {% endfor %}

@@ -1,4 +1,5 @@
 from flask import Flask, json, jsonify, redirect, render_template, send_file, send_from_directory, request, url_for, flash, Response
+import collections
 
 DEBUG = False
 SECRET_KEY = "dft5eycglbkj30i6tdfg,xfkxflgkdrfogkotg,/vxlf"
@@ -8,7 +9,7 @@ DATA_PATH = '../data/datatypes_latest.json'
 
 def load_data():
     f = open(DATA_PATH, 'r', encoding='utf8')
-    data = json.load(f)
+    data = collections.OrderedDict(sorted(json.load(f).items()))
     f.close()
     return data
 
