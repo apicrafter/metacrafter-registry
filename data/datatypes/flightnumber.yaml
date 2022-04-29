@@ -1,0 +1,11 @@
+categories:
+- transport
+doc: In the aviation industry, a flight number or flight designator is a code for an airline service consisting of two-character airline designator and a 1 to 4 digit number.
+id: flightnumber
+is_pii: 'False'
+langs:
+- common
+links:
+  type: wikipedia
+  url: https://en.wikipedia.org/wiki/Flight_number
+name: Flight number

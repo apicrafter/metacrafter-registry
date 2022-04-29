@@ -2,7 +2,7 @@ doc: An IATA airport code, also known as an IATA location identifier, IATA stati
   code, or simply a location identifier, is a three-letter geocode designating many
   airports and metropolitan areas around the world, defined by the International Air
   Transport Association (IATA)
-id: iatacode
+id: iataairportcode
 langs:
 - common
 links:

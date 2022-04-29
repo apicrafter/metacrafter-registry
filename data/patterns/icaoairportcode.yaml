@@ -2,7 +2,7 @@ doc: 'The ICAO airport code or location indicator is a four-letter code designat
   aerodromes around the world. These codes, as defined by the International Civil
   Aviation Organization and published in ICAO Document 7910: Location Indicators,
   are used by air traffic control and airline operations such as flight planning. '
-id: icaocode
+id: icaoairportcode
 langs:
 - common
 links:
