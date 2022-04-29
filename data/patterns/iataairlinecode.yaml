@@ -6,4 +6,4 @@ links:
   type: wikipedia
   url: https://en.wikipedia.org/wiki/Airline_codes
 name: IATA Airline code
-semantic_type: airline
+semantic_type: airlinecode
