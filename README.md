@@ -65,7 +65,7 @@ Current data update procedure:
 3. Run src/registry.py to see changes locally https://127.0.0.1:8089 
 4. Add, commit and push changed files
 
-TODO: Need Add github actions for automatic registry build, version control, release and validation.
+TODO: Add github actions for automatic registry build, version control, release and validation.
 
 
 # Contacts
