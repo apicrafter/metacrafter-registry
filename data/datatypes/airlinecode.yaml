@@ -12,4 +12,3 @@ name: Airline code
 patterns:
 - icaoairlinecode
 - iataairlinecode
-- faalid

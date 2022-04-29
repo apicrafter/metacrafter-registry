@@ -1,5 +1,5 @@
 doc: IATA airline designators, sometimes called IATA reservation codes, are two-character codes assigned by the International Air Transport Association (IATA) to the world's airlines.
-id: iataairlinetcode
+id: iataairlinecode
 langs:
 - common
 links:
