@@ -9,6 +9,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Data_Universal_Numbering_System
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Data_Universal_Numbering_System
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P2771
 name: Data Universal Numbering System (DUNS)
+wikidata_property: P2771
+regexp:  \d{9}
+examples:
+  - value:  548160290
+    description:  Langley Holdings
+  - value:  968806054
+    description: "ORCID, Inc."

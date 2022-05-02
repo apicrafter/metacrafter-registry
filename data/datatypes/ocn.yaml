@@ -12,6 +12,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/OCLC
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/OCLC
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P243
 name: OCLC Control Number
+wikidata_property: P243
+regexp: \d{1,14}
+examples:
+  - value: 787911721
+    description: Directory of Open Access Books
+  - value: 57722711
+    description: Iso suomen kielioppi

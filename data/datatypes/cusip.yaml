@@ -8,6 +8,6 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/CUSIP
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/CUSIP
 name: CUSIP code

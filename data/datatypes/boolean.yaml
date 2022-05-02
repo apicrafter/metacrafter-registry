@@ -8,8 +8,8 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Boolean_data_type
+  - type: wikipedia
+  - url: https://en.wikipedia.org/wiki/Boolean_data_type
 name: Boolean
 translations:
   ru:

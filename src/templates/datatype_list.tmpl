@@ -13,6 +13,7 @@ Contact <a href="mailto:ivan@begtin.tech">ivan@begtin.tech</a> if you have any q
       <thead>
         <tr>
           <th>ID</th>
+          <th>Wikidata property</th>
           <th>Name</th>
           <th>Type</th>
           <th>Description</th>
@@ -23,6 +24,7 @@ Contact <a href="mailto:ivan@begtin.tech">ivan@begtin.tech</a> if you have any q
         {% for o in objects %}
         <tr>
           <td>{{ o.id }}</td>
+          <td>{%if o.wikidata_property %}<a target="blank" href="https://www.wikidata.org/wiki/Property:{{o.wikidata_property}}">{{ o.wikidata_property }}</a>{% endif %}</td>
           <td><a href="/datatype/{{o.id}}">{{ o.name }}</a></td>
           <td>{{ o.type }}</td>
           <td>{{o.doc}}</td>

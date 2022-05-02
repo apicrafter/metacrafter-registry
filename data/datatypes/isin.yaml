@@ -9,6 +9,16 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/International_Securities_Identification_Number
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/International_Securities_Identification_Number
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P946
 name: International Securities Identification Number
+wikidata_property: P946
+regexp: '[A-Z]{2}[A-Z\d]{10}'
+examples:
+  - value:  RU0007661625
+    description: Gazprom
+  - value:  NL0000235190
+    description: Airbus Group
+

@@ -9,9 +9,18 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/IETF_language_tag
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/IETF_language_tag
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P305
 name: IETF language tag
+wikidata_property: P305
+regexp: '([a-z]{2,3}(-[a-zA-Z0-9]{1,8})*|i-[a-z]{3,8})|'
+examples:
+  - value: hu
+    description: Hungarian
+  - value: en-GB
+    description: British English
 translations:
   ru:
     doc: Языковой код/тэг по стандарту IETF BCP 47 идентифицирующий конкретный человеческий

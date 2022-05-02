@@ -6,7 +6,7 @@ id: icaoairportcode
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/ICAO_airport_code
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/ICAO_airport_code
 name: ICAO Airport code
 semantic_type: airport

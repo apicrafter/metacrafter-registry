@@ -11,6 +11,6 @@ is_pii: 'True'
 langs:
 - en
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/National_Insurance_number
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/National_Insurance_number
 name: National Insurance number

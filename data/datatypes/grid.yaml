@@ -8,6 +8,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Global_Research_Identifier_Database
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Global_Research_Identifier_Database
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P2427
 name: Global Research Identifier
+wikidata_property: P2427
+regexp: 'grid\.\d{4,6}\.[0-9a-f]{1,2}'
+examples:
+  - value: 'grid.1012.2'
+    description: University of Western Australia
+  - value: 'grid.454116.3'
+    description: Republic of Korea National Red Cross

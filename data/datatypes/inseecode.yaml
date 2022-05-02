@@ -10,6 +10,6 @@ is_pii: 'False'
 langs:
 - fr
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/INSEE_code
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/INSEE_code
 name: INSEE code

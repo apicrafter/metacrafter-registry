@@ -8,7 +8,7 @@ id: uszipcode
 langs:
 - en
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/ZIP_Code
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/ZIP_Code
 name: US Postal code
 semantic_type: postindex

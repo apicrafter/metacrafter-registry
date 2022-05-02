@@ -8,6 +8,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/International_Standard_Book_Number
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/International_Standard_Book_Number
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P957
 name: International Standard Book Number 10-digits (ISBN10)
+regexp: \d[\d\-]{11}\d
+wikidata_property: P957
+examples:
+  - value: 978-1107075412
+    description: Learning Scientific Programming with Python
+  - value: 978-94-6298-380-9
+    description: "Dolle mythes : een frisse factcheck van feminisme toen en nu"

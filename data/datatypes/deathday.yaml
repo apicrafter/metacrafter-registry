@@ -7,8 +7,8 @@ is_pii: 'True'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Death_anniversary
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Death_anniversary
 name: Date of death
 parent:
   type: date

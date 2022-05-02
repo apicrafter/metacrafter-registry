@@ -6,7 +6,7 @@ id: iataairportcode
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/IATA_airport_code
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/IATA_airport_code
 name: IATA Airport code
 semantic_type: airport

@@ -7,6 +7,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/IMO_number
-name: IMO Number
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/IMO_number
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P458
+name: IMO ship Number
+wikidata_property: P458
+regexp: '([1-9]\d{6})'
+examples:
+  - value: 6725418
+    description: Queen Elizabeth 2
+  - value: 9224752
+    description: TI Asia

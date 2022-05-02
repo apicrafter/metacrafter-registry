@@ -1,0 +1,23 @@
+categories:
+- science
+doc: 'Research Organization Registry (ROR) is a community-led database that aims to
+  provide a persistent identifier for every research institution in the world.[1]
+  It complements other commonly used identifiers such as ORCID for researchers and
+  DOI for research output. '
+id: rorid
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Research_Organization_Registry
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P6782
+name: ROR Identifier (ROR ID)
+wikidata_property: P6782
+regexp: '[a-z0-9]{9}'
+examples:
+  - value: 00v4dac24
+    description: 'Leeds Teaching Hospitals NHS Trust'
+  - value: 03rjyp183
+    description: National Library of Wales

@@ -10,6 +10,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/ORCID
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/ORCID
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P496
 name: Open Researcher and Contributor ID (ORCID)
+regexp: 0000-000(1-[5-9]|2-[0-9]|3-[0-4])\d{3}-\d{3}[\dX]
+wikidata_property: P496
+examples:
+  - value: 0000-0002-1003-5675
+    description: Mike Tailor
+  - value: 0000-0002-1825-0097
+    description: Josiah S. Carberry

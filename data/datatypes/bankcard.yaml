@@ -9,8 +9,8 @@ is_pii: 'True'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Bank_card
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Bank_card
 name: Bank card (credit/debit card)
 translations:
   ru:

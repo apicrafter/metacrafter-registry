@@ -8,6 +8,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: other
-  url: https://www.iso20022.org/market-identifier-codes
+  - type: other
+    url: https://www.iso20022.org/market-identifier-codes
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P7534
 name: Market Identifier Code (ISO 10383)
+wikidata_property: P7534
+regexp: '^[A-Z0-9]{4}$'
+examples:
+  - value: GBUL
+    description: 'Bulgarian Stock Exchange - SME Growth Market Beam'
+  - value: IFCA
+    description: 'Winnipeg Commodity Exchange'

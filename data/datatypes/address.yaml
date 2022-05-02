@@ -9,8 +9,8 @@ is_pii: 'True'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Address
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Address
 name: Address (physical location)
 translations:
   ru:

@@ -6,6 +6,6 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/SHA-2
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/SHA-2
 name: SHA256 hash

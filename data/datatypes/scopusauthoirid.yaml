@@ -7,6 +7,6 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P1153
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P1153
 name: Scopus author ID

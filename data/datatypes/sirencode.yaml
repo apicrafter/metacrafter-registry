@@ -11,6 +11,6 @@ is_pii: 'False'
 langs:
 - fr
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/SIREN_code
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/SIREN_code
 name: SIREN Code

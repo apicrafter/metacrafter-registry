@@ -11,6 +11,15 @@ is_pii: 'False'
 langs:
 - en
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/UN/LOCODE
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/UN/LOCODE
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P1937
 name: UN/LOCODE
+wikidata_property: P1937
+regexp: A[D-GILMOQ-UWXZ]|B[ABIE-HDJLM-OQR-TWYZ]|C[ACDF-IK-ORU-Z]|D[EJKMOZ]|E[CEGHRST]|F[I-KMOR]|JE|G[ABD-IL-UWY]|H[KMNRTU]|I[DELMNOQRST]|J[MOP]|K[EGHIMNPRWY]|K[YZ]|L[ABCIKR-VY]|M[AC-HKL-Z]|N[ACE-ILO-PRUZ]|OM|[P-Z][A-Z]+)[A-Z0-9]{3}
+examples:
+  - value: ITGOA
+    description: Genoa
+  - value: CHGVA
+    description: Geneva

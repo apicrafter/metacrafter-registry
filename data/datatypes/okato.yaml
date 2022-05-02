@@ -13,8 +13,8 @@ is_pii: 'False'
 langs:
 - ru
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/OKATO
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/OKATO
 name: OKATO (Russian Classification on Objects of Administrative Division)
 translations:
   ru:

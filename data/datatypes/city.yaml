@@ -10,8 +10,8 @@ is_pii: 'True'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/City
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/City
 name: City
 patterns:
 - ruscity

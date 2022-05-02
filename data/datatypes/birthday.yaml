@@ -9,8 +9,8 @@ is_pii: 'True'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Birthday
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Birthday
 name: Birthday
 parent:
   type: date

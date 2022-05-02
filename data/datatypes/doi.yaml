@@ -8,8 +8,8 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Digital_object_identifier
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Digital_object_identifier
 name: Digital Object Identifier (DOI)
 translations:
   ru:

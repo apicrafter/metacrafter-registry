@@ -1,0 +1,20 @@
+categories:
+- companies
+doc: 'Identifier for a corporation, in the OpenCorporates database. Format: country prefix, optional subnational entity abbrevation, "/", alphanumeric idid: oid'
+is_pii: 'False'
+id: opencorporatesid
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/OpenCorporates
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P1320
+name:  Open Corporates ID
+wikidata_property: P1320
+regexp: '[a-z]{2}(_[a-z]{2})?/[a-zA-ZÖÜÄ0-9\-_]*[0-9A-Za-f]'
+examples:
+  - value: gb/SC129785
+    description: Devro
+  - value:  mx/2682534
+    description:  Mexican Red Cross

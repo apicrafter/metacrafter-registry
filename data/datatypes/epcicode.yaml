@@ -9,6 +9,6 @@ is_pii: 'False'
 langs:
 - fr
 links:
-  type: other
-  url: https://www.insee.fr/fr/information/2510634
+  - type: other
+    url: https://www.insee.fr/fr/information/2510634
 name: Etablissements publics de coopération intercommunale (EPCI)

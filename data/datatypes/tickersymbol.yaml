@@ -7,6 +7,6 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Ticker_symbol
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Ticker_symbol
 name: Stock ticker symbol

@@ -8,8 +8,8 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Bank_account
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Bank_account
 name: Bank account
 patterns:
 - rubankaccount

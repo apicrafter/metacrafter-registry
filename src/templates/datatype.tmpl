@@ -19,6 +19,17 @@
 <td>Is personal identifiable information (PII) ?</td><td>{{object.is_pii}}</td>
 </tr>
 {% endif %}
+{% if object.wikidata_property %}
+<tr>
+<td>Wikidata property</td><td>{{object.wikidata_property}}</td>
+</tr>
+{% endif %}
+{% if object.regexp %}
+<tr>
+<td>Regular expression</td><td>{{object.regexp}}</td>
+</tr>
+{% endif %}
+
 {% if object.parent %}
 <tr>
 <td>Parent data type</td><td><a href="/datatype/{{object.parent.type}}">{{object.parent.type}}</a></td>
@@ -26,7 +37,14 @@
 {% endif %}
 {% if object.links %}
 <tr>
-<td>Source</td><td><a href="{{object.links.url}}">{{object.links.type}}</a></td>
+<td>Sources</td>
+<td>
+<ul>
+  {% for c in object.links %}
+  <li>{{c.type}} <a href="{{c.url}}" target="blank">{{c.url}}</a></li>
+  {% endfor %}
+</ul>
+</td>
 </tr>
 {% endif %}
 {% if object.categories %}
@@ -60,6 +78,18 @@
 <ul>
   {% for c in object.langs %} 
   <li>{{ c.id }} ({{ c.name }})</li>
+  {% endfor %}
+</ul>
+</td>
+</tr>
+{% endif %}
+{% if object.examples %}
+<tr>
+<td>Examples</td>
+<td>
+<ul>
+  {% for c in object.examples %}
+  <li>{{ c.value }} ({{ c.description }})</li>
   {% endfor %}
 </ul>
 </td>

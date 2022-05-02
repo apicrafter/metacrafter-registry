@@ -9,6 +9,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/URL
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/URL
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P2699
 name: Uniform Resource Locator (URL)
+wikidata_property: P2699
+regexp: '(https?|ftp)://(\S+\.)+\S+(/\S*)?|'
+examples:
+  - value: http://www.rdaregistry.info/xml/termList/AspectRatio.xml
+    description: RDA aspect ratio designation
+  - value: http://vocab.getty.edu/doc/
+    description: 'Art & Architecture Thesaurus LOD Dataset'

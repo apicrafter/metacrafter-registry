@@ -9,8 +9,8 @@ is_pii: 'False'
 langs:
 - ru
 links:
-  type: wikipedia
-  url: https://ru.wikipedia.org/wiki/Банковский_идентификационный_код
+  - type: wikipedia
+    url: https://ru.wikipedia.org/wiki/Банковский_идентификационный_код
 name: Russian bank identification code (BIK)
 translations:
   ru:

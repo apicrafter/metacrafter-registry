@@ -6,6 +6,17 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Flight_number
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Flight_number
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P3090
 name: Flight number
+wikidata_property: P3090
+regexp: ([A-Z]{2,3}|[A-Z][0-9]|[0-9][A-Z])\d{1,4}[A-Z]?|\d{1,4}
+examples:
+  - value: EK521
+    description: Emirates Flight 521
+  - value: 4U9525
+    description: Germanwings Flight 9525
+
+

@@ -9,6 +9,9 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Serial_shipping_container_code
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Serial_shipping_container_code
+  - type: other
+    url: https://www.gs1.org/standards/barcodes/application-identifiers/00
 name: Serial shipping container code
+regexp: '^00(d{18})$'

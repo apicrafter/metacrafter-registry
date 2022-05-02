@@ -1,0 +1,18 @@
+categories:
+- internet
+doc: Range of IPv6 addresses
+id: ipv6subnet
+is_pii: 'True'
+langs:
+- common
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P3793
+name: IPv4 routing prefix (subnet)
+wikidata_property: P3793
+regexp:  '[\d:a-f\/]{4,30}'
+examples:
+  - value:  2001:610::/29
+    description: SURFNet
+  - value:  2001:630:440::/44
+    description:  University of Oxford

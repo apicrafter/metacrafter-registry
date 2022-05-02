@@ -6,7 +6,7 @@ id: countrycode_alpha3
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
 name: ISO 3166-1 Alpha3 country code
 semantic_type: country

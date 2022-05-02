@@ -9,6 +9,6 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Aircraft_registration
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Aircraft_registration
 name: Aircraft/tail number

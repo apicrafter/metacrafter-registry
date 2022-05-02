@@ -3,7 +3,7 @@ id: iataairlinecode
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Airline_codes
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Airline_codes
 name: IATA Airline code
 semantic_type: airlinecode

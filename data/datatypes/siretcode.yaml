@@ -10,6 +10,6 @@ is_pii: 'False'
 langs:
 - fr
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/SIRET_code
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/SIRET_code
 name: SIRET Code

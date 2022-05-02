@@ -6,6 +6,11 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Year
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Year
 name: Year
+examples:
+  - value: 2022
+    description: Year 2022
+  - value: 1243
+    description: Year 1243

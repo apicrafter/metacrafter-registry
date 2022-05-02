@@ -1,0 +1,22 @@
+categories:
+- companies
+doc: 'Numeric identifier for company registered with Companies House in the United Kingdom'
+is_pii: 'False'
+langs:
+- en
+country:
+- GB
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Companies_House
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P2622
+id: companyhouseid
+name:  Companies House company ID (UK)
+wikidata_property: P2622
+regexp:  (AC|FC|GE|GN|GS|IC|IP|LP|NA|NF|NI|NL|NO|NP|NR|NZ|OC|R|RC|SA|SC|SF|SI|SL|SO|SP|SR|SZ|ZC|[0-9]{2})[0-9RS]{6}
+examples:
+  - value: 02050843
+    description:  Aardman Animation
+  - value: 00185647
+    description:  " Sainsbury's"

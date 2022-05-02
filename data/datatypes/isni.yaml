@@ -10,6 +10,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/International_Standard_Name_Identifier
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/International_Standard_Name_Identifier
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P213
 name: International Standard Name Identifier
+regexp: (\d{4})(\d{4})(\d{4})(\d{4})
+wikidata_property: P213
+examples:
+  - value: 0000 0001 2197 5163
+    description: Norway
+  - value: 0000 0001 2141 6409
+    description: Nero

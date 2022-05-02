@@ -10,6 +10,14 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Legal_Entity_Identifier
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Legal_Entity_Identifier
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P1278
 name: Legal Entity Identifier
+regexp:  '[0-9A-Z]{18}[0-9]{2}'
+examples:
+  - value: INR2EJN1ERAN0W5ZP974
+    description: Microsoft
+  - value: 2594007XIACKNMUAW223
+    description: MakoLab

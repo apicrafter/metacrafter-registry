@@ -10,6 +10,14 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/ISO_9362
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/ISO_9362
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P2627
 name: Bank SWIFT code (ISO 9362)
+regexp: '[A-Z]{6}[0-9A-Z]{2}([0-9A-Z]{3})?'
+wikidata_property: P2627
+examples:
+  - value:  DEUTDEFF
+    description:  "Deutsche Bank"
+

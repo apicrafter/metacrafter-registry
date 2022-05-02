@@ -8,6 +8,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/MIME
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/MIME
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P1163
 name: Multipurpose Internet Mail Extensions (MIME)
+wikidata_property: P1163
+regexp: '(application|audio|example|font|image|message|model|multipart|text|video)/[a-zA-Z0-9\-+.]+'
+examples:
+  - value: text/html
+    description: 'HyperText Markup Language'
+  - value: image/jpeg
+    description: 'JPEG File Interchange Format, version 1.0'

@@ -6,8 +6,8 @@ is_pii: 'False'
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Workweek_and_weekend
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Workweek_and_weekend
 name: Day of week
 patterns:
 - endayofweek

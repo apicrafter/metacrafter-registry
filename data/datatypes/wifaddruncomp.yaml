@@ -1,10 +1,14 @@
 categories:
 - cryptocurrency
 id: wifaddruncomp
+doc: Wallet Import Format (WIF) is a standardized method for displaying Bitcoin private keys using the Base58Check encoding scheme. WIF format was standardized in order to allow all Bitcoin wallets to import and export private keys.
 is_pii: 'False'
 langs:
 - common
 links:
-  type: other
-  url: https://allprivatekeys.com/bitcoin-address-format
+  - type: other
+    url: https://allprivatekeys.com/bitcoin-address-format
 name: WIF, uncompressed pubkey
+examples:
+  - value: 5Hwgr3u458GLafKBgxtssHSPqJnYoGrSzgQsPwLFhLNYskDPyyA
+    description: Example from https://allprivatekeys.com/bitcoin-address-format

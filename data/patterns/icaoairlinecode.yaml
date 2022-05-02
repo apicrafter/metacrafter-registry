@@ -3,7 +3,7 @@ id: icaoairlinecode
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/Airline_codes
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Airline_codes
 name: ICAO Airline code
 semantic_type: airlinecode

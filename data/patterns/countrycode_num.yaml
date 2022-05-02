@@ -6,7 +6,7 @@ id: countrycode_num
 langs:
 - common
 links:
-  type: wikipedia
-  url: https://en.wikipedia.org/wiki/ISO_3166-1_numeric
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/ISO_3166-1_numeric
 name: ISO 3166-1 Numeric country code
 semantic_type: country
