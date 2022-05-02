@@ -24,7 +24,10 @@ Each semantic data type YAML file  objects have following structure.
 - **doc** - English documentation/short description of this entity.
 - **langs** - list of languages
 - **is_pii** - true if this data is Personal identifiable information and false if not. PII could be detected also from contexts
-- **links** - list of associated links with **type** as link type and **url** as url. Supported link types: wikipedia, other
+- **links** - list of associated links with **type** as link type and **url** as url. Supported link types: wikipedia, wikidata, other
+- **regexp** - regular expression that match this data type
+- **wikidata_property** - property in Wikidata if applicable
+- **examples** - list of examples with **value** and **description** for each one
 - **parent_type** - name of the parent semantic type
 - **translations** - name and doc translated to selected language.  
 
@@ -41,6 +44,9 @@ Each entity YAML file  objects have following structure.
 - **country** - list of countries where this identifier used
 - **langs** - list of languages
 - **links** - list of associated links with **type** as link type and **url** as url. Supported link types: wikipedia, other
+- **regexp** - regular expression that match this data type
+- **wikidata_property** - property in Wikidata if applicable
+- **examples** - list of examples with **value** and **description** for each one
 
 ## Identification rules
 
@@ -53,7 +59,7 @@ Identification rules are regex, other pattern matching algorithms and code that 
 # Code
 
 * scripts/ - list of scripts to convert and process data types and related registry data
-* src/ - minimalistic server side code to run metadata server
+* src/ - minimalistic server side code to run metadata server/
 
 # Build registry
 
@@ -67,6 +73,10 @@ Current data update procedure:
 
 TODO: Add github actions for automatic registry build, version control, release and validation.
 
+# Run server 
+Server uses data/datatypes_latest.jsonl file to produce HTML for datatypes list
+1. Go to "src" directory
+2. Run "python registry.py"
 
 # Contacts
 
