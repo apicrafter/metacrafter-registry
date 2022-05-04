@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import yaml
 import json
+import logging
 try:
     from yaml import CLoader as Loader, CDumper as Dumper
 except ImportError:
@@ -10,6 +11,10 @@ import os
 import pprint
 
 DATA_PATH = '../data'
+FORMAT = '%(asctime)s %(message)s'
+logging.basicConfig(format=FORMAT)
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 def load_dict(filename):
     f = open(filename, 'r', encoding='utf8')
@@ -21,12 +26,15 @@ def load_dict(filename):
     return out
 
 def load_path(dirpath):
-    files = os.listdir(dirpath)
+    subfolders = [f.path for f in os.scandir(dirpath) if f.is_dir()]
     all = []
-    for filename in files:
-        f = open(os.path.join(dirpath, filename), 'r', encoding='utf8')
-        all.append(yaml.load(f, Loader=Loader))
-        f.close()
+    for subf in subfolders:
+        files = os.listdir(subf)
+        for filename in files:
+            logging.info('Load %s' % (filename))
+            f = open(os.path.join(subf, filename), 'r', encoding='utf8')
+            all.append(yaml.load(f, Loader=Loader))
+            f.close()
     return all
 
 
@@ -48,6 +56,7 @@ def yaml_to_jsonl():
     f = open(os.path.join(DATA_PATH, 'datatypes_latest.json'), 'w', encoding='utf8')
 
     patterns = load_path(os.path.join(DATA_PATH, 'patterns'))
+    print('Loaded %d patterns' % (len(patterns)))
     pindex = {}
     for p in patterns:
         p['type'] = 'pattern'
@@ -61,7 +70,8 @@ def yaml_to_jsonl():
         output[p['id']] = p
         fjsonl.write(json.dumps(p, ensure_ascii=False) + '\n')
 
-    datatypes = load_path(os.path.join(DATA_PATH, 'datatypes'))    
+    datatypes = load_path(os.path.join(DATA_PATH, 'datatypes'))
+    print('Loaded %d datatypes' % (len(datatypes)))
     for d in datatypes:
         d['type'] = 'datatype'
         d['is_pii'] = True if d['is_pii'] == 'True' else False

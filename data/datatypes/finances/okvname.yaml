@@ -1,5 +1,6 @@
 categories:
 - common
+- finances
 country:
 - RU
 doc: Russian currency names (OKV classifier)

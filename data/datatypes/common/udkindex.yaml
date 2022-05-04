@@ -17,7 +17,7 @@ examples:
   - value: 316.7
     description: sociology of culture
   - value: 316.774:32
-    description:  The Party Journalist
+    description: The Party Journalist
 translations:
   ru:
     doc: 'Универса́льная десяти́чная классифика́ция — система классификации информации,

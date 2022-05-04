@@ -1,5 +1,6 @@
 categories:
 - common
+- geo
 country:
 - RU
 doc: Name of the federal district of Russia. Full or short.

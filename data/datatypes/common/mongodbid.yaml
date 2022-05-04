@@ -1,5 +1,5 @@
 categories:
-- cryptography
+- common
 doc: MongoDB unique id assigned to each row of each collection in MongoDB as field
   _id
 id: mongodbid
