@@ -1,0 +1,20 @@
+categories:
+- industry
+country:
+- US
+doc: 'Classification in the North American Industry Classification System'
+id: naicscode
+is_pii: 'False'
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P3224
+langs:
+- en
+name: NAICS code
+wikidata_property: P3224
+regexp: \d{2,6}
+examples:
+  - value: 517919
+    description: CelerSMS
+  - value: 512240
+    description: 'recording studio'

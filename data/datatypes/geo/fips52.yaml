@@ -1,0 +1,20 @@
+categories:
+- geo
+country:
+- US
+doc: Two-digit identifier for US states and other associated areas per former Federal Information Processing Standard FIPS 5-2 standard
+id: fips52
+is_pii: 'False'
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P5087
+langs:
+- en
+name: FIPS 5-2 numeric code (US states)
+wikidata_property: P5087
+regexp: \d{2}
+examples:
+  - value: 76
+    description: Navassa Island
+  - value: 70
+    description: Palau

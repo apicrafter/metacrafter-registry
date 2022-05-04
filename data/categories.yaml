@@ -34,3 +34,5 @@
   name: All measurable values (percentage, amount and e.t.c)
 - id: chemistry
   name: Chemistry
+- id: industry
+  name: Industry
