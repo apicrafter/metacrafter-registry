@@ -8,5 +8,5 @@ langs:
 name: Day of month
 translations:
   ru:
-    doc: День месяца в зн
+    doc: День месяца в значении от 1 до 31
     name: День месяца

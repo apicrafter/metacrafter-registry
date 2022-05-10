@@ -14,7 +14,7 @@ name: NAICS code
 wikidata_property: P3224
 regexp: \d{2,6}
 examples:
-  - value: 517919
+  - value: '517919'
     description: CelerSMS
-  - value: 512240
+  - value: '512240'
     description: 'recording studio'

@@ -8,5 +8,14 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/ICAO_airport_code
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P239
 name: ICAO Airport code
 semantic_type: airport
+wikidata_property: P239
+regexp: '([A-Z]{2}|[CKY][A-Z0-9])([A-Z]{2}|[0-9]{2,4})'
+examples:
+  - value: CYXK
+    description: Rimouski Airport
+  - value: YBBN
+    description: Brisbane Airport

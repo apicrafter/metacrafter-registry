@@ -11,7 +11,7 @@ links:
     url: https://www.wikidata.org/wiki/Wikidata:Identifiers
 name: Wikidata Id
 examples:
-  - value: Q12345
-    name: Count von Count
-  - value: Q234511
-    name: Gurk
+  - value: 'Q12345'
+    description: Count von Count
+  - value: 'Q234511'
+    description: Gurk

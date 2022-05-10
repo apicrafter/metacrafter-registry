@@ -9,6 +9,7 @@ links:
   - type: other
     url: https://allprivatekeys.com/bitcoin-address-format
 name: WIF, uncompressed pubkey
+regexp:
 examples:
   - value: 5Hwgr3u458GLafKBgxtssHSPqJnYoGrSzgQsPwLFhLNYskDPyyA
     description: Example from https://allprivatekeys.com/bitcoin-address-format

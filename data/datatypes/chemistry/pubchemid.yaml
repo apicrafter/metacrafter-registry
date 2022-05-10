@@ -11,4 +11,11 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/PubChem
-name: PubChem ID
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P2153
+name: PubChem Substance ID (SID)
+wikidata_property: P2153
+regexp: '[1-9]\d*'
+examples:
+  - value: '135307179'
+    description: zeolite Y

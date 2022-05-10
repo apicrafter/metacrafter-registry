@@ -15,7 +15,7 @@ name: IMO ship Number
 wikidata_property: P458
 regexp: '([1-9]\d{6})'
 examples:
-  - value: 6725418
+  - value: '6725418'
     description: Queen Elizabeth 2
-  - value: 9224752
+  - value: '9224752'
     description: TI Asia

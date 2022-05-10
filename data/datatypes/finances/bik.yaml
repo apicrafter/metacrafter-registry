@@ -12,6 +12,12 @@ links:
   - type: wikipedia
     url: https://ru.wikipedia.org/wiki/Банковский_идентификационный_код
 name: Russian bank identification code (BIK)
+regexp: '\d{9}'
+examples:
+  - value: '011708377'
+    description: УФК по Владимирской области
+  - value: '043807798'
+    description: КУРСКИЙ РФ АО "РОССЕЛЬХОЗБАНК"
 translations:
   ru:
     doc: Банковский идентификационный код, БИК — уникальный идентификатор банка, используемый

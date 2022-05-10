@@ -8,4 +8,13 @@ id: inn
 is_pii: 'False'
 langs:
 - ru
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/VAT_identification_number
 name: INN (Russian tax identifier)
+regexp: '\d{10}'
+examples:
+  - value: ''
+    description: ''
+  - value: ''
+    description: ''

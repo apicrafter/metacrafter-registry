@@ -20,7 +20,7 @@ name: OCLC Control Number
 wikidata_property: P243
 regexp: \d{1,14}
 examples:
-  - value: 787911721
+  - value: '787911721'
     description: Directory of Open Access Books
-  - value: 57722711
+  - value: '57722711'
     description: Iso suomen kielioppi

@@ -9,8 +9,9 @@ links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Year
 name: Year
+regexp: '\d{4}'
 examples:
-  - value: 2022
+  - value: '2022'
     description: Year 2022
-  - value: 1243
+  - value: '1243'
     description: Year 1243

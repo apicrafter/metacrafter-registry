@@ -1,0 +1,17 @@
+doc: Difference between Coordinated Universal Time (UTC) and this timezone.
+id: ianatimezoneid
+langs:
+- common
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P6687
+name: IANA Timezone ID
+semantic_type: timezone
+wikidata_property: P6687
+regexp: '^UTC(?:Z|[+-](?:2[0-3]|[01][0-9]):[0-5][0-9])$'
+examples:
+  - value: 'Australia/Sydney'
+    description: 'Australia/Sydney'
+  - value: 'Europe/London'
+    description: 'Europe/London'
+

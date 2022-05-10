@@ -8,5 +8,14 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/IATA_airport_code
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P238
 name: IATA Airport code
 semantic_type: airport
+wikidata_property: P238
+regexp: '[A-Z0-9]{3}'
+examples:
+  - value: YXK
+    description: Rimouski Airport
+  - value: PAR
+    description: Paris

@@ -8,5 +8,15 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P297
 name: ISO 3166-1 Alpha2 country code
 semantic_type: country
+wikidata_property: P297
+regexp: '[A-Z]{2}'
+examples:
+  - value: WF
+    description: Wallis and Futuna
+  - value: AI
+    description: Anguilla
+

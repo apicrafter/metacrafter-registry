@@ -8,7 +8,15 @@ id: tnved
 is_pii: 'False'
 langs:
 - ru
-name: Russian TNVED code (product code)
+links:
+  - type: other
+    url: https://ru.wikipedia.org/wiki/Товарная_номенклатура_внешнеэкономической_деятельности_Евразийского_экономического_союза
+name: Russian TN VED code (product code)
+examples:
+  - value: '7304 11 00'
+    description: Line pipe of a kind used for oil or gas pipelines, seamless, of stainless steel
+  - value: '8431 39 00'
+    description: Parts of machinery of heading 8428, n.e.s.
 translations:
   ru:
     doc: Товарная номенклатура внешнеэкономической деятельности Евразийского экономического

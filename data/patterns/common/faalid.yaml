@@ -10,5 +10,16 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/IATA_airport_code
-name: FAA identifier
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P240
+name: FAA airport code (FAA identifier)
 semantic_type: airport
+regexp: '^[A-Z0-9]{3,5}$'
+wikidata_property: P240
+examples:
+  - value: 554
+    description: New Zealand
+  - value: 276
+    description: Germany
+
+

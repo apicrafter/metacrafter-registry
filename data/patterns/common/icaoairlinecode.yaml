@@ -5,5 +5,14 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Airline_codes
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P230
 name: ICAO Airline code
 semantic_type: airlinecode
+wikidata_property: P230
+regexp: '[A-Z0-9]{3}'
+examples:
+  - value: THY
+    description: Turkish Airlines
+  - value:  BWG
+    description: Blue Wings

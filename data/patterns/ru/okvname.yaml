@@ -1,5 +1,4 @@
 categories:
-- common
 - finances
 country:
 - RU
@@ -13,3 +12,4 @@ translations:
   ru:
     doc: Название валюты по справочнику ОКВ (Общероссийский классификатор валют)
     name: Название валюты по ОКВ
+semantic_type: currency

@@ -11,3 +11,9 @@ links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/CUSIP
 name: CUSIP code
+regexp: '^[0-9]{3}[a-zA-Z0-9]{2}[a-zA-Z0-9*@#]{3}[0-9]$'
+examples:
+  - value: '037833100'
+    description: Apple
+  - value: '38259P508'
+    description: Google

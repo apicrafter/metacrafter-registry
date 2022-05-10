@@ -3,11 +3,17 @@ categories:
 doc: Digital timestamp defined as Unix Time. It is a system for describing a point
   in time. It is the number of seconds that have elapsed since the Unix epoch, excluding
   leap seconds.
-id: timestamp
+id: unixtime
 is_pii: 'False'
 langs:
 - common
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Unix_time
-name: Digital timestamp (Unix time)
+name: Digital timestamp (Unix time, Epoch time, Posix time)
+regexp: \d{1,10}
+examples:
+  - value: '1652190194'
+    description: 2022-05-10T13:43:14+00:00
+  - value: '915148800'
+    description: 1998-12-31T23:59:60.25

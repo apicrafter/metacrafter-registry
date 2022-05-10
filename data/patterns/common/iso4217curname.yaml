@@ -7,3 +7,8 @@ links:
     url: https://www.iso.org/iso-4217-currency-codes.html
 name: ISO 4217 Currency name
 semantic_type: currency
+examples:
+  - value: palladium
+    description: palladium
+  - value: euro
+    description: euro

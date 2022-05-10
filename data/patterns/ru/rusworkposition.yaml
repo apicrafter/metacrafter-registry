@@ -1,8 +1,8 @@
 country:
 - RU
-doc: Work positions / job title common in Russia and writtern in Russian language.
+doc: 'Work positions / job title common in Russia and written in Russian language.'
 id: rusworkposition
 langs:
 - ru
-name: Work position / Job title (Russian)
+name: 'Work position / Job title (Russian)'
 semantic_type: jobtitle

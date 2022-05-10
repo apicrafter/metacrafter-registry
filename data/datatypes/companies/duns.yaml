@@ -15,9 +15,9 @@ links:
     url: https://www.wikidata.org/wiki/Property:P2771
 name: Data Universal Numbering System (DUNS)
 wikidata_property: P2771
-regexp:  \d{9}
+regexp:  '\d{9}'
 examples:
-  - value:  548160290
+  - value: '548160290'
     description:  Langley Holdings
-  - value:  968806054
+  - value: '968806054'
     description: "ORCID, Inc."

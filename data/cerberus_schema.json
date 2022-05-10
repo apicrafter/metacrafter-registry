@@ -1,0 +1,117 @@
+{
+    "name": {
+        "required": true,
+        "type": "string"
+    },
+    "id": {
+        "required": true,
+        "type": "string"
+    },
+    "semantic_type": {
+        "required": false,
+        "type": "string"
+    },
+    "wikidata_property": {
+        "required": false,
+        "type": "string"
+    },
+    "parent": {
+        "required": false,
+        "type": "dict",
+            "schema" : {
+                "type": {"type": "string",
+                    "required" :  false
+                }
+            }
+    },
+    "regexp": {
+        "required": false,
+        "type": "string"
+    },
+    "doc": {
+        "required": true,
+        "type": "string"
+    },
+    "is_pii": {
+        "required": false,
+        "type": "string"
+    },
+    "categories": {
+        "required": false,
+        "type": "list",
+        "schema": {
+            "type": "string"
+        }
+    },
+    "langs": {
+        "required": true,
+        "type": "list",
+        "schema": {
+            "type": "string"
+        }
+    },
+    "country": {
+        "required": false,
+        "type": "list",
+        "schema": {
+            "type": "string"
+        }
+    },
+    "patterns": {
+        "required": false,
+        "type": "list",
+        "schema": {
+            "type": "string"
+        }
+    },
+    "links": {
+        "required": false,
+        "type": "list",
+        "schema": {
+            "type" : "dict",
+            "schema" : {
+                "type": {"type": "string",
+                    "required" :  false
+                },
+                "url": {"type": "string",
+                "required" :  false
+                }
+            }
+        }
+    },
+    "translations": {
+        "required": false,
+        "type": "dict",
+        "schema": {
+            "ru" : {
+                "type": "dict",
+                "schema": {
+                    "doc": {
+                        "type": "string",
+                        "required" : true
+                    },
+                    "name": {
+                        "type": "string",
+                        "required" : true
+                    }
+                }
+            }
+        }
+    },
+    "examples": {
+        "required": false,
+        "type": "list",
+        "schema": {
+            "type" : "dict",
+            "schema" : {
+                "value": {"type": "string",
+                    "required" :  false
+                },
+                "description": {"type": "string",
+                "required" :  false
+                }
+            }
+        }
+    }
+}
+

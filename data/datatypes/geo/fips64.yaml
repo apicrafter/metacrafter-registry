@@ -14,7 +14,7 @@ name: FIPS 6-4 numeric code (US counties)
 wikidata_property: P882
 regexp: \d{5}
 examples:
-  - value: 24003
+  - value: '24003'
     description: Anne Arundel County
-  - value: 01001
+  - value: '01001'
     description: Autauga Country

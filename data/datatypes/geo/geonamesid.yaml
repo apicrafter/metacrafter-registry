@@ -12,7 +12,7 @@ name: Geonames ID
 wikidata_property: P1566
 regexp: '[1-9][0-9]{0,8}|'
 examples:
-  - value: 935877
+  - value: '935877'
     description: Piton de la Fournaise
-  - value: 1277082
+  - value: '1277082'
     description: Baranagar

@@ -10,3 +10,6 @@ links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Time_zone
 name: Time zone
+patterns:
+  - ianatimezoneid
+  - utctimezoneoffset

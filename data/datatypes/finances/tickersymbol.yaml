@@ -9,4 +9,14 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Ticker_symbol
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P249
 name: Stock ticker symbol
+regexp: '[A-Z0-9.]{1,16}'
+wikidata_property: P249
+examples:
+  - value: MSFT
+    description: Microsoft
+  - value: AMZN
+    description: Amazon
+

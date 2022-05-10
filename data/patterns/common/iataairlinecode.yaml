@@ -5,5 +5,14 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Airline_codes
-name: IATA Airline code
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P229
+name: IATA airline designator (airline code)
 semantic_type: airlinecode
+wikidata_property: P229
+regexp: '[A-Z0-9]{2}'
+examples:
+  - value: MH
+    description: Malaysia Airlines
+  - value: QW
+    description: Blue Wings

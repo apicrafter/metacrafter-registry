@@ -13,9 +13,9 @@ links:
     url: https://www.wikidata.org/wiki/Property:P214
 name: VIAF ID
 examples:
-  - value: 44298806
+  - value: '44298806'
     description: Foncine, Jean-Louis
-  - value: 125715126
+  - value: '125715126'
     description: Cairo
-regexp: ([1-9]\d(?:\d{0,7}|\d{17,20}))
+regexp: '([1-9]\d(?:\d{0,7}|\d{17,20}))'
 wikidata_property: P214

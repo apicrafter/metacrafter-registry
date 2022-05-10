@@ -8,6 +8,11 @@ is_pii: 'False'
 langs:
 - ru
 name: Russian OKEI name of code (classifier of units of measurement)
+examples:
+  - value: миллиграмм
+    description: миллиграмм
+  - value: сутки
+    description: сутки
 translations:
   ru:
     doc: Общероссийский классификатор единиц измерения — это общероссийский классификатор,

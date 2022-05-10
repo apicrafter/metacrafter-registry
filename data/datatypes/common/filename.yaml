@@ -5,4 +5,17 @@ id: filename
 is_pii: 'False'
 langs:
 - common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Filename
 name: Name of the file
+examples:
+  - value: sheet.xls
+    description: sheet.xls
+  - value: dataset.xml
+    description: dataset.xml
+translations:
+  ru:
+    doc: Название файла в файловой системе
+    name: Название файла
+

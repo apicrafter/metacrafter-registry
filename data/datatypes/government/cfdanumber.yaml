@@ -13,7 +13,7 @@ links:
 name: The Catalog of Federal Domestic Assistance (CFDA) number
 regexp: \d{2}\.\d{3}
 examples:
-  - value: 93.791
+  - value: '93.791'
     description: Money Follows the Person Rebalancing Demonstration
-  - value: 93.778
+  - value: '93.778'
     description: Medical Assistance Program

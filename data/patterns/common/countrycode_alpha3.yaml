@@ -8,5 +8,15 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P298
 name: ISO 3166-1 Alpha3 country code
 semantic_type: country
+regexp: '[A-Z]{3}'
+wikidata_property: P298
+examples:
+  - value: RUS
+    description: Russia
+  - value: DEU
+    description: Germany
+

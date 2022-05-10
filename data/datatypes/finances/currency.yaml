@@ -13,3 +13,5 @@ name: Currency
 patterns:
 - iso4217curcode
 - iso4217curname
+- okvname
+- okvcode

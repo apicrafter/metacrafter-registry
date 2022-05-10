@@ -14,7 +14,7 @@ name: FIPS 5-2 numeric code (US states)
 wikidata_property: P5087
 regexp: \d{2}
 examples:
-  - value: 76
+  - value: '76'
     description: Navassa Island
-  - value: 70
+  - value: '70'
     description: Palau

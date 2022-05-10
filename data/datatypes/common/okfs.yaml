@@ -7,7 +7,16 @@ id: okfs
 is_pii: 'False'
 langs:
 - ru
-name: Russian form of ownership code
+links:
+  - type: other
+    url: https://ru.wikipedia.org/wiki/Общероссийские_классификаторы_технико-экономической_и_социальной_информации
+name: Russian form of ownership code (OKFS)
+regexp: '\d{2}'
+examples:
+  - value: '12'
+    description: Федеральная собственность
+  - value: '22'
+    description: Собственность иностранных государств
 translations:
   ru:
     doc: ОКФС — это общероссийский классификатор форм собственности, входящий в Единую

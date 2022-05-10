@@ -5,5 +5,14 @@ langs:
 links:
   - type: other
     url: https://www.iso.org/iso-4217-currency-codes.html
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P498
 name: ISO 4217 Currency code
 semantic_type: currency
+wikidata_property: P498
+regexp: '[A-Z]{3}'
+examples:
+  - value: XPD
+    description: palladium
+  - value: EUR
+    description: euro

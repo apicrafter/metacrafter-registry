@@ -12,4 +12,12 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/ISO_10962
+  - type: other
+    url: https://www.iso.org/standard/81140.html
 name: Classification of Financial Instruments (ISO 10962)
+regexp: '[A-Z]{6}'
+examples:
+  - value: FXXXS
+    description: Standardized Future
+  - value: FCEPN
+    description: Nonstandard (flex) Commodity Future on an extraction resource with physical delivery

@@ -7,7 +7,16 @@ id: okei
 is_pii: 'False'
 langs:
 - ru
+links:
+  - type: other
+    url: https://ru.wikipedia.org/wiki/Общероссийский_классификатор_единиц_измерения
 name: Russian OKEI code (classifier of units of measurement)
+regexp: '\d{3,4}'
+examples:
+  - value: '161'
+    description: миллиграмм
+  - value: '359'
+    description: сутки
 translations:
   ru:
     doc: Общероссийский классификатор единиц измерения — это общероссийский классификатор,

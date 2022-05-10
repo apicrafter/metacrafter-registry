@@ -4,3 +4,8 @@ langs:
 - common
 name: Country name (English)
 semantic_type: country
+examples:
+  - value: Afghanistan
+    description: Afghanistan (country name)
+  - value: Mexico
+    description: Mexico (country name)
