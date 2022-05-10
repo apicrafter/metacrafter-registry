@@ -11,7 +11,7 @@ wikidata_property: P2907
 regexp: '^UTC(?:Z|[+-](?:2[0-3]|[01][0-9]):[0-5][0-9])$'
 examples:
   - value: 'UTC+08:00'
-    description: 8 hour
+    description: '8 hour'
   - value: 'UTC+01:24'
-    description: 1.4 hour
+    description: '1.4 hour'
 

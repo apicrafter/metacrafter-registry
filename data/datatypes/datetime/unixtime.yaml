@@ -14,6 +14,6 @@ name: Digital timestamp (Unix time, Epoch time, Posix time)
 regexp: \d{1,10}
 examples:
   - value: '1652190194'
-    description: 2022-05-10T13:43:14+00:00
+    description: '2022-05-10T13:43:14+00:00'
   - value: '915148800'
-    description: 1998-12-31T23:59:60.25
+    description: '1998-12-31T23:59:60.25'
