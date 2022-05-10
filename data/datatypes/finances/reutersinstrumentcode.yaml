@@ -1,0 +1,18 @@
+categories:
+- finances
+doc: A Reuters instrument code, or RIC, is a ticker-like code used by Refinitiv to identify financial instruments and indices. The codes are used for looking up information on various Refinitiv financial information networks (such as Refinitiv Real Time) and appear to have developed from the Quotron service purchased in the 1980s.
+id: ric
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Reuters_Instrument_Code
+name: Reuters Instrument Code (RIC)
+regexp: '[A-Z0-9.]{1,16}'
+examples:
+  - value: 'IBM.N'
+    description: IBM being traded on the New York Stock Exchang
+  - value: 'IBM.L'
+    description: IBM being traded on London Stock Exchange
+

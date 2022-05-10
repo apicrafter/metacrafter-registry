@@ -1,0 +1,20 @@
+categories:
+- finances
+doc: The Financial Instrument Global Identifier (FIGI) (formerly Bloomberg Global Identifier (BBGID)) is an open standard, unique identifier of financial instruments that can be assigned to instruments including common stock, options, derivatives, futures, corporate and government bonds, municipals, currencies, and mortgage products.
+id: tickersymbol
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Financial_Instrument_Global_Identifier
+  - type: other
+    url: https://www.omg.org/figi/
+name: Financial Instrument Global Identifier (FIGI)
+regexp: '[A-Z0-9]{12}'
+examples:
+  - value: BBG000BLNNV0
+    description: IBM UA
+  - value: BBG000BLNQ16
+    description: IBM UN
+

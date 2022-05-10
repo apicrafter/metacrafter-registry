@@ -12,7 +12,7 @@ links:
     url: https://www.wikidata.org/wiki/Property:P3090
 name: Flight number
 wikidata_property: P3090
-regexp: ([A-Z]{2,3}|[A-Z][0-9]|[0-9][A-Z])\d{1,4}[A-Z]?|\d{1,4}
+regexp: '([A-Z]{2,3}|[A-Z][0-9]|[0-9][A-Z])\d{1,4}[A-Z]?|\d{1,4}'
 examples:
   - value: EK521
     description: Emirates Flight 521

@@ -1,0 +1,21 @@
+categories:
+- government
+country:
+- US
+doc: 'The PIID consists of a combination of thirteen to seventeen alpha and/or numeric characters sequenced to convey certain information'
+id: uspiid
+is_pii: 'False'
+langs:
+- en
+links:
+  - type: other
+    url: https://www.acquisition.gov/sites/default/files/current/far/compiled_html/subpart_4.16.html
+  - type: other
+    url: https://www.fpds.gov/help/Procurement_Instrument_Identifier.htm
+name: Procurement Instrument Identifier (PIID)
+regexp: '[0-9A-Z]{13,17}'
+examples:
+  - value: '19RS5022F0185'
+    description: PIID 19RS5022F0185
+  - value: '19RS5021D0001'
+    description: 'PIID 19RS5021D0001'

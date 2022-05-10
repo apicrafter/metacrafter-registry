@@ -1,0 +1,20 @@
+categories:
+- industry
+langs:
+  - common
+doc: 'Code of industry by ISIC (International Standard Industrial Classification of All Economic Activities)'
+id: isicrev4
+is_pii: 'False'
+links:
+  - type: other
+    url: https://www.oecd-ilibrary.org/content/publication/8722852c-en
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P1796
+name: ISIC rev 4 class code
+wikidata_property: P1796
+regexp: ([A-U]|\d{2,4})
+examples:
+  - value: '3030'
+    description: 'aerospace industry'
+  - value: '3020'
+    description: 'locomotive manufacturing'

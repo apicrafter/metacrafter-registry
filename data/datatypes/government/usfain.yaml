@@ -1,0 +1,19 @@
+categories:
+- government
+country:
+- US
+doc: 'FAIN (Federal Award Identification Number) is the unique identifying number assigned to all federal finance awards. Since October of 2013, the Office of Management and Budget (OMB) has required all Federal Agencies to issue a FAIN to all financial assistance awards or grants.'
+id: usfain
+is_pii: 'False'
+langs:
+- en
+links:
+  - type: other
+    url: https://orsp.umich.edu/glossary/fain-federal-award-identification-number
+name: Federal Award Identification Number (FAIN)
+regexp: '[0-9A-Z]{10,13}'
+examples:
+  - value: 'SSI60022GR0005'
+    description: 'FAIN SSI60022GR0005'
+  - value: '2680229104'
+    description: 'FAIN 2680229104'
