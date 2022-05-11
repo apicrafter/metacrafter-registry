@@ -1,0 +1,21 @@
+categories:
+- finances
+country:
+- RU
+doc: State registration number of the issue of equity securities (Russia) has 9 symbols
+id: rueqsecreg
+is_pii: 'False'
+langs:
+- ru
+links:
+  - type: other
+    url: http://pravo.gov.ru/proxy/ips/?doc_itself=&nd=102096289&page=1&rdk=3#I0
+name: State registration number of the issue of equity securities (Russia)
+regexp: '\d{1}\d{5}[A-Z]{1}'
+examples:
+  - value: '10103317C'
+    description: '10103317C'
+translations:
+  ru:
+    doc: Государственный регистрационный номер - цифровой (буквенный, знаковый) код, идентифицирующий конкретный выпуск эмиссионных ценных бумаг, - состоит из девяти разрядов.
+    name: Государственный регистрационный номер выпуска эмиссионных ценных бумаг

@@ -1,0 +1,21 @@
+categories:
+- finances
+country:
+- RU
+doc: State registration number of the additional issue of equity securities (Russia) has 13 symbols
+id: rusecreg
+is_pii: 'False'
+langs:
+- ru
+links:
+  - type: other
+    url: http://pravo.gov.ru/proxy/ips/?doc_itself=&nd=102096289&page=1&rdk=3#I0
+name: State registration number of the additional issue of equity securities (Russia)
+regexp: '[0-9A-Z]{13}'
+examples:
+  - value: '1-01-55192-Е-003D'
+    description: 'Обыкновенные акции закрытая подписка Публичное акционерное общество «Полюс»'
+translations:
+  ru:
+    doc:  Государственный   регистрационный  номер  дополнительного выпуска  эмиссионных  ценных  бумаг  состоит  из   государственного регистрационного  номера,  присвоенного  выпуску эмиссионных ценных бумаг,  и  индивидуального  номера  (кода)  этого   дополнительного выпуска эмиссионных ценных бумаг
+    name: Государственный регистрационный номер дополнительного выпуска эмиссионных ценных бумаг
