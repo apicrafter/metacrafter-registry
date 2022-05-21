@@ -7,7 +7,17 @@ id: okpo
 is_pii: 'False'
 langs:
 - ru
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P2391
 name: Russian organization stat code
+wikidata_property: P2391
+regexp: '\d{8}'
+examples:
+  - value: '00040778'
+    description: Gazprom
+  - value: '03323755'
+    description: TEK SPB
 translations:
   ru:
     doc: Код по Общероссийскому классификатору предприятий и организаций

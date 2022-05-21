@@ -1,0 +1,24 @@
+categories:
+- transport
+- chemistry
+doc: Packaging code according to UN transportation rules
+id: unpkggroup
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P876
+name: UN Packaging group
+wikidata_property: P876
+regexp: '(I\/II)|(II\/III)|I{1,3}'
+examples:
+  - value: 'I'
+    description: sodium azide
+  - value: 'II'
+    description: hydrofluoric acid
+translations:
+  ru:
+    doc: 'Код группы упаковки ООН'
+    name: Код группы упаковки ООН
+

@@ -15,6 +15,7 @@ links:
   - type: wikidata
     url: https://www.wikidata.org/wiki/Property:P1278
 name: Legal Entity Identifier
+wikidata_property: P1278
 regexp:  '[0-9A-Z]{18}[0-9]{2}'
 examples:
   - value: INR2EJN1ERAN0W5ZP974

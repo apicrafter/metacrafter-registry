@@ -1,9 +1,19 @@
 categories:
 - pii
 - common
-doc: Number of phone/fax
+doc: Telephone number in standard format (RFC3966), without 'tel:' prefix
 id: phone
 is_pii: 'True'
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P1329
 langs:
 - common
 name: Phone number
+wikidata_property: P1329
+regexp: '(?:(?:(?:\+|00|011)[\.\/\-\ \t]*([17]|2(?:[07]|[1-689]\d)|3(?:[0-4679]|[578]\d)|4(?:[013-9]|2\d)|5(?:[1-8]|[09]\d)|6(?:[0-6]|[789]\d)|8(?:[1246]|[035789]\d)|9(?:[0-58]|[679]\d))[\.\/\-\ \t]*|([17])[\.\/\-\ ])?(?:\((\d{1,6})\)[\.\/\-\ \t]*)?(?:(\d{1,6})[\.\/\-\ ])?(?:(\d{1,6})[\.\/\-\ ])?(?:(\d{1,6})[\.\/\-\ ])?(?:(\d{1,6})[\.\/\-\ ])?(\d{0,10}?)(\d{1,4}+)(?:[\.\/\-;\ \t]*e?xt?[\.\/\-=\ \t]*(\d{1,14}))?)?'
+examples:
+  - value: +1-202-456-1414
+    description: White House
+  - value: +1-514-954-8219
+    description: International Civil Aviation Organization

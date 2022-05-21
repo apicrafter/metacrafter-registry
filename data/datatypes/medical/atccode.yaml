@@ -22,7 +22,6 @@ examples:
     description: ethanol
   - value: A02BC04
     description: '(RS)-rabeprazole'
-
 translations:
   ru:
     doc: Анатомо-терапевтическо-химическая классификация — международная система классификации
