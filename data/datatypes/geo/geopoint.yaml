@@ -1,6 +1,6 @@
 categories:
 - geo
-doc: Geographic point as string with latitude and longitude
+doc: Geographic point as string, or dict, or array with latitude and longitude
 id: geopoint
 is_pii: 'True'
 langs:
