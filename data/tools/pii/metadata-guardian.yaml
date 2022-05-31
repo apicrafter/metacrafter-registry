@@ -1,0 +1,22 @@
+id: metadata-guardian
+category: pii
+name: Metadata Guardian
+doc: Metadata Guardian is a Python package that provides an easy way to protect your data sources by searching its metadata. By searching with data rules, it will detect what you are looking to protect. Using Rust, it makes blazing fast multi-regex matching.
+website: https://github.com/fvaleye/metadata-guardian
+supported_types:
+   - email
+   - phone
+   - ipv4
+   - ipv6
+   - ipaddr
+   - postindex
+   - address
+   - person_firstname
+   - person_surname
+   - person_fullname
+   - birthday
+   - gender
+   - nationality
+   - username
+   - password
+   

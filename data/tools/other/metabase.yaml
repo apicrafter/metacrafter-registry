@@ -1,0 +1,22 @@
+id: metabase
+category: other
+name: Metabase
+doc: 'Metabase is a simple and powerful analytics tool which lets anyone learn and make decisions from their company s data no technical knowledge required.'
+website: https://www.metabase.com/docs/latest/users-guide/field-types.html
+supported_types:
+   - city
+   - country
+   - latitude
+   - longitude
+   - usstate
+   - postindex
+   - birthday
+   - company
+   - email
+   - username
+   - datetime
+   - timestamp
+   - time
+   - date
+   - url
+

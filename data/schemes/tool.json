@@ -1,0 +1,27 @@
+{
+    "name": {
+        "required": true,
+        "type": "string"
+    },
+    "id": {
+        "required": true,
+        "type": "string"
+    },
+    "doc": {
+        "required": true,
+        "type": "string"
+    },
+    "category": {
+        "required": true,
+        "type": "string"
+    },
+    "website": {
+        "required": false,
+        "type": "string"
+    },
+    "supported_types": {
+        "required": false,
+        "type": "list"
+    }
+}
+

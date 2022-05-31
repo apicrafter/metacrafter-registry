@@ -1,0 +1,32 @@
+{% extends "base.tmpl" %}
+{% block pagetitle %}Tools with semantic data types support{% endblock %}
+{% block content %}
+<h1>Tools with semantic data types support</h1>
+
+</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Types num</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for o in objects %}
+        <tr>
+          <td>{{ o.id }}</td>
+          <td><a href="/tool/{{o.id}}">{{ o.name }}</a></td>
+          <td>{{ o.category }}</td>
+          <td>{{ o.num }}</td>
+          <td>{{o.doc}}</td>
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+
+{% endblock %}

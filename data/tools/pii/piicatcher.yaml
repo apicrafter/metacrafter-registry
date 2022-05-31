@@ -1,0 +1,17 @@
+id: piicatcher
+category: pii
+name: PII Catcher
+doc: 'PIICatcher is a scanner for PII and PHI information. It finds PII data in your databases and file systems and tracks critical data.'
+website: https://github.com/tokern/piicatcher
+supported_types:
+  - email
+  - birthday
+  - gender
+  - nationality
+  - person_fullaname
+  - person_firstname
+  - person_lastname
+  - username
+  - password
+  - address
+  - usssn

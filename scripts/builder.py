@@ -56,7 +56,7 @@ def update_by_dict(arr, adict):
 
 
 
-def yaml_to_jsonl():
+def datatypes_yaml_to_jsonl():
     output = {}
     countries = load_dict(os.path.join(DATA_PATH, 'countries.yaml'))
     categories = load_dict(os.path.join(DATA_PATH, 'categories.yaml'))
@@ -98,6 +98,23 @@ def yaml_to_jsonl():
     f.write(json.dumps(output, ensure_ascii=False))
     f.close()
     fjsonl.close()
+
+def tools_yaml_to_jsonl():
+    output = {}
+
+    fjsonl = open(os.path.join(DATA_PATH, 'tools_latest.jsonl'), 'w', encoding='utf8')
+    f = open(os.path.join(DATA_PATH, 'tools_latest.json'), 'w', encoding='utf8')
+
+    tools = load_path(os.path.join(DATA_PATH, 'tools'))
+    typer.echo('Loaded %d tools' % (len(tools)))
+    for d in tools:
+        d['num'] = len(d['supported_types'])
+        fjsonl.write(json.dumps(d, ensure_ascii=False) + '\n')
+        output[d['id']] = d
+    f.write(json.dumps(output, ensure_ascii=False))
+    f.close()
+    fjsonl.close()
+
 
 
 def calculate_stats():
@@ -167,7 +184,7 @@ def report():
 @app.command()
 def validate():
     from cerberus import Validator
-    schema_file = os.path.join(DATA_PATH, 'cerberus_schema.json')
+    schema_file = os.path.join(DATA_PATH, 'schemes/datatype.json')
     f = open(schema_file, 'r', encoding='utf8')
     schema = json.load(f)
     f.close()
@@ -186,10 +203,29 @@ def validate():
             except Exception as e:
                 print('%s error %s' % (d['id'], str(e)))
 
+
+    tools = load_path(os.path.join(DATA_PATH, 'tools'))
+    schema_file = os.path.join(DATA_PATH, 'schemes/tool.json')
+    f = open(schema_file, 'r', encoding='utf8')
+    tools_schema = json.load(f)
+    f.close()
+    v = Validator(schema)
+    for d in tools:
+        if d:
+            try:
+                r = v.validate(d, tools_schema)
+                if not r:
+                    print('%s is not valid %s' % (d['id'], str(v.errors)))
+            except Exception as e:
+                print('%s error %s' % (d['id'], str(e)))
+
+
 @app.command()
 def build():
-    yaml_to_jsonl()
+    datatypes_yaml_to_jsonl()
     typer.echo('Build new datatypes JSON and JSON lines files')
+    tools_yaml_to_jsonl()
+    typer.echo('Build new tools JSON and JSON lines files')
 
 @app.command()
 def stats():

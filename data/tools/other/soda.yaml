@@ -1,0 +1,15 @@
+id: soda
+category: other
+name: Soda
+doc: 'Soda allows everyone on your data team to find, analyze, and resolve data issues. Our open-source tools and data observability platform bring everyone closer to the data, resulting in data products that you can trust.'
+website: https://docs.soda.io/soda-sql/sql_metrics.html#valid-format-values
+supported_types:
+   - date
+   - email
+   - ipv4
+   - ipv6
+   - ipaddr
+   - time
+   - phone
+   - uuid
+

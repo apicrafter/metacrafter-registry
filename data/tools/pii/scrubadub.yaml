@@ -1,0 +1,13 @@
+id: scrubadub
+category: pii
+name: scrubadub
+doc: 'Remove personally identifiable information from free text. Sometimes we have additional metadata about the people we wish to anonymize. Other times we dont. This package makes it easy to seamlessly scrub personal information from free text, without compromising the privacy of the people we are trying to protect.`'
+website: https://github.com/LeapBeyond/scrubadub
+supported_types:
+   - email
+   - phone
+   - birthday
+   - bankcard
+   - postindex
+   - address
+   - person_name

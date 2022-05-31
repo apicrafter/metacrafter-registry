@@ -1,0 +1,21 @@
+id: googledatastudio
+category: other
+name: Google Data Studio
+doc: 'With Data Studio, you can easily report on data from a wide variety of sources, without programing. In just a few moments, you can connect to data sets such as: Databases, including BigQuery, MySQL, and PostgreSQL. Google Marketing Platform products, including Google Ads, Analytics, Display & Video 360, Search Ads 360.'
+website: https://developers.google.com/datastudio/connector/semantics#semantic-type-detection
+supported_types:
+   - geopoint
+   - country
+   - city
+   - datetime
+   - time
+   - address
+   - person_name
+   - year
+   - date
+   - month
+   - day
+   - dayofweek
+   - boolean
+   - url
+
