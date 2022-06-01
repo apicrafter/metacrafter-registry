@@ -1,0 +1,16 @@
+categories:
+- industry
+- objectids
+- gs1
+doc: 'The Global Trade Item Number (GTIN) is an identifier for trade items, developed by the international organization GS1.Such identifiers are used to look up product information in a database (often by entering the number through a barcode scanner pointed at an actual product) which may belong to a retailer, manufacturer, collector, researcher, or other entity. The uniqueness and universality of the identifier is useful in establishing which product in one database corresponds to which product in another database, especially across organizational boundaries.'
+id: gtin
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Global_Trade_Item_Number
+  - type: other
+    url: https://www.gs1.org/standards/barcodes/application-identifiers/01
+name: Global Trade Item Number
+regexp: '^01(d{14})$'

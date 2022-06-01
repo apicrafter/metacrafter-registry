@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="01a818ac-9828-4375-97c0-a1a933968de2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/datatypes/gs1/gtin.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/datatypes/gs1/gtincontained.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/categories.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/categories.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datatypes/common/email.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/datatypes/common/email.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datatypes/common/okei.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/datatypes/industry/okei.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datatypes/common/okeiname.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/datatypes/industry/okeiname.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datatypes/common/okfs.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/datatypes/companies/okfs.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datatypes/common/okogu.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/datatypes/companies/okogu.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datatypes/common/okopf.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/datatypes/companies/okopf.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datatypes/common/okpd.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/datatypes/industry/okpd.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datatypes/common/okved.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/datatypes/industry/okved.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datatypes/common/tnved.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/datatypes/industry/tnved.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datatypes/common/udkindex.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/datatypes/science/udkindex.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datatypes/transport/sssc.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/datatypes/gs1/sssc.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="29xQQ7OKlSJmRO70C4uD5Cxokif" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/data/datatypes/gs1" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\public\apicrafter\metacrafter-registry\data\datatypes\gs1" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workspace\public\apicrafter\metacrafter-registry\data\datatypes\science" />
+      <recent name="C:\workspace\public\apicrafter\metacrafter-registry\data\datatypes\industry" />
+      <recent name="C:\workspace\public\apicrafter\metacrafter-registry\data\datatypes\companies" />
+      <recent name="C:\workspace\public\apicrafter\metacrafter-registry\data\datatypes\gs1" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="01a818ac-9828-4375-97c0-a1a933968de2" name="Changes" comment="" />
+      <created>1654052237802</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654052237802</updated>
+      <workItem from="1654052239171" duration="2247000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

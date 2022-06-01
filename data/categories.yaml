@@ -36,3 +36,5 @@
   name: Chemistry
 - id: industry
   name: Industry
+- id: gs1
+  name: GS1 standards

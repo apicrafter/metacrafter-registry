@@ -1,5 +1,7 @@
 categories:
 - transport
+- objectids
+- gs1
 doc: 'The Serial Shipping Container Code (SSCC) is an 18-digit number used to identify
   logistics units. In order to automate the reading process, the SSCC is often encoded
   in a barcode, generally GS1-128, and can also be encoded in an RFID tag. It is used
