@@ -1,0 +1,9 @@
+categories:
+- values
+- common
+doc: Any integer or float number
+id: numeric
+is_pii: 'False'
+langs:
+- common
+name: Numeric value

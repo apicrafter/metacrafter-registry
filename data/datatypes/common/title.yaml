@@ -1,0 +1,12 @@
+categories:
+- common
+doc: Title/name of the object or entity.
+id: title
+is_pii: 'False'
+langs:
+- common
+name: Title
+translations:
+  ru:
+    doc: Название объекта или сущности
+    name: Название 

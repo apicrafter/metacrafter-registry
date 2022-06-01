@@ -1,0 +1,11 @@
+categories:
+- values
+- common
+doc: Amount of money as numeric value
+id: money
+is_pii: 'False'
+parent:
+  type: numeric
+langs:
+- common
+name: Money amount

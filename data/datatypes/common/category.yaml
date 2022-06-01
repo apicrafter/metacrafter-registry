@@ -1,0 +1,12 @@
+categories:
+- common
+doc: Object or entity category
+id: category
+is_pii: 'False'
+langs:
+- common
+name: Category
+translations:
+  ru:
+    doc: Категория объекта/сущности
+    name: Категория

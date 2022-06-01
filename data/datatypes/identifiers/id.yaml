@@ -1,0 +1,8 @@
+categories:
+- identifiers
+doc: An unique identifier, local for DB/dataset or global and persistent
+id: id
+is_pii: 'False'
+langs:
+- common
+name: Unique identifier

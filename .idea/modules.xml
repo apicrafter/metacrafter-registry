@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/metacrafter-registry.iml" filepath="$PROJECT_DIR$/.idea/metacrafter-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../metacrafter-rules/.idea/metacrafter-rules.iml" filepath="$PROJECT_DIR$/../metacrafter-rules/.idea/metacrafter-rules.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,12 @@
+categories:
+- common
+doc: Object or entity description, common for any object
+id: descriptio
+is_pii: 'False'
+langs:
+- common
+name: Description
+translations:
+  ru:
+    doc: Описание объекта или сущности
+    name: Описание
