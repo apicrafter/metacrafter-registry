@@ -1,0 +1,20 @@
+categories:
+- industry
+country:
+- EU
+doc: 'massively multilingual and public domain taxonomy legislated by the EU for goods and services'
+id: cpvcode
+is_pii: 'False'
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P5417
+langs:
+- en
+name: CPV (Common Procurement Vocabulary) code
+wikidata_property: P5417
+regexp: \d{8}
+examples:
+  - value: '24110000'
+    description: industrial gas
+  - value: '24111700'
+    description: 'nitrogen'
