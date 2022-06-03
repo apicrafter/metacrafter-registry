@@ -36,7 +36,7 @@ Each semantic data type YAML file  objects have following structure.
 Patterns are extensions, additional helpers to identify certain ways to represent semantinc data types. They could be different by usage type, country, language and so on.
 Patterns have no category since they inherit category from semantic data type
 
-Each entity YAML file  objects have following structure.
+Each entity YAML file objects has following structure.
 
 - **id** - unique identifier of the entity
 - **name** - name of the entity
@@ -48,13 +48,23 @@ Each entity YAML file  objects have following structure.
 - **wikidata_property** - property in Wikidata if applicable
 - **examples** - list of examples with **value** and **description** for each one
 
+## Tool
+
+Tools are software libraries, open source or proprietary software with support of semantic data types.
+Each entity YAML file objects has following structure.
+
+- **id** - unique identifier of the entity
+- **name** - name of the entity
+- **category** - category of the tool. It could be one of: detector, pii, etl, other
+- **doc** - English documentation/short description of this entity.
+- **website** - URL of the primary web resource about this tool
+- **supported_types** - array of strings with id of datatype or pattern for each string
+
 ## Identification rules
 
 **Under development**
 
 Identification rules are regex, other pattern matching algorithms and code that help to identify certain semantic data type directly or by pattern.
-
-
 
 # Code
 
