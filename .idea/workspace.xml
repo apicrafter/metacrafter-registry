@@ -5,37 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01a818ac-9828-4375-97c0-a1a933968de2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/datatypes/common/category.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/datatypes/common/comment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/datatypes/common/description.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/datatypes/common/title.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/datatypes/files/filename.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/datatypes/identifiers/mongodbid.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/datatypes/internet/mimetype.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/datatypes/values/money_amount.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/datatypes/values/numeric.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../metacrafter-rules/rules/en/en_common.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../metacrafter-rules/rules/ru/ru_internet.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/metacrafter-registry.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/metacrafter-registry.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/datatypes/common/email.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/datatypes/internet/email.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/datatypes/common/filename.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/datatypes/common/mimetype.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/datatypes/common/mongodbid.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/datatypes/common/password.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/datatypes/persons/password.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/datatypes/values/percentage.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/data/datatypes/values/percentage.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../metacrafter-rules/rules/common/common.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../metacrafter-rules/rules/common/common.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../metacrafter-rules/rules/common/internet.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../metacrafter-rules/rules/common/internet.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../metacrafter-rules/rules/en/us_geo.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../metacrafter-rules/rules/en/us_geo.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../metacrafter-rules/rules/ru/ru_common.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../metacrafter-rules/rules/ru/ru_common.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../metacrafter-rules/rules/ru/ru_geo.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../metacrafter-rules/rules/ru/ru_geo.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../metacrafter-rules" />
@@ -63,7 +48,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../metacrafter-rules/rules/en" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../apicrafter/apicrafter/builder" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -71,17 +56,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\public\apicrafter\apicrafter\apicrafter\builder" />
+      <recent name="C:\workspace\public\apicrafter\apicrafter\apicrafter" />
       <recent name="C:\workspace\public\apicrafter\metacrafter-rules\rules\en" />
       <recent name="C:\workspace\public\apicrafter\metacrafter-registry\data\datatypes\values" />
       <recent name="C:\workspace\public\apicrafter\metacrafter-registry\data\datatypes\common" />
-      <recent name="C:\workspace\public\apicrafter\metacrafter-registry\data\datatypes\gs1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workspace\public\apicrafter\apicrafter\apicrafter\builder" />
+      <recent name="C:\workspace\public\apicrafter\apicrafter\apicrafter\server" />
       <recent name="C:\workspace\public\apicrafter\metacrafter-registry\data\datatypes\internet" />
       <recent name="C:\workspace\public\apicrafter\metacrafter-registry\data\datatypes\persons" />
       <recent name="C:\workspace\public\apicrafter\metacrafter-registry\data\datatypes\science" />
-      <recent name="C:\workspace\public\apicrafter\metacrafter-registry\data\datatypes\industry" />
-      <recent name="C:\workspace\public\apicrafter\metacrafter-registry\data\datatypes\companies" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -93,6 +79,9 @@
       <option name="presentableId" value="Default" />
       <updated>1654052237802</updated>
       <workItem from="1654052239171" duration="9219000" />
+      <workItem from="1654491944673" duration="3637000" />
+      <workItem from="1654501270686" duration="1200000" />
+      <workItem from="1654613737198" duration="7777000" />
     </task>
     <servers />
   </component>
@@ -109,6 +98,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../.idea/apicrafter.iml" filepath="$PROJECT_DIR$/../.idea/apicrafter.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/metacrafter-registry.iml" filepath="$PROJECT_DIR$/.idea/metacrafter-registry.iml" />
       <module fileurl="file://$PROJECT_DIR$/../metacrafter-rules/.idea/metacrafter-rules.iml" filepath="$PROJECT_DIR$/../metacrafter-rules/.idea/metacrafter-rules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../private/datacoon/rudatasets/.idea/rudatasets.iml" filepath="$PROJECT_DIR$/../../../private/datacoon/rudatasets/.idea/rudatasets.iml" />
     </modules>
   </component>
 </project>

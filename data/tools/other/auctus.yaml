@@ -1,0 +1,16 @@
+id: auctus
+category: other
+name: Auctus
+doc: 'This project is a web crawler and search engine for datasets, specifically meant for data augmentation tasks in machine learning. It is able to find datasets in different repositories and index them for later retrieval.'
+website: https://gitlab.com/ViDA-NYU/auctus/auctus
+supported_types:
+   - datetime
+   - id
+   - latitude
+   - longitude
+   - geopoint
+   - address
+   - url
+   - filename
+   - boolean
+
