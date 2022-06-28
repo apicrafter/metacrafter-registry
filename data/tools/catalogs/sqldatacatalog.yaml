@@ -1,0 +1,27 @@
+id: sqldatacatalog
+category: catalogs
+name: RedGate SQL Data catalog
+doc: 'SQL Data Catalog helps you protect your business by providing a scalable and repeatable process for managing personally-identifiable information (PII), as it moves through your SQL Server estate. Our solution lets you create a data catalog of your SQL Server estate, and monitors and controls it for protection appropriate to the sensitivity of the data, ensuring compliance during data handling.'
+website: https://documentation.red-gate.com/sql-data-catalog/data-scanning
+supported_types:
+   - bankaccount
+   - bankcard
+   - email
+   - city
+   - uscounty
+   - ipv4
+   - ipv6
+   - person_surname
+   - person_firstname
+   - person_fullname
+   - gender
+   - nationality
+   - ipaddr
+   - orgname
+   - usssn
+   - phone
+   - title
+   - url
+   - usstate
+   - postindex
+   - jobtitle

@@ -13,6 +13,8 @@ links:
     url: https://en.wikipedia.org/wiki/URL
   - type: wikidata
     url: https://www.wikidata.org/wiki/Property:P2699
+  - type: schema.org
+    url: https://schema.org/URL
 name: Uniform Resource Locator (URL)
 wikidata_property: P2699
 regexp: '(https?|ftp)://(\S+\.)+\S+(/\S*)?|'

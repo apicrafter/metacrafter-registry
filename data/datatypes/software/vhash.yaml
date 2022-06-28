@@ -1,0 +1,15 @@
+categories:
+- software
+doc: 'Virustotal in-house similarity clustering algorithm value, based on a simple structural feature hash allows you to find similar files'
+id: vhash
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: other
+    url: https://developers.virustotal.com/reference/files
+name: VHash
+examples:
+  - value: '1640566d1555156az3b26kz1fez5'
+    description: Virus total file Twain_32.dll
+

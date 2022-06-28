@@ -12,6 +12,8 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/City
+  - type: schema.org
+    url: https://schema.org/City
 name: City
 patterns:
 - ruscity

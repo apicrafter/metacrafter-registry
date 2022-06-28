@@ -38,3 +38,5 @@
   name: Industry
 - id: gs1
   name: GS1 standards
+- id: software
+  name: Software development

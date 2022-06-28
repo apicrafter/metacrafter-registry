@@ -4,6 +4,9 @@ categories:
 doc: Any integer or float number
 id: numeric
 is_pii: 'False'
+links:
+  - type: schema.org
+    url: https://schema.org/Number
 langs:
 - common
 name: Numeric value

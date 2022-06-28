@@ -1,0 +1,18 @@
+categories:
+- software
+doc: 'hash based on PE file imports (MD5 hash)'
+id: imphash
+is_pii: 'False'
+parent:
+  type: md5hash
+langs:
+- common
+links:
+  - type: other
+    url: https://developers.virustotal.com/reference/pe_info
+name: imphash
+examples:
+  - value: '316cd668ed705c998eae8d3bd7bd168f'
+    description: Virus total file Twain_32.dll
+
+

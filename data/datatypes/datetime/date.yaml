@@ -8,6 +8,8 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Date_and_time_notation
+  - type: schema.org
+    url: https://schema.org/Date
 name: Date
 translations:
   ru:

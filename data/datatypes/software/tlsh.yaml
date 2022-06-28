@@ -1,0 +1,15 @@
+categories:
+- software
+doc: 'tlsh is a hash used by Trend Micro which can be used for similarity comparisons.'
+id: tlsh
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: other
+    url: https://developers.virustotal.com/reference/files-tlsh
+name: TLSH hash
+examples:
+  - value: 'T18F535B52F19146B7CD502278DF2CEB3199BFE134871816E3634882B6576B0D1AB7E3CA'
+    description: Virus total file Twain_32.dll
+

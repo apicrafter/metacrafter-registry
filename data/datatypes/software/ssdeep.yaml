@@ -1,0 +1,17 @@
+categories:
+- software
+doc: 'CTPH hash of the file content.'
+id: ssdeep
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: other
+    url: https://ssdeep-project.github.io/ssdeep/index.html
+  - type: other
+    url: https://developers.virustotal.com/reference/ssdeep
+name: SSDEEP hash
+examples:
+  - value: '768:uPC0xySqWNPwcKnReqpxORBoWNOMFN5cYsFx1gAmOURksWrk/VwLtkKavNi3IJzU:uPC0xyowcklqHw9xGkLrNLtBiNR'
+    description: Virus total file Twain_32.dll
+
