@@ -2,11 +2,11 @@ categories:
 - internet
 doc: A domain name is an identification string that defines a realm of administrative
   autonomy, authority or control within the Internet.
-id: domainname
+id: fqdn
 is_pii: 'False'
 langs:
 - common
 links:
   - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Domain_name
-name: Internet domain name
+    url: https://en.wikipedia.org/wiki/Fully_qualified_domain_name
+name: Full qualified domain name (FQDN)
