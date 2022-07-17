@@ -1,0 +1,18 @@
+categories:
+- software
+doc: 'size of a software, dataset, neural network, or individual file'
+id: datasize
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P3575
+name: Data size
+wikidata_property: P3575
+examples:
+  - value: '839 megabyte'
+    description: FreeCAD
+  - value: '5.15 gigabyte'
+    description: 'Sly Cooper and the Thievius Raccoonus'
+
