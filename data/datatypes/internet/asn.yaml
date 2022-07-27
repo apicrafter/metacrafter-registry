@@ -1,0 +1,18 @@
+categories:
+- internet
+doc: autonomous system number
+id: asn
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P3797
+name: Autonomous system number (ASN)
+wikidata_property: P3797
+regexp:  ' [1-9]\d*'
+examples:
+  - value: '2532'
+    description: Library of Congress
+  - value: '174'
+    description: Cogent Communications
