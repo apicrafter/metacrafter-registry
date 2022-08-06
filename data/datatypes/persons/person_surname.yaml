@@ -6,6 +6,9 @@ id: person_surname
 is_pii: 'True'
 langs:
 - common
+links:
+  - type: schema.org
+    url: https://schema.org/familyName
 name: Person surname/lastname
 patterns:
 - russurname

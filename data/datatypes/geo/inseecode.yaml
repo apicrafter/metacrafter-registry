@@ -12,4 +12,13 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/INSEE_code
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P374
+wikidata_property: P374
+regexp:  \d[0-9AB][0-9P]\d\d
 name: INSEE code
+examples:
+  - value: '75056'
+    description: Paris
+  - value: '48095'
+    description: Mende

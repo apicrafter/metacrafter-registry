@@ -7,6 +7,10 @@ is_pii: 'True'
 links:
   - type: wikidata
     url: https://www.wikidata.org/wiki/Property:P1329
+  - type: schema.org
+    url: https://schema.org/telephone
+  - type: schema.org
+    url: https://schema.org/faxNumber
 langs:
 - common
 name: Phone number

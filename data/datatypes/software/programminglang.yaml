@@ -1,0 +1,18 @@
+categories:
+- software
+doc: 'size of a file'
+id: programminglang
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P277
+  - type: schema.org
+    url: https://schema.org/programmingLanguage
+name: Programming language
+wikidata_property: P277
+examples:
+  - value: 'C'
+    description: Linux
+

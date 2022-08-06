@@ -13,6 +13,8 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Email
+  - type: schema.org
+    url: https://schema.org/email
 name: Email (Electronic mail)
 translations:
   ru:

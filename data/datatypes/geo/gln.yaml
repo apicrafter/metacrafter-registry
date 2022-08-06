@@ -1,0 +1,23 @@
+categories:
+- geo
+- gs1
+doc: 'The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.'
+id: gln
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: schema.org
+    url: https://schema.org/globalLocationNumber
+  - type: other
+    url: https://www.gs1.org/standards/id-keys/gln
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Global_Location_Number
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P9860
+name: Global Location Number (GLN)
+examples:
+  - value: 0865321000104
+    description: Google
+  - value: 0860484000404
+    description: The Coca-Cola Company

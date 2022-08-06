@@ -6,6 +6,9 @@ is_pii: 'False'
 langs:
 - common
 name: Company name
+links:
+  - type: schema.org
+    value: https://schema.org/legalName
 patterns:
 - encompanyname
 - rucompanyname
