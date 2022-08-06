@@ -1,11 +1,14 @@
 categories:
 - common
-doc: Object or entity description, common for any object
-id: descriptio
+doc: Item, Object or entity description, common for any object
+id: description
 is_pii: 'False'
 langs:
 - common
 name: Description
+links:
+  - type: schema.org
+    url: https://schema.org/description
 translations:
   ru:
     doc: Описание объекта или сущности

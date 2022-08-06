@@ -1,0 +1,12 @@
+doc: The amount of intervening time in a time interval and are represented by the format P[n]Y[n]M[n]DT[n]H[n]M[n]S or P[n]W as shown on the aside
+id: iso8601duration
+langs:
+- common
+name: Duration
+semantic_type: duration
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/ISO_8601#Durations
+examples:
+  - value: P3Y6M4DT12H30M5S
+    description: Three years, six months, four days, twelve hours, thirty minutes, and five seconds

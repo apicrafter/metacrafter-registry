@@ -1,11 +1,14 @@
 categories:
 - common
-doc: Title/name of the object or entity.
-id: title
+doc: Name of the item, object or entity.
+id: name
 is_pii: 'False'
 langs:
 - common
-name: Title
+name: Name
+links:
+  - type: schema.org
+    url: https://schema.org/name
 translations:
   ru:
     doc: Название объекта или сущности

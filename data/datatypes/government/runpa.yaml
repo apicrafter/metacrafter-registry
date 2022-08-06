@@ -8,6 +8,8 @@ is_pii: 'False'
 langs:
 - ru
 name: Russian regulatory legal act
+parent:
+  type: legislationname
 translations:
   ru:
     doc: Нормативно-правовой документ в России. Например, постановление правительства

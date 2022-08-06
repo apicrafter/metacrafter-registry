@@ -1,0 +1,13 @@
+categories:
+- companies
+doc: 'An organization identifier as defined in ISO 6523(-1)'
+is_pii: 'False'
+langs:
+  - common
+links:
+  - type: schema.org
+    url: https://schema.org/iso6523Code
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/ISO/IEC_6523
+id: iso6523code
+name:  ISO 6523 organization identifier
