@@ -1,0 +1,18 @@
+
+categories:
+- common
+- texts
+doc: Headline of the article.
+id: headline
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: schema.org
+    url: https://schema.org/headline
+name: Headline
+translations:
+  ru:
+    doc: Заголовок статьи
+    name: Заголовок
+
