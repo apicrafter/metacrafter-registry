@@ -8,7 +8,7 @@ langs:
 name: Company name
 links:
   - type: schema.org
-    value: https://schema.org/legalName
+    url: https://schema.org/legalName
 patterns:
 - encompanyname
 - rucompanyname

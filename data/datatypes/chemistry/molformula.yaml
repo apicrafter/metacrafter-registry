@@ -9,4 +9,15 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Chemical_formula
+  - type: bioschemas
+    url: https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02#molecularFormula
+  - type: schema.org
+    url: https://schema.org/molecularFormula
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P274
+wikidata_property: P274
 name: Molecular Formula
+regexp: '([αβγδφωλμπ]-)?([([]*[A-Z☐][ub]?[a-z]?[₁₂₃₄₅₆₇₈₉₀.]*(\)?[¹²³⁴⁵⁶⁷⁸⁹⁰]*[⁺⁻]?)?[\])|,₁₂₃₄₅₆₇₈₉₀]*(·\(?[-0-9.]*n?\)?)?)+'
+examples:
+  - value: 'H₂O'
+    description: water

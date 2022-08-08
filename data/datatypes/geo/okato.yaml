@@ -15,6 +15,9 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/OKATO
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P721
+wikidata_property: P721
 name: OKATO (Russian Classification on Objects of Administrative Division)
 translations:
   ru:

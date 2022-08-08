@@ -13,6 +13,9 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/OKTMO
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P764
+wikidata_property: P764
 name: Russian Classification of Territories of Municipal Formations (OKTMO) code
 translations:
   ru:
