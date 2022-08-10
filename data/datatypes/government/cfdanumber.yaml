@@ -17,3 +17,4 @@ examples:
     description: Money Follows the Person Rebalancing Demonstration
   - value: '93.778'
     description: Medical Assistance Program
+classification: categorical

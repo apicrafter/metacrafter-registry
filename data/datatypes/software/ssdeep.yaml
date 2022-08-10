@@ -14,4 +14,4 @@ name: SSDEEP hash
 examples:
   - value: '768:uPC0xySqWNPwcKnReqpxORBoWNOMFN5cYsFx1gAmOURksWrk/VwLtkKavNi3IJzU:uPC0xyowcklqHw9xGkLrNLtBiNR'
     description: Virus total file Twain_32.dll
-
+classification: identifier

@@ -7,3 +7,4 @@ is_pii: 'True'
 langs:
 - common
 name: Gender
+classification: categorical

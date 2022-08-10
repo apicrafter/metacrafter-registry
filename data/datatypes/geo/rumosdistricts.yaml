@@ -13,3 +13,4 @@ translations:
   ru:
     doc: Округа города Москвы
     name: Округа города Москвы
+classification: categorical

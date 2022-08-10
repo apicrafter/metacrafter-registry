@@ -17,3 +17,4 @@ examples:
     description: 'FAIN SSI60022GR0005'
   - value: '2680229104'
     description: 'FAIN 2680229104'
+classification: identifier

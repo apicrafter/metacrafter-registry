@@ -14,5 +14,4 @@ name: imphash
 examples:
   - value: '316cd668ed705c998eae8d3bd7bd168f'
     description: Virus total file Twain_32.dll
-
-
+classification: identifier

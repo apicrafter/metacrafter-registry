@@ -9,3 +9,4 @@ links:
   - type: wikidata
     url: https://www.wikidata.org/wiki/Property:P300
 name: identifier for a country subdivision per ISO 3166-2
+classification: categorical

@@ -14,3 +14,4 @@ links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Social_Security_number
 name: US Social Security Number
+classification: identifier

@@ -8,3 +8,4 @@ is_pii: 'False'
 langs:
 - en
 name: US County
+classification: categorical

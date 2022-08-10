@@ -13,3 +13,4 @@ translations:
   ru:
     doc: Код по Общероссийскому классификатору продукции
     name: Код ОКПД
+classification: categorical

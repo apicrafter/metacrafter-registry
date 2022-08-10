@@ -21,3 +21,4 @@ examples:
     description: Google
   - value: 0860484000404
     description: The Coca-Cola Company
+classification: identifier

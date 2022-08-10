@@ -21,3 +21,4 @@ examples:
     description: 'Leeds Teaching Hospitals NHS Trust'
   - value: 03rjyp183
     description: National Library of Wales
+classification: identifier

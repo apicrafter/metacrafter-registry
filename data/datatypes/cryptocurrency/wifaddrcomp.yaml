@@ -12,3 +12,4 @@ name: WIF, compressed pubkey
 examples:
   - value: L1aW4aubDFB7yfras2S1mN3bqg9nwySY8nkoLmJebSLD5BWv3ENZ
     description: Example from https://allprivatekeys.com/bitcoin-address-format
+classification: identifier

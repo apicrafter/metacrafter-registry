@@ -14,3 +14,4 @@ translations:
   ru:
     doc: Страховой номер индивидуального лицевого счёта физического лица (СНИЛС)
     name: Код СНИЛС
+classification: identifier

@@ -18,4 +18,4 @@ wikidata_property: P2627
 examples:
   - value:  DEUTDEFF
     description:  "Deutsche Bank"
-
+classification: identifier

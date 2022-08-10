@@ -18,3 +18,4 @@ examples:
     description: Anne Arundel County
   - value: '01001'
     description: Autauga Country
+classification: categorical

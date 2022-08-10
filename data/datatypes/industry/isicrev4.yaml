@@ -18,3 +18,4 @@ examples:
     description: 'aerospace industry'
   - value: '3020'
     description: 'locomotive manufacturing'
+classification: categorical

@@ -23,4 +23,4 @@ examples:
     description: French Red Cross
   - value: '775670417'
     description: LVMH
-
+classification: identifier

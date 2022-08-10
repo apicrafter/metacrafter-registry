@@ -20,3 +20,4 @@ examples:
     description: 'HyperText Markup Language'
   - value: image/jpeg
     description: 'JPEG File Interchange Format, version 1.0'
+classification: identifier

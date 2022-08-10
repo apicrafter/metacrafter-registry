@@ -10,3 +10,4 @@ links:
   - type: wikidata
     url: https://www.wikidata.org/wiki/Property:P1153
 name: Scopus author ID
+classification: identifier

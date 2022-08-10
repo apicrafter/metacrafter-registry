@@ -9,3 +9,4 @@ is_pii: 'True'
 langs:
 - common
 name: Internet Protocol version 6 (IPv6)
+classification: identifier

@@ -16,3 +16,4 @@ examples:
     description: Piton de la Fournaise
   - value: '1277082'
     description: Baranagar
+classification: identifier

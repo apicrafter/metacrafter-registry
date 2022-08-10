@@ -2,8 +2,7 @@ categories:
 - geo
 country:
 - FR
-doc: Etablissements publics de cooperation intercommunale (EPCI). French administrative
-  geo code
+doc: Etablissements publics de cooperation intercommunale (EPCI). French administrative geo code
 id: epcicode
 is_pii: 'False'
 langs:
@@ -12,3 +11,4 @@ links:
   - type: other
     url: https://www.insee.fr/fr/information/2510634
 name: Etablissements publics de cooperation intercommunale (EPCI)
+classification: identifier

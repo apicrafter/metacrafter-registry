@@ -127,6 +127,7 @@ def calculate_stats():
     has_links = 0
     has_trans = 0
     has_exam = 0
+    has_classif = 0
     for d in data.values():
         if d['type'] == 'datatype':
             total_types += 1
@@ -141,6 +142,8 @@ def calculate_stats():
             has_trans += 1
         if 'examples' in d.keys():
             has_exam += 1
+        if 'classification' in d.keys():
+            has_classif += 1
     total_all = total_types + total_pat
     typer.echo('Total data types %d' % (total_types))
     typer.echo('Total patterns %d' % (total_pat))
@@ -150,6 +153,7 @@ def calculate_stats():
     typer.echo('- with wikidata url %0.2f%% (%d)' % (has_wikidata * 100.0 / total_all, has_wikidata))
     typer.echo('- with translations %0.2f%% (%d)' % (has_trans * 100.0 / total_all, has_trans))
     typer.echo('- with examples %0.2f%% (%d)' % (has_exam * 100.0 / total_all, has_exam))
+    typer.echo('- with classification %0.2f%% (%d)' % (has_classif * 100.0 / total_all, has_classif))
 
 
 @app.command()

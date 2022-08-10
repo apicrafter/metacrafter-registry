@@ -12,4 +12,4 @@ name: Rich PE Header hash
 examples:
   - value: '6fef15a59affb0e30563fc8baf21ed67'
     description: Virus total file Twain_32.dll
-
+classification: identifier

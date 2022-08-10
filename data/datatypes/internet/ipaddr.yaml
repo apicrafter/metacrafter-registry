@@ -7,3 +7,4 @@ is_pii: 'True'
 langs:
 - common
 name: IPv4 or IPv6 address
+classification: identifier

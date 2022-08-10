@@ -19,3 +19,4 @@ examples:
     description: PIID 19RS5022F0185
   - value: '19RS5021D0001'
     description: 'PIID 19RS5021D0001'
+classification: identifier

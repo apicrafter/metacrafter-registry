@@ -13,3 +13,4 @@ links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/SIRET_code
 name: SIRET Code
+classification: categorical

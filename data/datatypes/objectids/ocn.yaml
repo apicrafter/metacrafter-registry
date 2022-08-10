@@ -24,3 +24,4 @@ examples:
     description: Directory of Open Access Books
   - value: '57722711'
     description: Iso suomen kielioppi
+classification: identifier

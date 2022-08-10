@@ -13,3 +13,4 @@ translations:
   ru:
     doc: Справочник районов города Москвы
     name: Районы города Москвы
+classification: categorical

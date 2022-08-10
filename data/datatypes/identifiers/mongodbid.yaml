@@ -12,3 +12,4 @@ examples:
     description: Uninue MongoDB ObjectID
   - value: 507f191e810c19729de860ea
     description: Uninue MongoDB ObjectID
+classification: identifier

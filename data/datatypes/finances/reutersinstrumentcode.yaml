@@ -15,4 +15,4 @@ examples:
     description: IBM being traded on the New York Stock Exchang
   - value: 'IBM.L'
     description: IBM being traded on London Stock Exchange
-
+classification: identifier

@@ -13,3 +13,4 @@ links:
   - type: other
     url: https://allprivatekeys.com/bitcoin-address-format
 name: Pubkey hash (P2PKH address)
+classification: identifier

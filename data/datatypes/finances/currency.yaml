@@ -15,3 +15,4 @@ patterns:
 - iso4217curname
 - okvname
 - okvcode
+classification: categorical

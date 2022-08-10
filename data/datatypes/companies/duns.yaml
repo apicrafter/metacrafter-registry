@@ -21,3 +21,4 @@ examples:
     description:  Langley Holdings
   - value: '968806054'
     description: "ORCID, Inc."
+classification: identifier

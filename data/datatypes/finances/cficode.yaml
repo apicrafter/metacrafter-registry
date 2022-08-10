@@ -21,3 +21,4 @@ examples:
     description: Standardized Future
   - value: FCEPN
     description: Nonstandard (flex) Commodity Future on an extraction resource with physical delivery
+classification: categorical

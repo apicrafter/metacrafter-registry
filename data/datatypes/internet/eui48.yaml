@@ -9,3 +9,4 @@ is_pii: 'True'
 langs:
 - common
 name: MAC Address (EUI48) of the device
+classification: identifier

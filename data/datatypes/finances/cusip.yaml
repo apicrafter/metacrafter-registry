@@ -17,3 +17,4 @@ examples:
     description: Apple
   - value: '38259P508'
     description: Google
+classification: identifier

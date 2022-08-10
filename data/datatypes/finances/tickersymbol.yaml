@@ -19,4 +19,4 @@ examples:
     description: Microsoft
   - value: AMZN
     description: Amazon
-
+classification: identifier

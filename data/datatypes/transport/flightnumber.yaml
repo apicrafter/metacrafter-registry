@@ -18,5 +18,4 @@ examples:
     description: Emirates Flight 521
   - value: 4U9525
     description: Germanwings Flight 9525
-
-
+classification: identifier

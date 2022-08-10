@@ -19,3 +19,4 @@ examples:
     description: Queen Elizabeth 2
   - value: '9224752'
     description: TI Asia
+classification: identifier

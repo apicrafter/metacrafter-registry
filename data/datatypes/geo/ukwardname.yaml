@@ -12,3 +12,4 @@ links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Wards_and_electoral_divisions_of_the_United_Kingdom
 name: Ward name (United Kingdom)
+classification: categorical

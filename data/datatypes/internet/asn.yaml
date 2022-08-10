@@ -16,3 +16,4 @@ examples:
     description: Library of Congress
   - value: '174'
     description: Cogent Communications
+classification: identifier

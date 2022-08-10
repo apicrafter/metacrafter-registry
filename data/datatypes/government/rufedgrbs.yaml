@@ -13,4 +13,5 @@ name: Russian direct government budget receiver and distributor code
 translations:
   ru:
     name: Код главного распорядителя бюджетных средств
-    doc: ՛Код из 3 цифр определяющий конкретного распределителя бюджетных средств (ГРБС)՛
+    doc: 'Код из 3 цифр определяющий конкретного распределителя бюджетных средств (ГРБС)'
+classification: categorical

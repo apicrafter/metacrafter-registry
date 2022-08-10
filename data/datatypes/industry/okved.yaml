@@ -12,3 +12,4 @@ translations:
   ru:
     doc: Код по общероссийскому классификатору видов экономической деятельности
     name: Код ОКВЭД
+classification: categorical

@@ -8,3 +8,4 @@ is_pii: 'True'
 langs:
 - common
 name: Username
+classification: identifier

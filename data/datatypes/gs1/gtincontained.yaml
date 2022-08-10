@@ -14,3 +14,4 @@ links:
     url: https://www.gs1.org/standards/barcodes/application-identifiers/02
 name: Global Trade Item Number (GTIN) of contained trade items
 regexp: '^02(d{14})$'
+classification: identifier

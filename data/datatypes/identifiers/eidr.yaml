@@ -28,3 +28,4 @@ translations:
   ru:
     doc:  Entertainment Identifier Registry ID
     name: Код EIDR
+classification: identifier

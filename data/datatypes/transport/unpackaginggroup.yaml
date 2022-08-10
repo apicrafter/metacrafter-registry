@@ -21,4 +21,4 @@ translations:
   ru:
     doc: 'Код группы упаковки ООН'
     name: Код группы упаковки ООН
-
+classification: categorical

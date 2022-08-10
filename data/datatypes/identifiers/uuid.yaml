@@ -10,3 +10,4 @@ links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Universally_unique_identifier
 name: A universally unique identifier (UUID)
+classification: identifier

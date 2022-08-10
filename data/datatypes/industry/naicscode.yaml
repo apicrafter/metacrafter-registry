@@ -18,3 +18,4 @@ examples:
     description: CelerSMS
   - value: '512240'
     description: 'recording studio'
+classification: categorical

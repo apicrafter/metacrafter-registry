@@ -18,3 +18,4 @@ examples:
     description: industrial gas
   - value: '24111700'
     description: 'nitrogen'
+classification: categorical

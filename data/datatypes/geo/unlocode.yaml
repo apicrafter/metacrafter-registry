@@ -23,3 +23,4 @@ examples:
     description: Genoa
   - value: CHGVA
     description: Geneva
+classification: identifier

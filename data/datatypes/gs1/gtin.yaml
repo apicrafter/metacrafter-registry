@@ -14,3 +14,4 @@ links:
     url: https://www.gs1.org/standards/barcodes/application-identifiers/01
 name: Global Trade Item Number
 regexp: '^01(d{14})$'
+classification: identifier

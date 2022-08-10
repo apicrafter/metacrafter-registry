@@ -19,3 +19,4 @@ translations:
       или logical data type) — примитивный тип данных в информатике, принимающий два
       возможных значения, иногда называемых истиной (true) и ложью (false).
     name: Логический тип
+classification: categorical

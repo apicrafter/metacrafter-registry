@@ -5,10 +5,16 @@ id: orgname
 is_pii: 'False'
 langs:
 - common
-name: Company name
+name: Company or organization name
+parent:
+  type: name
 links:
   - type: schema.org
     url: https://schema.org/legalName
 patterns:
 - encompanyname
 - rucompanyname
+translations:
+  ru:
+    doc: Название организации, бизнеса или компании на любом языке
+    name: Название организации или компании

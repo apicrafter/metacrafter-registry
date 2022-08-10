@@ -12,4 +12,4 @@ name: Windows Registry key
 examples:
   - value: 'HKEY_LOCAL_MACHINE\System\CurrentControlSet\Hardware Profiles\Current'
     description: Current Windows hardware profile
-
+classification: identifier

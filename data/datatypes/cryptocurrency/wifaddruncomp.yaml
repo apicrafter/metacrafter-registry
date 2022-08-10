@@ -13,3 +13,4 @@ regexp:
 examples:
   - value: 5Hwgr3u458GLafKBgxtssHSPqJnYoGrSzgQsPwLFhLNYskDPyyA
     description: Example from https://allprivatekeys.com/bitcoin-address-format
+classification: identifier

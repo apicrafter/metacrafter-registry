@@ -26,6 +26,6 @@ translations:
   ru:
     doc: 'Международный химический идентификатор'
     name: Международный химический идентификатор
-
+classification: identifier
 
 

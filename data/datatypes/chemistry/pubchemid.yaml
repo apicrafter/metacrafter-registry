@@ -19,3 +19,4 @@ regexp: '[1-9]\d*'
 examples:
   - value: '135307179'
     description: zeolite Y
+classification: identifier

@@ -16,3 +16,4 @@ examples:
     description: Amazon web services ec2 server
   - value: xn--kxae4bafwg.xn--pxaix.gr
     description: Greek language national domain name
+classification: identifier

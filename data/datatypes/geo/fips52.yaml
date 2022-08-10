@@ -18,3 +18,4 @@ examples:
     description: Navassa Island
   - value: '70'
     description: Palau
+classification: categorical

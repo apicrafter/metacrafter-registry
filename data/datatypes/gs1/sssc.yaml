@@ -17,3 +17,4 @@ links:
     url: https://www.gs1.org/standards/barcodes/application-identifiers/00
 name: Serial shipping container code
 regexp: '^00(d{18})$'
+classification: identifier

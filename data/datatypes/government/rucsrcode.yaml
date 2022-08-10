@@ -12,3 +12,4 @@ translations:
   ru:
     doc: Целевая статья расходов российского бюджета
     name: Целевая статья расходов российского бюджета
+classification: categorical

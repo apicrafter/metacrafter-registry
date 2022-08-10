@@ -21,4 +21,4 @@ examples:
     description: Gazprom
   - value:  NL0000235190
     description: Airbus Group
-
+classification: identifier

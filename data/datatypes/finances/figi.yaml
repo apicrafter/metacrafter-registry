@@ -17,4 +17,4 @@ examples:
     description: IBM UA
   - value: BBG000BLNQ16
     description: IBM UN
-
+classification: identifier

@@ -19,3 +19,4 @@ examples:
     description: Cairo
 regexp: '([1-9]\d(?:\d{0,7}|\d{17,20}))'
 wikidata_property: P214
+classification: identifier

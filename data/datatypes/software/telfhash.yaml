@@ -12,4 +12,4 @@ name: telfhash
 examples:
   - value: 't167319f0a1c160d81cb547cbc383bfae309821ae56faaa74dba48b425b7f51c1903f5f5'
     description: Virus total file libmongocrypt.so
-
+classification: identifier

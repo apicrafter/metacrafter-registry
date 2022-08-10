@@ -10,3 +10,4 @@ translations:
   ru:
     doc: Категория объекта/сущности
     name: Категория
+classification: categorical

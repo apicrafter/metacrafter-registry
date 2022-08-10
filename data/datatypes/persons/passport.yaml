@@ -10,3 +10,4 @@ langs:
 name: Person passport number (universal)
 patterns:
 - ruintpassport
+classification: identifier

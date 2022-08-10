@@ -15,3 +15,4 @@ examples:
     description: Count von Count
   - value: 'Q234511'
     description: Gurk
+classification: identifier

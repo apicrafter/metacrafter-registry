@@ -12,3 +12,4 @@ translations:
   ru:
     doc: Торговое название для лекарственных средств
     name: Торговое наименование лекарственного средства
+classification: identifier

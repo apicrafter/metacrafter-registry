@@ -13,3 +13,4 @@ links:
   - type: other
     url: https://allprivatekeys.com/bitcoin-address-format
 name: BIP-32 key
+classification: identifier

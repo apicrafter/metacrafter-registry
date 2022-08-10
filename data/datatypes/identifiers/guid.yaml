@@ -7,3 +7,4 @@ is_pii: 'False'
 langs:
 - common
 name: GUID (Globally unique identifier)
+classification: identifier

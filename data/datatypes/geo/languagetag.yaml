@@ -26,3 +26,4 @@ translations:
     doc: Языковой код/тэг по стандарту IETF BCP 47 идентифицирующий конкретный человеческий
       язык, стиль написания и тд.
     name: Языковой код IETF
+classification: categorical

@@ -112,6 +112,10 @@
                 }
             }
         }
+    },
+    "classification": {
+        "required": false,
+        "type": "string"
     }
 }
 

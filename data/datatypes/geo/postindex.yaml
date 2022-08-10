@@ -24,3 +24,4 @@ translations:
   ru:
     doc: Индекс почтовой связи
     name: Почтовый индекс
+classification: categorical

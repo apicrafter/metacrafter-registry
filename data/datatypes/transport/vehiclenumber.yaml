@@ -6,3 +6,4 @@ is_pii: 'False'
 langs:
 - common
 name: Vehicle number
+classification: identifier
