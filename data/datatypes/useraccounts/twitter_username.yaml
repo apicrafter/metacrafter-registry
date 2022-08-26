@@ -11,7 +11,7 @@ langs:
 - common
 wikidata_property: P2002
 links:
-    type: wikidata
+  - type: wikidata
     url: https://www.wikidata.org/wiki/Property:P2002
 name: Twitter username
 regexp: '[0-9A-Za-z_]{1,20}'

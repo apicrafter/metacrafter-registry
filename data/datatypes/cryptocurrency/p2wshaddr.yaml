@@ -8,4 +8,5 @@ links:
   - type: other
     url: https://allprivatekeys.com/bitcoin-address-format
 name: P2WSH address
+doc: 'P2WSH address'
 classification: identifier

@@ -1,0 +1,13 @@
+categories:
+- telecom
+- pii
+doc: The international mobile subscriber identity (IMSI) is a number that uniquely identifies every user of a cellular network.
+id: imsi
+is_pii: 'True'
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/International_mobile_subscriber_identity
+langs:
+- common
+name: The international mobile subscriber identity (IMSI)
+classification: identifier

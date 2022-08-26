@@ -1,0 +1,14 @@
+categories:
+- telecom
+- pii
+doc: MSISDN is a number uniquely identifying a subscription in a Global System for Mobile communications or a Universal Mobile Telecommunications System mobile network. It is the mapping of the telephone number to the subscriber identity module in a mobile or cellular phone.
+id: msisdn
+is_pii: 'True'
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/MSISDN
+regexp: '^[1-9][0-9]{10,14}$'
+langs:
+- common
+name: Mobile Subscriber ISDN Number (MSISDN)
+classification: identifier

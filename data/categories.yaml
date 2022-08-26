@@ -46,3 +46,7 @@
   name: Texts and  articles
 - id: useraccounts
   name: User accounts in products and services
+- id: telecom
+  name: Telecommunications
+- id: shipping
+  name: Shipping and delivery

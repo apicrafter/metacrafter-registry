@@ -1,0 +1,16 @@
+categories:
+- objectids
+- shipping
+doc: 'The UPU S10 standard defines a system for assigning 13-character identifiers to international postal items for the purpose of tracking and tracing them during shipping.'
+id: s10upu
+is_pii: 'False'
+langs:
+- common
+parent:
+  type: tracknum
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/S10_(UPU_standard)
+regexp: '^[A-z]{2}\d{8}\d{1}[A-z]{2}$'
+name: S10 (UPU standard)
+classification: identifier
