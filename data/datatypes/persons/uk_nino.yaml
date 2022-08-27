@@ -3,7 +3,7 @@ categories:
 - persons
 country:
 - GB
-doc: ' The National Insurance number is a number used in the United Kingdom in the
+doc: 'The National Insurance number is a number used in the United Kingdom in the
   administration of the National Insurance or social security system. It is also used
   for some purposes in the UK tax system. '
 id: uknino
@@ -13,5 +13,5 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/National_Insurance_number
-name: National Insurance number
+name: UK National Insurance number
 classification: identifier

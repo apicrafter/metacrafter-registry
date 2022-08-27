@@ -1,0 +1,15 @@
+categories:
+- companies
+country:
+- AU
+doc: 'The Australian Business Number (ABN) is a unique 11-digit identifier issued by the Australian Business Register (ABR) which is operated by the Australian Taxation Office (ATO).'
+id: auabn
+is_pii: 'False'
+langs:
+- en
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Australian_Business_Number
+regexp: '\d{2}\s\d{3}\s\d{3}\s\d{3}'
+name: Australian Business Number (ABN)
+classification: identifier

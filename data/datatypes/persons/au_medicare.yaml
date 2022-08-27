@@ -1,0 +1,18 @@
+categories:
+- pii
+- persons
+country:
+- AU
+doc: 'Medicare number is a unique identifier issued by Australian Government
+    that enables the cardholder to receive a rebates of medical expenses
+    under Australia Medicare system.'
+id: aumedicarenum
+is_pii: 'True'
+langs:
+- en
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Medicare_card_(Australia)
+regexp: '[2-6]\d{3}\s\d{5}\s\d'
+name: Australian medicare number
+classification: identifier

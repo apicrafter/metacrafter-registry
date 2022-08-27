@@ -1,3 +1,4 @@
+# ISO 3166 code alpha-2 for all countries
 - id: RU
   name: Russian Federation
 - id: GB
@@ -12,3 +13,7 @@
   name: Mexico
 - id: EU
   name: European Union
+- id: AU
+  name: Australia
+- id: SG
+  name: Singapore

@@ -1,0 +1,17 @@
+categories:
+- pii
+- persons
+- medical
+country:
+- GB
+doc: 'NHS numbers are the unique numbers allocated to registered users of the three public health services in England, Wales and the Isle of Man; the three health systems use a shared numbering scheme.'
+id: uknhsnum
+is_pii: 'True'
+langs:
+- en
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/NHS_number
+regexp: '([0-9]{3})[- ]?([0-9]{3})[- ]?([0-9]{4})'
+name: UK NHS Number
+classification: identifier

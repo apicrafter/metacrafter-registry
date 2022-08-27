@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+country:
+- SG
+doc: 'The National Registration Identity Card (NRIC) is the compulsory identity document issued to citizens and permanent residents of Singapore.'
+id: sgnric
+is_pii: 'True'
+langs:
+- en
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/National_Registration_Identity_Card
+regexp: '(?i)([STFG][0-9]{7}[A-Z])'    
+name: The Singapore National Registration Identity Card (NRIC)
+classification: identifier

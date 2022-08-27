@@ -12,8 +12,8 @@ links:
     url: https://en.wikipedia.org/wiki/Bank_account
 name: Bank account
 patterns:
-- rubankaccount
 - rusbankaccount
+- usbankaccount
 translations:
   ru:
     doc: Банковский счёт — счёт, открываемый банком юридическим или физическим лицам

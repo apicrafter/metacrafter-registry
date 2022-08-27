@@ -128,6 +128,7 @@ def calculate_stats():
     has_trans = 0
     has_exam = 0
     has_classif = 0
+    by_country = {}
     for d in data.values():
         if d['type'] == 'datatype':
             total_types += 1
@@ -144,6 +145,14 @@ def calculate_stats():
             has_exam += 1
         if 'classification' in d.keys():
             has_classif += 1
+        if 'country' in d.keys():
+            for country in d['country']:
+                v = by_country.get(country['id'], 0)
+                by_country[country['id']] = v + 1
+        else:
+            country = 'any'
+            v = by_country.get(country, 0)
+            by_country[country] = v + 1 
     total_all = total_types + total_pat
     typer.echo('Total data types %d' % (total_types))
     typer.echo('Total patterns %d' % (total_pat))
@@ -154,6 +163,9 @@ def calculate_stats():
     typer.echo('- with translations %0.2f%% (%d)' % (has_trans * 100.0 / total_all, has_trans))
     typer.echo('- with examples %0.2f%% (%d)' % (has_exam * 100.0 / total_all, has_exam))
     typer.echo('- with classification %0.2f%% (%d)' % (has_classif * 100.0 / total_all, has_classif))
+    typer.echo('Stats by country')
+    for w in sorted(by_country, key=by_country.get, reverse=True):
+        print('- %s: %d' % (w, by_country[w]))
 
 
 @app.command()

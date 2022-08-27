@@ -4,5 +4,8 @@ doc: Number of Russian internal passport
 id: ruintpassport
 langs:
 - ru
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Russian_passport
 name: Russian passport number
 semantic_type: passport

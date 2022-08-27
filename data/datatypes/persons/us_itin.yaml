@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+country:
+- US
+doc: 'A Taxpayer Identification Number (TIN) is an identifying number used for tax purposes in the United States and in other countries under the Common Reporting Standard.'
+id: usitin
+is_pii: 'True'
+langs:
+- en
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Taxpayer_Identification_Number
+regexp: '(9\d{2})[- ]{1}((7[0-9]{1}|8[0-8]{1})|(9[0-2]{1})|(9[4-9]{1}))[- ]{1}(\d{4})'    
+name: US ITIN (Individual Taxpayer Identification Number)
+classification: identifier

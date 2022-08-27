@@ -11,3 +11,25 @@ supported_types:
   - usssn
   - phone
   - bankaccount
+  - abaroutingnum
+  - aumedicarenum
+  - auabn
+  - auacn
+  - autfn
+  - uspassport
+  - usitin
+  - usdeanumber
+  - usdriverlic
+  - sgnric
+  - usssn
+  - usbankaccount
+  - esnif
+  - bip32addr
+  - p2pkhaddr
+  - p2shaddr
+  - p2wpkhaddr
+  - p2wshaddr
+  - wifaddrcomp
+  - wifaddruncomp
+  - uknhsnum
+

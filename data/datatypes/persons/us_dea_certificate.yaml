@@ -1,0 +1,17 @@
+categories:
+- pii
+- persons
+- medical
+country:
+- US
+doc: 'A DEA number (DEA Registration Number) is an identifier assigned to a health care provider (such as a physician, physician assistant, nurse practitioner, optometrist, podiatrist, dentist, or veterinarian) by the United States Drug Enforcement Administration allowing them to write prescriptions for controlled substances.'
+id: usdeanumber
+is_pii: 'True'
+langs:
+- en
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/DEA_number
+regexp: '[a-zA-Z]{2}\d{7}|[a-zA-Z]{1}9\d{7}'
+name: USA DEA Registration (cerficicate) Number
+classification: identifier

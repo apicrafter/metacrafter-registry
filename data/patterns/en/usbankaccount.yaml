@@ -1,0 +1,17 @@
+country:
+- RU
+doc: A bank account in the financial institutuin in United States
+id: usbankaccount
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Bank_account
+name: Bank account in United States
+regexp: '[0-9]{8,17}'
+translations:
+  ru:
+    doc: Вид банковского счета открываемого в банках США
+    name: Банковский счет в банке США
+semantic_type: bankaccount
