@@ -67,6 +67,7 @@ def datatypes_yaml_to_jsonl():
 
     pindex = {}
     dindex = {}
+    patterns = {}
 
 
     datatypes = load_path(os.path.join(DATA_PATH, 'datatypes'))
@@ -76,6 +77,7 @@ def datatypes_yaml_to_jsonl():
             plist = pindex.get(d['semantic_type'], [])
             plist.append(d['id'])
             pindex[d['semantic_type']] = plist
+            patterns[d['id']] = d
         else:
             dindex[d['id']] = d
 
@@ -98,7 +100,9 @@ def datatypes_yaml_to_jsonl():
             d['langs'] = update_by_dict(d['langs'], langs)
         output[d['id']] = d        
         if d['id'] in pindex.keys():
-            d['patterns'] = pindex[d['id']]
+            d['patterns'] = [] 
+            for pid in pindex[d['id']]:
+                d['patterns'].append(patterns[pid])
         finallist.append(d)
         fjsonl.write(json.dumps(d, ensure_ascii=False) + '\n')
 
