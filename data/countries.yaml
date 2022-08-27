@@ -17,3 +17,7 @@
   name: Australia
 - id: SG
   name: Singapore
+- id: BE
+  name: Belgium
+- id: CA
+  name: Canada

@@ -31,11 +31,11 @@ def load_dict(filename):
 def load_path(dirpath):
     subfolders = [f.path for f in os.scandir(dirpath) if f.is_dir()]
     all = []
-    for subf in subfolders:
-        files = os.listdir(subf)
+    for root, dirs, files in os.walk(dirpath, topdown=False):
         for filename in files:
+            if filename.lower().rsplit('.', 1)[-1] != 'yaml': continue
             logging.info('Load %s' % (filename))
-            f = open(os.path.join(subf, filename), 'r', encoding='utf8')
+            f = open(os.path.join(root, filename), 'r', encoding='utf8')
             all.append(yaml.load(f, Loader=Loader))
             f.close()
     return all
@@ -65,36 +65,42 @@ def datatypes_yaml_to_jsonl():
     fjsonl = open(os.path.join(DATA_PATH, 'datatypes_latest.jsonl'), 'w', encoding='utf8')
     f = open(os.path.join(DATA_PATH, 'datatypes_latest.json'), 'w', encoding='utf8')
 
-    patterns = load_path(os.path.join(DATA_PATH, 'patterns'))
-    typer.echo('Loaded %d patterns' % (len(patterns)))
     pindex = {}
-    for p in patterns:
-        p['type'] = 'pattern'
-        if not p['semantic_type'] in pindex.keys():
-            pindex[p['semantic_type']] = []
-        if 'country' in p.keys():
-            p['country'] = update_by_dict(p['country'], countries)
-        if 'langs' in p.keys():
-            p['langs'] = update_by_dict(p['langs'], langs)
-        pindex[p['semantic_type']].append(p)
-        output[p['id']] = p
-        fjsonl.write(json.dumps(p, ensure_ascii=False) + '\n')
+    dindex = {}
+
 
     datatypes = load_path(os.path.join(DATA_PATH, 'datatypes'))
-    typer.echo('Loaded %d datatypes' % (len(datatypes)))
+    typer.echo('Loaded %d datatypes and patterns' % (len(datatypes)))
     for d in datatypes:
-        d['type'] = 'datatype'
-        d['is_pii'] = True if d['is_pii'] == 'True' else False
-        if d['id'] in pindex.keys():
-            d['patterns'] = pindex[d['id']]
+        if 'semantic_type' in d.keys():
+            plist = pindex.get(d['semantic_type'], [])
+            plist.append(d['id'])
+            pindex[d['semantic_type']] = plist
+        else:
+            dindex[d['id']] = d
+
+    finallist = []
+    for d in datatypes:
+        if 'semantic_type' in d.keys():
+            d['type'] = 'pattern'
+        else:
+            d['type'] = 'datatype'        
+        if d['type'] == 'pattern':
+            d['is_pii'] = True if dindex[d['semantic_type']]['is_pii'] == 'True' else False
+        else:
+            d['is_pii'] = True if d['is_pii'] == 'True' else False
         if 'categories' in d.keys():
             d['categories'] = update_by_dict(d['categories'], categories)
         if 'country' in d.keys():
             d['country'] = update_by_dict(d['country'], countries)
         if 'langs' in d.keys():
             d['langs'] = update_by_dict(d['langs'], langs)
+        output[d['id']] = d        
+        if d['id'] in pindex.keys():
+            d['patterns'] = pindex[d['id']]
+        finallist.append(d)
         fjsonl.write(json.dumps(d, ensure_ascii=False) + '\n')
-        output[d['id']] = d
+
     f.write(json.dumps(output, ensure_ascii=False))
     f.close()
     fjsonl.close()
@@ -129,6 +135,7 @@ def calculate_stats():
     has_exam = 0
     has_classif = 0
     by_country = {}
+    by_lang = {}
     for d in data.values():
         if d['type'] == 'datatype':
             total_types += 1
@@ -153,6 +160,14 @@ def calculate_stats():
             country = 'any'
             v = by_country.get(country, 0)
             by_country[country] = v + 1 
+        if 'langs' in d.keys():
+            for lang in d['langs']:
+                v = by_lang.get(lang['id'], 0)
+                by_lang[lang['id']] = v + 1
+        else:
+            lang = 'any'
+            v = by_lang.get(lang, 0)
+            by_lang[lang] = v + 1             
     total_all = total_types + total_pat
     typer.echo('Total data types %d' % (total_types))
     typer.echo('Total patterns %d' % (total_pat))
@@ -166,6 +181,9 @@ def calculate_stats():
     typer.echo('Stats by country')
     for w in sorted(by_country, key=by_country.get, reverse=True):
         print('- %s: %d' % (w, by_country[w]))
+    typer.echo('Stats by language')
+    for w in sorted(by_lang, key=by_lang.get, reverse=True):
+        print('- %s: %d' % (w, by_lang[w]))
 
 
 @app.command()
@@ -205,10 +223,8 @@ def validate():
     schema = json.load(f)
     f.close()
     datatypes = load_path(os.path.join(DATA_PATH, 'datatypes'))
-    typer.echo('Loaded %d datatypes' % (len(datatypes)))
+    typer.echo('Loaded %d datatypes amd patterns' % (len(datatypes)))
 
-    patterns = load_path(os.path.join(DATA_PATH, 'patterns'))
-    typer.echo('Loaded %d patterns' % (len(patterns)))
     v = Validator(schema)
     for d in datatypes:
         if d:

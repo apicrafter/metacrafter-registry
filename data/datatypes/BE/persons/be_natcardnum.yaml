@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+country:
+- BE
+doc: 'Belgium identity card is a national identity card issued to all citizens of Belgium aged 12 years old and above. '
+id: benatcardid
+is_pii: 'True'
+langs:
+- fr
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Belgian_identity_card
+name: Belgium national card ID
+regexp: '[0-9]{2}\.(0[1-9]|1[0-2])\.(0[1-9]|[1-2][0-9]|3[0-1])-[0-9]{3}\.[0-9]{2}'
+classification: identifier

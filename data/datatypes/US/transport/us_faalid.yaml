@@ -1,0 +1,25 @@
+country:
+- US
+doc: The Federal Aviation Administration location identifier (FAA LID) is a three-
+  to five-character alphanumeric code identifying aviation related facilities inside
+  the United States, though some codes are reserved for, and are managed by other
+  entities.
+id: faalid
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/IATA_airport_code
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P240
+name: FAA airport code (FAA identifier)
+semantic_type: airport
+regexp: '^[A-Z0-9]{3,5}$'
+wikidata_property: P240
+examples:
+  - value: '554'
+    description: New Zealand
+  - value: '276'
+    description: Germany
+
+

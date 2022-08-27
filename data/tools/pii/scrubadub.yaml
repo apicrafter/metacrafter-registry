@@ -10,4 +10,4 @@ supported_types:
    - bankcard
    - postindex
    - address
-   - person_name
+   - person_fullname

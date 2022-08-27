@@ -1,0 +1,14 @@
+categories:
+- transport
+country:
+- EU
+doc: The Craft Identification Number (CIN) or Hull Identification Number (HIN), standardised as EN ISO 10087:2006, is a permanent unique fourteen-digit alphanumeric identifier issued to all marine vessels in Europe.
+id: eucin
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Craft_Identification_Number
+name: Craft Identification Number
+classification: identifier

@@ -1,0 +1,22 @@
+id: ibmguardium
+category: pii
+name: IBM Security Guardium Analyzer
+doc: 'IBM Security Guardium Analyzer is a powerful service that can help you with this data security effort. Simple to use, Guardium Analyzer allows you to set up connections to your data sources - with no need to configure classification or risk scanning.'
+website: https://www.ibm.com/docs/en/sga
+supported_types:
+   - email
+   - phone
+   - bankcard
+   - address
+   - person_name
+   - person_fullname
+   - person_surname
+   - person_firstname
+   - benatcardid
+   - ipaddr
+   - ussn
+   - uknhsnum
+   - esnif
+   - aumedicarenum
+   - autfn
+   - casin

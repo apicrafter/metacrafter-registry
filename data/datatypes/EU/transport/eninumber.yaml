@@ -1,0 +1,14 @@
+categories:
+- transport
+country: 
+- EU
+doc: 'An ENI number (European Number of Identification or European Vessel Identification Number) is a registration for ships capable of navigating on inland European waters. It is a unique, eight-digit identifier that is attached to a hull for its entire lifetime, independent of the vessels current name or flag.'
+id: eninumber
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/ENI_number
+name: ENI Number
+classification: identifier
