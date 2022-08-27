@@ -1,0 +1,17 @@
+categories:
+- common
+doc: Color of subject
+id: hexcolor
+is_pii: 'False'
+langs:
+- common
+name: sRGB color hex triplet (hex color)
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P465
+wikidata_property: P465
+translations:
+  ru:
+    doc: Цвет sRGB в шестнадцатеричной кодировке
+    name: Цвет в шестнадцатеричной кодировке
+semantic_type: color

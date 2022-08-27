@@ -1,7 +1,7 @@
 categories:
 - values
 - common
-doc: Parcentage float number value between 0 and 100. Rarely could be greater that 100
+doc: Parcentage float number
 id: percentage
 is_pii: 'False'
 langs:

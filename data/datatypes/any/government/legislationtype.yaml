@@ -9,6 +9,8 @@ links:
   - type: schema.org
     url: https://schema.org/legislationType
 name: Legislation type
+parent:
+  type: genre
 translations:
   ru:
     doc: 'Тип нормативного документа'

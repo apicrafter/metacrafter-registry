@@ -1,0 +1,11 @@
+categories:
+- values
+- common
+doc: Gross margin, sub-type of money
+id: grossmargin
+is_pii: 'False'
+parent:
+  type: money
+langs:
+- common
+name: Gross margin (money)

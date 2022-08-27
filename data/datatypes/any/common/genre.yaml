@@ -1,0 +1,21 @@
+categories:
+- common
+doc: Genre of the creative work, broadcast channel or group.
+id: genre
+is_pii: 'False'
+langs:
+- common
+name: Genre
+links:
+  - type: schema.org
+    url: https://schema.org/genre
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P136
+wikidata_property: P136        
+translations:
+  ru:
+    doc: Жанр картины, музыки, фильма, документа или иного произведения исскуства или иного созданного
+    name: Жанр
+classification: categorical
+parent:
+  type: category

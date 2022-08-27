@@ -1,0 +1,11 @@
+categories:
+- values
+- common
+doc: Discount from price sub-type of money
+id: discount
+is_pii: 'False'
+parent:
+  type: money
+langs:
+- common
+name: Discount (money)

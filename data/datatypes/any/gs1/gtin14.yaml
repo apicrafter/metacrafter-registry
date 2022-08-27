@@ -10,8 +10,10 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Global_Trade_Item_Number
+  - type: schema.org
+    url: https://schema.org/gtin14
   - type: other
     url: https://www.gs1.org/standards/barcodes/application-identifiers/01
-name: Global Trade Item Number
+name: Global Trade Item Number 14
 regexp: '^01(d{14})$'
 classification: identifier

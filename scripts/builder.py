@@ -83,11 +83,12 @@ def datatypes_yaml_to_jsonl():
     for d in datatypes:
         if 'semantic_type' in d.keys():
             d['type'] = 'pattern'
+            d['is_pii'] = True if dindex[d['semantic_type']]['is_pii'] == 'True' else False
+            if 'classification' not in d.keys():
+                if 'classification' in dindex[d['semantic_type']].keys():
+                    d['classification'] = dindex[d['semantic_type']]['classification']
         else:
             d['type'] = 'datatype'        
-        if d['type'] == 'pattern':
-            d['is_pii'] = True if dindex[d['semantic_type']]['is_pii'] == 'True' else False
-        else:
             d['is_pii'] = True if d['is_pii'] == 'True' else False
         if 'categories' in d.keys():
             d['categories'] = update_by_dict(d['categories'], categories)

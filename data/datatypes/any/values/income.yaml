@@ -1,0 +1,11 @@
+categories:
+- values
+- common
+doc: Income, sub-type of money
+id: income
+is_pii: 'False'
+parent:
+  type: money
+langs:
+- common
+name: Income (money)

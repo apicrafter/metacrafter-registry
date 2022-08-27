@@ -1,0 +1,11 @@
+categories:
+- values
+- common
+doc: Number of something, quantity
+id: quantity
+is_pii: 'False'
+parent:
+  type: numeric
+langs:
+- common
+name: Quantity

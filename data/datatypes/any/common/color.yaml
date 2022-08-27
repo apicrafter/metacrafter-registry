@@ -1,0 +1,19 @@
+categories:
+- common
+doc: Color of subject
+id: color
+is_pii: 'False'
+langs:
+- common
+name: Color
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P462
+  - type: schema.org
+    url: https://schema.org/color
+wikidata_property: P462
+translations:
+  ru:
+    doc: Цвет как физическая характеристика объекта
+    name: Цвет
+classification: categorical

@@ -1,0 +1,11 @@
+categories:
+- values
+- common
+doc: Cost of something as sub-type of money
+id: cost
+is_pii: 'False'
+parent:
+  type: money
+langs:
+- common
+name: Cost of something (money)

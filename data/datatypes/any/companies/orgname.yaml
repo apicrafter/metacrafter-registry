@@ -18,3 +18,4 @@ translations:
   ru:
     doc: Название организации, бизнеса или компании на любом языке
     name: Название организации или компании
+classification: identifier
