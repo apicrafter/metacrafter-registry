@@ -1,0 +1,17 @@
+categories:
+- geo
+doc: Geographic point as string by ISO 6709, ISO 6709, Standard representation of geographic point location by coordinates, is the international standard for representation of latitude, longitude and altitude for geographic point locations.
+id: geopoint
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/ISO_6709
+name: ISO 6709 geopoint
+examples:
+  - value: '50°40′46.461″N 95°48′26.533″W 123.45m'
+    description: Geopoint example 1
+  - value: '50°03′46.461″S 125°48′26.533″E 978.90m'
+    description: Geopoint example 2
+classification: identifier

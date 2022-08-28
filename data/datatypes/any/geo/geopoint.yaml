@@ -1,8 +1,9 @@
 categories:
 - geo
-doc: Geographic point as string, or dict, or array with latitude and longitude
+doc: Basic geopoint as coordinates
 id: geopoint
-is_pii: 'True'
+is_pii: 'False'
 langs:
 - common
 name: Geopoint
+classification: identifier

@@ -1,0 +1,17 @@
+categories:
+- datetime
+doc: A calendar quater of the year
+id: quarter
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Calendar_year#Quarters
+name: Quarter of the year
+regexp: '[1234]'
+examples:
+  - value: '1'
+    description: First quarter
+  - value: '2'
+    description: Secord quarter

@@ -1,0 +1,23 @@
+categories:
+- geo
+country:
+- CA
+doc: 'The Standard Geographical Classification (SGC) is a system maintained by Statistics Canada for categorizing and enumerating the census geographic units of Canada. Each geographic area receives a unique numeric code ranging from 1 to 10 digits, which extend telescopically to refer to increasingly small areas.'
+id: casgc
+is_pii: 'False'
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P3012
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Standard_Geographical_Classification_code_(Canada)
+langs:
+- en
+name: Standard Geographical Classification (SGC)
+wikidata_property: P3012
+regexp: '\d{2}(\d{2}(\d{3})?)?'
+examples:
+  - value: '2410043'
+    description: Rimouski
+  - value: '4604040'
+    description:  Municipality of Louise
+classification: categorical

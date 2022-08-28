@@ -1,0 +1,21 @@
+categories:
+- geo
+doc: UN M49 or the Standard Country or Area Codes for Statistical Use (Series M, No. 49) is a standard for area codes used by the United Nations for statistical purposes, developed and maintained by the United Nations Statistics Division.
+id: unm49
+is_pii: 'False'
+langs:
+- en
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/UN_M49
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P2082
+name: UN M49
+wikidata_property: P2082
+regexp: '[0-9]{3}'
+examples:
+  - value: '005'
+    description: South America
+  - value: '554'
+    description: New Zealand
+classification: identifier

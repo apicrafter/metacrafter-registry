@@ -1,0 +1,19 @@
+categories:
+- geo
+doc: 'What3words is a proprietary geocode system designed to identify any location with a resolution of about 3 metres (9.8 ft). It is owned by What3words Limited, based in London, England.'
+id: what3words
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/What3word
+name: What3Words
+wikidata_property: P1566
+regexp: '[1-9][0-9]{0,8}|'
+examples:
+  - value: '935877'
+    description: Piton de la Fournaise
+  - value: '1277082'
+    description: Baranagar
+classification: identifier
