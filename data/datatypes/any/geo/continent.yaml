@@ -1,0 +1,12 @@
+categories:
+- geo
+doc: 'A continent is any of several large landmasses. Related to UN unm49 dataclass'
+id: continent
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Continent
+name: Continent name or identifier
+classification: categorical
