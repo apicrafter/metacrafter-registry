@@ -12,4 +12,6 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Longitude
+  - type: schema.org
+    url: http://schema.org/longitude    
 name: Longitude

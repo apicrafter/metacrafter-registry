@@ -11,4 +11,7 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Latitude
-name: Latitude
+  - type: schema.org
+    url: http://schema.org/latitude
+name: latitude
+classification: identifier

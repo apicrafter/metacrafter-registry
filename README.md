@@ -60,6 +60,18 @@ Each entity YAML file objects has following structure.
 - **website** - URL of the primary web resource about this tool
 - **supported_types** - array of strings with id of datatype or pattern for each string
 
+
+# Metadata sources
+
+Metadata for this registry collected and interlinked with multiple metadata sources.
+Source link defined in property `link` sub-property `type` and it could be one of:
+- `wikipedia` - wikipedia page url
+- `wikidata` - Wikidata property url, also should be defined as id only, not url, in `wikidata_property` property
+- `schema.org` - URL to Schema.org property, like https://schema.org/boolean
+- `datadrivendiscovery` - D3M metadata registry https://metadata.datadrivendiscovery.org
+- `other` - any other url
+
+
 ## Identification rules
 
 **Under development**

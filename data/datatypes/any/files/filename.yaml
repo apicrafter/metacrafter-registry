@@ -8,6 +8,8 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Filename
+  - type: datadrivendiscovery
+    url: https://metadata.datadrivendiscovery.org/types/FileName
 name: Name of the file
 examples:
   - value: sheet.xls
