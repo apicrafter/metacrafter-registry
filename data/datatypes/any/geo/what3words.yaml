@@ -12,8 +12,8 @@ name: What3Words
 wikidata_property: P1566
 regexp: '[1-9][0-9]{0,8}|'
 examples:
-  - value: '935877'
-    description: Piton de la Fournaise
-  - value: '1277082'
-    description: Baranagar
+  - value: 'thrive.collaborating.slangy'
+    description: What3Words example 1
+  - value: 'squirrels.devours.longitudes'
+    description: What3Words example 2
 classification: identifier
