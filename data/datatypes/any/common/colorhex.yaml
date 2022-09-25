@@ -1,0 +1,20 @@
+categories:
+- common
+doc: Web colors are colors used in displaying web pages on the World Wide Web, and the methods for describing and specifying those colors. Colors may be specified as an RGB triplet or in hexadecimal format (a hex triplet) or according to their common English names in some cases.
+id: colorhextriplet
+is_pii: 'False'
+langs:
+- common
+name: Color hex triplet (web color)
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P465
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Web_colors
+regexp: '^#(?:[0-9a-fA-F]{3}){1,2}$'
+wikidata_property: P465
+translations:
+  ru:
+    doc: Цвет как физическая характеристика объекта в виде триплета sRGB
+    name: Цвет (в шестнадцатеричной форме)
+semantic_type: color

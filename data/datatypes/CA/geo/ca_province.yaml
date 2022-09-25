@@ -1,0 +1,15 @@
+categories:
+- geo
+country:
+- CA
+doc: 'Provinces and territories of Canada alpha2 code'
+id: caprovincecode
+is_pii: 'False'
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Provinces_and_territories_of_Canada
+langs:
+- en
+regexp: '(NL|PE|NS|NB|QC|ON|MB|SK|AB|BC|YT|NT|NU)'
+name: Province of Canada alpha2 code
+semantic_type: caprovince
