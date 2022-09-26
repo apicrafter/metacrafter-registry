@@ -1,0 +1,17 @@
+categories:
+- science
+- identifiers
+doc: 'Identifier for works, authors, institutes, venues, concepts/subjects in OpenAlex'
+id: openalexid
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: other
+    url: https://docs.openalex.org/about-the-data#the-openalex-id
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P10283
+name: OpenAlex ID
+regexp: '[ACIVW][1-9]\d{3,9}'
+wikidata_property: P10283
+classification: identifier

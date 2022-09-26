@@ -1,0 +1,16 @@
+categories:
+- identifiers
+doc: 'Every entity in Data Commons (DC) has a unique identifier, called ‘dcid’. So, for example, the dcid of California is ‘geoId/06’ and of India is ‘country/IND’.'
+id: dcid
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: other
+    url: https://docs.datacommons.org/bigquery/unique_identifiers.html
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P10730
+name: Datacommons unique id
+regexp: '[A-Za-z\d_/]+'
+wikidata_property: P10730
+classification: identifier

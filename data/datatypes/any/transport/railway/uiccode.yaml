@@ -1,0 +1,19 @@
+categories:
+- transport
+doc: 'Identifier for a railway station in Europe, CIS countries, the Far East (China, Mongolia, Japan, Korea, Vietnam), North Africa and the Middle East'
+id: uiccode
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P722
+name: UIC station code
+wikidata_property: P722
+regexp: '(10|2\d|3[0-3]|4[01249]|5\d|6[0125678]|7\d|8[0-8]|9\d).+|'
+examples:
+  - value: '8748100'
+    description: Nantes Station
+  - value: '7120100'
+    description: Train station of Astorga
+classification: identifier

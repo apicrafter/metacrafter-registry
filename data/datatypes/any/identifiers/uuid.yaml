@@ -10,4 +10,5 @@ links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Universally_unique_identifier
 name: A universally unique identifier (UUID)
+regexp: '[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}'
 classification: identifier

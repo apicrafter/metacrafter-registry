@@ -1,0 +1,24 @@
+categories:
+- industry
+country:
+- US
+- GB
+doc: 'Standard Occupational Classification System'
+id: ensoc
+is_pii: 'False'
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Standard_Occupational_Classification_System
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P919
+langs:
+- en
+name: Standard Occupational Classification System (US and GB)
+wikidata_property: P919
+regexp: \d{2}\-\d{6}
+examples:
+  - value: '15-1242'
+    description: 'Database Administrators'
+  - value: '21-1023'
+    description: 'Mental Health and Substance Abuse Social Workers '
+classification: categorical

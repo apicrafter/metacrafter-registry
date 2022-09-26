@@ -1,0 +1,18 @@
+categories:
+- pii
+- persons
+- useraccounts
+doc: Person/organization username in Github
+id: github_username
+is_pii: 'True'
+parent: 
+  type: username
+langs:
+- common
+wikidata_property: P2037
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P2037
+name: Github username
+regexp: '[0-9A-Za-z]([0-9A-Za-z\-]{0,37}[0-9A-Za-z])?'
+classification: identifier
