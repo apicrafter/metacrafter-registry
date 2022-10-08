@@ -1,3 +1,5 @@
+categories:
+- datetime
 doc: The amount of intervening time in a time interval and are represented by the format P[n]Y[n]M[n]DT[n]H[n]M[n]S or P[n]W as shown on the aside
 id: iso8601duration
 langs:

@@ -1,3 +1,5 @@
+categories:
+- transport
 doc: 'The ICAO airline designator is a code assigned by the International Civil Aviation Organization (ICAO) to aircraft operating agencies, aeronautical authorities, and services related to international aviation, each of which is allocated both a three-letter designator and a telephony designator.'
 id: icaoairlinecode
 langs:

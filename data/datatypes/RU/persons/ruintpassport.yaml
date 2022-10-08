@@ -1,3 +1,6 @@
+categories:
+- pii
+- persons
 country:
 - RU
 doc: Number of Russian internal passport

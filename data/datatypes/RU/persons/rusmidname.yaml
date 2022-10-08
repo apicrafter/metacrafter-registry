@@ -1,3 +1,6 @@
+categories:
+- pii
+- persons
 country:
 - RU
 doc: Middle name in Russian

@@ -1,3 +1,5 @@
+categories:
+- datetime
 doc: Abbreviated short English name/abbreviation of month
 id: enmonthshort
 langs:

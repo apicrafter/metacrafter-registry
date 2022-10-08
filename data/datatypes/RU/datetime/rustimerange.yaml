@@ -1,3 +1,5 @@
+categories:
+- datetime
 country:
 - RU
 doc: Time range written in Russian

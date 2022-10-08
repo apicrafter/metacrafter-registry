@@ -1,3 +1,5 @@
+categories:
+- datetime
 doc: Difference between Coordinated Universal Time (UTC) and this timezone.
 id: ianatimezoneid
 langs:

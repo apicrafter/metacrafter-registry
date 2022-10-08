@@ -1,3 +1,5 @@
+categories:
+- geo
 doc: Name of the country in English
 id: encountryname
 langs:

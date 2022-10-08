@@ -1,6 +1,8 @@
+categories:
+- persons
 country:
 - RU
-doc: 'Academic degree title in Russian. '
+doc: 'Academic degree title in Russian.'
 id: rusdegree
 langs:
 - ru

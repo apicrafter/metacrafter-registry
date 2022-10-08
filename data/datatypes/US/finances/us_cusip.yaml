@@ -1,7 +1,7 @@
-country:
-- US
 categories:
 - finances
+country:
+- US
 doc: A CUSIP is a nine-digit numeric (e.g. 037833100 for Apple) or nine-character
   alphanumeric (e.g. 38259P508 for Google) code that identifies a North American financial
   security for the purposes of facilitating clearing and settlement of trades

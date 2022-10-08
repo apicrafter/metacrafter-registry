@@ -1,3 +1,5 @@
+categories:
+- datetime
 doc: English name of the month
 id: enmonth
 langs:
