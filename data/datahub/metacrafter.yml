@@ -1,0 +1,4817 @@
+nodes:
+- description: Chemistry
+  name: Chemistry
+  terms:
+  - custom_properties:
+      categories: chemistry
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: inchl
+      regexp: '[A-Z]{14}-[A-Z]{10}-[A-Z]'
+      wikidata_property: P235
+    description: International Chemical Identifier
+    inherits: []
+    name: inchl
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/inchl
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: chemistry
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: inchl
+      regexp: '[A-Z]{14}-[A-Z]{10}-[A-Z]'
+      wikidata_property: P235
+    description: International Chemical Identifier
+    inherits: []
+    name: inchl
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/inchl
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: chemistry
+      is_pii: false
+      languages: common
+      metacrafter_id: molformula
+      regexp: "([\u03B1\u03B2\u03B3\u03B4\u03C6\u03C9\u03BB\u03BC\u03C0]-)?([([]*[A-Z\u2610][ub]?[a-z]?[\u2081\u2082\u2083\u2084\u2085\u2086\u2087\u2088\u2089\u2080.]*(\\)?[\xB9\xB2\xB3\u2074\u2075\u2076\u2077\u2078\u2079\u2070]*[\u207A\u207B]?)?[\\])|,\u2081\u2082\u2083\u2084\u2085\u2086\u2087\u2088\u2089\u2080]*(\xB7\\(?[-0-9.]*n?\\)?)?)+"
+      wikidata_property: P274
+    description: Molecular formulae indicate the simple numbers of each type of atom
+      in a molecule of a molecular substance.
+    inherits: []
+    name: molformula
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/molformula
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: chemistry
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: pubchemid
+      regexp: '[1-9]\d*'
+      wikidata_property: P2153
+    description: PubChem is a database of chemical molecules and their activities
+      against biological assays. The system is maintained by the National Center for
+      Biotechnology Information (NCBI), a component of the National Library of Medicine,
+      which is part of the United States National Institutes of Health (NIH).
+    inherits: []
+    name: pubchemid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/pubchemid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: chemistry
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: unclass
+      regexp: (1\.[1-6]|[24]\.[123]|[56]\.[12]|[3789])
+      wikidata_property: P874
+    description: UN hazard classification code
+    inherits: []
+    name: unclass
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/unclass
+    term_source: EXTERNAL
+- description: Common
+  name: Common
+  terms:
+  - custom_properties:
+      categories: common
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: boolean
+    description: In computer science, the Boolean data type is a data type that has
+      one of two possible values (usually denoted true and false) which is intended
+      to represent the two truth values of logic and Boolean algebra.
+    inherits: []
+    name: boolean
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/boolean
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: boolean
+    description: In computer science, the Boolean data type is a data type that has
+      one of two possible values (usually denoted true and false) which is intended
+      to represent the two truth values of logic and Boolean algebra.
+    inherits: []
+    name: boolean
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/boolean
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: category
+    description: Object or entity category
+    inherits: []
+    name: category
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/category
+    term_source: EXTERNAL
+  - contains:
+    - common.colorhextriplet
+    - common.hexcolor
+    custom_properties:
+      categories: common
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: color
+      wikidata_property: P462
+    description: Color of subject
+    inherits: []
+    name: color
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/color
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: colorhextriplet
+      regexp: ^#(?:[0-9a-fA-F]{3}){1,2}$
+      wikidata_property: P465
+    description: Web colors are colors used in displaying web pages on the World Wide
+      Web, and the methods for describing and specifying those colors. Colors may
+      be specified as an RGB triplet or in hexadecimal format (a hex triplet) or according
+      to their common English names in some cases.
+    inherits:
+    - common.color
+    name: colorhextriplet
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/colorhextriplet
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: genre
+      wikidata_property: P136
+    description: Genre of the creative work, broadcast channel or group.
+    inherits:
+    - common.category
+    name: genre
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/genre
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: hexcolor
+      wikidata_property: P465
+    description: Color of subject
+    inherits:
+    - common.color
+    name: hexcolor
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/hexcolor
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      is_pii: false
+      languages: common
+      metacrafter_id: name
+      wikidata_property: P2561
+    description: Name of the item, object or entity.
+    inherits: []
+    name: name
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/name
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      is_pii: false
+      languages: common
+      metacrafter_id: url
+      regexp: (https?|ftp)://(\S+\.)+\S+(/\S*)?|
+      wikidata_property: P2699
+    description: A Uniform Resource Locator (URL), colloquially termed a web address,
+      is a reference to a web resource that specifies its location on a computer network
+      and a mechanism for retrieving it. A URL is a specific type of Uniform Resource
+      Identifier (URI), although many people use the two terms interchangeably
+    inherits: []
+    name: url
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/url
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      is_pii: false
+      languages: common
+      metacrafter_id: filename
+    description: File name with common notation like somefile.ext
+    inherits: []
+    name: filename
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/filename
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common,pii,geo
+      is_pii: true
+      languages: common
+      metacrafter_id: address
+    description: Geographic address, commonly consist of postindex, country, area,
+      town, street and building
+    inherits: []
+    name: address
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/address
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: mongodbid
+    description: MongoDB unique id assigned to each row of each collection in MongoDB
+      as field _id
+    inherits: []
+    name: mongodbid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/mongodbid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common,internet,pii
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: email
+    description: Electronic mail (email or e-mail) is a method of exchanging messages
+      ("mail") between people using electronic devices. Email was thus conceived as
+      the electronic (digital) version of, or counterpart to, mail, at a time when
+      "mail" meant only physical mail (hence e- + mail).
+    inherits: []
+    name: email
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/email
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: mimetype
+      regexp: (application|audio|example|font|image|message|model|multipart|text|video)/[a-zA-Z0-9\-+.]+
+      wikidata_property: P1163
+    description: 'Mime type of the file/content. Used to identify contents of the
+      stream or file. The MIME standard is specified in a series of requests for comments:
+      RFC 2045, RFC 2046, RFC 2047, RFC 4288, RFC 4289 and RFC 2049.'
+    inherits: []
+    name: mimetype
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/mimetype
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common,pii
+      is_pii: true
+      languages: common
+      metacrafter_id: password
+    description: Passwords, usually associated with login/username/email.
+    inherits: []
+    name: password
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/password
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: udkindex
+      regexp: \d{1,3}(\.\d{1,3})*
+      wikidata_property: P1190
+    description: The Universal Decimal Classification (UDC) is a bibliographic and
+      library classification representing the systematic arrangement of all branches
+      of human knowledge organized as a coherent system in which knowledge fields
+      are related and inter-linked.
+    inherits: []
+    name: udkindex
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/udkindex
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common,texts
+      is_pii: false
+      languages: common
+      metacrafter_id: comment
+    description: Comment/note for the object or entity.
+    inherits: []
+    name: comment
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/comment
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      is_pii: false
+      languages: common
+      metacrafter_id: description
+    description: Item, Object or entity description, common for any object
+    inherits: []
+    name: description
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/description
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common,texts
+      is_pii: false
+      languages: common
+      metacrafter_id: headline
+    description: Headline of the article.
+    inherits: []
+    name: headline
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/headline
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: okfs
+      regexp: \d{2}
+    description: Russian classifier of forms of ownership, OKFS
+    inherits: []
+    name: okfs
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/okfs
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: okogu
+    description: Russian government and governance code. OKOGU classifier
+    inherits: []
+    name: okogu
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/okogu
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: okei
+      regexp: \d{3,4}
+    description: Russian OKEI (classifier of units of measurement)
+    inherits: []
+    name: okei
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/okei
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: okeiname
+    description: Russian OKEI (classifier of units of measurement)
+    inherits: []
+    name: okeiname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/okeiname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: okpd
+    description: Russian product code (OKPD) used for government procurement and budget
+      planning purposes
+    inherits: []
+    name: okpd
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/okpd
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: okved
+    description: Russian economic classification code (OKVED)
+    inherits: []
+    name: okved
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/okved
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: common
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: tnved
+    description: TN VED is a Russian classifier used to identify product groups for
+      customs purposes and international trade statistics.
+    inherits: []
+    name: tnved
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/tnved
+    term_source: EXTERNAL
+- description: Personally idenfiable information
+  name: Pii
+  terms:
+  - custom_properties:
+      categories: pii,common
+      is_pii: true
+      languages: common
+      metacrafter_id: phone
+      regexp: (?:(?:(?:\+|00|011)[\.\/\-\ \t]*([17]|2(?:[07]|[1-689]\d)|3(?:[0-4679]|[578]\d)|4(?:[013-9]|2\d)|5(?:[1-8]|[09]\d)|6(?:[0-6]|[789]\d)|8(?:[1246]|[035789]\d)|9(?:[0-58]|[679]\d))[\.\/\-\
+        \t]*|([17])[\.\/\-\ ])?(?:\((\d{1,6})\)[\.\/\-\ \t]*)?(?:(\d{1,6})[\.\/\-\
+        ])?(?:(\d{1,6})[\.\/\-\ ])?(?:(\d{1,6})[\.\/\-\ ])?(?:(\d{1,6})[\.\/\-\ ])?(\d{0,10}?)(\d{1,4}+)(?:[\.\/\-;\
+        \t]*e?xt?[\.\/\-=\ \t]*(\d{1,14}))?)?
+      wikidata_property: P1329
+    description: Telephone number in standard format (RFC3966), without 'tel:' prefix
+    inherits: []
+    name: phone
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/phone
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,common
+      is_pii: true
+      languages: common
+      metacrafter_id: phone
+      regexp: (?:(?:(?:\+|00|011)[\.\/\-\ \t]*([17]|2(?:[07]|[1-689]\d)|3(?:[0-4679]|[578]\d)|4(?:[013-9]|2\d)|5(?:[1-8]|[09]\d)|6(?:[0-6]|[789]\d)|8(?:[1246]|[035789]\d)|9(?:[0-58]|[679]\d))[\.\/\-\
+        \t]*|([17])[\.\/\-\ ])?(?:\((\d{1,6})\)[\.\/\-\ \t]*)?(?:(\d{1,6})[\.\/\-\
+        ])?(?:(\d{1,6})[\.\/\-\ ])?(?:(\d{1,6})[\.\/\-\ ])?(?:(\d{1,6})[\.\/\-\ ])?(\d{0,10}?)(\d{1,4}+)(?:[\.\/\-;\
+        \t]*e?xt?[\.\/\-=\ \t]*(\d{1,14}))?)?
+      wikidata_property: P1329
+    description: Telephone number in standard format (RFC3966), without 'tel:' prefix
+    inherits: []
+    name: phone
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/phone
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,datetime
+      is_pii: true
+      languages: common
+      metacrafter_id: birthday
+    description: A birthday is the anniversary of the birth of a person, or figuratively
+      of an institution. Birthdays of people are celebrated in numerous cultures,
+      often with birthday gifts, birthday cards, a birthday party, or a rite of passage.
+    inherits:
+    - datetime.date
+    name: birthday
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/birthday
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,datetime
+      is_pii: true
+      languages: common
+      metacrafter_id: deathday
+    description: Date of death of the person
+    inherits:
+    - datetime.date
+    name: deathday
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/deathday
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,finances
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: bankcard
+      regexp: ^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$
+    description: A bank card is typically a plastic card issued by a bank to its clients
+      that performs one or more of a number of services that relate to giving the
+      client access to bank account.
+    inherits: []
+    name: bankcard
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/bankcard
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: categorical
+      is_pii: true
+      languages: common
+      metacrafter_id: gender
+    description: Gender flag and/or any other identification value
+    inherits: []
+    name: gender
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/gender
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: categorical
+      is_pii: true
+      languages: common
+      metacrafter_id: nationality
+    description: Nationality of the person from list of unique code from one of code
+      lists or defined somehow else.
+    inherits: []
+    name: nationality
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/nationality
+    term_source: EXTERNAL
+  - contains:
+    - pii.ruintpassport
+    - pii.uspassport
+    custom_properties:
+      categories: pii,persons
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: passport
+    description: Person passport, usually unique personal information that should
+      be shared online. Identifies personal document issued to person by government
+      authority
+    inherits: []
+    name: passport
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/passport
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: username
+    description: Name of the user or login, commonly used for authentication or user
+      identification purposes
+    inherits: []
+    name: username
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/username
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons,useraccounts
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: github_username
+      regexp: '[0-9A-Za-z]([0-9A-Za-z\-]{0,37}[0-9A-Za-z])?'
+      wikidata_property: P2037
+    description: Person/organization username in Github
+    inherits:
+    - pii.username
+    name: github_username
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/github_username
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons,useraccounts
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: instagram_username
+      regexp: ([0-9a-z_](?:(?:[0-9a-z_]|(?:\.(?!\.))){0,28}(?:[0-9a-z_]))?)
+      wikidata_property: P2003
+    description: Person username in Instagram
+    inherits:
+    - pii.username
+    name: instagram_username
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/instagram_username
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons,useraccounts
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: skype_username
+      regexp: '[a-zA-Z][a-zA-Z0-9_\-\,\.]{5,31}'
+      wikidata_property: P2893
+    description: Person username in Skype
+    inherits:
+    - pii.username
+    name: skype_username
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/skype_username
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons,useraccounts
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: twitter_username
+      regexp: '[0-9A-Za-z_]{1,20}'
+      wikidata_property: P2002
+    description: Person username in Twitter
+    inherits:
+    - pii.username
+    name: twitter_username
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/twitter_username
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: identifier
+      countries: AU
+      is_pii: true
+      languages: en
+      metacrafter_id: aumedicarenum
+      regexp: '[2-6]\d{3}\s\d{5}\s\d'
+    description: Medicare number is a unique identifier issued by Australian Government
+      that enables the cardholder to receive a rebates of medical expenses under Australia
+      Medicare system.
+    inherits: []
+    name: aumedicarenum
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/aumedicarenum
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: identifier
+      countries: AU
+      is_pii: true
+      languages: en
+      metacrafter_id: autfn
+      regexp: \d{3}\s\d{3}\s\d{3}
+    description: "The tax file number (TFN) is a unique identifier issued by the Australian
+      Taxation Office to each taxpaying entity \u2014 an individual, company, superannuation
+      fund, partnership, or trust."
+    inherits: []
+    name: autfn
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/autfn
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: identifier
+      countries: BE
+      is_pii: true
+      languages: fr
+      metacrafter_id: benatcardid
+      regexp: '[0-9]{2}\.(0[1-9]|1[0-2])\.(0[1-9]|[1-2][0-9]|3[0-1])-[0-9]{3}\.[0-9]{2}'
+    description: 'Belgium identity card is a national identity card issued to all
+      citizens of Belgium aged 12 years old and above. '
+    inherits: []
+    name: benatcardid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/benatcardid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: identifier
+      countries: CA
+      is_pii: true
+      languages: en
+      metacrafter_id: casin
+      regexp: (\d{3}-\d{3}-\d{3})|(\d{9})
+    description: 'Social insurance number (SIN) is a number issued in Canada to administer
+      various government programs. '
+    inherits: []
+    name: casin
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/casin
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: identifier
+      countries: ES
+      is_pii: true
+      languages: es
+      metacrafter_id: esnif
+      regexp: '[0-9]?[0-9]{7}[-]?[A-Z]'
+    description: Spanish tax identification number used to identify tax paying individuals
+    inherits: []
+    name: esnif
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/esnif
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      countries: FR
+      is_pii: false
+      languages: fr
+      metacrafter_id: frfullname
+    description: Full name of the person written in French
+    inherits:
+    - persons.person_fullname
+    name: frfullname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/frfullname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons,medical
+      classification: identifier
+      countries: GB
+      is_pii: true
+      languages: en
+      metacrafter_id: uknhsnum
+      regexp: ([0-9]{3})[- ]?([0-9]{3})[- ]?([0-9]{4})
+    description: NHS numbers are the unique numbers allocated to registered users
+      of the three public health services in England, Wales and the Isle of Man; the
+      three health systems use a shared numbering scheme.
+    inherits: []
+    name: uknhsnum
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/uknhsnum
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: identifier
+      countries: GB
+      is_pii: true
+      languages: en
+      metacrafter_id: uknino
+    description: 'The National Insurance number is a number used in the United Kingdom
+      in the administration of the National Insurance or social security system. It
+      is also used for some purposes in the UK tax system. '
+    inherits: []
+    name: uknino
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/uknino
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: ruintpassport
+    description: Number of Russian internal passport
+    inherits:
+    - pii.passport
+    name: ruintpassport
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ruintpassport
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rusfirstname
+    description: First name in Russian
+    inherits:
+    - persons.person_firstname
+    name: rusfirstname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rusfirstname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rusfullname
+    description: Fullname of the person in Russian
+    inherits:
+    - persons.person_fullname
+    name: rusfullname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rusfullname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rusmidname
+    description: Middle name in Russian
+    inherits:
+    - persons.person_midname
+    name: rusmidname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rusmidname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: russurname
+    description: Surname/Lastname in Russian
+    inherits:
+    - persons.person_surname
+    name: russurname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/russurname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: identifier
+      countries: RU
+      is_pii: true
+      languages: ru
+      metacrafter_id: rusnils
+    description: Russian social insurance identifier. Issued for every insured person
+      by Pension fund of Russia
+    inherits: []
+    name: rusnils
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rusnils
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: identifier
+      countries: SG
+      is_pii: true
+      languages: en
+      metacrafter_id: sgnric
+      regexp: (?i)([STFG][0-9]{7}[A-Z])
+    description: The National Registration Identity Card (NRIC) is the compulsory
+      identity document issued to citizens and permanent residents of Singapore.
+    inherits: []
+    name: sgnric
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/sgnric
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons,medical
+      classification: identifier
+      countries: US
+      is_pii: true
+      languages: en
+      metacrafter_id: usdeanumber
+      regexp: '[a-zA-Z]{2}\d{7}|[a-zA-Z]{1}9\d{7}'
+    description: A DEA number (DEA Registration Number) is an identifier assigned
+      to a health care provider (such as a physician, physician assistant, nurse practitioner,
+      optometrist, podiatrist, dentist, or veterinarian) by the United States Drug
+      Enforcement Administration allowing them to write prescriptions for controlled
+      substances.
+    inherits: []
+    name: usdeanumber
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/usdeanumber
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: identifier
+      countries: US
+      is_pii: true
+      languages: en
+      metacrafter_id: usdriverlic
+      regexp: ([A-Z][0-9]{3,6}|[A-Z][0-9]{5,9}|[A-Z][0-9]{6,8}|[A-Z][0-9]{4,8}|[A-Z][0-9]{9,11}|[A-Z]{1,2}[0-9]{5,6}|H[0-9]{8}|V[0-9]{6}|X[0-9]{8}|A-Z]{2}[0-9]{2,5}|[A-Z]{2}[0-9]{3,7}|[0-9]{2}[A-Z]{3}[0-9]{5,6}|[A-Z][0-9]{13,14}|[A-Z][0-9]{18}|[A-Z][0-9]{6}R|[A-Z][0-9]{9}|[A-Z][0-9]{1,12}|[0-9]{9}[A-Z]|[A-Z]{2}[0-9]{6}[A-Z]|[0-9]{8}[A-Z]{2}|[0-9]{3}[A-Z]{2}[0-9]{4}|[A-Z][0-9][A-Z][0-9][A-Z]|[0-9]{7,8}[A-Z])
+    description: Alphanumeric value of the United States driver license
+    inherits: []
+    name: usdriverlic
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/usdriverlic
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: identifier
+      countries: US
+      is_pii: true
+      languages: en
+      metacrafter_id: usitin
+      regexp: (9\d{2})[- ]{1}((7[0-9]{1}|8[0-8]{1})|(9[0-2]{1})|(9[4-9]{1}))[- ]{1}(\d{4})
+    description: A Taxpayer Identification Number (TIN) is an identifying number used
+      for tax purposes in the United States and in other countries under the Common
+      Reporting Standard.
+    inherits: []
+    name: usitin
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/usitin
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: identifier
+      countries: US
+      is_pii: false
+      languages: en
+      metacrafter_id: uspassport
+      regexp: '[0-9]{9}'
+    description: Number of US Passport
+    inherits:
+    - pii.passport
+    name: uspassport
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/uspassport
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: pii,persons
+      classification: identifier
+      countries: US
+      is_pii: true
+      languages: en
+      metacrafter_id: usssn
+      regexp: ([0-9]{3})[- .]([0-9]{2})[- .]([0-9]{4})
+    description: "In the United States, a Social Security number (SSN) is a nine-digit
+      number issued to U.S. citizens, permanent residents, and temporary (working)
+      residents under section 205(c)(2) of the Social Security Act, codified as 42
+      U.S.C. \xA7 405(c)(2)"
+    inherits: []
+    name: usssn
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/usssn
+    term_source: EXTERNAL
+- description: Companies/business/organizations
+  name: Companies
+  terms:
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: duns
+      regexp: \d{9}
+      wikidata_property: P2771
+    description: The Data Universal Numbering System, abbreviated as DUNS or D-U-N-S,
+      is a proprietary system developed and managed by Dun & Bradstreet (D&B) that
+      assigns a unique numeric identifier, referred to as a "DUNS number" to a single
+      business entity. It was introduced in 1963 to support D&B's credit reporting
+      practice.
+    inherits: []
+    name: duns
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/duns
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: duns
+      regexp: \d{9}
+      wikidata_property: P2771
+    description: The Data Universal Numbering System, abbreviated as DUNS or D-U-N-S,
+      is a proprietary system developed and managed by Dun & Bradstreet (D&B) that
+      assigns a unique numeric identifier, referred to as a "DUNS number" to a single
+      business entity. It was introduced in 1963 to support D&B's credit reporting
+      practice.
+    inherits: []
+    name: duns
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/duns
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      is_pii: false
+      languages: en
+      metacrafter_id: encompanyname
+    description: English written company/business/legal name of business entity
+    inherits:
+    - companies.orgname
+    name: encompanyname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/encompanyname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: iso6523code
+    description: An organization identifier as defined in ISO 6523(-1)
+    inherits: []
+    name: iso6523code
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/iso6523code
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: lei
+      regexp: '[0-9A-Z]{18}[0-9]{2}'
+      wikidata_property: P1278
+    description: The Legal Entity Identifier (LEI) is a unique global identifier for
+      legal entities participating in financial transactions. Also known as an LEI
+      code or LEI number, its purpose is to help identify legal entities on a globally
+      accessible database. Legal entities are organisations such as companies or government
+      entities that participate in financial transactions. An individual person may
+      not obtain an LEI.
+    inherits: []
+    name: lei
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/lei
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: opencorporatesid
+      regexp: "[a-z]{2}(_[a-z]{2})?/[a-zA-Z\xD6\xDC\xC40-9\\-_]*[0-9A-Za-f]"
+      wikidata_property: P1320
+    description: 'Identifier for a corporation, in the OpenCorporates database. Format:
+      country prefix, optional subnational entity abbrevation, "/", alphanumeric idid:
+      oid'
+    inherits: []
+    name: opencorporatesid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/opencorporatesid
+    term_source: EXTERNAL
+  - contains:
+    - companies.encompanyname
+    - companies.rucompanyname
+    custom_properties:
+      categories: companies
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: orgname
+    description: Name of the organization/business/company in any language
+    inherits:
+    - common.name
+    name: orgname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/orgname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      countries: AU
+      is_pii: false
+      languages: en
+      metacrafter_id: auabn
+      regexp: \d{2}\s\d{3}\s\d{3}\s\d{3}
+    description: The Australian Business Number (ABN) is a unique 11-digit identifier
+      issued by the Australian Business Register (ABR) which is operated by the Australian
+      Taxation Office (ATO).
+    inherits: []
+    name: auabn
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/auabn
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      countries: AU
+      is_pii: false
+      languages: en
+      metacrafter_id: auacn
+      regexp: \d{3}\s\d{3}\s\d{3}
+    description: "An Australian Company Number (usually shortened to ACN) is a unique
+      identifier required by every company registered under Australia\u2019s Corporations
+      Act 2001 (Cth)."
+    inherits: []
+    name: auacn
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/auacn
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      countries: EU
+      is_pii: false
+      languages: en
+      metacrafter_id: vatin
+      regexp: '[A-Z]{2}[A-Z\d]+|'
+      wikidata_property: P3608
+    description: A value-added tax identification number or VAT identification number
+      (VATIN) is an identifier used in many countries, including the countries of
+      the European Union, for value-added tax purposes.
+    inherits: []
+    name: vatin
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/vatin
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      countries: FR
+      is_pii: false
+      languages: fr
+      metacrafter_id: sirencode
+      regexp: \d{9}
+      wikidata_property: P1616
+    description: 'SIREN codes are given to French businesses and nonprofit associations,
+      SIRET codes to their establishments and facilities. SIREN codes are maintained
+      by the French INSEE. This is France-specific, and will not change during the
+      lifetime of the business. '
+    inherits: []
+    name: sirencode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/sirencode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      countries: GB
+      is_pii: false
+      languages: en
+      metacrafter_id: companyhouseid
+      regexp: (AC|FC|GE|GN|GS|IC|IP|LP|NA|NF|NI|NL|NO|NP|NR|NZ|OC|R|RC|SA|SC|SF|SI|SL|SO|SP|SR|SZ|ZC|[0-9]{2})[0-9RS]{6}
+      wikidata_property: P2622
+    description: Numeric identifier for company registered with Companies House in
+      the United Kingdom
+    inherits: []
+    name: companyhouseid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/companyhouseid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: kpp
+    description: Russian company supplemental registration code (KPP). Used in combination
+      with Taxpayer INN code
+    inherits: []
+    name: kpp
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/kpp
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies,common
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: okopf
+    description: Code of type of business entity in Russia, classifier OKOPF
+    inherits: []
+    name: okopf
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/okopf
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: okopfname
+    description: Type of business entity in Russia, classifier OKOPF
+    inherits: []
+    name: okopfname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/okopfname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: okpo
+      regexp: \d{8}
+      wikidata_property: P2391
+    description: Russian organizations statistical code (OKPO) issued by Rosstat
+    inherits: []
+    name: okpo
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/okpo
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rucompanyname
+    description: Russian written company/business name
+    inherits:
+    - companies.orgname
+    name: rucompanyname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rucompanyname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: inn
+      regexp: \d{10}
+    description: Russian organization/person tax identification number (INN) is unique
+      for each person and organization.
+    inherits: []
+    name: inn
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/inn
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: ogrn
+      regexp: \d{13}
+      wikidata_property: P7011
+    description: Primary State Registration Number number assigned by Tax Service
+      to any business entity in Russia
+    inherits: []
+    name: ogrn
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ogrn
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: companies
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: ogrn_ogrnip
+    description: Russian primary government identification number assigned by Tax
+      Service to any business entity (OGRN) in Russia and sole prprietors (OGRNIP)
+    inherits: []
+    name: ogrn_ogrnip
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ogrn_ogrnip
+    term_source: EXTERNAL
+- description: Cryptocurrency
+  name: Cryptocurrency
+  terms:
+  - custom_properties:
+      categories: cryptocurrency
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: bip32addr
+    description: The BIP-32 mainly describes the way of building the hierarchical
+      deterministic wallet basing on the BIP-39 features. What does it mean? BIP-32
+      is exactly explaining how the bitcoin master private key and the master chain
+      code is being created from delivered by BIP-39 bitcoin seed. The bitcoin seed
+      generated by BIP-39 is the base for generating deterministic and hierarchical
+      deterministic wallets.
+    inherits: []
+    name: bip32addr
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/bip32addr
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: cryptocurrency
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: bip32addr
+    description: The BIP-32 mainly describes the way of building the hierarchical
+      deterministic wallet basing on the BIP-39 features. What does it mean? BIP-32
+      is exactly explaining how the bitcoin master private key and the master chain
+      code is being created from delivered by BIP-39 bitcoin seed. The bitcoin seed
+      generated by BIP-39 is the base for generating deterministic and hierarchical
+      deterministic wallets.
+    inherits: []
+    name: bip32addr
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/bip32addr
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: cryptocurrency
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: p2pkhaddr
+    description: 'A Bitcoin address is only a hash, so the sender can''t provide a
+      full public key in scriptPubKey. When redeeming coins that have been sent to
+      a Bitcoin address, the recipient provides both the signature and the public
+      key. The script verifies that the provided public key does hash to the hash
+      in scriptPubKey, and then it also checks the signature against the public key. '
+    inherits: []
+    name: p2pkhaddr
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/p2pkhaddr
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: cryptocurrency
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: p2shaddr
+    description: 'Pay to script hash (P2SH) transactions were standardised in BIP
+      16. They allow transactions to be sent to a script hash (address starting with
+      3) instead of a public key hash (addresses starting with 1). To spend bitcoins
+      sent via P2SH, the recipient must provide a script matching the script hash
+      and data which makes the script evaluate to true. '
+    inherits: []
+    name: p2shaddr
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/p2shaddr
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: cryptocurrency
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: p2wpkhaddr
+    description: P2WPKH address
+    inherits: []
+    name: p2wpkhaddr
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/p2wpkhaddr
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: cryptocurrency
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: p2wshaddr
+    description: P2WSH address
+    inherits: []
+    name: p2wshaddr
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/p2wshaddr
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: cryptocurrency
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: wifaddrcomp
+    description: WIF, compressed pubkey
+    inherits: []
+    name: wifaddrcomp
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/wifaddrcomp
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: cryptocurrency
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: wifaddruncomp
+    description: WIF, uncompressed pubkey
+    inherits: []
+    name: wifaddruncomp
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/wifaddruncomp
+    term_source: EXTERNAL
+- description: Cryptographic identifiers
+  name: Cryptography
+  terms:
+  - custom_properties:
+      categories: cryptography
+      is_pii: false
+      languages: common
+      metacrafter_id: crc32
+    description: A cyclic redundancy check (CRC) is an error-detecting code commonly
+      used in digital networks and storage devices to detect accidental changes to
+      digital data. Blocks of data entering these systems get a short check value
+      attached, based on the remainder of a polynomial division of their contents.
+    inherits:
+    - values.numeric
+    name: crc32
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/crc32
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: cryptography
+      is_pii: false
+      languages: common
+      metacrafter_id: crc32
+    description: A cyclic redundancy check (CRC) is an error-detecting code commonly
+      used in digital networks and storage devices to detect accidental changes to
+      digital data. Blocks of data entering these systems get a short check value
+      attached, based on the remainder of a polynomial division of their contents.
+    inherits:
+    - values.numeric
+    name: crc32
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/crc32
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: cryptography
+      is_pii: false
+      languages: common
+      metacrafter_id: md5hash
+    description: Result of the MD5 hash function. Commonly used to generate hash of
+      from file or data or to use as unique identifier
+    inherits: []
+    name: md5hash
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/md5hash
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: cryptography
+      is_pii: false
+      languages: common
+      metacrafter_id: sctcrypto
+      regexp: ^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$
+    description: Signed certificate timestamp (SCT). The SCT is the log's promise
+      to incorporate the certificate in the Merkle Tree within a fixed amount of time
+      known as the Maximum Merge Delay (MMD
+    inherits: []
+    name: sctcrypto
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/sctcrypto
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: cryptography
+      is_pii: false
+      languages: common
+      metacrafter_id: sha1hash
+    description: SHA-1 hash from file or data. Sometimes used as unique id of the
+      data record
+    inherits: []
+    name: sha1hash
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/sha1hash
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: cryptography
+      is_pii: false
+      languages: common
+      metacrafter_id: sha256hash
+    description: SHA256 hash from file or data. Sometimes used as unique id of the
+      data record
+    inherits: []
+    name: sha256hash
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/sha256hash
+    term_source: EXTERNAL
+- description: Date and time
+  name: Datetime
+  terms:
+  - custom_properties:
+      categories: datetime
+      is_pii: true
+      languages: common
+      metacrafter_id: age
+    description: Age of the person or organization in years
+    inherits: []
+    name: age
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/age
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      is_pii: true
+      languages: common
+      metacrafter_id: age
+    description: Age of the person or organization in years
+    inherits: []
+    name: age
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/age
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: date
+    description: Date with one of known notations
+    inherits: []
+    name: date
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/date
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: datetime
+    description: Date and time with one of known notations
+    inherits: []
+    name: datetime
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/datetime
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: dayofmonth
+    description: Month day, numeric value from 1 to 31
+    inherits: []
+    name: dayofmonth
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/dayofmonth
+    term_source: EXTERNAL
+  - contains:
+    - datetime.endayofweek
+    - datetime.rusdayofweek
+    custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: dayofweek
+    description: Week day name
+    inherits: []
+    name: dayofweek
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/dayofweek
+    term_source: EXTERNAL
+  - contains:
+    - datetime.iso8601duration
+    custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: duration
+    description: The amount of time elapsed between two events
+    inherits: []
+    name: duration
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/duration
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: en
+      metacrafter_id: endayofweek
+    description: Day of week writtern in English
+    inherits:
+    - datetime.dayofweek
+    name: endayofweek
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/endayofweek
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: en
+      metacrafter_id: enmonth
+    description: English name of the month
+    inherits:
+    - datetime.month
+    name: enmonth
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/enmonth
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: en
+      metacrafter_id: enmonthshort
+    description: Abbreviated short English name/abbreviation of month
+    inherits:
+    - datetime.month
+    name: enmonthshort
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/enmonthshort
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: ianatimezoneid
+      regexp: ^UTC(?:Z|[+-](?:2[0-3]|[01][0-9]):[0-5][0-9])$
+      wikidata_property: P6687
+    description: Difference between Coordinated Universal Time (UTC) and this timezone.
+    inherits:
+    - datetime.timezone
+    name: ianatimezoneid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ianatimezoneid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: iso8601duration
+    description: The amount of intervening time in a time interval and are represented
+      by the format P[n]Y[n]M[n]DT[n]H[n]M[n]S or P[n]W as shown on the aside
+    inherits:
+    - datetime.duration
+    name: iso8601duration
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/iso8601duration
+    term_source: EXTERNAL
+  - contains:
+    - datetime.enmonth
+    - datetime.enmonthshort
+    custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: month
+    description: Month as number since start of the year. Could be from 1 to 12
+    inherits: []
+    name: month
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/month
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: quarter
+      regexp: '[1234]'
+    description: A calendar quater of the year
+    inherits: []
+    name: quarter
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/quarter
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: time
+    description: Time of the day, like 12:00 or 10PM or 11:05
+    inherits: []
+    name: time
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/time
+    term_source: EXTERNAL
+  - contains:
+    - datetime.rustimerange
+    custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: timerange
+    description: Interval between two points of time, like 8:00-21:00 or 8:00AM-1:00PM
+    inherits: []
+    name: timerange
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/timerange
+    term_source: EXTERNAL
+  - contains:
+    - datetime.ianatimezoneid
+    - datetime.utctimezoneoffset
+    custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: timezone
+    description: A time zone is an area that observes a uniform standard time for
+      legal, commercial and social purposes
+    inherits: []
+    name: timezone
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/timezone
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: unixtime
+      regexp: \d{1,10}
+    description: Digital timestamp defined as Unix Time. It is a system for describing
+      a point in time. It is the number of seconds that have elapsed since the Unix
+      epoch, excluding leap seconds.
+    inherits: []
+    name: unixtime
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/unixtime
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: utctimezoneoffset
+      regexp: ^UTC(?:Z|[+-](?:2[0-3]|[01][0-9]):[0-5][0-9])$
+      wikidata_property: P2907
+    description: Difference between Coordinated Universal Time (UTC) and this timezone.
+    inherits:
+    - datetime.timezone
+    name: utctimezoneoffset
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/utctimezoneoffset
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      is_pii: false
+      languages: common
+      metacrafter_id: year
+      regexp: \d{4}
+    description: A calendar year in western notation like 2022 or 1913
+    inherits: []
+    name: year
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/year
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rusdayofweek
+    description: Day of week written in Russian language
+    inherits:
+    - datetime.dayofweek
+    name: rusdayofweek
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rusdayofweek
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: datetime
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rustimerange
+    description: Time range written in Russian
+    inherits:
+    - datetime.timerange
+    name: rustimerange
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rustimerange
+    term_source: EXTERNAL
+- description: Finances and banking
+  name: Finances
+  terms:
+  - contains:
+    - finances.rusbankaccount
+    - finances.usbankaccount
+    custom_properties:
+      categories: finances
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: bankaccount
+    description: A bank account is a financial account maintained by a bank or other
+      financial institution in which the financial transactions between the bank and
+      a customer are recorded.
+    inherits: []
+    name: bankaccount
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/bankaccount
+    term_source: EXTERNAL
+  - contains:
+    - finances.rusbankaccount
+    - finances.usbankaccount
+    custom_properties:
+      categories: finances
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: bankaccount
+    description: A bank account is a financial account maintained by a bank or other
+      financial institution in which the financial transactions between the bank and
+      a customer are recorded.
+    inherits: []
+    name: bankaccount
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/bankaccount
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: cficode
+      regexp: '[A-Z]{6}'
+    description: ISO 10962, generally known as CFI (Classification of Financial Instruments)
+      is a six-letter-code used in the financial services industry to classify and
+      describe the structure and function of a financial instrument (in the form of
+      security or contract). It is an international standard approved by the International
+      Organization for Standardization (ISO)
+    inherits: []
+    name: cficode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/cficode
+    term_source: EXTERNAL
+  - contains:
+    - finances.iso4217curcode
+    - finances.iso4217curname
+    - finances.okvalpha
+    - finances.okvname
+    custom_properties:
+      categories: finances
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: currency
+    description: A currency in the most specific sense is money in any form when in
+      use or circulation as a medium of exchange, especially circulating banknotes
+      and coins.
+    inherits: []
+    name: currency
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/currency
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: tickersymbol
+      regexp: '[A-Z0-9.]{1,16}'
+      wikidata_property: P249
+    description: Ticker symbol or stock symbol is an abbreviation used to uniquely
+      identify publicly traded shares of a particular stock on a particular stock
+      market.
+    inherits: []
+    name: tickersymbol
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/tickersymbol
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: isin
+      regexp: '[A-Z]{2}[A-Z\d]{10}'
+      wikidata_property: P946
+    description: An International Securities Identification Number (ISIN) uniquely
+      identifies a security. Its structure is defined in ISO 6166. The ISIN code is
+      a 12-character alphanumeric code that serves for uniform identification of a
+      security through normalization of the assigned National Number, where one exists,
+      at trading and settlement.
+    inherits: []
+    name: isin
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/isin
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: iso4217curcode
+      regexp: '[A-Z]{3}'
+      wikidata_property: P498
+    description: ISO 4217 Currency code
+    inherits:
+    - finances.currency
+    name: iso4217curcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/iso4217curcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: iso4217curname
+    description: ISO 4217 Currency name
+    inherits:
+    - finances.currency
+    name: iso4217curname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/iso4217curname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: miccode
+      regexp: ^[A-Z0-9]{4}$
+      wikidata_property: P7534
+    description: This International Standard specifies a universal method of identifying
+      exchanges, trading platforms, regulated or non-regulated markets and trade reporting
+      facilities as sources of prices and related information in order to facilitate
+      automated processing
+    inherits: []
+    name: miccode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/miccode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: ric
+      regexp: '[A-Z0-9.]{1,16}'
+    description: A Reuters instrument code, or RIC, is a ticker-like code used by
+      Refinitiv to identify financial instruments and indices. The codes are used
+      for looking up information on various Refinitiv financial information networks
+      (such as Refinitiv Real Time) and appear to have developed from the Quotron
+      service purchased in the 1980s.
+    inherits: []
+    name: ric
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ric
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: swiftcode
+      regexp: '[A-Z]{6}[0-9A-Z]{2}([0-9A-Z]{3})?'
+      wikidata_property: P2627
+    description: ISO 9362 defines a standard format of Business Identifier Codes (also
+      known as SWIFT-BIC, BIC, SWIFT ID or SWIFT code) approved by the International
+      Organization for Standardization (ISO).
+    inherits: []
+    name: swiftcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/swiftcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: identifier
+      countries: GB,IE
+      is_pii: false
+      languages: common
+      metacrafter_id: sedol
+      regexp: '[0-9.]{7}'
+    description: SEDOL stands for Stock Exchange Daily Official List, a list of security
+      identifiers used in the United Kingdom and Ireland for clearing purposes.
+    inherits: []
+    name: sedol
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/sedol
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: bik
+      regexp: \d{9}
+    description: Russian bank identification code used as unique identifier of a credit
+      organization (bank) and issued by Bank of Russia
+    inherits: []
+    name: bik
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/bik
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: okvalpha
+    description: Russian currency codes (OKV classifier)
+    inherits:
+    - finances.currency
+    name: okvalpha
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/okvalpha
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: okvname
+    description: Russian currency names (OKV classifier)
+    inherits:
+    - finances.currency
+    name: okvname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/okvname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rusbankaccount
+    description: A bank account is a financial account maintained by a bank or other
+      financial institution in which the financial transactions between the bank and
+      a customer are recorded.
+    inherits:
+    - finances.bankaccount
+    name: rusbankaccount
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rusbankaccount
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rusecreg
+      regexp: '[0-9A-Z]{13}'
+    description: State registration number of the additional issue of equity securities
+      (Russia) has 13 symbols
+    inherits: []
+    name: rusecreg
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rusecreg
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rueqsecreg
+      regexp: \d{1}\d{5}[A-Z]{1}
+    description: State registration number of the issue of equity securities (Russia)
+      has 9 symbols
+    inherits: []
+    name: rueqsecreg
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rueqsecreg
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: identifier
+      countries: US
+      is_pii: false
+      languages: en
+      metacrafter_id: abaroutingnum
+      regexp: '[0123678]\d{3}-\d{4}-\d'
+    description: In the United States, an ABA routing transit number (ABA RTN) is
+      a nine-digit code printed on the bottom of checks to identify the financial
+      institution on which it was drawn.
+    inherits: []
+    name: abaroutingnum
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/abaroutingnum
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: common
+      metacrafter_id: usbankaccount
+      regexp: '[0-9]{8,17}'
+    description: A bank account in the financial institutuin in United States
+    inherits:
+    - finances.bankaccount
+    name: usbankaccount
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/usbankaccount
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: finances
+      classification: identifier
+      countries: US
+      is_pii: false
+      languages: common
+      metacrafter_id: cusip
+      regexp: ^[0-9]{3}[a-zA-Z0-9]{2}[a-zA-Z0-9*@#]{3}[0-9]$
+    description: A CUSIP is a nine-digit numeric (e.g. 037833100 for Apple) or nine-character
+      alphanumeric (e.g. 38259P508 for Google) code that identifies a North American
+      financial security for the purposes of facilitating clearing and settlement
+      of trades
+    inherits: []
+    name: cusip
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/cusip
+    term_source: EXTERNAL
+- description: Geographic identifiers
+  name: Geo
+  terms:
+  - contains:
+    - geo.ruscity
+    - geo.uscity
+    custom_properties:
+      categories: geo,pii,common
+      is_pii: true
+      languages: common
+      metacrafter_id: city
+    description: A city is a large human settlement. It can be defined as a permanent
+      and densely settled place with administratively defined boundaries whose members
+      work primarily on non-agricultural tasks.
+    inherits: []
+    name: city
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/city
+    term_source: EXTERNAL
+  - contains:
+    - geo.ruscity
+    - geo.uscity
+    custom_properties:
+      categories: geo,pii,common
+      is_pii: true
+      languages: common
+      metacrafter_id: city
+    description: A city is a large human settlement. It can be defined as a permanent
+      and densely settled place with administratively defined boundaries whose members
+      work primarily on non-agricultural tasks.
+    inherits: []
+    name: city
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/city
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: continent
+      wikidata_property: P30
+    description: A continent is any of several large landmasses. Related to UN unm49
+      dataclass
+    inherits: []
+    name: continent
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/continent
+    term_source: EXTERNAL
+  - contains:
+    - geo.countrycode_alpha2
+    - geo.countrycode_alpha3
+    - geo.countrycode_num
+    - geo.encountryname
+    - geo.ruscountryname
+    custom_properties:
+      categories: geo
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: country
+    description: A country is a distinct territorial body or political entity. It
+      may be an independent sovereign state or part of a larger state,[2] as a non-sovereign
+      or formerly sovereign political division, a physical territory with a government,
+      or a geographic region associated with sets of previously independent or differently
+      associated peoples with distinct political characteristics.
+    inherits: []
+    name: country
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/country
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: countrycode_alpha2
+      regexp: '[A-Z]{2}'
+      wikidata_property: P297
+    description: ISO 3166-1 alpha-2 codes are two-letter country codes defined in
+      ISO 3166-1, part of the ISO 3166 standard published by the International Organization
+      for Standardization (ISO), to represent countries, dependent territories, and
+      special areas of geographical interest.
+    inherits:
+    - geo.country
+    name: countrycode_alpha2
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/countrycode_alpha2
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: countrycode_alpha3
+      regexp: '[A-Z]{3}'
+      wikidata_property: P298
+    description: ISO 3166-1 alpha-3 codes are three-letter country codes defined in
+      ISO 3166-1, part of the ISO 3166 standard published by the International Organization
+      for Standardization (ISO), to represent countries, dependent territories, and
+      special areas of geographical interest.
+    inherits:
+    - geo.country
+    name: countrycode_alpha3
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/countrycode_alpha3
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: countrycode_num
+      regexp: ([0-9]{3}|)
+      wikidata_property: P299
+    description: ISO 3166-1 numeric (or numeric-3) codes are three-digit country codes
+      defined in ISO 3166-1, part of the ISO 3166 standard published by the International
+      Organization for Standardization (ISO), to represent countries, dependent territories,
+      and special areas of geographical interest.
+    inherits:
+    - geo.country
+    name: countrycode_num
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/countrycode_num
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: encountryname
+    description: Name of the country in English
+    inherits:
+    - geo.country
+    name: encountryname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/encountryname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: geonamesid
+      regexp: '[1-9][0-9]{0,8}|'
+      wikidata_property: P1566
+    description: identifier in the GeoNames geographical database
+    inherits: []
+    name: geonamesid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/geonamesid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: geopoint
+    description: Geographic point as string by ISO 6709, ISO 6709, Standard representation
+      of geographic point location by coordinates, is the international standard for
+      representation of latitude, longitude and altitude for geographic point locations.
+    inherits: []
+    name: geopoint
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/geopoint
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo,gs1
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: gln
+    description: The Global Location Number (GLN, sometimes also referred to as International
+      Location Number or ILN) of the respective organization, person, or place. The
+      GLN is a 13-digit number used to identify parties and physical locations.
+    inherits: []
+    name: gln
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/gln
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: iso3166code
+    description: identifier for a country subdivision per ISO 3166-2 (include country
+      code)
+    inherits: []
+    name: iso3166code
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/iso3166code
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: languagetag
+      regexp: ([a-z]{2,3}(-[a-zA-Z0-9]{1,8})*|i-[a-z]{3,8})|
+      wikidata_property: P305
+    description: An IETF BCP 47 language tag is a standardized code or tag that is
+      used to identify human languages in the Internet. The tag structure has been
+      standardized by the Internet Engineering Task Force (IETF) in Best Current Practice
+      (BCP) 47; the subtags are maintained by the IANA Language Subtag Registry.
+    inherits: []
+    name: languagetag
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/languagetag
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo,common
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: latitude
+    description: "In geography, latitude is a geographic coordinate that specifies
+      the north\u2013south position of a point on the Earths surface. Latitude is
+      an angle (defined below) which ranges from 0\xB0 at the Equator to 90\xB0 (North
+      or South) at the poles."
+    inherits: []
+    name: latitude
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/latitude
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo,common
+      is_pii: false
+      languages: common
+      metacrafter_id: longitude
+    description: "Longitude is a geographic coordinate that specifies the east\u2013west
+      position of a point on the Earths surface, or the surface of a celestial body.
+      It is an angular measurement, usually expressed in degrees and denoted by the
+      Greek letter lambda (\u03BB)"
+    inherits: []
+    name: longitude
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/longitude
+    term_source: EXTERNAL
+  - contains:
+    - geo.espostcode
+    - geo.frpostcode
+    - geo.ukpostalcode
+    - geo.ruspostalcode
+    - geo.uszipcode
+    custom_properties:
+      categories: geo,pii,common
+      classification: categorical
+      is_pii: true
+      languages: common
+      metacrafter_id: postindex
+      wikidata_property: P281
+    description: Postal index/code, unique post identifier used in address
+    inherits: []
+    name: postindex
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/postindex
+    term_source: EXTERNAL
+  - contains:
+    - geo.rustreet
+    custom_properties:
+      categories: geo,pii,common
+      is_pii: true
+      languages: common
+      metacrafter_id: street
+    description: Name of the street, commonly used in address
+    inherits: []
+    name: street
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/street
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: identifier
+      is_pii: false
+      languages: en
+      metacrafter_id: unlocode
+      regexp: A[D-GILMOQ-UWXZ]|B[ABIE-HDJLM-OQR-TWYZ]|C[ACDF-IK-ORU-Z]|D[EJKMOZ]|E[CEGHRST]|F[I-KMOR]|JE|G[ABD-IL-UWY]|H[KMNRTU]|I[DELMNOQRST]|J[MOP]|K[EGHIMNPRWY]|K[YZ]|L[ABCIKR-VY]|M[AC-HKL-Z]|N[ACE-ILO-PRUZ]|OM|[P-Z][A-Z]+)[A-Z0-9]{3}
+      wikidata_property: P1937
+    description: N/LOCODE, the United Nations Code for Trade and Transport Locations,
+      is a geographic coding scheme developed and maintained by United Nations Economic
+      Commission for Europe (UNECE). UN/LOCODE assigns codes to locations used in
+      trade and transport with functions such as seaports, rail and road terminals,
+      airports, Postal Exchange Office and border crossing points. The first issue
+      in 1981 contained codes for 8,000 locations. The version from 2011 contained
+      codes for about 82,000 locations.
+    inherits: []
+    name: unlocode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/unlocode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      is_pii: false
+      languages: en
+      metacrafter_id: unm49
+      regexp: '[0-9]{3}'
+      wikidata_property: P2082
+    description: UN M49 or the Standard Country or Area Codes for Statistical Use
+      (Series M, No. 49) is a standard for area codes used by the United Nations for
+      statistical purposes, developed and maintained by the United Nations Statistics
+      Division.
+    inherits: []
+    name: unm49
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/unm49
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: wbregion
+      wikidata_property: P30
+    description: World Bank regions are territorial classification of countries
+    inherits: []
+    name: wbregion
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/wbregion
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: what3words
+      regexp: '[1-9][0-9]{0,8}|'
+      wikidata_property: P1566
+    description: What3words is a proprietary geocode system designed to identify any
+      location with a resolution of about 3 metres (9.8 ft). It is owned by What3words
+      Limited, based in London, England.
+    inherits: []
+    name: what3words
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/what3words
+    term_source: EXTERNAL
+  - contains:
+    - transport.iataairportcode
+    - transport.icaoairportcode
+    - transport.faalid
+    custom_properties:
+      categories: geo,transport
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: airport
+    description: 'A location identifier is a symbolic representation for the name
+      and the location of an airport, navigation aid, or weather station, and is used
+      for staffed air traffic control facilities in air traffic control, telecommunications,
+      computer programming, weather reports, and related services. '
+    inherits: []
+    name: airport
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/airport
+    term_source: EXTERNAL
+  - contains:
+    - geo.caprovincecode
+    custom_properties:
+      categories: geo
+      classification: categorical
+      countries: CA
+      is_pii: false
+      languages: en
+      metacrafter_id: caprovince
+    description: Provinces and territories of Canada
+    inherits: []
+    name: caprovince
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/caprovince
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: CA
+      is_pii: false
+      languages: en
+      metacrafter_id: caprovincecode
+      regexp: (NL|PE|NS|NB|QC|ON|MB|SK|AB|BC|YT|NT|NU)
+    description: Provinces and territories of Canada alpha2 code
+    inherits:
+    - geo.caprovince
+    name: caprovincecode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/caprovincecode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: CA
+      is_pii: false
+      languages: en
+      metacrafter_id: casgc
+      regexp: \d{2}(\d{2}(\d{3})?)?
+      wikidata_property: P3012
+    description: The Standard Geographical Classification (SGC) is a system maintained
+      by Statistics Canada for categorizing and enumerating the census geographic
+      units of Canada. Each geographic area receives a unique numeric code ranging
+      from 1 to 10 digits, which extend telescopically to refer to increasingly small
+      areas.
+    inherits: []
+    name: casgc
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/casgc
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: ES,MX
+      is_pii: false
+      languages: es
+      metacrafter_id: espostcode
+      regexp: \d{5}
+    description: Spanish postal code (by language)
+    inherits:
+    - geo.postindex
+    name: espostcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/espostcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: EU
+      is_pii: false
+      languages: en
+      metacrafter_id: eunuts
+      regexp: '[A-Z]{2}[A-Z0-9]{0,3}'
+      wikidata_property: P605
+    description: European Union geographic code, identifier for a region per NUTS
+    inherits: []
+    name: eunuts
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/eunuts
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: identifier
+      countries: FR
+      is_pii: false
+      languages: fr
+      metacrafter_id: epcicode
+    description: Etablissements publics de cooperation intercommunale (EPCI). French
+      administrative geo code
+    inherits: []
+    name: epcicode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/epcicode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: identifier
+      countries: FR
+      is_pii: false
+      languages: fr
+      metacrafter_id: inseecode
+      regexp: \d[0-9AB][0-9P]\d\d
+      wikidata_property: P374
+    description: "The INSEE code is a numerical indexing code used by the French National
+      Institute for Statistics and Economic Studies (INSEE) to identify various entities,
+      including communes and d\xE9partements. "
+    inherits: []
+    name: inseecode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/inseecode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: FR
+      is_pii: false
+      languages: fr
+      metacrafter_id: frpostcode
+      regexp: \d{5}
+    description: French postal code
+    inherits:
+    - geo.postindex
+    name: frpostcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/frpostcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: FR
+      is_pii: false
+      languages: fr
+      metacrafter_id: siretcode
+    description: "The SIRET code (French: Syst\xE8me d\u2019identification du r\xE9pertoire
+      des \xE9tablissements), or SIRET number,[1] is an INSEE code which allows the
+      geographic identification of any French establishment or business. "
+    inherits: []
+    name: siretcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/siretcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: GB
+      is_pii: false
+      languages: en
+      metacrafter_id: ukpostalcode
+    description: Postal codes used in the United Kingdom, British Overseas Territories
+      and Crown dependencies are known as postcodes (originally, postal codes).
+    inherits:
+    - geo.postindex
+    name: ukpostalcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ukpostalcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: GB
+      is_pii: false
+      languages: en
+      metacrafter_id: ukwardcode
+    description: The wards and electoral divisions in the United Kingdom are electoral
+      districts at sub-national level represented by one or more councillors.
+    inherits: []
+    name: ukwardcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ukwardcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: GB
+      is_pii: false
+      languages: en
+      metacrafter_id: ukwardname
+    description: The wards and electoral divisions in the United Kingdom are electoral
+      districts at sub-national level represented by one or more councillors.
+    inherits: []
+    name: ukwardname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ukwardname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: MX
+      is_pii: false
+      languages: es
+      metacrafter_id: iso3166_mx3a
+    description: ISO 3166-2:MX 3-letters alphanumeric codes used to identify Mexican
+      states.
+    inherits: []
+    name: iso3166_mx3a
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/iso3166_mx3a
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: MX
+      is_pii: false
+      languages: es
+      metacrafter_id: mxstate
+    description: Mexican state/province by name or code
+    inherits: []
+    name: mxstate
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/mxstate
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: kladr
+    description: Russian unique codes assigned by Government Tax Service for every
+      administrative address in Russian federation. Replaces by FIAS government system
+    inherits: []
+    name: kladr
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/kladr
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: okato
+      wikidata_property: P721
+    description: "Russian Classification on Objects of Administrative Division (Russian:
+      \u041E\u0431\u0449\u0435\u0440\u043E\u0441\u0441\u0438\u0301\u0439\u0441\u043A\u0438\u0439
+      \u043A\u043B\u0430\u0441\u0441\u0438\u0444\u0438\u043A\u0430\u0301\u0442\u043E\u0440
+      \u043E\u0431\u044A\u0435\u0301\u043A\u0442\u043E\u0432 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u0438\u0301\u0432\u043D\u043E-\u0442\u0435\u0440\u0440\u0438\u0442\u043E\u0440\u0438\u0430\u0301\u043B\u044C\u043D\u043E\u0433\u043E
+      \u0434\u0435\u043B\u0435\u0301\u043D\u0438\u044F), or OKATO (Russian: \u041E\u041A\u0410\u0422\u041E),
+      also called All-Russian classification on units of administrative and territorial
+      distribution in English, is one of several Russian national registers. OKATOs
+      purpose is organization of information about structure of the administrative
+      divisions of the federal subjects of Russia."
+    inherits: []
+    name: okato
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/okato
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: oktmo
+      wikidata_property: P764
+    description: "Russian Classification of Territories of Municipal Formations (Russian:
+      \u041E\u0431\u0449\u0435\u0440\u043E\u0441\u0441\u0438\u0439\u0441\u043A\u0438\u0439
+      \u043A\u043B\u0430\u0441\u0441\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440
+      \u0442\u0435\u0440\u0440\u0438\u0442\u043E\u0440\u0438\u0439 \u043C\u0443\u043D\u0438\u0446\u0438\u043F\u0430\u043B\u044C\u043D\u044B\u0445
+      \u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u0439), or OKTMO
+      (Russian: \u041E\u041A\u0422\u041C\u041E), is one of several Russian national
+      registers. OKTMO organizes information about the structure of the municipal
+      divisions of Russia."
+    inherits: []
+    name: oktmo
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/oktmo
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: oktmoname
+    description: "Russian Classification of Territories of Municipal Formations (Russian:
+      \u041E\u0431\u0449\u0435\u0440\u043E\u0441\u0441\u0438\u0439\u0441\u043A\u0438\u0439
+      \u043A\u043B\u0430\u0441\u0441\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440
+      \u0442\u0435\u0440\u0440\u0438\u0442\u043E\u0440\u0438\u0439 \u043C\u0443\u043D\u0438\u0446\u0438\u043F\u0430\u043B\u044C\u043D\u044B\u0445
+      \u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u0439), or OKTMO
+      (Russian: \u041E\u041A\u0422\u041C\u041E), is one of several Russian national
+      registers. OKTMO organizes information about the structure of the municipal
+      divisions of Russia."
+    inherits: []
+    name: oktmoname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/oktmoname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rukadastr
+    description: Russian land registry number (kadastroviy nomer, cadaster number)
+      assigned to each land, territory, building and other geographic administrative
+      objects by Rosreestr
+    inherits: []
+    name: rukadastr
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rukadastr
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rumosadmareas
+    description: Moscow city (Russia) administrative areas
+    inherits: []
+    name: rumosadmareas
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rumosadmareas
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rumosdistricts
+    description: Moscow city (Russia) districts
+    inherits: []
+    name: rumosdistricts
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rumosdistricts
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: ruscity
+    description: City name in Russian language
+    inherits:
+    - geo.city
+    name: ruscity
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ruscity
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: ruscountryname
+    description: Name of the country written in Russian language.
+    inherits:
+    - geo.country
+    name: ruscountryname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ruscountryname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rusfeddistrict
+    description: Name of the federal district of Russia. Full or short.
+    inherits: []
+    name: rusfeddistrict
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rusfeddistrict
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: common
+      metacrafter_id: ruspostalcode
+    description: 6 digits postal codes used in Russian Federation
+    inherits:
+    - geo.postindex
+    name: ruspostalcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ruspostalcode
+    term_source: EXTERNAL
+  - contains:
+    - geo.rusregioncode
+    - geo.rusregionname
+    custom_properties:
+      categories: geo
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rusregion
+    description: Code or name of the region (federal subject) in Russia as it is in
+      country Constitution
+    inherits: []
+    name: rusregion
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rusregion
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rusregioncode
+    description: Russian unique code of country subdivision (regions/federal subjects)
+    inherits:
+    - geo.rusregion
+    name: rusregioncode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rusregioncode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rusregionname
+    description: Name of the region (federal subject) in Russia as it is in country
+      Constitution
+    inherits:
+    - geo.rusregion
+    name: rusregionname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rusregionname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rustreet
+    description: Street name writtern in Russian language
+    inherits:
+    - geo.street
+    name: rustreet
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rustreet
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: US
+      is_pii: false
+      languages: en
+      metacrafter_id: fips52
+      regexp: \d{2}
+      wikidata_property: P5087
+    description: Two-digit identifier for US states and other associated areas per
+      former Federal Information Processing Standard FIPS 5-2 standard
+    inherits: []
+    name: fips52
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/fips52
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: US
+      is_pii: false
+      languages: en
+      metacrafter_id: fips64
+      regexp: \d{5}
+      wikidata_property: P882
+    description: Identifier for US entities (mostly counties) per "Federal Information
+      Processing Series" (FIPS 6-4), used for counties, Puerto Rico zona urbana, Metropolitan
+      Statistical Areas (MSA) and Combined Statistical Areas (CSA) in the United States.
+    inherits: []
+    name: fips64
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/fips64
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      countries: US
+      is_pii: false
+      languages: en
+      metacrafter_id: uscity
+    description: United States city name
+    inherits:
+    - geo.city
+    name: uscity
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/uscity
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: US
+      is_pii: false
+      languages: en
+      metacrafter_id: uscounty
+    description: Name or code of US County
+    inherits: []
+    name: uscounty
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/uscounty
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: US
+      is_pii: false
+      languages: en
+      metacrafter_id: usstate
+    description: Name or code of US State
+    inherits: []
+    name: usstate
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/usstate
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: geo
+      classification: categorical
+      countries: US
+      is_pii: false
+      languages: en
+      metacrafter_id: uszipcode
+    description: A ZIP Code is a postal code used by the United States Postal Service
+      (USPS). Introduced in 1963, the basic format consisted of five digits. In 1983,
+      an extended ZIP+4 code was introduced; it included the five digits of the ZIP
+      Code, followed by a hyphen and four digits that designated a more specific location.
+    inherits:
+    - geo.postindex
+    name: uszipcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/uszipcode
+    term_source: EXTERNAL
+- description: Government related
+  name: Government
+  terms:
+  - custom_properties:
+      categories: government
+      is_pii: false
+      languages: common
+      metacrafter_id: legislationname
+    description: A legal document such as an act, decree, bill, etc. (enforceable
+      or not) or a component of a legal act (like an article).
+    inherits: []
+    name: legislationname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/legislationname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      is_pii: false
+      languages: common
+      metacrafter_id: legislationname
+    description: A legal document such as an act, decree, bill, etc. (enforceable
+      or not) or a component of a legal act (like an article).
+    inherits: []
+    name: legislationname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/legislationname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      is_pii: false
+      languages: common
+      metacrafter_id: legislationtype
+    description: The type of the legislation. Examples of values are "law", "act",
+      "directive", "decree", "regulation", "statutory instrument", "loi organique",
+      "reglement grand-ducal", etc., depending on the country.
+    inherits:
+    - common.genre
+    name: legislationtype
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/legislationtype
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government,companies
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: ruikuiko
+    description: Unique code assigned to all government customers in Russian Federation
+    inherits: []
+    name: ruikuiko
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ruikuiko
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government,companies
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: ruikz
+    description: Unique id assigned to all government procurement procedures in Russian
+      Federation
+    inherits: []
+    name: ruikz
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ruikz
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government,finances
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: govlicaccount
+      regexp: "[0-9\u0410-\u042F]{9,11}"
+    description: A personal account is an account for use by an individual for that
+      persons own needs. It is a relative term to differentiate them from those accounts
+      for business or corporate use. Used by Russian treasury for organizations accounts.
+    inherits: []
+    name: govlicaccount
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/govlicaccount
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: budgetcode
+    description: Budget codes issued by Ministry of Finances and Federal Treasury
+      of Russia to all government and local budgets.
+    inherits: []
+    name: budgetcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/budgetcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: budgetname
+    description: Name of the budget of Russian government at federal, regional or
+      local level
+    inherits: []
+    name: budgetname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/budgetname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: csrcode
+    description: Russian budget target item of expenditure code
+    inherits: []
+    name: csrcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/csrcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: fedgrbs
+    description: 3 digits code of the Russian direct government budget receiver and
+      distributor. Assigned to each government ministry, agency, service and some
+      other budget distributor organizations
+    inherits: []
+    name: fedgrbs
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/fedgrbs
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: kbk
+    description: Russian budget classification code KBK (kod byudzhetnoy klassifikacii)
+      identifiers certain budget allocation of the federal or regional budget
+    inherits: []
+    name: kbk
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/kbk
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: kosgucode
+    description: Russian Public Administration Sector Classification Code (KOSGU)
+      used in Russian budget planning and procurement
+    inherits: []
+    name: kosgucode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/kosgucode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: kvrcode
+    description: Russian budget expense type code (KVR) used in budget planning and
+      procurement
+    inherits: []
+    name: kvrcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/kvrcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: kvrname
+    description: Russian budget expense type code (KVR) used in budget planning and
+      procurement
+    inherits: []
+    name: kvrname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/kvrname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: runpa
+    description: 'Russian regulatory legal act. For example: Executive order'
+    inherits:
+    - government.legislationname
+    name: runpa
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/runpa
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: runpakind
+    description: 'Type of the Russian legal document: order, executive order and so
+      on'
+    inherits:
+    - government.legislationtype
+    name: runpakind
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/runpakind
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: ppocode
+    description: Russian public legal formation is a legal definition of public entity
+      with right of administration of its level budget
+    inherits: []
+    name: ppocode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ppocode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: pponame
+    description: Russian public legal formation is a legal definition of public entity
+      with right of administration of its level budget
+    inherits: []
+    name: pponame
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/pponame
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rnfi
+    description: Russian government federal property unique ID (RNFI)
+    inherits: []
+    name: rnfi
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rnfi
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: tofkcode
+    description: Unique id of the Russian Federal treasury division.
+    inherits: []
+    name: tofkcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/tofkcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: tofkname
+    description: Name of the Russian Federal treasury division
+    inherits: []
+    name: tofkname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/tofkname
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: categorical
+      countries: US
+      is_pii: false
+      languages: en
+      metacrafter_id: cfdanumber
+      regexp: \d{2}\.\d{3}
+    description: 'CFDA numbers are the system for identifying and sorting the 2,000+
+      federal programs. Each CFDA number contains five digits and appears in the following
+      format: ##.### (e.g., 10.001 or 98.102).'
+    inherits: []
+    name: cfdanumber
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/cfdanumber
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: identifier
+      countries: US
+      is_pii: false
+      languages: en
+      metacrafter_id: usfain
+      regexp: '[0-9A-Z]{10,13}'
+    description: FAIN (Federal Award Identification Number) is the unique identifying
+      number assigned to all federal finance awards. Since October of 2013, the Office
+      of Management and Budget (OMB) has required all Federal Agencies to issue a
+      FAIN to all financial assistance awards or grants.
+    inherits: []
+    name: usfain
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/usfain
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: government
+      classification: identifier
+      countries: US
+      is_pii: false
+      languages: en
+      metacrafter_id: uspiid
+      regexp: '[0-9A-Z]{13,17}'
+    description: The PIID consists of a combination of thirteen to seventeen alpha
+      and/or numeric characters sequenced to convey certain information
+    inherits: []
+    name: uspiid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/uspiid
+    term_source: EXTERNAL
+- description: Industry
+  name: Industry
+  terms:
+  - custom_properties:
+      categories: industry,objectids,gs1
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: gtin
+      regexp: ^01(d{14})$
+    description: The Global Trade Item Number (GTIN) is an identifier for trade items,
+      developed by the international organization GS1.Such identifiers are used to
+      look up product information in a database (often by entering the number through
+      a barcode scanner pointed at an actual product) which may belong to a retailer,
+      manufacturer, collector, researcher, or other entity. The uniqueness and universality
+      of the identifier is useful in establishing which product in one database corresponds
+      to which product in another database, especially across organizational boundaries.
+    inherits: []
+    name: gtin
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/gtin
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: industry,objectids,gs1
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: gtin
+      regexp: ^01(d{14})$
+    description: The Global Trade Item Number (GTIN) is an identifier for trade items,
+      developed by the international organization GS1.Such identifiers are used to
+      look up product information in a database (often by entering the number through
+      a barcode scanner pointed at an actual product) which may belong to a retailer,
+      manufacturer, collector, researcher, or other entity. The uniqueness and universality
+      of the identifier is useful in establishing which product in one database corresponds
+      to which product in another database, especially across organizational boundaries.
+    inherits: []
+    name: gtin
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/gtin
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: industry,objectids,gs1
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: gtin02
+      regexp: ^02(d{14})$
+    description: The Global Trade Item Number (GTIN) is an identifier for trade items,
+      developed by the international organization GS1.Such identifiers are used to
+      look up product information in a database (often by entering the number through
+      a barcode scanner pointed at an actual product) which may belong to a retailer,
+      manufacturer, collector, researcher, or other entity. The uniqueness and universality
+      of the identifier is useful in establishing which product in one database corresponds
+      to which product in another database, especially across organizational boundaries.
+    inherits: []
+    name: gtin02
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/gtin02
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: industry
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: isicrev4
+      regexp: ([A-U]|\d{2,4})
+      wikidata_property: P1796
+    description: Code of industry by ISIC (International Standard Industrial Classification
+      of All Economic Activities)
+    inherits: []
+    name: isicrev4
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/isicrev4
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: industry
+      classification: categorical
+      countries: EU
+      is_pii: false
+      languages: en
+      metacrafter_id: cpvcode
+      regexp: \d{8}
+      wikidata_property: P5417
+    description: massively multilingual and public domain taxonomy legislated by the
+      EU for goods and services
+    inherits: []
+    name: cpvcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/cpvcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: industry
+      classification: categorical
+      countries: US
+      is_pii: false
+      languages: en
+      metacrafter_id: naicscode
+      regexp: \d{2,6}
+      wikidata_property: P3224
+    description: Classification in the North American Industry Classification System
+    inherits: []
+    name: naicscode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/naicscode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: industry
+      classification: categorical
+      countries: US,GB
+      is_pii: false
+      languages: en
+      metacrafter_id: ensoc
+      regexp: \d{2}\-\d{6}
+      wikidata_property: P919
+    description: Standard Occupational Classification System
+    inherits: []
+    name: ensoc
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ensoc
+    term_source: EXTERNAL
+- description: Transportation
+  name: Transport
+  terms:
+  - custom_properties:
+      categories: transport,objectids,gs1,shipping
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: sssc
+      regexp: ^00(d{18})$
+    description: 'The Serial Shipping Container Code (SSCC) is an 18-digit number
+      used to identify logistics units. In order to automate the reading process,
+      the SSCC is often encoded in a barcode, generally GS1-128, and can also be encoded
+      in an RFID tag. It is used in electronic commerce transactions. '
+    inherits: []
+    name: sssc
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/sssc
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: transport,objectids,gs1,shipping
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: sssc
+      regexp: ^00(d{18})$
+    description: 'The Serial Shipping Container Code (SSCC) is an 18-digit number
+      used to identify logistics units. In order to automate the reading process,
+      the SSCC is often encoded in a barcode, generally GS1-128, and can also be encoded
+      in an RFID tag. It is used in electronic commerce transactions. '
+    inherits: []
+    name: sssc
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/sssc
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: transport,chemistry
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: unpkggroup
+      regexp: (I\/II)|(II\/III)|I{1,3}
+      wikidata_property: P876
+    description: Packaging code according to UN transportation rules
+    inherits: []
+    name: unpkggroup
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/unpkggroup
+    term_source: EXTERNAL
+  - contains:
+    - transport.iataairlinecode
+    - transport.icaoairlinecode
+    custom_properties:
+      categories: transport
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: airlinecode
+    description: Unique code of the airline provided by IATA or ICAP
+    inherits: []
+    name: airlinecode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/airlinecode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: transport
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: flightnumber
+      regexp: ([A-Z]{2,3}|[A-Z][0-9]|[0-9][A-Z])\d{1,4}[A-Z]?|\d{1,4}
+      wikidata_property: P3090
+    description: In the aviation industry, a flight number or flight designator is
+      a code for an airline service consisting of two-character airline designator
+      and a 1 to 4 digit number.
+    inherits: []
+    name: flightnumber
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/flightnumber
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: transport
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: iataairlinecode
+      regexp: '[A-Z0-9]{2}'
+      wikidata_property: P229
+    description: IATA airline designators, sometimes called IATA reservation codes,
+      are two-character codes assigned by the International Air Transport Association
+      (IATA) to the worlds airlines.
+    inherits:
+    - transport.airlinecode
+    name: iataairlinecode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/iataairlinecode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: transport
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: iataairportcode
+      regexp: '[A-Z0-9]{3}'
+      wikidata_property: P238
+    description: An IATA airport code, also known as an IATA location identifier,
+      IATA station code, or simply a location identifier, is a three-letter geocode
+      designating many airports and metropolitan areas around the world, defined by
+      the International Air Transport Association (IATA)
+    inherits:
+    - geo.airport
+    name: iataairportcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/iataairportcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: transport
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: icaoairlinecode
+      regexp: '[A-Z0-9]{3}'
+      wikidata_property: P230
+    description: The ICAO airline designator is a code assigned by the International
+      Civil Aviation Organization (ICAO) to aircraft operating agencies, aeronautical
+      authorities, and services related to international aviation, each of which is
+      allocated both a three-letter designator and a telephony designator.
+    inherits:
+    - transport.airlinecode
+    name: icaoairlinecode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/icaoairlinecode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: transport
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: icaoairportcode
+      regexp: ([A-Z]{2}|[CKY][A-Z0-9])([A-Z]{2}|[0-9]{2,4})
+      wikidata_property: P239
+    description: 'The ICAO airport code or location indicator is a four-letter code
+      designating aerodromes around the world. These codes, as defined by the International
+      Civil Aviation Organization and published in ICAO Document 7910: Location Indicators,
+      are used by air traffic control and airline operations such as flight planning. '
+    inherits:
+    - geo.airport
+    name: icaoairportcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/icaoairportcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: transport
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: imonumber
+      regexp: ([1-9]\d{6})
+      wikidata_property: P458
+    description: The International Maritime Organization (IMO) number is a unique
+      identifier for ships, registered ship owners and management companies.
+    inherits: []
+    name: imonumber
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/imonumber
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: transport
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: mmsi
+    description: 'A Maritime Mobile Service Identity (MMSI) is a series of nine digits
+      which are sent in digital form over a radio frequency channel in order to uniquely
+      identify ship stations, ship earth stations, coast stations, coast earth stations,
+      and group calls. These identities are formed in such a way that the identity
+      or part thereof can be used by telephone and telex subscribers connected to
+      the general telecommunications network to call ships automatically. '
+    inherits: []
+    name: mmsi
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/mmsi
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: transport
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: uiccode
+      regexp: (10|2\d|3[0-3]|4[01249]|5\d|6[0125678]|7\d|8[0-8]|9\d).+|
+      wikidata_property: P722
+    description: Identifier for a railway station in Europe, CIS countries, the Far
+      East (China, Mongolia, Japan, Korea, Vietnam), North Africa and the Middle East
+    inherits: []
+    name: uiccode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/uiccode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: transport
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: vehiclenumber
+    description: Number of the vehicle (vehicle plate number)
+    inherits: []
+    name: vehiclenumber
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/vehiclenumber
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: transport
+      classification: identifier
+      countries: EU
+      is_pii: false
+      languages: common
+      metacrafter_id: eninumber
+    description: An ENI number (European Number of Identification or European Vessel
+      Identification Number) is a registration for ships capable of navigating on
+      inland European waters. It is a unique, eight-digit identifier that is attached
+      to a hull for its entire lifetime, independent of the vessels current name or
+      flag.
+    inherits: []
+    name: eninumber
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/eninumber
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: transport
+      classification: identifier
+      countries: EU
+      is_pii: false
+      languages: common
+      metacrafter_id: eucin
+    description: The Craft Identification Number (CIN) or Hull Identification Number
+      (HIN), standardised as EN ISO 10087:2006, is a permanent unique fourteen-digit
+      alphanumeric identifier issued to all marine vessels in Europe.
+    inherits: []
+    name: eucin
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/eucin
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: transport
+      classification: identifier
+      countries: US
+      is_pii: false
+      languages: common
+      metacrafter_id: faalid
+      regexp: ^[A-Z0-9]{3,5}$
+      wikidata_property: P240
+    description: The Federal Aviation Administration location identifier (FAA LID)
+      is a three- to five-character alphanumeric code identifying aviation related
+      facilities inside the United States, though some codes are reserved for, and
+      are managed by other entities.
+    inherits:
+    - geo.airport
+    name: faalid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/faalid
+    term_source: EXTERNAL
+- description: Universal unique identifiers
+  name: Identifiers
+  terms:
+  - custom_properties:
+      categories: identifiers
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: dcid
+      regexp: '[A-Za-z\d_/]+'
+      wikidata_property: P10730
+    description: "Every entity in Data Commons (DC) has a unique identifier, called
+      \u2018dcid\u2019. So, for example, the dcid of California is \u2018geoId/06\u2019
+      and of India is \u2018country/IND\u2019."
+    inherits: []
+    name: dcid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/dcid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: identifiers
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: dcid
+      regexp: '[A-Za-z\d_/]+'
+      wikidata_property: P10730
+    description: "Every entity in Data Commons (DC) has a unique identifier, called
+      \u2018dcid\u2019. So, for example, the dcid of California is \u2018geoId/06\u2019
+      and of India is \u2018country/IND\u2019."
+    inherits: []
+    name: dcid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/dcid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: identifiers,media
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: eidr
+      wikidata_property: P2704
+    description: The Entertainment Identifier Registry, or EIDR, is a global unique
+      identifier system for a broad array of audio visual objects, including motion
+      pictures, television, and radio programs.
+    inherits:
+    - science.doi
+    name: eidr
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/eidr
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: identifiers
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: guid
+    description: A universally unique identifier (UUID) is a 128-bit label used for
+      information in computer systems. The term globally unique identifier (GUID)
+      is also used.
+    inherits: []
+    name: guid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/guid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: identifiers
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: id
+    description: An unique identifier, local for DB/dataset or global and persistent
+    inherits: []
+    name: id
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/id
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: identifiers
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: uuid
+      regexp: '[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}'
+    description: A universally unique identifier (UUID) is a 128-bit label used for
+      information in computer systems. The term globally unique identifier (GUID)
+      is also used.
+    inherits: []
+    name: uuid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/uuid
+    term_source: EXTERNAL
+- description: Internet
+  name: Internet
+  terms:
+  - custom_properties:
+      categories: internet
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: asn
+      regexp: ' [1-9]\d*'
+      wikidata_property: P3797
+    description: autonomous system number
+    inherits: []
+    name: asn
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/asn
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: internet
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: asn
+      regexp: ' [1-9]\d*'
+      wikidata_property: P3797
+    description: autonomous system number
+    inherits: []
+    name: asn
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/asn
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: internet,pii
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: eui48
+    description: A media access control address (MAC address) is a unique identifier
+      assigned to a network interface controller (NIC) for use as a network address
+      in communications within a network segment.
+    inherits: []
+    name: eui48
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/eui48
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: internet
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: fqdn
+      regexp: ^(?!:\/\/)(?=.{1,255}$)((.{1,63}\.){1,127}(?![0-9]*$)[a-z0-9-]+\.?)$
+    description: A domain name is an identification string that defines a realm of
+      administrative autonomy, authority or control within the Internet.
+    inherits: []
+    name: fqdn
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/fqdn
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: internet,pii
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: ipaddr
+    description: Internet Protocol version 4 (IPv4) or Internet Protocol version 6
+      (IPv6) address
+    inherits: []
+    name: ipaddr
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ipaddr
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: internet
+      is_pii: true
+      languages: common
+      metacrafter_id: ipsubnet
+    description: Subnetwork of IPv4 or IPv6 addresses
+    inherits: []
+    name: ipsubnet
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ipsubnet
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: internet,pii
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: ipv4
+    description: Internet Protocol version 4 (IPv4) is the fourth version of the Internet
+      Protocol (IP). It is one of the core protocols of standards-based internetworking
+      methods in the Internet and other packet-switched networks.
+    inherits: []
+    name: ipv4
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ipv4
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: internet
+      is_pii: true
+      languages: common
+      metacrafter_id: ipv4subnet
+      regexp: (([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]?|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]?|25[0-5])\/([0-9]|[12][0-9]|3[0-2])
+      wikidata_property: P3761
+    description: Range of IPv4 addresses
+    inherits: []
+    name: ipv4subnet
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ipv4subnet
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: internet,pii
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: ipv6
+    description: Internet Protocol version 6 (IPv6) is the most recent version of
+      the Internet Protocol (IP), the communications protocol that provides an identification
+      and location system for computers on networks and routes traffic across the
+      Internet.
+    inherits: []
+    name: ipv6
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ipv6
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: internet
+      is_pii: true
+      languages: common
+      metacrafter_id: ipv6subnet
+      regexp: '[\d:a-f\/]{4,30}'
+      wikidata_property: P3793
+    description: Range of IPv6 addresses
+    inherits: []
+    name: ipv6subnet
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ipv6subnet
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: internet
+      classification: identifier
+      is_pii: false
+      languages: en
+      metacrafter_id: tld
+    description: A top-level domain (TLD) is one of the domains at the highest level
+      in the hierarchical Domain Name System of the Internet after the root domain.[10]
+      The top-level domain names are installed in the root zone of the name space.
+    inherits: []
+    name: tld
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/tld
+    term_source: EXTERNAL
+- description: Medical/pharma identifiers
+  name: Medical
+  terms:
+  - custom_properties:
+      categories: medical
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: atccode
+      regexp: '[A-V]([0-9][0-9]([A-Z]([A-Z]([0-9][0-9])?)?)?)[0-9]'
+      wikidata_property: P267
+    description: The Anatomical Therapeutic Chemical (ATC) Classification System is
+      a drug classification system that classifies the active ingredients of drugs
+      according to the organ or system on which they act and their therapeutic, pharmacological
+      and chemical properties. Its purpose is an aid to monitor drug use and for research
+      to improve quality medication use. It does not imply drug recommendation or
+      efficacy.
+    inherits: []
+    name: atccode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/atccode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: medical
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: atccode
+      regexp: '[A-V]([0-9][0-9]([A-Z]([A-Z]([0-9][0-9])?)?)?)[0-9]'
+      wikidata_property: P267
+    description: The Anatomical Therapeutic Chemical (ATC) Classification System is
+      a drug classification system that classifies the active ingredients of drugs
+      according to the organ or system on which they act and their therapeutic, pharmacological
+      and chemical properties. Its purpose is an aid to monitor drug use and for research
+      to improve quality medication use. It does not imply drug recommendation or
+      efficacy.
+    inherits: []
+    name: atccode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/atccode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: medical
+      classification: identifier
+      countries: US
+      is_pii: false
+      languages: en
+      metacrafter_id: unii
+      regexp: ^[A-Z0-9]+$
+      wikidata_property: P652
+    description: The Unique Ingredient Identifier (UNII) is an alphanumeric identifier
+      linked to a substance molecular structure or descriptive information and is
+      generated by the Global Substance Registration System (GSRS) of the Food and
+      Drug Administration (FDA). It classifies substances as chemical, protein, nucleic
+      acid, polymer, structurally diverse, or mixture according to the standards outlined
+      by the International Organization for Standardization in ISO 11238 and ISO DTS
+      19844.
+    inherits: []
+    name: unii
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/unii
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: medical
+      classification: identifier
+      countries: GB
+      is_pii: false
+      languages: en
+      metacrafter_id: ukbnfcode
+    description: The British National Formulary (BNF) is a reference book containing
+      the standard list of medicines used in UK prescribing. It gives information
+      on the indications, dosages and side effects for over 70,000 medicines.
+    inherits: []
+    name: ukbnfcode
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ukbnfcode
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: medical
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rumedicineregnum
+    description: Russian medicine registration code
+    inherits: []
+    name: rumedicineregnum
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rumedicineregnum
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: medical
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rumedicinetradename
+    description: Trade name of the medicine in Russian.
+    inherits: []
+    name: rumedicinetradename
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rumedicinetradename
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: medical
+      classification: identifier
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rumedmnn
+    description: An international nonproprietary name (INN) is an official generic
+      and non-proprietary name given to a pharmaceutical drug or an active ingredient.
+      (Russian)
+    inherits: []
+    name: rumedmnn
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rumedmnn
+    term_source: EXTERNAL
+- description: Objects identifiers
+  name: Objectids
+  terms:
+  - custom_properties:
+      categories: objectids
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: isbn10
+      regexp: \d[\d\-]{11}\d
+      wikidata_property: P957
+    description: The International Standard Book Number (ISBN) is a numeric commercial
+      book identifier that is intended to be unique. Publishers purchase ISBNs from
+      an affiliate of the International ISBN Agency
+    inherits: []
+    name: isbn10
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/isbn10
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: objectids
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: isbn10
+      regexp: \d[\d\-]{11}\d
+      wikidata_property: P957
+    description: The International Standard Book Number (ISBN) is a numeric commercial
+      book identifier that is intended to be unique. Publishers purchase ISBNs from
+      an affiliate of the International ISBN Agency
+    inherits: []
+    name: isbn10
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/isbn10
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: objectids
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: isbn13
+      regexp: \d[\d\-]{15}\d
+      wikidata_property: P212
+    description: The International Standard Book Number (ISBN) is a numeric commercial
+      book identifier that is intended to be unique. Publishers purchase ISBNs from
+      an affiliate of the International ISBN Agency
+    inherits: []
+    name: isbn13
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/isbn13
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: objectids
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: ocn
+      regexp: \d{1,14}
+      wikidata_property: P243
+    description: OCLC assigns a unique control number (referred to as an "OCN" for
+      "OCLC Control Number") to each new bibliographic record in the WorldCat. Numbers
+      are assigned serially, and as of mid-2013 over a billion OCNs had been created.
+      In September 2013, the OCLC declared these numbers to be in the public domain,
+      removing a perceived barrier to widespread use of OCNs outside OCLC itself.[42]
+      The control numbers link WorldCat's records to local library system records
+      by providing a common reference key for a record across libraries
+    inherits: []
+    name: ocn
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ocn
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: objectids
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: oid
+      regexp: '[0123](\.\d+)*'
+      wikidata_property: P3743
+    description: 'In computing, object identifiers or OIDs are an identifier mechanism
+      standardized by the International Telecommunication Union (ITU) and ISO/IEC
+      for naming any object, concept, or "thing" with a globally unambiguous persistent
+      name.[1] '
+    inherits: []
+    name: oid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/oid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: objectids
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: openlibid
+      regexp: OL[1-9]\d*[AMW]
+      wikidata_property: P648
+    description: Identifier for a work ("W"), edition ("M") or author ("A") for book
+      data of the Internet Archive
+    inherits: []
+    name: openlibid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/openlibid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: objectids
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: viafid
+      regexp: ([1-9]\d(?:\d{0,7}|\d{17,20}))
+      wikidata_property: P214
+    description: 'Identifier for the Virtual International Authority File database
+      [format: up to 22 digits]'
+    inherits: []
+    name: viafid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/viafid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: objectids
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: wikidataid
+    description: Wikidata makes use of identifiers for both internal organization
+      of the knowledge base and for its connection to other databases.
+    inherits: []
+    name: wikidataid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/wikidataid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: objectids,shipping
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: s10upu
+      regexp: ^[A-z]{2}\d{8}\d{1}[A-z]{2}$
+    description: The UPU S10 standard defines a system for assigning 13-character
+      identifiers to international postal items for the purpose of tracking and tracing
+      them during shipping.
+    inherits:
+    - objectids.tracknum
+    name: s10upu
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/s10upu
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: objectids,shipping
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: tracknum
+    description: Postal tracking number
+    inherits: []
+    name: tracknum
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/tracknum
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: objectids,transport
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: aircraftnumber
+      regexp: '[A-Z0-9- ]+'
+      wikidata_property: P426
+    description: An aircraft registration, alternatively called a tail number, is
+      a code unique to a single aircraft, required by international convention to
+      be marked on the exterior of every civil aircraft.
+    inherits: []
+    name: aircraftnumber
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/aircraftnumber
+    term_source: EXTERNAL
+- description: Person related
+  name: Persons
+  terms:
+  - contains:
+    - persons.rusworkposition
+    custom_properties:
+      categories: persons,companies
+      countries: RU
+      is_pii: false
+      languages: common
+      metacrafter_id: jobtitle
+    description: Work positions / job title
+    inherits: []
+    name: jobtitle
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/jobtitle
+    term_source: EXTERNAL
+  - contains:
+    - persons.rusworkposition
+    custom_properties:
+      categories: persons,companies
+      countries: RU
+      is_pii: false
+      languages: common
+      metacrafter_id: jobtitle
+    description: Work positions / job title
+    inherits: []
+    name: jobtitle
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/jobtitle
+    term_source: EXTERNAL
+  - contains:
+    - pii.rusfirstname
+    custom_properties:
+      categories: persons,pii
+      is_pii: true
+      languages: common
+      metacrafter_id: person_firstname
+    description: First name of the person. For example, Donald or Vladimir or Jack
+    inherits: []
+    name: person_firstname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/person_firstname
+    term_source: EXTERNAL
+  - contains:
+    - pii.frfullname
+    - pii.rusfullname
+    custom_properties:
+      categories: persons,pii
+      is_pii: true
+      languages: common
+      metacrafter_id: person_fullname
+    description: Full name of the person as combination of last, first, and sometimes
+      middle name
+    inherits: []
+    name: person_fullname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/person_fullname
+    term_source: EXTERNAL
+  - contains:
+    - pii.rusmidname
+    custom_properties:
+      categories: persons,pii
+      is_pii: true
+      languages: common
+      metacrafter_id: person_midname
+    description: Middle name of the person
+    inherits: []
+    name: person_midname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/person_midname
+    term_source: EXTERNAL
+  - contains:
+    - pii.russurname
+    custom_properties:
+      categories: persons,pii
+      is_pii: true
+      languages: common
+      metacrafter_id: person_surname
+    description: Last name of the person. For example, Smith or Ivanova
+    inherits: []
+    name: person_surname
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/person_surname
+    term_source: EXTERNAL
+  - contains:
+    - persons.rusdegree
+    custom_properties:
+      categories: persons,science
+      classification: categorical
+      is_pii: false
+      languages: common
+      metacrafter_id: academicdegree
+    description: Academic degree title
+    inherits: []
+    name: academicdegree
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/academicdegree
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: persons,science
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: scopusauthoirid
+    description: identifier for an author assigned in Scopus bibliographic database
+    inherits: []
+    name: scopusauthoirid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/scopusauthoirid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: persons
+      classification: categorical
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rusdegree
+    description: Academic degree title in Russian.
+    inherits:
+    - persons.academicdegree
+    name: rusdegree
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rusdegree
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: persons
+      countries: RU
+      is_pii: false
+      languages: ru
+      metacrafter_id: rusworkposition
+    description: Work positions / job title common in Russia and written in Russian
+      language.
+    inherits:
+    - persons.jobtitle
+    name: rusworkposition
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rusworkposition
+    term_source: EXTERNAL
+- description: Scientific
+  name: Science
+  terms:
+  - custom_properties:
+      categories: science,identifiers
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: doi
+    description: A digital object identifier (DOI) is a persistent identifier or handle
+      used to identify objects uniquely, standardized by the International Organization
+      for Standardization (ISO).
+    inherits: []
+    name: doi
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/doi
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: science,identifiers
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: doi
+    description: A digital object identifier (DOI) is a persistent identifier or handle
+      used to identify objects uniquely, standardized by the International Organization
+      for Standardization (ISO).
+    inherits: []
+    name: doi
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/doi
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: science,identifiers
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: grid
+      regexp: grid\.\d{4,6}\.[0-9a-f]{1,2}
+      wikidata_property: P2427
+    description: Global Research Identifier Database (GRID) is a database of educational
+      and research organizations worldwide, created and maintained by Digital Science
+      & Research Solutions Ltd., part of the technology company Digital Science.
+    inherits: []
+    name: grid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/grid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: science,objectids,identifiers
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: isni
+      regexp: (\d{4})(\d{4})(\d{4})(\d{4})
+      wikidata_property: P213
+    description: 'The International Standard Name Identifier (ISNI) is an identifier
+      system for uniquely identifying the public identities of contributors to media
+      content such as books, television programmes, and newspaper articles. Such an
+      identifier consists of 16 digits. It can optionally be displayed as divided
+      into four blocks. '
+    inherits: []
+    name: isni
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/isni
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: science,identifiers
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: openalexid
+      regexp: '[ACIVW][1-9]\d{3,9}'
+      wikidata_property: P10283
+    description: Identifier for works, authors, institutes, venues, concepts/subjects
+      in OpenAlex
+    inherits: []
+    name: openalexid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/openalexid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: science,persons
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: orcid
+      regexp: 0000-000(1-[5-9]|2-[0-9]|3-[0-4])\d{3}-\d{3}[\dX]
+      wikidata_property: P496
+    description: The ORCID, Open Researcher and Contributor ID) is a nonproprietary
+      alphanumeric code to uniquely identify authors and contributors of scholarly
+      communication as well as ORCIDs website and services to look up authors and
+      their bibliographic output (and other user-supplied pieces of information).
+    inherits: []
+    name: orcid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/orcid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: science,persons
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: researcherid
+    description: 'ResearcherID is an identifying system for scientific authors. The
+      system was introduced in January 2008 by Thomson Reuters. '
+    inherits: []
+    name: researcherid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/researcherid
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: science
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: rorid
+      regexp: '[a-z0-9]{9}'
+      wikidata_property: P6782
+    description: 'Research Organization Registry (ROR) is a community-led database
+      that aims to provide a persistent identifier for every research institution
+      in the world.[1] It complements other commonly used identifiers such as ORCID
+      for researchers and DOI for research output. '
+    inherits: []
+    name: rorid
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/rorid
+    term_source: EXTERNAL
+- description: Software development
+  name: Software
+  terms:
+  - custom_properties:
+      categories: software
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: authentihash
+    description: authentihash is a sha256 hash used by Microsoft to verify that the
+      relevant sections of a PE image file have not been altered. This specific type
+      of hash is used by Microsoft AppLocker.
+    inherits:
+    - cryptography.sha256hash
+    name: authentihash
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/authentihash
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: software
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: authentihash
+    description: authentihash is a sha256 hash used by Microsoft to verify that the
+      relevant sections of a PE image file have not been altered. This specific type
+      of hash is used by Microsoft AppLocker.
+    inherits:
+    - cryptography.sha256hash
+    name: authentihash
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/authentihash
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: software
+      is_pii: false
+      languages: common
+      metacrafter_id: datasize
+      wikidata_property: P3575
+    description: size of a software, dataset, neural network, or individual file
+    inherits: []
+    name: datasize
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/datasize
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: software
+      is_pii: false
+      languages: common
+      metacrafter_id: filesize
+      wikidata_property: P3575
+    description: size of a file
+    inherits:
+    - software.datasize
+    name: filesize
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/filesize
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: software
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: imphash
+    description: hash based on PE file imports (MD5 hash)
+    inherits:
+    - cryptography.md5hash
+    name: imphash
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/imphash
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: software
+      is_pii: false
+      languages: common
+      metacrafter_id: programminglang
+      wikidata_property: P277
+    description: Programming language
+    inherits: []
+    name: programminglang
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/programminglang
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: software
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: richpeheaderhash
+    description: The Rich header is an undocumented header contained within PE files
+      compiled and linked using the Microsoft toolchain. It contains information about
+      the build environment that the PE file was created in.
+    inherits: []
+    name: richpeheaderhash
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/richpeheaderhash
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: software
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: ssdeep
+    description: CTPH hash of the file content.
+    inherits: []
+    name: ssdeep
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/ssdeep
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: software
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: telfhash
+    description: Files Trend Micro ELF Hash (aka telfhash)
+    inherits: []
+    name: telfhash
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/telfhash
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: software
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: tlsh
+    description: tlsh is a hash used by Trend Micro which can be used for similarity
+      comparisons.
+    inherits: []
+    name: tlsh
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/tlsh
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: software
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: vhash
+    description: Virustotal in-house similarity clustering algorithm value, based
+      on a simple structural feature hash allows you to find similar files
+    inherits: []
+    name: vhash
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/vhash
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: software
+      classification: identifier
+      is_pii: false
+      languages: common
+      metacrafter_id: winregkey
+    description: Registry keys are container objects similar to folders. Registry
+      values are non-container objects similar to files. Keys may contain values and
+      subkeys. Keys are referenced with a syntax similar to Windows path names, using
+      backslashes to indicate levels of hierarchy. Keys must have a case insensitive
+      name without backslashes.
+    inherits: []
+    name: winregkey
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/winregkey
+    term_source: EXTERNAL
+- description: Telecommunications
+  name: Telecom
+  terms:
+  - custom_properties:
+      categories: telecom,pii
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: imsi
+    description: The international mobile subscriber identity (IMSI) is a number that
+      uniquely identifies every user of a cellular network.
+    inherits: []
+    name: imsi
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/imsi
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: telecom,pii
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: imsi
+    description: The international mobile subscriber identity (IMSI) is a number that
+      uniquely identifies every user of a cellular network.
+    inherits: []
+    name: imsi
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/imsi
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: telecom,pii
+      classification: identifier
+      is_pii: true
+      languages: common
+      metacrafter_id: msisdn
+      regexp: ^[1-9][0-9]{10,14}$
+    description: MSISDN is a number uniquely identifying a subscription in a Global
+      System for Mobile communications or a Universal Mobile Telecommunications System
+      mobile network. It is the mapping of the telephone number to the subscriber
+      identity module in a mobile or cellular phone.
+    inherits: []
+    name: msisdn
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/msisdn
+    term_source: EXTERNAL
+- description: All measurable values (percentage, amount and e.t.c)
+  name: Values
+  terms:
+  - custom_properties:
+      categories: values,common
+      is_pii: false
+      languages: common
+      metacrafter_id: cost
+    description: Cost of something as sub-type of money
+    inherits:
+    - values.money
+    name: cost
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/cost
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: values,common
+      is_pii: false
+      languages: common
+      metacrafter_id: cost
+    description: Cost of something as sub-type of money
+    inherits:
+    - values.money
+    name: cost
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/cost
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: values,common
+      is_pii: false
+      languages: common
+      metacrafter_id: discount
+    description: Discount from price sub-type of money
+    inherits:
+    - values.money
+    name: discount
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/discount
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: values,common
+      is_pii: false
+      languages: common
+      metacrafter_id: grossmargin
+    description: Gross margin, sub-type of money
+    inherits:
+    - values.money
+    name: grossmargin
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/grossmargin
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: values,common
+      is_pii: false
+      languages: common
+      metacrafter_id: income
+    description: Income, sub-type of money
+    inherits:
+    - values.money
+    name: income
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/income
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: values,common
+      is_pii: false
+      languages: common
+      metacrafter_id: money
+    description: Amount of money as numeric value
+    inherits:
+    - values.numeric
+    name: money
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/money
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: values,common
+      is_pii: false
+      languages: common
+      metacrafter_id: numeric
+    description: Any integer or float number
+    inherits: []
+    name: numeric
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/numeric
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: values,common
+      is_pii: false
+      languages: common
+      metacrafter_id: percentage
+    description: Parcentage float number
+    inherits: []
+    name: percentage
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/percentage
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: values,common
+      is_pii: false
+      languages: common
+      metacrafter_id: price
+    description: Price of something, sub-type of money
+    inherits:
+    - values.money
+    name: price
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/price
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: values,common
+      is_pii: false
+      languages: common
+      metacrafter_id: quantity
+    description: Number of something, quantity
+    inherits:
+    - values.numeric
+    name: quantity
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/quantity
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: values,common
+      is_pii: false
+      languages: common
+      metacrafter_id: score
+    description: Score of something as numeric/float number
+    inherits:
+    - values.numeric
+    name: score
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/score
+    term_source: EXTERNAL
+  - custom_properties:
+      categories: values,common
+      is_pii: false
+      languages: common
+      metacrafter_id: share
+    description: Share of the part as percentage as float number. Always between 0
+      and 100 percents.
+    inherits:
+    - values.percentage
+    name: share
+    source_ref: METACRAFTER_REGISTRY
+    source_url: https://registry.apicrafter.io/datatype/share
+    term_source: EXTERNAL
+owners:
+  users:
+  - datahub
+source: DataHub
+url: https://registry.apicrafter.io
+version: 1

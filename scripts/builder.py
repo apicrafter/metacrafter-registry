@@ -208,6 +208,8 @@ def report():
             irep.append('no regexp')
         if 'wikidata_property' not in d.keys():
             irep.append('no wikidata property')
+        if 'categories' not in d.keys():
+            irep.append('no categories')
         if 'links' not in d.keys():
             irep.append('no links')
         if 'translations' not in d.keys():
