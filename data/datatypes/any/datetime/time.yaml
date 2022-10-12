@@ -1,6 +1,6 @@
 categories:
 - datetime
-doc: Time of the day, like 12:00 or 10PM or 11:05
+doc: Time of the day, like 12:00 or 10PM or 11:05 or 18:01:27
 id: time
 is_pii: 'False'
 langs:

@@ -1,0 +1,11 @@
+categories:
+- datetime
+doc: Defines a part of a date - the month and day. Example (MM-DD).
+id: monthday
+is_pii: 'False'
+links:
+  - type: other
+    url: https://ddialliance.org/Specification/DDI-CV/DateType_1.1.html
+langs:
+- common
+name: Month and day

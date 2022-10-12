@@ -1,0 +1,11 @@
+categories:
+- datetime
+doc: 'The TimeSpan structure represents a length of time (duration of time or elapsed time), and may be expressed as start/end, start/duration, or duration/end. Start, end, and duration are documented using the designated DateTime structures. Examples: start/end 2018-02-22T13:0'
+id: timespan
+is_pii: 'False'
+links:
+  - type: other
+    url: https://ddialliance.org/Specification/DDI-CV/DateType_1.1.html
+langs:
+- common
+name: Timespan

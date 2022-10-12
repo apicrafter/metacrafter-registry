@@ -10,6 +10,8 @@ links:
     url: https://en.wikipedia.org/wiki/ISO_8601#Durations
   - type: schema.org
     url: https://schema.org/duration
+  - type: other
+    url: https://ddialliance.org/Specification/DDI-CV/DateType_1.1.html
 name: Time duration
 translations:
   ru:

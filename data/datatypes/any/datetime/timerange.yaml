@@ -1,6 +1,6 @@
 categories:
 - datetime
-doc: Interval between two points of time, like 8:00-21:00 or 8:00AM-1:00PM
+doc: Interval between two points of time, like 8:00-21:00 or 8:00AM-1:00PM.
 id: timerange
 is_pii: 'False'
 langs:
