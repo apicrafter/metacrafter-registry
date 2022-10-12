@@ -11,6 +11,11 @@ langs:
 links:
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/Digital_object_identifier
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P356
+wikidata_property: P356
+parent:
+  type: url
 name: Digital Object Identifier (DOI)
 translations:
   ru:

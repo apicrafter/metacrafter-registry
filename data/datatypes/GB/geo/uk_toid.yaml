@@ -1,0 +1,21 @@
+categories:
+- geo
+country:
+- GB
+doc: 'TOpographic IDentifier assigned by the Ordnance Survey to identify a feature in Great Britain'
+id: toid
+is_pii: 'False'
+langs:
+- en
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/TOID
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P3120
+wikidata_property: P3120
+name: UK TOpographic IDentifier (TOID)
+classification: identifier
+examples:
+  - value: '7000000000013965'
+    description: Surrey
+regexp: '\d{16}'

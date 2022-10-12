@@ -1,0 +1,20 @@
+categories:
+- science
+- identifiers
+doc: 'Identifier specific to a DOI registrant'
+id: doiprefix
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Digital_object_identifier
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P1662
+wikidata_property: P1662
+name: Digital Object Identifier (DOI) prefix
+translations:
+  ru:
+    doc: 'Уникальный идентификатор для регистратора идентификаторов цифровых объектов' 
+    name: Префикс DOI
+classification: identifier

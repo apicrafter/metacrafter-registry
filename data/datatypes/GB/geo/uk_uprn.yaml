@@ -1,0 +1,21 @@
+categories:
+- geo
+country:
+- GB
+doc: 'The Unique Property Reference Number (UPRN) is a unique alphanumeric identifier (a geocode) for every spatial address in Great Britain and can be found in Ordnance Survey AddressBase products.'
+id: uprn
+is_pii: 'False'
+langs:
+- en
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/UPRN
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P8399
+wikidata_property: P8399
+name: UK Unique Property Reference Number (UPRN)
+classification: identifier
+examples:
+  - value: '9051138577'
+    description: Marischal College
+regexp: '\d{12}'
