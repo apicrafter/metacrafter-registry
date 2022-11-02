@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+country:
+- GB
+doc: 'In the United Kingdom, a driving licence is the official document which authorises its holder to operate motor vehicles on highways and other public roads.'
+id: ukdriverlic
+is_pii: 'True'
+langs:
+- en
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Driving_licence_in_the_United_Kingdom
+regexp: '^[A-Z9]{5}\d{6}[A-Z9]{2}\d[A-Z]{2}$'    
+name: UK driver license number
+classification: identifier

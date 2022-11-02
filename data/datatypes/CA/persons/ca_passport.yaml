@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+country:
+- CA
+doc: Number of Canadian passport
+id: capassport
+is_pii: 'True'
+langs:
+- en
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Canadian_passport
+name: Canadian passport number
+semantic_type: passport
+classification: identifier

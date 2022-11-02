@@ -23,7 +23,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../metacrafter-rules" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -82,6 +82,7 @@
       <workItem from="1654491944673" duration="3637000" />
       <workItem from="1654501270686" duration="1200000" />
       <workItem from="1654613737198" duration="7777000" />
+      <workItem from="1667325674192" duration="39000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+country:
+- DK
+doc: 'The Danish Personal Identification number is a national identification number, which is part of the personal information stored in the Civil Registration System (Danish: Det Centrale Personregister, Greenlandic: Inunnik Qitiusumik Nalunaarsuiffik).'
+id: dkcprnum
+is_pii: 'True'
+langs:
+- da
+links:
+  - type: wikipedia
+    url: "https://en.wikipedia.org/wiki/Personal_identification_number_(Denmark)"
+regexp: '/^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])\d{2}[-]?\d{4}$'    
+name: CPR-Number, Personal identification number (Denmark)
+classification: identifier

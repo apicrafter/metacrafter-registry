@@ -5,6 +5,7 @@ country:
 - US
 doc: Number of US Passport
 id: uspassport
+is_pii: 'True'
 langs:
 - en
 links:

@@ -230,7 +230,7 @@ def validate():
     schema = json.load(f)
     f.close()
     datatypes = load_path(os.path.join(DATA_PATH, 'datatypes'))
-    typer.echo('Loaded %d datatypes amd patterns' % (len(datatypes)))
+    typer.echo('Loaded %d datatypes and patterns' % (len(datatypes)))
 
     v = Validator(schema)
     for d in datatypes:

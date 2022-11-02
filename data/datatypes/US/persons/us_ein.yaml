@@ -1,0 +1,18 @@
+categories:
+- pii
+- persons
+country:
+- US
+doc: "An Employer Identification Number (EIN) is also known as a Federal Tax Identification Number, and is used to identify a business entity. Generally, businesses need an EIN."
+id: usein
+is_pii: 'True'
+langs:
+- en
+links:
+  - type: other
+    url: https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Employer_Identification_Number
+regexp: '[0-9]{9}'
+name: US EIN (Employer Identification Number)
+classification: identifier

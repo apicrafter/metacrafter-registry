@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+country:
+- GB
+doc: 'A UTR (unique taxpayer reference) number is a 10-digit number completely unique to each and every UK taxpayer.'
+id: ukutr
+is_pii: 'True'
+langs:
+- en
+links:
+  - type: other
+    url: https://www.gov.uk/find-lost-utr-number
+name: Unique Taxpayer Reference (UTR) 
+regexp: '[0-9]{10}'
+classification: identifier

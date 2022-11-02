@@ -1,0 +1,14 @@
+categories:
+- pii
+- persons
+country:
+- AU
+doc: Number of Australian National passport
+id: aupassport
+langs:
+- en
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Australian_passport
+name: Australian passport number
+semantic_type: passport

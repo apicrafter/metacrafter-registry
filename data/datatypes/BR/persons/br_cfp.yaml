@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+country:
+- BR
+doc: "The CPF number (Cadastro de Pessoas Fisicas; Portuguese for Natural Persons Register) is the Brazilian individual taxpayer registry, since its creation in 1965."
+id: brcpf
+is_pii: 'True'
+langs:
+- pt
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/CPF_number
+regexp: '\d{3}\.\d{3}\.\d{3}\-\d{2}'
+name: CPF number (Cadastro de Pessoas Fisicas)
+classification: identifier

@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+country:
+- GB
+doc: Number of the passport issued by the United Kingdom 
+id: ukpassport
+is_pii: 'True'
+langs:
+- en
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/British_passport
+name: British passport number
+semantic_type: passport
+regexp: '[0-9]{9}'

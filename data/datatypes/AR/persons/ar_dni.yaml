@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+country:
+- AR
+doc: "Documento Nacional de Identidad or DNI (which means National Identity Document) is the main identity document for Argentine citizens, as well as temporary or permanent resident aliens (DNI Extranjero)."
+id: ardni
+is_pii: 'True'
+langs:
+- es
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Documento_Nacional_de_Identidad_(Argentina)
+regexp: '[0-9]{2}[\.]{1}?[0-9]{3}[\.]{1}?[0-9]{3}'
+name: Argentina DNI (National Identity Document)
+classification: identifier

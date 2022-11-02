@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+country:
+- US
+doc: "An ATIN is an Adoption Taxpayer Identification Number issued by the Internal Revenue Service as a temporary taxpayer identification number for the child in a domestic adoption where the adopting taxpayers do not have and/or are unable to obtain the child's Social Security Number (SSN)."
+id: usatin
+is_pii: 'True'
+langs:
+- en
+links:
+  - type: other
+    url: https://www.irs.gov/individuals/adoption-taxpayer-identification-number
+regexp: '[0-9]{9}'
+name: US ATIN (Adoption Taxpayer Identification Number)
+classification: identifier

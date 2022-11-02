@@ -1,0 +1,17 @@
+categories:
+- pii
+- persons
+country:
+- FR
+doc: Number of French passport
+id: frpassport
+is_pii: 'True'
+langs:
+- fr
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/French_passport
+regexp: "^[0-9]{2}[A-z]{2}[0-9]{5}$"
+name: French passport number
+semantic_type: passport
+classification: identifier

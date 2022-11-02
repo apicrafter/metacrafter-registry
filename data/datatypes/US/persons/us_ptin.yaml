@@ -1,0 +1,15 @@
+categories:
+- pii
+- persons
+country:
+- US
+doc: "The Preparer Tax Identification Number (PTIN) is an identification number that all paid tax return preparers must use on U.S. federal tax returns or claims for refund submitted to the Internal Revenue Service (IRS). "
+id: usptin
+is_pii: 'True'
+langs:
+- en
+links:
+  - type: other
+    url: https://en.wikipedia.org/wiki/Preparer_Tax_Identification_Number
+name: US PTIN (Preparer Tax Identification Number)
+classification: identifier
