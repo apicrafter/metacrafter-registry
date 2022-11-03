@@ -1,10 +1,10 @@
 # ISO 3166 code alpha-2 for all countries as id, name as English name of the country
-- id: RU
-  name: Russian Federation
 - id: GB
   name: United Kingdom
 - id: US
   name: United States
+- id: RU
+  name: Russian Federation
 - id: FR
   name: France
 - id: ES
@@ -29,3 +29,11 @@
   name: Denmark
 - id: BR
   name: Brazil
+- id: FI
+  name: Finland
+- id: SE
+  name: Sweden
+- id: TH
+  name: Thailand
+- id: DE
+  name: Germany

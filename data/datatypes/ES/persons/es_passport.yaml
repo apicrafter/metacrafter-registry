@@ -1,0 +1,17 @@
+categories:
+- pii
+- persons
+country:
+- ES
+doc: Number of Spanish passport
+id: espassport
+is_pii: 'True'
+langs:
+- es
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Spanish_passport
+regexp: "^[A-z0-9]{2,3}[0-9]{6}$"
+name: Spanish passport number
+semantic_type: passport
+classification: identifier

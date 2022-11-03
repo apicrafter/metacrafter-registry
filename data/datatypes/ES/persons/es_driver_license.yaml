@@ -1,0 +1,15 @@
+categories:
+- pii
+- persons
+country:
+- ES
+doc: 'Alphanumeric value of the Spain driver license'
+id: esdriverlic
+is_pii: 'True'
+langs:
+- es
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Driving_licence_in_Spain
+name: Spain driver license number
+classification: identifier

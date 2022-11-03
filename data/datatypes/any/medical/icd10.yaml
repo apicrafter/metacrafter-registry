@@ -1,0 +1,25 @@
+categories:
+- medical
+doc: "ICD-10 is the 10th revision of the International Statistical Classification of Diseases and Related Health Problems (ICD), a medical classification list by the World Health Organization (WHO)."
+id: icd10
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/ICD-10
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P494
+name: Identifier in the ICD catalogue codes for diseases - Version 10 (ICD-10)
+wikidata_property: P494
+regexp: '[A-Z]\d{2}(\.\d{1,2})?'
+examples:
+  - value: J11
+    description: influenza
+  - value: R19.6
+    description: 'halitosis'
+translations:
+  ru:
+    doc: "Международная статистическая классификация болезней и проблем, связанных со здоровьем, Десятого пересмотра (МКБ-10) — версия классификатора МКБ, разработанная в 1989 году, принятая ВОЗ в 1990 году"
+    name: МКБ-10
+classification: categorical

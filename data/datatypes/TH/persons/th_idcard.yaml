@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+country:
+- TH
+doc: "Number of the Thai identity card"
+id: thidcard
+is_pii: 'True'
+langs:
+- th
+links:
+  - type: wikipedia
+    url: "https://en.wikipedia.org/wiki/Thai_identity_card"
+regexp: '^\b\d{1}-\d{4}-\d{5}-\d{2}-\d\b$'
+name: Thai identity card
+classification: identifier

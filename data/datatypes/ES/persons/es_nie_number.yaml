@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+country:
+- ES
+doc: 'The NIE is a tax identification number in Spain, known in Spanish as the NIE, or more formally the Numero de identidad de extranjero'
+id: esnie
+is_pii: 'True'
+langs:
+- es
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/NIE_number
+regexp: '^(X(-|\.)?0?\d{7}(-|\.)?[A-Z]|[A-Z](-|\.)?\d{7}(-|\.)?[0-9A-Z]|\d{8}(-|\.)?[A-Z])$'
+name: Spanish Foreigner Identity Number (NIE)
+classification: identifier

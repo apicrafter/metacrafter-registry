@@ -1,9 +1,9 @@
-- id: ru
-  name: Russian
 - id: common
   name: Common to most languages
 - id: en
   name: English
+- id: ru
+  name: Russian
 - id: fr
   name: French
 - id: es
@@ -14,3 +14,11 @@
   name: Portugenese
 - id: da
   name: Danish
+- id: fi
+  name: Finnish
+- id: se
+  name: Swedish
+- id: th
+  name: Thai
+- id: de
+  name: German

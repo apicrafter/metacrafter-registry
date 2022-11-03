@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+country:
+- FI
+doc: 'The Finnish identity card is one of two official identity documents in Finland, the other being the Finnish passport.'
+id: fiidcard
+is_pii: 'True'
+langs:
+- fi
+links:
+  - type: wikipedia
+    url: "https://en.wikipedia.org/wiki/Finnish_identity_card"
+regexp: '^(0[1-9]|[1-2][0-9]|3[0-1])(0[1-9]|1[0-2])[0-9]{2}[a+-][0-9]{3}[A-z0-9]$'    
+name: Finnish identity card
+classification: identifier

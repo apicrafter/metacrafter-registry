@@ -1,0 +1,15 @@
+categories:
+- pii
+- persons
+country:
+- CA
+doc: "Each B.C. resident enrolled with the Medical Services Plan (MSP) is given a unique lifetime identifier for health care called a Personal Health Number (PHN)."
+id: cabcphn
+is_pii: 'True'
+langs:
+- en
+links:
+  - type: other
+    url: https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/personal-health-identification
+name: "Canada British Columbia's Personal Health Number (PHN)"
+classification: identifier
