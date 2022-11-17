@@ -9,6 +9,6 @@ langs:
 - ru
 links:
   - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Russian_passport
-name: Russian passport number
+    url: https://en.wikipedia.org/wiki/Internal_passport_of_Russia
+name: Russian internal passport number
 semantic_type: passport

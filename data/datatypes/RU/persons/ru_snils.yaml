@@ -9,6 +9,9 @@ id: rusnils
 is_pii: 'True'
 langs:
 - ru
+links:
+  - type: wikipedia
+    url: "https://en.wikipedia.org/wiki/SNILS_(Russia)"
 name: Individual insurance account number (SNILS)
 translations:
   ru:

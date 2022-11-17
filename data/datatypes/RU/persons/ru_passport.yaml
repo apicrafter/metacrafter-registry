@@ -1,0 +1,14 @@
+categories:
+- pii
+- persons
+country:
+- RU
+doc: Number of Russian foreign passport
+id: rupassport
+langs:
+- ru
+links:
+  - type: wikipedia
+    url: https://en.wikipedia.org/wiki/Russian_passport
+name: Russian passport foreign number
+semantic_type: passport
