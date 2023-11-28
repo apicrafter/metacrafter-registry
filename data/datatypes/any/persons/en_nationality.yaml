@@ -1,0 +1,16 @@
+categories:
+- pii
+- persons
+doc: Nationality of the person written in English
+id: ennationality
+is_pii: 'True'
+langs:
+- common
+name: Person nationality in English
+classification: categorical
+semantic_type: nationality
+examples:
+  - value: Belorussian
+    description: Belorussian nationality
+  - value: Spanish
+    description: Spanish nationality

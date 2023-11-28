@@ -50,3 +50,5 @@
   name: Telecommunications
 - id: shipping
   name: Shipping and delivery
+- id: dublincore
+  name: Dublin Core

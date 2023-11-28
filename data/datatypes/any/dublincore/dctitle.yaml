@@ -1,0 +1,19 @@
+categories:
+- dublincore
+doc: A name given to the resource.
+id: dctitle
+is_pii: 'False'
+langs:
+- common
+links:
+  - type: dublincore
+    url: http://purl.org/dc/terms/title
+name: Title (Dublin Core)
+examples:
+  - value: Picture of the cat
+    description: Title of the resource
+translations:
+  ru:
+    doc: Имя данное ресурсу
+    name: Заголовок
+

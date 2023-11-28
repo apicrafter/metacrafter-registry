@@ -9,3 +9,5 @@ langs:
 - common
 name: Person nationality
 classification: categorical
+patterns:
+- ennationality
