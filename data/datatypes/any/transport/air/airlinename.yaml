@@ -1,0 +1,9 @@
+categories:
+- transport
+doc: Unique name of the airline
+id: airlinename
+is_pii: 'False'
+langs:
+- common
+name: Airline name
+classification: identifier

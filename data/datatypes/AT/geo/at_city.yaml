@@ -1,0 +1,10 @@
+categories:
+- geo
+country:
+- AT
+doc: Austrian city name in German language
+id: atcity
+langs:
+- de
+name: Austrian city name (in German)
+semantic_type: city

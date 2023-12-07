@@ -1,0 +1,18 @@
+categories:
+- telecom
+doc: "Identifier of a product assigned by the grantee in an application to the Federal Communications Commission of the United States"
+id: fccid
+is_pii: 'False'
+country:
+- US
+links:
+  - type: wikidata
+    url: https://www.wikidata.org/wiki/Property:P7290
+langs:
+- en
+wikidata_property: P7290
+name: FCC Product Code (FCC ID)
+examples:
+  - value: A1395
+    description: iPad 2, model A1395
+classification: identifier

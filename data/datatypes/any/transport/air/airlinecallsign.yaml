@@ -1,0 +1,9 @@
+categories:
+- transport
+doc: Unique call sign of the airline
+id: airlinecallsign
+is_pii: 'False'
+langs:
+- common
+name: Airline call sign
+classification: identifier
