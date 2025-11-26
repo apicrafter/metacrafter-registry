@@ -8,10 +8,10 @@ is_pii: 'True'
 langs:
 - common
 links:
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P281
-  - type: schema.org
-    url: https://schema.org/postalCode
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P281
+- type: schema.org
+  url: https://schema.org/postalCode
 wikidata_property: P281
 name: Postal code/index
 patterns:
@@ -25,3 +25,5 @@ translations:
     doc: Индекс почтовой связи
     name: Почтовый индекс
 classification: categorical
+examples: []
+regexp: ''

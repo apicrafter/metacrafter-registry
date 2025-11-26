@@ -14,3 +14,7 @@ translations:
     doc: Код по Общероссийскому классификатору продукции
     name: Код ОКПД
 classification: categorical
+links: []
+examples: []
+wikidata_property: ''
+regexp: ''

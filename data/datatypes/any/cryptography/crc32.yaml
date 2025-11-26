@@ -1,6 +1,9 @@
 categories:
 - cryptography
-doc: 'A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to digital data. Blocks of data entering these systems get a short check value attached, based on the remainder of a polynomial division of their contents.'
+doc: A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital
+  networks and storage devices to detect accidental changes to digital data. Blocks
+  of data entering these systems get a short check value attached, based on the remainder
+  of a polynomial division of their contents.
 id: crc32
 is_pii: 'False'
 langs:
@@ -8,6 +11,10 @@ langs:
 parent:
   type: numeric
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Cyclic_redundancy_check
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Cyclic_redundancy_check
 name: CRC-32
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

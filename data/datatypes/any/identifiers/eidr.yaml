@@ -1,7 +1,9 @@
 categories:
 - identifiers
 - media
-doc: The Entertainment Identifier Registry, or EIDR, is a global unique identifier system for a broad array of audio visual objects, including motion pictures, television, and radio programs.
+doc: The Entertainment Identifier Registry, or EIDR, is a global unique identifier
+  system for a broad array of audio visual objects, including motion pictures, television,
+  and radio programs.
 id: eidr
 is_pii: 'False'
 langs:
@@ -9,23 +11,24 @@ langs:
 parent:
   type: doi
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/EIDR
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P2704
-  - type: schema.org
-    url: https://schema.org/editEIDR
-  - type: schema.org
-    url: https://schema.org/titleEIDR
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/EIDR
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2704
+- type: schema.org
+  url: https://schema.org/editEIDR
+- type: schema.org
+  url: https://schema.org/titleEIDR
 wikidata_property: P2704
 name: Entertainment Identifier Registry (EIDR)
 examples:
-  - value: 10.5240/58DD-06EB-3EED-A705-EE28-7
-    description: The Simpsons
-  - value: 10.5240/E058-3983-F191-9805-DD81-Q
-    description: Never Say Never Again
+- value: 10.5240/58DD-06EB-3EED-A705-EE28-7
+  description: The Simpsons
+- value: 10.5240/E058-3983-F191-9805-DD81-Q
+  description: Never Say Never Again
 translations:
   ru:
-    doc:  Entertainment Identifier Registry ID
+    doc: Entertainment Identifier Registry ID
     name: Код EIDR
 classification: identifier
+regexp: ''

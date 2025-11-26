@@ -7,12 +7,14 @@ langs:
 - common
 name: Name
 links:
-  - type: schema.org
-    url: https://schema.org/name
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P2561
+- type: schema.org
+  url: https://schema.org/name
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2561
 wikidata_property: P2561
 translations:
   ru:
     doc: Название объекта или сущности
-    name: Название 
+    name: Название
+examples: []
+regexp: ''

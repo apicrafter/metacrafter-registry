@@ -13,3 +13,7 @@ translations:
     doc: Код валюты по справочнику ОКВ (Общероссийский классификатор валют)
     name: Код валюты по ОКВ
 semantic_type: currency
+links: []
+examples: []
+wikidata_property: ''
+regexp: ''

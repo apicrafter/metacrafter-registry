@@ -8,8 +8,12 @@ id: ukpostalcode
 langs:
 - en
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom
 name: UK Postal code
 semantic_type: postindex
 classification: categorical
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

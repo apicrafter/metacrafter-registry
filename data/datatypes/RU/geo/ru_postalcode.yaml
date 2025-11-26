@@ -8,3 +8,8 @@ langs:
 - common
 name: Russian postal code
 semantic_type: postindex
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

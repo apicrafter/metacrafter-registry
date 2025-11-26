@@ -1,18 +1,20 @@
 categories:
 - geo
-doc: 'A continent is any of several large landmasses. Related to UN unm49 dataclass'
+doc: A continent is any of several large landmasses. Related to UN unm49 dataclass
 id: continent
 is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Continent
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P30
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Continent
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P30
 wikidata_property: P30
 examples:
-  - value: 'Eurasia'
-    description: Eurasia  
+- value: Eurasia
+  description: Eurasia
 name: Continent name or identifier
 classification: categorical
+translations: {}
+regexp: ''

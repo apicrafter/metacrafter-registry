@@ -8,7 +8,11 @@ id: aupassport
 langs:
 - en
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Australian_passport
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Australian_passport
 name: Australian passport number
 semantic_type: passport
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

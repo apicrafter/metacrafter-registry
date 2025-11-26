@@ -11,8 +11,8 @@ is_pii: 'False'
 langs:
 - ru
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/OKTMO
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/OKTMO
 name: Russian Classification of Territories of Municipal Formations (OKTMO) name
 translations:
   ru:
@@ -22,3 +22,6 @@ translations:
       и социальной информации Российской Федерации» (ЕСКК).
     name: Наименование из справочника ОКТМО
 classification: categorical
+examples: []
+wikidata_property: ''
+regexp: ''

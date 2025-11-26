@@ -13,3 +13,7 @@ translations:
     doc: Наименование федерального округа России полное или сокращённое
     name: Наименование федерального округа России
 classification: categorical
+links: []
+examples: []
+wikidata_property: ''
+regexp: ''

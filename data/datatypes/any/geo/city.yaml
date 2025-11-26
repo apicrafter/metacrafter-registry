@@ -10,10 +10,10 @@ is_pii: 'True'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/City
-  - type: schema.org
-    url: https://schema.org/City
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/City
+- type: schema.org
+  url: https://schema.org/City
 name: City
 patterns:
 - ruscity
@@ -23,3 +23,6 @@ translations:
     doc: Город — крупный населённый пункт, жители которого заняты, как правило, не
       сельским хозяйством.
     name: Город
+examples: []
+wikidata_property: ''
+regexp: ''

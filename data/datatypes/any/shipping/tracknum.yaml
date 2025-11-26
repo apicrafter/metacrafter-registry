@@ -1,13 +1,17 @@
 categories:
 - objectids
 - shipping
-doc: 'Postal tracking number'
+doc: Postal tracking number
 id: tracknum
 is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Tracking_number
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Tracking_number
 name: Tracking number (postal)
 classification: identifier
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

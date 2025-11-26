@@ -6,10 +6,14 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Airline_codes
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Airline_codes
 name: Airline code
 patterns:
 - icaoairlinecode
 - iataairlinecode
 classification: identifier
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

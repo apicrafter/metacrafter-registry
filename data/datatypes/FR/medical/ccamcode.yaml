@@ -1,0 +1,32 @@
+categories:
+- medical
+id: ccamcode
+is_pii: 'False'
+langs:
+- fr
+name: Code CCAM selon le nom du champ
+doc: >
+  FR datatype for 'Code CCAM selon le nom du champ' (ccamcode) from rules in context
+  'medical'. CCAM (Classification Commune des Actes Médicaux) is the French common
+  classification of medical procedures used in the French healthcare system. CCAM codes
+  are used to identify and classify medical acts and procedures for billing, reimbursement,
+  and statistical purposes. The format consists of exactly 4 characters: 1 uppercase letter,
+  2 digits, and 1 uppercase letter (e.g., A123B).
+classification: identifier
+country:
+- FR
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Classification_commune_des_actes_m%C3%A9dicaux
+examples:
+- value: A123B
+  description: "CCAM code with format: letter + 2 digits + letter"
+- value: Z456C
+  description: Another example of CCAM code format
+- value: M789N
+  description: Example CCAM medical procedure code
+wikidata_property: ''
+translations:
+  en: CCAM Code (Common Classification of Medical Procedures)
+  fr: Code CCAM (Classification Commune des Actes Médicaux)
+regexp: ^[A-Z][0-9]{2}[A-Z]$

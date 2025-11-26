@@ -6,12 +6,14 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Year
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Year
 name: Year
-regexp: '\d{4}'
+regexp: \d{4}
 examples:
-  - value: '2022'
-    description: Year 2022
-  - value: '1243'
-    description: Year 1243
+- value: '2022'
+  description: Year 2022
+- value: '1243'
+  description: Year 1243
+wikidata_property: ''
+translations: {}

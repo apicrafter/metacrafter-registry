@@ -9,8 +9,8 @@ name: Company or organization name
 parent:
   type: name
 links:
-  - type: schema.org
-    url: https://schema.org/legalName
+- type: schema.org
+  url: https://schema.org/legalName
 patterns:
 - encompanyname
 - rucompanyname
@@ -19,3 +19,6 @@ translations:
     doc: Название организации, бизнеса или компании на любом языке
     name: Название организации или компании
 classification: identifier
+examples: []
+wikidata_property: ''
+regexp: ''

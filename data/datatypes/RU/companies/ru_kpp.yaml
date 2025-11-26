@@ -15,3 +15,7 @@ translations:
       принадлежности компании.
     name: Код постановки на учёт (КПП)
 classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+regexp: ''

@@ -1,0 +1,14 @@
+categories:
+- finances
+id: bic
+is_pii: 'False'
+langs:
+- common
+name: SWIFT/BIC code
+doc: Datatype for 'SWIFT/BIC code' (bic) from rules in context 'finances'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

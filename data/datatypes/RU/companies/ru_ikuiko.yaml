@@ -14,3 +14,7 @@ translations:
     doc: Код присваиваемый государственным заказчикам в Российской Федерации
     name: Идентификационный код заказчика
 classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+regexp: ''

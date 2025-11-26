@@ -1,0 +1,46 @@
+categories:
+- finances
+id: euvat
+is_pii: 'True'
+langs:
+- en
+name: VAT number
+doc: EU datatype for 'VAT number' (euvat) from rules in context 'finances'. The EU VAT
+  identification number (VAT ID) is a unique identifier assigned to businesses for VAT
+  purposes within the European Union. The format consists of a 2-letter country code
+  (ISO 3166-1 alpha-2) followed by 6 to 12 alphanumeric characters. The exact format
+  and length vary by member state, but all follow the general pattern of country code
+  plus alphanumeric identifier.
+classification: identifier
+country:
+- EU
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/VAT_identification_number
+- type: doc
+  url: https://ec.europa.eu/taxation_customs/vies/
+- type: doc
+  url: https://ec.europa.eu/taxation_customs/taxation/vat/how_vat_works/identifiers/index_en.htm
+examples:
+- value: 'DE123456789'
+  description: German VAT identification number (USt-IdNr.) with country code DE and 9 digits
+- value: 'FR12345678901'
+  description: French VAT identification number (TVA intracommunautaire) with country code FR and 11 alphanumeric characters
+- value: 'ES123456789'
+  description: Spanish VAT identification number (IVA intracomunitario) with country code ES and 9 alphanumeric characters
+- value: 'NL123456789B01'
+  description: Dutch VAT identification number (BTW-nummer) with country code NL and 12 alphanumeric characters
+- value: 'IT12345678901'
+  description: Italian VAT identification number with country code IT and 11 digits
+- value: 'GB123456789'
+  description: UK VAT identification number (pre-Brexit format) with country code GB and 9 alphanumeric characters
+wikidata_property: ''
+translations:
+  en: VAT identification number
+  fr: Numéro d'identification à la TVA intracommunautaire
+  de: Umsatzsteuer-Identifikationsnummer
+  es: Número de identificación del IVA intracomunitario
+  it: Numero di identificazione IVA
+  nl: BTW-identificatienummer
+  pt: Número de identificação de IVA
+regexp: ^[A-Z]{2}[0-9A-Z]{6,12}$

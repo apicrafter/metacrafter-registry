@@ -10,7 +10,11 @@ name: Person nationality in English
 classification: categorical
 semantic_type: nationality
 examples:
-  - value: Belorussian
-    description: Belorussian nationality
-  - value: Spanish
-    description: Spanish nationality
+- value: Belorussian
+  description: Belorussian nationality
+- value: Spanish
+  description: Spanish nationality
+links: []
+wikidata_property: ''
+translations: {}
+regexp: ''

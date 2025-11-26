@@ -1,0 +1,33 @@
+categories:
+- finances
+id: bsn
+is_pii: 'True'
+langs:
+- nl
+name: Burgerservicenummer op veldnaam
+doc: NL datatype for 'Burgerservicenummer op veldnaam' (bsn) from rules in context
+  'finances'. The Burgerservicenummer (BSN) is a unique 9-digit personal identification
+  number assigned to every Dutch citizen and resident. It is used for identification
+  in interactions with government agencies, healthcare providers, and for tax purposes.
+  The BSN replaced the former Social Security Number (SoFi-nummer) in 2007. It consists
+  of exactly 9 digits and uses an 11-proef (11-check) algorithm for validation.
+classification: identifier
+country:
+- NL
+links:
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Burgerservicenummer
+- type: doc
+  url: https://www.rijksoverheid.nl/onderwerpen/identificatie-en-reisdocumenten/vraag-en-antwoord/wat-is-het-burgerservicenummer-bsn
+examples:
+- value: '123456782'
+  description: Dutch BSN (Burgerservicenummer) with 9 digits
+- value: '987654321'
+  description: Another valid Dutch BSN format
+- value: '111222333'
+  description: Example Dutch BSN number
+wikidata_property: ''
+translations:
+  en: Citizen Service Number (BSN)
+  nl: Burgerservicenummer (BSN)
+regexp: ^[0-9]{9}$

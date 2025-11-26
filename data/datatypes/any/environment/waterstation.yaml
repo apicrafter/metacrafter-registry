@@ -1,0 +1,15 @@
+categories:
+- environment
+id: waterstation
+is_pii: 'False'
+langs:
+- en
+name: Water quality station id
+doc: Datatype for 'Water quality station id' (waterstation) from rules
+  in context 'environment'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

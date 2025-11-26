@@ -1,0 +1,39 @@
+categories:
+- geo
+id: ruscountrycode
+is_pii: 'False'
+langs:
+- ru
+name: Russian country code by OKSM classifier (3 digits) by data and fieldname
+doc: RU datatype for 'Russian country code by OKSM classifier (3 digits) by data and
+  fieldname' (ruscountrycode) from rules in context 'geo'. OKSM (Общероссийский
+  классификатор стран мира) is the Russian All-Russian Classifier of Countries of
+  the World. It uses 3-digit numeric codes to represent countries, dependent territories,
+  and special areas of geographical interest. The classifier is based on ISO 3166-1
+  numeric codes but may include additional codes specific to Russian classification
+  needs. Common codes include 643 for Russia, 276 for Germany, 840 for United States,
+  and 826 for United Kingdom.
+classification: identifier
+country:
+- RU
+links:
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%89%D0%B5%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80_%D1%81%D1%82%D1%80%D0%B0%D0%BD_%D0%BC%D0%B8%D1%80%D0%B0
+examples:
+- value: '643'
+  description: Russia (Россия) - OKSM code
+- value: '276'
+  description: Germany (Германия) - OKSM code
+- value: '840'
+  description: United States (Соединенные Штаты) - OKSM code
+- value: '826'
+  description: United Kingdom (Соединенное Королевство) - OKSM code
+- value: '032'
+  description: Argentina (Аргентина) - OKSM code
+- value: '704'
+  description: Vietnam (Вьетнам) - OKSM code
+wikidata_property: ''
+translations:
+  en: Russian OKSM Country Code (3 digits)
+  ru: Код страны по классификатору ОКСМ (3 цифры)
+regexp: ^[0-9]{3}$

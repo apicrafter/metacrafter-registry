@@ -1,0 +1,15 @@
+categories:
+- finances
+id: aba
+is_pii: 'False'
+langs:
+- common
+name: US ABA routing number
+doc: Datatype for 'US ABA routing number' (aba) from rules in context
+  'finances'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

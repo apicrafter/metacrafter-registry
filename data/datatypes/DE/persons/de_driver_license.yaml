@@ -3,13 +3,17 @@ categories:
 - persons
 country:
 - DE
-doc: 'Alphanumeric value of the German driver license'
+doc: Alphanumeric value of the German driver license
 id: dedriverlic
 is_pii: 'True'
 langs:
 - de
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Driving_licence_in_Germany
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Driving_licence_in_Germany
 name: Germany driver license number
 classification: identifier
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

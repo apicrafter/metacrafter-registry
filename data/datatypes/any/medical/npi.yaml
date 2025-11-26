@@ -1,0 +1,14 @@
+categories:
+- medical
+id: npi
+is_pii: 'True'
+langs:
+- en
+name: US NPI identifier
+doc: Datatype for 'US NPI identifier' (npi) from rules in context 'medical'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

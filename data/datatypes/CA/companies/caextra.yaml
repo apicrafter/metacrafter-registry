@@ -1,0 +1,25 @@
+categories:
+- companies
+id: caextra
+is_pii: 'False'
+langs:
+- en
+name: Extra-provincial registration number
+doc: CA datatype for 'Extra-provincial registration number' (caextra)
+  from rules in context 'companies'.
+classification: identifier
+country:
+- CA
+links: []
+examples:
+- value: AB-1234
+  description: Extra-provincial registration number with 2 letters, hyphen, and 4 digits
+- value: BC-12345
+  description: Extra-provincial registration number with 2 letters, hyphen, and 5 digits
+- value: XY-123456
+  description: Extra-provincial registration number with 2 letters, hyphen, and 6 digits
+- value: AB1234
+  description: Extra-provincial registration number with 2 letters and 4 digits (no hyphen)
+wikidata_property: ''
+translations: {}
+regexp: ^[A-Z]{2}-?[0-9]{4,6}$

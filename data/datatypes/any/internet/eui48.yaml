@@ -10,3 +10,8 @@ langs:
 - common
 name: MAC Address (EUI48) of the device
 classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

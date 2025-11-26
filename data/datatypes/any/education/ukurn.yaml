@@ -1,0 +1,14 @@
+categories:
+- education
+id: ukurn
+is_pii: 'False'
+langs:
+- en
+name: UK school URN
+doc: Datatype for 'UK school URN' (ukurn) from rules in context 'education'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

@@ -7,8 +7,12 @@ is_pii: 'True'
 langs:
 - common
 links:
-  - type: schema.org
-    url: https://schema.org/familyName
+- type: schema.org
+  url: https://schema.org/familyName
 name: Person surname/lastname
 patterns:
 - russurname
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

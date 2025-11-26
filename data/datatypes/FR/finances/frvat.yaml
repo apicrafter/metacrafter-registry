@@ -1,0 +1,30 @@
+categories:
+- finances
+id: frvat
+is_pii: 'True'
+langs:
+- fr
+name: TVA intracommunautaire par nom de champ
+doc: FR datatype for 'TVA intracommunautaire par nom de champ' (frvat) from rules
+  in context 'finances'. The French VAT identification number (TVA intracommunautaire,
+  Taxe sur la Valeur Ajoutée) is a unique identifier assigned to businesses for VAT
+  purposes within the European Union. It consists of the country code 'FR' followed
+  by 11 alphanumeric characters (letters and/or digits).
+classification: identifier
+country:
+- FR
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Num%C3%A9ro_d%27identification_%C3%A0_la_TVA_intracommunautaire
+- type: doc
+  url: https://www.service-public.fr/professionnels-entreprises/vosdroits/F23500
+examples:
+- value: 'FR12345678901'
+  description: French VAT identification number (TVA intracommunautaire) with country code FR and 11 alphanumeric characters
+- value: 'FR98765432109'
+  description: Another valid French VAT identification number format
+- value: 'FRABCDEFGHIJ1'
+  description: French VAT identification number with letters in the alphanumeric part
+wikidata_property: ''
+translations: {}
+regexp: ^FR[0-9A-Z]{11}$

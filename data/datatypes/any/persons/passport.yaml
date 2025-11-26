@@ -12,3 +12,8 @@ patterns:
 - ruintpassport
 - uspassport
 classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

@@ -10,11 +10,14 @@ is_pii: 'True'
 langs:
 - ru
 links:
-  - type: wikipedia
-    url: "https://en.wikipedia.org/wiki/SNILS_(Russia)"
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SNILS_(Russia)
 name: Individual insurance account number (SNILS)
 translations:
   ru:
     doc: Страховой номер индивидуального лицевого счёта физического лица (СНИЛС)
     name: Код СНИЛС
 classification: identifier
+examples: []
+wikidata_property: ''
+regexp: ''

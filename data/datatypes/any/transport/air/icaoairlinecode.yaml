@@ -1,20 +1,24 @@
 categories:
 - transport
-doc: 'The ICAO airline designator is a code assigned by the International Civil Aviation Organization (ICAO) to aircraft operating agencies, aeronautical authorities, and services related to international aviation, each of which is allocated both a three-letter designator and a telephony designator.'
+doc: The ICAO airline designator is a code assigned by the International Civil Aviation
+  Organization (ICAO) to aircraft operating agencies, aeronautical authorities, and
+  services related to international aviation, each of which is allocated both a three-letter
+  designator and a telephony designator.
 id: icaoairlinecode
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Airline_codes
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P230
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Airline_codes
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P230
 name: ICAO Airline code
 semantic_type: airlinecode
 wikidata_property: P230
 regexp: '[A-Z0-9]{3}'
 examples:
-  - value: THY
-    description: Turkish Airlines
-  - value:  BWG
-    description: Blue Wings
+- value: THY
+  description: Turkish Airlines
+- value: BWG
+  description: Blue Wings
+translations: {}

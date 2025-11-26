@@ -7,13 +7,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Fully_qualified_domain_name
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Fully_qualified_domain_name
 name: Full qualified domain name (FQDN)
 regexp: ^(?!:\/\/)(?=.{1,255}$)((.{1,63}\.){1,127}(?![0-9]*$)[a-z0-9-]+\.?)$
 examples:
-  - value: ec2-35-160-210-253.us-west-2-.compute.amazonaws.com
-    description: Amazon web services ec2 server
-  - value: xn--kxae4bafwg.xn--pxaix.gr
-    description: Greek language national domain name
+- value: ec2-35-160-210-253.us-west-2-.compute.amazonaws.com
+  description: Amazon web services ec2 server
+- value: xn--kxae4bafwg.xn--pxaix.gr
+  description: Greek language national domain name
 classification: identifier
+wikidata_property: ''
+translations: {}

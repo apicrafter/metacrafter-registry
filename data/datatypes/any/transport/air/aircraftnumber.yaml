@@ -1,24 +1,25 @@
 categories:
 - objectids
 - transport
-doc: An aircraft registration, alternatively called a tail number,
-  is a code unique to a single aircraft, required by international convention to be
-  marked on the exterior of every civil aircraft.
+doc: An aircraft registration, alternatively called a tail number, is a code unique
+  to a single aircraft, required by international convention to be marked on the exterior
+  of every civil aircraft.
 id: aircraftnumber
 is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Aircraft_registration
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P426
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Aircraft_registration
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P426
 name: Aircraft/tail number
 wikidata_property: P426
-regexp:  '[A-Z0-9- ]+'
+regexp: '[A-Z0-9- ]+'
 examples:
-  - value: 'N-X-211'
-    description: Spirit of St. Louis
-  - value: 'N736PA'
-    description: 'Clipper Victor'
+- value: N-X-211
+  description: Spirit of St. Louis
+- value: N736PA
+  description: Clipper Victor
 classification: identifier
+translations: {}

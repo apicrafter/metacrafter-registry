@@ -1,0 +1,25 @@
+categories:
+- finances
+id: deust
+is_pii: 'True'
+langs:
+- de
+name: USt-IdNr. anhand Feldname
+doc: DE datatype for 'USt-IdNr. anhand Feldname' (deust) from rules in context
+  'finances'. The German VAT identification number (Umsatzsteuer-Identifikationsnummer,
+  USt-IdNr.) is a unique identifier assigned to businesses for VAT purposes within
+  the European Union. It consists of the country code 'DE' followed by 9 digits.
+classification: identifier
+country:
+- DE
+links:
+- type: doc
+  url: https://www.bzst.de/DE/Unternehmen/SteuerlicheIdentifikationsnummern/UStIdNr/ustidnr_node.html
+examples:
+- value: 'DE123456789'
+  description: German VAT identification number (USt-IdNr.) with country code DE and 9 digits
+- value: 'DE987654321'
+  description: Another valid German VAT identification number format
+wikidata_property: ''
+translations: {}
+regexp: ^DE[0-9]{9}$

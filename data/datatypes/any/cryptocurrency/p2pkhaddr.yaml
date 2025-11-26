@@ -10,7 +10,11 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: other
-    url: https://allprivatekeys.com/bitcoin-address-format
+- type: other
+  url: https://allprivatekeys.com/bitcoin-address-format
 name: Pubkey hash (P2PKH address)
 classification: identifier
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

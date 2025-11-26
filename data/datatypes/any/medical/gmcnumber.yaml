@@ -1,0 +1,15 @@
+categories:
+- medical
+id: gmcnumber
+is_pii: 'True'
+langs:
+- en
+name: UK GMC registration number
+doc: Datatype for 'UK GMC registration number' (gmcnumber) from rules
+  in context 'medical'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

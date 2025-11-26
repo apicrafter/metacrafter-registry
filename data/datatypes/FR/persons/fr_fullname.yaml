@@ -9,3 +9,8 @@ langs:
 - fr
 name: French full name of the person
 semantic_type: person_fullname
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

@@ -1,0 +1,15 @@
+categories:
+- pii
+id: ssn
+is_pii: 'True'
+langs:
+- en
+name: US Social Security Number
+doc: Datatype for 'US Social Security Number' (ssn) from rules in context
+  'pii'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

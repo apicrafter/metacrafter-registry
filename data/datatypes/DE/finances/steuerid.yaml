@@ -1,0 +1,25 @@
+categories:
+- finances
+id: steuerid
+is_pii: 'True'
+langs:
+- de
+name: Steuer-ID anhand Feldname
+doc: DE datatype for 'Steuer-ID anhand Feldname' (steuerid) from rules in context
+  'finances'. The German tax identification number (Steueridentifikationsnummer) is
+  an 11-digit unique identifier assigned to every German citizen and resident for
+  tax purposes. It remains valid for life and does not change.
+classification: identifier
+country:
+- DE
+links:
+- type: doc
+  url: https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/steuerliche_identifikationsnummer_node.html
+examples:
+- value: '12345678901'
+  description: German tax identification number (Steuer-ID) with 11 digits
+- value: '98765432109'
+  description: Another valid German tax identification number format
+wikidata_property: ''
+translations: {}
+regexp: ^[0-9]{11}$

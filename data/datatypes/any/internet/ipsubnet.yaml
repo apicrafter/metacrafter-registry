@@ -6,3 +6,8 @@ is_pii: 'True'
 langs:
 - common
 name: IPv4 or IPv6 subnet
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

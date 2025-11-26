@@ -6,18 +6,19 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Filename
-  - type: datadrivendiscovery
-    url: https://metadata.datadrivendiscovery.org/types/FileName
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Filename
+- type: datadrivendiscovery
+  url: https://metadata.datadrivendiscovery.org/types/FileName
 name: Name of the file
 examples:
-  - value: sheet.xls
-    description: sheet.xls
-  - value: dataset.xml
-    description: dataset.xml
+- value: sheet.xls
+  description: sheet.xls
+- value: dataset.xml
+  description: dataset.xml
 translations:
   ru:
     doc: Название файла в файловой системе
     name: Название файла
-
+wikidata_property: ''
+regexp: ''

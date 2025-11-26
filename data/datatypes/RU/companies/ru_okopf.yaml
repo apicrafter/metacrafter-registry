@@ -14,3 +14,7 @@ translations:
     doc: Код организационно-правовой формы юридического лица по справочнику ОКОПФ
     name: Код организационно-правовая формы по ОКОПФ
 classification: categorical
+links: []
+examples: []
+wikidata_property: ''
+regexp: ''

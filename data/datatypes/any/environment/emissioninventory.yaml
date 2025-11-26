@@ -1,0 +1,15 @@
+categories:
+- environment
+id: emissioninventory
+is_pii: 'False'
+langs:
+- en
+name: Emission inventory field by name
+doc: Datatype for 'Emission inventory field by name' (emissioninventory) from rules
+  in context 'environment'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

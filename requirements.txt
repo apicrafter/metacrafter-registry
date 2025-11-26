@@ -1,0 +1,6 @@
+# Core dependencies for metacrafter-registry
+PyYAML>=6.0
+cerberus>=1.3.4
+typer>=0.9.0
+flask>=2.3.0
+

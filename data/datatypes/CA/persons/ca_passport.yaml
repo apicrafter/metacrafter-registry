@@ -9,8 +9,12 @@ is_pii: 'True'
 langs:
 - en
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Canadian_passport
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Canadian_passport
 name: Canadian passport number
 semantic_type: passport
 classification: identifier
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

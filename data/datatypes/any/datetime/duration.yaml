@@ -6,14 +6,17 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/ISO_8601#Durations
-  - type: schema.org
-    url: https://schema.org/duration
-  - type: other
-    url: https://ddialliance.org/Specification/DDI-CV/DateType_1.1.html
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_8601#Durations
+- type: schema.org
+  url: https://schema.org/duration
+- type: other
+  url: https://ddialliance.org/Specification/DDI-CV/DateType_1.1.html
 name: Time duration
 translations:
   ru:
     doc: Длительность события в музыке, мероприятии и тд.
     name: Длительность
+examples: []
+wikidata_property: ''
+regexp: ''

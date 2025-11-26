@@ -6,12 +6,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Date_and_time_notation
-  - type: schema.org
-    url: https://schema.org/Date
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation
+- type: schema.org
+  url: https://schema.org/Date
 name: Date
 translations:
   ru:
     doc: Дата в одной из общепринятых нотаций
     name: Дата
+examples: []
+wikidata_property: ''
+regexp: ''

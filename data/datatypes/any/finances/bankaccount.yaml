@@ -8,8 +8,8 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Bank_account
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Bank_account
 name: Bank account
 patterns:
 - rusbankaccount
@@ -22,3 +22,6 @@ translations:
       денежных средств для целевого использования.
     name: Банковский счет
 classification: identifier
+examples: []
+wikidata_property: ''
+regexp: ''

@@ -1,0 +1,15 @@
+categories:
+- education
+id: ncesid
+is_pii: 'False'
+langs:
+- en
+name: US NCES school identifier
+doc: Datatype for 'US NCES school identifier' (ncesid) from rules in
+  context 'education'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

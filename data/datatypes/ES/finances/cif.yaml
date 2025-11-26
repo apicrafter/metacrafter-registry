@@ -1,0 +1,26 @@
+categories:
+- finances
+id: cif
+is_pii: 'True'
+langs:
+- es
+name: CIF por nombre de campo
+doc: >
+  ES datatype for 'CIF por nombre de campo' (cif) from rules in context 'finances'.
+  The CIF (Código de Identificación Fiscal) is a Spanish tax identification code
+  assigned to companies and legal entities. It consists of 9 characters: one letter
+  from the set A-H, J-N, P-S, U-W (excluding I, O, and certain letters), followed
+  by 7 digits, and ending with one alphanumeric character (letter or digit) that
+  serves as a check digit.
+classification: identifier
+country:
+- ES
+links: []
+examples:
+- value: A12345674
+  description: Valid CIF format with letter A, 7 digits, and check character
+- value: B98765432
+  description: Another valid CIF format example
+wikidata_property: ''
+translations: {}
+regexp: ^[ABCDEFGHJKLMNPQRSUVW][0-9]{7}[A-Z0-9]$

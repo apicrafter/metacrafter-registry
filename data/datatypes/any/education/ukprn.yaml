@@ -1,0 +1,15 @@
+categories:
+- education
+id: ukprn
+is_pii: 'False'
+langs:
+- en
+name: UK provider UKPRN
+doc: Datatype for 'UK provider UKPRN' (ukprn) from rules in context
+  'education'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

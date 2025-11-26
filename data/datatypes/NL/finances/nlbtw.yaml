@@ -1,0 +1,30 @@
+categories:
+- finances
+id: nlbtw
+is_pii: 'True'
+langs:
+- nl
+name: BTW-nummer op veldnaam
+doc: NL datatype for 'BTW-nummer op veldnaam' (nlbtw) from rules in context 'finances'.
+  The Dutch VAT identification number (BTW-nummer, Belasting Toegevoegde Waarde) is
+  a unique identifier assigned to businesses for VAT purposes within the European Union.
+  It consists of the country code 'NL' followed by 12 alphanumeric characters (letters
+  and/or digits).
+classification: identifier
+country:
+- NL
+links:
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/BTW-nummer
+- type: doc
+  url: https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_nederland/btw_nummer
+examples:
+- value: 'NL123456789B01'
+  description: Dutch VAT identification number (BTW-nummer) with country code NL and 12 alphanumeric characters
+- value: 'NL987654321A12'
+  description: Another valid Dutch VAT identification number format
+- value: 'NLABCDEFGHIJ01'
+  description: Dutch VAT identification number with letters in the alphanumeric part
+wikidata_property: ''
+translations: {}
+regexp: ^NL[0-9A-Z]{12}$

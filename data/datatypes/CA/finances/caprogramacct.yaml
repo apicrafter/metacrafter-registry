@@ -1,0 +1,25 @@
+categories:
+- finances
+id: caprogramacct
+is_pii: 'False'
+langs:
+- en
+name: CRA program account number
+doc: CA datatype for 'CRA program account number' (caprogramacct) from
+  rules in context 'finances'.
+classification: identifier
+country:
+- CA
+links:
+- type: doc
+  url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/changes-your-business/understand-your-business-number.html
+examples:
+- value: '123456789RP0001'
+  description: CRA payroll deductions program account with 9-digit Business Number, 'RP' program identifier and 4-digit reference
+- value: '987654321RT0002'
+  description: CRA GST/HST program account with 9-digit Business Number, 'RT' program identifier and 4-digit reference
+- value: '123456789RC0001'
+  description: CRA corporate income tax program account with 9-digit Business Number, 'RC' program identifier and 4-digit reference
+wikidata_property: ''
+translations: {}
+regexp: ^[0-9]{9}R[A-Z][0-9]{4}$

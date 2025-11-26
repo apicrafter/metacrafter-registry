@@ -15,3 +15,7 @@ translations:
       или ОГРН (основной государственный регистрационный номер)
     name: Код ОГРН или ОГРНИП
 classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+regexp: ''

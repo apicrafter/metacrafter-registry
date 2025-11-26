@@ -1,0 +1,15 @@
+categories:
+- finances
+id: uksortcode
+is_pii: 'False'
+langs:
+- common
+name: UK sort code
+doc: Datatype for 'UK sort code' (uksortcode) from rules in context
+  'finances'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

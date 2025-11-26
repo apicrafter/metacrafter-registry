@@ -10,8 +10,8 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Country
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Country
 name: Country code or name
 patterns:
 - ruscountryname
@@ -26,3 +26,6 @@ translations:
       так и размытыми (в таком случае нередко говорят не о границах, а о «рубежах»).
     name: Название или код страны
 classification: categorical
+examples: []
+wikidata_property: ''
+regexp: ''

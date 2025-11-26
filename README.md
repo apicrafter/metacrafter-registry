@@ -5,60 +5,72 @@ It's created from list of identifiers in [Metacrafter](https://github.com/apicra
 
 # Data
 
-* data/datatypes/ - list of all known semantic data types as separate YAML files
-* data/patterns/ - list of known patterns as separate YAML files
-* data/categories.yaml - list of all data contexts. Categories used by Metacrafter tool to use only rules for certain situation/data/contexts set by user
-* data/countries.yaml - list of all countries with available rules
-* data/langs.yaml - list of all languages with available rules
+The registry contains the following data structures:
+
+* `data/datatypes/` - list of all known semantic data types as separate YAML files, organized by country/language
+* `data/tools/` - list of tools and software libraries that support semantic data types
+* `data/categories.yaml` - list of all data contexts. Categories are used by Metacrafter tool to filter rules for certain situations/data/contexts set by user
+* `data/countries.yaml` - list of all countries with available rules
+* `data/langs.yaml` - list of all languages with available rules
+* `data/schemes/` - JSON schema definitions for validating datatype and tool structures
 
 ## Semantic data type
 
 Semantic data type is a primary data class with description of unique type of the data which is somehow defined identifier or commonly used data type.
 
-Each semantic data type YAML file  objects have following structure.
+Each semantic data type YAML file contains objects with the following structure:
 
-- **id** - unique identifier of the entity
-- **name** - name of the entity
-- **category** - list of contexts associated with entity. 
-- **country** - list of countries where this identifier used
-- **doc** - English documentation/short description of this entity.
-- **langs** - list of languages
-- **is_pii** - true if this data is Personal identifiable information and false if not. PII could be detected also from contexts
-- **links** - list of associated links with **type** as link type and **url** as url. Supported link types: wikipedia, wikidata, other
-- **regexp** - regular expression that match this data type
-- **wikidata_property** - property in Wikidata if applicable
-- **examples** - list of examples with **value** and **description** for each one
-- **parent_type** - name of the parent semantic type
-- **translations** - name and doc translated to selected language.  
+- **id** (required) - unique identifier of the entity
+- **name** (required) - name of the entity
+- **doc** (required) - English documentation/short description of this entity
+- **langs** (required) - list of languages (ISO 639-1 codes)
+- **categories** (optional) - list of contexts associated with entity (e.g., "pii", "finance", "geo")
+- **country** (optional) - list of countries where this identifier is used (ISO 3166-1 alpha-2 codes)
+- **is_pii** (optional) - boolean indicating if this data is Personal Identifiable Information. PII can also be detected from categories
+- **regexp** (optional) - regular expression that matches this data type
+- **wikidata_property** (optional) - Wikidata property ID (not URL) if applicable
+- **links** (optional) - list of associated links with **type** (wikipedia, wikidata, schema.org, datadrivendiscovery, other) and **url**
+- **examples** (optional) - list of examples, each with **value** and **description**
+- **parent** (optional) - parent semantic type reference
+- **semantic_type** (optional) - semantic type classification
+- **patterns** (optional) - list of pattern IDs associated with this datatype
+- **translations** (optional) - dictionary with language codes as keys, containing translated **name** and **doc** for each language
+- **classification** (optional) - additional classification metadata
+
+See `data/schemes/datatype.json` for the complete JSON schema definition.  
 
 ## Pattern
 
 Patterns are extensions, additional helpers to identify certain ways to represent semantinc data types. They could be different by usage type, country, language and so on.
 Patterns have no category since they inherit category from semantic data type
 
-Each entity YAML file objects has following structure.
+Each pattern YAML file contains objects with the following structure:
 
-- **id** - unique identifier of the entity
-- **name** - name of the entity
-- **doc** - English documentation/short description of this entity.
-- **country** - list of countries where this identifier used
-- **langs** - list of languages
-- **links** - list of associated links with **type** as link type and **url** as url. Supported link types: wikipedia, other
-- **regexp** - regular expression that match this data type
-- **wikidata_property** - property in Wikidata if applicable
-- **examples** - list of examples with **value** and **description** for each one
+- **id** (required) - unique identifier of the entity
+- **name** (required) - name of the entity
+- **doc** (required) - English documentation/short description of this entity
+- **country** (optional) - list of countries where this pattern is used (ISO 3166-1 alpha-2 codes)
+- **langs** (optional) - list of languages (ISO 639-1 codes)
+- **links** (optional) - list of associated links with **type** (wikipedia, other) and **url**
+- **regexp** (optional) - regular expression that matches this pattern
+- **wikidata_property** (optional) - Wikidata property ID if applicable
+- **examples** (optional) - list of examples, each with **value** and **description**
+
+Note: Patterns inherit categories from their associated semantic data types.
 
 ## Tool
 
 Tools are software libraries, open source or proprietary software with support of semantic data types.
-Each entity YAML file objects has following structure.
+Each tool YAML file contains objects with the following structure:
 
-- **id** - unique identifier of the entity
-- **name** - name of the entity
-- **category** - category of the tool. It could be one of: detector, pii, etl, other
-- **doc** - English documentation/short description of this entity.
-- **website** - URL of the primary web resource about this tool
-- **supported_types** - array of strings with id of datatype or pattern for each string
+- **id** (required) - unique identifier of the entity
+- **name** (required) - name of the tool/software library
+- **category** (required) - category of the tool. Must be one of: `detector`, `pii`, `etl`, `other`
+- **doc** (required) - English documentation/short description of this entity
+- **website** (optional) - URL of the primary web resource about this tool
+- **supported_types** (optional) - array of strings with IDs of datatypes or patterns that this tool supports
+
+See `data/schemes/tool.json` for the complete JSON schema definition.
 
 
 # Metadata sources
@@ -85,20 +97,55 @@ Identification rules are regex, other pattern matching algorithms and code that 
 
 # Build registry
 
-**Under development**
+## Building the registry
 
-Current data update procedure:
-1. Edit YAML files in data directory
-2. Run builder.py script. It will to rebuild data/datatypes_latest.json and data/datatypes_latest.jsonl files from YAML files
-3. Run src/registry.py to see changes locally https://127.0.0.1:8089 
+The registry is built from YAML source files into JSON/JSONL formats for easier consumption.
+
+### Current build procedure:
+
+1. Edit YAML files in the `data/` directory
+2. Run the builder script to rebuild JSON/JSONL files:
+   ```bash
+   python scripts/builder.py
+   ```
+   This will rebuild:
+   - `data/datatypes_latest.json` - single JSON file with all datatypes
+   - `data/datatypes_latest.jsonl` - JSON Lines format (one datatype per line)
+   - `data/tools_latest.json` - single JSON file with all tools
+   - `data/tools_latest.jsonl` - JSON Lines format (one tool per line)
+3. Run the local server to preview changes:
+   ```bash
+   cd src
+   python registry.py
+   ```
+   Server will be available at http://127.0.0.1:8089
 4. Add, commit and push changed files
 
-TODO: Add github actions for automatic registry build, version control, release and validation.
+**Note:** Automated build, version control, release and validation via GitHub Actions is planned for future releases.
 
-# Run server 
-Server uses data/datatypes_latest.jsonl file to produce HTML for datatypes list
-1. Go to "src" directory
-2. Run "python registry.py"
+# Run server
+
+The registry includes a minimal web server for browsing and accessing the registry data.
+
+## Starting the server
+
+1. Navigate to the `src` directory:
+   ```bash
+   cd src
+   ```
+
+2. Run the registry server:
+   ```bash
+   python registry.py
+   ```
+
+3. Access the server:
+   - Web interface: http://127.0.0.1:8089
+   - The server uses `data/datatypes_latest.jsonl` and `data/tools_latest.jsonl` files to produce HTML pages for browsing datatypes and tools
+
+The server provides:
+- HTML pages for browsing datatypes and tools
+- API endpoints for programmatic access (see server code for details)
 
 # Contacts
 

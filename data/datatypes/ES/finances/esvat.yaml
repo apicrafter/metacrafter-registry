@@ -1,0 +1,30 @@
+categories:
+- finances
+id: esvat
+is_pii: 'True'
+langs:
+- es
+name: IVA intracomunitario por nombre de campo
+doc: ES datatype for 'IVA intracomunitario por nombre de campo' (esvat) from rules
+  in context 'finances'. The Spanish VAT identification number (IVA intracomunitario)
+  is a unique identifier assigned to businesses for VAT purposes within the European
+  Union. It consists of the country code 'ES' followed by 9 alphanumeric characters
+  (letters and/or digits).
+classification: identifier
+country:
+- ES
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal
+- type: doc
+  url: https://www.agenciatributaria.gob.es/AEAT.internet/Inicio/Ayuda/Modelos__Procedimientos_y_Servicios/Comun/Informacion_General/Numero_de_Identificacion_Fiscal_NIF_/Numero_de_Identificacion_Fiscal_NIF_.shtml
+examples:
+- value: 'ES123456789'
+  description: Spanish VAT identification number (IVA intracomunitario) with country code ES and 9 alphanumeric characters
+- value: 'ES987654321'
+  description: Another valid Spanish VAT identification number format
+- value: 'ESB12345678'
+  description: Spanish VAT identification number with letter in the alphanumeric part
+wikidata_property: ''
+translations: {}
+regexp: ^ES[0-9A-Z]{9}$

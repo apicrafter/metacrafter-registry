@@ -8,8 +8,8 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Bank_account
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Bank_account
 name: Bank account in United States
 regexp: '[0-9]{8,17}'
 translations:
@@ -17,3 +17,5 @@ translations:
     doc: Вид банковского счета открываемого в банках США
     name: Банковский счет в банке США
 semantic_type: bankaccount
+examples: []
+wikidata_property: ''

@@ -6,14 +6,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: dublincore
-    url: http://purl.org/dc/terms/language
+- type: dublincore
+  url: http://purl.org/dc/terms/language
 name: Language (Dublin Core)
 examples:
-  - value: eng
-    description: English language
+- value: eng
+  description: English language
 translations:
   ru:
     doc: Язык ресурса
     name: Язык
-
+wikidata_property: ''
+regexp: ''

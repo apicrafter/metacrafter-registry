@@ -1,0 +1,42 @@
+categories:
+- government
+id: nutsregion
+is_pii: 'False'
+langs:
+- en
+name: NUTS region code
+doc: EU datatype for 'NUTS region code' (nutsregion) from rules in context
+  'government'. The NUTS (Nomenclature of Territorial Units for Statistics) region
+  code is a hierarchical classification system used by the European Union to divide
+  its territory for statistical purposes. The code format consists of 2 uppercase
+  letters representing the country code, followed by 1 to 3 alphanumeric characters
+  representing the region level (NUTS 1, 2, or 3).
+classification: identifier
+country:
+- EU
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Nomenclature_of_Territorial_Units_for_Statistics
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P605
+- type: doc
+  url: https://ec.europa.eu/eurostat/web/nuts/overview
+examples:
+- value: BE10
+  description: NUTS 2 code for Brussels-Capital Region
+- value: DE11
+  description: NUTS 1 code for Baden-Württemberg
+- value: FR101
+  description: NUTS 3 code for Paris
+- value: ITC1
+  description: NUTS 1 code for Northwest Italy
+- value: ES11
+  description: NUTS 1 code for Galicia
+wikidata_property: P605
+translations:
+  en: NUTS region code
+  fr: Code région NUTS
+  de: NUTS-Regionscode
+  es: Código de región NUTS
+  it: Codice regione NUTS
+regexp: ^[A-Z]{2}[A-Z0-9]{1,3}$

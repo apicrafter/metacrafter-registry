@@ -8,8 +8,12 @@ langs:
 - common
 name: MongoDB unique Object ID
 examples:
-  - value: 507f1f77bcf86cd799439011
-    description: Uninue MongoDB ObjectID
-  - value: 507f191e810c19729de860ea
-    description: Uninue MongoDB ObjectID
+- value: 507f1f77bcf86cd799439011
+  description: Uninue MongoDB ObjectID
+- value: 507f191e810c19729de860ea
+  description: Uninue MongoDB ObjectID
 classification: identifier
+links: []
+wikidata_property: ''
+translations: {}
+regexp: ''

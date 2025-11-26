@@ -6,14 +6,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: dublincore
-    url: http://purl.org/dc/terms/abstract
+- type: dublincore
+  url: http://purl.org/dc/terms/abstract
 name: Abstract (Dublin Core)
 examples:
-  - value: A summary of the text.
-    description: A summary of the text.
+- value: A summary of the text.
+  description: A summary of the text.
 translations:
   ru:
     doc: Краткое изложение ресурса.
     name: Кратное изложение
-
+wikidata_property: ''
+regexp: ''

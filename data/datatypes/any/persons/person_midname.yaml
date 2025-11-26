@@ -9,3 +9,8 @@ langs:
 name: Person middle name
 patterns:
 - rusmidname
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

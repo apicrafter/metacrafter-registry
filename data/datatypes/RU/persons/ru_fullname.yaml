@@ -9,3 +9,8 @@ langs:
 - ru
 name: Fullname of the person in Russian
 semantic_type: person_fullname
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

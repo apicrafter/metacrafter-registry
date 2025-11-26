@@ -1,0 +1,16 @@
+categories:
+- companies
+id: rsin
+is_pii: 'False'
+langs:
+- nl
+name: RSIN op veldnaam
+doc: NL datatype for 'RSIN op veldnaam' (rsin) from rules in context 'companies'.
+classification: identifier
+country:
+- NL
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

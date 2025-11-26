@@ -1,0 +1,33 @@
+categories:
+- finances
+id: nif
+is_pii: 'True'
+langs:
+- es
+name: NIF por nombre de campo
+doc: ES datatype for 'NIF por nombre de campo' (nif) from rules in context 'finances'.
+  The Spanish tax identification number (Número de Identificación Fiscal, NIF) is
+  a unique identifier assigned to individuals and entities for tax purposes in Spain.
+  For individuals, it consists of 8 digits followed by a check letter. For foreigners,
+  it may start with X, Y, Z, K, L, or M followed by 7 digits and a check letter.
+  The total length is 9 characters.
+classification: identifier
+country:
+- ES
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal
+- type: doc
+  url: https://www.agenciatributaria.es/AEAT.internet/Inicio/Ayuda/Modelos__Procedimientos_y_Servicios/Comun/Preguntas_frecuentes/Identificacion_y_Domicilio_Fiscal/Preguntas_frecuentes_sobre_NIF_NIE_CIF.shtml
+examples:
+- value: '12345678Z'
+  description: Spanish NIF for a Spanish citizen with 8 digits and check letter
+- value: 'X1234567L'
+  description: Spanish NIF for a foreigner starting with X followed by 7 digits and check letter
+- value: '87654321X'
+  description: Another valid Spanish NIF format
+wikidata_property: ''
+translations:
+  en: Spanish Tax Identification Number (NIF)
+  es: Número de Identificación Fiscal (NIF)
+regexp: ^([0-9]{8}|[XYZKLM][0-9]{7})[TRWAGMYFPDXBNJZSQVHLCKE]$

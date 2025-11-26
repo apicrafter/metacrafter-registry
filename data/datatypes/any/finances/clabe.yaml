@@ -1,0 +1,14 @@
+categories:
+- finances
+id: clabe
+is_pii: 'False'
+langs:
+- common
+name: Mexican CLABE
+doc: Datatype for 'Mexican CLABE' (clabe) from rules in context 'finances'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

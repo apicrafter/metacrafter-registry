@@ -1,0 +1,21 @@
+categories:
+- medical
+id: opscode
+is_pii: 'False'
+langs:
+- de
+name: OPS-Prozedurcode
+doc: DE datatype for 'OPS-Prozedurcode anhand Feldnamen' (opscode) from rules in context
+  'medical'.
+classification: identifier
+country:
+- DE
+links: []
+examples:
+- value: '1234'
+  description: OPS procedure code with 4 digits without fractional part
+- value: '1234.5'
+  description: OPS procedure code with 4 digits and a 1-digit fractional part
+wikidata_property: ''
+translations: {}
+regexp: ^[0-9]{4}(\.[0-9]{1,2})?$

@@ -7,9 +7,12 @@ langs:
 - common
 name: Description
 links:
-  - type: schema.org
-    url: https://schema.org/description
+- type: schema.org
+  url: https://schema.org/description
 translations:
   ru:
     doc: Описание объекта или сущности
     name: Описание
+examples: []
+wikidata_property: ''
+regexp: ''

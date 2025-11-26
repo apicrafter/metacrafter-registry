@@ -1,18 +1,19 @@
 categories:
 - software
-doc: 'Programming language'
+doc: Programming language
 id: programminglang
 is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P277
-  - type: schema.org
-    url: https://schema.org/programmingLanguage
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P277
+- type: schema.org
+  url: https://schema.org/programmingLanguage
 name: Programming language
 wikidata_property: P277
 examples:
-  - value: 'C'
-    description: Linux
-
+- value: C
+  description: Linux
+translations: {}
+regexp: ''

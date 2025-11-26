@@ -9,3 +9,8 @@ langs:
 - ru
 name: First name in Russian
 semantic_type: person_firstname
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

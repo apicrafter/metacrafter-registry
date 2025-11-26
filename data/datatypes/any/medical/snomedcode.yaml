@@ -1,0 +1,15 @@
+categories:
+- medical
+id: snomedcode
+is_pii: 'False'
+langs:
+- en
+name: SNOMED CT concept code
+doc: Datatype for 'SNOMED CT concept code' (snomedcode) from rules in
+  context 'medical'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

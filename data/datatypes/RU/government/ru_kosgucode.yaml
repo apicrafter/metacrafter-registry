@@ -8,10 +8,14 @@ id: kosgucode
 is_pii: 'False'
 langs:
 - ru
-name: 'Russian Public Administration Sector Classification Code (KOSGU)'
+name: Russian Public Administration Sector Classification Code (KOSGU)
 translations:
   ru:
     doc: Код классификации секторов государственного управления используемые в Российской
       бюджетной системе
     name: Код КОСГУ
 classification: categorical
+links: []
+examples: []
+wikidata_property: ''
+regexp: ''

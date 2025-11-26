@@ -7,8 +7,8 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Currency
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Currency
 name: Currency
 patterns:
 - iso4217curcode
@@ -16,3 +16,7 @@ patterns:
 - okvname
 - okvcode
 classification: categorical
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

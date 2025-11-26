@@ -4,8 +4,12 @@ doc: Defines a part of a date - the year and month. Example YYYY-MM.
 id: yearmonth
 is_pii: 'False'
 links:
-  - type: other
-    url: https://ddialliance.org/Specification/DDI-CV/DateType_1.1.html
+- type: other
+  url: https://ddialliance.org/Specification/DDI-CV/DateType_1.1.html
 langs:
 - common
 name: Year and month
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

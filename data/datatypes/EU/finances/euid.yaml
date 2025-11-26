@@ -1,0 +1,34 @@
+categories:
+- finances
+id: euid
+is_pii: 'False'
+langs:
+- en
+name: European Unique Identifier (EUID)
+doc: EU datatype for 'European Unique Identifier (EUID)' (euid) from
+  rules in context 'finances'. The European Unique Identifier (EUID) is a unique
+  identifier format used within the European Union. It consists of a 2-letter
+  uppercase country code (ISO 3166-1 alpha-2) followed by 4 to 18 alphanumeric
+  characters (letters and/or digits), resulting in a total length of 6 to 20
+  characters. This identifier format is commonly used for financial and business
+  identification purposes across EU member states.
+classification: identifier
+country:
+- EU
+links: []
+examples:
+- value: 'FR1234567890'
+  description: EUID with French country code (FR) and 10 alphanumeric characters
+- value: 'DEABCD1234'
+  description: EUID with German country code (DE) and 10 alphanumeric characters
+- value: 'IT1234'
+  description: EUID with Italian country code (IT) and 4 alphanumeric characters (minimum length)
+- value: 'ES123456789012345678'
+  description: EUID with Spanish country code (ES) and 18 alphanumeric characters (maximum length)
+wikidata_property: ''
+translations:
+  en: European Unique Identifier
+  fr: Identifiant Unique Européen
+  de: Europäische Eindeutige Kennung
+  es: Identificador Único Europeo
+regexp: ^[A-Z]{2}[0-9A-Z]{4,18}$

@@ -1,0 +1,39 @@
+categories:
+- government
+id: awardnotice
+is_pii: 'False'
+langs:
+- en
+name: Contract award notice id
+doc: EU datatype for 'Contract award notice id' (awardnotice) from rules in context
+  'government'. The Contract Award Notice ID is a unique identifier assigned to
+  contract award notices published in the Official Journal of the European Union.
+  The identifier format consists of a 4-digit year, followed by '/S', then 1 to 3
+  digits representing the supplement number, a hyphen, and finally 1 to 5 digits
+  representing the notice number within that supplement.
+classification: identifier
+country:
+- EU
+links:
+- type: doc
+  url: https://ted.europa.eu/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Official_Journal_of_the_European_Union
+- type: doc
+  url: https://docs.ted.europa.eu/
+examples:
+- value: '2024/S123-45678'
+  description: Contract award notice ID with 4-digit year, 3-digit supplement, and 5-digit notice number
+- value: '2023/S12-4567'
+  description: Contract award notice ID with 4-digit year, 2-digit supplement, and 4-digit notice number
+- value: '2024/S1-123'
+  description: Contract award notice ID with 4-digit year, single-digit supplement, and 3-digit notice number
+- value: '2023/S123-1'
+  description: Contract award notice ID with 4-digit year, 3-digit supplement, and single-digit notice number
+wikidata_property: ''
+translations:
+  en: Contract Award Notice ID
+  fr: Identifiant d'avis d'attribution de contrat
+  de: Auftragsvergabe-Bekanntmachungs-ID
+  es: ID de aviso de adjudicación de contrato
+regexp: ^[0-9]{4}/S[0-9]{1,3}-[0-9]{1,5}$

@@ -14,3 +14,7 @@ translations:
     doc: Код присваиваемый государственным закупкам в Российской Федерации
     name: Идентификационный код закупки
 classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+regexp: ''

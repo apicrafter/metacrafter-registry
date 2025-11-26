@@ -1,0 +1,23 @@
+categories:
+- finances
+id: cabn
+is_pii: 'False'
+langs:
+- en
+name: Canada Business Number
+doc: CA datatype for 'Canada Business Number' (cabn) from rules in context
+  'finances'.
+classification: identifier
+country:
+- CA
+links:
+- type: doc
+  url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/business-number.html
+examples:
+- value: '123456789'
+  description: Canada Business Number with 9 digits
+- value: '987654321'
+  description: Another valid Canada Business Number with 9 digits
+wikidata_property: ''
+translations: {}
+regexp: ^[0-9]{9}$

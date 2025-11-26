@@ -16,3 +16,7 @@ translations:
     doc: Код или наименование субъекта Российской Федерации по Конституции страны
     name: Код или наименование субъекта Российской Федерации
 classification: categorical
+links: []
+examples: []
+wikidata_property: ''
+regexp: ''

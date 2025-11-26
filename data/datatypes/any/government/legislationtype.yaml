@@ -1,17 +1,22 @@
 categories:
 - government
-doc: 'The type of the legislation. Examples of values are "law", "act", "directive", "decree", "regulation", "statutory instrument", "loi organique", "reglement grand-ducal", etc., depending on the country.'
+doc: The type of the legislation. Examples of values are "law", "act", "directive",
+  "decree", "regulation", "statutory instrument", "loi organique", "reglement grand-ducal",
+  etc., depending on the country.
 id: legislationtype
 is_pii: 'False'
 langs:
 - common
 links:
-  - type: schema.org
-    url: https://schema.org/legislationType
+- type: schema.org
+  url: https://schema.org/legislationType
 name: Legislation type
 parent:
   type: genre
 translations:
   ru:
-    doc: 'Тип нормативного документа'
+    doc: Тип нормативного документа
     name: Тип нормативного документа
+examples: []
+wikidata_property: ''
+regexp: ''

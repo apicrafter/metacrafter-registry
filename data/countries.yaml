@@ -39,3 +39,7 @@
   name: Germany
 - id: AT
   name: Austria
+
+# Added to support countries referenced in datatype definitions
+- id: NL
+  name: Netherlands

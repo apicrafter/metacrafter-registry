@@ -1,0 +1,30 @@
+categories:
+- medical
+id: icd10code
+is_pii: 'False'
+langs:
+- de
+- en
+- es
+- fr
+name: ICD-10-Code
+doc: DE datatype for 'ICD-10 diagnosis code by field name' (icd10code) from rules
+  in context 'medical'. Covers standard ICD-10 and ICD-10-GM codes used in Germany.
+classification: identifier
+country:
+- DE
+links:
+- type: doc
+  url: https://www.bfarm.de/DE/Kodiersysteme/ICD/ICD-10-GM
+examples:
+- value: A09.9
+  description: Infectious gastroenteritis and colitis, unspecified
+- value: E11.0
+  description: Type 2 diabetes mellitus with coma
+- value: J18.9
+  description: Pneumonia, unspecified organism
+- value: S72.0
+  description: Fracture of neck of femur
+wikidata_property: P494
+translations: {}
+regexp: ^[A-TV-Z][0-9]{2}[0-9A-Z]?(\\.[0-9A-Z]{1,2})?$

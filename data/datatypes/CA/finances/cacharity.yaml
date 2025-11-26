@@ -1,0 +1,21 @@
+categories:
+- finances
+id: cacharity
+is_pii: 'False'
+langs:
+- en
+name: Charity registration number
+doc: CA datatype for 'Charity registration number' (cacharity) from
+  rules in context 'finances'.
+classification: identifier
+country:
+- CA
+links: []
+examples:
+- value: '123456789RR0001'
+  description: Charity registration number with 9-digit BN, 'RR' program identifier and 4-digit reference
+- value: '987654321RR0002'
+  description: Another valid charity registration number format
+wikidata_property: ''
+translations: {}
+regexp: ^[0-9]{9}RR[0-9]{4}$

@@ -9,8 +9,11 @@ is_pii: 'True'
 langs:
 - en
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/United_States_passport
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/United_States_passport
 name: US passport number
 semantic_type: passport
 regexp: '[0-9]{9}'
+examples: []
+wikidata_property: ''
+translations: {}

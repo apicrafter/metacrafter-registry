@@ -9,14 +9,15 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/PubChem
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P2153
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/PubChem
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2153
 name: PubChem Substance ID (SID)
 wikidata_property: P2153
 regexp: '[1-9]\d*'
 examples:
-  - value: '135307179'
-    description: zeolite Y
+- value: '135307179'
+  description: zeolite Y
 classification: identifier
+translations: {}

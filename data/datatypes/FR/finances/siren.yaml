@@ -1,0 +1,31 @@
+categories:
+- finances
+id: siren
+is_pii: 'False'
+langs:
+- fr
+name: Code SIREN par nom de champ
+doc: FR datatype for 'Code SIREN par nom de champ' (siren) from rules in context 'finances'.
+  The SIREN (Système d'Identification du Répertoire des Entreprises) is a unique
+  9-digit identifier assigned to French businesses and nonprofit associations by INSEE
+  (Institut National de la Statistique et des Études Économiques). It is used for
+  identifying legal entities in France and remains constant throughout the lifetime
+  of the business.
+classification: identifier
+country:
+- FR
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SIREN_code
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1616
+examples:
+- value: '775672272'
+  description: French Red Cross SIREN code
+- value: '775670417'
+  description: LVMH SIREN code
+- value: '552049447'
+  description: Example SIREN code format (9 digits)
+wikidata_property: P1616
+translations: {}
+regexp: ^\d{9}$

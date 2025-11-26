@@ -22,3 +22,7 @@
   name: Thai
 - id: de
   name: German
+
+# Added to support languages referenced in datatype definitions
+- id: nl
+  name: Dutch

@@ -7,9 +7,13 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Time_zone
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Time_zone
 name: Time zone
 patterns:
-  - ianatimezoneid
-  - utctimezoneoffset
+- ianatimezoneid
+- utctimezoneoffset
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

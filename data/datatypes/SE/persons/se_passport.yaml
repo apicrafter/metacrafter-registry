@@ -3,15 +3,18 @@ categories:
 - persons
 country:
 - SE
-doc: 'Number of Sweden passport, 8-digits'
+doc: Number of Sweden passport, 8-digits
 id: sepassport
 is_pii: 'True'
 langs:
 - se
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Swedish_passport
-regexp: "^[0-9]{8}$"
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Swedish_passport
+regexp: ^[0-9]{8}$
 name: Sweden passport number
 semantic_type: passport
 classification: identifier
+examples: []
+wikidata_property: ''
+translations: {}

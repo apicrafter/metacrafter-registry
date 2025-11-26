@@ -1,0 +1,15 @@
+categories:
+- medical
+id: cptcode
+is_pii: 'False'
+langs:
+- en
+name: CPT/HCPCS procedure code
+doc: Datatype for 'CPT/HCPCS procedure code' (cptcode) from rules in
+  context 'medical'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

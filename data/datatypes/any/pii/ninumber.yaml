@@ -1,0 +1,15 @@
+categories:
+- pii
+id: ninumber
+is_pii: 'True'
+langs:
+- en
+name: UK National Insurance Number
+doc: Datatype for 'UK National Insurance Number' (ninumber) from rules
+  in context 'pii'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

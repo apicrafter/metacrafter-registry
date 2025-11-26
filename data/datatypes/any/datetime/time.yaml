@@ -6,3 +6,8 @@ is_pii: 'False'
 langs:
 - common
 name: Time
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

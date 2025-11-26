@@ -8,7 +8,11 @@ id: rupassport
 langs:
 - ru
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Russian_passport
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Russian_passport
 name: Russian passport foreign number
 semantic_type: passport
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

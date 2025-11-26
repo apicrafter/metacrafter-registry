@@ -11,3 +11,8 @@ name: Person nationality
 classification: categorical
 patterns:
 - ennationality
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

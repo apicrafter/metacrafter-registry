@@ -1,0 +1,39 @@
+categories:
+- government
+id: tednoticeid
+is_pii: 'False'
+langs:
+- en
+name: TED notice id
+doc: EU datatype for 'TED notice id' (tednoticeid) from rules in context
+  'government'. The TED (Tenders Electronic Daily) notice ID is a unique identifier
+  assigned to procurement notices published in the Tenders Electronic Daily database,
+  which is the online version of the Supplement to the Official Journal of the European
+  Union. The identifier format consists of a 4-digit year followed by a hyphen and
+  then 1 to 8 digits representing the notice number within that year.
+classification: identifier
+country:
+- EU
+links:
+- type: doc
+  url: https://ted.europa.eu/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Tenders_Electronic_Daily
+- type: doc
+  url: https://docs.ted.europa.eu/
+examples:
+- value: '2024-12345678'
+  description: TED notice ID with 4-digit year and 8-digit notice number
+- value: '2023-1234567'
+  description: TED notice ID with 4-digit year and 7-digit notice number
+- value: '2024-12345'
+  description: TED notice ID with 4-digit year and 5-digit notice number
+- value: '2023-1'
+  description: TED notice ID with 4-digit year and single-digit notice number
+wikidata_property: ''
+translations:
+  en: TED Notice ID
+  fr: Identifiant d'avis TED
+  de: TED-Bekanntmachungs-ID
+  es: ID de aviso TED
+regexp: ^[0-9]{4}-[0-9]{1,8}$

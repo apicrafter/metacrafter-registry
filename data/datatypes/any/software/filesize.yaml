@@ -1,20 +1,21 @@
 categories:
 - software
-doc: 'size of a file'
+doc: size of a file
 id: filesize
 is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P3575
-  - type: schema.org
-    url: https://schema.org/fileSize
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3575
+- type: schema.org
+  url: https://schema.org/fileSize
 name: File size
 parent:
   type: datasize
 wikidata_property: P3575
 examples:
-  - value: '839 megabyte'
-    description: FreeCAD
-
+- value: 839 megabyte
+  description: FreeCAD
+translations: {}
+regexp: ''

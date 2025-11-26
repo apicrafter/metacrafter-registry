@@ -1,0 +1,15 @@
+categories:
+- environment
+id: gridnode
+is_pii: 'False'
+langs:
+- en
+name: Grid node identifier
+doc: Datatype for 'Grid node identifier' (gridnode) from rules in context
+  'environment'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

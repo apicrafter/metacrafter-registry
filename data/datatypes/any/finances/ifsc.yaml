@@ -1,0 +1,14 @@
+categories:
+- finances
+id: ifsc
+is_pii: 'False'
+langs:
+- common
+name: Indian IFSC code
+doc: Datatype for 'Indian IFSC code' (ifsc) from rules in context 'finances'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

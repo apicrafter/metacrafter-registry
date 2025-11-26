@@ -1,0 +1,15 @@
+categories:
+- medical
+id: upin
+is_pii: 'True'
+langs:
+- en
+name: US UPIN identifier
+doc: Datatype for 'US UPIN identifier' (upin) from rules in context
+  'medical'.
+classification: identifier
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

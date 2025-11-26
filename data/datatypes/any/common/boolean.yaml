@@ -8,10 +8,10 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Boolean_data_type
-  - type: schema.org
-    url: https://schema.org/Boolean
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Boolean_data_type
+- type: schema.org
+  url: https://schema.org/Boolean
 name: Boolean
 translations:
   ru:
@@ -20,3 +20,6 @@ translations:
       возможных значения, иногда называемых истиной (true) и ложью (false).
     name: Логический тип
 classification: categorical
+examples: []
+wikidata_property: ''
+regexp: ''

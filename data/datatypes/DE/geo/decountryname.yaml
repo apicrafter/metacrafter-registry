@@ -1,0 +1,40 @@
+categories:
+- geo
+id: decountryname
+is_pii: 'False'
+langs:
+- de
+name: Country name by value in German
+doc: DE datatype for 'Country name by value in German' (decountryname) from rules
+  in context 'geo'. Represents country names as written in German language.
+classification: identifier
+country:
+- DE
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Liste_der_Staaten_der_Erde
+semantic_type: country
+examples:
+- value: Deutschland
+  description: Germany
+- value: Österreich
+  description: Austria
+- value: Schweiz
+  description: Switzerland
+- value: Frankreich
+  description: France
+- value: Vereinigtes Königreich
+  description: United Kingdom
+- value: Vereinigte Staaten
+  description: United States
+- value: Russische Föderation
+  description: Russian Federation
+- value: Tschechische Republik
+  description: Czech Republic
+- value: Spanien
+  description: Spain
+- value: Italien
+  description: Italy
+wikidata_property: P297
+translations: {}
+regexp: ''

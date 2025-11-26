@@ -5,14 +5,16 @@ categories:
 doc: Person username in Twitter
 id: twitter_username
 is_pii: 'True'
-parent: 
+parent:
   type: username
 langs:
 - common
 wikidata_property: P2002
 links:
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P2002
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2002
 name: Twitter username
 regexp: '[0-9A-Za-z_]{1,20}'
 classification: identifier
+examples: []
+translations: {}

@@ -9,8 +9,8 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: schema.org
-    url: https://schema.org/jobTitle
+- type: schema.org
+  url: https://schema.org/jobTitle
 name: Work position / Job title
 patterns:
 - rusworkposition
@@ -19,5 +19,7 @@ translations:
     doc: Должность персоны в организации
     name: Должность
 examples:
-  - value: Aid worker/humanitarian worker
-    description: Aid worker job title
+- value: Aid worker/humanitarian worker
+  description: Aid worker job title
+wikidata_property: ''
+regexp: ''

@@ -8,16 +8,17 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Object_identifier
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P3743
-name:  ITU/ISO/IEC object identifier (OID)
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Object_identifier
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3743
+name: ITU/ISO/IEC object identifier (OID)
 wikidata_property: P3743
-regexp:  '[0123](\.\d+)*'
+regexp: '[0123](\.\d+)*'
 examples:
-  - value: 1.3.6.1.4.1.343
-    description: Intel
-  - value: 2.5.4.87
-    description: Uniform Resource Locator
+- value: 1.3.6.1.4.1.343
+  description: Intel
+- value: 2.5.4.87
+  description: Uniform Resource Locator
 classification: identifier
+translations: {}

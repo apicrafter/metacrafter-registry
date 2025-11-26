@@ -1,0 +1,21 @@
+categories:
+- finances
+id: handelsregisternr
+is_pii: 'False'
+langs:
+- de
+name: Handelsregisternummer anhand Feldname
+doc: DE datatype for 'Handelsregisternummer anhand Feldname' (handelsregisternr) from
+  rules in context 'finances'.
+classification: identifier
+country:
+- DE
+links: []
+examples:
+- value: 'H12345'
+  description: Handelsregisternummer with single-letter prefix and 5-digit number
+- value: 'A1'
+  description: Handelsregisternummer with single-letter prefix and 1-digit number
+wikidata_property: ''
+translations: {}
+regexp: '^[A-Z][0-9]{1,6}$'

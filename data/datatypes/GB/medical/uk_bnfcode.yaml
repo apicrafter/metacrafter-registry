@@ -10,7 +10,11 @@ is_pii: 'False'
 langs:
 - en
 links:
-  - type: other
-    url: https://www.thedatalab.org/blog/2017/04/prescribing-data-bnf-codes/
+- type: other
+  url: https://www.thedatalab.org/blog/2017/04/prescribing-data-bnf-codes/
 name: BNF code
 classification: identifier
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

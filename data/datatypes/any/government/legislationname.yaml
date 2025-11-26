@@ -1,15 +1,19 @@
 categories:
 - government
-doc: 'A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article).'
+doc: A legal document such as an act, decree, bill, etc. (enforceable or not) or a
+  component of a legal act (like an article).
 id: legislationname
 is_pii: 'False'
 langs:
 - common
 links:
-  - type: schema.org
-    url: https://schema.org/Legislation
+- type: schema.org
+  url: https://schema.org/Legislation
 name: Legislation name
 translations:
   ru:
-    doc: 'Название нормативного документа'
+    doc: Название нормативного документа
     name: Название нормативного документа
+examples: []
+wikidata_property: ''
+regexp: ''

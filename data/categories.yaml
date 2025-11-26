@@ -52,3 +52,9 @@
   name: Shipping and delivery
 - id: dublincore
   name: Dublin Core
+
+# Added to support categories referenced in datatype definitions
+- id: education
+  name: Education
+- id: environment
+  name: Environment

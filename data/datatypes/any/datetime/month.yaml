@@ -9,3 +9,8 @@ name: Month
 patterns:
 - enmonth
 - enmonthshort
+links: []
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

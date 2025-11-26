@@ -9,9 +9,13 @@ is_pii: 'False'
 langs:
 - common
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/Latitude
-  - type: schema.org
-    url: http://schema.org/latitude
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Latitude
+- type: schema.org
+  url: http://schema.org/latitude
 name: latitude
 classification: identifier
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

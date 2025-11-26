@@ -11,16 +11,17 @@ is_pii: 'False'
 langs:
 - fr
 links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/SIREN_code
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P1616
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SIREN_code
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1616
 name: SIREN Code
 wikidata_property: P1616
-regexp: '\d{9}'
+regexp: \d{9}
 examples:
-  - value: '775672272'
-    description: French Red Cross
-  - value: '775670417'
-    description: LVMH
+- value: '775672272'
+  description: French Red Cross
+- value: '775670417'
+  description: LVMH
 classification: identifier
+translations: {}
