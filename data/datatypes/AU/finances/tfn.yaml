@@ -1,0 +1,16 @@
+id: tfn
+name: Australian TFN (Tax File Number) by known name
+doc: Australian TFN (Tax File Number) by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- AU
+langs:
+- en
+is_pii: 'True'
+regexp: ^[0-9]{8,9}$
+links: []

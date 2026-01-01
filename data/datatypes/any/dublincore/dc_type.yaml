@@ -1,0 +1,12 @@
+id: dc_type
+name: Dublin Core type by field name
+doc: Dublin Core type by field name
+langs:
+- en
+categories:
+- dublincore
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

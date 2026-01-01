@@ -1,0 +1,16 @@
+id: sabankaccount
+name: Saudi bank account by field name
+doc: Saudi bank account by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- SA
+langs:
+- ar
+is_pii: 'False'
+regexp: ^[0-9]{8,20}$
+links: []

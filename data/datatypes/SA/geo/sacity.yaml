@@ -1,0 +1,15 @@
+id: sacity
+name: Saudi city name by field name
+doc: Saudi city name by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- geo
+country:
+- SA
+langs:
+- ar
+is_pii: 'False'
+links: []

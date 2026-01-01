@@ -1,0 +1,16 @@
+id: cnpj
+name: Brazilian CNPJ (Cadastro Nacional de Pessoa Jurídica) by known name
+doc: Brazilian CNPJ (Cadastro Nacional de Pessoa Jurídica) by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- BR
+langs:
+- pt
+is_pii: 'False'
+regexp: ^[0-9]{2}\.[0-9]{3}\.[0-9]{3}/[0-9]{4}-[0-9]{2}$
+links: []

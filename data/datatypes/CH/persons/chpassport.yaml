@@ -1,0 +1,24 @@
+categories:
+- pii
+- persons
+country:
+- CH
+doc: Swiss passport number used for international travel identification
+id: chpassport
+is_pii: 'True'
+langs:
+- de
+- fr
+- it
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Swiss_passport
+name: Swiss Passport Number
+regexp: '^[A-Z][0-9]{8}$'
+examples:
+- value: "A12345678"
+  description: Example Swiss passport number
+classification: identifier
+wikidata_property: ''
+translations: {}
+

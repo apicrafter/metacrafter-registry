@@ -3,7 +3,7 @@ categories:
 doc: Geographic point as string by ISO 6709, ISO 6709, Standard representation of
   geographic point location by coordinates, is the international standard for representation
   of latitude, longitude and altitude for geographic point locations.
-id: geopoint
+id: iso6709
 is_pii: 'False'
 langs:
 - common

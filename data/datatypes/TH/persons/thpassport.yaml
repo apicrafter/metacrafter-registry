@@ -1,0 +1,19 @@
+id: thpassport
+name: Thai passport by field name
+doc: Thai passport by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- pii
+- persons
+country:
+- TH
+langs:
+- th
+is_pii: 'True'
+regexp: ^[A-Z0-9]{6,10}$
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Passport

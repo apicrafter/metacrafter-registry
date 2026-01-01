@@ -1,0 +1,14 @@
+id: isbn
+name: ISBN by field name
+doc: ISBN by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- media
+langs:
+- en
+is_pii: 'False'
+regexp: ^(978|979)[0-9]{10}$
+links: []

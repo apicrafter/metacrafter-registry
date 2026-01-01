@@ -1,0 +1,20 @@
+categories:
+- geo
+country:
+- AE
+doc: UAE postal code
+id: aepostcode
+is_pii: 'False'
+langs:
+- ar
+- en
+links: []
+name: UAE Postal Code
+regexp: '^[0-9]{5,6}$'
+examples:
+- value: "00000"
+  description: Example UAE postal code
+classification: identifier
+wikidata_property: ''
+translations: {}
+

@@ -1,0 +1,21 @@
+categories:
+- geo
+country:
+- EG
+doc: Egyptian city name
+id: egcity
+is_pii: 'False'
+langs:
+- ar
+links: []
+name: Egyptian City Name
+regexp: ''
+examples:
+- value: "Cairo"
+  description: Example Egyptian city
+- value: "Alexandria"
+  description: Example Egyptian city
+classification: categorical
+wikidata_property: ''
+translations: {}
+

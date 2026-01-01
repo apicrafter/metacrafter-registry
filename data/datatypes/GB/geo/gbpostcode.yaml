@@ -1,0 +1,16 @@
+id: gbpostcode
+name: UK postal code by field name (for property identification)
+doc: UK postal code by field name (for property identification) identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: 'False'
+regexp: ^[0-9]{4,10}$
+links: []

@@ -1,0 +1,16 @@
+id: rfc
+name: Mexican RFC (Registro Federal de Contribuyentes) by known name
+doc: Mexican RFC (Registro Federal de Contribuyentes) by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- MX
+langs:
+- es
+is_pii: 'True'
+regexp: ^[A-Z]{4}[0-9]{6}[A-Z0-9]{3}$
+links: []

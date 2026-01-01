@@ -1,0 +1,16 @@
+id: krbankaccount
+name: Korean bank account by field name
+doc: Korean bank account by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- KR
+langs:
+- ko
+is_pii: 'False'
+regexp: ^[0-9]{8,20}$
+links: []

@@ -1,0 +1,15 @@
+id: rupropertynumber
+name: Russian property number by field name
+doc: Russian property number by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- realestate
+country:
+- RU
+langs:
+- ru
+is_pii: 'False'
+links: []

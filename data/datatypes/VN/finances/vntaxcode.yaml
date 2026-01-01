@@ -1,0 +1,16 @@
+id: vntaxcode
+name: Vietnamese tax code by field name
+doc: Vietnamese tax code by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- VN
+langs:
+- vi
+is_pii: 'False'
+regexp: ^[0-9]{9,15}$
+links: []

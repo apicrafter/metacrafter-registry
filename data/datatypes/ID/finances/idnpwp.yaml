@@ -1,0 +1,19 @@
+categories:
+- finance
+country:
+- ID
+doc: Indonesian NPWP (Nomor Pokok Wajib Pajak) - tax identification number
+id: idnpwp
+is_pii: 'False'
+langs:
+- id
+links: []
+name: Indonesian NPWP
+regexp: '^[0-9]{2}\\.[0-9]{3}\\.[0-9]{3}\\.[0-9]{1}-[0-9]{3}\\.[0-9]{3}$'
+examples:
+- value: "12.345.678.9-012.345"
+  description: Example Indonesian NPWP
+classification: identifier
+wikidata_property: ''
+translations: {}
+

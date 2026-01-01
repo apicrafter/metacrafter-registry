@@ -1,0 +1,16 @@
+id: krbusinessreg
+name: Korean business registration number by field name
+doc: Korean business registration number by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- KR
+langs:
+- ko
+is_pii: 'False'
+regexp: ^[0-9]{3}-[0-9]{2}-[0-9]{5}$
+links: []

@@ -1,0 +1,14 @@
+id: uspstracking
+name: USPS tracking number by field name
+doc: USPS tracking number by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- shipping
+langs:
+- en
+is_pii: 'False'
+regexp: ^[A-Z0-9]{8,20}$
+links: []

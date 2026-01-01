@@ -1,0 +1,15 @@
+id: plregon
+name: Polish REGON by field name
+doc: Polish REGON by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- common
+country:
+- PL
+langs:
+- pl
+is_pii: 'False'
+links: []

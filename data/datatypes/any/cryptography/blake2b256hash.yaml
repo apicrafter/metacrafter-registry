@@ -1,0 +1,12 @@
+id: blake2b256hash
+name: BLAKE2b-256 hash by field name
+doc: BLAKE2b-256 hash by field name
+langs:
+- en
+categories:
+- cryptography
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

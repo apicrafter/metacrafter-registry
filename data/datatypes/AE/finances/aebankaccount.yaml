@@ -1,0 +1,20 @@
+categories:
+- finance
+country:
+- AE
+doc: UAE bank account number
+id: aebankaccount
+is_pii: 'False'
+langs:
+- ar
+- en
+links: []
+name: UAE Bank Account Number
+regexp: '^AE[0-9]{2}[A-Z0-9]{4}[0-9]{16,24}$'
+examples:
+- value: "AE123456789012345678901234"
+  description: Example UAE bank account number (IBAN format)
+classification: identifier
+wikidata_property: ''
+translations: {}
+

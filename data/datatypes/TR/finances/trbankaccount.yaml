@@ -1,0 +1,16 @@
+id: trbankaccount
+name: Turkish bank account by field name
+doc: Turkish bank account by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- TR
+langs:
+- tr
+is_pii: 'False'
+regexp: ^[0-9]{8,20}$
+links: []

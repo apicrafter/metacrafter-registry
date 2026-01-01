@@ -1,0 +1,12 @@
+id: engine_number
+name: Engine number by field name
+doc: Engine number by field name number
+langs:
+- en
+categories:
+- transport
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

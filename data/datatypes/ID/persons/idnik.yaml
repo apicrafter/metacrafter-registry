@@ -1,0 +1,20 @@
+categories:
+- pii
+- persons
+country:
+- ID
+doc: Indonesian NIK (Nomor Induk Kependudukan) - national identification number
+id: idnik
+is_pii: 'True'
+langs:
+- id
+links: []
+name: Indonesian NIK
+regexp: '^[0-9]{16}$'
+examples:
+- value: "1234567890123456"
+  description: Example Indonesian NIK
+classification: identifier
+wikidata_property: ''
+translations: {}
+

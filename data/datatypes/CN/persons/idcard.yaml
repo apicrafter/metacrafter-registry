@@ -1,0 +1,17 @@
+id: idcard
+name: Chinese ID card (身份证) by known name
+doc: Chinese ID card (身份证) by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- pii
+- persons
+country:
+- CN
+langs:
+- zh
+is_pii: 'True'
+regexp: ^[0-9]{8,15}$
+links: []

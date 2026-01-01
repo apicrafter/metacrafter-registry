@@ -1,0 +1,25 @@
+categories:
+- telecom
+- pii
+doc: The Integrated Circuit Card Identifier (ICCID) is a unique identifier for SIM cards.
+  It is defined by ITU-T E.118 standard and consists of 19-20 digits with a Luhn check digit.
+id: iccid
+is_pii: 'True'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ICCID
+langs:
+- common
+regexp: '^\d{19,20}$'
+name: Integrated Circuit Card Identifier (ICCID)
+classification: identifier
+examples:
+  - value: '89014103211118510720'
+    description: ICCID with 20 digits (includes check digit)
+  - value: '89860012345678901234'
+    description: ICCID example (20 digits)
+  - value: '8901260123456789012'
+    description: ICCID with 19 digits
+wikidata_property: ''
+translations: {}
+

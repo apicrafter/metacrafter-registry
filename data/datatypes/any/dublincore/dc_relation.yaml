@@ -1,0 +1,12 @@
+id: dc_relation
+name: Dublin Core relation by field name
+doc: Dublin Core relation by field name
+langs:
+- en
+categories:
+- dublincore
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

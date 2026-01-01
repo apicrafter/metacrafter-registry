@@ -1,0 +1,22 @@
+categories:
+- pii
+- persons
+country:
+- ID
+doc: Indonesian passport number used for international travel identification
+id: idpassport
+is_pii: 'True'
+langs:
+- id
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Indonesian_passport
+name: Indonesian Passport Number
+regexp: '^[A-Z][0-9]{7,8}$'
+examples:
+- value: "A12345678"
+  description: Example Indonesian passport number
+classification: identifier
+wikidata_property: ''
+translations: {}
+

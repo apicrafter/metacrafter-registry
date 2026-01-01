@@ -1,0 +1,13 @@
+id: containernumber
+name: Shipping container number by field name
+doc: Shipping container number by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- shipping
+langs:
+- en
+is_pii: 'False'
+links: []

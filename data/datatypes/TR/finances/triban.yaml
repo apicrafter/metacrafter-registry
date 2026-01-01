@@ -1,0 +1,18 @@
+id: triban
+name: Turkish IBAN by field name
+doc: Turkish IBAN by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- TR
+langs:
+- tr
+is_pii: 'False'
+regexp: ^TR[0-9]{2}[A-Z0-9]{4}[0-9]{16,24}$
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Bank_Account_Number

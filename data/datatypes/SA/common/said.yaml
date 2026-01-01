@@ -1,0 +1,15 @@
+id: said
+name: Saudi ID by field name
+doc: Saudi ID by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- common
+country:
+- SA
+langs:
+- ar
+is_pii: 'True'
+links: []

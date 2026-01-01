@@ -1,0 +1,16 @@
+id: sebankaccount
+name: Swedish bank account by field name
+doc: Swedish bank account by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- SE
+langs:
+- sv
+is_pii: 'False'
+regexp: ^[0-9]{8,20}$
+links: []

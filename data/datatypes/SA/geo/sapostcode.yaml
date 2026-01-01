@@ -1,0 +1,16 @@
+id: sapostcode
+name: Saudi postal code by field name
+doc: Saudi postal code by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- geo
+country:
+- SA
+langs:
+- ar
+is_pii: 'False'
+regexp: ^[0-9]{4,10}$
+links: []

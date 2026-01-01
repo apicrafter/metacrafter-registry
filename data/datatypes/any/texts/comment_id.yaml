@@ -1,0 +1,12 @@
+id: comment_id
+name: Comment ID by field name
+doc: Comment ID by field name identifier
+langs:
+- en
+categories:
+- texts
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

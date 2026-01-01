@@ -1,0 +1,16 @@
+id: thbankaccount
+name: Thai bank account by field name
+doc: Thai bank account by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- TH
+langs:
+- th
+is_pii: 'False'
+regexp: ^[0-9]{8,20}$
+links: []

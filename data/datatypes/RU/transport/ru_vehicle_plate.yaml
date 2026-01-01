@@ -1,0 +1,14 @@
+id: ru_vehicle_plate
+name: Russian vehicle license plate by field name
+doc: Russian vehicle license plate by field name
+langs:
+- ru
+categories:
+- transport
+country:
+- RU
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

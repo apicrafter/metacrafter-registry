@@ -1,0 +1,13 @@
+id: hidate
+name: Hindi date format by field name
+doc: Hindi date format by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- datetime
+langs:
+- hi
+is_pii: 'False'
+links: []

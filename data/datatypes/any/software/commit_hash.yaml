@@ -1,0 +1,12 @@
+id: commit_hash
+name: Git commit hash by field name
+doc: Git commit hash by field name
+langs:
+- en
+categories:
+- software
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

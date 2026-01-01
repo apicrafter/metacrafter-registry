@@ -1,0 +1,17 @@
+id: pldriverlic
+name: Polish driver license by field name
+doc: Polish driver license by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- pii
+- persons
+country:
+- PL
+langs:
+- pl
+is_pii: 'True'
+regexp: ^[A-Z0-9]{6,12}$
+links: []

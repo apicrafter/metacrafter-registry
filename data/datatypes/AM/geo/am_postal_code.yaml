@@ -1,0 +1,26 @@
+categories:
+- geo
+country:
+- AM
+doc: Armenian postal code used for mail delivery and addressing
+id: am_postal_code
+is_pii: 'True'
+langs:
+- hy
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Armenia
+name: Armenian Postal Code
+regexp: \d{4}
+examples:
+- value: "0001"
+  description: Example Armenian postal code (Yerevan)
+- value: "3101"
+  description: Example Armenian postal code
+translations:
+  hy:
+    doc: Փոստային ինդեքս - Հայաստանում փոստային առաքման և հասցեավորման համար օգտագործվող 4-նիշ կոդ
+    name: Փոստային ինդեքս
+classification: identifier
+wikidata_property: ''
+

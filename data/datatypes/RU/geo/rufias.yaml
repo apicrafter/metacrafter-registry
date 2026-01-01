@@ -1,0 +1,19 @@
+categories:
+- geo
+country:
+- RU
+doc: Russian FIAS (Federal Information Address System) address identifier - GUID format
+id: rufias
+is_pii: 'False'
+langs:
+- ru
+links: []
+name: Russian FIAS Address Identifier
+regexp: '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'
+examples:
+- value: "12345678-1234-1234-1234-123456789012"
+  description: Example Russian FIAS identifier (GUID format)
+classification: identifier
+wikidata_property: ''
+translations: {}
+

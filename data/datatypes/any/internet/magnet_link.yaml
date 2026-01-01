@@ -1,0 +1,24 @@
+categories:
+- internet
+- identifiers
+doc: "A magnet link is a type of hyperlink that uses the magnet: URI scheme to reference a resource by its content hash (using a hash function such as SHA-1), rather than by its location. Magnet links are commonly used in BitTorrent and other peer-to-peer file sharing protocols to identify files by their content hash rather than by a specific server location."
+id: magnet_link
+is_pii: 'False'
+langs:
+- common
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Magnet_URI_scheme
+name: Magnet URI (BitTorrent)
+classification: identifier
+examples:
+- value: "magnet:?xt=urn:btih:0123456789abcdef0123456789abcdef01234567&dn=example"
+  description: Basic magnet link with info hash and display name
+- value: "magnet:?xt=urn:btih:ABCDEF0123456789ABCDEF0123456789ABCDEF01&dn=file.torrent&tr=http://tracker.example.com:8080/announce"
+  description: Magnet link with tracker URL
+- value: "magnet:?xt=urn:btih:fedcba9876543210fedcba9876543210fedcba98"
+  description: Minimal magnet link with only info hash
+wikidata_property: ''
+regexp: '^magnet:\?xt=urn:btih:[0-9a-fA-F]{40}'
+translations: {}
+

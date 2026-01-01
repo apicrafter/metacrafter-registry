@@ -1,0 +1,22 @@
+categories:
+- finance
+country:
+- AE
+doc: UAE IBAN (International Bank Account Number)
+id: aeiban
+is_pii: 'False'
+langs:
+- ar
+- en
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Bank_Account_Number
+name: UAE IBAN
+regexp: '^AE[0-9]{2}[A-Z0-9]{4}[0-9]{16,24}$'
+examples:
+- value: "AE123456789012345678901234"
+  description: Example UAE IBAN
+classification: identifier
+wikidata_property: ''
+translations: {}
+

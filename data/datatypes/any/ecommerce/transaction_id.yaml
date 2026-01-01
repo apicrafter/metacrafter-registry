@@ -1,0 +1,14 @@
+id: transaction_id
+name: Payment transaction ID by known name
+doc: Payment transaction ID by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- ecommerce
+langs:
+- en
+is_pii: 'False'
+regexp: ^[A-Z0-9]{8,20}$
+links: []

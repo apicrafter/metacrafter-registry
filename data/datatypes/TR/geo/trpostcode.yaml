@@ -1,0 +1,16 @@
+id: trpostcode
+name: Turkish postal code by field name
+doc: Turkish postal code by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- geo
+country:
+- TR
+langs:
+- tr
+is_pii: 'False'
+regexp: ^[0-9]{4,10}$
+links: []

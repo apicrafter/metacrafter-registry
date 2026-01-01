@@ -1,0 +1,16 @@
+id: cpf
+name: Brazilian CPF (Cadastro de Pessoa Física) by known name
+doc: Brazilian CPF (Cadastro de Pessoa Física) by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- BR
+langs:
+- pt
+is_pii: 'True'
+regexp: ^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$
+links: []

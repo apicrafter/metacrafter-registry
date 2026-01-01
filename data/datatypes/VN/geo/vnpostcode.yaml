@@ -1,0 +1,16 @@
+id: vnpostcode
+name: Vietnamese postal code by field name
+doc: Vietnamese postal code by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- geo
+country:
+- VN
+langs:
+- vi
+is_pii: 'False'
+regexp: ^[0-9]{4,10}$
+links: []

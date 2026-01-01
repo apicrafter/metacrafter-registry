@@ -1,0 +1,29 @@
+categories:
+- objectids
+- publishing
+doc: The International Standard Serial Number (ISSN) is an eight-digit serial number used
+  to uniquely identify a serial publication, such as a magazine. The ISSN is especially
+  helpful in distinguishing between serials with the same title. ISSNs are used in ordering,
+  cataloging, interlibrary loans, and other practices in connection with serial literature.
+id: issn
+is_pii: 'False'
+langs:
+- common
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Standard_Serial_Number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P236
+name: International Standard Serial Number (ISSN)
+wikidata_property: P236
+regexp: '\d{4}-\d{3}[\dX]|\d{8}'
+examples:
+- value: '0317-8471'
+  description: Example ISSN
+- value: '2049-3630'
+  description: Example ISSN
+- value: '03178471'
+  description: ISSN without hyphen
+classification: identifier
+translations: {}
+

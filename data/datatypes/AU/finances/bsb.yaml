@@ -1,0 +1,16 @@
+id: bsb
+name: Australian BSB (Bank State Branch) code by known name
+doc: Australian BSB (Bank State Branch) code by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- AU
+langs:
+- en
+is_pii: 'False'
+regexp: ^[0-9]{6}$
+links: []

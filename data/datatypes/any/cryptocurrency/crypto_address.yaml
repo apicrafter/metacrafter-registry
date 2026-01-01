@@ -1,0 +1,12 @@
+id: crypto_address
+name: Cryptocurrency address by field name (generic)
+doc: Cryptocurrency address by field name (generic)
+langs:
+- en
+categories:
+- cryptocurrency
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

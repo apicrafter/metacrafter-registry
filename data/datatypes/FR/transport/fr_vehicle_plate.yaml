@@ -1,0 +1,14 @@
+id: fr_vehicle_plate
+name: French vehicle license plate by field name
+doc: French vehicle license plate by field name
+langs:
+- fr
+categories:
+- transport
+country:
+- FR
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

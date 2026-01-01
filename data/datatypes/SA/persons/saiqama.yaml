@@ -1,0 +1,16 @@
+id: saiqama
+name: Saudi Iqama by field name
+doc: Saudi Iqama by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- pii
+- persons
+country:
+- SA
+langs:
+- ar
+is_pii: 'True'
+links: []

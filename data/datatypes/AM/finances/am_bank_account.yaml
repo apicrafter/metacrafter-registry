@@ -1,0 +1,24 @@
+categories:
+- finances
+country:
+- AM
+doc: Armenian bank account number used for financial transactions
+id: am_bank_account
+is_pii: 'False'
+langs:
+- hy
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Banking_in_Armenia
+name: Armenian Bank Account Number
+regexp: \d{10,20}
+examples:
+- value: "1234567890123456"
+  description: Example Armenian bank account number
+translations:
+  hy:
+    doc: Բանկային հաշիվ - Հայաստանում ֆինանսական գործարքների համար օգտագործվող հաշվեհամար
+    name: Բանկային հաշիվ
+classification: identifier
+wikidata_property: ''
+

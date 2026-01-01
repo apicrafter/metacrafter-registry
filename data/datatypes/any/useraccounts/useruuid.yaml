@@ -1,0 +1,14 @@
+id: useruuid
+name: User UUID by field name
+doc: User UUID by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+langs:
+- en
+is_pii: 'False'
+regexp: ^[A-Za-z0-9_-]{3,50}$
+links: []

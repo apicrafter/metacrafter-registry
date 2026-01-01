@@ -1,0 +1,19 @@
+categories:
+- finance
+country:
+- ID
+doc: Indonesian bank account number
+id: idbankaccount
+is_pii: 'False'
+langs:
+- id
+links: []
+name: Indonesian Bank Account Number
+regexp: '^[0-9]{8,17}$'
+examples:
+- value: "12345678901234567"
+  description: Example Indonesian bank account number
+classification: identifier
+wikidata_property: ''
+translations: {}
+

@@ -1,0 +1,14 @@
+id: de_vehicle_plate
+name: German vehicle license plate by field name
+doc: German vehicle license plate by field name
+langs:
+- de
+categories:
+- transport
+country:
+- DE
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

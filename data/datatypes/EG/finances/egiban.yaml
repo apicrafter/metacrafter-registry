@@ -1,0 +1,21 @@
+categories:
+- finance
+country:
+- EG
+doc: Egyptian IBAN (International Bank Account Number)
+id: egiban
+is_pii: 'False'
+langs:
+- ar
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Bank_Account_Number
+name: Egyptian IBAN
+regexp: '^EG[0-9]{2}[A-Z0-9]{4}[0-9]{16,24}$'
+examples:
+- value: "EG123456789012345678901234"
+  description: Example Egyptian IBAN
+classification: identifier
+wikidata_property: ''
+translations: {}
+

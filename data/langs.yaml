@@ -26,3 +26,13 @@
 # Added to support languages referenced in datatype definitions
 - id: nl
   name: Dutch
+- id: zh
+  name: Chinese
+- id: ja
+  name: Japanese
+- id: ar
+  name: Arabic
+- id: hi
+  name: Hindi
+- id: ko
+  name: Korean

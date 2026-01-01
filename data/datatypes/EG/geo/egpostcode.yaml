@@ -1,0 +1,19 @@
+categories:
+- geo
+country:
+- EG
+doc: Egyptian postal code
+id: egpostcode
+is_pii: 'False'
+langs:
+- ar
+links: []
+name: Egyptian Postal Code
+regexp: '^[0-9]{5}$'
+examples:
+- value: "11511"
+  description: Example Egyptian postal code
+classification: identifier
+wikidata_property: ''
+translations: {}
+

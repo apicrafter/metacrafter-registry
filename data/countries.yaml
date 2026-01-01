@@ -43,3 +43,11 @@
 # Added to support countries referenced in datatype definitions
 - id: NL
   name: Netherlands
+- id: CN
+  name: China
+- id: JP
+  name: Japan
+- id: IN
+  name: India
+- id: KR
+  name: South Korea

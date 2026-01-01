@@ -1,0 +1,16 @@
+id: plpostcode
+name: Polish postal code by field name
+doc: Polish postal code by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- geo
+country:
+- PL
+langs:
+- pl
+is_pii: 'False'
+regexp: ^[0-9]{4,10}$
+links: []

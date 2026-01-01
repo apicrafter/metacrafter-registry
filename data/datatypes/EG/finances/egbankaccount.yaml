@@ -1,0 +1,19 @@
+categories:
+- finance
+country:
+- EG
+doc: Egyptian bank account number
+id: egbankaccount
+is_pii: 'False'
+langs:
+- ar
+links: []
+name: Egyptian Bank Account Number
+regexp: '^EG[0-9]{2}[A-Z0-9]{4}[0-9]{16,24}$'
+examples:
+- value: "EG123456789012345678901234"
+  description: Example Egyptian bank account number (IBAN format)
+classification: identifier
+wikidata_property: ''
+translations: {}
+

@@ -1,0 +1,15 @@
+id: lastname
+name: Indian last name by known name
+doc: Indian last name by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- persons
+country:
+- IN
+langs:
+- en
+is_pii: 'True'
+links: []

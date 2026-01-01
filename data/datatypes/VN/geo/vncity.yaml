@@ -1,0 +1,15 @@
+id: vncity
+name: Vietnamese city name by field name
+doc: Vietnamese city name by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- geo
+country:
+- VN
+langs:
+- vi
+is_pii: 'False'
+links: []

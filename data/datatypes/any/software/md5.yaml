@@ -1,0 +1,12 @@
+id: md5
+name: MD5 hash by value
+doc: MD5 hash by value
+langs:
+- en
+categories:
+- software
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

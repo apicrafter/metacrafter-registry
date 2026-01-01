@@ -1,0 +1,18 @@
+id: acra
+name: Singapore ACRA (Accounting and Corporate Regulatory Authority) number by known
+  name
+doc: Singapore ACRA (Accounting and Corporate Regulatory Authority) number by known
+  name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- SG
+langs:
+- en
+is_pii: 'False'
+regexp: ^[0-9]{9}[A-Z]$
+links: []

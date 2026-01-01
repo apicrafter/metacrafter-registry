@@ -1,0 +1,17 @@
+id: krrrn
+name: Korean RRN by field name
+doc: Korean RRN by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- pii
+- persons
+country:
+- KR
+langs:
+- ko
+is_pii: 'True'
+regexp: ^[0-9]{6}-[0-9]{7}$
+links: []

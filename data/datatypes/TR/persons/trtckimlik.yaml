@@ -1,0 +1,17 @@
+id: trtckimlik
+name: Turkish TC Kimlik No by field name
+doc: Turkish TC Kimlik No by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- pii
+- persons
+country:
+- TR
+langs:
+- tr
+is_pii: 'True'
+regexp: ^[0-9]{11}$
+links: []

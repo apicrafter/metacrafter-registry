@@ -1,0 +1,23 @@
+categories:
+- finance
+country:
+- CH
+doc: Swiss IBAN (International Bank Account Number)
+id: chiban
+is_pii: 'False'
+langs:
+- de
+- fr
+- it
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Bank_Account_Number
+name: Swiss IBAN
+regexp: '^CH[0-9]{2}[A-Z0-9]{4}[0-9]{16,24}$'
+examples:
+- value: "CH1234567890123456789"
+  description: Example Swiss IBAN
+classification: identifier
+wikidata_property: ''
+translations: {}
+

@@ -1,0 +1,17 @@
+id: trdriverlic
+name: Turkish driver license by field name
+doc: Turkish driver license by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- pii
+- persons
+country:
+- TR
+langs:
+- tr
+is_pii: 'True'
+regexp: ^[A-Z0-9]{6,12}$
+links: []

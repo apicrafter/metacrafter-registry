@@ -19,11 +19,11 @@ links:
   url: https://www.wikidata.org/wiki/Property:P9860
 name: Global Location Number (GLN)
 examples:
-- value: 0865321000104
-  description: Google
-- value: 0860484000404
-  description: The Coca-Cola Company
+  - value: 0865321000104
+    description: Google
+  - value: 0860484000404
+    description: The Coca-Cola Company
 classification: identifier
-wikidata_property: ''
+wikidata_property: P9860
 translations: {}
-regexp: ''
+regexp: '\d{13}'

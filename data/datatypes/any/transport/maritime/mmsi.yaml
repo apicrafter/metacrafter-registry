@@ -15,7 +15,11 @@ links:
   url: https://en.wikipedia.org/wiki/Maritime_Mobile_Service_Identity
 name: Maritime Mobile Service Identity
 classification: identifier
-examples: []
+examples:
+- value: '123456789'
+  description: Example MMSI
+- value: '366123456'
+  description: US MMSI example
 wikidata_property: ''
 translations: {}
-regexp: ''
+regexp: '\d{9}'

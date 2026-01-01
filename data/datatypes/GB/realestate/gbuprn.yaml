@@ -1,0 +1,16 @@
+id: gbuprn
+name: UK UPRN by field name
+doc: UK UPRN by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- realestate
+country:
+- GB
+langs:
+- en
+is_pii: 'False'
+regexp: ^[0-9]{12}$
+links: []

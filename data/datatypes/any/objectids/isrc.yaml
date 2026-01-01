@@ -1,0 +1,29 @@
+categories:
+- objectids
+- publishing
+doc: The International Standard Recording Code (ISRC) is an international standard code
+  for uniquely identifying sound recordings and music video recordings. The code was developed
+  by the recording industry and is officially designated as the ISO 3901 standard. An
+  ISRC identifies a particular recording, not the work (composition and lyrical content)
+  itself. Therefore, different recordings, edits, and remixes of the same work should have
+  different ISRCs.
+id: isrc
+is_pii: 'False'
+langs:
+- common
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Standard_Recording_Code
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P435
+name: International Standard Recording Code (ISRC)
+wikidata_property: P435
+regexp: '[A-Z]{2}[A-Z0-9]{3}\d{7}'
+examples:
+- value: USRC17607839
+  description: Example ISRC
+- value: GBUM71500123
+  description: Example ISRC
+classification: identifier
+translations: {}
+

@@ -1,0 +1,21 @@
+categories:
+- geo
+country:
+- ID
+doc: Indonesian province name
+id: idprovince
+is_pii: 'False'
+langs:
+- id
+links: []
+name: Indonesian Province Name
+regexp: ''
+examples:
+- value: "DKI Jakarta"
+  description: Example Indonesian province
+- value: "Jawa Barat"
+  description: Example Indonesian province
+classification: categorical
+wikidata_property: ''
+translations: {}
+

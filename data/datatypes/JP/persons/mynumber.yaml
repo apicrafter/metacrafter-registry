@@ -1,0 +1,17 @@
+id: mynumber
+name: Japanese My Number (マイナンバー) by known name
+doc: Japanese My Number (マイナンバー) by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- pii
+- persons
+country:
+- JP
+langs:
+- ja
+is_pii: 'True'
+regexp: ^[0-9]{12}$
+links: []

@@ -1,0 +1,21 @@
+categories:
+- geo
+country:
+- ID
+doc: Indonesian city name
+id: idcity
+is_pii: 'False'
+langs:
+- id
+links: []
+name: Indonesian City Name
+regexp: ''
+examples:
+- value: "Jakarta"
+  description: Example Indonesian city
+- value: "Surabaya"
+  description: Example Indonesian city
+classification: categorical
+wikidata_property: ''
+translations: {}
+

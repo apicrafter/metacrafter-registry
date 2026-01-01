@@ -1,0 +1,12 @@
+id: semver
+name: Semantic version by value
+doc: Semantic version by value
+langs:
+- en
+categories:
+- software
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

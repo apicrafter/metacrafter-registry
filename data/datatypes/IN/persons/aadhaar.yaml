@@ -1,0 +1,17 @@
+id: aadhaar
+name: Indian Aadhaar number by known name
+doc: Indian Aadhaar number by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- pii
+- persons
+country:
+- IN
+langs:
+- en
+is_pii: 'True'
+regexp: ^[0-9]{12}$
+links: []

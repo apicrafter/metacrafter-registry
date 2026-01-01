@@ -1,0 +1,24 @@
+categories:
+- pii
+- persons
+country:
+- CH
+doc: Swiss AHV (Alters- und Hinterlassenenversicherung) social security number
+id: chahv
+is_pii: 'True'
+langs:
+- de
+- fr
+- it
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Swiss_social_security_number
+name: Swiss AHV Number
+regexp: '^[0-9]{3}\\.[0-9]{3}\\.[0-9]{3}\\.[0-9]{3}$'
+examples:
+- value: "123.456.789.012"
+  description: Example Swiss AHV number
+classification: identifier
+wikidata_property: ''
+translations: {}
+

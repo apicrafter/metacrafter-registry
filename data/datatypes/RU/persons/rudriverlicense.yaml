@@ -1,0 +1,17 @@
+id: rudriverlicense
+name: Russian driver's license by field name
+doc: Russian driver's license by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- pii
+- persons
+country:
+- RU
+langs:
+- ru
+is_pii: 'True'
+regexp: ^[A-Z0-9]{6,12}$
+links: []

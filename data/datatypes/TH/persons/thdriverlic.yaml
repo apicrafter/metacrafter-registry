@@ -1,0 +1,17 @@
+id: thdriverlic
+name: Thai driver license by field name
+doc: Thai driver license by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- pii
+- persons
+country:
+- TH
+langs:
+- th
+is_pii: 'True'
+regexp: ^[A-Z0-9]{6,12}$
+links: []

@@ -1,0 +1,16 @@
+id: krpostcode
+name: Korean postal code by field name
+doc: Korean postal code by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- geo
+country:
+- KR
+langs:
+- ko
+is_pii: 'False'
+regexp: ^[0-9]{4,10}$
+links: []

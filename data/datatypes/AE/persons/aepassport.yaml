@@ -1,0 +1,22 @@
+categories:
+- pii
+- persons
+country:
+- AE
+doc: UAE passport number used for international travel identification
+id: aepassport
+is_pii: 'True'
+langs:
+- ar
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Emirati_passport
+name: UAE Passport Number
+regexp: '^[A-Z0-9]{8,9}$'
+examples:
+- value: "A12345678"
+  description: Example UAE passport number
+classification: identifier
+wikidata_property: ''
+translations: {}
+

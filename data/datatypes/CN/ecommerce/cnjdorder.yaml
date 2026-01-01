@@ -1,0 +1,16 @@
+id: cnjdorder
+name: JD.com order ID by field name
+doc: JD.com order ID by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- ecommerce
+country:
+- CN
+langs:
+- zh
+is_pii: 'False'
+regexp: ^[A-Z0-9]{8,20}$
+links: []

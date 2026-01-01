@@ -1,0 +1,25 @@
+categories:
+- pii
+- persons
+country:
+- AM
+doc: Armenian passport number used for international travel identification
+id: am_passport
+is_pii: 'True'
+langs:
+- hy
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Armenian_passport
+name: Armenian Passport Number
+regexp: '[A-Z0-9]{6,9}'
+examples:
+- value: "AB123456"
+  description: Example Armenian passport number
+translations:
+  hy:
+    doc: Հայտարարագիր - Հայաստանի քաղաքացիների միջազգային ճանապարհորդության նույնականացման փաստաթուղթ
+    name: Հայտարարագիր
+classification: identifier
+wikidata_property: ''
+

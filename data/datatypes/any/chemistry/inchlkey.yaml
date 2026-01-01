@@ -1,7 +1,7 @@
 categories:
 - chemistry
 doc: International Chemical Identifier
-id: inchl
+id: inchlkey
 is_pii: 'False'
 langs:
 - common
@@ -14,7 +14,7 @@ links:
     url: https://schema.org/inChIKey
   - type: wikipedia
     url: https://en.wikipedia.org/wiki/International_Chemical_Identifier
-name: International Chemical Identifier (InChl)
+name: International Chemical Identifier Key (InChIKey)
 wikidata_property: P235
 regexp: '[A-Z]{14}-[A-Z]{10}-[A-Z]'
 examples:

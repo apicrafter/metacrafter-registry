@@ -1,0 +1,13 @@
+id: buildingnumber
+name: Building number by field name
+doc: Building number by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- realestate
+langs:
+- en
+is_pii: 'False'
+links: []

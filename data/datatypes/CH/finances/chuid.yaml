@@ -1,0 +1,23 @@
+categories:
+- finance
+country:
+- CH
+doc: Swiss UID (Unternehmens-Identifikationsnummer) - Swiss business identification number
+id: chuid
+is_pii: 'False'
+langs:
+- de
+- fr
+- it
+links: []
+name: Swiss UID
+regexp: '^(CHE[0-9]{9}TVA|[0-9]{3}\\.[0-9]{3}\\.[0-9]{3})$'
+examples:
+- value: "CHE123456789TVA"
+  description: Example Swiss UID
+- value: "123.456.789"
+  description: Example Swiss UID (alternative format)
+classification: identifier
+wikidata_property: ''
+translations: {}
+

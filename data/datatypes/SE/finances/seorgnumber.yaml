@@ -1,0 +1,16 @@
+id: seorgnumber
+name: Swedish organization number by field name
+doc: Swedish organization number by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- SE
+langs:
+- sv
+is_pii: 'False'
+regexp: ^[0-9]{9}$
+links: []

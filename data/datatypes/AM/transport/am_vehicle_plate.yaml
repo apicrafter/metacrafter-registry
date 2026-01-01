@@ -1,0 +1,26 @@
+categories:
+- transport
+country:
+- AM
+doc: Armenian vehicle registration plate. Format consists of two or three numbers, two letters, and two or three additional numbers. Plates include the international code "AM" and feature the national flag, security hologram, and machine-readable Data Matrix Code (since 2014).
+id: am_vehicle_plate
+is_pii: 'False'
+langs:
+- hy
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Armenia
+name: Armenian Vehicle Registration Plate
+regexp: '\d{2,3}[A-Z]{2}\d{2,3}'
+examples:
+- value: "12AB345"
+  description: Example Armenian vehicle plate (2 digits, 2 letters, 3 digits)
+- value: "123AB45"
+  description: Example Armenian vehicle plate (3 digits, 2 letters, 2 digits)
+translations:
+  hy:
+    doc: Մեքենայի համարանիշ - Հայաստանում ավտոմեքենաների գրանցման համարանիշ, որը բաղկացած է թվերից և տառերից
+    name: Մեքենայի համարանիշ
+classification: identifier
+wikidata_property: ''
+

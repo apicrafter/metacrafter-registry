@@ -1,0 +1,12 @@
+id: ethereum_address
+name: Ethereum address by field name
+doc: Ethereum address by field name
+langs:
+- en
+categories:
+- cryptocurrency
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

@@ -1,0 +1,16 @@
+id: rg
+name: Brazilian RG (Registro Geral) by known name
+doc: Brazilian RG (Registro Geral) by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- common
+country:
+- BR
+langs:
+- pt
+is_pii: 'True'
+regexp: ^[0-9]{9}$
+links: []

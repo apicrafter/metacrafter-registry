@@ -1,0 +1,15 @@
+id: frcadastral
+name: French cadastral reference by field name
+doc: French cadastral reference by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- realestate
+country:
+- FR
+langs:
+- fr
+is_pii: 'False'
+links: []

@@ -1,0 +1,14 @@
+id: userhandle
+name: User handle by field name
+doc: User handle by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- useraccounts
+langs:
+- en
+is_pii: 'False'
+regexp: ^[A-Za-z0-9_-]{3,50}$
+links: []

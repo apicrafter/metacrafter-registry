@@ -1,0 +1,22 @@
+categories:
+- geo
+country:
+- AE
+doc: UAE city name
+id: aecity
+is_pii: 'False'
+langs:
+- ar
+- en
+links: []
+name: UAE City Name
+regexp: ''
+examples:
+- value: "Dubai"
+  description: Example UAE city
+- value: "Abu Dhabi"
+  description: Example UAE city
+classification: categorical
+wikidata_property: ''
+translations: {}
+

@@ -1,0 +1,15 @@
+id: state
+name: Indian state by known name
+doc: Indian state by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- geo
+country:
+- IN
+langs:
+- en
+is_pii: 'False'
+links: []

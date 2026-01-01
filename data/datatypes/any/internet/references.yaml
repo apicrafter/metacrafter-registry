@@ -1,0 +1,21 @@
+categories:
+- internet
+doc: References is an email header field that contains a list of Message-IDs of messages in the reply chain, as defined in RFC 5322. It is used to maintain threading in email conversations.
+id: references
+is_pii: 'False'
+langs:
+- common
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Email#Message-ID
+name: References (Email Header)
+classification: identifier
+examples:
+- value: "<msg1@example.com> <msg2@example.com> <msg3@example.com>"
+  description: References header with multiple Message-IDs
+- value: "<CABcD1234@example.com>"
+  description: Single Message-ID in References header
+wikidata_property: ''
+regexp: ''
+translations: {}
+

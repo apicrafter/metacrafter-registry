@@ -1,0 +1,25 @@
+categories:
+- finances
+- companies
+country:
+- AM
+doc: Armenian organization Taxpayer Identification Number used for tax purposes to identify businesses and organizations
+id: am_org_tin
+is_pii: 'False'
+langs:
+- hy
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Armenia
+name: Armenian Organization Taxpayer Identification Number
+regexp: \d{8,12}
+examples:
+- value: "1234567890"
+  description: Example Armenian organization TIN
+translations:
+  hy:
+    doc: Կազմակերպության հարկային համար - բիզնեսների և կազմակերպությունների հարկային համակարգում նույնականացման համար
+    name: Կազմակերպության հարկային համար
+classification: identifier
+wikidata_property: ''
+

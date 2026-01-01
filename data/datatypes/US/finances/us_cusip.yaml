@@ -1,24 +1,30 @@
 categories:
 - finances
+- identifiers
 country:
 - US
+- CA
 doc: A CUSIP is a nine-digit numeric (e.g. 037833100 for Apple) or nine-character
   alphanumeric (e.g. 38259P508 for Google) code that identifies a North American financial
   security for the purposes of facilitating clearing and settlement of trades
 id: cusip
 is_pii: 'False'
 langs:
-- common
+- en
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/CUSIP
-name: CUSIP code
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5198
+name: CUSIP (Committee on Uniform Securities Identification Procedures)
 regexp: ^[0-9]{3}[a-zA-Z0-9]{2}[a-zA-Z0-9*@#]{3}[0-9]$
 examples:
 - value: 037833100
-  description: Apple
+  description: Apple Inc. common stock
 - value: 38259P508
-  description: Google
+  description: Google Inc. Class C capital stock
+- value: 30303M102
+  description: Facebook Inc. Class A common stock
 classification: identifier
-wikidata_property: ''
+wikidata_property: P5198
 translations: {}

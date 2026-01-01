@@ -1,0 +1,15 @@
+id: indate
+name: Indian date format by field name
+doc: Indian date format by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- datetime
+country:
+- IN
+langs:
+- hi
+is_pii: 'False'
+links: []

@@ -1,0 +1,18 @@
+id: vniban
+name: Vietnamese IBAN by field name
+doc: Vietnamese IBAN by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- VN
+langs:
+- vi
+is_pii: 'False'
+regexp: ^VN[0-9]{2}[A-Z0-9]{4}[0-9]{16,24}$
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Bank_Account_Number

@@ -1,0 +1,15 @@
+id: province
+name: Chinese province by known name
+doc: Chinese province by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- geo
+country:
+- CN
+langs:
+- zh
+is_pii: 'False'
+links: []

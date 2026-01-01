@@ -1,0 +1,24 @@
+categories:
+- pii
+- persons
+country:
+- RU
+doc: "Russian driver's license number (Водительское удостоверение). Format: series (2 digits) + number (6 digits), separated by space"
+id: rudriverlicense
+is_pii: 'True'
+langs:
+- ru
+name: Russian driver's license number
+links:
+  - type: wikipedia
+    url: https://ru.wikipedia.org/wiki/Водительское_удостоверение_в_России
+examples:
+  - value: "12 345678"
+    description: "Driver's license format: series + number"
+regexp: '^\d{2}\s\d{6}$'
+wikidata_property: ''
+translations:
+  ru:
+    doc: Номер водительского удостоверения Российской Федерации
+    name: Водительское удостоверение
+

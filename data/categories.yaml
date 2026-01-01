@@ -58,3 +58,9 @@
   name: Education
 - id: environment
   name: Environment
+- id: legal
+  name: Legal and compliance
+- id: ecommerce
+  name: E-commerce
+- id: realestate
+  name: Real estate

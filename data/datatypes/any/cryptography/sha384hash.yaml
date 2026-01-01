@@ -1,0 +1,12 @@
+id: sha384hash
+name: SHA-384 hash by field name
+doc: SHA-384 hash by field name
+langs:
+- en
+categories:
+- cryptography
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

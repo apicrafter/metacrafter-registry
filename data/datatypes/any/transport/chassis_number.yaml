@@ -1,0 +1,12 @@
+id: chassis_number
+name: Chassis number by field name
+doc: Chassis number by field name number
+langs:
+- en
+categories:
+- transport
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

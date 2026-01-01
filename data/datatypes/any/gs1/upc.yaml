@@ -1,0 +1,12 @@
+id: upc
+name: Universal Product Code (UPC) by field name
+doc: Universal Product Code (UPC) by field name code
+langs:
+- en
+categories:
+- gs1
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

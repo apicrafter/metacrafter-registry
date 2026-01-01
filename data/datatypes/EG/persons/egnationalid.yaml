@@ -1,0 +1,20 @@
+categories:
+- pii
+- persons
+country:
+- EG
+doc: Egyptian national identification number
+id: egnationalid
+is_pii: 'True'
+langs:
+- ar
+links: []
+name: Egyptian National ID Number
+regexp: '^[0-9]{14}$'
+examples:
+- value: "12345678901234"
+  description: Example Egyptian national ID number
+classification: identifier
+wikidata_property: ''
+translations: {}
+

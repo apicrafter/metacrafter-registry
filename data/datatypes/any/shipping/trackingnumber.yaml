@@ -1,0 +1,14 @@
+id: trackingnumber
+name: Shipping tracking number by field name
+doc: Shipping tracking number by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- shipping
+langs:
+- en
+is_pii: 'False'
+regexp: ^[A-Z0-9]{8,20}$
+links: []

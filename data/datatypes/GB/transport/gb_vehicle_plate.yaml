@@ -1,0 +1,14 @@
+id: gb_vehicle_plate
+name: UK vehicle registration plate by field name
+doc: UK vehicle registration plate by field name
+langs:
+- en
+categories:
+- transport
+country:
+- GB
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

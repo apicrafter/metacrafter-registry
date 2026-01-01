@@ -1,0 +1,13 @@
+id: legal_document
+name: Legal document type by known name
+doc: Legal document type by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- legal
+langs:
+- en
+is_pii: 'False'
+links: []

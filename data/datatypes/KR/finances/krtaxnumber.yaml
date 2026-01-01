@@ -1,0 +1,16 @@
+id: krtaxnumber
+name: Korean tax number by field name
+doc: Korean tax number by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- KR
+langs:
+- ko
+is_pii: 'False'
+regexp: ^[0-9]{9,15}$
+links: []

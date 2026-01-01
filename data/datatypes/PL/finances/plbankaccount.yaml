@@ -1,0 +1,16 @@
+id: plbankaccount
+name: Polish bank account by field name
+doc: Polish bank account by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- PL
+langs:
+- pl
+is_pii: 'False'
+regexp: ^[0-9]{8,20}$
+links: []

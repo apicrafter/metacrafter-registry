@@ -1,0 +1,23 @@
+categories:
+- internet
+doc: Message-ID is a unique identifier for an email message, as defined in RFC 5322. It is used to identify individual messages in email systems and is typically in the format <unique-string@domain>.
+id: message_id
+is_pii: 'False'
+langs:
+- common
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Message-ID
+name: Message-ID (Email Message Identifier)
+classification: identifier
+examples:
+- value: "<CABcD1234@example.com>"
+  description: Standard Message-ID format
+- value: "<20240115123456.ABC123@mail.example.com>"
+  description: Message-ID with timestamp
+- value: "<user+1234567890@example.org>"
+  description: Message-ID with user identifier
+wikidata_property: ''
+regexp: '^<[^<>@]+@[^<>@]+>$'
+translations: {}
+

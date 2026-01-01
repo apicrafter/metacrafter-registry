@@ -1,0 +1,16 @@
+id: sataxnumber
+name: Saudi tax number by field name
+doc: Saudi tax number by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- SA
+langs:
+- ar
+is_pii: 'False'
+regexp: ^[0-9]{9,15}$
+links: []

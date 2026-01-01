@@ -1,0 +1,28 @@
+categories:
+- internet
+- identifiers
+doc: A media access control address (MAC address) is a unique identifier assigned to a network
+  interface controller (NIC) for use as a network address in communications within a network
+  segment.
+id: mac_address
+is_pii: 'False'
+langs:
+- common
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/MAC_address
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2817
+name: MAC address (Media Access Control)
+wikidata_property: P2817
+regexp: '^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$'
+classification: identifier
+examples:
+  - value: '00:1B:44:11:3A:B7'
+    description: MAC address with colons
+  - value: '00-1B-44-11-3A-B7'
+    description: MAC address with dashes
+  - value: '08:00:27:3A:2E:5C'
+    description: MAC address example
+translations: {}
+

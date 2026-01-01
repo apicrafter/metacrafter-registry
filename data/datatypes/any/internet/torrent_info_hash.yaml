@@ -1,0 +1,25 @@
+categories:
+- internet
+- identifiers
+- cryptography
+doc: "A BitTorrent info hash (BTIH) is a SHA-1 hash of the \"info\" section of a BitTorrent metainfo file (.torrent file). It is a 40-character hexadecimal string that uniquely identifies a torrent. The info hash is used in magnet links and tracker communications to identify specific torrents without needing to reference a .torrent file."
+id: torrent_info_hash
+is_pii: 'False'
+langs:
+- common
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/BitTorrent
+name: BitTorrent Info Hash (BTIH)
+classification: identifier
+examples:
+- value: "0123456789abcdef0123456789abcdef01234567"
+  description: Standard 40-character hex info hash (lowercase)
+- value: "ABCDEF0123456789ABCDEF0123456789ABCDEF01"
+  description: Info hash with uppercase letters
+- value: "fedcba9876543210fedcba9876543210fedcba98"
+  description: Example info hash
+wikidata_property: ''
+regexp: '^[0-9a-fA-F]{40}$'
+translations: {}
+

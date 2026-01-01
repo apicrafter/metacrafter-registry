@@ -1,0 +1,12 @@
+id: private_key
+name: Private key by field name (generic)
+doc: Private key by field name (generic)
+langs:
+- en
+categories:
+- cryptocurrency
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

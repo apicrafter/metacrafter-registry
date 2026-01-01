@@ -10,9 +10,15 @@ links:
   url: https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity
 langs:
 - common
-regexp: \d{2}-\d{6}-\d{6}-\d\d?
+regexp: '\d{14,15}|\d{2}-\d{6}-\d{6}-\d{1,2}'
 name: International Mobile Equipment Identity (IMEI)
 classification: identifier
-examples: []
+examples:
+  - value: '490154203237518'
+    description: IMEI with check digit
+  - value: '356938035643809'
+    description: IMEI example
+  - value: '49-015420-323751-8'
+    description: IMEI with dashes
 wikidata_property: ''
 translations: {}

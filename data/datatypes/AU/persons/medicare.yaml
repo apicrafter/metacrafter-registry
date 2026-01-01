@@ -1,0 +1,16 @@
+id: medicare
+name: Australian Medicare number by known name
+doc: Australian Medicare number by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- pii
+- persons
+country:
+- AU
+langs:
+- en
+is_pii: 'True'
+links: []

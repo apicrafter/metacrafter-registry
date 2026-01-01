@@ -1,0 +1,16 @@
+id: trtaxnumber
+name: Turkish tax number by field name
+doc: Turkish tax number by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- finance
+country:
+- TR
+langs:
+- tr
+is_pii: 'False'
+regexp: ^[0-9]{9,15}$
+links: []

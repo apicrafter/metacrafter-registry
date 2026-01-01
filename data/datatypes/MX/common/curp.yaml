@@ -1,0 +1,16 @@
+id: curp
+name: Mexican CURP (Clave Única de Registro de Población) by known name
+doc: Mexican CURP (Clave Única de Registro de Población) by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- common
+country:
+- MX
+langs:
+- es
+is_pii: 'True'
+regexp: ^[A-Z]{4}[0-9]{6}[HM][A-Z]{5}[0-9A-Z]{1}[0-9]{1}$
+links: []

@@ -1,0 +1,16 @@
+id: postcode
+name: Chinese postal code (邮政编码) by known name
+doc: Chinese postal code (邮政编码) by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- geo
+country:
+- CN
+langs:
+- zh
+is_pii: 'False'
+regexp: ^[0-9]{4,10}$
+links: []

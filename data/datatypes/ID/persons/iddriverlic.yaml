@@ -1,0 +1,20 @@
+categories:
+- pii
+- persons
+country:
+- ID
+doc: Indonesian driver license (SIM - Surat Izin Mengemudi) number
+id: iddriverlic
+is_pii: 'True'
+langs:
+- id
+links: []
+name: Indonesian Driver License Number
+regexp: '^[A-Z][0-9]{11,12}$'
+examples:
+- value: "A12345678901"
+  description: Example Indonesian driver license number
+classification: identifier
+wikidata_property: ''
+translations: {}
+

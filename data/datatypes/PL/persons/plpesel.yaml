@@ -1,0 +1,17 @@
+id: plpesel
+name: Polish PESEL by field name
+doc: Polish PESEL by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- pii
+- persons
+country:
+- PL
+langs:
+- pl
+is_pii: 'True'
+regexp: ^[0-9]{11}$
+links: []

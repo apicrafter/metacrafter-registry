@@ -1,0 +1,12 @@
+id: sha256
+name: SHA-256 hash by value
+doc: SHA-256 hash by value
+langs:
+- en
+categories:
+- software
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

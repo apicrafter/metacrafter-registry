@@ -1,0 +1,16 @@
+id: thpostcode
+name: Thai postal code by field name
+doc: Thai postal code by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- geo
+country:
+- TH
+langs:
+- th
+is_pii: 'False'
+regexp: ^[0-9]{4,10}$
+links: []

@@ -1,0 +1,19 @@
+categories:
+- finance
+country:
+- EG
+doc: Egyptian tax identification number
+id: egtaxnumber
+is_pii: 'False'
+langs:
+- ar
+links: []
+name: Egyptian Tax Number
+regexp: '^[0-9]{9,15}$'
+examples:
+- value: "123456789"
+  description: Example Egyptian tax number
+classification: identifier
+wikidata_property: ''
+translations: {}
+

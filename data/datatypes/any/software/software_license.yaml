@@ -1,0 +1,12 @@
+id: software_license
+name: Software license by field name
+doc: Software license by field name
+langs:
+- en
+categories:
+- software
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

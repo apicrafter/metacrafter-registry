@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../metacrafter"
+		},
+		{
+			"path": "../metacrafter-rules"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"auxislabs.python-uv-toolkit"
+		]
+	}
+}

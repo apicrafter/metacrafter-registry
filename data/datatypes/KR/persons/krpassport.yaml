@@ -1,0 +1,19 @@
+id: krpassport
+name: Korean passport by field name
+doc: Korean passport by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- pii
+- persons
+country:
+- KR
+langs:
+- ko
+is_pii: 'True'
+regexp: ^[A-Z0-9]{6,10}$
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Passport

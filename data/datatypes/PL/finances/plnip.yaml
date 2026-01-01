@@ -1,0 +1,15 @@
+id: plnip
+name: Polish NIP by field name
+doc: Polish NIP by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- common
+country:
+- PL
+langs:
+- pl
+is_pii: 'False'
+links: []

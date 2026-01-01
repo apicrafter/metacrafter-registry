@@ -1,0 +1,13 @@
+id: day
+name: Chinese day name
+doc: Chinese day name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- datetime
+langs:
+- zh
+is_pii: 'False'
+links: []

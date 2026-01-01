@@ -1,0 +1,13 @@
+id: case_number
+name: Case number by known name
+doc: Case number by known name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- legal
+langs:
+- en
+is_pii: 'False'
+links: []

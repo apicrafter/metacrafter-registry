@@ -1,0 +1,12 @@
+id: dc_language
+name: Dublin Core language by field name
+doc: Dublin Core language by field name
+langs:
+- en
+categories:
+- dublincore
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

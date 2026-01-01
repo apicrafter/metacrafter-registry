@@ -1,0 +1,15 @@
+id: thprovince
+name: Thai province by field name
+doc: Thai province by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- geo
+country:
+- TH
+langs:
+- th
+is_pii: 'False'
+links: []

@@ -1,0 +1,19 @@
+categories:
+- internet
+doc: In-Reply-To is an email header field that contains the Message-ID of the message to which this message is a reply, as defined in RFC 5322.
+id: in_reply_to
+is_pii: 'False'
+langs:
+- common
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Email#Message-ID
+name: In-Reply-To (Email Header)
+classification: identifier
+examples:
+- value: "<CABcD1234@example.com>"
+  description: In-Reply-To header containing Message-ID
+wikidata_property: ''
+regexp: '^<[^<>@]+@[^<>@]+>$'
+translations: {}
+

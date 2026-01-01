@@ -1,0 +1,12 @@
+id: package_name
+name: Package name by field name
+doc: Package name by field name
+langs:
+- en
+categories:
+- software
+is_pii: 'False'
+classification: identifier
+translations: {}
+examples: []
+links: []

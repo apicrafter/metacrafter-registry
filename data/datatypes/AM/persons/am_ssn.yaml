@@ -1,0 +1,25 @@
+categories:
+- pii
+- persons
+country:
+- AM
+doc: Armenian Social Security Number (SSN) is a 10-digit unique identifier assigned to Armenian citizens, legally residing foreigners, stateless individuals, and refugees. Generated based on personal information such as gender and date of birth, it remains constant throughout an individual's lifetime.
+id: am_ssn
+is_pii: 'True'
+langs:
+- hy
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Armenia
+name: Armenian Social Security Number
+regexp: \d{10}
+examples:
+- value: "1234567890"
+  description: Example Armenian SSN
+translations:
+  hy:
+    doc: Հասարակական ապահովագրության համար - 10-նիշ եզակի նույնականացման համար, որը տրվում է Հայաստանի քաղաքացիներին, օրինականորեն բնակվող օտարերկրացիներին, անքաղաքացիներին և փախստականներին
+    name: Հասարակական ապահովագրության համար
+classification: identifier
+wikidata_property: ''
+

@@ -1,0 +1,15 @@
+id: usfipsproperty
+name: US FIPS property code by field name
+doc: US FIPS property code by field name identifier
+classification: identifier
+wikidata_property: ''
+translations: {}
+examples: []
+categories:
+- realestate
+country:
+- US
+langs:
+- en
+is_pii: 'False'
+links: []

@@ -1,0 +1,22 @@
+categories:
+- pii
+- persons
+country:
+- AE
+doc: UAE Emirates ID number used for identification of UAE citizens and residents
+id: aeemiratesid
+is_pii: 'True'
+langs:
+- ar
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Emirates_ID
+name: UAE Emirates ID Number
+regexp: '^[0-9]{15}$'
+examples:
+- value: "784123456789012"
+  description: Example UAE Emirates ID number
+classification: identifier
+wikidata_property: ''
+translations: {}
+

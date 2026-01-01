@@ -12,7 +12,13 @@ langs:
 - common
 name: The international mobile subscriber identity (IMSI)
 classification: identifier
-examples: []
+examples:
+  - value: '310150123456789'
+    description: US IMSI (MCC 310, MNC 15, MSIN 0123456789)
+  - value: '250990123456789'
+    description: Russian IMSI (MCC 250, MNC 99, MSIN 0123456789)
+  - value: '234150123456789'
+    description: UK IMSI (MCC 234, MNC 15, MSIN 0123456789)
 wikidata_property: ''
 translations: {}
-regexp: ''
+regexp: '^\d{15}$'
