@@ -71,7 +71,10 @@
             "type" : "dict",
             "schema" : {
                 "type": {"type": "string",
-                    "required" :  false
+                    "required" :  false,
+                    "allowed": ["wikipedia", "wikidata", "schema.org", "doc",
+                                "dublincore", "bioschemas", "datadrivendiscovery",
+                                "other"]
                 },
                 "url": {"type": "string",
                 "required" :  false

@@ -8,9 +8,9 @@ supported_types:
   - birthday
   - gender
   - nationality
-  - person_fullaname
+  - person_fullname
   - person_firstname
-  - person_lastname
+  - lastname
   - username
   - password
   - address

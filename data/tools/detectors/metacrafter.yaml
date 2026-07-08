@@ -17,7 +17,7 @@ supported_types:
    - boolean
    - url
    - year
-   - timestamp
+   - datetime
    - timezone
    - month
    - day

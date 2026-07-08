@@ -9,7 +9,7 @@ import logging
 import os
 import collections
 from pathlib import Path
-from flask import Flask, jsonify, render_template, abort
+from flask import Flask, jsonify, render_template, abort, request
 
 # Configuration from environment variables with defaults
 DEBUG = os.environ.get('REGISTRY_DEBUG', 'False').lower() == 'true'
@@ -209,9 +209,56 @@ def tool_view_json(slug):
         abort(404)
 
 
+def _matches_query(obj, q):
+    """Return True if the datatype/tool object matches a search string."""
+    q = q.lower()
+    for field in ('id', 'name', 'doc'):
+        value = obj.get(field)
+        if value and q in str(value).lower():
+            return True
+    categories = obj.get('categories') or []
+    if any(q in str(c).lower() for c in categories):
+        return True
+    return False
+
+
 def registry_view_json():
-    """Get all datatypes as JSON."""
+    """Get all datatypes as JSON.
+
+    Supports an optional ``?q=`` search parameter that filters by id, name,
+    doc, or category (case-insensitive substring match).
+    """
+    q = request.args.get('q')
+    if q:
+        filtered = collections.OrderedDict(
+            (slug, obj)
+            for slug, obj in registry_data.datatypes.items()
+            if _matches_query(obj, q)
+        )
+        return jsonify(filtered)
     return jsonify(registry_data.datatypes)
+
+
+def tools_view_json():
+    """Get all tools as JSON (optionally filtered by ``?q=``)."""
+    q = request.args.get('q')
+    if q:
+        filtered = collections.OrderedDict(
+            (slug, obj)
+            for slug, obj in registry_data.tools.items()
+            if _matches_query(obj, q)
+        )
+        return jsonify(filtered)
+    return jsonify(registry_data.tools)
+
+
+def health_view():
+    """Readiness endpoint reporting loaded record counts."""
+    return jsonify({
+        'status': 'ok',
+        'datatypes': len(registry_data.datatypes),
+        'tools': len(registry_data.tools),
+    })
 
 
 def add_views_rules(app):
@@ -221,10 +268,12 @@ def add_views_rules(app):
         app: Flask application instance
     """
     app.add_url_rule('/', 'root', root_view)
+    app.add_url_rule('/health', 'health', health_view)
     app.add_url_rule('/registry.json', 'registry.json', registry_view_json)
     app.add_url_rule('/datatype/<slug>', 'datatype', datatype_view)
     app.add_url_rule('/datatype/<slug>.json', 'datatype_json', datatype_view_json)
     app.add_url_rule('/tool', 'tools', tools_list_view)
+    app.add_url_rule('/tools.json', 'tools.json', tools_view_json)
     app.add_url_rule('/tool/<slug>', 'tool', tool_view)
     app.add_url_rule('/tool/<slug>.json', 'tool_json', tool_view_json)
 

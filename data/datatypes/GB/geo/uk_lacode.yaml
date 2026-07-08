@@ -1,0 +1,19 @@
+categories:
+- geo
+country:
+- GB
+doc: UK Local Authority (LA) code identifying a local authority, the administrative
+  body responsible for local government within a defined area of the United Kingdom.
+id: uklacode
+is_pii: 'False'
+langs:
+- en
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Local_government_in_the_United_Kingdom
+name: Local Authority code (United Kingdom)
+classification: categorical
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

@@ -20,7 +20,6 @@ supported_types:
    - orgname
    - usssn
    - phone
-   - title
    - url
    - usstate
    - postindex

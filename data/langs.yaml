@@ -11,7 +11,7 @@
 - id: it
   name: Italian
 - id: pt
-  name: Portugenese
+  name: Portuguese
 - id: da
   name: Danish
 - id: fi
@@ -36,3 +36,15 @@
   name: Hindi
 - id: ko
   name: Korean
+- id: pl
+  name: Polish
+- id: vi
+  name: Vietnamese
+- id: hy
+  name: Armenian
+- id: id
+  name: Indonesian
+- id: tr
+  name: Turkish
+- id: sv
+  name: Swedish (ISO 639-1)

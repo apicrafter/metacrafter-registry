@@ -1,7 +1,7 @@
 - id: common
   name: Common
 - id: pii
-  name: Personally idenfiable information
+  name: Personally identifiable information
 - id: geo
   name: Geographic identifiers
 - id: medical
@@ -64,3 +64,5 @@
   name: E-commerce
 - id: realestate
   name: Real estate
+- id: publishing
+  name: Publishing and print

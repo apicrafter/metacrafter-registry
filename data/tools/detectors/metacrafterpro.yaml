@@ -17,7 +17,7 @@ supported_types:
    - boolean
    - url
    - year
-   - timestamp
+   - datetime
    - timezone
    - month
    - day
@@ -67,7 +67,6 @@ supported_types:
    - tofkcode
    - tofkname
    - ruikuiko
-   - riikz
    - kvrcode
    - csrcode
    - kosgucode
@@ -79,7 +78,6 @@ supported_types:
    - kpp
    - ogrn_ogrnip
    - okopf
-   - okpfname
    - rusworkposition
    - rusdegree
    - tnved
@@ -108,7 +106,6 @@ supported_types:
    - ruscountryname
    - ruscountrycode
    - rumosadmareas
-   - russtreet
    - uscity
    - fips52
    - fips64

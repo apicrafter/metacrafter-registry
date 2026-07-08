@@ -51,3 +51,21 @@
   name: India
 - id: KR
   name: South Korea
+- id: PL
+  name: Poland
+- id: VN
+  name: Vietnam
+- id: AM
+  name: Armenia
+- id: SA
+  name: Saudi Arabia
+- id: ID
+  name: Indonesia
+- id: TR
+  name: Turkey
+- id: AE
+  name: United Arab Emirates
+- id: EG
+  name: Egypt
+- id: CH
+  name: Switzerland

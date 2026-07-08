@@ -457,6 +457,36 @@ def report():
     print('=' * 80)
 
 
+def check_cross_references():
+    """Verify pattern semantic_type and tool supported_types resolve to real IDs.
+
+    Returns the number of cross-reference errors found (0 = OK).
+    """
+    datatypes = [d for d in load_path(os.path.join(DATA_PATH, 'datatypes')) if d]
+    tools = [t for t in load_path(os.path.join(DATA_PATH, 'tools')) if t]
+
+    datatype_ids = {str(d['id']) for d in datatypes if d.get('id')}
+    errors = 0
+
+    for d in datatypes:
+        semantic_type = d.get('semantic_type')
+        if semantic_type and str(semantic_type) not in datatype_ids:
+            print("Cross-ref error: pattern '%s' references unknown semantic_type '%s'"
+                  % (d.get('id', 'unknown'), semantic_type))
+            errors += 1
+
+    for t in tools:
+        for st in (t.get('supported_types') or []):
+            if str(st) not in datatype_ids:
+                print("Cross-ref error: tool '%s' references unknown supported_type '%s'"
+                      % (t.get('id', 'unknown'), st))
+                errors += 1
+
+    if errors == 0:
+        print('Cross-reference check passed (semantic_type and supported_types resolve).')
+    return errors
+
+
 def validate():
     try:
         from cerberus import Validator
@@ -539,6 +569,10 @@ def validate():
                 print(error_msg)
                 tool_errors.append((item_id, str(e)))
     
+    # Cross-reference integrity checks
+    print('')
+    crossref_errors = check_cross_references()
+
     # Print summary
     print('')
     print('=' * 80)
@@ -546,6 +580,7 @@ def validate():
     print('=' * 80)
     print('Datatypes: %d valid, %d invalid' % (datatype_valid, len(datatype_errors)))
     print('Tools: %d valid, %d invalid' % (tool_valid, len(tool_errors)))
+    print('Cross-reference errors: %d' % crossref_errors)
     total_valid = datatype_valid + tool_valid
     total_invalid = len(datatype_errors) + len(tool_errors)
     total_items = total_valid + total_invalid
@@ -557,6 +592,50 @@ def validate():
             (total_invalid * 100.0 / total_items)
         ))
     print('=' * 80)
+    if datatype_errors or tool_errors or crossref_errors:
+        raise SystemExit(1)
+
+
+def check_unique_ids():
+    """Verify all datatype and tool IDs in the built JSONL files are unique.
+
+    Raises SystemExit(1) on any duplicate so the build fails fast.
+    """
+    from collections import defaultdict
+
+    def collect(path):
+        ids = defaultdict(list)
+        if not os.path.exists(path):
+            return ids
+        with open(path, 'r', encoding='utf-8') as handle:
+            for line_num, line in enumerate(handle, 1):
+                line = line.strip()
+                if not line:
+                    continue
+                record = json.loads(line)
+                rid = record.get('id')
+                if rid:
+                    ids[rid].append(line_num)
+        return ids
+
+    datatype_ids = collect(os.path.join(DATA_PATH, 'datatypes_latest.jsonl'))
+    tool_ids = collect(os.path.join(DATA_PATH, 'tools_latest.jsonl'))
+
+    dup_dt = {k: v for k, v in datatype_ids.items() if len(v) > 1}
+    dup_tool = {k: v for k, v in tool_ids.items() if len(v) > 1}
+    conflicts = set(datatype_ids) & set(tool_ids)
+
+    if dup_dt or dup_tool or conflicts:
+        for rid, lines in sorted(dup_dt.items()):
+            print('DUPLICATE datatype id: %s (lines %s)' % (rid, lines))
+        for rid, lines in sorted(dup_tool.items()):
+            print('DUPLICATE tool id: %s (lines %s)' % (rid, lines))
+        for rid in sorted(conflicts):
+            print('ID CONFLICT (datatype vs tool): %s' % rid)
+        raise SystemExit(1)
+
+    print('ID uniqueness check passed (%d datatypes, %d tools)' % (
+        len(datatype_ids), len(tool_ids)))
 
 
 def build():
@@ -564,6 +643,7 @@ def build():
     print('Build new datatypes JSON and JSON lines files')
     tools_yaml_to_jsonl()
     print('Build new tools JSON and JSON lines files')
+    check_unique_ids()
 
 
 def stats():

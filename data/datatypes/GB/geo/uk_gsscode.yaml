@@ -1,0 +1,20 @@
+categories:
+- geo
+country:
+- GB
+doc: UK GSS (Government Statistical Service) code, the nine-character geographic
+  code used by the Office for National Statistics to identify administrative and
+  statistical geographies across the United Kingdom.
+id: ukgsscode
+is_pii: 'False'
+langs:
+- en
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+name: GSS code (United Kingdom)
+classification: categorical
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

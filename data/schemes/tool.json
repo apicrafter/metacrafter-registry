@@ -13,7 +13,8 @@
     },
     "category": {
         "required": true,
-        "type": "string"
+        "type": "string",
+        "allowed": ["detector", "pii", "etl", "catalogs", "other"]
     },
     "website": {
         "required": false,

@@ -11,11 +11,10 @@ supported_types:
    - usstate
    - postindex
    - birthday
-   - company
+   - orgname
    - email
    - username
    - datetime
-   - timestamp
    - time
    - date
    - url

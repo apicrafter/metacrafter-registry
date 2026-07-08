@@ -1,5 +1,5 @@
 categories:
-- finance
+- finances
 country:
 - CH
 doc: Swiss bank account number (IBAN format)

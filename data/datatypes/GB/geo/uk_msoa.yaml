@@ -1,0 +1,19 @@
+categories:
+- geo
+country:
+- GB
+doc: UK Middle Layer Super Output Area (MSOA) code, a geography used by the Office
+  for National Statistics for the reporting of small-area statistics.
+id: ukmsoa
+is_pii: 'False'
+langs:
+- en
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+name: Middle Layer Super Output Area code (United Kingdom)
+classification: categorical
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''

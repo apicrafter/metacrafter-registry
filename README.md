@@ -1,7 +1,7 @@
 # metacrafter-registry
 Registry of metadata identifier entities like UUID, GUID, person fullname, address and so on. Linked with other sources and to be converted to ontology in the future.
 
-It's created from list of identifiers in [Metacrafter](https://github.com/apicrafter/metacrafter) tool  and list of data classes in [Datacrafter](https://datacrafter.ru/class) data catalog.
+It's created from list of identifiers in [Metacrafter](https://github.com/apicrafter/metacrafter) tool  and list of data classes in [Datacrafter](https://data.apicrafter.ru/class) data catalog.
 
 # Data
 
@@ -81,7 +81,28 @@ Source link defined in property `link` sub-property `type` and it could be one o
 - `wikidata` - Wikidata property url, also should be defined as id only, not url, in `wikidata_property` property
 - `schema.org` - URL to Schema.org property, like https://schema.org/boolean
 - `datadrivendiscovery` - D3M metadata registry https://metadata.datadrivendiscovery.org
+- `doc` - URL to external documentation or standard
+- `dublincore` - Dublin Core metadata term URL
+- `bioschemas` - Bioschemas profile/type URL
 - `other` - any other url
+
+The set of allowed `type` values is enforced by the datatype schema
+(`data/schemes/datatype.json`).
+
+## ID naming convention
+
+Every datatype, pattern, and tool has a unique `id`. Conventions:
+
+- IDs are lowercase, use `[a-z0-9_]`, and avoid spaces or punctuation.
+- Country/language-specific datatypes are prefixed with the lowercase country
+  or language code (e.g. `ru_inn`, `us_ssn`, `gb_nino`). Older entries may use a
+  concatenated form (e.g. `runpa`, `uscity`); prefer the prefixed form for new
+  additions.
+- The source file **should** be named `<id>.yaml`. Filename/ID mismatches are
+  tracked for migration and new files must match.
+- Pattern `semantic_type` and tool `supported_types` must reference existing
+  datatype IDs; this is enforced by `builder.py validate`
+  (cross-reference check) and by the build's uniqueness check.
 
 
 ## Identification rules
@@ -141,11 +162,34 @@ The registry includes a minimal web server for browsing and accessing the regist
 
 3. Access the server:
    - Web interface: http://127.0.0.1:8089
-   - The server uses `data/datatypes_latest.jsonl` and `data/tools_latest.jsonl` files to produce HTML pages for browsing datatypes and tools
+   - The server loads `data/datatypes_latest.json` and `data/tools_latest.json`
+     (the single-object JSON files, not the JSONL variants) to produce HTML
+     pages and JSON endpoints for browsing datatypes and tools
 
 The server provides:
 - HTML pages for browsing datatypes and tools
-- API endpoints for programmatic access (see server code for details)
+- JSON API endpoints for programmatic access
+
+## API reference
+
+| Method & path | Description |
+|---|---|
+| `GET /` | HTML list of datatypes |
+| `GET /health` | Readiness probe: `{"status": "ok", "datatypes": N, "tools": M}` |
+| `GET /registry.json` | All datatypes as JSON. Optional `?q=` filters by id/name/doc/category |
+| `GET /datatype/<id>` | HTML page for one datatype |
+| `GET /datatype/<id>.json` | Single datatype as JSON |
+| `GET /tool` | HTML list of tools |
+| `GET /tools.json` | All tools as JSON. Optional `?q=` filters by id/name/doc/category |
+| `GET /tool/<id>` | HTML page for one tool |
+| `GET /tool/<id>.json` | Single tool as JSON |
+
+## Identification rules
+
+Detection rules that map real data to these datatypes live in the companion
+[metacrafter-rules](https://github.com/apicrafter/metacrafter-rules) repository.
+Rule `key` values are aligned with datatype `id`s here; alignment is checked by
+`metacrafter/scripts/ecosystem_check.py`.
 
 # Contacts
 

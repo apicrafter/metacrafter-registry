@@ -1,0 +1,19 @@
+categories:
+- education
+country:
+- GB
+doc: UK establishment number, an identifier assigned to schools and other education
+  establishments in the United Kingdom (for example the DfE establishment/URN codes).
+id: ukestablishmentnumber
+is_pii: 'False'
+langs:
+- en
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Unique_Reference_Number
+name: Education establishment number (United Kingdom)
+classification: identifier
+examples: []
+wikidata_property: ''
+translations: {}
+regexp: ''
