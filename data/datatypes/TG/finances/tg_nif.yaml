@@ -1,0 +1,24 @@
+id: tg_nif
+name: Togolese tax identification number (NIF)
+status: draft
+doc: Numéro d'identification fiscale (NIF), the national tax identification number of taxpayers in Togo.
+  ORG-ID.guide lists the register as TG-NIF; with that prefix an identifier reads TG-NIF-1000047187.
+categories:
+- finances
+- companies
+country:
+- TG
+langs:
+- fr
+is_pii: true
+classification: identifier
+examples:
+- value: '1000047187'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: TG-NIF
+links:
+- type: doc
+  url: https://www.otr.tg/
+- type: other
+  url: https://org-id.guide/list/TG-NIF

@@ -1,0 +1,23 @@
+id: ae_dmcc
+name: Dubai Multi Commodities Centre company number (DMCC)
+status: draft
+doc: Number of a company registered with the Dubai Multi Commodities Centre (DMCC), a free zone authority
+  in Dubai. ORG-ID.guide lists the register as AE-DMCC; with that prefix an identifier reads AE-DMCC-JLT-65609.
+categories:
+- companies
+country:
+- AE
+langs:
+- ar
+is_pii: false
+classification: identifier
+examples:
+- value: JLT-65609
+  description: example from ORG-ID.guide
+mappings:
+  orgid: AE-DMCC
+links:
+- type: doc
+  url: https://www.dmcc.ae/
+- type: other
+  url: https://org-id.guide/list/AE-DMCC

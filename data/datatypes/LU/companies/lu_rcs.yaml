@@ -1,0 +1,28 @@
+id: lu_rcs
+name: Luxembourg trade and companies register number (RCS)
+status: draft
+doc: 'Number of a company in the Luxembourg Trade and Companies Register (Registre de commerce et des
+  sociétés, RCS): a letter followed by digits. ORG-ID.guide lists the register as LU-RCS; with that prefix
+  an identifier reads LU-RCS-B247312.'
+categories:
+- companies
+country:
+- LU
+langs:
+- lb
+- fr
+- de
+is_pii: false
+classification: identifier
+examples:
+- value: B247312
+  description: example from ORG-ID.guide
+- value: G157
+  description: example from ORG-ID.guide
+mappings:
+  orgid: LU-RCS
+links:
+- type: doc
+  url: https://www.lbr.lu/
+- type: other
+  url: https://org-id.guide/list/LU-RCS

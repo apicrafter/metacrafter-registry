@@ -18,6 +18,7 @@ mappings:
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/EmployerIdentificationNumber
   google_dlp: US_EMPLOYER_IDENTIFICATION_NUMBER
   fta: IDENTITY.EIN_US
+  orgid: US-EIN
 links:
 - type: other
   url: https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers

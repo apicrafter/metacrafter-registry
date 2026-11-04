@@ -20,6 +20,8 @@ examples:
   description: Synthetic number with a valid check digit
 - value: 5164071-6
   description: The first example in its printed form
+mappings:
+  orgid: PY-RUC
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.py.ruc.html

@@ -1,0 +1,26 @@
+id: gb_social_housing_provider_code
+name: Registered social housing provider code (England)
+status: draft
+doc: Registered provider code of a social housing provider in the statutory register of social housing
+  providers in England. ORG-ID.guide lists the register as GB-SHPE; with that prefix an identifier reads
+  GB-SHPE-LH4401.
+categories:
+- companies
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: LH4401
+  description: example from ORG-ID.guide
+- value: H4244
+  description: example from ORG-ID.guide
+- value: '4793'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GB-SHPE
+links:
+- type: other
+  url: https://org-id.guide/list/GB-SHPE

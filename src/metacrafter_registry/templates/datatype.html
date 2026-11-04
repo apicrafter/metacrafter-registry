@@ -41,9 +41,13 @@
   <dd>{% for c in object.country or [] %}<a href="{{ base }}/country/{{ c }}">{{ reg.countries[c].name }}</a>{% if not loop.last %}, {% endif %}{% else %}<span class="muted">Global (not tied to a country)</span>{% endfor %}</dd>
   <dt>Languages</dt>
   <dd>{% for l in object.langs or [] %}{{ reg.langs[l].name }}{% if not loop.last %}, {% endif %}{% else %}<span class="muted">not specified</span>{% endfor %}</dd>
-  {% for system, value in (object.mappings or {}).items() if system not in ('wikidata', 'fibo') %}
-  <dt>{{ {'schema_org': 'Schema.org', 'dpv': 'W3C DPV', 'presidio': 'Presidio', 'google_dlp': 'Google DLP', 'purview': 'Microsoft Purview', 'd3m': 'D3M', 'sherlock': 'Sherlock', 'cdm': 'Microsoft CDM', 'fta': 'FTA', 'autotype': 'AutoType benchmark'}.get(system, system) }}</dt>
+  {% for system, value in (object.mappings or {}).items() if system not in ('wikidata', 'fibo', 'orgid') %}
+  <dt>{{ {'schema_org': 'Schema.org', 'dpv': 'W3C DPV', 'presidio': 'Presidio', 'google_dlp': 'Google DLP', 'purview': 'Microsoft Purview', 'd3m': 'D3M', 'sherlock': 'Sherlock and Sato', 'cdm': 'Microsoft CDM', 'fta': 'FTA', 'autotype': 'AutoType benchmark', 'gs1_ai': 'GS1 Application Identifier'}.get(system, system) }}</dt>
+  {% if system == 'gs1_ai' %}
+  <dd>{% for v in ([value] if value is string else value) %}<a href="https://ref.gs1.org/ai/{{ v }}"><code>({{ v }})</code></a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>
+  {% else %}
   <dd>{% if value is string %}<code>{{ value }}</code>{% else %}{% for v in value %}<code>{{ v }}</code>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}</dd>
+  {% endif %}
   {% endfor %}
   {% if object.mappings and object.mappings.wikidata %}
   <dt>Wikidata</dt>
@@ -52,6 +56,10 @@
   {% if object.mappings and object.mappings.fibo %}
   <dt><abbr title="Financial Industry Business Ontology">FIBO</abbr></dt>
   <dd>{% for path in ([object.mappings.fibo] if object.mappings.fibo is string else object.mappings.fibo) %}{% set term = reg.fibo_terms.get(path, {}) %}<a href="https://spec.edmcouncil.org/fibo/ontology/{{ path }}" title="{{ term.definition or path }}">{{ term.label or path.rsplit('/', 1)[-1] }}</a>{% if term.abbreviations %} ({{ term.abbreviations | join(', ') }}){% endif %}{% if not loop.last %}<br>{% endif %}{% endfor %}</dd>
+  {% endif %}
+  {% if object.mappings and object.mappings.orgid %}
+  <dt>ORG-ID.guide</dt>
+  <dd>{% for code in ([object.mappings.orgid] if object.mappings.orgid is string else object.mappings.orgid) %}<a href="https://org-id.guide/list/{{ code }}">{{ code }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>
   {% endif %}
   {% if object.aliases %}
   <dt>Former IDs</dt>

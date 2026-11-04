@@ -1,0 +1,27 @@
+id: gs1_ai_8019
+name: Service Relation Instance Number (SRIN) (GS1 AI 8019)
+status: draft
+doc: 'GS1 element string of Application Identifier (8019): ''8019'' followed by up to 10 digits that identify
+  one instance of the service relationship whose GSRN is in AI (8017) or (8018). GS1 format N4+N..10.
+  It is a key qualifier in GS1 Digital Link. In the human-readable text under a barcode it is written
+  as (8019) and the value.'
+categories:
+- gs1
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^8019\d{1,10}$
+examples:
+- value: '801957'
+  description: Instance 57
+- value: '80191204'
+  description: Instance 1204
+- value: 8019A57
+  valid: false
+  description: Not numeric
+mappings:
+  gs1_ai: '8019'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8019

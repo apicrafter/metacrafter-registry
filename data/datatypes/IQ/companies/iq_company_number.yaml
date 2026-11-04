@@ -1,0 +1,23 @@
+id: iq_company_number
+name: Iraqi company registration number
+status: draft
+doc: Registration number of a company at the Registrar of Companies of the Ministry of Trade of Iraq.
+  ORG-ID.guide lists the register as IQ-MOT; with that prefix an identifier reads IQ-MOT-31813-2.
+categories:
+- companies
+country:
+- IQ
+langs:
+- ar
+is_pii: false
+classification: identifier
+examples:
+- value: 31813-2
+  description: example from ORG-ID.guide
+mappings:
+  orgid: IQ-MOT
+links:
+- type: doc
+  url: https://tasjeel.mot.gov.iq/
+- type: other
+  url: https://org-id.guide/list/IQ-MOT

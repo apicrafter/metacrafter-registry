@@ -1,0 +1,25 @@
+id: af_tin
+name: Afghan taxpayer identification number (TIN)
+status: draft
+doc: Tax identification number of taxpayers in Afghanistan, including companies, charities and trusts.
+  ORG-ID.guide lists the register as AF-TIN; with that prefix an identifier reads AF-TIN-9000082348.
+categories:
+- finances
+- companies
+country:
+- AF
+langs:
+- ps
+- fa
+is_pii: true
+classification: identifier
+examples:
+- value: '9000082348'
+  description: example from ORG-ID.guide
+- value: '9000453309'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: AF-TIN
+links:
+- type: other
+  url: https://org-id.guide/list/AF-TIN

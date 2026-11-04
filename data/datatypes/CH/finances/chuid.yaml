@@ -18,3 +18,7 @@ examples:
   description: Swiss UID (valid MOD-11 check digit)
 - value: CHE-123.456.788 TVA
   description: Swiss UID used as VAT number
+mappings:
+  orgid:
+  - CH-FDJP
+  - CH_BS-CR

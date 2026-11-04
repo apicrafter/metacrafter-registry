@@ -1,0 +1,27 @@
+id: rw_rgb_number
+name: Rwandan RGB registration number
+status: draft
+doc: Registration number of a non-governmental or faith-based organisation at the Rwanda Governance Board
+  (RGB). ORG-ID.guide lists the register as RW-RGB; with that prefix an identifier reads RW-RGB-57-RGB-RBO-2016.
+categories:
+- companies
+country:
+- RW
+langs:
+- rw
+- en
+- fr
+is_pii: false
+classification: identifier
+examples:
+- value: 57-RGB-RBO-2016
+  description: example from ORG-ID.guide
+- value: 92-RGB-NGO-2016
+  description: example from ORG-ID.guide
+mappings:
+  orgid: RW-RGB
+links:
+- type: doc
+  url: http://rgb.rw/
+- type: other
+  url: https://org-id.guide/list/RW-RGB

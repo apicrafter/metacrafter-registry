@@ -1,0 +1,23 @@
+id: si_maticna_stevilka
+name: Slovenian company registration number (matična številka)
+status: draft
+doc: Matična številka, the registration number of a business entity in the Slovenian Business Register.
+  ORG-ID.guide lists the register as SI-PRS; with that prefix an identifier reads SI-PRS-5092108.
+categories:
+- companies
+country:
+- SI
+langs:
+- sl
+is_pii: false
+classification: identifier
+examples:
+- value: '5092108'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: SI-PRS
+links:
+- type: doc
+  url: http://www.ajpes.eu/prs/
+- type: other
+  url: https://org-id.guide/list/SI-PRS

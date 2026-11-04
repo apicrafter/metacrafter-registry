@@ -1,0 +1,24 @@
+id: il_amuta_number
+name: Israeli non-profit association number (amuta)
+status: draft
+doc: Number of a non-profit association (amuta) in the register of associations (Rasham Ha'amutot) of
+  Israel. These numbers start with 58. ORG-ID.guide lists the register as IL-RA; with that prefix an identifier
+  reads IL-RA-580197770.
+categories:
+- companies
+country:
+- IL
+langs:
+- he
+is_pii: false
+classification: identifier
+examples:
+- value: '580197770'
+  description: example from ORG-ID.guide
+- value: '580166452'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: IL-RA
+links:
+- type: other
+  url: https://org-id.guide/list/IL-RA

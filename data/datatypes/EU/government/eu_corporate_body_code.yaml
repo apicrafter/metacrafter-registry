@@ -1,0 +1,28 @@
+id: eu_corporate_body_code
+name: EU corporate body code
+status: draft
+doc: Code of an institution, body or agency of the European Union in the corporate bodies authority list
+  of the Publications Office of the EU. ORG-ID.guide lists the register as XR-EUCB; with that prefix an
+  identifier reads XR-EUCB-ACP_MIN.
+categories:
+- government
+country:
+- EU
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: ACP_MIN
+  description: example from ORG-ID.guide
+- value: COR_COM5
+  description: example from ORG-ID.guide
+- value: DEL_SSD
+  description: example from ORG-ID.guide
+mappings:
+  orgid: XR-EUCB
+links:
+- type: doc
+  url: https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/corporate-body?target=About
+- type: other
+  url: https://org-id.guide/list/XR-EUCB

@@ -1,0 +1,24 @@
+id: tr_association_number
+name: Turkish association registration number
+status: draft
+doc: Registration number of an association in Türkiye, given by the Directorate General for Relations
+  with Civil Society of the Ministry of Interior. ORG-ID.guide lists the register as TR-MOI; with that
+  prefix an identifier reads TR-MOI-27-018-163.
+categories:
+- companies
+country:
+- TR
+langs:
+- tr
+is_pii: false
+classification: identifier
+examples:
+- value: 27-018-163
+  description: example from ORG-ID.guide
+mappings:
+  orgid: TR-MOI
+links:
+- type: doc
+  url: https://www.siviltoplum.gov.tr/
+- type: other
+  url: https://org-id.guide/list/TR-MOI

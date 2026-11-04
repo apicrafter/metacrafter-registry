@@ -1,0 +1,28 @@
+id: rs_maticni_broj
+name: Serbian company registration number (matični broj)
+status: draft
+doc: Matični broj, the 8-digit registration number of a company in the registers of the Serbian Business
+  Registers Agency (APR). ORG-ID.guide lists the register as RS-APR; with that prefix an identifier reads
+  RS-APR-06115403.
+categories:
+- companies
+country:
+- RS
+langs:
+- sr
+is_pii: false
+classification: identifier
+examples:
+- value: '06115403'
+  description: example from ORG-ID.guide
+- value: '20203641'
+  description: example from ORG-ID.guide
+- value: '29500258'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: RS-APR
+links:
+- type: doc
+  url: http://www.apr.gov.rs/eng/Home.aspx
+- type: other
+  url: https://org-id.guide/list/RS-APR

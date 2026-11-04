@@ -1,0 +1,31 @@
+id: ug_ursb_number
+name: Ugandan URSB registration number
+status: draft
+doc: Registration number of a company, business name or other entity at the Uganda Registration Services
+  Bureau (URSB). ORG-ID.guide lists the register as UG-RSB; with that prefix an identifier reads UG-RSB-80010001803086.
+categories:
+- companies
+country:
+- UG
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '80010001803086'
+  description: example from ORG-ID.guide
+- value: BN-55471
+  description: example from ORG-ID.guide
+- value: R1000000336259
+  description: example from ORG-ID.guide
+- value: '80010003208981'
+  description: example from ORG-ID.guide
+- value: 101303A
+  description: example from ORG-ID.guide
+mappings:
+  orgid: UG-RSB
+links:
+- type: doc
+  url: https://ursb.go.ug/
+- type: other
+  url: https://org-id.guide/list/UG-RSB

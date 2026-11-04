@@ -1,0 +1,29 @@
+id: gsin
+name: Global Shipment Identification Number (GSIN)
+status: draft
+doc: 'GS1 identification key that a seller (shipper) gives to a shipment: the logistic units that it sends
+  together to one buyer. Seventeen digits: a GS1 Company Prefix, a shipper reference and a GS1 check digit.
+  In barcodes it is carried by Application Identifier (402); the element string is the pattern gs1_ai_402.'
+categories:
+- gs1
+- shipping
+- transport
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{17}$
+checksum: gs1_mod10
+examples:
+- value: '95287650000042178'
+  description: Synthetic value with the GS1 demonstration prefix 952 and a valid check digit
+- value: '95287651000275160'
+  description: Synthetic value with the GS1 demonstration prefix 952 and a valid check digit
+- value: '95287650000042179'
+  valid: false
+  description: 'Last digit changed: fails the GS1 check digit'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/402
+- type: doc
+  url: https://ref.gs1.org/standards/genspecs/

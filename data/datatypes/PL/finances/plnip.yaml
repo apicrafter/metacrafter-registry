@@ -1,14 +1,40 @@
 id: plnip
-name: Polish NIP by field name
+name: Polish tax identification number (NIP)
 status: draft
-doc: Polish NIP by field name identifier
+doc: Numer identyfikacji podatkowej, the 10-digit tax identification number in Poland. Businesses, including
+  sole traders, use it in tax matters; since September 2011 individuals without a business use their PESEL
+  number instead. With the PL prefix it is the EU VAT number. Older documents group the digits with hyphens,
+  3-3-2-2 for individuals and 3-2-2-3 for companies. The last digit is a weighted modulo 11 check digit.
+parent: vatin
 categories:
-- common
+- finances
 country:
 - PL
 langs:
 - pl
-is_pii: false
+is_pii: true
 classification: identifier
+regexp: ^(?:PL[ -]?)?(?:\d{10}|\d{3}-\d{3}-\d{2}-\d{2}|\d{3}-\d{2}-\d{2}-\d{3})$
+checksum: pl_nip
+examples:
+- value: PL8567346215
+  description: python-stdnum reference value in the EU form
+- value: 856-734-62-15
+  description: The same number with hyphens
+- value: PL8567346216
+  valid: false
+  description: Check digit does not match
+- value: '85673462'
+  valid: false
+  description: Two digits short
 mappings:
   fta: IDENTITY.VAT_PL
+  orgid: PL-NIP
+links:
+- type: wikipedia
+  url: https://pl.wikipedia.org/wiki/Numer_identyfikacji_podatkowej
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.pl.nip.html
+translations:
+  pl:
+    name: Numer identyfikacji podatkowej (NIP)

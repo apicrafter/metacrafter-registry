@@ -1,0 +1,66 @@
+id: googledlp
+name: Google Cloud Sensitive Data Protection (DLP)
+category: pii
+doc: 'Google Cloud Sensitive Data Protection, formerly Cloud DLP, inspects text, files, BigQuery and Cloud
+  Storage with built-in infoType detectors: names, contact details, credentials, financial data, medical
+  codes and national identifiers of many countries. Findings can be masked, tokenized or redacted. Each
+  registry record lists the matching infoType names in mappings.google_dlp.'
+website: https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference
+supported_types:
+- aadhaar
+- aumedicarenum
+- autfn
+- bankcard
+- bic
+- brcpf
+- bsn
+- capassport
+- casin
+- cpf
+- curp
+- depersonalausweis
+- dkcprnum
+- email
+- es_dni
+- esnif
+- espassport
+- euvat
+- fi_hetu
+- frcni
+- frnir
+- frpassport
+- iban
+- icd10
+- imei
+- ipaddr
+- it_codicefiscale
+- jp_driver_license
+- jp_passport
+- mac_address
+- medicare
+- mynumber
+- nhsnumber
+- nif
+- no_fodselsnummer
+- npi
+- nric
+- pan
+- person_fullname
+- phone
+- plpesel
+- sepersonnummer
+- sgnric
+- swiftcode
+- uknhsnum
+- uknino
+- ukpassport
+- ukutr
+- url
+- usdeanumber
+- usdriverlic
+- usein
+- usitin
+- usnpi
+- uspassport
+- usssn
+- vatin

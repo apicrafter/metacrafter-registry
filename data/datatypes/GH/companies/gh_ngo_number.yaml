@@ -1,0 +1,23 @@
+id: gh_ngo_number
+name: Ghanaian NGO registration number
+status: draft
+doc: Registration number of a non-governmental organisation at the Department of Social Development of
+  Ghana. ORG-ID.guide lists the register as GH-DSW; with that prefix an identifier reads GH-DSW-258.
+categories:
+- companies
+country:
+- GH
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '258'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GH-DSW
+links:
+- type: doc
+  url: http://mogcsp.gov.gh/department-of-social-developments/
+- type: other
+  url: https://org-id.guide/list/GH-DSW

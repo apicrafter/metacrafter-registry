@@ -1,0 +1,26 @@
+id: et_cso_number
+name: Ethiopian civil society organisation registration number
+status: draft
+doc: Registration number of a civil society organisation at the Authority for Civil Society Organizations
+  (ACSO) of Ethiopia. ORG-ID.guide lists the register as ET-CSA; with that prefix an identifier reads
+  ET-CSA-1327.
+categories:
+- companies
+country:
+- ET
+langs:
+- am
+is_pii: false
+classification: identifier
+examples:
+- value: '1327'
+  description: example from ORG-ID.guide
+- value: '0444'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ET-CSA
+links:
+- type: doc
+  url: https://acso.gov.et/
+- type: other
+  url: https://org-id.guide/list/ET-CSA

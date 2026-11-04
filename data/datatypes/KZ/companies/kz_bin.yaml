@@ -1,0 +1,26 @@
+id: kz_bin
+name: Kazakh business identification number (BIN)
+status: draft
+doc: Бизнес-идентификационный номер (BIN), the 12-digit identification number of a legal entity or branch
+  in Kazakhstan. ORG-ID.guide lists the register as KZ-BIN; with that prefix an identifier reads KZ-BIN-950440001673.
+categories:
+- companies
+country:
+- KZ
+langs:
+- kk
+- ru
+is_pii: false
+classification: identifier
+examples:
+- value: '950440001673'
+  description: example from ORG-ID.guide
+- value: '990940003030'
+  description: example from ORG-ID.guide
+- value: '000640002067'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: KZ-BIN
+links:
+- type: other
+  url: https://org-id.guide/list/KZ-BIN

@@ -1,0 +1,39 @@
+id: org_id
+name: Organization identifier (ORG-ID.guide form)
+status: draft
+doc: 'Globally unique identifier of an organization in the form that ORG-ID.guide defines: the code of
+  the list (register) that issued the identifier, a hyphen and the identifier from that list. For example,
+  GB-COH-09506232 is company 09506232 in the Companies House register (list code GB-COH). IATI and 360Giving
+  data write organization identifiers this way. The Open Contracting Data Standard keeps the two parts
+  apart: the list code in identifier.scheme (org_id_scheme) and the identifier in identifier.id. The registry
+  pattern accepts identifiers without spaces; each list code maps to a registry record through mappings.orgid.'
+categories:
+- companies
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}(?:_[A-Z]{2})?-[A-Z0-9]+(?:_[A-Z0-9]+)?-\S+$
+examples:
+- value: GB-COH-09506232
+  description: company in the Companies House register (ORG-ID.guide example)
+- value: XM-DAC-41301
+  description: OECD DAC code (ORG-ID.guide example)
+- value: CA_NS-NVS_NVE-1542067
+  description: Nova Scotia registry, a list code with a subdivision
+- value: GB-COH
+  valid: false
+  description: a list code without an identifier is org_id_scheme
+- value: 09506232
+  valid: false
+  description: an identifier without its list code
+links:
+- type: doc
+  url: https://org-id.guide/about
+- type: doc
+  url: https://standard.open-contracting.org/latest/en/schema/identifiers/
+- type: doc
+  url: https://iatistandard.org/en/guidance/preparing-organisation/organisation-account/how-to-create-your-iati-organisation-identifier/
+translations:
+  ru:
+    name: Идентификатор организации (формат ORG-ID.guide)

@@ -19,6 +19,8 @@ examples:
   description: Synthetic number with a valid check digit
 - value: '669416810'
   description: Synthetic number with a valid check digit
+mappings:
+  orgid: RO-CUI
 links:
 - type: wikipedia
   url: https://ro.wikipedia.org/wiki/Cod_de_identificare_fiscal%C4%83

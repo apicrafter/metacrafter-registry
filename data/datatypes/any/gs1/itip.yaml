@@ -1,0 +1,32 @@
+id: itip
+name: Identification of an Individual Trade Item Piece (ITIP)
+status: draft
+doc: 'GS1 identifier of one piece of a trade item that is delivered in several pieces, such as a piece
+  of furniture packed in three boxes. Eighteen digits: the 14-digit GTIN of the trade item, the piece
+  number and the total number of pieces, two digits each. Neither number is 00, and the piece number does
+  not exceed the total. Application Identifier (8006) carries it, and (8026) carries the ITIP of pieces
+  contained in a logistic unit; the element strings are the patterns gs1_ai_8006 and gs1_ai_8026.'
+categories:
+- gs1
+- objectids
+- industry
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{14}(?:0[1-9]|[1-9]\d){2}$
+examples:
+- value: 095060001343520102
+  description: GS1's example GTIN 09506000134352, piece 1 of 2
+- value: 095060001343520303
+  description: GS1's example GTIN 09506000134352, piece 3 of 3
+- value: 095060001343520002
+  valid: false
+  description: Piece number 00 is not allowed
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8006
+- type: doc
+  url: https://ref.gs1.org/ai/8026
+- type: doc
+  url: https://ref.gs1.org/standards/genspecs/

@@ -1,0 +1,27 @@
+id: gb_gov_iati_code
+name: UK government department IATI reference number
+status: draft
+doc: Reference number of a UK government department in the IATI version 2 codes for UK government bodies.
+  ORG-ID.guide lists the register as GB-GOV; with that prefix an identifier reads GB-GOV-1.
+categories:
+- government
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '1'
+  description: example from ORG-ID.guide
+- value: '4'
+  description: example from ORG-ID.guide
+- value: '9'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GB-GOV
+links:
+- type: doc
+  url: http://data.gov.uk/dataset/iati-organisation-identifier-for-uk-government-bodies
+- type: other
+  url: https://org-id.guide/list/GB-GOV

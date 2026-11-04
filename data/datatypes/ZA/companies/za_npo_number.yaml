@@ -1,0 +1,28 @@
+id: za_npo_number
+name: South African nonprofit organisation number
+status: draft
+doc: Registration number of a nonprofit organisation at the Nonprofit Organisation Directorate of the
+  Department of Social Development of South Africa. ORG-ID.guide lists the register as ZA-NPO; with that
+  prefix an identifier reads ZA-NPO-181-465.
+categories:
+- companies
+country:
+- ZA
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: 181-465
+  description: example from ORG-ID.guide
+- value: 015-712
+  description: example from ORG-ID.guide
+- value: 56-058
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ZA-NPO
+links:
+- type: doc
+  url: http://www.npo.gov.za/
+- type: other
+  url: https://org-id.guide/list/ZA-NPO

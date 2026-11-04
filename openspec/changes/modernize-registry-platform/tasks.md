@@ -205,6 +205,21 @@
   - 119 of the 142 test cases are mapped to 83 records, at AutoType commit `600df80`.
   - 18 new draft records for benchmark types the registry lacked, such as `bibcode`, `iswc`, `uniprot_id`, `ensembl_id`, `icd9`, `asin` and `ca_fsa`. `ca_postalcode` (a metacrafter-rules key) becomes an alias of `ca_postcode`.
   - Message formats (SWIFT MT, FIX, NOTAM, NMEA), free-text types and mislabelled test cases are not mapped. The review is `devdocs/AUTOTYPE_REVIEW.md`.
+- [x] 8.13 Review the Sato semantic types (issue #33). Sato's published model predicts the same 78 types as Sherlock, in camelCase, at megagonlabs/sato commit `c19ace3`.
+  - No new mapping key: Sato labels resolve through `mappings.sherlock`, and `crosswalk("sato", ...)` is the same lookup as `crosswalk("sherlock", ...)`.
+  - New tool `sato` (detector). A test checks that its `supported_types` are the records that carry `mappings.sherlock`.
+  - The 46 unmapped types were checked again against the records added since 8.11; none has a same-meaning record yet. The review is `devdocs/SATO_REVIEW.md`.
+- [x] 8.14 Review the GS1 Application Identifiers (issue #20). Add the `gs1_ai` crosswalk key and the `gs1_mod10` and `gs1_checkpair` check-digit algorithms.
+  - Source: the GS1 AI vocabulary version 1.2 (541 AIs, 2026-01-26), checked against the GS1 Barcode Syntax Dictionary.
+  - The 26 identification-key AIs and 8 of the 9 GS1 Digital Link key qualifiers have one record per AI, holding the element string: 31 new `gs1_ai_<AI>` records, plus the mapping on `sssc`, `gtin` and `gtin02`. AIs 8007, 8040, 8041 and 716 map to `iban`, `imei` and `it_aic`.
+  - 11 new draft records for bare GS1 keys (`gdti`, `gcn`, `ginc`, `gsin`, `grai`, `giai`, `gsrn`, `cpid`, `gmn`, `hidri`, `itip`); the element strings of these keys and of `gln` are their patterns.
+  - Fixed: the `sssc` regexp (`d{18}`) and description, the unanchored `gln` regexp.
+  - Dates, measures, amounts, addresses and other data attributes (503 AIs) are not imported. The review is `devdocs/GS1_AI_REVIEW.md`.
+- [x] 8.15 Review the ORG-ID.guide register of organization identifier lists (issue #17). Add the `orgid` crosswalk key, which holds ORG-ID.guide list codes.
+  - New draft records `org_id` (an identifier in the ORG-ID.guide form, `GB-COH-09506232`) and `org_id_scheme` (a list code, `GB-COH`).
+  - 69 of the 569 list codes are mapped to 61 existing records. 182 lists get 175 new draft records; lists that use the same identifier share one record. New countries: 57. New languages: 22.
+  - `crosswalk("orgid", ...)` accepts a list code in any case, its org-id.guide URL or a whole identifier. A test checks that each code maps to at most one record.
+  - Not imported: 250 generated Chart of Accounts lists, 52 lists without an example identifier and 16 deprecated lists. The review is `devdocs/ORGID_REVIEW.md`.
 - Data fixes found during this phase:
   - 9 regexps that matched the empty string were fixed, and the validator now rejects such regexps.
   - The `what3words` regexp had been copied from `geonamesid`.

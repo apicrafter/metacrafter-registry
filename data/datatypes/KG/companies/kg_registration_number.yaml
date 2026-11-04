@@ -1,0 +1,23 @@
+id: kg_registration_number
+name: Kyrgyz legal entity registration number
+status: draft
+doc: Registration number (Рег. №) of a legal entity or branch in the register of legal entities of the
+  Ministry of Justice of Kyrgyzstan. ORG-ID.guide lists the register as KG-ID; with that prefix an identifier
+  reads KG-ID-48206-3303-ООО.
+categories:
+- companies
+country:
+- KG
+langs:
+- ky
+- ru
+is_pii: false
+classification: identifier
+examples:
+- value: 48206-3303-ООО
+  description: example from ORG-ID.guide
+mappings:
+  orgid: KG-ID
+links:
+- type: other
+  url: https://org-id.guide/list/KG-ID

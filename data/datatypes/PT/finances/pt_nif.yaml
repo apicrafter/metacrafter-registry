@@ -28,6 +28,7 @@ mappings:
   - Portugal tax identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  orgid: PT-NIPPC
 links:
 - type: wikipedia
   url: https://pt.wikipedia.org/wiki/N%C3%BAmero_de_identifica%C3%A7%C3%A3o_fiscal

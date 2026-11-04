@@ -1,0 +1,28 @@
+id: gs1_ai_22
+name: Consumer product variant (GS1 AI 22)
+status: draft
+doc: 'GS1 element string of Application Identifier (22): ''22'' followed by a code, up to 20 characters,
+  that tells apart variants of a trade item sold under one GTIN. GS1 format N2+X..20. It is used with
+  the GTIN in AI (01). It is a key qualifier in GS1 Digital Link. In the human-readable text under a barcode
+  it is written as (22) and the value.'
+categories:
+- gs1
+- ecommerce
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^22[!%-?A-Z_a-z\x22]{1,20}$
+examples:
+- value: 22B7
+  description: Variant B7
+- value: '2204'
+  description: Variant 04
+- value: '22'
+  valid: false
+  description: No variant code
+mappings:
+  gs1_ai: '22'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/22

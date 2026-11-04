@@ -24,6 +24,8 @@ examples:
 - value: '28128006697'
   valid: false
   description: One character too many
+mappings:
+  orgid: IS-KEN
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Kennitala

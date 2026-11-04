@@ -1,0 +1,25 @@
+id: tz_tin
+name: Tanzanian taxpayer identification number (TIN)
+status: draft
+doc: Taxpayer Identification Number (TIN) that the Tanzania Revenue Authority gives to taxpayers. ORG-ID.guide
+  lists the register as TZ-TRA; with that prefix an identifier reads TZ-TRA-101091759.
+categories:
+- finances
+- companies
+country:
+- TZ
+langs:
+- sw
+- en
+is_pii: true
+classification: identifier
+examples:
+- value: '101091759'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: TZ-TRA
+links:
+- type: doc
+  url: https://www.tra.go.tz/index.php
+- type: other
+  url: https://org-id.guide/list/TZ-TRA

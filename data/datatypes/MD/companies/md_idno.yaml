@@ -20,6 +20,8 @@ examples:
 - value: '10076010090377'
   valid: false
   description: One character too many
+mappings:
+  orgid: MD-IDNO
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.md.idno.html

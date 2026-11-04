@@ -1,0 +1,23 @@
+id: gs1_ai_253
+name: Global Document Type Identifier (GS1 AI 253)
+status: draft
+doc: 'GS1 element string of Application Identifier (253): ''253'' followed by a GDTI: 13 digits and an
+  optional serial component. GS1 format N3+N13[+X..17]. In the human-readable text under a barcode it
+  is written as (253) and the value.'
+semantic_type: gdti
+langs:
+- common
+regexp: ^253\d{13}[!%-?A-Z_a-z\x22]{0,17}$
+examples:
+- value: 2539528765000420CERT2026-15
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '2539528765000420'
+  description: Synthetic value with the GS1 demonstration prefix 952; no serial component
+- value: '253952876500042'
+  valid: false
+  description: GDTI too short
+mappings:
+  gs1_ai: '253'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/253

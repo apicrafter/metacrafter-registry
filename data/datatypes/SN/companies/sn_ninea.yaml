@@ -1,0 +1,26 @@
+id: sn_ninea
+name: Senegalese national identification number of companies and associations (NINEA)
+status: draft
+doc: Numéro d'identification national des entreprises et des associations (NINEA), the national identification
+  number of companies and associations in Senegal. ORG-ID.guide lists the register as SN-NINEA; with that
+  prefix an identifier reads SN-NINEA-006478110.
+categories:
+- companies
+country:
+- SN
+langs:
+- fr
+is_pii: false
+classification: identifier
+examples:
+- value: 006478110
+  description: example from ORG-ID.guide
+- value: 006470108
+  description: example from ORG-ID.guide
+- value: 006480256
+  description: example from ORG-ID.guide
+mappings:
+  orgid: SN-NINEA
+links:
+- type: other
+  url: https://org-id.guide/list/SN-NINEA

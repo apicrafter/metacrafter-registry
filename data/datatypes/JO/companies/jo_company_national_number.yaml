@@ -1,0 +1,29 @@
+id: jo_company_national_number
+name: Jordanian company national number
+status: draft
+doc: National number of a company at the Companies Control Department of Jordan. ORG-ID.guide lists the
+  register as JO-CCD; with that prefix an identifier reads JO-CCD-200105534.
+categories:
+- companies
+country:
+- JO
+langs:
+- ar
+is_pii: false
+classification: identifier
+examples:
+- value: '200105534'
+  description: example from ORG-ID.guide
+- value: '200138796'
+  description: example from ORG-ID.guide
+- value: '200063296'
+  description: example from ORG-ID.guide
+- value: '200115256'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: JO-CCD
+links:
+- type: doc
+  url: http://www.ccd.gov.jo/
+- type: other
+  url: https://org-id.guide/list/JO-CCD

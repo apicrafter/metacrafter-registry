@@ -1,0 +1,22 @@
+id: uz_ktut
+name: Uzbek KTUT code
+status: draft
+doc: KTUT number (the OKPO code) of a legal entity in the United State Register of Enterprises and Organizations
+  kept by the statistics agency of Uzbekistan. ORG-ID.guide lists the register as UZ-KTUT; with that prefix
+  an identifier reads UZ-KTUT-2365119.
+categories:
+- companies
+country:
+- UZ
+langs:
+- uz
+is_pii: false
+classification: identifier
+examples:
+- value: '2365119'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: UZ-KTUT
+links:
+- type: other
+  url: https://org-id.guide/list/UZ-KTUT

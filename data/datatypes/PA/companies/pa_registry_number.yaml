@@ -1,0 +1,23 @@
+id: pa_registry_number
+name: Panamanian Public Registry number
+status: draft
+doc: Number of a legal entity in the Public Registry of Panama (Registro Público de Panamá). ORG-ID.guide
+  lists the register as PA-PRP; with that prefix an identifier reads PA-PRP-5789.
+categories:
+- companies
+country:
+- PA
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: '5789'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: PA-PRP
+links:
+- type: doc
+  url: https://www.panadata.net/en/organizaciones
+- type: other
+  url: https://org-id.guide/list/PA-PRP

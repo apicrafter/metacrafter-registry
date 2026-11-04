@@ -18,6 +18,7 @@ examples:
   description: National Library of Wales
 mappings:
   wikidata: P6782
+  orgid: XI-ROR
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Research_Organization_Registry

@@ -1,0 +1,29 @@
+id: gdti
+name: Global Document Type Identifier (GDTI)
+status: draft
+doc: GS1 identification key for a type of document, such as a certificate, an invoice form or a permit.
+  Thirteen digits (a GS1 Company Prefix, a document type and a GS1 check digit) may be followed by a serial
+  component of up to 17 characters of GS1 character set 82 that identifies one document of that type.
+  In barcodes it is carried by Application Identifier (253); the element string is the pattern gs1_ai_253.
+categories:
+- gs1
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{13}[!%-?A-Z_a-z\x22]{0,17}$
+examples:
+- value: '9528765000420'
+  description: 'Synthetic value with the GS1 demonstration prefix 952: document type only, GS1 check digit
+    in position 13'
+- value: 9528765000420CERT2026-15
+  description: 'Synthetic value with the GS1 demonstration prefix 952: document type and serial component'
+- value: '952876500042'
+  valid: false
+  description: 'Twelve digits: too short'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/253
+- type: doc
+  url: https://ref.gs1.org/standards/genspecs/

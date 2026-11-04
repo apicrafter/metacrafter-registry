@@ -1,0 +1,22 @@
+id: gs1_ai_401
+name: Global Identification Number for Consignment (GS1 AI 401)
+status: draft
+doc: 'GS1 element string of Application Identifier (401): ''401'' followed by a GINC of up to 30 characters.
+  GS1 format N3+X..30. In the human-readable text under a barcode it is written as (401) and the value.'
+semantic_type: ginc
+langs:
+- common
+regexp: ^401\d{4}[!%-?A-Z_a-z\x22]{0,26}$
+examples:
+- value: 4019528765CONS-0042
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: 4019528765CN26-0815
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: 401CONS-0042
+  valid: false
+  description: No GS1 Company Prefix
+mappings:
+  gs1_ai: '401'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/401

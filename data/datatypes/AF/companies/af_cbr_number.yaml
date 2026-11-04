@@ -1,0 +1,26 @@
+id: af_cbr_number
+name: Afghan Central Business Registry number
+status: draft
+doc: Number of a company in the Afghanistan Central Business Registry. ORG-ID.guide lists the register
+  as AF-CBR; with that prefix an identifier reads AF-CBR-102164.
+categories:
+- companies
+country:
+- AF
+langs:
+- ps
+- fa
+is_pii: false
+classification: identifier
+examples:
+- value: '102164'
+  description: example from ORG-ID.guide
+- value: '121048'
+  description: example from ORG-ID.guide
+- value: '14941'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: AF-CBR
+links:
+- type: other
+  url: https://org-id.guide/list/AF-CBR

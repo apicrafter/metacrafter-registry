@@ -1,0 +1,23 @@
+id: ua_edrpou
+name: Ukrainian EDRPOU code
+status: draft
+doc: Код ЄДРПОУ, the 8-digit identification code of a legal entity in the Unified State Register of Ukraine.
+  ORG-ID.guide lists the register as UA-EDR; with that prefix an identifier reads UA-EDR-38422948.
+categories:
+- companies
+country:
+- UA
+langs:
+- uk
+is_pii: false
+classification: identifier
+examples:
+- value: '38422948'
+  description: example from ORG-ID.guide
+- value: '19280108'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: UA-EDR
+links:
+- type: other
+  url: https://org-id.guide/list/UA-EDR

@@ -28,6 +28,7 @@ examples:
   description: NUTS 1 code for Galicia
 mappings:
   wikidata: P605
+  orgid: XR-NUTS
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Nomenclature_of_Territorial_Units_for_Statistics

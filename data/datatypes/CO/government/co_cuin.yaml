@@ -1,0 +1,28 @@
+id: co_cuin
+name: Colombian unique institutional code (CUIN)
+status: draft
+doc: Código Único Institucional (CUIN), the 15-digit code that the Contaduría General de la Nación gives
+  to public sector entities of Colombia. ORG-ID.guide lists the register as CO-CUIN; with that prefix
+  an identifier reads CO-CUIN-311100000000027.
+categories:
+- government
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: '311100000000027'
+  description: example from ORG-ID.guide
+- value: '111122749503787'
+  description: example from ORG-ID.guide
+- value: '237125235603979'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: CO-CUIN
+links:
+- type: doc
+  url: https://www.contaduria.gov.co/definicion-del-codigo-cuin
+- type: other
+  url: https://org-id.guide/list/CO-CUIN

@@ -1,0 +1,22 @@
+id: ne_nif
+name: Nigerien tax identification number (NIF)
+status: draft
+doc: Numéro d'identification fiscale (NIF) that the Directorate General of Taxes of Niger gives to taxpayers.
+  ORG-ID.guide lists the register as NE-DGI; with that prefix an identifier reads NE-DGI-5412.
+categories:
+- finances
+- companies
+country:
+- NE
+langs:
+- fr
+is_pii: true
+classification: identifier
+examples:
+- value: '5412'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: NE-DGI
+links:
+- type: other
+  url: https://org-id.guide/list/NE-DGI

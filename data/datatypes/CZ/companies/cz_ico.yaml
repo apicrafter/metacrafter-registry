@@ -1,0 +1,26 @@
+id: cz_ico
+name: Czech business identification number (IČO)
+status: draft
+doc: Identifikační číslo osoby (IČO), the 8-digit identification number of a company, public body or other
+  organisation in the Czech registers of economic subjects (ARES). ORG-ID.guide lists the register as
+  CZ-ICO; with that prefix an identifier reads CZ-ICO-28179609.
+categories:
+- companies
+country:
+- CZ
+langs:
+- cs
+is_pii: false
+classification: identifier
+examples:
+- value: '28179609'
+  description: example from ORG-ID.guide
+- value: '74750542'
+  description: example from ORG-ID.guide
+- value: '01146131'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: CZ-ICO
+links:
+- type: other
+  url: https://org-id.guide/list/CZ-ICO

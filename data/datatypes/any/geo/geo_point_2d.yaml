@@ -1,0 +1,37 @@
+id: geo_point_2d
+name: Opendatasoft geographic point (geo_point_2d)
+status: draft
+doc: Geographic point stored in the geo_point_2d field type of the Opendatasoft data platform (now Huwise),
+  which runs many French and other European open data portals. Datasets often keep the default field name
+  geo_point_2d, usually next to a geo_shape field with the full geometry of the record. The point is a
+  latitude and a longitude in decimal degrees. The Explore API v2.1 returns it as a JSON object with lon
+  and lat members. CSV exports write the latitude, a comma and a space, then the longitude, and the legacy
+  Records API v1 returns a [latitude, longitude] array. This latitude-first order is the opposite of GeoJSON.
+parent: geopoint
+categories:
+- geo
+langs:
+- common
+is_pii: false
+regexp: ^(?:-?\d{1,2}(?:\.\d+)?, ?-?\d{1,3}(?:\.\d+)?|\[\s*-?\d{1,2}(?:\.\d+)?\s*,\s*-?\d{1,3}(?:\.\d+)?\s*\]|\{\s*"lon"\s*:\s*-?\d{1,3}(?:\.\d+)?\s*,\s*"lat"\s*:\s*-?\d{1,2}(?:\.\d+)?\s*\}|\{\s*"lat"\s*:\s*-?\d{1,2}(?:\.\d+)?\s*,\s*"lon"\s*:\s*-?\d{1,3}(?:\.\d+)?\s*\})$
+examples:
+- value: '{"lon": 55.51277383144647, "lat": -21.354091540437363}'
+  description: Explore API v2.1 JSON, pedestrian crossings on the national roads of La Réunion
+- value: -21.152200178649892, 55.280328656208845
+  description: CSV export of the same dataset, latitude first
+- value: '[16.1990956313132, -61.54086081933653]'
+  description: Records API v1, Guadeloupe in the georef-france-region dataset, latitude first
+- value: '{"type": "Point", "coordinates": [55.51277383144647, -21.354091540437363]}'
+  valid: false
+  description: GeoJSON geometry, which is the geo_shape form
+- value: POINT (55.51277383144647 -21.354091540437363)
+  valid: false
+  description: WKT, not a geo_point_2d value
+links:
+- type: doc
+  url: https://help.opendatasoft.com/apis/ods-explore-v2/explore_v2.1.html
+translations:
+  fr:
+    name: Point géographique Opendatasoft (geo_point_2d)
+  ru:
+    name: Географическая точка Opendatasoft (geo_point_2d)

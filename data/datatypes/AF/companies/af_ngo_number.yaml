@@ -1,0 +1,29 @@
+id: af_ngo_number
+name: Afghan NGO registration number
+status: draft
+doc: Number that the NGO Department of the Ministry of Economy of Afghanistan gives to the non-governmental
+  organisations it registers. ORG-ID.guide lists the register as AF-MOE; with that prefix an identifier
+  reads AF-MOE-89.
+categories:
+- companies
+country:
+- AF
+langs:
+- ps
+- fa
+is_pii: false
+classification: identifier
+examples:
+- value: '89'
+  description: example from ORG-ID.guide
+- value: '176'
+  description: example from ORG-ID.guide
+- value: '2620'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: AF-MOE
+links:
+- type: doc
+  url: http://moec.gov.af/en
+- type: other
+  url: https://org-id.guide/list/AF-MOE
