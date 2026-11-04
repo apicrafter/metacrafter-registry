@@ -3,15 +3,15 @@
 
 These instructions are for AI assistants working in this project.
 
-Always open `@/openspec/AGENTS.md` when the request:
+Check `openspec/` (run `openspec list`) when the request:
 - Mentions planning or proposals (words like proposal, spec, change, plan)
 - Introduces new capabilities, breaking changes, architecture shifts, or big performance/security work
 - Sounds ambiguous and you need the authoritative spec before coding
 
-Use `@/openspec/AGENTS.md` to learn:
-- How to create and apply change proposals
-- Spec format and conventions
-- Project structure and guidelines
+Project context and rules are in `openspec/config.yaml`. The active change is
+`openspec/changes/modernize-registry-platform/` (proposal, design, specs,
+tasks). The audit behind it is `devdocs/AUDIT_2026-11.md`.
+Use `openspec instructions <artifact> --change <id>` for artifact formats.
 
 Keep this managed block so 'openspec update' can refresh the instructions.
 
@@ -56,16 +56,17 @@ metacrafter-registry/
 │   ├── datatypes_latest.jsonl  # Built JSONL (one per line)
 │   ├── tools_latest.json       # Built JSON (all tools)
 │   └── tools_latest.jsonl      # Built JSONL (one per line)
-├── src/                    # Server code
-│   ├── registry.py         # Web server for registry
-│   └── templates/          # HTML templates
-│       ├── base.tmpl
-│       ├── datatype.tmpl
-│       ├── datatype_list.tmpl
-│       ├── tool.tmpl
-│       └── tool_list.tmpl
+├── src/
+│   ├── metacrafter_registry/  # Package + CLI: validate, build, serve, check-contract
+│   │   └── templates/         # Jinja2 templates of the static site
+│   ├── registry.py         # Legacy Flask server (deprecated)
+│   └── templates/          # Templates of the legacy Flask server
+├── tests/                  # pytest suite
+├── .github/workflows/      # ci.yml, pages.yml (GitHub Pages deploy)
+├── openspec/               # OpenSpec config and change proposals
+├── devdocs/                # Audit and analysis notes
 ├── scripts/                # Build and utility scripts
-│   ├── builder.py          # Main build script (598 lines)
+│   ├── builder.py          # Legacy entry point (stats, report; delegates build/validate)
 │   ├── export.py           # Export utilities
 │   ├── enrich_datatypes.py # Data enrichment
 │   └── analyze_missing_rules.py  # Analysis tools
@@ -135,49 +136,60 @@ Language metadata with ISO 639-1 codes.
 
 ## Build System
 
-### Builder Script (`scripts/builder.py`)
+### Package and CLI (`src/metacrafter_registry/`)
 
-The builder processes YAML source files and generates JSON/JSONL outputs:
+Install once with `pip install -e ".[dev]"`. Then:
 
-**Key Functions:**
-- `datatypes_yaml_to_jsonl()` - Converts datatype YAMLs to JSON/JSONL
-- `tools_yaml_to_jsonl()` - Converts tool YAMLs to JSON/JSONL
-- `update_by_dict()` - Maps IDs to names using reference dictionaries
-- `load_path()` - Recursively loads YAML files from directory
-
-**Build Process:**
-1. Loads reference data (countries, categories, langs)
-2. Scans `data/datatypes/` directory recursively
-3. Separates datatypes from patterns (patterns have `semantic_type` field)
-4. Links patterns to parent datatypes
-5. Resolves category/country/language IDs to names
-6. Outputs to `datatypes_latest.json` and `datatypes_latest.jsonl`
-7. Repeats for tools
-
-**Running the Builder:**
 ```bash
-python scripts/builder.py
+metacrafter-registry validate      # schema + semantic checks; -w lists warnings
+metacrafter-registry build         # dist/ (site + JSON) and data/*_latest.json(l)
+metacrafter-registry serve         # preview dist/ with GitHub Pages URL rules
+metacrafter-registry check-contract <base-url>   # verify public URLs
+pytest -q
 ```
 
-### Export Script (`scripts/export.py`)
+Modules:
+- `loader.py` - deterministic loading of YAML sources and reference lists
+- `validate.py` - validation gates (see below)
+- `legacy.py` - the release 1.02 JSON shape. This shape is a public contract:
+  do not remove or retype fields
+- `build.py` - renders `dist/`, writes the manifest `api/v1/index.json` and the
+  transitional `data/*_latest.*` files
+- `serve.py`, `contract.py` - local Pages-like server and URL contract check
+- `templates/` - Jinja2 templates of the site
 
-Utilities for exporting registry data in various formats.
+**Validation gates.** The build fails, and writes nothing, on any of these:
+- schema error
+- unknown category, country or language id
+- duplicate id
+- unresolved `semantic_type`, `parent` or tool `supported_types`
+- regexp that does not compile
+- example that does not match its regexp
+- record under `datatypes/<CC>/` without `<CC>` in `country`
+- record under `datatypes/any/` with exactly one country
 
-## Web Server (`src/registry.py`)
+Warnings, which do not fail the build: file name differs from id, unanchored
+regexp, Python-only regexp syntax.
 
-Minimal web server for browsing registry:
+**Committed outputs.** `data/datatypes_latest.json(l)` and
+`data/tools_latest.json(l)` are still committed, because metacrafter tools read
+them from a checkout. Always run `metacrafter-registry build` and commit them
+together with YAML changes; CI fails if they are stale.
 
-**Features:**
-- HTML pages for browsing datatypes and tools
-- API endpoints for programmatic access
-- Uses built JSONL files (`datatypes_latest.jsonl`, `tools_latest.jsonl`)
+`scripts/builder.py build|validate|stats|report` still works. Its `build` and
+`validate` commands delegate to the package.
 
-**Running the Server:**
-```bash
-cd src
-python registry.py
-# Server available at http://127.0.0.1:8089
-```
+### Publishing
+
+`.github/workflows/pages.yml` deploys `dist/` to GitHub Pages on every push to
+`main`, then runs `check-contract` against the live site.
+`.github/workflows/ci.yml` runs lint, tests, validation, build, the
+freshness check and the URL contract on every PR.
+
+### Legacy Flask server (`src/registry.py`)
+
+Deprecated. Use `metacrafter-registry serve` instead. It will be removed with
+the schema v2 migration.
 
 ## Common Tasks
 
@@ -194,25 +206,27 @@ python registry.py
    doc: Description of the data type
    langs: [en]
    categories: [category1, category2]
-   country: [us]  # Optional
-   is_pii: False
-   regexp: "^pattern$"  # Optional
+   country: [US]  # Optional; uppercase ISO 3166-1 alpha-2, must match the directory
+   is_pii: 'False'  # quoted string until the schema v2 migration
+   regexp: '^pattern$'  # Optional; anchored; every example must match it
    examples:
      - value: "example"
        description: "Example value"
    ```
 
-3. **Rebuild:**
+3. **Validate and rebuild:**
    ```bash
-   python scripts/builder.py
+   metacrafter-registry validate
+   metacrafter-registry build
    ```
 
-4. **Test:**
+4. **Preview:**
    ```bash
-   cd src
-   python registry.py
+   metacrafter-registry serve
    # Browse to http://127.0.0.1:8089/datatype/new_datatype
    ```
+
+5. **Commit** the YAML file together with the regenerated `data/*_latest.*` files.
 
 ### Adding a Pattern
 
@@ -253,8 +267,8 @@ examples:
 ### Updating Metadata
 
 1. Edit the YAML file directly
-2. Run builder: `python scripts/builder.py`
-3. Commit changes
+2. Run `metacrafter-registry validate` and `metacrafter-registry build`
+3. Commit the YAML change and the regenerated `data/*_latest.*` files
 
 ### Linking to External Sources
 
@@ -348,9 +362,10 @@ Use `scripts/analyze_missing_rules.py` to identify:
 
 ## Important Files
 
-- `scripts/builder.py` - Main build script (598 lines)
-- `scripts/export.py` - Export utilities (196 lines)
-- `src/registry.py` - Web server
+- `src/metacrafter_registry/` - build, validation and site generation (CLI `metacrafter-registry`)
+- `scripts/builder.py` - legacy entry point (`stats`, `report`)
+- `scripts/export.py` - Export utilities
+- `src/registry.py` - legacy Flask server (deprecated)
 - `data/schemes/datatype.json` - Datatype schema
 - `data/schemes/tool.json` - Tool schema
 
@@ -358,7 +373,9 @@ Use `scripts/analyze_missing_rules.py` to identify:
 
 Key dependencies:
 - `PyYAML` - YAML parsing
-- `Flask` (or similar) - Web server (in `src/registry.py`)
+- `Jinja2` - static site templates
+- `cerberus` - schema validation (until the JSON Schema migration)
+- `Flask` - legacy server only (`src/registry.py`)
 - Standard library: `json`, `os`, `logging`, `csv`
 
 ## Contributing Guidelines

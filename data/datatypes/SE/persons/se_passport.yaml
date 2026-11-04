@@ -7,7 +7,7 @@ doc: Number of Sweden passport, 8-digits
 id: sepassport
 is_pii: 'True'
 langs:
-- se
+- sv
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Swedish_passport

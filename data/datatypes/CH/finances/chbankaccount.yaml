@@ -11,10 +11,10 @@ langs:
 - it
 links: []
 name: Swiss Bank Account Number
-regexp: '^CH[0-9]{2}[A-Z0-9]{4}[0-9]{16,24}$'
+regexp: '^CH\d{7}[0-9A-Z]{12}$'
 examples:
-- value: "CH1234567890123456789"
-  description: Example Swiss bank account number (IBAN format)
+- value: 'CH9300762011623852957'
+  description: Swiss IBAN (21 characters, valid MOD-97 checksum)
 classification: identifier
 wikidata_property: ''
 translations: {}

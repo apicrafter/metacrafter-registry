@@ -27,4 +27,4 @@ examples:
   description: Fracture of neck of femur
 wikidata_property: P494
 translations: {}
-regexp: ^[A-TV-Z][0-9]{2}[0-9A-Z]?(\\.[0-9A-Z]{1,2})?$
+regexp: '^[A-TV-Z][0-9]{2}[0-9A-Z]?(?:\.[0-9A-Z]{1,2})?$'

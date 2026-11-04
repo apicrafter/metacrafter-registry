@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block pagetitle %}{{object.name}}{% endblock %}
+{% block head %}
+<link rel="canonical" href="{{ site_url }}/tool/{{ object.id }}">
+<link rel="alternate" type="application/json" href="{{ base }}/tool/{{ object.id }}.json">
+{% endblock %}
+{% block content %}
+<div class="hero-sm bg-gray">
+  <div class="hero-body">
+    <h1>{{object.name}} ({{object.id}})</h1>
+    <p>{{object.doc}}</p>
+    <p><a href="{{ base }}/tool/{{object.id}}.json">JSON</a></p>
+  </div>
+</div>
+<table class="table">
+<thead><th></th><th></th></thead>
+<tbody>
+<tr>
+<td>Category</td><td>{{object.category}}</td>
+</tr>
+<tr>
+<td>Website</td><td><a href="{{object.website}}">{{object.website}}</a></td>
+</tr>
+<tr>
+<td>Description</td><td>{{object.doc}}</td>
+</tr>
+{% if object.supported_types %}
+<tr>
+<td>Supported semantic data types</td>
+<td>
+<ul>
+  {% for c in object.supported_types %} 
+  <li><a href="{{ base }}/datatype/{{c}}">{{c}}</a></li>
+  {% endfor %}
+</ul>
+</td>
+</tr>
+{% endif %}
+</tr>
+</tr>
+</tbody>
+</table>
+{% endblock %}

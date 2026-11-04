@@ -113,76 +113,87 @@ Identification rules are regex, other pattern matching algorithms and code that 
 
 # Code
 
-* scripts/ - list of scripts to convert and process data types and related registry data
-* src/ - minimalistic server side code to run metadata server/
+* `src/metacrafter_registry/` - Python package with the `metacrafter-registry` CLI:
+  validation, build of the static site and JSON files, local preview server,
+  public URL contract check
+* `tests/` - pytest suite (validation gates, legacy JSON shape, build, URL contract)
+* `scripts/` - helper scripts; `scripts/builder.py` keeps `stats` and `report` and
+  delegates `build` and `validate` to the package
+* `src/registry.py` - legacy Flask server, deprecated (replaced by the static site)
+* `.github/workflows/` - CI (`ci.yml`) and GitHub Pages deployment (`pages.yml`)
 
 # Build registry
 
-## Building the registry
+The YAML files in `data/` are the source of truth. One command validates them and
+builds everything that gets published.
 
-The registry is built from YAML source files into JSON/JSONL formats for easier consumption.
-
-### Current build procedure:
-
-1. Edit YAML files in the `data/` directory
-2. Run the builder script to rebuild JSON/JSONL files:
+1. Install the package (once):
    ```bash
-   python scripts/builder.py
+   python -m venv .venv && . .venv/bin/activate
+   pip install -e ".[dev]"
    ```
-   This will rebuild:
-   - `data/datatypes_latest.json` - single JSON file with all datatypes
-   - `data/datatypes_latest.jsonl` - JSON Lines format (one datatype per line)
-   - `data/tools_latest.json` - single JSON file with all tools
-   - `data/tools_latest.jsonl` - JSON Lines format (one tool per line)
-3. Run the local server to preview changes:
+2. Edit YAML files in `data/`.
+3. Validate (add `-w` to list warnings):
    ```bash
-   cd src
-   python registry.py
+   metacrafter-registry validate
    ```
-   Server will be available at http://127.0.0.1:8089
-4. Add, commit and push changed files
-
-**Note:** Automated build, version control, release and validation via GitHub Actions is planned for future releases.
-
-# Run server
-
-The registry includes a minimal web server for browsing and accessing the registry data.
-
-## Starting the server
-
-1. Navigate to the `src` directory:
+4. Build:
    ```bash
-   cd src
+   metacrafter-registry build
    ```
+   This writes:
+   - `dist/` - the static site and JSON files deployed to GitHub Pages
+     (not committed)
+   - `data/datatypes_latest.json`, `data/datatypes_latest.jsonl`,
+     `data/tools_latest.json`, `data/tools_latest.jsonl` - transitional files
+     still read from a checkout by metacrafter tools. Commit them; CI fails if
+     they are stale.
 
-2. Run the registry server:
+   The build fails, and writes nothing, if any record has a validation error:
+   schema, unknown reference, duplicate id, regexp that does not compile,
+   example that does not match its regexp, or a directory/country mismatch.
+5. Preview locally with the same URL rules as GitHub Pages:
    ```bash
-   python registry.py
+   metacrafter-registry serve        # http://127.0.0.1:8089
+   ```
+6. Run the tests and commit:
+   ```bash
+   pytest -q
    ```
 
-3. Access the server:
-   - Web interface: http://127.0.0.1:8089
-   - The server loads `data/datatypes_latest.json` and `data/tools_latest.json`
-     (the single-object JSON files, not the JSONL variants) to produce HTML
-     pages and JSON endpoints for browsing datatypes and tools
+`python scripts/builder.py build|validate|stats|report` still works.
 
-The server provides:
-- HTML pages for browsing datatypes and tools
-- JSON API endpoints for programmatic access
+# Publishing
 
-## API reference
+Every merge to `main` builds the site and deploys it to GitHub Pages
+(`.github/workflows/pages.yml`). After deploying, the workflow checks the public
+URL contract on the live site:
 
-| Method & path | Description |
+```bash
+metacrafter-registry check-contract https://registry.apicrafter.io
+```
+
+## Public URLs
+
+These URLs are a contract: metacrafter links every detected type to
+`https://registry.apicrafter.io/datatype/<id>`, and its `RegistryClient` reads the
+JSON files.
+
+| Path | Description |
 |---|---|
-| `GET /` | HTML list of datatypes |
-| `GET /health` | Readiness probe: `{"status": "ok", "datatypes": N, "tools": M}` |
-| `GET /registry.json` | All datatypes as JSON. Optional `?q=` filters by id/name/doc/category |
-| `GET /datatype/<id>` | HTML page for one datatype |
-| `GET /datatype/<id>.json` | Single datatype as JSON |
-| `GET /tool` | HTML list of tools |
-| `GET /tools.json` | All tools as JSON. Optional `?q=` filters by id/name/doc/category |
-| `GET /tool/<id>` | HTML page for one tool |
-| `GET /tool/<id>.json` | Single tool as JSON |
+| `/` | HTML list of datatypes |
+| `/datatype/<id>` | HTML page for one datatype or pattern |
+| `/datatype/<id>.json` | Single datatype as JSON |
+| `/registry.json` | All datatypes and patterns as JSON, keyed by id |
+| `/datatypes.jsonl` | All datatypes and patterns as JSON Lines |
+| `/tool` | HTML list of tools |
+| `/tool/<id>` | HTML page for one tool |
+| `/tool/<id>.json` | Single tool as JSON |
+| `/tools.json` | All tools as JSON, keyed by id |
+| `/api/v1/index.json` | Manifest: version, git SHA, counts, file hashes, datatype URL template |
+
+The static site has no server-side search: the `?q=` filter and `/health`
+endpoint of the old Flask server are not available.
 
 ## Identification rules
 

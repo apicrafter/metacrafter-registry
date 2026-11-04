@@ -19,14 +19,12 @@ links:
 - type: wikipedia
   url: https://fr.wikipedia.org/wiki/Classification_commune_des_actes_m%C3%A9dicaux
 examples:
-- value: A123B
-  description: "CCAM code with format: letter + 2 digits + letter"
-- value: Z456C
-  description: Another example of CCAM code format
-- value: M789N
-  description: Example CCAM medical procedure code
+- value: 'HBQK002'
+  description: CCAM act code (4 letters + 3 digits)
+- value: 'ZBQK002'
+  description: CCAM act code (4 letters + 3 digits)
 wikidata_property: ''
 translations:
   en: CCAM Code (Common Classification of Medical Procedures)
   fr: Code CCAM (Classification Commune des Actes Médicaux)
-regexp: ^[A-Z][0-9]{2}[A-Z]$
+regexp: '^[A-Z]{4}\d{3}$'

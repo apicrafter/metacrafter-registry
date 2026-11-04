@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block pagetitle %}{% endblock %} · Metacrafter Registry</title>
+  {% block head %}{% endblock %}
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css@0.5.9/dist/spectre.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css@0.5.9/dist/spectre-exp.min.css">
+</head>
+<body>
+<header class="navbar">
+  <section class="navbar-section">
+    <a href="{{ base }}/" class="navbar-brand mr-2">Datatypes registry</a>
+    <a href="{{ base }}/tool/" class="navbar-brand mr-2">Tools</a>
+    <a href="https://github.com/apicrafter/metacrafter-registry/blob/main/README.md" class="btn btn-link">Docs</a>
+    <a href="https://github.com/apicrafter/metacrafter-registry" class="btn btn-link">GitHub</a>
+  </section>
+</header>
+<div class="container">
+  <div class="columns">
+    <div class="column col-1"></div>
+    <div class="column col-9">{% block content %}{% endblock %}</div>
+  </div>
+</div>
+<footer class="container text-gray">
+  <p class="text-small">Metacrafter Registry {{ version }}{% if git_sha %} · <a href="https://github.com/apicrafter/metacrafter-registry/commit/{{ git_sha }}">{{ git_sha[:7] }}</a>{% endif %} · <a href="{{ base }}/registry.json">registry.json</a></p>
+</footer>
+</body>
+</html>

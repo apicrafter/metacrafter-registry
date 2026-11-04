@@ -8,9 +8,7 @@ id: am_ssn
 is_pii: 'True'
 langs:
 - hy
-links:
-- type: wikipedia
-  url: https://en.wikipedia.org/wiki/Armenia
+links: []
 name: Armenian Social Security Number
 regexp: \d{10}
 examples:

@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block pagetitle %}{{object.name}}{% endblock %}
+{% block head %}
+<link rel="canonical" href="{{ site_url }}/datatype/{{ object.id }}">
+<link rel="alternate" type="application/json" href="{{ base }}/datatype/{{ object.id }}.json">
+{% endblock %}
+{% block content %}
+<div class="hero-sm bg-gray">
+  <div class="hero-body">
+    <h1>{{object.name}} ({{object.id}})</h1>
+    <p>{{object.doc}}</p>
+    <p><a href="{{ base }}/datatype/{{object.id}}.json">JSON</a></p>
+  </div>
+</div>
+<table class="table">
+<thead><th></th><th></th></thead>
+<tbody>
+<tr>
+<td>Type</td><td>{{object.type}} {% if object.type == "pattern" %}, related to <a href="{{ base }}/datatype/{{object.semantic_type}}">{{object.semantic_type}}</a>{% endif %}</td>
+</tr>
+{% if object.is_pii %}
+<tr>
+<td>Is personal identifiable information (PII) ?</td><td>{{object.is_pii}}</td>
+</tr>
+{% endif %}
+{% if object.wikidata_property %}
+<tr>
+<td>Wikidata property</td><td>{{object.wikidata_property}}</td>
+</tr>
+{% endif %}
+{% if object.regexp %}
+<tr>
+<td>Regular expression</td><td>{{object.regexp}}</td>
+</tr>
+{% endif %}
+
+{% if object.parent %}
+<tr>
+<td>Parent data type</td><td><a href="{{ base }}/datatype/{{object.parent.type}}">{{object.parent.type}}</a></td>
+</tr>
+{% endif %}
+{% if object.links %}
+<tr>
+<td>Sources</td>
+<td>
+<ul>
+  {% for c in object.links %}
+  <li>{{c.type}} <a href="{{c.url}}" target="blank">{{c.url}}</a></li>
+  {% endfor %}
+</ul>
+</td>
+</tr>
+{% endif %}
+{% if object.classification %}
+<tr>
+<td>Classification</td><td>{{object.classification}}</td>
+</tr>
+{% endif %}
+{% if object.categories %}
+<tr>
+<td>Categories</td>
+<td>
+<ul>
+  {% for c in object.categories %} 
+  <li>{{ c.id }} ({{ c.name }})</li>
+  {% endfor %}
+</ul>
+</td>
+</tr>
+{% endif %}
+{% if object.country %}
+<tr>
+<td>Countries</td>
+<td>
+<ul>
+  {% for c in object.country %} 
+  <li>{{ c.id }} ({{ c.name }})</li>
+  {% endfor %}
+</ul>
+</td>
+</tr>
+{% endif %}
+{% if object.langs %}
+<tr>
+<td>Languages</td>
+<td>
+<ul>
+  {% for c in object.langs %} 
+  <li>{{ c.id }} ({{ c.name }})</li>
+  {% endfor %}
+</ul>
+</td>
+</tr>
+{% endif %}
+{% if object.examples %}
+<tr>
+<td>Examples</td>
+<td>
+<ul>
+  {% for c in object.examples %}
+  <li>{{ c.value }} ({{ c.description }})</li>
+  {% endfor %}
+</ul>
+</td>
+</tr>
+{% endif %}
+</tbody>
+</table>
+{% if object.patterns %}
+<h3>Patterns</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>doc</th>
+        </tr>
+      </thead>
+      <tbody>
+{% for t in object.patterns %} 
+<tr><td><a href="{{ base }}/datatype/{{t.id}}">{{t.id}}</a></td><td>{{t.name}}</td><td>{{t.doc}}</td></tr>
+{% endfor %} 
+      </tbody>
+    </table>
+{% endif %}
+{% if object.translations %}
+<h3>Translations</h3>
+    <table class="table">
+      <thead>
+        <tr> 
+          <th></th>
+          <th>name</th>
+          <th>doc</th>
+        </tr>
+      </thead>
+      <tbody>
+{% for t in object.translations.items() %} 
+<tr><td>{{t[0]}}</td><td>{{t[1].name}}</td><td>{{t[1].doc}}</td></tr>
+{% endfor %}
+      </tbody>
+    </table>
+{% endif %}
+{% endblock %}

@@ -10,7 +10,7 @@ links:
   url: https://www.wikidata.org/wiki/Property:P3797
 name: Autonomous system number (ASN)
 wikidata_property: P3797
-regexp: ' [1-9]\d*'
+regexp: '^(?:AS)?[1-9]\d{0,9}$'
 examples:
 - value: '2532'
   description: Library of Congress

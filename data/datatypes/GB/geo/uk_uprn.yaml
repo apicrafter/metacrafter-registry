@@ -20,5 +20,5 @@ classification: identifier
 examples:
 - value: '9051138577'
   description: Marischal College
-regexp: \d{12}
+regexp: '^\d{1,12}$'
 translations: {}

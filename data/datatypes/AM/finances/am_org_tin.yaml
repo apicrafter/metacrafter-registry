@@ -8,9 +8,7 @@ id: am_org_tin
 is_pii: 'False'
 langs:
 - hy
-links:
-- type: wikipedia
-  url: https://en.wikipedia.org/wiki/Armenia
+links: []
 name: Armenian Organization Taxpayer Identification Number
 regexp: \d{8,12}
 examples:

@@ -3,14 +3,28 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 
+# Build output (deployed by CI, never committed)
+dist/
+.build-*/
+
 # Virtual environment
 venv/
 env/
 .venv/
 
-# Python cache
+# Python cache and tooling
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
+*.egg-info/
+build/
+.pytest_cache/
+.ruff_cache/
+
+# Editors and OS
+.idea/
+.vscode/
+*.code-workspace
+.DS_Store

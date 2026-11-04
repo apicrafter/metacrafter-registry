@@ -1,0 +1,29 @@
+schema: spec-driven
+
+context: |
+  Metacrafter Registry is the canonical catalog of semantic data types
+  (identifiers, PII, codes) used by the Metacrafter ecosystem:
+  - metacrafter: Python CLI/library that labels table fields; links each
+    detected type to https://registry.apicrafter.io/datatype/<id>
+  - metacrafter-rules: YAML detection rules; rule `key` MUST equal a registry `id`
+  - metacrafter-llm / metacrafter LLM mode: RAG classifier over registry JSONL
+
+  Source of truth: one YAML file per entity under data/ (datatypes, patterns,
+  tools) plus reference lists (categories, countries, langs).
+  Tech stack: Python 3.10+, PyYAML; build outputs are static files deployed to
+  GitHub Pages. Code license Apache-2.0.
+
+  Conventions:
+  - IDs are lowercase [a-z0-9_]; country-specific IDs use `<cc>_` prefix;
+    renamed IDs keep an alias forever (metacrafter links must not break).
+  - Never break the public URL contract: /datatype/<id>, /datatype/<id>.json,
+    /registry.json, /tool/<id>, /tools.json.
+  - Generated or unreviewed records are marked `status: draft`, never deleted
+    silently.
+  - Evidence for current state: devdocs/AUDIT_2026-11.md
+
+rules:
+  proposal:
+    - Mark any change to the public URL contract or JSON shape as **BREAKING**
+  tasks:
+    - Each task group must leave main deployable
