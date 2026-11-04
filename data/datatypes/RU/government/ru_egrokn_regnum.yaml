@@ -1,0 +1,57 @@
+id: ru_egrokn_regnum
+name: Registration number of a Russian cultural heritage object (EGROKN)
+status: draft
+doc: 'Fifteen-digit registration number of an object in the Unified State Register of Cultural Heritage
+  Objects of the Peoples of the Russian Federation (ЕГРОКН), kept by the Ministry of Culture. The number
+  has the structure СС ГГ В XXXXXX ППП К: the code of the federal subject (two digits), the last two digits
+  of the year the record was entered (two), the kind of object (one: 1 monument, 2 ensemble, 3 landmark
+  site, 4 archaeological heritage object), a sequence number (six), the component of a composite object
+  (three) and the category of historical and cultural significance (one: 4 local, 5 regional, 6 federal;
+  7 to 9 for objects on the World Heritage List and especially valuable objects). In the open data of
+  the Ministry the kind and category digits agree with the attributes of the record in 99.7% of 110 000
+  records.'
+categories:
+- government
+- realestate
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4}[1-4]\d{9}[4-9]$
+examples:
+- value: '561510197480005'
+  description: Monument of regional significance in Orenburg Oblast, entered in 2015
+- value: '231420039480005'
+  description: Ensemble of regional significance in Krasnodar Krai
+- value: '701430309590005'
+  description: Landmark site of regional significance in Tomsk Oblast
+- value: '781510319380066'
+  description: Chinese Theatre in Tsarskoye Selo, a monument of federal significance (Wikidata example)
+- value: '771420520120016'
+  description: Ensemble of federal significance in Moscow, from data.mos.ru
+- value: '691731293250006'
+  description: Source of the Volga (Wikidata example)
+- value: '911510359770006'
+  description: Tsar's Kurgan (Wikidata example)
+- value: 56-142
+  valid: false
+  description: Accounting number of the register, the datatype ru_egrokn_accounting_number
+- value: '561510197480003'
+  valid: false
+  description: Category digit 3 is not defined
+mappings:
+  wikidata: P5381
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5381
+- type: doc
+  url: https://opendata.mkrf.ru/opendata/7705851331-egrkn
+translations:
+  ru:
+    name: Регистрационный номер объекта культурного наследия в ЕГРОКН
+    doc: Пятнадцатизначный регистрационный номер объекта в Едином государственном реестре объектов культурного
+      наследия (памятников истории и культуры) народов Российской Федерации со структурой СС ГГ В XXXXXX
+      ППП К. Здесь СС — код субъекта РФ, ГГ — год внесения записи, В — вид объекта, XXXXXX — порядковый
+      номер, ППП — пообъектный состав, К — категория историко-культурного значения.

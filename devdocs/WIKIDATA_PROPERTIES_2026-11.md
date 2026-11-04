@@ -51,12 +51,12 @@ Sources, all read on 2026-11-04:
   - Corrected the regexp of 8 records (5 of them rejected almost every
     Wikidata value) and added a regexp to 16 records that had none.
   - Added examples from Wikidata to 25 existing records.
-  - Added **98 new draft records**, one per Wikidata property, with a regexp
-    tested against Wikidata values (97 of them) and examples from Wikidata.
+  - Added **97 new draft records**, one per Wikidata property, with a regexp
+    tested against Wikidata values (96 of them) and examples from Wikidata.
   - Added `scripts/wikidata_properties.py`, which repeats the comparison.
 - After this change 282 records map to 274 Wikidata properties (144 before).
   Compared with `main` at the time of the merge, the share of records with a
-  regexp went from 55.7% to 60.8%, and with examples from 59.7% to 64.5%.
+  regexp went from 56.5% to 61.4%, and with examples from 60.7% to 65.3%.
 
 ## Method
 
@@ -168,6 +168,10 @@ record had none, the regexp tested against Wikidata values.
 | `sk_ico` | [P8174](https://www.wikidata.org/wiki/Property:P8174) | Slovak Registration ID |
 | `ua_edrpou` | [P3125](https://www.wikidata.org/wiki/Property:P3125) | EDRPOU code |
 
+The opendata.mkrf.ru analysis added `ru_egrokn_regnum` (EGROKN registration
+number) at the same time; it already maps to P5381. This change adds two
+Wikidata examples to it instead of a second record.
+
 ### Corrected regexps
 
 Wikidata values showed that these regexps were wrong. "Matches" counts the
@@ -201,7 +205,7 @@ Wikidata values that the regexp accepts, before and after.
 
 ## New records
 
-98 new records, all `status: draft`. "Uses" is the number of Wikidata
+97 new records, all `status: draft`. "Uses" is the number of Wikidata
 statements with the property; "Matches" is the share of up to 3,000 Wikidata values that
 the record regexp accepts.
 
@@ -291,7 +295,6 @@ the record regexp accepts.
 | `ru_esr_code` | [P2815](https://www.wikidata.org/wiki/Property:P2815) | ESR station code | 14,201 | 3000/3000 |
 | `ru_gkgn_id` | [P1397](https://www.wikidata.org/wiki/Property:P1397) | State Catalogue of Geographical Names (Russia) ID | 67,649 | 3000/3000 |
 | `ru_gvr_code` | [P884](https://www.wikidata.org/wiki/Property:P884) | State Water Register Code (Russia) | 39,320 | 3000/3000 |
-| `ru_egrokn` | [P5381](https://www.wikidata.org/wiki/Property:P5381) | EGROKN ID | 51,978 | 2977/3000 |
 | `ua_katottg` | [P9435](https://www.wikidata.org/wiki/Property:P9435) | KATOTTH ID | 31,981 | 3000/3000 |
 | `ua_koatuu` | [P1077](https://www.wikidata.org/wiki/Property:P1077) | KOATUU ID | 41,393 | 3000/3000 |
 | `by_soato` | [P2672](https://www.wikidata.org/wiki/Property:P2672) | SOATO ID | 22,902 | 3000/3000 |

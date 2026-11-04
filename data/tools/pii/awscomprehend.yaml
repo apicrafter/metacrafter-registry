@@ -1,0 +1,44 @@
+id: awscomprehend
+name: Amazon Comprehend
+category: pii
+doc: Amazon Comprehend is an AWS natural language processing service. Its PII detection (the DetectPiiEntities
+  API and asynchronous batch jobs) finds personal data in English or Spanish text and can redact it; each
+  finding has an entity type, character offsets and a confidence score. The entity types are universal
+  ones such as names, addresses, card numbers, credentials and network identifiers, plus a few country-specific
+  identifiers for Canada, India, the UK and the US. The list is in the Comprehend developer guide.
+website: https://docs.aws.amazon.com/comprehend/latest/dg/how-pii.html
+supported_types:
+- aadhaar
+- aba
+- abaroutingnum
+- address
+- age
+- aws_access_key_id
+- aws_secret_access_key
+- bankcard
+- bic
+- casin
+- date
+- datetime
+- email
+- iban
+- in_epic
+- ipv4
+- mac_address
+- nhsnumber
+- pan
+- password
+- person_fullname
+- phone
+- swiftcode
+- uknhsnum
+- uknino
+- ukutr
+- url
+- usbankaccount
+- username
+- usitin
+- uspassport
+- usssn
+- vehiclenumber
+- vin

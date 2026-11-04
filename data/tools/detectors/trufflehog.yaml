@@ -1,0 +1,33 @@
+id: trufflehog
+name: TruffleHog
+category: detector
+doc: TruffleHog is an open-source (AGPL-3.0) secret scanner from Truffle Security that searches git history,
+  file systems, cloud storage and other sources for leaked credentials. Each of its several hundred detectors
+  targets one service and combines keywords with a regular expression; many detectors then call the service's
+  API to check whether the credential is live. The list of supported types covers only the registry datatypes
+  that match a detector.
+website: https://github.com/trufflesecurity/trufflehog
+supported_types:
+- aws_access_key_id
+- aws_secret_access_key
+- azure_storage_account_key
+- connection_string
+- github_token
+- google_api_key
+- heroku_oauth_token
+- jfrog_api_key
+- jfrog_reference_token
+- jwt
+- mailchimp_api_key
+- npm_access_token
+- sendgrid_api_key
+- shared_access_signature
+- slack_token
+- slack_webhook_url
+- sonarqube_token
+- square_access_token
+- stripe_api_key
+- telegram_bot_token
+- twilio_api_key_sid
+- uri_with_password
+- x509_private_key

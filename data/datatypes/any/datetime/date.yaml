@@ -1,12 +1,25 @@
 id: date
 name: Date
 status: stable
-doc: Date with one of known notations
+doc: Calendar date. The regexp covers the ISO 8601 extended form YYYY-MM-DD; other notations, such as
+  DD.MM.YYYY, are patterns of this datatype.
 categories:
 - datetime
 langs:
 - common
 is_pii: false
+regexp: ^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$
+examples:
+- value: '2025-05-15'
+  description: ISO 8601 date
+- value: '1993-12-30'
+  description: Date of a document in the register of cultural heritage objects
+- value: '2025-13-01'
+  valid: false
+  description: There is no month 13
+- value: 15.05.2025
+  valid: false
+  description: Day-first notation, the pattern date_dmy
 mappings:
   autotype:
   - date-chinese
@@ -21,9 +34,12 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Date_and_time_notation
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_8601
 - type: schema.org
   url: https://schema.org/Date
 translations:
   ru:
     name: Дата
-    doc: Дата в одной из общепринятых нотаций
+    doc: Календарная дата. Регулярное выражение описывает форму ISO 8601 ГГГГ-ММ-ДД; другие нотации, например
+      ДД.ММ.ГГГГ, описаны шаблонами этого типа.

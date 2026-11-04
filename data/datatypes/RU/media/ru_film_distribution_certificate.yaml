@@ -1,0 +1,38 @@
+id: ru_film_distribution_certificate
+name: Russian film distribution certificate number
+status: draft
+doc: Number of a film distribution certificate (прокатное удостоверение), which the Russian Ministry of
+  Culture issues for showing and distributing a film and records in the federal register of certificates.
+  Current numbers have nine digits, the last two being the year of issue (99.8% of 113 621 records in
+  the open data of the Ministry), and begin with 1 or 2. Older certificates have eight digits, and numbers
+  issued in 1998-2003 may end with the letter Д.
+categories:
+- media
+- legal
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{8,9}Д?$
+examples:
+- value: '111001324'
+  description: Certificate issued in 2024
+- value: '211004124'
+  description: Certificate issued in 2024
+- value: '22109112'
+  description: Eight-digit certificate issued in 2012
+- value: 221009902Д
+  description: Number with the letter Д, issued in 2002
+- value: '37343'
+  valid: false
+  description: Number of a national film certificate, the datatype ru_national_film_certificate
+links:
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/Прокатное_удостоверение
+- type: doc
+  url: https://opendata.mkrf.ru/opendata/7705851331-register_movies
+translations:
+  ru:
+    name: Номер прокатного удостоверения на фильм

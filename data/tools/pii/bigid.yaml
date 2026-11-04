@@ -1,0 +1,8 @@
+id: bigid
+name: BigID
+category: pii
+doc: BigID is a data security and privacy platform that discovers and classifies sensitive data in structured
+  and unstructured data sources. It uses regular-expression classifiers, NER and other machine-learning
+  classifiers, and document classifiers, and users can add their own. The catalog of built-in classifiers
+  is shown inside the product and is not published in public documentation.
+website: https://bigid.com/data-classification/

@@ -1,0 +1,87 @@
+id: collibra
+name: Collibra Data Classification
+category: catalogs
+doc: 'Collibra suggests data classes for catalog columns with classification rules: regular expressions
+  on column names or values, lists of values and data type checks, applied to a sample of the column with
+  a minimum confidence threshold. Collibra publishes a set of out-of-the-box data classes that stewards
+  can import into their environment as a starting point and then edit. The set covers US identifiers such
+  as SSN, EIN, ITIN and DEA numbers, card and bank numbers, securities codes, several date and time formats,
+  Italian identifiers, and common personal attributes. The documentation lists each class with a description
+  and an example value.'
+website: https://productresources.collibra.com/docs/collibra/latest/Content/Catalog/DataClassification/UnifiedDataClassification/co_ootb-data-classes.htm
+supported_types:
+- aadhaar
+- aba
+- abaroutingnum
+- bankcard
+- bic
+- ca_postcode
+- city
+- country
+- cusip
+- date
+- datetime
+- dayofweek
+- email
+- fqdn
+- gender
+- honorificprefix
+- iban
+- icd10
+- icd9
+- imei
+- ipaddr
+- isbn
+- isbn10
+- isbn13
+- isin
+- iso4217curcode
+- it_codicefiscale
+- it_iva
+- it_postcode
+- jobtitle
+- language
+- latitude
+- longitude
+- mac_address
+- marital_status
+- miccode
+- money
+- month
+- namesuffix
+- nhsnumber
+- npi
+- pan
+- passport
+- password
+- percentage
+- person_firstname
+- person_surname
+- phone
+- race_ethnicity
+- religion
+- ric
+- sedol
+- street_address
+- swiftcode
+- temperature
+- tickersymbol
+- time
+- ukdriverlic
+- uknhsnum
+- ukpostalcode
+- url
+- usatin
+- usdeanumber
+- usdriverlic
+- usein
+- usitin
+- usnpi
+- usptin
+- usssn
+- usstate
+- uszipcode
+- utctimezoneoffset
+- uuid
+- vehiclenumber
+- vin

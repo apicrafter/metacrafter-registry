@@ -1,0 +1,29 @@
+id: ru_okn_kind
+name: Kind of a Russian cultural heritage object
+status: draft
+doc: Kind of a cultural heritage object under Article 3 of Federal Law No. 73-FZ on cultural heritage
+  objects. The law distinguishes monuments (памятник), ensembles (ансамбль) and landmark sites (достопримечательное
+  место). The register of cultural heritage objects (ЕГРОКН) records the kind of each object.
+categories:
+- government
+- realestate
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: ^(?:Памятник|Ансамбль|Достопримечательное место)$
+examples:
+- value: Памятник
+- value: Ансамбль
+- value: Достопримечательное место
+- value: Памятник археологии
+  valid: false
+  description: Typology of the object, the datatype ru_okn_typology
+links:
+- type: doc
+  url: https://opendata.mkrf.ru/opendata/7705851331-egrkn
+translations:
+  ru:
+    name: Вид объекта культурного наследия
