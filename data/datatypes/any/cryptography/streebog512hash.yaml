@@ -1,0 +1,36 @@
+id: streebog512hash
+name: Streebog-512 hash (GOST R 34.11-2012)
+status: draft
+doc: 'Digest of Streebog, the hash function of the Russian standard GOST R 34.11-2012 (also RFC 6986),
+  with a 512-bit output. It is written as 128 hexadecimal digits. The standard and RFC 6986 print digests
+  in reverse byte order, while libraries such as gostcrypto and the Wikipedia article print them in byte
+  order, as the examples here do. Other 512-bit digests (SHA-512, SHA3-512, Keccak-512 and BLAKE2b-512)
+  have the same length, so the value alone does not tell them apart: use the field name or context.'
+parent: hash
+categories:
+- cryptography
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-fA-F]{128}$
+examples:
+- value: 8e945da209aa869f0455928529bcae4679e9873ab707b55315f56ceb98bef0a7362f715528356ee83cda5f2aac4c6ad2ba3a715c1bcd81cb8e9f90bf4c1c1a8a
+  description: Streebog-512 hash of the empty string
+- value: 1b54d01a4af5b9d5cc3d86d68d285462b19abc2475222f35c085122be4ba1ffa00ad30f8767b3a82384c6574f024c311e2a481332b08ef7f41797891c1646f48
+  description: Streebog-512 hash of the RFC 6986 Example 1 message (63 digits 0123456789012...), in byte
+    order
+- value: 8e945da209aa869f0455928529bcae4679e9873ab707b55315f56ceb98bef0a7362f715528356ee83cda5f2aac4c6ad2ba3a715c1bcd81cb8e9f90bf4c1c1a8
+  valid: false
+  description: one hex digit short (127 instead of 128)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Streebog
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc6986
+translations:
+  ru:
+    name: Хеш Стрибог-512 (ГОСТ Р 34.11-2012)
+    doc: Значение хеш-функции «Стрибог» по ГОСТ Р 34.11-2012 (RFC 6986) длиной 512 бит, записанное 128
+      шестнадцатеричными цифрами. Стандарт и RFC 6986 печатают значение в обратном порядке байтов, а библиотеки
+      обычно в прямом.

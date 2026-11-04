@@ -1,15 +1,28 @@
 id: crc32
-name: CRC-32
+name: CRC-32 checksum
 status: stable
-doc: A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and
-  storage devices to detect accidental changes to digital data. Blocks of data entering these systems
-  get a short check value attached, based on the remainder of a polynomial division of their contents.
-parent: numeric
+doc: Check value of CRC-32 (CRC-32/ISO-HDLC, polynomial 0x04C11DB7), the cyclic redundancy check that
+  Ethernet, ZIP, gzip and PNG use to detect accidental corruption of data. It is not a cryptographic hash
+  and does not protect against deliberate changes. It is usually written as 8 hexadecimal digits; some
+  tools, such as MySQL CRC32() and Python zlib.crc32(), return it as an unsigned 32-bit integer instead.
+parent: hash
 categories:
 - cryptography
 langs:
 - common
 is_pii: false
+classification: identifier
+regexp: ^[0-9a-fA-F]{8}$
+examples:
+- value: cbf43926
+  description: CRC-32 of the string '123456789' (the standard check value)
+- value: 352441c2
+  description: CRC-32 of the string 'abc'
+- value: cbf4392
+  valid: false
+  description: one hex digit short (7 instead of 8)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Cyclic_redundancy_check
+- type: other
+  url: https://reveng.sourceforge.io/crc-catalogue/17plus.htm#crc.cat.crc-32-iso-hdlc

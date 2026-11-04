@@ -10,6 +10,7 @@ doc: Self-describing content address of the multiformats CID specification, used
 categories:
 - identifiers
 - internet
+- cryptography
 langs:
 - common
 is_pii: false

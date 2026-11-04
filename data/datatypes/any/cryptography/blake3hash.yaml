@@ -1,0 +1,29 @@
+id: blake3hash
+name: BLAKE3 hash
+status: draft
+doc: 'Digest of the BLAKE3 hash function with its default 256-bit output, written as 64 hexadecimal digits.
+  BLAKE3 is a fast successor of BLAKE2 and one of the registered algorithms of OCI content digests. It
+  can also produce longer outputs, which the regexp does not cover. Other 256-bit digests (SHA-256, SHA3-256,
+  Keccak-256, BLAKE2b-256 and Streebog-256) have the same length, so the value alone does not tell them
+  apart: use the field name or context.'
+parent: hash
+categories:
+- cryptography
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-fA-F]{64}$
+examples:
+- value: af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262
+  description: BLAKE3 hash of the empty string
+- value: 6437b3ac38465133ffb63b75273a8db548c558465d79db03fd359c6cd5bd9d85
+  description: BLAKE3 hash of the string 'abc'
+- value: af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f326
+  valid: false
+  description: one hex digit short (63 instead of 64)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/BLAKE_(hash_function)
+- type: other
+  url: https://github.com/BLAKE3-team/BLAKE3

@@ -2,8 +2,9 @@ id: sha512hash
 name: SHA-512 hash
 status: stable
 doc: 'Digest of the SHA-512 hash function (SHA-2 family, 512 bits). It is written as 128 hexadecimal digits.
-  SHA-512, Keccak-512 and BLAKE2b-512 digests have the same length, so the value alone does not tell them
-  apart: use the field name or context.'
+  Other 512-bit digests (SHA3-512, Keccak-512, BLAKE2b-512 and Streebog-512) have the same length, so
+  the value alone does not tell them apart: use the field name or context.'
+parent: hash
 categories:
 - cryptography
 langs:
@@ -22,3 +23,5 @@ examples:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SHA-2
+- type: doc
+  url: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf

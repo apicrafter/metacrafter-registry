@@ -1,0 +1,39 @@
+id: pem_public_key
+name: Public key (PEM)
+status: draft
+doc: 'Public key in the PEM textual encoding: the Base64 of a DER SubjectPublicKeyInfo structure (RFC
+  5280) between -----BEGIN PUBLIC KEY----- and -----END PUBLIC KEY----- (RFC 7468, section 13). OpenSSL
+  also writes RSA keys in the PKCS #1 form with the label RSA PUBLIC KEY. A public key is not secret;
+  for the private key see x509_private_key.'
+categories:
+- cryptography
+langs:
+- common
+is_pii: false
+regexp: ^-----BEGIN (?:RSA )?PUBLIC KEY-----[\s\S]+-----END (?:RSA )?PUBLIC KEY-----$
+examples:
+- value: '-----BEGIN PUBLIC KEY-----
+
+    MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEn1LlwLN/KBYQRVH6HfIMTzfEqJOVztLe
+
+    kLchp2hi78cCaMY81FBlYs8J9l7krc+M4aBeCGYFjba+hiXttJWPL7ydlE+5UG4U
+
+    Nkn3Eos8EiZByi9DVsyfy9eejh+8AXgp
+
+    -----END PUBLIC KEY-----'
+  description: Example P-384 key of RFC 7468, section 13
+- value: '-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+
+    xjMEU/NfCxYJKwYBBAHaRw8BAQdAPwmJlL3ZFu1AUxl5NOSofIBzOhKA1i+AEJku
+
+    Q+47JAY=
+
+    -----END PGP PUBLIC KEY BLOCK-----'
+  valid: false
+  description: OpenPGP public key block
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc7468#section-13
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail

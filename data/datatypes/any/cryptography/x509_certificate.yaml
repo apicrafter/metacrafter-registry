@@ -1,0 +1,59 @@
+id: x509_certificate
+name: X.509 certificate (PEM)
+status: draft
+doc: 'Public-key certificate in the PEM textual encoding of RFC 7468: the Base64 of the DER certificate
+  between the lines -----BEGIN CERTIFICATE----- and -----END CERTIFICATE-----. Older tools also write
+  the labels X509 CERTIFICATE or X.509 CERTIFICATE, and OpenSSL writes TRUSTED CERTIFICATE for a certificate
+  with trust settings. A certificate holds a public key and is not secret.'
+categories:
+- cryptography
+langs:
+- common
+is_pii: false
+regexp: ^-----BEGIN (?:X509 |X\.509 |TRUSTED )?CERTIFICATE-----[\s\S]+-----END (?:X509 |X\.509 |TRUSTED
+  )?CERTIFICATE-----$
+examples:
+- value: '-----BEGIN CERTIFICATE-----
+
+    MIICLDCCAdKgAwIBAgIBADAKBggqhkjOPQQDAjB9MQswCQYDVQQGEwJCRTEPMA0G
+
+    A1UEChMGR251VExTMSUwIwYDVQQLExxHbnVUTFMgY2VydGlmaWNhdGUgYXV0aG9y
+
+    aXR5MQ8wDQYDVQQIEwZMZXV2ZW4xJTAjBgNVBAMTHEdudVRMUyBjZXJ0aWZpY2F0
+
+    ZSBhdXRob3JpdHkwHhcNMTEwNTIzMjAzODIxWhcNMTIxMjIyMDc0MTUxWjB9MQsw
+
+    CQYDVQQGEwJCRTEPMA0GA1UEChMGR251VExTMSUwIwYDVQQLExxHbnVUTFMgY2Vy
+
+    dGlmaWNhdGUgYXV0aG9yaXR5MQ8wDQYDVQQIEwZMZXV2ZW4xJTAjBgNVBAMTHEdu
+
+    dVRMUyBjZXJ0aWZpY2F0ZSBhdXRob3JpdHkwWTATBgcqhkjOPQIBBggqhkjOPQMB
+
+    BwNCAARS2I0jiuNn14Y2sSALCX3IybqiIJUvxUpj+oNfzngvj/Niyv2394BWnW4X
+
+    uQ4RTEiywK87WRcWMGgJB5kX/t2no0MwQTAPBgNVHRMBAf8EBTADAQH/MA8GA1Ud
+
+    DwEB/wQFAwMHBgAwHQYDVR0OBBYEFPC0gf6YEr+1KLlkQAPLzB9mTigDMAoGCCqG
+
+    SM49BAMCA0gAMEUCIDGuwD1KPyG+hRf88MeyMQcqOFZD0TbVleF+UsAGQ4enAiEA
+
+    l4wOuDwKQa+upc8GftXE2C//4mKANBC6It01gUaTIpo=
+
+    -----END CERTIFICATE-----'
+  description: Example certificate of RFC 7468, section 5.1 (a GnuTLS test CA)
+- value: '-----BEGIN PUBLIC KEY-----
+
+    MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEn1LlwLN/KBYQRVH6HfIMTzfEqJOVztLe
+
+    kLchp2hi78cCaMY81FBlYs8J9l7krc+M4aBeCGYFjba+hiXttJWPL7ydlE+5UG4U
+
+    Nkn3Eos8EiZByi9DVsyfy9eejh+8AXgp
+
+    -----END PUBLIC KEY-----'
+  valid: false
+  description: PEM public key, not a certificate
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc7468#section-5
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/X.509

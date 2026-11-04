@@ -1,10 +1,11 @@
 id: torrent_info_hash
 name: BitTorrent Info Hash (BTIH)
 status: stable
-doc: A BitTorrent info hash (BTIH) is a SHA-1 hash of the "info" section of a BitTorrent metainfo file
-  (.torrent file). It is a 40-character hexadecimal string that uniquely identifies a torrent. The info
-  hash is used in magnet links and tracker communications to identify specific torrents without needing
-  to reference a .torrent file.
+doc: 'Identifier of a torrent: the hash of the bencoded info dictionary of its .torrent file. Version
+  1 torrents (BEP 3) use SHA-1, written as 40 hexadecimal digits, as in magnet:?xt=urn:btih: links; old
+  magnet links may carry the same 20 bytes as 32 Base32 characters, which the regexp does not cover. Version
+  2 torrents (BEP 52) use a SHA-256 info hash, written as a multihash in urn:btmh: links.'
+parent: sha1hash
 categories:
 - internet
 - identifiers
@@ -15,12 +16,21 @@ is_pii: false
 classification: identifier
 regexp: ^[0-9a-fA-F]{40}$
 examples:
-- value: 0123456789abcdef0123456789abcdef01234567
-  description: Standard 40-character hex info hash (lowercase)
-- value: ABCDEF0123456789ABCDEF0123456789ABCDEF01
-  description: Info hash with uppercase letters
-- value: fedcba9876543210fedcba9876543210fedcba98
-  description: Example info hash
+- value: dd8255ecdc7ca55fb0bbf81323d87062db1f6d1c
+  description: Info hash of the Big Buck Bunny torrent published by WebTorrent
+- value: 08ada5a7a6183aae1e09d831df6748d566095a10
+  description: Info hash of the Sintel torrent published by WebTorrent
+- value: DD8255ECDC7CA55FB0BBF81323D87062DB1F6D1C
+  description: The Big Buck Bunny info hash in uppercase
+- value: dd8255ecdc7ca55fb0bbf81323d87062db1f6d1
+  valid: false
+  description: one hex digit short (39 instead of 40)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/BitTorrent
+- type: doc
+  url: https://www.bittorrent.org/beps/bep_0003.html
+- type: doc
+  url: https://www.bittorrent.org/beps/bep_0009.html
+- type: doc
+  url: https://www.bittorrent.org/beps/bep_0052.html

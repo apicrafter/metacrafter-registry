@@ -4,6 +4,7 @@ status: stable
 doc: 'Digest of the RIPEMD-160 hash function (160 bits), used for example in Bitcoin addresses. It is
   written as 40 hexadecimal digits. SHA-1 and RIPEMD-160 digests have the same length, so the value alone
   does not tell them apart: use the field name or context.'
+parent: hash
 categories:
 - cryptography
 langs:
@@ -22,3 +23,5 @@ examples:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/RIPEMD
+- type: other
+  url: https://homes.esat.kuleuven.be/~bosselae/ripemd160.html

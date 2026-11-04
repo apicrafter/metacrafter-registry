@@ -1,0 +1,26 @@
+id: x509_certificate_fingerprint
+name: X.509 certificate fingerprint
+status: draft
+doc: 'Hash of the DER encoding of an X.509 certificate, as shown by browsers, certificate stores and openssl
+  x509 -fingerprint: hexadecimal octets separated by colons, 20 octets for SHA-1 and 32 octets for SHA-256.
+  The same value without separators looks like a plain SHA-1 or SHA-256 hash.'
+categories:
+- cryptography
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){19}(?:(?::[0-9A-Fa-f]{2}){12})?$
+examples:
+- value: FF:2D:1B:4E:E9:CD:62:5A:52:CA:49:AF:A1:97:4E:A3:3F:09:ED:35:DB:8E:55:4D:F0:EC:7D:4C:73:A7:72:F2
+  description: SHA-256 fingerprint of the example certificate of RFC 7468, section 5.1
+- value: AE:C4:60:61:F4:58:FC:B5:6E:20:4A:11:79:DE:BB:CF:23:7F:1C:53
+  description: SHA-1 fingerprint of the same certificate
+- value: AE:C4:60:61:F4:58:FC:B5:6E:20:4A:11:79:DE:BB:CF:23:7F:1C
+  valid: false
+  description: one octet short (19 instead of 20)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Public_key_fingerprint
+- type: doc
+  url: https://docs.openssl.org/master/man1/openssl-x509/

@@ -2,9 +2,10 @@ id: keccak256hash
 name: Keccak-256 hash
 status: stable
 doc: 'Digest of the original Keccak-256 hash function (256 bits) as used by Ethereum. It differs from
-  the standardized SHA3-256, which uses different padding. It is written as 64 hexadecimal digits. SHA-256,
-  Keccak-256 and BLAKE2b-256 digests have the same length, so the value alone does not tell them apart:
-  use the field name or context.'
+  the standardized SHA3-256, which uses different padding. It is written as 64 hexadecimal digits. Other
+  256-bit digests (SHA-256, SHA3-256, BLAKE2b-256, BLAKE3 and Streebog-256) have the same length, so the
+  value alone does not tell them apart: use the field name or context.'
+parent: hash
 categories:
 - cryptography
 langs:
@@ -23,3 +24,5 @@ examples:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SHA-3
+- type: other
+  url: https://keccak.team/keccak.html
