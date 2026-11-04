@@ -1,0 +1,25 @@
+id: ru_film_kind
+name: Kind of film in the Russian film registers
+status: draft
+doc: Kind of film (вид фильма) in the registers of the Russian Ministry of Culture, such as feature (художественный),
+  documentary (документальный), animated (анимационный) or popular science (научно-популярный). The registers
+  write the values inconsistently, with about sixty variants.
+categories:
+- media
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+examples:
+- value: Художественный
+- value: Документальный
+- value: Анимационный
+- value: Научно-популярный
+links:
+- type: doc
+  url: https://opendata.mkrf.ru/opendata/7705851331-register_movies
+translations:
+  ru:
+    name: Вид фильма

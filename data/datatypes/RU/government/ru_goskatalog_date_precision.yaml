@@ -1,0 +1,29 @@
+id: ru_goskatalog_date_precision
+name: Precision of the creation date of a museum object in the Russian State Catalogue
+status: draft
+doc: Precision with which the State Catalogue of the Museum Fund of the Russian Federation (Госкаталог)
+  records the creation date of a museum object. The open data of the Ministry of Culture uses the values
+  DAY, MONTH, YEAR, CENTURY and EPOCH.
+categories:
+- datetime
+- government
+country:
+- RU
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:DAY|MONTH|YEAR|CENTURY|EPOCH)$
+examples:
+- value: YEAR
+- value: CENTURY
+- value: DAY
+- value: year
+  valid: false
+  description: The catalogue writes the values in capitals
+links:
+- type: doc
+  url: https://opendata.mkrf.ru/opendata/7705851331-museum-exhibits
+translations:
+  ru:
+    name: Точность датировки музейного предмета в Госкаталоге

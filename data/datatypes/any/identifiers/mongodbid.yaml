@@ -1,15 +1,26 @@
 id: mongodbid
 name: MongoDB unique Object ID
 status: stable
-doc: MongoDB unique id assigned to each row of each collection in MongoDB as field _id
+doc: MongoDB ObjectId, the unique id that MongoDB assigns to each document of a collection as the field
+  _id. It is a 12-byte value written as 24 hexadecimal characters.
 categories:
 - common
 langs:
 - common
 is_pii: false
 classification: identifier
+regexp: ^[0-9a-fA-F]{24}$
 examples:
 - value: 507f1f77bcf86cd799439011
-  description: Uninue MongoDB ObjectID
+  description: Unique MongoDB ObjectID
 - value: 507f191e810c19729de860ea
-  description: Uninue MongoDB ObjectID
+  description: Unique MongoDB ObjectID
+- value: 507f1f77bcf86cd79943901
+  valid: false
+  description: 23 characters instead of 24
+links:
+- type: doc
+  url: https://www.mongodb.com/docs/manual/reference/method/ObjectId/
+translations:
+  ru:
+    name: Идентификатор объекта MongoDB (ObjectId)
