@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Search the registry
+    url: https://registry.apicrafter.io/search
+    about: Check whether a datatype already exists before you propose it.
+  - name: Detection rules (metacrafter-rules)
+    url: https://github.com/apicrafter/metacrafter-rules/issues
+    about: Report a rule that metacrafter uses to detect a datatype.
