@@ -213,3 +213,12 @@
 - id: RO
   name: Romania
   kind: country
+- id: TZ
+  name: Tanzania
+  kind: country
+- id: UY
+  name: Uruguay
+  kind: country
+- id: ZA
+  name: South Africa
+  kind: country

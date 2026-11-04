@@ -9,3 +9,4 @@ langs:
 is_pii: true
 mappings:
   cdm: means.demographic.age
+  fta: PERSON.AGE

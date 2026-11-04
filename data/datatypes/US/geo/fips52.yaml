@@ -19,6 +19,7 @@ examples:
   description: Palau
 mappings:
   wikidata: P5087
+  fta: STATE_PROVINCE.STATE_FIPS_US
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P5087

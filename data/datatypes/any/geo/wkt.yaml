@@ -1,0 +1,32 @@
+id: wkt
+name: Well-known text (WKT) geometry
+status: draft
+doc: Geometry written in the well-known text (WKT) markup of the OGC Simple Features standard (ISO 19125),
+  such as POINT (30 10) or POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10)). PostGIS also writes extended
+  WKT (EWKT), which starts with the spatial reference id, as in SRID=4326;POINT (30 10).
+categories:
+- geo
+langs:
+- common
+is_pii: false
+regexp: '^(?:SRID=\d+;)?(?:POINT|MULTIPOINT|LINESTRING|MULTILINESTRING|POLYGON|MULTIPOLYGON|GEOMETRYCOLLECTION|CIRCULARSTRING|COMPOUNDCURVE|CURVEPOLYGON|MULTICURVE|MULTISURFACE|POLYHEDRALSURFACE|TRIANGLE|TIN)(?:
+  ?(?:Z|M|ZM))? ?(?:\(.*\)|EMPTY)$'
+examples:
+- value: POINT (30 10)
+- value: LINESTRING (30 10, 10 30, 40 40)
+- value: POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))
+- value: SRID=4326;POINT (30.5234 50.4501)
+  description: extended WKT
+- value: '{"type": "Point", "coordinates": [30, 10]}'
+  valid: false
+  description: GeoJSON, not WKT
+mappings:
+  fta: SPATIAL.WKT
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Геометрия WKT

@@ -11,6 +11,10 @@ is_pii: false
 examples:
 - value: Aid worker/humanitarian worker
   description: Aid worker job title
+mappings:
+  fta:
+  - JOB_TITLE_EN
+  - JOB_TITLE_JA
 links:
 - type: schema.org
   url: https://schema.org/jobTitle

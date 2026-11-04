@@ -9,3 +9,8 @@ categories:
 langs:
 - common
 is_pii: true
+mappings:
+  fta:
+  - STREET_NAME_BARE_<LANGUAGE>
+  - STREET_NAME_BARE_EN
+  - STREET_NAME_EN

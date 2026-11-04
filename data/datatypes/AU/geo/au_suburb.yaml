@@ -1,0 +1,28 @@
+id: au_suburb
+name: Australian suburb or locality
+status: draft
+doc: 'Name of a suburb or locality of Australia: the place named in a postal address before the state
+  and the postcode, such as Parramatta or Fitzroy.'
+categories:
+- geo
+- government
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Parramatta
+- value: Fitzroy
+- value: Bondi Beach
+mappings:
+  fta: STATE_PROVINCE.SUBURB_AU
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Suburbs_and_localities_(Australia)
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Пригород (населённый пункт) Австралии

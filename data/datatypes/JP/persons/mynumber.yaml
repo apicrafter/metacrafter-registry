@@ -15,3 +15,4 @@ regexp: ^[0-9]{12}$
 mappings:
   google_dlp: JAPAN_INDIVIDUAL_NUMBER
   purview: Japanese My Number Personal
+  fta: IDENTITY.INDIVIDUAL_NUMBER_JA

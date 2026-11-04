@@ -9,3 +9,7 @@ langs:
 is_pii: false
 mappings:
   cdm: means.calendar.monthOfYear
+  fta:
+  - MONTH.ABBR_<LOCALE>
+  - MONTH.DIGITS
+  - MONTH.FULL_<LOCALE>

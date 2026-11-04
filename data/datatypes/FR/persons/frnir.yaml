@@ -24,6 +24,7 @@ examples:
 mappings:
   google_dlp: FRANCE_NIR
   purview: France social security number (INSEE)
+  fta: IDENTITY.SSN_FR
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/INSEE_code

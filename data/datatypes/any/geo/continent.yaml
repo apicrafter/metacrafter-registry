@@ -14,6 +14,22 @@ examples:
 mappings:
   cdm: means.location.continent
   wikidata: P30
+  fta:
+  - CONTINENT.TEXT_CS
+  - CONTINENT.TEXT_DA
+  - CONTINENT.TEXT_DE
+  - CONTINENT.TEXT_EN
+  - CONTINENT.TEXT_ES
+  - CONTINENT.TEXT_FI
+  - CONTINENT.TEXT_FR
+  - CONTINENT.TEXT_IT
+  - CONTINENT.TEXT_JA
+  - CONTINENT.TEXT_NL
+  - CONTINENT.TEXT_PL
+  - CONTINENT.TEXT_PT
+  - CONTINENT.TEXT_RO
+  - CONTINENT.TEXT_RU
+  - CONTINENT.TEXT_SV
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Continent

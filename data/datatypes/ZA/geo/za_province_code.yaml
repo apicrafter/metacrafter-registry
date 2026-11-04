@@ -1,0 +1,29 @@
+id: za_province_code
+name: South African province code
+status: draft
+doc: 'Code of a South African province from ISO 3166-2:ZA, without the ZA- prefix: EC, FS, GP, KZN, LP,
+  MP, NC, NW or WC. Older data also uses GT for Gauteng, NL for KwaZulu-Natal and NP for Limpopo.'
+semantic_type: za_province
+country:
+- ZA
+regexp: ^(?:EC|FS|GP|KZN|LP|MP|NC|NW|WC)$
+examples:
+- value: GP
+  description: Gauteng
+- value: WC
+  description: Western Cape
+- value: KZN
+  description: KwaZulu-Natal
+- value: NL
+  valid: false
+  description: former code of KwaZulu-Natal
+mappings:
+  fta: STATE_PROVINCE.PROVINCE_ZA
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Provinces_of_South_Africa
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Код провинции ЮАР

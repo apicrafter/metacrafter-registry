@@ -9,3 +9,5 @@ country:
 - RU
 langs:
 - common
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_RU

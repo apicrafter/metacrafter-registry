@@ -1,0 +1,29 @@
+id: ch_canton_code
+name: Swiss canton abbreviation
+status: draft
+doc: Two-letter abbreviation of a Swiss canton, such as ZH (Zürich), BE (Bern) or TI (Ticino). It is used
+  on vehicle plates and in ISO 3166-2:CH after CH-.
+semantic_type: ch_canton
+country:
+- CH
+regexp: ^(?:AG|AI|AR|BE|BL|BS|FR|GE|GL|GR|JU|LU|NE|NW|OW|SG|SH|SO|SZ|TG|TI|UR|VD|VS|ZG|ZH)$
+examples:
+- value: ZH
+  description: Zürich
+- value: GE
+  description: Geneva
+- value: TI
+  description: Ticino
+- value: CH
+  valid: false
+  description: the country code
+mappings:
+  fta: STATE_PROVINCE.CANTON_CH
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Cantons_of_Switzerland
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Сокращение кантона Швейцарии

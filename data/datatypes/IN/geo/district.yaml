@@ -10,3 +10,5 @@ langs:
 - en
 is_pii: false
 classification: identifier
+mappings:
+  fta: STATE_PROVINCE.DISTRICT_NAME_IN

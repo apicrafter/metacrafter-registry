@@ -26,6 +26,8 @@ examples:
 - value: '61248020201'
   valid: false
   description: Check digit does not match
+mappings:
+  fta: IDENTITY.VAT_IT
 links:
 - type: wikipedia
   url: https://it.wikipedia.org/wiki/Partita_IVA

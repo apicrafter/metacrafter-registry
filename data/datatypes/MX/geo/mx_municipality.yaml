@@ -1,0 +1,28 @@
+id: mx_municipality
+name: Mexican municipality
+status: draft
+doc: Name of a municipality (municipio) of Mexico, the level below the state, such as Guadalajara or Monterrey.
+  Mexico has about 2,470 municipalities; Mexico City is divided into 16 boroughs (alcaldías) instead.
+categories:
+- geo
+- government
+country:
+- MX
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Guadalajara
+- value: Monterrey
+- value: Mérida
+mappings:
+  fta: STATE_PROVINCE.MUNICIPALITY_MX
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Municipalities_of_Mexico
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Муниципалитет Мексики

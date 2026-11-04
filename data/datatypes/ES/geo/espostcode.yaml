@@ -16,6 +16,8 @@ examples:
   description: Palma, Majorca
 - value: '27722'
   description: Veigas, Asturias
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_ES
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Postal_codes_in_Spain

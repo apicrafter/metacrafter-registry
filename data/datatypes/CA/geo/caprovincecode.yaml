@@ -8,6 +8,8 @@ country:
 langs:
 - en
 regexp: (NL|PE|NS|NB|QC|ON|MB|SK|AB|BC|YT|NT|NU)
+mappings:
+  fta: STATE_PROVINCE.PROVINCE_CA
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Provinces_and_territories_of_Canada

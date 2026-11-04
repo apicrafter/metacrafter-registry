@@ -19,6 +19,7 @@ examples:
   description: AHV/AVS number format (EAN-13 check digit)
 mappings:
   purview: Swiss Social Security Number AHV
+  fta: IDENTITY.SSN_CH
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Swiss_social_security_number

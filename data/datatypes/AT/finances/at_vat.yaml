@@ -24,6 +24,8 @@ examples:
 - value: AT13585627
   valid: false
   description: the letter U is missing
+mappings:
+  fta: IDENTITY.VAT_AT
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/VAT_identification_number

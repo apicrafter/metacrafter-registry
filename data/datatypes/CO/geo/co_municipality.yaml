@@ -1,0 +1,28 @@
+id: co_municipality
+name: Colombian municipality
+status: draft
+doc: Name of a municipality (municipio) of Colombia, the level below the department, such as Medellín,
+  Cali or Leticia. Colombia has about 1,100 of them.
+categories:
+- geo
+- government
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Medellín
+- value: Cali
+- value: Leticia
+mappings:
+  fta: STATE_PROVINCE.MUNICIPALITY_CO
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Municipalities_of_Colombia
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Муниципалитет Колумбии

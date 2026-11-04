@@ -165,6 +165,56 @@ def test_d3m_mapping_must_be_a_semantic_type_uri(mini_data):
     assert validate(load_sources(mini_data)).errors == []
 
 
+def test_fta_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+
+    def ids(name: str) -> list[str]:
+        return [r["id"] for r in reg.crosswalk("fta", name)]
+
+    assert ids("EMAIL") == ["email"]
+    assert ids("POSTAL_CODE.ZIP5_US") == ["uszipcode"]
+    assert ids("POSTAL_CODE.POSTAL_CODE_CA") == ["ca_postcode"]
+    assert ids("COUNTRY.ISO-3166-2") == ["countrycode_alpha2"]
+    # IDENTITY.VAT_<COUNTRY> is mapped through its bound names
+    assert ids("IDENTITY.VAT_IT") == ["it_iva"]
+    assert ids("IDENTITY.VAT_DE") == []
+    # locale-bound names resolve through FTA's placeholder ...
+    assert ids("MONTH.FULL_fr-FR") == ["month"]
+    assert ids("GENDER.TEXT_DE") == ["gender"]
+    assert ids("STREET_ADDRESS_NL") == ["street_address"]
+    # ... and an exact name wins over the placeholder
+    assert ids("STREET_ADDRESS_JA") == ["address"]
+    assert ids("CHECKDIGIT.LUHN") == []
+    # every FTA type maps to at most one registry record
+    seen: dict[str, str] = {}
+    for record in reg.datatypes.values():
+        value = record.get("mappings", {}).get("fta")
+        for name in value if isinstance(value, list) else [value] if value else []:
+            assert name not in seen, f"{name} is mapped by {seen[name]} and {record['id']}"
+            seen[name] = record["id"]
+    assert len(seen) >= 250
+
+
+def test_fta_tool_lists_the_mapped_records(repo_sources):
+    mapped = {
+        rec.id for rec in repo_sources.datatypes if (rec.data.get("mappings") or {}).get("fta")
+    }
+    assert effective_supported_types(repo_sources)["fta"] == sorted(mapped)
+
+
+def test_fta_mapping_must_be_an_fta_type(mini_data):
+    path = mini_data / "datatypes/any/pii/email.yaml"
+    path.write_text(path.read_text() + "mappings:\n  fta: email\n")
+    errors = [str(i) for i in validate(load_sources(mini_data)).errors]
+    assert any("mappings" in e and "fta" in e for e in errors), errors
+
+    for good in ("EMAIL", "COUNTRY.ISO-3166-2", "MONTH.FULL_<LOCALE>"):
+        path.write_text(path.read_text().rsplit("  fta:", 1)[0] + f"  fta: {good}\n")
+        assert validate(load_sources(mini_data)).errors == [], good
+
+
 def test_changes_diff():
     old = [
         {"id": "a", "status": "draft", "name": "A"},

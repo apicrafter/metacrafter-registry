@@ -17,6 +17,7 @@ mappings:
   google_dlp: SWEDEN_NATIONAL_ID_NUMBER
   presidio: SE_PERSONNUMMER
   purview: Sweden national ID
+  fta: IDENTITY.PERSONNUMMER_SE
 links:
 - type: other
   url: https://en.wikipedia.org/wiki/Personal_identity_number_(Sweden)
