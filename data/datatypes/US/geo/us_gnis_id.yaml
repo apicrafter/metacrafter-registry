@@ -1,0 +1,44 @@
+id: us_gnis_id
+name: GNIS Feature ID
+status: draft
+doc: Numeric identifier of a named geographic feature in the Geographic Names Information System (GNIS),
+  the official gazetteer of the United States kept by the US Geological Survey for the US Board on Geographic
+  Names. It identifies populated places, administrative areas, streams, summits, structures and other
+  features of the United States and its territories, and since 2024 also of Antarctica. The Census Bureau
+  publishes the same number zero-padded to eight digits, for example STATENS 01779778 for California.
+  Data Commons stores it in the gnisId property.
+categories:
+- geo
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9][0-9]{0,7}$
+examples:
+- value: '1779778'
+  description: California
+- value: '949654'
+  description: Empire State Building
+- value: '1505604'
+  description: Hoquiam River, Washington
+- value: 01779778
+  valid: false
+  description: zero-padded Census Bureau form of the same feature ID
+mappings:
+  wikidata: P590
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Geographic_Names_Information_System
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P590
+- type: doc
+  url: https://www.usgs.gov/tools/geographic-names-information-system-gnis
+- type: other
+  url: https://datacommons.org/browser/gnisId
+translations:
+  fr:
+    name: Identifiant d'entité GNIS
+  ru:
+    name: Идентификатор объекта GNIS

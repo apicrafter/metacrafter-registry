@@ -1,0 +1,39 @@
+id: worldcat_identities_id
+name: WorldCat Identities ID
+status: draft
+doc: Key of a name page in WorldCat Identities, a retired OCLC research service that summarized the works
+  by and about a person, organization or place. OCLC stopped updating it in July 2022 and replaced it
+  with WorldCat Entities. The key is a prefix and a value - lccn- with a Library of Congress name authority
+  number, viaf- with a VIAF ID, or np-, nc- or ns- with other text. Data Commons still stores it in the
+  worldcatIdentitiesId property, and older datasets keep it.
+categories:
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:viaf-\d+|lccn-n[a-z]?[0-9-]+|n[cps]-.+)$
+examples:
+- value: lccn-n79041717
+  description: California
+- value: lccn-n91128701
+  description: Belarus
+- value: lccn-n78-95332
+  description: William Shakespeare
+- value: viaf-136244923
+  description: Aqua, skyscraper in Chicago
+- value: n79041717
+  valid: false
+  description: bare Library of Congress name authority number without the lccn- prefix
+links:
+- type: doc
+  url: https://www.oclc.org/research/areas/data-science/identities.html
+- type: other
+  url: https://www.wikidata.org/wiki/Wikidata:Properties_for_deletion/P7859
+- type: other
+  url: https://datacommons.org/browser/worldcatIdentitiesId
+translations:
+  fr:
+    name: Identifiant WorldCat Identities
+  ru:
+    name: Идентификатор WorldCat Identities

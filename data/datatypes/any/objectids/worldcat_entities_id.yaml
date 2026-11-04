@@ -1,0 +1,38 @@
+id: worldcat_entities_id
+name: WorldCat Entities ID
+status: draft
+doc: Identifier of a person, place, work, event or other entity in WorldCat Entities, the linked data
+  service of OCLC. It is the last segment of the entity URI https://id.oclc.org/worldcat/entity/<id>.
+  OCLC publishes no formal grammar; identifiers seen in practice are 26 letters and digits that start
+  with E39P or E39Q. It succeeds the WorldCat Identities ID.
+categories:
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[a-zA-Z0-9]{2,26}$
+examples:
+- value: E39PBJfrJjjP9djpqRMMWPCPcP
+  description: Eritrea
+- value: E39PBJt8p3GDkhpJkC9y6FY3wC
+  description: California
+- value: E39Qhp4vBbhpRH9XvjbDFXtxhb
+  description: World War II
+- value: E39PCG49K6QCxWwHvtYhKMKkMq
+  description: Gone with the Wind (1939 film)
+- value: https://id.oclc.org/worldcat/entity/E39PBJfrJjjP9djpqRMMWPCPcP
+  valid: false
+  description: full entity URI, not the bare identifier
+mappings:
+  wikidata: P10832
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P10832
+- type: doc
+  url: https://entities.oclc.org/worldcat/entity
+translations:
+  fr:
+    name: Identifiant WorldCat Entities
+  ru:
+    name: Идентификатор WorldCat Entities
