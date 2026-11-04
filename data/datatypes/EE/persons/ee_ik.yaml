@@ -1,0 +1,35 @@
+id: ee_ik
+name: Estonian personal identification code (isikukood)
+status: draft
+doc: Isikukood, the 11-digit personal code in Estonia. The first digit gives the sex and the century of
+  birth, the next six the date of birth (YYMMDD), then come a 3-digit serial number and a check digit.
+categories:
+- pii
+- persons
+country:
+- EE
+langs:
+- et
+is_pii: true
+classification: identifier
+regexp: ^[1-8]\d{10}$
+examples:
+- value: '40612037308'
+  description: Synthetic number with a valid check digit
+- value: '68711217148'
+  description: Synthetic number with a valid check digit
+- value: '406120373087'
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://et.wikipedia.org/wiki/Isikukood
+- type: doc
+  url: https://www.riigiteataja.ee/akt/106032012004
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ee.ik.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_ee_ik.html
+translations:
+  et:
+    name: Isikukood

@@ -1,0 +1,37 @@
+id: fi_hetu
+name: Finnish personal identity code (HETU)
+status: draft
+doc: Henkilötunnus, the personal identity code of people registered in Finland. It is the date of birth
+  (DDMMYY), a century sign (+ for the 1800s, - or one of Y, X, W, V, U for the 1900s, A to F for the 2000s),
+  a 3-digit individual number and a check character.
+categories:
+- pii
+- persons
+country:
+- FI
+langs:
+- fi
+- sv
+is_pii: true
+classification: identifier
+regexp: ^(?:0[1-9]|[12]\d|3[01])(?:0[1-9]|1[0-2])\d{2}[-+A-FU-Y]\d{3}[0-9A-FHJ-NPR-Y]$
+examples:
+- value: 241060-268N
+  description: Synthetic number with a valid check digit
+- value: 271117A736D
+  description: Synthetic number with a valid check digit
+- value: 241060-268N7
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://fi.wikipedia.org/wiki/Henkil%C3%B6tunnus
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fi.hetu.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_fi_hetu.html
+translations:
+  fi:
+    name: Henkilötunnus (HETU)
+  sv:
+    name: Personbeteckning

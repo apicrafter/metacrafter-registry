@@ -1,0 +1,38 @@
+id: fr_nif
+name: French tax identification number (numéro fiscal)
+status: draft
+doc: Numéro fiscal de référence, also called NIF or SPI number, the 13-digit number that the French tax
+  administration gives to each person who must report taxes. It starts with 0, 1, 2 or 3 and the last
+  three digits are a check key.
+categories:
+- finances
+- pii
+country:
+- FR
+langs:
+- fr
+is_pii: true
+classification: identifier
+regexp: ^[0-3]\d ?\d{2} ?\d{3} ?\d{3} ?\d{3}$
+examples:
+- value: '3251768311393'
+  description: Synthetic number with a valid check digit
+- value: '1351473348477'
+  description: Synthetic number with a valid check digit
+- value: 32 51 768 311 393
+  description: The first example in its printed form
+- value: '32517683113937'
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Num%C3%A9ro_d%27Immatriculation_Fiscale#France
+- type: doc
+  url: https://ec.europa.eu/taxation_customs/tin/tinByCountry.html
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fr.nif.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_fr_nif.html
+translations:
+  fr:
+    name: Numéro fiscal de référence

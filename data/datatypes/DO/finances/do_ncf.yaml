@@ -1,0 +1,31 @@
+id: do_ncf
+name: Dominican Republic fiscal receipt number (NCF)
+status: draft
+doc: Número de Comprobante Fiscal, the number of invoices and other tax documents in the Dominican Republic.
+  Current numbers have 11 characters and start with B followed by a 2-digit document type; electronic
+  receipts (e-CF) have 13 characters and start with E; the older 19-character form starts with A or P.
+categories:
+- finances
+country:
+- DO
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:B\d{10}|E\d{12}|[AP]\d{18})$
+examples:
+- value: B0136221995
+  description: Synthetic number in the documented format
+- value: B1443672135
+  description: Synthetic number in the documented format
+- value: B01362219957
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.do.ncf.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_do_ncf.html
+translations:
+  es:
+    name: Número de Comprobante Fiscal (NCF)

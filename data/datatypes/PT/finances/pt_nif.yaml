@@ -1,0 +1,35 @@
+id: pt_nif
+name: Portuguese tax identification number (NIF)
+status: draft
+doc: Número de identificação fiscal, the 9-digit tax number of individuals and legal persons in Portugal
+  (for legal persons also called NIPC). The first digit is not 0 and the last is a check digit. With the
+  PT prefix it is the VAT number.
+parent: vatin
+categories:
+- finances
+- pii
+country:
+- PT
+langs:
+- pt
+is_pii: true
+classification: identifier
+regexp: ^(?:PT[ -]?)?[1-9]\d{2} ?\d{3} ?\d{3}$
+examples:
+- value: '301211760'
+  description: Synthetic number with a valid check digit
+- value: '290048842'
+  description: Synthetic number with a valid check digit
+- value: '3012117607'
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://pt.wikipedia.org/wiki/N%C3%BAmero_de_identifica%C3%A7%C3%A3o_fiscal
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.pt.nif.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_pt_nif.html
+translations:
+  pt:
+    name: Número de identificação fiscal (NIF)

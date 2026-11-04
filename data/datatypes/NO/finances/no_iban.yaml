@@ -1,0 +1,31 @@
+id: no_iban
+name: Norwegian IBAN
+status: draft
+doc: 'International Bank Account Number of a bank account in Norway. It has 15 characters: NO, two IBAN
+  check digits and the 11-digit account number (kontonummer).'
+parent: iban
+categories:
+- finances
+country:
+- 'NO'
+langs:
+- 'no'
+is_pii: false
+classification: identifier
+regexp: ^NO\d{2} ?\d{4} ?\d{4} ?\d{3}$
+checksum: iban_mod97
+examples:
+- value: NO1642669998761
+  description: Synthetic number with a valid check digit
+- value: NO4807358188219
+  description: Synthetic number with a valid check digit
+- value: NO16 4266 9998 761
+  description: The first example in its printed form
+- value: NO1642669998760
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.no.iban.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_no_iban.html

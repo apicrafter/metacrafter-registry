@@ -1,0 +1,28 @@
+id: ie_vat
+name: Irish VAT number
+status: draft
+doc: 'VAT registration number in Ireland. It has eight or nine characters: seven digits and one or two
+  letters. An older form has a letter or symbol in the second position.'
+parent: vatin
+categories:
+- finances
+country:
+- IE
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^(?:IE[ -]?)?(?:\d{7}[A-W][A-IW]?|\d[A-Z+*]\d{5}[A-W])$
+examples:
+- value: IE 9679477V
+  description: Real-world value published online
+- value: IE6599001W
+  description: Real-world value published online
+- value: 9679477V7
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ie.vat.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_ie_vat.html

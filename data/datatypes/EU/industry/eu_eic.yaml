@@ -1,0 +1,33 @@
+id: eu_eic
+name: Energy Identification Code (EIC)
+status: draft
+doc: Energy Identification Code, the 16-character code of the European electricity and gas sector for
+  market participants, areas, metering points and other objects. It has a 2-character code of the issuing
+  office, an object type letter, twelve characters for the object and a check character. Digits, capital
+  letters and hyphens are used.
+categories:
+- industry
+country:
+- EU
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{2}[A-Z][0-9A-Z-]{12}[0-9A-Z]$
+examples:
+- value: 59Z000000001534U
+  description: Real-world value published online
+- value: 19XENIONENERGIAM
+  description: Real-world value published online
+- value: 59Z000000001534U7
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Energy_Identification_Code
+- type: doc
+  url: https://www.entsoe.eu/data/energy-identification-codes-eic/
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.eu.eic.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_eu_eic.html

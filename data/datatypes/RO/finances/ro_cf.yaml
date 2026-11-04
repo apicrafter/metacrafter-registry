@@ -1,0 +1,29 @@
+id: ro_cf
+name: Romanian VAT code (CF)
+status: draft
+doc: 'Cod de înregistrare în scopuri de TVA, the VAT registration code in Romania: the company identifier
+  (CUI) of 2 to 10 digits, usually written with the RO prefix. Some sources also accept a 13-digit personal
+  numerical code (CNP).'
+parent: vatin
+categories:
+- finances
+country:
+- RO
+langs:
+- ro
+is_pii: true
+classification: identifier
+regexp: ^(?:RO[ -]?)?(?:\d{2,10}|\d{13})$
+examples:
+- value: RO40751635
+  description: Synthetic number with a valid check digit
+- value: RO346362927
+  description: Synthetic number with a valid check digit
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ro.cf.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_ro_cf.html
+translations:
+  ro:
+    name: Cod de înregistrare în scopuri de TVA

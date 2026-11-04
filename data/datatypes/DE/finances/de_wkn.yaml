@@ -1,0 +1,32 @@
+id: de_wkn
+name: German securities identification number (WKN)
+status: draft
+doc: Wertpapierkennnummer, the 6-character code of digits and capital letters (without I and O) that identifies
+  securities in Germany. It has no check digit and no internal structure, and the ISIN is replacing it.
+categories:
+- finances
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-HJ-NP-Z]{6}$
+examples:
+- value: A0DPBF
+  description: Real-world value published online
+- value: LYX0AB
+  description: Real-world value published online
+- value: A0DPBF7
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Wertpapierkennnummer
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.de.wkn.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_de_wkn.html
+translations:
+  de:
+    name: Wertpapierkennnummer (WKN)

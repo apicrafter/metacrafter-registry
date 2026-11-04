@@ -1,0 +1,30 @@
+id: mu_nid
+name: Mauritian national identity number
+status: draft
+doc: 'National identity number of people in Mauritius, given at birth and printed on the National Identity
+  Card. It has 14 characters: the first letter of the surname at birth, the date of birth (DDMMYY), a
+  6-digit unique number and a check character.'
+categories:
+- pii
+- persons
+country:
+- MU
+langs:
+- en
+- fr
+is_pii: true
+classification: identifier
+regexp: ^[A-Z]\d{12}[0-9A-Z]$
+examples:
+- value: R281297722816D
+  description: Synthetic number with a valid check digit
+- value: T0911658291658
+  description: Synthetic number with a valid check digit
+- value: R281297722816D7
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.mu.nid.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_mu_nid.html

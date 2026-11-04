@@ -1,0 +1,36 @@
+id: es_ccc
+name: Spanish bank account code (CCC)
+status: draft
+doc: 'Código Cuenta Cliente, the 20-digit Spanish bank account number: a 4-digit bank code, a 4-digit
+  office code, two check digits and a 10-digit account number. Since 2014 it is used inside the Spanish
+  IBAN.'
+parent: bankaccount
+categories:
+- finances
+country:
+- ES
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{4}[ -]?\d{4}[ -]?\d{2}[ -]?\d{10}$
+examples:
+- value: '78485312256049891785'
+  description: Synthetic number with a valid check digit
+- value: '22296089868003386336'
+  description: Synthetic number with a valid check digit
+- value: '784853122560498917857'
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/C%C3%B3digo_cuenta_cliente
+- type: doc
+  url: https://www.bde.es/bde/es/secciones/servicios/Particulares_y_e/Registros_de_Ent/
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.es.ccc.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_es_ccc.html
+translations:
+  es:
+    name: Código Cuenta Cliente (CCC)
