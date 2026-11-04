@@ -112,6 +112,66 @@ def ru_ogrn(value: str) -> bool:
     return False
 
 
+def fr_nir(value: str) -> bool:
+    """French social security number (NIR): 13 characters and a 2-digit key.
+
+    The key is 97 minus the 13-character number modulo 97; the Corsican
+    department codes 2A and 2B count as 19 and 18.
+    """
+    compact = _compact(value).upper()
+    if not re.fullmatch(r"\d{5}(?:\d{2}|2[AB])\d{8}", compact):
+        return False
+    department = {"2A": "19", "2B": "18"}.get(compact[5:7], compact[5:7])
+    body = int(compact[:5] + department + compact[7:13])
+    return 97 - body % 97 == int(compact[13:])
+
+
+def at_uid(value: str) -> bool:
+    """Austrian VAT number (UID): U and 8 digits, optionally prefixed with AT.
+
+    The check digit is (6 - Luhn sum of the 7 digits before it) mod 10.
+    """
+    compact = _compact(value).upper()
+    if compact.startswith("AT"):
+        compact = compact[2:]
+    if not re.fullmatch(r"U\d{8}", compact):
+        return False
+    digits = [int(c) for c in compact[1:]]
+    total = 0
+    for i, d in enumerate(reversed(digits[:-1])):
+        total += d if i % 2 == 0 else sum(divmod(d * 2, 10))
+    return (6 - total) % 10 == digits[-1]
+
+
+def bg_vat(value: str) -> bool:
+    """Bulgarian VAT number: 9 digits (legal entities) or 10 digits, optionally prefixed with BG.
+
+    A 10-digit number passes when its last digit matches the EGN, the PNF or
+    the generic check digit; the birth date inside an EGN is not checked.
+    """
+    compact = _compact(value).upper()
+    if compact.startswith("BG"):
+        compact = compact[2:]
+    digits = [int(c) for c in compact] if compact.isdigit() else None
+    if not digits:
+        return False
+
+    def weighted(weights: tuple[int, ...]) -> int:
+        return sum(w * d for w, d in zip(weights, digits, strict=False))
+
+    if len(digits) == 9:
+        check = weighted((1, 2, 3, 4, 5, 6, 7, 8)) % 11
+        if check == 10:
+            check = weighted((3, 4, 5, 6, 7, 8, 9, 10)) % 11
+        return check % 10 == digits[8]
+    if len(digits) == 10:
+        egn = weighted((2, 4, 8, 5, 10, 9, 7, 3, 6)) % 11 % 10
+        pnf = weighted((21, 19, 17, 13, 11, 9, 7, 3, 1)) % 10
+        other = (11 - weighted((4, 3, 2, 7, 6, 5, 4, 3, 2))) % 11
+        return digits[9] in (egn, pnf, other)
+    return False
+
+
 ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "luhn": luhn,
     "iban_mod97": iban_mod97,
@@ -121,6 +181,9 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "ru_inn": ru_inn,
     "ru_snils": ru_snils,
     "ru_ogrn": ru_ogrn,
+    "fr_nir": fr_nir,
+    "at_uid": at_uid,
+    "bg_vat": bg_vat,
 }
 
 

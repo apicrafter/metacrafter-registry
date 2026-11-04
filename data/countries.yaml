@@ -103,6 +103,9 @@
 - id: CH
   name: Switzerland
   kind: country
+- id: BG
+  name: Bulgaria
+  kind: country
 
 # Added for the identifiers supported by Dataprep (issue #1)
 - id: AD
@@ -110,9 +113,6 @@
   kind: country
 - id: AL
   name: Albania
-  kind: country
-- id: BG
-  name: Bulgaria
   kind: country
 - id: BY
   name: Belarus

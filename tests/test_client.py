@@ -6,6 +6,9 @@ import pytest
 
 from metacrafter_registry import Registry
 from metacrafter_registry.checksums import (
+    at_uid,
+    bg_vat,
+    fr_nir,
     gtin,
     iban_mod97,
     isbn10,
@@ -34,6 +37,12 @@ def test_checksum_reference_values():
     assert ru_inn("7707083893") and ru_inn("500100732259") and not ru_inn("7707083894")
     assert ru_snils("112-233-445 95") and not ru_snils("112-233-445 96")
     assert ru_ogrn("1027700132195") and not ru_ogrn("1027700132196")
+    # Reference values from the python-stdnum documentation.
+    assert fr_nir("2 95 10 99 126 111 93") and not fr_nir("295109912611199")
+    assert fr_nir("253072B07300470") and fr_nir("253072A07300443")
+    assert not fr_nir("253072C07300443")
+    assert at_uid("ATU13585627") and at_uid("U13585627") and not at_uid("ATU13585626")
+    assert bg_vat("BG175074752") and bg_vat("175074752") and not bg_vat("BG175074751")
 
 
 def test_lookup_and_aliases(reg):

@@ -1,0 +1,39 @@
+id: fr_region_code
+name: French region code (INSEE)
+status: draft
+doc: Two-digit code of a French region in the INSEE Official Geographic Code (COG). The 18 current codes
+  are 01 to 04 and 06 for the overseas regions and 11, 24, 27, 28, 32, 44, 52, 53, 75, 76, 84, 93 and
+  94 for the regions of metropolitan France.
+semantic_type: fr_region
+country:
+- FR
+langs:
+- fr
+regexp: ^(?:0[1-46]|11|2[478]|32|44|5[23]|7[56]|84|9[34])$
+examples:
+- value: '11'
+  description: Île-de-France
+- value: '53'
+  description: Bretagne
+- value: '84'
+  description: Auvergne-Rhône-Alpes
+- value: '06'
+  description: Mayotte
+- value: '05'
+  valid: false
+  description: not a region code
+- value: '21'
+  valid: false
+  description: not a current region code
+mappings:
+  wikidata: P2585
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2585
+- type: doc
+  url: https://www.insee.fr/fr/information/2560452
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Regions_of_France
+translations:
+  fr:
+    name: Code région

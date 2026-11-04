@@ -1,0 +1,34 @@
+id: fr_region
+name: French region (région)
+status: draft
+doc: Name of an administrative region of France, the level above the department, for example Île-de-France
+  or Bretagne. France has 18 regions, five of them overseas. The INSEE code of a region is the pattern
+  fr_region_code.
+categories:
+- geo
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+examples:
+- value: Île-de-France
+  description: region 11
+- value: Bretagne
+  description: region 53
+- value: Guadeloupe
+  description: overseas region 01
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Regions_of_France
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q36784
+- type: doc
+  url: https://www.insee.fr/fr/information/2560452
+translations:
+  fr:
+    name: Région
+  ru:
+    name: Регион Франции

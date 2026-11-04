@@ -69,11 +69,11 @@
 - id: sv
   name: Swedish
   kind: language
-- id: be
-  name: Belarusian
-  kind: language
 - id: bg
   name: Bulgarian
+  kind: language
+- id: be
+  name: Belarusian
   kind: language
 - id: ca
   name: Catalan
