@@ -1,0 +1,32 @@
+id: fi_alv
+name: Finnish VAT number (ALV)
+status: draft
+doc: 'Arvonlisäveronumero, the Finnish VAT number: the FI prefix and the 8-digit business ID (Y-tunnus)
+  without its hyphen. The last digit is a weighted check digit.'
+parent: vatin
+categories:
+- finances
+country:
+- FI
+langs:
+- fi
+- sv
+is_pii: false
+classification: identifier
+regexp: ^(?:FI[ -]?)?\d{7}-?\d$
+examples:
+- value: FI 02459042
+  description: Real-world value published online
+- value: FI 18949388
+  description: Real-world value published online
+- value: 024590427
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fi.alv.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_fi_alv.html
+translations:
+  fi:
+    name: Arvonlisäveronumero (ALV-numero)

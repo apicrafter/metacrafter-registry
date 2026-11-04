@@ -1,0 +1,31 @@
+id: cu_ni
+name: Cuban identity card number
+status: draft
+doc: Número de identidad, the 11-digit national identifier printed on the identity card of Cuban residents.
+  It begins with the date of birth (YYMMDD) and also encodes the century of birth and the sex.
+categories:
+- pii
+- persons
+country:
+- CU
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^\d{11}$
+examples:
+- value: '37110693016'
+  description: Synthetic number in the documented format
+- value: 06110680099
+  description: Synthetic number in the documented format
+- value: '371106930167'
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cu.ni.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_cu_ni.html
+translations:
+  es:
+    name: Número de identidad

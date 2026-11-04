@@ -1,0 +1,35 @@
+id: dk_cvr
+name: Danish business registration number (CVR)
+status: draft
+doc: CVR-nummer, the 8-digit number of a business in the Danish Central Business Register. With the DK
+  prefix it is also the VAT number (momsregistreringsnummer). It does not start with 0 and has a weighted
+  modulo 11 check.
+parent: vatin
+categories:
+- companies
+- finances
+country:
+- DK
+langs:
+- da
+is_pii: false
+classification: identifier
+regexp: '^(?:DK[ -]?)?[1-9]\d(?: ?\d{2}){3}$'
+examples:
+- value: DK 90 30 16 59
+  description: Real-world value published online
+- value: DK10290813
+  description: Real-world value published online
+- value: '903016597'
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://da.wikipedia.org/wiki/CVR-nummer
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.dk.cvr.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_dk_cvr.html
+translations:
+  da:
+    name: CVR-nummer

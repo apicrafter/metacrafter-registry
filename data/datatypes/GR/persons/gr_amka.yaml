@@ -1,0 +1,32 @@
+id: gr_amka
+name: Greek social security number (AMKA)
+status: draft
+doc: Αριθμός Μητρώου Κοινωνικής Ασφάλισης, the 11-digit social security registration number in Greece.
+  It begins with the date of birth (DDMMYY), includes the sex and ends with a Luhn check digit.
+categories:
+- pii
+- persons
+country:
+- GR
+langs:
+- el
+is_pii: true
+classification: identifier
+regexp: ^\d{11}$
+checksum: luhn
+examples:
+- value: '13122664595'
+  description: Synthetic number with a valid check digit
+- value: 06021878191
+  description: Synthetic number with a valid check digit
+- value: '13122664590'
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gr.amka.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_gr_amka.html
+translations:
+  el:
+    name: Αριθμός Μητρώου Κοινωνικής Ασφάλισης (ΑΜΚΑ)

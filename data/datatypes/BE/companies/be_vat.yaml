@@ -1,0 +1,39 @@
+id: be_vat
+name: Belgian enterprise number (VAT number)
+status: draft
+doc: Ondernemingsnummer or numéro d'entreprise, the 10-digit number of a company in the Belgian Crossroads
+  Bank for Enterprises. With the BE prefix it is also the VAT number (BTW, TVA). It starts with 0 or 1
+  and ends with two check digits; older numbers had nine digits.
+parent: vatin
+categories:
+- companies
+- finances
+country:
+- BE
+langs:
+- nl
+- fr
+- de
+is_pii: false
+classification: identifier
+regexp: ^(?:BE[ -]?)?[01]?\d{3}[. ]?\d{3}[. ]?\d{3}$
+examples:
+- value: BE 0220.764.971
+  description: Real-world value published online
+- value: BE 456.973.433
+  description: Real-world value published online
+- value: 02207649717
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Ondernemingsnummer
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.be.vat.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_be_vat.html
+translations:
+  nl:
+    name: Ondernemingsnummer
+  fr:
+    name: Numéro d'entreprise

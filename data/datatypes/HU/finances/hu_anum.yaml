@@ -1,0 +1,31 @@
+id: hu_anum
+name: Hungarian VAT number (ANUM)
+status: draft
+doc: 'Közösségi adószám, the Hungarian EU VAT number: the HU prefix and an 8-digit taxpayer number with
+  a weighted check digit.'
+parent: vatin
+categories:
+- finances
+country:
+- HU
+langs:
+- hu
+is_pii: false
+classification: identifier
+regexp: ^(?:HU[ -]?)?\d{8}$
+examples:
+- value: HU 10672101
+  description: Real-world value published online
+- value: HU 23157653
+  description: Real-world value published online
+- value: '106721017'
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.hu.anum.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_hu_anum.html
+translations:
+  hu:
+    name: Közösségi adószám

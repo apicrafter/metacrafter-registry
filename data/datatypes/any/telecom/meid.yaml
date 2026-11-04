@@ -1,0 +1,25 @@
+id: meid
+name: Mobile Equipment Identifier (MEID)
+status: draft
+doc: 56-bit identifier of CDMA mobile devices. It is written as 14 hexadecimal characters or as an 18-digit
+  decimal number, either of them optionally followed by a check character.
+categories:
+- telecom
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^(?:[0-9A-F]{14}[0-9A-F]?|\d{18}\d?)$
+examples:
+- value: A1F1A9017017E0
+  description: Synthetic number in the documented format
+- value: A341E59CFB517B
+  description: Synthetic number in the documented format
+- value: A1F1A9017017E
+  valid: false
+  description: One character too few
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Mobile_equipment_identifier
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.meid.html

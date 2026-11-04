@@ -1,0 +1,32 @@
+id: cr_cpj
+name: Costa Rican legal person ID number (cédula jurídica)
+status: draft
+doc: 'Cédula de Persona Jurídica, the tax identifier of legal entities in Costa Rica. It has ten digits:
+  a class digit (2 to 5), a 3-digit type code and a 6-digit sequence number given by the National Registry.'
+categories:
+- companies
+country:
+- CR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^[2-5]-?\d{3}-?\d{6}$
+examples:
+- value: '3101269160'
+  description: Real-world value published online
+- value: 3-102-388142
+  description: Real-world value published online
+- value: 3-101-269160
+  description: The first example in its printed form
+- value: '31012691607'
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cr.cpj.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_cr_cpj.html
+translations:
+  es:
+    name: Cédula de Persona Jurídica

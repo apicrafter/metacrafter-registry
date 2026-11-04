@@ -1,0 +1,35 @@
+id: nl_brin
+name: Dutch school identification number (BRIN)
+status: draft
+doc: 'BRIN number (Basisregistratie Instellingen), the code of schools and other education institutions
+  in the Netherlands: two digits and two letters, sometimes followed by two digits for a specific location
+  (vestigingsnummer).'
+categories:
+- education
+country:
+- NL
+langs:
+- nl
+is_pii: false
+classification: identifier
+regexp: ^\d{2}[A-Z]{2}(?:\d{2})?$
+examples:
+- value: 74GY72
+  description: Synthetic number in the documented format
+- value: 09FX
+  description: Synthetic number in the documented format
+- value: 74GY727
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Basisregistratie_Instellingen
+- type: doc
+  url: https://www.duo.nl/open_onderwijsdata/databestanden/
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.nl.brin.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_nl_brin.html
+translations:
+  nl:
+    name: BRIN-nummer
