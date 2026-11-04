@@ -1,7 +1,9 @@
 id: seorgnumber
 name: Swedish organization number by field name
 status: stable
-doc: Swedish organization number by field name identifier
+doc: 'Swedish organisation number (organisationsnummer) of a legal entity: ten digits, usually written
+  as NNNNNN-NNNN. The last digit is a Luhn check digit, and the third digit is 2 or greater, which tells
+  it apart from a personal identity number.'
 categories:
 - finances
 country:
@@ -10,6 +12,17 @@ langs:
 - sv
 is_pii: false
 classification: identifier
-regexp: ^[0-9]{9}$
+regexp: ^\d{6}-?\d{4}$
+examples:
+- value: 556667-4759
+  description: Paradox Interactive
+- value: 202100-5489
+  description: Swedish Companies Registration Office
+- value: 802002-8711
+  description: Swedish Red Cross
 mappings:
   presidio: SE_ORGANISATIONSNUMMER
+  wikidata: P6460
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6460

@@ -1,0 +1,26 @@
+id: gns_ufi
+name: GNS Unique Feature Identifier (UFI)
+status: draft
+doc: Number of a place in the GEOnet Names Server of the US National Geospatial-Intelligence Agency, which
+  covers geographic names outside the United States. Some values are negative numbers.
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^-?[1-9]\d{0,7}$
+examples:
+- value: '-558821'
+  description: Zadní Chodov
+- value: '-1352554'
+  description: Kiribati
+- value: '-1456928'
+  description: Paris
+mappings:
+  wikidata: P2326
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/GEOnet_Names_Server
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2326

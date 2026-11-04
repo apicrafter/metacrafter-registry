@@ -1,0 +1,33 @@
+id: gnd_id
+name: GND ID (Gemeinsame Normdatei)
+status: draft
+doc: Identifier of a person, organization, place, subject or work in the Integrated Authority File (GND)
+  of the German National Library and German-speaking library networks. It ends in a check character.
+categories:
+- publishing
+- objectids
+country:
+- DE
+- AT
+- CH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:1[01234]?\d{7}[0-9X]|[47]\d{6}-\d|[1-9]\d{0,7}-[0-9X]|3\d{7}[0-9X])$
+examples:
+- value: 4132700-7
+  description: member of parliament
+- value: 7505698-7
+  description: Tomb of the Scipios
+- value: 1231643-X
+  description: Slovenian Red Cross
+mappings:
+  wikidata: P227
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Integrated_Authority_File
+- type: doc
+  url: https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P227

@@ -1,0 +1,26 @@
+id: at_firmenbuchnummer
+name: Austrian company register number (Firmenbuchnummer)
+status: draft
+doc: 'Number of a company in the Austrian commercial register: digits followed by a lowercase check letter,
+  such as 123456a. It is often written with the prefix FN.'
+categories:
+- companies
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9][0-9]{4,5}[a-z]$
+examples:
+- value: 93363z
+  description: OMV
+- value: 76023z
+  description: Verbund
+mappings:
+  wikidata: P5285
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Firmenbuch
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5285

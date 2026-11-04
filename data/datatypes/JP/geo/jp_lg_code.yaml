@@ -1,0 +1,27 @@
+id: jp_lg_code
+name: Japanese local government code (dantai code)
+status: draft
+doc: Six-digit code of a Japanese prefecture or municipality defined by the Ministry of Internal Affairs
+  and Communications (JIS X 0402 plus a check digit). The first two digits are the prefecture.
+categories:
+- geo
+- government
+country:
+- JP
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{6}$
+examples:
+- value: '261009'
+  description: Kyoto
+- value: '011002'
+  description: Sapporo
+mappings:
+  wikidata: P429
+links:
+- type: wikipedia
+  url: https://ja.wikipedia.org/wiki/%E5%85%A8%E5%9B%BD%E5%9C%B0%E6%96%B9%E5%85%AC%E5%85%B1%E5%9B%A3%E4%BD%93%E3%82%B3%E3%83%BC%E3%83%89
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P429

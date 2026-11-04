@@ -1,0 +1,26 @@
+id: tiktok_username
+name: TikTok username
+status: draft
+doc: Username of a TikTok account, written without the @.
+parent: username
+categories:
+- pii
+- persons
+- useraccounts
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^[A-Za-z0-9_](?:[A-Za-z0-9_.]{0,22}[A-Za-z0-9_])?$
+examples:
+- value: icc
+  description: International Cricket Council
+- value: brawlstars
+  description: Brawl Stars
+- value: sonymusicindia
+  description: Sony Music India
+mappings:
+  wikidata: P7085
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P7085

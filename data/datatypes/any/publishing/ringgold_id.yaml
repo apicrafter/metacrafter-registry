@@ -1,0 +1,27 @@
+id: ringgold_id
+name: Ringgold ID
+status: draft
+doc: Number of an institution in the Ringgold Identify database, used in the publishing supply chain and
+  in ORCID affiliations.
+categories:
+- publishing
+- companies
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4,6}$
+examples:
+- value: '5072'
+  description: Wellcome Trust
+- value: '50785'
+  description: Grand Accélérateur National d'Ions Lourds
+- value: '428759'
+  description: Mexican Red Cross
+mappings:
+  wikidata: P3500
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Ringgold_identifier
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3500

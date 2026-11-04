@@ -1,0 +1,30 @@
+id: ph_psgc
+name: Philippine Standard Geographic Code (PSGC)
+status: draft
+doc: 'Code of a region, province, city, municipality or barangay of the Philippines assigned by the Philippine
+  Statistics Authority: nine digits in the older form and ten digits in the current one.'
+categories:
+- geo
+country:
+- PH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{9}|\d{10})$
+examples:
+- value: '175307000'
+  description: Busuanga
+- value: '129804000'
+  description: Cotabato City
+- value: '071246023'
+  description: Humayhumay
+mappings:
+  wikidata: P988
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Philippine_Standard_Geographic_Code
+- type: doc
+  url: https://psa.gov.ph/classification/psgc
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P988

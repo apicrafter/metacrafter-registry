@@ -1,0 +1,32 @@
+id: ua_katottg
+name: Ukrainian KATOTTH code
+status: draft
+doc: 'Code of an administrative or territorial unit in the Codifier of administrative-territorial units
+  and territories of territorial communities of Ukraine (KATOTTH), in use since 2020: UA and 17 digits.'
+categories:
+- geo
+country:
+- UA
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^UA\d{17}$
+examples:
+- value: UA74000000000025378
+  description: Chernihiv Oblast
+- value: UA32120070080094229
+  description: Novi Bezradichi
+- value: UA71020270000021083
+  description: Stebliv Settlement Hromada
+mappings:
+  wikidata: P9435
+links:
+- type: wikipedia
+  url: https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B4%D0%B8%D1%84%D1%96%D0%BA%D0%B0%D1%82%D0%BE%D1%80_%D0%B0%D0%B4%D0%BC%D1%96%D0%BD%D1%96%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%BE-%D1%82%D0%B5%D1%80%D0%B8%D1%82%D0%BE%D1%80%D1%96%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D1%85_%D0%BE%D0%B4%D0%B8%D0%BD%D0%B8%D1%86%D1%8C_%D1%82%D0%B0_%D1%82%D0%B5%D1%80%D0%B8%D1%82%D0%BE%D1%80%D1%96%D0%B9_%D1%82%D0%B5%D1%80%D0%B8%D1%82%D0%BE%D1%80%D1%96%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D1%85_%D0%B3%D1%80%D0%BE%D0%BC%D0%B0%D0%B4
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9435
+translations:
+  ru:
+    name: Код КАТОТТГ
+    doc: Код административно-территориальной единицы Украины по кодификатору КАТОТТГ.

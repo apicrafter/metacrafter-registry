@@ -1,0 +1,32 @@
+id: ua_edrpou
+name: Ukrainian EDRPOU code
+status: draft
+doc: Eight-digit identification code of a legal entity in the Unified State Register of Enterprises and
+  Organizations of Ukraine (EDRPOU).
+categories:
+- companies
+- finances
+country:
+- UA
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{8}$
+examples:
+- value: '01566117'
+  description: State University of Trade and Economics
+- value: '20077720'
+  description: Naftogaz of Ukraine
+mappings:
+  wikidata: P3125
+links:
+- type: wikipedia
+  url: https://uk.wikipedia.org/wiki/%D0%84%D0%94%D0%A0%D0%9F%D0%9E%D0%A3
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3125
+translations:
+  ru:
+    name: Код ЕГРПОУ
+    doc: Восьмизначный идентификационный код юридического лица в Едином государственном реестре предприятий
+      и организаций Украины.

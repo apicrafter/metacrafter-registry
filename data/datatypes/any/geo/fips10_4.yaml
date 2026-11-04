@@ -1,0 +1,24 @@
+id: fips10_4
+name: FIPS 10-4 country or region code
+status: draft
+doc: Two-letter code of a country, optionally followed by two characters for a first-level subdivision,
+  from the US standard FIPS 10-4, withdrawn in 2008. Some datasets, such as GDELT, still use it.
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{2}(?:[1-9][0-9]|[0-9A-Z][1-9])?$
+examples:
+- value: AF
+  description: Afghanistan
+- value: AU01
+  description: Burgenland
+mappings:
+  wikidata: P901
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/FIPS_10-4
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P901

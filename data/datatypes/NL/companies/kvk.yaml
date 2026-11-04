@@ -22,11 +22,15 @@ examples:
   description: Dutch KvK number with leading zero
 - value: '87654321'
   description: Another valid Dutch KvK number format
+mappings:
+  wikidata: P3220
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Kamer_van_Koophandel
 - type: doc
   url: https://www.kvk.nl/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3220
 translations:
   en:
     name: Chamber of Commerce Number (KvK)

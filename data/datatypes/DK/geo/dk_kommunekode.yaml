@@ -1,0 +1,27 @@
+id: dk_kommunekode
+name: Danish municipality code (kommunekode)
+status: draft
+doc: Three-digit code of a Danish municipality, used in official registers and statistics.
+categories:
+- geo
+country:
+- DK
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{3}$
+examples:
+- value: '710'
+  description: Favrskov Municipality
+- value: '410'
+  description: Middelfart Municipality
+- value: '575'
+  description: Vejen Municipality
+mappings:
+  wikidata: P1168
+links:
+- type: wikipedia
+  url: https://da.wikipedia.org/wiki/Kommunekode
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1168

@@ -11,6 +11,18 @@ langs:
 - en
 is_pii: false
 classification: categorical
+regexp: ^[EKLMNSW]\d{8}$
+examples:
+- value: E09000025
+  description: London Borough of Newham
+- value: E08000001
+  description: Bolton
+- value: W92000004
+  description: Wales
+mappings:
+  wikidata: P836
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P836

@@ -1,0 +1,28 @@
+id: ro_siruta
+name: Romanian SIRUTA code
+status: draft
+doc: Code of a Romanian county, municipality or locality in the SIRUTA register of the National Institute
+  of Statistics.
+categories:
+- geo
+country:
+- RO
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{2,6}$
+examples:
+- value: '1017'
+  description: Alba Iulia
+- value: '101430'
+  description: Vadu Lat
+- value: '10'
+  description: Alba County
+mappings:
+  wikidata: P843
+links:
+- type: wikipedia
+  url: https://ro.wikipedia.org/wiki/SIRUTA
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P843

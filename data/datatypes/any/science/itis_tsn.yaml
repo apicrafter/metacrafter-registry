@@ -1,0 +1,27 @@
+id: itis_tsn
+name: ITIS Taxonomic Serial Number (TSN)
+status: draft
+doc: Number of a scientific name in the Integrated Taxonomic Information System run by US, Canadian and
+  Mexican government agencies.
+categories:
+- science
+- environment
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{1,6}$
+examples:
+- value: '160330'
+  description: oceanic whitetip shark
+- value: '162003'
+  description: Brook trout
+mappings:
+  wikidata: P815
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Integrated_Taxonomic_Information_System
+- type: doc
+  url: https://www.itis.gov/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P815

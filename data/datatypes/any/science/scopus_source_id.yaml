@@ -1,0 +1,27 @@
+id: scopus_source_id
+name: Scopus source ID
+status: draft
+doc: Number of a journal, book series or conference proceedings in the Scopus bibliographic database of
+  Elsevier.
+categories:
+- science
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,11}$
+examples:
+- value: '25283'
+  description: Journal of Fluorine Chemistry
+- value: '16129'
+  description: ACC Current Journal Review
+- value: '22380'
+  description: International Journal of Infectious Diseases
+mappings:
+  wikidata: P1156
+links:
+- type: doc
+  url: https://www.scopus.com/sources
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1156

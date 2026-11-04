@@ -22,6 +22,8 @@ examples:
 - value: '513174810'
   valid: false
   description: Check digit does not match
+mappings:
+  wikidata: P10889
 links:
 - type: wikipedia
   url: https://he.wikipedia.org/wiki/%D7%AA%D7%90%D7%92%D7%99%D7%93#%D7%9E%D7%A1%D7%A4%D7%A8_%D7%A8%D7%99%D7%A9%D7%95%D7%9D_%D7%94%D7%AA%D7%90%D7%92%D7%99%D7%93
@@ -31,6 +33,8 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.il.hp.html
 - type: other
   url: https://docs.dataprep.ai/user_guide/clean/clean_il_hp.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P10889
 translations:
   he:
     name: מספר חברה (ח.פ.)

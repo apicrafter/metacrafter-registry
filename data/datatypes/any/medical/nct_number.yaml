@@ -1,0 +1,27 @@
+id: nct_number
+name: ClinicalTrials.gov identifier (NCT number)
+status: draft
+doc: 'Registration number of a clinical study in ClinicalTrials.gov, the registry of the US National Library
+  of Medicine: NCT and eight digits.'
+categories:
+- medical
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^NCT\d{8}$
+examples:
+- value: NCT00243178
+  description: Atrial Fibrillation Clopidogrel Trial With Irbesartan for Prevention of Vascular Events
+- value: NCT04315948
+  description: Trial of Treatments for COVID-19 in Hospitalized Adults
+mappings:
+  wikidata: P3098
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ClinicalTrials.gov
+- type: doc
+  url: https://clinicaltrials.gov/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3098

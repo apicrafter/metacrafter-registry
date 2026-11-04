@@ -22,6 +22,8 @@ examples:
 - value: '9869929287'
   valid: false
   description: One character too many
+mappings:
+  wikidata: P2333
 links:
 - type: wikipedia
   url: https://no.wikipedia.org/wiki/Organisasjonsnummer
@@ -29,6 +31,8 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.no.orgnr.html
 - type: other
   url: https://docs.dataprep.ai/user_guide/clean/clean_no_orgnr.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2333
 translations:
   'no':
     name: Organisasjonsnummer

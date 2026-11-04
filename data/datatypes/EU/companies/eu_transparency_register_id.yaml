@@ -1,0 +1,29 @@
+id: eu_transparency_register_id
+name: EU Transparency Register ID
+status: draft
+doc: 'Identification number of an organization in the Transparency Register of the European Parliament,
+  Council and Commission, which lists interest representatives: digits, a hyphen and two digits.'
+categories:
+- companies
+- government
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{8,13}-\d{2}$
+examples:
+- value: 760465913924-94
+  description: German Research Foundation
+- value: 309451334691-46
+  description: Union of Penal Chambers
+- value: 697519611807-33
+  description: Young Pirates of Europe
+mappings:
+  wikidata: P2657
+links:
+- type: doc
+  url: https://transparency-register.europa.eu/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2657

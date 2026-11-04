@@ -23,6 +23,8 @@ examples:
 - value: '903016597'
   valid: false
   description: One character too many
+mappings:
+  wikidata: P1059
 links:
 - type: wikipedia
   url: https://da.wikipedia.org/wiki/CVR-nummer
@@ -30,6 +32,8 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.dk.cvr.html
 - type: other
   url: https://docs.dataprep.ai/user_guide/clean/clean_dk_cvr.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1059
 translations:
   da:
     name: CVR-nummer

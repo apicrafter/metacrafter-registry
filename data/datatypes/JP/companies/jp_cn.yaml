@@ -26,6 +26,7 @@ mappings:
   purview:
   - Japanese My Number Corporate
   - Japan My Number - Corporate
+  wikidata: P3225
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Corporate_Number
@@ -35,6 +36,8 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.jp.cn.html
 - type: other
   url: https://docs.dataprep.ai/user_guide/clean/clean_jp_cn.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3225
 translations:
   ja:
     name: 法人番号

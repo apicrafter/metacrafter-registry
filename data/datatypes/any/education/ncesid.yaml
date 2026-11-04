@@ -1,10 +1,25 @@
 id: ncesid
 name: US NCES school identifier
 status: draft
-doc: Datatype for 'US NCES school identifier' (ncesid) from rules in context 'education'.
+doc: 'Identifier of a US school assigned by the National Center for Education Statistics: twelve digits
+  for a public school (the seven-digit district ID followed by a five-digit school number) or eight characters
+  for a private school.'
 categories:
 - education
 langs:
 - en
 is_pii: false
 classification: identifier
+regexp: ^(?:\d{12}|[A-Z0-9]{8})$
+examples:
+- value: '180915001514'
+  description: Portage High School
+- value: '550561002248'
+  description: Grafton High School
+- value: '341242000688'
+  description: Paramus High School
+mappings:
+  wikidata: P2484
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2484

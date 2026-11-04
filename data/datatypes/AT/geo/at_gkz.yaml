@@ -1,0 +1,26 @@
+id: at_gkz
+name: Austrian municipality code (Gemeindekennziffer)
+status: draft
+doc: 'Five-digit code of an Austrian municipality assigned by Statistics Austria: the state digit, two
+  digits for the district and two for the municipality.'
+categories:
+- geo
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '70101'
+  description: Innsbruck
+- value: '60101'
+  description: Graz
+mappings:
+  wikidata: P964
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Gemeindekennziffer
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P964

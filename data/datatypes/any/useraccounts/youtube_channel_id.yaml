@@ -1,0 +1,23 @@
+id: youtube_channel_id
+name: YouTube channel ID
+status: draft
+doc: 'Identifier of a YouTube channel: UC and 22 characters, as in youtube.com/channel/<id>. Channel handles
+  that start with @ are different identifiers.'
+parent: username
+categories:
+- pii
+- persons
+- useraccounts
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^UC[-_0-9A-Za-z]{21}[AQgw]$
+examples:
+- value: UCpDJl2EmP7Oh90Vylx0dZtA
+  description: Spinnin' Records
+mappings:
+  wikidata: P2397
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2397

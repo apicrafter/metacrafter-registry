@@ -1,0 +1,32 @@
+id: ru_egrokn
+name: EGROKN registration number (Russian cultural heritage register)
+status: draft
+doc: Fifteen-digit registration number of a cultural heritage site in the Unified State Register of Cultural
+  Heritage Objects of Russia (EGROKN), kept by the Ministry of Culture.
+categories:
+- government
+- geo
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{15}$
+examples:
+- value: '691731293250006'
+  description: Volga source
+- value: '781510319380066'
+  description: Chinese Theatre in Tsarskoe Selo
+- value: '911510359770006'
+  description: Tsar's Kurgan
+mappings:
+  wikidata: P5381
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5381
+translations:
+  ru:
+    name: Регистрационный номер ЕГРОКН
+    doc: Регистрационный номер объекта культурного наследия в Едином государственном реестре объектов
+      культурного наследия.

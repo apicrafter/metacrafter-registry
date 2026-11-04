@@ -1,10 +1,25 @@
 id: ifsc
 name: Indian IFSC code
 status: draft
-doc: Datatype for 'Indian IFSC code' (ifsc) from rules in context 'finances'.
+doc: 'Indian Financial System Code: eleven-character code of a bank branch that takes part in the NEFT,
+  RTGS and IMPS payment systems. The first four letters identify the bank, the fifth character is 0 and
+  the last six identify the branch. The Reserve Bank of India publishes the codes.'
 categories:
 - finances
 langs:
 - common
 is_pii: false
 classification: identifier
+regexp: ^[A-Z]{4}0[A-Z0-9]{6}$
+examples:
+- value: UTIB0000022
+  description: Bank Of Baroda, Puri branch
+- value: BARB0SWARGD
+  description: Bank Of Baroda, Puri branch
+- value: UTIB0000464
+  description: Axis Bank, Puri branch
+mappings:
+  wikidata: P4635
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4635

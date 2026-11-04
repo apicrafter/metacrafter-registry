@@ -12,14 +12,24 @@ langs:
 - en
 is_pii: true
 classification: identifier
-regexp: '[0-9]{9}'
+regexp: ^\d{2}-?\d{7}$
+examples:
+- value: 94-2404110
+  description: Apple Inc.
+- value: 91-1144442
+  description: Microsoft
+- value: 56-2618866
+  description: Gates Foundation
 mappings:
   autotype: ein
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/EmployerIdentificationNumber
   google_dlp: US_EMPLOYER_IDENTIFICATION_NUMBER
   fta: IDENTITY.EIN_US
+  wikidata: P1297
 links:
 - type: other
   url: https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Employer_Identification_Number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1297

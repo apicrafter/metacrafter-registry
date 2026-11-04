@@ -1,0 +1,31 @@
+id: eu_celex
+name: CELEX number
+status: draft
+doc: 'Identifier of a document in EUR-Lex, the database of European Union law: a sector digit, the year,
+  a document type letter and a number, such as 32016R0679 for the GDPR.'
+categories:
+- legal
+- government
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[\dEC](20|1\d)\d\d[A-Z][A-Z]?(\d{3,5}(\(\d\d\))?|/TXT|/PRO/\d\d)(-\d{8})?$
+examples:
+- value: 61993CJ0415
+  description: Bosman ruling
+- value: 32016R0679
+  description: General Data Protection Regulation
+- value: 22014A0529(01)
+  description: Ukraine–European Union Association Agreement
+mappings:
+  wikidata: P476
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/EUR-Lex
+- type: doc
+  url: https://eur-lex.europa.eu/content/tools/TableOfSectors/types_of_documents_in_eurlex.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P476

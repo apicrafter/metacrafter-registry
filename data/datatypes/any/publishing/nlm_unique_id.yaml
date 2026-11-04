@@ -1,0 +1,25 @@
+id: nlm_unique_id
+name: NLM Unique ID
+status: draft
+doc: Number of a record (journal, book, audiovisual item) in the catalogue of the US National Library
+  of Medicine. PubMed journal records carry it.
+categories:
+- publishing
+- medical
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{6,19}(A|R|\d)$
+examples:
+- value: '7501160'
+  description: The Journal of the American Medical Association
+- value: '0050556'
+  description: Radiochimica Acta
+mappings:
+  wikidata: P1055
+links:
+- type: doc
+  url: https://www.ncbi.nlm.nih.gov/nlmcatalog/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1055

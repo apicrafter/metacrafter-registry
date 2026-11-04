@@ -1,0 +1,28 @@
+id: no_kommunenummer
+name: Norwegian municipality number (kommunenummer)
+status: draft
+doc: 'Four-digit number of a Norwegian municipality: two digits for the county and two for the municipality.
+  The numbers changed in the 2020 and 2024 reforms.'
+categories:
+- geo
+country:
+- 'NO'
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-5]\d{3}$
+examples:
+- value: '0127'
+  description: Skiptvet Municipality
+- value: '1220'
+  description: Bremnes Municipality
+- value: '1423'
+  description: Borgund Municipality
+mappings:
+  wikidata: P2504
+links:
+- type: wikipedia
+  url: https://no.wikipedia.org/wiki/Kommunenummer
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2504

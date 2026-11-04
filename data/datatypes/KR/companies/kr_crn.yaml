@@ -1,0 +1,26 @@
+id: kr_crn
+name: South Korean corporate registration number
+status: draft
+doc: Thirteen-digit corporate registration number (beopin deungnok beonho) of a company registered with
+  a South Korean court registry, written as six and seven digits.
+categories:
+- companies
+country:
+- KR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{6}-[0-9]{7}$
+examples:
+- value: 110111-2487050
+  description: LG Electronics
+- value: 110111-0108484
+  description: Korean Air
+- value: 130111-0006246
+  description: Samsung Electronics
+mappings:
+  wikidata: P6859
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6859

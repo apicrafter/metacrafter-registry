@@ -21,6 +21,8 @@ examples:
 - value: '273165157'
   valid: false
   description: One character too many
+mappings:
+  wikidata: P12980
 links:
 - type: wikipedia
   url: https://fi.wikipedia.org/wiki/Y-tunnus
@@ -28,6 +30,8 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fi.ytunnus.html
 - type: other
   url: https://docs.dataprep.ai/user_guide/clean/clean_fi_ytunnus.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P12980
 translations:
   fi:
     name: Yritys- ja yhteisötunnus (Y-tunnus)

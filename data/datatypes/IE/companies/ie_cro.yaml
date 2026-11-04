@@ -1,0 +1,27 @@
+id: ie_cro
+name: Irish Companies Registration Office number
+status: draft
+doc: Number of a company registered with the Companies Registration Office of Ireland.
+categories:
+- companies
+country:
+- IE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{3,11}[A-Z]?$
+examples:
+- value: '246488'
+  description: Ryanair
+- value: '98788'
+  description: An Post
+- value: '397094'
+  description: Scouting Ireland
+mappings:
+  wikidata: P9679
+links:
+- type: doc
+  url: https://core.cro.ie/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9679

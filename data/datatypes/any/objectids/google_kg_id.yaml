@@ -1,0 +1,22 @@
+id: google_kg_id
+name: Google Knowledge Graph ID
+status: draft
+doc: 'Identifier of an entity in the Google Knowledge Graph that did not come from Freebase: /g/ followed
+  by letters and digits. Entities that came from Freebase keep their /m/ identifiers.'
+categories:
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^/g/1(?:[1258dhjnpqrstvwxyz][0-9b-df-hj-np-tv-z_]{6,8}|3b[013-9b-df-hj-np-tv-z_]{4}|3z[2356gmpqwz_]{6})$
+examples:
+- value: /g/11bwcf511s
+  description: Alphabet Inc.
+mappings:
+  wikidata: P2671
+links:
+- type: doc
+  url: https://developers.google.com/knowledge-graph
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2671

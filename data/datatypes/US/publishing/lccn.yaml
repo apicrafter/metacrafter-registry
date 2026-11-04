@@ -1,0 +1,29 @@
+id: lccn
+name: Library of Congress Control Number (LCCN)
+status: draft
+doc: 'Number of a bibliographic record in the Library of Congress catalogue: an optional alphabetic prefix,
+  a two- or four-digit year and a six-digit serial number.'
+categories:
+- publishing
+- objectids
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[a-z]{0,3}(?:\d{8}|\d{10})$
+examples:
+- value: '11025047'
+  description: Treasure Island
+- value: sn00063530
+  description: Malheur Enterprise
+mappings:
+  wikidata: P1144
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Library_of_Congress_Control_Number
+- type: doc
+  url: https://www.loc.gov/marc/lccn_structure.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1144

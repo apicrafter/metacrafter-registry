@@ -1,0 +1,28 @@
+id: kz_kato
+name: Kazakh KATO code
+status: draft
+doc: Nine-digit code of an administrative-territorial object of Kazakhstan in the Classifier of administrative-territorial
+  objects (KATO).
+categories:
+- geo
+country:
+- KZ
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{9}$
+examples:
+- value: '351010000'
+  description: Karaganda
+- value: '154200000'
+  description: Kobda District
+mappings:
+  wikidata: P4838
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4838
+translations:
+  ru:
+    name: Код КАТО
+    doc: Девятизначный код административно-территориального объекта Казахстана по классификатору КАТО.

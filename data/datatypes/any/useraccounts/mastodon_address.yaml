@@ -1,0 +1,23 @@
+id: mastodon_address
+name: Mastodon address
+status: draft
+doc: 'Address of an account on Mastodon or another fediverse server: user@server, sometimes written with
+  a leading @.'
+parent: username
+categories:
+- pii
+- persons
+- useraccounts
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^@?[A-Za-z0-9_](?:[A-Za-z0-9_.]*[A-Za-z0-9_])?@(?:[A-Za-z0-9-]+\.)+[A-Za-z]{2,}$
+examples:
+- value: libreoffice@fosstodon.org
+  description: LibreOffice
+mappings:
+  wikidata: P4033
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4033

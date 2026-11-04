@@ -1,0 +1,28 @@
+id: sk_ico
+name: Slovak organization identification number (IČO)
+status: draft
+doc: Eight-digit identification number of an organization in Slovakia assigned by the Statistical Office
+  of the Slovak Republic.
+categories:
+- companies
+country:
+- SK
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{8}$
+examples:
+- value: '35848863'
+  description: O2 Slovakia
+- value: 00686930
+  description: Tatra banka
+- value: '31562141'
+  description: Železiarne Podbrezová
+mappings:
+  wikidata: P8174
+links:
+- type: wikipedia
+  url: https://sk.wikipedia.org/wiki/Identifika%C4%8Dn%C3%A9_%C4%8D%C3%ADslo_organiz%C3%A1cie
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8174

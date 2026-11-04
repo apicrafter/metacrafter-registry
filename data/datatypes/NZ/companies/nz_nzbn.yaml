@@ -1,0 +1,26 @@
+id: nz_nzbn
+name: New Zealand Business Number (NZBN)
+status: draft
+doc: Thirteen-digit global identifier of a New Zealand business. It is a GS1 Global Location Number starting
+  with 94.
+categories:
+- companies
+country:
+- NZ
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{13}$
+examples:
+- value: '9429042872504'
+  description: Royal New Zealand Ballet
+- value: '9429046844125'
+  description: Cofactor
+mappings:
+  wikidata: P5687
+links:
+- type: doc
+  url: https://www.nzbn.govt.nz/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5687

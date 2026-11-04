@@ -1,0 +1,28 @@
+id: issn_l
+name: Linking ISSN (ISSN-L)
+status: draft
+doc: 'ISSN chosen to group all media versions (print, online) of one continuing resource. It has the format
+  of an ISSN: two groups of four characters, the last of which is a check digit or X.'
+parent: issn
+categories:
+- publishing
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{4}\-[0-9]{3}[0-9X]$
+examples:
+- value: 0264-2875
+  description: Dance Research
+- value: 1748-7188
+  description: Algorithms for Molecular Biology
+mappings:
+  wikidata: P7363
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISSN#Linking_ISSN
+- type: doc
+  url: https://www.issn.org/understanding-the-issn/assignment-rules/the-issn-l-for-publications-on-multiple-media/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P7363

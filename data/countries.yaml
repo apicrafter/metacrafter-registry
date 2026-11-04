@@ -243,3 +243,6 @@
 - id: UY
   name: Uruguay
   kind: country
+- id: KZ
+  name: Kazakhstan
+  kind: country

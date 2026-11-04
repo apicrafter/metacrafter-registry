@@ -18,3 +18,8 @@ examples:
   description: Swiss UID (valid MOD-11 check digit)
 - value: CHE-123.456.788 TVA
   description: Swiss UID used as VAT number
+mappings:
+  wikidata: P4829
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4829

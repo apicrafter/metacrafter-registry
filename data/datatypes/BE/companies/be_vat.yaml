@@ -27,6 +27,7 @@ examples:
   description: One character too many
 mappings:
   purview: Belgium value added tax number
+  wikidata: P3376
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Ondernemingsnummer
@@ -34,6 +35,8 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.be.vat.html
 - type: other
   url: https://docs.dataprep.ai/user_guide/clean/clean_be_vat.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3376
 translations:
   nl:
     name: Ondernemingsnummer

@@ -1,0 +1,29 @@
+id: unspsc
+name: UNSPSC code
+status: draft
+doc: Code of a product or service in the United Nations Standard Products and Services Code, a hierarchy
+  of segment, family, class and commodity of two digits each. It is used in procurement and spend analysis.
+categories:
+- industry
+- ecommerce
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{8}(?:\d{2})?$
+examples:
+- value: '25101703'
+  description: ambulance
+- value: '11101803'
+  description: platinum
+- value: '11101709'
+  description: antimony
+mappings:
+  wikidata: P2167
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/UNSPSC
+- type: doc
+  url: https://www.unspsc.org/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2167

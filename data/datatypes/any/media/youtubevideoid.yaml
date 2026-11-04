@@ -1,10 +1,24 @@
 id: youtubevideoid
 name: YouTube video ID by field name
 status: draft
-doc: YouTube video ID by field name identifier
+doc: 'Eleven-character identifier of a YouTube video, as in youtube.com/watch?v=<id>: letters, digits,
+  hyphens and underscores.'
 categories:
 - media
 langs:
 - en
 is_pii: false
 classification: identifier
+regexp: ^[-_0-9A-Za-z]{11}$
+examples:
+- value: txqiwrbYGrs
+  description: David After Dentist
+- value: YHoGXDYGkIw
+  description: Levitate
+- value: uv_1AKKKJnk
+  description: Levitate
+mappings:
+  wikidata: P1651
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1651

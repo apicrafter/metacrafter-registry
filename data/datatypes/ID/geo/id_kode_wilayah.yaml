@@ -1,0 +1,28 @@
+id: id_kode_wilayah
+name: Indonesian administrative area code (kode wilayah)
+status: draft
+doc: 'Code of an Indonesian province, regency or city, district and village issued by the Ministry of
+  Home Affairs: groups of digits separated by dots, such as 32.73 for Bandung.'
+categories:
+- geo
+country:
+- ID
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{2}(\.\d{2}(\.\d{2,5}(\.\d{4})?)?)?$
+examples:
+- value: 33.22.06
+  description: Tuntang
+- value: 33.22.06.2008
+  description: Watuagung
+- value: '33'
+  description: Central Java
+mappings:
+  wikidata: P2588
+links:
+- type: wikipedia
+  url: https://id.wikipedia.org/wiki/Kode_wilayah_administrasi_di_Indonesia
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2588

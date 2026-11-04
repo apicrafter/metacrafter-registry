@@ -1,0 +1,27 @@
+id: pmid
+name: PubMed ID (PMID)
+status: draft
+doc: Number of a citation record in PubMed, the biomedical literature database of the US National Library
+  of Medicine. It has up to eight digits.
+categories:
+- science
+- publishing
+- medical
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[1-4]\d{7}|[1-9]\d{0,6})$
+examples:
+- value: '17246615'
+- value: '823'
+- value: '4388'
+mappings:
+  wikidata: P698
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/PubMed
+- type: doc
+  url: https://pubmed.ncbi.nlm.nih.gov/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P698

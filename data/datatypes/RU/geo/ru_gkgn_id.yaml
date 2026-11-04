@@ -1,0 +1,28 @@
+id: ru_gkgn_id
+name: State Catalogue of Geographical Names ID (Russia)
+status: draft
+doc: Seven-digit registration number of a geographical name in the State Catalogue of Geographical Names
+  (GKGN) kept by Rosreestr.
+categories:
+- geo
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{7}$
+examples:
+- value: 0012783
+  description: Bolshoy Kamen
+- value: 0012787
+  description: Vladivostok
+mappings:
+  wikidata: P1397
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1397
+translations:
+  ru:
+    name: Регистрационный номер в ГКГН
+    doc: Номер географического названия в Государственном каталоге географических названий.

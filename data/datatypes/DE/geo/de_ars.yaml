@@ -1,0 +1,28 @@
+id: de_ars
+name: German regional key (Amtlicher Regionalschlüssel, ARS)
+status: draft
+doc: 'Twelve-digit official regional key of a German municipality: the municipality key with a four-digit
+  code of the municipal association inserted after the district.'
+categories:
+- geo
+country:
+- DE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{12}$
+examples:
+- value: '034565404000'
+  description: Uelsen
+- value: 092715202130
+  description: Lalling
+- value: 010590000000
+  description: Schleswig-Flensburg District
+mappings:
+  wikidata: P1388
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Amtlicher_Gemeindeschl%C3%BCssel#Regionalschl%C3%BCssel
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1388

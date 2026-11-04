@@ -1,0 +1,28 @@
+id: chemspider_id
+name: ChemSpider ID
+status: draft
+doc: Number of a chemical structure record in ChemSpider, the chemical database of the Royal Society of
+  Chemistry.
+categories:
+- chemistry
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d*$
+examples:
+- value: '3953'
+  description: (RS)-methadone
+- value: '10189562'
+  description: vitamin C
+- value: '1086'
+  description: sulfuric acid
+mappings:
+  wikidata: P661
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ChemSpider
+- type: doc
+  url: https://www.chemspider.com/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P661

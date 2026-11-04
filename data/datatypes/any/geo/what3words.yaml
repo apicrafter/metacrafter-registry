@@ -15,8 +15,6 @@ examples:
   description: What3Words example 1
 - value: squirrels.devours.longitudes
   description: What3Words example 2
-mappings:
-  wikidata: P1566
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/What3word

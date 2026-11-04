@@ -1,0 +1,28 @@
+id: it_istat_comune
+name: Italian ISTAT municipality code
+status: draft
+doc: Code of an Italian municipality (six digits), province (three digits) or region (two digits) assigned
+  by the Italian National Institute of Statistics (ISTAT).
+categories:
+- geo
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{2}|\d{3}|\d{6})$
+examples:
+- value: '015146'
+  description: Milan
+- value: 058091
+  description: Rome
+mappings:
+  wikidata: P635
+links:
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Codice_ISTAT
+- type: doc
+  url: https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P635

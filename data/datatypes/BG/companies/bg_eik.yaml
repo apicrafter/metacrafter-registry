@@ -1,0 +1,28 @@
+id: bg_eik
+name: Bulgarian EIK / BULSTAT code
+status: draft
+doc: 'Unified identification code of a Bulgarian company in the Commercial Register (EIK) or BULSTAT code
+  of another legal entity: nine digits, or thirteen for a branch.'
+categories:
+- companies
+country:
+- BG
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{9}|\d{13})$
+examples:
+- value: '831447150'
+  description: Central Cooperative Bank
+- value: '040534040'
+  description: Teximbank
+- value: '131409398'
+  description: EPay.bg
+mappings:
+  wikidata: P8894
+links:
+- type: doc
+  url: https://portal.registryagency.bg/en/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8894

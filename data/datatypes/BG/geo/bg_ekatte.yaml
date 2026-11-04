@@ -1,0 +1,29 @@
+id: bg_ekatte
+name: Bulgarian EKATTE code
+status: draft
+doc: 'Code in the Unified Classifier of Administrative-Territorial and Territorial Units (EKATTE) of the
+  Bulgarian National Statistical Institute: five digits for a settlement, three letters for a province
+  and three letters with two digits for a municipality.'
+categories:
+- geo
+country:
+- BG
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{5}|[A-Z]{3}(?:\d{2})?)(?:-\d{2})?$
+examples:
+- value: '39970'
+  description: Krumovgrad
+- value: KRZ15
+  description: Krumovgrad Municipality
+- value: KRZ
+  description: Kardzhali Province
+mappings:
+  wikidata: P3990
+links:
+- type: wikipedia
+  url: https://bg.wikipedia.org/wiki/%D0%95%D0%9A%D0%90%D0%A2%D0%A2%D0%95
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3990

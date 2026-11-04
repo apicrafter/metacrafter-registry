@@ -1,0 +1,28 @@
+id: cn_division_code
+name: Chinese administrative division code
+status: draft
+doc: 'Code of an administrative division of the People''s Republic of China used by the National Bureau
+  of Statistics: six digits for provinces, prefectures and counties (GB/T 2260), up to twelve for townships
+  and villages. Wikidata writes it in groups separated by spaces.'
+categories:
+- geo
+country:
+- CN
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '^(?:1[1-5]|2[1-3]|3[1-7]|4[1-6]|5[0-4]|6[1-5]|71|8[1-2])(?: ?(?:0[1-9]|[1-6]\d|70|90)(?: ?(?:0[1-9]|[1-9]\d)(?:
+  ?(?:00[1-9]|0[1-9]\d|[1-5]\d\d)(?: ?(?:00[1-9]|0[1-9]\d|[1-5]\d\d)(?: ?(?:11[1-2]|12[1-3]|2[1-2]0))?)?)?)?)?$'
+examples:
+- value: 31 01 10
+  description: Yangpu District
+- value: '11'
+  description: Beijing
+mappings:
+  wikidata: P442
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Administrative_division_codes_of_the_People%27s_Republic_of_China
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P442

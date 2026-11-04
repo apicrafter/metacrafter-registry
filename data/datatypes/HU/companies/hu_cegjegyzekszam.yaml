@@ -1,0 +1,24 @@
+id: hu_cegjegyzekszam
+name: Hungarian company registration number (cégjegyzékszám)
+status: draft
+doc: 'Number of a company in the Hungarian company register: two digits for the court of registry, two
+  for the company form and six for the serial number, separated by hyphens.'
+categories:
+- companies
+country:
+- HU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(0[1-9]|1\d|20)-(0[1-9]|1\d|2[0-3])-\d{6}$
+examples:
+- value: 01-10-041928
+  description: Magyar Telekom
+- value: 01-10-043037
+  description: BKV
+mappings:
+  wikidata: P2619
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2619

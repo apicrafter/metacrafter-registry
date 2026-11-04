@@ -11,6 +11,12 @@ langs:
 - common
 is_pii: false
 classification: identifier
+regexp: ^10\.\d{4,9}/\S+$
+examples:
+- value: 10.1371/JOURNAL.PONE.0029797
+  description: PLOS ONE article
+- value: 10.12987/YALE/9780300197051.003.0010
+  description: Book chapter (Yale University Press)
 mappings:
   autotype: doi
   wikidata: P356

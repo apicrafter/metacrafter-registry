@@ -49,9 +49,9 @@ def test_skos_export_parses(built_site):
     assert (dt.uspassport, SKOS.broader, dt.passport) in graph
     assert (dt.usssn, SKOS.altLabel, rdflib.Literal("ssn")) in graph
     assert (
-        dt.mac_address,
+        dt.isrc,
         SKOS.exactMatch,
-        rdflib.URIRef("http://www.wikidata.org/entity/P2817"),
+        rdflib.URIRef("http://www.wikidata.org/entity/P1243"),
     ) in graph
     concepts = set(graph.subjects(RDF.type, SKOS.Concept))
     records = json.loads((built_site / "api/v1/datatypes.json").read_text("utf-8"))

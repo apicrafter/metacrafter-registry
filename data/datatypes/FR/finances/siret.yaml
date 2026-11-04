@@ -24,11 +24,15 @@ examples:
   description: Another valid French SIRET number format
 - value: '55203253400015'
   description: French SIRET number example
+mappings:
+  wikidata: P3215
 links:
 - type: wikipedia
   url: https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27identification_du_r%C3%A9pertoire_des_%C3%A9tablissements
 - type: doc
   url: https://www.sirene.fr/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3215
 translations:
   en:
     name: SIRET Number (Business Establishment Identifier)

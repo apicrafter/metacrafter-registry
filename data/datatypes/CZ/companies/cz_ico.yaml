@@ -1,0 +1,28 @@
+id: cz_ico
+name: Czech company identification number (IČO)
+status: draft
+doc: Eight-digit identification number of a legal entity or entrepreneur in the Czech Republic. The last
+  digit is a check digit.
+categories:
+- companies
+country:
+- CZ
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{8}$
+examples:
+- value: '45274649'
+  description: ČEZ Group
+- value: '00426547'
+  description: Czech Red Cross
+- value: 00022985
+  description: Ministry of Education, Youth and Sports
+mappings:
+  wikidata: P4156
+links:
+- type: wikipedia
+  url: https://cs.wikipedia.org/wiki/Identifika%C4%8Dn%C3%AD_%C4%8D%C3%ADslo_osoby
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4156

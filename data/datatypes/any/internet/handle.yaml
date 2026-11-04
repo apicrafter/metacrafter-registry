@@ -1,0 +1,28 @@
+id: handle
+name: Handle System identifier
+status: draft
+doc: 'Persistent identifier in the Handle System: a naming authority prefix and a local name separated
+  by a slash. DOIs are handles whose prefix starts with 10.'
+categories:
+- internet
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-z]+(?:\.[0-9a-z]+)*/\S{2,}$
+examples:
+- value: 10462/eadarc/7154
+  description: Eleanor Elizabeth Bourne Papers
+- value: 20.500.11794/34239
+  description: 'Dialogue avec l''histoire : les collections de la Bibliothèque de l''Université Laval'
+- value: 1773/45982
+mappings:
+  wikidata: P1184
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Handle_System
+- type: doc
+  url: https://www.handle.net/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1184

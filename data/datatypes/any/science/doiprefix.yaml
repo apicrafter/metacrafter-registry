@@ -9,6 +9,12 @@ langs:
 - common
 is_pii: false
 classification: identifier
+regexp: ^10(?:\.[1-9]\d*)+$
+examples:
+- value: '10.1371'
+  description: Public Library of Science
+- value: '10.1039'
+  description: Royal Society of Chemistry
 mappings:
   wikidata: P1662
 links:

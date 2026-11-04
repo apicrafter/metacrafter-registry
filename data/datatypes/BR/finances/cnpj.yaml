@@ -10,6 +10,15 @@ langs:
 - pt
 is_pii: false
 classification: identifier
-regexp: ^[0-9]{2}\.[0-9]{3}\.[0-9]{3}/[0-9]{4}-[0-9]{2}$
+regexp: ^\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2}$
+examples:
+- value: 47.508.411/0001-56
+  description: Pão de Açúcar
+- value: 09.101.925/0001-01
+  description: Shopping Pátio Higienópolis
 mappings:
   purview: Brazil legal entity number (CNPJ)
+  wikidata: P6204
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6204

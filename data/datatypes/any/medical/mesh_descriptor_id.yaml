@@ -1,0 +1,30 @@
+id: mesh_descriptor_id
+name: MeSH descriptor ID
+status: draft
+doc: Unique identifier of a descriptor (D and six or nine digits) or supplementary concept record (C and
+  six or nine digits) in Medical Subject Headings, the US National Library of Medicine thesaurus used
+  to index PubMed.
+categories:
+- medical
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[CD]\d{6}(?:\d{3})?$
+examples:
+- value: C004931
+  description: DPPH
+- value: D008180
+  description: systemic lupus erythematosus
+- value: D014583
+  description: Uruguay
+mappings:
+  wikidata: P486
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Medical_Subject_Headings
+- type: doc
+  url: https://www.nlm.nih.gov/mesh/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P486

@@ -1,0 +1,28 @@
+id: fr_uai
+name: French UAI code (school identifier)
+status: draft
+doc: 'Code of a French educational establishment in the Répertoire national des établissements (RNE):
+  seven digits and a check letter.'
+categories:
+- education
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{7}([A-H]|[J-N]|P|[R-Z])$
+examples:
+- value: 0750654D
+  description: Lycée Henri-IV
+- value: 1220001N
+  description: Lycée Français de Varsovie
+- value: 0622871J
+  description: collège Jacques Prévert de Houdain
+mappings:
+  wikidata: P3202
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Unit%C3%A9_administrative_immatricul%C3%A9e
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3202

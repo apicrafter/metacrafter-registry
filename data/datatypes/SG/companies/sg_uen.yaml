@@ -1,0 +1,28 @@
+id: sg_uen
+name: Singapore Unique Entity Number (UEN)
+status: draft
+doc: 'Identifier of a business or other entity in Singapore: nine or ten characters, in one of three formats
+  for businesses, local companies and other entities. It ends in a check letter.'
+categories:
+- companies
+country:
+- SG
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{8,9}[A-Z]|[A-Z]\d{2}[A-Z]{2}\d{4}[A-Z])$
+examples:
+- value: 198101793G
+  description: NCS Pte Ltd
+- value: 202120748H
+  description: SPH Media
+- value: 202134064M
+  description: Oh Baby Games
+mappings:
+  wikidata: P13194
+links:
+- type: doc
+  url: https://www.uen.gov.sg/ueninternet/faces/pages/uenFAQ.jspx
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P13194
