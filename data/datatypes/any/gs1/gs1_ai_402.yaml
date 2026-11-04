@@ -1,0 +1,22 @@
+id: gs1_ai_402
+name: Global Shipment Identification Number (GS1 AI 402)
+status: draft
+doc: 'GS1 element string of Application Identifier (402): ''402'' followed by a 17-digit GSIN. GS1 format
+  N3+N17. In the human-readable text under a barcode it is written as (402) and the value.'
+semantic_type: gsin
+langs:
+- common
+regexp: ^402\d{17}$
+examples:
+- value: '40295287650000042178'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '40295287651000275160'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '4029528765000004217'
+  valid: false
+  description: Sixteen digits
+mappings:
+  gs1_ai: '402'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/402

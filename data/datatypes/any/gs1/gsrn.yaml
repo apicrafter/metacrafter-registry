@@ -1,0 +1,33 @@
+id: gsrn
+name: Global Service Relation Number (GSRN)
+status: draft
+doc: 'GS1 identification key for the relationship between an organisation that offers a service and a
+  person or party in that service: a provider of the service, such as a caregiver, or a recipient, such
+  as a patient or a loyalty scheme member. Eighteen digits: a GS1 Company Prefix, a service reference
+  and a GS1 check digit. Application Identifier (8017) carries the GSRN of a provider and (8018) the GSRN
+  of a recipient; the element strings are the patterns gs1_ai_8017 and gs1_ai_8018. A GSRN usually identifies
+  a person, so it is treated as personal data.'
+categories:
+- gs1
+- pii
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{18}$
+checksum: gs1_mod10
+examples:
+- value: '952876500003104257'
+  description: Synthetic value with the GS1 demonstration prefix 952 and a valid check digit
+- value: '952876510000005891'
+  description: Synthetic value with the GS1 demonstration prefix 952 and a valid check digit
+- value: '952876500003104258'
+  valid: false
+  description: 'Last digit changed: fails the GS1 check digit'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8017
+- type: doc
+  url: https://ref.gs1.org/ai/8018
+- type: doc
+  url: https://ref.gs1.org/standards/genspecs/

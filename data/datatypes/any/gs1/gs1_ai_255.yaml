@@ -1,0 +1,23 @@
+id: gs1_ai_255
+name: Global Coupon Number (GS1 AI 255)
+status: draft
+doc: 'GS1 element string of Application Identifier (255): ''255'' followed by a GCN: 13 digits and an
+  optional numeric serial component. GS1 format N3+N13[+N..12]. In the human-readable text under a barcode
+  it is written as (255) and the value.'
+semantic_type: gcn
+langs:
+- common
+regexp: ^255\d{13,25}$
+examples:
+- value: '2559528765000178'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '2559528765000178000781'
+  description: Synthetic value with the GS1 demonstration prefix 952; with a serial component
+- value: 2559528765000178X1
+  valid: false
+  description: Serial component is numeric
+mappings:
+  gs1_ai: '255'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/255

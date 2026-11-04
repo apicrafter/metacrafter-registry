@@ -1,0 +1,28 @@
+id: gs1_ai_254
+name: GLN extension component (GS1 AI 254)
+status: draft
+doc: 'GS1 element string of Application Identifier (254): ''254'' followed by an extension, up to 20 characters,
+  that identifies a place inside the physical location whose GLN is in AI (414), such as a room or a shelf.
+  GS1 format N3+X..20. It is a key qualifier in GS1 Digital Link. In the human-readable text under a barcode
+  it is written as (254) and the value.'
+categories:
+- gs1
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^254[!%-?A-Z_a-z\x22]{1,20}$
+examples:
+- value: 254B12-R3
+  description: Synthetic extension B12-R3
+- value: 254DOCK7
+  description: Synthetic extension DOCK7
+- value: '254'
+  valid: false
+  description: No extension
+mappings:
+  gs1_ai: '254'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/254

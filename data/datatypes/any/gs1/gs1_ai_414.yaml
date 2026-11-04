@@ -1,0 +1,24 @@
+id: gs1_ai_414
+name: GLN of a physical location (GS1 AI 414)
+status: draft
+doc: 'GS1 element string of Application Identifier (414): ''414'' followed by the 13-digit Global Location
+  Number of a physical location, such as a building, a warehouse or a store. GS1 format N3+N13. The GLN
+  ends in a GS1 check digit. In the human-readable text under a barcode it is written as (414) and the
+  value.'
+semantic_type: gln
+langs:
+- common
+regexp: ^414\d{13}$
+examples:
+- value: '4149528765000017'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '4149528765000253'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '414952876500001'
+  valid: false
+  description: Twelve-digit GLN
+mappings:
+  gs1_ai: '414'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/414
