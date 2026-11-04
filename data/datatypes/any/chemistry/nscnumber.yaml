@@ -1,0 +1,35 @@
+id: nscnumber
+name: NSC number
+status: draft
+doc: Number that the Developmental Therapeutics Program of the US National Cancer Institute (NCI) gives
+  to a substance submitted for testing. Wikidata stores the bare number; PubChem writes it with the prefix
+  "NSC", for example NSC27223.
+categories:
+- chemistry
+- medical
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:NSC ?)?[1-9]\d{0,5}$
+examples:
+- value: NSC27223
+  description: Aspirin, as PubChem writes it
+- value: '224131'
+  description: Sparfosic acid
+- value: '1300'
+  description: Hexaamminecobalt(III) nitrate
+- value: DTXSID5020108
+  valid: false
+  description: DSSTox substance ID of aspirin
+mappings:
+  wikidata: P2840
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2840
+- type: doc
+  url: https://dtp.cancer.gov/databases_tools/bulk_data.htm
+translations:
+  ru:
+    name: Номер NSC
+    doc: Номер вещества, переданного на испытания в Национальный институт рака США.

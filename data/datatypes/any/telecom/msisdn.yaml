@@ -21,6 +21,8 @@ examples:
   description: Russian MSISDN (country code 7, 11 digits total)
 - value: '8613800138000'
   description: Chinese MSISDN (country code 86, 13 digits total)
+mappings:
+  autotype: msisdn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/MSISDN

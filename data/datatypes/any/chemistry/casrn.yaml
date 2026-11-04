@@ -21,6 +21,7 @@ examples:
   valid: false
   description: One character too many
 mappings:
+  autotype: cas
   wikidata: P231
 links:
 - type: wikipedia

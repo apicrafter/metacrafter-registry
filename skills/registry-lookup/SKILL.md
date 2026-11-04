@@ -66,8 +66,9 @@ Example:
   such as `pii` and `persons` add context.
 - **Crosswalk.** `crosswalk("wikidata", "P968")` finds the registry record for
   an id in another vocabulary. The systems are `wikidata`, `fibo`, `schema_org`,
-  `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm`, `fta`
-  and `orgid`.
+  `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `sato`, `cdm`, `fta`,
+  `autotype` (AutoType benchmark test cases, such as `isbn` or `date-chinese`)
+  and `orgid` (ORG-ID.guide list codes, such as `GB-COH`).
   Coverage outside Wikidata is still small. For `fibo`, pass a FIBO class IRI,
   for example
   `https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier`;
@@ -86,7 +87,8 @@ Example:
   For a column that Sherlock labelled, pass its label: `crosswalk("sherlock",
   "birth Date")` returns `birthday`; case and spaces are ignored. 32 of
   Sherlock's 78 types are mapped. Generic labels such as `code`, `type` or
-  `rank` return nothing. For an organization identifier in the ORG-ID.guide
+  `rank` return nothing. Sato predicts the same 78 types, written in camelCase:
+  `crosswalk("sato", "birthDate")` also returns `birthday`. For an organization identifier in the ORG-ID.guide
   form, as in IATI, 360Giving or Open Contracting data, pass the list code or
   the whole identifier: `crosswalk("orgid", "GB-COH-09506232")` returns
   `companyhouseid`. A column of whole ORG-ID.guide identifiers is `org_id`; a

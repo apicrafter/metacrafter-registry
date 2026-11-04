@@ -13,6 +13,7 @@ country:
 langs:
 - en
 mappings:
+  autotype: zipcode-correct
   d3m: http://schema.org/postalCode
   fta:
   - POSTAL_CODE.ZIP5_PLUS4_US

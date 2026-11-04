@@ -21,6 +21,8 @@ examples:
 - value: '97900322822087'
   valid: false
   description: One character too many
+mappings:
+  autotype: ismn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Standard_Music_Number

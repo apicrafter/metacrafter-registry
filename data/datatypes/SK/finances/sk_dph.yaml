@@ -1,0 +1,38 @@
+id: sk_dph
+name: Slovak VAT number (IČ DPH)
+status: draft
+doc: 'Identifikačné číslo pre daň z pridanej hodnoty (IČ DPH), the VAT number in Slovakia: SK followed
+  by 10 digits, which are usually the tax identification number (DIČ) of the payer. The first digit is
+  not 0 and the 10-digit number is divisible by 11.'
+parent: vatin
+categories:
+- finances
+country:
+- SK
+langs:
+- sk
+is_pii: true
+classification: identifier
+regexp: ^(?:SK[ -]?)?[1-9]\d{9}$
+checksum: sk_dph
+examples:
+- value: SK2022749619
+  description: python-stdnum reference value
+- value: '2022749619'
+  description: The same number without the country prefix
+- value: SK2022749618
+  valid: false
+  description: Not divisible by 11
+- value: SK0022749619
+  valid: false
+  description: The first digit cannot be 0
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/VAT_identification_number
+- type: doc
+  url: https://ec.europa.eu/taxation_customs/vies/
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.sk.dph.html
+translations:
+  sk:
+    name: Identifikačné číslo pre daň z pridanej hodnoty (IČ DPH)

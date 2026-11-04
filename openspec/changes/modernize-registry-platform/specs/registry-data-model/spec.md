@@ -85,7 +85,7 @@ When a record has a `regexp`, these rules apply:
 - **THEN** validation fails
 
 ### Requirement: Typed mappings to external vocabularies
-A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm`, `fta` and `orgid`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
+A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm`, `fta`, `autotype` and `orgid`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
 
 `mappings.wikidata` SHALL match `^[PQ]\d+$`.
 
@@ -115,11 +115,17 @@ A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`
 - **WHEN** a client calls `crosswalk("fta", "GENDER.TEXT_DE")`
 - **THEN** it gets the record that maps `GENDER.TEXT_<LANGUAGE>`
 
-`mappings.sherlock` SHALL hold one or more of the 78 Sherlock semantic type labels, spelled as the trained Sherlock model returns them (for example `city` or `birth Date`). A Sherlock type SHALL be mapped to at most one record, and only when that record has the same meaning. The `sherlock` tool SHALL list exactly the records that carry `mappings.sherlock`.
+`mappings.sherlock` SHALL hold one or more of the 78 Sherlock semantic type labels, spelled as the trained Sherlock model returns them (for example `city` or `birth Date`). A Sherlock type SHALL be mapped to at most one record, and only when that record has the same meaning. The `sherlock` tool SHALL list exactly the records that carry `mappings.sherlock`. Sato predicts the same 78 types in camelCase (`birthDate`), so the registry SHALL NOT add a separate Sato mapping key: the `sato` tool SHALL list the same records as the `sherlock` tool, and `crosswalk("sato", label)` SHALL resolve through `mappings.sherlock`.
 
 #### Scenario: Unknown Sherlock label
 - **WHEN** a record has `mappings: {sherlock: "email"}`
 - **THEN** validation fails with a schema error on `mappings.sherlock`
+
+`mappings.autotype` SHALL hold AutoType benchmark test case names: the names of the benchmark's `data_release/*.txt` files without the `.txt` extension, such as `isbn` or `date-chinese`. A test case SHALL map to at most one record.
+
+#### Scenario: AutoType test case given as a file name
+- **WHEN** a record has `mappings: {autotype: "isbn.txt"}`
+- **THEN** validation fails with a schema error on `mappings.autotype`
 
 `mappings.orgid` SHALL hold ORG-ID.guide list codes, such as `GB-COH` or `CA_ON-ONT`, of the organization identifier lists whose identifiers the record describes. A list code SHALL be mapped to at most one record. A deprecated code MAY be mapped when ORG-ID.guide names the list that replaced it and both lists use the same identifier. `crosswalk("orgid", ...)` SHALL accept a list code in any case, its `https://org-id.guide/list/<code>` URL or a whole ORG-ID.guide identifier such as `GB-COH-09506232`.
 

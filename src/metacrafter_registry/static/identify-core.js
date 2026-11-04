@@ -163,8 +163,39 @@
       var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
       if (!/^\d{8}[A-Z]$/.test(s)) return false;
       return "TRWAGMYFPDXBNJZSQVHLCKE"[Number(s.slice(0, 8)) % 23] === s[8];
+    },
+    pl_nip: function (v) {
+      var s = stripPrefix(v, "PL");
+      if (!/^\d{10}$/.test(s)) return false;
+      var w = [6, 5, 7, 2, 3, 4, 5, 6, 7], t = 0;
+      for (var i = 0; i < 9; i += 1) t += w[i] * Number(s[i]);
+      return t % 11 === Number(s[9]);
+    },
+    sk_dph: function (v) {
+      var s = stripPrefix(v, "SK");
+      if (!/^[1-9]\d{9}$/.test(s)) return false;
+      var rem = 0;
+      for (var i = 0; i < s.length; i += 1) rem = (rem * 10 + Number(s[i])) % 11;
+      return rem === 0;
+    },
+    si_ddv: function (v) {
+      var s = stripPrefix(v, "SI");
+      if (!/^[1-9]\d{7}$/.test(s)) return false;
+      var t = 0;
+      for (var i = 0; i < 7; i += 1) t += (8 - i) * Number(s[i]);
+      var check = 11 - (t % 11);
+      return check !== 11 && check % 10 === Number(s[7]);
+    },
+    se_vat: function (v) {
+      var s = stripPrefix(v, "SE");
+      return /^\d{10}01$/.test(s) && CHECKSUMS.luhn(s.slice(0, 10));
     }
   };
+
+  function stripPrefix(value, prefix) {
+    var s = String(value).replace(/[\s.\-]/g, "").toUpperCase();
+    return s.indexOf(prefix) === 0 ? s.slice(prefix.length) : s;
+  }
 
   function tokens(text) {
     var spaced = String(text || "").replace(/([a-z0-9])([A-Z])/g, "$1 $2").toLowerCase();

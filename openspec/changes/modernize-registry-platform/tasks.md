@@ -201,7 +201,15 @@
   - 6 new draft records: `birthplace`, `brand`, `religion`, `weight`, `elevation` and `species`. `industry` and `language` came from the FTA review (8.10) and now carry the Sherlock mapping too.
   - New tool `sherlock` (detector). A test checks that its `supported_types` are the records that carry `mappings.sherlock`.
   - Generic header words (`code`, `type`, `rank`, ...) and roles over names (`director`, `owner`, ...) are not imported. The review is `devdocs/SHERLOCK_REVIEW.md`.
-- [x] 8.12 Review the ORG-ID.guide register of organization identifier lists (issue #17). Add the `orgid` crosswalk key, which holds ORG-ID.guide list codes.
+- [x] 8.12 Review the AutoType benchmark of Microsoft Research (issue #39). Add the `autotype` crosswalk key, which holds benchmark test case names.
+  - 119 of the 142 test cases are mapped to 83 records, at AutoType commit `600df80`.
+  - 18 new draft records for benchmark types the registry lacked, such as `bibcode`, `iswc`, `uniprot_id`, `ensembl_id`, `icd9`, `asin` and `ca_fsa`. `ca_postalcode` (a metacrafter-rules key) becomes an alias of `ca_postcode`.
+  - Message formats (SWIFT MT, FIX, NOTAM, NMEA), free-text types and mislabelled test cases are not mapped. The review is `devdocs/AUTOTYPE_REVIEW.md`.
+- [x] 8.13 Review the Sato semantic types (issue #33). Sato's published model predicts the same 78 types as Sherlock, in camelCase, at megagonlabs/sato commit `c19ace3`.
+  - No new mapping key: Sato labels resolve through `mappings.sherlock`, and `crosswalk("sato", ...)` is the same lookup as `crosswalk("sherlock", ...)`.
+  - New tool `sato` (detector). A test checks that its `supported_types` are the records that carry `mappings.sherlock`.
+  - The 46 unmapped types were checked again against the records added since 8.11; none has a same-meaning record yet. The review is `devdocs/SATO_REVIEW.md`.
+- [x] 8.14 Review the ORG-ID.guide register of organization identifier lists (issue #17). Add the `orgid` crosswalk key, which holds ORG-ID.guide list codes.
   - New draft records `org_id` (an identifier in the ORG-ID.guide form, `GB-COH-09506232`) and `org_id_scheme` (a list code, `GB-COH`).
   - 69 of the 569 list codes are mapped to 61 existing records. 182 lists get 175 new draft records; lists that use the same identifier share one record. New countries: 57. New languages: 22.
   - `crosswalk("orgid", ...)` accepts a list code in any case, its org-id.guide URL or a whole identifier. A test checks that each code maps to at most one record.

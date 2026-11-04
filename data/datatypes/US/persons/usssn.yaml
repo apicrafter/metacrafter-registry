@@ -17,6 +17,9 @@ is_pii: true
 classification: identifier
 regexp: ([0-9]{3})[- .]([0-9]{2})[- .]([0-9]{4})
 mappings:
+  autotype:
+  - ssn
+  - ssn - new
   google_dlp: US_SOCIAL_SECURITY_NUMBER
   presidio: US_SSN
   purview: U.S. social security number (SSN)

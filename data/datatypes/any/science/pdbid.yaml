@@ -1,0 +1,38 @@
+id: pdbid
+name: Protein Data Bank (PDB) ID
+status: draft
+doc: Four-character identifier of a three-dimensional structure entry in the Protein Data Bank, the archive
+  of protein and nucleic acid structures run by the wwPDB partners (RCSB PDB, PDBe, PDBj, BMRB). It is
+  a digit followed by three letters or digits. The wwPDB has announced an extended 12-character form for
+  future entries, such as pdb_00001abc, which this regexp does not cover.
+categories:
+- science
+- chemistry
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9][0-9A-Za-z]{3}$
+examples:
+- value: 4HHB
+  description: Human deoxyhaemoglobin
+- value: 1XU7
+  description: Tetrameric 11-beta-hydroxysteroid dehydrogenase 1
+- value: 4ZHD
+  description: Siderocalin recognition of actinides
+- value: HHB4
+  valid: false
+  description: Starts with a letter
+mappings:
+  wikidata: P638
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Protein_Data_Bank
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P638
+- type: doc
+  url: https://www.rcsb.org/
+translations:
+  ru:
+    name: Идентификатор PDB
+    doc: Идентификатор пространственной структуры в банке данных белков Protein Data Bank.

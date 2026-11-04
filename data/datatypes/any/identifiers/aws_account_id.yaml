@@ -1,0 +1,22 @@
+id: aws_account_id
+name: AWS account ID
+status: draft
+doc: Twelve-digit number that identifies an Amazon Web Services account, for example in the account field
+  of an ARN. AWS states that account IDs are not secret, but secret scanners report them because they
+  help to target an account.
+categories:
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{12}$
+examples:
+- value: '111122223333'
+  description: Example account ID from the AWS IAM documentation
+- value: '11112222333'
+  valid: false
+  description: Eleven digits
+links:
+- type: doc
+  url: https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-identifiers.html

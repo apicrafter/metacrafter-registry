@@ -10,4 +10,7 @@ is_pii: false
 classification: identifier
 regexp: ^[0-9]{13}$
 mappings:
+  autotype:
+  - EAN13_correct
+  - ean
   fta: CHECKDIGIT.EAN13
