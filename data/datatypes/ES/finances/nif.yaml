@@ -22,6 +22,9 @@ examples:
   description: Spanish NIF for a foreigner starting with X followed by 7 digits and check letter
 - value: 87654321X
   description: Another valid Spanish NIF format
+mappings:
+  google_dlp: SPAIN_NIF_NUMBER
+  presidio: ES_NIF
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal

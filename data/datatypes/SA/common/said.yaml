@@ -10,3 +10,5 @@ langs:
 - ar
 is_pii: true
 classification: identifier
+mappings:
+  purview: Saudi Arabia National ID

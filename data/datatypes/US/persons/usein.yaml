@@ -13,6 +13,8 @@ langs:
 is_pii: true
 classification: identifier
 regexp: '[0-9]{9}'
+mappings:
+  google_dlp: US_EMPLOYER_IDENTIFICATION_NUMBER
 links:
 - type: other
   url: https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers

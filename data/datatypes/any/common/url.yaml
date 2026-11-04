@@ -9,13 +9,15 @@ categories:
 langs:
 - common
 is_pii: false
-regexp: (https?|ftp)://(\S+\.)+\S+(/\S*)?|
+regexp: ^(?:https?|ftp)://(?:\S+\.)+\S+(?:/\S*)?$
 examples:
 - value: http://www.rdaregistry.info/xml/termList/AspectRatio.xml
   description: RDA aspect ratio designation
 - value: http://vocab.getty.edu/doc/
   description: Art & Architecture Thesaurus LOD Dataset
 mappings:
+  google_dlp: URL
+  presidio: URL
   wikidata: P2699
 links:
 - type: wikipedia

@@ -13,6 +13,9 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[0-9]{12}$
+mappings:
+  google_dlp: FRANCE_CNI
+  purview: France national id card (CNI)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/National_identity_card_(France)

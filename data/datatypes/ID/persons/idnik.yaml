@@ -15,3 +15,5 @@ regexp: ^[0-9]{16}$
 examples:
 - value: '1234567890123456'
   description: Example Indonesian NIK
+mappings:
+  purview: Indonesia identity card (KTP) number

@@ -1,10 +1,18 @@
 id: dc_coverage
-name: Dublin Core coverage by field name
-status: draft
-doc: Dublin Core coverage by field name
+name: Coverage (Dublin Core)
+status: stable
+doc: 'Dublin Core element ''coverage'': the spatial or temporal topic of the resource, the place it applies
+  to, or the jurisdiction it falls under.'
 categories:
 - dublincore
 langs:
-- en
+- common
 is_pii: false
-classification: identifier
+examples:
+- value: Europe
+  description: spatial coverage
+- value: 2020/2025
+  description: temporal coverage
+links:
+- type: dublincore
+  url: http://purl.org/dc/terms/coverage

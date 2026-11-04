@@ -5,6 +5,8 @@ _site/
 
 # Build output (deployed by CI, never committed)
 dist/
+src/metacrafter_registry/snapshot/
+.ecosystem/
 .build-*/
 
 # Virtual environment
@@ -28,3 +30,4 @@ build/
 .vscode/
 *.code-workspace
 .DS_Store
+.changes/

@@ -21,6 +21,9 @@ examples:
 - value: 153072C07300443
   valid: false
   description: 2C is not a department code
+mappings:
+  google_dlp: FRANCE_NIR
+  purview: France social security number (INSEE)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/INSEE_code

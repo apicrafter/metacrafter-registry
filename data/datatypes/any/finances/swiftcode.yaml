@@ -14,6 +14,8 @@ examples:
 - value: DEUTDEFF
   description: Deutsche Bank
 mappings:
+  google_dlp: SWIFT_CODE
+  purview: SWIFT code
   wikidata: P2627
 links:
 - type: wikipedia

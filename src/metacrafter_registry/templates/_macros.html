@@ -26,7 +26,7 @@
   </thead>
   <tbody>
   {% for r in records %}
-    <tr data-kind="{{ r.kind }}" data-status="{{ r.status }}" data-pii="{{ 'yes' if r.is_pii else 'no' }}" data-categories="{{ (r.categories or [])|join(' ') }}" data-country="{{ (r.country or ['any'])|join(' ') }}" data-text="{{ search_text[r.id] }}">
+    <tr data-kind="{{ r.kind }}" data-status="{{ r.status }}" data-rules="{{ 'yes' if (r.detected_by or {}).get('metacrafter_rules') else 'no' }}" data-pii="{{ 'yes' if r.is_pii else 'no' }}" data-categories="{{ (r.categories or [])|join(' ') }}" data-country="{{ (r.country or ['any'])|join(' ') }}" data-text="{{ search_text[r.id] }}">
       <td class="id"><a href="{{ base }}/datatype/{{ r.id }}">{{ r.id }}</a></td>
       <td><a href="{{ base }}/datatype/{{ r.id }}">{{ r.name }}</a> {{ pii_badge(r) }} {{ kind_badge(r) }} {{ status_badge(r) }}</td>
       <td>{{ category_links(r) }}</td>

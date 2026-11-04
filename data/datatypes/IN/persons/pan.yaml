@@ -12,3 +12,7 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[A-Z]{5}[0-9]{4}[A-Z]{1}$
+mappings:
+  google_dlp: INDIA_PAN_INDIVIDUAL
+  presidio: IN_PAN
+  purview: India permanent account number (PAN)

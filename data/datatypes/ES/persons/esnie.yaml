@@ -13,6 +13,8 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^(X(-|\.)?0?\d{7}(-|\.)?[A-Z]|[A-Z](-|\.)?\d{7}(-|\.)?[0-9A-Z]|\d{8}(-|\.)?[A-Z])$
+mappings:
+  presidio: ES_NIE
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/NIE_number

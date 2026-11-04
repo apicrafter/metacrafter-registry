@@ -31,6 +31,8 @@ examples:
 - value: GB123456789
   description: UK VAT identification number (pre-Brexit format) with country code GB and 9 alphanumeric
     characters
+mappings:
+  google_dlp: VAT_NUMBER
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/VAT_identification_number

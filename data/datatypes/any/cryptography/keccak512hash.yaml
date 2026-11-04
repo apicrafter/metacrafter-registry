@@ -1,10 +1,24 @@
 id: keccak512hash
-name: Keccak-512 hash by field name
-status: draft
-doc: Keccak-512 hash by field name
+name: Keccak-512 hash
+status: stable
+doc: 'Digest of the original Keccak-512 hash function (512 bits). It differs from the standardized SHA3-512,
+  which uses different padding. It is written as 128 hexadecimal digits. SHA-512, Keccak-512 and BLAKE2b-512
+  digests have the same length, so the value alone does not tell them apart: use the field name or context.'
 categories:
 - cryptography
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+regexp: ^[0-9a-fA-F]{128}$
+examples:
+- value: 0eab42de4c3ceb9235fc91acffe746b29c29a8c366b7c60e4e67c466f36a4304c00fa9caf9d87976ba469bcbe06713b435f091ef2769fb160cdab33d3670680e
+  description: Keccak-512 hash of the empty string
+- value: 18587dc2ea106b9a1563e32b3312421ca164c7f1f07bc922a9c83d77cea3a1e5d0c69910739025372dc14ac9642629379540c17e2a65b19d77aa511a9d00bb96
+  description: Keccak-512 hash of the string 'abc'
+- value: 0eab42de4c3ceb9235fc91acffe746b29c29a8c366b7c60e4e67c466f36a4304c00fa9caf9d87976ba469bcbe06713b435f091ef2769fb160cdab33d3670680
+  valid: false
+  description: one hex digit short (127 instead of 128)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SHA-3

@@ -11,3 +11,6 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[0-9]{11}$
+mappings:
+  presidio: AU_ABN
+  purview: Australian Business Number
