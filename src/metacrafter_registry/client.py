@@ -310,6 +310,8 @@ class Registry:
 
         A regexp like ``[A-Za-z0-9_]+`` matches most identifiers, so a hit is weak
         evidence; a regexp that matches no other record's examples is strong.
+        Rounded to 3 decimals, as in the site's identify index, so that the
+        Python and JavaScript scorers compute the same scores.
         """
         corpus = [
             (record["id"], example["value"])
@@ -321,7 +323,7 @@ class Registry:
         for rid, pattern in self._compiled.items():
             others = [value for owner, value in corpus if owner != rid]
             matched = sum(1 for value in others if pattern.fullmatch(value))
-            broadness[rid] = matched / len(others) if others else 0.0
+            broadness[rid] = round(matched / len(others), 3) if others else 0.0
         return broadness
 
     def _regexp_matches(self, rid: str, value: str) -> bool:
