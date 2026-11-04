@@ -60,6 +60,7 @@ mappings:
   fta:
   - FULL_ADDRESS_EN
   - STREET_ADDRESS_JA
+  sherlock: address
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Address

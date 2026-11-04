@@ -119,7 +119,9 @@ def create_server(registry: Registry):
         (http://schema.org/email) or its bare name (FileName). For purview, a
         Microsoft Purview sensitive information type name; case, periods and
         apostrophes are ignored. For fta, a semantic type as FTA (Fast Text
-        Analysis) reports it (POSTAL_CODE.ZIP5_US, MONTH.FULL_fr-FR).
+        Analysis) reports it (POSTAL_CODE.ZIP5_US, MONTH.FULL_fr-FR). For
+        sherlock, a Sherlock semantic type label (city, birth Date); case and
+        spaces are ignored.
         """
         return [_summary(registry, r) for r in registry.crosswalk(system, external_id)]
 

@@ -15,6 +15,7 @@ examples:
   description: Year 1243
 mappings:
   cdm: means.calendar.year
+  sherlock: year
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Year

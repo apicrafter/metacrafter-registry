@@ -244,6 +244,65 @@ def test_fta_mapping_must_be_an_fta_type(mini_data):
         assert validate(load_sources(mini_data)).errors == [], good
 
 
+def test_sherlock_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+
+    def ids(label: str) -> list[str]:
+        return [r["id"] for r in reg.crosswalk("sherlock", label)]
+
+    assert ids("city") == ["city"]
+    assert ids("birth Date") == ["birthday"]
+    # the paper writes "Birth date" and Sato writes "birthDate": case and
+    # spaces are ignored
+    assert ids("Birth date") == ["birthday"]
+    assert ids("birthDate") == ["birthday"]
+    assert ids("fileSize") == ["filesize"]
+    # a record can carry several Sherlock types
+    assert ids("company") == ids("organisation") == ["orgname"]
+    assert ids("sex") == ids("gender") == ["gender"]
+    # new records for Sherlock types the registry did not have
+    assert ids("birth Place") == ["birthplace"]
+    assert ids("religion") == ["religion"]
+    # generic header words and roles are not mapped
+    assert ids("code") == []
+    assert ids("director") == []
+    # every Sherlock type maps to at most one registry record
+    seen: dict[str, str] = {}
+    for record in reg.datatypes.values():
+        value = record.get("mappings", {}).get("sherlock")
+        for label in value if isinstance(value, list) else [value] if value else []:
+            assert label not in seen, f"{label} is mapped by {seen[label]} and {record['id']}"
+            seen[label] = record["id"]
+    assert len(seen) >= 32
+
+
+def test_sherlock_schema_lists_the_78_types():
+    schema = json.loads((REPO / "schema/datatype.schema.json").read_text("utf-8"))
+    labels = schema["$defs"]["sherlockType"]["enum"]
+    assert len(labels) == len(set(labels)) == 78
+    assert {"birth Date", "birth Place", "file Size", "team Name"} <= set(labels)
+
+
+def test_sherlock_tool_lists_the_mapped_records(repo_sources):
+    mapped = sorted(
+        rec.id for rec in repo_sources.datatypes if (rec.data.get("mappings") or {}).get("sherlock")
+    )
+    tool = next(t for t in repo_sources.tools if t.id == "sherlock")
+    assert sorted(tool.data["supported_types"]) == mapped
+
+
+def test_sherlock_mapping_must_be_a_sherlock_type(mini_data):
+    path = mini_data / "datatypes/any/pii/email.yaml"
+    path.write_text(path.read_text() + "mappings:\n  sherlock: email\n")
+    errors = [str(i) for i in validate(load_sources(mini_data)).errors]
+    assert any("mappings" in e and "sherlock" in e for e in errors), errors
+
+    path.write_text(path.read_text().replace("sherlock: email", "sherlock: name"))
+    assert validate(load_sources(mini_data)).errors == []
+
+
 def test_changes_diff():
     old = [
         {"id": "a", "status": "draft", "name": "A"},

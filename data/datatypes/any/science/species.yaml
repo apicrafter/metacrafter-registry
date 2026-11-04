@@ -1,0 +1,27 @@
+id: species
+name: Species
+status: draft
+doc: Name of a biological species, either its scientific name, such as Panthera leo, or a common name,
+  such as lion. Typical columns are in biodiversity observations, fishery and forestry statistics, and
+  in machine learning datasets such as Iris. The animal record covers common names of animals.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Panthera leo
+  description: scientific name of the lion
+- value: Iris-setosa
+  description: class label in the UCI Iris dataset
+mappings:
+  sherlock: species
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Species
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q7432
+translations:
+  ru:
+    name: Биологический вид

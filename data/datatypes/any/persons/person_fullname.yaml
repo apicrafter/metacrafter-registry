@@ -16,3 +16,4 @@ mappings:
   fta:
   - NAME.FIRST_LAST
   - NAME.LAST_FIRST
+  sherlock: person

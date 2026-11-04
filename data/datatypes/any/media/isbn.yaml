@@ -9,3 +9,5 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(978|979)[0-9]{10}$
+mappings:
+  sherlock: isbn

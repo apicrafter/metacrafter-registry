@@ -82,5 +82,9 @@ Example:
   column that FTA (Fast Text Analysis) labelled, pass FTA's semantic type as it
   reports it: `crosswalk("fta", "POSTAL_CODE.ZIP5_US")` returns `uszipcode`,
   and `crosswalk("fta", "MONTH.FULL_fr-FR")` returns `month`.
+  For a column that Sherlock labelled, pass its label: `crosswalk("sherlock",
+  "birth Date")` returns `birthday`; case and spaces are ignored. 32 of
+  Sherlock's 78 types are mapped. Generic labels such as `code`, `type` or
+  `rank` return nothing.
 - **Former ids.** `get_datatype("ssn")` returns `usssn` with
   `resolved_from_alias`. Always cite the canonical id.
