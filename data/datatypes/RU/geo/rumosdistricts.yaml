@@ -12,5 +12,5 @@ is_pii: false
 classification: categorical
 translations:
   ru:
-    name: Округа города Москвы
-    doc: Округа города Москвы
+    name: Районы города Москвы
+    doc: Районы и поселения города Москвы, например Тверской район
