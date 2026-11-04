@@ -1,0 +1,43 @@
+id: country_calling_code
+name: Country calling code (international telephone code)
+status: draft
+doc: One- to three-digit code of ITU-T Recommendation E.164 that is dialled after the international prefix
+  to reach a country or a group of countries, usually written with a plus sign. Some codes serve several
+  countries (+1 for the North American Numbering Plan, +7 for Russia and Kazakhstan), and some are for
+  global services such as satellite networks.
+categories:
+- telecom
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\+?[1-9]\d{0,2}$
+examples:
+- value: '+7'
+  description: Russia and Kazakhstan
+- value: '+44'
+  description: United Kingdom
+- value: '+358'
+  description: Finland
+- value: '+0'
+  valid: false
+  description: No calling code starts with 0
+- value: '+1234'
+  valid: false
+  description: Four digits, longer than any calling code
+mappings:
+  wikidata: P474
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_country_calling_codes
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P474
+- type: doc
+  url: https://www.itu.int/rec/T-REC-E.164
+translations:
+  ru:
+    name: Телефонный код страны
+    doc: Код из одной–трёх цифр по рекомендации МСЭ-Т E.164, который набирается после международного префикса
+      для вызова страны или группы стран; обычно записывается со знаком плюс. Некоторые коды общие для
+      нескольких стран (+1 — Североамериканский план нумерации, +7 — Россия и Казахстан).

@@ -1,21 +1,27 @@
 id: meid
 name: Mobile Equipment Identifier (MEID)
 status: draft
-doc: 56-bit identifier of CDMA mobile devices. It is written as 14 hexadecimal characters or as an 18-digit
-  decimal number, either of them optionally followed by a check character.
+doc: 56-bit identifier of CDMA mobile devices that replaced the 32-bit ESN (esn). It is written as 14
+  hexadecimal characters or as an 18-digit decimal number, either of them optionally followed by a check
+  character.
 categories:
 - telecom
+- pii
 langs:
 - common
 is_pii: true
 classification: identifier
 regexp: ^(?:[0-9A-F]{14}[0-9A-F]?|\d{18}\d?)$
 examples:
-- value: A1F1A9017017E0
-  description: Synthetic number in the documented format
-- value: A341E59CFB517B
-  description: Synthetic number in the documented format
-- value: A1F1A9017017E
+- value: AF0123450ABCDE
+  description: Hexadecimal form (python-stdnum documentation)
+- value: AF0123450ABCDEC
+  description: The same MEID with its check character C
+- value: '293608736500703710'
+  description: The same MEID in decimal form
+- value: '2936087365007037100'
+  description: Decimal form with its check digit 0
+- value: AF0123450ABCD
   valid: false
   description: One character too few
 links:
@@ -23,3 +29,9 @@ links:
   url: https://en.wikipedia.org/wiki/Mobile_equipment_identifier
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.meid.html
+translations:
+  ru:
+    name: Идентификатор мобильного оборудования (MEID)
+    doc: 56-битный идентификатор мобильных устройств стандарта CDMA, заменивший 32-битный ESN. Записывается
+      14 шестнадцатеричными символами или 18-значным десятичным числом, в обоих случаях с необязательным
+      контрольным символом.

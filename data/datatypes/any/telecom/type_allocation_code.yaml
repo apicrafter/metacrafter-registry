@@ -1,0 +1,33 @@
+id: type_allocation_code
+name: Type Allocation Code (TAC) of a mobile device
+status: draft
+doc: The first eight digits of an IMEI or IMEISV, which identify the make and model of a mobile device.
+  Reporting bodies approved by the GSMA allocate TACs to manufacturers; the first two digits are the Reporting
+  Body Identifier. Before 2003 this part of the IMEI was a six-digit type approval code followed by a
+  two-digit final assembly code. Device databases keyed by TAC are used to resolve the model of an IMEI.
+categories:
+- telecom
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{8}$
+examples:
+- value: '35174605'
+  description: Google Galaxy Nexus (Wikipedia)
+- value: '35880005'
+  description: Apple iPhone 5C, model A1507 (Wikipedia)
+- value: '49015420'
+  description: TAC of the example IMEI 490154203237518
+- value: '3517460'
+  valid: false
+  description: Seven digits, one too few
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Type_Allocation_Code
+translations:
+  ru:
+    name: Код типа устройства (TAC)
+    doc: Первые восемь цифр IMEI или IMEISV, которые определяют производителя и модель мобильного устройства.
+      Коды выделяют производителям уполномоченные GSMA организации; первые две цифры — идентификатор такой
+      организации (Reporting Body Identifier).

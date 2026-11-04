@@ -1,8 +1,10 @@
 id: imsi
-name: The international mobile subscriber identity (IMSI)
+name: International Mobile Subscriber Identity (IMSI)
 status: stable
-doc: The international mobile subscriber identity (IMSI) is a number that uniquely identifies every user
-  of a cellular network.
+doc: Number stored on a SIM card that identifies a subscription in a mobile network (3GPP TS 23.003, ITU-T
+  E.212). It starts with the 3-digit mobile country code (MCC) and the 2- or 3-digit mobile network code
+  (MNC) of the home network, followed by the mobile subscription identification number (MSIN). It has
+  at most 15 digits; most IMSIs have 15, and some older ones have 14.
 categories:
 - telecom
 - pii
@@ -10,14 +12,28 @@ langs:
 - common
 is_pii: true
 classification: identifier
-regexp: ^\d{15}$
+regexp: ^\d{14,15}$
 examples:
 - value: '310150123456789'
-  description: US IMSI (MCC 310, MNC 15, MSIN 0123456789)
-- value: '250990123456789'
-  description: Russian IMSI (MCC 250, MNC 99, MSIN 0123456789)
-- value: '234150123456789'
-  description: UK IMSI (MCC 234, MNC 15, MSIN 0123456789)
+  description: United States; MCC 310, MNC 150, MSIN 123456789 (python-stdnum documentation)
+- value: '429011234567890'
+  description: Nepal; MCC 429, MNC 01 (python-stdnum documentation)
+- value: '460001357924680'
+  description: China; MCC 460, MNC 00, MSIN 1357924680 (Wikipedia)
+- value: '3101501234567890'
+  valid: false
+  description: 16 digits, longer than an IMSI can be
+- value: 310-150-123456789
+  valid: false
+  description: Separators are not used
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_mobile_subscriber_identity
+- type: doc
+  url: https://www.3gpp.org/DynaReport/23003.htm
+translations:
+  ru:
+    name: Международный идентификатор мобильного абонента (IMSI)
+    doc: Номер, записанный на SIM-карте и идентифицирующий подписку в мобильной сети (3GPP TS 23.003,
+      МСЭ-Т E.212). Начинается с 3-значного мобильного кода страны (MCC) и 2- или 3-значного кода сети
+      (MNC), за которыми следует номер абонента (MSIN). Содержит не более 15 цифр.

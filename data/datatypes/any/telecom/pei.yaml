@@ -1,0 +1,36 @@
+id: pei
+name: Permanent Equipment Identifier (PEI) of a 5G network
+status: draft
+doc: Permanent identifier of the device that accesses a 5G core network (3GPP TS 23.003). The service
+  APIs of the 5G core (3GPP TS 29.571) write it as imei- followed by an IMEI, imeisv- followed by an IMEISV,
+  or, for devices on wireline access, mac- or eui- followed by a MAC address or an EUI-64 in hyphen-separated
+  octets.
+categories:
+- telecom
+- pii
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^(?:imei-\d{15}|imeisv-\d{16}|mac(?:-[0-9a-fA-F]{2}){6}(?:-untrusted)?|eui(?:-[0-9a-fA-F]{2}){8})$
+examples:
+- value: imei-490154203237518
+  description: PEI of type IMEI
+- value: imeisv-3520990017614823
+  description: PEI of type IMEISV
+- value: mac-00-1b-44-11-3a-b7
+  description: PEI of type MAC address
+- value: '490154203237518'
+  valid: false
+  description: A bare IMEI without the type prefix
+links:
+- type: doc
+  url: https://www.3gpp.org/DynaReport/23003.htm
+- type: doc
+  url: https://www.3gpp.org/DynaReport/29571.htm
+translations:
+  ru:
+    name: Постоянный идентификатор оборудования (PEI) в сети 5G
+    doc: Постоянный идентификатор устройства, подключающегося к ядру сети 5G (3GPP TS 23.003). В сервисных
+      API ядра 5G записывается как imei- и IMEI, imeisv- и IMEISV, а для проводного доступа — mac- или
+      eui- и MAC-адрес или EUI-64 по октетам через дефис.

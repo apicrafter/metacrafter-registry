@@ -1,9 +1,11 @@
 id: msisdn
 name: Mobile Subscriber ISDN Number (MSISDN)
 status: stable
-doc: MSISDN is a number uniquely identifying a subscription in a Global System for Mobile communications
-  or a Universal Mobile Telecommunications System mobile network. It is the mapping of the telephone number
-  to the subscriber identity module in a mobile or cellular phone.
+doc: Telephone number of a mobile subscription, which the network links to the IMSI of the SIM card (3GPP
+  TS 23.003). It is an ITU-T E.164 number written in international form without the plus sign, spaces
+  or punctuation; the country code, the national destination code and the subscriber number together have
+  at most 15 digits.
+parent: phone
 categories:
 - telecom
 - pii
@@ -11,18 +13,28 @@ langs:
 - common
 is_pii: true
 classification: identifier
-regexp: ^[1-9][0-9]{10,14}$
+regexp: ^[1-9]\d{7,14}$
 examples:
-- value: '12025551234'
-  description: US MSISDN (country code 1, 11 digits total)
-- value: '447911123456'
-  description: UK MSISDN (country code 44, 12 digits total)
-- value: '79101234567'
-  description: Russian MSISDN (country code 7, 11 digits total)
-- value: '8613800138000'
-  description: Chinese MSISDN (country code 86, 13 digits total)
+- value: '12025550143'
+  description: United States; 555-0100 to 555-0199 are reserved for fictional use
+- value: '447700900123'
+  description: United Kingdom; 07700 900000 to 900999 are reserved by Ofcom for drama
+- value: '+447700900123'
+  valid: false
+  description: The plus sign belongs to the E.164 notation (phone_e164), not to the MSISDN
+- value: 07700900123
+  valid: false
+  description: National notation with the trunk prefix 0 instead of the country code
 mappings:
   autotype: msisdn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/MSISDN
+- type: doc
+  url: https://www.3gpp.org/DynaReport/23003.htm
+translations:
+  ru:
+    name: Номер мобильного абонента (MSISDN)
+    doc: Телефонный номер мобильной подписки, который сеть связывает с IMSI SIM-карты (3GPP TS 23.003).
+      Это номер по рекомендации МСЭ-Т E.164 в международном виде без знака плюс, пробелов и разделителей;
+      код страны, код сети и номер абонента вместе содержат не более 15 цифр.

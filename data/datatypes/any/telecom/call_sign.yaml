@@ -1,0 +1,30 @@
+id: call_sign
+name: Radio call sign
+status: draft
+doc: Identifier of a radio station, such as a broadcaster, a ship, an aircraft or an amateur radio operator,
+  formed under the ITU Radio Regulations from a prefix allocated to the country and a suffix assigned
+  by the national administration. Amateur radio call signs identify individual licence holders.
+categories:
+- telecom
+langs:
+- common
+is_pii: true
+classification: identifier
+examples:
+- value: KDKA
+  description: Radio station in Pittsburgh, United States
+- value: SHJO
+  description: Call sign of the Swedish ship Asta av Smögen (Wikidata)
+mappings:
+  wikidata: P2317
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Call_sign
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2317
+translations:
+  ru:
+    name: Позывной сигнал радиостанции
+    doc: Идентификатор радиостанции — вещателя, судна, воздушного судна или радиолюбителя, — образованный
+      по Регламенту радиосвязи МСЭ из префикса страны и суффикса, который назначает национальная администрация.
+      Любительские позывные идентифицируют конкретных владельцев лицензий.

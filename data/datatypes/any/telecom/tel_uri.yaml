@@ -1,0 +1,33 @@
+id: tel_uri
+name: Telephone number as a tel URI
+status: draft
+doc: Telephone number written as a URI of the tel scheme (RFC 3966), as in HTML links, vCards and SIP
+  messages. A global number starts with a plus sign and may contain hyphens, dots and parentheses as visual
+  separators; a local number needs a phone-context parameter. Other parameters, such as ext for an extension,
+  follow after semicolons.
+semantic_type: phone
+langs:
+- common
+regexp: ^tel:(?:\+[\d().-]*\d[\d().-]*|[\dA-Fa-f*#().-]*[\dA-Fa-f*#][\dA-Fa-f*#().-]*)(?:;[^;\s]+)*$
+examples:
+- value: tel:+1-201-555-0123
+  description: Global number (RFC 3966)
+- value: tel:7042;phone-context=example.com
+  description: Local number with a domain as its context (RFC 3966)
+- value: tel:863-1234;phone-context=+1-914-555
+  description: Local number with a number prefix as its context (RFC 3966)
+- value: +1-201-555-0123
+  valid: false
+  description: The tel scheme is missing
+- value: sip:+1-212-555-1212@gateway.com
+  valid: false
+  description: A SIP URI, not a tel URI
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc3966
+translations:
+  ru:
+    name: Номер телефона в виде tel URI
+    doc: Номер телефона, записанный как URI схемы tel (RFC 3966), например в HTML-ссылках, vCard и сообщениях
+      SIP. Глобальный номер начинается со знака плюс и может содержать дефисы, точки и скобки; для локального
+      номера нужен параметр phone-context.

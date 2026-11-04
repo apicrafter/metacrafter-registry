@@ -1,0 +1,39 @@
+id: esn
+name: Electronic Serial Number (ESN) of a mobile device
+status: draft
+doc: 32-bit identifier of AMPS and CDMA mobile devices, replaced by the MEID (meid). It is written as
+  8 hexadecimal digits or as an 11-digit decimal number, in which the first three digits encode the first
+  eight bits (000 to 255) and the other eight digits the remaining 24 bits. The prefix 80 in hexadecimal
+  (128 in decimal) marks a pseudo-ESN derived from an MEID, which is not guaranteed to be unique.
+categories:
+- telecom
+- pii
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^(?:[0-9A-Fa-f]{8}|(?:[01]\d{2}|2[0-4]\d|25[0-5])\d{8})$
+examples:
+- value: 9F6E45A1
+  description: Synthetic ESN in hexadecimal form
+- value: '15907226785'
+  description: The same ESN in decimal form
+- value: 80A3F21C
+  description: Synthetic pseudo-ESN (prefix 80)
+- value: '12810744348'
+  description: The same pseudo-ESN in decimal form
+- value: 9F6E45A
+  valid: false
+  description: Seven hexadecimal digits, one too few
+- value: '25607226785'
+  valid: false
+  description: The first three decimal digits cannot exceed 255
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Electronic_serial_number
+translations:
+  ru:
+    name: Электронный серийный номер (ESN) мобильного устройства
+    doc: 32-битный идентификатор мобильных устройств стандартов AMPS и CDMA, заменённый MEID. Записывается
+      8 шестнадцатеричными цифрами или 11-значным десятичным числом. Префикс 80 (128 в десятичной записи)
+      обозначает псевдо-ESN, вычисленный из MEID.

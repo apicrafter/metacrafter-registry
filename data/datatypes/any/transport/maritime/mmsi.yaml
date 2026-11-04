@@ -1,23 +1,29 @@
 id: mmsi
 name: Maritime Mobile Service Identity
 status: stable
-doc: A Maritime Mobile Service Identity (MMSI) is a series of nine digits which are sent in digital form
-  over a radio frequency channel in order to uniquely identify ship stations, ship earth stations, coast
-  stations, coast earth stations, and group calls. These identities are formed in such a way that the
-  identity or part thereof can be used by telephone and telex subscribers connected to the general telecommunications
-  network to call ships automatically.
+doc: Nine-digit number that identifies a station of the maritime radio service (ITU-R Recommendation M.585)
+  in digital selective calling, AIS and satellite systems. Ship stations start with the three-digit Maritime
+  Identification Digits (MID) of the flag country; coast stations start with 00, groups of ships with
+  0, search and rescue aircraft with 111, and aids to navigation with 99. Public telephone networks can
+  use it to call ships automatically.
 categories:
 - transport
+- telecom
 langs:
 - common
 is_pii: false
 classification: identifier
-regexp: \d{9}
+regexp: ^\d{9}$
 examples:
-- value: '123456789'
-  description: Example MMSI
-- value: '366123456'
-  description: US MMSI example
+- value: '212933000'
+  description: Ship station Atlantic Progress; MID 212 (Cyprus)
+- value: '311001109'
+  description: Ship station; MID 311 (Bahamas)
+- value: 003669999
+  description: Group coast station of the US Coast Guard
+- value: '21293300'
+  valid: false
+  description: Eight digits, one too few
 mappings:
   wikidata: P587
 links:
@@ -25,3 +31,11 @@ links:
   url: https://en.wikipedia.org/wiki/Maritime_Mobile_Service_Identity
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P587
+- type: doc
+  url: https://www.itu.int/rec/R-REC-M.585
+translations:
+  ru:
+    name: Идентификатор морской подвижной службы (MMSI)
+    doc: Девятизначный номер станции морской радиослужбы (рекомендация МСЭ-R M.585), используемый в цифровом
+      избирательном вызове, АИС и спутниковых системах. Номер судовой станции начинается с трёхзначного
+      морского идентификационного кода (MID) страны флага, номер береговой станции — с 00.

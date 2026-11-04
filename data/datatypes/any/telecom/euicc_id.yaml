@@ -1,0 +1,34 @@
+id: euicc_id
+name: eUICC identifier (EID)
+status: draft
+doc: Permanent 32-digit identifier of an eUICC, the chip of an eSIM that stores mobile network profiles,
+  defined by GSMA SGP.29. It begins with the identification number of the eUICC manufacturer, older EIDs
+  with 89, and ends with two check digits chosen so that the whole number divided by 97 leaves the remainder
+  1. Phones show it in their settings, and remote SIM provisioning uses it to address the chip.
+categories:
+- telecom
+- pii
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{32}$
+examples:
+- value: '89034011560010000000000000000121'
+  description: Example EID from Infineon documentation
+- value: '89049032735180294610385712649039'
+  description: Synthetic EID with valid check digits
+- value: '8903401156001000000000000000012'
+  valid: false
+  description: 31 digits, one too few
+links:
+- type: doc
+  url: https://www.gsma.com/solutions-and-impact/technologies/esim/wp-content/uploads/2024/03/SGP.29-v1.1.pdf
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ESIM
+translations:
+  ru:
+    name: Идентификатор eUICC (EID)
+    doc: Постоянный 32-значный идентификатор eUICC — чипа eSIM, хранящего профили операторов, по спецификации
+      GSMA SGP.29. Начинается с идентификатора производителя (у старых EID — с 89) и заканчивается двумя
+      контрольными цифрами, при которых остаток от деления всего числа на 97 равен 1.

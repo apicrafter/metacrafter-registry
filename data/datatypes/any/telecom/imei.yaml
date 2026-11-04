@@ -1,8 +1,11 @@
 id: imei
 name: International Mobile Equipment Identity (IMEI)
 status: stable
-doc: The International Mobile Equipment Identity (IMEI) is a numeric identifier, usually unique for 3GPP
-  and iDEN mobile phones, as well as some satellite phones.
+doc: Number that identifies a mobile device of 3GPP networks (GSM, UMTS, LTE, 5G) and of some satellite
+  networks. It has 15 digits; the 8-digit Type Allocation Code (TAC) identifies the device model, the
+  next 6 digits are the serial number given by the manufacturer, and the last digit is a Luhn check digit.
+  It is often written as AA-BBBBBB-CCCCCC-D. The related IMEISV (imeisv) replaces the check digit with
+  a two-digit software version number.
 categories:
 - telecom
 - pii
@@ -10,15 +13,21 @@ langs:
 - common
 is_pii: true
 classification: identifier
-regexp: ^(?:\d{14,15}|\d{2}-\d{6}-\d{6}-\d{1,2})$
+regexp: ^(?:\d{15}|\d{2}-\d{6}-\d{6}-\d)$
 checksum: luhn
 examples:
 - value: '490154203237518'
-  description: IMEI with check digit
-- value: '356938035643809'
-  description: IMEI example
+  description: Example from the Luhn check digit calculation on Wikipedia; TAC 49015420
 - value: 49-015420-323751-8
-  description: IMEI with dashes
+  description: The same IMEI in the AA-BBBBBB-CCCCCC-D notation
+- value: '352099001761481'
+  description: Older IMEI with a six-digit type approval code and a final assembly code
+- value: '490154203237519'
+  valid: false
+  description: Wrong check digit
+- value: 35-209900-176148-23
+  valid: false
+  description: An IMEISV, which has a software version instead of a check digit
 mappings:
   autotype: imei
   google_dlp: IMEI_HARDWARE_ID
@@ -29,3 +38,11 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity
+- type: doc
+  url: https://www.3gpp.org/DynaReport/23003.htm
+translations:
+  ru:
+    name: Международный идентификатор мобильного оборудования (IMEI)
+    doc: Номер, который идентифицирует мобильное устройство сетей 3GPP (GSM, UMTS, LTE, 5G) и некоторых
+      спутниковых сетей. Состоит из 15 цифр — 8-значного кода типа устройства (TAC), 6-значного серийного
+      номера и контрольной цифры по алгоритму Луна. Часто записывается в виде AA-BBBBBB-CCCCCC-D.

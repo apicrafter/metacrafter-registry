@@ -1,0 +1,37 @@
+id: mobile_country_code
+name: Mobile country code (MCC)
+status: draft
+doc: Three-digit code of ITU-T Recommendation E.212 that identifies the country of a mobile network; with
+  the mobile network code (mobile_network_code) it identifies the network (plmn_id) and forms the start
+  of an IMSI. The first digit gives the region (2 Europe, 3 North America and the Caribbean, 4 Asia and
+  the Middle East, 5 Oceania, 6 Africa, 7 South and Central America, 9 worldwide services); 001 is for
+  test networks. A country can have several codes.
+categories:
+- telecom
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[02-79]\d{2}$
+examples:
+- value: '310'
+  description: United States
+- value: '460'
+  description: China
+- value: '001'
+  description: Test networks
+- value: '31'
+  valid: false
+  description: Two digits, one too few
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Mobile_country_code
+- type: doc
+  url: https://www.itu.int/rec/T-REC-E.212
+translations:
+  ru:
+    name: Мобильный код страны (MCC)
+    doc: Трёхзначный код по рекомендации МСЭ-Т E.212, обозначающий страну мобильной сети. Вместе с кодом
+      сети (MNC) идентифицирует сеть и образует начало IMSI. Первая цифра обозначает регион; у страны
+      может быть несколько кодов.
