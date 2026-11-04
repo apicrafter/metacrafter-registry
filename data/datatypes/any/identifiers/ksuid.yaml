@@ -1,0 +1,33 @@
+id: ksuid
+name: KSUID (K-Sortable Unique Identifier)
+status: draft
+doc: 160-bit identifier from Segment's ksuid library. It is a 32-bit timestamp in seconds since 13 May
+  2014 (Unix time 1400000000) followed by 128 random bits, so values sort by creation time. The text form
+  is always 27 base62 characters (digits, uppercase and lowercase letters) without separators. The largest
+  KSUID is aWgEPTl1tmebfsQzFP4bxwgy80V, so the first character is a digit, an uppercase letter or a.
+categories:
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Za][0-9A-Za-z]{26}$
+examples:
+- value: 0ujtsYcgvSTl8PAuAdqWYSMnLOv
+  description: KSUID inspected in the ksuid README, created 2017-10-10 04:00:47 UTC
+- value: 0ujsswThIGTUYm2K8FjOOfXtY1K
+  description: KSUID generated in the ksuid README
+- value: aWgEPTl1tmebfsQzFP4bxwgy80V
+  description: Largest KSUID
+- value: 0ujtsYcgvSTl8PAuAdqWYSMnLO
+  valid: false
+  description: 26 characters
+- value: 0ujtsYcgvSTl8PAuAdqWYSM-LOv
+  valid: false
+  description: The hyphen is not a base62 character
+links:
+- type: doc
+  url: https://github.com/segmentio/ksuid
+translations:
+  ru:
+    name: KSUID (K-сортируемый уникальный идентификатор)

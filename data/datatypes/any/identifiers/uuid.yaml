@@ -1,8 +1,14 @@
 id: uuid
-name: A universally unique identifier (UUID)
+name: Universally unique identifier (UUID)
 status: stable
-doc: A universally unique identifier (UUID) is a 128-bit label used for information in computer systems.
-  The term globally unique identifier (GUID) is also used.
+doc: 128-bit identifier that systems generate without a central registry, defined by RFC 9562 (2024),
+  which replaced RFC 4122. Microsoft calls it a GUID. The text form is 32 hexadecimal digits in five groups
+  of 8, 4, 4, 4 and 12 separated by hyphens, in any letter case. The first digit of the third group is
+  the version (1 to 8, see uuid_v1, uuid_v4 and uuid_v7), and the first digit of the fourth group is 8,
+  9, a or b for the RFC 9562 variant. The Nil UUID (all zeros) and the Max UUID (all f) are special values.
+  Microsoft tools and the Windows registry write GUIDs in curly braces, a form the regexp also accepts.
+  The regexp does not accept the 32 digits without hyphens, which look like an MD5 hash, or the urn:uuid
+  form (uuid_urn).
 aliases:
 - guid
 categories:
@@ -11,7 +17,25 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: '[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}'
+regexp: ^(?:[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}|\{[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}\})$
+examples:
+- value: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+  description: Example string UUID of RFC 9562 (Figure 1)
+- value: 919108f7-52d1-4320-9bac-f847db4148a8
+  description: UUIDv4 test vector of RFC 9562 (Appendix A.3)
+- value: 6fa459ea-ee8a-3ca4-894e-db77e160355e
+  description: Name-based UUIDv3 from the Python uuid module documentation
+- value: '{C232AB00-9414-11EC-B3C8-9F6BDECED846}'
+  description: UUIDv1 test vector of RFC 9562 in the braced GUID form of Microsoft tools
+- value: f81d4fae7dec11d0a76500a0c91e6bf6
+  valid: false
+  description: 32 hexadecimal digits without hyphens
+- value: urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+  valid: false
+  description: URN form, see uuid_urn
+- value: '{f81d4fae-7dec-11d0-a765-00a0c91e6bf6'
+  valid: false
+  description: Unbalanced brace
 mappings:
   autotype: guid
   cdm: is.dataFormat.guid
@@ -20,3 +44,13 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Universally_unique_identifier
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q195284
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc9562
+translations:
+  ru:
+    name: Универсальный уникальный идентификатор (UUID)
+    doc: 128-битный идентификатор по RFC 9562, который системы создают без центрального реестра. В Microsoft
+      его называют GUID. Записывается как 32 шестнадцатеричные цифры в пяти группах (8-4-4-4-12) через
+      дефис; первая цифра третьей группы указывает версию.

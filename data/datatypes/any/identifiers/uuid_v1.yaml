@@ -1,0 +1,33 @@
+id: uuid_v1
+name: Time-based UUID (version 1)
+status: draft
+doc: UUID of version 1 under RFC 9562. It holds a 60-bit count of 100-nanosecond intervals since 15 October
+  1582, a clock sequence and a 48-bit node ID. The node ID is usually the IEEE 802 MAC address of the
+  generating host, so the value reveals when and on which machine it was made. The version digit, the
+  first digit of the third group, is 1. RFC 9562 recommends version 7 instead of versions 1 and 6 where
+  possible.
+parent: uuid
+categories:
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-1[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$
+examples:
+- value: C232AB00-9414-11EC-B3C8-9F6BDECED846
+  description: UUIDv1 test vector of RFC 9562 (Appendix A.1)
+- value: a8098c1a-f86e-11da-bd1a-00112444be1e
+  description: uuid1() output in the Python uuid module documentation
+- value: 1EC9414C-232A-6B00-B3C8-9F6BDECED846
+  valid: false
+  description: The same time and node as UUIDv6 (RFC 9562, Appendix A.5)
+- value: 919108f7-52d1-4320-9bac-f847db4148a8
+  valid: false
+  description: UUIDv4
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc9562#name-uuid-version-1
+translations:
+  ru:
+    name: UUID версии 1 (на основе времени)

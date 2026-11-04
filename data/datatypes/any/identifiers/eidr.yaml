@@ -17,6 +17,9 @@ examples:
   description: The Simpsons
 - value: 10.5240/E058-3983-F191-9805-DD81-Q
   description: Never Say Never Again
+- value: 10.1000/182
+  valid: false
+  description: DOI outside the EIDR prefix 10.5240
 mappings:
   wikidata: P2704
 links:

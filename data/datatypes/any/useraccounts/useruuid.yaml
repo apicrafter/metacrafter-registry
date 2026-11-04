@@ -1,11 +1,26 @@
 id: useruuid
-name: User UUID by field name
-status: stable
-doc: User UUID by field name identifier
+name: User UUID
+status: draft
+doc: UUID that identifies a user account, typically in a column such as user_uuid, account_uuid or user_guid.
+  The value has the UUID format (uuid). Metacrafter reports it when the field name points to a user.
+parent: userid
 categories:
-- finances
+- useraccounts
+- identifiers
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
-regexp: ^[A-Za-z0-9_-]{3,50}$
+regexp: ^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$
+examples:
+- value: 16fd2706-8baf-433b-82eb-8c7fada847da
+  description: UUIDv4 from the Python uuid module documentation
+- value: '42'
+  valid: false
+  description: Numeric user ID, see userid
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc9562
+translations:
+  ru:
+    name: UUID пользователя
