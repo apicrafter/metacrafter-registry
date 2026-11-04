@@ -54,6 +54,32 @@ jobs:
       - name: Install
         run: pip install -e .
 
+      - name: Read the pinned metacrafter-rules ref
+        id: lock
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import re, yaml
+          ref = str(yaml.safe_load(open("ecosystem.lock"))["metacrafter-rules"]["ref"])
+          if not re.fullmatch(r"[0-9a-f]{40}", ref):
+              raise SystemExit(f"ecosystem.lock: ref must be a full commit SHA, got {ref!r}")
+          print(f"ref={ref}")
+          PY
+
+      - name: Check out metacrafter-rules at the pinned ref
+        uses: actions/checkout@v4
+        with:
+          repository: apicrafter/metacrafter-rules
+          ref: ${{ steps.lock.outputs.ref }}
+          path: .ecosystem/metacrafter-rules
+
+      - name: Rule coverage matches the pinned metacrafter-rules
+        env:
+          RULES_REF: ${{ steps.lock.outputs.ref }}
+        run: metacrafter-registry coverage check --rules-dir .ecosystem/metacrafter-rules/rules --ref "$RULES_REF"
+
+      - name: Rule keys without a registry record (warnings)
+        run: metacrafter-registry coverage report --github-annotations
+
       - name: Build
         run: metacrafter-registry build
 

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Data quality{% endblock %}
+{% block description %}How complete the registry records are, which records are drafts, and how well metacrafter rules cover them.{% endblock %}
+{% block content %}
+{% set total = records|length %}
+{% set drafts_n = drafts|length %}
+<h1>Data quality</h1>
+<p class="lead">Honest numbers: a field counts only when it has a value. Every record has a quality score from 0 to 100 (<a href="https://github.com/apicrafter/metacrafter-registry/blob/main/src/metacrafter_registry/quality.py">rubric</a>) and a list of what it is missing.</p>
+
+<div class="stats">
+  <div class="stat"><strong>{{ total }}</strong><span>records</span></div>
+  <div class="stat"><strong>{{ total - drafts_n }}</strong><span>stable</span></div>
+  <div class="stat"><strong>{{ drafts_n }}</strong><span>drafts</span></div>
+  <div class="stat"><strong>{{ (records|sum(attribute='quality.score') / total)|round(1) }}</strong><span>average score</span></div>
+  <div class="stat"><strong>{{ reg.coverage.datatypes_with_rules }}</strong><span>with metacrafter rules</span></div>
+</div>
+
+<h2>Completeness</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th scope="col">Element</th><th scope="col">Records</th><th scope="col">Share</th></tr></thead>
+  <tbody>
+  {% for key, label in [('regexp', 'Regular expression'), ('examples', 'Examples'), ('checksum', 'Check-digit algorithm'), ('links', 'Source links'), ('mappings', 'Mappings (Wikidata, Presidio, …)'), ('translations', 'Translations'), ('detected_by', 'Detected by a rule or tool')] %}
+    {% set n = records|selectattr(key)|list|length %}
+    <tr><td>{{ label }}</td><td>{{ n }}</td><td>{{ (100 * n / total)|round(1) }}%</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<h2>metacrafter-rules coverage</h2>
+{% if not reg.coverage.source %}
+<p class="muted">No rule coverage file in this build.</p>
+{% else %}
+<p>Pinned release: <a href="https://github.com/apicrafter/metacrafter-rules/tree/{{ reg.coverage.source.ref }}"><code>{{ reg.coverage.source.ref[:12] }}</code></a> · {{ reg.coverage.rules }} rules, {{ reg.coverage.rule_keys }} keys · {{ reg.coverage.datatypes_without_rules|length }} records have no rule yet · {{ reg.coverage.orphan_rule_keys|length }} rule keys have no registry record. Details: <a href="{{ base }}/api/v1/coverage.json">coverage.json</a>.</p>
+{% if reg.coverage.orphan_rule_keys %}
+<details>
+  <summary>Rule keys without a registry record ({{ reg.coverage.orphan_rule_keys|length }})</summary>
+  <ul class="plain small">
+  {% for key, refs in reg.coverage.orphan_rule_keys.items() %}<li><code>{{ key }}</code> <span class="muted">{{ refs|join(', ') }}</span></li>{% endfor %}
+  </ul>
+</details>
+{% endif %}
+{% endif %}
+
+<h2>Drafts to review ({{ drafts_n }})</h2>
+<p>Draft records were generated or never reviewed. Pick one, complete what you can verify, and set <code>status: stable</code> in a pull request — see <a href="https://github.com/apicrafter/metacrafter-registry/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>. Lowest scores first.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th scope="col">Score</th><th scope="col">ID</th><th scope="col">Missing</th><th scope="col">Edit</th></tr></thead>
+  <tbody>
+  {% for row in drafts %}
+    <tr>
+      <td>{{ row.score }}</td>
+      <td class="id"><a href="{{ base }}/datatype/{{ row.id }}">{{ row.id }}</a></td>
+      <td class="doc">{{ row.missing|join(', ') }}</td>
+      <td><a href="https://github.com/apicrafter/metacrafter-registry/edit/main/{{ row.path }}">edit</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

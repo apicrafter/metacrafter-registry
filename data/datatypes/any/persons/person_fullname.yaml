@@ -8,3 +8,7 @@ categories:
 langs:
 - common
 is_pii: true
+mappings:
+  google_dlp: PERSON_NAME
+  presidio: PERSON
+  purview: All full names

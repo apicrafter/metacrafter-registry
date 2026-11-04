@@ -17,6 +17,8 @@ regexp: ^756\.?\d{4}\.?\d{4}\.?\d{2}$
 examples:
 - value: 756.9217.0769.85
   description: AHV/AVS number format (EAN-13 check digit)
+mappings:
+  purview: Swiss Social Security Number AHV
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Swiss_social_security_number

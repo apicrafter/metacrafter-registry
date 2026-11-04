@@ -1,10 +1,25 @@
 id: keccak256hash
-name: Keccak-256 hash by field name
-status: draft
-doc: Keccak-256 hash by field name
+name: Keccak-256 hash
+status: stable
+doc: 'Digest of the original Keccak-256 hash function (256 bits) as used by Ethereum. It differs from
+  the standardized SHA3-256, which uses different padding. It is written as 64 hexadecimal digits. SHA-256,
+  Keccak-256 and BLAKE2b-256 digests have the same length, so the value alone does not tell them apart:
+  use the field name or context.'
 categories:
 - cryptography
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+regexp: ^[0-9a-fA-F]{64}$
+examples:
+- value: c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470
+  description: Keccak-256 hash of the empty string
+- value: 4e03657aea45a94fc7d47ba826c8d667c0d1e6e33a64a036ec44f58fa12d6c45
+  description: Keccak-256 hash of the string 'abc'
+- value: c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a47
+  valid: false
+  description: one hex digit short (63 instead of 64)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SHA-3

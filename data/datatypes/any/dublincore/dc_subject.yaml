@@ -1,10 +1,16 @@
 id: dc_subject
-name: Dublin Core subject by field name
-status: draft
-doc: Dublin Core subject by field name
+name: Subject (Dublin Core)
+status: stable
+doc: 'Dublin Core element ''subject'': the topic of the resource, usually keywords, key phrases or classification
+  codes.'
 categories:
 - dublincore
 langs:
-- en
+- common
 is_pii: false
-classification: identifier
+examples:
+- value: air quality
+  description: keyword
+links:
+- type: dublincore
+  url: http://purl.org/dc/terms/subject

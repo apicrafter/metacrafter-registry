@@ -9,7 +9,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: '[1-9][0-9]{0,8}|'
+regexp: ^(?:///)?[^\W\d_]+\.[^\W\d_]+\.[^\W\d_]+$
 examples:
 - value: thrive.collaborating.slangy
   description: What3Words example 1

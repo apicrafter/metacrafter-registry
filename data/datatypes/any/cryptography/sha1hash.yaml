@@ -1,12 +1,28 @@
 id: sha1hash
 name: SHA-1 hash
 status: stable
-doc: SHA-1 hash from file or data. Sometimes used as unique id of the data record
+doc: 'Digest of the SHA-1 hash function (160 bits), used for example as a Git object id or a file checksum.
+  SHA-1 is no longer considered collision-resistant. It is written as 40 hexadecimal digits. SHA-1 and
+  RIPEMD-160 digests have the same length, so the value alone does not tell them apart: use the field
+  name or context.'
+aliases:
+- sha1
 categories:
 - cryptography
+- software
 langs:
 - common
 is_pii: false
+classification: identifier
+regexp: ^[0-9a-fA-F]{40}$
+examples:
+- value: da39a3ee5e6b4b0d3255bfef95601890afd80709
+  description: SHA-1 hash of the empty string
+- value: a9993e364706816aba3e25717850c26c9cd0d89d
+  description: SHA-1 hash of the string 'abc'
+- value: da39a3ee5e6b4b0d3255bfef95601890afd8070
+  valid: false
+  description: one hex digit short (39 instead of 40)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SHA-1

@@ -4,6 +4,7 @@
 {% block description %}{{ object.doc|truncate(200) }}{% endblock %}
 {% block head %}
   <link rel="alternate" type="application/json" href="{{ base }}/api/v1/datatypes/{{ object.id }}.json" title="API v1 record">
+  <link rel="alternate" type="text/markdown" href="{{ base }}/datatype/{{ object.id }}.md" title="Markdown">
   <link rel="alternate" type="application/json" href="{{ base }}/datatype/{{ object.id }}.json" title="Legacy record">
   <script type="application/ld+json">{{ jsonld|tojson }}</script>
 {% endblock %}
@@ -58,6 +59,10 @@
   {% endif %}
   <dt>Quality</dt>
   <dd>{{ object.quality.score }}/100{% if object.quality.missing %} <span class="muted small">· missing: {{ object.quality.missing|join(', ') }}</span>{% endif %}</dd>
+  <dt>Metacrafter rules</dt>
+  <dd>{% set rules = (object.detected_by or {}).get('metacrafter_rules', []) %}{% if rules %}{{ rules|length }} rule{{ '' if rules|length == 1 else 's' }} ({{ rules|selectattr('type', 'equalto', 'field')|list|length }} by field name, {{ rules|selectattr('type', 'equalto', 'data')|list|length }} by value)
+    <ul class="plain small">{% for r in rules[:8] %}<li><a href="https://github.com/apicrafter/metacrafter-rules/blob/{{ reg.coverage.source.ref }}/rules/{{ r.file }}"><code>{{ r.rule }}</code></a> <span class="muted">{{ r.type }}, {{ r.file }}{% if r.key %}, key {{ r.key }}{% endif %}</span></li>{% endfor %}{% if rules|length > 8 %}<li class="muted">and {{ rules|length - 8 }} more (see the JSON)</li>{% endif %}</ul>
+  {% else %}<span class="muted">no detection rule yet</span>{% endif %}</dd>
   <dt>Supported by tools</dt>
   <dd>{% for t in (object.detected_by or {}).get('tools', []) %}<a href="{{ base }}/tool/{{ t }}">{{ reg.tools[t].name }}</a>{% if not loop.last %}, {% endif %}{% else %}<span class="muted">no tool record lists this type yet</span>{% endfor %}</dd>
 </dl>
@@ -117,7 +122,7 @@
 <h2>Use this record</h2>
 <ul class="plain">
   <li>Page URL: <code>{{ site_url }}/datatype/{{ object.id }}</code></li>
-  <li>JSON: <a href="{{ base }}/api/v1/datatypes/{{ object.id }}.json">API v1</a> · <a href="{{ base }}/datatype/{{ object.id }}.json">legacy shape</a> (used by metacrafter)</li>
+  <li>JSON: <a href="{{ base }}/api/v1/datatypes/{{ object.id }}.json">API v1</a> · <a href="{{ base }}/datatype/{{ object.id }}.json">legacy shape</a> (used by metacrafter) · <a href="{{ base }}/datatype/{{ object.id }}.md">Markdown</a> (for LLMs)</li>
   <li>Improve it: <a href="{{ object.source.edit_url }}">edit <code>{{ object.source.path }}</code> on GitHub</a></li>
 </ul>
 {% endblock %}

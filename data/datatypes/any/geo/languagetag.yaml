@@ -10,7 +10,7 @@ langs:
 - common
 is_pii: false
 classification: categorical
-regexp: ([a-z]{2,3}(-[a-zA-Z0-9]{1,8})*|i-[a-z]{3,8})|
+regexp: ^(?:[a-z]{2,3}(?:-[a-zA-Z0-9]{1,8})*|i-[a-z]{3,8})$
 examples:
 - value: hu
   description: Hungarian

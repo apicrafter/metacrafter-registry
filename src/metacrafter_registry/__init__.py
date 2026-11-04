@@ -9,3 +9,7 @@ except PackageNotFoundError:  # running from a source checkout without install
 
 DEFAULT_BASE_URL = "https://registry.apicrafter.io"
 DATATYPE_URL_TEMPLATE = "{base}/datatype/{id}"
+
+from .client import Registry  # noqa: E402  (public API)
+
+__all__ = ["Registry", "DEFAULT_BASE_URL", "__version__"]

@@ -9,3 +9,7 @@ langs:
 - common
 is_pii: true
 classification: identifier
+mappings:
+  google_dlp: IP_ADDRESS
+  presidio: IP_ADDRESS
+  purview: IP address

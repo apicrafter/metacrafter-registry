@@ -12,7 +12,7 @@ Negative example                   5
 Source link                        15      8 if only links of type 'other'
 Mapping (e.g. Wikidata)            10
 Translation                        5
-Detector coverage                  10      tool records today; metacrafter rules later
+Detector coverage                  10      a metacrafter rule or a tool record
 =================================  ======  =====================================
 """
 
@@ -87,7 +87,8 @@ def score_record(record: dict[str, Any]) -> dict[str, Any]:
     else:
         missing.append("translation")
 
-    if record.get("detected_by", {}).get("tools"):
+    detected_by = record.get("detected_by", {})
+    if detected_by.get("metacrafter_rules") or detected_by.get("tools"):
         score += 10
     else:
         missing.append("detector coverage")

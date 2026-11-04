@@ -39,10 +39,19 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Download the changelogs of published releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p .changes
+          for TAG in $(gh release list --repo "$GITHUB_REPOSITORY" --limit 50 --json tagName -q '.[].tagName'); do
+            gh release download "$TAG" --repo "$GITHUB_REPOSITORY" -p changes.json -D ".changes/$TAG" || true
+          done
+
       - name: Build
         env:
           BASE_URL: ${{ steps.pages.outputs.base_url }}
-        run: metacrafter-registry build --base-url "$BASE_URL" --no-data-files
+        run: metacrafter-registry build --base-url "$BASE_URL" --no-data-files --changes-dir .changes
 
       - uses: actions/upload-pages-artifact@v3
         with:

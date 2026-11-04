@@ -1,10 +1,19 @@
 id: dc_type
-name: Dublin Core type by field name
-status: draft
-doc: Dublin Core type by field name
+name: Type (Dublin Core)
+status: stable
+doc: 'Dublin Core element ''type'': the nature or genre of the resource, preferably a term from the DCMI
+  Type Vocabulary such as Dataset, Text or Image.'
 categories:
 - dublincore
 langs:
-- en
+- common
 is_pii: false
-classification: identifier
+classification: categorical
+examples:
+- value: Dataset
+  description: DCMI Type Vocabulary term
+- value: Image
+  description: DCMI Type Vocabulary term
+links:
+- type: dublincore
+  url: http://purl.org/dc/terms/type

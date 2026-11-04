@@ -11,13 +11,14 @@ langs:
 - en
 is_pii: false
 classification: identifier
-regexp: '[A-Z]{2}[A-Z\d]+|'
+regexp: ^[A-Z]{2}[A-Z\d]+$
 examples:
 - value: FI15243611
   description: Sanoma Corporation
 - value: BG200356710
   description: Ontotext
 mappings:
+  google_dlp: VAT_NUMBER
   wikidata: P3608
 links:
 - type: wikipedia

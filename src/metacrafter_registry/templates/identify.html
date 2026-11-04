@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Identify values{% endblock %}
+{% block description %}Paste sample values of a column and find which semantic datatype they are. Runs in your browser; values are not sent anywhere.{% endblock %}
+{% block head %}
+  <script src="{{ base }}/assets/identify-core.js" defer></script>
+  <script src="{{ base }}/assets/identify.js" defer></script>
+{% endblock %}
+{% block content %}
+<h1>Identify values</h1>
+<p class="lead">Paste sample values from one column, one per line, and optionally the column name. The page ranks registry datatypes by how many values match their regular expression, whether check digits are valid (Luhn, IBAN, ISBN, INN, …) and how close the column name is.</p>
+<p class="notice"><strong>Your values stay in this browser tab.</strong> Matching runs locally; the page only downloads the datatype index. Even so, prefer test or masked values over real personal data.</p>
+
+<form id="identify-form" class="filters" style="flex-direction: column; align-items: stretch">
+  <label for="identify-values">Values, one per line (up to 200)
+    <textarea id="identify-values" name="values" rows="8" spellcheck="false" style="font-family: var(--mono); padding: .5rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); color: var(--fg)">GB82 WEST 1234 5698 7654 32
+DE89370400440532013000</textarea>
+  </label>
+  <div class="filters" style="margin: 0">
+    <label for="identify-field">Column name (optional)
+      <input id="identify-field" type="text" name="field" placeholder="e.g. iban, inn, email">
+    </label>
+    <label for="identify-country">Country (optional)
+      <select id="identify-country" name="country">
+        <option value="">Any</option>
+        {% for c in countries %}<option value="{{ c.id }}">{{ c.name }}</option>{% endfor %}
+      </select>
+    </label>
+    <button type="submit" name="submit" disabled>Identify</button>
+  </div>
+</form>
+<p id="identify-status" class="result-count" aria-live="polite"></p>
+<div id="identify-results"></div>
+<noscript><p class="notice">This page needs JavaScript. The same check is available offline in the Python package (<code>Registry.identify</code>) and the MCP server (<code>identify_values</code>); see <a href="{{ base }}/agents">For AI agents</a>.</p></noscript>
+
+<h2>How the score works</h2>
+<p class="small">Score (0–100) = 60 × share of values matching the regexp × regexp specificity + 25 × share of valid check digits + 25 × column-name similarity; +5 for a matching country, −10 for another country, −5 for draft records. Specificity is low for catch-all patterns that also match many other datatypes’ examples. The same formula is used by the Python package and the MCP server.</p>
+{% endblock %}

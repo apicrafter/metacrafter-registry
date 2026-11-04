@@ -1,10 +1,19 @@
 id: dc_format
-name: Dublin Core format by field name
-status: draft
-doc: Dublin Core format by field name
+name: Format (Dublin Core)
+status: stable
+doc: 'Dublin Core element ''format'': the file format, physical medium or dimensions of the resource;
+  for digital resources usually a media (MIME) type.'
 categories:
 - dublincore
 langs:
-- en
+- common
 is_pii: false
-classification: identifier
+classification: categorical
+examples:
+- value: text/csv
+  description: media type
+- value: application/pdf
+  description: media type
+links:
+- type: dublincore
+  url: http://purl.org/dc/terms/format

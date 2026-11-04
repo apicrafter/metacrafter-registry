@@ -11,6 +11,8 @@ langs:
 - common
 is_pii: false
 classification: identifier
+mappings:
+  presidio: CRYPTO
 links:
 - type: other
   url: https://allprivatekeys.com/bitcoin-address-format

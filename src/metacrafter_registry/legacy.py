@@ -101,9 +101,14 @@ def build_datatypes(sources: RegistrySources) -> dict[str, dict[str, Any]]:
 
 def build_tools(sources: RegistrySources) -> dict[str, dict[str, Any]]:
     """Return legacy-shaped tools keyed by id, sorted by id."""
+    from .coverage import effective_supported_types
+
+    supported_types = effective_supported_types(sources)
     tools = {}
     for rec in sorted(sources.tools, key=lambda r: r.id):
         record = copy.deepcopy(rec.data)
+        if supported_types[rec.id]:
+            record["supported_types"] = supported_types[rec.id]
         record["num"] = len(record.get("supported_types") or [])
         tools[rec.id] = record
     return tools
