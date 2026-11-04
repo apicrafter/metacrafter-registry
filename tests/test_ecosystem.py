@@ -165,6 +165,46 @@ def test_d3m_mapping_must_be_a_semantic_type_uri(mini_data):
     assert validate(load_sources(mini_data)).errors == []
 
 
+def test_autotype_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+
+    def ids(case: str) -> list[str]:
+        return [r["id"] for r in reg.crosswalk("autotype", case)]
+
+    assert ids("isbn") == ["isbn10"]
+    assert ids("date-chinese") == ["date"]
+    assert ids("ssn - new") == ["usssn"]
+    # new records for benchmark types the registry lacked
+    assert ids("canpost") == ["ca_fsa"]
+    assert ids("bibcode") == ["bibcode"]
+    # a file name or a data_release path resolves too
+    assert ids("isbn.txt") == ["isbn10"]
+    assert ids("data_release/japan address.txt") == ["address"]
+    # message formats and mislabelled test cases are not mapped
+    assert ids("SWIFT") == []
+    assert ids("ric") == []
+    # every test case maps to at most one registry record
+    seen: dict[str, str] = {}
+    for record in reg.datatypes.values():
+        value = record.get("mappings", {}).get("autotype")
+        for case in value if isinstance(value, list) else [value] if value else []:
+            assert case not in seen, f"{case} is mapped by {seen[case]} and {record['id']}"
+            seen[case] = record["id"]
+    assert len(seen) == 118
+
+
+def test_autotype_mapping_must_be_a_test_case_name(mini_data):
+    path = mini_data / "datatypes/any/pii/email.yaml"
+    path.write_text(path.read_text() + "mappings:\n  autotype: email.txt\n")
+    errors = [str(i) for i in validate(load_sources(mini_data)).errors]
+    assert any("mappings" in e and "autotype" in e for e in errors), errors
+
+    path.write_text(path.read_text().replace("autotype: email.txt", "autotype: email"))
+    assert validate(load_sources(mini_data)).errors == []
+
+
 def test_changes_diff():
     old = [
         {"id": "a", "status": "draft", "name": "A"},

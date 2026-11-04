@@ -192,6 +192,10 @@
   - 13 of D3M's 90 types are mapped to 12 records, exact concept matches only, at d3m commit `244d552`.
   - New draft pattern `nanpphone` (North American phone number) for D3M's `AmericanPhoneNumber`.
   - Column roles, dataset structure and hyper-parameter types are not value types. They are not imported. The review is `devdocs/D3M_REVIEW.md`.
+- [x] 8.10 Review the AutoType benchmark of Microsoft Research (issue #39). Add the `autotype` crosswalk key, which holds benchmark test case names.
+  - 118 of the 142 test cases are mapped to 81 records, at AutoType commit `600df80`.
+  - 19 new draft records for benchmark types the registry lacked, such as `bibcode`, `iswc`, `uniprot_id`, `ensembl_id`, `icd9`, `asin` and `ca_fsa`.
+  - Message formats (SWIFT MT, FIX, NOTAM, NMEA), free-text types and mislabelled test cases are not mapped. The review is `devdocs/AUTOTYPE_REVIEW.md`.
 - Data fixes found during this phase:
   - 9 regexps that matched the empty string were fixed, and the validator now rejects such regexps.
   - The `what3words` regexp had been copied from `geonamesid`.

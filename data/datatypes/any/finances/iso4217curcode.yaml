@@ -12,6 +12,7 @@ examples:
 - value: EUR
   description: euro
 mappings:
+  autotype: currency
   cdm:
   - means.measurement.currencyCode
   - means.measurement.currency.iSOCode

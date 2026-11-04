@@ -13,6 +13,7 @@ is_pii: false
 classification: identifier
 regexp: '[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}'
 mappings:
+  autotype: guid
   cdm: is.dataFormat.guid
   presidio: UUID
 links:

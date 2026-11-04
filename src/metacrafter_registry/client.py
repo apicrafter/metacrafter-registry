@@ -438,13 +438,17 @@ class Registry:
     def crosswalk(self, system: str, external_id: str) -> list[dict[str, Any]]:
         """Records mapped to ``external_id`` in another vocabulary (wikidata, fibo, presidio, ...).
 
-        For wikidata, a property id or its URL; for fibo, a class path or its full IRI.
+        For wikidata, a property id or its URL; for fibo, a class path or its full IRI;
+        for autotype, a benchmark test case name, its file name or its data_release path.
         """
         wanted = str(external_id).strip()
         if system == "wikidata":
             wanted = wanted.rstrip("/").rsplit("/", 1)[-1].removeprefix("Property:").upper()
         elif system == "fibo":
             wanted = fibo_normalize(wanted)
+        elif system == "autotype":
+            # Test cases are data_release/<name>.txt files; accept the bare name too.
+            wanted = wanted.rsplit("/", 1)[-1].removesuffix(".txt")
         # D3M writes semantic types as URIs (http://schema.org/email). Also
         # accept https://schema.org/... and a bare type name (FileName, email).
         d3m_bare = system == "d3m" and "://" not in wanted

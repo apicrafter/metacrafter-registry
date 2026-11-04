@@ -20,6 +20,7 @@ examples:
 - value: 49-015420-323751-8
   description: IMEI with dashes
 mappings:
+  autotype: imei
   google_dlp: IMEI_HARDWARE_ID
 links:
 - type: wikipedia

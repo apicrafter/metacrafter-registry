@@ -10,3 +10,5 @@ langs:
 - en
 is_pii: false
 classification: categorical
+mappings:
+  autotype: usstate

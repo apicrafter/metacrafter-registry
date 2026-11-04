@@ -14,6 +14,7 @@ examples:
 - value: '#FFF'
   description: short three-digit form
 mappings:
+  autotype: hexcolor
   wikidata: P465
 links:
 - type: wikidata

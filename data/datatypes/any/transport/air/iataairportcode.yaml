@@ -16,6 +16,7 @@ examples:
 - value: PAR
   description: Paris
 mappings:
+  autotype: airport
   wikidata: P238
 links:
 - type: wikipedia

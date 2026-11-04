@@ -41,7 +41,7 @@ personal attribute or a commonly used data class. Fields (see
 | `regexp` | | Python `re` pattern, anchored with `^...$`; every example must match it |
 | `checksum` | | Name of the check-digit algorithm, e.g. `luhn` |
 | `examples` | | List of `{value, description, valid}`; `valid: false` marks a negative example |
-| `mappings` | | Ids in other vocabularies: `wikidata` (e.g. `P968`), `fibo` (FIBO class IRI without `https://spec.edmcouncil.org/fibo/ontology/`), `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m` (D3M semantic type URI, e.g. `http://schema.org/email`), `sherlock`, `cdm` (Microsoft Common Data Model trait, e.g. `means.identity.service.email`) |
+| `mappings` | | Ids in other vocabularies: `wikidata` (e.g. `P968`), `fibo` (FIBO class IRI without `https://spec.edmcouncil.org/fibo/ontology/`), `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m` (D3M semantic type URI, e.g. `http://schema.org/email`), `sherlock`, `cdm` (Microsoft Common Data Model trait, e.g. `means.identity.service.email`), `autotype` (AutoType benchmark test case, e.g. `isbn` or `date-chinese`) |
 | `links` | | List of `{type, url}`; `type` is one of `wikipedia`, `wikidata`, `schema.org`, `doc`, `dublincore`, `bioschemas`, `datadrivendiscovery`, `other` |
 | `translations` | | `{<lang>: {name, doc}}` |
 

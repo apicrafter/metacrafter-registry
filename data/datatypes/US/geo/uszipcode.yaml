@@ -13,6 +13,7 @@ country:
 langs:
 - en
 mappings:
+  autotype: zipcode-correct
   d3m: http://schema.org/postalCode
 links:
 - type: wikipedia

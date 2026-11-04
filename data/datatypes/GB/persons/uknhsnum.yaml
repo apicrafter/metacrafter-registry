@@ -15,6 +15,7 @@ is_pii: true
 classification: identifier
 regexp: ([0-9]{3})[- ]?([0-9]{3})[- ]?([0-9]{4})
 mappings:
+  autotype: nhs
   google_dlp: UK_NATIONAL_HEALTH_SERVICE_NUMBER
   presidio: UK_NHS
   purview: U.K. national health service number

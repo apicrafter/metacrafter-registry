@@ -14,6 +14,7 @@ examples:
 - value: AI
   description: Anguilla
 mappings:
+  autotype: countrycode
   wikidata: P297
 links:
 - type: wikipedia

@@ -10,6 +10,17 @@ langs:
 - common
 is_pii: true
 mappings:
+  autotype:
+  - austraddr
+  - chinaaddr
+  - japan address
+  - us_address
+  - usaddress-mixed
+  - usaddress1
+  - usaddress2
+  - usaddress3
+  - usaddress4
+  - usaddress5
   cdm: means.location.address
   d3m: http://schema.org/address
   fibo: FND/Places/Addresses/PhysicalAddress

@@ -29,6 +29,11 @@
       "pattern": "^(means|is)(\\.[A-Za-z0-9]+)+$",
       "description": "A trait name from the CDM foundations, for example means.location.postalCode or is.dataFormat.guid"
     },
+    "autotypeCase": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9]+([ _-]+[A-Za-z0-9]+)*$",
+      "description": "An AutoType benchmark test case: the name of its data_release file without .txt, for example isbn, date-chinese or ssn - new"
+    },
     "d3mType": {
       "type": "string",
       "pattern": "^(https://metadata\\.datadrivendiscovery\\.org/types/|http://schema\\.org/)[A-Za-z0-9]+$",
@@ -114,6 +119,13 @@
               ]
             },
             "sherlock": {"$ref": "#/$defs/stringOrList"},
+            "autotype": {
+              "description": "AutoType benchmark test cases (data_release file names without .txt), for example isbn or date-chinese",
+              "oneOf": [
+                {"$ref": "#/$defs/autotypeCase"},
+                {"type": "array", "items": {"$ref": "#/$defs/autotypeCase"}, "minItems": 1, "uniqueItems": true}
+              ]
+            },
             "cdm": {
               "description": "Microsoft Common Data Model trait names, for example means.identity.service.email",
               "oneOf": [

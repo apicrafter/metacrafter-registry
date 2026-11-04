@@ -1,0 +1,37 @@
+id: hslcolor
+name: HSL color
+status: draft
+doc: 'Color written as hue, saturation and lightness: a hue angle from 0 to 360 degrees and two percentages
+  from 0% to 100%, separated by commas, either bare (0, 100%, 50%) or in the CSS functional notation hsl(0,
+  100%, 50%). The regexp accepts whole numbers only, without the deg unit, an alpha channel or the space-separated
+  syntax of CSS Color Level 4.'
+semantic_type: color
+langs:
+- common
+regexp: ^(?:hsl\(\s*(?:360|3[0-5]\d|[12]\d\d|[1-9]?\d)\s*,\s*(?:100|[1-9]?\d)%\s*,\s*(?:100|[1-9]?\d)%\s*\)|(?:360|3[0-5]\d|[12]\d\d|[1-9]?\d)\s*,\s*(?:100|[1-9]?\d)%\s*,\s*(?:100|[1-9]?\d)%)$
+examples:
+- value: hsl(0, 100%, 50%)
+  description: Pure red
+- value: 120, 100%, 25%
+  description: Dark green
+- value: 0, 0%, 100%
+  description: White
+- value: 361, 50%, 50%
+  valid: false
+  description: Hue above 360
+- value: 120, 100, 25
+  valid: false
+  description: Saturation and lightness without %
+mappings:
+  autotype: hsl
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/HSL_and_HSV
+- type: doc
+  url: https://www.w3.org/TR/css-color-4/#the-hsl-notation
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/hsl.txt
+translations:
+  ru:
+    name: Цвет HSL
+    doc: Цвет, записанный тоном (0–360°), насыщенностью и светлотой в процентах.

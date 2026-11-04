@@ -9,6 +9,7 @@ langs:
 - common
 is_pii: true
 mappings:
+  autotype: name1
   cdm: means.identity.person.fullName
   google_dlp: PERSON_NAME
   presidio: PERSON

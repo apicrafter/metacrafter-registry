@@ -22,6 +22,8 @@ examples:
 - value: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b85
   valid: false
   description: one hex digit short (63 instead of 64)
+mappings:
+  autotype: sha256
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SHA-2

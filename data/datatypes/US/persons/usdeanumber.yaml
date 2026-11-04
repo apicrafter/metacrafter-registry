@@ -17,6 +17,7 @@ is_pii: true
 classification: identifier
 regexp: '[a-zA-Z]{2}\d{7}|[a-zA-Z]{1}9\d{7}'
 mappings:
+  autotype: dea
   google_dlp: US_DEA_NUMBER
   purview: Drug Enforcement Agency (DEA) number
 links:

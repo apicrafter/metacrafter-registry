@@ -85,7 +85,7 @@ When a record has a `regexp`, these rules apply:
 - **THEN** validation fails
 
 ### Requirement: Typed mappings to external vocabularies
-A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock` and `cdm`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
+A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm` and `autotype`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
 
 `mappings.wikidata` SHALL match `^[PQ]\d+$`.
 
@@ -104,6 +104,12 @@ A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`
 #### Scenario: D3M type given as a bare name
 - **WHEN** a record has `mappings: {d3m: "FileName"}`
 - **THEN** validation fails with a schema error on `mappings.d3m`
+
+`mappings.autotype` SHALL hold AutoType benchmark test case names: the names of the benchmark's `data_release/*.txt` files without the `.txt` extension, such as `isbn` or `date-chinese`. A test case SHALL map to at most one record.
+
+#### Scenario: AutoType test case given as a file name
+- **WHEN** a record has `mappings: {autotype: "isbn.txt"}`
+- **THEN** validation fails with a schema error on `mappings.autotype`
 
 ### Requirement: Pattern inheritance
 A pattern SHALL reference an existing datatype through `semantic_type`.

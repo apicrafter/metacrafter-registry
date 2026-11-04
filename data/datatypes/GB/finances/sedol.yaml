@@ -17,6 +17,7 @@ examples:
 - value: 0263494
   description: BAE Systems
 mappings:
+  autotype: SEDOL
   fibo: SEC/Securities/SecuritiesIdentificationIndividuals/StockExchangeDailyOfficialListCode
 links:
 - type: wikipedia

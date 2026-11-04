@@ -16,6 +16,7 @@ examples:
 - value: http://vocab.getty.edu/doc/
   description: Art & Architecture Thesaurus LOD Dataset
 mappings:
+  autotype: url
   cdm: means.reference.URL
   d3m: http://schema.org/URL
   google_dlp: URL

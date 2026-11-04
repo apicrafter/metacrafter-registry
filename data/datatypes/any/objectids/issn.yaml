@@ -21,6 +21,7 @@ examples:
 - value: 03178471
   description: ISSN without hyphen
 mappings:
+  autotype: issn
   wikidata: P236
 links:
 - type: wikipedia

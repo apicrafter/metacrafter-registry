@@ -12,6 +12,7 @@ langs:
 is_pii: false
 classification: identifier
 mappings:
+  autotype: doi
   wikidata: P356
 links:
 - type: wikipedia
