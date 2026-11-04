@@ -1,0 +1,28 @@
+id: ru_construction_permit
+name: Russian construction or commissioning permit number
+status: draft
+doc: Number of a permit for construction or for putting a building into operation in Russia. Datasets
+  on data.gov.ru use two forms - region code, "RU" with the municipality code, sequence number and year
+  ("86-RU86311000-1-2021"), and a shorter form of hyphen-separated numbers ending with the year ("86-09-01-2026").
+  Some regions use their own forms that the regexp does not cover.
+categories:
+- government
+- realestate
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{2}-(?:RU|Ru|ru)\d{8,11}-\d+[а-я]?|\d{2}-\d{2,6}-\d{1,7})-\d{4}$
+examples:
+- value: 86-RU86311000-1-2021
+  description: Construction permit for a hospital building, Uray
+- value: 86-09-01-2026
+  description: Commissioning permit for a workshop, Sovetsky district
+- value: 86-RU86311000-1
+  valid: false
+translations:
+  ru:
+    name: Номер разрешения на строительство или ввод объекта в эксплуатацию
+    doc: Номер разрешения на строительство или на ввод объекта в эксплуатацию.

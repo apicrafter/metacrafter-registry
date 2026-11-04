@@ -1,0 +1,24 @@
+id: ru_quarter
+name: Quarter of the year (Russian)
+status: draft
+doc: Calendar quarter written in Russian with an Arabic or Roman number, optionally followed by the year,
+  for example "1 квартал" or "II квартал 2026 года".
+semantic_type: quarter
+country:
+- RU
+langs:
+- ru
+regexp: '^(?:[1-4]|I{1,3}|IV)(?:-?й)? [Кк]вартал(?: \d{4}(?: года| г\.)?)?$'
+examples:
+- value: 1 квартал
+  description: First quarter
+- value: II квартал
+  description: Second quarter
+- value: 1 квартал 2026 года
+  description: First quarter of 2026
+- value: 5 квартал
+  valid: false
+translations:
+  ru:
+    name: Квартал
+    doc: Квартал года в русской записи.
