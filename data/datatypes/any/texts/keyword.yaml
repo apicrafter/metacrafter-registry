@@ -1,0 +1,31 @@
+id: keyword
+name: Keyword
+status: draft
+doc: A short word or phrase that describes the topic of a resource, such as a document, dataset or web
+  page, and is used to find and group such resources. Keywords can be free-form tags or terms from a controlled
+  vocabulary. One field often holds several keywords separated by commas or semicolons. Semantic MediaWiki
+  has a Keyword datatype for these values; it limits their length and matches them case- and diacritic-insensitively.
+categories:
+- texts
+- common
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: air quality
+  description: topic keyword of an environmental dataset
+- value: open data
+  description: topic keyword of a data portal page
+mappings:
+  schema_org: keywords
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Index_term
+- type: schema.org
+  url: https://schema.org/keywords
+- type: doc
+  url: https://www.semantic-mediawiki.org/wiki/Help:Type_Keyword
+translations:
+  ru:
+    name: Ключевое слово
