@@ -1,0 +1,32 @@
+id: rtecsnumber
+name: RTECS number
+status: draft
+doc: Identifier of a substance in the Registry of Toxic Effects of Chemical Substances (RTECS), a toxicity
+  database started by the US National Institute for Occupational Safety and Health (NIOSH). It is two
+  uppercase letters followed by seven digits.
+categories:
+- chemistry
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}\d{7}$
+examples:
+- value: KQ6300000
+  description: Ethanol
+- value: DS1750000
+  description: Beryllium
+- value: KQ630000
+  valid: false
+  description: Six digits instead of seven
+mappings:
+  wikidata: P657
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Registry_of_Toxic_Effects_of_Chemical_Substances
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P657
+translations:
+  ru:
+    name: Номер RTECS
+    doc: Номер вещества в Реестре токсических эффектов химических веществ (RTECS).

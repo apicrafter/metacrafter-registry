@@ -1,0 +1,36 @@
+id: dtxsid
+name: DSSTox substance ID (DTXSID)
+status: draft
+doc: Identifier of a substance in DSSTox, the curated chemistry database of the US Environmental Protection
+  Agency (EPA) behind the CompTox Chemicals Dashboard. It is "DTXSID" followed by seven to nine digits.
+categories:
+- chemistry
+- environment
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^DTXSID\d{7,9}$
+examples:
+- value: DTXSID5020108
+  description: Aspirin (acetylsalicylic acid)
+- value: DTXSID3039242
+  description: Benzene
+- value: DTXSID9020112
+  description: Atrazine
+- value: DTXSID50201
+  valid: false
+  description: Too few digits
+mappings:
+  wikidata: P3117
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/CompTox_Chemicals_Dashboard
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3117
+- type: doc
+  url: https://comptox.epa.gov/dashboard/
+translations:
+  ru:
+    name: Идентификатор вещества DSSTox (DTXSID)
+    doc: Идентификатор вещества в базе данных DSSTox Агентства по охране окружающей среды США.

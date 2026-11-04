@@ -1,0 +1,38 @@
+id: eu_ec_number
+name: European Community (EC) number
+status: draft
+doc: Seven-digit number of a chemical substance in the European Community inventory, which joins EINECS,
+  ELINCS and the NLP list. It is written as three groups, NNN-NNN-N; the last digit is a check digit.
+  The European Chemicals Agency (ECHA) maintains the inventory and uses the same form for its list numbers.
+categories:
+- chemistry
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{3}-\d{3}-\d$
+examples:
+- value: 200-064-1
+  description: Aspirin (acetylsalicylic acid)
+- value: 200-578-6
+  description: Ethanol
+- value: 200-001-8
+  description: Formaldehyde
+- value: 50-78-2
+  valid: false
+  description: CAS Registry Number of aspirin, not an EC number
+mappings:
+  wikidata: P232
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/European_Community_number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P232
+- type: doc
+  url: https://echa.europa.eu/information-on-chemicals/ec-inventory
+translations:
+  ru:
+    name: Номер EC (Европейского сообщества)
+    doc: Номер химического вещества в перечне веществ Европейского сообщества (EINECS, ELINCS, NLP).
