@@ -1,0 +1,29 @@
+id: language
+name: Language
+status: draft
+doc: A human language, written as its name, such as Japanese or French. Typical columns hold the language
+  of a document, film or web page, or a language that a person speaks. Language codes have their own records,
+  such as languagetag (IETF BCP 47 tags), and the Dublin Core element has the record dclanguage.
+categories:
+- common
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Japanese
+  description: language name in English
+- value: French
+  description: language name in English
+mappings:
+  sherlock: language
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Language
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q34770
+- type: schema.org
+  url: https://schema.org/Language
+translations:
+  ru:
+    name: Язык

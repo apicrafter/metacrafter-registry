@@ -8,6 +8,8 @@ categories:
 langs:
 - common
 is_pii: false
+mappings:
+  sherlock: creator
 links:
 - type: dublincore
   url: http://purl.org/dc/terms/creator

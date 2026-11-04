@@ -13,3 +13,4 @@ mappings:
   google_dlp: PERSON_NAME
   presidio: PERSON
   purview: All full names
+  sherlock: person

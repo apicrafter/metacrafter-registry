@@ -13,6 +13,7 @@ langs:
 is_pii: true
 mappings:
   cdm: means.demographic.birthDate
+  sherlock: birth Date
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Birthday

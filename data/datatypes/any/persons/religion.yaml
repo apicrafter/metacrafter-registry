@@ -1,0 +1,31 @@
+id: religion
+name: Religion
+status: draft
+doc: Religion, religious denomination or worldview of a person or a group, such as Catholic, Sunni Islam
+  or Buddhism. Censuses and surveys often record it. Under the GDPR, data that reveals a person's religious
+  beliefs is a special category of personal data.
+categories:
+- persons
+- pii
+langs:
+- common
+is_pii: true
+classification: categorical
+examples:
+- value: Catholic
+  description: denomination
+- value: Evangelical Protestant
+  description: denomination group used in surveys
+- value: Buddhism
+  description: religion
+mappings:
+  sherlock: religion
+  wikidata: P140
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Religion
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P140
+translations:
+  ru:
+    name: Религия

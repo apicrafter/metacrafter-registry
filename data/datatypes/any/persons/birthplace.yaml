@@ -1,0 +1,31 @@
+id: birthplace
+name: Place of birth
+status: draft
+doc: The place where a person was born, usually a city or town, often followed by the region or country,
+  such as "Montreal, QC, CAN". Together with a name and a birth date it helps to identify a person, so
+  it is personal data.
+categories:
+- persons
+- pii
+- geo
+langs:
+- common
+is_pii: true
+examples:
+- value: Montreal, QC, CAN
+  description: city, province and country code
+- value: Lyon, France
+  description: city and country
+mappings:
+  sherlock: birth Place
+  wikidata: P19
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Place_of_birth
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P19
+- type: schema.org
+  url: https://schema.org/birthPlace
+translations:
+  ru:
+    name: Место рождения

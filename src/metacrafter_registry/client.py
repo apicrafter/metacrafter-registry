@@ -47,6 +47,11 @@ def _tokens(text: str) -> set[str]:
     return set(_TOKEN.findall(_CAMEL.sub(" ", str(text)).lower()))
 
 
+def _sherlock_key(label: str) -> str:
+    """A Sherlock type label without case and whitespace: "birth Date" -> "birthdate"."""
+    return re.sub(r"\s+", "", str(label)).lower()
+
+
 def _cache_dir() -> Path:
     base = os.environ.get("XDG_CACHE_HOME") or Path.home() / ".cache"
     return Path(base) / "metacrafter-registry"
@@ -438,7 +443,8 @@ class Registry:
     def crosswalk(self, system: str, external_id: str) -> list[dict[str, Any]]:
         """Records mapped to ``external_id`` in another vocabulary (wikidata, fibo, presidio, ...).
 
-        For wikidata, a property id or its URL; for fibo, a class path or its full IRI.
+        For wikidata, a property id or its URL; for fibo, a class path or its full IRI;
+        for sherlock, a type label, compared without case and spaces.
         """
         wanted = str(external_id).strip()
         if system == "wikidata":
@@ -450,12 +456,18 @@ class Registry:
         d3m_bare = system == "d3m" and "://" not in wanted
         if system == "d3m" and wanted.startswith("https://schema.org/"):
             wanted = "http://" + wanted.removeprefix("https://")
+        # Sherlock returns labels such as "birth Date"; the paper writes "Birth
+        # date". Compare without case and spaces, so "birthDate" matches too.
+        if system == "sherlock":
+            wanted = _sherlock_key(wanted)
         out = []
         for record in self.datatypes.values():
             value = record.get("mappings", {}).get(system)
             values = value if isinstance(value, list) else [value] if value else []
             if system == "wikidata":
                 normalized = [v.upper() for v in values]
+            elif system == "sherlock":
+                normalized = [_sherlock_key(v) for v in values]
             elif d3m_bare:
                 normalized = [v.rsplit("/", 1)[-1] for v in values]
             else:

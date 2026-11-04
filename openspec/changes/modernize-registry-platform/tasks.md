@@ -192,6 +192,11 @@
   - 13 of D3M's 90 types are mapped to 12 records, exact concept matches only, at d3m commit `244d552`.
   - New draft pattern `nanpphone` (North American phone number) for D3M's `AmericanPhoneNumber`.
   - Column roles, dataset structure and hyper-parameter types are not value types. They are not imported. The review is `devdocs/D3M_REVIEW.md`.
+- [x] 8.10 Review the Sherlock semantic types (issue #37). `mappings.sherlock` now holds Sherlock type labels, checked against the list of 78 labels in the schema.
+  - 32 of Sherlock's 78 types are mapped to 30 records, same-meaning matches only, at sherlock-project commit `f194013`.
+  - 8 new draft records: `birthplace`, `brand`, `religion`, `industry`, `language`, `weight`, `elevation` and `species`.
+  - New tool `sherlock` (detector). A test checks that its `supported_types` are the records that carry `mappings.sherlock`.
+  - Generic header words (`code`, `type`, `rank`, ...) and roles over names (`director`, `owner`, ...) are not imported. The review is `devdocs/SHERLOCK_REVIEW.md`.
 - Data fixes found during this phase:
   - 9 regexps that matched the empty string were fixed, and the validator now rejects such regexps.
   - The `what3words` regexp had been copied from `geonamesid`.

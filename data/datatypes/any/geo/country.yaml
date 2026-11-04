@@ -16,6 +16,7 @@ mappings:
   d3m:
   - http://schema.org/Country
   - http://schema.org/addressCountry
+  sherlock: country
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Country

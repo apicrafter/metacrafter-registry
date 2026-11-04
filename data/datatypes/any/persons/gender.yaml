@@ -11,3 +11,6 @@ is_pii: true
 classification: categorical
 mappings:
   cdm: means.demographic.gender
+  sherlock:
+  - gender
+  - sex

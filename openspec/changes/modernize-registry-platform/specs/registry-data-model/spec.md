@@ -105,6 +105,12 @@ A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`
 - **WHEN** a record has `mappings: {d3m: "FileName"}`
 - **THEN** validation fails with a schema error on `mappings.d3m`
 
+`mappings.sherlock` SHALL hold one or more of the 78 Sherlock semantic type labels, spelled as the trained Sherlock model returns them (for example `city` or `birth Date`). A Sherlock type SHALL be mapped to at most one record, and only when that record has the same meaning. The `sherlock` tool SHALL list exactly the records that carry `mappings.sherlock`.
+
+#### Scenario: Unknown Sherlock label
+- **WHEN** a record has `mappings: {sherlock: "email"}`
+- **THEN** validation fails with a schema error on `mappings.sherlock`
+
 ### Requirement: Pattern inheritance
 A pattern SHALL reference an existing datatype through `semantic_type`.
 

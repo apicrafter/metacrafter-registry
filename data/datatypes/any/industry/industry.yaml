@@ -1,0 +1,32 @@
+id: industry
+name: Industry
+status: draft
+doc: Name of the industry or economic sector in which a company or organization works, such as Communications
+  or Retail. Values are free-text names or terms from a list chosen by the data publisher. Codes of an
+  industry classification have their own records, such as isicrev4 (ISIC Rev. 4), eu_nace (NACE) and naicscode
+  (NAICS).
+categories:
+- industry
+- companies
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Communications
+  description: sector name
+- value: Fabricated Goods
+  description: sector name
+mappings:
+  sherlock: industry
+  wikidata: P452
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Industry_(economics)
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P452
+- type: schema.org
+  url: https://schema.org/industry
+translations:
+  ru:
+    name: Отрасль

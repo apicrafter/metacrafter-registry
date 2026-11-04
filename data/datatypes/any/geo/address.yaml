@@ -13,6 +13,7 @@ mappings:
   cdm: means.location.address
   d3m: http://schema.org/address
   fibo: FND/Places/Addresses/PhysicalAddress
+  sherlock: address
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Address

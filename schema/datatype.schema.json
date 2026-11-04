@@ -34,6 +34,21 @@
       "pattern": "^(https://metadata\\.datadrivendiscovery\\.org/types/|http://schema\\.org/)[A-Za-z0-9]+$",
       "description": "A D3M semantic type URI as D3M metadata writes it, for example https://metadata.datadrivendiscovery.org/types/FileName or http://schema.org/email"
     },
+    "sherlockType": {
+      "description": "One of the 78 Sherlock semantic types, spelled as the trained model returns it (model_files/classes_sherlock.npy of mitmedialab/sherlock-project), for example city or birth Date",
+      "enum": [
+        "address", "affiliate", "affiliation", "age", "album", "area", "artist", "birth Date",
+        "birth Place", "brand", "capacity", "category", "city", "class", "classification", "club",
+        "code", "collection", "command", "company", "component", "continent", "country", "county",
+        "creator", "credit", "currency", "day", "depth", "description", "director", "duration",
+        "education", "elevation", "family", "file Size", "format", "gender", "genre", "grades",
+        "industry", "isbn", "jockey", "language", "location", "manufacturer", "name", "nationality",
+        "notes", "operator", "order", "organisation", "origin", "owner", "person", "plays",
+        "position", "product", "publisher", "range", "rank", "ranking", "region", "religion",
+        "requirement", "result", "sales", "service", "sex", "species", "state", "status",
+        "symbol", "team", "team Name", "type", "weight", "year"
+      ]
+    },
     "record": {
       "type": "object",
       "additionalProperties": false,
@@ -113,7 +128,13 @@
                 {"type": "array", "items": {"$ref": "#/$defs/d3mType"}, "minItems": 1, "uniqueItems": true}
               ]
             },
-            "sherlock": {"$ref": "#/$defs/stringOrList"},
+            "sherlock": {
+              "description": "Sherlock semantic type labels, for example birth Date",
+              "oneOf": [
+                {"$ref": "#/$defs/sherlockType"},
+                {"type": "array", "items": {"$ref": "#/$defs/sherlockType"}, "minItems": 1, "uniqueItems": true}
+              ]
+            },
             "cdm": {
               "description": "Microsoft Common Data Model trait names, for example means.identity.service.email",
               "oneOf": [

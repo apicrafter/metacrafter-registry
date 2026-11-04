@@ -13,6 +13,7 @@ examples:
   description: Eurasia
 mappings:
   cdm: means.location.continent
+  sherlock: continent
   wikidata: P30
 links:
 - type: wikipedia
