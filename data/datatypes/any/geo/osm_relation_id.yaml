@@ -1,0 +1,33 @@
+id: osm_relation_id
+name: OpenStreetMap relation ID
+status: draft
+doc: Numeric ID of an OpenStreetMap relation, a group of nodes, ways and other relations with roles. Relations
+  model administrative boundaries, multipolygons and transport routes.
+parent: osm_id
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9][0-9]{0,18}$
+examples:
+- value: '62422'
+  description: Berlin boundary
+- value: '51701'
+  description: Switzerland boundary
+- value: r62422
+  valid: false
+  description: type-prefixed form of osm_id, not a bare relation ID
+mappings:
+  wikidata: P402
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P402
+- type: doc
+  url: https://wiki.openstreetmap.org/wiki/Relation
+translations:
+  fr:
+    name: Identifiant de relation OpenStreetMap
+  ru:
+    name: Идентификатор отношения OpenStreetMap

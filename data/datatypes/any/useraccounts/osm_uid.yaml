@@ -1,0 +1,27 @@
+id: osm_uid
+name: OpenStreetMap user ID
+status: draft
+doc: Numeric ID of an OpenStreetMap account. Unlike the display name (osm_user) it never changes. The
+  OpenStreetMap API returns it as the uid attribute of each element version, and osm2pgsql writes it to
+  an osm_uid column.
+parent: userid
+categories:
+- pii
+- useraccounts
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^[1-9][0-9]{0,18}$
+mappings:
+  wikidata: P8754
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8754
+- type: doc
+  url: https://wiki.openstreetmap.org/wiki/Elements
+translations:
+  fr:
+    name: Identifiant d'utilisateur OpenStreetMap
+  ru:
+    name: Идентификатор пользователя OpenStreetMap

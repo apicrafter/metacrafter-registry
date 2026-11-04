@@ -1,0 +1,45 @@
+id: osm_id
+name: OpenStreetMap element ID
+status: draft
+doc: Identifier of an OpenStreetMap element, that is a node, a way or a relation. IDs are positive 64-bit
+  integers that are unique only within one element type, so node 100 and way 100 are different objects.
+  Datasets write the ID as a bare number, with a type letter (n, w or r; N, W or R in Nominatim), or as
+  type/number like in OpenStreetMap URLs. osm2pgsql stores relation IDs as negative numbers.
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:-|[nwrNWR]|(?:node|way|relation)/)?[1-9][0-9]{0,18}$
+examples:
+- value: '62422'
+  description: Berlin boundary relation, bare number
+- value: n164979149
+  description: Mount Everest summit node, osmium type letter
+- value: w32965412
+  description: Statue of Liberty way, osmium type letter
+- value: R62422
+  description: Berlin boundary relation, Nominatim lookup form
+- value: relation/51701
+  description: Switzerland boundary relation, OpenStreetMap URL form
+- value: '-62422'
+  description: Berlin boundary relation as osm2pgsql stores it
+- value: '0'
+  valid: false
+  description: IDs start at 1
+- value: x62422
+  valid: false
+  description: unknown element type letter
+links:
+- type: doc
+  url: https://wiki.openstreetmap.org/wiki/Elements
+- type: doc
+  url: https://nominatim.org/release-docs/latest/api/Lookup/
+- type: doc
+  url: https://docs.osmcode.org/osmium/latest/osmium-getid.html
+translations:
+  fr:
+    name: Identifiant d'objet OpenStreetMap
+  ru:
+    name: Идентификатор объекта OpenStreetMap
