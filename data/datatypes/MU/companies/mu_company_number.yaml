@@ -1,0 +1,29 @@
+id: mu_company_number
+name: Mauritian company number
+status: draft
+doc: Company or partnership number (file number) in the Companies and Businesses Registration Integrated
+  System (CBRIS) of Mauritius. It differs from the business registration number that some companies also
+  have. ORG-ID.guide lists the register as MU-CR; with that prefix an identifier reads MU-CR-C136127.
+categories:
+- companies
+country:
+- MU
+langs:
+- en
+- fr
+is_pii: false
+classification: identifier
+examples:
+- value: C136127
+  description: example from ORG-ID.guide
+- value: I06004428
+  description: example from ORG-ID.guide
+- value: C078008
+  description: example from ORG-ID.guide
+mappings:
+  orgid: MU-CR
+links:
+- type: doc
+  url: http://companies.govmu.org/
+- type: other
+  url: https://org-id.guide/list/MU-CR

@@ -11,3 +11,5 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[0-9]{9,15}$
+mappings:
+  orgid: CN-USCI

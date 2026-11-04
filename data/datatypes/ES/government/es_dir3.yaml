@@ -1,0 +1,28 @@
+id: es_dir3
+name: Spanish DIR3 code
+status: draft
+doc: Code of an organisational unit or office of the Spanish public administration in the Common Directory
+  of Organisational Units and Offices (Directorio Común de Unidades Orgánicas y Oficinas, DIR3). ORG-ID.guide
+  lists the register as ES-DIR3; with that prefix an identifier reads ES-DIR3-E04100802.
+categories:
+- government
+country:
+- ES
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: E04100802
+  description: example from ORG-ID.guide
+- value: E00142804
+  description: example from ORG-ID.guide
+- value: E00003301
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ES-DIR3
+links:
+- type: doc
+  url: http://administracionelectronica.gob.es/ctt/dir3/descargas
+- type: other
+  url: https://org-id.guide/list/ES-DIR3

@@ -1,0 +1,25 @@
+id: jo_association_number
+name: Jordanian association registration number
+status: draft
+doc: Number of an association in the Register of Associations of Jordan. ORG-ID.guide lists the register
+  as JO-MSD; with that prefix an identifier reads JO-MSD-2013011100066.
+categories:
+- companies
+country:
+- JO
+langs:
+- ar
+is_pii: false
+classification: identifier
+examples:
+- value: '2013011100066'
+  description: example from ORG-ID.guide
+- value: '2017011116227'
+  description: example from ORG-ID.guide
+- value: '2017011116153'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: JO-MSD
+links:
+- type: other
+  url: https://org-id.guide/list/JO-MSD

@@ -201,6 +201,11 @@
   - 6 new draft records: `birthplace`, `brand`, `religion`, `weight`, `elevation` and `species`. `industry` and `language` came from the FTA review (8.10) and now carry the Sherlock mapping too.
   - New tool `sherlock` (detector). A test checks that its `supported_types` are the records that carry `mappings.sherlock`.
   - Generic header words (`code`, `type`, `rank`, ...) and roles over names (`director`, `owner`, ...) are not imported. The review is `devdocs/SHERLOCK_REVIEW.md`.
+- [x] 8.12 Review the ORG-ID.guide register of organization identifier lists (issue #17). Add the `orgid` crosswalk key, which holds ORG-ID.guide list codes.
+  - New draft records `org_id` (an identifier in the ORG-ID.guide form, `GB-COH-09506232`) and `org_id_scheme` (a list code, `GB-COH`).
+  - 69 of the 569 list codes are mapped to 61 existing records. 182 lists get 175 new draft records; lists that use the same identifier share one record. New countries: 57. New languages: 22.
+  - `crosswalk("orgid", ...)` accepts a list code in any case, its org-id.guide URL or a whole identifier. A test checks that each code maps to at most one record.
+  - Not imported: 250 generated Chart of Accounts lists, 52 lists without an example identifier and 16 deprecated lists. The review is `devdocs/ORGID_REVIEW.md`.
 - Data fixes found during this phase:
   - 9 regexps that matched the empty string were fixed, and the validator now rejects such regexps.
   - The `what3words` regexp had been copied from `geonamesid`.

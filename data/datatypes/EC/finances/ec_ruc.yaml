@@ -21,6 +21,8 @@ examples:
 - value: '24910219920017'
   valid: false
   description: One character too many
+mappings:
+  orgid: EC-RUC
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ec.ruc.html

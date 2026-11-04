@@ -1,0 +1,28 @@
+id: lk_company_number
+name: Sri Lankan company registration number
+status: draft
+doc: Registration number of a company at the Department of the Registrar of Companies of Sri Lanka. ORG-ID.guide
+  lists the register as LK-DRC; with that prefix an identifier reads LK-DRC-GA139.
+categories:
+- companies
+country:
+- LK
+langs:
+- si
+- ta
+is_pii: false
+classification: identifier
+examples:
+- value: GA139
+  description: example from ORG-ID.guide
+- value: PV82258
+  description: example from ORG-ID.guide
+- value: NPVS171
+  description: example from ORG-ID.guide
+- value: NPVS20325
+  description: example from ORG-ID.guide
+mappings:
+  orgid: LK-DRC
+links:
+- type: other
+  url: https://org-id.guide/list/LK-DRC

@@ -1,0 +1,24 @@
+id: cy_company_number
+name: Cypriot company registration number
+status: draft
+doc: Registration number of a company at the Department of Registrar of Companies and Official Receiver
+  of Cyprus. ORG-ID.guide lists the register as CY-DRCOR; with that prefix an identifier reads CY-DRCOR-12032.
+categories:
+- companies
+country:
+- CY
+langs:
+- el
+- tr
+is_pii: false
+classification: identifier
+examples:
+- value: '12032'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: CY-DRCOR
+links:
+- type: doc
+  url: https://efiling.drcor.mcit.gov.cy/DrcorPublic/Default.aspx?cultureInfo=en-AU
+- type: other
+  url: https://org-id.guide/list/CY-DRCOR

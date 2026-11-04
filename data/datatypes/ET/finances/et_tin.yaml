@@ -1,0 +1,26 @@
+id: et_tin
+name: Ethiopian taxpayer identification number (TIN)
+status: draft
+doc: Taxpayer Identification Number (TIN) of taxpayers in Ethiopia, including companies, charities and
+  trusts. ORG-ID.guide lists the register as ET-TIN; with that prefix an identifier reads ET-TIN-0000178477.
+categories:
+- finances
+- companies
+country:
+- ET
+langs:
+- am
+is_pii: true
+classification: identifier
+examples:
+- value: 0000178477
+  description: example from ORG-ID.guide
+- value: 0000006966
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ET-TIN
+links:
+- type: doc
+  url: https://www.mor.gov.et/
+- type: other
+  url: https://org-id.guide/list/ET-TIN

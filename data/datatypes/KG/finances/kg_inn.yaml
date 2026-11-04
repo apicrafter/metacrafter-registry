@@ -1,0 +1,30 @@
+id: kg_inn
+name: Kyrgyz taxpayer identification number (INN)
+status: draft
+doc: ИНН, the taxpayer identification number of a legal entity or branch, as shown in the register of
+  legal entities of the Ministry of Justice of Kyrgyzstan. ORG-ID.guide lists it under KG-TIN and KG-INN;
+  with that prefix an identifier reads KG-TIN-02507199510010.
+categories:
+- finances
+- companies
+country:
+- KG
+langs:
+- ky
+- ru
+is_pii: true
+classification: identifier
+examples:
+- value: 02507199510010
+  description: example from ORG-ID.guide
+- value: '20502198100469'
+  description: example from ORG-ID.guide
+mappings:
+  orgid:
+  - KG-TIN
+  - KG-INN
+links:
+- type: other
+  url: https://org-id.guide/list/KG-TIN
+- type: other
+  url: https://org-id.guide/list/KG-INN

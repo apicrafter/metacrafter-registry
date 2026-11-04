@@ -1,0 +1,32 @@
+id: it_cuu
+name: Italian unique office code (codice univoco ufficio)
+status: draft
+doc: Codice univoco ufficio, the 6-character code of an office (organisational unit) of the Italian public
+  administration in the IPA index. It is used, for example, to address electronic invoices to public bodies.
+  ORG-ID.guide lists the register as IT-CUUO; with that prefix an identifier reads IT-CUUO-7GEM3B.
+categories:
+- government
+country:
+- IT
+langs:
+- it
+is_pii: false
+classification: identifier
+examples:
+- value: 7GEM3B
+  description: example from ORG-ID.guide
+- value: PL20QL
+  description: example from ORG-ID.guide
+- value: NAELZU
+  description: example from ORG-ID.guide
+- value: E7F7SL
+  description: example from ORG-ID.guide
+- value: UFFTT8
+  description: example from ORG-ID.guide
+mappings:
+  orgid: IT-CUUO
+links:
+- type: doc
+  url: https://www.indicepa.gov.it/ipa-portale/
+- type: other
+  url: https://org-id.guide/list/IT-CUUO

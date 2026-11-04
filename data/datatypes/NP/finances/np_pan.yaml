@@ -1,0 +1,25 @@
+id: np_pan
+name: Nepalese permanent account number (PAN)
+status: draft
+doc: Permanent Account Number (PAN), the 9-digit tax number that the Inland Revenue Department of Nepal
+  gives to taxpayers. ORG-ID.guide lists the register as NP-IRD; with that prefix an identifier reads
+  NP-IRD-302274734.
+categories:
+- finances
+- companies
+country:
+- NP
+langs:
+- ne
+is_pii: true
+classification: identifier
+examples:
+- value: '302274734'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: NP-IRD
+links:
+- type: doc
+  url: https://ird.gov.np/
+- type: other
+  url: https://org-id.guide/list/NP-IRD

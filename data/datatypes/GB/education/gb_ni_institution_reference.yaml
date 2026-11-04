@@ -1,0 +1,28 @@
+id: gb_ni_institution_reference
+name: Northern Ireland institution reference number
+status: draft
+doc: Reference number (institution number) of a school or other institution in Schools Plus, the directory
+  of the Department of Education of Northern Ireland. ORG-ID.guide lists the register as GB-IRN; with
+  that prefix an identifier reads GB-IRN-542-0059.
+categories:
+- education
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: 542-0059
+  description: example from ORG-ID.guide
+- value: 201-1873
+  description: example from ORG-ID.guide
+- value: 311-6220
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GB-IRN
+links:
+- type: doc
+  url: https://www.education-ni.gov.uk/services/schools-plus
+- type: other
+  url: https://org-id.guide/list/GB-IRN

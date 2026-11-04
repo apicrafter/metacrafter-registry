@@ -1,0 +1,27 @@
+id: bd_ngoab_number
+name: Bangladeshi NGO Affairs Bureau registration number
+status: draft
+doc: Registration number of a non-governmental organisation at the NGO Affairs Bureau of Bangladesh. ORG-ID.guide
+  lists the register as BD-NAB; with that prefix an identifier reads BD-NAB-2330.
+categories:
+- companies
+country:
+- BD
+langs:
+- bn
+is_pii: false
+classification: identifier
+examples:
+- value: '2330'
+  description: example from ORG-ID.guide
+- value: '2830'
+  description: example from ORG-ID.guide
+- value: '2427'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: BD-NAB
+links:
+- type: doc
+  url: http://www.ngoab.gov.bd
+- type: other
+  url: https://org-id.guide/list/BD-NAB

@@ -303,6 +303,50 @@ def test_sherlock_mapping_must_be_a_sherlock_type(mini_data):
     assert validate(load_sources(mini_data)).errors == []
 
 
+def test_orgid_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+
+    def ids(value: str) -> list[str]:
+        return [r["id"] for r in reg.crosswalk("orgid", value)]
+
+    assert ids("GB-COH") == ["companyhouseid"]
+    assert ids("XI-LEI") == ["lei"]
+    # a whole ORG-ID.guide identifier, any case, or the list page URL
+    assert ids("GB-COH-09506232") == ["companyhouseid"]
+    assert ids("gb-coh") == ["companyhouseid"]
+    assert ids("https://org-id.guide/list/RU-INN") == ["inn"]
+    assert ids("XI-PB-gb/aberdeen-city-council") == ["okfn_public_body"]
+    assert ids("CA_NS-NVS_NVE-1542067") == ["ca_ns_registry_id"]
+    # deprecated codes resolve to the record of the list that replaced them
+    assert ids("SE-BLV") == ["seorgnumber"]
+    assert ids("IT-RI") == ["it_iva"]
+    assert ids("XE-EXAMPLE") == []
+    # every ORG-ID.guide code maps to at most one registry record
+    seen: dict[str, str] = {}
+    for record in reg.datatypes.values():
+        value = record.get("mappings", {}).get("orgid")
+        for code in value if isinstance(value, list) else [value] if value else []:
+            assert code not in seen, f"{code} is mapped by {seen[code]} and {record['id']}"
+            seen[code] = record["id"]
+    assert len(seen) >= 250
+
+
+def test_orgid_mapping_must_be_a_list_code(mini_data):
+    path = mini_data / "datatypes/any/pii/email.yaml"
+    path.write_text(path.read_text() + "mappings:\n  orgid: gb-coh\n")
+    errors = [str(i) for i in validate(load_sources(mini_data)).errors]
+    assert any("mappings" in e and "orgid" in e for e in errors), errors
+
+    path.write_text(path.read_text().replace("orgid: gb-coh", "orgid: GB-COH-09506232"))
+    assert validate(load_sources(mini_data)).errors
+
+    for good in ("GB-COH", "CA_ON-ONT", "BE-BCE_KBO", "[XI-LEI, XI-GRID]"):
+        path.write_text(path.read_text().rsplit("  orgid:", 1)[0] + f"  orgid: {good}\n")
+        assert validate(load_sources(mini_data)).errors == [], good
+
+
 def test_changes_diff():
     old = [
         {"id": "a", "status": "draft", "name": "A"},

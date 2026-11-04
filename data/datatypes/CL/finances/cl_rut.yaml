@@ -26,6 +26,7 @@ examples:
   description: One character too many
 mappings:
   purview: Chile identity card number
+  orgid: CL-RUT
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/Rol_%C3%9Anico_Tributario

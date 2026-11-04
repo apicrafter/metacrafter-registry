@@ -1,0 +1,27 @@
+id: je_charity_number
+name: Jersey registered charity number
+status: draft
+doc: Number of a charity in the Jersey Charity Register. ORG-ID.guide lists the register as JE-JCR; with
+  that prefix an identifier reads JE-JCR-345.
+categories:
+- companies
+country:
+- JE
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '345'
+  description: example from ORG-ID.guide
+- value: '69'
+  description: example from ORG-ID.guide
+- value: '120'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: JE-JCR
+links:
+- type: doc
+  url: https://charitycommissioner.je/
+- type: other
+  url: https://org-id.guide/list/JE-JCR

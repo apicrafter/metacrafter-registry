@@ -1,0 +1,25 @@
+id: kg_okpo
+name: Kyrgyz OKPO code
+status: draft
+doc: OKPO code, the statistical code of an enterprise or organisation in Kyrgyzstan, as shown in the register
+  of legal entities. ORG-ID.guide lists the register as KG-OKPO; with that prefix an identifier reads
+  KG-OKPO-29693656.
+categories:
+- companies
+country:
+- KG
+langs:
+- ky
+- ru
+is_pii: false
+classification: identifier
+examples:
+- value: '29693656'
+  description: example from ORG-ID.guide
+- value: '22383800'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: KG-OKPO
+links:
+- type: other
+  url: https://org-id.guide/list/KG-OKPO

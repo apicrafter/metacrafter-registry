@@ -57,6 +57,19 @@ def _purview_key(name: str) -> str:
     return " ".join(re.sub(r"[.'’]", "", name).casefold().split())
 
 
+def _orgid_code(value: str) -> str:
+    """The ORG-ID.guide list code of a code, its URL or a full identifier.
+
+    ``https://org-id.guide/list/GB-COH``, ``gb-coh`` and ``GB-COH-09506232`` all
+    give ``GB-COH``: a list code has exactly one hyphen, and an ORG-ID.guide
+    organization identifier is the list code, a hyphen and the identifier.
+    """
+    value = str(value).strip()
+    if "org-id.guide/list/" in value:
+        value = value.split("org-id.guide/list/", 1)[1].strip("/")
+    return "-".join(value.split("-")[:2]).upper()
+
+
 def _cache_dir() -> Path:
     base = os.environ.get("XDG_CACHE_HOME") or Path.home() / ".cache"
     return Path(base) / "metacrafter-registry"
@@ -451,7 +464,8 @@ class Registry:
         For wikidata, a property id or its URL; for fibo, a class path or its full IRI;
         for fta, a semantic type as FTA reports it, including locale-bound names such
         as MONTH.FULL_fr-FR or GENDER.TEXT_DE; for sherlock, a type label, compared
-        without case and spaces.
+        without case and spaces; for orgid, an ORG-ID.guide list code (GB-COH), its
+        org-id.guide URL or a whole organization identifier (GB-COH-09506232).
         """
         if system == "fta":
             return self._crosswalk_fta(str(external_id).strip())
@@ -473,6 +487,8 @@ class Registry:
         # punctuation ("U.S. driver's license number", "U.S. Drivers License Number").
         if system == "purview":
             wanted = _purview_key(wanted)
+        if system == "orgid":
+            wanted = _orgid_code(wanted)
         out = []
         for record in self.datatypes.values():
             value = record.get("mappings", {}).get(system)

@@ -1,0 +1,24 @@
+id: nl_owms
+name: Dutch government organisation identifier (OWMS)
+status: draft
+doc: 'Identifier of a Dutch government organisation in the Overheid.nl Web Metadata Standard (OWMS): the
+  last part of the organisation''s URI in the OWMS lists. ORG-ID.guide lists the register as NL-OWMS;
+  with that prefix an identifier reads NL-OWMS-rfmcie.'
+categories:
+- government
+country:
+- NL
+langs:
+- nl
+is_pii: false
+classification: identifier
+examples:
+- value: rfmcie
+  description: example from ORG-ID.guide
+- value: '''s-Graveland_(gemeente)'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: NL-OWMS
+links:
+- type: other
+  url: https://org-id.guide/list/NL-OWMS

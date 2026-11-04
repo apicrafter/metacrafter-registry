@@ -54,6 +54,11 @@
       "pattern": "^[A-Z][A-Z0-9_]*(\\.[A-Z0-9][A-Z0-9_-]*)?(<(LANGUAGE|COUNTRY|LOCALE)>)?$",
       "description": "An FTA (Fast Text Analysis) semantic type as FTA documents it, for example EMAIL, COUNTRY.ISO-3166-2 or MONTH.FULL_<LOCALE>"
     },
+    "orgidCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}(_[A-Z]{2})?-[A-Z0-9]+(_[A-Z0-9]+)?$",
+      "description": "An ORG-ID.guide list code, for example GB-COH, XI-LEI or CA_ON-ONT"
+    },
     "record": {
       "type": "object",
       "additionalProperties": false,
@@ -152,6 +157,13 @@
               "oneOf": [
                 {"$ref": "#/$defs/ftaType"},
                 {"type": "array", "items": {"$ref": "#/$defs/ftaType"}, "minItems": 1, "uniqueItems": true}
+              ]
+            },
+            "orgid": {
+              "description": "ORG-ID.guide list codes of the organization identifier lists that use this identifier, for example GB-COH. Deprecated codes that ORG-ID.guide replaced with a listed code may follow the current ones.",
+              "oneOf": [
+                {"$ref": "#/$defs/orgidCode"},
+                {"type": "array", "items": {"$ref": "#/$defs/orgidCode"}, "minItems": 1, "uniqueItems": true}
               ]
             }
           }

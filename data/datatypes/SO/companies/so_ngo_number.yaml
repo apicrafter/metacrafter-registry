@@ -1,0 +1,23 @@
+id: so_ngo_number
+name: Somaliland NGO registration number
+status: draft
+doc: Registration number of a non-governmental organisation in the General Register for Non-Governmental
+  Organizations of the Ministry of Planning and National Development of Somaliland. ORG-ID.guide lists
+  the register as SO-MPND; with that prefix an identifier reads SO-MPND-L43135002018MJ.
+categories:
+- companies
+country:
+- SO
+langs:
+- so
+- ar
+is_pii: false
+classification: identifier
+examples:
+- value: L43135002018MJ
+  description: example from ORG-ID.guide
+mappings:
+  orgid: SO-MPND
+links:
+- type: other
+  url: https://org-id.guide/list/SO-MPND

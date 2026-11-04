@@ -23,6 +23,8 @@ examples:
 - value: '903016597'
   valid: false
   description: One character too many
+mappings:
+  orgid: DK-CVR
 links:
 - type: wikipedia
   url: https://da.wikipedia.org/wiki/CVR-nummer

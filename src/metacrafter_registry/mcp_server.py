@@ -111,7 +111,7 @@ def create_server(registry: Registry):
         """Registry records mapped to an id in another vocabulary.
 
         system: wikidata, fibo, schema_org, dpv, presidio, google_dlp, purview, d3m,
-        sherlock, cdm or fta. For wikidata, a property id (P968) or its URL. For fibo, a
+        sherlock, cdm, fta or orgid. For wikidata, a property id (P968) or its URL. For fibo, a
         FIBO class IRI, e.g. https://spec.edmcouncil.org/fibo/ontology/FBC/
         ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier,
         or the part after /ontology/. For cdm, a Common Data Model trait name
@@ -121,7 +121,8 @@ def create_server(registry: Registry):
         apostrophes are ignored. For fta, a semantic type as FTA (Fast Text
         Analysis) reports it (POSTAL_CODE.ZIP5_US, MONTH.FULL_fr-FR). For
         sherlock, a Sherlock semantic type label (city, birth Date); case and
-        spaces are ignored.
+        spaces are ignored. For orgid, an ORG-ID.guide list code (GB-COH), its
+        org-id.guide URL or a whole organization identifier (GB-COH-09506232).
         """
         return [_summary(registry, r) for r in registry.crosswalk(system, external_id)]
 

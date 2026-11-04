@@ -1,0 +1,30 @@
+id: bd_rjsc_number
+name: Bangladeshi RJSC registration number
+status: draft
+doc: Registration number of a company, society or firm at the Office of the Registrar of Joint Stock Companies
+  and Firms (RJSC) of Bangladesh. ORG-ID.guide lists the register as BD-ROC; with that prefix an identifier
+  reads BD-ROC-3-S123.
+categories:
+- companies
+country:
+- BD
+langs:
+- bn
+is_pii: false
+classification: identifier
+examples:
+- value: 3-S123
+  description: example from ORG-ID.guide
+- value: C-69103
+  description: example from ORG-ID.guide
+- value: CH-5884
+  description: example from ORG-ID.guide
+- value: '66885'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: BD-ROC
+links:
+- type: doc
+  url: https://roc.gov.bd/
+- type: other
+  url: https://org-id.guide/list/BD-ROC

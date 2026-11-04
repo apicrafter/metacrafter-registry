@@ -1,0 +1,28 @@
+id: za_company_number
+name: South African company registration number (CIPC)
+status: draft
+doc: 'Registration number of a company at the Companies and Intellectual Property Commission (CIPC) of
+  South Africa: the year of registration, a sequence number and a code for the type of company. ORG-ID.guide
+  lists the register as ZA-CIP; with that prefix an identifier reads ZA-CIP-6713-713839-07.'
+categories:
+- companies
+country:
+- ZA
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: 6713-713839-07
+  description: example from ORG-ID.guide
+- value: 2007-031592-07
+  description: example from ORG-ID.guide
+- value: 1994-010680-07
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ZA-CIP
+links:
+- type: doc
+  url: https://www.cipc.co.za/
+- type: other
+  url: https://org-id.guide/list/ZA-CIP

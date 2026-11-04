@@ -1,0 +1,28 @@
+id: tz_ngo_number
+name: Tanzanian NGO registration number
+status: draft
+doc: Registration number of a non-governmental organisation at the National NGO Coordination Board of
+  Tanzania. ORG-ID.guide lists the register as TZ-NNCB; with that prefix an identifier reads TZ-NNCB-00NGO-1787.
+categories:
+- companies
+country:
+- TZ
+langs:
+- sw
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: 00NGO-1787
+  description: example from ORG-ID.guide
+- value: 00NGO-00007227
+  description: example from ORG-ID.guide
+- value: 00NGO-R-4900
+  description: example from ORG-ID.guide
+mappings:
+  orgid: TZ-NNCB
+links:
+- type: doc
+  url: https://nis.jamii.go.tz/
+- type: other
+  url: https://org-id.guide/list/TZ-NNCB

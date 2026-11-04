@@ -1,0 +1,25 @@
+id: np_company_number
+name: Nepalese company registration number
+status: draft
+doc: Registration number of a company at the Office of the Company Registrar of Nepal. ORG-ID.guide lists
+  the register as NP-CRO; with that prefix an identifier reads NP-CRO-45995.
+categories:
+- companies
+country:
+- NP
+langs:
+- ne
+is_pii: false
+classification: identifier
+examples:
+- value: '45995'
+  description: example from ORG-ID.guide
+- value: '34774'
+  description: example from ORG-ID.guide
+- value: '105299'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: NP-CRO
+links:
+- type: other
+  url: https://org-id.guide/list/NP-CRO

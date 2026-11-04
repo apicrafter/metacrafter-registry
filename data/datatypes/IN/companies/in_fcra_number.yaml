@@ -1,0 +1,25 @@
+id: in_fcra_number
+name: Indian FCRA registration number
+status: draft
+doc: Registration number of an association under the Foreign Contribution (Regulation) Act, given by the
+  Ministry of Home Affairs of India. ORG-ID.guide lists the register as IN-MHA; with that prefix an identifier
+  reads IN-MHA-104860017.
+categories:
+- companies
+country:
+- IN
+langs:
+- en
+- hi
+is_pii: false
+classification: identifier
+examples:
+- value: '104860017'
+  description: example from ORG-ID.guide
+- value: '147040594'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: IN-MHA
+links:
+- type: other
+  url: https://org-id.guide/list/IN-MHA

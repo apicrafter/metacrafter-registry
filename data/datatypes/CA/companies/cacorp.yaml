@@ -18,3 +18,5 @@ examples:
   description: Federal corporation number with 8 digits
 - value: '123456789'
   description: Federal corporation number with 9 digits
+mappings:
+  orgid: CA-CC

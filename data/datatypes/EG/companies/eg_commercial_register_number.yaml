@@ -1,0 +1,23 @@
+id: eg_commercial_register_number
+name: Egyptian commercial registry number
+status: draft
+doc: Number of a company in the Commercial Registry of Egypt. ORG-ID.guide lists the register as EG-CR;
+  with that prefix an identifier reads EG-CR-117508.
+categories:
+- companies
+country:
+- EG
+langs:
+- ar
+is_pii: false
+classification: identifier
+examples:
+- value: '117508'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: EG-CR
+links:
+- type: doc
+  url: http://itda.gov.eg/
+- type: other
+  url: https://org-id.guide/list/EG-CR

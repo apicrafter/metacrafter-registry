@@ -18,6 +18,7 @@ mappings:
   - Slovenia tax identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  orgid: SI-TIN
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-slovenia-tax-identification-number

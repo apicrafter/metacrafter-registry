@@ -1,0 +1,24 @@
+id: na_bipa
+name: Namibian BIPA registration number
+status: draft
+doc: Registration number of a company, close corporation or other entity at the Business and Intellectual
+  Property Authority (BIPA) of Namibia. ORG-ID.guide lists the register as NA-BIPA; with that prefix an
+  identifier reads NA-BIPA-CC-2017-11330.
+categories:
+- companies
+country:
+- NA
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: CC-2017-11330
+  description: example from ORG-ID.guide
+mappings:
+  orgid: NA-BIPA
+links:
+- type: doc
+  url: https://www.bipa.na/business-registration/
+- type: other
+  url: https://org-id.guide/list/NA-BIPA

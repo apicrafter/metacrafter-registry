@@ -1,0 +1,23 @@
+id: ls_hei_number
+name: Lesotho higher education institution registration number
+status: draft
+doc: Registration number of a higher education institution in Lesotho. ORG-ID.guide lists the register
+  as LS-HEI; with that prefix an identifier reads LS-HEI-HEI-CRL-2025CNT-3182004.
+categories:
+- education
+country:
+- LS
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: HEI-CRL-2025CNT-3182004
+  description: example from ORG-ID.guide
+mappings:
+  orgid: LS-HEI
+links:
+- type: doc
+  url: https://www.education.gov.ls/
+- type: other
+  url: https://org-id.guide/list/LS-HEI

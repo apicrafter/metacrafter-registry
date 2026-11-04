@@ -1,0 +1,26 @@
+id: ng_tin
+name: Nigerian taxpayer identification number (TIN)
+status: draft
+doc: Taxpayer Identification Number (TIN) of taxpayers in Nigeria. ORG-ID.guide lists the register as
+  NG-TIN; with that prefix an identifier reads NG-TIN-23227964-0001.
+categories:
+- finances
+- companies
+country:
+- NG
+langs:
+- en
+is_pii: true
+classification: identifier
+examples:
+- value: 23227964-0001
+  description: example from ORG-ID.guide
+- value: 01567727-0001
+  description: example from ORG-ID.guide
+mappings:
+  orgid: NG-TIN
+links:
+- type: doc
+  url: https://apps.firs.gov.ng/tinverification/
+- type: other
+  url: https://org-id.guide/list/NG-TIN

@@ -1,0 +1,21 @@
+id: iq_ngo_number
+name: Iraqi NGO registration number
+status: draft
+doc: Registration number of a non-governmental organisation at the NGO Directorate of Iraq. ORG-ID.guide
+  lists the register as IQ-NGO; with that prefix an identifier reads IQ-NGO-1Z2364.
+categories:
+- companies
+country:
+- IQ
+langs:
+- ar
+is_pii: false
+classification: identifier
+examples:
+- value: 1Z2364
+  description: example from ORG-ID.guide
+mappings:
+  orgid: IQ-NGO
+links:
+- type: other
+  url: https://org-id.guide/list/IQ-NGO

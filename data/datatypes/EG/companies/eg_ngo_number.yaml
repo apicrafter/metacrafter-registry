@@ -1,0 +1,25 @@
+id: eg_ngo_number
+name: Egyptian NGO registration number
+status: draft
+doc: Registration number of a non-governmental organisation at the Ministry of Social Solidarity of Egypt.
+  ORG-ID.guide lists the register as EG-MOSS; with that prefix an identifier reads EG-MOSS-27-20.
+categories:
+- companies
+country:
+- EG
+langs:
+- ar
+is_pii: false
+classification: identifier
+examples:
+- value: 27-20
+  description: example from ORG-ID.guide
+- value: 1-10135
+  description: example from ORG-ID.guide
+- value: 1-10120
+  description: example from ORG-ID.guide
+mappings:
+  orgid: EG-MOSS
+links:
+- type: other
+  url: https://org-id.guide/list/EG-MOSS

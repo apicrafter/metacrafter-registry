@@ -1,0 +1,26 @@
+id: bo_nit
+name: Bolivian tax identification number (NIT)
+status: draft
+doc: Número de Identificación Tributaria (NIT), the tax identification number of taxpayers in Bolivia.
+  ORG-ID.guide lists the register as BO-NIT; with that prefix an identifier reads BO-NIT-301140029.
+categories:
+- finances
+- companies
+country:
+- BO
+langs:
+- es
+is_pii: true
+classification: identifier
+examples:
+- value: '301140029'
+  description: example from ORG-ID.guide
+- value: '4746889017'
+  description: example from ORG-ID.guide
+- value: '308468025'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: BO-NIT
+links:
+- type: other
+  url: https://org-id.guide/list/BO-NIT

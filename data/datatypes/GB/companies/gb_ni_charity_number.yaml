@@ -1,0 +1,27 @@
+id: gb_ni_charity_number
+name: Northern Ireland registered charity number
+status: draft
+doc: Number of a charity in the register of the Charity Commission for Northern Ireland. ORG-ID.guide
+  lists the register as GB-NIC; with that prefix an identifier reads GB-NIC-100019.
+categories:
+- companies
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '100019'
+  description: example from ORG-ID.guide
+- value: '100048'
+  description: example from ORG-ID.guide
+- value: '100050'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GB-NIC
+links:
+- type: doc
+  url: http://www.charitycommissionni.org.uk/charity-search/
+- type: other
+  url: https://org-id.guide/list/GB-NIC

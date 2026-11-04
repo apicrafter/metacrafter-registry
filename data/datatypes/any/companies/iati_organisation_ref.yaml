@@ -1,0 +1,26 @@
+id: iati_organisation_ref
+name: IATI-assigned organisation identifier
+status: draft
+doc: Identifier that the IATI Secretariat generates for an organisation that has no identifier in a recognised
+  registration agency, so that it can be named in IATI data. ORG-ID.guide lists the register as XI-IATI;
+  with that prefix an identifier reads XI-IATI-IADB.
+categories:
+- companies
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: IADB
+  description: example from ORG-ID.guide
+- value: WAI
+  description: example from ORG-ID.guide
+- value: '1001'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: XI-IATI
+links:
+- type: doc
+  url: http://iatistandard.org/codelists/IATIOrganisationIdentifier/
+- type: other
+  url: https://org-id.guide/list/XI-IATI

@@ -1,0 +1,21 @@
+id: ls_society_number
+name: Lesotho society registration number
+status: draft
+doc: Registration number of a society (a non-profit organisation) in Lesotho. ORG-ID.guide lists the register
+  as LS-SRN; with that prefix an identifier reads LS-SRN-88-6.
+categories:
+- companies
+country:
+- LS
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: 88-6
+  description: example from ORG-ID.guide
+mappings:
+  orgid: LS-SRN
+links:
+- type: other
+  url: https://org-id.guide/list/LS-SRN

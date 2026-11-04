@@ -12,3 +12,4 @@ is_pii: false
 classification: identifier
 mappings:
   fta: IDENTITY.VAT_PL
+  orgid: PL-NIP

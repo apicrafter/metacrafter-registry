@@ -1,0 +1,28 @@
+id: rw_tin
+name: Rwandan taxpayer identification number (TIN)
+status: draft
+doc: Taxpayer Identification Number (TIN) that the Rwanda Revenue Authority gives to taxpayers. ORG-ID.guide
+  lists the register as RW-RRA; with that prefix an identifier reads RW-RRA-103197639.
+categories:
+- finances
+- companies
+country:
+- RW
+langs:
+- rw
+- en
+- fr
+is_pii: true
+classification: identifier
+examples:
+- value: '103197639'
+  description: example from ORG-ID.guide
+- value: '103380232'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: RW-RRA
+links:
+- type: doc
+  url: https://www.rra.gov.rw/en/home
+- type: other
+  url: https://org-id.guide/list/RW-RRA

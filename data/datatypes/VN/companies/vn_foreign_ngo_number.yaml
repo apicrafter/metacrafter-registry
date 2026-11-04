@@ -1,0 +1,26 @@
+id: vn_foreign_ngo_number
+name: Vietnamese foreign NGO registration number
+status: draft
+doc: Registration number that the Ministry of Foreign Affairs of Viet Nam gives to a foreign non-governmental
+  organisation to work in the country. ORG-ID.guide lists the register as VN-MFA; with that prefix an
+  identifier reads VN-MFA-38-NVVH-HD.
+categories:
+- companies
+country:
+- VN
+langs:
+- vi
+is_pii: false
+classification: identifier
+examples:
+- value: 38-NVVH-HD
+  description: example from ORG-ID.guide
+- value: 125-BNG-HD
+  description: example from ORG-ID.guide
+mappings:
+  orgid: VN-MFA
+links:
+- type: doc
+  url: https://mofa.gov.vn
+- type: other
+  url: https://org-id.guide/list/VN-MFA

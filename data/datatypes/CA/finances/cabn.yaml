@@ -18,6 +18,7 @@ examples:
   description: Another valid Canada Business Number with 9 digits
 mappings:
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/BusinessNumber
+  orgid: CA-CRA_ACR
 links:
 - type: doc
   url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/business-number.html

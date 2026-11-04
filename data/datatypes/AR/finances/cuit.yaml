@@ -13,3 +13,4 @@ classification: identifier
 regexp: ^[0-9]{2}-[0-9]{8}-[0-9]{1}$
 mappings:
   purview: Argentina Unique Tax Identification Key (CUIT/CUIL)
+  orgid: AR-CUIT

@@ -14,6 +14,8 @@ examples:
   description: Count von Count
 - value: Q234511
   description: Gurk
+mappings:
+  orgid: XI-WIKIDATA
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Wikidata:Identifiers

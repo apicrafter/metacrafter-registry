@@ -1,0 +1,21 @@
+id: qa_establishment_number
+name: Qatari establishment number
+status: draft
+doc: Establishment number that the Ministry of Interior of Qatar gives to companies and other organisations.
+  ORG-ID.guide lists the register as QA-MOI; with that prefix an identifier reads QA-MOI-01005700.
+categories:
+- companies
+country:
+- QA
+langs:
+- ar
+is_pii: false
+classification: identifier
+examples:
+- value: '01005700'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: QA-MOI
+links:
+- type: other
+  url: https://org-id.guide/list/QA-MOI

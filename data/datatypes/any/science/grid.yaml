@@ -19,6 +19,7 @@ examples:
   description: Republic of Korea National Red Cross
 mappings:
   wikidata: P2427
+  orgid: XI-GRID
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Global_Research_Identifier_Database

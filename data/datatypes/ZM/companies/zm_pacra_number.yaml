@@ -1,0 +1,25 @@
+id: zm_pacra_number
+name: Zambian PACRA registration number
+status: draft
+doc: Registration number of a company or business at the Patents and Companies Registration Agency (PACRA)
+  of Zambia. ORG-ID.guide lists the register as ZM-PCR; with that prefix an identifier reads ZM-PCR-320170016571.
+categories:
+- companies
+country:
+- ZM
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '320170016571'
+  description: example from ORG-ID.guide
+- value: '120130109834'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ZM-PCR
+links:
+- type: doc
+  url: http://www.pacra.org.zm/
+- type: other
+  url: https://org-id.guide/list/ZM-PCR

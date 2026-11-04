@@ -20,6 +20,9 @@ examples:
   description: LVMH
 mappings:
   wikidata: P1616
+  orgid:
+  - FR-RCS
+  - FR-INSEE
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SIREN_code

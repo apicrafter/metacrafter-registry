@@ -1,0 +1,26 @@
+id: bw_tin
+name: Botswana taxpayer identification number (TIN)
+status: draft
+doc: Taxpayer Identification Number (TIN) that the Botswana Unified Revenue Service gives to taxpayers.
+  ORG-ID.guide lists the register as BW-TIN; with that prefix an identifier reads BW-TIN-C00123402021.
+categories:
+- finances
+- companies
+country:
+- BW
+langs:
+- en
+is_pii: true
+classification: identifier
+examples:
+- value: C00123402021
+  description: example from ORG-ID.guide
+- value: T087389
+  description: example from ORG-ID.guide
+mappings:
+  orgid: BW-TIN
+links:
+- type: doc
+  url: http://www.burs.org.bw/
+- type: other
+  url: https://org-id.guide/list/BW-TIN

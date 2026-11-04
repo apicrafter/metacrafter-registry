@@ -19,6 +19,7 @@ examples:
 mappings:
   wikidata: P2771
   fta: IDENTITY.DUNS
+  orgid: XI-DUNS
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Data_Universal_Numbering_System

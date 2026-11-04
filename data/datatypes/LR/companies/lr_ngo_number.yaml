@@ -1,0 +1,22 @@
+id: lr_ngo_number
+name: Liberian NGO registration number
+status: draft
+doc: Registration number of a non-governmental organisation at the Ministry of Finance and Development
+  Planning of Liberia. ORG-ID.guide lists the register as LR-MFDPNGO; with that prefix an identifier reads
+  LR-MFDPNGO-0961.
+categories:
+- companies
+country:
+- LR
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: 0961
+  description: example from ORG-ID.guide
+mappings:
+  orgid: LR-MFDPNGO
+links:
+- type: other
+  url: https://org-id.guide/list/LR-MFDPNGO
