@@ -604,7 +604,8 @@ def test_javascript_identify_matches_python(built_site, tmp_path):
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
 def test_javascript_compact_matches_match_python(reg_with_date, tmp_path):
-    """Both scorers ignore a compact-form match that a more specific regexp claims."""
+    """Both scorers ignore a compact-form match that a more specific regexp claims
+    and weight the other compact-form matches the same way."""
     from conftest import ISO_DATES
 
     from metacrafter_registry.agents import identify_index
@@ -620,6 +621,9 @@ def test_javascript_compact_matches_match_python(reg_with_date, tmp_path):
         (["4111-1111-1111-1111", "5500 0000 0000 0004"], "card"),
         (["45 397 000"], ""),
         (["GB82 WEST 1234 5698 7654 32"], ""),
+        # Compact-form hits without a check digit count half.
+        (["01001-000", "01310-100"], ""),
+        (["432 5251 79"], ""),
     ]
     js = _javascript_identify(tmp_path, index, cases, 5)
     for (values, field), js_top in zip(cases, js, strict=True):
