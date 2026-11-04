@@ -25,6 +25,8 @@ links:
   url: https://en.wikipedia.org/wiki/Bank_card
 - type: other
   url: https://stackoverflow.com/questions/9315647/regex-credit-card-number-tests
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO/IEC_7812
 translations:
   ru:
     name: Банковская карта

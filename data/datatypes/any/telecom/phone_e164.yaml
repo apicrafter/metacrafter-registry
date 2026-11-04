@@ -1,0 +1,27 @@
+id: phone_e164
+name: Phone number in E.164 format
+status: draft
+doc: 'International telephone number written in the format of ITU-T Recommendation E.164: a plus sign
+  followed by at most 15 digits, without spaces or punctuation. The digits start with a country code of
+  one to three digits, which never starts with 0. This compact form is used by SIP, SMS gateways, ENUM
+  and many APIs.'
+semantic_type: phone
+langs:
+- common
+regexp: ^\+[1-9]\d{1,14}$
+examples:
+- value: '+12025550143'
+  description: United States; 555-0100 to 555-0199 are reserved for fiction
+- value: '+442079460958'
+  description: United Kingdom; 020 7946 0000 to 0999 are reserved for drama
+- value: +1 202 555 0143
+  valid: false
+  description: Spaces are not part of the E.164 form
+- value: '12025550143'
+  valid: false
+  description: The leading plus sign is missing
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/E.164
+- type: doc
+  url: https://www.itu.int/rec/T-REC-E.164/

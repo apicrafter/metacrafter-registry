@@ -1,0 +1,22 @@
+id: alei
+name: Authoritative Legal Entity Identifier (ALEI, IBRN)
+status: draft
+doc: Globally unique identifier of a legal entity defined by ISO 8000-116. It combines a prefix for the
+  jurisdiction and the register that created the entity with the local registration number from that register,
+  for example US-DE.BER:3031657. Unlike proxy identifiers such as the LEI or the DUNS number, it is issued
+  by the authority that registers the entity. The International Business Registration Number (IBRN) is
+  the name used for ALEIs in trade.
+categories:
+- companies
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: US-DE.BER:3031657
+  description: Entity in the Delaware Business Entity Register
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Authoritative_Legal_Entity_Identifier
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Business_Registration_Number

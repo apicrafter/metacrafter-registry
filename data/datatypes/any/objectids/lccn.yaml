@@ -1,0 +1,35 @@
+id: lccn
+name: Library of Congress Control Number (LCCN)
+status: draft
+doc: Serial number of a catalog record of the US Library of Congress, used since 1898. It is made of a
+  year and a six-digit serial number with leading zeros. The year has two digits for 1898 to 2000 and
+  four digits from 2001. A hyphen between year and serial number is optional. Some numbers start with
+  a short alphabetic prefix such as n, sh or sn. The LCCN is not related to the Library of Congress Classification.
+categories:
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[a-z]{0,3}(?:\d{2}|\d{4})-?\d{6}$
+examples:
+- value: '11025047'
+  description: 1911 edition of Treasure Island
+- value: sn00063530
+  description: 'Serial: Malheur Enterprise (newspaper)'
+- value: n81092084
+  description: 'Name authority: Royal Society for the Prevention of Cruelty to Animals'
+- value: sh85037527
+  description: 'Subject heading: dialect'
+- value: n7902293
+  valid: false
+  description: The serial number must have six digits
+mappings:
+  wikidata: P1144
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Library_of_Congress_Control_Number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1144
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P244

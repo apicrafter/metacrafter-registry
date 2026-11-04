@@ -1,0 +1,35 @@
+id: rrid
+name: Research Resource Identifier (RRID)
+status: draft
+doc: Persistent identifier for a research resource such as an antibody, cell line, model organism, plasmid
+  or software tool, cited in scientific papers as RRID:<prefix>_<id> or RRID:<prefix><id>. The prefix
+  names the source database, for example AB for antibodies, CVCL for Cellosaurus cell lines and SCR for
+  software and databases. RRIDs are registered through SciCrunch.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^RRID:[A-Za-z]+[A-Za-z0-9_:-]*$
+examples:
+- value: RRID:AB_2298772
+  description: Antibody
+- value: RRID:CVCL_1H60
+  description: Cell line GM03745
+- value: RRID:SCR_007358
+  description: 'Software: CellProfiler'
+- value: RRID:IMSR_JAX:000664
+  description: Mouse strain C57BL/6
+- value: AB_2298772
+  valid: false
+  description: 'Without the RRID: prefix the value is not recognized'
+mappings:
+  wikidata: P9712
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SciCrunch
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9712
+- type: doc
+  url: https://www.rrids.org/
