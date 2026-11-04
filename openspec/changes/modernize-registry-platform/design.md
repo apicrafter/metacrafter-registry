@@ -82,8 +82,10 @@ The motivation is in `proposal.md` (Why) and the evidence in
   - Astro: a strong second choice if richer interactivity is needed later.
     It adds a Node toolchain.
 - **Client-side pieces:**
-  - Search uses a vendored MiniSearch (about 7 KB gzipped) over
-    `search-index.json`.
+  - Search is a small plain-JS ranking over `search-index.json`: exact id,
+    id prefix, name, translated names, categories, then doc. At about 630
+    records it needs no library. MiniSearch remains an option if fuzzy
+    matching becomes necessary.
   - Plain JavaScript and no CSS framework. Light and dark themes come from
     CSS variables.
   - No third-party requests at runtime: no CDN and no analytics by default.

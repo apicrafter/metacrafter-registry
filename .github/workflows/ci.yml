@@ -65,6 +65,9 @@ jobs:
             exit 1
           fi
 
+      - name: Internal links resolve
+        run: metacrafter-registry check-links
+
       - name: URL contract on the built site (Pages-like local server)
         run: |
           metacrafter-registry serve --port 8089 &

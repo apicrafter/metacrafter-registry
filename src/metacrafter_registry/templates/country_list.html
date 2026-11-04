@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Countries and regions{% endblock %}
+{% block description %}Country-specific semantic data types: national identifiers, tax numbers, postal codes and more.{% endblock %}
+{% block content %}
+<h1>Countries and regions</h1>
+<p class="lead">Datatypes tied to a country, such as national IDs, tax numbers and postal codes. {{ global_count }} more types are global: see the <a href="{{ base }}/datatype/?country=any">global types</a>.</p>
+<div class="grid">
+{% for c in countries %}
+  <a class="card" href="{{ base }}/country/{{ c.id }}">{{ c.name }}<br><span class="count">{{ c.count }} types · <code>{{ c.id }}</code></span></a>
+{% endfor %}
+</div>
+{% endblock %}

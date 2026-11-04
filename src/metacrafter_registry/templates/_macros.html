@@ -1,0 +1,36 @@
+{% macro pii_badge(record) -%}
+{% if record.is_pii %}<span class="badge pii">PII</span>{% endif %}
+{%- endmacro %}
+
+{% macro kind_badge(record) -%}
+{% if record.kind == 'pattern' %}<span class="badge neutral">pattern</span>{% endif %}
+{%- endmacro %}
+
+{% macro country_links(record) -%}
+{% if record.country %}{% for c in record.country %}<a href="{{ base }}/country/{{ c }}">{{ c }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% else %}<span class="muted">global</span>{% endif %}
+{%- endmacro %}
+
+{% macro category_links(record) -%}
+{% for c in record.categories or [] %}<a href="{{ base }}/category/{{ c }}">{{ c }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+{%- endmacro %}
+
+{% macro datatype_table(records, table_id=None) -%}
+<div class="table-wrap">
+<table{% if table_id %} id="{{ table_id }}"{% endif %}>
+  <thead>
+    <tr><th scope="col">ID</th><th scope="col">Name</th><th scope="col">Categories</th><th scope="col">Countries</th><th scope="col">Description</th></tr>
+  </thead>
+  <tbody>
+  {% for r in records %}
+    <tr data-kind="{{ r.kind }}" data-pii="{{ 'yes' if r.is_pii else 'no' }}" data-categories="{{ (r.categories or [])|join(' ') }}" data-country="{{ (r.country or ['any'])|join(' ') }}" data-text="{{ search_text[r.id] }}">
+      <td class="id"><a href="{{ base }}/datatype/{{ r.id }}">{{ r.id }}</a></td>
+      <td><a href="{{ base }}/datatype/{{ r.id }}">{{ r.name }}</a> {{ pii_badge(r) }} {{ kind_badge(r) }}</td>
+      <td>{{ category_links(r) }}</td>
+      <td>{{ country_links(r) }}</td>
+      <td class="doc">{{ r.doc|truncate(140) }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{%- endmacro %}

@@ -1,37 +1,43 @@
 {% extends "base.html" %}
-{% block pagetitle %}Semantic data types registry{% endblock %}
+{% from "_macros.html" import datatype_table with context %}
+{% block title %}All datatypes and patterns{% endblock %}
 {% block content %}
-<h1>Semantic data types registry</h1>
-<p>Registry of metadata identifier entities like UUID, GUID, person fullname, address and so on. Linked with other sources and to be converted to the formal ontology in the near future.</p>
-<p>Registry include <em>semantic data types</em> that are some known meaningful entity and <em>patterns</em> that are one of semantic type representation.</p>
+<h1>Datatypes and patterns</h1>
+<p class="lead">{{ reg.kind_count('datatype') }} semantic datatypes and {{ reg.kind_count('pattern') }} patterns. A <em>pattern</em> is one specific representation of a datatype, for example a national passport number format.</p>
 
-<p>Download as <a href="{{ base }}/registry.json">JSON</a></a>.
-Raw code and data at <a href="https://github.com/apicrafter/metacrafter-registry">apicrafter/metacrafter-registry</a>.
-Contact <a href="mailto:ivan@begtin.tech">ivan@begtin.tech</a> if you have any question.
-</p>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Wikidata property</th>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
+<form id="filters" class="filters" hidden>
+  <label for="f-q">Text
+    <input id="f-q" type="search" name="q" placeholder="id, name, description">
+  </label>
+  <label for="f-category">Category
+    <select id="f-category" name="category">
+      <option value="">All</option>
+      {% for c in categories %}<option value="{{ c.id }}">{{ c.name }} ({{ c.count }})</option>{% endfor %}
+    </select>
+  </label>
+  <label for="f-country">Country
+    <select id="f-country" name="country">
+      <option value="">All</option>
+      <option value="any">Global (no country)</option>
+      {% for c in countries %}<option value="{{ c.id }}">{{ c.name }} ({{ c.count }})</option>{% endfor %}
+    </select>
+  </label>
+  <label for="f-kind">Kind
+    <select id="f-kind" name="kind">
+      <option value="">All</option>
+      <option value="datatype">Datatypes</option>
+      <option value="pattern">Patterns</option>
+    </select>
+  </label>
+  <label for="f-pii">Personal data
+    <select id="f-pii" name="pii">
+      <option value="">All</option>
+      <option value="yes">PII</option>
+      <option value="no">Not PII</option>
+    </select>
+  </label>
+</form>
+<p id="result-count" class="result-count" aria-live="polite">{{ records|length }} records</p>
 
-        {% for o in objects %}
-        <tr>
-          <td>{{ o.id }}</td>
-          <td>{%if o.wikidata_property %}<a target="blank" href="https://www.wikidata.org/wiki/Property:{{o.wikidata_property}}">{{ o.wikidata_property }}</a>{% endif %}</td>
-          <td><a href="{{ base }}/datatype/{{o.id}}">{{ o.name }}</a></td>
-          <td>{{ o.type }}</td>
-          <td>{{o.doc}}</td>
-        </tr>
-        {% endfor %}
-
-      </tbody>
-    </table>
-
+{{ datatype_table(records, 'datatype-table') }}
 {% endblock %}

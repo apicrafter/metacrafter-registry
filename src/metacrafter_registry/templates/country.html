@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% from "_macros.html" import datatype_table with context %}
+{% block title %}{{ group.name }} — country datatypes{% endblock %}
+{% block description %}{{ group.count }} semantic data types used in {{ group.name }}.{% endblock %}
+{% block content %}
+<p class="small muted"><a href="{{ base }}/country/">Countries and regions</a></p>
+<h1>{{ group.name }}</h1>
+<p class="id-line">Code <code>{{ group.id }}</code> · {{ group.count }} types</p>
+{{ datatype_table(records) }}
+{% endblock %}
