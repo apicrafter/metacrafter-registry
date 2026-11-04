@@ -3,6 +3,7 @@ name: Brazilian state (federative unit)
 status: draft
 doc: 'Name of one of the 27 federative units of Brazil: the 26 states and the Federal District, such as
   São Paulo, Minas Gerais or Distrito Federal. The two-letter abbreviation is the pattern br_state_code.'
+parent: admin_area_1
 categories:
 - geo
 - government

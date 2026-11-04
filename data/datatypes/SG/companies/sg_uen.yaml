@@ -1,8 +1,11 @@
 id: sg_uen
 name: Singapore Unique Entity Number (UEN)
 status: draft
-doc: 'Identifier of a business or other entity in Singapore: nine or ten characters, in one of three formats
-  for businesses, local companies and other entities. It ends in a check letter.'
+doc: 'Identification number that the government of Singapore gives to every entity that operates in Singapore:
+  businesses, local companies, societies, charities and others. It has nine or ten characters in one of
+  three formats: eight digits and a check letter for businesses, nine digits starting with the year of
+  registration and a check letter for local companies, and for other entities a letter (R, S or T), two
+  digits of the year, two letters for the entity type, four digits and a check letter.'
 categories:
 - companies
 country:
@@ -11,7 +14,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^(?:\d{8,9}[A-Z]|[A-Z]\d{2}[A-Z]{2}\d{4}[A-Z])$
+regexp: ^(?:\d{8}[A-Z]|\d{9}[A-Z]|[RST]\d{2}[A-Z]{2}\d{4}[A-Z])$
 examples:
 - value: 198101793G
   description: NCS Pte Ltd
@@ -19,10 +22,22 @@ examples:
   description: SPH Media
 - value: 202134064M
   description: Oh Baby Games
+- value: 00192200M
+  description: Business format, test value of python-stdnum
+- value: S16FC0121D
+  description: Other entity format, test value of python-stdnum
+- value: S16FC0121
+  valid: false
+  description: The check letter is missing
 mappings:
   wikidata: P13194
+  presidio: SG_UEN
 links:
 - type: doc
   url: https://www.uen.gov.sg/ueninternet/faces/pages/uenFAQ.jspx
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P13194
+- type: other
+  url: https://github.com/arthurdejong/python-stdnum/blob/master/stdnum/sg/uen.py
+- type: other
+  url: https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/singapore/sg_uen_recognizer.py

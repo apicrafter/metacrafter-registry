@@ -2,6 +2,7 @@ id: iddriverlic
 name: Indonesian Driver License Number
 status: stable
 doc: Indonesian driver license (SIM - Surat Izin Mengemudi) number
+parent: driver_license
 categories:
 - pii
 - persons

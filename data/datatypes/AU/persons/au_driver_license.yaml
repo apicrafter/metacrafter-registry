@@ -4,6 +4,7 @@ status: draft
 doc: 'Number of a driving licence issued in Australia. Microsoft Purview looks for the formats of all
   states and territories: six to ten digits, six letters and digits, or digit groups separated by spaces
   or hyphens.'
+parent: driver_license
 categories:
 - pii
 - persons

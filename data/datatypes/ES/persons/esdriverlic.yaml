@@ -2,6 +2,7 @@ id: esdriverlic
 name: Spain driver license number
 status: stable
 doc: Alphanumeric value of the Spain driver license
+parent: driver_license
 categories:
 - pii
 - persons

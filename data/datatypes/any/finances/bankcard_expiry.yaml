@@ -1,0 +1,16 @@
+id: bankcard_expiry
+name: Payment card expiration date
+status: draft
+doc: Month and year after which a payment card is no longer valid, printed on the card next to the card
+  number. Payment card rules treat it as cardholder data together with the card number and the cardholder
+  name. Data sets usually store it as month and two- or four-digit year.
+categories:
+- finances
+- datetime
+langs:
+- common
+is_pii: false
+classification: categorical
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Payment_card

@@ -1,0 +1,29 @@
+id: cuid2
+name: Cuid2 identifier
+status: draft
+doc: Identifier of the Cuid2 library, the successor of cuid. It is a SHA-3 hash of a timestamp, a counter,
+  a host fingerprint and random data, written in lowercase base36 after an initial random letter, so it
+  reveals no creation time. The default length is 24 characters; applications can choose other lengths
+  up to 32, which the regexp does not cover.
+categories:
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[a-z][0-9a-z]{23}$
+examples:
+- value: tz4a98xxat96iws9zmbrgj3a
+  description: Example of the Cuid2 README, default length
+- value: c94jt94rt4
+  valid: false
+  description: Cuid2 with a custom length of 10, not covered
+- value: 1z4a98xxat96iws9zmbrgj3a
+  valid: false
+  description: Starts with a digit
+links:
+- type: doc
+  url: https://github.com/paralleldrive/cuid2
+translations:
+  ru:
+    name: Идентификатор Cuid2

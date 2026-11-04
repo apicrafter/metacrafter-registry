@@ -2,6 +2,7 @@ id: thdriverlic
 name: Thai driver license by field name
 status: stable
 doc: Thai driver license by field name identifier
+parent: driver_license
 categories:
 - pii
 - persons

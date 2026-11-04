@@ -2,6 +2,7 @@ id: si_driver_license
 name: Slovenian driver's license number
 status: draft
 doc: Number of a driving licence issued in Slovenia. Microsoft Purview looks for nine digits.
+parent: driver_license
 categories:
 - pii
 - persons

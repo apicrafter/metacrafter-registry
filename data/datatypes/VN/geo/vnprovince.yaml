@@ -2,6 +2,7 @@ id: vnprovince
 name: Vietnamese province by field name
 status: draft
 doc: Vietnamese province by field name identifier
+parent: admin_area_1
 categories:
 - geo
 country:

@@ -3,6 +3,7 @@ name: Slovak driver's license number
 status: draft
 doc: Number of a driving licence issued in Slovakia. Microsoft Purview looks for a letter or digit followed
   by seven digits.
+parent: driver_license
 categories:
 - pii
 - persons

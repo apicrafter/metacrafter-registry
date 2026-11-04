@@ -1,0 +1,37 @@
+id: typeid
+name: TypeID (type-prefixed UUIDv7)
+status: draft
+doc: Identifier from the TypeID specification of Jetify, a UUIDv7 with a type prefix. It has the form
+  <prefix>_<suffix>. The prefix names the kind of object, such as user, in up to 63 lowercase letters
+  and underscores that start and end with a letter, and it may be left out together with the underscore.
+  The suffix is the 128-bit UUID in 26 characters of lowercase Crockford Base32; its first character is
+  0 to 7. New TypeIDs carry a UUIDv7, so they sort by creation time.
+categories:
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[a-z](?:[a-z_]{0,61}[a-z])?_)?[0-7][0-9a-hjkmnp-tv-z]{25}$
+examples:
+- value: prefix_01h455vb4pex5vsknk084sn02q
+  description: valid-uuidv7 test case of the TypeID specification, UUID 01890a5d-ac96-774b-bcce-b302099a8057
+- value: user_01h5fskfsk4fpeqwnsyz5hj55t
+  description: TypeID of type user in the TypeID specification
+- value: 01h5fskfsk4fpeqwnsyz5hj55t
+  description: TypeID without a prefix in the TypeID specification
+- value: PREFIX_01h5fskfsk4fpeqwnsyz5hj55t
+  valid: false
+  description: Uppercase prefix
+- value: _prefix_01h5fskfsk4fpeqwnsyz5hj55t
+  valid: false
+  description: Prefix starts with an underscore
+- value: prefix_8zzzzzzzzzzzzzzzzzzzzzzzzz
+  valid: false
+  description: Suffix exceeds 128 bits
+links:
+- type: doc
+  url: https://github.com/jetify-com/typeid/tree/main/spec
+translations:
+  ru:
+    name: TypeID (UUIDv7 с префиксом типа)

@@ -9,6 +9,8 @@ website: https://docs.snowflake.com/en/user-guide/classify-native
 supported_types:
 - aadhaar
 - abn
+- admin_area_1
+- admin_area_2
 - age
 - at_driver_license
 - at_passport
@@ -53,6 +55,7 @@ supported_types:
 - dk_driver_license
 - dk_passport
 - dkcprnum
+- driver_license
 - ee_driver_license
 - ee_ik
 - ee_passport
@@ -129,6 +132,7 @@ supported_types:
 - nz_driver_license
 - nz_ird
 - nz_nhi
+- nz_nzbn
 - pan
 - person_fullname
 - phone
@@ -147,6 +151,7 @@ supported_types:
 - se_driver_license
 - sepassport
 - sepersonnummer
+- sg_uen
 - sgnric
 - si_driver_license
 - si_emso

@@ -1,0 +1,27 @@
+id: bankcard_cvv
+name: Payment card security code (CVV, CVC, CID)
+status: draft
+doc: Short code printed on a payment card that card-not-present transactions use to show that the payer
+  holds the card. Visa calls it CVV2, Mastercard CVC2 and American Express CID. Most networks print three
+  digits on the back of the card; American Express prints four digits on the front. Card rules forbid
+  storing it after authorization, so its presence in a data set is a finding on its own. The digits alone
+  cannot be told apart from other short numbers.
+categories:
+- pii
+- finances
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{3,4}$
+examples:
+- value: '418'
+  description: Constructed three-digit code (Visa, Mastercard, Discover)
+- value: '7193'
+  description: Constructed four-digit code (American Express)
+- value: '41'
+  valid: false
+  description: Too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Card_security_code

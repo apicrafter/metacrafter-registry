@@ -1,0 +1,33 @@
+id: uuid_v7
+name: Unix time-ordered UUID (version 7)
+status: draft
+doc: UUID of version 7, introduced by RFC 9562 in 2024. The first 48 bits are the Unix time in milliseconds,
+  and the rest, apart from the version and variant bits, is random or a counter. Values sort by creation
+  time, which suits database keys, and RFC 9562 recommends this version over versions 1 and 6. The creation
+  time can be read back from the first 12 hexadecimal digits. The version digit, the first digit of the
+  third group, is 7. PostgreSQL 18 makes it with uuidv7() and Python 3.14 with uuid.uuid7().
+parent: uuid
+categories:
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-7[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$
+examples:
+- value: 017F22E2-79B0-7CC3-98C4-DC0C0C07398F
+  description: UUIDv7 test vector of RFC 9562 (Appendix A.6), created 2022-02-22 19:22:22 UTC
+- value: 01890a5d-ac96-774b-bcce-b302099a8057
+  description: UUIDv7 of the valid-uuidv7 test case of the TypeID specification
+- value: 919108f7-52d1-4320-9bac-f847db4148a8
+  valid: false
+  description: UUIDv4
+- value: 1EC9414C-232A-6B00-B3C8-9F6BDECED846
+  valid: false
+  description: UUIDv6
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc9562#name-uuid-version-7
+translations:
+  ru:
+    name: UUID версии 7 (упорядоченный по времени Unix)

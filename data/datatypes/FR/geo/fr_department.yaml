@@ -4,6 +4,7 @@ status: draft
 doc: Name of a department of France, the administrative level between the region and the commune, for
   example Ain or Corse-du-Sud. France has 101 departments, five of them overseas. The INSEE code of a
   department is the pattern fr_department_code.
+parent: admin_area_2
 categories:
 - geo
 - government

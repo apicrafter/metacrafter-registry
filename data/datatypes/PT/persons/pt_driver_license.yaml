@@ -4,6 +4,7 @@ status: draft
 doc: Number of a driving licence issued in Portugal. Microsoft Purview looks for two letters, a hyphen,
   five or six digits, a space and a digit, or one letter, a hyphen, six or eight digits, a space and a
   digit.
+parent: driver_license
 categories:
 - pii
 - persons

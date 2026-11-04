@@ -2,6 +2,7 @@ id: trdriverlic
 name: Turkish driver license by field name
 status: stable
 doc: Turkish driver license by field name identifier
+parent: driver_license
 categories:
 - pii
 - persons

@@ -2,6 +2,7 @@ id: krdriverlic
 name: Korean driver license by field name
 status: stable
 doc: Korean driver license by field name identifier
+parent: driver_license
 categories:
 - pii
 - persons

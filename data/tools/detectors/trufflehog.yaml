@@ -13,6 +13,7 @@ supported_types:
 - azure_storage_account_key
 - connection_string
 - github_token
+- gitlab_pat
 - google_api_key
 - heroku_oauth_token
 - jfrog_api_key
@@ -20,12 +21,15 @@ supported_types:
 - jwt
 - mailchimp_api_key
 - npm_access_token
+- openai_api_key
+- pypi_token
 - sendgrid_api_key
 - shared_access_signature
 - slack_token
 - slack_webhook_url
 - sonarqube_token
 - square_access_token
+- square_oauth_secret
 - stripe_api_key
 - telegram_bot_token
 - twilio_api_key_sid

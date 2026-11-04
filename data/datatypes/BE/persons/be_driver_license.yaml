@@ -2,6 +2,7 @@ id: be_driver_license
 name: Belgian driver's license number
 status: draft
 doc: Number of a driving licence issued in Belgium. Microsoft Purview looks for ten digits.
+parent: driver_license
 categories:
 - pii
 - persons

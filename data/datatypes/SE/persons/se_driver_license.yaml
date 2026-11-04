@@ -3,6 +3,7 @@ name: Swedish driver's license number
 status: draft
 doc: Number of a driving licence issued in Sweden. Microsoft Purview looks for six digits, a hyphen and
   four digits.
+parent: driver_license
 categories:
 - pii
 - persons

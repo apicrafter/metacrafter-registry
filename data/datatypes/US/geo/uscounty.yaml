@@ -2,6 +2,7 @@ id: uscounty
 name: US County
 status: draft
 doc: Name or code of US County
+parent: admin_area_2
 categories:
 - geo
 country:

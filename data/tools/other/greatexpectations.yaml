@@ -8,6 +8,7 @@ doc: A contributed package of custom expectations for Great Expectations, the Py
   Expectations repository and are not part of the core library.
 website: https://github.com/fivetran/great_expectations/tree/develop/contrib/great_expectations_semantic_types_expectations
 supported_types:
+- arxiv_id
 - bic
 - city
 - colorhextriplet
@@ -22,6 +23,7 @@ supported_types:
 - encountryname
 - ethereum_address
 - euvat
+- fips10_4
 - fips64
 - gtin
 - hexcolor
@@ -29,6 +31,7 @@ supported_types:
 - ianatimezoneid
 - iban
 - icd10
+- imdb_id
 - imei
 - imsi
 - ipv4

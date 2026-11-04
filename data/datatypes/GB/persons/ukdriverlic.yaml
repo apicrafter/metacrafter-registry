@@ -3,6 +3,7 @@ name: UK driver license number
 status: stable
 doc: In the United Kingdom, a driving licence is the official document which authorises its holder to
   operate motor vehicles on highways and other public roads.
+parent: driver_license
 categories:
 - pii
 - persons

@@ -2,6 +2,7 @@ id: at_driver_license
 name: Austrian driver's license number
 status: draft
 doc: Number of a driving licence issued in Austria. Microsoft Purview looks for eight digits.
+parent: driver_license
 categories:
 - pii
 - persons

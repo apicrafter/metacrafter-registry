@@ -2,6 +2,7 @@ id: dedriverlic
 name: Germany driver license number
 status: stable
 doc: Alphanumeric value of the German driver license
+parent: driver_license
 categories:
 - pii
 - persons

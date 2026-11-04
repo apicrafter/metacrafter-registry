@@ -1,0 +1,19 @@
+id: admin_area_2
+name: Second-level administrative division
+status: draft
+doc: Name or code of a subdivision of a first-level administrative division, such as a US county, an Italian
+  province or a French department. The registry keeps a record per country as a child of this one.
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+mappings:
+  wikidata: Q13220204
+  cdm: means.location.county
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Administrative_division
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q13220204

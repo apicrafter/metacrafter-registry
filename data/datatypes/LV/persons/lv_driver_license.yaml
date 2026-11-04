@@ -2,6 +2,7 @@ id: lv_driver_license
 name: Latvian driver's license number
 status: draft
 doc: Number of a driving licence issued in Latvia. Microsoft Purview looks for three letters and six digits.
+parent: driver_license
 categories:
 - pii
 - persons

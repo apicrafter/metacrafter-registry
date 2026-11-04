@@ -1,0 +1,16 @@
+id: driver_license
+name: Driver's license number (universal)
+status: draft
+doc: Number of a driving licence, the document that a public authority issues to allow a person to drive
+  motor vehicles. Each country or state defines its own format, so the registry keeps one record per issuer
+  as a child of this one.
+categories:
+- pii
+- persons
+langs:
+- common
+is_pii: true
+classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Driver%27s_license

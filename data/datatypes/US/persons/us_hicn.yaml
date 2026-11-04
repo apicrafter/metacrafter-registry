@@ -1,0 +1,32 @@
+id: us_hicn
+name: US Medicare Health Insurance Claim Number (HICN)
+status: draft
+doc: 'Former Medicare number of a beneficiary in the United States: the nine-digit Social Security number
+  of the wage earner on whose record the person is entitled, followed by a one- or two-character beneficiary
+  identification code such as A for the wage earner. Railroad Retirement Board beneficiaries had a differently
+  built number. Medicare cards switched to the Medicare Beneficiary Identifier (us_mbi) from 2018, but
+  the HICN remains in older claims and administrative files.'
+categories:
+- pii
+- persons
+- medical
+country:
+- US
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: ^\d{9}[0-9A-Z]{1,2}$
+examples:
+- value: 987654320A
+  description: Constructed from 987-65-4320, a number that SSA reserves for advertising
+- value: '00012345616'
+  description: Pseudo HICN example from the CMS code descriptions
+- value: 1EG4TE5MK73
+  valid: false
+  description: An MBI, not a HICN
+links:
+- type: doc
+  url: https://www.cms.gov/files/document/chapter-4-code-descriptions.pdf
+- type: doc
+  url: https://www.cms.gov/medicare/new-medicare-card

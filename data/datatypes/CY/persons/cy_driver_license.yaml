@@ -2,6 +2,7 @@ id: cy_driver_license
 name: Cypriot driver's license number
 status: draft
 doc: Number of a driving licence issued in Cyprus. Microsoft Purview looks for twelve digits.
+parent: driver_license
 categories:
 - pii
 - persons
