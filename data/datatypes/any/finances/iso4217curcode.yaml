@@ -12,6 +12,9 @@ examples:
 - value: EUR
   description: euro
 mappings:
+  cdm:
+  - means.measurement.currencyCode
+  - means.measurement.currency.iSOCode
   wikidata: P498
 links:
 - type: other

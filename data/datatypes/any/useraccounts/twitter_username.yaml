@@ -13,6 +13,7 @@ is_pii: true
 classification: identifier
 regexp: '[0-9A-Za-z_]{1,20}'
 mappings:
+  cdm: means.identity.service.twitter
   wikidata: P2002
 links:
 - type: wikidata

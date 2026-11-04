@@ -9,3 +9,5 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[A-Z0-9-]{3,20}$
+mappings:
+  cdm: means.identity.SKU

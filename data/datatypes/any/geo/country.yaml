@@ -11,6 +11,8 @@ langs:
 - common
 is_pii: false
 classification: categorical
+mappings:
+  cdm: means.location.country
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Country

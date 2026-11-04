@@ -94,6 +94,36 @@ def test_crosswalk_mappings(repo_sources):
     ]
 
 
+def test_cdm_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+    assert [r["id"] for r in reg.crosswalk("cdm", "means.identity.service.email")] == ["email"]
+    assert [r["id"] for r in reg.crosswalk("cdm", "means.location.postalCode")] == ["postindex"]
+    # a pattern can carry the mapping, and a record can list several traits
+    assert [r["id"] for r in reg.crosswalk("cdm", "means.measurement.currency.iSOCode")] == [
+        "iso4217curcode"
+    ]
+    # every CDM trait maps to at most one registry record
+    seen: dict[str, str] = {}
+    for record in reg.datatypes.values():
+        value = record.get("mappings", {}).get("cdm")
+        for trait in value if isinstance(value, list) else [value] if value else []:
+            assert trait not in seen, f"{trait} is mapped by {seen[trait]} and {record['id']}"
+            seen[trait] = record["id"]
+    assert len(seen) >= 40
+
+
+def test_cdm_mapping_must_be_a_trait_name(mini_data):
+    path = mini_data / "datatypes/any/pii/email.yaml"
+    path.write_text(path.read_text() + "mappings:\n  cdm: email\n")
+    errors = [str(i) for i in validate(load_sources(mini_data)).errors]
+    assert any("mappings" in e and "cdm" in e for e in errors), errors
+
+    path.write_text(path.read_text().replace("cdm: email", "cdm: means.identity.service.email"))
+    assert validate(load_sources(mini_data)).errors == []
+
+
 def test_changes_diff():
     old = [
         {"id": "a", "status": "draft", "name": "A"},

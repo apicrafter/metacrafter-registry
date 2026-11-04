@@ -9,3 +9,5 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[A-Za-z0-9_-]{3,50}$
+mappings:
+  cdm: means.userId
