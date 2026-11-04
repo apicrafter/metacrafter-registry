@@ -1,19 +1,29 @@
 id: viafid
 name: VIAF ID
 status: stable
-doc: 'Identifier for the Virtual International Authority File database [format: up to 22 digits]'
+doc: Identifier of a cluster in the Virtual International Authority File (VIAF), an OCLC service that
+  links the authority records of national libraries for the same person, organization, work or place.
+  It has 2 to 9 or 19 to 22 digits and does not start with zero. Data Commons stores it in the viafId
+  property.
 categories:
 - objectids
 langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ([1-9]\d(?:\d{0,7}|\d{17,20}))
+regexp: ^[1-9](?:\d{1,8}|\d{18,21})$
 examples:
 - value: '44298806'
   description: Foncine, Jean-Louis
 - value: '125715126'
   description: Cairo
+- value: '147680367'
+  description: California
+- value: '9972147907520779210008'
+  description: Cathedral of Santa Maria d'Urgell (22-digit cluster ID)
+- value: 0147680367
+  valid: false
+  description: leading zero
 mappings:
   wikidata: P214
 links:
@@ -21,3 +31,10 @@ links:
   url: https://en.wikipedia.org/wiki/Virtual_International_Authority_File
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P214
+- type: other
+  url: https://datacommons.org/browser/viafId
+translations:
+  fr:
+    name: Identifiant VIAF
+  ru:
+    name: Идентификатор VIAF
