@@ -79,6 +79,49 @@
       if (s.length === 13) return (Number(s.slice(0, 12)) % 11) % 10 === Number(s[12]);
       if (s.length === 15) return (Number(s.slice(0, 14)) % 13) % 10 === Number(s[14]);
       return false;
+    },
+    fr_nir: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      if (!/^\d{5}(?:\d{2}|2[AB])\d{8}$/.test(s)) return false;
+      var dept = s.slice(5, 7) === "2A" ? "19" : s.slice(5, 7) === "2B" ? "18" : s.slice(5, 7);
+      var body = s.slice(0, 5) + dept + s.slice(7, 13), rem = 0;
+      for (var i = 0; i < body.length; i += 1) rem = (rem * 10 + Number(body[i])) % 97;
+      return 97 - rem === Number(s.slice(13));
+    },
+    at_uid: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      if (s.indexOf("AT") === 0) s = s.slice(2);
+      if (!/^U\d{8}$/.test(s)) return false;
+      var d = s.slice(1).split("").map(Number), total = 0;
+      for (var i = 0; i < 7; i += 1) {
+        var x = d[6 - i];
+        if (i % 2 === 1) { x *= 2; if (x > 9) x -= 9; }
+        total += x;
+      }
+      return ((6 - total) % 10 + 10) % 10 === d[7];
+    },
+    bg_vat: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      if (s.indexOf("BG") === 0) s = s.slice(2);
+      if (!/^\d+$/.test(s)) return false;
+      var d = s.split("").map(Number);
+      var weighted = function (w) {
+        var t = 0;
+        for (var i = 0; i < w.length; i += 1) t += w[i] * d[i];
+        return t;
+      };
+      if (d.length === 9) {
+        var check = weighted([1, 2, 3, 4, 5, 6, 7, 8]) % 11;
+        if (check === 10) check = weighted([3, 4, 5, 6, 7, 8, 9, 10]) % 11;
+        return check % 10 === d[8];
+      }
+      if (d.length === 10) {
+        var egn = (weighted([2, 4, 8, 5, 10, 9, 7, 3, 6]) % 11) % 10;
+        var pnf = weighted([21, 19, 17, 13, 11, 9, 7, 3, 1]) % 10;
+        var other = (((11 - weighted([4, 3, 2, 7, 6, 5, 4, 3, 2])) % 11) + 11) % 11;
+        return d[9] === egn || d[9] === pnf || d[9] === other;
+      }
+      return false;
     }
   };
 

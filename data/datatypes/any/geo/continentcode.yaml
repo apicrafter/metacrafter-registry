@@ -1,0 +1,26 @@
+id: continentcode
+name: Continent code (two letters)
+status: draft
+doc: 'Two-letter continent code used by GeoNames and other geographic datasets: AF (Africa), AN (Antarctica),
+  AS (Asia), EU (Europe), NA (North America), OC (Oceania) and SA (South America). Many CSV readers turn
+  NA into a missing value unless told otherwise.'
+semantic_type: continent
+langs:
+- common
+regexp: ^(?:AF|AN|AS|EU|NA|OC|SA)$
+examples:
+- value: EU
+  description: Europe
+- value: AF
+  description: Africa
+- value: OC
+  description: Oceania
+- value: AM
+  valid: false
+  description: not a continent code
+links:
+- type: doc
+  url: https://download.geonames.org/export/dump/readme.txt
+translations:
+  ru:
+    name: Код континента

@@ -1,0 +1,27 @@
+id: formaltitle
+name: Formal title
+status: draft
+doc: Title of rank, honour or office written before a person's name, such as Sir, Dame, Lord, Lady, The
+  Honourable or His Excellency. It is more formal than a common title such as Mr or Mrs (civility).
+parent: honorificprefix
+categories:
+- persons
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Sir
+  description: man with a British knighthood or a baronet
+- value: Dame
+  description: woman with a British knighthood in her own right
+- value: Lord
+  description: male peer
+- value: The Hon.
+  description: The Honourable, used for some officials and judges
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/English_honorifics
+translations:
+  ru:
+    name: Титул (сэр, лорд, ваше превосходительство)

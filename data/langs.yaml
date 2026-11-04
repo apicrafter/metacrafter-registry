@@ -69,3 +69,6 @@
 - id: sv
   name: Swedish
   kind: language
+- id: bg
+  name: Bulgarian
+  kind: language

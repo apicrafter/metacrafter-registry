@@ -202,3 +202,59 @@ def test_javascript_identify_matches_python(built_site, tmp_path):
     for (values, field), js_top in zip(cases, js, strict=True):
         py_top = [[r["id"], r["score"]] for r in reg.identify(values, field_name=field, limit=3)]
         assert js_top[0] == py_top[0], (values, js_top, py_top)
+
+
+@pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
+def test_javascript_checksums_match_python(tmp_path):
+    """Every check-digit algorithm exists in identify-core.js and gives the same answers."""
+    import random
+
+    from metacrafter_registry.checksums import ALGORITHMS
+
+    rng = random.Random(3)
+    values = [
+        "4111 1111 1111 1111",
+        "GB82 WEST 1234 5698 7654 32",
+        "978-0-521-29366-2",
+        "0-521-22151-X",
+        "7707083893",
+        "112-233-445 95",
+        "2 95 10 99 126 111 93",
+        "253072B07300470",
+        "253072A07300443",
+        "ATU13585627",
+        "U13585626",
+        "BG175074752",
+        "BG 175 074 751",
+    ]
+    values += [str(rng.randrange(10**8, 10**15)) for _ in range(300)]
+    values += [f"ATU{rng.randrange(10**8):08d}" for _ in range(100)]
+    values += [f"BG{rng.randrange(10**10):010d}" for _ in range(100)]
+    values += [
+        f"{rng.randrange(10**5):05d}2{rng.choice('AB')}{rng.randrange(10**8):08d}"
+        for _ in range(100)
+    ]
+    script = tmp_path / "checksums.js"
+    script.write_text(
+        "const core = require(process.argv[2]);\n"
+        "const names = JSON.parse(process.argv[3]);\n"
+        "const values = JSON.parse(process.argv[4]);\n"
+        "console.log(JSON.stringify(names.map(n => core.CHECKSUMS[n] ? "
+        "values.map(v => core.CHECKSUMS[n](v)) : null)));\n"
+    )
+    names = sorted(ALGORITHMS)
+    out = subprocess.run(
+        [
+            "node",
+            str(script),
+            str(REPO / "src/metacrafter_registry/static/identify-core.js"),
+            json.dumps(names),
+            json.dumps(values),
+        ],
+        capture_output=True,
+        text=True,
+        check=True,
+    ).stdout
+    for name, js in zip(names, json.loads(out), strict=True):
+        assert js is not None, f"{name} is missing from identify-core.js"
+        assert js == [ALGORITHMS[name](v) for v in values], name

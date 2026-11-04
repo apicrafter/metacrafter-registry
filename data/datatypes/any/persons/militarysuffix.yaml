@@ -1,0 +1,22 @@
+id: militarysuffix
+name: Military name suffix
+status: draft
+doc: Abbreviation of a military service written after a person's name, for example USN or USMC. In the
+  United States military it helps to compare seniority between services and can show reserve status.
+parent: namesuffix
+categories:
+- persons
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: USN
+  description: United States Navy
+- value: USMC
+  description: United States Marine Corps
+- value: USAF
+  description: United States Air Force
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Name_suffix#Professional
