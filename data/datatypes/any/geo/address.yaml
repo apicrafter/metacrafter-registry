@@ -9,6 +9,8 @@ categories:
 langs:
 - common
 is_pii: true
+mappings:
+  fibo: FND/Places/Addresses/PhysicalAddress
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Address

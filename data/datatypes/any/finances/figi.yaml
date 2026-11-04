@@ -17,6 +17,8 @@ examples:
   description: IBM UA
 - value: BBG000BLNQ16
   description: IBM UN
+mappings:
+  fibo: SEC/Securities/SecuritiesIdentificationIndividuals/FinancialInstrumentGlobalIdentifier
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Financial_Instrument_Global_Identifier

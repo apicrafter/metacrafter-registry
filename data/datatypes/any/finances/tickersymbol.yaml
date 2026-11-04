@@ -16,6 +16,7 @@ examples:
 - value: AMZN
   description: Amazon
 mappings:
+  fibo: SEC/Securities/SecuritiesIdentification/TickerSymbol
   wikidata: P249
 links:
 - type: wikipedia

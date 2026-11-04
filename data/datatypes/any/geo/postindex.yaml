@@ -11,6 +11,7 @@ langs:
 is_pii: true
 classification: categorical
 mappings:
+  fibo: FND/Places/Addresses/Postcode
   wikidata: P281
 links:
 - type: wikidata

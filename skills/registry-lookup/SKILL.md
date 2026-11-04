@@ -65,8 +65,11 @@ Example:
 - **"Is this PII?"** The record's `is_pii` is the registry's answer. Categories
   such as `pii` and `persons` add context.
 - **Crosswalk.** `crosswalk("wikidata", "P968")` finds the registry record for
-  an id in another vocabulary. The systems are `wikidata`, `schema_org`, `dpv`,
-  `presidio`, `google_dlp`, `purview`, `d3m` and `sherlock`. Coverage outside
-  Wikidata is still small.
+  an id in another vocabulary. The systems are `wikidata`, `fibo`, `schema_org`,
+  `dpv`, `presidio`, `google_dlp`, `purview`, `d3m` and `sherlock`. For `fibo`,
+  pass a FIBO class IRI, for example
+  `https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier`.
+  It links glossary terms to registry types. Coverage outside Wikidata is still
+  small.
 - **Former ids.** `get_datatype("ssn")` returns `usssn` with
   `resolved_from_alias`. Always cite the canonical id.

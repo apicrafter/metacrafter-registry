@@ -12,6 +12,7 @@ examples:
 - value: EUR
   description: euro
 mappings:
+  fibo: FND/Accounting/CurrencyAmount/CurrencyIdentifier
   wikidata: P498
 links:
 - type: other

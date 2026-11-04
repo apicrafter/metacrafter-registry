@@ -9,3 +9,5 @@ categories:
 langs:
 - common
 is_pii: false
+mappings:
+  fibo: FND/Accounting/CurrencyAmount/Price

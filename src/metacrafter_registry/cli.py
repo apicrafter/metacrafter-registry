@@ -224,6 +224,65 @@ def cmd_coverage(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_fibo(args: argparse.Namespace) -> int:
+    """FIBO mappings: update the committed term list, check it, or search a checkout."""
+    from .coverage import git_ref
+    from .fibo import (
+        build_vocabulary,
+        dump_vocabulary,
+        load_vocabulary,
+        mapped_paths,
+        scan_classes,
+        search,
+        vocabulary_path,
+    )
+
+    fibo_dir = Path(args.fibo_dir)
+    if not fibo_dir.is_dir():
+        print(
+            f"--fibo-dir {fibo_dir} is not a directory (clone https://github.com/edmcouncil/fibo)"
+        )
+        return 2
+    classes = scan_classes(fibo_dir)
+    if args.action == "search":
+        if not args.query:
+            print("search needs a query, e.g.: fibo search 'bank account' --fibo-dir <checkout>")
+            return 2
+        for path, term in search(classes, " ".join(args.query), args.limit):
+            abbreviations = (
+                f" ({', '.join(term['abbreviations'])})" if term.get("abbreviations") else ""
+            )
+            print(f"{path}\n    {term['label']}{abbreviations} [{term.get('maturity', '?')}]")
+            if term.get("definition"):
+                print(f"    {term['definition']}")
+        return 0
+
+    data_dir = _data_dir(args)
+    used = mapped_paths(rec.data for rec in load_sources(data_dir).datatypes)
+    ref = args.ref or git_ref(fibo_dir) or "unknown"
+    fresh, missing = build_vocabulary(classes, used, ref)
+    for path in missing:
+        print(f"Not a labelled FIBO class at {ref[:12]}: {path} (used by {', '.join(used[path])})")
+    if args.action == "update":
+        if missing:
+            return 1
+        path = vocabulary_path(data_dir)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(dump_vocabulary(fresh), encoding="utf-8")
+        print(f"Wrote {path} ({len(fresh['terms'])} FIBO classes at {ref[:12]})")
+        return 0
+    committed = load_vocabulary(data_dir) or {}
+    if missing or committed.get("terms") != fresh["terms"]:
+        print(
+            f"FIBO term list differs from FIBO {ref[:12]} "
+            f"(committed: {str((committed.get('source') or {}).get('ref'))[:12]}). "
+            "Review the changes, then run: metacrafter-registry fibo update --fibo-dir <checkout>"
+        )
+        return 1
+    print(f"FIBO term list matches FIBO {ref[:12]} ({len(fresh['terms'])} classes)")
+    return 0
+
+
 def cmd_snapshot(args: argparse.Namespace) -> int:
     """Copy published data files into the package so wheels work offline."""
     import shutil
@@ -344,6 +403,14 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--markdown", help="write a Markdown report to this file")
     p.add_argument("--json", action="store_true", help="print the full report as JSON")
     p.set_defaults(func=cmd_coverage)
+
+    p = sub.add_parser("fibo", help="FIBO mappings: update or check the term list, search FIBO")
+    p.add_argument("action", choices=["update", "check", "search"])
+    p.add_argument("query", nargs="*", help="search: words to find in class names and labels")
+    p.add_argument("--fibo-dir", required=True, help="a checkout of github.com/edmcouncil/fibo")
+    p.add_argument("--ref", help="git ref of that checkout (default: its HEAD)")
+    p.add_argument("--limit", type=int, default=20, help="search: most classes to print")
+    p.set_defaults(func=cmd_fibo)
 
     p = sub.add_parser("snapshot", help="bundle published data files into the package")
     p.add_argument("--dist", default="dist", help="built site directory (default: dist)")

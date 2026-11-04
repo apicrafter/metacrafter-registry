@@ -25,6 +25,7 @@ examples:
   valid: false
   description: No @
 mappings:
+  fibo: FND/Places/VirtualPlaces/ElectronicMailAddress
   google_dlp: EMAIL_ADDRESS
   presidio: EMAIL_ADDRESS
 links:

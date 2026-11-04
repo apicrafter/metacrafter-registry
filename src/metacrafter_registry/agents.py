@@ -9,6 +9,8 @@ from __future__ import annotations
 from collections.abc import Iterable, Mapping
 from typing import Any
 
+from .fibo import fibo_iris
+
 RAG_TEMPLATE_VERSION = "1"
 
 DRAFT_NOTE = (
@@ -101,6 +103,10 @@ def record_markdown(
         lines += ["## Mappings", ""]
         for system, value in record["mappings"].items():
             values = value if isinstance(value, list) else [value]
+            if system == "fibo":  # paths are only meaningful as IRIs
+                iris = fibo_iris(record["mappings"])
+                lines.append(f"- fibo: {', '.join(f'<{iri}>' for iri in iris)}")
+                continue
             lines.append(f"- {system}: {', '.join(f'`{v}`' for v in values)}")
         lines.append("")
     rules = record.get("detected_by", {}).get("metacrafter_rules", [])
@@ -326,6 +332,7 @@ def _match_iris(mappings: Mapping[str, Any]) -> list[str]:
     schema_org = mappings.get("schema_org")
     for value in schema_org if isinstance(schema_org, list) else [schema_org] if schema_org else []:
         iris.append(value if value.startswith("http") else f"https://schema.org/{value}")
+    iris += fibo_iris(mappings)
     return iris
 
 
