@@ -92,7 +92,9 @@ def test_collections_agree(built_site):
     assert rows[0] == CSV_COLUMNS
     assert len(rows) - 1 == len(records)
     legacy = load(built_site, "registry.json")
-    assert {r["id"] for r in records} == set(legacy)
+    aliases = load(built_site, "api/v1/aliases.json")
+    # legacy registry.json also keeps retired ids (aliases) as entries
+    assert {r["id"] for r in records} | set(aliases) == set(legacy)
 
 
 def test_reference_counts(built_site):
@@ -107,16 +109,15 @@ def test_manifest_hashes_cover_bulk_files(built_site):
     for name in ("registry.json", "api/v1/datatypes.json", "api/v1/datatypes.csv"):
         assert name in manifest["files"]
     assert manifest["license"] == "Apache-2.0"
-    assert manifest["counts"]["datatypes"] + manifest["counts"]["patterns"] == len(
-        load(built_site, "registry.json")
-    )
+    records = load(built_site, "api/v1/datatypes.json")
+    assert manifest["counts"]["datatypes"] + manifest["counts"]["patterns"] == len(records)
 
 
 def test_search_index(built_site):
     index = load(built_site, "search-index.json")
     email = next(e for e in index if e["id"] == "email")
     assert "почта" in email["t"].lower()
-    assert len(index) == len(load(built_site, "registry.json"))
+    assert len(index) == len(load(built_site, "api/v1/datatypes.json"))
 
 
 def test_entity_page_structured_data(built_site):
@@ -136,3 +137,29 @@ def test_sitemap_lists_entity_pages(built_site):
     assert "<loc>https://registry.apicrafter.io/category/pii</loc>" in sitemap
     robots = (built_site / "robots.txt").read_text("utf-8")
     assert "Sitemap: https://registry.apicrafter.io/sitemap.xml" in robots
+
+
+def test_aliases(built_site):
+    aliases = load(built_site, "api/v1/aliases.json")
+    assert aliases["ssn"] == "usssn" and aliases["eui48"] == "mac_address"
+    assert list(aliases) == sorted(aliases)
+    usssn = load(built_site, "api/v1/datatypes/usssn.json")
+    assert "ssn" in usssn["aliases"]
+    legacy = load(built_site, "datatype/ssn.json")
+    assert legacy["alias_of"] == "usssn"
+    page = (built_site / "datatype/ssn.html").read_text("utf-8")
+    assert 'http-equiv="refresh" content="0; url=/datatype/usssn"' in page
+    assert '<link rel="canonical" href="https://registry.apicrafter.io/datatype/usssn">' in page
+    assert "/datatype/ssn<" not in (built_site / "sitemap.xml").read_text("utf-8")
+
+
+def test_status_and_quality_published(built_site):
+    records = load(built_site, "api/v1/datatypes.json")
+    statuses = {r["status"] for r in records}
+    assert statuses <= {"draft", "stable", "deprecated"} and "draft" in statuses
+    assert all(0 <= r["quality"]["score"] <= 100 for r in records)
+    manifest = load(built_site, "api/v1/index.json")
+    assert manifest["counts"]["draft"] == sum(r["status"] == "draft" for r in records)
+    draft = next(r for r in records if r["status"] == "draft")
+    html = (built_site / f"datatype/{draft['id']}.html").read_text("utf-8")
+    assert "has not been reviewed yet" in html

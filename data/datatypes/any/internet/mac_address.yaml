@@ -3,12 +3,15 @@ name: MAC address (Media Access Control)
 status: stable
 doc: A media access control address (MAC address) is a unique identifier assigned to a network interface
   controller (NIC) for use as a network address in communications within a network segment.
+aliases:
+- eui48
 categories:
 - internet
 - identifiers
+- pii
 langs:
 - common
-is_pii: false
+is_pii: true
 classification: identifier
 regexp: ^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$
 examples:

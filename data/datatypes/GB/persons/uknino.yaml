@@ -3,6 +3,8 @@ name: UK National Insurance number
 status: stable
 doc: The National Insurance number is a number used in the United Kingdom in the administration of the
   National Insurance or social security system. It is also used for some purposes in the UK tax system.
+aliases:
+- ninumber
 categories:
 - pii
 - persons

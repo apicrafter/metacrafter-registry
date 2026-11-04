@@ -1,20 +1,20 @@
 id: isbn10
 name: International Standard Book Number 10-digits (ISBN10)
 status: stable
-doc: The International Standard Book Number (ISBN) is a numeric commercial book identifier that is intended
-  to be unique. Publishers purchase ISBNs from an affiliate of the International ISBN Agency
+doc: 10-digit International Standard Book Number, used for books published before 2007. The last character
+  is a check digit (0-9 or X).
 categories:
 - objectids
 langs:
 - common
 is_pii: false
 classification: identifier
-regexp: \d[\d\-]{11}\d
+regexp: ^(?:\d[- ]?){9}[\dX]$
 examples:
-- value: 978-1107075412
-  description: Learning Scientific Programming with Python
-- value: 978-94-6298-380-9
-  description: 'Dolle mythes : een frisse factcheck van feminisme toen en nu'
+- value: 0-521-29366-9
+  description: Hamlet, Prince of Denmark
+- value: 0-521-22151-X
+  description: Hamlet, Prince of Denmark
 mappings:
   wikidata: P957
 links:

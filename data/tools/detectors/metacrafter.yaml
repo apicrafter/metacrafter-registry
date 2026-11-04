@@ -35,7 +35,7 @@ supported_types:
 - countrycode_alpha2
 - countrycode_alpha3
 - languagetag
-- eui48
+- mac_address
 - ipv4
 - ipv6
 - ipaddr
@@ -53,4 +53,3 @@ supported_types:
 - sha1hash
 - md5hash
 - uuid
-- guid

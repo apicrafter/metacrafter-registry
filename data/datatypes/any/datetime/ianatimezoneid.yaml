@@ -1,7 +1,8 @@
 id: ianatimezoneid
 name: IANA Timezone ID
 status: stable
-doc: Difference between Coordinated Universal Time (UTC) and this timezone.
+doc: Time zone identifier from the IANA time zone database (tz database), in Area/Location form, for example
+  Europe/London.
 semantic_type: timezone
 langs:
 - common

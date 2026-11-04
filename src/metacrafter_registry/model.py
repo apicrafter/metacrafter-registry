@@ -222,7 +222,9 @@ def build_registry(sources: RegistrySources, site_url: str) -> Registry:
         countries=reference(sources.countries, "country", "country"),
         langs=reference(sources.langs, "langs", ""),
         tools_by_type=tools_by_type,
-        aliases={alias: rid for rid, r in datatypes.items() for alias in r.get("aliases", [])},
+        aliases=dict(
+            sorted((alias, rid) for rid, r in datatypes.items() for alias in r.get("aliases", []))
+        ),
     )
 
 

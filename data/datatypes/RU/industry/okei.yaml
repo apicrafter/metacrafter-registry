@@ -1,7 +1,8 @@
 id: okei
 name: Russian OKEI code (classifier of units of measurement)
 status: stable
-doc: Russian OKEI (classifier of units of measurement)
+doc: Code of a unit of measurement in the Russian OKEI classifier (Общероссийский классификатор единиц
+  измерения), 3 or 4 digits.
 categories:
 - common
 country:
@@ -10,7 +11,7 @@ langs:
 - ru
 is_pii: false
 classification: categorical
-regexp: \d{3,4}
+regexp: ^\d{3,4}$
 examples:
 - value: '161'
   description: миллиграмм

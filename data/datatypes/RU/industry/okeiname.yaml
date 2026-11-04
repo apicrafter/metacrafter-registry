@@ -1,7 +1,8 @@
 id: okeiname
 name: Russian OKEI name of code (classifier of units of measurement)
 status: stable
-doc: Russian OKEI (classifier of units of measurement)
+doc: Name of a unit of measurement in the Russian OKEI classifier (Общероссийский классификатор единиц
+  измерения), for example 'миллиграмм'. The code is okei.
 categories:
 - common
 country:

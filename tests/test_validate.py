@@ -121,3 +121,21 @@ def test_filename_mismatch_is_an_error(mini_data):
         "id: realname\nname: X\ndoc: X\nlangs: [en]\nstatus: stable\nis_pii: false\n",
     )
     assert messages(mini_data) == ["realname: file name must be 'realname.yaml'"]
+
+
+def test_alias_must_not_collide_with_an_id(mini_data):
+    write_record(
+        mini_data / "datatypes/any/pii/other.yaml",
+        "id: other\nname: Other\nstatus: stable\ndoc: Other\nlangs: [en]\nis_pii: false\n"
+        "aliases: [email]\n",
+    )
+    assert any("email: duplicate id or alias" in m for m in messages(mini_data))
+
+
+def test_replaced_by_must_resolve(mini_data):
+    write_record(
+        mini_data / "datatypes/any/pii/old.yaml",
+        "id: old\nname: Old\nstatus: deprecated\ndoc: Old\nlangs: [en]\nis_pii: false\n"
+        "replaced_by: nothing\n",
+    )
+    assert any("old: unknown replaced_by 'nothing'" in m for m in messages(mini_data))

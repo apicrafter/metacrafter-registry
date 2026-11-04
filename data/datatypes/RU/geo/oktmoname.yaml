@@ -1,9 +1,8 @@
 id: oktmoname
 name: Russian Classification of Territories of Municipal Formations (OKTMO) name
 status: stable
-doc: 'Russian Classification of Territories of Municipal Formations (Russian: Общероссийский классификатор
-  территорий муниципальных образований), or OKTMO (Russian: ОКТМО), is one of several Russian national
-  registers. OKTMO organizes information about the structure of the municipal divisions of Russia.'
+doc: Name of a territory in the Russian OKTMO classifier (Общероссийский классификатор территорий муниципальных
+  образований), for example a municipal district or a settlement. The code is oktmo.
 categories:
 - geo
 country:

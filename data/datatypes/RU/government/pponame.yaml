@@ -1,8 +1,8 @@
 id: pponame
 name: Russian public legal formation name
 status: draft
-doc: Russian public legal formation is a legal definition of public entity with right of administration
-  of its level budget
+doc: 'Name of a Russian public legal formation (публично-правовое образование, ППО): the Russian Federation,
+  a federal subject or a municipal formation that administers its own budget. The code is ppocode.'
 categories:
 - government
 country:

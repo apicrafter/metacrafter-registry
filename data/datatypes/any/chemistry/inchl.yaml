@@ -1,7 +1,8 @@
 id: inchl
 name: International Chemical Identifier (InChl)
 status: stable
-doc: International Chemical Identifier
+doc: 'International Chemical Identifier (InChI): a textual identifier for chemical substances defined
+  by IUPAC. It starts with ''InChI=''.'
 categories:
 - chemistry
 langs:

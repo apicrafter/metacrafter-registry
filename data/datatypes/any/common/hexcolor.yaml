@@ -1,10 +1,18 @@
 id: hexcolor
 name: sRGB color hex triplet (hex color)
-status: draft
-doc: Color of subject
+status: stable
+doc: 'Color written as a hexadecimal sRGB triplet, for example #1F5FBF.'
 semantic_type: color
 langs:
 - common
+regexp: ^#?(?:[0-9A-Fa-f]{3}){1,2}$
+examples:
+- value: '#1F5FBF'
+  description: 'six hex digits with a leading #'
+- value: FF8800
+  description: 'six hex digits without #'
+- value: '#FFF'
+  description: short three-digit form
 mappings:
   wikidata: P465
 links:

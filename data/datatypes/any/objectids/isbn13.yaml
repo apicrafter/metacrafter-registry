@@ -1,8 +1,7 @@
 id: isbn13
 name: International Standard Book Number 13-digits (ISBN13)
 status: stable
-doc: The International Standard Book Number (ISBN) is a numeric commercial book identifier that is intended
-  to be unique. Publishers purchase ISBNs from an affiliate of the International ISBN Agency
+doc: 13-digit International Standard Book Number, used since 2007. It starts with the prefix 978 or 979.
 categories:
 - objectids
 langs:
@@ -15,6 +14,10 @@ examples:
   description: Hamlet, Prince of Denmark (ISBN-10 0-521-29366-9)
 - value: 978-0-521-22151-1
   description: Hamlet, Prince of Denmark (ISBN-10 0-521-22151-X)
+- value: 978-1107075412
+  description: Learning Scientific Programming with Python
+- value: 978-94-6298-380-9
+  description: 'Dolle mythes: een frisse factcheck van feminisme toen en nu'
 mappings:
   wikidata: P212
 links:

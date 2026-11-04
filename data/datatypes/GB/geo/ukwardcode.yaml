@@ -1,8 +1,8 @@
 id: ukwardcode
 name: Ward code (United Kingdom)
 status: stable
-doc: The wards and electoral divisions in the United Kingdom are electoral districts at sub-national level
-  represented by one or more councillors.
+doc: 'Official code of a ward or electoral division in the United Kingdom: the electoral district represented
+  by one or more councillors.'
 categories:
 - geo
 country:

@@ -1,7 +1,7 @@
 id: color
 name: Color
 status: draft
-doc: Color of subject
+doc: Color of a subject, written as a color name or a color code.
 categories:
 - common
 langs:

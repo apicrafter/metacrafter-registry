@@ -1,14 +1,15 @@
 id: inchlkey
 name: International Chemical Identifier Key (InChIKey)
 status: stable
-doc: International Chemical Identifier
+doc: 'InChIKey: a fixed-length hashed form of the InChI chemical identifier, written as three hyphen-separated
+  blocks of 14, 10 and 1 uppercase letters.'
 categories:
 - chemistry
 langs:
 - common
 is_pii: false
 classification: identifier
-regexp: '[A-Z]{14}-[A-Z]{10}-[A-Z]'
+regexp: ^[A-Z]{14}-[A-Z]{10}-[A-Z]$
 examples:
 - value: LFQSCWFLJHTTHZ-UHFFFAOYSA-N
   description: ethanol

@@ -1,10 +1,10 @@
 id: rusbankaccount
 name: Bank account in Russia
-status: draft
-doc: A bank account is a financial account maintained by a bank or other financial institution in which
-  the financial transactions between the bank and a customer are recorded.
+status: stable
+doc: 'Number of a bank account in a Russian bank (расчётный счёт): 20 digits.'
 semantic_type: bankaccount
 country:
 - RU
 langs:
 - ru
+regexp: ^\d{20}$

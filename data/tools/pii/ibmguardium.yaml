@@ -16,7 +16,7 @@ supported_types:
 - person_firstname
 - benatcardid
 - ipaddr
-- ssn
+- usssn
 - uknhsnum
 - esnif
 - aumedicarenum
