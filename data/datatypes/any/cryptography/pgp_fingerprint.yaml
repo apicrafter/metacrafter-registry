@@ -1,0 +1,29 @@
+id: pgp_fingerprint
+name: OpenPGP key fingerprint
+status: draft
+doc: 'Fingerprint of an OpenPGP key: 40 hexadecimal digits (SHA-1) for version 4 keys and 64 hexadecimal
+  digits (SHA-256) for version 6 keys of RFC 9580. GnuPG prints a version 4 fingerprint as ten groups
+  of four digits with a double space in the middle. Without spaces a version 4 fingerprint looks like
+  a plain SHA-1 hash: use the field name or context.'
+categories:
+- cryptography
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '^(?:[0-9A-Fa-f]{40}|[0-9A-Fa-f]{64}|[0-9A-Fa-f]{4}(?: {1,2}[0-9A-Fa-f]{4}){9})$'
+examples:
+- value: C959 BDBA FA32 A2F8 9A15  3B67 8CFD E121 9796 5A9A
+  description: Sample version 4 key of RFC 9580, appendix A.1, as GnuPG prints it
+- value: C959BDBAFA32A2F89A153B678CFDE12197965A9A
+  description: The same fingerprint without spaces
+- value: CB186C4F0609A697E4D52DFA6C722B0C1F1E27C18A56708F6525EC27BAD9ACC9
+  description: Sample version 6 key of RFC 9580, appendix A.3
+- value: 8CFDE12197965A9A
+  valid: false
+  description: Key ID of the version 4 sample key
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc9580#section-5.5.4
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Public_key_fingerprint

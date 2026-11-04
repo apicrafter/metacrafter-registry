@@ -1,0 +1,36 @@
+id: streebog256hash
+name: Streebog-256 hash (GOST R 34.11-2012)
+status: draft
+doc: 'Digest of Streebog, the hash function of the Russian standard GOST R 34.11-2012 (also RFC 6986),
+  with a 256-bit output. It is written as 64 hexadecimal digits. The standard and RFC 6986 print digests
+  in reverse byte order, while libraries such as gostcrypto and the Wikipedia article print them in byte
+  order, as the examples here do. Other 256-bit digests (SHA-256, SHA3-256, Keccak-256, BLAKE2b-256 and
+  BLAKE3) have the same length, so the value alone does not tell them apart: use the field name or context.'
+parent: hash
+categories:
+- cryptography
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-fA-F]{64}$
+examples:
+- value: 3f539a213e97c802cc229d474c6aa32a825a360b2a933a949fd925208d9ce1bb
+  description: Streebog-256 hash of the empty string
+- value: 9d151eefd8590b89daa6ba6cb74af9275dd051026bb149a452fd84e5e57b5500
+  description: Streebog-256 hash of the RFC 6986 Example 1 message (63 digits 0123456789012...), in byte
+    order
+- value: 3f539a213e97c802cc229d474c6aa32a825a360b2a933a949fd925208d9ce1b
+  valid: false
+  description: one hex digit short (63 instead of 64)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Streebog
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc6986
+translations:
+  ru:
+    name: Хеш Стрибог-256 (ГОСТ Р 34.11-2012)
+    doc: Значение хеш-функции «Стрибог» по ГОСТ Р 34.11-2012 (RFC 6986) длиной 256 бит, записанное 64
+      шестнадцатеричными цифрами. Стандарт и RFC 6986 печатают значение в обратном порядке байтов, а библиотеки
+      обычно в прямом.

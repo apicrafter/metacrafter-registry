@@ -1,0 +1,30 @@
+id: ssh_key_fingerprint
+name: SSH key fingerprint
+status: draft
+doc: 'Fingerprint of an SSH public key, as printed by ssh-keygen -l and shown when a client first connects
+  to a host: SHA256: and 43 characters of unpadded Base64 (the default since OpenSSH 6.8), or the legacy
+  MD5 form of 16 colon-separated hexadecimal octets, optionally after MD5:.'
+categories:
+- cryptography
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:SHA256:[A-Za-z0-9+/]{43}|(?:MD5:)?[0-9a-f]{2}(?::[0-9a-f]{2}){15})$
+examples:
+- value: SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU
+  description: Fingerprint of the Ed25519 host key of github.com
+- value: SHA256:uNiVztksCsDhcc0u9e8BujQXVUpKZIDTMczCvj3tD2s
+  description: Fingerprint of the RSA host key of github.com
+- value: MD5:65:96:2d:fc:e8:d5:a9:11:64:0c:0f:ea:00:6e:5b:bd
+  description: Legacy MD5 fingerprint of the Ed25519 host key of github.com (ssh-keygen -E md5)
+- value: AE:C4:60:61:F4:58:FC:B5:6E:20:4A:11:79:DE:BB:CF:23:7F:1C:53
+  valid: false
+  description: SHA-1 fingerprint of an X.509 certificate (20 octets)
+links:
+- type: doc
+  url: https://man.openbsd.org/ssh-keygen
+- type: other
+  url: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Public_key_fingerprint

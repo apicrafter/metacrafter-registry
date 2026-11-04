@@ -1,0 +1,29 @@
+id: sha3_256hash
+name: SHA3-256 hash
+status: draft
+doc: 'Digest of the SHA3-256 hash function (SHA-3 family, FIPS 202, 256 bits). It is written as 64 hexadecimal
+  digits. SHA3-256 pads its input differently from the original Keccak-256 used by Ethereum, so the two
+  give different digests of the same data. Other 256-bit digests (SHA-256, Keccak-256, BLAKE2b-256, BLAKE3
+  and Streebog-256) have the same length, so the value alone does not tell them apart: use the field name
+  or context.'
+parent: hash
+categories:
+- cryptography
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-fA-F]{64}$
+examples:
+- value: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a
+  description: SHA3-256 hash of the empty string
+- value: 3a985da74fe225b2045c172d6bd390bd855f086e3e9d525b46bfe24511431532
+  description: SHA3-256 hash of the string 'abc'
+- value: a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434
+  valid: false
+  description: one hex digit short (63 instead of 64)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SHA-3
+- type: doc
+  url: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf

@@ -2,8 +2,9 @@ id: blake2b512hash
 name: BLAKE2b-512 hash
 status: stable
 doc: 'Digest of the BLAKE2b hash function with a 512-bit output. It is written as 128 hexadecimal digits.
-  SHA-512, Keccak-512 and BLAKE2b-512 digests have the same length, so the value alone does not tell them
-  apart: use the field name or context.'
+  Other 512-bit digests (SHA-512, SHA3-512, Keccak-512 and Streebog-512) have the same length, so the
+  value alone does not tell them apart: use the field name or context.'
+parent: hash
 categories:
 - cryptography
 langs:
@@ -22,3 +23,5 @@ examples:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/BLAKE_(hash_function)
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc7693
