@@ -453,11 +453,16 @@ class Registry:
         For wikidata, a property id or its URL; for fibo, a class path or its full IRI;
         for fta, a semantic type as FTA reports it, including locale-bound names such
         as MONTH.FULL_fr-FR or GENDER.TEXT_DE; for sherlock, a type label, compared
-        without case and spaces; for autotype, a benchmark test case name, its file
-        name or its data_release path.
+        without case and spaces; for sato, a Sato type label (Sato predicts the
+        Sherlock types, written birthDate); for autotype, a benchmark test case name,
+        its file name or its data_release path.
         """
         if system == "fta":
             return self._crosswalk_fta(str(external_id).strip())
+        # Sato predicts the 78 Sherlock types, in camelCase (birthDate), so its
+        # labels resolve through mappings.sherlock.
+        if system == "sato":
+            system = "sherlock"
         wanted = str(external_id).strip()
         if system == "wikidata":
             wanted = wanted.rstrip("/").rsplit("/", 1)[-1].removeprefix("Property:").upper()

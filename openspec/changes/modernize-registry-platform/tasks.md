@@ -205,6 +205,10 @@
   - 119 of the 142 test cases are mapped to 83 records, at AutoType commit `600df80`.
   - 18 new draft records for benchmark types the registry lacked, such as `bibcode`, `iswc`, `uniprot_id`, `ensembl_id`, `icd9`, `asin` and `ca_fsa`. `ca_postalcode` (a metacrafter-rules key) becomes an alias of `ca_postcode`.
   - Message formats (SWIFT MT, FIX, NOTAM, NMEA), free-text types and mislabelled test cases are not mapped. The review is `devdocs/AUTOTYPE_REVIEW.md`.
+- [x] 8.13 Review the Sato semantic types (issue #33). Sato's published model predicts the same 78 types as Sherlock, in camelCase, at megagonlabs/sato commit `c19ace3`.
+  - No new mapping key: Sato labels resolve through `mappings.sherlock`, and `crosswalk("sato", ...)` is the same lookup as `crosswalk("sherlock", ...)`.
+  - New tool `sato` (detector). A test checks that its `supported_types` are the records that carry `mappings.sherlock`.
+  - The 46 unmapped types were checked again against the records added since 8.11; none has a same-meaning record yet. The review is `devdocs/SATO_REVIEW.md`.
 - Data fixes found during this phase:
   - 9 regexps that matched the empty string were fixed, and the validator now rejects such regexps.
   - The `what3words` regexp had been copied from `geonamesid`.
