@@ -1,0 +1,29 @@
+id: date_dmy_dash
+name: Date as DD-MM-YYYY
+status: draft
+doc: Calendar date written as day, month and four-digit year separated by hyphens, for example 25-12-2024.
+  It is not the ISO 8601 order, which puts the year first (the regexp of date).
+semantic_type: date
+langs:
+- common
+regexp: ^(?:0?[1-9]|[12]\d|3[01])-(?:0?[1-9]|1[0-2])-\d{4}$
+examples:
+- value: 25-12-2024
+  description: 25 December 2024
+- value: 05-05-2022
+  description: 5 May 2022
+- value: '2024-12-25'
+  valid: false
+- value: 12-25-2024
+  valid: false
+mappings:
+  qddate: dt:date:date_iso8601
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_date_formats_by_country
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/base.py
+translations:
+  ru:
+    name: Дата в формате ДД-ММ-ГГГГ
+    doc: 'Календарная дата: день, месяц и год из четырёх цифр через дефис, например 25-12-2024.'

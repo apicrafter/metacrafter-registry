@@ -1,0 +1,26 @@
+id: monthday_cjk
+name: Month and day with units (Chinese, Japanese)
+status: draft
+doc: Month and day without a year, written in Chinese or Japanese as numbers followed by the units for
+  month (月) and day (日 or 号), for example 12月25日. A weekday may follow.
+semantic_type: monthday
+langs:
+- zh
+- ja
+regexp: '^[0-9０-９]{1,2}月[0-9０-９]{1,2}[日号](?: ?(?:[(（](?:星期[一二三四五六日天]|周[一二三四五六日天]|[月火水木金土日](?:曜日?)?)[)）]|星期[一二三四五六日天]|周[一二三四五六日天]|[月火水木金土日]曜日))?$'
+examples:
+- value: 12月25日
+  description: 25 December
+- value: 5月5日(木)
+  description: 5 May, Thursday
+- value: 2024年12月25日
+  valid: false
+mappings:
+  qddate: dt:date:date_cjk_noyear
+links:
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/cjk.py
+translations:
+  ru:
+    name: Месяц и день с единицами (китайский, японский)
+    doc: Месяц и день без года на китайском или японском языке, например 12月25日.

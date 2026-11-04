@@ -1,0 +1,32 @@
+id: date_turkish
+name: Date with a Turkish month name
+status: draft
+doc: Calendar date written in Turkish with the month name, day first, for example 5 Mayıs 2022, optionally
+  followed by tarihinde or tarihli (on, dated).
+semantic_type: date
+langs:
+- tr
+regexp: '^(?:0?[1-9]|[12]\d|3[01]) (?:[Oo]cak|[Şş]ubat|[Mm]art|[Nn]isan|[Mm]ayıs|[Hh]aziran|[Tt]emmuz|[Aa]ğustos|[Ee]ylül|[Ee]kim|[Kk]asım|[Aa]ralık)
+  \d{4}(?: (?:tarihinde|tarihli))?$'
+examples:
+- value: 25 Aralık 2024
+  description: 25 December 2024
+- value: 5 mayıs 2022 tarihinde
+  description: On 5 May 2022
+- value: Aralık 2024
+  valid: false
+- value: 25 December 2024
+  valid: false
+mappings:
+  qddate:
+  - dt:date:tr_base
+  - dt:date:tr_base_lc
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_Turkey
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/tr.py
+translations:
+  ru:
+    name: Дата с турецким названием месяца
+    doc: Календарная дата на турецком языке с названием месяца, например 5 Mayıs 2022.

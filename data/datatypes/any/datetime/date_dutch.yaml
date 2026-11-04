@@ -1,0 +1,43 @@
+id: date_dutch
+name: Date with a Dutch month name
+status: draft
+doc: 'Calendar date written in Dutch with the month name, day first: 5 mei 2022 or 5 mrt 2022, optionally
+  after the weekday (donderdag 5 mei 2022). The month is full or abbreviated, capitalised or in lower
+  case. The month-first form mei 5, 2022 is accepted too.'
+semantic_type: date
+langs:
+- nl
+regexp: ^(?:(?:(?:[Mm]aandag|[Dd]insdag|[Ww]oensdag|[Dd]onderdag|[Vv]rijdag|[Zz]aterdag|[Zz]ondag),? )?(?:0?[1-9]|[12]\d|3[01])\.?
+  (?:[Jj]an(?:uari)?|[Ff]eb(?:ruari)?|[Mm]aart|[Mm]rt|[Aa]pr(?:il)?|[Mm]ei|[Jj]uni?|[Jj]uli?|[Aa]ug(?:ustus)?|[Ss]ep(?:tember)?|[Oo]kt(?:ober)?|[Nn]ov(?:ember)?|[Dd]ec(?:ember)?)
+  \d{4}|(?:[Jj]an(?:uari)?|[Ff]eb(?:ruari)?|[Mm]aart|[Mm]rt|[Aa]pr(?:il)?|[Mm]ei|[Jj]uni?|[Jj]uli?|[Aa]ug(?:ustus)?|[Ss]ep(?:tember)?|[Oo]kt(?:ober)?|[Nn]ov(?:ember)?|[Dd]ec(?:ember)?)
+  (?:0?[1-9]|[12]\d|3[01]), \d{4})$
+examples:
+- value: 5 mei 2022
+  description: 5 May 2022
+- value: woensdag 25 december 2024
+  description: With the weekday
+- value: 5 mrt 2022
+  description: Abbreviated month
+- value: december 2024
+  valid: false
+- value: 25 dezember 2024
+  valid: false
+mappings:
+  qddate:
+  - dt:date:nl_base
+  - dt:date:nl_base_lc
+  - dt:date:nl_weekday
+  - dt:date:nl_weekday_lc
+  - dt:date:nl_short
+  - dt:date:nl_short_lc
+  - dt:date:nl_rare_1
+  - dt:date:nl_rare_2
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_the_Netherlands
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/nl.py
+translations:
+  ru:
+    name: Дата с нидерландским названием месяца
+    doc: Календарная дата на нидерландском языке с названием месяца, например 5 mei 2022.

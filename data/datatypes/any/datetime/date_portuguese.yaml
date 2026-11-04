@@ -1,0 +1,48 @@
+id: date_portuguese
+name: Date with a Portuguese month name
+status: draft
+doc: 'Calendar date written in Portuguese with the month name, day first: 5 de maio de 2022, 5 maio 2022
+  or 5 mai 2022, optionally after the weekday (quinta-feira, 5 maio 2022). The month-first form maio 5,
+  2022 is accepted too.'
+semantic_type: date
+langs:
+- pt
+regexp: ^(?:(?:(?:[Ss]egunda-feira|[Tt]erça-feira|[Qq]uarta-feira|[Qq]uinta-feira|[Ss]exta-feira|[Ss]ábado|[Dd]omingo|[Ss]eg|[Tt]er|[Qq]ua|[Qq]ui|[Ss]ex|[Ss]áb|[Dd]om),?
+  )?(?:0?[1-9]|[12]\d|3[01]) (?:[Dd]e (?:[Jj]an(?:eiro)?|[Ff]ev(?:ereiro)?|[Mm]ar(?:ço)?|[Aa]br(?:il)?|[Mm]aio?|[Jj]un(?:ho)?|[Jj]ul(?:ho)?|[Aa]go(?:sto)?|[Ss]et(?:embro)?|[Oo]ut(?:ubro)?|[Nn]ov(?:embro)?|[Dd]ez(?:embro)?)
+  [Dd]e|(?:[Jj]an(?:eiro)?|[Ff]ev(?:ereiro)?|[Mm]ar(?:ço)?|[Aa]br(?:il)?|[Mm]aio?|[Jj]un(?:ho)?|[Jj]ul(?:ho)?|[Aa]go(?:sto)?|[Ss]et(?:embro)?|[Oo]ut(?:ubro)?|[Nn]ov(?:embro)?|[Dd]ez(?:embro)?))
+  \d{4}|(?:[Jj]an(?:eiro)?|[Ff]ev(?:ereiro)?|[Mm]ar(?:ço)?|[Aa]br(?:il)?|[Mm]aio?|[Jj]un(?:ho)?|[Jj]ul(?:ho)?|[Aa]go(?:sto)?|[Ss]et(?:embro)?|[Oo]ut(?:ubro)?|[Nn]ov(?:embro)?|[Dd]ez(?:embro)?)
+  (?:0?[1-9]|[12]\d|3[01]), \d{4})$
+examples:
+- value: 25 de dezembro de 2024
+  description: 25 December 2024
+- value: 25 dezembro 2024
+  description: Without the preposition
+- value: quarta-feira, 25 dezembro 2024
+  description: With the weekday
+- value: dezembro de 2024
+  valid: false
+- value: 25 de diciembre de 2024
+  valid: false
+mappings:
+  qddate:
+  - dt:date:pt_base
+  - dt:date:pt_base_lc
+  - dt:date:pt_base_article
+  - dt:date:pt_base_lc_article
+  - dt:date:pt_short
+  - dt:date:pt_short_lc
+  - dt:date:pt_short_monthfirst
+  - dt:date:pt_short_lc_monthfirst
+  - dt:date:pt_weekday
+  - dt:date:pt_weekday_lc
+  - dt:date:pt_weekday_short
+  - dt:date:pt_weekday_short_lc
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_Brazil
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/pt.py
+translations:
+  ru:
+    name: Дата с португальским названием месяца
+    doc: Календарная дата на португальском языке с названием месяца, например 5 de maio de 2022.

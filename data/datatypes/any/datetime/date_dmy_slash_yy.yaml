@@ -1,0 +1,29 @@
+id: date_dmy_slash_yy
+name: Date as DD/MM/YY
+status: draft
+doc: Calendar date written as day, month and two-digit year separated by slashes, for example 25/12/24.
+  The century is not written and has to be inferred.
+semantic_type: date
+langs:
+- common
+regexp: ^(?:0?[1-9]|[12]\d|3[01])/(?:0?[1-9]|1[0-2])/\d{2}$
+examples:
+- value: 25/12/24
+  description: 25 December 2024
+- value: 31/01/22
+  description: 31 January 2022
+- value: 12/25/24
+  valid: false
+- value: 25/12/2024
+  valid: false
+mappings:
+  qddate: dt:date:date_8
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_date_formats_by_country
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/base.py
+translations:
+  ru:
+    name: Дата в формате ДД/ММ/ГГ
+    doc: 'Календарная дата: день, месяц и год из двух цифр через косую черту, например 25/12/24.'

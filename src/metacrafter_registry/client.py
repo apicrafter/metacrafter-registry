@@ -93,6 +93,21 @@ def _orgid_code(value: str) -> str:
     return "-".join(value.split("-")[:2]).upper()
 
 
+# qddate generates variants of each date pattern: with a time after the date
+# (:time_1 ... :time_4), before it (:time_left), and with text after it (:t_right).
+_QDDATE_VARIANT = re.compile(r"(?::time_(?:\d+|left))?(?::t_right)?$")
+
+
+def _qddate_key(value: str) -> str:
+    """The base qddate pattern key of a key, a generated variant or a bare name.
+
+    ``dt:date:date_2:time_1``, ``dt:date:date_2:t_right`` and ``date_2`` all give
+    ``dt:date:date_2``, the key that ``mappings.qddate`` holds.
+    """
+    key = _QDDATE_VARIANT.sub("", str(value).strip(), count=1)
+    return key if key.startswith("dt:") else "dt:date:" + key
+
+
 def _cache_dir() -> Path:
     base = os.environ.get("XDG_CACHE_HOME") or Path.home() / ".cache"
     return Path(base) / "metacrafter-registry"
@@ -528,7 +543,11 @@ class Registry:
         for gs1_ai, an Application Identifier as written in a barcode's
         human-readable text ((414) or 414) or its https://ref.gs1.org/ai/ IRI;
         for orgid, an ORG-ID.guide list code (GB-COH), its org-id.guide URL or a
-        whole organization identifier (GB-COH-09506232).
+        whole organization identifier (GB-COH-09506232);
+        for qddate, a date pattern key as qddate and metacrafter report it
+        (dt:date:date_2), a generated variant of it (dt:date:date_2:time_1,
+        dt:date:date_2:t_right), which resolves to the notation of its date part,
+        or the key without dt:date: (date_2).
         """
         if system == "fta":
             return self._crosswalk_fta(str(external_id).strip())
@@ -561,6 +580,8 @@ class Registry:
             wanted = _purview_key(wanted)
         if system == "orgid":
             wanted = _orgid_code(wanted)
+        if system == "qddate":
+            wanted = _qddate_key(wanted)
         out = []
         for record in self.datatypes.values():
             value = record.get("mappings", {}).get(system)

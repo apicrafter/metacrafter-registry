@@ -1,0 +1,27 @@
+id: monthday_dm_dot
+name: Day and month as DD.MM
+status: draft
+doc: Day and month without a year, written as two two-digit numbers separated by a dot, for example 25.12.
+  Such values look like decimal numbers, so they need context, such as a column name, to be read as dates.
+semantic_type: monthday
+langs:
+- common
+regexp: ^(?:0[1-9]|[12]\d|3[01])\.(?:0[1-9]|1[0-2])$
+examples:
+- value: '25.12'
+  description: 25 December
+- value: '05.05'
+  description: 5 May
+- value: 25.12.2024
+  valid: false
+- value: '12.45'
+  valid: false
+mappings:
+  qddate: dt:date:noyear_1
+links:
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/base.py
+translations:
+  ru:
+    name: День и месяц в формате ДД.ММ
+    doc: 'День и месяц без года: два двузначных числа через точку, например 25.12.'

@@ -1,0 +1,27 @@
+id: monthday_russian
+name: Day and month with a Russian month name
+status: draft
+doc: Day and month without a year, written in Russian with the month name in the genitive case, for example
+  5 мая or 25 декабря.
+semantic_type: monthday
+langs:
+- ru
+regexp: ^(?:0?[1-9]|[12]\d|3[01]) (?:[Яя]нваря|[Фф]евраля|[Мм]арта|[Аа]преля|[Мм]ая|[Ии]юня|[Ии]юля|[Аа]вгуста|[Сс]ентября|[Оо]ктября|[Нн]оября|[Дд]екабря)$
+examples:
+- value: 25 декабря
+  description: 25 December
+- value: 5 Мая
+  description: 5 May, capitalised month
+- value: 25 декабря 2024
+  valid: false
+- value: декабрь
+  valid: false
+mappings:
+  qddate: dt:date:date_rus_noyear
+links:
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/ru.py
+translations:
+  ru:
+    name: День и месяц с русским названием месяца
+    doc: День и месяц без года на русском языке, например 5 мая.

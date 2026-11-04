@@ -1,0 +1,45 @@
+id: date_french
+name: Date with a French month name
+status: draft
+doc: 'Calendar date written in French with the month name, day first: 5 mai 2022, le 5 mai 2022, 5 sept
+  2022, optionally after the weekday (jeudi 5 mai 2022). The month is full or abbreviated, capitalised
+  or in lower case. The month-first form mai 5, 2022 is accepted too.'
+semantic_type: date
+langs:
+- fr
+regexp: ^(?:(?:[Ll]e |(?:[Ll]undi|[Mm]ardi|[Mm]ercredi|[Jj]eudi|[Vv]endredi|[Ss]amedi|[Dd]imanche),? )?(?:0?[1-9]|[12]\d|3[01])
+  (?:[Jj]anv(?:ier)?|[Ff]évr(?:ier)?|[Mm]ars|[Aa]vr(?:il)?|[Mm]ai|[Jj]uin|[Jj]uil(?:let)?|[Aa]oût|[Ss]ept(?:embre)?|[Oo]ct(?:obre)?|[Nn]ov(?:embre)?|[Dd]éc(?:embre)?)
+  \d{4}|(?:[Jj]anv(?:ier)?|[Ff]évr(?:ier)?|[Mm]ars|[Aa]vr(?:il)?|[Mm]ai|[Jj]uin|[Jj]uil(?:let)?|[Aa]oût|[Ss]ept(?:embre)?|[Oo]ct(?:obre)?|[Nn]ov(?:embre)?|[Dd]éc(?:embre)?)
+  (?:0?[1-9]|[12]\d|3[01]), \d{4})$
+examples:
+- value: 25 décembre 2024
+  description: 25 December 2024
+- value: le 25 décembre 2024
+  description: With the article
+- value: mercredi 25 décembre 2024
+  description: With the weekday
+- value: décembre 2024
+  valid: false
+- value: 25 december 2024
+  valid: false
+mappings:
+  qddate:
+  - dt:date:fr_base
+  - dt:date:fr_base_lc
+  - dt:date:fr_base_article
+  - dt:date:fr_base_lc_article
+  - dt:date:fr_short
+  - dt:date:fr_short_lc
+  - dt:date:fr_short_monthfirst
+  - dt:date:fr_short_lc_monthfirst
+  - dt:date:fr_weekday
+  - dt:date:fr_weekday_lc
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_France
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/fr.py
+translations:
+  ru:
+    name: Дата с французским названием месяца
+    doc: Календарная дата на французском языке с названием месяца, например 5 mai 2022.

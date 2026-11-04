@@ -1,0 +1,47 @@
+id: date_italian
+name: Date with an Italian month name
+status: draft
+doc: 'Calendar date written in Italian with the month name, day first: 5 maggio 2022 or 5 mag 2022, optionally
+  after the weekday (giovedì 5 maggio 2022). The month is full or abbreviated, capitalised or in lower
+  case. The month-first form maggio 5, 2022 is accepted too.'
+semantic_type: date
+langs:
+- it
+regexp: ^(?:(?:(?:[Ll]unedì|[Mm]artedì|[Mm]ercoledì|[Gg]iovedì|[Vv]enerdì|[Ss]abato|[Dd]omenica),? )?(?:0?[1-9]|[12]\d|3[01])
+  (?:[Gg]en(?:naio)?|[Ff]eb(?:braio)?|[Mm]ar(?:zo)?|[Aa]pr(?:ile)?|[Mm]ag(?:gio)?|[Gg]iu(?:gno)?|[Ll]ug(?:lio)?|[Aa]go(?:sto)?|[Ss]et(?:tembre)?|[Oo]tt(?:obre)?|[Nn]ov(?:embre)?|[Dd]ic(?:embre)?)
+  \d{4}|(?:[Gg]en(?:naio)?|[Ff]eb(?:braio)?|[Mm]ar(?:zo)?|[Aa]pr(?:ile)?|[Mm]ag(?:gio)?|[Gg]iu(?:gno)?|[Ll]ug(?:lio)?|[Aa]go(?:sto)?|[Ss]et(?:tembre)?|[Oo]tt(?:obre)?|[Nn]ov(?:embre)?|[Dd]ic(?:embre)?)
+  (?:0?[1-9]|[12]\d|3[01]), \d{4})$
+examples:
+- value: 25 dicembre 2024
+  description: 25 December 2024
+- value: mercoledì 25 dicembre 2024
+  description: With the weekday
+- value: 5 mag 2022
+  description: Abbreviated month
+- value: dicembre 2024
+  valid: false
+- value: 25 december 2024
+  valid: false
+mappings:
+  qddate:
+  - dt:date:it_base
+  - dt:date:it_base_lc
+  - dt:date:it_base_article
+  - dt:date:it_base_lc_article
+  - dt:date:it_rare_1
+  - dt:date:it_rare_2
+  - dt:date:it_weekday
+  - dt:date:it_weekday_lc
+  - dt:date:it_short
+  - dt:date:it_short_lc
+  - dt:date:it_short_monthfirst
+  - dt:date:it_short_lc_monthfirst
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_Italy
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/it.py
+translations:
+  ru:
+    name: Дата с итальянским названием месяца
+    doc: Календарная дата на итальянском языке с названием месяца, например 5 maggio 2022.

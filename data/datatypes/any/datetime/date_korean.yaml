@@ -1,0 +1,30 @@
+id: date_korean
+name: Date with year, month and day units (Korean)
+status: draft
+doc: Calendar date written in Korean as numbers followed by the units for year (년), month (월) and day
+  (일), for example 2024년 12월 25일. A weekday may follow, such as (수) or 수요일.
+semantic_type: date
+langs:
+- ko
+regexp: '^[0-9０-９]{4}년 ?[0-9０-９]{1,2}월 ?[0-9０-９]{1,2}일(?: ?(?:[(（][월화수목금토일](?:요일)?[)）]|[월화수목금토일]요일))?$'
+examples:
+- value: 2024년 12월 25일
+  description: 25 December 2024
+- value: 2024년 12월 25일 (수)
+  description: With the weekday Wednesday
+- value: 12월 25일
+  valid: false
+- value: 2024年12月25日
+  valid: false
+mappings:
+  qddate: dt:date:date_cjk_ko
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_South_Korea
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/cjk.py
+translations:
+  ru:
+    name: Дата с единицами года, месяца и дня (корейский)
+    doc: 'Календарная дата на корейском языке: числа с единицами года, месяца и дня, например 2024년 12월
+      25일.'

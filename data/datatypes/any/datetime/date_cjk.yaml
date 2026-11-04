@@ -1,0 +1,38 @@
+id: date_cjk
+name: Date with year, month and day units (Chinese, Japanese)
+status: draft
+doc: Calendar date written in Chinese or Japanese as numbers followed by the units for year (年), month
+  (月) and day (日, or 号 in spoken Chinese), for example 2024年12月25日. Full-width digits are accepted, and
+  a weekday may follow, alone or in brackets, such as (水) or 星期三.
+semantic_type: date
+langs:
+- zh
+- ja
+regexp: '^[0-9０-９]{4}年[0-9０-９]{1,2}月[0-9０-９]{1,2}[日号](?: ?(?:[(（](?:星期[一二三四五六日天]|周[一二三四五六日天]|[月火水木金土日](?:曜日?)?)[)）]|星期[一二三四五六日天]|周[一二三四五六日天]|[月火水木金土日]曜日))?$'
+examples:
+- value: 2024年12月25日
+  description: 25 December 2024
+- value: ２０２４年１２月２５日
+  description: Full-width digits
+- value: 2024年12月25日(水)
+  description: Japanese, with the weekday Wednesday
+- value: 2024年12月25日 星期三
+  description: Chinese, with the weekday Wednesday
+- value: 12月25日
+  valid: false
+- value: 2024년 12월 25일
+  valid: false
+mappings:
+  qddate: dt:date:date_cjk
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_Asia#Greater_China
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_Japan
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/cjk.py
+translations:
+  ru:
+    name: Дата с единицами года, месяца и дня (китайский, японский)
+    doc: 'Календарная дата на китайском или японском языке: числа с иероглифами года, месяца и дня, например
+      2024年12月25日.'

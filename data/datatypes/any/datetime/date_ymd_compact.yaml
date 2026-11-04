@@ -1,0 +1,31 @@
+id: date_ymd_compact
+name: Date as YYYYMMDD
+status: draft
+doc: 'Calendar date written as eight digits without separators: four-digit year, two-digit month and two-digit
+  day, for example 20241225. This is the basic format of ISO 8601, common in file names, logs and database
+  exports. A column of such values is easy to take for integers.'
+semantic_type: date
+langs:
+- common
+regexp: ^\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])$
+examples:
+- value: '20241225'
+  description: 25 December 2024
+- value: '20220505'
+  description: 5 May 2022
+- value: '25122024'
+  valid: false
+- value: '2024-12-25'
+  valid: false
+mappings:
+  qddate: dt:date:date_6
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/base.py
+translations:
+  ru:
+    name: Дата в формате ГГГГММДД
+    doc: 'Календарная дата из восьми цифр без разделителей: год, месяц и день, например 20241225. Это
+      базовый формат ISO 8601.'

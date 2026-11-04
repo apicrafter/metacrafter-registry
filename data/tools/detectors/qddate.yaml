@@ -1,0 +1,47 @@
+id: qddate
+name: qddate
+category: detector
+doc: Python library by Ivan Begtin that finds and parses dates written in many notations without being
+  told the format. Version 1.1.0 has 151 date patterns, each with a key such as dt:date:date_2 - numeric
+  dates with dots, slashes, hyphens or no separator, dates with a month name in 15 languages, and Chinese,
+  Japanese and Korean dates with year, month and day units - plus generated variants with a time before
+  or after the date. Metacrafter uses it to detect date columns and reports the key of the matching pattern
+  as the format of the match. The registry records of these notations carry the pattern keys in mappings.qddate;
+  this list is derived from them. Released under the BSD 3-Clause license.
+website: https://github.com/ivbeg/qddate
+supported_types:
+- date
+- date_bulgarian
+- date_cjk
+- date_czech
+- date_dmy
+- date_dmy_compact
+- date_dmy_dash
+- date_dmy_dash_yy
+- date_dmy_dot_yy
+- date_dmy_slash
+- date_dmy_slash_yy
+- date_dutch
+- date_english
+- date_french
+- date_german
+- date_italian
+- date_korean
+- date_mdy_slash
+- date_mdy_slash_yy
+- date_polish
+- date_portuguese
+- date_romanian
+- date_russian
+- date_slovak
+- date_spanish
+- date_turkish
+- date_ukrainian
+- date_ymd_compact
+- date_ymd_dot
+- date_ymd_slash
+- monthday_cjk
+- monthday_dm_dot
+- monthday_english
+- monthday_korean
+- monthday_russian

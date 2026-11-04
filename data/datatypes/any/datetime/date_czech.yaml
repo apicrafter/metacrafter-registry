@@ -1,0 +1,35 @@
+id: date_czech
+name: Date with a Czech month name
+status: draft
+doc: Calendar date written in Czech with the month name, day first, usually with a dot after the day and
+  the month in the genitive case (5. května 2022). The nominative month (5. květen 2022) and a day without
+  the dot are accepted too.
+semantic_type: date
+langs:
+- cs
+regexp: ^(?:0?[1-9]|[12]\d|3[01])\.? (?:[Ll]ed(?:en|na)|[Úú]nora?|[Bb]ře(?:zen|zna)|[Dd]ub(?:en|na)|[Kk]vět(?:en|na)|[Čč]erv(?:enec|ence|en|na)|[Ss]rp(?:en|na)|[Zz]áří|[Řř]íj(?:en|na)|[Ll]istopadu?|[Pp]rosin(?:ec|ce))
+  \d{4}$
+examples:
+- value: 25. prosince 2024
+  description: 25 December 2024
+- value: 5. května 2022
+  description: 5 May 2022
+- value: prosinec 2024
+  valid: false
+- value: 25. decembra 2024
+  valid: false
+mappings:
+  qddate:
+  - dt:date:cz_base
+  - dt:date:cz_base_lc
+  - dt:date:cz_gen
+  - dt:date:cz_gen_lc
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_the_Czech_Republic
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/cz.py
+translations:
+  ru:
+    name: Дата с чешским названием месяца
+    doc: Календарная дата на чешском языке с названием месяца, например 5. května 2022.

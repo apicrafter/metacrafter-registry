@@ -69,6 +69,11 @@
       "pattern": "^[A-Z]{2}(_[A-Z]{2})?-[A-Z0-9]+(_[A-Z0-9]+)?$",
       "description": "An ORG-ID.guide list code, for example GB-COH, XI-LEI or CA_ON-ONT"
     },
+    "qddateKey": {
+      "type": "string",
+      "pattern": "^dt:date:[a-z0-9_]+$",
+      "description": "The key of a qddate date pattern (ivbeg/qddate, qddate/patterns), for example dt:date:date_2. Generated variants such as dt:date:date_2:time_1 are not mapped; crosswalk resolves them to their base pattern."
+    },
     "record": {
       "type": "object",
       "additionalProperties": false,
@@ -188,6 +193,13 @@
               "oneOf": [
                 {"$ref": "#/$defs/orgidCode"},
                 {"type": "array", "items": {"$ref": "#/$defs/orgidCode"}, "minItems": 1, "uniqueItems": true}
+              ]
+            },
+            "qddate": {
+              "description": "Keys of the qddate date patterns that read this notation, for example dt:date:date_2. Each key maps to at most one record.",
+              "oneOf": [
+                {"$ref": "#/$defs/qddateKey"},
+                {"type": "array", "items": {"$ref": "#/$defs/qddateKey"}, "minItems": 1, "uniqueItems": true}
               ]
             }
           }

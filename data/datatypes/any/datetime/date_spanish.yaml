@@ -1,0 +1,48 @@
+id: date_spanish
+name: Date with a Spanish month name
+status: draft
+doc: 'Calendar date written in Spanish with the month name, day first, with or without the preposition
+  de: 5 de mayo de 2022, 5 mayo 2022, 5 de may de 2022, optionally after the weekday (jueves, 5 mayo 2022).
+  The month-first form mayo 5, 2022 is accepted too.'
+semantic_type: date
+langs:
+- es
+regexp: '^(?:(?:(?:[Ll]unes|[Mm]artes|[Mm]iércoles|[Jj]ueves|[Vv]iernes|[Ss]ábado|[Dd]omingo),? )?(?:0?[1-9]|[12]\d|3[01])
+  (?:[Dd]e (?:[Ee]ne(?:ro)?|[Ff]eb(?:rero)?|[Mm]ar(?:zo)?|[Aa]br(?:il)?|[Mm]ayo?|[Jj]un(?:io)?|[Jj]ul(?:io)?|[Aa]go(?:sto)?|[Ss]ep(?:tiembre)?|[Oo]ct(?:ubre)?|[Nn]ov(?:iembre)?|[Dd]ic(?:iembre)?)(?:
+  [Dd]e|,)|(?:[Ee]ne(?:ro)?|[Ff]eb(?:rero)?|[Mm]ar(?:zo)?|[Aa]br(?:il)?|[Mm]ayo?|[Jj]un(?:io)?|[Jj]ul(?:io)?|[Aa]go(?:sto)?|[Ss]ep(?:tiembre)?|[Oo]ct(?:ubre)?|[Nn]ov(?:iembre)?|[Dd]ic(?:iembre)?),?)
+  \d{4}|(?:[Ee]ne(?:ro)?|[Ff]eb(?:rero)?|[Mm]ar(?:zo)?|[Aa]br(?:il)?|[Mm]ayo?|[Jj]un(?:io)?|[Jj]ul(?:io)?|[Aa]go(?:sto)?|[Ss]ep(?:tiembre)?|[Oo]ct(?:ubre)?|[Nn]ov(?:iembre)?|[Dd]ic(?:iembre)?)
+  (?:0?[1-9]|[12]\d|3[01]), \d{4})$'
+examples:
+- value: 25 de diciembre de 2024
+  description: 25 December 2024
+- value: 25 diciembre 2024
+  description: Without the preposition
+- value: Miércoles, 25 Diciembre 2024
+  description: With the weekday
+- value: diciembre de 2024
+  valid: false
+- value: 25 de december de 2024
+  valid: false
+mappings:
+  qddate:
+  - dt:date:es_base
+  - dt:date:es_base_lc
+  - dt:date:es_base_article
+  - dt:date:es_base_lc_article
+  - dt:date:es_rare_1
+  - dt:date:es_rare_2
+  - dt:date:es_short
+  - dt:date:es_short_lc
+  - dt:date:es_short_monthfirst
+  - dt:date:es_short_lc_monthfirst
+  - dt:date:es_weekday
+  - dt:date:es_weekday_lc
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_Spain
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/es.py
+translations:
+  ru:
+    name: Дата с испанским названием месяца
+    doc: Календарная дата на испанском языке с названием месяца, например 5 de mayo de 2022.

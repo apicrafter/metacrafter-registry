@@ -1,0 +1,33 @@
+id: date_mdy_slash
+name: Date as MM/DD/YYYY (United States)
+status: draft
+doc: Calendar date written as month, day and four-digit year separated by slashes, for example 12/25/2024,
+  the usual numeric date in the United States. Most other countries write the day first in the same shape
+  (date_dmy_slash), so a value whose first two numbers are both 12 or less can be read either way.
+semantic_type: date
+langs:
+- common
+regexp: ^(?:0?[1-9]|1[0-2])/(?:0?[1-9]|[12]\d|3[01])/\d{4}$
+examples:
+- value: 12/25/2024
+  description: 25 December 2024
+- value: 1/31/2022
+  description: 31 January 2022
+- value: 25/12/2024
+  valid: false
+- value: 12/25/24
+  valid: false
+mappings:
+  qddate: dt:date:date_usa
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_date_formats_by_country
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_the_United_States
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/base.py
+translations:
+  ru:
+    name: Дата в формате ММ/ДД/ГГГГ (США)
+    doc: 'Календарная дата в американском порядке: месяц, день и год из четырёх цифр через косую черту,
+      например 12/25/2024.'

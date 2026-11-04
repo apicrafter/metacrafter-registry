@@ -17,9 +17,13 @@ examples:
 - value: 32.01.2022
   valid: false
   description: There is no day 32
+mappings:
+  qddate: dt:date:date_2
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Date_format_by_country
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/base.py
 translations:
   ru:
     name: Дата в формате ДД.ММ.ГГГГ

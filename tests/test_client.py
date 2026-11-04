@@ -214,10 +214,11 @@ def test_a_match_as_written_outweighs_a_compact_form_match():
 
 
 def test_identify_iso_dates_rank_date_records_above_digit_codes(reg):
-    # The qddate pattern date_ymd_dash (issue #12) is a draft. Stable
-    # eight-digit codes (okpo, am_tin, ...) match ISO dates only without their
-    # hyphens and must not outrank it. The stable date record, whose regexp
-    # also accepts ISO dates, may rank above it.
+    # A draft date pattern with a broad regexp (date_ymd_dash, built here; the
+    # registry maps YYYY-MM-DD to date itself). Stable eight-digit codes (okpo,
+    # am_tin, ...) match ISO dates only without their hyphens and must not
+    # outrank it. The stable date record, whose regexp also accepts ISO dates,
+    # may rank above it.
     records = dict(reg.datatypes)
     records.setdefault(
         "date_ymd_dash",

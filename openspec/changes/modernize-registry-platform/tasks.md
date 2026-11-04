@@ -145,7 +145,7 @@
   - checksum validators: `luhn`, `iban_mod97`, `isbn10`, `isbn13`, `gtin`, `ru_inn`, `ru_snils`, `ru_ogrn`
   - Added on top: `identify` (ranking by regexp hit rate × specificity, check digits and field-name similarity) and `crosswalk`.
   - `identify` also counts a value written with spaces or hyphens as a hit when it matches without them, unless the regexp of another record that is at least as specific matches the value as written. So an ISO date is not an eight-digit `okpo` or `oktmo` hit when a date regexp matches it. `match` keeps every compact-form match. The `/identify` page (`identify-core.js`) uses the same rule and gives the same scores.
-  - In the `identify` score a compact-form hit counts half a hit as written, unless the record's check digit passes on the value. So a draft date pattern such as `date_ymd_dash` outranks stable eight-digit codes for ISO dates even when its regexp is broader than theirs, and spaced card numbers keep their `bankcard` hit. `regexp_hit_rate` stays the unweighted share of hits. `identify-core.js` applies the same weight.
+  - In the `identify` score a compact-form hit counts half a hit as written, unless the record's check digit passes on the value. So a draft date pattern outranks stable eight-digit codes for ISO dates even when its regexp is broader than theirs, and spaced card numbers keep their `bankcard` hit. `regexp_hit_rate` stays the unweighted share of hits. `identify-core.js` applies the same weight.
   - `fetch` verifies SHA-256 against the manifest and caches the data.
   - `checksum` is now set on 12 records. Validation checks examples against the check digit.
   - `iban` and `email` gained regexps and examples.
@@ -222,6 +222,11 @@
   - 69 of the 569 list codes are mapped to 61 existing records. 182 lists get 175 new draft records; lists that use the same identifier share one record. New countries: 57. New languages: 22.
   - `crosswalk("orgid", ...)` accepts a list code in any case, its org-id.guide URL or a whole identifier. A test checks that each code maps to at most one record.
   - Not imported: 250 generated Chart of Accounts lists, 52 lists without an example identifier and 16 deprecated lists. The review is `devdocs/ORGID_REVIEW.md`.
+- [x] 8.16 Add the date patterns of qddate as registry types (issue #12). Add the `qddate` crosswalk key, which holds qddate pattern keys, and the `qddate` tool.
+  - All 151 base patterns of qddate 1.1.0 (commit `ec1f57a`) are mapped to 35 records. 33 are new draft patterns: 28 of `date` and 5 of `monthday`. YYYY-MM-DD maps to `date` itself, and DD.MM.YYYY maps to the existing pattern `date_dmy`.
+  - There are 13 numeric notations (`date_dmy`, `date_mdy_slash`, `date_ymd_compact`, ...), one record per language for dates with a month name (15 languages), and Chinese/Japanese and Korean dates with units.
+  - `crosswalk("qddate", ...)` resolves generated variants with a time or trailing text to their base pattern, so the `format` that metacrafter reports for a date column finds its notation.
+  - Every regexp and example was checked against the qddate grammars: each example is read by qddate with a mapped key, and each month name form of qddate matches the language record. The review is `devdocs/QDDATE_REVIEW.md`.
 - Data fixes found during this phase:
   - 9 regexps that matched the empty string were fixed, and the validator now rejects such regexps.
   - The `what3words` regexp had been copied from `geonamesid`.

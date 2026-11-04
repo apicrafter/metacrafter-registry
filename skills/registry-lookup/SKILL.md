@@ -67,8 +67,9 @@ Example:
 - **Crosswalk.** `crosswalk("wikidata", "P968")` finds the registry record for
   an id in another vocabulary. The systems are `wikidata`, `fibo`, `schema_org`,
   `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `sato`, `cdm`, `fta`,
-  `autotype` (AutoType benchmark test cases, such as `isbn` or `date-chinese`)
-  `gs1_ai` and `orgid` (ORG-ID.guide list codes, such as `GB-COH`).
+  `autotype` (AutoType benchmark test cases, such as `isbn` or `date-chinese`),
+  `gs1_ai`, `orgid` (ORG-ID.guide list codes, such as `GB-COH`) and `qddate`
+  (qddate date pattern keys, such as `dt:date:date_2`).
   Coverage outside Wikidata is still small. For `fibo`, pass a FIBO class IRI,
   for example
   `https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier`;
@@ -99,5 +100,11 @@ Example:
   the whole identifier: `crosswalk("orgid", "GB-COH-09506232")` returns
   `companyhouseid`. A column of whole ORG-ID.guide identifiers is `org_id`; a
   column of list codes (`identifier.scheme`) is `org_id_scheme`.
+  For a date column, metacrafter reports the qddate pattern that read it as
+  the `format` of its `datetime` match. Pass that key to get the notation:
+  `crosswalk("qddate", "dt:date:date_2")` returns `date_dmy`
+  (25.12.2024), and `crosswalk("qddate", "dt:date:date_rus_lc2")` returns
+  `date_russian`. A key with a time or trailing text
+  (`dt:date:date_2:time_1`) resolves to the notation of its date part.
 - **Former ids.** `get_datatype("ssn")` returns `usssn` with
   `resolved_from_alias`. Always cite the canonical id.
