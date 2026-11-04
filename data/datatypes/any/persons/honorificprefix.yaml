@@ -1,0 +1,34 @@
+id: honorificprefix
+name: Honorific prefix (title before a name)
+status: draft
+doc: Title written before a person's name to address or refer to the person with courtesy or respect.
+  It groups common titles (civility), formal titles of rank or office, academic and professional titles,
+  and religious titles such as Rev. or Father.
+categories:
+- persons
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Mr
+  description: common title
+- value: Sir
+  description: formal title
+- value: Dr
+  description: academic title
+- value: Rev.
+  description: religious title (Reverend)
+mappings:
+  wikidata: P511
+  schema_org: honorificPrefix
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/English_honorifics
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P511
+- type: schema.org
+  url: https://schema.org/honorificPrefix
+translations:
+  ru:
+    name: Обращение или титул перед именем

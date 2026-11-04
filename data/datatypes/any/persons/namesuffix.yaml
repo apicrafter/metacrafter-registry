@@ -1,0 +1,35 @@
+id: namesuffix
+name: Name suffix
+status: draft
+doc: Word, abbreviation or numeral written after a person's surname. It can be generational (Jr., Sr.,
+  III), academic (PhD), an honour (OBE), professional or military.
+categories:
+- persons
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Jr.
+  description: generational suffix (Junior)
+- value: III
+  description: generational suffix (the Third)
+- value: PhD
+  description: academic degree
+- value: OBE
+  description: honour (Officer of the Order of the British Empire)
+- value: Esq.
+  description: Esquire
+mappings:
+  wikidata: P1035
+  schema_org: honorificSuffix
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Name_suffix
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1035
+- type: schema.org
+  url: https://schema.org/honorificSuffix
+translations:
+  ru:
+    name: Суффикс имени

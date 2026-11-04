@@ -103,3 +103,6 @@
 - id: CH
   name: Switzerland
   kind: country
+- id: BG
+  name: Bulgaria
+  kind: country

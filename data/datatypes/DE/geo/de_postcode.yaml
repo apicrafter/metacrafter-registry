@@ -1,0 +1,27 @@
+id: de_postcode
+name: German postal code (Postleitzahl)
+status: draft
+doc: Five-digit postal code (Postleitzahl, PLZ) used in Germany since 1993. The first digit is the postal
+  zone and the first two digits are the postal region.
+semantic_type: postindex
+country:
+- DE
+langs:
+- de
+regexp: ^(?:0[1-9]|[1-9]\d)\d{3}$
+examples:
+- value: '10117'
+  description: Berlin
+- value: '80331'
+  description: München
+- value: '01067'
+  description: Dresden
+- value: '1011'
+  valid: false
+  description: four digits, the system used before 1993
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Germany
+translations:
+  de:
+    name: Postleitzahl
