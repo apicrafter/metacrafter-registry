@@ -134,6 +134,57 @@ builds everything that gets published.
 
 `python scripts/builder.py <command>` still works and delegates to the same CLI.
 
+# Python package and MCP server
+
+```python
+from metacrafter_registry import Registry
+
+reg = Registry.load()  # bundled snapshot (wheel) or the YAML of this checkout
+reg = Registry.fetch()  # published data, cached in ~/.cache, verified by SHA-256
+reg.get("ssn")["id"]  # 'usssn': former ids (aliases) resolve
+reg.identify(["7707083893", "7728168971"], field_name="inn")[0]["id"]  # 'inn'
+reg.search("passport", country="GB")
+reg.url_for("email")  # https://registry.apicrafter.io/datatype/email
+```
+
+`identify` ranks datatypes for sample values of one column. It combines:
+- the regexp hit rate, weighted by how specific the regexp is;
+- check digits: Luhn, IBAN mod-97, GTIN, ISBN, Russian INN, SNILS and OGRN;
+- similarity to the field name.
+
+The MCP server exposes the same functions to AI agents and runs locally:
+
+```bash
+pip install "metacrafter-registry[mcp]"
+metacrafter-registry mcp            # stdio; add --refresh to download newer data
+```
+
+See https://registry.apicrafter.io/agents for client configuration, and
+`skills/` for agent skills.
+
+# metacrafter-rules coverage
+
+`ecosystem.lock` pins a commit of
+[metacrafter-rules](https://github.com/apicrafter/metacrafter-rules), and
+`data/coverage/metacrafter-rules.json` summarizes every rule at that commit.
+The build uses this summary for three things:
+- the rules that detect each datatype (`detected_by.metacrafter_rules`);
+- the `metacrafter` tool's supported types;
+- `/api/v1/coverage.json`, which lists the rule keys with no registry record
+  and the records with no rule.
+
+To adopt newer rules:
+
+```bash
+git clone https://github.com/apicrafter/metacrafter-rules /tmp/metacrafter-rules
+metacrafter-registry coverage update --rules-dir /tmp/metacrafter-rules/rules
+metacrafter-registry build
+```
+
+CI checks the summary against the pinned commit. A weekly workflow
+(`weekly.yml`) does two more checks: it compares coverage with the latest
+rules, and it checks external links. It reports both in tracking issues.
+
 # Publishing
 
 Every merge to `main` builds the site and deploys it to GitHub Pages
@@ -162,6 +213,10 @@ Site pages:
 | `/tool/`, `/tool/<id>` | Tools and the types they support (`/tool` redirects to `/tool/`) |
 | `/search?q=` | Client-side search (runs in the browser) |
 | `/about` | About, API reference, license, contributing |
+| `/identify` | Paste column values to find their datatype (runs in the browser) |
+| `/quality` | Completeness, metacrafter-rules coverage, drafts to review |
+| `/changes` | Changes in each data release |
+| `/agents` | MCP server, Python package, skills, llms.txt |
 | `/sitemap.xml`, `/robots.txt` | For crawlers |
 
 JSON API (static files, described in `/api/v1/openapi.json`):
@@ -174,7 +229,13 @@ JSON API (static files, described in `/api/v1/openapi.json`):
 | `/api/v1/tools/<id>.json`, `/api/v1/tools.json`, `.jsonl` | Tools |
 | `/api/v1/categories.json`, `countries.json`, `languages.json` | Reference lists with record counts |
 | `/api/v1/openapi.json` | OpenAPI 3.1 description |
+| `/api/v1/rag/corpus.jsonl` | One embedding text per record (template version in the manifest) |
+| `/llms.txt`, `/llms-full.txt` | Index and full text for LLMs ([llmstxt.org](https://llmstxt.org)) |
+| `/datatype/<id>.md`, `/tool/<id>.md`, `/category/<id>.md` | Markdown twins of the pages |
+| `/registry.ttl` | SKOS concept scheme (Turtle) |
 | `/api/v1/aliases.json` | Retired ids and the record each one resolves to |
+| `/api/v1/coverage.json` | metacrafter-rules coverage: orphan rule keys, records without rules |
+| `/api/v1/changes.json` | Changes per data release |
 | `/schema/*.schema.json` | JSON Schemas of the source records |
 | `/registry.json` | Legacy: all records keyed by id (release 1.02 shape) |
 | `/datatype/<id>.json` | Legacy: one record (release 1.02 shape) |

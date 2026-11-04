@@ -8,3 +8,4 @@ langs:
 - en
 is_pii: false
 classification: identifier
+checksum: gtin

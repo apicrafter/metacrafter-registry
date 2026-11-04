@@ -12,6 +12,8 @@ langs:
 is_pii: false
 classification: identifier
 regexp: '[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}'
+mappings:
+  presidio: UUID
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Universally_unique_identifier

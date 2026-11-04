@@ -1,12 +1,27 @@
 id: sha256hash
-name: SHA256 hash
+name: SHA-256 hash
 status: stable
-doc: SHA256 hash from file or data. Sometimes used as unique id of the data record
+doc: 'Digest of the SHA-256 hash function (SHA-2 family, 256 bits), widely used for file checksums, content
+  addressing and digital signatures. It is written as 64 hexadecimal digits. SHA-256, Keccak-256 and BLAKE2b-256
+  digests have the same length, so the value alone does not tell them apart: use the field name or context.'
+aliases:
+- sha256
 categories:
 - cryptography
+- software
 langs:
 - common
 is_pii: false
+classification: identifier
+regexp: ^[0-9a-fA-F]{64}$
+examples:
+- value: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  description: SHA-256 hash of the empty string
+- value: ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
+  description: SHA-256 hash of the string 'abc'
+- value: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b85
+  valid: false
+  description: one hex digit short (63 instead of 64)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SHA-2

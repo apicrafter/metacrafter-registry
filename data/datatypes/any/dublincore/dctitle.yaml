@@ -2,6 +2,8 @@ id: dctitle
 name: Title (Dublin Core)
 status: stable
 doc: A name given to the resource.
+aliases:
+- dc_title
 categories:
 - dublincore
 langs:

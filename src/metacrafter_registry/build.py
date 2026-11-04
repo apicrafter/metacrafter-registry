@@ -20,9 +20,9 @@ from xml.sax.saxutils import escape as xml_escape
 
 from jinja2 import Environment, PackageLoader, select_autoescape
 
-from . import DEFAULT_BASE_URL, __version__, legacy
+from . import DEFAULT_BASE_URL, __version__, agents, legacy
 from .loader import RegistrySources, load_sources
-from .model import CSV_COLUMNS, Registry, build_registry, csv_row
+from .model import CSV_COLUMNS, RegistryModel, build_registry, csv_row
 from .openapi import build_openapi
 from .validate import ValidationResult, validate
 
@@ -107,7 +107,7 @@ def _write_legacy(out: Path, datatypes: dict, tools: dict) -> None:
         _write(out / "tool" / f"{rid}.json", _dump(record, indent=2))
 
 
-def _write_api_v1(out: Path, reg: Registry, site_url: str, info: BuildInfo) -> None:
+def _write_api_v1(out: Path, reg: RegistryModel, site_url: str, info: BuildInfo) -> None:
     api = out / "api" / "v1"
     records = list(reg.datatypes.values())
     for rid, record in reg.datatypes.items():
@@ -130,7 +130,43 @@ def _write_api_v1(out: Path, reg: Registry, site_url: str, info: BuildInfo) -> N
     _write(api / "countries.json", _dump(list(reg.countries.values()), indent=2))
     _write(api / "languages.json", _dump(list(reg.langs.values()), indent=2))
     _write(api / "aliases.json", _dump(reg.aliases, indent=2))
+    _write(api / "coverage.json", _dump(reg.coverage, indent=2))
+    _write(api / "rag" / "corpus.jsonl", _jsonl(agents.rag_entry(r) for r in records))
     _write(api / "openapi.json", _dump(build_openapi(site_url, info.version), indent=2))
+
+
+def _write_agent_files(out: Path, reg: RegistryModel, site_url: str, info: BuildInfo) -> None:
+    """Markdown twins, llms.txt, llms-full.txt and the SKOS export."""
+    refs = {"categories": reg.categories, "countries": reg.countries, "langs": reg.langs}
+    for rid, record in reg.datatypes.items():
+        _write(out / "datatype" / f"{rid}.md", agents.record_markdown(record, **refs))
+    for rid, tool in reg.tools.items():
+        _write(out / "tool" / f"{rid}.md", agents.tool_markdown(tool))
+    records = list(reg.datatypes.values())
+    categories = sorted(
+        (c for c in reg.categories.values() if c["count"]), key=lambda c: (-c["count"], c["id"])
+    )
+    countries = sorted((c for c in reg.countries.values() if c["count"]), key=lambda c: c["name"])
+    for category in categories:
+        members = [r for r in records if category["id"] in r.get("categories", [])]
+        _write(
+            out / "category" / f"{category['id']}.md",
+            agents.category_markdown(category, members, site_url),
+        )
+    counts = {"datatypes": reg.kind_count("datatype"), "patterns": reg.kind_count("pattern")}
+    from .client import Registry
+
+    runtime = Registry(datatypes=records)
+    _write(
+        out / "identify-index.json",
+        _dump(agents.identify_index(records, runtime._broadness)),
+    )
+    _write(out / "llms.txt", agents.llms_txt(site_url, counts, categories, countries))
+    _write(out / "llms-full.txt", agents.llms_full_txt(records, site_url))
+    _write(
+        out / "registry.ttl",
+        agents.skos_turtle(records, reg.categories.values(), site_url, info.version),
+    )
 
 
 def _search_text(record: dict[str, Any]) -> str:
@@ -139,7 +175,7 @@ def _search_text(record: dict[str, Any]) -> str:
     return " ".join(p for p in parts if p).lower()
 
 
-def _search_index(reg: Registry) -> list[dict[str, Any]]:
+def _search_index(reg: RegistryModel) -> list[dict[str, Any]]:
     index = []
     for record in reg.datatypes.values():
         doc = record["doc"]
@@ -189,7 +225,13 @@ def _jsonld(record: dict[str, Any], site_url: str) -> dict[str, Any]:
     return data
 
 
-def _render_site(out: Path, reg: Registry, site_url: str, info: BuildInfo) -> list[str]:
+def _render_site(
+    out: Path,
+    reg: RegistryModel,
+    site_url: str,
+    info: BuildInfo,
+    releases: list[dict[str, Any]] | None = None,
+) -> list[str]:
     """Render HTML pages; return the list of page paths (for the sitemap)."""
     env = Environment(
         loader=PackageLoader("metacrafter_registry", "templates"),
@@ -302,6 +344,20 @@ def _render_site(out: Path, reg: Registry, site_url: str, info: BuildInfo) -> li
         )
 
     render("about.html", "about.html", "/about", section="about")
+    render("agents.html", "agents.html", "/agents", section="agents")
+    render("identify.html", "identify.html", "/identify", section="identify")
+    render("changes.html", "changes.html", "/changes", section="", releases=releases)
+    from .stats import report_rows
+
+    render(
+        "quality.html",
+        "quality.html",
+        "/quality",
+        section="",
+        drafts=report_rows(reg, status="draft"),
+        records=records,
+    )
+    _write(out / "agents.md", env.get_template("agents.md").render(**env.globals))
     render("search.html", "search.html", None)
     render("404.html", "404.html", None)
     return pages
@@ -342,7 +398,7 @@ def _write_sitemap(out: Path, pages: list[str], site_url: str, info: BuildInfo) 
 
 
 def _write_manifest(
-    out: Path, reg: Registry, site_url: str, info: BuildInfo, tool_count: int
+    out: Path, reg: RegistryModel, site_url: str, info: BuildInfo, tool_count: int
 ) -> None:
     bulk = [
         "registry.json",
@@ -355,6 +411,12 @@ def _write_manifest(
         "api/v1/tools.jsonl",
         "api/v1/openapi.json",
         "api/v1/aliases.json",
+        "api/v1/categories.json",
+        "api/v1/countries.json",
+        "api/v1/languages.json",
+        "api/v1/rag/corpus.jsonl",
+        "llms-full.txt",
+        "registry.ttl",
     ]
     manifest = {
         "name": "metacrafter-registry",
@@ -366,6 +428,8 @@ def _write_manifest(
         "datatype_url_template": site_url + "/datatype/{id}",
         "api_record_url_template": site_url + "/api/v1/datatypes/{id}.json",
         "openapi": site_url + "/api/v1/openapi.json",
+        "llms_txt": site_url + "/llms.txt",
+        "rag_template_version": agents.RAG_TEMPLATE_VERSION,
         "counts": {
             "datatypes": reg.kind_count("datatype"),
             "draft": sum(1 for r in reg.datatypes.values() if r["status"] == "draft"),
@@ -394,6 +458,7 @@ def build(
     base_url: str = DEFAULT_BASE_URL,
     update_data_files: bool = True,
     sources: RegistrySources | None = None,
+    changes_dir: Path | None = None,
 ) -> ValidationResult:
     """Validate sources and write the publishable tree to ``out_dir``.
 
@@ -418,10 +483,15 @@ def build(
     try:
         _write_legacy(staging, legacy_datatypes, legacy_tools)
         _write_api_v1(staging, reg, site_url, info)
-        pages = _render_site(staging, reg, site_url, info)
+        from .changes import load_release_changes
+
+        releases = load_release_changes(changes_dir)
+        _write(staging / "api" / "v1" / "changes.json", _dump(releases, indent=2))
+        pages = _render_site(staging, reg, site_url, info, releases)
         _copy_static(staging)
         _copy_schemas(staging, data_dir)
         _write(staging / "search-index.json", _dump(_search_index(reg)))
+        _write_agent_files(staging, reg, site_url, info)
         _write_sitemap(staging, pages, site_url, info)
         _write(staging / ".nojekyll", "")
         _write_manifest(staging, reg, site_url, info, len(legacy_tools))

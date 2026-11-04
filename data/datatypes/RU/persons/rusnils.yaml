@@ -11,6 +11,7 @@ langs:
 - ru
 is_pii: true
 classification: identifier
+checksum: ru_snils
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SNILS_(Russia)

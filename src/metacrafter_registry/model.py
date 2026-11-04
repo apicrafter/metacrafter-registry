@@ -10,6 +10,13 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
+from .coverage import (
+    coverage_report,
+    effective_supported_types,
+    load_coverage,
+    rules_by_datatype,
+    source_aliases,
+)
 from .loader import RegistrySources
 from .quality import score_record
 
@@ -66,7 +73,7 @@ def _links(raw: Any) -> list[dict[str, str]]:
 
 
 @dataclass
-class Registry:
+class RegistryModel:
     """Normalized datatypes, tools and reference lists, all keyed and sorted by id."""
 
     datatypes: dict[str, dict[str, Any]]
@@ -76,12 +83,13 @@ class Registry:
     langs: dict[str, dict[str, Any]]
     tools_by_type: dict[str, list[str]] = field(default_factory=dict)
     aliases: dict[str, str] = field(default_factory=dict)  # alias -> canonical id
+    coverage: dict[str, Any] = field(default_factory=dict)  # metacrafter-rules report
 
     def kind_count(self, kind: str) -> int:
         return sum(1 for r in self.datatypes.values() if r["kind"] == kind)
 
 
-def build_registry(sources: RegistrySources, site_url: str) -> Registry:
+def build_registry(sources: RegistrySources, site_url: str) -> RegistryModel:
     site_url = site_url.rstrip("/")
     raw = {rec.id: rec for rec in sources.datatypes}
 
@@ -96,10 +104,12 @@ def build_registry(sources: RegistrySources, site_url: str) -> Registry:
         if _present(parent_id):
             children_of.setdefault(str(parent_id), []).append(rid)
 
+    supported_types = effective_supported_types(sources)
     tools_by_type: dict[str, list[str]] = {}
     for rec in sorted(sources.tools, key=lambda r: r.id):
-        for supported in _ids(rec.data.get("supported_types")):
+        for supported in supported_types[rec.id]:
             tools_by_type.setdefault(supported, []).append(rec.id)
+    rules_of = rules_by_datatype(load_coverage(sources.data_dir), set(raw), source_aliases(sources))
 
     datatypes: dict[str, dict[str, Any]] = {}
     for rid in sorted(raw):
@@ -162,8 +172,13 @@ def build_registry(sources: RegistrySources, site_url: str) -> Registry:
         translations = _translations(data.get("translations"))
         if translations:
             record["translations"] = translations
+        detected_by: dict[str, Any] = {}
         if rid in tools_by_type:
-            record["detected_by"] = {"tools": tools_by_type[rid]}
+            detected_by["tools"] = tools_by_type[rid]
+        if rid in rules_of:
+            detected_by["metacrafter_rules"] = rules_of[rid]
+        if detected_by:
+            record["detected_by"] = detected_by
         record["quality"] = score_record(record)
         record["source"] = {
             "path": "data/" + rec.relpath,
@@ -187,7 +202,7 @@ def build_registry(sources: RegistrySources, site_url: str) -> Registry:
         }
         if _present(data.get("website")):
             tool["website"] = str(data["website"])
-        tool["supported_types"] = _ids(data.get("supported_types"))
+        tool["supported_types"] = supported_types[rec.id]
         tool["source"] = {
             "path": "data/" + rec.relpath,
             "url": SOURCE_URL.format(path=rec.relpath),
@@ -215,7 +230,7 @@ def build_registry(sources: RegistrySources, site_url: str) -> Registry:
             out[key] = entry
         return out
 
-    return Registry(
+    return RegistryModel(
         datatypes=datatypes,
         tools=tools,
         categories=reference(sources.categories, "categories", "category"),
@@ -224,6 +239,9 @@ def build_registry(sources: RegistrySources, site_url: str) -> Registry:
         tools_by_type=tools_by_type,
         aliases=dict(
             sorted((alias, rid) for rid, r in datatypes.items() for alias in r.get("aliases", []))
+        ),
+        coverage=coverage_report(
+            load_coverage(sources.data_dir), set(datatypes), source_aliases(sources)
         ),
     )
 

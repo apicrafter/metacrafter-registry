@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Changes{% endblock %}
+{% block description %}What changed in each release of the Metacrafter Registry: added, merged, reviewed and updated records.{% endblock %}
+{% block content %}
+<h1>Changes</h1>
+<p class="lead">Each data release lists added, merged, reviewed and updated records, computed against the previous release. Releases with downloadable data files are on <a href="https://github.com/apicrafter/metacrafter-registry/releases">GitHub Releases</a>; the same list is in <a href="{{ base }}/api/v1/changes.json">changes.json</a>.</p>
+{% if not releases %}
+<p class="notice">No release has been published with the current pipeline yet. The site always shows the latest data from the <code>main</code> branch.</p>
+{% endif %}
+{% for r in releases %}
+<h2>{{ r.to }} <span class="muted small">since {{ r['from'] }}</span></h2>
+<ul class="plain">
+  {% if r.added %}<li><strong>Added ({{ r.added|length }}):</strong> {% for id in r.added %}<a href="{{ base }}/datatype/{{ id }}"><code>{{ id }}</code></a>{% if not loop.last %}, {% endif %}{% endfor %}</li>{% endif %}
+  {% if r.merged %}<li><strong>Merged ({{ r.merged|length }}):</strong> {% for old, new in r.merged.items() %}<code>{{ old }}</code> → <a href="{{ base }}/datatype/{{ new }}"><code>{{ new }}</code></a>{% if not loop.last %}, {% endif %}{% endfor %}</li>{% endif %}
+  {% if r.removed %}<li><strong>Removed ({{ r.removed|length }}):</strong> {{ r.removed|join(', ') }}</li>{% endif %}
+  {% set stable = r.status_changed|selectattr('to', 'equalto', 'stable')|list %}
+  {% if stable %}<li><strong>Reviewed, now stable ({{ stable|length }}):</strong> {% for s in stable %}<a href="{{ base }}/datatype/{{ s.id }}"><code>{{ s.id }}</code></a>{% if not loop.last %}, {% endif %}{% endfor %}</li>{% endif %}
+  {% if r.changed %}<li><strong>Updated:</strong> {{ r.changed|length }} records</li>{% endif %}
+</ul>
+{% endfor %}
+{% endblock %}

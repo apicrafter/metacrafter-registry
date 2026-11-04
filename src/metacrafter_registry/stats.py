@@ -8,7 +8,7 @@ from __future__ import annotations
 from collections import Counter
 from typing import Any
 
-from .model import Registry
+from .model import RegistryModel
 
 FIELDS = [
     ("regexp", "regexp"),
@@ -25,7 +25,7 @@ def _pct(part: int, whole: int) -> str:
     return f"{part * 100.0 / whole:5.1f}%" if whole else "  n/a"
 
 
-def stats_lines(reg: Registry) -> list[str]:
+def stats_lines(reg: RegistryModel) -> list[str]:
     records = list(reg.datatypes.values())
     total = len(records)
     lines = [
@@ -72,7 +72,7 @@ def stats_lines(reg: Registry) -> list[str]:
 
 
 def report_rows(
-    reg: Registry, status: str | None = None, below: int | None = None
+    reg: RegistryModel, status: str | None = None, below: int | None = None
 ) -> list[dict[str, Any]]:
     rows = []
     for r in reg.datatypes.values():

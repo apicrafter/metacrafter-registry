@@ -8,6 +8,10 @@ country:
 langs:
 - es
 regexp: ^[A-z0-9]{2,3}[0-9]{6}$
+mappings:
+  google_dlp: SPAIN_PASSPORT
+  presidio: ES_PASSPORT
+  purview: Spain passport number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Spanish_passport

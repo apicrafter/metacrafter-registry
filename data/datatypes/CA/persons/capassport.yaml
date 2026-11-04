@@ -7,6 +7,9 @@ country:
 - CA
 langs:
 - en
+mappings:
+  google_dlp: CANADA_PASSPORT
+  purview: Canada passport number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Canadian_passport

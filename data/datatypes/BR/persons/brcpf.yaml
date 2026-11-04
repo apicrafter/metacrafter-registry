@@ -13,6 +13,9 @@ langs:
 is_pii: true
 classification: identifier
 regexp: \d{3}\.\d{3}\.\d{3}\-\d{2}
+mappings:
+  google_dlp: BRAZIL_CPF_NUMBER
+  purview: Brazil CPF number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/CPF_number

@@ -8,3 +8,7 @@ langs:
 - en
 is_pii: true
 classification: identifier
+mappings:
+  google_dlp: UK_NATIONAL_HEALTH_SERVICE_NUMBER
+  presidio: UK_NHS
+  purview: U.K. national health service number

@@ -11,11 +11,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:\d{10}|\d{12})$
+checksum: ru_inn
 examples:
 - value: '7707083893'
   description: Organization INN (10 digits), Sberbank
 - value: '7728168971'
   description: Organization INN (10 digits), Alfa-Bank
+mappings:
+  purview: Russia taxpayer identification number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/VAT_identification_number

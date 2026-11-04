@@ -1,10 +1,13 @@
 id: dc_description
-name: Dublin Core description by field name
-status: draft
-doc: Dublin Core description by field name
+name: Description (Dublin Core)
+status: stable
+doc: 'Dublin Core element ''description'': an account of the resource, such as an abstract, a table of
+  contents or a free-text description.'
 categories:
 - dublincore
 langs:
-- en
+- common
 is_pii: false
-classification: identifier
+links:
+- type: dublincore
+  url: http://purl.org/dc/terms/description

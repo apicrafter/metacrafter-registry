@@ -1,0 +1,5 @@
+# Pinned versions of ecosystem repositories used by the build.
+# Update with: metacrafter-registry coverage update --rules-dir <checkout>
+metacrafter-rules:
+  repo: apicrafter/metacrafter-rules
+  ref: 19823306b33ab5488293910e4fabff99a4171592

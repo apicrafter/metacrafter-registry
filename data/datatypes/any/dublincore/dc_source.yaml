@@ -1,10 +1,12 @@
 id: dc_source
-name: Dublin Core source by field name
-status: draft
-doc: Dublin Core source by field name
+name: Source (Dublin Core)
+status: stable
+doc: 'Dublin Core element ''source'': a related resource from which the described resource is derived.'
 categories:
 - dublincore
 langs:
-- en
+- common
 is_pii: false
-classification: identifier
+links:
+- type: dublincore
+  url: http://purl.org/dc/terms/source

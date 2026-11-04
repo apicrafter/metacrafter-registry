@@ -12,6 +12,9 @@ langs:
 is_pii: false
 classification: identifier
 regexp: \d{3}\s\d{3}\s\d{3}
+mappings:
+  presidio: AU_ACN
+  purview: Australian Company Number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Australian_Company_Number
