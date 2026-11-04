@@ -1,0 +1,42 @@
+id: geo_shape
+name: Opendatasoft geographic shape (geo_shape)
+status: draft
+doc: Geometry stored in the geo_shape field type of the Opendatasoft data platform (now Huwise), which
+  runs many French and other European open data portals. Datasets often keep the default field name geo_shape,
+  usually next to a geo_point_2d field with a point of the same record. The value is GeoJSON, so positions
+  are longitude first, then latitude. The Explore API v2.1 returns a GeoJSON Feature whose geometry member
+  holds the shape and whose properties member is empty. CSV exports write the bare geometry object instead.
+  One value holds one geometry of any GeoJSON type, such as Point, LineString, Polygon or MultiPolygon.
+parent: geojson
+categories:
+- geo
+langs:
+- common
+is_pii: false
+regexp: ^\{.*"type"\s*:\s*"(?:Feature|Point|MultiPoint|LineString|MultiLineString|Polygon|MultiPolygon|GeometryCollection)".*\}$
+examples:
+- value: '{"type": "Feature", "geometry": {"coordinates": [55.51277383144647, -21.354091540437363], "type":
+    "Point"}, "properties": {}}'
+  description: Explore API v2.1 JSON, pedestrian crossings on the national roads of La Réunion
+- value: '{"coordinates": [55.280328656208845, -21.152200178649892], "type": "Point"}'
+  description: CSV export of the same dataset, bare geometry
+- value: '{"type": "Feature", "geometry": {"coordinates": [[[-2.181727156897353, 47.29847256203905], [-2.181948973690747,
+    47.29831385193075], [-2.181949432895089, 47.298313937858104], [-2.181727262249872, 47.29847263672119],
+    [-2.181727156897353, 47.29847256203905]]], "type": "Polygon"}, "properties": {}}'
+  description: Explore API v2.1 JSON, land use parcel in Loire-Atlantique
+- value: '{"lon": 55.51277383144647, "lat": -21.354091540437363}'
+  valid: false
+  description: geo_point_2d object, not a geometry
+- value: POINT (55.51277383144647 -21.354091540437363)
+  valid: false
+  description: WKT, not GeoJSON
+links:
+- type: doc
+  url: https://help.opendatasoft.com/apis/ods-explore-v2/explore_v2.1.html
+- type: doc
+  url: https://datatracker.ietf.org/doc/html/rfc7946
+translations:
+  fr:
+    name: Forme géographique Opendatasoft (geo_shape)
+  ru:
+    name: Географическая форма Opendatasoft (geo_shape)
