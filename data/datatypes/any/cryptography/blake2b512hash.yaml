@@ -1,10 +1,24 @@
 id: blake2b512hash
-name: BLAKE2b-512 hash by field name
-status: draft
-doc: BLAKE2b-512 hash by field name
+name: BLAKE2b-512 hash
+status: stable
+doc: 'Digest of the BLAKE2b hash function with a 512-bit output. It is written as 128 hexadecimal digits.
+  SHA-512, Keccak-512 and BLAKE2b-512 digests have the same length, so the value alone does not tell them
+  apart: use the field name or context.'
 categories:
 - cryptography
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+regexp: ^[0-9a-fA-F]{128}$
+examples:
+- value: 786a02f742015903c6c6fd852552d272912f4740e15847618a86e217f71f5419d25e1031afee585313896444934eb04b903a685b1448b755d56f701afe9be2ce
+  description: BLAKE2b-512 hash of the empty string
+- value: ba80a53f981c4d0d6a2797b69f12f6e94c212f14685ac4b74b12bb6fdbffa2d17d87c5392aab792dc252d5de4533cc9518d38aa8dbf1925ab92386edd4009923
+  description: BLAKE2b-512 hash of the string 'abc'
+- value: 786a02f742015903c6c6fd852552d272912f4740e15847618a86e217f71f5419d25e1031afee585313896444934eb04b903a685b1448b755d56f701afe9be2c
+  valid: false
+  description: one hex digit short (127 instead of 128)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/BLAKE_(hash_function)

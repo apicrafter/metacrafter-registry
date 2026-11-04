@@ -89,8 +89,11 @@ Data releases use [Semantic Versioning](https://semver.org/):
 - **PATCH**: corrections to existing values.
 
 To release, a maintainer bumps `version` in `pyproject.toml`, merges, and
-pushes a tag such as `v1.3.0`. `.github/workflows/release.yml` then publishes
-a GitHub Release with these files:
+pushes the matching tag, such as `v1.3.0`. The workflow then publishes the
+Python package to PyPI through trusted publishing. Before the first release,
+configure this once on pypi.org: add a trusted publisher for
+`apicrafter/metacrafter-registry`, workflow `release.yml`, environment
+`pypi`. The same workflow also publishes a GitHub Release with these files:
 - `datatypes.json`, `datatypes.jsonl` and `datatypes.csv`
 - `tools.json`
 - the reference lists

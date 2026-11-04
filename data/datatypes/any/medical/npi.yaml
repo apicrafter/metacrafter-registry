@@ -8,3 +8,6 @@ langs:
 - en
 is_pii: true
 classification: identifier
+mappings:
+  google_dlp: US_HEALTHCARE_NPI
+  presidio: US_NPI

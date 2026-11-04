@@ -1,10 +1,24 @@
 id: sha512hash
-name: SHA-512 hash by field name
-status: draft
-doc: SHA-512 hash by field name
+name: SHA-512 hash
+status: stable
+doc: 'Digest of the SHA-512 hash function (SHA-2 family, 512 bits). It is written as 128 hexadecimal digits.
+  SHA-512, Keccak-512 and BLAKE2b-512 digests have the same length, so the value alone does not tell them
+  apart: use the field name or context.'
 categories:
 - cryptography
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+regexp: ^[0-9a-fA-F]{128}$
+examples:
+- value: cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+  description: SHA-512 hash of the empty string
+- value: ddaf35a193617abacc417349ae20413112e6fa4e89a97ea20a9eeee64b55d39a2192992a274fc1a836ba3c23a3feebbd454d4423643ce80e2a9ac94fa54ca49f
+  description: SHA-512 hash of the string 'abc'
+- value: cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3
+  valid: false
+  description: one hex digit short (127 instead of 128)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SHA-2

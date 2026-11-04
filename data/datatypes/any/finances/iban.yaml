@@ -11,6 +11,22 @@ langs:
 - common
 is_pii: false
 classification: identifier
+regexp: '^[A-Z]{2}\d{2}(?: ?[A-Z0-9]){11,30}$'
+checksum: iban_mod97
+examples:
+- value: GB82WEST12345698765432
+  description: Documentation example, electronic format
+- value: GB82 WEST 1234 5698 7654 32
+  description: The same IBAN in print format
+- value: DE89370400440532013000
+  description: German documentation example
+- value: GB82WEST12345698765433
+  valid: false
+  description: 'Last digit changed: fails the mod-97 check'
+mappings:
+  google_dlp: IBAN_CODE
+  presidio: IBAN_CODE
+  purview: International banking account number (IBAN)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Bank_Account_Number

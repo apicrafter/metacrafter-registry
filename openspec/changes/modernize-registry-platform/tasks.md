@@ -134,30 +134,60 @@
 
 ## 7. Phase 3: Agent integration
 
-- [ ] 7.1 Add the Markdown twin emitter (`<page>.md`, with front matter).
-- [ ] 7.2 Add `llms.txt` and `llms-full.txt`.
-- [ ] 7.3 Add the SKOS Turtle export (`/registry.ttl`). Validate that it parses.
-- [ ] 7.4 Add the RAG corpus emitter. Put the template version in the manifest.
-- [ ] 7.5 Add the package runtime API:
+- [x] 7.1 Add the Markdown twin emitter (`<page>.md`, with front matter).
+  - Twins exist for datatypes, tools and categories.
+- [x] 7.2 Add `llms.txt` and `llms-full.txt`.
+- [x] 7.3 Add the SKOS Turtle export (`/registry.ttl`). Validate that it parses.
+  - The export is written without a runtime dependency. Tests parse it with `rdflib`.
+- [x] 7.4 Add the RAG corpus emitter. Put the template version in the manifest.
+- [x] 7.5 Add the package runtime API:
   - `Registry.load`, `fetch`, `get` (alias-aware), `search`, `url_for`, `match`
   - checksum validators: `luhn`, `iban_mod97`, `isbn10`, `isbn13`, `gtin`, `ru_inn`, `ru_snils`, `ru_ogrn`
-- [ ] 7.6 Add the MCP server (`metacrafter-registry mcp`): the tools and resources from the `agent-integration` spec, an offline snapshot and `--refresh`. Add tests with an MCP client.
-- [ ] 7.7 Add PyPI trusted publishing to `release.yml`. The data snapshot is bundled from the build output.
-- [ ] 7.8 Write the skills `skills/registry-lookup/SKILL.md` and `skills/registry-contributor/SKILL.md`, and point to them from `AGENTS.md`.
-- [ ] 7.9 Add the site pages `/developers` and `/agents`: API, package, MCP configuration snippets, `llms.txt` and the safety note about drafts.
+  - Added on top: `identify` (ranking by regexp hit rate × specificity, check digits and field-name similarity) and `crosswalk`.
+  - `fetch` verifies SHA-256 against the manifest and caches the data.
+  - `checksum` is now set on 12 records. Validation checks examples against the check digit.
+  - `iban` and `email` gained regexps and examples.
+- [x] 7.6 Add the MCP server (`metacrafter-registry mcp`): the tools and resources from the `agent-integration` spec, an offline snapshot and `--refresh`. Add tests with an MCP client.
+  - Uses `mcp>=2,<3` (`MCPServer`).
+  - Tests run in memory, plus an end-to-end test over stdio through the real CLI.
+- [x] 7.7 Add PyPI trusted publishing to `release.yml`. The data snapshot is bundled from the build output.
+  - [ ] **Owner action:** register the trusted publisher on pypi.org (repository `apicrafter/metacrafter-registry`, workflow `release.yml`, environment `pypi`).
+- [x] 7.8 Write the skills `skills/registry-lookup/SKILL.md` and `skills/registry-contributor/SKILL.md`, and point to them from `AGENTS.md`.
+- [x] 7.9 Add the site pages `/developers` and `/agents`: API, package, MCP configuration snippets, `llms.txt` and the safety note about drafts.
+  - `/agents` has a Markdown twin, `/agents.md`.
+  - The developer API reference stays on `/about`, so no separate `/developers` page was added.
 
 ## 8. Phase 4: Ecosystem alignment
 
-- [ ] 8.1 Add `ecosystem.lock`, pinning the metacrafter-rules ref. CI checks out metacrafter-rules at that ref.
-- [ ] 8.2 Build `detected_by.metacrafter_rules`, `/api/v1/coverage.json` and the generated `metacrafter` tool `supported_types`.
-- [ ] 8.3 Report orphans on PRs. Add the `weekly.yml` drift job, which opens or updates a tracking issue, and an external link check.
-- [ ] 8.4 Add the `/identify` playground: a Web Worker, `regexp_js`, per-pattern time limits and JS checksum ports. Add a test that the page makes no network requests.
-- [ ] 8.5 Add starter crosswalk mappings for the Presidio, Google DLP and Purview entities. Wire them into the `crosswalk` tool.
-- [ ] 8.6 Add the `/quality` and `/changes` pages. Add a changelog generator that diffs against the previous release's assets.
+- [x] 8.1 Add `ecosystem.lock`, pinning the metacrafter-rules ref. CI checks out metacrafter-rules at that ref.
+  - The build reads a committed summary, `data/coverage/metacrafter-rules.json`, so local builds and CI agree without network access.
+  - `coverage update` regenerates the summary. In CI, `coverage check` verifies it against the pinned checkout.
+  - The ref is validated as a full SHA before use.
+- [x] 8.2 Build `detected_by.metacrafter_rules`, `/api/v1/coverage.json` and the generated `metacrafter` tool `supported_types`.
+  - At commit `1982330`: 1,267 rules and 544 keys. 498 records have rules, 123 do not, and 39 rule keys have no registry record.
+  - The `metacrafter` tool now lists 498 types, up from 47 typed by hand.
+  - The quality rubric counts rules as detector coverage.
+- [x] 8.3 Report orphans on PRs. Add the `weekly.yml` drift job, which opens or updates a tracking issue, and an external link check.
+  - Orphans appear as `::warning` annotations in CI.
+  - `weekly.yml` checks drift against the latest rules and checks links with lychee. Each check keeps one tracking issue up to date.
+- [x] 8.4 Add the `/identify` playground: a Web Worker, `regexp_js`, per-pattern time limits and JS checksum ports. Add a test that the page makes no network requests.
+  - The JS scorer gives the same top results as `Registry.identify`. A test runs it in node when node is available.
+  - Every pattern has a 250 ms watchdog: a slow pattern is skipped and reported.
+  - A static test checks that the only network request is the index download. A browser check confirmed it.
+- [x] 8.5 Add starter crosswalk mappings for the Presidio, Google DLP and Purview entities. Wire them into the `crosswalk` tool.
+  - 148 mappings on 73 records.
+  - Names are copied verbatim from the three official lists, retrieved on 2026-11-04. Only exact concept matches are mapped.
+- [x] 8.6 Add the `/quality` and `/changes` pages. Add a changelog generator that diffs against the previous release's assets.
+  - The `changes` command produces the diff.
+  - `release.yml` writes the release notes from it.
+  - `pages.yml` downloads every release's `changes.json` and builds `/changes` from them.
 - [ ] 8.7 File the follow-up OpenSpec changes in the sibling repos:
   - metacrafter: honour `METACRAFTER_REGISTRY_URL` in `processor.py`, and optionally use the package.
   - metacrafter-llm: load the corpus by URL or package, and rebuild on a hash change.
   - metacrafter-rules: fix or alias the 39 orphan keys.
+- Data fixes found during this phase:
+  - 9 regexps that matched the empty string were fixed, and the validator now rejects such regexps.
+  - The `what3words` regexp had been copied from `geonamesid`.
 
 ## 9. Release 2.0.0
 

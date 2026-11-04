@@ -70,7 +70,8 @@ def test_v1_record_is_normalized(built_site):
     assert email["is_pii"] is True
     assert all(isinstance(c, str) for c in email["categories"])
     # empty source values are omitted, not published as "" or []
-    assert "regexp" not in email and "examples" not in email
+    draft = load(built_site, "api/v1/datatypes/runpa.json")
+    assert "regexp" not in draft and "examples" not in draft
     assert email["urls"]["html"] == "https://registry.apicrafter.io/datatype/email"
     assert email["source"]["path"].startswith("data/datatypes/")
 

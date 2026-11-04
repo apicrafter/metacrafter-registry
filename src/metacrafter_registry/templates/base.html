@@ -11,6 +11,7 @@
   <meta property="og:site_name" content="Metacrafter Registry">
   <meta property="og:title" content="{{ self.title() }}">
   <meta property="og:description" content="{{ self.description() }}">
+  <link rel="alternate" type="text/markdown" href="{{ base }}/llms.txt" title="llms.txt">
   {% block head %}{% endblock %}
   <link rel="stylesheet" href="{{ base }}/assets/site.css">
   <script src="{{ base }}/assets/site.js" defer></script>
@@ -25,7 +26,9 @@
       <a href="{{ base }}/category/"{% if section == 'categories' %} aria-current="page"{% endif %}>Categories</a>
       <a href="{{ base }}/country/"{% if section == 'countries' %} aria-current="page"{% endif %}>Countries</a>
       <a href="{{ base }}/tool/"{% if section == 'tools' %} aria-current="page"{% endif %}>Tools</a>
+      <a href="{{ base }}/identify"{% if section == 'identify' %} aria-current="page"{% endif %}>Identify values</a>
       <a href="{{ base }}/about"{% if section == 'about' %} aria-current="page"{% endif %}>About &amp; API</a>
+      <a href="{{ base }}/agents"{% if section == 'agents' %} aria-current="page"{% endif %}>For AI agents</a>
     </nav>
     <form class="header-search" role="search" action="{{ base }}/search" method="get">
       <label for="header-q" class="skip-link">Search datatypes</label>
@@ -45,6 +48,7 @@
     <a href="{{ base }}/api/v1/index.json">API manifest</a>
     <a href="{{ base }}/registry.json">registry.json</a>
     <a href="https://github.com/apicrafter/metacrafter-registry">GitHub</a>
+    <a href="{{ base }}/quality">Data quality</a>
     <a href="https://github.com/apicrafter/metacrafter">Metacrafter</a>
   </div>
 </footer>

@@ -22,6 +22,8 @@ examples:
 - value: 08:00:27:3A:2E:5C
   description: MAC address example
 mappings:
+  google_dlp: MAC_ADDRESS
+  presidio: MAC_ADDRESS
   wikidata: P2817
 links:
 - type: wikipedia

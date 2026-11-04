@@ -13,6 +13,10 @@ langs:
 is_pii: true
 classification: identifier
 regexp: (9\d{2})[- ]{1}((7[0-9]{1}|8[0-8]{1})|(9[0-2]{1})|(9[4-9]{1}))[- ]{1}(\d{4})
+mappings:
+  google_dlp: US_INDIVIDUAL_TAXPAYER_IDENTIFICATION_NUMBER
+  presidio: US_ITIN
+  purview: U.S. individual taxpayer identification number (ITIN)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Taxpayer_Identification_Number

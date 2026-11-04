@@ -8,3 +8,6 @@ langs:
 - common
 is_pii: false
 classification: identifier
+mappings:
+  google_dlp: SWIFT_CODE
+  purview: SWIFT code

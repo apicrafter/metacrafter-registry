@@ -1,13 +1,26 @@
 id: md5hash
 name: MD5 hash
 status: stable
-doc: Result of the MD5 hash function. Commonly used to generate hash of from file or data or to use as
-  unique identifier
+doc: Digest of the MD5 hash function (128 bits), often used as a checksum of a file or as a record fingerprint.
+  MD5 is not collision-resistant and must not be used for security. It is written as 32 hexadecimal digits.
+aliases:
+- md5
 categories:
 - cryptography
+- software
 langs:
 - common
 is_pii: false
+classification: identifier
+regexp: ^[0-9a-fA-F]{32}$
+examples:
+- value: d41d8cd98f00b204e9800998ecf8427e
+  description: MD5 hash of the empty string
+- value: 900150983cd24fb0d6963f7d28e17f72
+  description: MD5 hash of the string 'abc'
+- value: d41d8cd98f00b204e9800998ecf8427
+  valid: false
+  description: one hex digit short (31 instead of 32)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/MD5

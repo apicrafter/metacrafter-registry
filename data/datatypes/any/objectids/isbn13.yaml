@@ -9,6 +9,7 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^97[89](?:[- ]?\d){10}$
+checksum: isbn13
 examples:
 - value: 978-0-521-29366-2
   description: Hamlet, Prince of Denmark (ISBN-10 0-521-29366-9)

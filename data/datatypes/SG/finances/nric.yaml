@@ -11,3 +11,7 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[STFG][0-9]{7}[A-Z]$
+mappings:
+  google_dlp: SINGAPORE_NATIONAL_REGISTRATION_ID_NUMBER
+  presidio: SG_NRIC_FIN
+  purview: Singapore national registration identity card (NRIC) number

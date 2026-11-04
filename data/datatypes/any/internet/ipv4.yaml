@@ -11,3 +11,5 @@ langs:
 - common
 is_pii: true
 classification: identifier
+mappings:
+  purview: IP Address v4

@@ -12,3 +12,7 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[0-9]{12}$
+mappings:
+  google_dlp: INDIA_AADHAAR_INDIVIDUAL
+  presidio: IN_AADHAAR
+  purview: India unique identification (Aadhaar) number
