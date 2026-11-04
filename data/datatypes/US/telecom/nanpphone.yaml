@@ -1,0 +1,45 @@
+id: nanpphone
+name: North American phone number (NANP)
+status: draft
+doc: Ten-digit telephone number of the North American Numbering Plan (NANP), the shared numbering plan
+  of country code 1 used by the United States, Canada and several Caribbean and Pacific territories. The
+  number is a three-digit area code, a three-digit central office code and a four-digit line number. The
+  area code and the central office code start with a digit from 2 to 9. Common notations are NPA-NXX-XXXX
+  and (NPA) NXX-XXXX, with an optional leading 1 or +1.
+semantic_type: phone
+country:
+- US
+- CA
+langs:
+- common
+regexp: ^(?:\+?1[-. ]?)?(?:\([2-9]\d{2}\)|[2-9]\d{2})[-. ]?[2-9]\d{2}[-. ]?\d{4}$
+examples:
+- value: (202) 555-0143
+  description: (NPA) NXX-XXXX notation; 555-0100 to 555-0199 are reserved for fictional use
+- value: (613)555-0180
+  description: Parentheses without a space, as in the D3M definition
+- value: 1-416-555-0123
+  description: With the leading 1
+- value: +1 212 555 0199
+  description: International notation
+- value: '3125550111'
+  description: Digits only
+- value: (123) 555-0143
+  valid: false
+  description: An area code cannot start with 0 or 1
+- value: 555-0143
+  valid: false
+  description: Seven-digit local number without an area code
+mappings:
+  d3m: https://metadata.datadrivendiscovery.org/types/AmericanPhoneNumber
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/North_American_Numbering_Plan
+- type: datadrivendiscovery
+  url: https://metadata.datadrivendiscovery.org/types/AmericanPhoneNumber
+translations:
+  ru:
+    name: Североамериканский номер телефона (NANP)
+    doc: Десятизначный номер телефона по Североамериканскому плану нумерации (NANP) с кодом страны 1.
+      Используется в США, Канаде и ряде территорий Карибского бассейна и Тихого океана. Состоит из трёхзначного
+      кода региона, трёхзначного кода станции и четырёхзначного номера абонента.

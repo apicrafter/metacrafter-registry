@@ -99,6 +99,12 @@ A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`
 - **WHEN** a record has `mappings: {cdm: "email"}`
 - **THEN** validation fails with a schema error on `mappings.cdm`
 
+`mappings.d3m` SHALL hold D3M semantic type URIs as D3M metadata writes them: `https://metadata.datadrivendiscovery.org/types/<Name>` or `http://schema.org/<Name>`. D3M column roles (such as `PrimaryKey` or `Target`) SHALL NOT be mapped, because they do not say what a value means.
+
+#### Scenario: D3M type given as a bare name
+- **WHEN** a record has `mappings: {d3m: "FileName"}`
+- **THEN** validation fails with a schema error on `mappings.d3m`
+
 ### Requirement: Pattern inheritance
 A pattern SHALL reference an existing datatype through `semantic_type`.
 

@@ -12,6 +12,7 @@ langs:
 is_pii: true
 mappings:
   cdm: means.location.city
+  d3m: http://schema.org/City
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/City

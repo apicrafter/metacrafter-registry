@@ -13,6 +13,9 @@ is_pii: false
 classification: categorical
 mappings:
   cdm: means.location.country
+  d3m:
+  - http://schema.org/Country
+  - http://schema.org/addressCountry
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Country
