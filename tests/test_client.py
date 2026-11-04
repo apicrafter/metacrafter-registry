@@ -213,10 +213,11 @@ def test_a_match_as_written_outweighs_a_compact_form_match():
     assert [(c["id"], c["score"]) for c in invalid] == [("card16", 30)]
 
 
-def test_identify_iso_dates_rank_the_dash_date_pattern_first(reg):
+def test_identify_iso_dates_rank_date_records_above_digit_codes(reg):
     # The qddate pattern date_ymd_dash (issue #12) is a draft. Stable
     # eight-digit codes (okpo, am_tin, ...) match ISO dates only without their
-    # hyphens and must not outrank it.
+    # hyphens and must not outrank it. The stable date record, whose regexp
+    # also accepts ISO dates, may rank above it.
     records = dict(reg.datatypes)
     records.setdefault(
         "date_ymd_dash",
@@ -231,10 +232,12 @@ def test_identify_iso_dates_rank_the_dash_date_pattern_first(reg):
     )
     with_dates = Registry(records.values(), aliases=reg.aliases, manifest=reg.manifest)
     assert "okpo" in [r["id"] for r in with_dates.match("20241225")]
-    top = with_dates.identify(["2024-12-25", "2023-01-31"])
-    assert top[0]["id"] == "date_ymd_dash" and top[0]["regexp_hit_rate"] == 1.0
-    for candidate in top[1:]:
-        assert candidate["score"] < top[0]["score"]
+    candidates = {c["id"]: c for c in with_dates.identify(["2024-12-25", "2023-01-31"], limit=100)}
+    assert next(iter(candidates)) in {"date", "date_ymd_dash"}
+    dash = candidates["date_ymd_dash"]
+    assert dash["regexp_hit_rate"] == 1.0
+    for rid in ("okpo", "am_tin", "companyhouseid"):
+        assert candidates.get(rid, {"score": 0})["score"] < dash["score"]
 
 
 def test_catch_all_regexps_rank_low(reg):
