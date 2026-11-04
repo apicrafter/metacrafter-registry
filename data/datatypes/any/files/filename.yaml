@@ -14,6 +14,7 @@ examples:
   description: dataset.xml
 mappings:
   cdm: means.fileName
+  d3m: https://metadata.datadrivendiscovery.org/types/FileName
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Filename

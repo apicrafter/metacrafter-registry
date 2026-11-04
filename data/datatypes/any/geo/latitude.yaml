@@ -13,6 +13,7 @@ is_pii: false
 classification: identifier
 mappings:
   cdm: means.location.latitude
+  d3m: http://schema.org/latitude
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Latitude

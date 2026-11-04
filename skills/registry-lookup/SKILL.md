@@ -69,6 +69,9 @@ Example:
   `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock` and `cdm`. Coverage
   outside Wikidata is still small. For a Microsoft Common Data Model column,
   pass the meaning trait of its data type: `crosswalk("cdm",
-  "means.location.postalCode")` returns `postindex`.
+  "means.location.postalCode")` returns `postindex`. For a D3M dataset column,
+  pass a semantic type URI from its metadata: `crosswalk("d3m",
+  "http://schema.org/email")` returns `email`. Column roles such as
+  `.../types/PrimaryKey` or `.../types/Target` are not mapped.
 - **Former ids.** `get_datatype("ssn")` returns `usssn` with
   `resolved_from_alias`. Always cite the canonical id.

@@ -26,6 +26,7 @@ examples:
   description: No @
 mappings:
   cdm: means.identity.service.email
+  d3m: http://schema.org/email
   google_dlp: EMAIL_ADDRESS
   presidio: EMAIL_ADDRESS
 links:
