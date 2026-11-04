@@ -1,0 +1,38 @@
+id: gnd_id
+name: GND ID (Integrated Authority File of the German National Library)
+status: draft
+doc: Identifier of a record in the Gemeinsame Normdatei (GND), the authority file for persons, corporate
+  bodies, places, subjects and works kept by the German National Library and library networks in German-speaking
+  countries. In 2012 it replaced the separate name (PND), corporate body (GKD) and subject heading (SWD)
+  authority files. GND IDs come in several formats; the last character is a check character, a digit or
+  X, and in some formats a hyphen precedes it.
+categories:
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:1[01234]?\d{7}[0-9X]|[47]\d{6}-\d|[1-9]\d{0,7}-[0-9X]|3\d{7}[0-9X])$
+examples:
+- value: 4079154-3
+  description: 'Subject heading: universe'
+- value: 4010921-5
+  description: 'Geographic name: Dakar'
+- value: 1231643-X
+  description: 'Corporate body: Slovenian Red Cross'
+- value: '4079154'
+  valid: false
+  description: The check character is missing
+mappings:
+  wikidata: P227
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Integrated_Authority_File
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Gemeinsame_K%C3%B6rperschaftsdatei
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Personennamendatei
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Schlagwortnormdatei
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P227

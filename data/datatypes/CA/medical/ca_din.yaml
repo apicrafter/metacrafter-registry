@@ -1,0 +1,28 @@
+id: ca_din
+name: Canadian Drug Identification Number (DIN)
+status: draft
+doc: Eight-digit number that Health Canada assigns to a drug product, for human or veterinary use, when
+  it is authorized for sale in Canada. It is printed on the label. The Drug Product Database of Health
+  Canada can be searched by DIN.
+categories:
+- medical
+country:
+- CA
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{8}$
+examples:
+- value: 00559393
+  description: Tylenol Regular Strength
+- value: '00425362'
+  description: Tylenol No. 1 tablets
+- value: 0055939
+  valid: false
+  description: Seven digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Drug_identification_number
+- type: doc
+  url: https://health-products.canada.ca/dpd-bdpp/

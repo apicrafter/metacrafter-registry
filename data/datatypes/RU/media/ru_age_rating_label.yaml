@@ -1,0 +1,22 @@
+id: ru_age_rating_label
+name: Russian age rating with its explanation
+status: draft
+doc: Age category of information products under Federal Law No. 436-FZ written as the mark in guillemets
+  followed by its explanation, such as «12+» для детей старше 12 лет. The register of film distribution
+  certificates of the Russian Ministry of Culture uses this form.
+semantic_type: ru_age_rating
+country:
+- RU
+langs:
+- ru
+regexp: '^«(?:0|6|12|16|18)\+»(?: .+)?$'
+examples:
+- value: «12+» для детей старше 12 лет
+- value: «18+» запрещено для детей
+- value: «0+» для любой зрительской аудитории
+- value: Зрителям, достигшим 14 лет
+  valid: false
+  description: Category of the film classification used before Law No. 436-FZ
+translations:
+  ru:
+    name: Возрастная категория с пояснением

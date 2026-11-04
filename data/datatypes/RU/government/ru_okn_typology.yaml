@@ -1,0 +1,26 @@
+id: ru_okn_typology
+name: Typology of a Russian cultural heritage object
+status: draft
+doc: General typology (общая видовая принадлежность) of a cultural heritage object in the register of
+  cultural heritage objects (ЕГРОКН), such as a monument of archaeology, of history, of urban planning
+  and architecture, or of monumental art. An object can have several typologies.
+categories:
+- government
+- realestate
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+examples:
+- value: Памятник археологии
+- value: Памятник градостроительства и архитектуры
+- value: Памятник истории
+- value: Памятник монументального искусства
+links:
+- type: doc
+  url: https://opendata.mkrf.ru/opendata/7705851331-egrkn
+translations:
+  ru:
+    name: Общая видовая принадлежность объекта культурного наследия

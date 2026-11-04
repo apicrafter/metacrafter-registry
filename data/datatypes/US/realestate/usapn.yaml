@@ -11,3 +11,6 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[0-9]{1,15}$
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Assessor%27s_parcel_number

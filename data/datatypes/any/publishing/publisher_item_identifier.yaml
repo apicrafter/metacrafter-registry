@@ -1,0 +1,27 @@
+id: publisher_item_identifier
+name: Publisher Item Identifier (PII)
+status: draft
+doc: 'Identifier of an article or chapter, used since 1996 by Elsevier, the American Chemical Society,
+  the American Physical Society, IEEE and other publishers. It has 17 characters: S for a serial or B
+  for a book, the ISSN or ISBN of the publication, for serials two more digits (often the year), a five-digit
+  item number and a check character. In print it is often punctuated as Sxxxx-xxxx(yy)iiiii-d. Elsevier
+  uses the PII as the item part of its DOIs.'
+categories:
+- publishing
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:S\d{4}-?\d{3}[\dX](?:\(\d{2}\)|\d{2})\d{5}-?[\dX]|B\d{9}[\dX]\d{5}[\dX])$
+examples:
+- value: S0960-894X(96)00515-X
+  description: Article in Bioorganic & Medicinal Chemistry Letters, printed form
+- value: S0960894X9600515X
+  description: The same PII as a 17-character string
+- value: S0960-894X(96)0051-X
+  valid: false
+  description: The item number must have five digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Publisher_Item_Identifier

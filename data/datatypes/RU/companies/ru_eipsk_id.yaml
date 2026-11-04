@@ -1,0 +1,35 @@
+id: ru_eipsk_id
+name: Identifier in the Russian Unified Information Space of Culture (EIPSK)
+status: draft
+doc: Numeric identifier of a place, an organization or an event in the Unified Information Space in the
+  Sphere of Culture (ЕИПСК). The open data of the Russian Ministry of Culture about theatres, museums,
+  libraries, cinemas and other institutions uses these identifiers, and place records link to their pages
+  on culture.ru. Places and organizations are numbered separately, so the same number may denote different
+  objects. The identifiers are positive integers; in the open data of the Ministry they have up to five
+  digits. Many other identifiers look the same, so the field name matters more than the value.
+categories:
+- identifiers
+- companies
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,5}$
+examples:
+- value: '39672'
+  description: Identifier of a place (a cinema)
+- value: '30377'
+  description: Identifier of an organization
+- value: 039672
+  valid: false
+  description: Identifiers have no leading zeros
+links:
+- type: doc
+  url: https://opendata.mkrf.ru/opendata/7705851331-theaters
+translations:
+  ru:
+    name: Идентификатор ЕИПСК
+    doc: Числовой идентификатор места, организации или мероприятия в Едином информационном пространстве
+      в сфере культуры (ЕИПСК).

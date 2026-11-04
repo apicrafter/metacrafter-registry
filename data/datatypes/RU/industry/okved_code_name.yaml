@@ -1,0 +1,21 @@
+id: okved_code_name
+name: OKVED code followed by its name
+status: draft
+doc: Code of the Russian classification of economic activities (OKVED) followed by the name of the class,
+  such as 90.01 Деятельность в области исполнительских искусств. Registers often store the main activity
+  of an organization in this form.
+semantic_type: okved
+country:
+- RU
+langs:
+- ru
+regexp: ^\d{2}(?:\.\d{1,2}){0,2} [А-ЯЁ].+$
+examples:
+- value: 90.01 Деятельность в области исполнительских искусств
+- value: 94.99 Деятельность прочих общественных организаций, не включенных в другие группировки
+- value: '90.01'
+  valid: false
+  description: A code without a name is the datatype okved
+translations:
+  ru:
+    name: Код ОКВЭД с наименованием

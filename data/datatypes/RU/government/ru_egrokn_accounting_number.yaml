@@ -1,0 +1,31 @@
+id: ru_egrokn_accounting_number
+name: Accounting number of a Russian cultural heritage object (EGROKN)
+status: draft
+doc: Accounting number (учётный номер) of an object in the open data of the Russian Unified State Register
+  of Cultural Heritage Objects (ЕГРОКН). It is written as the two-digit code of the federal subject, a
+  hyphen and a sequence number, such as 56-142. The region prefix agrees with the region of the record
+  in 99.99% of 110 000 records. It differs from the fifteen-digit registration number.
+categories:
+- government
+- realestate
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{2}-\d{1,6}$
+examples:
+- value: 56-142
+  description: Object in Orenburg Oblast
+- value: 69-546
+  description: Object in Tver Oblast
+- value: '561510197480005'
+  valid: false
+  description: Registration number, the datatype ru_egrokn_regnum
+links:
+- type: doc
+  url: https://opendata.mkrf.ru/opendata/7705851331-egrkn
+translations:
+  ru:
+    name: Учётный номер объекта культурного наследия в ЕГРОКН

@@ -1,0 +1,24 @@
+id: rus_initials_surname
+name: Russian surname with initials
+status: draft
+doc: Name of a person in Russian written as a surname with the initials of the first name and patronymic,
+  before or after it, such as И.И. Иванов or Иванов И.И. Official documents and registers use this form
+  for signatories, authors and film crews.
+semantic_type: person_fullname
+country:
+- RU
+langs:
+- ru
+regexp: ^(?:[А-ЯЁ]\.\s?(?:[А-ЯЁ]\.\s?)?[А-ЯЁ][а-яё]+(?:-[А-ЯЁ][а-яё]+)?|[А-ЯЁ][а-яё]+(?:-[А-ЯЁ][а-яё]+)?\s[А-ЯЁ]\.\s?(?:[А-ЯЁ]\.)?)$
+examples:
+- value: И.И. Иванов
+- value: И.И.Иванов
+- value: Иванов И.И.
+- value: П.Сидоров
+  description: Only the first-name initial
+- value: Иванов Иван Иванович
+  valid: false
+  description: Full name, the pattern rusfullname
+translations:
+  ru:
+    name: Фамилия с инициалами
