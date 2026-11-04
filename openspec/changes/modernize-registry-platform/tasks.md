@@ -10,7 +10,7 @@
 - [x] 1.3 Add the `build` command. It writes `dist/` with the legacy files, `datatype/<id>.html`, `tool/<id>.html`, `tool/index.html` and `index.html`. It reuses the existing templates, minimally.
   - It also writes a minimal `api/v1/index.json` manifest (version, git SHA, counts, file hashes, `datatype_url_template`), which the deploy check uses.
 - [x] 1.4 Add the `pages.yml` workflow, which deploys `dist/` with `upload-pages-artifact` and `deploy-pages`.
-  - [ ] Enable Pages (source: GitHub Actions) in the repository settings. **Owner action.**
+  - [x] Enable Pages (source: GitHub Actions) in the repository settings. Done on 2026-11-04.
 - [x] 1.5 Write the URL contract test, a script run against a deployed base URL. The following must return 200 with the expected content type:
   - `/datatype/email`
   - `/datatype/email.json`
@@ -21,7 +21,7 @@
 
   Run it on `apicrafter.github.io/metacrafter-registry/`. If extensionless URLs fail, switch to the fallback in design.md (D3 risk).
   - Implemented as `metacrafter-registry check-contract <base-url>`. CI runs it on every PR against a local server that applies the GitHub Pages URL rules (`metacrafter-registry serve`). `pages.yml` runs it against the live site after each deploy, with `--expect-sha`.
-  - [ ] Confirm the result on the real GitHub Pages after the first deploy.
+  - [x] Confirm the result on the real GitHub Pages after the first deploy. On 2026-11-04, 14/14 checks passed on `apicrafter.github.io/metacrafter-registry`, and `/datatype/email` was served without a redirect.
 - [x] 1.6 Add the `ci.yml` workflow. On every PR it runs lint, tests, `validate` and `build`, and checks that the committed `data/*_latest.*` files are fresh.
 - [x] 1.7 Remove `.idea/`, `.DS_Store` and `metacrafter.code-workspace`, and extend `.gitignore` with `dist/`.
 
@@ -99,8 +99,9 @@
 
 ## 6. Phase 2: Data model v2 and migration
 
-- [ ] 6.1 Write the JSON Schemas (`schema/datatype|pattern|tool.schema.json`) per the `registry-data-model` spec. Publish them under `/schema/`.
-- [ ] 6.2 Implement the semantic validator:
+- [x] 6.1 Write the JSON Schemas (`schema/datatype|pattern|tool.schema.json`) per the `registry-data-model` spec. Publish them under `/schema/`.
+  - Validation uses `jsonschema` (Draft 2020-12). Empty values are rejected through `minLength`, `minItems` and `minProperties`.
+- [x] 6.2 Implement the semantic validator:
   - uniqueness, including aliases
   - references
   - regexp compilation
@@ -108,18 +109,28 @@
   - directory and country agreement
   - file name and ID agreement
   - warnings: unanchored regexps, regexps with no ECMAScript form, placeholder-like examples
-- [ ] 6.3 Implement `migrate`. Prove it is idempotent with `--check`.
-- [ ] 6.4 Migration PR, with no content changes:
+  - Also checked: `replaced_by` must resolve. Possessive quantifiers and atomic groups are errors on every Python version.
+- [x] 6.3 Implement `migrate`. Prove it is idempotent with `--check`.
+  - A test checks that the repository is fully migrated: `migrate --check` reports 0 changes.
+- [x] 6.4 Migration PR, with no content changes:
   - Run `migrate`.
   - `git mv` the 180 files to `<id>.yaml`.
   - Attach a before and after stats report.
-- [ ] 6.5 Add `kind` to the reference lists (`EU` → region, `common` → special).
-- [ ] 6.6 Implement the quality-score rubric. Fix the `stats` and `report` commands to count only non-empty values.
-- [ ] 6.7 Apply `status: draft` per the stub criteria. Review the list by hand before merging.
-- [ ] 6.8 Merge the duplicates: `ssn` into `usssn`, and `ninumber` into `uknino`. Review the 13 duplicate-doc pairs, and merge or differentiate each. Add aliases and redirect pages.
-- [ ] 6.9 Remove the hand-maintained `patterns:` lists, and redundant pattern `categories`.
-- [ ] 6.10 Update `generate_missing_entries.py`, or its successor, so that it emits `status: draft`. Move the other one-off scripts, `_original/` and `analysis/` to `archive/`.
-- [ ] 6.11 Remove the Cerberus schemas, `src/registry.py` and the Flask dependency. Update README and `AGENTS.md`.
+  - Done in commit "feat: migrate registry sources to the v2 record contract": 644 files rewritten, 181 renamed (180 datatypes and 1 tool). The normalized `/api/v1/` output was compared before and after: apart from the new fields and source paths, the only differences were trimmed whitespace, the order of inherited pattern categories, and deduplicated `supported_types`.
+- [x] 6.5 Add `kind` to the reference lists (`EU` → region, `common` → special).
+- [x] 6.6 Implement the quality-score rubric. Fix the `stats` and `report` commands to count only non-empty values.
+  - `stats` and `report` are package commands, and `scripts/builder.py` delegates to them.
+  - The detector-coverage element counts tool records until rule coverage exists (8.2).
+- [x] 6.7 Apply `status: draft` per the stub criteria. Review the list by hand before merging.
+  - 238 records are draft and 392 stable. The list is `metacrafter-registry report --status draft`. **Review it in the PR.**
+- [x] 6.8 Merge the duplicates: `ssn` into `usssn`, and `ninumber` into `uknino`. Review the 13 duplicate-doc pairs, and merge or differentiate each. Add aliases and redirect pages.
+  - `guid` → `uuid` and `eui48` → `mac_address` were merged as well.
+  - 11 look-alike groups were differentiated with new descriptions; see the commit "data: merge duplicate records and differentiate look-alikes".
+  - Retired ids stay in `registry.json` and the JSONL as alias entries (`alias_of`).
+- [x] 6.9 Remove the hand-maintained `patterns:` lists, and redundant pattern `categories`.
+- [x] 6.10 Update `generate_missing_entries.py`, or its successor, so that it emits `status: draft`. Move the other one-off scripts, `_original/` and `analysis/` to `archive/`.
+  - The generator no longer invents regexps or links. It writes v2 drafts with only the facts taken from the rules.
+- [x] 6.11 Remove the Cerberus schemas, `src/registry.py` and the Flask dependency. Update README and `AGENTS.md`.
 
 ## 7. Phase 3: Agent integration
 

@@ -1,8 +1,7 @@
-# Core dependencies for metacrafter-registry.
-# Preferred: pip install -e ".[dev]" (see pyproject.toml)
+# Runtime dependencies are declared in pyproject.toml.
+# Preferred: pip install -e ".[dev]"
 PyYAML>=6.0
 Jinja2>=3.1
-cerberus>=1.3.4
-# Legacy Flask server (src/registry.py) and scripts/export.py only
+jsonschema>=4.18
+# scripts/export.py (DataHub glossary export) only
 typer>=0.9.0
-flask>=2.3.0

@@ -316,6 +316,17 @@ def _copy_static(out: Path) -> None:
             target.write_bytes(entry.read_bytes())
 
 
+def _copy_schemas(out: Path, data_dir: Path) -> None:
+    """Publish the source-record JSON Schemas at /schema/ (editors, agents)."""
+    from .validate import default_schema_dir
+
+    schema_dir = default_schema_dir(data_dir)
+    for path in sorted(schema_dir.glob("*.schema.json")):
+        target = out / "schema" / path.name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(path.read_bytes())
+
+
 def _write_sitemap(out: Path, pages: list[str], site_url: str, info: BuildInfo) -> None:
     lastmod = f"<lastmod>{info.generated_at[:10]}</lastmod>" if info.generated_at else ""
     urls = "".join(
@@ -409,6 +420,7 @@ def build(
         _write_api_v1(staging, reg, site_url, info)
         pages = _render_site(staging, reg, site_url, info)
         _copy_static(staging)
+        _copy_schemas(staging, data_dir)
         _write(staging / "search-index.json", _dump(_search_index(reg)))
         _write_sitemap(staging, pages, site_url, info)
         _write(staging / ".nojekyll", "")

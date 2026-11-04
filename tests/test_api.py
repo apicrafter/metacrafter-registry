@@ -163,3 +163,9 @@ def test_status_and_quality_published(built_site):
     draft = next(r for r in records if r["status"] == "draft")
     html = (built_site / f"datatype/{draft['id']}.html").read_text("utf-8")
     assert "has not been reviewed yet" in html
+
+
+def test_schemas_published(built_site):
+    for name in ("datatype", "pattern", "tool"):
+        schema = load(built_site, f"schema/{name}.schema.json")
+        assert schema["$id"] == f"https://registry.apicrafter.io/schema/{name}.schema.json"

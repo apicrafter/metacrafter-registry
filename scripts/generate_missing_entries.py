@@ -2,6 +2,10 @@
 """
 Generate missing registry entries from rules analysis.
 Reads the missing keys and creates YAML files for them.
+
+Every generated record has status: draft and contains only facts taken from the
+rules (name, context, country, language, PII flag). Review and complete it, then
+run `metacrafter-registry validate`.
 """
 
 import os
@@ -154,7 +158,7 @@ def create_datatype_entry(base_path, key, metadata, existing_ids):
     
     if country_code:
         dir_path = determine_directory(key, country_code, category)
-        country_list = [country_code]
+        country_list = [country_code.upper()]  # ISO 3166-1 alpha-2, uppercase
     else:
         dir_path = determine_directory(key, None, category)
         country_list = []
@@ -162,54 +166,30 @@ def create_datatype_entry(base_path, key, metadata, existing_ids):
     file_path = base_path / 'data' / 'datatypes' / dir_path / f"{key}.yaml"
     file_path.parent.mkdir(parents=True, exist_ok=True)
     
-    # Create the datatype entry
+    # Create the datatype entry (v2 record contract, see schema/datatype.schema.json).
+    # Only facts known from the rules are written: no invented regexps, examples or
+    # links. Generated records are always drafts until a human reviews them.
     entry = {
         'id': key,
         'name': name,
-        'doc': f"{name} identifier",
-        'classification': 'identifier',
-        'wikidata_property': '',
-        'translations': {},
-        'examples': []
+        'status': 'draft',
+        'doc': f"{name}. Generated from the metacrafter-rules key '{key}' (context '{context}'); "
+               "needs a reviewed description.",
     }
-    
     if category:
         entry['categories'] = category
-    
     if country_list:
         entry['country'] = country_list
-    
-    entry['langs'] = [lang] if lang != 'common' else ['en']
-    entry['is_pii'] = str(is_pii)
-    
-    # Add regexp if we can infer it (basic patterns)
-    if 'iban' in key:
-        country_prefix = country_code if country_code else 'XX'
-        entry['regexp'] = f'^{country_prefix}[0-9]{{2}}[A-Z0-9]{{4}}[0-9]{{16,24}}$'
-    elif 'passport' in key:
-        entry['regexp'] = '^[A-Z0-9]{6,10}$'
-    elif 'driver' in key or 'license' in key:
-        entry['regexp'] = '^[A-Z0-9]{6,12}$'
-    elif 'ssn' in key or 'nationalid' in key or 'idcard' in key:
-        entry['regexp'] = '^[0-9]{8,15}$'
-    elif 'postcode' in key or 'postal' in key:
-        entry['regexp'] = '^[0-9]{4,10}$'
-    elif 'tax' in key or 'tin' in key:
-        entry['regexp'] = '^[0-9]{9,15}$'
-    elif 'bank' in key and 'iban' not in key:
-        entry['regexp'] = '^[0-9]{8,20}$'
-    
-    # Add links
-    entry['links'] = []
-    if 'passport' in key:
-        entry['links'].append({'type': 'wikipedia', 'url': f'https://en.wikipedia.org/wiki/Passport'})
-    if 'iban' in key:
-        entry['links'].append({'type': 'wikipedia', 'url': 'https://en.wikipedia.org/wiki/International_Bank_Account_Number'})
-    
-    # Write the file
+    entry['langs'] = [lang] if lang != 'common' else ['common']
+    entry['is_pii'] = bool(is_pii) and str(is_pii) != 'False'
+    entry['classification'] = 'identifier'
+
+    sys.path.insert(0, str(base_path / 'src'))
+    from metacrafter_registry.migrate import dump_yaml
+
     with open(file_path, 'w', encoding='utf-8') as f:
-        yaml.dump(entry, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
-    
+        f.write(dump_yaml(entry))
+
     print(f"Created: {file_path}")
     return True
 
