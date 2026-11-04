@@ -9,5 +9,14 @@ country:
 - RU
 langs:
 - common
+regexp: ^\d{6}$
+examples:
+- value: '101000'
+  description: Moscow
+- value: '125009'
+  description: Moscow
+- value: '12500'
+  valid: false
+  description: Five digits
 mappings:
   fta: POSTAL_CODE.POSTAL_CODE_RU

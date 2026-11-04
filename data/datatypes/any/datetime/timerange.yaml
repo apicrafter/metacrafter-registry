@@ -7,3 +7,14 @@ categories:
 langs:
 - common
 is_pii: false
+regexp: ^(?:[01]?\d|2[0-4]):[0-5]\d ?(?:[AaPp][Mm])? ?[-–] ?(?:[01]?\d|2[0-4]):[0-5]\d ?(?:[AaPp][Mm])?$
+examples:
+- value: 08:00-22:00
+  description: Opening hours
+- value: 8:00AM-1:00PM
+  description: Opening hours with a 12-hour clock
+- value: 9:00 - 15:00
+  description: With spaces around the dash
+- value: 08:00
+  valid: false
+  description: A single time
