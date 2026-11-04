@@ -1,0 +1,26 @@
+id: woodwork
+name: Alteryx Woodwork
+category: detector
+doc: 'Woodwork is an open source Python library from Alteryx that adds typing metadata to pandas DataFrames:
+  a logical type and semantic tags for each column. It infers some logical types from the values, including
+  EmailAddress, URL, PhoneNumber, PostalCode, IPAddress, Datetime and Boolean, and validates email, URL
+  and phone values with configurable regular expressions; other types, such as Address, CountryCode or
+  LatLong, are set by the user. Version 0.31.0 defines 26 logical types in woodwork/logical_types.py,
+  and woodwork.list_logical_types() lists them.'
+website: https://woodwork.alteryx.com/en/stable/guides/logical_types_and_semantic_tags.html
+supported_types:
+- address
+- age
+- boolean
+- countrycode_alpha2
+- datetime
+- duration
+- email
+- geopoint
+- ipaddr
+- iso3166code
+- iso4217curcode
+- person_fullname
+- phone
+- postindex
+- url

@@ -1,0 +1,36 @@
+id: semgrep
+name: Semgrep
+category: detector
+doc: Semgrep is a static analysis engine that runs pattern rules over source code and plain text. Its
+  public rule registry has secret rules under generic/secrets/ (the p/secrets and p/gitleaks rulesets)
+  that find credential formats, such as cloud keys, service tokens and private key blocks, with regular
+  expressions and entropy checks. Semgrep Secrets, the commercial product, adds proprietary rules, data-flow
+  analysis and live validation; its full detector list is shown only inside a customer deployment. The
+  list of supported types covers only the registry datatypes that match a public rule.
+website: https://github.com/semgrep/semgrep-rules/tree/develop/generic/secrets
+supported_types:
+- aws_access_key_id
+- aws_account_id
+- aws_secret_access_key
+- bcrypt_hash
+- facebook_app_access_token
+- github_token
+- google_api_key
+- heroku_oauth_token
+- jfrog_api_key
+- jfrog_reference_token
+- jwt
+- mailchimp_api_key
+- npm_access_token
+- pgp_private_key_block
+- sendgrid_api_key
+- slack_token
+- slack_webhook_url
+- sonarqube_token
+- square_access_token
+- stripe_api_key
+- telegram_bot_token
+- twilio_api_key_sid
+- unix_shadow_entry
+- uri_with_password
+- x509_private_key

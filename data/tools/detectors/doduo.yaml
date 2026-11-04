@@ -1,0 +1,43 @@
+id: doduo
+name: Doduo
+category: detector
+doc: 'Doduo is a research model from Megagon Labs, published at SIGMOD 2022, that predicts the semantic
+  type of every column of a table and the relation between pairs of columns. It fine-tunes a BERT language
+  model on the whole table written out as one sequence, so the values of the other columns help to type
+  each column. The repository ships two pretrained models: one trained on WikiTable data from TURL, with
+  255 Freebase column types, and one trained on VizNet data from Sato, with the same 78 semantic types
+  as Sherlock and Sato, such as birthDate or fileSize. The registry maps the VizNet types through mappings.sherlock,
+  so this list is the same as the one of the sherlock and sato tools. The code is released under the Apache
+  2.0 license.'
+website: https://github.com/megagonlabs/doduo
+supported_types:
+- address
+- age
+- birthday
+- birthplace
+- brand
+- category
+- city
+- comment
+- continent
+- country
+- currency
+- dc_creator
+- dc_publisher
+- description
+- duration
+- elevation
+- filesize
+- gender
+- genre
+- industry
+- isbn
+- language
+- name
+- nationality
+- orgname
+- person_fullname
+- religion
+- species
+- weight
+- year
