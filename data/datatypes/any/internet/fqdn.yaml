@@ -9,12 +9,27 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^(?!:\/\/)(?=.{1,255}$)((.{1,63}\.){1,127}(?![0-9]*$)[a-z0-9-]+\.?)$
+regexp: ^(?=.{1,253}\.?$)(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+(?![0-9]+\.?$)[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.?$
 examples:
-- value: ec2-35-160-210-253.us-west-2-.compute.amazonaws.com
+- value: ec2-35-160-210-253.us-west-2.compute.amazonaws.com
   description: Amazon web services ec2 server
 - value: xn--kxae4bafwg.xn--pxaix.gr
   description: Greek language national domain name
+- value: did:web:w3c-ccg.github.io
+  valid: false
+  description: Decentralized identifier (DID); a colon is not allowed in a label
+- value: https://www.example.com/path
+  valid: false
+  description: URL; a domain name has no scheme or path
+- value: my host.example.com
+  valid: false
+  description: A label with a space
+- value: ec2-35-160-210-253.us-west-2-.compute.amazonaws.com
+  valid: false
+  description: A label that ends with a hyphen
+- value: 192.0.2.1
+  valid: false
+  description: IPv4 address; the top-level label must not be all-numeric
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Fully_qualified_domain_name
