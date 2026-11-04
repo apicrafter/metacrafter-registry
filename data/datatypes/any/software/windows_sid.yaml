@@ -1,0 +1,30 @@
+id: windows_sid
+name: Windows security identifier (SID)
+status: draft
+doc: Identifier of a security principal in Microsoft Windows, such as a user account, group, computer
+  or service. Its text form is S-1- followed by the identifier authority and up to 15 subauthorities,
+  all decimal and separated by hyphens. Domain and local accounts have SIDs starting with S-1-5-21. Well-known
+  SIDs, such as S-1-5-32-544 for the local Administrators group, are the same on all systems.
+categories:
+- software
+- useraccounts
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^S-1-\d+(?:-\d+){1,15}$
+examples:
+- value: S-1-5-32-544
+  description: Well-known SID of the built-in Administrators group
+- value: S-1-1-0
+  description: Well-known SID World, the group of all users
+- value: S-1-5-80-859482183-879914841-863379149-1145462774-2388618682
+  description: Service SID of the dnscache service
+- value: S-1-5
+  valid: false
+  description: An identifier authority without subauthorities
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Security_Identifier
+- type: doc
+  url: https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers

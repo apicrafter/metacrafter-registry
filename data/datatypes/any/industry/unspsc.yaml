@@ -1,8 +1,9 @@
 id: unspsc
-name: UNSPSC code
+name: United Nations Standard Products and Services Code (UNSPSC)
 status: draft
-doc: Code of a product or service in the United Nations Standard Products and Services Code, a hierarchy
-  of segment, family, class and commodity of two digits each. It is used in procurement and spend analysis.
+doc: 'Code from the UNSPSC taxonomy of products and services used in e-commerce and procurement. It has
+  eight digits: two each for segment, family, class and commodity. Upper levels have their own codes ending
+  in 00. An optional ninth and tenth digit give the business function, such as retail or wholesale.'
 categories:
 - industry
 - ecommerce
@@ -10,20 +11,23 @@ langs:
 - common
 is_pii: false
 classification: categorical
-regexp: ^\d{8}(?:\d{2})?$
+regexp: ^[1-9]\d{7}(?:\d{2})?$
 examples:
+- value: '10101501'
+  description: 'Commodity: cats'
+- value: '10101500'
+  description: 'Class: livestock'
+- value: '10100000'
+  description: 'Family: live animals'
 - value: '25101703'
-  description: ambulance
-- value: '11101803'
-  description: platinum
-- value: '11101709'
-  description: antimony
+  description: 'Commodity: ambulances'
+- value: '1010150'
+  valid: false
+  description: Seven digits
 mappings:
   wikidata: P2167
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/UNSPSC
-- type: doc
-  url: https://www.unspsc.org/
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P2167

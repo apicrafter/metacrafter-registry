@@ -31,3 +31,5 @@ links:
   url: https://schema.org/telephone
 - type: schema.org
   url: https://schema.org/faxNumber
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Telephone_number

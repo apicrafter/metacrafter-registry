@@ -1,0 +1,24 @@
+id: lsid
+name: Life Science Identifier (LSID)
+status: draft
+doc: Identifier for a piece of life-science data, written in URN form as urn:lsid:<authority>:<namespace>:<object
+  id>, optionally followed by :<version>. The authority is usually the domain name of the issuing service.
+  The lsid namespace was never registered with IANA. LSIDs are still used by biodiversity catalogues such
+  as ZooBank to identify taxonomic names and publications.
+parent: urn
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[Uu][Rr][Nn]:[Ll][Ss][Ii][Dd]:[^:\s]+:[^:\s]+:[^:\s]+(?::[^:\s]+)?$
+examples:
+- value: urn:lsid:zoobank.org:pub:CDC8D258-8F57-41DC-B560-247E17D3DC8C
+  description: ZooBank publication record
+- value: urn:lsid:zoobank.org:pub
+  valid: false
+  description: The object identifier is missing
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/LSID

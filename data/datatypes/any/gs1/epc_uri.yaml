@@ -1,0 +1,26 @@
+id: epc_uri
+name: Electronic Product Code (EPC) pure identity URI
+status: draft
+doc: 'Identifier of one individual physical object in the GS1 EPC Tag Data Standard, written as a URN:
+  urn:epc:id:<scheme>:<fields>. The scheme says which GS1 key is used, for example sgtin (a GTIN plus
+  a serial number), sscc, sgln or grai. The fields hold the GS1 Company Prefix and the rest of the key
+  separated by dots, without the check digit. The same identifier can be encoded in RFID tags and in barcodes.'
+parent: urn
+categories:
+- gs1
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^urn:epc:id:[a-z]+:\S+$
+examples:
+- value: urn:epc:id:sgtin:9506000.013435.1001
+  description: SGTIN of GS1's example GTIN 09506000134352 with serial number 1001
+- value: urn:epc:tag:sgtin-96:3.9506000.013435.1001
+  valid: false
+  description: Tag URI, not a pure identity URI
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Electronic_Product_Code
+- type: doc
+  url: https://ref.gs1.org/standards/tds/

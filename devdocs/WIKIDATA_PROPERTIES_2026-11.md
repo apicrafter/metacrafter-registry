@@ -51,12 +51,12 @@ Sources, all read on 2026-11-04:
   - Corrected the regexp of 8 records (5 of them rejected almost every
     Wikidata value) and added a regexp to 16 records that had none.
   - Added examples from Wikidata to 25 existing records.
-  - Added **97 new draft records**, one per Wikidata property, with a regexp
-    tested against Wikidata values (96 of them) and examples from Wikidata.
+  - Added **92 new draft records**, one per Wikidata property, with a regexp
+    tested against Wikidata values (91 of them) and examples from Wikidata.
   - Added `scripts/wikidata_properties.py`, which repeats the comparison.
-- After this change 282 records map to 274 Wikidata properties (144 before).
-  Compared with `main` at the time of the merge, the share of records with a
-  regexp went from 56.5% to 61.4%, and with examples from 60.7% to 65.3%.
+- After this change 290 records map to 282 Wikidata properties (158 on `main`
+  at the time of the merge). The share of records with a regexp went from
+  57.3% to 62.0%, and with examples from 61.4% to 65.8%.
 
 ## Method
 
@@ -172,6 +172,13 @@ The opendata.mkrf.ru analysis added `ru_egrokn_regnum` (EGROKN registration
 number) at the same time; it already maps to P5381. This change adds two
 Wikidata examples to it instead of a second record.
 
+The review of identifiers from Wikipedia
+([#18](https://github.com/apicrafter/metacrafter-registry/issues/18)) added
+`unspsc`, `us_ndc`, `gnd_id`, `lccn` and `handle_id` at the same time, with the
+same Wikidata mappings (`us_ndc` has none). This change keeps those records, adds
+two examples to `gnd_id`, and makes `lcnaf_id` a child of `lccn`: a Library of
+Congress authority ID is the LCCN of an authority record.
+
 ### Corrected regexps
 
 Wikidata values showed that these regexps were wrong. "Matches" counts the
@@ -205,7 +212,7 @@ Wikidata values that the regexp accepts, before and after.
 
 ## New records
 
-97 new records, all `status: draft`. "Uses" is the number of Wikidata
+92 new records, all `status: draft`. "Uses" is the number of Wikidata
 statements with the property; "Matches" is the share of up to 3,000 Wikidata values that
 the record regexp accepts.
 
@@ -216,13 +223,11 @@ the record regexp accepts.
 | `iso639_3` | [P220](https://www.wikidata.org/wiki/Property:P220) | ISO 639-3 code | 8,705 | 3000/3000 |
 | `iso15924` | [P506](https://www.wikidata.org/wiki/Property:P506) | ISO 15924 alpha-4 code | 280 | 274/274 |
 | `un_number` | [P695](https://www.wikidata.org/wiki/Property:P695) | UN number | 524 | 524/524 |
-| `unspsc` | [P2167](https://www.wikidata.org/wiki/Property:P2167) | UNSPSC code | 1,525 | 1516/1516 |
 | `e_number` | [P628](https://www.wikidata.org/wiki/Property:P628) | E number | 622 | 615/620 |
 | `hasc` | [P8119](https://www.wikidata.org/wiki/Property:P8119) | HASC | 11,096 | 3000/3000 |
 | `ioc_country_code` | [P984](https://www.wikidata.org/wiki/Property:P984) | IOC country code | 265 | 254/254 |
 | `fips10_4` | [P901](https://www.wikidata.org/wiki/Property:P901) | FIPS 10-4 (countries and regions) | 4,350 | 3000/3000 |
 | `sec_cik` | [P5531](https://www.wikidata.org/wiki/Property:P5531) | Central Index Key | 3,783 | 3000/3000 |
-| `us_ndc` | [P3640](https://www.wikidata.org/wiki/Property:P3640) | National Drug Code | 502 | 502/502 |
 
 ### Medicine and life sciences
 
@@ -261,12 +266,9 @@ the record regexp accepts.
 | `arxiv_id` | [P818](https://www.wikidata.org/wiki/Property:P818) | arXiv ID | 465,225 | 387/392 |
 | `issn_l` | [P7363](https://www.wikidata.org/wiki/Property:P7363) | ISSN-L | 148,308 | 3000/3000 |
 | `lcnaf_id` | [P244](https://www.wikidata.org/wiki/Property:P244) | Library of Congress Authorities ID | 1,774,868 | 3000/3000 |
-| `lccn` | [P1144](https://www.wikidata.org/wiki/Property:P1144) | Library of Congress item ID (LCCN bibliographic) | 57,662 | 2991/3000 |
-| `gnd_id` | [P227](https://www.wikidata.org/wiki/Property:P227) | GND ID | 3,175,783 | 3000/3000 |
 | `bnf_id` | [P268](https://www.wikidata.org/wiki/Property:P268) | Bibliothèque nationale de France ID | 788,534 | 3000/3000 |
 | `scopus_source_id` | [P1156](https://www.wikidata.org/wiki/Property:P1156) | Scopus source ID | 46,167 | 3000/3000 |
 | `nlm_unique_id` | [P1055](https://www.wikidata.org/wiki/Property:P1055) | NLM Unique ID | 35,821 | 2990/3000 |
-| `handle` | [P1184](https://www.wikidata.org/wiki/Property:P1184) | Handle ID | 149,837 | 2996/3000 |
 | `freebase_mid` | [P646](https://www.wikidata.org/wiki/Property:P646) | Freebase ID | 4,470,735 | 2995/3000 |
 | `google_kg_id` | [P2671](https://www.wikidata.org/wiki/Property:P2671) | Google Knowledge Graph ID | 8,182,547 | 3000/3000 |
 | `imdb_id` | [P345](https://www.wikidata.org/wiki/Property:P345) | IMDb ID | 1,219,549 | 3000/3000 |
@@ -390,6 +392,9 @@ The mappings are kept: the record holds the values of the property.
 
 ## Not done
 
+- **`us_ndc`.** P3640 (National Drug Code) stores the labeler and product
+  segments only, such as `0009-0417`. The record is the full package code with
+  three segments and rejects that form, so it is not mapped.
 - **`gtin` and `ean`.** `gtin` is the GS1 element string with Application
   Identifier (01): `01` and 14 digits. P3962 (Global Trade Item Number) holds
   the plain GTIN of 8 to 14 digits. The values differ, so `gtin` is not

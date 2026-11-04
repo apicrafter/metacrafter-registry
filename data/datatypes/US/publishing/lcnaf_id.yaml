@@ -3,6 +3,7 @@ name: Library of Congress authority ID (LCCN of an authority record)
 status: draft
 doc: 'Identifier of a name, subject or genre authority record of the Library of Congress: a prefix such
   as n, nb, nr, no or sh, then the year and a serial number. It is used in library catalogues and in id.loc.gov.'
+parent: lccn
 categories:
 - publishing
 - objectids

@@ -1,0 +1,27 @@
+id: oui
+name: Organizationally Unique Identifier (OUI)
+status: draft
+doc: 24-bit number that the IEEE Registration Authority assigns to a vendor or other organization (MA-L
+  assignment). It forms the first three octets of MAC addresses and other EUI-48 and EUI-64 identifiers
+  made by that organization, and is also used in World Wide Names and SNAP protocol identifiers. It is
+  written as three hexadecimal octets, separated by hyphens or colons or not at all.
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[0-9A-Fa-f]{2}-[0-9A-Fa-f]{2}-[0-9A-Fa-f]{2}|[0-9A-Fa-f]{2}:[0-9A-Fa-f]{2}:[0-9A-Fa-f]{2}|[0-9A-Fa-f]{6})$
+examples:
+- value: AC-DE-48
+  description: IEEE example OUI
+- value: ACDE48
+  description: The same OUI without separators
+- value: AC-DE-48-23-45-67
+  valid: false
+  description: A full MAC address, not only the OUI
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Organizationally_unique_identifier
+- type: doc
+  url: https://standards.ieee.org/products-programs/regauth/

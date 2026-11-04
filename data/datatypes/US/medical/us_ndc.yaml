@@ -1,29 +1,32 @@
 id: us_ndc
 name: US National Drug Code (NDC)
 status: draft
-doc: 'Code of a drug product in the United States: labeler, product and package segments of 4-4-2, 5-3-2
-  or 5-4-1 digits. The labeler and product segments alone, such as 0009-0417, identify the product without
-  its package; Wikidata stores this form. The FDA publishes the NDC Directory.'
+doc: 'Ten-digit identifier of a drug package listed with the US Food and Drug Administration. It has three
+  segments: the labeler code assigned by the FDA, the product code and the package code, both assigned
+  by the labeler. The official form separates the segments with hyphens in one of the configurations 4-4-2,
+  5-3-2, 5-4-1, 6-3-2 or 6-4-1. Claims data under HIPAA use an 11-digit form without hyphens that pads
+  the segments with zeros to 5-4-2.'
 categories:
 - medical
 country:
 - US
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
-regexp: ^(?:\d{4}-\d{4}(?:-\d{2})?|\d{5}-\d{3}(?:-\d{2})?|\d{5}-\d{4}(?:-\d{1,2})?)$
+regexp: ^(?:\d{4}-\d{4}-\d{2}|\d{5}-\d{3}-\d{2}|\d{5}-\d{4}-\d|\d{6}-\d{3}-\d{2}|\d{6}-\d{4}-\d|\d{11})$
 examples:
+- value: 50242-090-02
+  description: Zelboraf (vemurafenib), 5-3-2 configuration
+- value: 0009-0417-01
+  description: Depo-Testosterone, 4-4-2 configuration
+- value: 00009041701
+  description: The same package in the 11-digit HIPAA form
 - value: 50242-090
-  description: vemurafenib
-- value: 0009-0417
-  description: Depo-testosterone
-- value: 0037-6824
-  description: Epifoam
-mappings:
-  wikidata: P3640
+  valid: false
+  description: Labeler and product only; the package code is missing
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/National_drug_code
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P3640
+- type: doc
+  url: https://open.fda.gov/apis/drug/ndc/

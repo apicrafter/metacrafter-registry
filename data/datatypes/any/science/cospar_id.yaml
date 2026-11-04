@@ -1,0 +1,31 @@
+id: cospar_id
+name: International Designator (COSPAR ID) of a space object
+status: draft
+doc: International identifier of an artificial object in space, assigned by United States Space Command
+  together with the satellite catalog number. It is the launch year, a hyphen, the three-digit number
+  of the launch in that year and one to three letters for the piece of that launch. In TLE files the century
+  and the hyphen are left out. The modern scheme was introduced in 1963 and replaced Greek-letter designations.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:19[5-9]\d|20\d{2})-\d{3}[A-Z]{1,3}$
+examples:
+- value: 1990-037A
+  description: Space Shuttle Discovery, mission STS-31
+- value: 1990-037B
+  description: Hubble Space Telescope
+- value: 1970-060A
+  description: Venera 7
+- value: 1990-37A
+  valid: false
+  description: The launch number must have three digits
+mappings:
+  wikidata: P247
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Designator
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P247

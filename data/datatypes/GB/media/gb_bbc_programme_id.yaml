@@ -1,0 +1,35 @@
+id: gb_bbc_programme_id
+name: BBC Programme Identifier (PID)
+status: draft
+doc: Persistent identifier of a BBC television or radio programme brand, series or episode, used in BBC
+  web addresses, iPlayer and internal systems. It is a lower-case letter followed by seven or more lower-case
+  consonants or digits; vowels are never used. The first letter shows the issuing source, for example
+  b or p. Most PIDs have eight characters; some World Service programmes have eleven.
+categories:
+- media
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[b-df-hj-np-tv-z][0-9b-df-hj-np-tv-z]{7,10}$
+examples:
+- value: b006q2x0
+  description: Doctor Who
+- value: b015sqc7
+  description: The Life Scientific (radio series)
+- value: p009y95q
+  description: Desert Island Discs episode from 1956
+- value: wcr5dr3dnl3
+  description: World Service programme, eleven characters
+- value: b006qa20
+  valid: false
+  description: Contains a vowel
+mappings:
+  wikidata: P827
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/BBC_Programme_Identifier
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P827

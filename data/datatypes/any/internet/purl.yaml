@@ -1,0 +1,28 @@
+id: purl
+name: Persistent Uniform Resource Locator (PURL)
+status: draft
+doc: URL on a PURL resolver that redirects to the current location of a resource, so that the published
+  address keeps working when the resource moves. The original resolver at purl.org, now run by the Internet
+  Archive, also answers at purl.net, purl.com and purl.info. Other resolvers use host names that start
+  with purl, such as purl.fdlp.gov. Dublin Core publishes its term URIs as PURLs.
+parent: url
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^https?://purl\.[A-Za-z0-9.-]+/\S+$
+examples:
+- value: http://purl.org/dc/terms/
+  description: Dublin Core terms namespace
+- value: http://purl.org/dc/elements/1.1/title
+  description: Dublin Core element title
+- value: https://example.org/dc/terms/
+  valid: false
+  description: Not hosted on a PURL resolver
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Persistent_uniform_resource_locator
+- type: doc
+  url: https://purl.archive.org/

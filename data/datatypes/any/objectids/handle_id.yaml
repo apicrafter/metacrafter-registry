@@ -1,0 +1,30 @@
+id: handle_id
+name: Handle System identifier (handle)
+status: draft
+doc: Persistent identifier in the Handle System, written as <prefix>/<suffix>. The prefix names a naming
+  authority and may have several levels separated by dots, such as 20.1000 or 20.500.11794. The suffix
+  is the local name assigned by that authority. DOIs are handles with prefix 10. The regexp matches handles
+  with a dotted prefix; older handles with a single numeric prefix such as 2381/12345 cannot be told apart
+  from other slash-separated values by their form.
+categories:
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d+(?:\.\d+)+/\S+$
+examples:
+- value: 20.1000/100
+  description: Handle of the HANDLE.NET software license
+- value: 20.500.11794/34239
+  description: Item in the repository of Université Laval
+- value: 12/25/2020
+  valid: false
+  description: A date
+mappings:
+  wikidata: P1184
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Handle_System
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1184
