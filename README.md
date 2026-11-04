@@ -134,6 +134,34 @@ builds everything that gets published.
 
 `python scripts/builder.py <command>` still works and delegates to the same CLI.
 
+# Python package and MCP server
+
+```python
+from metacrafter_registry import Registry
+
+reg = Registry.load()  # bundled snapshot (wheel) or the YAML of this checkout
+reg = Registry.fetch()  # published data, cached in ~/.cache, verified by SHA-256
+reg.get("ssn")["id"]  # 'usssn': former ids (aliases) resolve
+reg.identify(["7707083893", "7728168971"], field_name="inn")[0]["id"]  # 'inn'
+reg.search("passport", country="GB")
+reg.url_for("email")  # https://registry.apicrafter.io/datatype/email
+```
+
+`identify` ranks datatypes for sample values of one column. It combines:
+- the regexp hit rate, weighted by how specific the regexp is;
+- check digits: Luhn, IBAN mod-97, GTIN, ISBN, Russian INN, SNILS and OGRN;
+- similarity to the field name.
+
+The MCP server exposes the same functions to AI agents and runs locally:
+
+```bash
+pip install "metacrafter-registry[mcp]"
+metacrafter-registry mcp            # stdio; add --refresh to download newer data
+```
+
+See https://registry.apicrafter.io/agents for client configuration, and
+`skills/` for agent skills.
+
 # Publishing
 
 Every merge to `main` builds the site and deploys it to GitHub Pages
@@ -174,6 +202,10 @@ JSON API (static files, described in `/api/v1/openapi.json`):
 | `/api/v1/tools/<id>.json`, `/api/v1/tools.json`, `.jsonl` | Tools |
 | `/api/v1/categories.json`, `countries.json`, `languages.json` | Reference lists with record counts |
 | `/api/v1/openapi.json` | OpenAPI 3.1 description |
+| `/api/v1/rag/corpus.jsonl` | One embedding text per record (template version in the manifest) |
+| `/llms.txt`, `/llms-full.txt` | Index and full text for LLMs ([llmstxt.org](https://llmstxt.org)) |
+| `/datatype/<id>.md`, `/tool/<id>.md`, `/category/<id>.md` | Markdown twins of the pages |
+| `/registry.ttl` | SKOS concept scheme (Turtle) |
 | `/api/v1/aliases.json` | Retired ids and the record each one resolves to |
 | `/schema/*.schema.json` | JSON Schemas of the source records |
 | `/registry.json` | Legacy: all records keyed by id (release 1.02 shape) |

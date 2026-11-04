@@ -17,7 +17,15 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8", "ruff>=0.6", "jsonschema>=4.18", "openapi-spec-validator>=0.7"]
+mcp = ["mcp>=2.0,<3"]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+    "jsonschema>=4.18",
+    "openapi-spec-validator>=0.7",
+    "rdflib>=7",
+    "mcp>=2.0,<3",
+]
 
 [project.urls]
 Homepage = "https://registry.apicrafter.io"
@@ -31,7 +39,7 @@ where = ["src"]
 include = ["metacrafter_registry*"]
 
 [tool.setuptools.package-data]
-metacrafter_registry = ["templates/*.html", "static/*"]
+metacrafter_registry = ["templates/*.html", "templates/*.md", "static/*", "snapshot/*"]
 
 [tool.ruff]
 line-length = 100

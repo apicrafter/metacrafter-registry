@@ -11,6 +11,7 @@ langs:
 is_pii: true
 classification: identifier
 regexp: \d{14,15}|\d{2}-\d{6}-\d{6}-\d{1,2}
+checksum: luhn
 examples:
 - value: '490154203237518'
   description: IMEI with check digit

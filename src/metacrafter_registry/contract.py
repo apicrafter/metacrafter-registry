@@ -75,6 +75,8 @@ CHECKS: list[tuple[str, str, Callable[[bytes], str | None]]] = [
         _json_check(lambda d: str(d.get("openapi", "")).startswith("3.1"), "OpenAPI 3.1"),
     ),
     ("/sitemap.xml", "xml", _html_mentions("/datatype/email")),
+    ("/llms.txt", "text/plain", _html_mentions("# Metacrafter Registry")),
+    ("/datatype/email.md", "text/markdown", _html_mentions('id: "email"')),
     (
         "/datatype/email.json",
         "application/json",

@@ -66,7 +66,7 @@ def _links(raw: Any) -> list[dict[str, str]]:
 
 
 @dataclass
-class Registry:
+class RegistryModel:
     """Normalized datatypes, tools and reference lists, all keyed and sorted by id."""
 
     datatypes: dict[str, dict[str, Any]]
@@ -81,7 +81,7 @@ class Registry:
         return sum(1 for r in self.datatypes.values() if r["kind"] == kind)
 
 
-def build_registry(sources: RegistrySources, site_url: str) -> Registry:
+def build_registry(sources: RegistrySources, site_url: str) -> RegistryModel:
     site_url = site_url.rstrip("/")
     raw = {rec.id: rec for rec in sources.datatypes}
 
@@ -215,7 +215,7 @@ def build_registry(sources: RegistrySources, site_url: str) -> Registry:
             out[key] = entry
         return out
 
-    return Registry(
+    return RegistryModel(
         datatypes=datatypes,
         tools=tools,
         categories=reference(sources.categories, "categories", "category"),

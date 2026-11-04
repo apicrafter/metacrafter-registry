@@ -255,6 +255,52 @@ def _regexp_issues(sources: RegistrySources) -> list[Issue]:
     return issues
 
 
+def _checksum_issues(sources: RegistrySources) -> list[Issue]:
+    """A named checksum must exist; examples must agree with it."""
+    from .checksums import ALGORITHMS
+
+    issues = []
+    for rec in sources.datatypes:
+        algorithm = rec.data.get("checksum")
+        if not algorithm:
+            continue
+        if algorithm not in ALGORITHMS:
+            known = ", ".join(sorted(ALGORITHMS))
+            issues.append(
+                Issue(
+                    ERROR, rec.relpath, rec.id, f"unknown checksum '{algorithm}' (known: {known})"
+                )
+            )
+            continue
+        pattern = rec.data.get("regexp")
+        compiled = re.compile(str(pattern)) if pattern else None
+        for example in rec.data.get("examples") or []:
+            if not isinstance(example, dict) or "value" not in example:
+                continue
+            value = str(example["value"])
+            passes = ALGORITHMS[algorithm](value)
+            if example.get("valid", True) is not False:
+                if not passes:
+                    issues.append(
+                        Issue(
+                            ERROR,
+                            rec.relpath,
+                            rec.id,
+                            f"example '{value}' fails the {algorithm} check digit",
+                        )
+                    )
+            elif passes and (compiled is None or compiled.search(value)):
+                issues.append(
+                    Issue(
+                        ERROR,
+                        rec.relpath,
+                        rec.id,
+                        f"negative example '{value}' passes both the regexp and {algorithm}",
+                    )
+                )
+    return issues
+
+
 def validate(sources: RegistrySources, schema_dir: Path | None = None) -> ValidationResult:
     schema_dir = schema_dir or default_schema_dir(sources.data_dir)
     issues = [Issue(ERROR, path, "-", message) for path, message in sources.load_errors]
@@ -263,4 +309,5 @@ def validate(sources: RegistrySources, schema_dir: Path | None = None) -> Valida
     issues += _id_issues(sources)
     issues += _location_issues(sources)
     issues += _regexp_issues(sources)
+    issues += _checksum_issues(sources)
     return ValidationResult(issues=issues)

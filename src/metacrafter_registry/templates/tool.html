@@ -4,6 +4,7 @@
 {% block description %}{{ object.doc|truncate(200) }}{% endblock %}
 {% block head %}
   <link rel="alternate" type="application/json" href="{{ base }}/api/v1/tools/{{ object.id }}.json" title="API v1 record">
+  <link rel="alternate" type="text/markdown" href="{{ base }}/tool/{{ object.id }}.md" title="Markdown">
   <link rel="alternate" type="application/json" href="{{ base }}/tool/{{ object.id }}.json" title="Legacy record">
 {% endblock %}
 {% block content %}

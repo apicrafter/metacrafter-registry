@@ -124,6 +124,47 @@ def cmd_migrate(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_snapshot(args: argparse.Namespace) -> int:
+    """Copy published data files into the package so wheels work offline."""
+    import shutil
+
+    from .client import SNAPSHOT_DIR, SNAPSHOT_FILES
+
+    source = Path(args.dist) / "api" / "v1"
+    target = Path(args.out) if args.out else SNAPSHOT_DIR
+    missing = [name for name in SNAPSHOT_FILES if not (source / name).is_file()]
+    if missing:
+        print(f"{source} lacks {', '.join(missing)}; run 'metacrafter-registry build' first")
+        return 1
+    target.mkdir(parents=True, exist_ok=True)
+    for name in SNAPSHOT_FILES:
+        shutil.copyfile(source / name, target / name)
+    print(f"Snapshot of {len(SNAPSHOT_FILES)} files written to {target}")
+    return 0
+
+
+def cmd_mcp(args: argparse.Namespace) -> int:
+    try:
+        from .mcp_server import serve
+    except ImportError:  # pragma: no cover - depends on the optional extra
+        print(
+            'The MCP server needs the extra: pip install "metacrafter-registry[mcp]"',
+            file=sys.stderr,
+        )
+        return 1
+    kwargs = {}
+    if args.transport != "stdio":
+        kwargs = {"host": args.host, "port": args.port}
+    serve(
+        args.data,
+        refresh=args.refresh,
+        base_url=args.base_url,
+        transport=args.transport,
+        **kwargs,
+    )
+    return 0
+
+
 def cmd_check_links(args: argparse.Namespace) -> int:
     from .linkcheck import check_links
 
@@ -183,6 +224,22 @@ def main(argv: list[str] | None = None) -> int:
         "--check", action="store_true", help="only report; exit 1 if anything would change"
     )
     p.set_defaults(func=cmd_migrate)
+
+    p = sub.add_parser("snapshot", help="bundle published data files into the package")
+    p.add_argument("--dist", default="dist", help="built site directory (default: dist)")
+    p.add_argument("--out", help="target directory (default: the package snapshot/ folder)")
+    p.set_defaults(func=cmd_snapshot)
+
+    p = sub.add_parser("mcp", help="run the MCP server (needs the [mcp] extra)")
+    p.add_argument("--data", help="snapshot or data/ directory (default: bundled or checkout)")
+    p.add_argument("--refresh", action="store_true", help="download newer published data")
+    p.add_argument("--base-url", default=None, help="site to download data from")
+    p.add_argument(
+        "--transport", choices=["stdio", "streamable-http"], default="stdio", help="MCP transport"
+    )
+    p.add_argument("--host", default="127.0.0.1", help="host for streamable-http")
+    p.add_argument("--port", type=int, default=8000, help="port for streamable-http")
+    p.set_defaults(func=cmd_mcp)
 
     p = sub.add_parser("check-links", help="check internal links in a built site")
     p.add_argument("--dir", help="built site directory (default: <repo>/dist)")

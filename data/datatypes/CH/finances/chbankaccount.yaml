@@ -13,6 +13,7 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^CH\d{7}[0-9A-Z]{12}$
+checksum: iban_mod97
 examples:
 - value: CH9300762011623852957
   description: Swiss IBAN (21 characters, valid MOD-97 checksum)

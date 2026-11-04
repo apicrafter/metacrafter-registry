@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}For AI agents{% endblock %}
+{% block description %}Use the Metacrafter Registry from AI agents: llms.txt, Markdown records, an MCP server, a Python package and agent skills.{% endblock %}
+{% block head %}<link rel="alternate" type="text/markdown" href="{{ base }}/agents.md" title="Markdown">{% endblock %}
+{% block content %}
+<h1>For AI agents</h1>
+<p class="lead">An agent can use the registry to answer questions like “what is in this column?”, “is this field personal data?” or “which Presidio entity is this?”, and to link its answer to a stable URL. Everything below is free, read-only and needs no key.</p>
+
+<p class="notice">Each record has a <code>status</code>. <strong>Draft</strong> records have not been reviewed yet and may be incomplete or wrong; do not treat them as authoritative for legal or compliance decisions. Filter on <code>status: stable</code> when that matters.</p>
+
+<h2>Read the registry</h2>
+<ul class="plain">
+  <li><a href="{{ base }}/llms.txt">/llms.txt</a>: an index in the <a href="https://llmstxt.org/">llms.txt</a> format; <a href="{{ base }}/llms-full.txt">/llms-full.txt</a> has every record in one Markdown file.</li>
+  <li>Every record page has a Markdown twin: append <code>.md</code>, for example <a href="{{ base }}/datatype/email.md">/datatype/email.md</a>.</li>
+  <li>JSON API described in <a href="{{ base }}/api/v1/openapi.json">OpenAPI 3.1</a>; frameworks that import OpenAPI tools can use it directly.</li>
+  <li><a href="{{ base }}/api/v1/rag/corpus.jsonl">RAG corpus</a>: one embedding text per record, with a versioned template (see the manifest).</li>
+</ul>
+
+<h2>MCP server</h2>
+<p>The <code>metacrafter-registry</code> Python package includes a local <a href="https://modelcontextprotocol.io/">MCP</a> server. It works offline from a data snapshot, so sample values never leave your machine. Tools:</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th scope="col">Tool</th><th scope="col">What it does</th></tr></thead>
+  <tbody>
+    <tr><td class="id">identify_values</td><td>Ranks datatypes for sample values and an optional field name: regexp hit rate, check digits, name similarity</td></tr>
+    <tr><td class="id">search_datatypes</td><td>Full-text search with filters: category, country, PII, status</td></tr>
+    <tr><td class="id">get_datatype</td><td>One record by id; former ids (aliases) resolve</td></tr>
+    <tr><td class="id">crosswalk</td><td>Finds the registry record for an id in another vocabulary, e.g. a Wikidata property</td></tr>
+    <tr><td class="id">list_categories, list_countries</td><td>Reference lists with record counts</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Each record is also an MCP resource, <code>registry://datatype/{id}</code>, in Markdown.</p>
+<p>Claude Code:</p>
+<pre><code>claude mcp add metacrafter-registry -- uvx --from "metacrafter-registry[mcp]" metacrafter-registry mcp</code></pre>
+<p>Other clients (Claude Desktop, Cursor, …):</p>
+<pre><code>{
+  "mcpServers": {
+    "metacrafter-registry": {
+      "command": "uvx",
+      "args": ["--from", "metacrafter-registry[mcp]", "metacrafter-registry", "mcp"]
+    }
+  }
+}</code></pre>
+<p class="small muted">Until the package is on PyPI, install from GitHub: <code>uvx --from "metacrafter-registry[mcp] @ git+https://github.com/apicrafter/metacrafter-registry" metacrafter-registry mcp</code>. Without a bundled snapshot the server downloads the published data once and caches it. Add <code>--refresh</code> to check for newer data on start.</p>
+
+<h2>Python package</h2>
+<pre><code>from metacrafter_registry import Registry
+
+reg = Registry.fetch()                      # published data, cached locally
+reg.get("ssn")["id"]                        # 'usssn': former ids resolve
+reg.identify(["7707083893", "7728168971"], field_name="inn")[0]["id"]   # 'inn'
+reg.search("passport", country="GB")
+reg.url_for("email")                        # https://registry.apicrafter.io/datatype/email</code></pre>
+
+<h2>Agent skills</h2>
+<ul class="plain">
+  <li><a href="https://github.com/apicrafter/metacrafter-registry/blob/main/skills/registry-lookup/SKILL.md">registry-lookup</a>: label the columns of a dataset with registry types.</li>
+  <li><a href="https://github.com/apicrafter/metacrafter-registry/blob/main/skills/registry-contributor/SKILL.md">registry-contributor</a>: add or improve a record so that it passes validation.</li>
+</ul>
+{% endblock %}

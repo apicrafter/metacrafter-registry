@@ -68,8 +68,17 @@ metacrafter-registry report --status draft --limit 20   # records that need work
 metacrafter-registry migrate --check # sources are in canonical v2 form
 metacrafter-registry check-links     # internal links of dist/ resolve
 metacrafter-registry check-contract <base-url>   # public URLs work
+metacrafter-registry mcp             # MCP server over stdio (needs the [mcp] extra)
+metacrafter-registry snapshot        # bundle dist/ data into the package (release only)
 pytest -q
 ```
+
+## Agent skills
+
+- `skills/registry-lookup/SKILL.md` - label dataset columns with registry
+  types (MCP tools, Python package or HTTP).
+- `skills/registry-contributor/SKILL.md` - add or improve records so that they
+  pass validation. Follow it when you edit `data/`.
 
 ## Record format (v2)
 
@@ -165,6 +174,14 @@ examples.
   Fields may be added, never removed or retyped.
 - `build.py`: renders `dist/` and writes the manifest.
 - `openapi.py`: the OpenAPI 3.1 description.
+- `client.py`: the public `Registry` API: `load`, `fetch`, `get`, `search`,
+  `identify`, `match`, `crosswalk`, `url_for`.
+- `checksums.py`: the check-digit algorithms named by the `checksum` field.
+- `agents.py`: Markdown twins, `llms.txt`, `llms-full.txt`, the RAG corpus and
+  the SKOS export.
+- `mcp_server.py`: the MCP server: tools `identify_values`,
+  `search_datatypes`, `get_datatype`, `crosswalk`, `list_categories`,
+  `list_countries`, and the resource `registry://datatype/{id}`.
 - `serve.py`, `contract.py`, `linkcheck.py`: the local Pages-like server, the
   URL contract check and the link checker.
 

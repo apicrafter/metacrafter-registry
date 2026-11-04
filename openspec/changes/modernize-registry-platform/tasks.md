@@ -134,17 +134,28 @@
 
 ## 7. Phase 3: Agent integration
 
-- [ ] 7.1 Add the Markdown twin emitter (`<page>.md`, with front matter).
-- [ ] 7.2 Add `llms.txt` and `llms-full.txt`.
-- [ ] 7.3 Add the SKOS Turtle export (`/registry.ttl`). Validate that it parses.
-- [ ] 7.4 Add the RAG corpus emitter. Put the template version in the manifest.
-- [ ] 7.5 Add the package runtime API:
+- [x] 7.1 Add the Markdown twin emitter (`<page>.md`, with front matter).
+  - Twins exist for datatypes, tools and categories.
+- [x] 7.2 Add `llms.txt` and `llms-full.txt`.
+- [x] 7.3 Add the SKOS Turtle export (`/registry.ttl`). Validate that it parses.
+  - The export is written without a runtime dependency. Tests parse it with `rdflib`.
+- [x] 7.4 Add the RAG corpus emitter. Put the template version in the manifest.
+- [x] 7.5 Add the package runtime API:
   - `Registry.load`, `fetch`, `get` (alias-aware), `search`, `url_for`, `match`
   - checksum validators: `luhn`, `iban_mod97`, `isbn10`, `isbn13`, `gtin`, `ru_inn`, `ru_snils`, `ru_ogrn`
-- [ ] 7.6 Add the MCP server (`metacrafter-registry mcp`): the tools and resources from the `agent-integration` spec, an offline snapshot and `--refresh`. Add tests with an MCP client.
-- [ ] 7.7 Add PyPI trusted publishing to `release.yml`. The data snapshot is bundled from the build output.
-- [ ] 7.8 Write the skills `skills/registry-lookup/SKILL.md` and `skills/registry-contributor/SKILL.md`, and point to them from `AGENTS.md`.
-- [ ] 7.9 Add the site pages `/developers` and `/agents`: API, package, MCP configuration snippets, `llms.txt` and the safety note about drafts.
+  - Added on top: `identify` (ranking by regexp hit rate × specificity, check digits and field-name similarity) and `crosswalk`.
+  - `fetch` verifies SHA-256 against the manifest and caches the data.
+  - `checksum` is now set on 12 records. Validation checks examples against the check digit.
+  - `iban` and `email` gained regexps and examples.
+- [x] 7.6 Add the MCP server (`metacrafter-registry mcp`): the tools and resources from the `agent-integration` spec, an offline snapshot and `--refresh`. Add tests with an MCP client.
+  - Uses `mcp>=2,<3` (`MCPServer`).
+  - Tests run in memory, plus an end-to-end test over stdio through the real CLI.
+- [x] 7.7 Add PyPI trusted publishing to `release.yml`. The data snapshot is bundled from the build output.
+  - [ ] **Owner action:** register the trusted publisher on pypi.org (repository `apicrafter/metacrafter-registry`, workflow `release.yml`, environment `pypi`).
+- [x] 7.8 Write the skills `skills/registry-lookup/SKILL.md` and `skills/registry-contributor/SKILL.md`, and point to them from `AGENTS.md`.
+- [x] 7.9 Add the site pages `/developers` and `/agents`: API, package, MCP configuration snippets, `llms.txt` and the safety note about drafts.
+  - `/agents` has a Markdown twin, `/agents.md`.
+  - The developer API reference stays on `/about`, so no separate `/developers` page was added.
 
 ## 8. Phase 4: Ecosystem alignment
 
