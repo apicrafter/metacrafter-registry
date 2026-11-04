@@ -10,6 +10,8 @@ categories:
 langs:
 - common
 is_pii: true
+mappings:
+  cdm: means.location.city
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/City

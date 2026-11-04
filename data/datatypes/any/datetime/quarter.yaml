@@ -13,6 +13,8 @@ examples:
   description: First quarter
 - value: '2'
   description: Secord quarter
+mappings:
+  cdm: means.calendar.quarterOfYear
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Calendar_year#Quarters

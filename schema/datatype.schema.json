@@ -23,6 +23,11 @@
         {"type": "array", "items": {"$ref": "#/$defs/nonEmptyString"}, "minItems": 1, "uniqueItems": true}
       ]
     },
+    "cdmTrait": {
+      "type": "string",
+      "pattern": "^(means|is)(\\.[A-Za-z0-9]+)+$",
+      "description": "A trait name from the CDM foundations, for example means.location.postalCode or is.dataFormat.guid"
+    },
     "record": {
       "type": "object",
       "additionalProperties": false,
@@ -89,7 +94,14 @@
             "google_dlp": {"$ref": "#/$defs/stringOrList"},
             "purview": {"$ref": "#/$defs/stringOrList"},
             "d3m": {"$ref": "#/$defs/stringOrList"},
-            "sherlock": {"$ref": "#/$defs/stringOrList"}
+            "sherlock": {"$ref": "#/$defs/stringOrList"},
+            "cdm": {
+              "description": "Microsoft Common Data Model trait names, for example means.identity.service.email",
+              "oneOf": [
+                {"$ref": "#/$defs/cdmTrait"},
+                {"type": "array", "items": {"$ref": "#/$defs/cdmTrait"}, "minItems": 1, "uniqueItems": true}
+              ]
+            }
           }
         },
         "links": {

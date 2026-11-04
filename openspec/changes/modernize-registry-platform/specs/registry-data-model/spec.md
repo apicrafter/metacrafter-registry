@@ -85,13 +85,19 @@ When a record has a `regexp`, these rules apply:
 - **THEN** validation fails
 
 ### Requirement: Typed mappings to external vocabularies
-A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m` and `sherlock`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
+A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock` and `cdm`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
 
 `mappings.wikidata` SHALL match `^[PQ]\d+$`.
 
 #### Scenario: Wikidata given as URL
 - **WHEN** a record has `mappings: {wikidata: "https://www.wikidata.org/wiki/Property:P968"}`
 - **THEN** validation fails and expects `P968`
+
+`mappings.cdm` SHALL hold Microsoft Common Data Model trait names, such as `means.identity.service.email`, and not CDM data type or entity names.
+
+#### Scenario: CDM data type name instead of a trait
+- **WHEN** a record has `mappings: {cdm: "email"}`
+- **THEN** validation fails with a schema error on `mappings.cdm`
 
 ### Requirement: Pattern inheritance
 A pattern SHALL reference an existing datatype through `semantic_type`.

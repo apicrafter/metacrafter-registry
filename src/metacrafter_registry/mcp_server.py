@@ -110,8 +110,9 @@ def create_server(registry: Registry):
     def crosswalk(system: str, external_id: str) -> list[dict[str, Any]]:
         """Registry records mapped to an id in another vocabulary.
 
-        system: wikidata, schema_org, dpv, presidio, google_dlp, purview, d3m or
-        sherlock. For wikidata, a property id (P968) or its URL.
+        system: wikidata, schema_org, dpv, presidio, google_dlp, purview, d3m,
+        sherlock or cdm. For wikidata, a property id (P968) or its URL. For cdm,
+        a Common Data Model trait name (means.identity.service.email).
         """
         return [_summary(registry, r) for r in registry.crosswalk(system, external_id)]
 

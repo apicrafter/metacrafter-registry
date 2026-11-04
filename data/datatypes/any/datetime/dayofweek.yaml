@@ -7,6 +7,8 @@ categories:
 langs:
 - common
 is_pii: false
+mappings:
+  cdm: means.calendar.dayOfWeek
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Workweek_and_weekend

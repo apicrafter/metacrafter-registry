@@ -17,6 +17,7 @@ examples:
 - value: +1-514-954-8219
   description: International Civil Aviation Organization
 mappings:
+  cdm: means.identity.service.phone
   google_dlp: PHONE_NUMBER
   presidio: PHONE_NUMBER
   wikidata: P1329

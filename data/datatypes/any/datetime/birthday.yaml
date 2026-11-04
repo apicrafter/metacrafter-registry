@@ -11,6 +11,8 @@ categories:
 langs:
 - common
 is_pii: true
+mappings:
+  cdm: means.demographic.birthDate
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Birthday

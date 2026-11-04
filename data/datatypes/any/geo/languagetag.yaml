@@ -17,6 +17,7 @@ examples:
 - value: en-GB
   description: British English
 mappings:
+  cdm: means.reference.language.tag
   wikidata: P305
 links:
 - type: wikipedia
