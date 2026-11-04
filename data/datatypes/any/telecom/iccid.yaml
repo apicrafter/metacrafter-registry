@@ -1,8 +1,10 @@
 id: iccid
 name: Integrated Circuit Card Identifier (ICCID)
 status: stable
-doc: The Integrated Circuit Card Identifier (ICCID) is a unique identifier for SIM cards. It is defined
-  by ITU-T E.118 standard and consists of 19-20 digits with a Luhn check digit.
+doc: Serial number of a SIM card (UICC), stored on the chip and printed on the card. ITU-T Recommendation
+  E.118 defines it as a primary account number with the major industry identifier 89 (telecommunications),
+  a country code, an issuer identifier, an individual account number and a Luhn check digit. Each issuer
+  uses either 19 or 20 digits.
 categories:
 - telecom
 - pii
@@ -10,14 +12,28 @@ langs:
 - common
 is_pii: true
 classification: identifier
-regexp: ^\d{19,20}$
+regexp: ^89\d{17,18}$
 examples:
 - value: '89014103211118510720'
-  description: ICCID with 20 digits (includes check digit)
-- value: '89860012345678901234'
-  description: ICCID example (20 digits)
-- value: '8901260123456789012'
-  description: ICCID with 19 digits
+  description: 20 digits; country code 01 (North American Numbering Plan)
+- value: '8970104603819273550'
+  description: Synthetic 19-digit ICCID with a valid Luhn check digit
+- value: '89445009305718462034'
+  description: Synthetic 20-digit ICCID with a valid Luhn check digit
+- value: '99014103211118510720'
+  valid: false
+  description: Every ICCID starts with the industry identifier 89
+- value: '890141032111185107'
+  valid: false
+  description: 18 digits, too short
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ICCID
+- type: doc
+  url: https://www.itu.int/rec/T-REC-E.118
+translations:
+  ru:
+    name: Идентификатор SIM-карты (ICCID)
+    doc: Серийный номер SIM-карты (UICC), записанный в чип и напечатанный на карте. По рекомендации МСЭ-Т
+      E.118 состоит из отраслевого идентификатора 89 (электросвязь), кода страны, кода эмитента, номера
+      карты и контрольной цифры по алгоритму Луна. Обычно содержит 19 или 20 цифр.

@@ -1,0 +1,34 @@
+id: supi
+name: Subscription Permanent Identifier (SUPI) of a 5G network
+status: draft
+doc: Permanent identifier of a subscriber in a 5G core network (3GPP TS 23.003). The service APIs of the
+  5G core (3GPP TS 29.571) write it as a string with a type prefix, imsi- followed by an IMSI or nai-
+  followed by a network access identifier; gci- and gli- mark identifiers of wireline access. In radio
+  signalling the SUPI is sent only in concealed form (SUCI).
+categories:
+- telecom
+- pii
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^(?:imsi-\d{5,15}|nai-\S+|gci-\S+|gli-\S+)$
+examples:
+- value: imsi-310150123456789
+  description: SUPI of type IMSI
+- value: imsi-460001357924680
+  description: SUPI of type IMSI
+- value: '310150123456789'
+  valid: false
+  description: A bare IMSI without the type prefix
+links:
+- type: doc
+  url: https://www.3gpp.org/DynaReport/23003.htm
+- type: doc
+  url: https://www.3gpp.org/DynaReport/29571.htm
+translations:
+  ru:
+    name: Постоянный идентификатор подписки (SUPI) в сети 5G
+    doc: Постоянный идентификатор абонента в ядре сети 5G (3GPP TS 23.003). В сервисных API ядра 5G (3GPP
+      TS 29.571) записывается строкой с префиксом типа — imsi- и IMSI или nai- и сетевой идентификатор
+      доступа. По радиоканалу передаётся только в скрытом виде (SUCI).

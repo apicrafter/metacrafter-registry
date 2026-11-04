@@ -5,6 +5,7 @@ doc: Telephone number in standard format (RFC3966), without 'tel:' prefix
 categories:
 - pii
 - common
+- telecom
 langs:
 - common
 is_pii: true

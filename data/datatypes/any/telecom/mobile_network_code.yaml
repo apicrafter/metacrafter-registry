@@ -1,0 +1,31 @@
+id: mobile_network_code
+name: Mobile network code (MNC)
+status: draft
+doc: Two- or three-digit code of ITU-T Recommendation E.212 that identifies a mobile network within its
+  mobile country code (mobile_country_code). The number of digits is significant, so 01 and 001 are different
+  codes; the same MNC means different networks under different country codes.
+categories:
+- telecom
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{2,3}$
+examples:
+- value: '150'
+  description: Three-digit MNC, used with MCC 310 (United States)
+- value: '00'
+  description: Two-digit MNC, used with MCC 460 (China)
+- value: '1500'
+  valid: false
+  description: Four digits, too long
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Mobile_country_code
+- type: doc
+  url: https://www.itu.int/rec/T-REC-E.212
+translations:
+  ru:
+    name: Код мобильной сети (MNC)
+    doc: Двух- или трёхзначный код по рекомендации МСЭ-Т E.212, обозначающий мобильную сеть в пределах
+      мобильного кода страны (MCC). Количество цифр значимо, поэтому 01 и 001 — разные коды.

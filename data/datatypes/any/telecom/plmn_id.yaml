@@ -1,0 +1,35 @@
+id: plmn_id
+name: Public land mobile network identifier (PLMN ID, MCC+MNC)
+status: draft
+doc: Identifier of a mobile network operator's network that joins the three-digit mobile country code
+  and the two- or three-digit mobile network code, for example 310150 or 310-150. SIM cards, phones and
+  network logs use it to name the home and the serving network, and it forms the first five or six digits
+  of an IMSI (3GPP TS 23.003).
+categories:
+- telecom
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[02-79]\d{2}-?\d{2,3}$
+examples:
+- value: '310150'
+  description: MCC 310 (United States), MNC 150
+- value: '46000'
+  description: MCC 460 (China), MNC 00
+- value: 310-150
+  description: With a hyphen between MCC and MNC, as in 3GPP service APIs
+- value: '3101'
+  valid: false
+  description: Four digits, too short for an MCC and an MNC
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Public_land_mobile_network
+- type: doc
+  url: https://www.3gpp.org/DynaReport/23003.htm
+translations:
+  ru:
+    name: Идентификатор сети подвижной связи (PLMN ID, MCC+MNC)
+    doc: Идентификатор сети мобильного оператора из трёхзначного мобильного кода страны и двух- или трёхзначного
+      кода сети, например 310150 или 310-150. Используется в SIM-картах, телефонах и журналах сети для
+      обозначения домашней и обслуживающей сети и образует первые пять или шесть цифр IMSI.

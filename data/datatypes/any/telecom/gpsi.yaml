@@ -1,0 +1,33 @@
+id: gpsi
+name: Generic Public Subscription Identifier (GPSI) of a 5G network
+status: draft
+doc: Public identifier of a 5G subscription that is used outside the 3GPP system, unlike the SUPI (3GPP
+  TS 23.003). The service APIs of the 5G core (3GPP TS 29.571) write it as msisdn- followed by an MSISDN,
+  or extid- followed by an external identifier of the form local-id@domain.
+categories:
+- telecom
+- pii
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^(?:msisdn-\d{5,15}|extid-[^@\s]+@[^@\s]+)$
+examples:
+- value: msisdn-447700900123
+  description: GPSI of type MSISDN; 07700 900000 to 900999 are reserved by Ofcom for drama
+- value: extid-sensor42@iot.example.com
+  description: GPSI of type external identifier
+- value: '447700900123'
+  valid: false
+  description: A bare MSISDN without the type prefix
+links:
+- type: doc
+  url: https://www.3gpp.org/DynaReport/23003.htm
+- type: doc
+  url: https://www.3gpp.org/DynaReport/29571.htm
+translations:
+  ru:
+    name: Общий публичный идентификатор подписки (GPSI) в сети 5G
+    doc: Публичный идентификатор подписки 5G, который используется за пределами системы 3GPP, в отличие
+      от SUPI (3GPP TS 23.003). В сервисных API ядра 5G записывается как msisdn- и MSISDN или extid- и
+      внешний идентификатор вида local-id@domain.

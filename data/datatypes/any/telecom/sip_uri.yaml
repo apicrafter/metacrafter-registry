@@ -1,0 +1,41 @@
+id: sip_uri
+name: SIP URI
+status: draft
+doc: Address of a user, a phone or a service in the Session Initiation Protocol (RFC 3261), used for voice
+  over IP, video calls and instant messaging. It has the form sip:user@host or, for secure transport,
+  sips:user@host; the user part may be a phone number, and parameters and headers may follow the host.
+categories:
+- telecom
+- internet
+- pii
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^sips?:(?:[^\s@]+@)?(?:[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?|\[[0-9A-Fa-f:.]+\])(?::\d{1,5})?(?:[;?]\S*)?$
+examples:
+- value: sip:alice@atlanta.com
+  description: Example from RFC 3261
+- value: sips:alice@atlanta.com?subject=project%20x&priority=urgent
+  description: SIPS URI with headers (RFC 3261)
+- value: sip:+1-212-555-1212:1234@gateway.com;user=phone
+  description: Phone number as the user part (RFC 3261)
+- value: sip:alice@192.0.2.4
+  description: Host given as an IPv4 address (RFC 3261)
+- value: alice@atlanta.com
+  valid: false
+  description: The sip or sips scheme is missing
+- value: tel:+1-201-555-0123
+  valid: false
+  description: A tel URI, not a SIP URI
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc3261
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SIP_URI_scheme
+translations:
+  ru:
+    name: SIP URI
+    doc: Адрес пользователя, телефона или сервиса в протоколе SIP (RFC 3261), который используется в IP-телефонии,
+      видеозвонках и мессенджерах. Имеет вид sip:user@host или, для защищённого соединения, sips:user@host;
+      пользовательской частью может быть номер телефона.

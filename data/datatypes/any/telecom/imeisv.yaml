@@ -1,0 +1,34 @@
+id: imeisv
+name: IMEI with software version number (IMEISV)
+status: draft
+doc: Sixteen-digit variant of the IMEI (imei) that a mobile device of a 3GPP network reports to the network
+  (3GPP TS 23.003). The first 14 digits are the same as in the IMEI, the 8-digit Type Allocation Code
+  and the 6-digit serial number; the last two digits are the software version number (SVN) instead of
+  a check digit. It is often written as AA-BBBBBB-CCCCCC-EE.
+categories:
+- telecom
+- pii
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^(?:\d{16}|\d{2}-\d{6}-\d{6}-\d{2})$
+examples:
+- value: 35-209900-176148-23
+  description: IMEISV of the IMEI 35-209900-176148-1 (Wikipedia)
+- value: '3520990017614823'
+  description: The same IMEISV without separators
+- value: '352099001761481'
+  valid: false
+  description: A 15-digit IMEI with a check digit, not an IMEISV
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity
+- type: doc
+  url: https://www.3gpp.org/DynaReport/23003.htm
+translations:
+  ru:
+    name: IMEI с номером версии ПО (IMEISV)
+    doc: Шестнадцатизначный вариант IMEI, который мобильное устройство сети 3GPP сообщает сети (3GPP TS
+      23.003). Первые 14 цифр совпадают с IMEI (код типа устройства и серийный номер), последние две —
+      номер версии программного обеспечения (SVN) вместо контрольной цифры.
