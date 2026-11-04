@@ -20,3 +20,6 @@ examples:
 links:
 - type: doc
   url: https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-identifiers.html
+translations:
+  ru:
+    name: Идентификатор аккаунта AWS

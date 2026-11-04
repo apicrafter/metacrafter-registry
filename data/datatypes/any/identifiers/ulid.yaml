@@ -1,10 +1,44 @@
 id: ulid
-name: ULID (Universally Unique Lexicographically Sortable Identifier) by field name
-status: draft
-doc: ULID (Universally Unique Lexicographically Sortable Identifier) by field name identifier
+name: ULID (Universally Unique Lexicographically Sortable Identifier)
+status: stable
+doc: 128-bit identifier from the ULID specification. The first 48 bits are the Unix time in milliseconds
+  and the other 80 bits are random, so values sort by creation time. The canonical form is 26 characters
+  of Crockford's Base32 (digits and uppercase letters without I, L, O and U), 10 for the time and 16 for
+  the randomness. The first character is 0 to 7, because 26 characters hold 130 bits and the largest ULID
+  is 7ZZZZZZZZZZZZZZZZZZZZZZZZZ. The specification calls ULIDs case-insensitive; the regexp accepts the
+  canonical uppercase form. A ULID has the same size as a UUID and is often stored in a UUID column.
 categories:
 - identifiers
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+regexp: ^[0-7][0-9A-HJKMNP-TV-Z]{25}$
+examples:
+- value: 01ARZ3NDEKTSV4RRFFQ69G5FAV
+  description: Example of the ULID specification, created 2016-07-30
+- value: 01AN4Z07BY79KA1307SR9X4MV3
+  description: Example of the timestamp and randomness parts in the ULID specification
+- value: 7ZZZZZZZZZZZZZZZZZZZZZZZZZ
+  description: Largest valid ULID
+- value: 8ZZZZZZZZZZZZZZZZZZZZZZZZZ
+  valid: false
+  description: Exceeds 128 bits
+- value: 01ARZ3NDEKTSV4RRFFQ69G5FAU
+  valid: false
+  description: The letter U is not in Crockford's Base32
+- value: 01ARZ3NDEKTSV4RRFFQ69G5FA
+  valid: false
+  description: 25 characters
+links:
+- type: doc
+  url: https://github.com/ulid/spec
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q114247076
+- type: doc
+  url: https://www.crockford.com/base32.html
+translations:
+  ru:
+    name: ULID (универсальный уникальный лексикографически сортируемый идентификатор)
+    doc: 128-битный идентификатор из 48 бит времени Unix в миллисекундах и 80 случайных бит. Записывается
+      26 символами Base32 Крокфорда; значения сортируются по времени создания.

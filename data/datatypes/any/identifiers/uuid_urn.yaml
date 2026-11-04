@@ -1,0 +1,31 @@
+id: uuid_urn
+name: UUID as a URN (urn:uuid)
+status: draft
+doc: A UUID written as a URN in the uuid namespace, urn:uuid:<UUID>, as RFC 9562 defines. It is used where
+  an identifier must be a URI, for example as the id of Atom feeds and entries (RFC 4287), in RDF data
+  and as the identifier of EPUB packages. The urn and uuid parts are case-insensitive.
+semantic_type: uuid
+langs:
+- common
+regexp: ^[Uu][Rr][Nn]:[Uu][Uu][Ii][Dd]:[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$
+examples:
+- value: urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+  description: Example URN of RFC 9562 (Figure 4)
+- value: urn:uuid:6e8bc430-9c3a-11d9-9669-0800200c9a66
+  description: Example of the uuid namespace in the Wikipedia article on URNs
+- value: urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a
+  description: Entry id in the example feed of RFC 4287 (Atom)
+- value: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+  valid: false
+  description: Bare UUID without the URN prefix, see uuid
+- value: urn:uuid:{f81d4fae-7dec-11d0-a765-00a0c91e6bf6}
+  valid: false
+  description: Braces are not part of the URN form
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc9562
+- type: doc
+  url: https://www.iana.org/assignments/urn-namespaces/urn-namespaces.xhtml
+translations:
+  ru:
+    name: UUID в виде URN (urn:uuid)

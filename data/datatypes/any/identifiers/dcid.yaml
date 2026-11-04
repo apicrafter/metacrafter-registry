@@ -17,6 +17,9 @@ examples:
   description: India
 - value: GiniIndex_EconomicActivity
   description: Gini coefficient
+- value: geoId 06
+  valid: false
+  description: Spaces are not allowed
 mappings:
   wikidata: P10730
 links:
@@ -24,3 +27,6 @@ links:
   url: https://docs.datacommons.org/bigquery/unique_identifiers.html
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P10730
+translations:
+  ru:
+    name: Уникальный идентификатор Data Commons (DCID)

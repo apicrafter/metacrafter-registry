@@ -1,0 +1,32 @@
+id: cuid
+name: CUID (collision-resistant unique identifier)
+status: draft
+doc: Identifier of the cuid library, written as the letter c followed by 24 lowercase base36 characters
+  that encode a timestamp, a counter, a host fingerprint and random data. Prisma generates it with @default(cuid()).
+  Its authors deprecated it for security reasons, since parts of it can be guessed, and recommend Cuid2
+  (cuid2) instead. The 25-character length holds while the base36 timestamp has 8 digits, which lasts
+  until 2059.
+categories:
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^c[0-9a-z]{24}$
+examples:
+- value: cjld2cjxh0000qzrmn831i7rn
+  description: Example of the cuid README
+- value: cjld2cyuq0000t3rmniod1foy
+  description: Example of the cuid README
+- value: tz4a98xxat96iws9zmbrgj3a
+  valid: false
+  description: Cuid2 of the default length, see cuid2
+- value: Cjld2cjxh0000qzrmn831i7rn
+  valid: false
+  description: Uppercase letter
+links:
+- type: doc
+  url: https://github.com/paralleldrive/cuid
+translations:
+  ru:
+    name: Идентификатор CUID

@@ -1,10 +1,31 @@
 id: snowflake_id
-name: Snowflake ID by field name
+name: Snowflake ID
 status: draft
-doc: Snowflake ID by field name identifier
+doc: 64-bit identifier scheme that Twitter introduced in 2010 and that X, Discord, Instagram, Mastodon
+  and other services use, each with its own epoch and bit layout. In the Twitter form the highest bit
+  is 0, then come 41 bits of milliseconds since the epoch 1288834974657 (4 November 2010), 10 bits of
+  machine ID and a 12-bit sequence number, so IDs sort by creation time. Discord uses the same layout
+  with the epoch 1420070400000 (1 January 2015). Values are written as decimal numbers, today of 18 or
+  19 digits, and APIs often send them as strings because JavaScript numbers cannot hold 64-bit integers
+  exactly. Any large integer looks the same, so there is no regexp; detect Snowflake IDs by field name.
 categories:
 - identifiers
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+examples:
+- value: '1888944671579078978'
+  description: Tweet ID from the Wikipedia article, created 2025-02-10 13:34:39.256 UTC
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Snowflake_ID
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q104889222
+- type: doc
+  url: https://docs.discord.com/developers/reference#snowflakes
+translations:
+  ru:
+    name: Идентификатор Snowflake
+    doc: 64-битный идентификатор, введённый Twitter. Он состоит из метки времени в миллисекундах, номера
+      машины и порядкового номера. Его используют X, Discord, Instagram, Mastodon и другие сервисы.
