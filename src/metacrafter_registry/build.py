@@ -58,13 +58,11 @@ def build_info(repo_dir: Path) -> BuildInfo:
     """Version metadata derived from the commit, so rebuilds are reproducible."""
     sha = os.environ.get("GITHUB_SHA") or _git(["rev-parse", "HEAD"], repo_dir)
     generated_at = None
-    epoch = os.environ.get("SOURCE_DATE_EPOCH")
-    if epoch:
+    # Unix seconds, not ISO text: GitHub merge commits print "...Z", which
+    # datetime.fromisoformat() rejects before Python 3.11.
+    epoch = os.environ.get("SOURCE_DATE_EPOCH") or _git(["log", "-1", "--format=%ct"], repo_dir)
+    if epoch and epoch.strip().isdigit():
         generated_at = datetime.fromtimestamp(int(epoch), tz=timezone.utc).isoformat()
-    else:
-        commit_time = _git(["log", "-1", "--format=%cI"], repo_dir)
-        if commit_time:
-            generated_at = datetime.fromisoformat(commit_time).astimezone(timezone.utc).isoformat()
     return BuildInfo(version=__version__, git_sha=sha, generated_at=generated_at)
 
 

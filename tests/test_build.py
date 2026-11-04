@@ -86,6 +86,21 @@ def test_internal_links_with_project_base_path(mini_data, tmp_path):
     assert [str(b) for b in broken] == []
 
 
+def test_build_info_uses_commit_time(monkeypatch, tmp_path):
+    from metacrafter_registry import build as build_module
+
+    # A GitHub merge commit; its ISO date ends in "Z", which Python 3.10 cannot parse.
+    monkeypatch.delenv("SOURCE_DATE_EPOCH", raising=False)
+    monkeypatch.setattr(
+        build_module, "_git", lambda args, cwd: "1793797539" if "--format=%ct" in args else "abc"
+    )
+    info = build_module.build_info(tmp_path)
+    assert info.generated_at == "2026-11-04T13:05:39+00:00"
+
+    monkeypatch.setenv("SOURCE_DATE_EPOCH", "0")
+    assert build_module.build_info(tmp_path).generated_at == "1970-01-01T00:00:00+00:00"
+
+
 def test_full_site_build_is_reproducible(repo_sources, tmp_path):
     from conftest import DATA
 
