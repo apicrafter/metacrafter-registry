@@ -1,24 +1,25 @@
+id: oid
+name: ITU/ISO/IEC object identifier (OID)
+status: stable
+doc: In computing, object identifiers or OIDs are an identifier mechanism standardized by the International
+  Telecommunication Union (ITU) and ISO/IEC for naming any object, concept, or "thing" with a globally
+  unambiguous persistent name.[1]
 categories:
 - objectids
-doc: 'In computing, object identifiers or OIDs are an identifier mechanism standardized
-  by the International Telecommunication Union (ITU) and ISO/IEC for naming any object,
-  concept, or "thing" with a globally unambiguous persistent name.[1] '
-id: oid
-is_pii: 'False'
 langs:
 - common
-links:
-- type: wikipedia
-  url: https://en.wikipedia.org/wiki/Object_identifier
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P3743
-name: ITU/ISO/IEC object identifier (OID)
-wikidata_property: P3743
+is_pii: false
+classification: identifier
 regexp: '[0123](\.\d+)*'
 examples:
 - value: 1.3.6.1.4.1.343
   description: Intel
 - value: 2.5.4.87
   description: Uniform Resource Locator
-classification: identifier
-translations: {}
+mappings:
+  wikidata: P3743
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Object_identifier
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3743

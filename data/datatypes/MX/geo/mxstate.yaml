@@ -1,0 +1,15 @@
+id: mxstate
+name: Mexican state (province)
+status: stable
+doc: Mexican state/province by name or code
+categories:
+- geo
+country:
+- MX
+langs:
+- es
+is_pii: false
+classification: categorical
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_states_of_Mexico

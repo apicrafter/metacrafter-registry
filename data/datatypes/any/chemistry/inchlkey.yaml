@@ -1,31 +1,31 @@
+id: inchlkey
+name: International Chemical Identifier Key (InChIKey)
+status: stable
+doc: International Chemical Identifier
 categories:
 - chemistry
-doc: International Chemical Identifier
-id: inchlkey
-is_pii: 'False'
 langs:
 - common
-links:
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P235
-  - type: bioschemas
-    url:  https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02#inChIKey
-  - type: schema.org
-    url: https://schema.org/inChIKey
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/International_Chemical_Identifier
-name: International Chemical Identifier Key (InChIKey)
-wikidata_property: P235
+is_pii: false
+classification: identifier
 regexp: '[A-Z]{14}-[A-Z]{10}-[A-Z]'
 examples:
-  - value: 'LFQSCWFLJHTTHZ-UHFFFAOYSA-N'
-    description: ethanol
-  - value: 'PCHJSUWPFVWCPO-UHFFFAOYSA-N'
-    description: gold
+- value: LFQSCWFLJHTTHZ-UHFFFAOYSA-N
+  description: ethanol
+- value: PCHJSUWPFVWCPO-UHFFFAOYSA-N
+  description: gold
+mappings:
+  wikidata: P235
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P235
+- type: bioschemas
+  url: https://bioschemas.org/types/MolecularEntity/0.3-RELEASE-2019_09_02#inChIKey
+- type: schema.org
+  url: https://schema.org/inChIKey
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Chemical_Identifier
 translations:
   ru:
-    doc: 'Международный текстовый химический идентификатор (ключ)'
-    name: 'Международный текстовый химический идентификатор (ключ)'
-classification: identifier
-
-
+    name: Международный текстовый химический идентификатор (ключ)
+    doc: Международный текстовый химический идентификатор (ключ)

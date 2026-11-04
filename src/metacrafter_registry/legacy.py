@@ -54,17 +54,32 @@ def build_datatypes(sources: RegistrySources) -> dict[str, dict[str, Any]]:
     processed: dict[str, dict[str, Any]] = {}
     for rid in sorted(raw):
         record = copy.deepcopy(raw[rid])
+        record.pop("patterns", None)  # derived below
         if "semantic_type" in record:
             parent = raw.get(str(record["semantic_type"]), {})
             record["type"] = "pattern"
-            record["is_pii"] = _as_bool(parent.get("is_pii"))
+            # v2: a pattern inherits what it does not declare
+            record["is_pii"] = _as_bool(record.get("is_pii", parent.get("is_pii")))
+            if "categories" not in record and parent.get("categories"):
+                record["categories"] = list(parent["categories"])
             if "classification" not in record and "classification" in parent:
                 record["classification"] = parent["classification"]
         else:
             record["type"] = "datatype"
             record["is_pii"] = _as_bool(record.get("is_pii"))
-        if "categories" in record:
-            record["categories"] = _resolve(record["categories"], sources.categories)
+        if isinstance(record.get("parent"), str):  # v2 id string -> legacy {type: id}
+            record["parent"] = {"type": record["parent"]}
+        wikidata = (record.get("mappings") or {}).get("wikidata")
+        if wikidata and "wikidata_property" not in record:
+            record["wikidata_property"] = wikidata
+        for key, default in (
+            ("categories", []),
+            ("links", []),
+            ("examples", []),
+            ("translations", {}),
+        ):
+            record.setdefault(key, default)  # present on every 1.02 record
+        record["categories"] = _resolve(record["categories"], sources.categories)
         if "country" in record:
             record["country"] = _resolve(record["country"], sources.countries)
         if "langs" in record:
@@ -74,7 +89,14 @@ def build_datatypes(sources: RegistrySources) -> dict[str, dict[str, Any]]:
     for rid, record in processed.items():
         if rid in patterns_of:
             record["patterns"] = [copy.deepcopy(processed[pid]) for pid in patterns_of[rid]]
-    return processed
+
+    # Retired IDs keep resolving: an alias entry is the canonical record under the old id.
+    aliases: dict[str, dict[str, Any]] = {}
+    for rid, record in processed.items():
+        for alias in raw[rid].get("aliases") or []:
+            aliases[str(alias)] = {**copy.deepcopy(record), "id": str(alias), "alias_of": rid}
+    processed.update(aliases)
+    return dict(sorted(processed.items()))
 
 
 def build_tools(sources: RegistrySources) -> dict[str, dict[str, Any]]:

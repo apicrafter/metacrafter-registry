@@ -1,20 +1,20 @@
+id: wbregion
+name: World Bank region
+status: stable
+doc: World Bank regions are territorial classification of countries
 categories:
 - geo
-doc: World Bank regions are territorial classification of countries
-id: wbregion
-is_pii: 'False'
 langs:
 - common
-links:
-- type: other
-  url: https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups
-wikidata_property: P30
+is_pii: false
+classification: categorical
 examples:
 - value: South Asia
   description: South Asia
 - value: Europe & Central Asia
   description: Europe & Central Asia
-name: World Bank region
-classification: categorical
-translations: {}
-regexp: ''
+mappings:
+  wikidata: P30
+links:
+- type: other
+  url: https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups

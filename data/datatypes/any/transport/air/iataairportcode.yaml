@@ -1,24 +1,24 @@
+id: iataairportcode
+name: IATA Airport code
+status: stable
+doc: An IATA airport code, also known as an IATA location identifier, IATA station code, or simply a location
+  identifier, is a three-letter geocode designating many airports and metropolitan areas around the world,
+  defined by the International Air Transport Association (IATA)
+semantic_type: airport
 categories:
 - transport
-doc: An IATA airport code, also known as an IATA location identifier, IATA station
-  code, or simply a location identifier, is a three-letter geocode designating many
-  airports and metropolitan areas around the world, defined by the International Air
-  Transport Association (IATA)
-id: iataairportcode
 langs:
 - common
-links:
-- type: wikipedia
-  url: https://en.wikipedia.org/wiki/IATA_airport_code
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P238
-name: IATA Airport code
-semantic_type: airport
-wikidata_property: P238
 regexp: '[A-Z0-9]{3}'
 examples:
 - value: YXK
   description: Rimouski Airport
 - value: PAR
   description: Paris
-translations: {}
+mappings:
+  wikidata: P238
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/IATA_airport_code
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P238

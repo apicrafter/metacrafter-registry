@@ -1,16 +1,13 @@
 id: krtaxnumber
 name: Korean tax number by field name
+status: stable
 doc: Korean tax number by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - finances
 country:
 - KR
 langs:
 - ko
-is_pii: 'False'
+is_pii: false
+classification: identifier
 regexp: ^[0-9]{9,15}$
-links: []

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://registry.apicrafter.io/schema/tool.schema.json",
+  "title": "Metacrafter Registry tool",
+  "description": "Source YAML record of a tool (data/tools/**/<id>.yaml) that supports registry datatypes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "category", "doc"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9_-]+$"},
+    "name": {"type": "string", "minLength": 1},
+    "category": {"enum": ["detector", "pii", "etl", "catalogs", "other"]},
+    "doc": {"type": "string", "minLength": 1},
+    "website": {"type": "string", "pattern": "^https?://"},
+    "supported_types": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  }
+}

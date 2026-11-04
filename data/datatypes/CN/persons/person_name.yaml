@@ -1,15 +1,12 @@
 id: person_name
 name: Chinese person name by known name
+status: draft
 doc: Chinese person name by known name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - persons
 country:
 - CN
 langs:
 - zh
-is_pii: 'True'
-links: []
+is_pii: true
+classification: identifier

@@ -1,26 +1,26 @@
+id: orcid
+name: Open Researcher and Contributor ID (ORCID)
+status: stable
+doc: The ORCID, Open Researcher and Contributor ID) is a nonproprietary alphanumeric code to uniquely
+  identify authors and contributors of scholarly communication as well as ORCIDs website and services
+  to look up authors and their bibliographic output (and other user-supplied pieces of information).
 categories:
 - science
 - persons
-doc: The ORCID, Open Researcher and Contributor ID) is a nonproprietary alphanumeric
-  code to uniquely identify authors and contributors of scholarly communication as
-  well as ORCIDs website and services to look up authors and their bibliographic output
-  (and other user-supplied pieces of information).
-id: orcid
-is_pii: 'False'
 langs:
 - common
-links:
-- type: wikipedia
-  url: https://en.wikipedia.org/wiki/ORCID
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P496
-name: Open Researcher and Contributor ID (ORCID)
+is_pii: false
+classification: identifier
 regexp: 0000-000(1-[5-9]|2-[0-9]|3-[0-4])\d{3}-\d{3}[\dX]
-wikidata_property: P496
 examples:
 - value: 0000-0002-1003-5675
   description: Mike Tailor
 - value: 0000-0002-1825-0097
   description: Josiah S. Carberry
-classification: identifier
-translations: {}
+mappings:
+  wikidata: P496
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ORCID
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P496

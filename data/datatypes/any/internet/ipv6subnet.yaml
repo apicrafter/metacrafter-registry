@@ -1,19 +1,20 @@
+id: ipv6subnet
+name: IPv6 routing prefix (subnet)
+status: draft
+doc: Range of IPv6 addresses
 categories:
 - internet
-doc: Range of IPv6 addresses
-id: ipv6subnet
-is_pii: 'True'
 langs:
 - common
-links:
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P3793
-name: IPv6 routing prefix (subnet)
-wikidata_property: P3793
+is_pii: true
 regexp: '[\d:a-f\/]{4,30}'
 examples:
 - value: 2001:610::/29
   description: SURFNet
 - value: 2001:630:440::/44
   description: University of Oxford
-translations: {}
+mappings:
+  wikidata: P3793
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3793

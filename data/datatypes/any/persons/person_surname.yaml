@@ -1,18 +1,13 @@
+id: person_surname
+name: Person surname/lastname
+status: stable
+doc: Last name of the person. For example, Smith or Ivanova
 categories:
 - persons
 - pii
-doc: Last name of the person. For example, Smith or Ivanova
-id: person_surname
-is_pii: 'True'
 langs:
 - common
+is_pii: true
 links:
 - type: schema.org
   url: https://schema.org/familyName
-name: Person surname/lastname
-patterns:
-- russurname
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

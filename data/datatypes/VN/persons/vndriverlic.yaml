@@ -1,10 +1,7 @@
 id: vndriverlic
 name: Vietnamese driver license by field name
+status: stable
 doc: Vietnamese driver license by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - pii
 - persons
@@ -12,6 +9,6 @@ country:
 - VN
 langs:
 - vi
-is_pii: 'True'
+is_pii: true
+classification: identifier
 regexp: ^[A-Z0-9]{6,12}$
-links: []

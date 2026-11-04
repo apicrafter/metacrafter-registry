@@ -1,16 +1,13 @@
 id: krbankaccount
 name: Korean bank account by field name
+status: stable
 doc: Korean bank account by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - finances
 country:
 - KR
 langs:
 - ko
-is_pii: 'False'
+is_pii: false
+classification: identifier
 regexp: ^[0-9]{8,20}$
-links: []

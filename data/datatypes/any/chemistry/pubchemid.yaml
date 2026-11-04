@@ -1,23 +1,23 @@
+id: pubchemid
+name: PubChem Substance ID (SID)
+status: stable
+doc: PubChem is a database of chemical molecules and their activities against biological assays. The system
+  is maintained by the National Center for Biotechnology Information (NCBI), a component of the National
+  Library of Medicine, which is part of the United States National Institutes of Health (NIH).
 categories:
 - chemistry
-doc: PubChem is a database of chemical molecules and their activities against biological
-  assays. The system is maintained by the National Center for Biotechnology Information
-  (NCBI), a component of the National Library of Medicine, which is part of the United
-  States National Institutes of Health (NIH).
-id: pubchemid
-is_pii: 'False'
 langs:
 - common
+is_pii: false
+classification: identifier
+regexp: '[1-9]\d*'
+examples:
+- value: '135307179'
+  description: zeolite Y
+mappings:
+  wikidata: P2153
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/PubChem
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P2153
-name: PubChem Substance ID (SID)
-wikidata_property: P2153
-regexp: '[1-9]\d*'
-examples:
-- value: '135307179'
-  description: zeolite Y
-classification: identifier
-translations: {}

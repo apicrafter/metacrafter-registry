@@ -1,14 +1,10 @@
+id: ukurn
+name: UK school URN
+status: draft
+doc: Datatype for 'UK school URN' (ukurn) from rules in context 'education'.
 categories:
 - education
-id: ukurn
-is_pii: 'False'
 langs:
 - en
-name: UK school URN
-doc: Datatype for 'UK school URN' (ukurn) from rules in context 'education'.
+is_pii: false
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

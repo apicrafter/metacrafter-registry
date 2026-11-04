@@ -1,15 +1,12 @@
+id: yearmonth
+name: Year and month
+status: stable
+doc: Defines a part of a date - the year and month. Example YYYY-MM.
 categories:
 - datetime
-doc: Defines a part of a date - the year and month. Example YYYY-MM.
-id: yearmonth
-is_pii: 'False'
+langs:
+- common
+is_pii: false
 links:
 - type: other
   url: https://ddialliance.org/Specification/DDI-CV/DateType_1.1.html
-langs:
-- common
-name: Year and month
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

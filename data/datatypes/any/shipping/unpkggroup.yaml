@@ -1,0 +1,26 @@
+id: unpkggroup
+name: UN Packaging group
+status: stable
+doc: Packaging code according to UN transportation rules
+categories:
+- transport
+- chemistry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: (I\/II)|(II\/III)|I{1,3}
+examples:
+- value: I
+  description: sodium azide
+- value: II
+  description: hydrofluoric acid
+mappings:
+  wikidata: P876
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P876
+translations:
+  ru:
+    name: Код группы упаковки ООН
+    doc: Код группы упаковки ООН

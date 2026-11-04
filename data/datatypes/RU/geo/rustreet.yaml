@@ -1,0 +1,11 @@
+id: rustreet
+name: Street name (Russian)
+status: draft
+doc: Street name writtern in Russian language
+semantic_type: street
+categories:
+- geo
+country:
+- RU
+langs:
+- ru

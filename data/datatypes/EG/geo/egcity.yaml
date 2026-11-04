@@ -1,21 +1,17 @@
+id: egcity
+name: Egyptian City Name
+status: draft
+doc: Egyptian city name
 categories:
 - geo
 country:
 - EG
-doc: Egyptian city name
-id: egcity
-is_pii: 'False'
 langs:
 - ar
-links: []
-name: Egyptian City Name
-regexp: ''
-examples:
-- value: "Cairo"
-  description: Example Egyptian city
-- value: "Alexandria"
-  description: Example Egyptian city
+is_pii: false
 classification: categorical
-wikidata_property: ''
-translations: {}
-
+examples:
+- value: Cairo
+  description: Example Egyptian city
+- value: Alexandria
+  description: Example Egyptian city

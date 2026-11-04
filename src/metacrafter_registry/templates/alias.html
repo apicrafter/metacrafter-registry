@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ alias }} → {{ object.id }}{% endblock %}
+{% block description %}{{ alias }} is a former ID of {{ object.name }} ({{ object.id }}).{% endblock %}
+{% block head %}
+  <meta http-equiv="refresh" content="0; url={{ base }}/datatype/{{ object.id }}">
+  <meta name="robots" content="noindex">
+{% endblock %}
+{% block content %}
+<h1>Moved: <code>{{ alias }}</code></h1>
+<p><code>{{ alias }}</code> is a former ID. The record is now <a href="{{ base }}/datatype/{{ object.id }}">{{ object.name }} (<code>{{ object.id }}</code>)</a>.</p>
+<p class="small muted">The old ID keeps working in <code>/datatype/{{ alias }}.json</code> and <code>/registry.json</code>; see <a href="{{ base }}/api/v1/aliases.json">aliases.json</a>.</p>
+{% endblock %}

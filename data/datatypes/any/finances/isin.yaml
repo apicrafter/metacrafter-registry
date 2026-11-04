@@ -1,25 +1,26 @@
+id: isin
+name: International Securities Identification Number
+status: stable
+doc: An International Securities Identification Number (ISIN) uniquely identifies a security. Its structure
+  is defined in ISO 6166. The ISIN code is a 12-character alphanumeric code that serves for uniform identification
+  of a security through normalization of the assigned National Number, where one exists, at trading and
+  settlement.
 categories:
 - finances
-doc: An International Securities Identification Number (ISIN) uniquely identifies
-  a security. Its structure is defined in ISO 6166. The ISIN code is a 12-character
-  alphanumeric code that serves for uniform identification of a security through normalization
-  of the assigned National Number, where one exists, at trading and settlement.
-id: isin
-is_pii: 'False'
 langs:
 - common
-links:
-- type: wikipedia
-  url: https://en.wikipedia.org/wiki/International_Securities_Identification_Number
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P946
-name: International Securities Identification Number
-wikidata_property: P946
+is_pii: false
+classification: identifier
 regexp: '[A-Z]{2}[A-Z\d]{10}'
 examples:
 - value: RU0007661625
   description: Gazprom
 - value: NL0000235190
   description: Airbus Group
-classification: identifier
-translations: {}
+mappings:
+  wikidata: P946
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Securities_Identification_Number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P946

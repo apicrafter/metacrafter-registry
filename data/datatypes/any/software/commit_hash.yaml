@@ -1,12 +1,10 @@
 id: commit_hash
 name: Git commit hash by field name
+status: draft
 doc: Git commit hash by field name
-langs:
-- en
 categories:
 - software
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

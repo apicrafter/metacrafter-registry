@@ -1,0 +1,12 @@
+id: ennationality
+name: Person nationality in English
+status: stable
+doc: Nationality of the person written in English
+semantic_type: nationality
+langs:
+- common
+examples:
+- value: Belorussian
+  description: Belorussian nationality
+- value: Spanish
+  description: Spanish nationality

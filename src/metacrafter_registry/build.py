@@ -129,12 +129,13 @@ def _write_api_v1(out: Path, reg: Registry, site_url: str, info: BuildInfo) -> N
     _write(api / "categories.json", _dump(list(reg.categories.values()), indent=2))
     _write(api / "countries.json", _dump(list(reg.countries.values()), indent=2))
     _write(api / "languages.json", _dump(list(reg.langs.values()), indent=2))
+    _write(api / "aliases.json", _dump(reg.aliases, indent=2))
     _write(api / "openapi.json", _dump(build_openapi(site_url, info.version), indent=2))
 
 
 def _search_text(record: dict[str, Any]) -> str:
     names = [t.get("name", "") for t in record.get("translations", {}).values()]
-    parts = [record["id"], record["name"], *names, record["doc"][:200]]
+    parts = [record["id"], *record.get("aliases", []), record["name"], *names, record["doc"][:200]]
     return " ".join(p for p in parts if p).lower()
 
 
@@ -149,8 +150,12 @@ def _search_index(reg: Registry) -> list[dict[str, Any]]:
                 "d": doc if len(doc) <= 160 else doc[:157].rstrip() + "…",
                 "k": record["kind"],
                 "p": record["is_pii"],
+                "s": record["status"],
                 "c": " ".join(record.get("categories", []) + record.get("country", [])),
-                "t": " ".join(t.get("name", "") for t in record.get("translations", {}).values()),
+                "t": " ".join(
+                    [*record.get("aliases", [])]
+                    + [t.get("name", "") for t in record.get("translations", {}).values()]
+                ),
             }
         )
     return index
@@ -235,6 +240,16 @@ def _render_site(out: Path, reg: Registry, site_url: str, info: BuildInfo) -> li
             patterns=[reg.datatypes[p] for p in record.get("patterns", [])],
             children=[reg.datatypes[c] for c in record.get("children", [])],
             jsonld=_jsonld(record, site_url),
+        )
+
+    for alias, canonical in reg.aliases.items():
+        render(
+            "alias.html",
+            f"datatype/{alias}.html",
+            None,
+            alias=alias,
+            object=reg.datatypes[canonical],
+            canonical=f"/datatype/{canonical}",
         )
 
     render("category_list.html", "category/index.html", "/category/", section="categories")
@@ -328,6 +343,7 @@ def _write_manifest(
         "api/v1/tools.json",
         "api/v1/tools.jsonl",
         "api/v1/openapi.json",
+        "api/v1/aliases.json",
     ]
     manifest = {
         "name": "metacrafter-registry",
@@ -341,6 +357,8 @@ def _write_manifest(
         "openapi": site_url + "/api/v1/openapi.json",
         "counts": {
             "datatypes": reg.kind_count("datatype"),
+            "draft": sum(1 for r in reg.datatypes.values() if r["status"] == "draft"),
+            "aliases": len(reg.aliases),
             "patterns": reg.kind_count("pattern"),
             "tools": tool_count,
             "categories": sum(1 for c in reg.categories.values() if c["count"]),

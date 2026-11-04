@@ -1,20 +1,19 @@
+id: skype_username
+name: Skype username
+status: draft
+doc: Person username in Skype
+parent: username
 categories:
 - pii
 - persons
 - useraccounts
-doc: Person username in Skype
-id: skype_username
-is_pii: 'True'
-parent:
-  type: username
 langs:
 - common
-name: Skype username
+is_pii: true
+classification: identifier
 regexp: '[a-zA-Z][a-zA-Z0-9_\-\,\.]{5,31}'
-wikidata_property: P2893
+mappings:
+  wikidata: P2893
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P2893
-classification: identifier
-examples: []
-translations: {}

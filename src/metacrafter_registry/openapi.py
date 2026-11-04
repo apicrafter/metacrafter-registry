@@ -81,10 +81,26 @@ SCHEMAS: dict[str, Any] = {
         "type": "object",
         "description": "A semantic datatype, or a pattern (one representation of a datatype). "
         "Optional fields are omitted when empty.",
-        "required": ["id", "kind", "name", "doc", "is_pii", "source", "urls"],
+        "required": ["id", "kind", "status", "name", "doc", "is_pii", "quality", "source", "urls"],
         "properties": {
             "id": {"type": "string"},
             "kind": {"type": "string", "enum": ["datatype", "pattern"]},
+            "status": {
+                "type": "string",
+                "enum": ["draft", "stable", "deprecated"],
+                "description": "draft: not reviewed yet, do not treat as authoritative",
+            },
+            "aliases": {**ID_LIST, "description": "Former ids that resolve to this record"},
+            "replaced_by": {"type": "string"},
+            "checksum": {"type": "string", "description": "Check-digit algorithm name"},
+            "quality": {
+                "type": "object",
+                "required": ["score", "missing"],
+                "properties": {
+                    "score": {"type": "integer", "minimum": 0, "maximum": 100},
+                    "missing": ID_LIST,
+                },
+            },
             "name": {"type": "string"},
             "doc": {"type": "string"},
             "semantic_type": {
@@ -103,8 +119,11 @@ SCHEMAS: dict[str, Any] = {
             "examples": {"type": "array", "items": _ref("Example")},
             "mappings": {
                 "type": "object",
+                "description": "Identifiers of the same concept in other vocabularies",
                 "properties": {"wikidata": {"type": "string", "pattern": "^[PQ][0-9]+$"}},
-                "additionalProperties": True,
+                "additionalProperties": {
+                    "oneOf": [{"type": "string"}, {"type": "array", "items": {"type": "string"}}]
+                },
             },
             "links": {"type": "array", "items": _ref("Link")},
             "translations": {
@@ -141,6 +160,10 @@ SCHEMAS: dict[str, Any] = {
             "id": {"type": "string"},
             "name": {"type": "string"},
             "count": {"type": "integer", "description": "Datatypes and patterns that use it"},
+            "kind": {
+                "type": "string",
+                "description": "country or region; language or special ('common' = any language)",
+            },
             "url": {"type": "string", "format": "uri"},
         },
     },
@@ -243,6 +266,16 @@ def build_openapi(site_url: str, version: str) -> dict[str, Any]:
                 ),
             }
         }
+    paths["/api/v1/aliases.json"] = {
+        "get": {
+            "operationId": "listAliases",
+            "summary": "Retired ids and the canonical id each one resolves to",
+            "responses": _json_response(
+                "Object: alias -> canonical id",
+                {"type": "object", "additionalProperties": {"type": "string"}},
+            ),
+        }
+    }
     paths["/registry.json"] = {
         "get": {
             "operationId": "getLegacyRegistry",

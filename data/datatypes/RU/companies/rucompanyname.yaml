@@ -1,0 +1,9 @@
+id: rucompanyname
+name: Company/business name in Russian
+status: draft
+doc: Russian written company/business name
+semantic_type: orgname
+country:
+- RU
+langs:
+- ru

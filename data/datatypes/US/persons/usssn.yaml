@@ -1,0 +1,19 @@
+id: usssn
+name: US Social Security Number
+status: stable
+doc: In the United States, a Social Security number (SSN) is a nine-digit number issued to U.S. citizens,
+  permanent residents, and temporary (working) residents under section 205(c)(2) of the Social Security
+  Act, codified as 42 U.S.C. § 405(c)(2)
+categories:
+- pii
+- persons
+country:
+- US
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: ([0-9]{3})[- .]([0-9]{2})[- .]([0-9]{4})
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Social_Security_number

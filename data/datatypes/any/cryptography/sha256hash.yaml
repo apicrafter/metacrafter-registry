@@ -1,15 +1,12 @@
+id: sha256hash
+name: SHA256 hash
+status: stable
+doc: SHA256 hash from file or data. Sometimes used as unique id of the data record
 categories:
 - cryptography
-doc: SHA256 hash from file or data. Sometimes used as unique id of the data record
-id: sha256hash
-is_pii: 'False'
 langs:
 - common
+is_pii: false
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SHA-2
-name: SHA256 hash
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

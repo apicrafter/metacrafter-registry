@@ -1,15 +1,12 @@
 id: prefecture
 name: Japanese prefecture by known name
+status: draft
 doc: Japanese prefecture by known name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - geo
 country:
 - JP
 langs:
 - ja
-is_pii: 'False'
-links: []
+is_pii: false
+classification: identifier

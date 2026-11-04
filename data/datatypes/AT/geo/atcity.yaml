@@ -1,0 +1,11 @@
+id: atcity
+name: Austrian city name (in German)
+status: draft
+doc: Austrian city name in German language
+semantic_type: city
+categories:
+- geo
+country:
+- AT
+langs:
+- de

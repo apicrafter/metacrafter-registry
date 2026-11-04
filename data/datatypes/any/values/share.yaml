@@ -1,16 +1,11 @@
+id: share
+name: Share of value
+status: draft
+doc: Share of the part as percentage as float number. Always between 0 and 100 percents.
+parent: percentage
 categories:
 - values
 - common
-doc: Share of the part as percentage as float number. Always between 0 and 100 percents.
-id: share
-is_pii: 'False'
 langs:
 - common
-name: Share of value
-parent:
-  type: percentage
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''
+is_pii: false

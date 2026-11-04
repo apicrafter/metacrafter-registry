@@ -1,0 +1,12 @@
+id: rnfi
+name: Russian government property ID (RNFI)
+status: draft
+doc: Russian government federal property unique ID (RNFI)
+categories:
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier

@@ -1,23 +1,20 @@
+id: chuid
+name: Swiss UID
+status: stable
+doc: Swiss UID (Unternehmens-Identifikationsnummer) - Swiss business identification number
 categories:
 - finances
 country:
 - CH
-doc: Swiss UID (Unternehmens-Identifikationsnummer) - Swiss business identification number
-id: chuid
-is_pii: 'False'
 langs:
 - de
 - fr
 - it
-links: []
-name: Swiss UID
+is_pii: false
+classification: identifier
 regexp: '^CHE-?\d{3}\.?\d{3}\.?\d{3}(?: ?(?:MWST|TVA|IVA))?$'
 examples:
-- value: 'CHE-123.456.788'
+- value: CHE-123.456.788
   description: Swiss UID (valid MOD-11 check digit)
-- value: 'CHE-123.456.788 TVA'
+- value: CHE-123.456.788 TVA
   description: Swiss UID used as VAT number
-classification: identifier
-wikidata_property: ''
-translations: {}
-

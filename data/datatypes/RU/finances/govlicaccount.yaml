@@ -1,0 +1,28 @@
+id: govlicaccount
+name: Personal account for government budgets (Russian Treasury)
+status: stable
+doc: A personal account is an account for use by an individual for that persons own needs. It is a relative
+  term to differentiate them from those accounts for business or corporate use. Used by Russian treasury
+  for organizations accounts.
+categories:
+- government
+- finances
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: '[0-9А-Я]{9,11}'
+examples:
+- value: '821090011'
+  description: Лицевой счет получателя бюджетных средствАДМИНИСТРАЦИЯ СЕВЕРНОГО РАЙОНА НОВОСИБИРСКОЙ ОБЛАСТИ
+- value: 712Я5686001
+  description: л/c для учета операций со средствами юридических лиц при казначейском сопровождении ООО
+    "ПРОШКОЛА №13"
+translations:
+  ru:
+    name: Лицевой счет
+    doc: Лицевой счёт (англ. personal account) — бухгалтерский счёт для ведения учёта расчетов с физическими
+      и юридическими лицами, на котором отражаются все финансово-кредитные операции с определенным клиентом,
+      является документом аналитического учёта.

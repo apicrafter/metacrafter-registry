@@ -1,16 +1,13 @@
 id: usamazonorder
 name: Amazon order ID by field name
+status: stable
 doc: Amazon order ID by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - ecommerce
 country:
 - US
 langs:
 - en
-is_pii: 'False'
+is_pii: false
+classification: identifier
 regexp: ^[A-Z0-9]{8,20}$
-links: []

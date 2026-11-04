@@ -1,0 +1,16 @@
+id: ukboroughcode
+name: Borough code (United Kingdom)
+status: stable
+doc: UK borough code identifying a borough, a type of local government administrative division within
+  the United Kingdom.
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Borough

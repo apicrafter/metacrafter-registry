@@ -1,16 +1,16 @@
+id: cabizlic
+name: Business licence number
+status: stable
+doc: CA datatype for 'Business licence number' (cabizlic) from rules in context 'companies'.
 categories:
 - companies
-id: cabizlic
-is_pii: 'False'
-langs:
-- en
-name: Business licence number
-doc: CA datatype for 'Business licence number' (cabizlic) from rules
-  in context 'companies'.
-classification: identifier
 country:
 - CA
-links: []
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{1,3}[0-9]{4,7}$
 examples:
 - value: A1234
   description: Business licence number with 1 letter and 4 digits
@@ -18,6 +18,3 @@ examples:
   description: Business licence number with 2 letters and 5 digits
 - value: XYZ1234567
   description: Business licence number with 3 letters and 7 digits
-wikidata_property: ''
-translations: {}
-regexp: ^[A-Z]{1,3}[0-9]{4,7}$

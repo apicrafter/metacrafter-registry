@@ -1,24 +1,18 @@
+id: orgname
+name: Company or organization name
+status: stable
+doc: Name of the organization/business/company in any language
+parent: name
 categories:
 - companies
-doc: Name of the organization/business/company in any language
-id: orgname
-is_pii: 'False'
 langs:
 - common
-name: Company or organization name
-parent:
-  type: name
+is_pii: false
+classification: identifier
 links:
 - type: schema.org
   url: https://schema.org/legalName
-patterns:
-- encompanyname
-- rucompanyname
 translations:
   ru:
-    doc: Название организации, бизнеса или компании на любом языке
     name: Название организации или компании
-classification: identifier
-examples: []
-wikidata_property: ''
-regexp: ''
+    doc: Название организации, бизнеса или компании на любом языке

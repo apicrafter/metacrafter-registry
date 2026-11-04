@@ -1,0 +1,17 @@
+id: esnif
+name: Spanish Tax identification number
+status: stable
+doc: Spanish tax identification number used to identify tax paying individuals
+categories:
+- pii
+- persons
+country:
+- ES
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: '[0-9]?[0-9]{7}[-]?[A-Z]'
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal

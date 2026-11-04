@@ -1,14 +1,10 @@
+id: id
+name: Unique identifier
+status: draft
+doc: An unique identifier, local for DB/dataset or global and persistent
 categories:
 - identifiers
-doc: An unique identifier, local for DB/dataset or global and persistent
-id: id
-is_pii: 'False'
 langs:
 - common
-name: Unique identifier
+is_pii: false
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

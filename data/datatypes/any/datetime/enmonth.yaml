@@ -1,0 +1,7 @@
+id: enmonth
+name: Month name (English)
+status: draft
+doc: English name of the month
+semantic_type: month
+langs:
+- en

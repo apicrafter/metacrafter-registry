@@ -1,12 +1,10 @@
 id: keccak256hash
 name: Keccak-256 hash by field name
+status: draft
 doc: Keccak-256 hash by field name
-langs:
-- en
 categories:
 - cryptography
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

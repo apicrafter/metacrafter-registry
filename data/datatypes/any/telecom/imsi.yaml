@@ -1,24 +1,23 @@
+id: imsi
+name: The international mobile subscriber identity (IMSI)
+status: stable
+doc: The international mobile subscriber identity (IMSI) is a number that uniquely identifies every user
+  of a cellular network.
 categories:
 - telecom
 - pii
-doc: The international mobile subscriber identity (IMSI) is a number that uniquely
-  identifies every user of a cellular network.
-id: imsi
-is_pii: 'True'
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{15}$
+examples:
+- value: '310150123456789'
+  description: US IMSI (MCC 310, MNC 15, MSIN 0123456789)
+- value: '250990123456789'
+  description: Russian IMSI (MCC 250, MNC 99, MSIN 0123456789)
+- value: '234150123456789'
+  description: UK IMSI (MCC 234, MNC 15, MSIN 0123456789)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_mobile_subscriber_identity
-langs:
-- common
-name: The international mobile subscriber identity (IMSI)
-classification: identifier
-examples:
-  - value: '310150123456789'
-    description: US IMSI (MCC 310, MNC 15, MSIN 0123456789)
-  - value: '250990123456789'
-    description: Russian IMSI (MCC 250, MNC 99, MSIN 0123456789)
-  - value: '234150123456789'
-    description: UK IMSI (MCC 234, MNC 15, MSIN 0123456789)
-wikidata_property: ''
-translations: {}
-regexp: '^\d{15}$'

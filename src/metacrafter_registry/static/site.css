@@ -12,6 +12,8 @@
   --pii-soft: #fbe9ea;
   --ok: #1d6b3a;
   --ok-soft: #e5f4ea;
+  --draft: #8a5a00;
+  --draft-soft: #fdf1d8;
   --radius: 6px;
   --maxw: 1120px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -33,6 +35,8 @@
     --pii-soft: #3a1f23;
     --ok: #8fd6a8;
     --ok-soft: #1c3326;
+    --draft: #f2c46d;
+    --draft-soft: #3a2f17;
   }
 }
 
@@ -139,6 +143,7 @@ pre code { background: none; padding: 0; }
 .badge.pii { background: var(--pii-soft); color: var(--pii); }
 .badge.ok { background: var(--ok-soft); color: var(--ok); }
 .badge.neutral { background: var(--bg-code); color: var(--fg-muted); }
+.badge.draft { background: var(--draft-soft); color: var(--draft); }
 
 /* Tables */
 .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }

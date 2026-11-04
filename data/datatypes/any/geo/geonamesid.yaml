@@ -1,20 +1,21 @@
+id: geonamesid
+name: Geonames ID
+status: stable
+doc: identifier in the GeoNames geographical database
 categories:
 - geo
-doc: identifier in the GeoNames geographical database
-id: geonamesid
-is_pii: 'False'
 langs:
 - common
-links:
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P1566
-name: Geonames ID
-wikidata_property: P1566
+is_pii: false
+classification: identifier
 regexp: '[1-9][0-9]{0,8}|'
 examples:
 - value: '935877'
   description: Piton de la Fournaise
 - value: '1277082'
   description: Baranagar
-classification: identifier
-translations: {}
+mappings:
+  wikidata: P1566
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1566

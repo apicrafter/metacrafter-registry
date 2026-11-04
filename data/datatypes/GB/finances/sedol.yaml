@@ -1,0 +1,21 @@
+id: sedol
+name: SEDOL identifier
+status: stable
+doc: SEDOL stands for Stock Exchange Daily Official List, a list of security identifiers used in the United
+  Kingdom and Ireland for clearing purposes.
+categories:
+- finances
+country:
+- GB
+- IE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '[0-9.]{7}'
+examples:
+- value: 0263494
+  description: BAE Systems
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SEDOL

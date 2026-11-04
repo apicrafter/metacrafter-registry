@@ -1,21 +1,18 @@
+id: latitude
+name: latitude
+status: stable
+doc: In geography, latitude is a geographic coordinate that specifies the north–south position of a point
+  on the Earths surface. Latitude is an angle (defined below) which ranges from 0° at the Equator to 90°
+  (North or South) at the poles.
 categories:
 - geo
 - common
-doc: In geography, latitude is a geographic coordinate that specifies the north–south
-  position of a point on the Earths surface. Latitude is an angle (defined below)
-  which ranges from 0° at the Equator to 90° (North or South) at the poles.
-id: latitude
-is_pii: 'False'
 langs:
 - common
+is_pii: false
+classification: identifier
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Latitude
 - type: schema.org
   url: http://schema.org/latitude
-name: latitude
-classification: identifier
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

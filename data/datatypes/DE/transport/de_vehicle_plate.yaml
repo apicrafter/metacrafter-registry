@@ -1,14 +1,12 @@
 id: de_vehicle_plate
 name: German vehicle license plate by field name
+status: draft
 doc: German vehicle license plate by field name
-langs:
-- de
 categories:
 - transport
 country:
 - DE
-is_pii: 'False'
+langs:
+- de
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

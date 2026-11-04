@@ -1,0 +1,21 @@
+id: inn
+name: INN (Russian tax identifier)
+status: stable
+doc: Russian organization/person tax identification number (INN) is unique for each person and organization.
+categories:
+- companies
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{10}|\d{12})$
+examples:
+- value: '7707083893'
+  description: Organization INN (10 digits), Sberbank
+- value: '7728168971'
+  description: Organization INN (10 digits), Alfa-Bank
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/VAT_identification_number

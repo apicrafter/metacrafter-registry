@@ -1,29 +1,23 @@
+id: postindex
+name: Postal code/index
+status: stable
+doc: Postal index/code, unique post identifier used in address
 categories:
 - geo
 - pii
 - common
-doc: Postal index/code, unique post identifier used in address
-id: postindex
-is_pii: 'True'
 langs:
 - common
+is_pii: true
+classification: categorical
+mappings:
+  wikidata: P281
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P281
 - type: schema.org
   url: https://schema.org/postalCode
-wikidata_property: P281
-name: Postal code/index
-patterns:
-- ukpostalcode
-- uszipcode
-- ruspostalcode
-- frpostcode
-- espostcode
 translations:
   ru:
-    doc: Индекс почтовой связи
     name: Почтовый индекс
-classification: categorical
-examples: []
-regexp: ''
+    doc: Индекс почтовой связи

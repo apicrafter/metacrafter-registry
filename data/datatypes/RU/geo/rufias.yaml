@@ -1,0 +1,25 @@
+id: rufias
+name: Russian FIAS address identifier
+status: stable
+doc: Federal Information Address System (FIAS) identifier - unique GUID assigned to each address object
+  in Russia
+categories:
+- geo
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+examples:
+- value: a3a1ecc7-0a10-4e22-b998-d039de7df480
+  description: Example FIAS GUID
+links:
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/ФИАС
+translations:
+  ru:
+    name: Идентификатор ФИАС
+    doc: Идентификатор Федеральной информационной адресной системы (ФИАС) - уникальный GUID, присваиваемый
+      каждому адресному объекту в России

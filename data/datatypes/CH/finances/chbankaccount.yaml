@@ -1,21 +1,18 @@
+id: chbankaccount
+name: Swiss Bank Account Number
+status: stable
+doc: Swiss bank account number (IBAN format)
 categories:
 - finances
 country:
 - CH
-doc: Swiss bank account number (IBAN format)
-id: chbankaccount
-is_pii: 'False'
 langs:
 - de
 - fr
 - it
-links: []
-name: Swiss Bank Account Number
-regexp: '^CH\d{7}[0-9A-Z]{12}$'
-examples:
-- value: 'CH9300762011623852957'
-  description: Swiss IBAN (21 characters, valid MOD-97 checksum)
+is_pii: false
 classification: identifier
-wikidata_property: ''
-translations: {}
-
+regexp: ^CH\d{7}[0-9A-Z]{12}$
+examples:
+- value: CH9300762011623852957
+  description: Swiss IBAN (21 characters, valid MOD-97 checksum)

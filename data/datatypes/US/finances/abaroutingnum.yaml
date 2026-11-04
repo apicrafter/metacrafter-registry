@@ -1,0 +1,17 @@
+id: abaroutingnum
+name: American Banking Association (ABA) routing number
+status: stable
+doc: In the United States, an ABA routing transit number (ABA RTN) is a nine-digit code printed on the
+  bottom of checks to identify the financial institution on which it was drawn.
+categories:
+- finances
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: '[0123678]\d{3}-\d{4}-\d'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ABA_routing_transit_number

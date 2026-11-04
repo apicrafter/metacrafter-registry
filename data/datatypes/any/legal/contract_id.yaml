@@ -1,13 +1,10 @@
 id: contract_id
 name: Contract identifier by known name
+status: draft
 doc: Contract identifier by known name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - legal
 langs:
 - en
-is_pii: 'False'
-links: []
+is_pii: false
+classification: identifier

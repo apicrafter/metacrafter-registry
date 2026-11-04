@@ -1,12 +1,10 @@
 id: content_id
 name: Content ID by field name
+status: draft
 doc: Content ID by field name identifier
-langs:
-- en
 categories:
 - texts
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

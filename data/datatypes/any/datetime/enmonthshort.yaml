@@ -1,0 +1,7 @@
+id: enmonthshort
+name: Short name of month (English)
+status: draft
+doc: Abbreviated short English name/abbreviation of month
+semantic_type: month
+langs:
+- en

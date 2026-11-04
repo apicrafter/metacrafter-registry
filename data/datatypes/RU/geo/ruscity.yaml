@@ -1,0 +1,11 @@
+id: ruscity
+name: City name (Russian)
+status: draft
+doc: City name in Russian language
+semantic_type: city
+categories:
+- geo
+country:
+- RU
+langs:
+- ru

@@ -1,0 +1,20 @@
+id: rusnils
+name: Individual insurance account number (SNILS)
+status: stable
+doc: Russian social insurance identifier. Issued for every insured person by Pension fund of Russia
+categories:
+- pii
+- persons
+country:
+- RU
+langs:
+- ru
+is_pii: true
+classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SNILS_(Russia)
+translations:
+  ru:
+    name: Код СНИЛС
+    doc: Страховой номер индивидуального лицевого счёта физического лица (СНИЛС)

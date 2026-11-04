@@ -1,22 +1,20 @@
+id: egpassport
+name: Egyptian Passport Number
+status: stable
+doc: Egyptian passport number used for international travel identification
 categories:
 - pii
 - persons
 country:
 - EG
-doc: Egyptian passport number used for international travel identification
-id: egpassport
-is_pii: 'True'
 langs:
 - ar
+is_pii: true
+classification: identifier
+regexp: ^[A-Z0-9]{8,9}$
+examples:
+- value: A12345678
+  description: Example Egyptian passport number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Egyptian_passport
-name: Egyptian Passport Number
-regexp: '^[A-Z0-9]{8,9}$'
-examples:
-- value: "A12345678"
-  description: Example Egyptian passport number
-classification: identifier
-wikidata_property: ''
-translations: {}
-

@@ -1,13 +1,9 @@
+id: age
+name: Age
+status: draft
+doc: Age of the person or organization in years
 categories:
 - datetime
-doc: Age of the person or organization in years
-id: age
-is_pii: 'True'
 langs:
 - common
-name: Age
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''
+is_pii: true

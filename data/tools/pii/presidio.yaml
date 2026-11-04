@@ -1,35 +1,36 @@
 id: presidio
-category: pii
 name: Microsoft Presidio
-doc: 'Presidio (Origin from Latin praesidium protection, garrison) helps to ensure sensitive data is properly managed and governed. It provides fast identification and anonymization modules for private entities in text such as credit card numbers, names, locations, social security numbers, bitcoin wallets, US phone numbers, financial data and more.'
+category: pii
+doc: Presidio (Origin from Latin praesidium protection, garrison) helps to ensure sensitive data is properly
+  managed and governed. It provides fast identification and anonymization modules for private entities
+  in text such as credit card numbers, names, locations, social security numbers, bitcoin wallets, US
+  phone numbers, financial data and more.
 website: https://github.com/microsoft/presidio
 supported_types:
-  - bankcard
-  - date
-  - email
-  - ipaddr
-  - usssn
-  - phone
-  - bankaccount
-  - abaroutingnum
-  - aumedicarenum
-  - auabn
-  - auacn
-  - autfn
-  - uspassport
-  - usitin
-  - usdeanumber
-  - usdriverlic
-  - sgnric
-  - usssn
-  - usbankaccount
-  - esnif
-  - bip32addr
-  - p2pkhaddr
-  - p2shaddr
-  - p2wpkhaddr
-  - p2wshaddr
-  - wifaddrcomp
-  - wifaddruncomp
-  - uknhsnum
-
+- bankcard
+- date
+- email
+- ipaddr
+- usssn
+- phone
+- bankaccount
+- abaroutingnum
+- aumedicarenum
+- auabn
+- auacn
+- autfn
+- uspassport
+- usitin
+- usdeanumber
+- usdriverlic
+- sgnric
+- usbankaccount
+- esnif
+- bip32addr
+- p2pkhaddr
+- p2shaddr
+- p2wpkhaddr
+- p2wshaddr
+- wifaddrcomp
+- wifaddruncomp
+- uknhsnum

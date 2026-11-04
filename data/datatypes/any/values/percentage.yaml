@@ -1,14 +1,10 @@
+id: percentage
+name: Percentage value
+status: draft
+doc: Parcentage float number
 categories:
 - values
 - common
-doc: Parcentage float number
-id: percentage
-is_pii: 'False'
 langs:
 - common
-name: Percentage value
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''
+is_pii: false

@@ -1,18 +1,16 @@
+id: wifaddruncomp
+name: WIF, uncompressed pubkey
+status: draft
+doc: WIF, uncompressed pubkey
 categories:
 - cryptocurrency
-id: wifaddruncomp
-doc: WIF, uncompressed pubkey
-is_pii: 'False'
 langs:
 - common
-links:
-- type: other
-  url: https://allprivatekeys.com/bitcoin-address-format
-name: WIF, uncompressed pubkey
+is_pii: false
+classification: identifier
 examples:
 - value: 5Hwgr3u458GLafKBgxtssHSPqJnYoGrSzgQsPwLFhLNYskDPyyA
   description: Example from https://allprivatekeys.com/bitcoin-address-format
-classification: identifier
-wikidata_property: ''
-translations: {}
-regexp: ''
+links:
+- type: other
+  url: https://allprivatekeys.com/bitcoin-address-format

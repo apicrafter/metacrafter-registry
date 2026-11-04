@@ -1,30 +1,30 @@
+id: ccamcode
+name: Code CCAM selon le nom du champ
+status: stable
+doc: 'FR datatype for ''Code CCAM selon le nom du champ'' (ccamcode) from rules in context ''medical''.
+  CCAM (Classification Commune des Actes Médicaux) is the French common classification of medical procedures
+  used in the French healthcare system. CCAM codes are used to identify and classify medical acts and
+  procedures for billing, reimbursement, and statistical purposes. The format consists of exactly 4 characters:
+  1 uppercase letter, 2 digits, and 1 uppercase letter (e.g., A123B).'
 categories:
 - medical
-id: ccamcode
-is_pii: 'False'
-langs:
-- fr
-name: Code CCAM selon le nom du champ
-doc: >
-  FR datatype for 'Code CCAM selon le nom du champ' (ccamcode) from rules in context
-  'medical'. CCAM (Classification Commune des Actes Médicaux) is the French common
-  classification of medical procedures used in the French healthcare system. CCAM codes
-  are used to identify and classify medical acts and procedures for billing, reimbursement,
-  and statistical purposes. The format consists of exactly 4 characters: 1 uppercase letter,
-  2 digits, and 1 uppercase letter (e.g., A123B).
-classification: identifier
 country:
 - FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{4}\d{3}$
+examples:
+- value: HBQK002
+  description: CCAM act code (4 letters + 3 digits)
+- value: ZBQK002
+  description: CCAM act code (4 letters + 3 digits)
 links:
 - type: wikipedia
   url: https://fr.wikipedia.org/wiki/Classification_commune_des_actes_m%C3%A9dicaux
-examples:
-- value: 'HBQK002'
-  description: CCAM act code (4 letters + 3 digits)
-- value: 'ZBQK002'
-  description: CCAM act code (4 letters + 3 digits)
-wikidata_property: ''
 translations:
-  en: CCAM Code (Common Classification of Medical Procedures)
-  fr: Code CCAM (Classification Commune des Actes Médicaux)
-regexp: '^[A-Z]{4}\d{3}$'
+  en:
+    name: CCAM Code (Common Classification of Medical Procedures)
+  fr:
+    name: Code CCAM (Classification Commune des Actes Médicaux)

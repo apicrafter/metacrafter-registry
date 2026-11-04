@@ -1,21 +1,17 @@
+id: longitude
+name: Longitude
+status: stable
+doc: Longitude is a geographic coordinate that specifies the east–west position of a point on the Earths
+  surface, or the surface of a celestial body. It is an angular measurement, usually expressed in degrees
+  and denoted by the Greek letter lambda (λ)
 categories:
 - geo
 - common
-doc: Longitude is a geographic coordinate that specifies the east–west position of
-  a point on the Earths surface, or the surface of a celestial body. It is an angular
-  measurement, usually expressed in degrees and denoted by the Greek letter lambda
-  (λ)
-id: longitude
-is_pii: 'False'
 langs:
 - common
+is_pii: false
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Longitude
 - type: schema.org
   url: http://schema.org/longitude
-name: Longitude
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

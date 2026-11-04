@@ -1,21 +1,25 @@
+id: unclass
+name: UN Class
+status: stable
+doc: UN hazard classification code
 categories:
 - chemistry
-doc: UN hazard classification code
-id: unclass
-is_pii: 'False'
 langs:
 - common
-links:
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P874
-name: UN Class
-wikidata_property: P874
-regexp: '(1\.[1-6]|[24]\.[123]|[56]\.[12]|[3789])'
+is_pii: false
+classification: categorical
+regexp: (1\.[1-6]|[24]\.[123]|[56]\.[12]|[3789])
 examples:
-  - value: '6.1'
-    description: sodium azide
+- value: '6.1'
+  description: sodium azide
+mappings:
+  wikidata: P874
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P874
 translations:
   ru:
-    doc: 'Номер ООН, Номер UN или UN-идентификатор — четырёхзначное число, позволяющее определить опасность вещества или изделия (такого, например, как взрывчатое вещество, легковоспламеняющаяся жидкость, ядовитое вещество и др.)'
     name: Код класса опасности ООН
-classification: categorical
+    doc: Номер ООН, Номер UN или UN-идентификатор — четырёхзначное число, позволяющее определить опасность
+      вещества или изделия (такого, например, как взрывчатое вещество, легковоспламеняющаяся жидкость,
+      ядовитое вещество и др.)

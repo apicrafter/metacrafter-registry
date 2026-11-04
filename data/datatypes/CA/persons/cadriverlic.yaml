@@ -1,0 +1,17 @@
+id: cadriverlic
+name: Canada driver license number
+status: stable
+doc: Alphanumeric value of the Canada driver license
+categories:
+- pii
+- persons
+country:
+- CA
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: ^[A-Z](?:\d[- ]*){14}$
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Driver%27s_licences_in_Canada

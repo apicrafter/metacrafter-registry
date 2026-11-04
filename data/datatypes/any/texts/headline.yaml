@@ -1,19 +1,17 @@
+id: headline
+name: Headline
+status: draft
+doc: Headline of the article.
 categories:
 - common
 - texts
-doc: Headline of the article.
-id: headline
-is_pii: 'False'
 langs:
 - common
+is_pii: false
 links:
 - type: schema.org
   url: https://schema.org/headline
-name: Headline
 translations:
   ru:
-    doc: Заголовок статьи
     name: Заголовок
-examples: []
-wikidata_property: ''
-regexp: ''
+    doc: Заголовок статьи

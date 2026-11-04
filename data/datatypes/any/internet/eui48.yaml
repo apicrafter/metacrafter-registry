@@ -1,17 +1,12 @@
+id: eui48
+name: MAC Address (EUI48) of the device
+status: draft
+doc: A media access control address (MAC address) is a unique identifier assigned to a network interface
+  controller (NIC) for use as a network address in communications within a network segment.
 categories:
 - internet
 - pii
-doc: A media access control address (MAC address) is a unique identifier assigned
-  to a network interface controller (NIC) for use as a network address in communications
-  within a network segment.
-id: eui48
-is_pii: 'True'
 langs:
 - common
-name: MAC Address (EUI48) of the device
+is_pii: true
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

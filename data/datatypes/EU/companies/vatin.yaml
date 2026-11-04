@@ -1,0 +1,26 @@
+id: vatin
+name: EU VAT ID
+status: stable
+doc: A value-added tax identification number or VAT identification number (VATIN) is an identifier used
+  in many countries, including the countries of the European Union, for value-added tax purposes.
+categories:
+- companies
+country:
+- EU
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: '[A-Z]{2}[A-Z\d]+|'
+examples:
+- value: FI15243611
+  description: Sanoma Corporation
+- value: BG200356710
+  description: Ontotext
+mappings:
+  wikidata: P3608
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/VAT_identification_number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3608

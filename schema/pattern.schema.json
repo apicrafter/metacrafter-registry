@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://registry.apicrafter.io/schema/pattern.schema.json",
+  "title": "Metacrafter Registry pattern",
+  "description": "Source YAML record of a pattern: one representation of a datatype (it has semantic_type). It inherits categories, is_pii and classification from that datatype unless it declares them.",
+  "$ref": "datatype.schema.json#/$defs/pattern"
+}

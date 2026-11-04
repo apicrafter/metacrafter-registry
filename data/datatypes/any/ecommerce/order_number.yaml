@@ -1,14 +1,11 @@
 id: order_number
 name: Order number by known name
+status: stable
 doc: Order number by known name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - ecommerce
 langs:
 - en
-is_pii: 'False'
+is_pii: false
+classification: identifier
 regexp: ^[A-Z0-9]{8,20}$
-links: []

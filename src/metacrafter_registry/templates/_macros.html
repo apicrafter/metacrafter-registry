@@ -2,6 +2,10 @@
 {% if record.is_pii %}<span class="badge pii">PII</span>{% endif %}
 {%- endmacro %}
 
+{% macro status_badge(record) -%}
+{% if record.status == 'draft' %}<span class="badge draft" title="Not reviewed yet">draft</span>{% elif record.status == 'deprecated' %}<span class="badge neutral">deprecated</span>{% endif %}
+{%- endmacro %}
+
 {% macro kind_badge(record) -%}
 {% if record.kind == 'pattern' %}<span class="badge neutral">pattern</span>{% endif %}
 {%- endmacro %}
@@ -22,9 +26,9 @@
   </thead>
   <tbody>
   {% for r in records %}
-    <tr data-kind="{{ r.kind }}" data-pii="{{ 'yes' if r.is_pii else 'no' }}" data-categories="{{ (r.categories or [])|join(' ') }}" data-country="{{ (r.country or ['any'])|join(' ') }}" data-text="{{ search_text[r.id] }}">
+    <tr data-kind="{{ r.kind }}" data-status="{{ r.status }}" data-pii="{{ 'yes' if r.is_pii else 'no' }}" data-categories="{{ (r.categories or [])|join(' ') }}" data-country="{{ (r.country or ['any'])|join(' ') }}" data-text="{{ search_text[r.id] }}">
       <td class="id"><a href="{{ base }}/datatype/{{ r.id }}">{{ r.id }}</a></td>
-      <td><a href="{{ base }}/datatype/{{ r.id }}">{{ r.name }}</a> {{ pii_badge(r) }} {{ kind_badge(r) }}</td>
+      <td><a href="{{ base }}/datatype/{{ r.id }}">{{ r.name }}</a> {{ pii_badge(r) }} {{ kind_badge(r) }} {{ status_badge(r) }}</td>
       <td>{{ category_links(r) }}</td>
       <td>{{ country_links(r) }}</td>
       <td class="doc">{{ r.doc|truncate(140) }}</td>

@@ -1,0 +1,26 @@
+id: inseecode
+name: INSEE code
+status: stable
+doc: The INSEE code is a numerical indexing code used by the French National Institute for Statistics
+  and Economic Studies (INSEE) to identify various entities, including communes and départements.
+categories:
+- geo
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: \d[0-9AB][0-9P]\d\d
+examples:
+- value: '75056'
+  description: Paris
+- value: '48095'
+  description: Mende
+mappings:
+  wikidata: P374
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/INSEE_code
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P374

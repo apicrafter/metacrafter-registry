@@ -1,20 +1,19 @@
+id: dctitle
+name: Title (Dublin Core)
+status: stable
+doc: A name given to the resource.
 categories:
 - dublincore
-doc: A name given to the resource.
-id: dctitle
-is_pii: 'False'
 langs:
 - common
-links:
-- type: dublincore
-  url: http://purl.org/dc/terms/title
-name: Title (Dublin Core)
+is_pii: false
 examples:
 - value: Picture of the cat
   description: Title of the resource
+links:
+- type: dublincore
+  url: http://purl.org/dc/terms/title
 translations:
   ru:
-    doc: Имя данное ресурсу
     name: Заголовок
-wikidata_property: ''
-regexp: ''
+    doc: Имя данное ресурсу

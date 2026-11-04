@@ -1,22 +1,14 @@
+id: currency
+name: Currency
+status: stable
+doc: A currency in the most specific sense is money in any form when in use or circulation as a medium
+  of exchange, especially circulating banknotes and coins.
 categories:
 - finances
-doc: A currency in the most specific sense is money in any form when in use or circulation
-  as a medium of exchange, especially circulating banknotes and coins.
-id: currency
-is_pii: 'False'
 langs:
 - common
+is_pii: false
+classification: categorical
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Currency
-name: Currency
-patterns:
-- iso4217curcode
-- iso4217curname
-- okvname
-- okvcode
-classification: categorical
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

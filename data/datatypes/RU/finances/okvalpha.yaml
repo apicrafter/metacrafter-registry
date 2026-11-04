@@ -1,0 +1,13 @@
+id: okvalpha
+name: Russian currency code
+status: draft
+doc: Russian currency codes (OKV classifier)
+semantic_type: currency
+country:
+- RU
+langs:
+- ru
+translations:
+  ru:
+    name: Код валюты по ОКВ
+    doc: Код валюты по справочнику ОКВ (Общероссийский классификатор валют)

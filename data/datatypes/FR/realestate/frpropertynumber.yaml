@@ -1,15 +1,12 @@
 id: frpropertynumber
 name: French property number by field name
+status: draft
 doc: French property number by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - realestate
 country:
 - FR
 langs:
 - fr
-is_pii: 'False'
-links: []
+is_pii: false
+classification: identifier

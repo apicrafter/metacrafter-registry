@@ -1,16 +1,11 @@
+id: price
+name: Price (money)
+status: draft
+doc: Price of something, sub-type of money
+parent: money
 categories:
 - values
 - common
-doc: Price of something, sub-type of money
-id: price
-is_pii: 'False'
-parent:
-  type: money
 langs:
 - common
-name: Price (money)
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''
+is_pii: false

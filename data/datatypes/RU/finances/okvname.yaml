@@ -1,0 +1,13 @@
+id: okvname
+name: Russian currency name
+status: draft
+doc: Russian currency names (OKV classifier)
+semantic_type: currency
+country:
+- RU
+langs:
+- ru
+translations:
+  ru:
+    name: Название валюты по ОКВ
+    doc: Название валюты по справочнику ОКВ (Общероссийский классификатор валют)

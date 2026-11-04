@@ -1,23 +1,22 @@
+id: cagst
+name: GST/HST account number
+status: stable
+doc: CA datatype for 'GST/HST account number' (cagst) from rules in context 'finances'.
 categories:
 - finances
-id: cagst
-is_pii: 'False'
-langs:
-- en
-name: GST/HST account number
-doc: CA datatype for 'GST/HST account number' (cagst) from rules in
-  context 'finances'.
-classification: identifier
 country:
 - CA
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{9}RT[0-9]{4}$
+examples:
+- value: 123456789RT0001
+  description: GST/HST account number with 9-digit Business Number, 'RT' program identifier and 4-digit
+    reference
+- value: 987654321RT0002
+  description: Another valid GST/HST account number format
 links:
 - type: doc
   url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/registration/gst-hst-account-number.html
-examples:
-- value: '123456789RT0001'
-  description: GST/HST account number with 9-digit Business Number, 'RT' program identifier and 4-digit reference
-- value: '987654321RT0002'
-  description: Another valid GST/HST account number format
-wikidata_property: ''
-translations: {}
-regexp: ^[0-9]{9}RT[0-9]{4}$

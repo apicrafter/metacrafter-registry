@@ -1,0 +1,17 @@
+id: ruikuiko
+name: Russian government customers unique code
+status: draft
+doc: Unique code assigned to all government customers in Russian Federation
+categories:
+- government
+- companies
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+translations:
+  ru:
+    name: Идентификационный код заказчика
+    doc: Код присваиваемый государственным заказчикам в Российской Федерации

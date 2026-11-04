@@ -1,15 +1,10 @@
+id: ninumber
+name: UK National Insurance Number
+status: draft
+doc: Datatype for 'UK National Insurance Number' (ninumber) from rules in context 'pii'.
 categories:
 - pii
-id: ninumber
-is_pii: 'True'
 langs:
 - en
-name: UK National Insurance Number
-doc: Datatype for 'UK National Insurance Number' (ninumber) from rules
-  in context 'pii'.
+is_pii: true
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

@@ -1,0 +1,9 @@
+id: rusregioncode
+name: Russian region unique code
+status: draft
+doc: Russian unique code of country subdivision (regions/federal subjects)
+semantic_type: rusregion
+country:
+- RU
+langs:
+- ru

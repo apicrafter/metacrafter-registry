@@ -1,0 +1,11 @@
+id: uscity
+name: United States city
+status: draft
+doc: United States city name
+semantic_type: city
+categories:
+- geo
+country:
+- US
+langs:
+- en

@@ -1,0 +1,18 @@
+id: richpeheaderhash
+name: Rich PE Header hash
+status: stable
+doc: The Rich header is an undocumented header contained within PE files compiled and linked using the
+  Microsoft toolchain. It contains information about the build environment that the PE file was created
+  in.
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: 6fef15a59affb0e30563fc8baf21ed67
+  description: Virus total file Twain_32.dll
+links:
+- type: other
+  url: https://github.com/RichHeaderResearch/RichPE

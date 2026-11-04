@@ -1,0 +1,18 @@
+id: frcni
+name: French national identity card
+status: stable
+doc: The French national identity card (CNI) is an official identity document consisting of an electronic
+  ID-1 card bearing a photograph, name and address.
+categories:
+- pii
+- persons
+country:
+- FR
+langs:
+- fr
+is_pii: true
+classification: identifier
+regexp: ^[0-9]{12}$
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_identity_card_(France)

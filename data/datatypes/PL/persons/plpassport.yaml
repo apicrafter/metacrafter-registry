@@ -1,10 +1,7 @@
 id: plpassport
 name: Polish passport by field name
+status: stable
 doc: Polish passport by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - pii
 - persons
@@ -12,7 +9,8 @@ country:
 - PL
 langs:
 - pl
-is_pii: 'True'
+is_pii: true
+classification: identifier
 regexp: ^[A-Z0-9]{6,10}$
 links:
 - type: wikipedia

@@ -1,0 +1,23 @@
+id: eunuts
+name: NUTS code (EU)
+status: stable
+doc: European Union geographic code, identifier for a region per NUTS
+categories:
+- geo
+country:
+- EU
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: '[A-Z]{2}[A-Z0-9]{0,3}'
+examples:
+- value: BE10
+  description: Brussels-Capital Region
+mappings:
+  wikidata: P605
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P605
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Nomenclature_of_Territorial_Units_for_Statistics

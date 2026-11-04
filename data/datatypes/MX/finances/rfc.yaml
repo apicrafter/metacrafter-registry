@@ -1,16 +1,13 @@
 id: rfc
 name: Mexican RFC (Registro Federal de Contribuyentes) by known name
+status: stable
 doc: Mexican RFC (Registro Federal de Contribuyentes) by known name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - finances
 country:
 - MX
 langs:
 - es
-is_pii: 'True'
+is_pii: true
+classification: identifier
 regexp: ^[A-Z]{4}[0-9]{6}[A-Z0-9]{3}$
-links: []

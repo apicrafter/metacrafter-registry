@@ -1,15 +1,10 @@
+id: uksortcode
+name: UK sort code
+status: draft
+doc: Datatype for 'UK sort code' (uksortcode) from rules in context 'finances'.
 categories:
 - finances
-id: uksortcode
-is_pii: 'False'
 langs:
 - common
-name: UK sort code
-doc: Datatype for 'UK sort code' (uksortcode) from rules in context
-  'finances'.
+is_pii: false
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

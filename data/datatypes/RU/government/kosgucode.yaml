@@ -1,0 +1,17 @@
+id: kosgucode
+name: Russian Public Administration Sector Classification Code (KOSGU)
+status: draft
+doc: Russian Public Administration Sector Classification Code (KOSGU) used in Russian budget planning
+  and procurement
+categories:
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+translations:
+  ru:
+    name: Код КОСГУ
+    doc: Код классификации секторов государственного управления используемые в Российской бюджетной системе

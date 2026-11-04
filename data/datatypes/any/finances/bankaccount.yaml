@@ -1,27 +1,20 @@
+id: bankaccount
+name: Bank account
+status: stable
+doc: A bank account is a financial account maintained by a bank or other financial institution in which
+  the financial transactions between the bank and a customer are recorded.
 categories:
 - finances
-doc: A bank account is a financial account maintained by a bank or other financial
-  institution in which the financial transactions between the bank and a customer
-  are recorded.
-id: bankaccount
-is_pii: 'False'
 langs:
 - common
+is_pii: false
+classification: identifier
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Bank_account
-name: Bank account
-patterns:
-- rusbankaccount
-- usbankaccount
-- iban
 translations:
   ru:
-    doc: Банковский счёт — счёт, открываемый банком юридическим или физическим лицам
-      для их участия в безналичном денежном обороте и аккумулировании на счёте безналичных
-      денежных средств для целевого использования.
     name: Банковский счет
-classification: identifier
-examples: []
-wikidata_property: ''
-regexp: ''
+    doc: Банковский счёт — счёт, открываемый банком юридическим или физическим лицам для их участия в
+      безналичном денежном обороте и аккумулировании на счёте безналичных денежных средств для целевого
+      использования.

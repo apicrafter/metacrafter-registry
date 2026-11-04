@@ -1,17 +1,13 @@
+id: ipv6
+name: Internet Protocol version 6 (IPv6)
+status: draft
+doc: Internet Protocol version 6 (IPv6) is the most recent version of the Internet Protocol (IP), the
+  communications protocol that provides an identification and location system for computers on networks
+  and routes traffic across the Internet.
 categories:
 - internet
 - pii
-doc: Internet Protocol version 6 (IPv6) is the most recent version of the Internet
-  Protocol (IP), the communications protocol that provides an identification and location
-  system for computers on networks and routes traffic across the Internet.
-id: ipv6
-is_pii: 'True'
 langs:
 - common
-name: Internet Protocol version 6 (IPv6)
+is_pii: true
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

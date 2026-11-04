@@ -1,0 +1,16 @@
+id: csrcode
+name: Russian budget target item of expenditure code
+status: draft
+doc: Russian budget target item of expenditure code
+categories:
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+translations:
+  ru:
+    name: Целевая статья расходов российского бюджета
+    doc: Целевая статья расходов российского бюджета

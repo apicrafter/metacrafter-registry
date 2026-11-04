@@ -1,16 +1,13 @@
+id: iso3166code
+name: identifier for a country subdivision per ISO 3166-2
+status: stable
+doc: identifier for a country subdivision per ISO 3166-2 (include country code)
 categories:
 - geo
-doc: identifier for a country subdivision per ISO 3166-2 (include country code)
-id: iso3166code
-is_pii: 'False'
 langs:
 - common
+is_pii: false
+classification: categorical
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P300
-name: identifier for a country subdivision per ISO 3166-2
-classification: categorical
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

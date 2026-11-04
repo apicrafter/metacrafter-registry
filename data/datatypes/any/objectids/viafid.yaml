@@ -1,23 +1,23 @@
+id: viafid
+name: VIAF ID
+status: stable
+doc: 'Identifier for the Virtual International Authority File database [format: up to 22 digits]'
 categories:
 - objectids
-doc: 'Identifier for the Virtual International Authority File database [format: up
-  to 22 digits]'
-id: viafid
-is_pii: 'False'
 langs:
 - common
-links:
-- type: wikipedia
-  url: https://en.wikipedia.org/wiki/Virtual_International_Authority_File
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P214
-name: VIAF ID
+is_pii: false
+classification: identifier
+regexp: ([1-9]\d(?:\d{0,7}|\d{17,20}))
 examples:
 - value: '44298806'
   description: Foncine, Jean-Louis
 - value: '125715126'
   description: Cairo
-regexp: ([1-9]\d(?:\d{0,7}|\d{17,20}))
-wikidata_property: P214
-classification: identifier
-translations: {}
+mappings:
+  wikidata: P214
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Virtual_International_Authority_File
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P214

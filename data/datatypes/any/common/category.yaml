@@ -1,17 +1,14 @@
+id: category
+name: Category
+status: draft
+doc: Object or entity category
 categories:
 - common
-doc: Object or entity category
-id: category
-is_pii: 'False'
 langs:
 - common
-name: Category
+is_pii: false
+classification: categorical
 translations:
   ru:
-    doc: Категория объекта/сущности
     name: Категория
-classification: categorical
-links: []
-examples: []
-wikidata_property: ''
-regexp: ''
+    doc: Категория объекта/сущности

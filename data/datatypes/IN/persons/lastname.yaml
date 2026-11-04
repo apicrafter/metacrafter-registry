@@ -1,15 +1,12 @@
 id: lastname
 name: Indian last name by known name
+status: draft
 doc: Indian last name by known name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - persons
 country:
 - IN
 langs:
 - en
-is_pii: 'True'
-links: []
+is_pii: true
+classification: identifier

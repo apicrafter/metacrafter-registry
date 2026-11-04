@@ -1,16 +1,13 @@
+id: p2wshaddr
+name: P2WSH address
+status: draft
+doc: P2WSH address
 categories:
 - cryptocurrency
-id: p2wshaddr
-is_pii: 'False'
 langs:
 - common
+is_pii: false
+classification: identifier
 links:
 - type: other
   url: https://allprivatekeys.com/bitcoin-address-format
-name: P2WSH address
-doc: P2WSH address
-classification: identifier
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

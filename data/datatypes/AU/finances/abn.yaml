@@ -1,16 +1,13 @@
 id: abn
 name: Australian ABN (Australian Business Number) by known name
+status: stable
 doc: Australian ABN (Australian Business Number) by known name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - finances
 country:
 - AU
 langs:
 - en
-is_pii: 'False'
+is_pii: false
+classification: identifier
 regexp: ^[0-9]{11}$
-links: []

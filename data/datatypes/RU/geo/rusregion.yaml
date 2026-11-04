@@ -1,0 +1,16 @@
+id: rusregion
+name: Russian region (federal subject) coce or name
+status: draft
+doc: Code or name of the region (federal subject) in Russia as it is in country Constitution
+categories:
+- geo
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+translations:
+  ru:
+    name: Код или наименование субъекта Российской Федерации
+    doc: Код или наименование субъекта Российской Федерации по Конституции страны

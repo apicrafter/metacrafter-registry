@@ -1,0 +1,16 @@
+id: frnir
+name: France National ID number (social number)
+status: stable
+doc: France's National ID number
+categories:
+- pii
+- persons
+country:
+- FR
+langs:
+- fr
+is_pii: true
+classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/INSEE_code

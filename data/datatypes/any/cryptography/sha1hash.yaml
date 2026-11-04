@@ -1,15 +1,12 @@
+id: sha1hash
+name: SHA-1 hash
+status: stable
+doc: SHA-1 hash from file or data. Sometimes used as unique id of the data record
 categories:
 - cryptography
-doc: SHA-1 hash from file or data. Sometimes used as unique id of the data record
-id: sha1hash
-is_pii: 'False'
 langs:
 - common
+is_pii: false
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SHA-1
-name: SHA-1 hash
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

@@ -1,0 +1,11 @@
+id: money
+name: Money amount
+status: draft
+doc: Amount of money as numeric value
+parent: numeric
+categories:
+- values
+- common
+langs:
+- common
+is_pii: false

@@ -1,0 +1,9 @@
+id: rusmidname
+name: Middle name in Russian
+status: draft
+doc: Middle name in Russian
+semantic_type: person_midname
+country:
+- RU
+langs:
+- ru

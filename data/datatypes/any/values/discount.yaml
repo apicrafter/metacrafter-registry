@@ -1,16 +1,11 @@
+id: discount
+name: Discount (money)
+status: draft
+doc: Discount from price sub-type of money
+parent: money
 categories:
 - values
 - common
-doc: Discount from price sub-type of money
-id: discount
-is_pii: 'False'
-parent:
-  type: money
 langs:
 - common
-name: Discount (money)
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''
+is_pii: false

@@ -1,14 +1,10 @@
+id: geopoint
+name: Geopoint
+status: draft
+doc: Basic geopoint as coordinates
 categories:
 - geo
-doc: Basic geopoint as coordinates
-id: geopoint
-is_pii: 'False'
 langs:
 - common
-name: Geopoint
+is_pii: false
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

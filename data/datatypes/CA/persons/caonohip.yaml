@@ -1,0 +1,16 @@
+id: caonohip
+name: Canada Ontario Health Insurance Plan (OHIP) number
+status: draft
+doc: Canada Ontario Health Insurance Plan (OHIP) number
+categories:
+- pii
+- persons
+country:
+- CA
+langs:
+- en
+is_pii: true
+classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Ontario_Health_Insurance_Plan

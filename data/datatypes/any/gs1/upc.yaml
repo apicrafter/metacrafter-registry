@@ -1,12 +1,10 @@
 id: upc
 name: Universal Product Code (UPC) by field name
+status: draft
 doc: Universal Product Code (UPC) by field name code
-langs:
-- en
 categories:
 - gs1
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

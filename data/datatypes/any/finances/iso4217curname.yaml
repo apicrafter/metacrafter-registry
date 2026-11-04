@@ -1,19 +1,15 @@
-categories:
-- finances
-doc: ISO 4217 Currency name
 id: iso4217curname
+name: ISO 4217 Currency name
+status: draft
+doc: ISO 4217 Currency name
+semantic_type: currency
 langs:
 - common
-links:
-- type: other
-  url: https://www.iso.org/iso-4217-currency-codes.html
-name: ISO 4217 Currency name
-semantic_type: currency
 examples:
 - value: palladium
   description: palladium
 - value: euro
   description: euro
-wikidata_property: ''
-translations: {}
-regexp: ''
+links:
+- type: other
+  url: https://www.iso.org/iso-4217-currency-codes.html

@@ -1,0 +1,17 @@
+id: kvrcode
+name: Russian budget expense type code (KVR)
+status: draft
+doc: Russian budget expense type code (KVR) used in budget planning and procurement
+categories:
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+translations:
+  ru:
+    name: Код вида расходов (КВР)
+    doc: Код вида расходов (КВР) используется как часть кода бюджетной классификации в процессах связанных
+      с бюджетированием и госзакупками в Российской Федерации

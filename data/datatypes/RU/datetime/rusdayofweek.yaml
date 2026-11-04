@@ -1,0 +1,9 @@
+id: rusdayofweek
+name: Day of week (in Russian)
+status: draft
+doc: Day of week written in Russian language
+semantic_type: dayofweek
+country:
+- RU
+langs:
+- ru

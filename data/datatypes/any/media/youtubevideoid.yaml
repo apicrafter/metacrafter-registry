@@ -1,13 +1,10 @@
 id: youtubevideoid
 name: YouTube video ID by field name
+status: draft
 doc: YouTube video ID by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - media
 langs:
 - en
-is_pii: 'False'
-links: []
+is_pii: false
+classification: identifier

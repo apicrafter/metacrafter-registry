@@ -1,0 +1,16 @@
+id: runpa
+name: Russian regulatory legal act
+status: draft
+doc: 'Russian regulatory legal act. For example: Executive order'
+parent: legislationname
+categories:
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+translations:
+  ru:
+    name: Нормативно-правовой документ
+    doc: Нормативно-правовой документ в России. Например, постановление правительства

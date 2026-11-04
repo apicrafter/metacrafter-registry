@@ -1,0 +1,27 @@
+id: okpo
+name: Russian organization stat code
+status: stable
+doc: Russian organizations statistical code (OKPO) issued by Rosstat
+categories:
+- companies
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: \d{8}
+examples:
+- value: 00040778
+  description: Gazprom
+- value: '03323755'
+  description: TEK SPB
+mappings:
+  wikidata: P2391
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2391
+translations:
+  ru:
+    name: Код ОКПО
+    doc: Код по Общероссийскому классификатору предприятий и организаций

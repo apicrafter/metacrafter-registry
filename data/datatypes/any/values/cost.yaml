@@ -1,16 +1,11 @@
+id: cost
+name: Cost of something (money)
+status: draft
+doc: Cost of something as sub-type of money
+parent: money
 categories:
 - values
 - common
-doc: Cost of something as sub-type of money
-id: cost
-is_pii: 'False'
-parent:
-  type: money
 langs:
 - common
-name: Cost of something (money)
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''
+is_pii: false

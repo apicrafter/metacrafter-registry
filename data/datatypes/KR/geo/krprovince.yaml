@@ -1,15 +1,12 @@
 id: krprovince
 name: Korean province by field name
+status: draft
 doc: Korean province by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - geo
 country:
 - KR
 langs:
 - ko
-is_pii: 'False'
-links: []
+is_pii: false
+classification: identifier

@@ -1,0 +1,11 @@
+id: rusdegree
+name: Academic degree (Russian)
+status: draft
+doc: Academic degree title in Russian.
+semantic_type: academicdegree
+categories:
+- persons
+country:
+- RU
+langs:
+- ru

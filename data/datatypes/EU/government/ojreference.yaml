@@ -1,24 +1,20 @@
+id: ojreference
+name: Official Journal reference
+status: stable
+doc: EU datatype for 'Official Journal reference' (ojreference) from rules in context 'government'. The
+  Official Journal reference is a unique identifier used to reference notices and documents published
+  in the Official Journal of the European Union. The format consists of the prefix 'OJ/S' followed by
+  an optional space, then 1 to 4 digits representing the notice number, a forward slash, and 1 to 4 digits
+  representing the year or sequence number.
 categories:
 - government
-id: ojreference
-is_pii: 'False'
-langs:
-- en
-name: Official Journal reference
-doc: EU datatype for 'Official Journal reference' (ojreference) from rules in context
-  'government'. The Official Journal reference is a unique identifier used to reference
-  notices and documents published in the Official Journal of the European Union. The
-  format consists of the prefix 'OJ/S' followed by an optional space, then 1 to 4 digits
-  representing the notice number, a forward slash, and 1 to 4 digits representing the
-  year or sequence number.
-classification: identifier
 country:
 - EU
-links:
-- type: doc
-  url: https://eur-lex.europa.eu/oj/direct-access.html
-- type: wikipedia
-  url: https://en.wikipedia.org/wiki/Official_Journal_of_the_European_Union
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^OJ/S\s?\d{1,4}/\d{1,4}$
 examples:
 - value: OJ/S 123/456
   description: Official Journal reference with space and 3-digit numbers
@@ -28,10 +24,17 @@ examples:
   description: Official Journal reference with single digit and year
 - value: OJ/S1234/1
   description: Official Journal reference with 4-digit notice number
-wikidata_property: ''
+links:
+- type: doc
+  url: https://eur-lex.europa.eu/oj/direct-access.html
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Official_Journal_of_the_European_Union
 translations:
-  en: Official Journal Reference
-  fr: Référence du Journal Officiel
-  de: Amtsblatt-Referenz
-  es: Referencia del Diario Oficial
-regexp: ^OJ/S\s?\d{1,4}/\d{1,4}$
+  en:
+    name: Official Journal Reference
+  fr:
+    name: Référence du Journal Officiel
+  de:
+    name: Amtsblatt-Referenz
+  es:
+    name: Referencia del Diario Oficial

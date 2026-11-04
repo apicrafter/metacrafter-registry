@@ -1,16 +1,13 @@
+id: md5hash
+name: MD5 hash
+status: stable
+doc: Result of the MD5 hash function. Commonly used to generate hash of from file or data or to use as
+  unique identifier
 categories:
 - cryptography
-doc: Result of the MD5 hash function. Commonly used to generate hash of from file
-  or data or to use as unique identifier
-id: md5hash
-is_pii: 'False'
 langs:
 - common
+is_pii: false
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/MD5
-name: MD5 hash
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

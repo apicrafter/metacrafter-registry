@@ -1,0 +1,17 @@
+id: auacn
+name: Australian Company Number (ACN)
+status: stable
+doc: An Australian Company Number (usually shortened to ACN) is a unique identifier required by every
+  company registered under Australia’s Corporations Act 2001 (Cth).
+categories:
+- companies
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: \d{3}\s\d{3}\s\d{3}
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Australian_Company_Number

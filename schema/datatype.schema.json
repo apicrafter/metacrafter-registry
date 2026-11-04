@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://registry.apicrafter.io/schema/datatype.schema.json",
+  "title": "Metacrafter Registry semantic datatype",
+  "description": "Source YAML record of a semantic datatype (data/datatypes/**/<id>.yaml). Empty values are not allowed: omit the field instead.",
+  "$ref": "#/$defs/datatype",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "description": "Lowercase identifier: letters, digits and underscores"
+    },
+    "idList": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/id"},
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "nonEmptyString": {"type": "string", "minLength": 1},
+    "stringOrList": {
+      "oneOf": [
+        {"$ref": "#/$defs/nonEmptyString"},
+        {"type": "array", "items": {"$ref": "#/$defs/nonEmptyString"}, "minItems": 1, "uniqueItems": true}
+      ]
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "name": {"$ref": "#/$defs/nonEmptyString"},
+        "status": {
+          "enum": ["draft", "stable", "deprecated"],
+          "description": "draft: not reviewed yet (for example generated from a rule key); stable: reviewed; deprecated: do not use, see replaced_by"
+        },
+        "doc": {"$ref": "#/$defs/nonEmptyString"},
+        "semantic_type": {"$ref": "#/$defs/id", "description": "Patterns only: the datatype this pattern represents"},
+        "parent": {"$ref": "#/$defs/id", "description": "A broader datatype"},
+        "aliases": {"$ref": "#/$defs/idList", "description": "Former IDs of this record (for example after merging duplicates). They keep resolving forever."},
+        "replaced_by": {"$ref": "#/$defs/id"},
+        "categories": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "IDs from data/categories.yaml"
+        },
+        "country": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^[A-Z]{2}$"},
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Uppercase ISO 3166-1 alpha-2 codes from data/countries.yaml"
+        },
+        "langs": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^([a-z]{2}|common)$"},
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "ISO 639-1 codes from data/langs.yaml; 'common' means language-independent"
+        },
+        "is_pii": {"type": "boolean"},
+        "classification": {"enum": ["identifier", "categorical"]},
+        "regexp": {"$ref": "#/$defs/nonEmptyString", "description": "Python re syntax; anchored with ^...$; no possessive quantifiers or atomic groups"},
+        "checksum": {"$ref": "#/$defs/id", "description": "Name of the check-digit algorithm, for example luhn or iban_mod97"},
+        "examples": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["value"],
+            "properties": {
+              "value": {"$ref": "#/$defs/nonEmptyString"},
+              "description": {"$ref": "#/$defs/nonEmptyString"},
+              "valid": {"type": "boolean", "description": "false marks a negative example: it must not match"}
+            }
+          }
+        },
+        "mappings": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "wikidata": {"type": "string", "pattern": "^[PQ][0-9]+$"},
+            "schema_org": {"$ref": "#/$defs/stringOrList"},
+            "dpv": {"$ref": "#/$defs/stringOrList"},
+            "presidio": {"$ref": "#/$defs/stringOrList"},
+            "google_dlp": {"$ref": "#/$defs/stringOrList"},
+            "purview": {"$ref": "#/$defs/stringOrList"},
+            "d3m": {"$ref": "#/$defs/stringOrList"},
+            "sherlock": {"$ref": "#/$defs/stringOrList"}
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "url"],
+            "properties": {
+              "type": {"enum": ["wikipedia", "wikidata", "schema.org", "doc", "dublincore", "bioschemas", "datadrivendiscovery", "other"]},
+              "url": {"type": "string", "pattern": "^https?://"}
+            }
+          }
+        },
+        "translations": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {"pattern": "^[a-z]{2}$"},
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "minProperties": 1,
+            "properties": {
+              "name": {"$ref": "#/$defs/nonEmptyString"},
+              "doc": {"$ref": "#/$defs/nonEmptyString"}
+            }
+          }
+        }
+      }
+    },
+    "datatype": {
+      "allOf": [{"$ref": "#/$defs/record"}],
+      "required": ["id", "name", "status", "doc", "langs", "is_pii"],
+      "not": {"required": ["semantic_type"]}
+    },
+    "pattern": {
+      "allOf": [{"$ref": "#/$defs/record"}],
+      "required": ["id", "name", "status", "doc", "semantic_type"]
+    }
+  }
+}
