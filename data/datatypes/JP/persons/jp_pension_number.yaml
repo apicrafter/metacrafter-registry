@@ -1,0 +1,24 @@
+id: jp_pension_number
+name: Japanese basic pension number
+status: draft
+doc: Ten-digit number that identifies a person across all Japanese public pension schemes. It was introduced
+  in January 1997 and stays the same for life. It is written as a four-digit code and a six-digit serial
+  number, usually with a hyphen between them. It is different from the twelve-digit My Number (mynumber).
+categories:
+- pii
+- persons
+country:
+- JP
+langs:
+- ja
+is_pii: true
+classification: identifier
+regexp: ^\d{4}-?\d{6}$
+links:
+- type: wikipedia
+  url: https://ja.wikipedia.org/wiki/%E5%9F%BA%E7%A4%8E%E5%B9%B4%E9%87%91%E7%95%AA%E5%8F%B7
+- type: doc
+  url: https://www.city.kawasaki.jp/templates/faq/350/0000013194.html
+translations:
+  ja:
+    name: 基礎年金番号

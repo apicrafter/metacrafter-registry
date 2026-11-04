@@ -1,0 +1,32 @@
+id: jp_driver_license
+name: Japanese driver's license number
+status: draft
+doc: Twelve-digit number of a Japanese driver's license. The first two digits identify the prefectural
+  public safety commission that first issued the license, the next two are the last two digits of the
+  year it was first obtained, then come a six-digit serial number, a check digit and a last digit that
+  counts reissues.
+categories:
+- pii
+- persons
+country:
+- JP
+langs:
+- ja
+is_pii: true
+classification: identifier
+regexp: ^\d{12}$
+examples:
+- value: 30-21-123456-7-0
+  valid: false
+  description: separators are not part of the number
+mappings:
+  google_dlp: JAPAN_DRIVERS_LICENSE_NUMBER
+  purview: Japan driver's license number
+links:
+- type: wikipedia
+  url: https://ja.wikipedia.org/wiki/%E9%81%8B%E8%BB%A2%E5%85%8D%E8%A8%B1%E8%A8%BC
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Driving_licence_in_Japan
+translations:
+  ja:
+    name: 運転免許証番号
