@@ -1,0 +1,31 @@
+id: ro_cui
+name: Romanian company identifier (CUI, CIF)
+status: draft
+doc: Codul unic de înregistrare, also called codul de identificare fiscală (CIF), the fiscal identifier
+  of companies and other entities in Romania. It has 2 to 10 digits, the last being a check digit. The
+  RO prefix shows that the entity is registered for VAT.
+categories:
+- companies
+- finances
+country:
+- RO
+langs:
+- ro
+is_pii: false
+classification: identifier
+regexp: ^(?:RO[ -]?)?[1-9]\d{1,9}$
+examples:
+- value: '235519185'
+  description: Synthetic number with a valid check digit
+- value: '669416810'
+  description: Synthetic number with a valid check digit
+links:
+- type: wikipedia
+  url: https://ro.wikipedia.org/wiki/Cod_de_identificare_fiscal%C4%83
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ro.cui.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_ro_cui.html
+translations:
+  ro:
+    name: Codul unic de înregistrare (CUI)

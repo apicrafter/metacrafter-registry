@@ -1,0 +1,35 @@
+id: nl_postcode
+name: Dutch postal code
+status: draft
+doc: 'Postcode in the Netherlands: four digits, the first not 0, followed by two capital letters and normally
+  separated from them by a space. The letter pairs SA, SD and SS are not used.'
+parent: postindex
+categories:
+- geo
+country:
+- NL
+langs:
+- nl
+is_pii: true
+classification: categorical
+regexp: ^[1-9]\d{3} ?[A-Z]{2}$
+examples:
+- value: 3443 BX
+  description: Synthetic number in the documented format
+- value: 8205 WZ
+  description: Synthetic number in the documented format
+- value: 3443BX7
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_the_Netherlands
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Postcodes_in_Nederland
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.nl.postcode.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_nl_postcode.html
+translations:
+  nl:
+    name: Postcode

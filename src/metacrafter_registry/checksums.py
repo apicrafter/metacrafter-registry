@@ -202,7 +202,7 @@ _CF_ODD = {c: _CF_ODD_LETTERS[i if i < 10 else i - 10] for i, c in enumerate(_CF
 _CF_EVEN = {c: i if i < 10 else i - 10 for i, c in enumerate(_CF_CHARS)}
 
 
-def it_codice_fiscale(value: str) -> bool:
+def it_codicefiscale(value: str) -> bool:
     """Italian fiscal code of a person: 16 characters, the last one a check letter.
 
     Characters in odd positions (1st, 3rd, ...) and even positions have
@@ -270,7 +270,7 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "at_uid": at_uid,
     "bg_vat": bg_vat,
     "no_fnr": no_fnr,
-    "it_codice_fiscale": it_codice_fiscale,
+    "it_codicefiscale": it_codicefiscale,
     "it_iva": it_iva,
     "fi_hetu": fi_hetu,
     "es_dni": es_dni,

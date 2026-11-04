@@ -1,0 +1,25 @@
+id: osm_user
+name: OpenStreetMap username
+status: draft
+doc: Display name of an OpenStreetMap account. In element data it names the user who made the latest version
+  of the object; osm2pgsql writes it to an osm_user column. Users can change their display name, so the
+  numeric user ID (osm_uid) is the stable reference.
+parent: username
+categories:
+- pii
+- persons
+- useraccounts
+langs:
+- common
+is_pii: true
+classification: identifier
+links:
+- type: doc
+  url: https://wiki.openstreetmap.org/wiki/Elements
+- type: doc
+  url: https://osm2pgsql.org/doc/manual.html
+translations:
+  fr:
+    name: Nom d'utilisateur OpenStreetMap
+  ru:
+    name: Имя пользователя OpenStreetMap

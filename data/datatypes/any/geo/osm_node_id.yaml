@@ -1,0 +1,33 @@
+id: osm_node_id
+name: OpenStreetMap node ID
+status: draft
+doc: Numeric ID of an OpenStreetMap node, a single point with a latitude and a longitude. Nodes mark points
+  of interest and are the vertices of ways.
+parent: osm_id
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9][0-9]{0,18}$
+examples:
+- value: '164979149'
+  description: Mount Everest summit
+- value: '1504546320'
+  description: Switzerland country node
+- value: n164979149
+  valid: false
+  description: type-prefixed form of osm_id, not a bare node ID
+mappings:
+  wikidata: P11693
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P11693
+- type: doc
+  url: https://wiki.openstreetmap.org/wiki/Node
+translations:
+  fr:
+    name: Identifiant de nœud OpenStreetMap
+  ru:
+    name: Идентификатор точки OpenStreetMap

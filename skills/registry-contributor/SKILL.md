@@ -66,7 +66,7 @@ pip install -e ".[dev]"
   - With `checksum`, every positive example must also pass the check digit.
     Known algorithms are `luhn`, `iban_mod97`, `gtin`, `isbn10`, `isbn13`,
     `ru_inn`, `ru_snils`, `ru_ogrn`, `fr_nir`, `at_uid`, `bg_vat`, `no_fnr`,
-    `it_codice_fiscale`, `it_iva`, `fi_hetu` and `es_dni`
+    `it_codicefiscale`, `it_iva`, `fi_hetu` and `es_dni`
     (`src/metacrafter_registry/checksums.py`).
   - Compute check digits with code. Do not do it by hand.
 - **Status:**

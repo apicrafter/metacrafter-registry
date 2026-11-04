@@ -1,0 +1,28 @@
+id: ismn
+name: International Standard Music Number (ISMN)
+status: draft
+doc: ISO 10957 identifier of notated (printed) music. The current form has 13 digits starting with 979-0;
+  the older 10-character form starts with M. The last digit is a check digit.
+categories:
+- publishing
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:979[- ]?0|M)(?:[- ]?\d){9}$
+examples:
+- value: '9790032282208'
+  description: Synthetic number with a valid check digit
+- value: '9790051283651'
+  description: Synthetic number with a valid check digit
+- value: 979-0-032-28220-8
+  description: The first example in its printed form
+- value: '97900322822087'
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Standard_Music_Number
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ismn.html

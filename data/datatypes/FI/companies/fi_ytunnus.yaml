@@ -1,0 +1,35 @@
+id: fi_ytunnus
+name: Finnish business ID (Y-tunnus)
+status: draft
+doc: 'Y-tunnus (yritys- ja yhteisötunnus, in Swedish FO-nummer), the business identity code of companies
+  and organisations in Finland: seven digits, a hyphen and a weighted check digit.'
+categories:
+- companies
+country:
+- FI
+langs:
+- fi
+- sv
+is_pii: false
+classification: identifier
+regexp: ^\d{7}-?\d$
+examples:
+- value: 2731651-5
+  description: Synthetic number with a valid check digit
+- value: 7162313-3
+  description: Synthetic number with a valid check digit
+- value: '273165157'
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://fi.wikipedia.org/wiki/Y-tunnus
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fi.ytunnus.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_fi_ytunnus.html
+translations:
+  fi:
+    name: Yritys- ja yhteisötunnus (Y-tunnus)
+  sv:
+    name: FO-nummer

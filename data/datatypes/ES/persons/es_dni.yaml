@@ -1,10 +1,10 @@
 id: es_dni
 name: Spanish national identity document number (DNI)
 status: draft
-doc: Number of the Spanish national identity document (Documento Nacional de Identidad, DNI) that Spanish
-  citizens carry. It is eight digits and a check letter - the number modulo 23 looked up in TRWAGMYFPDXBNJZSQVHLCKE.
-  For Spanish citizens the same number and letter are the tax identification number (esnif); foreign nationals
-  get an NIE (esnie) instead.
+doc: 'Documento Nacional de Identidad, the identity number of Spanish citizens: eight digits and a check
+  letter, which is the number modulo 23 looked up in TRWAGMYFPDXBNJZSQVHLCKE. The same value is the person''s
+  tax number (NIF). Foreigners receive an NIE instead.'
+parent: esnif
 categories:
 - pii
 - persons
@@ -17,13 +17,18 @@ classification: identifier
 regexp: ^\d{8}-?[A-Z]$
 checksum: es_dni
 examples:
-- value: 54362315K
-  description: valid check letter (python-stdnum test value)
+- value: 12442144H
+  description: Synthetic number with a valid check digit
+- value: 85103532J
+  description: Synthetic number with a valid check digit
 - value: 54362315-K
-  description: the same number with a hyphen before the letter
-- value: 54362315Z
+  description: python-stdnum test value, with a hyphen before the letter
+- value: 12442144A
   valid: false
-  description: wrong check letter
+  description: Check letter does not match
+- value: 12442144H7
+  valid: false
+  description: One character too many
 mappings:
   google_dlp: SPAIN_DNI_NUMBER
   purview: Spain DNI
@@ -32,6 +37,10 @@ links:
   url: https://en.wikipedia.org/wiki/Documento_Nacional_de_Identidad_(Spain)
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/Documento_nacional_de_identidad_(Espa%C3%B1a)
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.es.dni.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_es_dni.html
 translations:
   es:
     name: Documento Nacional de Identidad (DNI)

@@ -134,7 +134,7 @@
       return check([3, 7, 6, 1, 8, 9, 4, 5, 2]) === d[9] &&
         check([5, 4, 3, 2, 7, 6, 5, 4, 3, 2]) === d[10];
     },
-    it_codice_fiscale: function (v) {
+    it_codicefiscale: function (v) {
       var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
       if (!/^[A-Z]{6}[0-9LMNP-V]{2}[ABCDEHLMPRST][0-9LMNP-V]{2}[A-Z][0-9LMNP-V]{3}[A-Z]$/.test(s)) return false;
       var odd = [1, 0, 5, 7, 9, 13, 15, 17, 19, 21, 2, 4, 18, 20, 11, 3, 6, 8, 12, 14, 16, 10, 22, 25, 24, 23];

@@ -1,0 +1,35 @@
+id: eu_nace
+name: NACE code (EU classification of economic activities)
+status: draft
+doc: Code of NACE, the Statistical Classification of Economic Activities in the European Community and
+  the EU version of the UN ISIC classification. A section is a single letter; divisions, groups and classes
+  have two to four digits, usually written with a dot after the second digit. Revision 2.1 replaced revision
+  2 from 2025 and changed some codes.
+categories:
+- industry
+country:
+- EU
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:[A-U]|\d{2}(?:\.\d{1,2})?)$
+examples:
+- value: '62.10'
+  description: 'Class (NACE Rev. 2.1): computer programming activities'
+- value: '01.11'
+  description: 'Class: growing of cereals, other than rice, leguminous crops and oil seeds'
+- value: '01.1'
+  description: 'Group: growing of non-perennial crops'
+- value: A
+  description: 'Section: agriculture, forestry and fishing'
+- value: '62.107'
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Statistical_Classification_of_Economic_Activities_in_the_European_Community
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.eu.nace.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_eu_nace.html

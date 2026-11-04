@@ -1,0 +1,31 @@
+id: ie_pps
+name: Irish Personal Public Service number (PPS)
+status: draft
+doc: Personal Public Service Number, the identifier for social welfare, public services and tax in Ireland.
+  It has seven digits and a check letter, sometimes followed by a second letter (A or B for individuals,
+  H for non-individuals such as companies or trusts).
+categories:
+- pii
+- persons
+country:
+- IE
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: ^\d{7}[A-W][ABHWTX]?$
+examples:
+- value: 0966186QA
+  description: Synthetic number with a valid check digit
+- value: 2175829QA
+  description: Synthetic number with a valid check digit
+- value: 0966186QA7
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Personal_Public_Service_Number
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ie.pps.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_ie_pps.html

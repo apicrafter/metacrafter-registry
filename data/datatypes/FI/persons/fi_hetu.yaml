@@ -1,11 +1,10 @@
 id: fi_hetu
-name: Finnish personal identity code (henkilötunnus)
+name: Finnish personal identity code (HETU)
 status: draft
-doc: Personal identity code of Finland (henkilötunnus, HETU; personbeteckning in Swedish). It has 11 characters,
-  DDMMYYCZZZQ - the date of birth, a century sign (+ for the 1800s, - or U to Y for the 1900s, A to F
-  for the 2000s), an individual number (odd for men, even for women; 900 to 999 for temporary codes) and
-  a control character. The control character is the nine-digit number DDMMYYZZZ modulo 31, looked up in
-  0123456789ABCDEFHJKLMNPRSTUVWXY.
+doc: Henkilötunnus, the personal identity code of people registered in Finland. It is the date of birth
+  (DDMMYY), a century sign (+ for the 1800s, - or one of Y, X, W, V, U for the 1900s, A to F for the 2000s),
+  a 3-digit individual number (odd for men, even for women; 900 to 999 for temporary codes) and a check
+  character - the nine-digit number DDMMYYZZZ modulo 31, looked up in 0123456789ABCDEFHJKLMNPRSTUVWXY.
 categories:
 - pii
 - persons
@@ -19,14 +18,18 @@ classification: identifier
 regexp: ^(?:0[1-9]|[12]\d|3[01])(?:0[1-9]|1[0-2])\d{2}[-+A-FU-Y]\d{3}[0-9A-FHJ-NPR-Y]$
 checksum: fi_hetu
 examples:
+- value: 241060-268N
+  description: Synthetic number with a valid check digit
+- value: 271117A736D
+  description: Synthetic number with a valid check digit
 - value: 131052-308T
-  description: worked example from Wikipedia, valid control character
+  description: Worked example from Wikipedia
 - value: 131052-308U
   valid: false
-  description: wrong control character
-- value: 131052G308T
+  description: Check character does not match
+- value: 241060-268N7
   valid: false
-  description: G is not a century sign
+  description: One character too many
 mappings:
   google_dlp: FINLAND_NATIONAL_ID_NUMBER
   purview: Finland national ID
@@ -35,8 +38,12 @@ links:
   url: https://fi.wikipedia.org/wiki/Henkil%C3%B6tunnus
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/National_identification_number#Finland
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fi.hetu.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_fi_hetu.html
 translations:
   fi:
-    name: Henkilötunnus
+    name: Henkilötunnus (HETU)
   sv:
     name: Personbeteckning

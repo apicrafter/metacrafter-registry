@@ -106,9 +106,110 @@
 - id: BG
   name: Bulgaria
   kind: country
-- id: 'NO'
-  name: Norway
+
+# Added for the identifiers supported by Dataprep (issue #1)
+- id: AD
+  name: Andorra
+  kind: country
+- id: AL
+  name: Albania
+  kind: country
+- id: BY
+  name: Belarus
+  kind: country
+- id: CL
+  name: Chile
+  kind: country
+- id: CO
+  name: Colombia
+  kind: country
+- id: CR
+  name: Costa Rica
+  kind: country
+- id: CU
+  name: Cuba
+  kind: country
+- id: CY
+  name: Cyprus
+  kind: country
+- id: CZ
+  name: Czechia
+  kind: country
+- id: DO
+  name: Dominican Republic
+  kind: country
+- id: EC
+  name: Ecuador
+  kind: country
+- id: EE
+  name: Estonia
+  kind: country
+- id: GR
+  name: Greece
+  kind: country
+- id: GT
+  name: Guatemala
+  kind: country
+- id: HR
+  name: Croatia
+  kind: country
+- id: HU
+  name: Hungary
+  kind: country
+- id: IL
+  name: Israel
+  kind: country
+- id: IS
+  name: Iceland
   kind: country
 - id: IT
   name: Italy
+  kind: country
+- id: LI
+  name: Liechtenstein
+  kind: country
+- id: LT
+  name: Lithuania
+  kind: country
+- id: LU
+  name: Luxembourg
+  kind: country
+- id: LV
+  name: Latvia
+  kind: country
+- id: MC
+  name: Monaco
+  kind: country
+- id: MD
+  name: Moldova
+  kind: country
+- id: ME
+  name: Montenegro
+  kind: country
+- id: MT
+  name: Malta
+  kind: country
+- id: MU
+  name: Mauritius
+  kind: country
+- id: MY
+  name: Malaysia
+  kind: country
+- id: "NO"
+  name: Norway
+  kind: country
+- id: NZ
+  name: New Zealand
+  kind: country
+- id: PE
+  name: Peru
+  kind: country
+- id: PT
+  name: Portugal
+  kind: country
+- id: PY
+  name: Paraguay
+  kind: country
+- id: RO
+  name: Romania
   kind: country

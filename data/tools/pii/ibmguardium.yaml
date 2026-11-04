@@ -31,8 +31,8 @@ supported_types:
 - jp_passport
 - mynumber
 - jp_pension_number
-- it_vat
-- it_codice_fiscale
+- it_iva
+- it_codicefiscale
 - iban
 - depersonalausweis
 - frcni

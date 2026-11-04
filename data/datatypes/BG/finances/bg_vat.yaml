@@ -29,6 +29,10 @@ links:
   url: https://en.wikipedia.org/wiki/VAT_identification_number
 - type: doc
   url: https://ec.europa.eu/taxation_customs/vies/
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.bg.vat.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_bg_vat.html
 translations:
   bg:
     name: Идентификационен номер по ДДС
