@@ -63,7 +63,7 @@ email, адрес, округ и район Москвы, день недели.
 | `geojson_geometry_type`: тип геометрии GeoJSON (RFC 7946), общий тип | `geoData.type` («Тип геоданных») | `^(?:Point\|MultiPoint\|LineString\|MultiLineString\|Polygon\|MultiPolygon\|GeometryCollection)$` | 452 | 98,6% |
 | `ru_mos_metro_station`: станция Московского метрополитена | `MetroStation`, `NameOfStation`, `StationName`, `NearStation` | закрытый перечень, эталон — набор 1488 «Станции Московского метрополитена» | 21 | перечень |
 | `ru_mos_metro_line`: линия метро, МЦК или МЦД | `Line`, `MetroLine` | перечень, эталон — набор 2278 «Линии Московского метрополитена»; в полях встречается 23 различных значения | 15 | перечень |
-| `ru_license_regnum`: регистрационный номер лицензии в едином реестре лицензий | `License`, `LicNum`, `LicenseNumber`, `LicenceNumber`, `RegistrationLicenseNumber`, `LicenseRegNumber`, `LicRegNum` | `^Л\d{3}[-–]\d{5}[-–]\d{2}/\d{8}$`, например `Л035-01298-77/00184869` | 14 | 77% (остальное — старые номера: `2124`, `000769 ПРЮВЮ`) |
+| `ru_license_erul` (кандидат совпал с записью из анализа data.gov.ru): регистрационный номер лицензии в едином реестре лицензий | `License`, `LicNum`, `LicenseNumber`, `LicenceNumber`, `RegistrationLicenseNumber`, `LicenseRegNumber`, `LicRegNum` | `^Л\d{3}[-–]\d{5}[-–]\d{2}/\d{8}$`, например `Л035-01298-77/00184869` | 14 | 77% (остальное — старые номера: `2124`, `000769 ПРЮВЮ`) |
 | `ru_age_rating`: возрастная категория информационной продукции (436-ФЗ) | `AgeRestrictions`, `AgeLimit` | `^(?:0\|6\|12\|16\|18)\+$` | 2 | 94,5% (в данных встречаются нестандартные `14+`, `5+`) |
 
 Записи `ru_mos_global_id` и `ru_mos_unom` важны прежде всего против ложных
@@ -75,12 +75,12 @@ email, адрес, округ и район Москвы, день недели.
 | Кандидат | Поля | Формат | Наборы | Попадание |
 |---|---|---|---|---|
 | `ru_accreditation_regnum`: номер государственной аккредитации (тот же реестр, префикс «А») | `AccreditationNumber` | `^А\d{3}-\d{5}-\d{2}/\d{8}$`, например `А007-01298-77/01191788` | 2 | 100% |
-| `ru_construction_permit_number`: номер разрешения на строительство | `PermissionNumber`, `PermitNum` | новый формат `77-09-021903-2025`, `77-229000-020163-2022`; старый `RU50524000-445` | 3 | 87,5% |
+| `ru_construction_permit_number`: номер разрешения на строительство. Новый формат уже покрыт записью `ru_construction_permit` из анализа data.gov.ru, старый `RU50524000-445` — нет | `PermissionNumber`, `PermitNum` | новый формат `77-09-021903-2025`, `77-229000-020163-2022`; старый `RU50524000-445` | 3 | 87,5% |
 | `ru_gpzu_number`: номер градостроительного плана земельного участка | `GPZUDocumentNumber` | `^РФ-\d{2}-\d-\d{2}-\d-\d{2}-\d{4}-\d{4,5}(?:-\d)?$`, например `РФ-77-4-59-3-41-2024-0206-0`; старый вид `RU77139000-040877` | 1 | 81% |
 | `ru_egrokn_regnum`: регистрационный номер объекта культурного наследия в ЕГРОКН | `USRCHONumber` («Номер ЕГРОКН») | `^\d{15}$`, например `771420520120016`; первые две цифры, по-видимому, код региона | 4 | 100% |
 | `ru_eis_contract_regnum`: реестровый номер контракта в ЕИС | `RegistryContractNumber`, `RegNumberEIS`, `ContractNumber` | `^[123]\d{18}$`, например `2770584037920000037`; гипотеза о составе (уровень бюджета + ИНН заказчика + год + порядковый номер) требует проверки | ≥4 | поля смешанные |
 | `ru_eis_purchase_number`: номер закупки (извещения) в ЕИС | те же поля и `ContractNumber` | `^0\d{18}$`, например `0173200001418000667` | ≥4 | поля смешанные |
-| `ru_fsrar_license`: номер лицензии на розничную продажу алкоголя в сводном реестре ФСРАР | `LicenseNumberInRegistry` | `^\d{2}РП[АО]\d{7}$`, например `77РПА0000060` | 1 | 100% |
+| `ru_fsrar_license`: номер лицензии на розничную продажу алкоголя в сводном реестре ФСРАР. Уже покрыт записью `ru_alcohol_license` из анализа data.gov.ru | `LicenseNumberInRegistry` | `^\d{2}РП[АО]\d{7}$`, например `77РПА0000060` | 1 | 100% |
 | `ru_si_type_regnum`: номер типа средства измерений в Госреестре СИ (ФИФ ОЕИ) | `STATE_REGISTER_NUMBER` | `^\d{1,6}-\d{2}$`, например `27011-13` | 1 | 95% |
 | `ru_ubp_code`: код участника бюджетного процесса по Сводному реестру | `OrgCode`, `MainOrgCode`, `RbsOrgCode` | 8 знаков `[0-9А-Я]`, например `452К7402`; в данных также встречается латиница (`452D5026`) | 1 | 96,6% |
 
@@ -201,7 +201,8 @@ email, адрес, округ и район Москвы, день недели.
    `ipv6subnet`.
 2. Добавить черновые (`draft`) записи приоритета 1: `ru_mos_global_id`,
    `ru_mos_unom`, `geojson_geometry_type`, `ru_mos_metro_station`,
-   `ru_mos_metro_line`, `ru_license_regnum` и `ru_age_rating`.
+   `ru_mos_metro_line` и `ru_age_rating`. Номер лицензии ЕРУЛ уже есть
+   в реестре как `ru_license_erul`.
 3. Добавить записи приоритета 2 (реестровые номера) после проверки форматов
    по нормативным актам.
 4. Добавить общероссийские классификаторы, начиная с ОКЗ, ОКПДТР, ОКСО,
@@ -222,8 +223,12 @@ email, адрес, округ и район Москвы, день недели.
 - `ddi_agency_id` теперь требует, чтобы первая метка состояла из 2–3 букв.
   `ipv6subnet` теперь заякорен и требует длину префикса.
 - Новые черновые записи: `ru_mos_global_id`, `ru_mos_unom`,
-  `geojson_geometry_type`, `ru_mos_metro_station`, `ru_mos_metro_line`,
-  `ru_license_regnum` и `ru_age_rating`.
+  `geojson_geometry_type`, `ru_mos_metro_station`, `ru_mos_metro_line` и
+  `ru_age_rating`.
+- Номер лицензии ЕРУЛ параллельно добавил анализ data.gov.ru как
+  `ru_license_erul`. Отдельная запись `ru_license_regnum` не создавалась:
+  её примеры, разбор групп номера по данным data.mos.ru и поддержка
+  длинного тире перенесены в `ru_license_erul`.
 
 Результат `identify` на тех же группах полей (лучший кандидат, было → стало):
 
@@ -235,7 +240,7 @@ email, адрес, округ и район Москвы, день недели.
 | `PostalCode` | `naicscode` 60 | `ruspostalcode` 76 |
 | `OKTMO` | `okpo` 63 | `oktmo` 86 |
 | `CadastralNumber` | `uiccode` 43 | `rukadastr` 65 |
-| `License` | `rudriverlicense` 20 | `ru_license_regnum` 75 |
+| `License` | `rudriverlicense` 20 | `ru_license_erul` 75 |
 | `RegistrationPlateTractor` | `govlicaccount` 53 | `ru_vehicle_plate` 75 |
 | `AgeRestrictions` | `age` 8 | `ru_age_rating` 56 |
 | `Hours`, `WorkHours` | `ipv6subnet` 33 | `timerange` 48 |
