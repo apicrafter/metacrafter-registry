@@ -1,12 +1,10 @@
 id: crypto_address
 name: Cryptocurrency address by field name (generic)
+status: draft
 doc: Cryptocurrency address by field name (generic)
-langs:
-- en
 categories:
 - cryptocurrency
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

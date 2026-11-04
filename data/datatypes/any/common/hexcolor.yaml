@@ -1,19 +1,24 @@
-categories:
-- common
-doc: Color of subject
 id: hexcolor
-is_pii: 'False'
+name: sRGB color hex triplet (hex color)
+status: stable
+doc: 'Color written as a hexadecimal sRGB triplet, for example #1F5FBF.'
+semantic_type: color
 langs:
 - common
-name: sRGB color hex triplet (hex color)
+regexp: ^#?(?:[0-9A-Fa-f]{3}){1,2}$
+examples:
+- value: '#1F5FBF'
+  description: 'six hex digits with a leading #'
+- value: FF8800
+  description: 'six hex digits without #'
+- value: '#FFF'
+  description: short three-digit form
+mappings:
+  wikidata: P465
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P465
-wikidata_property: P465
 translations:
   ru:
-    doc: Цвет sRGB в шестнадцатеричной кодировке
     name: Цвет в шестнадцатеричной кодировке
-semantic_type: color
-examples: []
-regexp: ''
+    doc: Цвет sRGB в шестнадцатеричной кодировке

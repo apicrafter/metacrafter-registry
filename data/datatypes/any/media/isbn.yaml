@@ -1,14 +1,11 @@
 id: isbn
 name: ISBN by field name
+status: stable
 doc: ISBN by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - media
 langs:
 - en
-is_pii: 'False'
+is_pii: false
+classification: identifier
 regexp: ^(978|979)[0-9]{10}$
-links: []

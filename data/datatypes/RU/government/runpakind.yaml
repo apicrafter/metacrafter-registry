@@ -1,0 +1,17 @@
+id: runpakind
+name: Russian regulatory legal act type
+status: draft
+doc: 'Type of the Russian legal document: order, executive order and so on'
+parent: legislationtype
+categories:
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+translations:
+  ru:
+    name: Тип нормативного документа в России/на русском языке
+    doc: 'Тип нормативного документа, например: указ, постановление, приказ и др., на русском языке'

@@ -1,14 +1,10 @@
+id: nhsnumber
+name: NHS number
+status: draft
+doc: Datatype for 'NHS number' (nhsnumber) from rules in context 'pii'.
 categories:
 - pii
-id: nhsnumber
-is_pii: 'True'
 langs:
 - en
-name: NHS number
-doc: Datatype for 'NHS number' (nhsnumber) from rules in context 'pii'.
+is_pii: true
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

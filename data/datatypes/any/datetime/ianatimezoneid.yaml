@@ -1,19 +1,19 @@
-categories:
-- datetime
-doc: Difference between Coordinated Universal Time (UTC) and this timezone.
 id: ianatimezoneid
+name: IANA Timezone ID
+status: stable
+doc: Time zone identifier from the IANA time zone database (tz database), in Area/Location form, for example
+  Europe/London.
+semantic_type: timezone
 langs:
 - common
-links:
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P6687
-name: IANA Timezone ID
-semantic_type: timezone
-wikidata_property: P6687
-regexp: '^(?:[A-Z][A-Za-z_-]+(?:/[A-Za-z0-9_+-]+){1,2}|UTC|GMT)$'
+regexp: ^(?:[A-Z][A-Za-z_-]+(?:/[A-Za-z0-9_+-]+){1,2}|UTC|GMT)$
 examples:
 - value: Australia/Sydney
   description: Australia/Sydney
 - value: Europe/London
   description: Europe/London
-translations: {}
+mappings:
+  wikidata: P6687
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6687

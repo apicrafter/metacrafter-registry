@@ -1,0 +1,15 @@
+id: iso3166_mx3a
+name: ISO 3166-2:MX (3-letters code)
+status: stable
+doc: ISO 3166-2:MX 3-letters alphanumeric codes used to identify Mexican states.
+categories:
+- geo
+country:
+- MX
+langs:
+- es
+is_pii: false
+classification: categorical
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Template:Mexico_State-Abbreviation_Codes

@@ -1,0 +1,9 @@
+id: russurname
+name: Surname/Lastname in Russian
+status: draft
+doc: Surname/Lastname in Russian
+semantic_type: person_surname
+country:
+- RU
+langs:
+- ru

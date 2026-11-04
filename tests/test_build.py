@@ -129,7 +129,7 @@ def test_invalid_sources_leave_previous_output(mini_data, tmp_path):
     before = tree_hash(out)
     write_record(
         mini_data / "datatypes/any/pii/bad.yaml",
-        "id: bad\nname: Bad\ndoc: Bad\nlangs: [en]\nis_pii: 'False'\nregexp: '(ab'\n",
+        "id: bad\nname: Bad\nstatus: stable\ndoc: Bad\nlangs: [en]\nis_pii: false\nregexp: '(ab'\n",
     )
     with pytest.raises(BuildError):
         build(mini_data, out, update_data_files=False)

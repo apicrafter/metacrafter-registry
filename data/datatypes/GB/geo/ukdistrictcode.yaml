@@ -1,0 +1,16 @@
+id: ukdistrictcode
+name: District code (United Kingdom)
+status: stable
+doc: UK district code identifying a district, a level of subnational division used for local government
+  within the United Kingdom.
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Districts_of_England

@@ -1,0 +1,14 @@
+id: encompanyname
+name: Company/business name in English
+status: stable
+doc: English written company/business/legal name of business entity
+semantic_type: orgname
+langs:
+- en
+examples:
+- value: AARDMAN ANIMATIONS LIMITED
+  description: AARDMAN ANIMATIONS LIMITED
+- value: ULSTER INNOVATION FUND LP
+  description: ULSTER INNOVATION FUND LP
+- value: GREEN HILL TRUST
+  description: GREEN HILL TRUST

@@ -1,19 +1,16 @@
+id: idpostcode
+name: Indonesian Postal Code
+status: stable
+doc: Indonesian postal code (kode pos)
 categories:
 - geo
 country:
 - ID
-doc: Indonesian postal code (kode pos)
-id: idpostcode
-is_pii: 'False'
 langs:
 - id
-links: []
-name: Indonesian Postal Code
-regexp: '^[0-9]{5}$'
-examples:
-- value: "10110"
-  description: Example Indonesian postal code
+is_pii: false
 classification: identifier
-wikidata_property: ''
-translations: {}
-
+regexp: ^[0-9]{5}$
+examples:
+- value: '10110'
+  description: Example Indonesian postal code

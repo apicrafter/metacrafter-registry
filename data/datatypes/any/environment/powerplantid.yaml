@@ -1,15 +1,10 @@
+id: powerplantid
+name: Power plant identifier
+status: draft
+doc: Datatype for 'Power plant identifier' (powerplantid) from rules in context 'environment'.
 categories:
 - environment
-id: powerplantid
-is_pii: 'False'
 langs:
 - en
-name: Power plant identifier
-doc: Datatype for 'Power plant identifier' (powerplantid) from rules
-  in context 'environment'.
+is_pii: false
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

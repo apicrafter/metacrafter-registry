@@ -1,16 +1,10 @@
+id: person_midname
+name: Person middle name
+status: draft
+doc: Middle name of the person
 categories:
 - persons
 - pii
-doc: Middle name of the person
-id: person_midname
-is_pii: 'True'
 langs:
 - common
-name: Person middle name
-patterns:
-- rusmidname
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''
+is_pii: true

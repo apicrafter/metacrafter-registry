@@ -1,13 +1,22 @@
+id: url
+name: Uniform Resource Locator (URL)
+status: stable
+doc: A Uniform Resource Locator (URL), colloquially termed a web address, is a reference to a web resource
+  that specifies its location on a computer network and a mechanism for retrieving it. A URL is a specific
+  type of Uniform Resource Identifier (URI), although many people use the two terms interchangeably
 categories:
 - common
-doc: A Uniform Resource Locator (URL), colloquially termed a web address, is a reference
-  to a web resource that specifies its location on a computer network and a mechanism
-  for retrieving it. A URL is a specific type of Uniform Resource Identifier (URI),
-  although many people use the two terms interchangeably
-id: url
-is_pii: 'False'
 langs:
 - common
+is_pii: false
+regexp: (https?|ftp)://(\S+\.)+\S+(/\S*)?|
+examples:
+- value: http://www.rdaregistry.info/xml/termList/AspectRatio.xml
+  description: RDA aspect ratio designation
+- value: http://vocab.getty.edu/doc/
+  description: Art & Architecture Thesaurus LOD Dataset
+mappings:
+  wikidata: P2699
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/URL
@@ -15,12 +24,3 @@ links:
   url: https://www.wikidata.org/wiki/Property:P2699
 - type: schema.org
   url: https://schema.org/URL
-name: Uniform Resource Locator (URL)
-wikidata_property: P2699
-regexp: (https?|ftp)://(\S+\.)+\S+(/\S*)?|
-examples:
-- value: http://www.rdaregistry.info/xml/termList/AspectRatio.xml
-  description: RDA aspect ratio designation
-- value: http://vocab.getty.edu/doc/
-  description: Art & Architecture Thesaurus LOD Dataset
-translations: {}

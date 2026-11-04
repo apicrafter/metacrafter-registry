@@ -1,0 +1,16 @@
+id: okved
+name: Russian economic classification code (OKVED)
+status: draft
+doc: Russian economic classification code (OKVED)
+categories:
+- common
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+translations:
+  ru:
+    name: Код ОКВЭД
+    doc: Код по общероссийскому классификатору видов экономической деятельности

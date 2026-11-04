@@ -1,22 +1,18 @@
+id: aecity
+name: UAE City Name
+status: draft
+doc: UAE city name
 categories:
 - geo
 country:
 - AE
-doc: UAE city name
-id: aecity
-is_pii: 'False'
 langs:
 - ar
 - en
-links: []
-name: UAE City Name
-regexp: ''
-examples:
-- value: "Dubai"
-  description: Example UAE city
-- value: "Abu Dhabi"
-  description: Example UAE city
+is_pii: false
 classification: categorical
-wikidata_property: ''
-translations: {}
-
+examples:
+- value: Dubai
+  description: Example UAE city
+- value: Abu Dhabi
+  description: Example UAE city

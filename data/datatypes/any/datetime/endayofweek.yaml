@@ -1,0 +1,7 @@
+id: endayofweek
+name: Day of week (in English)
+status: draft
+doc: Day of week writtern in English
+semantic_type: dayofweek
+langs:
+- en

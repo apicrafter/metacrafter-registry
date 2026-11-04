@@ -1,16 +1,11 @@
+id: score
+name: Score (numeric)
+status: draft
+doc: Score of something as numeric/float number
+parent: numeric
 categories:
 - values
 - common
-doc: Score of something as numeric/float number
-id: score
-is_pii: 'False'
-parent:
-  type: numeric
 langs:
 - common
-name: Score (numeric)
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''
+is_pii: false

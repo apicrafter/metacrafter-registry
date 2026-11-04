@@ -1,16 +1,11 @@
+id: grossmargin
+name: Gross margin (money)
+status: draft
+doc: Gross margin, sub-type of money
+parent: money
 categories:
 - values
 - common
-doc: Gross margin, sub-type of money
-id: grossmargin
-is_pii: 'False'
-parent:
-  type: money
 langs:
 - common
-name: Gross margin (money)
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''
+is_pii: false

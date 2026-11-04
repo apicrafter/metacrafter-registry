@@ -1,0 +1,13 @@
+id: uspassport
+name: US passport number
+status: draft
+doc: Number of US Passport
+semantic_type: passport
+country:
+- US
+langs:
+- en
+regexp: '[0-9]{9}'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/United_States_passport

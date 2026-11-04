@@ -1,12 +1,10 @@
 id: ethereum_address
 name: Ethereum address by field name
+status: draft
 doc: Ethereum address by field name
-langs:
-- en
 categories:
 - cryptocurrency
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

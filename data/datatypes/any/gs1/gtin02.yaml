@@ -1,0 +1,19 @@
+id: gtin02
+name: Global Trade Item Number (GTIN) of contained trade items
+status: stable
+doc: 'GTIN of the trade items contained in a logistic unit, written as a GS1 element string with Application
+  Identifier (02): ''02'' followed by 14 digits. Used together with the SSCC of the unit.'
+categories:
+- industry
+- objectids
+- gs1
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^02(\d{14})$
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Global_Trade_Item_Number
+- type: other
+  url: https://www.gs1.org/standards/barcodes/application-identifiers/02

@@ -1,0 +1,16 @@
+id: okogu
+name: Russian government and governance code (OKOGU)
+status: draft
+doc: Russian government and governance code. OKOGU classifier
+categories:
+- common
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+translations:
+  ru:
+    name: Код ОКОГУ
+    doc: ОКОГУ -  это общероссийский классификатор органов государственной власти и управления

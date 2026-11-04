@@ -1,0 +1,16 @@
+id: aubsb
+name: Australia bank state branch (BSB) code
+status: stable
+doc: A bank state branch is the name used in Australia for a bank code, which is a branch identifier.
+categories:
+- finances
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{3}-?[0-9]{3}$
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Bank_state_branch

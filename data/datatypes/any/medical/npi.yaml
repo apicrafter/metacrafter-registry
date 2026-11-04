@@ -1,14 +1,10 @@
+id: npi
+name: US NPI identifier
+status: draft
+doc: Datatype for 'US NPI identifier' (npi) from rules in context 'medical'.
 categories:
 - medical
-id: npi
-is_pii: 'True'
 langs:
 - en
-name: US NPI identifier
-doc: Datatype for 'US NPI identifier' (npi) from rules in context 'medical'.
+is_pii: true
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

@@ -1,12 +1,10 @@
 id: dc_type
 name: Dublin Core type by field name
+status: draft
 doc: Dublin Core type by field name
-langs:
-- en
 categories:
 - dublincore
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

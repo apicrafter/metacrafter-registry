@@ -1,19 +1,18 @@
+id: year
+name: Year
+status: stable
+doc: A calendar year in western notation like 2022 or 1913
 categories:
 - datetime
-doc: A calendar year in western notation like 2022 or 1913
-id: year
-is_pii: 'False'
 langs:
 - common
-links:
-- type: wikipedia
-  url: https://en.wikipedia.org/wiki/Year
-name: Year
+is_pii: false
 regexp: \d{4}
 examples:
 - value: '2022'
   description: Year 2022
 - value: '1243'
   description: Year 1243
-wikidata_property: ''
-translations: {}
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Year

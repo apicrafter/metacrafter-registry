@@ -1,12 +1,10 @@
 id: sha256
 name: SHA-256 hash by value
+status: draft
 doc: SHA-256 hash by value
-langs:
-- en
 categories:
 - software
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

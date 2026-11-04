@@ -1,23 +1,23 @@
+id: am_tin
+name: Armenian Taxpayer Identification Number
+status: stable
+doc: Armenian Taxpayer Identification Number (TIN) used for tax purposes to identify individuals and entities
+  within the tax system. Mandatory for public sector systems.
 categories:
 - finances
 - government
 country:
 - AM
-doc: Armenian Taxpayer Identification Number (TIN) used for tax purposes to identify individuals and entities within the tax system. Mandatory for public sector systems.
-id: am_tin
-is_pii: 'False'
 langs:
 - hy
-links: []
-name: Armenian Taxpayer Identification Number
+is_pii: false
+classification: identifier
 regexp: \d{8}
 examples:
-- value: "12345678"
+- value: '12345678'
   description: Example Armenian TIN
 translations:
   hy:
-    doc: Հարկ վճարողի նույնականացման համար - հարկային համակարգում անհատների և կազմակերպությունների նույնականացման համար օգտագործվող համար
     name: Հարկ վճարողի նույնականացման համար
-classification: identifier
-wikidata_property: ''
-
+    doc: Հարկ վճարողի նույնականացման համար - հարկային համակարգում անհատների և կազմակերպությունների նույնականացման
+      համար օգտագործվող համար

@@ -1,12 +1,10 @@
 id: dc_format
 name: Dublin Core format by field name
+status: draft
 doc: Dublin Core format by field name
-langs:
-- en
 categories:
 - dublincore
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

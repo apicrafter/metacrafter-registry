@@ -1,20 +1,17 @@
+id: aetaxnumber
+name: UAE Tax Number
+status: stable
+doc: UAE tax identification number (TRN - Tax Registration Number)
 categories:
 - finances
 country:
 - AE
-doc: UAE tax identification number (TRN - Tax Registration Number)
-id: aetaxnumber
-is_pii: 'False'
 langs:
 - ar
 - en
-links: []
-name: UAE Tax Number
-regexp: '^[0-9]{9,15}$'
-examples:
-- value: "123456789"
-  description: Example UAE tax number
+is_pii: false
 classification: identifier
-wikidata_property: ''
-translations: {}
-
+regexp: ^[0-9]{9,15}$
+examples:
+- value: '123456789'
+  description: Example UAE tax number

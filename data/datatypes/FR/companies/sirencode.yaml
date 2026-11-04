@@ -1,0 +1,27 @@
+id: sirencode
+name: SIREN Code
+status: stable
+doc: SIREN codes are given to French businesses and nonprofit associations, SIRET codes to their establishments
+  and facilities. SIREN codes are maintained by the French INSEE. This is France-specific, and will not
+  change during the lifetime of the business.
+categories:
+- companies
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: \d{9}
+examples:
+- value: '775672272'
+  description: French Red Cross
+- value: '775670417'
+  description: LVMH
+mappings:
+  wikidata: P1616
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SIREN_code
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1616

@@ -7,6 +7,7 @@ import re
 from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 from .loader import RegistrySources
 
@@ -20,6 +21,17 @@ _PYTHON_ONLY_RE = re.compile(r"\(\?P[<=]|\\[AZ]|\(\?[aiLmsux]+\)|\(\?#")
 # ``\d{1,4}+`` and atomic groups ``(?>...)``). Consumers run older Pythons and
 # browsers, so these are errors even when the local interpreter accepts them.
 _PY311_ONLY_OPCODES = {"POSSESSIVE_REPEAT", "ATOMIC_GROUP"}
+
+
+def _looks_like_placeholder(value: str) -> bool:
+    """'0000', '1234567890', 'XXXXX': values that only show a format."""
+    compact = re.sub(r"[\s.\-/]", "", value)
+    if len(compact) < 4:
+        return False
+    if len(set(compact.upper())) == 1:
+        return True
+    digits = "01234567890123456789"
+    return compact.isdigit() and len(compact) >= 6 and compact in digits
 
 
 def _uses_py311_only_syntax(pattern: str) -> bool:
@@ -66,19 +78,39 @@ class ValidationResult:
         return not self.errors
 
 
-def _schema_issues(sources: RegistrySources, schema_dir: Path) -> list[Issue]:
-    from cerberus import Validator
+def default_schema_dir(data_dir: Path) -> Path:
+    return Path(data_dir).resolve().parent / "schema"
 
+
+def load_schema_validators(schema_dir: Path) -> dict[str, Any]:
+    """JSON Schema (2020-12) validators for 'datatype', 'pattern' and 'tool' records."""
+    from jsonschema import Draft202012Validator
+    from referencing import Registry, Resource
+
+    schemas = {}
+    registry = Registry()
+    for name in ("datatype", "pattern", "tool"):
+        with open(Path(schema_dir) / f"{name}.schema.json", encoding="utf-8") as handle:
+            schema = json.load(handle)
+        schemas[name] = schema
+        registry = registry.with_resource(schema["$id"], Resource.from_contents(schema))
+    return {
+        name: Draft202012Validator(schema, registry=registry) for name, schema in schemas.items()
+    }
+
+
+def _schema_issues(sources: RegistrySources, schema_dir: Path) -> list[Issue]:
+    validators = load_schema_validators(schema_dir)
     issues = []
-    for schema_name, records in (
-        ("datatype.json", sources.datatypes),
-        ("tool.json", sources.tools),
-    ):
-        with open(schema_dir / schema_name, encoding="utf-8") as handle:
-            validator = Validator(json.load(handle))
-        for rec in records:
-            if not validator.validate(rec.data):
-                issues.append(Issue(ERROR, rec.relpath, rec.id, f"schema: {validator.errors}"))
+    tool_records = {id(rec) for rec in sources.tools}
+    for rec in [*sources.datatypes, *sources.tools]:
+        if id(rec) in tool_records:
+            kind = "tool"
+        else:
+            kind = "pattern" if "semantic_type" in rec.data else "datatype"
+        for error in sorted(validators[kind].iter_errors(rec.data), key=lambda e: list(e.path)):
+            where = ".".join(str(p) for p in error.absolute_path) or "(record)"
+            issues.append(Issue(ERROR, rec.relpath, rec.id, f"schema: {where}: {error.message}"))
     return issues
 
 
@@ -104,26 +136,25 @@ def _id_issues(sources: RegistrySources) -> list[Issue]:
     seen: dict[str, list[str]] = defaultdict(list)
     for rec in [*sources.datatypes, *sources.tools]:
         seen[rec.id].append(rec.relpath)
+    for rec in sources.datatypes:
+        for alias in rec.data.get("aliases") or []:
+            seen[str(alias)].append(f"{rec.relpath} (alias)")
     for rid, paths in sorted(seen.items()):
         if len(paths) > 1:
-            issues.append(Issue(ERROR, paths[0], rid, f"duplicate id, also in {paths[1:]}"))
+            issues.append(
+                Issue(ERROR, paths[0], rid, f"duplicate id or alias, also in {paths[1:]}")
+            )
 
     datatype_ids = {rec.id for rec in sources.datatypes}
     for rec in sources.datatypes:
-        semantic_type = rec.data.get("semantic_type")
-        if semantic_type is not None and str(semantic_type) not in datatype_ids:
-            issues.append(
-                Issue(ERROR, rec.relpath, rec.id, f"unknown semantic_type '{semantic_type}'")
-            )
-        parent = rec.data.get("parent")
-        parent_id = parent.get("type") if isinstance(parent, dict) else parent
-        if parent_id is not None and str(parent_id) not in datatype_ids:
-            issues.append(Issue(ERROR, rec.relpath, rec.id, f"unknown parent '{parent_id}'"))
-        stem = Path(rec.relpath).stem
-        if stem != rec.id:
-            issues.append(
-                Issue(WARNING, rec.relpath, rec.id, f"file name should be '{rec.id}.yaml'")
-            )
+        for field_name in ("semantic_type", "parent", "replaced_by"):
+            value = rec.data.get(field_name)
+            target = value.get("type") if isinstance(value, dict) else value
+            if target is not None and str(target) not in datatype_ids:
+                issues.append(Issue(ERROR, rec.relpath, rec.id, f"unknown {field_name} '{target}'"))
+    for rec in [*sources.datatypes, *sources.tools]:
+        if Path(rec.relpath).stem != rec.id:
+            issues.append(Issue(ERROR, rec.relpath, rec.id, f"file name must be '{rec.id}.yaml'"))
     for rec in sources.tools:
         for supported in rec.data.get("supported_types") or []:
             if str(supported) not in datatype_ids:
@@ -195,6 +226,12 @@ def _regexp_issues(sources: RegistrySources) -> list[Issue]:
             if not isinstance(example, dict) or "value" not in example:
                 continue
             value = str(example["value"])
+            if _looks_like_placeholder(value):
+                issues.append(
+                    Issue(
+                        WARNING, rec.relpath, rec.id, f"example '{value}' looks like a placeholder"
+                    )
+                )
             valid = example.get("valid", True) is not False
             matched = compiled.search(value) is not None
             if valid and not matched:
@@ -219,7 +256,7 @@ def _regexp_issues(sources: RegistrySources) -> list[Issue]:
 
 
 def validate(sources: RegistrySources, schema_dir: Path | None = None) -> ValidationResult:
-    schema_dir = schema_dir or sources.data_dir / "schemes"
+    schema_dir = schema_dir or default_schema_dir(sources.data_dir)
     issues = [Issue(ERROR, path, "-", message) for path, message in sources.load_errors]
     issues += _schema_issues(sources, schema_dir)
     issues += _ref_issues(sources)

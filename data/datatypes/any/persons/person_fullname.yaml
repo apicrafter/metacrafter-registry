@@ -1,17 +1,10 @@
+id: person_fullname
+name: Person fullname
+status: draft
+doc: Full name of the person as combination of last, first, and sometimes middle name
 categories:
 - persons
 - pii
-doc: Full name of the person as combination of last, first, and sometimes middle name
-id: person_fullname
-is_pii: 'True'
 langs:
 - common
-name: Person fullname
-patterns:
-- rusfullname
-- frfullname
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''
+is_pii: true

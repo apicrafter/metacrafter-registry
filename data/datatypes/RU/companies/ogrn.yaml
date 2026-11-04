@@ -1,0 +1,31 @@
+id: ogrn
+name: Russian primary state registration number (OGRN)
+status: stable
+doc: Primary State Registration Number number assigned by Tax Service to any business entity in Russia
+categories:
+- companies
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: \d{13}
+examples:
+- value: '1027700043502'
+  description: Rosneft
+- value: '1027700132195'
+  description: Sberbank of Russia
+mappings:
+  wikidata: P7011
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P7011
+translations:
+  ru:
+    name: Основной государственный регистрационный номер (ОГРН)
+    doc: ОГРН (основной государственный регистрационный номер) — государственный регистрационный номер
+      записи о создании юридического лица либо записи о первом представлении в соответствии с федеральным
+      законом Российской Федерации «О государственной регистрации юридических лиц» сведений о юридическом
+      лице, зарегистрированном до введения в действие указанного Закона (пункт 8 Правил ведения Единого
+      государственного реестра юридических лиц).

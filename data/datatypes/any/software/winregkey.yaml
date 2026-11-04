@@ -1,0 +1,19 @@
+id: winregkey
+name: Windows Registry key
+status: stable
+doc: Registry keys are container objects similar to folders. Registry values are non-container objects
+  similar to files. Keys may contain values and subkeys. Keys are referenced with a syntax similar to
+  Windows path names, using backslashes to indicate levels of hierarchy. Keys must have a case insensitive
+  name without backslashes.
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: HKEY_LOCAL_MACHINE\System\CurrentControlSet\Hardware Profiles\Current
+  description: Current Windows hardware profile
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Windows_Registry

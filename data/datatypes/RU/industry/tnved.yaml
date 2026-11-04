@@ -1,0 +1,25 @@
+id: tnved
+name: Russian TN VED code (product code)
+status: stable
+doc: TN VED is a Russian classifier used to identify product groups for customs purposes and international
+  trade statistics.
+categories:
+- common
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+examples:
+- value: 7304 11 00
+  description: Line pipe of a kind used for oil or gas pipelines, seamless, of stainless steel
+- value: 8431 39 00
+  description: Parts of machinery of heading 8428, n.e.s.
+links:
+- type: other
+  url: https://ru.wikipedia.org/wiki/Товарная_номенклатура_внешнеэкономической_деятельности_Евразийского_экономического_союза
+translations:
+  ru:
+    name: Код ТНВЭД
+    doc: Товарная номенклатура внешнеэкономической деятельности Евразийского экономического союза

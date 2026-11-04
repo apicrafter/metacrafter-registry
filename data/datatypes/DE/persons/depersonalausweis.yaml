@@ -1,0 +1,18 @@
+id: depersonalausweis
+name: Germany national identity card
+status: stable
+doc: The German Identity Card is issued to German citizens by local registration offices in Germany and
+  diplomatic missions abroad, while they are produced at the Bundesdruckerei in Berlin.
+categories:
+- pii
+- persons
+country:
+- DE
+langs:
+- de
+is_pii: true
+classification: identifier
+regexp: ^[0-9]{12}$
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/German_identity_card

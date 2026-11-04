@@ -1,71 +1,105 @@
 # ISO 3166 code alpha-2 for all countries as id, name as English name of the country
 - id: GB
   name: United Kingdom
+  kind: country
 - id: US
   name: United States
+  kind: country
 - id: RU
   name: Russian Federation
+  kind: country
 - id: FR
   name: France
+  kind: country
 - id: ES
   name: Spain
+  kind: country
 - id: MX
   name: Mexico
+  kind: country
 - id: EU
   name: European Union
+  kind: region
 - id: AU
   name: Australia
+  kind: country
 - id: SG
   name: Singapore
+  kind: country
 - id: BE
   name: Belgium
+  kind: country
 - id: CA
   name: Canada
+  kind: country
 - id: IE
   name: Ireland
+  kind: country
 - id: AR 
   name: Argentina
+  kind: country
 - id: DK
   name: Denmark
+  kind: country
 - id: BR
   name: Brazil
+  kind: country
 - id: FI
   name: Finland
+  kind: country
 - id: SE
   name: Sweden
+  kind: country
 - id: TH
   name: Thailand
+  kind: country
 - id: DE
   name: Germany
+  kind: country
 - id: AT
   name: Austria
+  kind: country
 
 # Added to support countries referenced in datatype definitions
 - id: NL
   name: Netherlands
+  kind: country
 - id: CN
   name: China
+  kind: country
 - id: JP
   name: Japan
+  kind: country
 - id: IN
   name: India
+  kind: country
 - id: KR
   name: South Korea
+  kind: country
 - id: PL
   name: Poland
+  kind: country
 - id: VN
   name: Vietnam
+  kind: country
 - id: AM
   name: Armenia
+  kind: country
 - id: SA
   name: Saudi Arabia
+  kind: country
 - id: ID
   name: Indonesia
+  kind: country
 - id: TR
   name: Turkey
+  kind: country
 - id: AE
   name: United Arab Emirates
+  kind: country
 - id: EG
   name: Egypt
+  kind: country
 - id: CH
   name: Switzerland
+  kind: country

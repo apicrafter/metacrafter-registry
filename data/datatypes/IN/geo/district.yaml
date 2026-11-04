@@ -1,15 +1,12 @@
 id: district
 name: Indian district by known name
+status: draft
 doc: Indian district by known name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - geo
 country:
 - IN
 langs:
 - en
-is_pii: 'False'
-links: []
+is_pii: false
+classification: identifier

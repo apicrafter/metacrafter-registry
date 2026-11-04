@@ -1,0 +1,21 @@
+id: gtin
+name: Global Trade Item Number 14
+status: stable
+doc: 'Global Trade Item Number (GTIN-14) written as a GS1 element string with Application Identifier (01):
+  ''01'' followed by the 14 digits of the GTIN. GS1 GTINs identify trade items and are read from barcodes.'
+categories:
+- industry
+- objectids
+- gs1
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^01(\d{14})$
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Global_Trade_Item_Number
+- type: schema.org
+  url: https://schema.org/gtin14
+- type: other
+  url: https://www.gs1.org/standards/barcodes/application-identifiers/01

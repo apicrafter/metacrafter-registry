@@ -1,10 +1,7 @@
 id: krdriverlic
 name: Korean driver license by field name
+status: stable
 doc: Korean driver license by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - pii
 - persons
@@ -12,6 +9,6 @@ country:
 - KR
 langs:
 - ko
-is_pii: 'True'
+is_pii: true
+classification: identifier
 regexp: ^[A-Z0-9]{6,12}$
-links: []

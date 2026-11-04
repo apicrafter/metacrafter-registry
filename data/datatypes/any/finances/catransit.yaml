@@ -1,15 +1,10 @@
+id: catransit
+name: Canadian branch transit number
+status: draft
+doc: Datatype for 'Canadian branch transit number' (catransit) from rules in context 'finances'.
 categories:
 - finances
-id: catransit
-is_pii: 'False'
 langs:
 - common
-name: Canadian branch transit number
-doc: Datatype for 'Canadian branch transit number' (catransit) from
-  rules in context 'finances'.
+is_pii: false
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

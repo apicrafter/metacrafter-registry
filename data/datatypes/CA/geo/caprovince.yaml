@@ -1,18 +1,15 @@
+id: caprovince
+name: Province of Canada
+status: stable
+doc: Provinces and territories of Canada
 categories:
 - geo
 country:
 - CA
-doc: Provinces and territories of Canada
-id: caprovince
-is_pii: 'False'
+langs:
+- en
+is_pii: false
+classification: categorical
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Provinces_and_territories_of_Canada
-langs:
-- en
-name: Province of Canada
-classification: categorical
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

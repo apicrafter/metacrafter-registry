@@ -1,19 +1,16 @@
+id: egtaxnumber
+name: Egyptian Tax Number
+status: stable
+doc: Egyptian tax identification number
 categories:
 - finances
 country:
 - EG
-doc: Egyptian tax identification number
-id: egtaxnumber
-is_pii: 'False'
 langs:
 - ar
-links: []
-name: Egyptian Tax Number
-regexp: '^[0-9]{9,15}$'
-examples:
-- value: "123456789"
-  description: Example Egyptian tax number
+is_pii: false
 classification: identifier
-wikidata_property: ''
-translations: {}
-
+regexp: ^[0-9]{9,15}$
+examples:
+- value: '123456789'
+  description: Example Egyptian tax number

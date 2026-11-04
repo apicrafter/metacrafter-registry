@@ -1,0 +1,16 @@
+id: esdriverlic
+name: Spain driver license number
+status: stable
+doc: Alphanumeric value of the Spain driver license
+categories:
+- pii
+- persons
+country:
+- ES
+langs:
+- es
+is_pii: true
+classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Driving_licence_in_Spain

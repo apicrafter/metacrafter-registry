@@ -1,14 +1,10 @@
+id: airlinecallsign
+name: Airline call sign
+status: draft
+doc: Unique call sign of the airline
 categories:
 - transport
-doc: Unique call sign of the airline
-id: airlinecallsign
-is_pii: 'False'
 langs:
 - common
-name: Airline call sign
+is_pii: false
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

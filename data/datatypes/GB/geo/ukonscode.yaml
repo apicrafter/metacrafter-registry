@@ -1,0 +1,16 @@
+id: ukonscode
+name: ONS code (United Kingdom)
+status: stable
+doc: UK ONS code, a geographic code assigned by the Office for National Statistics under the older ONS
+  coding system for administrative and statistical geographies.
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system

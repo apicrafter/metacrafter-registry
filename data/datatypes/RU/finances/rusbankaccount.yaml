@@ -1,0 +1,10 @@
+id: rusbankaccount
+name: Bank account in Russia
+status: stable
+doc: 'Number of a bank account in a Russian bank (расчётный счёт): 20 digits.'
+semantic_type: bankaccount
+country:
+- RU
+langs:
+- ru
+regexp: ^\d{20}$

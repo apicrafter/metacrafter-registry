@@ -1,0 +1,9 @@
+id: rusfullname
+name: Fullname of the person in Russian
+status: draft
+doc: Fullname of the person in Russian
+semantic_type: person_fullname
+country:
+- RU
+langs:
+- ru

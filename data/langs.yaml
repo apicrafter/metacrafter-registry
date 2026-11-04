@@ -1,48 +1,71 @@
 - id: common
   name: Common to most languages
+  kind: special
 - id: en
   name: English
+  kind: language
 - id: ru
   name: Russian
+  kind: language
 - id: fr
   name: French
+  kind: language
 - id: es
   name: Spanish
+  kind: language
 - id: it
   name: Italian
+  kind: language
 - id: pt
   name: Portuguese
+  kind: language
 - id: da
   name: Danish
+  kind: language
 - id: fi
   name: Finnish
+  kind: language
 - id: th
   name: Thai
+  kind: language
 - id: de
   name: German
+  kind: language
 
 # Added to support languages referenced in datatype definitions
 - id: nl
   name: Dutch
+  kind: language
 - id: zh
   name: Chinese
+  kind: language
 - id: ja
   name: Japanese
+  kind: language
 - id: ar
   name: Arabic
+  kind: language
 - id: hi
   name: Hindi
+  kind: language
 - id: ko
   name: Korean
+  kind: language
 - id: pl
   name: Polish
+  kind: language
 - id: vi
   name: Vietnamese
+  kind: language
 - id: hy
   name: Armenian
+  kind: language
 - id: id
   name: Indonesian
+  kind: language
 - id: tr
   name: Turkish
+  kind: language
 - id: sv
   name: Swedish
+  kind: language

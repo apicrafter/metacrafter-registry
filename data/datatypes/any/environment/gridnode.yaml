@@ -1,15 +1,10 @@
+id: gridnode
+name: Grid node identifier
+status: draft
+doc: Datatype for 'Grid node identifier' (gridnode) from rules in context 'environment'.
 categories:
 - environment
-id: gridnode
-is_pii: 'False'
 langs:
 - en
-name: Grid node identifier
-doc: Datatype for 'Grid node identifier' (gridnode) from rules in context
-  'environment'.
+is_pii: false
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

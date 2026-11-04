@@ -1,0 +1,17 @@
+id: tofkcode
+name: Russian Federal treasury division code
+status: draft
+doc: Unique id of the Russian Federal treasury division.
+categories:
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+translations:
+  ru:
+    name: Код территориального управления Федерального казначейства РФ
+    doc: Код территориального управления Федерального казначейства РФ. Синхронизовано с наименованием
+      территориального управления, ведомственный справочник.

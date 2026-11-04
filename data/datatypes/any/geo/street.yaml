@@ -1,18 +1,11 @@
+id: street
+name: Street
+status: draft
+doc: Name of the street, commonly used in address
 categories:
 - geo
 - pii
 - common
-doc: Name of the street, commonly used in address
-id: street
-is_pii: 'True'
 langs:
 - common
-name: Street
-patterns:
-- rustreet
-- russtreet
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''
+is_pii: true

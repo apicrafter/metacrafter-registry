@@ -1,0 +1,25 @@
+id: fips64
+name: FIPS 6-4 numeric code (US counties)
+status: stable
+doc: Identifier for US entities (mostly counties) per "Federal Information Processing Series" (FIPS 6-4),
+  used for counties, Puerto Rico zona urbana, Metropolitan Statistical Areas (MSA) and Combined Statistical
+  Areas (CSA) in the United States.
+categories:
+- geo
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: \d{5}
+examples:
+- value: '24003'
+  description: Anne Arundel County
+- value: '01001'
+  description: Autauga Country
+mappings:
+  wikidata: P882
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P882

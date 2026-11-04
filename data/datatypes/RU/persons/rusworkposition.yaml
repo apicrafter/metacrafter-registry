@@ -1,0 +1,11 @@
+id: rusworkposition
+name: Work position / Job title (Russian)
+status: draft
+doc: Work positions / job title common in Russia and written in Russian language.
+semantic_type: jobtitle
+categories:
+- persons
+country:
+- RU
+langs:
+- ru

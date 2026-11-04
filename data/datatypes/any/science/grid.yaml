@@ -1,25 +1,26 @@
+id: grid
+name: Global Research Identifier
+status: stable
+doc: Global Research Identifier Database (GRID) is a database of educational and research organizations
+  worldwide, created and maintained by Digital Science & Research Solutions Ltd., part of the technology
+  company Digital Science.
 categories:
 - science
 - identifiers
-doc: Global Research Identifier Database (GRID) is a database of educational and research
-  organizations worldwide, created and maintained by Digital Science & Research Solutions
-  Ltd., part of the technology company Digital Science.
-id: grid
-is_pii: 'False'
 langs:
 - common
-links:
-- type: wikipedia
-  url: https://en.wikipedia.org/wiki/Global_Research_Identifier_Database
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P2427
-name: Global Research Identifier
-wikidata_property: P2427
+is_pii: false
+classification: identifier
 regexp: grid\.\d{4,6}\.[0-9a-f]{1,2}
 examples:
 - value: grid.1012.2
   description: University of Western Australia
 - value: grid.454116.3
   description: Republic of Korea National Red Cross
-classification: identifier
-translations: {}
+mappings:
+  wikidata: P2427
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Global_Research_Identifier_Database
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2427

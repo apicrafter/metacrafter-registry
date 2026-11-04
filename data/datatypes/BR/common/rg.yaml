@@ -1,16 +1,13 @@
 id: rg
 name: Brazilian RG (Registro Geral) by known name
+status: stable
 doc: Brazilian RG (Registro Geral) by known name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - common
 country:
 - BR
 langs:
 - pt
-is_pii: 'True'
+is_pii: true
+classification: identifier
 regexp: ^[0-9]{9}$
-links: []

@@ -1,0 +1,15 @@
+id: ukparishcode
+name: Parish code (United Kingdom)
+status: stable
+doc: UK parish code identifying a civil parish, the lowest tier of local government in England.
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Civil_parish

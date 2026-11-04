@@ -1,0 +1,17 @@
+id: ruikz
+name: Russian government procurement unique id
+status: draft
+doc: Unique id assigned to all government procurement procedures in Russian Federation
+categories:
+- government
+- companies
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+translations:
+  ru:
+    name: Идентификационный код закупки
+    doc: Код присваиваемый государственным закупкам в Российской Федерации

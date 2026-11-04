@@ -1,25 +1,24 @@
+id: am_driver_license
+name: Armenian Driver License Number
+status: stable
+doc: Armenian driver license number used for vehicle operation authorization
 categories:
 - pii
 - persons
 country:
 - AM
-doc: Armenian driver license number used for vehicle operation authorization
-id: am_driver_license
-is_pii: 'True'
 langs:
 - hy
+is_pii: true
+classification: identifier
+regexp: '[A-Z0-9]{6,10}'
+examples:
+- value: '12345678'
+  description: Example Armenian driver license number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Driving_licence_in_Armenia
-name: Armenian Driver License Number
-regexp: '[A-Z0-9]{6,10}'
-examples:
-- value: "12345678"
-  description: Example Armenian driver license number
 translations:
   hy:
-    doc: Վարորդական իրավունք - Հայաստանում մեքենա վարելու թույլտվություն
     name: Վարորդական իրավունք
-classification: identifier
-wikidata_property: ''
-
+    doc: Վարորդական իրավունք - Հայաստանում մեքենա վարելու թույլտվություն

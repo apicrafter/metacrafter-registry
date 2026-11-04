@@ -1,10 +1,12 @@
+id: duration
+name: Time duration
+status: stable
+doc: The amount of time elapsed between two events
 categories:
 - datetime
-doc: The amount of time elapsed between two events
-id: duration
-is_pii: 'False'
 langs:
 - common
+is_pii: false
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ISO_8601#Durations
@@ -12,11 +14,7 @@ links:
   url: https://schema.org/duration
 - type: other
   url: https://ddialliance.org/Specification/DDI-CV/DateType_1.1.html
-name: Time duration
 translations:
   ru:
-    doc: Длительность события в музыке, мероприятии и тд.
     name: Длительность
-examples: []
-wikidata_property: ''
-regexp: ''
+    doc: Длительность события в музыке, мероприятии и тд.

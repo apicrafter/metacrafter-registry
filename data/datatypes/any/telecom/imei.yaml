@@ -1,24 +1,23 @@
+id: imei
+name: International Mobile Equipment Identity (IMEI)
+status: stable
+doc: The International Mobile Equipment Identity (IMEI) is a numeric identifier, usually unique for 3GPP
+  and iDEN mobile phones, as well as some satellite phones.
 categories:
 - telecom
 - pii
-doc: The International Mobile Equipment Identity (IMEI) is a numeric identifier, usually
-  unique for 3GPP and iDEN mobile phones, as well as some satellite phones.
-id: imei
-is_pii: 'True'
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: \d{14,15}|\d{2}-\d{6}-\d{6}-\d{1,2}
+examples:
+- value: '490154203237518'
+  description: IMEI with check digit
+- value: '356938035643809'
+  description: IMEI example
+- value: 49-015420-323751-8
+  description: IMEI with dashes
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity
-langs:
-- common
-regexp: '\d{14,15}|\d{2}-\d{6}-\d{6}-\d{1,2}'
-name: International Mobile Equipment Identity (IMEI)
-classification: identifier
-examples:
-  - value: '490154203237518'
-    description: IMEI with check digit
-  - value: '356938035643809'
-    description: IMEI example
-  - value: '49-015420-323751-8'
-    description: IMEI with dashes
-wikidata_property: ''
-translations: {}

@@ -1,0 +1,12 @@
+id: encountryname
+name: Country name (English)
+status: stable
+doc: Name of the country in English
+semantic_type: country
+langs:
+- common
+examples:
+- value: Afghanistan
+  description: Afghanistan (country name)
+- value: Mexico
+  description: Mexico (country name)

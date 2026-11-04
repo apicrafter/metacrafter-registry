@@ -24,7 +24,7 @@ def test_mini_registry_is_valid(mini_data):
 def test_regexp_must_compile(mini_data):
     write_record(
         mini_data / "datatypes/any/pii/bad.yaml",
-        "id: bad\nname: Bad\ndoc: Bad regexp\nlangs: [en]\nis_pii: 'False'\nregexp: '(ab'\n",
+        "id: bad\nname: Bad\ndoc: Bad regexp\nlangs: [en]\nstatus: stable\nis_pii: false\nregexp: '(ab'\n",
     )
     assert any("bad: regexp does not compile" in m for m in messages(mini_data))
 
@@ -32,7 +32,7 @@ def test_regexp_must_compile(mini_data):
 def test_possessive_quantifier_is_rejected(mini_data):
     write_record(
         mini_data / "datatypes/any/pii/num.yaml",
-        "id: num\nname: Num\ndoc: Number\nlangs: [en]\nis_pii: 'False'\nregexp: '^\\d{1,4}+$'\n",
+        "id: num\nname: Num\ndoc: Number\nlangs: [en]\nstatus: stable\nis_pii: false\nregexp: '^\\d{1,4}+$'\n",
     )
     errors = messages(mini_data)
     # Python 3.11+ reports the portability error; 3.10 cannot compile it at all.
@@ -50,7 +50,8 @@ def test_example_must_match_regexp(mini_data):
         name: Code
         doc: Four digit code
         langs: [en]
-        is_pii: 'False'
+        status: stable
+        is_pii: false
         regexp: '^\\d{4}$'
         examples:
         - value: '12345'
@@ -67,7 +68,8 @@ def test_negative_example_must_not_match(mini_data):
         name: Code
         doc: Four digit code
         langs: [en]
-        is_pii: 'False'
+        status: stable
+        is_pii: false
         regexp: '^\\d{4}$'
         examples:
         - value: '1234'
@@ -80,7 +82,7 @@ def test_negative_example_must_not_match(mini_data):
 def test_directory_country_mismatch(mini_data):
     write_record(
         mini_data / "datatypes/US/pii/usthing.yaml",
-        "id: usthing\nname: X\ndoc: Thing\nlangs: [en]\ncountry: [RU]\nis_pii: 'False'\n",
+        "id: usthing\nname: X\ndoc: Thing\nlangs: [en]\ncountry: [RU]\nstatus: stable\nis_pii: false\n",
     )
     errors = messages(mini_data)
     assert any("usthing: record in datatypes/US/ must list 'US'" in m for m in errors)
@@ -90,7 +92,7 @@ def test_directory_country_mismatch(mini_data):
 def test_single_country_in_any_dir(mini_data):
     write_record(
         mini_data / "datatypes/any/pii/local.yaml",
-        "id: local\nname: X\ndoc: Thing\nlangs: [en]\ncountry: [US]\nis_pii: 'False'\n",
+        "id: local\nname: X\ndoc: Thing\nlangs: [en]\ncountry: [US]\nstatus: stable\nis_pii: false\n",
     )
     assert any("local: record in any/ has a single country" in m for m in messages(mini_data))
 
@@ -98,7 +100,7 @@ def test_single_country_in_any_dir(mini_data):
 def test_duplicate_ids(mini_data):
     write_record(
         mini_data / "datatypes/any/pii/email_copy.yaml",
-        "id: email\nname: Copy\ndoc: Copy\nlangs: [en]\nis_pii: 'True'\n",
+        "id: email\nname: Copy\ndoc: Copy\nlangs: [en]\nstatus: stable\nis_pii: true\n",
     )
     assert any("email: duplicate id" in m for m in messages(mini_data))
 
@@ -113,10 +115,27 @@ def test_unresolved_references(mini_data):
     assert any("unknown langs id 'xx'" in m for m in errors)
 
 
-def test_filename_mismatch_is_a_warning(mini_data):
+def test_filename_mismatch_is_an_error(mini_data):
     write_record(
         mini_data / "datatypes/any/pii/other_name.yaml",
-        "id: realname\nname: X\ndoc: X\nlangs: [en]\nis_pii: 'False'\n",
+        "id: realname\nname: X\ndoc: X\nlangs: [en]\nstatus: stable\nis_pii: false\n",
     )
-    assert messages(mini_data) == []
-    assert any("file name should be 'realname.yaml'" in m for m in messages(mini_data, "warning"))
+    assert messages(mini_data) == ["realname: file name must be 'realname.yaml'"]
+
+
+def test_alias_must_not_collide_with_an_id(mini_data):
+    write_record(
+        mini_data / "datatypes/any/pii/other.yaml",
+        "id: other\nname: Other\nstatus: stable\ndoc: Other\nlangs: [en]\nis_pii: false\n"
+        "aliases: [email]\n",
+    )
+    assert any("email: duplicate id or alias" in m for m in messages(mini_data))
+
+
+def test_replaced_by_must_resolve(mini_data):
+    write_record(
+        mini_data / "datatypes/any/pii/old.yaml",
+        "id: old\nname: Old\nstatus: deprecated\ndoc: Old\nlangs: [en]\nis_pii: false\n"
+        "replaced_by: nothing\n",
+    )
+    assert any("old: unknown replaced_by 'nothing'" in m for m in messages(mini_data))

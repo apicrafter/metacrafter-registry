@@ -1,10 +1,7 @@
 id: pan
 name: Indian PAN (Permanent Account Number) by known name
+status: stable
 doc: Indian PAN (Permanent Account Number) by known name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - pii
 - persons
@@ -12,6 +9,6 @@ country:
 - IN
 langs:
 - en
-is_pii: 'True'
+is_pii: true
+classification: identifier
 regexp: ^[A-Z]{5}[0-9]{4}[A-Z]{1}$
-links: []

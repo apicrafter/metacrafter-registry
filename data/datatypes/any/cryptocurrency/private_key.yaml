@@ -1,12 +1,10 @@
 id: private_key
 name: Private key by field name (generic)
+status: draft
 doc: Private key by field name (generic)
-langs:
-- en
 categories:
 - cryptocurrency
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

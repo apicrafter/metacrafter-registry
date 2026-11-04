@@ -1,16 +1,13 @@
 id: cuit
 name: Argentine CUIT (Clave Única de Identificación Tributaria) by known name
+status: stable
 doc: Argentine CUIT (Clave Única de Identificación Tributaria) by known name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - finances
 country:
 - AR
 langs:
 - es
-is_pii: 'False'
+is_pii: false
+classification: identifier
 regexp: ^[0-9]{2}-[0-9]{8}-[0-9]{1}$
-links: []

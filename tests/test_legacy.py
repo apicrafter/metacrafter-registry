@@ -47,3 +47,12 @@ def test_committed_data_files_are_fresh(repo_sources):
     assert json.loads((DATA / "tools_latest.json").read_text("utf-8")) == tools
     lines = (DATA / "datatypes_latest.jsonl").read_text("utf-8").splitlines()
     assert {json.loads(line)["id"]: json.loads(line) for line in lines} == datatypes
+
+
+def test_retired_ids_resolve_in_legacy_output(repo_sources):
+    """Merged duplicates keep their old id in registry.json and the JSONL (metacrafter rules)."""
+    records = legacy.build_datatypes(repo_sources)
+    for alias, canonical in (("ssn", "usssn"), ("ninumber", "uknino"), ("guid", "uuid")):
+        entry = records[alias]
+        assert entry["id"] == alias and entry["alias_of"] == canonical
+        assert entry["name"] == records[canonical]["name"]

@@ -1,16 +1,13 @@
+id: dayofmonth
+name: Day of month
+status: draft
+doc: Month day, numeric value from 1 to 31
 categories:
 - datetime
-doc: Month day, numeric value from 1 to 31
-id: dayofmonth
-is_pii: 'False'
 langs:
 - common
-name: Day of month
+is_pii: false
 translations:
   ru:
-    doc: День месяца в значении от 1 до 31
     name: День месяца
-links: []
-examples: []
-wikidata_property: ''
-regexp: ''
+    doc: День месяца в значении от 1 до 31

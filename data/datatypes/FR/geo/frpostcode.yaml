@@ -1,0 +1,22 @@
+id: frpostcode
+name: French postal code
+status: draft
+doc: French postal code
+semantic_type: postindex
+categories:
+- geo
+country:
+- FR
+langs:
+- fr
+regexp: \d{5}
+examples:
+- value: '75008'
+  description: Paris
+- value: '97439'
+  description: Sainte-Rose
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_France
+- type: other
+  url: https://www.wikidata.org/wiki/Q1105640

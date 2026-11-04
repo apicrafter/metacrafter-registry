@@ -1,0 +1,18 @@
+id: autfn
+name: Australian Tax File Number (TFN)
+status: stable
+doc: The tax file number (TFN) is a unique identifier issued by the Australian Taxation Office to each
+  taxpaying entity — an individual, company, superannuation fund, partnership, or trust.
+categories:
+- pii
+- persons
+country:
+- AU
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: \d{3}\s\d{3}\s\d{3}
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Tax_file_number

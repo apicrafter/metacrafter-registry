@@ -1,14 +1,10 @@
+id: airlinename
+name: Airline name
+status: draft
+doc: Unique name of the airline
 categories:
 - transport
-doc: Unique name of the airline
-id: airlinename
-is_pii: 'False'
 langs:
 - common
-name: Airline name
+is_pii: false
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

@@ -1,0 +1,13 @@
+id: ukpassport
+name: British passport number
+status: stable
+doc: Number of the passport issued by the United Kingdom
+semantic_type: passport
+country:
+- GB
+langs:
+- en
+regexp: '[0-9]{9}'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/British_passport

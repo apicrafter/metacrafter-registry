@@ -1,18 +1,15 @@
+id: researcherid
+name: ResearcherID
+status: stable
+doc: ResearcherID is an identifying system for scientific authors. The system was introduced in January
+  2008 by Thomson Reuters.
 categories:
 - science
 - persons
-doc: 'ResearcherID is an identifying system for scientific authors. The system was
-  introduced in January 2008 by Thomson Reuters. '
-id: researcherid
-is_pii: 'False'
 langs:
 - common
+is_pii: false
+classification: identifier
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ResearcherID
-name: ResearcherID
-classification: identifier
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

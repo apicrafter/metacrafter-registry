@@ -1,16 +1,11 @@
+id: income
+name: Income (money)
+status: draft
+doc: Income, sub-type of money
+parent: money
 categories:
 - values
 - common
-doc: Income, sub-type of money
-id: income
-is_pii: 'False'
-parent:
-  type: money
 langs:
 - common
-name: Income (money)
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''
+is_pii: false

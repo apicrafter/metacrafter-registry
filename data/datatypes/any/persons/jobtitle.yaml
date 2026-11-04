@@ -1,23 +1,20 @@
+id: jobtitle
+name: Work position / Job title
+status: stable
+doc: Work positions / job title
 categories:
 - persons
 - companies
-doc: Work positions / job title
-id: jobtitle
-is_pii: 'False'
 langs:
 - common
-links:
-- type: schema.org
-  url: https://schema.org/jobTitle
-name: Work position / Job title
-patterns:
-- rusworkposition
-translations:
-  ru:
-    doc: Должность персоны в организации
-    name: Должность
+is_pii: false
 examples:
 - value: Aid worker/humanitarian worker
   description: Aid worker job title
-wikidata_property: ''
-regexp: ''
+links:
+- type: schema.org
+  url: https://schema.org/jobTitle
+translations:
+  ru:
+    name: Должность
+    doc: Должность персоны в организации

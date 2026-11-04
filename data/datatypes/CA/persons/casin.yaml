@@ -1,0 +1,17 @@
+id: casin
+name: Canada social insurance number (SIN)
+status: stable
+doc: Social insurance number (SIN) is a number issued in Canada to administer various government programs.
+categories:
+- pii
+- persons
+country:
+- CA
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: (\d{3}-\d{3}-\d{3})|(\d{9})
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Social_insurance_number

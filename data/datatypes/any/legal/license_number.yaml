@@ -1,14 +1,11 @@
 id: license_number
 name: License number by known name
+status: stable
 doc: License number by known name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - legal
 langs:
 - en
-is_pii: 'False'
+is_pii: false
+classification: identifier
 regexp: ^[A-Z0-9]{6,12}$
-links: []

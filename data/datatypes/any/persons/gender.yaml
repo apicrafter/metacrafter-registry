@@ -1,15 +1,11 @@
+id: gender
+name: Gender
+status: draft
+doc: Gender flag and/or any other identification value
 categories:
 - pii
 - persons
-doc: Gender flag and/or any other identification value
-id: gender
-is_pii: 'True'
 langs:
 - common
-name: Gender
+is_pii: true
 classification: categorical
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

@@ -1,12 +1,10 @@
 id: vin
 name: Vehicle Identification Number by field name
+status: draft
 doc: Vehicle Identification Number by field name number
-langs:
-- en
 categories:
 - transport
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

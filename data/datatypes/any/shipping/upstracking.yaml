@@ -1,14 +1,11 @@
 id: upstracking
 name: UPS tracking number by field name
+status: stable
 doc: UPS tracking number by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - shipping
 langs:
 - en
-is_pii: 'False'
+is_pii: false
+classification: identifier
 regexp: ^[A-Z0-9]{8,20}$
-links: []

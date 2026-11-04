@@ -1,25 +1,23 @@
+id: bankcard
+name: Bank card (credit/debit card)
+status: stable
+doc: A bank card is typically a plastic card issued by a bank to its clients that performs one or more
+  of a number of services that relate to giving the client access to bank account.
 categories:
 - pii
 - finances
-doc: A bank card is typically a plastic card issued by a bank to its clients that
-  performs one or more of a number of services that relate to giving the client access
-  to bank account.
-id: bankcard
-is_pii: 'True'
 langs:
 - common
+is_pii: true
+classification: identifier
+regexp: ^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Bank_card
 - type: other
   url: https://stackoverflow.com/questions/9315647/regex-credit-card-number-tests
-name: Bank card (credit/debit card)
-regexp: ^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$
 translations:
   ru:
-    doc: Банковская карта (англ. bank card) — пластиковая, металлическая или виртуальная
-      карта, обычно привязанная к одному или нескольким расчётным счетам в банке.
     name: Банковская карта
-classification: identifier
-examples: []
-wikidata_property: ''
+    doc: Банковская карта (англ. bank card) — пластиковая, металлическая или виртуальная карта, обычно
+      привязанная к одному или нескольким расчётным счетам в банке.

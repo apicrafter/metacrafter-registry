@@ -1,12 +1,10 @@
 id: dc_relation
 name: Dublin Core relation by field name
+status: draft
 doc: Dublin Core relation by field name
-langs:
-- en
 categories:
 - dublincore
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

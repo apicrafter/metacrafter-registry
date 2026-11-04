@@ -1,0 +1,9 @@
+id: ruscountryname
+name: Country name (Russian)
+status: draft
+doc: Name of the country written in Russian language.
+semantic_type: country
+country:
+- RU
+langs:
+- ru

@@ -1,24 +1,16 @@
+id: airport
+name: Airport location identifier
+status: stable
+doc: A location identifier is a symbolic representation for the name and the location of an airport, navigation
+  aid, or weather station, and is used for staffed air traffic control facilities in air traffic control,
+  telecommunications, computer programming, weather reports, and related services.
 categories:
 - geo
 - transport
-doc: 'A location identifier is a symbolic representation for the name and the location
-  of an airport, navigation aid, or weather station, and is used for staffed air traffic
-  control facilities in air traffic control, telecommunications, computer programming,
-  weather reports, and related services. '
-id: airport
-is_pii: 'False'
 langs:
 - common
+is_pii: false
+classification: identifier
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Location_identifier
-name: Airport location identifier
-patterns:
-- icaoairportcode
-- iataairportcode
-- faalid
-classification: identifier
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

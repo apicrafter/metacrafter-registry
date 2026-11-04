@@ -1,15 +1,10 @@
+id: waterstation
+name: Water quality station id
+status: draft
+doc: Datatype for 'Water quality station id' (waterstation) from rules in context 'environment'.
 categories:
 - environment
-id: waterstation
-is_pii: 'False'
 langs:
 - en
-name: Water quality station id
-doc: Datatype for 'Water quality station id' (waterstation) from rules
-  in context 'environment'.
+is_pii: false
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

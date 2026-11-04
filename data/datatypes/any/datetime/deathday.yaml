@@ -1,21 +1,18 @@
+id: deathday
+name: Date of death
+status: stable
+doc: Date of death of the person
+parent: date
 categories:
 - pii
 - datetime
-doc: Date of death of the person
-id: deathday
-is_pii: 'True'
 langs:
 - common
+is_pii: true
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Death_anniversary
-name: Date of death
-parent:
-  type: date
 translations:
   ru:
-    doc: Дата смерти человека
     name: Дата смерти
-examples: []
-wikidata_property: ''
-regexp: ''
+    doc: Дата смерти человека

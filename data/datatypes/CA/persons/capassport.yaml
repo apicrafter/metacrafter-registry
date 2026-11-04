@@ -1,0 +1,12 @@
+id: capassport
+name: Canadian passport number
+status: stable
+doc: Number of Canadian passport
+semantic_type: passport
+country:
+- CA
+langs:
+- en
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Canadian_passport

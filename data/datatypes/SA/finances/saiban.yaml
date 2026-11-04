@@ -1,17 +1,15 @@
 id: saiban
 name: Saudi IBAN by field name
+status: stable
 doc: Saudi IBAN by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - finances
 country:
 - SA
 langs:
 - ar
-is_pii: 'False'
+is_pii: false
+classification: identifier
 regexp: ^SA[0-9]{2}[A-Z0-9]{4}[0-9]{16,24}$
 links:
 - type: wikipedia

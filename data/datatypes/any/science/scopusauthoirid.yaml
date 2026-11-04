@@ -1,17 +1,14 @@
+id: scopusauthoirid
+name: Scopus author ID
+status: stable
+doc: identifier for an author assigned in Scopus bibliographic database
 categories:
 - persons
 - science
-doc: identifier for an author assigned in Scopus bibliographic database
-id: scopusauthoirid
-is_pii: 'False'
 langs:
 - common
+is_pii: false
+classification: identifier
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1153
-name: Scopus author ID
-classification: identifier
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

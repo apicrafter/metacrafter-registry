@@ -1,16 +1,13 @@
 id: usapn
 name: US Assessor Parcel Number by field name
+status: stable
 doc: US Assessor Parcel Number by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - realestate
 country:
 - US
 langs:
 - en
-is_pii: 'False'
+is_pii: false
+classification: identifier
 regexp: ^[0-9]{1,15}$
-links: []

@@ -1,0 +1,23 @@
+id: openlibid
+name: Open Library ID
+status: stable
+doc: Identifier for a work ("W"), edition ("M") or author ("A") for book data of the Internet Archive
+categories:
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: OL[1-9]\d*[AMW]
+examples:
+- value: OL36858W
+  description: Twenty Years After
+- value: OL3156833A
+  description: Anton Chekhov
+mappings:
+  wikidata: P648
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Open_Library
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P648

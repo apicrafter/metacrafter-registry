@@ -1,0 +1,12 @@
+id: uscounty
+name: US County
+status: draft
+doc: Name or code of US County
+categories:
+- geo
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical

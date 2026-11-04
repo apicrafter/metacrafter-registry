@@ -1,20 +1,18 @@
+id: date
+name: Date
+status: stable
+doc: Date with one of known notations
 categories:
 - datetime
-doc: Date with one of known notations
-id: date
-is_pii: 'False'
 langs:
 - common
+is_pii: false
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Date_and_time_notation
 - type: schema.org
   url: https://schema.org/Date
-name: Date
 translations:
   ru:
-    doc: Дата в одной из общепринятых нотаций
     name: Дата
-examples: []
-wikidata_property: ''
-regexp: ''
+    doc: Дата в одной из общепринятых нотаций

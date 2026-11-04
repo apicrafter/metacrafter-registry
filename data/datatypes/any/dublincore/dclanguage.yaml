@@ -1,20 +1,19 @@
+id: dclanguage
+name: Language (Dublin Core)
+status: stable
+doc: A language of the resource.
 categories:
 - dublincore
-doc: A language of the resource.
-id: dclanguage
-is_pii: 'False'
 langs:
 - common
-links:
-- type: dublincore
-  url: http://purl.org/dc/terms/language
-name: Language (Dublin Core)
+is_pii: false
 examples:
 - value: eng
   description: English language
+links:
+- type: dublincore
+  url: http://purl.org/dc/terms/language
 translations:
   ru:
-    doc: Язык ресурса
     name: Язык
-wikidata_property: ''
-regexp: ''
+    doc: Язык ресурса

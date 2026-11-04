@@ -1,13 +1,10 @@
 id: cadastralnumber
 name: Cadastral number by field name
+status: draft
 doc: Cadastral number by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - realestate
 langs:
 - en
-is_pii: 'False'
-links: []
+is_pii: false
+classification: identifier

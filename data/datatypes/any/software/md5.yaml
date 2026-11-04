@@ -1,12 +1,10 @@
 id: md5
 name: MD5 hash by value
+status: draft
 doc: MD5 hash by value
-langs:
-- en
 categories:
 - software
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

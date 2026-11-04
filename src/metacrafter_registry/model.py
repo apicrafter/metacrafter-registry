@@ -11,6 +11,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from .loader import RegistrySources
+from .quality import score_record
 
 REPO_URL = "https://github.com/apicrafter/metacrafter-registry"
 EDIT_URL = REPO_URL + "/edit/main/data/{path}"
@@ -74,6 +75,7 @@ class Registry:
     countries: dict[str, dict[str, Any]]
     langs: dict[str, dict[str, Any]]
     tools_by_type: dict[str, list[str]] = field(default_factory=dict)
+    aliases: dict[str, str] = field(default_factory=dict)  # alias -> canonical id
 
     def kind_count(self, kind: str) -> int:
         return sum(1 for r in self.datatypes.values() if r["kind"] == kind)
@@ -111,6 +113,7 @@ def build_registry(sources: RegistrySources, site_url: str) -> Registry:
         record: dict[str, Any] = {
             "id": rid,
             "kind": "pattern" if semantic_type else "datatype",
+            "status": str(data.get("status") or "stable"),
             "name": str(data.get("name", "")).strip(),
             "doc": str(data.get("doc", "")).strip(),
         }
@@ -118,15 +121,24 @@ def build_registry(sources: RegistrySources, site_url: str) -> Registry:
             record["semantic_type"] = semantic_type
         if _present(parent_id):
             record["parent"] = str(parent_id)
+        for key in ("aliases",):
+            values = _ids(data.get(key))
+            if values:
+                record[key] = values
+        if _present(data.get("replaced_by")):
+            record["replaced_by"] = str(data["replaced_by"])
         if rid in children_of:
             record["children"] = children_of[rid]
         if rid in patterns_of:
             record["patterns"] = patterns_of[rid]
+        # A pattern inherits is_pii, categories and classification unless it declares them.
         record["is_pii"] = _as_bool(
-            parent_rec.get("is_pii") if semantic_type else data.get("is_pii")
+            data["is_pii"] if "is_pii" in data else parent_rec.get("is_pii")
         )
         for key in ("categories", "country", "langs"):
             values = _ids(data.get(key))
+            if not values and key == "categories" and semantic_type:
+                values = _ids(parent_rec.get(key))
             if values:
                 record[key] = values
         classification = data.get("classification") or parent_rec.get("classification")
@@ -134,14 +146,16 @@ def build_registry(sources: RegistrySources, site_url: str) -> Registry:
             record["classification"] = str(classification)
         if _present(data.get("regexp")):
             record["regexp"] = str(data["regexp"])
+        if _present(data.get("checksum")):
+            record["checksum"] = str(data["checksum"])
         examples = _examples(data.get("examples"))
         if examples:
             record["examples"] = examples
-        mappings = {}
-        if _present(data.get("wikidata_property")):
-            mappings["wikidata"] = str(data["wikidata_property"]).strip()
+        mappings = {k: v for k, v in (data.get("mappings") or {}).items() if _present(v)}
+        if _present(data.get("wikidata_property")):  # v1 sources
+            mappings.setdefault("wikidata", str(data["wikidata_property"]).strip())
         if mappings:
-            record["mappings"] = mappings
+            record["mappings"] = dict(sorted(mappings.items()))
         links = _links(data.get("links"))
         if links:
             record["links"] = links
@@ -150,6 +164,7 @@ def build_registry(sources: RegistrySources, site_url: str) -> Registry:
             record["translations"] = translations
         if rid in tools_by_type:
             record["detected_by"] = {"tools": tools_by_type[rid]}
+        record["quality"] = score_record(record)
         record["source"] = {
             "path": "data/" + rec.relpath,
             "url": SOURCE_URL.format(path=rec.relpath),
@@ -192,6 +207,8 @@ def build_registry(sources: RegistrySources, site_url: str) -> Registry:
         out = {}
         for key in sorted(entries):
             entry = {"id": key, "name": str(entries[key]["name"]).strip()}
+            if entries[key].get("kind"):
+                entry["kind"] = str(entries[key]["kind"])
             entry["count"] = counts.get(key, 0)
             if path:
                 entry["url"] = f"{site_url}/{path}/{key}"
@@ -205,6 +222,9 @@ def build_registry(sources: RegistrySources, site_url: str) -> Registry:
         countries=reference(sources.countries, "country", "country"),
         langs=reference(sources.langs, "langs", ""),
         tools_by_type=tools_by_type,
+        aliases=dict(
+            sorted((alias, rid) for rid, r in datatypes.items() for alias in r.get("aliases", []))
+        ),
     )
 
 
@@ -223,6 +243,9 @@ CSV_COLUMNS = [
     "regexp",
     "wikidata",
     "url",
+    "status",
+    "quality_score",
+    "aliases",
 ]
 
 
@@ -245,4 +268,7 @@ def csv_row(record: dict[str, Any]) -> list[str]:
         record.get("regexp", ""),
         record.get("mappings", {}).get("wikidata", ""),
         record["urls"]["html"],
+        record["status"],
+        str(record["quality"]["score"]),
+        joined("aliases"),
     ]

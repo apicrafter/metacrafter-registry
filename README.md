@@ -7,109 +7,79 @@ It's created from list of identifiers in [Metacrafter](https://github.com/apicra
 
 The registry contains the following data structures:
 
-* `data/datatypes/` - list of all known semantic data types as separate YAML files, organized by country/language
-* `data/tools/` - list of tools and software libraries that support semantic data types
-* `data/categories.yaml` - list of all data contexts. Categories are used by Metacrafter tool to filter rules for certain situations/data/contexts set by user
-* `data/countries.yaml` - list of all countries with available rules
-* `data/langs.yaml` - list of all languages with available rules
-* `data/schemes/` - JSON schema definitions for validating datatype and tool structures
+* `data/datatypes/` - one YAML file per semantic datatype or pattern, organized
+  as `<COUNTRY|any>/<category>/<id>.yaml`
+* `data/tools/` - one YAML file per tool that supports semantic datatypes
+* `data/categories.yaml` - contexts of use. Metacrafter uses them to choose the
+  rules for a dataset
+* `data/countries.yaml` - countries and regions (`kind: country` or `region`)
+* `data/langs.yaml` - languages (`kind: language`; `common` has `kind: special`
+  and means language-independent)
+* `schema/` - JSON Schemas (draft 2020-12) of datatype, pattern and tool
+  records, also published at `https://registry.apicrafter.io/schema/`
 
-## Semantic data type
+## Semantic datatype
 
-Semantic data type is a primary data class with description of unique type of the data which is somehow defined identifier or commonly used data type.
+A semantic datatype is a kind of value with a meaning: an identifier, a code, a
+personal attribute or a commonly used data class. Fields (see
+`schema/datatype.schema.json`; empty values are not allowed, omit the field):
 
-Each semantic data type YAML file contains objects with the following structure:
-
-- **id** (required) - unique identifier of the entity
-- **name** (required) - name of the entity
-- **doc** (required) - English documentation/short description of this entity
-- **langs** (required) - list of languages (ISO 639-1 codes)
-- **categories** (optional) - list of contexts associated with entity (e.g., "pii", "finance", "geo")
-- **country** (optional) - list of countries where this identifier is used (ISO 3166-1 alpha-2 codes)
-- **is_pii** (optional) - boolean indicating if this data is Personal Identifiable Information. PII can also be detected from categories
-- **regexp** (optional) - regular expression that matches this data type
-- **wikidata_property** (optional) - Wikidata property ID (not URL) if applicable
-- **links** (optional) - list of associated links with **type** (wikipedia, wikidata, schema.org, datadrivendiscovery, other) and **url**
-- **examples** (optional) - list of examples, each with **value** and **description**
-- **parent** (optional) - parent semantic type reference
-- **semantic_type** (optional) - semantic type classification
-- **patterns** (optional) - list of pattern IDs associated with this datatype
-- **translations** (optional) - dictionary with language codes as keys, containing translated **name** and **doc** for each language
-- **classification** (optional) - additional classification metadata
-
-See `data/schemes/datatype.json` for the complete JSON schema definition.  
+| Field | Required | Description |
+|---|---|---|
+| `id` | yes | Unique id, `[a-z0-9_]`; the file must be named `<id>.yaml` |
+| `name` | yes | English name |
+| `status` | yes | `draft` (not reviewed yet), `stable` or `deprecated` |
+| `doc` | yes | English description |
+| `langs` | yes | ISO 639-1 codes; `common` for language-independent values |
+| `is_pii` | yes | `true` if the value is personal data |
+| `categories` | | Category ids from `data/categories.yaml` |
+| `country` | | Uppercase ISO 3166-1 alpha-2 codes; must include the directory's country |
+| `parent` | | Id of a broader datatype |
+| `aliases` | | Former ids of this record; they keep resolving everywhere |
+| `replaced_by` | | For `deprecated` records: the id to use instead |
+| `classification` | | `identifier` or `categorical` |
+| `regexp` | | Python `re` pattern, anchored with `^...$`; every example must match it |
+| `checksum` | | Name of the check-digit algorithm, e.g. `luhn` |
+| `examples` | | List of `{value, description, valid}`; `valid: false` marks a negative example |
+| `mappings` | | Ids in other vocabularies: `wikidata` (e.g. `P968`), `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock` |
+| `links` | | List of `{type, url}`; `type` is one of `wikipedia`, `wikidata`, `schema.org`, `doc`, `dublincore`, `bioschemas`, `datadrivendiscovery`, `other` |
+| `translations` | | `{<lang>: {name, doc}}` |
 
 ## Pattern
 
-Patterns are extensions, additional helpers to identify certain ways to represent semantinc data types. They could be different by usage type, country, language and so on.
-Patterns have no category since they inherit category from semantic data type
-
-Each pattern YAML file contains objects with the following structure:
-
-- **id** (required) - unique identifier of the entity
-- **name** (required) - name of the entity
-- **doc** (required) - English documentation/short description of this entity
-- **country** (optional) - list of countries where this pattern is used (ISO 3166-1 alpha-2 codes)
-- **langs** (optional) - list of languages (ISO 639-1 codes)
-- **links** (optional) - list of associated links with **type** (wikipedia, other) and **url**
-- **regexp** (optional) - regular expression that matches this pattern
-- **wikidata_property** (optional) - Wikidata property ID if applicable
-- **examples** (optional) - list of examples, each with **value** and **description**
-
-Note: Patterns inherit categories from their associated semantic data types.
+A pattern is one representation of a datatype, for example a national passport
+number format. It sets `semantic_type: <datatype id>` and follows
+`schema/pattern.schema.json`. A pattern inherits `categories`, `is_pii` and
+`classification` from its datatype unless it declares them.
 
 ## Tool
 
-Tools are software libraries, open source or proprietary software with support of semantic data types.
-Each tool YAML file contains objects with the following structure:
+A tool is software that supports semantic datatypes (`schema/tool.schema.json`):
+`id`, `name`, `category` (`detector`, `pii`, `etl`, `catalogs` or `other`),
+`doc`, optional `website` and `supported_types` (datatype ids).
 
-- **id** (required) - unique identifier of the entity
-- **name** (required) - name of the tool/software library
-- **category** (required) - category of the tool. Must be one of: `detector`, `pii`, `etl`, `other`
-- **doc** (required) - English documentation/short description of this entity
-- **website** (optional) - URL of the primary web resource about this tool
-- **supported_types** (optional) - array of strings with IDs of datatypes or patterns that this tool supports
+## Status and quality
 
-See `data/schemes/tool.json` for the complete JSON schema definition.
-
-
-# Metadata sources
-
-Metadata for this registry collected and interlinked with multiple metadata sources.
-Source link defined in property `link` sub-property `type` and it could be one of:
-- `wikipedia` - wikipedia page url
-- `wikidata` - Wikidata property url, also should be defined as id only, not url, in `wikidata_property` property
-- `schema.org` - URL to Schema.org property, like https://schema.org/boolean
-- `datadrivendiscovery` - D3M metadata registry https://metadata.datadrivendiscovery.org
-- `doc` - URL to external documentation or standard
-- `dublincore` - Dublin Core metadata term URL
-- `bioschemas` - Bioschemas profile/type URL
-- `other` - any other url
-
-The set of allowed `type` values is enforced by the datatype schema
-(`data/schemes/datatype.json`).
+Records generated from rule keys, or with no real description and no evidence
+(regexp, examples or links), have `status: draft`. The site marks them and the
+API exposes `status`, so agents can skip unreviewed records. Every record also
+gets a quality score from 0 to 100 with the list of missing elements; see
+`metacrafter-registry stats` and `metacrafter-registry report`.
 
 ## ID naming convention
 
-Every datatype, pattern, and tool has a unique `id`. Conventions:
-
-- IDs are lowercase, use `[a-z0-9_]`, and avoid spaces or punctuation.
-- Country/language-specific datatypes are prefixed with the lowercase country
-  or language code (e.g. `ru_inn`, `us_ssn`, `gb_nino`). Older entries may use a
-  concatenated form (e.g. `runpa`, `uscity`); prefer the prefixed form for new
-  additions.
-- The source file **should** be named `<id>.yaml`. Filename/ID mismatches are
-  tracked for migration and new files must match.
-- Pattern `semantic_type` and tool `supported_types` must reference existing
-  datatype IDs; this is enforced by `builder.py validate`
-  (cross-reference check) and by the build's uniqueness check.
-
+- IDs are lowercase `[a-z0-9_]`.
+- New country-specific IDs start with the lowercase country code and an
+  underscore (`ru_inn`). Older IDs use a concatenated form (`usssn`,
+  `rusfirstname`); they are kept, because metacrafter rules and stored URLs
+  use them.
+- An ID changes only when duplicates are merged. The old ID then becomes an
+  alias of the surviving record and keeps resolving.
 
 ## Identification rules
 
-**Under development**
-
-Identification rules are regex, other pattern matching algorithms and code that help to identify certain semantic data type directly or by pattern.
+Detection rules that map real data to these datatypes live in the companion
+[metacrafter-rules](https://github.com/apicrafter/metacrafter-rules) repository.
 
 # Code
 
@@ -119,7 +89,8 @@ Identification rules are regex, other pattern matching algorithms and code that 
 * `tests/` - pytest suite (validation gates, legacy JSON shape, build, URL contract)
 * `scripts/` - helper scripts; `scripts/builder.py` keeps `stats` and `report` and
   delegates `build` and `validate` to the package
-* `src/registry.py` - legacy Flask server, deprecated (replaced by the static site)
+* `schema/` - JSON Schemas of the source records
+* `archive/` - historical material (original CSV, research notes, one-off scripts)
 * `.github/workflows/` - CI (`ci.yml`) and GitHub Pages deployment (`pages.yml`)
 
 # Build registry
@@ -161,7 +132,7 @@ builds everything that gets published.
    pytest -q
    ```
 
-`python scripts/builder.py build|validate|stats|report` still works.
+`python scripts/builder.py <command>` still works and delegates to the same CLI.
 
 # Publishing
 
@@ -203,6 +174,8 @@ JSON API (static files, described in `/api/v1/openapi.json`):
 | `/api/v1/tools/<id>.json`, `/api/v1/tools.json`, `.jsonl` | Tools |
 | `/api/v1/categories.json`, `countries.json`, `languages.json` | Reference lists with record counts |
 | `/api/v1/openapi.json` | OpenAPI 3.1 description |
+| `/api/v1/aliases.json` | Retired ids and the record each one resolves to |
+| `/schema/*.schema.json` | JSON Schemas of the source records |
 | `/registry.json` | Legacy: all records keyed by id (release 1.02 shape) |
 | `/datatype/<id>.json` | Legacy: one record (release 1.02 shape) |
 | `/datatypes.jsonl`, `/tools.json`, `/tool/<id>.json` | Legacy bulk and tool files |
@@ -212,13 +185,6 @@ or retyped. The static site has no server-side search: the `?q=` filter and the
 `/health` endpoint of the old Flask server are not available.
 
 Releases are published by pushing a `v*` tag (see `CONTRIBUTING.md`).
-
-## Identification rules
-
-Detection rules that map real data to these datatypes live in the companion
-[metacrafter-rules](https://github.com/apicrafter/metacrafter-rules) repository.
-Rule `key` values are aligned with datatype `id`s here; alignment is checked by
-`metacrafter/scripts/ecosystem_check.py`.
 
 # Contacts
 

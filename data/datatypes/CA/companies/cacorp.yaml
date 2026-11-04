@@ -1,16 +1,16 @@
+id: cacorp
+name: Federal corporation number
+status: stable
+doc: CA datatype for 'Federal corporation number' (cacorp) from rules in context 'companies'.
 categories:
 - companies
-id: cacorp
-is_pii: 'False'
-langs:
-- en
-name: Federal corporation number
-doc: CA datatype for 'Federal corporation number' (cacorp) from rules
-  in context 'companies'.
-classification: identifier
 country:
 - CA
-links: []
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{7,9}$
 examples:
 - value: '1234567'
   description: Federal corporation number with 7 digits
@@ -18,6 +18,3 @@ examples:
   description: Federal corporation number with 8 digits
 - value: '123456789'
   description: Federal corporation number with 9 digits
-wikidata_property: ''
-translations: {}
-regexp: ^[0-9]{7,9}$

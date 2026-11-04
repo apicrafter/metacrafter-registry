@@ -1,10 +1,7 @@
 id: trtckimlik
 name: Turkish TC Kimlik No by field name
+status: stable
 doc: Turkish TC Kimlik No by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - pii
 - persons
@@ -12,6 +9,6 @@ country:
 - TR
 langs:
 - tr
-is_pii: 'True'
+is_pii: true
+classification: identifier
 regexp: ^[0-9]{11}$
-links: []

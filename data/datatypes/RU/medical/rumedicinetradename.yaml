@@ -1,0 +1,16 @@
+id: rumedicinetradename
+name: Medicine trade name (Russian)
+status: draft
+doc: Trade name of the medicine in Russian.
+categories:
+- medical
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+translations:
+  ru:
+    name: Торговое наименование лекарственного средства
+    doc: Торговое название для лекарственных средств

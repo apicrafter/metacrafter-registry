@@ -1,11 +1,19 @@
+id: molformula
+name: Molecular Formula
+status: stable
+doc: Molecular formulae indicate the simple numbers of each type of atom in a molecule of a molecular
+  substance.
 categories:
 - chemistry
-doc: Molecular formulae indicate the simple numbers of each type of atom in a molecule
-  of a molecular substance.
-id: molformula
-is_pii: 'False'
 langs:
 - common
+is_pii: false
+regexp: ([αβγδφωλμπ]-)?([([]*[A-Z☐][ub]?[a-z]?[₁₂₃₄₅₆₇₈₉₀.]*(\)?[¹²³⁴⁵⁶⁷⁸⁹⁰]*[⁺⁻]?)?[\])|,₁₂₃₄₅₆₇₈₉₀]*(·\(?[-0-9.]*n?\)?)?)+
+examples:
+- value: H₂O
+  description: water
+mappings:
+  wikidata: P274
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Chemical_formula
@@ -15,10 +23,3 @@ links:
   url: https://schema.org/molecularFormula
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P274
-wikidata_property: P274
-name: Molecular Formula
-regexp: ([αβγδφωλμπ]-)?([([]*[A-Z☐][ub]?[a-z]?[₁₂₃₄₅₆₇₈₉₀.]*(\)?[¹²³⁴⁵⁶⁷⁸⁹⁰]*[⁺⁻]?)?[\])|,₁₂₃₄₅₆₇₈₉₀]*(·\(?[-0-9.]*n?\)?)?)+
-examples:
-- value: H₂O
-  description: water
-translations: {}

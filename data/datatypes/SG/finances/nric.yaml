@@ -1,16 +1,13 @@
 id: nric
 name: Singapore NRIC (National Registration Identity Card) by known name
+status: stable
 doc: Singapore NRIC (National Registration Identity Card) by known name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - finances
 country:
 - SG
 langs:
 - en
-is_pii: 'True'
+is_pii: true
+classification: identifier
 regexp: ^[STFG][0-9]{7}[A-Z]$
-links: []

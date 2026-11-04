@@ -1,20 +1,19 @@
+id: instagram_username
+name: Instagram username
+status: stable
+doc: Person username in Instagram
+parent: username
 categories:
 - pii
 - persons
 - useraccounts
-doc: Person username in Instagram
-id: instagram_username
-is_pii: 'True'
-parent:
-  type: username
 langs:
 - common
-wikidata_property: P2003
+is_pii: true
+classification: identifier
+regexp: ([0-9a-z_](?:(?:[0-9a-z_]|(?:\.(?!\.))){0,28}(?:[0-9a-z_]))?)
+mappings:
+  wikidata: P2003
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P2003
-name: Instagram username
-regexp: ([0-9a-z_](?:(?:[0-9a-z_]|(?:\.(?!\.))){0,28}(?:[0-9a-z_]))?)
-classification: identifier
-examples: []
-translations: {}

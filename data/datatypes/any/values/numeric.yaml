@@ -1,16 +1,13 @@
+id: numeric
+name: Numeric value
+status: stable
+doc: Any integer or float number
 categories:
 - values
 - common
-doc: Any integer or float number
-id: numeric
-is_pii: 'False'
+langs:
+- common
+is_pii: false
 links:
 - type: schema.org
   url: https://schema.org/Number
-langs:
-- common
-name: Numeric value
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

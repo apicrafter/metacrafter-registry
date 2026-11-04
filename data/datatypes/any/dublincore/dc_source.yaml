@@ -1,12 +1,10 @@
 id: dc_source
 name: Dublin Core source by field name
+status: draft
 doc: Dublin Core source by field name
-langs:
-- en
 categories:
 - dublincore
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []

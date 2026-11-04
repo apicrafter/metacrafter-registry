@@ -1,23 +1,24 @@
+id: tickersymbol
+name: Stock ticker symbol
+status: stable
+doc: Ticker symbol or stock symbol is an abbreviation used to uniquely identify publicly traded shares
+  of a particular stock on a particular stock market.
 categories:
 - finances
-doc: Ticker symbol or stock symbol is an abbreviation used to uniquely identify publicly
-  traded shares of a particular stock on a particular stock market.
-id: tickersymbol
-is_pii: 'False'
 langs:
 - common
-links:
-- type: wikipedia
-  url: https://en.wikipedia.org/wiki/Ticker_symbol
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P249
-name: Stock ticker symbol
+is_pii: false
+classification: identifier
 regexp: '[A-Z0-9.]{1,16}'
-wikidata_property: P249
 examples:
 - value: MSFT
   description: Microsoft
 - value: AMZN
   description: Amazon
-classification: identifier
-translations: {}
+mappings:
+  wikidata: P249
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Ticker_symbol
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P249

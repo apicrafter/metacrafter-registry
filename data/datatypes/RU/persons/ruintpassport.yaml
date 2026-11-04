@@ -1,0 +1,12 @@
+id: ruintpassport
+name: Russian internal passport number
+status: stable
+doc: Number of Russian internal passport
+semantic_type: passport
+country:
+- RU
+langs:
+- ru
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Internal_passport_of_Russia

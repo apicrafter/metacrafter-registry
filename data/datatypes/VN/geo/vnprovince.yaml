@@ -1,15 +1,12 @@
 id: vnprovince
 name: Vietnamese province by field name
+status: draft
 doc: Vietnamese province by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - geo
 country:
 - VN
 langs:
 - vi
-is_pii: 'False'
-links: []
+is_pii: false
+classification: identifier

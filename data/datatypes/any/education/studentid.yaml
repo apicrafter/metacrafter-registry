@@ -1,15 +1,10 @@
+id: studentid
+name: Student identifier
+status: draft
+doc: Datatype for 'Student identifier' (studentid) from rules in context 'education'.
 categories:
 - education
-id: studentid
-is_pii: 'True'
 langs:
 - en
-name: Student identifier
-doc: Datatype for 'Student identifier' (studentid) from rules in context
-  'education'.
+is_pii: true
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

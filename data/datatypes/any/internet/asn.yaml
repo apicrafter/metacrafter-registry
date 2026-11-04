@@ -1,20 +1,21 @@
+id: asn
+name: Autonomous system number (ASN)
+status: draft
+doc: autonomous system number
 categories:
 - internet
-doc: autonomous system number
-id: asn
-is_pii: 'False'
 langs:
 - common
-links:
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P3797
-name: Autonomous system number (ASN)
-wikidata_property: P3797
-regexp: '^(?:AS)?[1-9]\d{0,9}$'
+is_pii: false
+classification: identifier
+regexp: ^(?:AS)?[1-9]\d{0,9}$
 examples:
 - value: '2532'
   description: Library of Congress
 - value: '174'
   description: Cogent Communications
-classification: identifier
-translations: {}
+mappings:
+  wikidata: P3797
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3797

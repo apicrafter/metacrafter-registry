@@ -1,10 +1,7 @@
 id: vncccd
 name: Vietnamese CCCD by field name
+status: stable
 doc: Vietnamese CCCD by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - pii
 - persons
@@ -12,6 +9,6 @@ country:
 - VN
 langs:
 - vi
-is_pii: 'True'
+is_pii: true
+classification: identifier
 regexp: ^[0-9]{12}$
-links: []

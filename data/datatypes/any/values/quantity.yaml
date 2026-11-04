@@ -1,16 +1,11 @@
+id: quantity
+name: Quantity
+status: draft
+doc: Number of something, quantity
+parent: numeric
 categories:
 - values
 - common
-doc: Number of something, quantity
-id: quantity
-is_pii: 'False'
-parent:
-  type: numeric
 langs:
 - common
-name: Quantity
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''
+is_pii: false

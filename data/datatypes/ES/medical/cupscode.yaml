@@ -1,19 +1,18 @@
+id: cupscode
+name: Código CUP/CUPS según el nombre del campo
+status: stable
+doc: 'ES datatype for ''Código CUP/CUPS según el nombre del campo'' (cupscode) from rules in context ''medical''.
+  CUPS (Catálogo Único de Procedimientos Sanitarios) codes are used in Spain to identify medical procedures.
+  Format: 5 digits (3+2) optionally followed by a dot and 2-3 additional digits.'
 categories:
 - medical
-id: cupscode
-is_pii: 'False'
-langs:
-- es
-name: Código CUP/CUPS según el nombre del campo
-doc: >
-  ES datatype for 'Código CUP/CUPS según el nombre del campo' (cupscode) from rules
-  in context 'medical'. CUPS (Catálogo Único de Procedimientos Sanitarios) codes are
-  used in Spain to identify medical procedures. Format: 5 digits (3+2) optionally followed
-  by a dot and 2-3 additional digits.
-classification: identifier
 country:
 - ES
-links: []
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{3}[0-9]{2}(\.[0-9]{2,3})?$
 examples:
 - value: '12345'
   description: CUPS code with 5 digits (3+2 format)
@@ -21,6 +20,3 @@ examples:
   description: CUPS code with 5 digits and 2-digit extension
 - value: '12345.678'
   description: CUPS code with 5 digits and 3-digit extension
-wikidata_property: ''
-translations: {}
-regexp: ^[0-9]{3}[0-9]{2}(\.[0-9]{2,3})?$

@@ -1,16 +1,13 @@
 id: sapostcode
 name: Saudi postal code by field name
+status: stable
 doc: Saudi postal code by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - geo
 country:
 - SA
 langs:
 - ar
-is_pii: 'False'
+is_pii: false
+classification: identifier
 regexp: ^[0-9]{4,10}$
-links: []

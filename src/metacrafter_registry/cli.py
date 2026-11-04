@@ -77,6 +77,53 @@ def cmd_check_contract(args: argparse.Namespace) -> int:
     return 1 if failed else 0
 
 
+def _registry(args: argparse.Namespace):
+    from .model import build_registry
+
+    return build_registry(load_sources(_data_dir(args)), DEFAULT_BASE_URL)
+
+
+def cmd_stats(args: argparse.Namespace) -> int:
+    from .stats import stats_lines
+
+    print("\n".join(stats_lines(_registry(args))))
+    return 0
+
+
+def cmd_report(args: argparse.Namespace) -> int:
+    import json
+
+    from .stats import report_rows
+
+    rows = report_rows(_registry(args), status=args.status, below=args.below)
+    if args.json:
+        print(json.dumps(rows, ensure_ascii=False, indent=2))
+        return 0
+    for row in rows[: args.limit or None]:
+        print(f"{row['score']:3d}  {row['status']:<10} {row['id']:<28} {row['path']}")
+        if row["missing"]:
+            print(f"{'':16}missing: {', '.join(row['missing'])}")
+    print(f"{len(rows)} record(s)")
+    return 0
+
+
+def cmd_migrate(args: argparse.Namespace) -> int:
+    from .migrate import apply_migration, plan_migration, plan_reference_lists
+
+    data_dir = _data_dir(args)
+    plan = plan_migration(data_dir)
+    refs = plan_reference_lists(data_dir)
+    root = data_dir.parent
+    for old, new in sorted(plan.renames.items()):
+        print(f"rename {old.relative_to(root)} -> {new.name}")
+    print(f"{len(plan.writes) + len(refs)} file(s) to rewrite, {len(plan.renames)} to rename")
+    if args.check:
+        return 1 if (plan.changed or refs) else 0
+    apply_migration(data_dir, plan, refs)
+    print("Migration applied. Run 'metacrafter-registry build' to refresh outputs.")
+    return 0
+
+
 def cmd_check_links(args: argparse.Namespace) -> int:
     from .linkcheck import check_links
 
@@ -120,6 +167,22 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--expect-sha", help="fail unless the deployed manifest has this git SHA")
     p.add_argument("--retries", type=int, default=0, help="retry rounds (10 s apart)")
     p.set_defaults(func=cmd_check_contract)
+
+    p = sub.add_parser("stats", help="honest completeness and quality statistics")
+    p.set_defaults(func=cmd_stats)
+
+    p = sub.add_parser("report", help="records ordered by quality score, with missing elements")
+    p.add_argument("--status", choices=["draft", "stable", "deprecated"])
+    p.add_argument("--below", type=int, help="only records with a score below this value")
+    p.add_argument("--limit", type=int, default=0, help="print at most N records (0 = all)")
+    p.add_argument("--json", action="store_true", help="print JSON")
+    p.set_defaults(func=cmd_report)
+
+    p = sub.add_parser("migrate", help="migrate YAML sources to the v2 record contract")
+    p.add_argument(
+        "--check", action="store_true", help="only report; exit 1 if anything would change"
+    )
+    p.set_defaults(func=cmd_migrate)
 
     p = sub.add_parser("check-links", help="check internal links in a built site")
     p.add_argument("--dir", help="built site directory (default: <repo>/dist)")

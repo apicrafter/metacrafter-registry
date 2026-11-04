@@ -1,29 +1,30 @@
+id: languagetag
+name: IETF language tag
+status: stable
+doc: An IETF BCP 47 language tag is a standardized code or tag that is used to identify human languages
+  in the Internet. The tag structure has been standardized by the Internet Engineering Task Force (IETF)
+  in Best Current Practice (BCP) 47; the subtags are maintained by the IANA Language Subtag Registry.
 categories:
 - geo
-doc: An IETF BCP 47 language tag is a standardized code or tag that is used to identify
-  human languages in the Internet. The tag structure has been standardized by the
-  Internet Engineering Task Force (IETF) in Best Current Practice (BCP) 47; the subtags
-  are maintained by the IANA Language Subtag Registry.
-id: languagetag
-is_pii: 'False'
 langs:
 - common
-links:
-  - type: wikipedia
-    url: https://en.wikipedia.org/wiki/IETF_language_tag
-  - type: wikidata
-    url: https://www.wikidata.org/wiki/Property:P305
-name: IETF language tag
-wikidata_property: P305
-regexp: '([a-z]{2,3}(-[a-zA-Z0-9]{1,8})*|i-[a-z]{3,8})|'
+is_pii: false
+classification: categorical
+regexp: ([a-z]{2,3}(-[a-zA-Z0-9]{1,8})*|i-[a-z]{3,8})|
 examples:
-  - value: hu
-    description: Hungarian
-  - value: en-GB
-    description: British English
+- value: hu
+  description: Hungarian
+- value: en-GB
+  description: British English
+mappings:
+  wikidata: P305
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/IETF_language_tag
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P305
 translations:
   ru:
-    doc: Языковой код/тэг по стандарту IETF BCP 47 идентифицирующий конкретный человеческий
-      язык, стиль написания и тд.
     name: Языковой код IETF
-classification: categorical
+    doc: Языковой код/тэг по стандарту IETF BCP 47 идентифицирующий конкретный человеческий язык, стиль
+      написания и тд.

@@ -1,20 +1,20 @@
+id: name
+name: Name
+status: stable
+doc: Name of the item, object or entity.
 categories:
 - common
-doc: Name of the item, object or entity.
-id: name
-is_pii: 'False'
 langs:
 - common
-name: Name
+is_pii: false
+mappings:
+  wikidata: P2561
 links:
 - type: schema.org
   url: https://schema.org/name
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P2561
-wikidata_property: P2561
 translations:
   ru:
-    doc: Название объекта или сущности
     name: Название
-examples: []
-regexp: ''
+    doc: Название объекта или сущности

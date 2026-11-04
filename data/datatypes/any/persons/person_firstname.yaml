@@ -1,18 +1,13 @@
+id: person_firstname
+name: Person firstname
+status: stable
+doc: First name of the person. For example, Donald or Vladimir or Jack
 categories:
 - persons
 - pii
-doc: First name of the person. For example, Donald or Vladimir or Jack
-id: person_firstname
-is_pii: 'True'
 langs:
 - common
+is_pii: true
 links:
 - type: schema.org
   url: https://schema.org/givenName
-name: Person firstname
-patterns:
-- rusfirstname
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

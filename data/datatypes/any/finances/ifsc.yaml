@@ -1,14 +1,10 @@
+id: ifsc
+name: Indian IFSC code
+status: draft
+doc: Datatype for 'Indian IFSC code' (ifsc) from rules in context 'finances'.
 categories:
 - finances
-id: ifsc
-is_pii: 'False'
 langs:
 - common
-name: Indian IFSC code
-doc: Datatype for 'Indian IFSC code' (ifsc) from rules in context 'finances'.
+is_pii: false
 classification: identifier
-links: []
-examples: []
-wikidata_property: ''
-translations: {}
-regexp: ''

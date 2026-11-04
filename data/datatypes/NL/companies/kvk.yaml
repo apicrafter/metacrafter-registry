@@ -1,24 +1,20 @@
+id: kvk
+name: KvK-nummer op veldnaam
+status: stable
+doc: NL datatype for 'KvK-nummer op veldnaam' (kvk) from rules in context 'companies'. The KvK-nummer
+  (Kamer van Koophandel nummer) is a unique 8-digit registration number assigned to businesses and organizations
+  in the Netherlands by the Chamber of Commerce (Kamer van Koophandel). Every business entity registered
+  in the Netherlands receives a KvK number, which is used for official identification and registration
+  purposes. The number consists of exactly 8 digits, sometimes with leading zeros.
 categories:
 - companies
-id: kvk
-is_pii: 'False'
-langs:
-- nl
-name: KvK-nummer op veldnaam
-doc: NL datatype for 'KvK-nummer op veldnaam' (kvk) from rules in context 'companies'.
-  The KvK-nummer (Kamer van Koophandel nummer) is a unique 8-digit registration number
-  assigned to businesses and organizations in the Netherlands by the Chamber of Commerce
-  (Kamer van Koophandel). Every business entity registered in the Netherlands receives
-  a KvK number, which is used for official identification and registration purposes.
-  The number consists of exactly 8 digits, sometimes with leading zeros.
-classification: identifier
 country:
 - NL
-links:
-- type: wikipedia
-  url: https://nl.wikipedia.org/wiki/Kamer_van_Koophandel
-- type: doc
-  url: https://www.kvk.nl/
+langs:
+- nl
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{8}$
 examples:
 - value: '12345678'
   description: Dutch KvK number with 8 digits
@@ -26,8 +22,13 @@ examples:
   description: Dutch KvK number with leading zero
 - value: '87654321'
   description: Another valid Dutch KvK number format
-wikidata_property: ''
+links:
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Kamer_van_Koophandel
+- type: doc
+  url: https://www.kvk.nl/
 translations:
-  en: Chamber of Commerce Number (KvK)
-  nl: KvK-nummer (Kamer van Koophandel nummer)
-regexp: ^[0-9]{8}$
+  en:
+    name: Chamber of Commerce Number (KvK)
+  nl:
+    name: KvK-nummer (Kamer van Koophandel nummer)

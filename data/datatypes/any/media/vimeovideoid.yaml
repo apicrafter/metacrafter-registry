@@ -1,13 +1,10 @@
 id: vimeovideoid
 name: Vimeo video ID by field name
+status: draft
 doc: Vimeo video ID by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - media
 langs:
 - en
-is_pii: 'False'
-links: []
+is_pii: false
+classification: identifier

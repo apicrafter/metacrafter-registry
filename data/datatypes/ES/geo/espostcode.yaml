@@ -1,0 +1,21 @@
+id: espostcode
+name: Spanish postal code (by language)
+status: draft
+doc: Spanish postal code (by language)
+semantic_type: postindex
+categories:
+- geo
+country:
+- ES
+- MX
+langs:
+- es
+regexp: \d{5}
+examples:
+- value: '07002'
+  description: Palma, Majorca
+- value: '27722'
+  description: Veigas, Asturias
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Spain

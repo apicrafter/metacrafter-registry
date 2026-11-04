@@ -28,7 +28,7 @@
     var rows = Array.prototype.slice.call(document.querySelectorAll("#datatype-table tbody tr"));
     var counter = document.getElementById("result-count");
     var params = new URLSearchParams(window.location.search);
-    ["q", "category", "country", "kind", "pii"].forEach(function (name) {
+    ["q", "category", "country", "kind", "status", "pii"].forEach(function (name) {
       var field = filterForm.elements[name];
       if (field && params.get(name)) field.value = params.get(name);
     });
@@ -39,6 +39,7 @@
       var country = filterForm.elements.country.value;
       var kind = filterForm.elements.kind.value;
       var pii = filterForm.elements.pii.value;
+      var status = filterForm.elements.status.value;
       var shown = 0;
       rows.forEach(function (row) {
         var ok =
@@ -46,13 +47,14 @@
           (!category || (" " + row.getAttribute("data-categories") + " ").indexOf(" " + category + " ") !== -1) &&
           (!country || (" " + row.getAttribute("data-country") + " ").indexOf(" " + country + " ") !== -1) &&
           (!kind || row.getAttribute("data-kind") === kind) &&
+          (!status || row.getAttribute("data-status") === status) &&
           (!pii || row.getAttribute("data-pii") === pii);
         row.hidden = !ok;
         if (ok) shown += 1;
       });
       counter.textContent = "Showing " + shown + " of " + rows.length;
       var state = new URLSearchParams();
-      ["q", "category", "country", "kind", "pii"].forEach(function (name) {
+      ["q", "category", "country", "kind", "status", "pii"].forEach(function (name) {
         var value = filterForm.elements[name].value;
         if (value) state.set(name, value);
       });
@@ -114,6 +116,7 @@
           '<code>' + escapeHtml(e.id) + "</code>" +
           (e.p ? ' <span class="badge pii">PII</span>' : "") +
           (e.k === "pattern" ? ' <span class="badge neutral">pattern</span>' : "") +
+          (e.s === "draft" ? ' <span class="badge draft">draft</span>' : "") +
           '<div class="meta">' + escapeHtml(e.d) + "</div>";
         results.appendChild(li);
       });

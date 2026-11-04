@@ -1,16 +1,13 @@
 id: thbankaccount
 name: Thai bank account by field name
+status: stable
 doc: Thai bank account by field name identifier
-classification: identifier
-wikidata_property: ''
-translations: {}
-examples: []
 categories:
 - finances
 country:
 - TH
 langs:
 - th
-is_pii: 'False'
+is_pii: false
+classification: identifier
 regexp: ^[0-9]{8,20}$
-links: []

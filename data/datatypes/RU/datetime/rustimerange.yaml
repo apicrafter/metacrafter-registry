@@ -1,0 +1,9 @@
+id: rustimerange
+name: Time range (Russian)
+status: draft
+doc: Time range written in Russian
+semantic_type: timerange
+country:
+- RU
+langs:
+- ru

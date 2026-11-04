@@ -1,20 +1,18 @@
+id: datetime
+name: Date and time
+status: stable
+doc: Date and time with one of known notations
 categories:
 - datetime
-doc: Date and time with one of known notations
-id: datetime
-is_pii: 'False'
 langs:
 - common
+is_pii: false
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Date_and_time_notation
 - type: schema.org
   url: https://schema.org/DateTime
-name: Date and time
 translations:
   ru:
-    doc: Дата и время в одной из общепринятых нотаций
     name: Дата и время
-examples: []
-wikidata_property: ''
-regexp: ''
+    doc: Дата и время в одной из общепринятых нотаций

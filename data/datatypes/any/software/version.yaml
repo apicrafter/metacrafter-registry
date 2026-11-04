@@ -1,12 +1,10 @@
 id: version
 name: Software version by field name
+status: draft
 doc: Software version by field name
-langs:
-- en
 categories:
 - software
-is_pii: 'False'
+langs:
+- en
+is_pii: false
 classification: identifier
-translations: {}
-examples: []
-links: []
