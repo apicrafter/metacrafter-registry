@@ -1,0 +1,24 @@
+id: alteryxdesignercloud
+name: Alteryx Designer Cloud
+category: other
+doc: Alteryx Designer Cloud, formerly Trifacta, is a cloud service for data preparation. It infers a data
+  type for each column from the first rows of a sample, shows the share of valid, invalid and empty values,
+  and suggests transformations to fix the invalid ones. Besides logical types such as Integer, Boolean
+  and Datetime it has complex types, which are strings checked by regular expressions, such as Social
+  Security Number, Phone Number, Zip Code, State, Credit Card and HTTP Code. The types are listed in the
+  overview of the type system in the Alteryx help.
+website: https://help.alteryx.com/trifacta-classic/en/concepts/feature-overviews/overview-of-the-type-system.html
+supported_types:
+- bankcard
+- boolean
+- date
+- datetime
+- email
+- gender
+- http_status_code
+- ipv4
+- nanpphone
+- url
+- usssn
+- usstate
+- uszipcode

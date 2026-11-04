@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import os
 import re
 import urllib.request
@@ -42,9 +43,26 @@ _TOKEN = re.compile(r"[a-z0-9]+")
 _SEPARATORS = re.compile(r"[\s-]")
 _CAMEL = re.compile(r"(?<=[a-z0-9])(?=[A-Z])")
 
+# How a regexp matches one value (see _match_kind).
+_NO_MATCH, _RAW, _COMPACT = 0, 1, 2
+
 
 def _tokens(text: str) -> set[str]:
     return set(_TOKEN.findall(_CAMEL.sub(" ", str(text)).lower()))
+
+
+def _match_kind(pattern: re.Pattern[str], value: str) -> int:
+    """_RAW if ``pattern`` matches ``value`` as written, _COMPACT if it matches
+    only once spaces and hyphens are removed, _NO_MATCH otherwise."""
+    # A column value is the whole value: unanchored registry regexps must not
+    # match a substring of a longer value. Values printed with spaces or
+    # hyphens ("4111 1111 1111 1111") are also tried in compact form.
+    if pattern.fullmatch(value) is not None:
+        return _RAW
+    compact = _SEPARATORS.sub("", value)
+    if compact != value and pattern.fullmatch(compact) is not None:
+        return _COMPACT
+    return _NO_MATCH
 
 
 def _sherlock_key(label: str) -> str:
@@ -346,15 +364,7 @@ class Registry:
 
     def _regexp_matches(self, rid: str, value: str) -> bool:
         pattern = self._compiled.get(rid)
-        if pattern is None:
-            return False
-        # A column value is the whole value: unanchored registry regexps must not
-        # match a substring of a longer value. Values printed with spaces or
-        # hyphens ("4111 1111 1111 1111") are also tried in compact form.
-        if pattern.fullmatch(value) is not None:
-            return True
-        compact = _SEPARATORS.sub("", value)
-        return compact != value and pattern.fullmatch(compact) is not None
+        return pattern is not None and _match_kind(pattern, value) != _NO_MATCH
 
     def match(self, value: str) -> list[dict[str, Any]]:
         """Records whose regexp matches ``value`` and whose check digit (if any) passes."""
@@ -411,16 +421,40 @@ class Registry:
         matching country, -10 for a different country, -5 for drafts; capped at
         100. Specificity is 1 minus the share of other records' examples that the
         regexp also matches, so catch-all patterns rank low.
+
+        A value printed with spaces or hyphens ("4111 1111 1111 1111") is also a
+        regexp hit when it matches without them, unless the regexp of another
+        record that is at least as specific matches the value as written. So
+        "2025-05-15" is not a hit for an eight-digit number such as ``okpo``
+        when a date regexp matches it. That check uses every record with a
+        regexp, whatever ``status`` filters.
         """
         samples = [str(v).strip() for v in values if v is not None and str(v).strip()]
         country = country.upper() if country else None
+        kinds = (
+            {rid: [_match_kind(p, v) for v in samples] for rid, p in self._compiled.items()}
+            if samples
+            else {}
+        )
+        # Per sample, the broadness of the most specific regexp that matches it
+        # as written: a compact-form hit counts only for a more specific regexp.
+        claimed = [math.inf] * len(samples)
+        for rid, record_kinds in kinds.items():
+            for i, kind in enumerate(record_kinds):
+                if kind == _RAW:
+                    claimed[i] = min(claimed[i], self._broadness[rid])
         results = []
         for rid, record in self.datatypes.items():
             if status and record["status"] != status:
                 continue
             hit_rate = None
-            if samples and rid in self._compiled:
-                hits = sum(1 for v in samples if self._regexp_matches(rid, v))
+            if rid in kinds:
+                own = self._broadness[rid]
+                hits = sum(
+                    1
+                    for i, kind in enumerate(kinds[rid])
+                    if kind == _RAW or (kind == _COMPACT and claimed[i] > own)
+                )
                 hit_rate = hits / len(samples)
             checksum = None
             algorithm = record.get("checksum")

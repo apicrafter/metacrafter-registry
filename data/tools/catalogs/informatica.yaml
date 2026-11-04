@@ -1,0 +1,9 @@
+id: informatica
+name: Informatica Cloud Data Governance and Catalog
+category: catalogs
+doc: Informatica Cloud Data Governance and Catalog classifies columns and fields of scanned sources with
+  data element classifications that are configured in Metadata Command Center. A rule-based classification
+  is a Spark SQL expression over column names, comments and profiling results such as frequent values,
+  and it can use lookup tables and reference data. More than 200 predefined rule-based classifications
+  can be imported as predefined content; CLAIRE can also generate classifications from asset names.
+website: https://onlinehelp.informatica.com/IICS/prod/MCC/en/metadata-command-center-administration/Creating_a_data_element_classification.html

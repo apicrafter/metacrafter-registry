@@ -1,0 +1,9 @@
+id: ataccama
+name: Ataccama ONE
+category: catalogs
+doc: 'Ataccama ONE classifies catalog items and attributes by assigning business glossary terms to them.
+  Detection rules attached to a term decide when it applies: metadata rules check attribute names and
+  descriptions, and data rules check values against masks, regular expressions, value lists or reference
+  catalog items. The documentation says the platform ships some preconfigured terms and default detection
+  rules for initial data discovery, but it does not list them.'
+website: https://docs.ataccama.com/one/latest/terms/terms.html

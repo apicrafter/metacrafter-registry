@@ -555,6 +555,33 @@ def test_identify_page_sends_no_values():
     assert code.count("fetch(") == 1 and 'fetch(base + "/identify-index.json")' in code
 
 
+def _javascript_identify(tmp_path, index_path, cases, limit):
+    """[[id, score], ...] from identify-core.js for each (values, field_name) case."""
+    script = tmp_path / "run.js"
+    script.write_text(
+        "const core = require(process.argv[2]);\n"
+        "const index = require(process.argv[3]);\n"
+        "const cases = JSON.parse(process.argv[4]);\n"
+        "const limit = Number(process.argv[5]);\n"
+        "console.log(JSON.stringify(cases.map(([v, f]) => "
+        "core.identify(index, v, f, null, limit).map(r => [r.id, r.score]))));\n"
+    )
+    out = subprocess.run(
+        [
+            "node",
+            str(script),
+            str(REPO / "src/metacrafter_registry/static/identify-core.js"),
+            str(index_path),
+            json.dumps(cases),
+            str(limit),
+        ],
+        capture_output=True,
+        text=True,
+        check=True,
+    ).stdout
+    return json.loads(out)
+
+
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
 def test_javascript_identify_matches_python(built_site, tmp_path):
     """The browser scorer and Registry.identify rank the same top candidates."""
@@ -567,31 +594,40 @@ def test_javascript_identify_matches_python(built_site, tmp_path):
         (["4111 1111 1111 1111"], "card"),
         (["user@example.com", "first.last+tag@mail.example.org"], ""),
         (["e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"], "sha256"),
+        (["2025-05-15", "1990-01-31"], "birthday"),
     ]
-    script = tmp_path / "run.js"
-    script.write_text(
-        "const core = require(process.argv[2]);\n"
-        "const index = require(process.argv[3]);\n"
-        "const cases = JSON.parse(process.argv[4]);\n"
-        "console.log(JSON.stringify(cases.map(([v, f]) => "
-        "core.identify(index, v, f, null, 3).map(r => [r.id, r.score]))));\n"
-    )
-    out = subprocess.run(
-        [
-            "node",
-            str(script),
-            str(REPO / "src/metacrafter_registry/static/identify-core.js"),
-            str(built_site / "identify-index.json"),
-            json.dumps(cases),
-        ],
-        capture_output=True,
-        text=True,
-        check=True,
-    ).stdout
-    js = json.loads(out)
+    js = _javascript_identify(tmp_path, built_site / "identify-index.json", cases, 3)
     for (values, field), js_top in zip(cases, js, strict=True):
         py_top = [[r["id"], r["score"]] for r in reg.identify(values, field_name=field, limit=3)]
         assert js_top[0] == py_top[0], (values, js_top, py_top)
+
+
+@pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
+def test_javascript_compact_matches_match_python(reg_with_date, tmp_path):
+    """Both scorers ignore a compact-form match that a more specific regexp claims."""
+    from conftest import ISO_DATES
+
+    from metacrafter_registry.agents import identify_index
+
+    index = tmp_path / "identify-index.json"
+    index.write_text(
+        json.dumps(identify_index(reg_with_date.datatypes.values(), reg_with_date._broadness))
+    )
+    cases = [
+        (ISO_DATES, "birthday"),
+        (ISO_DATES, "cardPeriod"),
+        (["4111 1111 1111 1111"], ""),
+        (["4111-1111-1111-1111", "5500 0000 0000 0004"], "card"),
+        (["45 397 000"], ""),
+        (["GB82 WEST 1234 5698 7654 32"], ""),
+    ]
+    js = _javascript_identify(tmp_path, index, cases, 5)
+    for (values, field), js_top in zip(cases, js, strict=True):
+        py_top = [
+            [r["id"], r["score"]] for r in reg_with_date.identify(values, field_name=field, limit=5)
+        ]
+        assert js_top == py_top, (values, js_top, py_top)
+    assert js[0][0][0] == js[1][0][0] == "date"
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")

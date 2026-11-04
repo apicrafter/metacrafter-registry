@@ -18,6 +18,25 @@ def repo_sources():
     return load_sources(DATA)
 
 
+# An ISO 8601 calendar date. Its hyphens are part of the format: without them
+# "2025-05-15" is eight digits, which okpo and oktmo accept.
+ISO_DATE = r"^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$"
+ISO_DATES = ["2025-05-15", "1990-01-31", "2001-12-02"]
+
+
+@pytest.fixture(scope="session")
+def reg_with_date(repo_sources):
+    """The registry of data/, with ISO_DATE on the `date` record if it has no regexp."""
+    from metacrafter_registry import Registry
+
+    base = Registry.from_sources(DATA)
+    records = [dict(r) for r in base.datatypes.values()]
+    for record in records:
+        if record["id"] == "date":
+            record.setdefault("regexp", ISO_DATE)
+    return Registry(records, aliases=base.aliases, manifest=base.manifest)
+
+
 @pytest.fixture(scope="session")
 def built_site(tmp_path_factory, repo_sources):
     out = tmp_path_factory.mktemp("site") / "dist"
