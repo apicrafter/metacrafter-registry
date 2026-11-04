@@ -1,0 +1,22 @@
+id: ru_orgunit
+name: Organizational unit name (Russian)
+status: draft
+doc: Name of a structural unit of an organization in Russian, for example a department of a government
+  body. Published in data.gov.ru datasets in columns such as "отдел", "структурное подразделение" and
+  "dep".
+semantic_type: orgunit
+country:
+- RU
+langs:
+- ru
+examples:
+- value: Общий отдел
+  description: General department
+- value: Отдел доходов
+  description: Revenue department of a treasury office
+- value: Финансовый отдел
+  description: Finance department
+translations:
+  ru:
+    name: Структурное подразделение
+    doc: Наименование структурного подразделения организации на русском языке.
