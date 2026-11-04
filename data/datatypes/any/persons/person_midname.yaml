@@ -8,3 +8,5 @@ categories:
 langs:
 - common
 is_pii: true
+mappings:
+  cdm: means.identity.person.middleName

@@ -1,0 +1,33 @@
+id: lu_tva
+name: Luxembourg VAT number
+status: draft
+doc: Numéro d'identification à la taxe sur la valeur ajoutée, the 8-digit VAT number in Luxembourg. The
+  last two digits are check digits.
+parent: vatin
+categories:
+- finances
+country:
+- LU
+langs:
+- fr
+- de
+- lb
+is_pii: false
+classification: identifier
+regexp: ^(?:LU[ -]?)?\d{3} ?\d{3} ?\d{2}$
+examples:
+- value: LU 22991225
+  description: Real-world value published online
+- value: LU 19406747
+  description: Real-world value published online
+- value: '229912257'
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.lu.tva.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_lu_tva.html
+translations:
+  fr:
+    name: Numéro d'identification à la TVA

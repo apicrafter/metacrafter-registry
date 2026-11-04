@@ -1,0 +1,31 @@
+id: bg_pnf
+name: Bulgarian personal number of a foreigner (LNCh)
+status: draft
+doc: Личен номер на чужденец, the 10-digit personal number given to foreigners who live in Bulgaria. The
+  last digit is a weighted check digit.
+categories:
+- pii
+- persons
+country:
+- BG
+langs:
+- bg
+is_pii: true
+classification: identifier
+regexp: ^\d{10}$
+examples:
+- value: '4199722079'
+  description: Synthetic number with a valid check digit
+- value: '6345738590'
+  description: Synthetic number with a valid check digit
+- value: '41997220797'
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.bg.pnf.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_bg_pnf.html
+translations:
+  bg:
+    name: Личен номер на чужденец (ЛНЧ)

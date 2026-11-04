@@ -1,0 +1,36 @@
+id: de_stnr
+name: German tax number (Steuernummer)
+status: draft
+doc: Steuernummer (St.-Nr.), the number that a regional German tax office gives to taxable individuals
+  and organisations. The regional form has 10 or 11 digits and is usually written with slashes; the form
+  that is unique in all of Germany has 13 digits. It holds the tax office number, a district number, a
+  serial number and a check digit. The tax identification number (Steuer-ID) is replacing it.
+categories:
+- finances
+country:
+- DE
+langs:
+- de
+is_pii: true
+classification: identifier
+regexp: ^(?:\d{2,3}[/ ]\d{3,4}[/ ]\d{4,5}|\d{10,11}|\d{13})$
+examples:
+- value: 31 5565/0251
+  description: Synthetic number in the documented format
+- value: 810 576 0864
+  description: Synthetic number in the documented format
+- value: 31/556/50251
+  description: The first example in its printed form
+- value: '315565025'
+  valid: false
+  description: One character too few
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Steuernummer
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.de.stnr.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_de_stnr.html
+translations:
+  de:
+    name: Steuernummer (St.-Nr.)

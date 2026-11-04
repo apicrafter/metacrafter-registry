@@ -12,6 +12,8 @@ country:
 - US
 langs:
 - en
+mappings:
+  d3m: http://schema.org/postalCode
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ZIP_Code

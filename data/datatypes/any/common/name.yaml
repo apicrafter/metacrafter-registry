@@ -8,6 +8,7 @@ langs:
 - common
 is_pii: false
 mappings:
+  cdm: means.identity.name
   wikidata: P2561
 links:
 - type: schema.org

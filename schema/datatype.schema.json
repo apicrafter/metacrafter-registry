@@ -24,6 +24,16 @@
         {"type": "array", "items": {"$ref": "#/$defs/nonEmptyString"}, "minItems": 1, "uniqueItems": true}
       ]
     },
+    "cdmTrait": {
+      "type": "string",
+      "pattern": "^(means|is)(\\.[A-Za-z0-9]+)+$",
+      "description": "A trait name from the CDM foundations, for example means.location.postalCode or is.dataFormat.guid"
+    },
+    "d3mType": {
+      "type": "string",
+      "pattern": "^(https://metadata\\.datadrivendiscovery\\.org/types/|http://schema\\.org/)[A-Za-z0-9]+$",
+      "description": "A D3M semantic type URI as D3M metadata writes it, for example https://metadata.datadrivendiscovery.org/types/FileName or http://schema.org/email"
+    },
     "record": {
       "type": "object",
       "additionalProperties": false,
@@ -96,8 +106,21 @@
             "presidio": {"$ref": "#/$defs/stringOrList"},
             "google_dlp": {"$ref": "#/$defs/stringOrList"},
             "purview": {"$ref": "#/$defs/stringOrList"},
-            "d3m": {"$ref": "#/$defs/stringOrList"},
-            "sherlock": {"$ref": "#/$defs/stringOrList"}
+            "d3m": {
+              "description": "D3M semantic type URIs, for example http://schema.org/email",
+              "oneOf": [
+                {"$ref": "#/$defs/d3mType"},
+                {"type": "array", "items": {"$ref": "#/$defs/d3mType"}, "minItems": 1, "uniqueItems": true}
+              ]
+            },
+            "sherlock": {"$ref": "#/$defs/stringOrList"},
+            "cdm": {
+              "description": "Microsoft Common Data Model trait names, for example means.identity.service.email",
+              "oneOf": [
+                {"$ref": "#/$defs/cdmTrait"},
+                {"type": "array", "items": {"$ref": "#/$defs/cdmTrait"}, "minItems": 1, "uniqueItems": true}
+              ]
+            }
           }
         },
         "links": {

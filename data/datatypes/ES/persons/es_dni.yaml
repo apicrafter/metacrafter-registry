@@ -1,0 +1,34 @@
+id: es_dni
+name: Spanish national identity document number (DNI)
+status: draft
+doc: 'Documento Nacional de Identidad, the identity number of Spanish citizens: eight digits and a check
+  letter. The same value is the person''s tax number (NIF). Foreigners receive an NIE instead.'
+parent: esnif
+categories:
+- pii
+- persons
+country:
+- ES
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^\d{8}-?[A-Z]$
+examples:
+- value: 12442144H
+  description: Synthetic number with a valid check digit
+- value: 85103532J
+  description: Synthetic number with a valid check digit
+- value: 12442144H7
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Documento_Nacional_de_Identidad_(Spain)
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.es.dni.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_es_dni.html
+translations:
+  es:
+    name: Documento Nacional de Identidad (DNI)

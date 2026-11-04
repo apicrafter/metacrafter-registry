@@ -1,0 +1,31 @@
+id: no_mva
+name: Norwegian VAT number (MVA)
+status: draft
+doc: 'Merverdiavgift (MVA) number, the VAT number of Norwegian businesses: the 9-digit organisation number
+  followed by MVA.'
+parent: vatin
+categories:
+- finances
+country:
+- 'NO'
+langs:
+- 'no'
+is_pii: false
+classification: identifier
+regexp: ^(?:NO ?)?\d{3} ?\d{3} ?\d{3} ?MVA$
+examples:
+- value: NO 982 952 573 MVA
+  description: Real-world value published online
+- value: NO 917 313 008 MVA
+  description: Real-world value published online
+- value: 982952573MVA7
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.no.mva.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_no_mva.html
+translations:
+  'no':
+    name: MVA-nummer

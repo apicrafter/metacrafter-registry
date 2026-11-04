@@ -1,0 +1,36 @@
+id: cz_rc
+name: Czech birth number (rodné číslo)
+status: draft
+doc: Rodné číslo, the Czech national personal identifier; Slovakia uses the same scheme. It encodes the
+  date of birth and the sex. Numbers given after 1 January 1954 have ten digits, older ones nine. It is
+  usually written with a slash after the sixth digit.
+categories:
+- pii
+- persons
+country:
+- CZ
+langs:
+- cs
+is_pii: true
+classification: identifier
+regexp: ^\d{6}/?\d{3,4}$
+examples:
+- value: '7810181082'
+  description: Synthetic number with a valid check digit
+- value: '1457090811'
+  description: Synthetic number with a valid check digit
+- value: 781018/1082
+  description: The first example in its printed form
+- value: '78101810827'
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://cs.wikipedia.org/wiki/Rodn%C3%A9_%C4%8D%C3%ADslo
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cz.rc.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_cz_rc.html
+translations:
+  cs:
+    name: Rodné číslo

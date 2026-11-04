@@ -1,0 +1,32 @@
+id: ro_onrc
+name: Romanian trade register number (ONRC)
+status: draft
+doc: 'Registration number in the Romanian Trade Register (Oficiul Național al Registrului Comerțului).
+  The old form is a letter for the kind of entity, a county code, a serial number and the registration
+  year, separated by slashes. Since July 2024 a 14-character form without slashes is used: the letter,
+  the year, a serial number, the county code and a check digit.'
+categories:
+- companies
+country:
+- RO
+langs:
+- ro
+is_pii: false
+classification: identifier
+regexp: '^(?:[JFC] ?\d{1,2}(?: ?/ ?| )\d{1,6}(?: ?/ ?| )(?:\d{2}\.\d{2}\.)?\d{4}|[JFC]\d{13})$'
+examples:
+- value: C22/4/2018
+  description: Real-world value published online
+- value: J40 9214 2024
+  description: Real-world value published online
+- value: C22/4/20187
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ro.onrc.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_ro_onrc.html
+translations:
+  ro:
+    name: Număr de ordine în Registrul Comerțului

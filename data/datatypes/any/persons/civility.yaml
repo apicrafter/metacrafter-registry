@@ -1,0 +1,33 @@
+id: civility
+name: Civility (common title)
+status: draft
+doc: Everyday courtesy title written before a person's name, such as Mr, Mrs, Ms, Miss or Mx in English,
+  M. or Mme in French and Herr or Frau in German. Most of these titles show the person's gender and some
+  show marital status, so a civility column is personal data.
+parent: honorificprefix
+categories:
+- persons
+- pii
+langs:
+- common
+is_pii: true
+classification: categorical
+examples:
+- value: Mr
+  description: English title for a man
+- value: Ms
+  description: English title for a woman, whatever her marital status
+- value: Mx
+  description: English gender-neutral title
+- value: Mme
+  description: French title for a woman (Madame)
+- value: Herr
+  description: German title for a man
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/English_honorifics
+translations:
+  fr:
+    name: Civilité
+  ru:
+    name: Обращение (господин, госпожа)

@@ -1,0 +1,31 @@
+id: be_postcode
+name: Belgian postal code
+status: draft
+doc: Four-digit postal code used in Belgium since 1969. The first digit mostly shows the province. bpost
+  asks not to write a country prefix such as B- before the code.
+semantic_type: postindex
+country:
+- BE
+langs:
+- nl
+- fr
+- de
+regexp: ^[1-9]\d{3}$
+examples:
+- value: '1000'
+  description: Brussels
+- value: '2000'
+  description: Antwerp
+- value: '8500'
+  description: Kortrijk
+- value: B-8500
+  valid: false
+  description: country prefix is not part of the code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Belgium
+translations:
+  nl:
+    name: Postcode
+  fr:
+    name: Code postal

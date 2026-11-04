@@ -1,0 +1,39 @@
+id: fr_department_code
+name: French department code (INSEE)
+status: draft
+doc: Code of a French department in the INSEE Official Geographic Code (COG). Departments in metropolitan
+  France use two characters from 01 to 95, with 2A (Corse-du-Sud) and 2B (Haute-Corse) in place of 20.
+  Overseas departments use three digits, 971 to 974 and 976.
+semantic_type: fr_department
+country:
+- FR
+langs:
+- fr
+regexp: ^(?:0[1-9]|1\d|2[1-9AB]|[3-8]\d|9[0-5]|97[1-46])$
+examples:
+- value: '01'
+  description: Ain
+- value: 2A
+  description: Corse-du-Sud
+- value: '75'
+  description: Paris
+- value: '974'
+  description: La Réunion
+- value: '20'
+  valid: false
+  description: replaced by 2A and 2B
+- value: '975'
+  valid: false
+  description: Saint-Pierre-et-Miquelon is not a department
+mappings:
+  wikidata: P2586
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2586
+- type: doc
+  url: https://www.insee.fr/fr/information/2560452
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Departments_of_France
+translations:
+  fr:
+    name: Code département

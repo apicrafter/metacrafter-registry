@@ -66,10 +66,15 @@ Example:
   such as `pii` and `persons` add context.
 - **Crosswalk.** `crosswalk("wikidata", "P968")` finds the registry record for
   an id in another vocabulary. The systems are `wikidata`, `fibo`, `schema_org`,
-  `dpv`, `presidio`, `google_dlp`, `purview`, `d3m` and `sherlock`. For `fibo`,
-  pass a FIBO class IRI, for example
-  `https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier`.
-  It links glossary terms to registry types. Coverage outside Wikidata is still
-  small.
+  `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock` and `cdm`.
+  Coverage outside Wikidata is still small. For `fibo`, pass a FIBO class IRI,
+  for example
+  `https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier`;
+  it links glossary terms to registry types. For a Microsoft Common Data Model
+  column, pass the meaning trait of its data type: `crosswalk("cdm",
+  "means.location.postalCode")` returns `postindex`. For a D3M dataset column,
+  pass a semantic type URI from its metadata: `crosswalk("d3m",
+  "http://schema.org/email")` returns `email`. Column roles such as
+  `.../types/PrimaryKey` or `.../types/Target` are not mapped.
 - **Former ids.** `get_datatype("ssn")` returns `usssn` with
   `resolved_from_alias`. Always cite the canonical id.

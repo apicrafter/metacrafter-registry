@@ -1,0 +1,30 @@
+id: nz_ird
+name: New Zealand IRD number
+status: draft
+doc: Inland Revenue Department number (Te Tari Taake), the tax number of individuals and businesses in
+  New Zealand. It has eight or nine digits with a check digit and is often written in groups of three
+  separated by hyphens.
+categories:
+- finances
+country:
+- NZ
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: ^(?:NZ)?\d{2,3}-?\d{3}-?\d{3}$
+examples:
+- value: '147388330'
+  description: Synthetic number with a valid check digit
+- value: '106499253'
+  description: Synthetic number with a valid check digit
+- value: 147-388-330
+  description: The first example in its printed form
+- value: '1473883307'
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.nz.ird.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_nz_ird.html

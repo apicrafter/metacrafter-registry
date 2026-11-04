@@ -1,0 +1,35 @@
+id: pe_cui
+name: Peruvian identity number (CUI)
+status: draft
+doc: Cédula Única de Identidad, the 8-digit personal number on the Peruvian national identity document
+  (DNI). It can be followed by a check character, a digit or a letter.
+categories:
+- pii
+- persons
+country:
+- PE
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^\d{8}-?[0-9A-K]?$
+examples:
+- value: '962709112'
+  description: Synthetic number with a valid check digit
+- value: '153959922'
+  description: Synthetic number with a valid check digit
+- value: '9627091127'
+  valid: false
+  description: One character too many
+links:
+- type: doc
+  url: https://www.gob.pe/235-documento-nacional-de-identidad-dni
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Documento_Nacional_de_Identidad_(Per%C3%BA)
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.pe.cui.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_pe_cui.html
+translations:
+  es:
+    name: Cédula Única de Identidad (CUI)

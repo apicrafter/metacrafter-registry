@@ -1,0 +1,33 @@
+id: osm_way_id
+name: OpenStreetMap way ID
+status: draft
+doc: Numeric ID of an OpenStreetMap way, an ordered list of nodes that forms a line such as a road, or
+  a closed shape such as a building outline.
+parent: osm_id
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9][0-9]{0,18}$
+examples:
+- value: '32965412'
+  description: Statue of Liberty
+- value: '446646206'
+  description: Burj Khalifa building outline
+- value: w32965412
+  valid: false
+  description: type-prefixed form of osm_id, not a bare way ID
+mappings:
+  wikidata: P10689
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P10689
+- type: doc
+  url: https://wiki.openstreetmap.org/wiki/Way
+translations:
+  fr:
+    name: Identifiant de chemin OpenStreetMap
+  ru:
+    name: Идентификатор линии OpenStreetMap

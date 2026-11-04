@@ -1,0 +1,33 @@
+id: ad_nrt
+name: Andorran tax registration number (NRT)
+status: draft
+doc: 'Número de Registre Tributari, the identifier that the Andorran tax administration gives to natural
+  and legal persons. It has eight characters: a letter for the kind of taxpayer, six digits and a control
+  letter. The parts are often separated by hyphens.'
+categories:
+- finances
+country:
+- AD
+langs:
+- ca
+is_pii: true
+classification: identifier
+regexp: ^[ACDEFGLOPU]-?\d{6}-?[A-Z]$
+examples:
+- value: E-790360O
+  description: Synthetic number in the documented format
+- value: C-876875X
+  description: Synthetic number in the documented format
+- value: E-790360-O
+  description: The first example in its printed form
+- value: E790360O7
+  valid: false
+  description: One character too many
+links:
+- type: doc
+  url: https://www.oecd.org/tax/automatic-exchange/crs-implementation-and-assistance/tax-identification-numbers/Andorra-TIN.pdf
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ad.nrt.html
+translations:
+  ca:
+    name: Número de Registre Tributari (NRT)

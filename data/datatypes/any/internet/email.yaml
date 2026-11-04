@@ -25,6 +25,8 @@ examples:
   valid: false
   description: No @
 mappings:
+  cdm: means.identity.service.email
+  d3m: http://schema.org/email
   fibo: FND/Places/VirtualPlaces/ElectronicMailAddress
   google_dlp: EMAIL_ADDRESS
   presidio: EMAIL_ADDRESS

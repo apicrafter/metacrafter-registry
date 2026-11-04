@@ -445,11 +445,21 @@ class Registry:
             wanted = wanted.rstrip("/").rsplit("/", 1)[-1].removeprefix("Property:").upper()
         elif system == "fibo":
             wanted = fibo_normalize(wanted)
+        # D3M writes semantic types as URIs (http://schema.org/email). Also
+        # accept https://schema.org/... and a bare type name (FileName, email).
+        d3m_bare = system == "d3m" and "://" not in wanted
+        if system == "d3m" and wanted.startswith("https://schema.org/"):
+            wanted = "http://" + wanted.removeprefix("https://")
         out = []
         for record in self.datatypes.values():
             value = record.get("mappings", {}).get(system)
             values = value if isinstance(value, list) else [value] if value else []
-            normalized = [v.upper() if system == "wikidata" else v for v in values]
+            if system == "wikidata":
+                normalized = [v.upper() for v in values]
+            elif d3m_bare:
+                normalized = [v.rsplit("/", 1)[-1] for v in values]
+            else:
+                normalized = values
             if wanted in normalized:
                 out.append(record)
         return out

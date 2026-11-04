@@ -1,0 +1,38 @@
+id: bg_vat
+name: Bulgarian VAT identification number
+status: draft
+doc: Bulgarian VAT identification number (ДДС номер). It is BG followed by 9 digits for legal entities
+  or 10 digits for individuals, foreigners and others; a 10-digit number can be a personal number (EGN).
+  The last digit is a check digit, with a different algorithm for each length.
+parent: euvat
+categories:
+- finances
+- companies
+country:
+- BG
+langs:
+- bg
+is_pii: true
+classification: identifier
+regexp: ^BG\d{9,10}$
+checksum: bg_vat
+examples:
+- value: BG175074752
+  description: legal entity, valid check digit
+- value: BG200356710
+  description: legal entity (Ontotext)
+- value: BG175074751
+  valid: false
+  description: wrong check digit
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/VAT_identification_number
+- type: doc
+  url: https://ec.europa.eu/taxation_customs/vies/
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.bg.vat.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_bg_vat.html
+translations:
+  bg:
+    name: Идентификационен номер по ДДС

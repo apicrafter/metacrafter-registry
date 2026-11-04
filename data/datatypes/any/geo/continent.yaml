@@ -12,6 +12,7 @@ examples:
 - value: Eurasia
   description: Eurasia
 mappings:
+  cdm: means.location.continent
   wikidata: P30
 links:
 - type: wikipedia

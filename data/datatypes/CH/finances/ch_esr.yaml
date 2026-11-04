@@ -1,0 +1,39 @@
+id: ch_esr
+name: Swiss payment slip reference number (ESR, QR reference)
+status: draft
+doc: Reference number of Swiss inpayment slips (ESR/ISR, Einzahlungsschein mit Referenznummer), also used
+  as the QR reference of QR-bills. It has 27 digits, the last being a recursive modulo 10 check digit,
+  and is printed as two digits followed by five groups of five. Leading zeros can be omitted.
+categories:
+- finances
+country:
+- CH
+langs:
+- de
+- fr
+- it
+is_pii: false
+classification: identifier
+regexp: '^(?:\d{2}(?: \d{5}){5}|\d{27})$'
+examples:
+- value: '306356360403828294825668780'
+  description: Synthetic number with a valid check digit
+- value: '664319904784271582486799994'
+  description: Synthetic number with a valid check digit
+- value: 30 63563 60403 82829 48256 68780
+  description: The first example in its printed form
+- value: '3063563604038282948256687807'
+  valid: false
+  description: One character too many
+links:
+- type: doc
+  url: https://www.paymentstandards.ch/dam/downloads/ig-qr-bill-en.pdf
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ch.esr.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_ch_esr.html
+translations:
+  de:
+    name: Einzahlungsschein mit Referenznummer (ESR)
+  fr:
+    name: Bulletin de versement avec numéro de référence (BVR)

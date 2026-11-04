@@ -1,0 +1,31 @@
+id: is_vsk
+name: Icelandic VAT number (VSK)
+status: draft
+doc: 'Virðisaukaskattsnúmer, the VAT number in Iceland: five or six digits, sometimes written with the
+  IS prefix.'
+parent: vatin
+categories:
+- finances
+country:
+- IS
+langs:
+- is
+is_pii: false
+classification: identifier
+regexp: ^(?:IS)?\d{5,6}$
+examples:
+- value: '77121'
+  description: Synthetic number in the documented format
+- value: '682085'
+  description: Synthetic number in the documented format
+- value: '7712'
+  valid: false
+  description: One character too few
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.is_.vsk.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_is_vsk.html
+translations:
+  is:
+    name: Virðisaukaskattsnúmer

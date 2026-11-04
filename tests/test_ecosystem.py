@@ -94,6 +94,77 @@ def test_crosswalk_mappings(repo_sources):
     ]
 
 
+def test_cdm_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+    assert [r["id"] for r in reg.crosswalk("cdm", "means.identity.service.email")] == ["email"]
+    assert [r["id"] for r in reg.crosswalk("cdm", "means.location.postalCode")] == ["postindex"]
+    # a pattern can carry the mapping, and a record can list several traits
+    assert [r["id"] for r in reg.crosswalk("cdm", "means.measurement.currency.iSOCode")] == [
+        "iso4217curcode"
+    ]
+    # every CDM trait maps to at most one registry record
+    seen: dict[str, str] = {}
+    for record in reg.datatypes.values():
+        value = record.get("mappings", {}).get("cdm")
+        for trait in value if isinstance(value, list) else [value] if value else []:
+            assert trait not in seen, f"{trait} is mapped by {seen[trait]} and {record['id']}"
+            seen[trait] = record["id"]
+    assert len(seen) >= 40
+
+
+def test_cdm_mapping_must_be_a_trait_name(mini_data):
+    path = mini_data / "datatypes/any/pii/email.yaml"
+    path.write_text(path.read_text() + "mappings:\n  cdm: email\n")
+    errors = [str(i) for i in validate(load_sources(mini_data)).errors]
+    assert any("mappings" in e and "cdm" in e for e in errors), errors
+
+    path.write_text(path.read_text().replace("cdm: email", "cdm: means.identity.service.email"))
+    assert validate(load_sources(mini_data)).errors == []
+
+
+def test_d3m_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+
+    def ids(external_id: str) -> list[str]:
+        return [r["id"] for r in reg.crosswalk("d3m", external_id)]
+
+    assert ids("http://schema.org/email") == ["email"]
+    # D3M defines schema.org postalCode as a US postal code; a pattern carries it
+    assert ids("http://schema.org/postalCode") == ["uszipcode"]
+    assert ids("https://metadata.datadrivendiscovery.org/types/FileName") == ["filename"]
+    assert ids("https://metadata.datadrivendiscovery.org/types/AmericanPhoneNumber") == [
+        "nanpphone"
+    ]
+    # https schema.org URIs and bare type names resolve too
+    assert ids("https://schema.org/email") == ["email"]
+    assert ids("FileName") == ["filename"]
+    assert ids("addressCountry") == ["country"]
+    # column roles are not value types and are not mapped
+    assert ids("https://metadata.datadrivendiscovery.org/types/PrimaryKey") == []
+    # every D3M semantic type maps to at most one registry record
+    seen: dict[str, str] = {}
+    for record in reg.datatypes.values():
+        value = record.get("mappings", {}).get("d3m")
+        for uri in value if isinstance(value, list) else [value] if value else []:
+            assert uri not in seen, f"{uri} is mapped by {seen[uri]} and {record['id']}"
+            seen[uri] = record["id"]
+    assert len(seen) >= 13
+
+
+def test_d3m_mapping_must_be_a_semantic_type_uri(mini_data):
+    path = mini_data / "datatypes/any/pii/email.yaml"
+    path.write_text(path.read_text() + "mappings:\n  d3m: email\n")
+    errors = [str(i) for i in validate(load_sources(mini_data)).errors]
+    assert any("mappings" in e and "d3m" in e for e in errors), errors
+
+    path.write_text(path.read_text().replace("d3m: email", "d3m: http://schema.org/email"))
+    assert validate(load_sources(mini_data)).errors == []
+
+
 def test_changes_diff():
     old = [
         {"id": "a", "status": "draft", "name": "A"},
@@ -172,3 +243,59 @@ def test_javascript_identify_matches_python(built_site, tmp_path):
     for (values, field), js_top in zip(cases, js, strict=True):
         py_top = [[r["id"], r["score"]] for r in reg.identify(values, field_name=field, limit=3)]
         assert js_top[0] == py_top[0], (values, js_top, py_top)
+
+
+@pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
+def test_javascript_checksums_match_python(tmp_path):
+    """Every check-digit algorithm exists in identify-core.js and gives the same answers."""
+    import random
+
+    from metacrafter_registry.checksums import ALGORITHMS
+
+    rng = random.Random(3)
+    values = [
+        "4111 1111 1111 1111",
+        "GB82 WEST 1234 5698 7654 32",
+        "978-0-521-29366-2",
+        "0-521-22151-X",
+        "7707083893",
+        "112-233-445 95",
+        "2 95 10 99 126 111 93",
+        "253072B07300470",
+        "253072A07300443",
+        "ATU13585627",
+        "U13585626",
+        "BG175074752",
+        "BG 175 074 751",
+    ]
+    values += [str(rng.randrange(10**8, 10**15)) for _ in range(300)]
+    values += [f"ATU{rng.randrange(10**8):08d}" for _ in range(100)]
+    values += [f"BG{rng.randrange(10**10):010d}" for _ in range(100)]
+    values += [
+        f"{rng.randrange(10**5):05d}2{rng.choice('AB')}{rng.randrange(10**8):08d}"
+        for _ in range(100)
+    ]
+    script = tmp_path / "checksums.js"
+    script.write_text(
+        "const core = require(process.argv[2]);\n"
+        "const names = JSON.parse(process.argv[3]);\n"
+        "const values = JSON.parse(process.argv[4]);\n"
+        "console.log(JSON.stringify(names.map(n => core.CHECKSUMS[n] ? "
+        "values.map(v => core.CHECKSUMS[n](v)) : null)));\n"
+    )
+    names = sorted(ALGORITHMS)
+    out = subprocess.run(
+        [
+            "node",
+            str(script),
+            str(REPO / "src/metacrafter_registry/static/identify-core.js"),
+            json.dumps(names),
+            json.dumps(values),
+        ],
+        capture_output=True,
+        text=True,
+        check=True,
+    ).stdout
+    for name, js in zip(names, json.loads(out), strict=True):
+        assert js is not None, f"{name} is missing from identify-core.js"
+        assert js == [ALGORITHMS[name](v) for v in values], name

@@ -1,0 +1,34 @@
+id: cr_cpf
+name: Costa Rican physical person ID number (cédula de identidad)
+status: draft
+doc: 'Cédula de Persona Física, also called cédula de identidad, the identity number of people in Costa
+  Rica. It has ten digits in the form 0P-TTTT-AAAA: the province, the volume (tomo) and the entry (asiento)
+  in the civil register. The leading zeros of each part are often left out.'
+categories:
+- pii
+- persons
+country:
+- CR
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^(?:0?\d-\d{1,4}-\d{1,4}|0?\d{9})$
+examples:
+- value: 0784849265
+  description: Synthetic number in the documented format
+- value: 0112697462
+  description: Synthetic number in the documented format
+- value: 07-8484-9265
+  description: The first example in its printed form
+- value: 07848492657
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cr.cpf.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_cr_cpf.html
+translations:
+  es:
+    name: Cédula de Persona Física

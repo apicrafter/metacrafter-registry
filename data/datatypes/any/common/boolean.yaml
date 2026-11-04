@@ -9,6 +9,8 @@ langs:
 - common
 is_pii: false
 classification: categorical
+mappings:
+  d3m: http://schema.org/Boolean
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Boolean_data_type

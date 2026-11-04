@@ -1,0 +1,31 @@
+id: cy_vat
+name: Cypriot VAT number
+status: draft
+doc: 'Αριθμός Εγγραφής Φ.Π.Α., the VAT registration number in Cyprus: eight digits and a check letter.'
+parent: vatin
+categories:
+- finances
+country:
+- CY
+langs:
+- el
+- tr
+is_pii: false
+classification: identifier
+regexp: ^(?:CY[ -]?)?\d{8}[A-Z]$
+examples:
+- value: CY-10259033P
+  description: Real-world value published online
+- value: CY 10263870R
+  description: Real-world value published online
+- value: 10259033P7
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cy.vat.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_cy_vat.html
+translations:
+  el:
+    name: Αριθμός Εγγραφής Φ.Π.Α.

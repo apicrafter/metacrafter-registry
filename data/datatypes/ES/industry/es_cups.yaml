@@ -1,0 +1,33 @@
+id: es_cups
+name: Spanish energy supply point code (CUPS)
+status: draft
+doc: 'Código Unificado de Punto de Suministro, the identifier of an electricity or piped gas supply point
+  in Spain. It has 20 or 22 characters: ES, a 4-digit distribution company code, a 12-digit supply point
+  number, two check letters and, optionally, a border point digit and letter.'
+categories:
+- industry
+country:
+- ES
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^ES\d{16}[A-Z]{2}(?:\d[A-Z])?$
+examples:
+- value: ES0341392425346906CP
+  description: Synthetic number with a valid check digit
+- value: ES0116359966285471RN
+  description: Synthetic number with a valid check digit
+- value: ES0341392425346906CP7
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/C%C3%B3digo_Unificado_de_Punto_de_Suministro
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.es.cups.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_es_cups.html
+translations:
+  es:
+    name: Código Unificado de Punto de Suministro (CUPS)

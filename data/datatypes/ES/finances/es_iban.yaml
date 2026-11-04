@@ -1,0 +1,31 @@
+id: es_iban
+name: Spanish IBAN
+status: draft
+doc: 'International Bank Account Number of a bank account in Spain. It has 24 characters: ES, two IBAN
+  check digits and the 20-digit CCC.'
+parent: iban
+categories:
+- finances
+country:
+- ES
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: '^ES\d{2}(?: ?\d{4}){5}$'
+checksum: iban_mod97
+examples:
+- value: ES1595241979227144437196
+  description: Synthetic number with a valid check digit
+- value: ES6753215985554013429698
+  description: Synthetic number with a valid check digit
+- value: ES15 9524 1979 2271 4443 7196
+  description: The first example in its printed form
+- value: ES1595241979227144437190
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.es.iban.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_es_iban.html

@@ -1,7 +1,11 @@
 id: frnir
-name: France National ID number (social number)
+name: French social security number (NIR)
 status: stable
-doc: France's National ID number
+doc: 'French national identification number (numéro d''inscription au répertoire, NIR), known as the social
+  security number. INSEE assigns it to every person born in France. It has 13 characters and a two-digit
+  control key: sex (1 or 2; 7 or 8 for temporary registrations), year and month of birth, department and
+  commune of birth (2A or 2B for Corsica), an order number, and the key. The key is 97 minus the 13-character
+  number modulo 97, with 2A read as 19 and 2B as 18.'
 categories:
 - pii
 - persons
@@ -11,9 +15,22 @@ langs:
 - fr
 is_pii: true
 classification: identifier
+regexp: ^[1278]\d{4}(?:\d{2}|2[AB])\d{8}$
+checksum: fr_nir
+examples:
+- value: 153072C07300443
+  valid: false
+  description: 2C is not a department code
 mappings:
   google_dlp: FRANCE_NIR
   purview: France social security number (INSEE)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/INSEE_code
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Num%C3%A9ro_de_s%C3%A9curit%C3%A9_sociale_en_France
+- type: doc
+  url: https://www.insee.fr/en/metadonnees/definition/c1409
+translations:
+  fr:
+    name: Numéro de sécurité sociale (NIR)
