@@ -12,6 +12,9 @@ classification: identifier
 mappings:
   cdm: means.identity.company.name
   fta: COMPANY_NAME
+  sherlock:
+  - company
+  - organisation
 links:
 - type: schema.org
   url: https://schema.org/legalName

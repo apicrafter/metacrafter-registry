@@ -1,0 +1,31 @@
+id: brand
+name: Brand
+status: draft
+doc: Name of a brand, the name under which a product, a product line, a service or a store chain is sold.
+  A brand can differ from the name of the company that owns it, so it is a separate type from the company
+  name.
+categories:
+- companies
+- ecommerce
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Walmart
+  description: retail chain
+- value: Lexus
+  description: car brand of Toyota
+mappings:
+  sherlock: brand
+  wikidata: P1716
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Brand
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1716
+- type: schema.org
+  url: https://schema.org/brand
+translations:
+  ru:
+    name: Бренд

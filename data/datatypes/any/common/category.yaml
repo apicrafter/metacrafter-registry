@@ -8,6 +8,8 @@ langs:
 - common
 is_pii: false
 classification: categorical
+mappings:
+  sherlock: category
 translations:
   ru:
     name: Категория
