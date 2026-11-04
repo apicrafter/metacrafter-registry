@@ -1,0 +1,44 @@
+id: uniprot_id
+name: UniProtKB accession number
+status: draft
+doc: Stable identifier of a protein entry in the UniProt Knowledgebase (UniProtKB), the protein sequence
+  and function database of the UniProt consortium. An accession has 6 or 10 uppercase letters and digits
+  in a fixed layout, which UniProt publishes as a regular expression. An entry keeps its primary accession
+  across releases, and the accessions of entries merged into it remain as secondary accessions. It is
+  not the mnemonic entry name, which has the form NAME_SPECIES.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z][0-9](?:[A-Z][A-Z0-9]{2}[0-9]){1,2})$
+examples:
+- value: P12345
+  description: Six-character accession (example from the UniProt help)
+- value: A2BC19
+  description: Six-character accession (example from the UniProt help)
+- value: A0A023GPI8
+  description: Ten-character accession (example from the UniProt help)
+- value: P1234
+  valid: false
+  description: Five characters
+- value: p12345
+  valid: false
+  description: Lowercase letters
+mappings:
+  autotype: uniprot
+  wikidata: P352
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/UniProt
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P352
+- type: doc
+  url: https://www.uniprot.org/help/accession_numbers
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/uniprot.txt
+translations:
+  ru:
+    name: Номер доступа UniProtKB
+    doc: 'Стабильный идентификатор записи о белке в базе знаний UniProtKB: 6 или 10 заглавных букв и цифр.'

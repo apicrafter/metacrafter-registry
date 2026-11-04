@@ -10,5 +10,8 @@ langs:
 - common
 is_pii: false
 mappings:
+  autotype:
+  - currency2
+  - currency3
   cdm: means.measurement.currency
   fibo: FND/Accounting/CurrencyAmount/MonetaryAmount

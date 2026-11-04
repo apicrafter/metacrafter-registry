@@ -1,0 +1,42 @@
+id: dbsnp_id
+name: dbSNP Reference SNP number (rsID)
+status: draft
+doc: Identifier of a reference SNP record (RefSNP) in dbSNP, the database of short genetic variations
+  kept by the US National Center for Biotechnology Information (NCBI). It is the letters rs followed by
+  a number. A RefSNP groups the submitted reports of a variant at the same location of the reference genome,
+  so genome-wide association studies, genotyping files and variant annotations use the rsID to name a
+  variant.
+categories:
+- science
+- medical
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^rs[1-9]\d*$
+examples:
+- value: rs334
+  description: Variant of the HBB gene behind sickle cell disease
+- value: rs113488022
+  description: Example of Wikidata property P6861
+- value: rs121913355
+  description: Example of Wikidata property P6861
+- value: ss334
+  valid: false
+  description: Submitted SNP (ss) number, not a RefSNP
+mappings:
+  autotype: SNPID_correct
+  wikidata: P6861
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/DbSNP
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6861
+- type: doc
+  url: https://www.ncbi.nlm.nih.gov/snp/docs/RefSNP_about/
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/SNPID_correct.txt
+translations:
+  ru:
+    name: Идентификатор варианта dbSNP (rsID)
+    doc: 'Номер записи RefSNP в базе генетических вариаций dbSNP (NCBI): буквы rs и число.'

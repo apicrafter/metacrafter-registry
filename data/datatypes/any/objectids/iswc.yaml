@@ -1,0 +1,42 @@
+id: iswc
+name: International Standard Musical Work Code (ISWC)
+status: draft
+doc: ISO 15707 identifier of a musical work as a composition, apart from its recordings (which have ISRC
+  codes) and editions. It is the letter T, a nine-digit work number and a check digit, usually printed
+  as T-123.456.789-C; the dots and hyphens are optional. Collecting societies issue the numbers in sequence
+  under CISAC, the registration authority, and the number says nothing about the work. The check digit
+  is a weighted sum of the digits modulo 10, which the registry does not verify.
+categories:
+- objectids
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^T-?\d{3}\.?\d{3}\.?\d{3}-?\d$
+examples:
+- value: T-034.524.680-1
+  description: Example from the Wikipedia article
+- value: T-000.000.001-0
+  description: The first ISWC
+- value: T0000000010
+  description: The first ISWC in compact form, as Wikidata stores it
+- value: T-034.524.680
+  valid: false
+  description: No check digit
+mappings:
+  autotype: iswc
+  wikidata: P1827
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Standard_Musical_Work_Code
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1827
+- type: doc
+  url: https://www.iswc.org/
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/iswc.txt
+translations:
+  ru:
+    name: Международный стандартный код музыкального произведения (ISWC)
+    doc: 'Идентификатор музыкального произведения по ISO 15707: буква T, девять цифр и контрольная цифра.'

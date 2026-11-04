@@ -1,0 +1,42 @@
+id: uic_wagon_number
+name: UIC wagon number (European Vehicle Number)
+status: draft
+doc: Twelve-digit number of a railway vehicle, such as a freight wagon, coach or locomotive, in the numbering
+  system of the International Union of Railways (UIC), now the European Vehicle Number (EVN). Digits 1-2
+  give the vehicle type and interoperability, digits 3-4 the country of registration (before 2006, the
+  owning railway), digits 5-8 the type of vehicle and digits 9-11 the serial number. Digit 12 is a check
+  digit computed with the Luhn algorithm. On the vehicle the groups are separated by spaces and the check
+  digit by a hyphen. Not to be confused with the UIC station code (uiccode).
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{2}[ .-]?\d{2}[ .-]?(?:\d[ .]?){7}-?\d$
+checksum: luhn
+examples:
+- value: 21 81 2471 217-3
+  description: Example from the Wikipedia article
+- value: 21.81.2471.217-3
+  description: The same number with dots
+- value: '218124712173'
+  description: The same number without separators
+- value: 21 81 2471 217-4
+  valid: false
+  description: Wrong check digit
+- value: 21 81 2471 21-3
+  valid: false
+  description: Eleven digits
+mappings:
+  autotype: uic
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/UIC_wagon_numbers
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/uic.txt
+translations:
+  ru:
+    name: Номер вагона UIC (European Vehicle Number)
+    doc: Двенадцатизначный номер железнодорожного подвижного состава по системе UIC; последняя цифра контрольная
+      (алгоритм Луна).

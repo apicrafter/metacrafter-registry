@@ -315,6 +315,8 @@ class Registry:
 
         A regexp like ``[A-Za-z0-9_]+`` matches most identifiers, so a hit is weak
         evidence; a regexp that matches no other record's examples is strong.
+        Rounded to 3 decimals, as in the site's identify index, so that the
+        Python and JavaScript scorers compute the same scores.
         """
         corpus = [
             (record["id"], example["value"])
@@ -326,7 +328,7 @@ class Registry:
         for rid, pattern in self._compiled.items():
             others = [value for owner, value in corpus if owner != rid]
             matched = sum(1 for value in others if pattern.fullmatch(value))
-            broadness[rid] = matched / len(others) if others else 0.0
+            broadness[rid] = round(matched / len(others), 3) if others else 0.0
         return broadness
 
     def _regexp_matches(self, rid: str, value: str) -> bool:
@@ -451,7 +453,8 @@ class Registry:
         For wikidata, a property id or its URL; for fibo, a class path or its full IRI;
         for fta, a semantic type as FTA reports it, including locale-bound names such
         as MONTH.FULL_fr-FR or GENDER.TEXT_DE; for sherlock, a type label, compared
-        without case and spaces.
+        without case and spaces; for autotype, a benchmark test case name, its file
+        name or its data_release path.
         """
         if system == "fta":
             return self._crosswalk_fta(str(external_id).strip())
@@ -460,6 +463,9 @@ class Registry:
             wanted = wanted.rstrip("/").rsplit("/", 1)[-1].removeprefix("Property:").upper()
         elif system == "fibo":
             wanted = fibo_normalize(wanted)
+        elif system == "autotype":
+            # Test cases are data_release/<name>.txt files; accept the bare name too.
+            wanted = wanted.rsplit("/", 1)[-1].removesuffix(".txt")
         # D3M writes semantic types as URIs (http://schema.org/email). Also
         # accept https://schema.org/... and a bare type name (FileName, email).
         d3m_bare = system == "d3m" and "://" not in wanted

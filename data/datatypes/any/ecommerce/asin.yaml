@@ -1,0 +1,37 @@
+id: asin
+name: Amazon Standard Identification Number (ASIN)
+status: draft
+doc: Ten-character code of uppercase letters and digits that Amazon and its partners assign to a product
+  in the Amazon catalog. For a book with a 10-digit ISBN, the ASIN is that ISBN. Other products, including
+  most Kindle editions, get a code assigned by Amazon.
+categories:
+- ecommerce
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Z]{10}$
+examples:
+- value: B073HWQBJP
+  description: Example of Wikidata property P5749
+- value: B016BEEBXU
+  description: Example of Wikidata property P5749
+- value: '0306406152'
+  description: 'Book: the ASIN is its ISBN-10'
+- value: B073HWQBJ
+  valid: false
+  description: Nine characters
+mappings:
+  autotype: asin
+  wikidata: P5749
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5749
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/asin.txt
+translations:
+  ru:
+    name: Идентификатор товара Amazon (ASIN)
+    doc: Десятисимвольный код товара в каталоге Amazon; для книг совпадает с ISBN-10.

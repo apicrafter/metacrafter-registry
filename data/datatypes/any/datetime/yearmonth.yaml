@@ -7,6 +7,10 @@ categories:
 langs:
 - common
 is_pii: false
+mappings:
+  autotype:
+  - date-y
+  - date11
 links:
 - type: other
   url: https://ddialliance.org/Specification/DDI-CV/DateType_1.1.html

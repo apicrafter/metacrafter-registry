@@ -15,6 +15,9 @@ examples:
 - value: '915148800'
   description: '1998-12-31T23:59:60.25'
 mappings:
+  autotype:
+  - unixback
+  - unixtime
   fta:
   - EPOCH.MILLISECONDS
   - EPOCH.SECONDS

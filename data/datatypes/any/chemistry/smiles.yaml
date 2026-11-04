@@ -1,32 +1,38 @@
 id: smiles
 name: SMILES chemical notation
 status: draft
-doc: Line notation that writes the structure of a molecule as a short ASCII string of atoms, bonds, branches
-  in parentheses and ring-closure digits (Simplified Molecular Input Line Entry System). A canonical SMILES
-  is the single string that a canonicalization algorithm produces for a structure; an isomeric SMILES
-  adds stereochemistry with @, / and \. PubChem and Wikidata publish both forms.
+doc: 'Simplified Molecular-Input Line-Entry System (SMILES): a line notation that writes the structure
+  of a molecule as a short ASCII string. Atoms are written by their element symbols, double and triple
+  bonds by = and #, branches in parentheses and ring closures by digits; lowercase letters mark aromatic
+  atoms. One molecule has many valid SMILES strings. Canonical SMILES picks one of them, and isomeric
+  SMILES also records stereochemistry and isotopes. PubChem and Wikidata publish both forms. The record
+  has no regexp: the SMILES character set also matches ordinary words, so a chemistry parser such as RDKit
+  or Open Babel is needed to check a value.'
 categories:
 - chemistry
+- science
 langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^[A-Za-z0-9+\-*=#$:().>@\\/\[\]%]+$
 examples:
-- value: CC(=O)OC1=CC=CC=C1C(=O)O
-  description: Aspirin
 - value: CCO
   description: Ethanol
+- value: C1=CC=CC=C1
+  description: Benzene, Kekulé form
+- value: c1ccccc1
+  description: Benzene, aromatic form
+- value: O=C=O
+  description: Carbon dioxide
+- value: CC(=O)OC1=CC=CC=C1C(=O)O
+  description: Aspirin
 - value: '[Au]'
   description: Gold
 - value: O=C(O)[C@@H](N)C
   description: L-alanine, isomeric SMILES
-- value: C C O
-  valid: false
-  description: Spaces are not allowed
 mappings:
-  wikidata: P233
   schema_org: smiles
+  autotype: smile
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Simplified_Molecular_Input_Line_Entry_System
@@ -38,7 +44,10 @@ links:
   url: https://schema.org/smiles
 - type: doc
   url: http://opensmiles.org/opensmiles.html
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/smile.txt
 translations:
   ru:
     name: Нотация SMILES
-    doc: Строковая запись структуры молекулы в нотации SMILES.
+    doc: 'Строковая запись структуры молекулы (Simplified Molecular-Input Line-Entry System): атомы, связи,
+      ветви и циклы записываются ASCII-символами.'
