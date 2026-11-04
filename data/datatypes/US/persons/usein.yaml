@@ -14,6 +14,7 @@ is_pii: true
 classification: identifier
 regexp: '[0-9]{9}'
 mappings:
+  autotype: ein
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/EmployerIdentificationNumber
   google_dlp: US_EMPLOYER_IDENTIFICATION_NUMBER
   fta: IDENTITY.EIN_US

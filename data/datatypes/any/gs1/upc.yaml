@@ -10,4 +10,5 @@ is_pii: false
 classification: identifier
 checksum: gtin
 mappings:
+  autotype: upc
   fta: CHECKDIGIT.UPC

@@ -12,6 +12,7 @@ langs:
 is_pii: false
 classification: identifier
 mappings:
+  autotype: bitcoin
   presidio: CRYPTO
 links:
 - type: other

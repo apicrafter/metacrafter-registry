@@ -9,6 +9,7 @@ langs:
 is_pii: false
 mappings:
   cdm: means.identity.name
+  sherlock: name
   wikidata: P2561
 links:
 - type: schema.org

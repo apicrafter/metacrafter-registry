@@ -85,7 +85,7 @@ When a record has a `regexp`, these rules apply:
 - **THEN** validation fails
 
 ### Requirement: Typed mappings to external vocabularies
-A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm` and `fta`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
+A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm`, `fta` and `autotype`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
 
 `mappings.wikidata` SHALL match `^[PQ]\d+$`.
 
@@ -114,6 +114,18 @@ A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`
 #### Scenario: Locale-bound FTA type
 - **WHEN** a client calls `crosswalk("fta", "GENDER.TEXT_DE")`
 - **THEN** it gets the record that maps `GENDER.TEXT_<LANGUAGE>`
+
+`mappings.sherlock` SHALL hold one or more of the 78 Sherlock semantic type labels, spelled as the trained Sherlock model returns them (for example `city` or `birth Date`). A Sherlock type SHALL be mapped to at most one record, and only when that record has the same meaning. The `sherlock` tool SHALL list exactly the records that carry `mappings.sherlock`.
+
+#### Scenario: Unknown Sherlock label
+- **WHEN** a record has `mappings: {sherlock: "email"}`
+- **THEN** validation fails with a schema error on `mappings.sherlock`
+
+`mappings.autotype` SHALL hold AutoType benchmark test case names: the names of the benchmark's `data_release/*.txt` files without the `.txt` extension, such as `isbn` or `date-chinese`. A test case SHALL map to at most one record.
+
+#### Scenario: AutoType test case given as a file name
+- **WHEN** a record has `mappings: {autotype: "isbn.txt"}`
+- **THEN** validation fails with a schema error on `mappings.autotype`
 
 ### Requirement: Pattern inheritance
 A pattern SHALL reference an existing datatype through `semantic_type`.

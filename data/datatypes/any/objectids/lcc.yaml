@@ -1,0 +1,42 @@
+id: lcc
+name: Library of Congress Classification (LCC) number
+status: draft
+doc: Class number or call number in the Library of Congress Classification, the subject classification
+  of the US Library of Congress, which most research and academic libraries in the United States use to
+  shelve books. It starts with one to three letters for the class and subclass, such as QA for mathematics
+  or TK for electrical engineering, followed by a number with an optional decimal part. A call number
+  adds Cutter numbers, such as .P98, and often a year. The regexp is adapted from the Wikidata format
+  of property P1149 and requires a class number.
+categories:
+- publishing
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: '^[A-Z]{1,3}\d+(?:\.\d+)?(?: *\.[A-Z]{0,3}\d+(?:[ -]\.?[A-Z]{0,3}\d+)?)?(?: *\d+[a-z]*)?$'
+examples:
+- value: QA76
+  description: Class number only
+- value: QA76.73.P98
+  description: Class number with a Cutter number
+- value: TK5105.888
+  description: Class number with a decimal part
+- value: QA
+  valid: false
+  description: Subclass letters without a number
+mappings:
+  autotype: lcc
+  wikidata: P1149
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Library_of_Congress_Classification
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1149
+- type: doc
+  url: https://www.loc.gov/catdir/cpso/lcco/
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/lcc.txt
+translations:
+  ru:
+    name: Индекс Классификации Библиотеки Конгресса (LCC)
+    doc: Классификационный индекс или шифр хранения по Классификации Библиотеки Конгресса США.

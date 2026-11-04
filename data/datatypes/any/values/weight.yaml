@@ -1,0 +1,42 @@
+id: weight
+name: Weight (mass)
+status: draft
+doc: Weight of a person, an animal or a product, measured as mass in kilograms, grams, pounds or ounces.
+  Datasets store it as a number, with the unit either in the value, such as "95 lbs.", or in the column
+  name or metadata. The regular expression recognizes only values that carry one of these unit symbols.
+parent: numeric
+categories:
+- values
+- common
+langs:
+- common
+is_pii: false
+regexp: ^\d+(?:[.,]\d+)?\s?(?:kg|g|mg|lbs?|oz)\.?$
+examples:
+- value: 95 lbs.
+  description: pounds, abbreviation with a dot
+- value: 72.5 kg
+  description: kilograms
+- value: 250g
+  description: grams without a space
+- value: 12 oz
+  description: ounces
+- value: kg
+  valid: false
+  description: unit without a number
+- value: 5 km
+  valid: false
+  description: unit of length
+mappings:
+  sherlock: weight
+  wikidata: P2067
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Mass
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2067
+- type: schema.org
+  url: https://schema.org/weight
+translations:
+  ru:
+    name: Вес (масса)

@@ -1,0 +1,41 @@
+id: sherlock
+name: Sherlock
+category: detector
+doc: Sherlock is a deep learning model from the MIT Media Lab that predicts the semantic type of a table
+  column from its values, without using the column header. It was trained on 686,765 columns of the VizNet
+  corpus whose headers matched one of 78 semantic types taken from DBpedia properties, such as city, birth
+  Date or isbn. Many of these types are header words rather than value types, such as code, type or rank.
+  The registry records that carry a Sherlock type in mappings.sherlock are listed here. The code and the
+  trained model are released under the MIT license.
+website: https://sherlock.media.mit.edu
+supported_types:
+- address
+- age
+- birthday
+- birthplace
+- brand
+- category
+- city
+- comment
+- continent
+- country
+- currency
+- dc_creator
+- dc_publisher
+- description
+- duration
+- elevation
+- filesize
+- gender
+- genre
+- industry
+- isbn
+- language
+- name
+- nationality
+- orgname
+- person_fullname
+- religion
+- species
+- weight
+- year

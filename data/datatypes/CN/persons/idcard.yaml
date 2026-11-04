@@ -1,7 +1,10 @@
 id: idcard
 name: Chinese ID card (身份证) by known name
 status: stable
-doc: Chinese ID card (身份证) by known name identifier
+doc: Citizen identification number of the People's Republic of China, printed on the Resident Identity
+  Card (居民身份证). Since 1999 it has 18 characters, a six-digit address code, the date of birth as YYYYMMDD,
+  a three-digit sequence code and a check digit computed with ISO 7064 MOD 11-2, where X stands for 10.
+  Older numbers have 15 digits, with a two-digit year and no check digit.
 categories:
 - pii
 - persons
@@ -11,6 +14,10 @@ langs:
 - zh
 is_pii: true
 classification: identifier
-regexp: ^[0-9]{8,15}$
+regexp: ^(?:\d{17}[\dX]|\d{15})$
 mappings:
+  autotype: cin
   purview: China resident identity card (PRC) number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Resident_Identity_Card

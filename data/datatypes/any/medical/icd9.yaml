@@ -1,0 +1,48 @@
+id: icd9
+name: ICD-9 code
+status: draft
+doc: Code of the Ninth Revision of the International Classification of Diseases (ICD-9) of the World Health
+  Organization, which ICD-10 later replaced. A code is three digits for a category of diseases, with up
+  to two decimal digits for a subcategory. Supplementary codes start with V (factors that influence health
+  status and contact with health services) or E (external causes of injury and poisoning). ICD-9-CM, the
+  clinical modification used in the United States until October 2015, adds a volume of procedure codes,
+  which the regexp does not cover.
+categories:
+- medical
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:\d{3}|V\d{2}|E[89]\d{2})(?:\.\d{1,2})?$
+examples:
+- value: '250'
+  description: Diabetes mellitus
+- value: '487.1'
+  description: Influenza with other respiratory manifestations
+- value: V01
+  description: Contact with or exposure to communicable diseases
+- value: E849.0
+  description: 'Place of occurrence: home'
+- value: I61
+  valid: false
+  description: ICD-10 code
+- value: '25'
+  valid: false
+  description: Two digits
+mappings:
+  autotype: icd9
+  wikidata: P493
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ICD-9
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_ICD-9_codes
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P493
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/icd9.txt
+translations:
+  ru:
+    name: Код МКБ-9
+    doc: 'Код Международной классификации болезней девятого пересмотра (МКБ-9): три цифры и до двух знаков
+      после точки, дополнительные коды начинаются с V или E.'

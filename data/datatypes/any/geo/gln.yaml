@@ -18,6 +18,7 @@ examples:
 - value: 0860484000404
   description: The Coca-Cola Company
 mappings:
+  autotype: gln
   wikidata: P9860
 links:
 - type: schema.org

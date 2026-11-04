@@ -8,6 +8,8 @@ categories:
 langs:
 - common
 is_pii: false
+mappings:
+  sherlock: notes
 links:
 - type: schema.org
   url: https://schema.org/Comment

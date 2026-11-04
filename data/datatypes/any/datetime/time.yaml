@@ -7,3 +7,5 @@ categories:
 langs:
 - common
 is_pii: false
+mappings:
+  autotype: date-t

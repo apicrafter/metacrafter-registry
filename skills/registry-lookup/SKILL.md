@@ -66,7 +66,8 @@ Example:
   such as `pii` and `persons` add context.
 - **Crosswalk.** `crosswalk("wikidata", "P968")` finds the registry record for
   an id in another vocabulary. The systems are `wikidata`, `fibo`, `schema_org`,
-  `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm` and `fta`.
+  `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm`, `fta` and
+  `autotype` (AutoType benchmark test cases, such as `isbn` or `date-chinese`).
   Coverage outside Wikidata is still small. For `fibo`, pass a FIBO class IRI,
   for example
   `https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier`;
@@ -82,5 +83,9 @@ Example:
   column that FTA (Fast Text Analysis) labelled, pass FTA's semantic type as it
   reports it: `crosswalk("fta", "POSTAL_CODE.ZIP5_US")` returns `uszipcode`,
   and `crosswalk("fta", "MONTH.FULL_fr-FR")` returns `month`.
+  For a column that Sherlock labelled, pass its label: `crosswalk("sherlock",
+  "birth Date")` returns `birthday`; case and spaces are ignored. 32 of
+  Sherlock's 78 types are mapped. Generic labels such as `code`, `type` or
+  `rank` return nothing.
 - **Former ids.** `get_datatype("ssn")` returns `usssn` with
   `resolved_from_alias`. Always cite the canonical id.

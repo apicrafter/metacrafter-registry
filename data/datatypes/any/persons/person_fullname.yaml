@@ -9,6 +9,7 @@ langs:
 - common
 is_pii: true
 mappings:
+  autotype: name1
   cdm: means.identity.person.fullName
   google_dlp: PERSON_NAME
   presidio: PERSON
@@ -16,3 +17,4 @@ mappings:
   fta:
   - NAME.FIRST_LAST
   - NAME.LAST_FIRST
+  sherlock: person

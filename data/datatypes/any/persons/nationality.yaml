@@ -13,3 +13,4 @@ mappings:
   fta:
   - NATIONALITY_JA
   - NATIONALITY_NL
+  sherlock: nationality

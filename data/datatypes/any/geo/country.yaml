@@ -29,6 +29,7 @@ mappings:
   - COUNTRY.TEXT_PT
   - COUNTRY.TEXT_RO
   - COUNTRY.TEXT_SV
+  sherlock: country
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Country

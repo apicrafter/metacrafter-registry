@@ -47,6 +47,11 @@ def _tokens(text: str) -> set[str]:
     return set(_TOKEN.findall(_CAMEL.sub(" ", str(text)).lower()))
 
 
+def _sherlock_key(label: str) -> str:
+    """A Sherlock type label without case and whitespace: "birth Date" -> "birthdate"."""
+    return re.sub(r"\s+", "", str(label)).lower()
+
+
 def _purview_key(name: str) -> str:
     """Compare Purview type names without case, periods and apostrophes."""
     return " ".join(re.sub(r"[.'’]", "", name).casefold().split())
@@ -310,6 +315,8 @@ class Registry:
 
         A regexp like ``[A-Za-z0-9_]+`` matches most identifiers, so a hit is weak
         evidence; a regexp that matches no other record's examples is strong.
+        Rounded to 3 decimals, as in the site's identify index, so that the
+        Python and JavaScript scorers compute the same scores.
         """
         corpus = [
             (record["id"], example["value"])
@@ -321,7 +328,7 @@ class Registry:
         for rid, pattern in self._compiled.items():
             others = [value for owner, value in corpus if owner != rid]
             matched = sum(1 for value in others if pattern.fullmatch(value))
-            broadness[rid] = matched / len(others) if others else 0.0
+            broadness[rid] = round(matched / len(others), 3) if others else 0.0
         return broadness
 
     def _regexp_matches(self, rid: str, value: str) -> bool:
@@ -445,7 +452,9 @@ class Registry:
 
         For wikidata, a property id or its URL; for fibo, a class path or its full IRI;
         for fta, a semantic type as FTA reports it, including locale-bound names such
-        as MONTH.FULL_fr-FR or GENDER.TEXT_DE.
+        as MONTH.FULL_fr-FR or GENDER.TEXT_DE; for sherlock, a type label, compared
+        without case and spaces; for autotype, a benchmark test case name, its file
+        name or its data_release path.
         """
         if system == "fta":
             return self._crosswalk_fta(str(external_id).strip())
@@ -454,11 +463,18 @@ class Registry:
             wanted = wanted.rstrip("/").rsplit("/", 1)[-1].removeprefix("Property:").upper()
         elif system == "fibo":
             wanted = fibo_normalize(wanted)
+        elif system == "autotype":
+            # Test cases are data_release/<name>.txt files; accept the bare name too.
+            wanted = wanted.rsplit("/", 1)[-1].removesuffix(".txt")
         # D3M writes semantic types as URIs (http://schema.org/email). Also
         # accept https://schema.org/... and a bare type name (FileName, email).
         d3m_bare = system == "d3m" and "://" not in wanted
         if system == "d3m" and wanted.startswith("https://schema.org/"):
             wanted = "http://" + wanted.removeprefix("https://")
+        # Sherlock returns labels such as "birth Date"; the paper writes "Birth
+        # date". Compare without case and spaces, so "birthDate" matches too.
+        if system == "sherlock":
+            wanted = _sherlock_key(wanted)
         # Microsoft writes the same Purview type name with varying case and
         # punctuation ("U.S. driver's license number", "U.S. Drivers License Number").
         if system == "purview":
@@ -469,6 +485,8 @@ class Registry:
             values = value if isinstance(value, list) else [value] if value else []
             if system == "wikidata":
                 normalized = [v.upper() for v in values]
+            elif system == "sherlock":
+                normalized = [_sherlock_key(v) for v in values]
             elif system == "purview":
                 normalized = [_purview_key(v) for v in values]
             elif d3m_bare:

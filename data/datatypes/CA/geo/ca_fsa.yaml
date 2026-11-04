@@ -1,0 +1,41 @@
+id: ca_fsa
+name: Canadian forward sortation area (FSA)
+status: draft
+doc: 'First three characters of a Canadian postal code (ca_postcode): letter, digit, letter, for example
+  K1A. A forward sortation area is the area covered by all postal codes that start with these characters.
+  The letter is a postal district within one province or territory, and a 0 as the digit marks a rural
+  area. Statistics Canada and other publishers release data and boundary files by FSA when full postal
+  codes would be too detailed.'
+categories:
+- geo
+country:
+- CA
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z]$
+examples:
+- value: K1A
+  description: Ottawa
+- value: T2P
+  description: Alberta (postal district T)
+- value: X0A
+  description: Rural area (0 as the digit)
+- value: D1A
+  valid: false
+  description: D is never used
+- value: K1A 0B1
+  valid: false
+  description: Full postal code
+mappings:
+  autotype: canpost
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Canada
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/canpost.txt
+translations:
+  ru:
+    name: Зона сортировки почты Канады (FSA)
+    doc: Первые три символа канадского почтового индекса, обозначающие район сортировки почты.
