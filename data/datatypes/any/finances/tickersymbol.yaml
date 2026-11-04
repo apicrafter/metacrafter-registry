@@ -16,6 +16,7 @@ examples:
 - value: AMZN
   description: Amazon
 mappings:
+  cdm: means.identity.tickerSymbol
   wikidata: P249
 links:
 - type: wikipedia

@@ -12,6 +12,8 @@ examples:
   description: sheet.xls
 - value: dataset.xml
   description: dataset.xml
+mappings:
+  cdm: means.fileName
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Filename

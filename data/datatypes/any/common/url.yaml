@@ -16,6 +16,7 @@ examples:
 - value: http://vocab.getty.edu/doc/
   description: Art & Architecture Thesaurus LOD Dataset
 mappings:
+  cdm: means.reference.URL
   google_dlp: URL
   presidio: URL
   wikidata: P2699

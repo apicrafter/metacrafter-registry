@@ -7,6 +7,8 @@ categories:
 langs:
 - common
 is_pii: false
+mappings:
+  cdm: means.location.timezone
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Time_zone

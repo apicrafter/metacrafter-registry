@@ -9,6 +9,8 @@ langs:
 - common
 is_pii: false
 classification: identifier
+mappings:
+  cdm: means.identity.company.name
 links:
 - type: schema.org
   url: https://schema.org/legalName

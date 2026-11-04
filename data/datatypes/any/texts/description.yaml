@@ -7,6 +7,8 @@ categories:
 langs:
 - common
 is_pii: false
+mappings:
+  cdm: means.reference.description
 links:
 - type: schema.org
   url: https://schema.org/description

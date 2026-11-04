@@ -9,6 +9,8 @@ categories:
 langs:
 - common
 is_pii: true
+mappings:
+  cdm: means.location.address
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Address

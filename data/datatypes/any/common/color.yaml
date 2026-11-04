@@ -9,6 +9,7 @@ langs:
 is_pii: false
 classification: categorical
 mappings:
+  cdm: means.measurement.color
   wikidata: P462
 links:
 - type: wikidata

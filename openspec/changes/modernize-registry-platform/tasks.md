@@ -185,6 +185,9 @@
   - metacrafter: honour `METACRAFTER_REGISTRY_URL` in `processor.py`, and optionally use the package.
   - metacrafter-llm: load the corpus by URL or package, and rebuild on a hash change.
   - metacrafter-rules: fix or alias the 39 orphan keys.
+- [x] 8.8 Review the Microsoft Common Data Model (issue #14). Add the `cdm` crosswalk key, which holds CDM trait names.
+  - 44 CDM traits are mapped to 43 records, exact concept matches only, at CDM commit `dd21d71`.
+  - CDM entities (Account, Lead, ...) are business objects, not value types. They are not imported. The review is `devdocs/CDM_REVIEW.md`.
 - Data fixes found during this phase:
   - 9 regexps that matched the empty string were fixed, and the validator now rejects such regexps.
   - The `what3words` regexp had been copied from `geonamesid`.
