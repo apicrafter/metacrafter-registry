@@ -1,0 +1,30 @@
+id: gcn
+name: Global Coupon Number (GCN)
+status: draft
+doc: GS1 identification key for a coupon offer, used on paper and digital coupons. Thirteen digits (a
+  GS1 Company Prefix, a coupon reference and a GS1 check digit) may be followed by a serial component
+  of up to 12 digits that identifies one issued coupon. In barcodes it is carried by Application Identifier
+  (255); the element string is the pattern gs1_ai_255.
+categories:
+- gs1
+- objectids
+- ecommerce
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{13,25}$
+examples:
+- value: '9528765000178'
+  description: 'Synthetic value with the GS1 demonstration prefix 952: coupon offer, GS1 check digit in
+    position 13'
+- value: '9528765000178000781'
+  description: 'Synthetic value with the GS1 demonstration prefix 952: coupon offer and serial component'
+- value: 9528765000178COUPON
+  valid: false
+  description: The serial component is numeric
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/255
+- type: doc
+  url: https://ref.gs1.org/standards/genspecs/

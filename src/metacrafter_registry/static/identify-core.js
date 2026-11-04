@@ -10,6 +10,11 @@
     return /^\d+$/.test(compact) ? compact.split("").map(Number) : null;
   }
 
+  function isPrime(n) {
+    for (var p = 2; p * p <= n; p += 1) if (n % p === 0) return false;
+    return n > 1;
+  }
+
   var CHECKSUMS = {
     luhn: function (v) {
       var d = digitsOf(v);
@@ -34,12 +39,32 @@
       }
       return rem === 1;
     },
-    gtin: function (v) {
+    gs1_mod10: function (v) {
       var d = digitsOf(v);
-      if (!d || [8, 12, 13, 14].indexOf(d.length) === -1) return false;
+      if (!d || d.length < 2) return false;
       var check = d[d.length - 1], body = d.slice(0, -1), total = 0;
       for (var i = 0; i < body.length; i += 1) total += body[body.length - 1 - i] * (i % 2 === 0 ? 3 : 1);
       return (10 - (total % 10)) % 10 === check;
+    },
+    gtin: function (v) {
+      var d = digitsOf(v);
+      if (!d || [8, 12, 13, 14].indexOf(d.length) === -1) return false;
+      return CHECKSUMS.gs1_mod10(v);
+    },
+    gs1_checkpair: function (v) {
+      var cset82 = "!\"%&'()*+,-./0123456789:;<=>?ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz";
+      var cset32 = "23456789ABCDEFGHJKLMNPQRSTUVWXYZ";
+      var s = String(v).trim();
+      if (s.length < 2) return false;
+      var body = s.slice(0, -2), total = 0, prime = 1;
+      for (var i = body.length - 1; i >= 0; i -= 1) {
+        var weight = cset82.indexOf(body[i]);
+        if (weight === -1) return false;
+        do { prime += 1; } while (!isPrime(prime));
+        total += weight * prime;
+      }
+      total %= 1021;
+      return s.slice(-2) === cset32[total >> 5] + cset32[total & 31];
     },
     isbn13: function (v) { var d = digitsOf(v); return !!d && d.length === 13 && CHECKSUMS.gtin(v); },
     isbn10: function (v) {
@@ -163,8 +188,39 @@
       var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
       if (!/^\d{8}[A-Z]$/.test(s)) return false;
       return "TRWAGMYFPDXBNJZSQVHLCKE"[Number(s.slice(0, 8)) % 23] === s[8];
+    },
+    pl_nip: function (v) {
+      var s = stripPrefix(v, "PL");
+      if (!/^\d{10}$/.test(s)) return false;
+      var w = [6, 5, 7, 2, 3, 4, 5, 6, 7], t = 0;
+      for (var i = 0; i < 9; i += 1) t += w[i] * Number(s[i]);
+      return t % 11 === Number(s[9]);
+    },
+    sk_dph: function (v) {
+      var s = stripPrefix(v, "SK");
+      if (!/^[1-9]\d{9}$/.test(s)) return false;
+      var rem = 0;
+      for (var i = 0; i < s.length; i += 1) rem = (rem * 10 + Number(s[i])) % 11;
+      return rem === 0;
+    },
+    si_ddv: function (v) {
+      var s = stripPrefix(v, "SI");
+      if (!/^[1-9]\d{7}$/.test(s)) return false;
+      var t = 0;
+      for (var i = 0; i < 7; i += 1) t += (8 - i) * Number(s[i]);
+      var check = 11 - (t % 11);
+      return check !== 11 && check % 10 === Number(s[7]);
+    },
+    se_vat: function (v) {
+      var s = stripPrefix(v, "SE");
+      return /^\d{10}01$/.test(s) && CHECKSUMS.luhn(s.slice(0, 10));
     }
   };
+
+  function stripPrefix(value, prefix) {
+    var s = String(value).replace(/[\s.\-]/g, "").toUpperCase();
+    return s.indexOf(prefix) === 0 ? s.slice(prefix.length) : s;
+  }
 
   function tokens(text) {
     var spaced = String(text || "").replace(/([a-z0-9])([A-Z])/g, "$1 $2").toLowerCase();

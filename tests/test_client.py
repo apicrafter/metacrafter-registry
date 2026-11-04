@@ -11,6 +11,8 @@ from metacrafter_registry.checksums import (
     es_dni,
     fi_hetu,
     fr_nir,
+    gs1_checkpair,
+    gs1_mod10,
     gtin,
     iban_mod97,
     isbn10,
@@ -19,9 +21,13 @@ from metacrafter_registry.checksums import (
     it_iva,
     luhn,
     no_fnr,
+    pl_nip,
     ru_inn,
     ru_ogrn,
     ru_snils,
+    se_vat,
+    si_ddv,
+    sk_dph,
 )
 from metacrafter_registry.serve import running_server
 
@@ -31,6 +37,30 @@ def reg(repo_sources):
     from conftest import DATA
 
     return Registry.from_sources(DATA)
+
+
+def test_gs1_checksums():
+    # GS1 check digit of any length: GTIN-14, GLN, SSCC, and the SSCC element string
+    assert gs1_mod10("09506000134352") and not gs1_mod10("09506000134353")
+    assert gs1_mod10("0865321000104")
+    assert gs1_mod10("095287650000315043") and gs1_mod10("00095287650000315043")
+    assert not gs1_mod10("7") and not gs1_mod10("95A")
+    # GS1 check character pair: test values of lint_csumalpha.c (GS1 Barcode Syntax Engine)
+    for good in (
+        "22",
+        "!22",
+        "1987654Ad4X4bL5ttr2310c2K",
+        "12345678901234567890123NT",
+        "12345_ABCDEFGHIJKLMCP",
+        "12345_abcdefghijklmN3",
+        "12345_!\"%&'()*+,-./LC",
+        "12345_0123456789:;<=>?62",
+        "7907665Bm8v2AB",
+        "97850l6KZm0yCD",
+    ):
+        assert gs1_checkpair(good), good
+    for bad in ("", "2", "33", "1987654Ad4X4bL5ttr2310cXK", "1987654Ad4X4bL5ttr2310c2X"):
+        assert not gs1_checkpair(bad), bad
 
 
 def test_checksum_reference_values():
@@ -55,6 +85,11 @@ def test_checksum_reference_values():
     assert not it_iva("00743115007")  # 500 is not a tax office code
     assert fi_hetu("131052-308T") and not fi_hetu("131052-308U") and not fi_hetu("131052308T")
     assert es_dni("54362315-K") and not es_dni("54362315Z")
+    assert pl_nip("PL 8567346215") and pl_nip("856-734-62-15") and not pl_nip("PL 8567346216")
+    assert sk_dph("SK 202 274 96 19") and not sk_dph("SK 202 274 96 18")
+    assert si_ddv("SI 5022 3054") and si_ddv("50223054") and not si_ddv("SI 50223055")
+    assert se_vat("SE556012579001") and se_vat("556012-5790 01")
+    assert not se_vat("SE556012579101") and not se_vat("SE556012579002")
 
 
 def test_lookup_and_aliases(reg):

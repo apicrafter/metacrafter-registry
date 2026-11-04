@@ -1,10 +1,11 @@
 id: nlbtw
-name: BTW-nummer op veldnaam
+name: Dutch VAT identification number (btw-id)
 status: stable
-doc: NL datatype for 'BTW-nummer op veldnaam' (nlbtw) from rules in context 'finances'. The Dutch VAT
-  identification number (BTW-nummer, Belasting Toegevoegde Waarde) is a unique identifier assigned to
-  businesses for VAT purposes within the European Union. It consists of the country code 'NL' followed
-  by 12 alphanumeric characters (letters and/or digits).
+doc: 'Btw-identificatienummer, the VAT identification number of businesses in the Netherlands: NL, nine
+  digits, the letter B and a 2-digit sequence number. The older btw-nummer was built from the RSIN of
+  a company or the citizen service number (BSN) of a sole trader. Since 2020 sole traders have a btw-identificatienummer
+  that does not contain their BSN.'
+parent: vatin
 categories:
 - finances
 country:
@@ -13,14 +14,18 @@ langs:
 - nl
 is_pii: true
 classification: identifier
-regexp: ^NL[0-9A-Z]{12}$
+regexp: ^NL\d{9}B\d{2}$
 examples:
-- value: NL123456789B01
-  description: Dutch VAT identification number (BTW-nummer) with country code NL and 12 alphanumeric characters
-- value: NL987654321A12
-  description: Another valid Dutch VAT identification number format
-- value: NLABCDEFGHIJ01
-  description: Dutch VAT identification number with letters in the alphanumeric part
+- value: NL004495445B01
+  description: python-stdnum reference value
+- value: NL002455799B11
+  description: Number of the form issued since 2020, python-stdnum reference value
+- value: NL004495445
+  valid: false
+  description: The B and the sequence number are missing
+- value: NL004495445B1
+  valid: false
+  description: The sequence number has two digits
 mappings:
   purview: Netherlands value added tax number
   fta: IDENTITY.VAT_NL
@@ -29,3 +34,8 @@ links:
   url: https://nl.wikipedia.org/wiki/BTW-nummer
 - type: doc
   url: https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_nederland/btw_nummer
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.nl.btw.html
+translations:
+  nl:
+    name: Btw-identificatienummer

@@ -1,0 +1,23 @@
+id: gs1_ai_8017
+name: GSRN of a service provider (GS1 AI 8017)
+status: draft
+doc: 'GS1 element string of Application Identifier (8017): ''8017'' followed by the 18-digit GSRN that
+  identifies the relationship between an organisation offering services and the provider of the services.
+  GS1 format N4+N18. In the human-readable text under a barcode it is written as (8017) and the value.'
+semantic_type: gsrn
+langs:
+- common
+regexp: ^8017\d{18}$
+examples:
+- value: '8017952876500003104257'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '8017952876510000005891'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '801795287650000310425'
+  valid: false
+  description: Seventeen digits
+mappings:
+  gs1_ai: '8017'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8017

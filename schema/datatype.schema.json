@@ -59,6 +59,11 @@
       "pattern": "^[A-Z][A-Z0-9_]*(\\.[A-Z0-9][A-Z0-9_-]*)?(<(LANGUAGE|COUNTRY|LOCALE)>)?$",
       "description": "An FTA (Fast Text Analysis) semantic type as FTA documents it, for example EMAIL, COUNTRY.ISO-3166-2 or MONTH.FULL_<LOCALE>"
     },
+    "gs1Ai": {
+      "type": "string",
+      "pattern": "^[0-9]{2,4}$",
+      "description": "A GS1 Application Identifier as GS1 writes it, with its leading zeros and without parentheses, for example 01, 414 or 8003"
+    },
     "record": {
       "type": "object",
       "additionalProperties": false,
@@ -164,6 +169,13 @@
               "oneOf": [
                 {"$ref": "#/$defs/ftaType"},
                 {"type": "array", "items": {"$ref": "#/$defs/ftaType"}, "minItems": 1, "uniqueItems": true}
+              ]
+            },
+            "gs1_ai": {
+              "description": "GS1 Application Identifiers (https://ref.gs1.org/ai/) that this record represents, for example 8003. Each AI maps to at most one record: the element-string record of the AI when the registry has one, otherwise the record of the value the AI carries (8007 maps to iban).",
+              "oneOf": [
+                {"$ref": "#/$defs/gs1Ai"},
+                {"type": "array", "items": {"$ref": "#/$defs/gs1Ai"}, "minItems": 1, "uniqueItems": true}
               ]
             }
           }

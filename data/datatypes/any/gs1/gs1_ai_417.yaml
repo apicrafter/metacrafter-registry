@@ -1,0 +1,23 @@
+id: gs1_ai_417
+name: Party GLN (GS1 AI 417)
+status: draft
+doc: 'GS1 element string of Application Identifier (417): ''417'' followed by the 13-digit Global Location
+  Number of a party, such as a company or one of its departments. GS1 format N3+N13. The GLN ends in a
+  GS1 check digit. In the human-readable text under a barcode it is written as (417) and the value.'
+semantic_type: gln
+langs:
+- common
+regexp: ^417\d{13}$
+examples:
+- value: '4179528765000017'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '4179528765000253'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '417952876500001'
+  valid: false
+  description: Twelve-digit GLN
+mappings:
+  gs1_ai: '417'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/417

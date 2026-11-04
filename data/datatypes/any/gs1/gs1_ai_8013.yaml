@@ -1,0 +1,23 @@
+id: gs1_ai_8013
+name: Global Model Number (GS1 AI 8013)
+status: draft
+doc: 'GS1 element string of Application Identifier (8013): ''8013'' followed by a GMN of up to 25 characters
+  ending in a check character pair. GS1 format N4+X..25. In the human-readable text under a barcode it
+  is written as (8013) and the value.'
+semantic_type: gmn
+langs:
+- common
+regexp: ^8013\d{4}[!%-?A-Z_a-z\x22]{0,19}[2-9A-HJ-NP-Z]{2}$
+examples:
+- value: 80131987654Ad4X4bL5ttr2310c2K
+  description: GS1 linter test value
+- value: 80139528765Model-A7NM
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: 80131987654Ad4X4bL5ttr2310c2K22
+  valid: false
+  description: Longer than 25 characters
+mappings:
+  gs1_ai: '8013'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8013

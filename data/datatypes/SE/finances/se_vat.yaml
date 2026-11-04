@@ -1,0 +1,38 @@
+id: se_vat
+name: Swedish VAT number (momsregistreringsnummer)
+status: draft
+doc: 'Momsregistreringsnummer, the VAT number in Sweden: SE, the 10-digit organisation number (organisationsnummer)
+  of the business and the suffix 01. A sole trader uses the 10-digit personal identity number (personnummer)
+  in place of the organisation number. The tenth digit is a Luhn check digit.'
+parent: vatin
+categories:
+- finances
+country:
+- SE
+langs:
+- sv
+is_pii: true
+classification: identifier
+regexp: ^(?:SE[ -]?)?\d{10}01$
+checksum: se_vat
+examples:
+- value: SE556012579001
+  description: Aktiebolaget Volvo, organisation number 556012-5790
+- value: '556012579001'
+  description: The same number without the country prefix
+- value: SE556012579101
+  valid: false
+  description: Check digit does not match
+- value: SE5560125790
+  valid: false
+  description: The suffix 01 is missing
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/VAT_identification_number
+- type: doc
+  url: https://ec.europa.eu/taxation_customs/vies/
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.se.vat.html
+translations:
+  sv:
+    name: Momsregistreringsnummer

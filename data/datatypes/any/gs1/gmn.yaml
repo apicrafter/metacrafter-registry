@@ -1,0 +1,32 @@
+id: gmn
+name: Global Model Number (GMN)
+status: draft
+doc: 'GS1 identification key for a product model: the design that a group of trade items is made to. It
+  is a GS1 Company Prefix, a model reference and two check characters, up to 25 characters of GS1 character
+  set 82. The check character pair is computed from the other characters with prime weights modulo 1021.
+  In barcodes it is carried by Application Identifier (8013); the element string is the pattern gs1_ai_8013.'
+categories:
+- gs1
+- objectids
+- industry
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4}[!%-?A-Z_a-z\x22]{0,19}[2-9A-HJ-NP-Z]{2}$
+checksum: gs1_checkpair
+examples:
+- value: 1987654Ad4X4bL5ttr2310c2K
+  description: Test value of the GS1 Barcode Syntax Engine check pair linter
+- value: 9528765Model-A7NM
+  description: Synthetic value with the GS1 demonstration prefix 952 and a valid check character pair
+- value: 1987654Ad4X4bL5ttr2310cXK
+  valid: false
+  description: 'Check characters changed: fails the check pair'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8013
+- type: doc
+  url: https://ref.gs1.org/standards/genspecs/
+- type: other
+  url: https://github.com/gs1/gs1-syntax-engine/blob/main/src/c-lib/syntax/lint_csumalpha.c

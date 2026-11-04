@@ -1,0 +1,23 @@
+id: gs1_ai_8010
+name: Component/Part Identifier (GS1 AI 8010)
+status: draft
+doc: 'GS1 element string of Application Identifier (8010): ''8010'' followed by a CPID of up to 30 characters
+  of GS1 character set 39. GS1 format N4+Y..30. In the human-readable text under a barcode it is written
+  as (8010) and the value.'
+semantic_type: cpid
+langs:
+- common
+regexp: ^8010\d{4}[A-Z0-9/#-]{1,26}$
+examples:
+- value: 80109528765PART-12A/7
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: 80109528765B-77/2#1
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: 80109528765part-12a
+  valid: false
+  description: Lower-case letters
+mappings:
+  gs1_ai: '8010'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8010

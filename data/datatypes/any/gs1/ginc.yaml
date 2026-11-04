@@ -1,0 +1,30 @@
+id: ginc
+name: Global Identification Number for Consignment (GINC)
+status: draft
+doc: 'GS1 identification key for a consignment: logistic units that a freight forwarder or carrier moves
+  together as one transport assignment. It is a GS1 Company Prefix followed by a consignment reference,
+  up to 30 characters of GS1 character set 82 in total; the first four characters are digits because the
+  shortest GS1 Company Prefix has four. In barcodes it is carried by Application Identifier (401); the
+  element string is the pattern gs1_ai_401.'
+categories:
+- gs1
+- shipping
+- transport
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4}[!%-?A-Z_a-z\x22]{0,26}$
+examples:
+- value: 9528765CONS-0042
+  description: Synthetic value with the GS1 demonstration prefix 952 and a consignment reference
+- value: 9528765CN26-0815
+  description: Synthetic value with the GS1 demonstration prefix 952 and a consignment reference
+- value: CONS-0042
+  valid: false
+  description: Does not start with a GS1 Company Prefix
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/401
+- type: doc
+  url: https://ref.gs1.org/standards/genspecs/

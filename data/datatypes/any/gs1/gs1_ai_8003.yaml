@@ -1,0 +1,23 @@
+id: gs1_ai_8003
+name: Global Returnable Asset Identifier (GS1 AI 8003)
+status: draft
+doc: 'GS1 element string of Application Identifier (8003): ''8003'' followed by a filler zero, the 13
+  digits of a GRAI and an optional serial component. GS1 format N4+N14[+X..16]. In the human-readable
+  text under a barcode it is written as (8003) and the value.'
+semantic_type: grai
+langs:
+- common
+regexp: ^80030\d{13}[!%-?A-Z_a-z\x22]{0,16}$
+examples:
+- value: 800309528765000116RT1042
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '800309528765000116'
+  description: Synthetic value with the GS1 demonstration prefix 952; no serial component
+- value: 80039528765000116RT1042
+  valid: false
+  description: Filler zero missing
+mappings:
+  gs1_ai: '8003'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8003
