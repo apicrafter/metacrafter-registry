@@ -1,0 +1,34 @@
+id: fi_veronumero
+name: Finnish individual tax number (veronumero)
+status: draft
+doc: Veronumero, the 12-digit tax number given to people who work in the construction industry in Finland.
+  It is separate from the personal identity code and holds no personal information.
+categories:
+- pii
+- persons
+country:
+- FI
+langs:
+- fi
+- sv
+is_pii: true
+classification: identifier
+regexp: ^\d{12}$
+examples:
+- value: '124487862842'
+  description: Synthetic number in the documented format
+- value: '103398312952'
+  description: Synthetic number in the documented format
+- value: '1244878628427'
+  valid: false
+  description: One character too many
+links:
+- type: doc
+  url: https://www.vero.fi/en/detailed-guidance/guidance/48791/individual_tax_numbers__instructions_fo/
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fi.veronumero.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_fi_veronumero.html
+translations:
+  fi:
+    name: Veronumero

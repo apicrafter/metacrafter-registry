@@ -1,0 +1,35 @@
+id: lv_pvn
+name: Latvian VAT number (PVN)
+status: draft
+doc: PVN reģistrācijas numurs, the 11-digit VAT number in Latvia. For legal entities the first digit is
+  greater than 3; for natural persons it is the personal code (personas kods), which starts with the date
+  of birth (DDMMYY) or, for newer codes, with 32.
+parent: vatin
+categories:
+- finances
+country:
+- LV
+langs:
+- lv
+is_pii: true
+classification: identifier
+regexp: ^(?:LV[ -]?)?\d{11}$
+checksum: lv_pvn
+examples:
+- value: '48146577057'
+  description: Synthetic number with a valid check digit
+- value: '45806572111'
+  description: Synthetic number with a valid check digit
+- value: '48146577050'
+  valid: false
+  description: Check digit does not match
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_identification_number#Latvia
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.lv.pvn.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_lv_pvn.html
+translations:
+  lv:
+    name: PVN reģistrācijas numurs

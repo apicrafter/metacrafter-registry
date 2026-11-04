@@ -1,0 +1,32 @@
+id: ec_ruc
+name: Ecuadorian taxpayer number (RUC)
+status: draft
+doc: 'Registro Único de Contribuyentes, the 13-digit tax number in Ecuador. The third digit shows the
+  kind of taxpayer: below 6 for natural persons (their cédula followed by an establishment number), 6
+  for public entities and 9 for private companies.'
+categories:
+- finances
+country:
+- EC
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^\d{13}$
+checksum: ec_ruc
+examples:
+- value: '2491021992001'
+  description: Synthetic number with a valid check digit
+- value: '1692234326001'
+  description: Synthetic number with a valid check digit
+- value: '24910219920017'
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ec.ruc.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_ec_ruc.html
+translations:
+  es:
+    name: Registro Único de Contribuyentes (RUC)

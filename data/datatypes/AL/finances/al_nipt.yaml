@@ -1,0 +1,30 @@
+id: al_nipt
+name: Albanian taxpayer identification number (NIPT)
+status: draft
+doc: 'Numri i Identifikimit për Personin e Tatueshëm (NIPT, also NUIS), the tax number that Albania gives
+  to businesses and individuals. It has ten characters: a letter, eight digits and a final letter. The
+  leading characters encode the registration date, or the birth date of an individual. The check letter
+  algorithm is not published.'
+categories:
+- finances
+country:
+- AL
+langs:
+- sq
+is_pii: true
+classification: identifier
+regexp: ^(?:AL)?[A-M] ?\d{8} ?[A-Z]$
+examples:
+- value: ALL93085780 P
+  description: Synthetic number in the documented format
+- value: ALG80878384 U
+  description: Synthetic number in the documented format
+- value: L93085780P7
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.al.nipt.html
+translations:
+  sq:
+    name: Numri i Identifikimit për Personin e Tatueshëm (NIPT)

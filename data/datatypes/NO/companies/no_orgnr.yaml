@@ -1,0 +1,35 @@
+id: no_orgnr
+name: Norwegian organisation number (organisasjonsnummer)
+status: draft
+doc: Organisasjonsnummer, the 9-digit number of a legal entity in the Norwegian Central Coordinating Register
+  for Legal Entities (Enhetsregisteret). The last digit is a modulo 11 check digit.
+categories:
+- companies
+country:
+- 'NO'
+langs:
+- 'no'
+is_pii: false
+classification: identifier
+regexp: ^\d{3} ?\d{3} ?\d{3}$
+checksum: no_orgnr
+examples:
+- value: '986992928'
+  description: Synthetic number with a valid check digit
+- value: '911067404'
+  description: Synthetic number with a valid check digit
+- value: 986 992 928
+  description: The first example in its printed form
+- value: '986992920'
+  valid: false
+  description: Check digit does not match
+links:
+- type: wikipedia
+  url: https://no.wikipedia.org/wiki/Organisasjonsnummer
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.no.orgnr.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_no_orgnr.html
+translations:
+  'no':
+    name: Organisasjonsnummer

@@ -1,0 +1,31 @@
+id: eu_banknote
+name: Euro banknote serial number
+status: draft
+doc: Serial number printed on euro banknotes. Notes of the first series have one letter and eleven digits;
+  notes of the Europa series have two letters and ten digits. The first letter shows the printing works,
+  and all characters together form a simple checksum.
+categories:
+- finances
+country:
+- EU
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[B-HJLMNPR-Z][A-Z0-9]\d{10}$
+checksum: eu_banknote
+examples:
+- value: VA0436214792
+  description: Real-world value published online
+- value: U71220515711
+  description: Real-world value published online
+- value: VA0436214790
+  valid: false
+  description: Check digit does not match
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Euro_banknotes#Serial_number
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.eu.banknote.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_eu_banknote.html

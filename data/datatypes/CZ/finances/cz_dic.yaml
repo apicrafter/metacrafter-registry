@@ -1,0 +1,30 @@
+id: cz_dic
+name: Czech VAT number (DIČ)
+status: draft
+doc: Daňové identifikační číslo, the Czech tax identification number used for VAT (DPH). Legal entities
+  have eight digits; individuals use their 9- or 10-digit birth number, or a 9-digit number starting with
+  6 if they have no birth number.
+parent: vatin
+categories:
+- finances
+country:
+- CZ
+langs:
+- cs
+is_pii: true
+classification: identifier
+regexp: ^(?:CZ[ -]?)?(?:\d{8}|\d{6}/?\d{3,4})$
+checksum: cz_dic
+examples:
+- value: CZ 834929/971
+  description: Synthetic number with a valid check digit
+- value: '87623153'
+  description: Synthetic number with a valid check digit
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cz.dic.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_cz_dic.html
+translations:
+  cs:
+    name: Daňové identifikační číslo (DIČ)

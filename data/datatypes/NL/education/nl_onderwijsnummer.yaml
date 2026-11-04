@@ -1,0 +1,35 @@
+id: nl_onderwijsnummer
+name: Dutch education number (onderwijsnummer)
+status: draft
+doc: Onderwijsnummer, the 9-digit number of pupils and students in the Netherlands who have no citizen
+  service number (BSN). It starts with 10 and has a check similar to the BSN's.
+categories:
+- pii
+- persons
+- education
+country:
+- NL
+langs:
+- nl
+is_pii: true
+classification: identifier
+regexp: ^10\d{7}$
+checksum: nl_onderwijsnummer
+examples:
+- value: '108148380'
+  description: Synthetic number with a valid check digit
+- value: '109964543'
+  description: Synthetic number with a valid check digit
+- value: '108148381'
+  valid: false
+  description: Check digit does not match
+links:
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Onderwijsnummer
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.nl.onderwijsnummer.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_nl_onderwijsnummer.html
+translations:
+  nl:
+    name: Onderwijsnummer

@@ -1,0 +1,36 @@
+id: hr_oib
+name: Croatian personal identification number (OIB)
+status: draft
+doc: Osobni identifikacijski broj, the 11-digit identification number of persons and legal entities in
+  Croatia. It holds no personal information and has an ISO 7064 mod 11-10 check digit. With the HR prefix
+  it is the VAT number.
+parent: vatin
+categories:
+- finances
+- pii
+country:
+- HR
+langs:
+- hr
+is_pii: true
+classification: identifier
+regexp: ^(?:HR[ -]?)?\d{11}$
+checksum: iso7064_mod11_10
+examples:
+- value: '63121378524'
+  description: Synthetic number with a valid check digit
+- value: '18231363323'
+  description: Synthetic number with a valid check digit
+- value: '63121378520'
+  valid: false
+  description: Check digit does not match
+links:
+- type: wikipedia
+  url: https://hr.wikipedia.org/wiki/Osobni_identifikacijski_broj
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.hr.oib.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_hr_oib.html
+translations:
+  hr:
+    name: Osobni identifikacijski broj (OIB)

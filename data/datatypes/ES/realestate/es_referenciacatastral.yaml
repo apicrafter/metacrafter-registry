@@ -1,0 +1,36 @@
+id: es_referenciacatastral
+name: Spanish cadastral reference (referencia catastral)
+status: draft
+doc: Referencia catastral, the 20-character identifier that the Spanish Directorate General for Cadastre
+  gives to a real estate property. It holds 14 characters for the parcel, 4 for the property within the
+  parcel and 2 check letters; digits and letters, including Ñ, are used.
+categories:
+- realestate
+country:
+- ES
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-ZÑ]{7} ?[0-9A-ZÑ]{7} ?[0-9A-ZÑ]{4} ?[A-Z]{2}$
+checksum: es_referenciacatastral
+examples:
+- value: 10118A004030320000PY
+  description: Real-world value published online
+- value: 9872023 VH5797S 0001 WX
+  description: Real-world value published online
+- value: 10118A0 0403032 0000 PY
+  description: The first example in its printed form
+- value: 10118A004030320000PA
+  valid: false
+  description: Check digit does not match
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Catastro#Referencia_catastral
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.es.referenciacatastral.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_es_referenciacatastral.html
+translations:
+  es:
+    name: Referencia catastral

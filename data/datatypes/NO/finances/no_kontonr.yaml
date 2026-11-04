@@ -1,0 +1,36 @@
+id: no_kontonr
+name: Norwegian bank account number (kontonummer)
+status: draft
+doc: 'Kontonummer, the 11-digit bank account number in Norway: a 4-digit bank code, six digits for the
+  account and a modulo 11 check digit. It is usually written with dots after the fourth and sixth digits.'
+parent: bankaccount
+categories:
+- finances
+country:
+- 'NO'
+langs:
+- 'no'
+is_pii: false
+classification: identifier
+regexp: ^\d{4}[. ]?\d{2}[. ]?\d{5}$
+checksum: no_kontonr
+examples:
+- value: '63774914465'
+  description: Synthetic number with a valid check digit
+- value: '43296503003'
+  description: Synthetic number with a valid check digit
+- value: 6377.49.14465
+  description: The first example in its printed form
+- value: '63774914460'
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://www.ecbs.org/iban/norway-bank-account-number.html
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.no.kontonr.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_no_kontonr.html
+translations:
+  'no':
+    name: Kontonummer

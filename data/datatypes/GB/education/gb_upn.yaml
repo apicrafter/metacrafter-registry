@@ -1,0 +1,33 @@
+id: gb_upn
+name: English unique pupil number (UPN)
+status: draft
+doc: Unique Pupil Number, the 13-character code of a pupil in English state schools. It is a check letter,
+  a 3-digit local authority number, a 4-digit school establishment number, two digits for the year of
+  issue and a 3-digit serial number. Temporary numbers end with a letter.
+categories:
+- pii
+- persons
+- education
+country:
+- GB
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: ^[A-HJ-NP-RT-Z]\d{11}[0-9A-HJ-NP-RT-Z]$
+checksum: gb_upn
+examples:
+- value: Q202066535762
+  description: Synthetic number with a valid check digit
+- value: Z208803304719
+  description: Synthetic number with a valid check digit
+- value: Q202066535760
+  valid: false
+  description: Check digit does not match
+links:
+- type: doc
+  url: https://www.gov.uk/government/publications/unique-pupil-numbers
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gb.upn.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_gb_upn.html

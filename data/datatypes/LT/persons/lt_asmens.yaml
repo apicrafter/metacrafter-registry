@@ -1,0 +1,36 @@
+id: lt_asmens
+name: Lithuanian personal code (asmens kodas)
+status: draft
+doc: Asmens kodas, the 11-digit personal code in Lithuania. The first digit gives the sex and the century
+  of birth, the next six the date of birth (YYMMDD), then come a 3-digit serial number and a check digit.
+categories:
+- pii
+- persons
+country:
+- LT
+langs:
+- lt
+is_pii: true
+classification: identifier
+regexp: ^[1-69]\d{10}$
+checksum: lt_asmens
+examples:
+- value: '46810141867'
+  description: Synthetic number with a valid check digit
+- value: '42601100756'
+  description: Synthetic number with a valid check digit
+- value: '46810141860'
+  valid: false
+  description: Check digit does not match
+links:
+- type: wikipedia
+  url: https://lt.wikipedia.org/wiki/Asmens_kodas
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_identification_number#Lithuania
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.lt.asmens.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_lt_asmens.html
+translations:
+  lt:
+    name: Asmens kodas

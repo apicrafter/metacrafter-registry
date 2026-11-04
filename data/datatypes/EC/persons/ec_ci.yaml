@@ -1,0 +1,32 @@
+id: ec_ci
+name: Ecuadorian identity card number (cédula)
+status: draft
+doc: Cédula de identidad, the 10-digit number that identifies citizens of Ecuador. The first two digits
+  are a province code and the last digit is a check digit.
+categories:
+- pii
+- persons
+country:
+- EC
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^\d{9}-?\d$
+checksum: ec_ci
+examples:
+- value: '1421301860'
+  description: Synthetic number with a valid check digit
+- value: '2451810663'
+  description: Synthetic number with a valid check digit
+- value: '1421301861'
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ec.ci.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_ec_ci.html
+translations:
+  es:
+    name: Cédula de identidad

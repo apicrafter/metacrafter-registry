@@ -1,0 +1,32 @@
+id: nz_bankaccount
+name: New Zealand bank account number
+status: draft
+doc: 'Bank account number in New Zealand: two digits for the bank, four for the branch, seven for the
+  account base number and two or three for the account suffix, usually separated by hyphens. The bank
+  and branch determine the check algorithm.'
+parent: bankaccount
+categories:
+- finances
+country:
+- NZ
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{2}[- ]?\d{4}[- ]?\d{7}[- ]?\d{2,3}$
+checksum: nz_bankaccount
+examples:
+- value: 02-0552-0410366-070
+  description: Synthetic number with a valid check digit
+- value: 02-0208-0649925-077
+  description: Synthetic number with a valid check digit
+- value: '02055204103660707'
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/New_Zealand_bank_account_number
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.nz.bankaccount.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_nz_bankaccount.html

@@ -1,0 +1,34 @@
+id: py_ruc
+name: Paraguayan taxpayer number (RUC)
+status: draft
+doc: Registro Único del Contribuyente, the tax number of persons and legal entities in Paraguay. Legal
+  entities have eight digits starting from 80000000; persons have up to nine digits. The last digit is
+  a check digit, usually written after a hyphen.
+categories:
+- finances
+country:
+- PY
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^\d{1,8}-?\d$
+checksum: py_ruc
+examples:
+- value: '51640716'
+  description: Synthetic number with a valid check digit
+- value: '33077444'
+  description: Synthetic number with a valid check digit
+- value: 5164071-6
+  description: The first example in its printed form
+- value: '51640710'
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.py.ruc.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_py_ruc.html
+translations:
+  es:
+    name: Registro Único del Contribuyente (RUC)

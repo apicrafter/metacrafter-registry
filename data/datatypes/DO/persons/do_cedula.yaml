@@ -1,0 +1,35 @@
+id: do_cedula
+name: Dominican Republic identity number (cédula)
+status: draft
+doc: Cédula de identidad y electoral, the 11-digit identification number that the Dominican Republic gives
+  to citizens and residents. It is usually written as 3, 7 and 1 digits separated by hyphens; the last
+  digit is a Luhn check digit.
+categories:
+- pii
+- persons
+country:
+- DO
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^\d{3}-?\d{7}-?\d$
+checksum: luhn
+examples:
+- value: 02666974551
+  description: Synthetic number with a valid check digit
+- value: 08990011481
+  description: Synthetic number with a valid check digit
+- value: 026-6697455-1
+  description: The first example in its printed form
+- value: 02666974550
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.do.cedula.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_do_cedula.html
+translations:
+  es:
+    name: Cédula de identidad y electoral

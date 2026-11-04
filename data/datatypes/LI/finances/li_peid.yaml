@@ -1,0 +1,27 @@
+id: li_peid
+name: Liechtenstein personal identification number (PEID)
+status: draft
+doc: Personenidentifikationsnummer, a numeric code of up to 12 digits that identifies individuals and
+  entities in Liechtenstein, used as the tax identification number.
+categories:
+- finances
+country:
+- LI
+langs:
+- de
+is_pii: true
+classification: identifier
+regexp: ^\d{4,12}$
+examples:
+- value: '6892921637'
+  description: Synthetic number in the documented format
+- value: '312066637'
+  description: Synthetic number in the documented format
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.li.peid.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_li_peid.html
+translations:
+  de:
+    name: Personenidentifikationsnummer (PEID)

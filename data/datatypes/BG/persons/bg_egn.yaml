@@ -1,0 +1,35 @@
+id: bg_egn
+name: Bulgarian unified civil number (EGN)
+status: draft
+doc: Единен граждански номер, the 10-digit personal number of Bulgarian citizens. The first six digits
+  encode the date of birth (the month is shifted for births outside the 20th century), the next three
+  are a birth order number that also gives the sex, and the last digit is a check digit.
+categories:
+- pii
+- persons
+country:
+- BG
+langs:
+- bg
+is_pii: true
+classification: identifier
+regexp: ^\d{10}$
+checksum: bg_egn
+examples:
+- value: '2143258377'
+  description: Synthetic number with a valid check digit
+- value: '2631299974'
+  description: Synthetic number with a valid check digit
+- value: '2143258370'
+  valid: false
+  description: Check digit does not match
+links:
+- type: wikipedia
+  url: https://bg.wikipedia.org/wiki/%D0%95%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD_%D0%B3%D1%80%D0%B0%D0%B6%D0%B4%D0%B0%D0%BD%D1%81%D0%BA%D0%B8_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.bg.egn.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_bg_egn.html
+translations:
+  bg:
+    name: Единен граждански номер (ЕГН)

@@ -1,0 +1,34 @@
+id: gt_nit
+name: Guatemalan tax number (NIT)
+status: draft
+doc: 'Número de Identificación Tributaria, the tax identifier of the Guatemalan tax authority (SAT). It
+  has 2 to 12 characters: digits and a final check character (a digit or K), usually separated by a hyphen.
+  Leading zeros are often left out.'
+categories:
+- finances
+country:
+- GT
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^\d{1,11}-?[0-9K]$
+checksum: gt_nit
+examples:
+- value: 3459079K
+  description: Synthetic number with a valid check digit
+- value: '721490670'
+  description: Synthetic number with a valid check digit
+- value: 3459079-K
+  description: The first example in its printed form
+- value: 3459079K7
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gt.nit.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_gt_nit.html
+translations:
+  es:
+    name: Número de Identificación Tributaria (NIT)

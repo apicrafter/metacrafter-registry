@@ -1,0 +1,38 @@
+id: no_fodselsnummer
+name: Norwegian national identity number (fødselsnummer)
+status: draft
+doc: 'Fødselsnummer, the 11-digit national identity number in Norway: the date of birth (DDMMYY), a 3-digit
+  individual number that also gives the sex, and two check digits.'
+categories:
+- pii
+- persons
+country:
+- 'NO'
+langs:
+- 'no'
+is_pii: true
+classification: identifier
+regexp: ^\d{6}[ -]?\d{5}$
+checksum: no_fodselsnummer
+examples:
+- value: '27051338311'
+  description: Synthetic number with a valid check digit
+- value: '26129914091'
+  description: Synthetic number with a valid check digit
+- value: 270513 38311
+  description: The first example in its printed form
+- value: '27051338310'
+  valid: false
+  description: Check digit does not match
+links:
+- type: wikipedia
+  url: https://no.wikipedia.org/wiki/F%C3%B8dselsnummer
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_identification_number#Norway
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.no.fodselsnummer.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_no_fodselsnummer.html
+translations:
+  'no':
+    name: Fødselsnummer

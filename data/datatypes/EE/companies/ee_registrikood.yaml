@@ -1,0 +1,34 @@
+id: ee_registrikood
+name: Estonian organisation registration code (registrikood)
+status: draft
+doc: Registrikood, the 8-digit code that the Estonian registers give to organisations. Commercial companies
+  start with 1, state and local government bodies with 7, non-profit associations with 8 and foundations
+  with 9. The last digit is a check digit.
+categories:
+- companies
+country:
+- EE
+langs:
+- et
+is_pii: false
+classification: identifier
+regexp: ^[1789]\d{7}$
+checksum: ee_ik
+examples:
+- value: '19232463'
+  description: Synthetic number with a valid check digit
+- value: '95529387'
+  description: Synthetic number with a valid check digit
+- value: '19232460'
+  valid: false
+  description: Check digit does not match
+links:
+- type: doc
+  url: https://ariregister.rik.ee/
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ee.registrikood.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_ee_registrikood.html
+translations:
+  et:
+    name: Registrikood

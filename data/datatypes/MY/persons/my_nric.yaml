@@ -1,0 +1,35 @@
+id: my_nric
+name: Malaysian identity card number (NRIC)
+status: draft
+doc: 'National Registration Identity Card number (MyKad number) of Malaysian citizens and permanent residents.
+  It has twelve digits: the date of birth (YYMMDD), a 2-digit birth place code and four digits, the last
+  of which is odd for males and even for females. It is often written with hyphens after the sixth and
+  eighth digits.'
+categories:
+- pii
+- persons
+country:
+- MY
+langs:
+- ms
+- en
+is_pii: true
+classification: identifier
+regexp: ^\d{6}-?\d{2}-?\d{4}$
+examples:
+- value: '440521161293'
+  description: Synthetic number in the documented format
+- value: '380220029348'
+  description: Synthetic number in the documented format
+- value: 440521-16-1293
+  description: The first example in its printed form
+- value: '4405211612937'
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Malaysian_identity_card
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.my.nric.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_my_nric.html

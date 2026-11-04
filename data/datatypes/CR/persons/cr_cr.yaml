@@ -1,0 +1,29 @@
+id: cr_cr
+name: Costa Rican foreigner residence ID number (DIMEX)
+status: draft
+doc: 'Cédula de Residencia, also called DIMEX (Documento de Identificación Migratorio para Extranjeros),
+  the identifier of foreigners in Costa Rica. It has 11 or 12 digits: 1, a 3-digit code of the country
+  of origin, then a sequence over all issued numbers and a sequence per country.'
+categories:
+- pii
+- persons
+country:
+- CR
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^1\d{3}-?\d{1,8}-?\d{1,8}$
+examples:
+- value: '165997848390'
+  description: Synthetic number in the documented format
+- value: '12516350370'
+  description: Synthetic number in the documented format
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cr.cr.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_cr_cr.html
+translations:
+  es:
+    name: Cédula de Residencia (DIMEX)

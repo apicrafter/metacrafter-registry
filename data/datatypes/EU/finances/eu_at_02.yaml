@@ -1,0 +1,29 @@
+id: eu_at_02
+name: SEPA creditor identifier (AT-02)
+status: draft
+doc: Creditor identifier of SEPA direct debits (data element AT-02 of the SEPA rulebooks, Creditor Scheme
+  Identification in ISO 20022). It starts with the ISO country code and two ISO 7064 mod 97-10 check digits,
+  followed by a 3-character creditor business code (ZZZ when not used) and a national identifier.
+categories:
+- finances
+country:
+- EU
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}\d{2}[0-9A-Z]{3}[0-9A-Z]{1,28}$
+checksum: iso7064_mod97_10
+examples:
+- value: DE36ZZZ37441515
+  description: Synthetic number with a valid check digit
+- value: DE54ZZZ69403467
+  description: Synthetic number with a valid check digit
+- value: DE36ZZZ37441510
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.eu.at_02.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_eu_at_02.html

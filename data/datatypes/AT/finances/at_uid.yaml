@@ -1,0 +1,30 @@
+id: at_uid
+name: Austrian VAT identification number (UID)
+status: draft
+doc: Umsatzsteuer-Identifikationsnummer, the VAT number of businesses in Austria. It is the letter U followed
+  by eight digits, the last of which is a check digit, and is usually written with the AT country prefix.
+parent: vatin
+categories:
+- finances
+country:
+- AT
+langs:
+- de
+is_pii: false
+classification: identifier
+regexp: ^(?:AT[ -]?)?U ?\d{8}$
+checksum: at_uid
+examples:
+- value: ATU 64762368
+  description: Real-world value published online
+- value: ATU 65034704
+  description: Real-world value published online
+- value: U64762360
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.at.uid.html
+translations:
+  de:
+    name: Umsatzsteuer-Identifikationsnummer (UID)

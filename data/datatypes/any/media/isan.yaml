@@ -1,0 +1,27 @@
+id: isan
+name: International Standard Audiovisual Number (ISAN)
+status: draft
+doc: 'ISO 15706 identifier of audiovisual works, such as films and episodes. It is hexadecimal: a 12-digit
+  root and a 4-digit episode or part, an optional check character, then optionally an 8-digit version
+  and a second check character. The check characters use ISO 7064 mod 37,36.'
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:ISAN )?[0-9A-F]{4}-?[0-9A-F]{4}-?[0-9A-F]{4}-?[0-9A-F]{4}(?:-?[0-9A-Z])?(?:-?[0-9A-F]{4}-?[0-9A-F]{4}(?:-?[0-9A-Z])?)?$
+checksum: iso7064_mod37_36
+examples:
+- value: 0000-0000-9E64-0000-9-AA55-2C14-M
+  description: Synthetic number with a valid check digit
+- value: 0000-0000-2279-0000-M-B381-1B6A-3
+  description: Synthetic number with a valid check digit
+- value: 000000009E640000AA552C1
+  valid: false
+  description: One character too few
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Standard_Audiovisual_Number
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.isan.html

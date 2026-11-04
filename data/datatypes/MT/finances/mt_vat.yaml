@@ -1,0 +1,29 @@
+id: mt_vat
+name: Maltese VAT number
+status: draft
+doc: 'VAT registration number in Malta: eight digits, the first not 0, with a weighted check.'
+parent: vatin
+categories:
+- finances
+country:
+- MT
+langs:
+- mt
+- en
+is_pii: false
+classification: identifier
+regexp: ^(?:MT[ -]?)?[1-9]\d{3}[ -]?\d{4}$
+checksum: mt_vat
+examples:
+- value: MT 20630321
+  description: Real-world value published online
+- value: MT 17025737
+  description: Real-world value published online
+- value: '20630320'
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.mt.vat.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_mt_vat.html

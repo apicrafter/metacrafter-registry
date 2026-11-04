@@ -1,0 +1,31 @@
+id: me_iban
+name: Montenegrin IBAN
+status: draft
+doc: 'International Bank Account Number of a bank account in Montenegro. It has 22 characters: ME, two
+  IBAN check digits, a 3-digit bank code, a 13-digit account number and two national check digits.'
+parent: iban
+categories:
+- finances
+country:
+- ME
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '^ME\d{2}(?: ?\d{4}){4} ?\d{2}$'
+checksum: iban_mod97
+examples:
+- value: ME25678284986502522902
+  description: Synthetic number with a valid check digit
+- value: ME25136416838732305259
+  description: Synthetic number with a valid check digit
+- value: ME25 6782 8498 6502 5229 02
+  description: The first example in its printed form
+- value: ME25678284986502522900
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.me.iban.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_me_iban.html

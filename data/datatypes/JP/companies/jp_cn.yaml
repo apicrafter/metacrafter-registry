@@ -1,0 +1,37 @@
+id: jp_cn
+name: Japanese corporate number (hōjin bangō)
+status: draft
+doc: 法人番号 (hōjin bangō), the 13-digit Corporate Number that the National Tax Agency gives to corporations,
+  government bodies and other organisations in Japan. The first digit is a check digit and is never 0.
+categories:
+- companies
+country:
+- JP
+langs:
+- ja
+is_pii: false
+classification: identifier
+regexp: ^[1-9]-?\d{4}-?\d{4}-?\d{4}$
+checksum: jp_cn
+examples:
+- value: '8166975505797'
+  description: Real-world value published online
+- value: '7896877317434'
+  description: Real-world value published online
+- value: 8-1669-7550-5797
+  description: The first example in its printed form
+- value: '8166975505790'
+  valid: false
+  description: Check digit does not match
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Corporate_Number
+- type: doc
+  url: https://www.nta.go.jp/taxes/tetsuzuki/mynumberinfo/houjinbangou/
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.jp.cn.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_jp_cn.html
+translations:
+  ja:
+    name: 法人番号

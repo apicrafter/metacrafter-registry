@@ -1,0 +1,30 @@
+id: grid_release
+name: Global Release Identifier (GRid)
+status: draft
+doc: 'Global Release Identifier, used to identify releases of digital sound recordings and other music
+  products distributed electronically. It has 18 characters: the identifier scheme A1, a 5-character issuer
+  code, a 10-character release number and an ISO 7064 mod 37,36 check character, usually printed with
+  hyphens between the parts. Not to be confused with the GRID research organisation identifier.'
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '^(?:GRID: ?)?A1-?[0-9A-Z]{5}-?[0-9A-Z]{10}-?[0-9A-Z]$'
+checksum: iso7064_mod37_36
+examples:
+- value: A1YMT8K96ZLZOEM4G9
+  description: Synthetic number with a valid check digit
+- value: A17UZ928STGV287H57
+  description: Synthetic number with a valid check digit
+- value: A1-YMT8K-96ZLZOEM4G-9
+  description: The first example in its printed form
+- value: A1YMT8K96ZLZOEM4G0
+  valid: false
+  description: Check digit does not match
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Global_Release_Identifier
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.grid.html

@@ -1,0 +1,33 @@
+id: mc_tva
+name: Monaco VAT number
+status: draft
+doc: VAT number (numéro de TVA) of businesses in Monaco, which belongs to the French VAT territory. It
+  has the French format, FR followed by a 2-character key and nine digits, but the nine digits start with
+  000 instead of being a French SIREN.
+parent: vatin
+categories:
+- finances
+country:
+- MC
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^(?:FR ?)?[0-9A-HJ-NP-Z]{2} ?000 ?\d{3} ?\d{3}$
+checksum: fr_tva
+examples:
+- value: FR11000878076
+  description: Synthetic number with a valid check digit
+- value: FR59000104129
+  description: Synthetic number with a valid check digit
+- value: FR11000878070
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.mc.tva.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_mc_tva.html
+translations:
+  fr:
+    name: Numéro de TVA

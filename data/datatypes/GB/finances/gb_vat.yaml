@@ -1,0 +1,31 @@
+id: gb_vat
+name: UK VAT registration number
+status: draft
+doc: VAT registration number of businesses in the United Kingdom and the Isle of Man. The standard form
+  has nine digits with a weighted check, sometimes followed by a 3-digit branch code; government departments
+  (GD) and health authorities (HA) have short 5-character numbers. Northern Ireland businesses use the
+  XI prefix for trade with the EU.
+parent: vatin
+categories:
+- finances
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: '^(?:(?:GB|XI)[ -]?)?(?:\d{3} ?\d{4} ?\d{2}(?: ?\d{3})?|GD\d{3}|HA\d{3})$'
+checksum: gb_vat
+examples:
+- value: XI 432525179
+  description: Real-world value published online
+- value: 432 5251 79
+  description: The first example in its printed form
+- value: '432525170'
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gb.vat.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_gb_vat.html

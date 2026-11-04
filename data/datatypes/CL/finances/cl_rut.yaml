@@ -1,0 +1,37 @@
+id: cl_rut
+name: Chilean tax number (RUT, RUN)
+status: draft
+doc: Rol Único Tributario, the Chilean tax number. For people it is the same as the RUN (Rol Único Nacional),
+  the national identification number. It has up to eight digits and a check character (a digit or K),
+  and is usually written with dots and a hyphen.
+categories:
+- finances
+- pii
+country:
+- CL
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^\d{1,2}\.?\d{3}\.?\d{3}-?[0-9K]$
+checksum: cl_rut
+examples:
+- value: 95566826K
+  description: Synthetic number with a valid check digit
+- value: '676347704'
+  description: Synthetic number with a valid check digit
+- value: 95.566.826-K
+  description: The first example in its printed form
+- value: 95566826K7
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Rol_%C3%9Anico_Tributario
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cl.rut.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_cl_rut.html
+translations:
+  es:
+    name: Rol Único Tributario (RUT)

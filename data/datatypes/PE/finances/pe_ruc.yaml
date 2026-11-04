@@ -1,0 +1,34 @@
+id: pe_ruc
+name: Peruvian taxpayer number (RUC)
+status: draft
+doc: Registro Único de Contribuyentes, the 11-digit tax number of companies and individuals in Peru. The
+  first two digits give the kind of taxpayer (for example 10 for individuals, followed by their DNI, and
+  20 for legal entities) and the last digit is a check digit.
+categories:
+- finances
+country:
+- PE
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^(?:10|15|17|20)\d{9}$
+checksum: pe_ruc
+examples:
+- value: '20468189446'
+  description: Synthetic number with a valid check digit
+- value: '20388002353'
+  description: Synthetic number with a valid check digit
+- value: '20468189440'
+  valid: false
+  description: Check digit does not match
+links:
+- type: doc
+  url: https://www.sunat.gob.pe/legislacion/ruc/
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.pe.ruc.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_pe_ruc.html
+translations:
+  es:
+    name: Registro Único de Contribuyentes (RUC)

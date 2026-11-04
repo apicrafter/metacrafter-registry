@@ -1,0 +1,28 @@
+id: fi_associationid
+name: Finnish association register number
+status: draft
+doc: Number of an association in the Finnish Register of Associations. It has one to six digits, often
+  written with a dot before the last three digits.
+categories:
+- companies
+country:
+- FI
+langs:
+- fi
+- sv
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{1,3}\.\d{3}|\d{1,6})$
+examples:
+- value: '425.422'
+  description: Synthetic number in the documented format
+- value: '612.245'
+  description: Synthetic number in the documented format
+- value: '4254227'
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fi.associationid.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_fi_associationid.html

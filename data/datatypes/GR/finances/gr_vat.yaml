@@ -1,0 +1,32 @@
+id: gr_vat
+name: Greek tax number (AFM)
+status: draft
+doc: Αριθμός Φορολογικού Μητρώου (ΑΦΜ), the 9-digit tax registration number of individuals and businesses
+  in Greece. With the EL prefix it is the VAT number (ΦΠΑ). The last digit is a check digit.
+parent: vatin
+categories:
+- finances
+country:
+- GR
+langs:
+- el
+is_pii: true
+classification: identifier
+regexp: ^(?:(?:EL|GR)[ -]?)?\d{9}$
+checksum: gr_vat
+examples:
+- value: 072830684
+  description: Synthetic number with a valid check digit
+- value: '652909339'
+  description: Synthetic number with a valid check digit
+- value: 072830680
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gr.vat.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_gr_vat.html
+translations:
+  el:
+    name: Αριθμός Φορολογικού Μητρώου (ΑΦΜ)

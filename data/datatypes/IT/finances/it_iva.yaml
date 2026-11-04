@@ -1,0 +1,34 @@
+id: it_iva
+name: Italian VAT number (partita IVA)
+status: draft
+doc: 'Partita IVA, the 11-digit VAT number in Italy: seven digits that identify the taxpayer, a 3-digit
+  province code and a Luhn check digit.'
+parent: vatin
+categories:
+- finances
+country:
+- IT
+langs:
+- it
+is_pii: false
+classification: identifier
+regexp: ^(?:IT[ -]?)?\d{11}$
+checksum: luhn
+examples:
+- value: IT 00118439991
+  description: Real-world value published online
+- value: IT 04894530635
+  description: Real-world value published online
+- value: 00118439990
+  valid: false
+  description: Check digit does not match
+links:
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Partita_IVA
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.it.iva.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_it_iva.html
+translations:
+  it:
+    name: Partita IVA

@@ -1,0 +1,31 @@
+id: md_idno
+name: Moldovan state identification number (IDNO)
+status: draft
+doc: IDNO (numărul de identificare de stat), the 13-digit identifier of legal entities in Moldova. It
+  holds a registry digit, three digits for the year the code was assigned, an identifier and a check digit.
+categories:
+- companies
+country:
+- MD
+langs:
+- ro
+is_pii: false
+classification: identifier
+regexp: ^\d{13}$
+checksum: md_idno
+examples:
+- value: '1003601000988'
+  description: Real-world value published online
+- value: '1002600037724'
+  description: Real-world value published online
+- value: '1003601000980'
+  valid: false
+  description: Check digit does not match
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.md.idno.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_md_idno.html
+translations:
+  ro:
+    name: Numărul de identificare de stat (IDNO)

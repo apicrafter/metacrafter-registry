@@ -1,0 +1,35 @@
+id: ar_cbu
+name: Argentine uniform bank account code (CBU)
+status: draft
+doc: Clave Bancaria Uniforme, the 22-digit code that identifies a customer account at a bank in Argentina.
+  The first block holds a 3-digit bank code, a 4-digit branch code and a check digit; the second block
+  holds a 13-digit account number and another check digit.
+parent: bankaccount
+categories:
+- finances
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{8} ?\d{14}$
+checksum: ar_cbu
+examples:
+- value: 0546356555736828044859
+  description: Synthetic number with a valid check digit
+- value: 23449187 47751308934223
+  description: Synthetic number with a valid check digit
+- value: 05463565 55736828044859
+  description: The first example in its printed form
+- value: 0546356555736828044850
+  valid: false
+  description: Check digit does not match
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Clave_Bancaria_Uniforme
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ar.cbu.html
+translations:
+  es:
+    name: Clave Bancaria Uniforme (CBU)
