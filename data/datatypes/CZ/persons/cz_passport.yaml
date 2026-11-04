@@ -1,0 +1,17 @@
+id: cz_passport
+name: Czech passport number
+status: draft
+doc: Number of a passport issued by the Czech Republic. Microsoft Purview looks for eight digits.
+semantic_type: passport
+country:
+- CZ
+langs:
+- cs
+regexp: ^\d{8}$
+mappings:
+  purview:
+  - Czech passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-czech-passport-number

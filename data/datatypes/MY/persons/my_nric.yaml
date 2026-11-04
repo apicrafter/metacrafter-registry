@@ -26,6 +26,10 @@ examples:
 - value: '4405211612937'
   valid: false
   description: One character too many
+mappings:
+  purview:
+  - Malaysia Identity Card Number
+  - Malaysia identification card number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Malaysian_identity_card

@@ -1,0 +1,21 @@
+id: ca_phin
+name: Canadian personal health identification number (PHIN)
+status: draft
+doc: 'Personal health identification number (PHIN) of the health insurance plan of Manitoba: nine digits.'
+categories:
+- pii
+- persons
+- medical
+country:
+- CA
+langs:
+- en
+- fr
+is_pii: true
+classification: identifier
+regexp: ^\d{9}$
+mappings:
+  purview: Canada personal health identification number (PHIN)
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-canada-personal-health-identification-number

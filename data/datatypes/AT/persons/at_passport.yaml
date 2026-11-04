@@ -1,0 +1,18 @@
+id: at_passport
+name: Austrian passport number
+status: draft
+doc: Number of a passport issued by Austria. Microsoft Purview looks for a letter, an optional space and
+  seven digits.
+semantic_type: passport
+country:
+- AT
+langs:
+- de
+regexp: ^[A-Z] ?\d{7}$
+mappings:
+  purview:
+  - Austria passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-austria-passport-number

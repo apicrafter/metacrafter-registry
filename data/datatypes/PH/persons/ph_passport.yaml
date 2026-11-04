@@ -1,0 +1,16 @@
+id: ph_passport
+name: Philippine passport number
+status: draft
+doc: Number of a passport issued by the Philippines. Microsoft Purview looks for one or two letters and
+  six digits, two letters and seven digits, or a letter, seven digits and a letter.
+semantic_type: passport
+country:
+- PH
+langs:
+- en
+regexp: ^(?:[A-Z]\d{6}|[A-Z]{2}\d{6,7}|[A-Z]\d{7}[A-Z])$
+mappings:
+  purview: Philippines passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-philippines-passport-number

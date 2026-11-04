@@ -66,3 +66,5 @@
   name: Real estate
 - id: publishing
   name: Publishing and print
+- id: secrets
+  name: Secrets and credentials (passwords, keys, tokens)

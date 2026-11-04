@@ -1,0 +1,21 @@
+id: in_gstin
+name: Indian GST identification number (GSTIN)
+status: draft
+doc: 'Goods and Services Tax identification number of India, 15 characters: a two-digit state code, the
+  holder''s PAN, an entity number, the letter Z and a check character.'
+categories:
+- finances
+- companies
+country:
+- IN
+langs:
+- en
+- hi
+is_pii: false
+classification: identifier
+regexp: ^\d{2}[ -]?[A-Z]{5}\d{4}[A-Z][0-9A-Z][ -]?Z[ -]?[0-9A-Z]$
+mappings:
+  purview: India GST Number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-india-gst-number

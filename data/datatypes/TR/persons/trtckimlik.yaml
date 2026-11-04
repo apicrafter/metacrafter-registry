@@ -12,3 +12,7 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[0-9]{11}$
+mappings:
+  purview:
+  - Türkiye national identification number
+  - Turkey national identification number

@@ -1,0 +1,22 @@
+id: nz_driver_license
+name: New Zealand driver's license number
+status: draft
+doc: Number of a driving licence issued in New Zealand. Microsoft Purview looks for two letters and six
+  digits.
+categories:
+- pii
+- persons
+country:
+- NZ
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: ^[A-Z]{2}\d{6}$
+mappings:
+  purview:
+  - New Zealand Driver License Number
+  - New Zealand driver's license number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-new-zealand-drivers-license-number

@@ -1,0 +1,22 @@
+id: jp_residence_card
+name: Japanese residence card number
+status: draft
+doc: 'Number of the residence card (在留カード) issued to mid- to long-term foreign residents of Japan: two
+  letters, eight digits and two letters.'
+categories:
+- pii
+- persons
+country:
+- JP
+langs:
+- ja
+is_pii: true
+classification: identifier
+regexp: ^[A-Z]{2}\d{8}[A-Z]{2}$
+mappings:
+  purview:
+  - Japanese Residence Card Number
+  - Japan residence card number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-japan-residence-card-number

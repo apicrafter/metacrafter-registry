@@ -1,0 +1,18 @@
+id: mt_passport
+name: Maltese passport number
+status: draft
+doc: Number of a passport issued by Malta. Microsoft Purview looks for seven digits.
+semantic_type: passport
+country:
+- MT
+langs:
+- mt
+- en
+regexp: ^\d{7}$
+mappings:
+  purview:
+  - Malta passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-malta-passport-number

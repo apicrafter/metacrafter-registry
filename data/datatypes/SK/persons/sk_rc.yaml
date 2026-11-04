@@ -1,0 +1,24 @@
+id: sk_rc
+name: Slovak personal number (rodné číslo)
+status: draft
+doc: 'Slovak personal number (rodné číslo): the date of birth (YYMMDD), an optional slash and three digits;
+  numbers issued since 1954 have a fourth, check digit.'
+categories:
+- pii
+- persons
+country:
+- SK
+langs:
+- sk
+is_pii: true
+classification: identifier
+regexp: ^\d{6}/?\d{3,4}$
+mappings:
+  purview:
+  - Slovakia personal number
+  - EU national identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-slovakia-personal-number

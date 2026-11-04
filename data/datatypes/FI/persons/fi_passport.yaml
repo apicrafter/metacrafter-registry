@@ -1,0 +1,18 @@
+id: fi_passport
+name: Finnish passport number
+status: draft
+doc: Number of a passport issued by Finland. Microsoft Purview looks for two letters and seven digits.
+semantic_type: passport
+country:
+- FI
+langs:
+- fi
+- sv
+regexp: ^[A-Z]{2}\d{7}$
+mappings:
+  purview:
+  - Finland passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-finland-passport-number

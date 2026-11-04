@@ -32,7 +32,11 @@ examples:
   description: One character too many
 mappings:
   google_dlp: ITALY_FISCAL_CODE
-  purview: Italy fiscal code
+  purview:
+  - Italy fiscal code
+  - EU national identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Italian_fiscal_code

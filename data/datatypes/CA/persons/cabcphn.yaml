@@ -12,6 +12,8 @@ langs:
 - en
 is_pii: true
 classification: identifier
+mappings:
+  purview: Canada health service number
 links:
 - type: other
   url: https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/personal-health-identification

@@ -1,0 +1,25 @@
+id: medical_condition
+name: Medical condition name
+status: draft
+doc: Name of a disease, disorder, injury or impairment, for example tuberculosis or type 2 diabetes. Linked
+  to a person, it is health data.
+categories:
+- medical
+langs:
+- en
+is_pii: false
+classification: categorical
+mappings:
+  purview:
+  - Diseases
+  - Impairments Listed In The U.S. Disability Evaluation Under Social Security
+  - International classification of diseases (ICD-10-CM)
+  - International classification of diseases (ICD-9-CM)
+  - All medical terms and conditions
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-diseases
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Disease
+- type: schema.org
+  url: https://schema.org/MedicalCondition

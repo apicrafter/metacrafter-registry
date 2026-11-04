@@ -16,7 +16,11 @@ regexp: ^[0-9]{12}$
 mappings:
   google_dlp: GERMANY_IDENTITY_CARD_NUMBER
   presidio: DE_ID_CARD
-  purview: Germany identity card number
+  purview:
+  - Germany identity card number
+  - EU Social Security Number (SSN) or Equivalent ID
+  - EU social security number or equivalent identification
+  - EU national identification number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/German_identity_card

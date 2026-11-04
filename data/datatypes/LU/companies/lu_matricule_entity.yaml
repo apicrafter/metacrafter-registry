@@ -1,0 +1,25 @@
+id: lu_matricule_entity
+name: Luxembourg national identification number of a legal entity
+status: draft
+doc: 'National identification number of a legal entity (non-natural person) in Luxembourg, also used as
+  its tax number: 11 digits that end with a check digit.'
+categories:
+- companies
+country:
+- LU
+langs:
+- lb
+- fr
+- de
+is_pii: false
+classification: identifier
+regexp: ^\d{2} ?\d{3} ?\d{3} ?\d{3}$
+mappings:
+  purview:
+  - Luxembourg National Identification Number (Non-natural persons)
+  - Luxemburg national identification number (non-natural persons)
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-luxemburg-national-identification-number-non-natural-persons

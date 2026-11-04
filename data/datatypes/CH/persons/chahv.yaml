@@ -18,7 +18,9 @@ examples:
 - value: 756.9217.0769.85
   description: AHV/AVS number format (EAN-13 check digit)
 mappings:
-  purview: Swiss Social Security Number AHV
+  purview:
+  - Swiss Social Security Number AHV
+  - Switzerland SSN AHV number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Swiss_social_security_number

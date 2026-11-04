@@ -24,7 +24,12 @@ examples:
   description: Example Dutch BSN number
 mappings:
   google_dlp: NETHERLANDS_BSN_NUMBER
-  purview: Netherlands citizen's service (BSN) number
+  purview:
+  - Netherlands citizens service (BSN) number
+  - Netherlands tax identification number
+  - EU national identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Burgerservicenummer
