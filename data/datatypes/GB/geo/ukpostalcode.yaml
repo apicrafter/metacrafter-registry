@@ -10,6 +10,8 @@ country:
 - GB
 langs:
 - en
+mappings:
+  presidio: UK_POSTCODE
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom

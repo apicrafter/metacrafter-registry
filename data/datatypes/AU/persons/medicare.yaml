@@ -11,3 +11,7 @@ langs:
 - en
 is_pii: true
 classification: identifier
+mappings:
+  google_dlp: AUSTRALIA_MEDICARE_NUMBER
+  presidio: AU_MEDICARE
+  purview: Australia medical account number

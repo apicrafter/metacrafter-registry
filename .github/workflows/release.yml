@@ -47,6 +47,21 @@ jobs:
       - name: Build the Python package
         run: python -m build --outdir pkg-dist
 
+      - name: Changelog against the previous release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          mkdir -p release
+          PREV=$(gh release list --repo "$GITHUB_REPOSITORY" --limit 20 --json tagName -q '[.[].tagName | select(. != env.TAG)][0]')
+          if [ -n "$PREV" ] && gh release download "$PREV" --repo "$GITHUB_REPOSITORY" -p datatypes.jsonl -D prev; then
+            metacrafter-registry changes --old prev/datatypes.jsonl --new dist \
+              --old-version "$PREV" --new-version "$TAG" \
+              --json release/changes.json --markdown release/CHANGES.md
+          else
+            echo "First release with the current pipeline." > release/CHANGES.md
+          fi
+
       - name: Collect release assets
         run: |
           mkdir -p release
@@ -86,7 +101,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.ref_name }}
-        run: gh release create "$TAG" release/* --repo "$GITHUB_REPOSITORY" --title "$TAG" --generate-notes --verify-tag
+        run: gh release create "$TAG" release/* --repo "$GITHUB_REPOSITORY" --title "$TAG" --notes-file release/CHANGES.md --verify-tag
 
   pypi:
     needs: build

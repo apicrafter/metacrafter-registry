@@ -24,6 +24,9 @@ examples:
 - value: user.example.com
   valid: false
   description: No @
+mappings:
+  google_dlp: EMAIL_ADDRESS
+  presidio: EMAIL_ADDRESS
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Email

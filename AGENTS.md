@@ -68,6 +68,9 @@ metacrafter-registry report --status draft --limit 20   # records that need work
 metacrafter-registry migrate --check # sources are in canonical v2 form
 metacrafter-registry check-links     # internal links of dist/ resolve
 metacrafter-registry check-contract <base-url>   # public URLs work
+metacrafter-registry coverage report # metacrafter-rules coverage and orphan rule keys
+metacrafter-registry coverage update --rules-dir <metacrafter-rules>/rules   # bump the pinned rules
+metacrafter-registry changes --old <prev datatypes.jsonl>   # changelog between versions
 metacrafter-registry mcp             # MCP server over stdio (needs the [mcp] extra)
 metacrafter-registry snapshot        # bundle dist/ data into the package (release only)
 pytest -q
@@ -179,6 +182,12 @@ examples.
 - `checksums.py`: the check-digit algorithms named by the `checksum` field.
 - `agents.py`: Markdown twins, `llms.txt`, `llms-full.txt`, the RAG corpus and
   the SKOS export.
+- `coverage.py`: metacrafter-rules coverage. `ecosystem.lock` pins the
+  rules commit, and `data/coverage/metacrafter-rules.json` is its committed
+  summary, so builds need no network. The list of the `metacrafter` tool's
+  `supported_types` is generated from it; do not edit it by hand.
+- `changes.py`: the changelog between two data versions, used for release
+  notes and the `/changes` page.
 - `mcp_server.py`: the MCP server: tools `identify_values`,
   `search_datatypes`, `get_datatype`, `crosswalk`, `list_categories`,
   `list_countries`, and the resource `registry://datatype/{id}`.

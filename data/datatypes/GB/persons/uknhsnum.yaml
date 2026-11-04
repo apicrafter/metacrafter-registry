@@ -14,6 +14,10 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ([0-9]{3})[- ]?([0-9]{3})[- ]?([0-9]{4})
+mappings:
+  google_dlp: UK_NATIONAL_HEALTH_SERVICE_NUMBER
+  presidio: UK_NHS
+  purview: U.K. national health service number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/NHS_number

@@ -133,7 +133,27 @@ SCHEMAS: dict[str, Any] = {
             },
             "detected_by": {
                 "type": "object",
-                "properties": {"tools": ID_LIST},
+                "properties": {
+                    "tools": ID_LIST,
+                    "metacrafter_rules": {
+                        "type": "array",
+                        "description": "Rules of the pinned metacrafter-rules release",
+                        "items": {
+                            "type": "object",
+                            "required": ["rule", "type", "match", "file"],
+                            "properties": {
+                                "rule": {"type": "string"},
+                                "type": {"type": "string", "description": "field or data"},
+                                "match": {"type": "string"},
+                                "file": {"type": "string"},
+                                "key": {
+                                    "type": "string",
+                                    "description": "when the rule uses an alias",
+                                },
+                            },
+                        },
+                    },
+                },
             },
             "source": _ref("Source"),
             "urls": _ref("Urls"),
@@ -274,6 +294,13 @@ def build_openapi(site_url: str, version: str) -> dict[str, Any]:
                 "Object: alias -> canonical id",
                 {"type": "object", "additionalProperties": {"type": "string"}},
             ),
+        }
+    }
+    paths["/api/v1/coverage.json"] = {
+        "get": {
+            "operationId": "getCoverage",
+            "summary": "metacrafter-rules coverage: datatypes without rules, orphan rule keys",
+            "responses": _json_response("Coverage report", {"type": "object"}),
         }
     }
     paths["/registry.json"] = {

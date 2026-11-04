@@ -208,6 +208,8 @@ def _regexp_issues(sources: RegistrySources) -> list[Issue]:
         except re.error as exc:
             issues.append(Issue(ERROR, rec.relpath, rec.id, f"regexp does not compile: {exc}"))
             continue
+        if compiled.fullmatch("") is not None:
+            issues.append(Issue(ERROR, rec.relpath, rec.id, "regexp matches an empty string"))
         if _uses_py311_only_syntax(pattern):
             issues.append(
                 Issue(
@@ -301,6 +303,28 @@ def _checksum_issues(sources: RegistrySources) -> list[Issue]:
     return issues
 
 
+def _coverage_issues(sources: RegistrySources) -> list[Issue]:
+    """The committed rule coverage must come from the ref pinned in ecosystem.lock."""
+    from .coverage import COVERAGE_FILE, load_coverage, read_lock
+
+    coverage = load_coverage(sources.data_dir)
+    if coverage is None:
+        return []
+    locked = read_lock(sources.data_dir).get("metacrafter-rules", {}).get("ref")
+    actual = (coverage.get("source") or {}).get("ref")
+    if locked != actual:
+        return [
+            Issue(
+                ERROR,
+                str(COVERAGE_FILE),
+                "-",
+                f"coverage was generated from metacrafter-rules {actual}, "
+                f"but ecosystem.lock pins {locked}",
+            )
+        ]
+    return []
+
+
 def validate(sources: RegistrySources, schema_dir: Path | None = None) -> ValidationResult:
     schema_dir = schema_dir or default_schema_dir(sources.data_dir)
     issues = [Issue(ERROR, path, "-", message) for path, message in sources.load_errors]
@@ -310,4 +334,5 @@ def validate(sources: RegistrySources, schema_dir: Path | None = None) -> Valida
     issues += _location_issues(sources)
     issues += _regexp_issues(sources)
     issues += _checksum_issues(sources)
+    issues += _coverage_issues(sources)
     return ValidationResult(issues=issues)

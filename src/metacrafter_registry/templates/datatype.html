@@ -59,6 +59,10 @@
   {% endif %}
   <dt>Quality</dt>
   <dd>{{ object.quality.score }}/100{% if object.quality.missing %} <span class="muted small">· missing: {{ object.quality.missing|join(', ') }}</span>{% endif %}</dd>
+  <dt>Metacrafter rules</dt>
+  <dd>{% set rules = (object.detected_by or {}).get('metacrafter_rules', []) %}{% if rules %}{{ rules|length }} rule{{ '' if rules|length == 1 else 's' }} ({{ rules|selectattr('type', 'equalto', 'field')|list|length }} by field name, {{ rules|selectattr('type', 'equalto', 'data')|list|length }} by value)
+    <ul class="plain small">{% for r in rules[:8] %}<li><a href="https://github.com/apicrafter/metacrafter-rules/blob/{{ reg.coverage.source.ref }}/rules/{{ r.file }}"><code>{{ r.rule }}</code></a> <span class="muted">{{ r.type }}, {{ r.file }}{% if r.key %}, key {{ r.key }}{% endif %}</span></li>{% endfor %}{% if rules|length > 8 %}<li class="muted">and {{ rules|length - 8 }} more (see the JSON)</li>{% endif %}</ul>
+  {% else %}<span class="muted">no detection rule yet</span>{% endif %}</dd>
   <dt>Supported by tools</dt>
   <dd>{% for t in (object.detected_by or {}).get('tools', []) %}<a href="{{ base }}/tool/{{ t }}">{{ reg.tools[t].name }}</a>{% if not loop.last %}, {% endif %}{% else %}<span class="muted">no tool record lists this type yet</span>{% endfor %}</dd>
 </dl>

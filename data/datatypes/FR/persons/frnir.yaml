@@ -11,6 +11,9 @@ langs:
 - fr
 is_pii: true
 classification: identifier
+mappings:
+  google_dlp: FRANCE_NIR
+  purview: France social security number (INSEE)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/INSEE_code

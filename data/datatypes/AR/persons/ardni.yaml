@@ -13,6 +13,8 @@ langs:
 is_pii: true
 classification: identifier
 regexp: '[0-9]{2}[\.]{1}?[0-9]{3}[\.]{1}?[0-9]{3}'
+mappings:
+  purview: Argentina national identity (DNI) number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Documento_Nacional_de_Identidad_(Argentina)

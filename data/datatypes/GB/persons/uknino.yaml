@@ -14,6 +14,10 @@ langs:
 - en
 is_pii: true
 classification: identifier
+mappings:
+  google_dlp: UK_NATIONAL_INSURANCE_NUMBER
+  presidio: UK_NINO
+  purview: U.K. national insurance number (NINO)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/National_Insurance_number

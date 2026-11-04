@@ -13,6 +13,10 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[0-9]{12}$
+mappings:
+  google_dlp: GERMANY_IDENTITY_CARD_NUMBER
+  presidio: DE_ID_CARD
+  purview: Germany identity card number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/German_identity_card

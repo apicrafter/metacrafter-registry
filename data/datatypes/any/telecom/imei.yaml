@@ -19,6 +19,8 @@ examples:
   description: IMEI example
 - value: 49-015420-323751-8
   description: IMEI with dashes
+mappings:
+  google_dlp: IMEI_HARDWARE_ID
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity

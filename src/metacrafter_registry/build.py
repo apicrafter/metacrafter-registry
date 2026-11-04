@@ -130,6 +130,7 @@ def _write_api_v1(out: Path, reg: RegistryModel, site_url: str, info: BuildInfo)
     _write(api / "countries.json", _dump(list(reg.countries.values()), indent=2))
     _write(api / "languages.json", _dump(list(reg.langs.values()), indent=2))
     _write(api / "aliases.json", _dump(reg.aliases, indent=2))
+    _write(api / "coverage.json", _dump(reg.coverage, indent=2))
     _write(api / "rag" / "corpus.jsonl", _jsonl(agents.rag_entry(r) for r in records))
     _write(api / "openapi.json", _dump(build_openapi(site_url, info.version), indent=2))
 
@@ -153,6 +154,13 @@ def _write_agent_files(out: Path, reg: RegistryModel, site_url: str, info: Build
             agents.category_markdown(category, members, site_url),
         )
     counts = {"datatypes": reg.kind_count("datatype"), "patterns": reg.kind_count("pattern")}
+    from .client import Registry
+
+    runtime = Registry(datatypes=records)
+    _write(
+        out / "identify-index.json",
+        _dump(agents.identify_index(records, runtime._broadness)),
+    )
     _write(out / "llms.txt", agents.llms_txt(site_url, counts, categories, countries))
     _write(out / "llms-full.txt", agents.llms_full_txt(records, site_url))
     _write(
@@ -217,7 +225,13 @@ def _jsonld(record: dict[str, Any], site_url: str) -> dict[str, Any]:
     return data
 
 
-def _render_site(out: Path, reg: RegistryModel, site_url: str, info: BuildInfo) -> list[str]:
+def _render_site(
+    out: Path,
+    reg: RegistryModel,
+    site_url: str,
+    info: BuildInfo,
+    releases: list[dict[str, Any]] | None = None,
+) -> list[str]:
     """Render HTML pages; return the list of page paths (for the sitemap)."""
     env = Environment(
         loader=PackageLoader("metacrafter_registry", "templates"),
@@ -331,6 +345,18 @@ def _render_site(out: Path, reg: RegistryModel, site_url: str, info: BuildInfo) 
 
     render("about.html", "about.html", "/about", section="about")
     render("agents.html", "agents.html", "/agents", section="agents")
+    render("identify.html", "identify.html", "/identify", section="identify")
+    render("changes.html", "changes.html", "/changes", section="", releases=releases)
+    from .stats import report_rows
+
+    render(
+        "quality.html",
+        "quality.html",
+        "/quality",
+        section="",
+        drafts=report_rows(reg, status="draft"),
+        records=records,
+    )
     _write(out / "agents.md", env.get_template("agents.md").render(**env.globals))
     render("search.html", "search.html", None)
     render("404.html", "404.html", None)
@@ -432,6 +458,7 @@ def build(
     base_url: str = DEFAULT_BASE_URL,
     update_data_files: bool = True,
     sources: RegistrySources | None = None,
+    changes_dir: Path | None = None,
 ) -> ValidationResult:
     """Validate sources and write the publishable tree to ``out_dir``.
 
@@ -456,7 +483,11 @@ def build(
     try:
         _write_legacy(staging, legacy_datatypes, legacy_tools)
         _write_api_v1(staging, reg, site_url, info)
-        pages = _render_site(staging, reg, site_url, info)
+        from .changes import load_release_changes
+
+        releases = load_release_changes(changes_dir)
+        _write(staging / "api" / "v1" / "changes.json", _dump(releases, indent=2))
+        pages = _render_site(staging, reg, site_url, info, releases)
         _copy_static(staging)
         _copy_schemas(staging, data_dir)
         _write(staging / "search-index.json", _dump(_search_index(reg)))

@@ -103,6 +103,17 @@ def record_markdown(
             values = value if isinstance(value, list) else [value]
             lines.append(f"- {system}: {', '.join(f'`{v}`' for v in values)}")
         lines.append("")
+    rules = record.get("detected_by", {}).get("metacrafter_rules", [])
+    if rules:
+        by_type = {kind: sum(1 for r in rules if r["type"] == kind) for kind in ("field", "data")}
+        lines += [
+            "## Metacrafter rules",
+            "",
+            f"{len(rules)} rules: {by_type['field']} match the field name, "
+            f"{by_type['data']} match values.",
+            "",
+        ]
+        lines += [f"- `{r['rule']}` ({r['type']}, `{r['file']}`)" for r in rules[:20]] + [""]
     if record.get("detected_by", {}).get("tools"):
         lines += ["## Supported by tools", ""]
         lines += [f"- `{t}`" for t in record["detected_by"]["tools"]] + [""]
@@ -371,3 +382,53 @@ def skos_turtle(
         lines.append(f"cat:{c['id']} " + " ;\n    ".join(props) + " .")
         lines.append("")
     return "\n".join(lines)
+
+
+# --- browser identification index -----------------------------------------
+
+_INLINE_FLAGS = {"i": "i", "s": "s", "m": "m"}
+
+
+def js_regexp(pattern: str) -> tuple[str, str] | None:
+    """Translate a Python ``re`` pattern to ECMAScript, or None if it cannot be."""
+    import re as _re
+
+    flags = ""
+    lead = _re.match(r"^\(\?([a-zA-Z]+)\)", pattern)
+    if lead:
+        for flag in lead.group(1):
+            if flag not in _INLINE_FLAGS:
+                return None
+            flags += _INLINE_FLAGS[flag]
+        pattern = pattern[lead.end() :]
+    if _re.search(r"\(\?[aiLmsux]+[):]", pattern) or "(?#" in pattern:
+        return None  # inline flags inside the pattern, comments
+    pattern = pattern.replace("(?P<", "(?<")
+    pattern = _re.sub(r"\(\?P=(\w+)\)", r"\\k<\1>", pattern)
+    pattern = pattern.replace("\\A", "^").replace("\\Z", "$")
+    return pattern, flags
+
+
+def identify_index(records: Iterable[Mapping[str, Any]], broadness: Mapping[str, float]) -> list:
+    """Compact records for the /identify page (all records; regexps in JS syntax)."""
+    out = []
+    for r in records:
+        entry: dict[str, Any] = {"id": r["id"], "n": r["name"], "s": r["status"], "p": r["is_pii"]}
+        if r.get("country"):
+            entry["c"] = r["country"]
+        if r.get("aliases"):
+            entry["a"] = r["aliases"]
+        names = [t["name"] for t in r.get("translations", {}).values() if t.get("name")]
+        if names:
+            entry["t"] = names
+        if r.get("regexp"):
+            converted = js_regexp(r["regexp"])
+            if converted:
+                entry["re"], flags = converted
+                if flags:
+                    entry["f"] = flags
+                entry["b"] = round(broadness.get(r["id"], 0.0), 3)
+        if r.get("checksum"):
+            entry["ck"] = r["checksum"]
+        out.append(entry)
+    return out

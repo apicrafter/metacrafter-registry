@@ -1,0 +1,91 @@
+name: Weekly checks
+
+# 1. Rule coverage against the latest metacrafter-rules (not the pinned ref):
+#    shows what a bump of ecosystem.lock would change.
+# 2. External links in data/ (lychee).
+# Each check keeps one tracking issue up to date instead of opening new ones.
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  rules-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install
+        run: pip install .
+
+      - name: Check out the latest metacrafter-rules
+        uses: actions/checkout@v4
+        with:
+          repository: apicrafter/metacrafter-rules
+          path: .ecosystem/rules-main
+
+      - name: Coverage report against the latest rules
+        run: |
+          metacrafter-registry coverage report --rules-dir .ecosystem/rules-main/rules --markdown drift.md
+          PINNED=$(python -c "import yaml;print(yaml.safe_load(open('ecosystem.lock'))['metacrafter-rules']['ref'])")
+          LATEST=$(git -C .ecosystem/rules-main rev-parse HEAD)
+          {
+            echo ""
+            echo "Pinned in \`ecosystem.lock\`: \`$PINNED\`; latest \`main\`: \`$LATEST\`."
+            if [ "$PINNED" != "$LATEST" ]; then
+              echo ""
+              echo "To adopt the latest rules: \`metacrafter-registry coverage update --rules-dir <checkout>/rules\` and commit."
+            fi
+            echo ""
+            echo "_Updated by the weekly workflow on $(date -u +%Y-%m-%d)._"
+          } >> drift.md
+
+      - name: Update the tracking issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: "metacrafter-rules coverage drift"
+        run: |
+          NUMBER=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "in:title \"$TITLE\"" --json number -q '.[0].number')
+          if [ -n "$NUMBER" ]; then
+            gh issue edit "$NUMBER" --repo "$GITHUB_REPOSITORY" --body-file drift.md
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$TITLE" --body-file drift.md
+          fi
+
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check external links in the YAML sources
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --max-concurrency 8 --accept 200,206,429 'data/**/*.yaml'
+          format: markdown
+          output: lychee/out.md
+          fail: false
+
+      - name: Update the tracking issue
+        if: steps.lychee.outputs.exit_code != 0
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: "Broken external links in registry records"
+        run: |
+          NUMBER=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "in:title \"$TITLE\"" --json number -q '.[0].number')
+          if [ -n "$NUMBER" ]; then
+            gh issue edit "$NUMBER" --repo "$GITHUB_REPOSITORY" --body-file lychee/out.md
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$TITLE" --body-file lychee/out.md
+          fi

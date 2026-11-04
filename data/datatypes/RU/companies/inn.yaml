@@ -17,6 +17,8 @@ examples:
   description: Organization INN (10 digits), Sberbank
 - value: '7728168971'
   description: Organization INN (10 digits), Alfa-Bank
+mappings:
+  purview: Russia taxpayer identification number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/VAT_identification_number

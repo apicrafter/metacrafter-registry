@@ -12,6 +12,10 @@ langs:
 is_pii: true
 classification: identifier
 regexp: (\d{3}-\d{3}-\d{3})|(\d{9})
+mappings:
+  google_dlp: CANADA_SOCIAL_INSURANCE_NUMBER
+  presidio: CA_SIN
+  purview: Canada social insurance number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Social_insurance_number

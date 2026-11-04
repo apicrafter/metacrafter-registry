@@ -76,6 +76,12 @@ CHECKS: list[tuple[str, str, Callable[[bytes], str | None]]] = [
     ),
     ("/sitemap.xml", "xml", _html_mentions("/datatype/email")),
     ("/llms.txt", "text/plain", _html_mentions("# Metacrafter Registry")),
+    ("/identify", "text/html", _html_mentions("identify-form")),
+    (
+        "/api/v1/coverage.json",
+        "application/json",
+        _json_check(lambda d: "orphan_rule_keys" in d, "coverage report"),
+    ),
     ("/datatype/email.md", "text/markdown", _html_mentions('id: "email"')),
     (
         "/datatype/email.json",

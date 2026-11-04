@@ -18,6 +18,9 @@ examples:
   description: German tax identification number (Steuer-ID) with 11 digits
 - value: '98765432109'
   description: Another valid German tax identification number format
+mappings:
+  presidio: DE_TAX_ID
+  purview: Germany tax identification number
 links:
 - type: doc
   url: https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/steuerliche_identifikationsnummer_node.html

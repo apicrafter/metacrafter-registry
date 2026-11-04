@@ -162,6 +162,29 @@ metacrafter-registry mcp            # stdio; add --refresh to download newer dat
 See https://registry.apicrafter.io/agents for client configuration, and
 `skills/` for agent skills.
 
+# metacrafter-rules coverage
+
+`ecosystem.lock` pins a commit of
+[metacrafter-rules](https://github.com/apicrafter/metacrafter-rules), and
+`data/coverage/metacrafter-rules.json` summarizes every rule at that commit.
+The build uses this summary for three things:
+- the rules that detect each datatype (`detected_by.metacrafter_rules`);
+- the `metacrafter` tool's supported types;
+- `/api/v1/coverage.json`, which lists the rule keys with no registry record
+  and the records with no rule.
+
+To adopt newer rules:
+
+```bash
+git clone https://github.com/apicrafter/metacrafter-rules /tmp/metacrafter-rules
+metacrafter-registry coverage update --rules-dir /tmp/metacrafter-rules/rules
+metacrafter-registry build
+```
+
+CI checks the summary against the pinned commit. A weekly workflow
+(`weekly.yml`) does two more checks: it compares coverage with the latest
+rules, and it checks external links. It reports both in tracking issues.
+
 # Publishing
 
 Every merge to `main` builds the site and deploys it to GitHub Pages
@@ -190,6 +213,10 @@ Site pages:
 | `/tool/`, `/tool/<id>` | Tools and the types they support (`/tool` redirects to `/tool/`) |
 | `/search?q=` | Client-side search (runs in the browser) |
 | `/about` | About, API reference, license, contributing |
+| `/identify` | Paste column values to find their datatype (runs in the browser) |
+| `/quality` | Completeness, metacrafter-rules coverage, drafts to review |
+| `/changes` | Changes in each data release |
+| `/agents` | MCP server, Python package, skills, llms.txt |
 | `/sitemap.xml`, `/robots.txt` | For crawlers |
 
 JSON API (static files, described in `/api/v1/openapi.json`):
@@ -207,6 +234,8 @@ JSON API (static files, described in `/api/v1/openapi.json`):
 | `/datatype/<id>.md`, `/tool/<id>.md`, `/category/<id>.md` | Markdown twins of the pages |
 | `/registry.ttl` | SKOS concept scheme (Turtle) |
 | `/api/v1/aliases.json` | Retired ids and the record each one resolves to |
+| `/api/v1/coverage.json` | metacrafter-rules coverage: orphan rule keys, records without rules |
+| `/api/v1/changes.json` | Changes per data release |
 | `/schema/*.schema.json` | JSON Schemas of the source records |
 | `/registry.json` | Legacy: all records keyed by id (release 1.02 shape) |
 | `/datatype/<id>.json` | Legacy: one record (release 1.02 shape) |

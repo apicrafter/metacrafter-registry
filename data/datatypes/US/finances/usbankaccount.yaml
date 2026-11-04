@@ -8,6 +8,9 @@ country:
 langs:
 - common
 regexp: '[0-9]{8,17}'
+mappings:
+  presidio: US_BANK_NUMBER
+  purview: U.S. bank account number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Bank_account

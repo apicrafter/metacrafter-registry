@@ -23,6 +23,10 @@ examples:
 - value: GB82WEST12345698765433
   valid: false
   description: 'Last digit changed: fails the mod-97 check'
+mappings:
+  google_dlp: IBAN_CODE
+  presidio: IBAN_CODE
+  purview: International banking account number (IBAN)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Bank_Account_Number

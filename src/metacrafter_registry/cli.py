@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 import sys
 from pathlib import Path
@@ -44,6 +45,7 @@ def cmd_build(args: argparse.Namespace) -> int:
             out_dir,
             base_url=args.base_url,
             update_data_files=not args.no_data_files,
+            changes_dir=Path(args.changes_dir) if args.changes_dir else None,
         )
     except BuildError as exc:
         _print_result(exc.result, show_warnings=False)
@@ -124,6 +126,104 @@ def cmd_migrate(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_changes(args: argparse.Namespace) -> int:
+    """Changelog between two data versions (e.g. the previous release and this build)."""
+    from .changes import changes_markdown, diff_records, read_records
+
+    diff = diff_records(
+        read_records(args.old), read_records(args.new), args.old_version, args.new_version
+    )
+    if args.json:
+        Path(args.json).write_text(json.dumps(diff, ensure_ascii=False, indent=2), "utf-8")
+    markdown = changes_markdown(diff, args.base_url.rstrip("/"))
+    if args.markdown:
+        Path(args.markdown).write_text(markdown, "utf-8")
+    else:
+        print(markdown)
+    return 0
+
+
+def cmd_coverage(args: argparse.Namespace) -> int:
+    """Rule coverage from metacrafter-rules: update the pinned summary, check it, report."""
+    from .coverage import (
+        build_coverage,
+        coverage_path,
+        coverage_report,
+        dump_coverage,
+        git_ref,
+        load_coverage,
+        read_lock,
+        source_aliases,
+        write_lock,
+    )
+
+    data_dir = _data_dir(args)
+    sources = load_sources(data_dir)
+    ids = {rec.id for rec in sources.datatypes}
+    aliases = source_aliases(sources)
+
+    if args.action in ("update", "check"):
+        if not args.rules_dir:
+            print("--rules-dir is required (the rules/ directory of a metacrafter-rules checkout)")
+            return 2
+        rules_dir = Path(args.rules_dir)
+        ref = args.ref or git_ref(rules_dir) or "unknown"
+        fresh = build_coverage(rules_dir, ref)
+        if args.action == "update":
+            path = coverage_path(data_dir)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(dump_coverage(fresh), encoding="utf-8")
+            write_lock(data_dir, ref)
+            print(f"Wrote {path} ({len(fresh['rules'])} rules at {ref[:12]}) and ecosystem.lock")
+            return 0
+        committed = load_coverage(data_dir)
+        locked = read_lock(data_dir).get("metacrafter-rules", {}).get("ref")
+        if committed != fresh or locked != ref:
+            print(
+                f"Coverage is stale for metacrafter-rules {ref[:12]} (lock: {str(locked)[:12]}). "
+                "Run: metacrafter-registry coverage update --rules-dir <checkout>/rules"
+            )
+            return 1
+        print(f"Coverage matches metacrafter-rules {ref[:12]} ({len(fresh['rules'])} rules)")
+        return 0
+
+    if args.rules_dir:  # report against another checkout, e.g. the latest rules
+        rules_dir = Path(args.rules_dir)
+        coverage = build_coverage(rules_dir, args.ref or git_ref(rules_dir) or "unknown")
+    else:
+        coverage = load_coverage(data_dir)
+    report = coverage_report(coverage, ids, aliases)
+    orphans = report["orphan_rule_keys"]
+    if args.github_annotations:
+        for key, refs in orphans.items():
+            print(
+                "::warning title=Rule key without registry record::"
+                f"{key} used by {', '.join(refs[:3])}"
+            )
+    if args.markdown:
+        lines = [
+            "## metacrafter-rules coverage",
+            "",
+            f"Rules: {report['rules']} ({report['rule_keys']} keys) at "
+            f"`{(report['source'] or {}).get('ref', 'unknown')}`.",
+            f"Datatypes with rules: {report['datatypes_with_rules']}; "
+            f"without rules: {len(report['datatypes_without_rules'])}.",
+            "",
+            f"### Rule keys without a registry record ({len(orphans)})",
+            "",
+        ]
+        lines += [f"- `{key}`: {', '.join(refs)}" for key, refs in orphans.items()] or ["None."]
+        Path(args.markdown).write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(
+        f"{report['rules']} rules, {report['rule_keys']} keys; "
+        f"{report['datatypes_with_rules']} datatypes with rules, "
+        f"{len(report['datatypes_without_rules'])} without; {len(orphans)} orphan rule keys"
+    )
+    if args.json:
+        print(json.dumps(report, ensure_ascii=False, indent=2))
+    return 0
+
+
 def cmd_snapshot(args: argparse.Namespace) -> int:
     """Copy published data files into the package so wheels work offline."""
     import shutil
@@ -195,6 +295,7 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="do not rewrite the committed data/*_latest.json(l) files",
     )
+    p.add_argument("--changes-dir", help="directory with changes.json files of past releases")
     p.set_defaults(func=cmd_build)
 
     p = sub.add_parser("serve", help="serve dist/ locally with GitHub Pages URL rules")
@@ -224,6 +325,25 @@ def main(argv: list[str] | None = None) -> int:
         "--check", action="store_true", help="only report; exit 1 if anything would change"
     )
     p.set_defaults(func=cmd_migrate)
+
+    p = sub.add_parser("changes", help="changelog between two data versions")
+    p.add_argument("--old", required=True, help="previous datatypes.jsonl (or its directory)")
+    p.add_argument("--new", default="dist", help="new datatypes.jsonl or built site (default dist)")
+    p.add_argument("--old-version", default="previous")
+    p.add_argument("--new-version", default="current")
+    p.add_argument("--base-url", default=DEFAULT_BASE_URL)
+    p.add_argument("--json", help="write the changes as JSON")
+    p.add_argument("--markdown", help="write release notes as Markdown (default: print)")
+    p.set_defaults(func=cmd_changes)
+
+    p = sub.add_parser("coverage", help="metacrafter-rules coverage: update, check, report")
+    p.add_argument("action", choices=["update", "check", "report"])
+    p.add_argument("--rules-dir", help="rules/ directory of a metacrafter-rules checkout")
+    p.add_argument("--ref", help="git ref of that checkout (default: its HEAD)")
+    p.add_argument("--github-annotations", action="store_true", help="print ::warning lines")
+    p.add_argument("--markdown", help="write a Markdown report to this file")
+    p.add_argument("--json", action="store_true", help="print the full report as JSON")
+    p.set_defaults(func=cmd_coverage)
 
     p = sub.add_parser("snapshot", help="bundle published data files into the package")
     p.add_argument("--dist", default="dist", help="built site directory (default: dist)")
