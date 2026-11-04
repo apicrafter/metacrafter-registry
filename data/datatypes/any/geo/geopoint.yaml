@@ -9,6 +9,7 @@ langs:
 is_pii: false
 classification: identifier
 mappings:
+  autotype: longlat
   fta:
   - COORDINATE_PAIR.DECIMAL
   - COORDINATE_PAIR.DECIMAL_PAREN

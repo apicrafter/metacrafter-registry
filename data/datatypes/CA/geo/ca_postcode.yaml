@@ -5,6 +5,8 @@ doc: 'Canadian postal code: six characters in the form A1A 1A1, a letter, a digi
   then a digit, a letter and a digit. The letters D, F, I, O, Q and U are not used, and W and Z do not
   start a code.'
 semantic_type: postindex
+aliases:
+- ca_postalcode
 country:
 - CA
 langs:

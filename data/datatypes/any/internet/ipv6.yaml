@@ -12,6 +12,7 @@ langs:
 is_pii: true
 classification: identifier
 mappings:
+  autotype: ipv6
   cdm: means.identity.IP6Address
   purview: IP Address v6
   fta: IPADDRESS.IPV6

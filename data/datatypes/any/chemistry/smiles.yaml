@@ -1,0 +1,43 @@
+id: smiles
+name: SMILES chemical notation
+status: draft
+doc: 'Simplified Molecular-Input Line-Entry System (SMILES): a line notation that writes the structure
+  of a molecule as a short ASCII string. Atoms are written by their element symbols, double and triple
+  bonds by = and #, branches in parentheses and ring closures by digits; lowercase letters mark aromatic
+  atoms. One molecule has many valid SMILES strings. Canonical SMILES picks one of them, and isomeric
+  SMILES also records stereochemistry and isotopes. The record has no regexp: the SMILES character set
+  also matches ordinary words, so a chemistry parser such as RDKit or Open Babel is needed to check a
+  value.'
+categories:
+- chemistry
+- science
+langs:
+- common
+is_pii: false
+examples:
+- value: CCO
+  description: Ethanol
+- value: C1=CC=CC=C1
+  description: Benzene, Kekulé form
+- value: c1ccccc1
+  description: Benzene, aromatic form
+- value: O=C=O
+  description: Carbon dioxide
+mappings:
+  autotype: smile
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Simplified_Molecular_Input_Line_Entry_System
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P233
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2017
+- type: doc
+  url: http://opensmiles.org/opensmiles.html
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/smile.txt
+translations:
+  ru:
+    name: Нотация SMILES
+    doc: 'Строковая запись структуры молекулы (Simplified Molecular-Input Line-Entry System): атомы, связи,
+      ветви и циклы записываются ASCII-символами.'

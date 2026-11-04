@@ -11,6 +11,7 @@ country:
 langs:
 - en
 mappings:
+  autotype: ukpost
   presidio: UK_POSTCODE
   fta: POSTAL_CODE.POSTAL_CODE_UK
 links:

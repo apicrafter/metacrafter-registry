@@ -31,6 +31,10 @@ examples:
   valid: false
   description: Seven-digit local number without an area code
 mappings:
+  autotype:
+  - phone-mixed
+  - phone1
+  - phone2
   d3m: https://metadata.datadrivendiscovery.org/types/AmericanPhoneNumber
 links:
 - type: wikipedia

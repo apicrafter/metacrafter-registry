@@ -24,6 +24,7 @@ examples:
   valid: false
   description: one hex digit short (39 instead of 40)
 mappings:
+  autotype: SHA1_correct
   fta: HASH.SHA1_HEX
 links:
 - type: wikipedia

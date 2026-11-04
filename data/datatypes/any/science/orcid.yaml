@@ -18,6 +18,7 @@ examples:
 - value: 0000-0002-1825-0097
   description: Josiah S. Carberry
 mappings:
+  autotype: orcid
   wikidata: P496
 links:
 - type: wikipedia

@@ -15,6 +15,7 @@ examples:
 - value: 1600 Pennsylvania Avenue NW
 - value: Unter den Linden 77
 mappings:
+  autotype: usaddress4
   schema_org: streetAddress
   fta:
   - STREET_ADDRESS_<LANGUAGE>

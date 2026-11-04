@@ -16,6 +16,7 @@ examples:
 - value: PAR
   description: Paris
 mappings:
+  autotype: airport
   wikidata: P238
   fta: AIRPORT_CODE.IATA
 links:
