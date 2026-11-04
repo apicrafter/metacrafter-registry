@@ -1,0 +1,36 @@
+id: ncbigeneid
+name: NCBI Gene ID (Entrez Gene)
+status: draft
+doc: Numeric identifier of a gene record in the NCBI Gene database (formerly Entrez Gene) of the US National
+  Center for Biotechnology Information. Gene records cover many species. PubChem gene pages use this ID,
+  as in https://pubchem.ncbi.nlm.nih.gov/gene/3123.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,8}$
+examples:
+- value: '3123'
+  description: HLA-DRB1, human
+- value: '1017'
+  description: CDK2, human
+- value: '1207170'
+  description: Alkaline phosphatase gene of Bacillus cereus ATCC 14579
+- value: '03123'
+  valid: false
+  description: No leading zeros
+mappings:
+  wikidata: P351
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Entrez
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P351
+- type: doc
+  url: https://www.ncbi.nlm.nih.gov/gene/
+translations:
+  ru:
+    name: Идентификатор гена NCBI (Entrez Gene)
+    doc: Числовой идентификатор записи о гене в базе данных NCBI Gene.
