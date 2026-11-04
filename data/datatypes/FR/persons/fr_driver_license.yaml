@@ -2,6 +2,7 @@ id: fr_driver_license
 name: French driver's license number
 status: draft
 doc: Number of a driving licence issued in France. Microsoft Purview looks for twelve digits.
+parent: driver_license
 categories:
 - pii
 - persons

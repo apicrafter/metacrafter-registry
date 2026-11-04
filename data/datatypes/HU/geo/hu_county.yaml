@@ -3,6 +3,7 @@ name: Hungarian county (vármegye)
 status: draft
 doc: Name of one of the 19 counties (vármegye) of Hungary, such as Pest, Baranya or Bács-Kiskun. Budapest,
   the capital, is not part of a county but is often listed with them.
+parent: admin_area_1
 categories:
 - geo
 - government

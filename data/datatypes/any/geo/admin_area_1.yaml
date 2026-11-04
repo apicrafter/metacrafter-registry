@@ -1,0 +1,20 @@
+id: admin_area_1
+name: First-level administrative division
+status: draft
+doc: Name or code of the largest administrative subdivision of a country, such as a US state, a Canadian
+  province, a German Land or a Russian federal subject. The registry keeps a record per country as a child
+  of this one.
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+mappings:
+  wikidata: Q10864048
+  cdm: means.location.stateOrProvince
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Administrative_division
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q10864048

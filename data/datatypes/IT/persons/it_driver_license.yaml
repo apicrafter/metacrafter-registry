@@ -4,6 +4,7 @@ status: draft
 doc: 'Number of a driving licence issued in Italy. Microsoft Purview looks for ten letters and digits:
   a letter, a letter or digit, seven letters or digits and a final letter, optionally separated by spaces
   or hyphens.'
+parent: driver_license
 categories:
 - pii
 - persons

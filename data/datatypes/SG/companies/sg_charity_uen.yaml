@@ -3,6 +3,7 @@ name: Singapore charity UEN
 status: draft
 doc: Unique Entity Number (UEN) under which a charity is registered with the Commissioner of Charities
   of Singapore. ORG-ID.guide lists the register as SG-COC; with that prefix an identifier reads SG-COC-S83SS0014K.
+parent: sg_uen
 categories:
 - companies
 country:

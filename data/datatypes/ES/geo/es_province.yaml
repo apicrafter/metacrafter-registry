@@ -3,6 +3,7 @@ name: Spanish province
 status: draft
 doc: Name of one of the 50 provinces of Spain, such as Madrid, Barcelona or A Coruña, in Spanish or in
   a co-official language (Alacant). Ceuta and Melilla are autonomous cities outside the provinces.
+parent: admin_area_2
 categories:
 - geo
 - government

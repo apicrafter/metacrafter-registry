@@ -2,6 +2,7 @@ id: acra
 name: Singapore ACRA (Accounting and Corporate Regulatory Authority) number by known name
 status: stable
 doc: Singapore ACRA (Accounting and Corporate Regulatory Authority) number by known name identifier
+parent: sg_uen
 categories:
 - finances
 country:

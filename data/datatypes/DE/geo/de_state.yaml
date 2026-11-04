@@ -3,6 +3,7 @@ name: German state (Land)
 status: draft
 doc: Name of one of the 16 states (Länder) of Germany, such as Bayern, Nordrhein-Westfalen or Berlin,
   in German or English (Bavaria).
+parent: admin_area_1
 categories:
 - geo
 - government

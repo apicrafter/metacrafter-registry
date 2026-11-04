@@ -8,6 +8,8 @@ doc: Tableau is a business intelligence and visual analytics platform. In Tablea
   roles are listed in the Tableau Desktop help on geographic roles and the Tableau Prep help on data roles.
 website: https://help.tableau.com/current/pro/desktop/en-us/maps_geographicroles.htm
 supported_types:
+- admin_area_1
+- admin_area_2
 - airport
 - au_postcode
 - city
@@ -18,6 +20,7 @@ supported_types:
 - email
 - encountryname
 - eunuts
+- fips10_4
 - fr_department
 - iataairportcode
 - icaoairportcode

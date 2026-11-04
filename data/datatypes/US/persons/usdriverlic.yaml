@@ -2,6 +2,7 @@ id: usdriverlic
 name: US driver license number
 status: stable
 doc: Alphanumeric value of the United States driver license
+parent: driver_license
 categories:
 - pii
 - persons

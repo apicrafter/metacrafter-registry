@@ -2,6 +2,7 @@ id: prefecture
 name: Japanese prefecture by known name
 status: draft
 doc: Japanese prefecture by known name identifier
+parent: admin_area_1
 categories:
 - geo
 country:

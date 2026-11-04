@@ -18,6 +18,7 @@ supported_types:
 - aumedicarenum
 - autfn
 - bankcard
+- bankcard_cvv
 - date
 - email
 - esnie
@@ -28,6 +29,7 @@ supported_types:
 - ipaddr
 - it_codicefiscale
 - it_driver_license
+- it_id_card
 - it_iva
 - it_passport
 - medicare
@@ -42,6 +44,7 @@ supported_types:
 - person_fullname
 - phone
 - plpesel
+- sg_uen
 - sgnric
 - tfn
 - uknhsnum

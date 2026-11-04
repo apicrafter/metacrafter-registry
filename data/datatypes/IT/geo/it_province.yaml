@@ -3,6 +3,7 @@ name: Italian province
 status: draft
 doc: Name of a province or metropolitan city of Italy, the level between the region and the comune, such
   as Milano, Napoli or Bolzano. Each has a two-letter abbreviation, the pattern it_province_code.
+parent: admin_area_2
 categories:
 - geo
 - government

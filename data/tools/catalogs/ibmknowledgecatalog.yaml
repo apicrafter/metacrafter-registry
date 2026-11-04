@@ -12,7 +12,10 @@ supported_types:
 - aba
 - abaroutingnum
 - address_line2
+- admin_area_1
 - bankcard
+- bankcard_cvv
+- bankcard_expiry
 - bic
 - birthday
 - boolean
@@ -75,6 +78,8 @@ supported_types:
 - ukpostalcode
 - upc
 - url
+- us_hicn
+- us_ndc
 - uscounty
 - usdriverlic
 - usein

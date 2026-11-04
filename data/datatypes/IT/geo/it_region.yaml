@@ -3,6 +3,7 @@ name: Italian region
 status: draft
 doc: Name of one of the 20 regions of Italy, such as Lombardia, Lazio or Sicilia, in Italian or English
   (Lombardy, Sicily). Five of them have special autonomy.
+parent: admin_area_1
 categories:
 - geo
 - government

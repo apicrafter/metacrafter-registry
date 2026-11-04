@@ -16,10 +16,13 @@ supported_types:
 - aws_access_key_id
 - aws_secret_access_key
 - bankcard
+- bankcard_cvv
+- bankcard_expiry
 - bic
 - casin
 - date
 - datetime
+- driver_license
 - email
 - iban
 - in_epic
