@@ -11,6 +11,7 @@ langs:
 is_pii: true
 mappings:
   cdm: means.location.address
+  d3m: http://schema.org/address
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Address

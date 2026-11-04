@@ -124,6 +124,47 @@ def test_cdm_mapping_must_be_a_trait_name(mini_data):
     assert validate(load_sources(mini_data)).errors == []
 
 
+def test_d3m_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+
+    def ids(external_id: str) -> list[str]:
+        return [r["id"] for r in reg.crosswalk("d3m", external_id)]
+
+    assert ids("http://schema.org/email") == ["email"]
+    # D3M defines schema.org postalCode as a US postal code; a pattern carries it
+    assert ids("http://schema.org/postalCode") == ["uszipcode"]
+    assert ids("https://metadata.datadrivendiscovery.org/types/FileName") == ["filename"]
+    assert ids("https://metadata.datadrivendiscovery.org/types/AmericanPhoneNumber") == [
+        "nanpphone"
+    ]
+    # https schema.org URIs and bare type names resolve too
+    assert ids("https://schema.org/email") == ["email"]
+    assert ids("FileName") == ["filename"]
+    assert ids("addressCountry") == ["country"]
+    # column roles are not value types and are not mapped
+    assert ids("https://metadata.datadrivendiscovery.org/types/PrimaryKey") == []
+    # every D3M semantic type maps to at most one registry record
+    seen: dict[str, str] = {}
+    for record in reg.datatypes.values():
+        value = record.get("mappings", {}).get("d3m")
+        for uri in value if isinstance(value, list) else [value] if value else []:
+            assert uri not in seen, f"{uri} is mapped by {seen[uri]} and {record['id']}"
+            seen[uri] = record["id"]
+    assert len(seen) >= 13
+
+
+def test_d3m_mapping_must_be_a_semantic_type_uri(mini_data):
+    path = mini_data / "datatypes/any/pii/email.yaml"
+    path.write_text(path.read_text() + "mappings:\n  d3m: email\n")
+    errors = [str(i) for i in validate(load_sources(mini_data)).errors]
+    assert any("mappings" in e and "d3m" in e for e in errors), errors
+
+    path.write_text(path.read_text().replace("d3m: email", "d3m: http://schema.org/email"))
+    assert validate(load_sources(mini_data)).errors == []
+
+
 def test_changes_diff():
     old = [
         {"id": "a", "status": "draft", "name": "A"},
@@ -226,6 +267,13 @@ def test_javascript_checksums_match_python(tmp_path):
         "U13585626",
         "BG175074752",
         "BG 175 074 751",
+        "151086 95088",
+        "RCCMNL83S18D969H",
+        "CNTCHR83T41D969D",
+        "IT 00743110157",
+        "131052-308T",
+        "131052A308T",
+        "54362315-K",
     ]
     values += [str(rng.randrange(10**8, 10**15)) for _ in range(300)]
     values += [f"ATU{rng.randrange(10**8):08d}" for _ in range(100)]
@@ -234,6 +282,23 @@ def test_javascript_checksums_match_python(tmp_path):
         f"{rng.randrange(10**5):05d}2{rng.choice('AB')}{rng.randrange(10**8):08d}"
         for _ in range(100)
     ]
+    values += [f"{rng.randrange(10**11):011d}" for _ in range(1000)]
+    offices = ["001", "100", "121", "888", "500"]
+    values += [
+        f"IT{rng.randrange(10**7):07d}{rng.choice(offices)}{rng.randrange(10)}" for _ in range(100)
+    ]
+    values += [
+        f"{rng.randrange(10**6):06d}{rng.choice('-+ABCDEFUVWXY')}{rng.randrange(1000):03d}"
+        f"{rng.choice('0123456789ABCDEFHJKLMNPRSTUVWXY')}"
+        for _ in range(200)
+    ]
+    values += [
+        f"{rng.randrange(10**8):08d}{rng.choice('TRWAGMYFPDXBNJZSQVHLCKE')}" for _ in range(200)
+    ]
+    letters, digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "0123456789LMNPQRSTUV"
+    fiscal_code = [letters] * 6 + [digits] * 2 + ["ABCDEHLMPRST"] + [digits] * 2
+    fiscal_code += [letters] + [digits] * 3 + [letters]
+    values += ["".join(rng.choice(chars) for chars in fiscal_code) for _ in range(500)]
     script = tmp_path / "checksums.js"
     script.write_text(
         "const core = require(process.argv[2]);\n"

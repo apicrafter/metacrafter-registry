@@ -1,9 +1,11 @@
 id: it_codicefiscale
 name: Italian tax code (codice fiscale)
 status: draft
-doc: 'Codice fiscale, the tax code of people in Italy: 16 characters derived from the surname, the first
-  name, the date of birth and sex, and the place of birth, with a check letter at the end. Legal entities
-  have an 11-digit code that equals their VAT number.'
+doc: 'Codice fiscale, the tax code of people in Italy, issued by the Agenzia delle Entrate: 16 characters
+  derived from the surname, the first name, the date of birth and sex (40 is added to the day for women),
+  and the Belfiore code of the place of birth, with a check letter at the end. When two people would get
+  the same code, digits are replaced by letters (omocodia). Legal entities have an 11-digit code that
+  equals their VAT number (it_iva).'
 categories:
 - pii
 - persons
@@ -14,14 +16,23 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[A-Z]{6}[0-9LMNPQRSTUV]{2}[ABCDEHLMPRST][0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{3}[A-Z]$
+checksum: it_codicefiscale
 examples:
 - value: DYMMTM43M45I436N
   description: Synthetic number with a valid check digit
 - value: LVFGNC77T47H353V
   description: Synthetic number with a valid check digit
+- value: RCCMNL83S18D969H
+  description: python-stdnum test value
+- value: DYMMTM43M45I436A
+  valid: false
+  description: Check letter does not match
 - value: DYMMTM43M45I436N7
   valid: false
   description: One character too many
+mappings:
+  google_dlp: ITALY_FISCAL_CODE
+  purview: Italy fiscal code
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Italian_fiscal_code
