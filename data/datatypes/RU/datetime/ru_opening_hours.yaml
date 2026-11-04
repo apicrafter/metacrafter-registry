@@ -1,0 +1,21 @@
+id: ru_opening_hours
+name: Opening hours (Russian)
+status: draft
+doc: Opening hours written in Russian free text, as published in data.gov.ru datasets in columns such
+  as "режим работы", "график работы" and "часы приема".
+semantic_type: opening_hours
+country:
+- RU
+langs:
+- ru
+examples:
+- value: Понедельник-четверг с 8-00 до 17-00; Пятница с 8-00 до 16-00
+  description: Weekly schedule with a shorter Friday
+- value: с 8-00 до 17-00 перерыв на обед с 12-00 до 13-00
+  description: Daily hours with a lunch break
+- value: круглосуточно
+  description: Always open
+translations:
+  ru:
+    name: Режим работы
+    doc: Режим или график работы, записанный на русском языке.
