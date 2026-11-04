@@ -1,0 +1,38 @@
+id: no_fodselsnummer
+name: Norwegian national identity number (fødselsnummer)
+status: draft
+doc: Eleven-digit personal identification number of Norway, recorded in the National Population Register
+  that the Norwegian Tax Administration keeps. The first six digits are the date of birth (DDMMYY), the
+  next three an individual number whose last digit is odd for men and even for women, and the last two
+  are mod-11 check digits. A D-number, given to people who are not registered as residents, has the same
+  layout with 4 added to the first digit.
+categories:
+- pii
+- persons
+country:
+- 'NO'
+langs:
+- 'no'
+is_pii: true
+classification: identifier
+regexp: ^(?:0[1-9]|[12]\d|3[01]|4[1-9]|[56]\d|7[01])(?:0[1-9]|1[0-2])\d{2} ?\d{5}$
+checksum: no_fnr
+examples:
+- value: '15108695088'
+  description: valid check digits (python-stdnum test value)
+- value: 151086 95088
+  description: the same number with a space after the date of birth
+- value: '15108695077'
+  valid: false
+  description: wrong check digits
+mappings:
+  google_dlp: NORWAY_NI_NUMBER
+  purview: Norway identification number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_identity_number_(Norway)
+- type: wikipedia
+  url: https://no.wikipedia.org/wiki/F%C3%B8dselsnummer
+translations:
+  'no':
+    name: Fødselsnummer

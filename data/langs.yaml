@@ -72,3 +72,6 @@
 - id: bg
   name: Bulgarian
   kind: language
+- id: 'no'
+  name: Norwegian
+  kind: language

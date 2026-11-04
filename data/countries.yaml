@@ -106,3 +106,9 @@
 - id: BG
   name: Bulgaria
   kind: country
+- id: 'NO'
+  name: Norway
+  kind: country
+- id: IT
+  name: Italy
+  kind: country

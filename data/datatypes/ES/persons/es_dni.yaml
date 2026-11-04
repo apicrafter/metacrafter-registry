@@ -1,0 +1,37 @@
+id: es_dni
+name: Spanish national identity document number (DNI)
+status: draft
+doc: Number of the Spanish national identity document (Documento Nacional de Identidad, DNI) that Spanish
+  citizens carry. It is eight digits and a check letter - the number modulo 23 looked up in TRWAGMYFPDXBNJZSQVHLCKE.
+  For Spanish citizens the same number and letter are the tax identification number (esnif); foreign nationals
+  get an NIE (esnie) instead.
+categories:
+- pii
+- persons
+country:
+- ES
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^\d{8}-?[A-Z]$
+checksum: es_dni
+examples:
+- value: 54362315K
+  description: valid check letter (python-stdnum test value)
+- value: 54362315-K
+  description: the same number with a hyphen before the letter
+- value: 54362315Z
+  valid: false
+  description: wrong check letter
+mappings:
+  google_dlp: SPAIN_DNI_NUMBER
+  purview: Spain DNI
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Documento_Nacional_de_Identidad_(Spain)
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Documento_nacional_de_identidad_(Espa%C3%B1a)
+translations:
+  es:
+    name: Documento Nacional de Identidad (DNI)

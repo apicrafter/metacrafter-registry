@@ -13,7 +13,10 @@ langs:
 - da
 is_pii: true
 classification: identifier
-regexp: /^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])\d{2}[-]?\d{4}$
+regexp: ^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])\d{2}[-]?\d{4}$
+mappings:
+  google_dlp: DENMARK_CPR_NUMBER
+  purview: Denmark personal identification number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Personal_identification_number_(Denmark)

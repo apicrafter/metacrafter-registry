@@ -1,0 +1,26 @@
+id: jp_passport
+name: Japanese passport number
+status: draft
+doc: Number of a passport issued by Japan - two letters followed by seven digits. The first letter shows
+  the passport type (M for a five-year passport, T for a ten-year one).
+semantic_type: passport
+country:
+- JP
+langs:
+- ja
+regexp: ^[A-Z]{2}\d{7}$
+examples:
+- value: TK123456
+  valid: false
+  description: only six digits
+mappings:
+  google_dlp: JAPAN_PASSPORT
+  purview: Japan passport number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Japanese_passport
+- type: wikipedia
+  url: https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E5%9B%BD%E6%97%85%E5%88%B8
+translations:
+  ja:
+    name: 旅券番号

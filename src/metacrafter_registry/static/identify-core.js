@@ -122,6 +122,47 @@
         return d[9] === egn || d[9] === pnf || d[9] === other;
       }
       return false;
+    },
+    no_fnr: function (v) {
+      var d = digitsOf(v);
+      if (!d || d.length !== 11) return false;
+      var check = function (w) {
+        var t = 0;
+        for (var i = 0; i < w.length; i += 1) t += w[i] * d[i];
+        return (11 - (t % 11)) % 11;
+      };
+      return check([3, 7, 6, 1, 8, 9, 4, 5, 2]) === d[9] &&
+        check([5, 4, 3, 2, 7, 6, 5, 4, 3, 2]) === d[10];
+    },
+    it_codice_fiscale: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      if (!/^[A-Z]{6}[0-9LMNP-V]{2}[ABCDEHLMPRST][0-9LMNP-V]{2}[A-Z][0-9LMNP-V]{3}[A-Z]$/.test(s)) return false;
+      var odd = [1, 0, 5, 7, 9, 13, 15, 17, 19, 21, 2, 4, 18, 20, 11, 3, 6, 8, 12, 14, 16, 10, 22, 25, 24, 23];
+      var total = 0;
+      for (var i = 0; i < 15; i += 1) {
+        var c = s[i], n = /\d/.test(c) ? Number(c) : c.charCodeAt(0) - 65;
+        total += i % 2 === 0 ? odd[n] : n;
+      }
+      return String.fromCharCode(65 + (total % 26)) === s[15];
+    },
+    it_iva: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      if (s.indexOf("IT") === 0) s = s.slice(2);
+      if (!/^\d{11}$/.test(s) || Number(s.slice(0, 7)) === 0) return false;
+      var office = s.slice(7, 10);
+      if (!((office >= "001" && office <= "100") || ["120", "121", "888", "999"].indexOf(office) !== -1)) return false;
+      return CHECKSUMS.luhn(s);
+    },
+    fi_hetu: function (v) {
+      var s = String(v).replace(/\s/g, "").toUpperCase();
+      var m = /^(\d{6})[-+A-FU-Y](\d{3})([0-9A-FHJ-NPR-Y])$/.exec(s);
+      if (!m) return false;
+      return "0123456789ABCDEFHJKLMNPRSTUVWXY"[Number(m[1] + m[2]) % 31] === m[3];
+    },
+    es_dni: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      if (!/^\d{8}[A-Z]$/.test(s)) return false;
+      return "TRWAGMYFPDXBNJZSQVHLCKE"[Number(s.slice(0, 8)) % 23] === s[8];
     }
   };
 
