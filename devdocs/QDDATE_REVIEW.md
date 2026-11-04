@@ -239,12 +239,14 @@ These do not block the mapping. They are worth fixing in qddate:
 1. **metacrafter:** link a qddate match to the notation record. With the
    `format` key, `crosswalk("qddate", format)` gives the record, for example
    `date_dmy_dot`, whose page and JSON say what the column holds.
-2. **Registry `identify`:** a draft date record can rank below loose stable
-   records. `identify` also tries a value without hyphens and spaces, so
-   `2024-12-25` matches every `\d{8}` regexp (`am_tin`, `okpo`, ...), and
-   those stable records outrank the draft `date_ymd_dash` (58 against 55).
-   Preferring a match of the value as written over a match of its compact
-   form would fix this; the JavaScript twin of `identify` has to change too.
+2. **Registry `identify`:** `identify` also tries a value without hyphens and
+   spaces, so `2024-12-25` used to match every `\d{8}` regexp (`am_tin`,
+   `okpo`, ...), and those stable records outranked the draft
+   `date_ymd_dash`. Commit `b32688d` on `main` fixed this: a compact-form
+   hit no longer counts when a regexp at least as specific matches the value
+   as written, and `date_ymd_dash` now ranks first for ISO dates. A column of
+   `20241225` values still ranks the eight-digit codes first: without
+   separators, a date and an eight-digit code look alike.
 3. **Records per date-and-time notation** (`datetime` patterns such as
    `YYYY-MM-DDTHH:MM:SS`) would give the generated variants a record of
    their own. They need a decision on how many time forms to list.
