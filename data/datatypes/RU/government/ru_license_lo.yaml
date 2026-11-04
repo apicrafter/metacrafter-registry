@@ -1,0 +1,31 @@
+id: ru_license_lo
+name: Russian license number (ЛО- format)
+status: draft
+doc: Number of a license for medical or pharmaceutical activity in the format "ЛО-NN-NN-NNNNNN", issued
+  before the Unified Register of Licenses (ЕРУЛ) numbering. In the license registers published on data.gov.ru
+  the first two digits match the region code of the licensing authority (34 for Volgograd region, 66 for
+  Sverdlovsk region); the second group is 01 in medical activity registers and 02 in pharmaceutical activity
+  registers.
+parent: license_number
+categories:
+- legal
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^ЛО-\d{2}-\d{2}-\d{6}$
+examples:
+- value: ЛО-34-02-001434
+  description: Pharmaceutical activity license of a company, Volgograd region register
+- value: ЛО-66-01-003808
+  description: Medical activity license of an organization, Sverdlovsk region register
+- value: Л056-00106-77/00025315
+  valid: false
+translations:
+  ru:
+    name: Номер лицензии (формат ЛО-)
+    doc: Номер лицензии на медицинскую или фармацевтическую деятельность в формате «ЛО-NN-NN-NNNNNN»,
+      который применялся до нумерации Единого реестра учёта лицензий.
