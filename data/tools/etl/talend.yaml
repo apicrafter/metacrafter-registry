@@ -1,0 +1,91 @@
+id: talend
+name: Talend (Qlik Talend Data Preparation, Data Catalog and Data Inventory)
+category: etl
+doc: Talend, now part of Qlik, suggests a semantic type for each column of a dataset. The types live in
+  Talend Dictionary Service and are shared by Data Preparation, Data Inventory, Data Stewardship and Pipeline
+  Designer. A type is either a list of values (for example ISO country and currency lists or INSEE lists
+  of French communes), a regular expression, or a compound of other types. The predefined list covers
+  names and titles, addresses and postal codes, phone numbers, card and bank numbers, national identifiers
+  for France, Sweden, the UK and the US, and several kinds of URLs.
+website: https://help.qlik.com/talend/en-US/data-preparation-user-guide/Cloud/predefined-semantic-types
+supported_types:
+- aba
+- abaroutingnum
+- academictitle
+- animal
+- at_vat
+- bankcard
+- be_postcode
+- beverage
+- bg_vat
+- boolean
+- caprovince
+- caprovincecode
+- city
+- civility
+- colorhextriplet
+- continent
+- country
+- countrycode_alpha2
+- countrycode_alpha3
+- date
+- datetime
+- dayofweek
+- de_postcode
+- email
+- endayofweek
+- enmonth
+- enmonthshort
+- formaltitle
+- fqdn
+- fr_commune
+- fr_department
+- fr_region
+- frnir
+- frpostcode
+- frvat
+- gender
+- geopoint
+- hexcolor
+- honorificprefix
+- iataairportcode
+- iban
+- industry
+- inseecode
+- ipv4
+- ipv6
+- isbn
+- isbn10
+- isbn13
+- iso3166_mx3a
+- iso4217curcode
+- iso4217curname
+- iso639_1
+- iso639_2
+- jobtitle
+- language
+- mac_address
+- militarysuffix
+- money
+- month
+- mxstate
+- namesuffix
+- nanpphone
+- orgname
+- orgunit
+- person_firstname
+- person_fullname
+- person_surname
+- phone
+- sedol
+- sepersonnummer
+- street_address
+- street_suffix
+- time
+- uknino
+- ukpostalcode
+- url
+- uscounty
+- usssn
+- usstate
+- uszipcode

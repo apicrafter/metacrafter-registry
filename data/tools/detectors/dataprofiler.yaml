@@ -1,0 +1,27 @@
+id: dataprofiler
+name: Capital One DataProfiler
+category: detector
+doc: DataProfiler is an open source Python library from Capital One that profiles datasets and detects
+  sensitive data. Its data labeler is a character-level neural model that predicts an entity label for
+  each cell of structured data, and the profiler aggregates these predictions into a label for the column.
+  The default structured labeler has 23 labels, such as EMAIL_ADDRESS, CREDIT_CARD, SSN, IPV4 and US_STATE;
+  the list is in the label_mapping.json resource of the structured model and on the data labeling page
+  of the docs.
+website: https://capitalone.github.io/DataProfiler/data_labeling.html
+supported_types:
+- address
+- bankaccount
+- bankcard
+- date
+- datetime
+- email
+- ipv4
+- ipv6
+- mac_address
+- person_fullname
+- phone
+- time
+- url
+- usssn
+- usstate
+- uuid
