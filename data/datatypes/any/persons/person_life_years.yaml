@@ -1,0 +1,26 @@
+id: person_life_years
+name: Years of life of a person
+status: draft
+doc: Years of birth and death of a person written as two four-digit years joined by a hyphen or an en
+  dash, such as 1837–1919. A question mark stands for an unknown year of death. Catalogues of museum objects
+  and of lost cultural property give the years of life of authors in this form.
+parent: year_range
+categories:
+- persons
+- datetime
+- pii
+langs:
+- common
+is_pii: true
+regexp: ^\d{4}\s?[-–]\s?(?:\d{4}|\?)$
+examples:
+- value: 1720-1778
+- value: 1837–1919
+- value: 1877-?
+  description: Year of death unknown
+- value: Вторая половина XIX в.
+  valid: false
+  description: Historical dating, the datatype ru_historical_dating
+translations:
+  ru:
+    name: Годы жизни

@@ -1,0 +1,29 @@
+id: ru_national_film_certificate
+name: Russian national film certificate number
+status: draft
+doc: Number of a national film certificate (удостоверение национального фильма), which the Russian Ministry
+  of Culture issues to confirm that a film is a national film. The numbers are sequential integers, such
+  as 37343; in the open data of the Ministry they have up to six digits. Many other numbers look the same,
+  so the field name matters more than the value.
+categories:
+- media
+- legal
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,5}$
+examples:
+- value: '37343'
+- value: '37344'
+- value: '111001324'
+  valid: false
+  description: Number of a distribution certificate, the datatype ru_film_distribution_certificate
+links:
+- type: doc
+  url: https://opendata.mkrf.ru/opendata/7705851331-national_film_identities
+translations:
+  ru:
+    name: Номер удостоверения национального фильма
