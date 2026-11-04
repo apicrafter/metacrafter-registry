@@ -1,0 +1,244 @@
+{
+ "source": {
+  "repo": "edmcouncil/fibo",
+  "ref": "33a92cd34285d532c158da97bb42add089f135d3",
+  "iri_base": "https://spec.edmcouncil.org/fibo/ontology/",
+  "license": {
+   "name": "MIT",
+   "copyright": "Copyright (c) Enterprise Data Management Council",
+   "url": "https://github.com/edmcouncil/fibo/blob/master/LICENSE"
+  }
+ },
+ "terms": {
+  "BE/LegalEntities/FormalBusinessOrganizations/ValueAddedTaxIdentificationNumber": {
+   "label": "value-added tax identification number",
+   "definition": "tax identifier that identifies a taxable person (business) or non-taxable legal entity for a consumption tax that is assessed incrementally, levied on the price of a product or service at each stage of production, distribution, and sale to the end consumer",
+   "abbreviations": [
+    "VATIN"
+   ],
+   "maturity": "Release",
+   "source_file": "BE/LegalEntities/FormalBusinessOrganizations.rdf"
+  },
+  "BE/LegalEntities/LEIEntities/LegalEntityIdentifier": {
+   "label": "legal entity identifier",
+   "definition": "an organization identifier that uniquely identifies a legal person as defined in ISO 17442",
+   "maturity": "Release",
+   "source_file": "BE/LegalEntities/LEIEntities.rdf"
+  },
+  "FBC/FunctionalEntities/BusinessRegistries/NorthAmericanIndustryClassificationSystemCode": {
+   "label": "North American Industry Classification System code",
+   "definition": "the North American Industry Classification System (NAICS) code representing an industry",
+   "abbreviations": [
+    "NAICS code"
+   ],
+   "maturity": "Release",
+   "source_file": "FBC/FunctionalEntities/BusinessRegistries.rdf"
+  },
+  "FBC/FunctionalEntities/FinancialServicesEntities/BusinessIdentifierCode": {
+   "label": "business identifier code",
+   "definition": "international identifier for financial and non-financial institutions used to facilitate automated processing of information for financial services",
+   "abbreviations": [
+    "BIC"
+   ],
+   "maturity": "Release",
+   "source_file": "FBC/FunctionalEntities/FinancialServicesEntities.rdf"
+  },
+  "FBC/FunctionalEntities/Markets/MarketIdentifier": {
+   "label": "market identifier",
+   "definition": "identifier that specifies a universal method of identifying exchanges, trading platforms, regulated or non-regulated markets, and data reporting services providers as sources of prices and related information in order to facilitate automated processing",
+   "abbreviations": [
+    "MIC"
+   ],
+   "maturity": "Release",
+   "source_file": "FBC/FunctionalEntities/Markets.rdf"
+  },
+  "FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/BusinessNumber": {
+   "label": "business number",
+   "definition": "unique, 9-digit number that is the standard identifier for legal entities in Canada which are typically a business",
+   "abbreviations": [
+    "BN"
+   ],
+   "maturity": "Release",
+   "source_file": "FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies.rdf"
+  },
+  "FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/GoodsServicesTaxHarmonizedSalesTaxRegistrationNumber": {
+   "label": "Goods and Services Tax / Harmonized Sales Tax registration number",
+   "definition": "concatenation of an entity's business number, the 'RT' abbreviation and a 4-digit subaccount number used for reporting GST/HST",
+   "abbreviations": [
+    "GST/HST registation number"
+   ],
+   "maturity": "Release",
+   "source_file": "FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies.rdf"
+  },
+  "FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/RegisteredCharityProgramNumber": {
+   "label": "registered charity program number",
+   "definition": "concatenation of an entity's business number, the 'RR' abbreviation and a 4-digit subaccount number used for registered charity contribution",
+   "maturity": "Release",
+   "source_file": "FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies.rdf"
+  },
+  "FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/EmployerIdentificationNumber": {
+   "label": "employer identification number",
+   "definition": "unique nine-digit number assigned by the Internal Revenue Service (IRS) to business entities operating in the United States for the purposes of identification",
+   "abbreviations": [
+    "EIN",
+    "FEIN"
+   ],
+   "maturity": "Release",
+   "source_file": "FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf"
+  },
+  "FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/RoutingTransitNumber": {
+   "label": "routing transit number",
+   "definition": "unique nine digit identifier, used primarily in the United States, to identify a banking or other financial institution for clearing funds, and, as it appears on a check, denotes the banking institution that holds the account from which funds are to be drawn",
+   "abbreviations": [
+    "RTN"
+   ],
+   "maturity": "Release",
+   "source_file": "FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf"
+  },
+  "FBC/ProductsAndServices/ClientsAndAccounts/BankAccountIdentifier": {
+   "label": "bank account identifier",
+   "definition": "identifier that identifies a demand deposit account provided by a bank",
+   "maturity": "Release",
+   "source_file": "FBC/ProductsAndServices/ClientsAndAccounts.rdf"
+  },
+  "FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier": {
+   "label": "international bank account identifier",
+   "definition": "identifier for a bank account that is an expanded version of the basic bank account number (BBAN), intended for use internationally",
+   "abbreviations": [
+    "IBAN"
+   ],
+   "maturity": "Release",
+   "source_file": "FBC/ProductsAndServices/ClientsAndAccounts.rdf"
+  },
+  "FND/Accounting/CurrencyAmount/Currency": {
+   "label": "currency",
+   "definition": "medium of exchange value, defined by reference to the geographical location of the monetary authorities responsible for it",
+   "maturity": "Release",
+   "source_file": "FND/Accounting/CurrencyAmount.rdf"
+  },
+  "FND/Accounting/CurrencyAmount/CurrencyIdentifier": {
+   "label": "currency identifier",
+   "definition": "sequence of characters representing some currency",
+   "maturity": "Release",
+   "source_file": "FND/Accounting/CurrencyAmount.rdf"
+  },
+  "FND/Accounting/CurrencyAmount/MonetaryAmount": {
+   "label": "monetary amount",
+   "definition": "measure that is an amount of money specified in monetary units",
+   "maturity": "Release",
+   "source_file": "FND/Accounting/CurrencyAmount.rdf"
+  },
+  "FND/Accounting/CurrencyAmount/Price": {
+   "label": "price",
+   "definition": "amount of money, goods, or services requested, expected, required, or given in exchange for something else",
+   "maturity": "Release",
+   "source_file": "FND/Accounting/CurrencyAmount.rdf"
+  },
+  "FND/AgentsAndPeople/People/PassportNumber": {
+   "label": "passport number",
+   "definition": "national identification number associated with a passport",
+   "maturity": "Release",
+   "source_file": "FND/AgentsAndPeople/People.rdf"
+  },
+  "FND/Places/Addresses/PhysicalAddress": {
+   "label": "physical address",
+   "definition": "physical address where communications can be addressed, papers served or representatives located for any kind of organization or person",
+   "maturity": "Release",
+   "source_file": "FND/Places/Addresses.rdf"
+  },
+  "FND/Places/Addresses/Postcode": {
+   "label": "postcode",
+   "definition": "sequence of characters used to assist in the sorting of mail",
+   "maturity": "Release",
+   "source_file": "FND/Places/Addresses.rdf"
+  },
+  "FND/Places/VirtualPlaces/ElectronicMailAddress": {
+   "label": "electronic mail address",
+   "definition": "virtual address that defines an electronic messaging endpoint to which email messages can be delivered, typically via an Simple Mail Transfer Protocol (SMTP) based communications system",
+   "abbreviations": [
+    "e-mail address",
+    "email address"
+   ],
+   "maturity": "Release",
+   "source_file": "FND/Places/VirtualPlaces.rdf"
+  },
+  "FND/Places/VirtualPlaces/TelephoneNumber": {
+   "label": "telephone number",
+   "definition": "virtual address that may be assigned to a fixed-line telephone subscriber station connected to a telephone line or to a wireless electronic telephony device, such as a radio telephone or a mobile telephone, or to other devices or services for data transmission via the public switched telephone network (PSTN) or other public and private networks",
+   "abbreviations": [
+    "phone number"
+   ],
+   "maturity": "Release",
+   "source_file": "FND/Places/VirtualPlaces.rdf"
+  },
+  "LOAN/LoansSpecific/CardAccounts/PrimaryCardAccountNumber": {
+   "label": "primary card account number",
+   "definition": "composite identifier of 14 or 16 digits embossed on a bank or payment card and encoded in the card's magnetic strip",
+   "abbreviations": [
+    "PAN"
+   ],
+   "maturity": "Release",
+   "source_file": "LOAN/LoansSpecific/CardAccounts.rdf"
+  },
+  "SEC/Securities/SecuritiesClassification/FinancialInstrumentClassificationCode": {
+   "label": "financial instrument classification code",
+   "definition": "classifier and code for a financial instrument defined in the ISO 10962 Classification of Financial Instruments (CFI) Code Scheme",
+   "abbreviations": [
+    "CFI code"
+   ],
+   "maturity": "Release",
+   "source_file": "SEC/Securities/SecuritiesClassification.rdf"
+  },
+  "SEC/Securities/SecuritiesIdentification/InternationalSecuritiesIdentificationNumber": {
+   "label": "international securities identification number",
+   "definition": "security identifier that is defined as specified in ISO 6166, Securities and related financial instruments -- International securities identification numbering system (ISIN)",
+   "abbreviations": [
+    "ISIN"
+   ],
+   "maturity": "Release",
+   "source_file": "SEC/Securities/SecuritiesIdentification.rdf"
+  },
+  "SEC/Securities/SecuritiesIdentification/TickerSymbol": {
+   "label": "ticker symbol",
+   "definition": "reassignable identifier of relatively short character string length that is unique within an exchange for a particular financial instrument or listing for that instrument",
+   "maturity": "Release",
+   "source_file": "SEC/Securities/SecuritiesIdentification.rdf"
+  },
+  "SEC/Securities/SecuritiesIdentificationIndividuals/CommitteeOnUniformSecuritiesIdentificationProceduresNumber": {
+   "label": "Committee on Uniform Securities Identification Procedures (CUSIP) number",
+   "definition": "nine-character alphanumeric number that identifies all North American stocks and registered bonds for the purposes of facilitating clearing and settlement of trades, issued by CUSIP Global Services on behalf of the American Bankers' Association, which is a part of Standard and Poor's Capital IQ, that is the National Numbering Agency Identifier for securities issued in North America, which is also part of the ISIN for the security it identifies",
+   "abbreviations": [
+    "CUSIP"
+   ],
+   "maturity": "Release",
+   "source_file": "SEC/Securities/SecuritiesIdentificationIndividuals.rdf"
+  },
+  "SEC/Securities/SecuritiesIdentificationIndividuals/FinancialInstrumentGlobalIdentifier": {
+   "label": "financial instrument global identifier",
+   "definition": "financial instrument identifier that is defined as specified in the Object Management Group (OMG) Financial Instrument Global Identifier (FIGI) Specification",
+   "abbreviations": [
+    "FIGI"
+   ],
+   "maturity": "Release",
+   "source_file": "SEC/Securities/SecuritiesIdentificationIndividuals.rdf"
+  },
+  "SEC/Securities/SecuritiesIdentificationIndividuals/RefinitivInstrumentCode": {
+   "label": "Refinitiv instrument code",
+   "definition": "proprietary code for financial instruments and indices owned, managed, and distributed by the London Stock Exchange Group's LSEG Financial Solutions (branded as Refinitiv)",
+   "abbreviations": [
+    "RIC"
+   ],
+   "maturity": "Release",
+   "source_file": "SEC/Securities/SecuritiesIdentificationIndividuals.rdf"
+  },
+  "SEC/Securities/SecuritiesIdentificationIndividuals/StockExchangeDailyOfficialListCode": {
+   "label": "Stock Exchange Daily Official List (SEDOL) code",
+   "definition": "seven-character security identifier, issued by the London Stock Exchange, that is the National Securities Identifying Number (NSIN) for securities issued in the United Kingdom, which is also part of the ISIN for the security it identifies",
+   "abbreviations": [
+    "SEDOL code"
+   ],
+   "maturity": "Release",
+   "source_file": "SEC/Securities/SecuritiesIdentificationIndividuals.rdf"
+  }
+ }
+}

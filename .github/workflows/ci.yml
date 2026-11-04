@@ -80,6 +80,29 @@ jobs:
       - name: Rule keys without a registry record (warnings)
         run: metacrafter-registry coverage report --github-annotations
 
+      - name: Read the pinned FIBO ref
+        id: fibo
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, re
+          ref = str(json.load(open("data/vocabularies/fibo.json"))["source"]["ref"])
+          if not re.fullmatch(r"[0-9a-f]{40}", ref):
+              raise SystemExit(f"data/vocabularies/fibo.json: ref must be a full commit SHA, got {ref!r}")
+          print(f"ref={ref}")
+          PY
+
+      - name: Check out FIBO at the pinned ref
+        uses: actions/checkout@v4
+        with:
+          repository: edmcouncil/fibo
+          ref: ${{ steps.fibo.outputs.ref }}
+          path: .ecosystem/fibo
+
+      - name: FIBO term list matches the pinned FIBO
+        env:
+          FIBO_REF: ${{ steps.fibo.outputs.ref }}
+        run: metacrafter-registry fibo check --fibo-dir .ecosystem/fibo --ref "$FIBO_REF"
+
       - name: Build
         run: metacrafter-registry build
 

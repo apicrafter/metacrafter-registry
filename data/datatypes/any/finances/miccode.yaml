@@ -17,6 +17,7 @@ examples:
 - value: IFCA
   description: Winnipeg Commodity Exchange
 mappings:
+  fibo: FBC/FunctionalEntities/Markets/MarketIdentifier
   wikidata: P7534
 links:
 - type: other

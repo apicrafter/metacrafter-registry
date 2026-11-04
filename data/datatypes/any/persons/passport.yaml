@@ -10,3 +10,5 @@ langs:
 - common
 is_pii: true
 classification: identifier
+mappings:
+  fibo: FND/AgentsAndPeople/People/PassportNumber

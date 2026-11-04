@@ -17,6 +17,8 @@ examples:
   description: Equity, shares, voting, free, fully paid, registered
 - value: FCEPNX
   description: Future, commodities, extraction resources, physical delivery, non-standardized
+mappings:
+  fibo: SEC/Securities/SecuritiesClassification/FinancialInstrumentClassificationCode
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ISO_10962

@@ -17,6 +17,7 @@ from .coverage import (
     rules_by_datatype,
     source_aliases,
 )
+from .fibo import load_vocabulary
 from .loader import RegistrySources
 from .quality import score_record
 
@@ -84,6 +85,7 @@ class RegistryModel:
     tools_by_type: dict[str, list[str]] = field(default_factory=dict)
     aliases: dict[str, str] = field(default_factory=dict)  # alias -> canonical id
     coverage: dict[str, Any] = field(default_factory=dict)  # metacrafter-rules report
+    fibo_terms: dict[str, dict[str, Any]] = field(default_factory=dict)  # FIBO path -> term
 
     def kind_count(self, kind: str) -> int:
         return sum(1 for r in self.datatypes.values() if r["kind"] == kind)
@@ -243,6 +245,7 @@ def build_registry(sources: RegistrySources, site_url: str) -> RegistryModel:
         coverage=coverage_report(
             load_coverage(sources.data_dir), set(datatypes), source_aliases(sources)
         ),
+        fibo_terms=(load_vocabulary(sources.data_dir) or {}).get("terms", {}),
     )
 
 

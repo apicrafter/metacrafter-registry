@@ -24,6 +24,7 @@ examples:
   valid: false
   description: 'Last digit changed: fails the mod-97 check'
 mappings:
+  fibo: FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier
   google_dlp: IBAN_CODE
   presidio: IBAN_CODE
   purview: International banking account number (IBAN)
