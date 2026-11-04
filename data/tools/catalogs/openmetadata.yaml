@@ -1,0 +1,55 @@
+id: openmetadata
+name: OpenMetadata auto-classification
+category: catalogs
+doc: OpenMetadata's auto-classification workflow samples table columns and tags them PII.Sensitive or
+  PII.NonSensitive. It matches column names against regular expressions and checks sampled values with
+  Microsoft Presidio recognizers and a spaCy model. Each PII tag holds a list of recognizers that administrators
+  can change; the default list, seeded from piiTagsWithRecognizers.json, covers card numbers, IBAN, email,
+  IP addresses, phone numbers, person names and national identifiers of the US, UK, Spain, Italy, Poland,
+  Singapore, Australia, India and Finland.
+website: https://docs.open-metadata.org/latest/how-to-guides/data-governance/classification/auto-classification/auto-pii-tagging
+supported_types:
+- aadhaar
+- aba
+- abaroutingnum
+- abn
+- auabn
+- auacn
+- aumedicarenum
+- autfn
+- bankcard
+- date
+- email
+- esnie
+- esnif
+- fi_hetu
+- iban
+- in_epic
+- ipaddr
+- it_codicefiscale
+- it_driver_license
+- it_iva
+- it_passport
+- medicare
+- nhsnumber
+- nif
+- nric
+- p2pkhaddr
+- p2shaddr
+- p2wpkhaddr
+- p2wshaddr
+- pan
+- person_fullname
+- phone
+- plpesel
+- sgnric
+- tfn
+- uknhsnum
+- uknino
+- url
+- usbankaccount
+- usdeanumber
+- usdriverlic
+- usitin
+- uspassport
+- usssn

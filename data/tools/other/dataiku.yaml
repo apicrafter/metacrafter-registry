@@ -1,0 +1,27 @@
+id: dataiku
+name: Dataiku DSS
+category: other
+doc: Dataiku DSS is a platform for data preparation, analytics and machine learning. Every column of a
+  dataset has a meaning, which DSS infers from a sample of the values and uses to count invalid values
+  and to suggest preparation steps. Built-in meanings include basic ones, such as Boolean and Date only,
+  geospatial ones, such as Geopoint, Country and US State, and web ones, such as IP address, URL, User
+  Agent and E-Mail address. The list is in the DSS reference documentation, and users can also define
+  their own meanings.
+website: https://doc.dataiku.com/dss/latest/schemas/meanings-list.html
+supported_types:
+- boolean
+- country
+- date
+- datetime
+- email
+- encountryname
+- geopoint
+- ipaddr
+- ipv4
+- ipv6
+- latitude
+- longitude
+- url
+- user_agent
+- usstate
+- wkt

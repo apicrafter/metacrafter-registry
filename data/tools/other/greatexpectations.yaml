@@ -1,0 +1,68 @@
+id: greatexpectations
+name: Great Expectations Semantic Types Expectations
+category: other
+doc: A contributed package of custom expectations for Great Expectations, the Python data validation framework.
+  Each expectation asserts that the values of a column are valid for one semantic type, using a regular
+  expression or a helper library such as python-stdnum, schwifty, phonenumbers, pycountry or geonamescache;
+  a few call online services. The expectations live in the package's expectations folder in the Great
+  Expectations repository and are not part of the core library.
+website: https://github.com/fivetran/great_expectations/tree/develop/contrib/great_expectations_semantic_types_expectations
+supported_types:
+- bic
+- city
+- colorhextriplet
+- country
+- countrycode_alpha2
+- countrycode_alpha3
+- countrycode_num
+- date
+- doi
+- ean
+- email
+- encountryname
+- ethereum_address
+- euvat
+- fips64
+- gtin
+- hexcolor
+- http_status_code
+- ianatimezoneid
+- iban
+- icd10
+- imei
+- imsi
+- ipv4
+- ipv6
+- isan
+- isbn
+- isbn10
+- isbn13
+- isin
+- ismn
+- iso4217curcode
+- iso639_1
+- iso639_2
+- language
+- mac_address
+- md5hash
+- meid
+- miccode
+- mimetype
+- openlibid
+- orcid
+- p2pkhaddr
+- p2shaddr
+- p2wpkhaddr
+- phone
+- price
+- roman_numeral
+- sha1hash
+- swiftcode
+- temperature
+- tld
+- upc
+- url
+- uscounty
+- usssn
+- usstate
+- uuid

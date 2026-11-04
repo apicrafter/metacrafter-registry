@@ -1,0 +1,30 @@
+id: tableau
+name: Tableau
+category: other
+doc: Tableau is a business intelligence and visual analytics platform. In Tableau Desktop a field can
+  be given a geographic role, such as Airport, City, Country/Region or ZIP Code/Postcode, so that Tableau
+  geocodes its values and can plot them on a map. Tableau Prep uses the same geographic roles, together
+  with Email and URL, as data roles that validate field values and mark the ones that do not match. The
+  roles are listed in the Tableau Desktop help on geographic roles and the Tableau Prep help on data roles.
+website: https://help.tableau.com/current/pro/desktop/en-us/maps_geographicroles.htm
+supported_types:
+- airport
+- au_postcode
+- city
+- country
+- countrycode_alpha2
+- countrycode_alpha3
+- de_postcode
+- email
+- encountryname
+- eunuts
+- fr_department
+- iataairportcode
+- icaoairportcode
+- latitude
+- longitude
+- nutsregion
+- postindex
+- url
+- uscounty
+- uszipcode

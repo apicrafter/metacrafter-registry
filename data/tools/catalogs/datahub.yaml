@@ -1,0 +1,26 @@
+id: datahub
+name: DataHub classification
+category: catalogs
+doc: 'DataHub can classify table columns during ingestion and attach a glossary term for each detected
+  info type. The built-in classifier comes from the acryl-datahub-classify library: it scores a column
+  by its name, description, data type and sample values, using regular expressions, spaCy named entities
+  or the schwifty library. Its default configuration in reference_input.py defines 14 info types, such
+  as Email_Address, IBAN, Swift_Code and US_Social_Security_Number. Recent acryl-datahub releases no longer
+  include this built-in classifier.'
+website: https://github.com/acryldata/datahub-classify/blob/main/datahub-classify/src/datahub_classify/reference_input.py
+supported_types:
+- address
+- age
+- bankcard
+- bic
+- email
+- gender
+- iban
+- ipv4
+- ipv6
+- person_fullname
+- phone
+- swiftcode
+- usdriverlic
+- usssn
+- vin

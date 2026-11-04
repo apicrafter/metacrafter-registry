@@ -1,0 +1,20 @@
+id: powerbi
+name: Microsoft Power BI
+category: other
+doc: 'Microsoft Power BI is a business intelligence service with a desktop report editor. In Power BI
+  Desktop the author sets a data category on a column, such as City, Postal code, Latitude, Web URL or
+  Barcode, to tell Power BI how to use its values: geographic categories are sent to Bing Maps for geocoding,
+  Web URL and Image URL turn values into links or pictures, and Barcode lets the mobile app filter a report
+  by a scanned code. The category is set by hand and is not inferred from the values. The categories are
+  described in the Power BI documentation on data categorization, map tips, hyperlinks, images and barcodes.'
+website: https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-data-categorization
+supported_types:
+- address
+- city
+- continent
+- country
+- latitude
+- longitude
+- postindex
+- street_address
+- url

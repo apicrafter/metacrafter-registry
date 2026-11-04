@@ -1,0 +1,85 @@
+id: ibmknowledgecatalog
+name: IBM Knowledge Catalog (IBM watsonx.data intelligence)
+category: catalogs
+doc: IBM Knowledge Catalog, now part of IBM watsonx.data intelligence, assigns data classes to table columns
+  when it profiles data assets. More than 150 predefined data classes ship with the product; each one
+  matches values or column names with a regular expression, a value list or a built-in Java classifier.
+  They cover personal and financial identifiers, US state and Canadian province driver's licenses, codes
+  such as ISO country and language codes, and generic classes such as Code, Identifier and Text. The table
+  of classes and their matching criteria is published in the IBM documentation.
+website: https://dataplatform.cloud.ibm.com/docs/content/governance/dmg_attr_classifier.html
+supported_types:
+- aba
+- abaroutingnum
+- address_line2
+- bankcard
+- bic
+- birthday
+- boolean
+- ca_postcode
+- cadriverlic
+- caprovince
+- caprovincecode
+- casin
+- city
+- color
+- country
+- countrycode_alpha2
+- countrycode_alpha3
+- cptcode
+- date
+- de_vehicle_plate
+- duns
+- email
+- esnif
+- frnir
+- gender
+- geopoint
+- honorificprefix
+- iataairportcode
+- iban
+- icd10
+- imei
+- ipv4
+- ipv6
+- isbn
+- isbn10
+- isbn13
+- isicrev4
+- isin
+- iso3166code
+- it_codicefiscale
+- language
+- latitude
+- longitude
+- mac_address
+- marital_status
+- money
+- month
+- namesuffix
+- nanpphone
+- nif
+- orgname
+- percentage
+- person_firstname
+- person_fullname
+- person_midname
+- person_surname
+- race_ethnicity
+- religion
+- street
+- street_address
+- swiftcode
+- temperature
+- uknino
+- ukpostalcode
+- upc
+- url
+- uscounty
+- usdriverlic
+- usein
+- usitin
+- usssn
+- usstate
+- uszipcode
+- vin
