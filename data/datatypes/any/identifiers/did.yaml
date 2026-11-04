@@ -1,0 +1,45 @@
+id: did
+name: Decentralized identifier (DID)
+status: draft
+doc: Identifier defined by the W3C Recommendation Decentralized Identifiers (DIDs) v1.0 (2022). It has
+  the form did:<method>:<method-specific-id>. The method name is lowercase letters and digits, such as
+  web, key or plc, and the method decides how the identifier resolves to a DID document with keys and
+  service endpoints. The method-specific part uses letters, digits, period, hyphen, underscore, percent-encoded
+  bytes and colons, and does not end with a colon. A DID followed by a path, query or fragment is a DID
+  URL, which the regexp does not accept. Bluesky and the AT Protocol identify accounts with did:plc and
+  did:web DIDs.
+categories:
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^did:[a-z0-9]+:(?:(?:[A-Za-z0-9._-]|%[0-9A-Fa-f]{2})*:)*(?:[A-Za-z0-9._-]|%[0-9A-Fa-f]{2})+$
+examples:
+- value: did:example:123456789abcdefghi
+  description: Example 1 of the W3C DID specification
+- value: did:web:w3c-ccg.github.io
+  description: did:web method specification
+- value: did:web:example.com%3A3000:user:alice
+  description: did:web with an encoded port and a path, did:web method specification
+- value: did:Example:123456789abcdefghi
+  valid: false
+  description: Uppercase letter in the method name
+- value: did:example:123456/path
+  valid: false
+  description: DID URL with a path
+- value: 'did:example:'
+  valid: false
+  description: Empty method-specific identifier
+links:
+- type: doc
+  url: https://www.w3.org/TR/did-1.0/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q95350968
+- type: doc
+  url: https://w3c-ccg.github.io/did-method-web/
+- type: doc
+  url: https://atproto.com/specs/did
+translations:
+  ru:
+    name: Децентрализованный идентификатор (DID)

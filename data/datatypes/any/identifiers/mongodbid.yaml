@@ -2,8 +2,12 @@ id: mongodbid
 name: MongoDB unique Object ID
 status: stable
 doc: MongoDB ObjectId, the unique id that MongoDB assigns to each document of a collection as the field
-  _id. It is a 12-byte value written as 24 hexadecimal characters.
+  _id. It is a 12-byte value written as 24 hexadecimal characters. The first 4 bytes are the creation
+  time in seconds since the Unix epoch, then come a 5-byte random value per process and a 3-byte counter,
+  so ObjectIds sort roughly by creation time. The MongoDB manual writes the hexadecimal digits in lowercase.
+  The xid format encodes the same 12 bytes in Base32 (xid). It is not the ArcGIS OBJECTID (objectid).
 categories:
+- identifiers
 - common
 langs:
 - common
@@ -15,6 +19,8 @@ examples:
   description: Unique MongoDB ObjectID
 - value: 507f191e810c19729de860ea
   description: Unique MongoDB ObjectID
+- value: 00000020f51bb4362eee2a4d
+  description: ObjectId(32) from the MongoDB manual, 32 seconds after the Unix epoch
 - value: 507f1f77bcf86cd79943901
   valid: false
   description: 23 characters instead of 24

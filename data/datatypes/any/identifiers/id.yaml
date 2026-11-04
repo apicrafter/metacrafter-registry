@@ -1,7 +1,8 @@
 id: id
 name: Unique identifier
 status: draft
-doc: An unique identifier, local for DB/dataset or global and persistent
+doc: Generic identifier of a record or object, unique within a database or dataset or globally and persistently.
+  Use a more specific type, such as uuid, ulid or a national identifier, when the format is known.
 categories:
 - identifiers
 langs:
@@ -11,3 +12,6 @@ classification: identifier
 mappings:
   cdm: means.identity.entityId
   fta: IDENTIFIER
+translations:
+  ru:
+    name: Уникальный идентификатор

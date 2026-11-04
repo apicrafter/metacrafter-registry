@@ -1,0 +1,31 @@
+id: xid
+name: xid globally unique ID
+status: draft
+doc: 96-bit identifier of the Go library rs/xid. It uses the MongoDB ObjectId layout (a 4-byte time in
+  seconds, a 3-byte machine ID, a 2-byte process ID and a 3-byte counter) and writes the 12 bytes as 20
+  characters of lowercase base32hex (digits and the letters a to v), which keeps the sort order. The last
+  character holds a single bit, so it is 0 or g.
+categories:
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-v]{19}[0g]$
+examples:
+- value: 9m4e2mr0ui3e8a215n4g
+  description: Example of the rs/xid README
+- value: a1vhuttsv1mdf6a3i08g
+  description: The 12 bytes of the MongoDB ObjectId 507f1f77bcf86cd799439011 written as an xid
+- value: 9M4E2MR0UI3E8A215N4G
+  valid: false
+  description: Uppercase
+- value: 9m4e2mr0ui3e8a215n4w
+  valid: false
+  description: w is not a base32hex character
+links:
+- type: doc
+  url: https://github.com/rs/xid
+translations:
+  ru:
+    name: Глобально уникальный идентификатор xid

@@ -1,0 +1,28 @@
+id: nanoid
+name: Nano ID
+status: draft
+doc: Random identifier of the Nano ID library. By default it is 21 characters of the URL-safe alphabet
+  A-Z, a-z, 0-9, underscore and hyphen, which gives a collision probability similar to UUIDv4. Applications
+  can choose another length or alphabet; the regexp covers only the default.
+categories:
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Za-z0-9_-]{21}$
+examples:
+- value: V1StGXR8_Z5jdHi6B-myT
+  description: Example of the Nano ID README
+- value: IRFa-VaY2b
+  valid: false
+  description: Nano ID with a custom size of 10, not covered
+- value: V1StGXR8_Z5jdHi6B+myT
+  valid: false
+  description: The plus sign is not in the default alphabet
+links:
+- type: doc
+  url: https://github.com/ai/nanoid
+translations:
+  ru:
+    name: Идентификатор Nano ID
