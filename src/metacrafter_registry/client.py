@@ -46,6 +46,11 @@ def _tokens(text: str) -> set[str]:
     return set(_TOKEN.findall(_CAMEL.sub(" ", str(text)).lower()))
 
 
+def _purview_key(name: str) -> str:
+    """Compare Purview type names without case, periods and apostrophes."""
+    return " ".join(re.sub(r"[.'’]", "", name).casefold().split())
+
+
 def _cache_dir() -> Path:
     base = os.environ.get("XDG_CACHE_HOME") or Path.home() / ".cache"
     return Path(base) / "metacrafter-registry"
@@ -444,12 +449,18 @@ class Registry:
         d3m_bare = system == "d3m" and "://" not in wanted
         if system == "d3m" and wanted.startswith("https://schema.org/"):
             wanted = "http://" + wanted.removeprefix("https://")
+        # Microsoft writes the same Purview type name with varying case and
+        # punctuation ("U.S. driver's license number", "U.S. Drivers License Number").
+        if system == "purview":
+            wanted = _purview_key(wanted)
         out = []
         for record in self.datatypes.values():
             value = record.get("mappings", {}).get(system)
             values = value if isinstance(value, list) else [value] if value else []
             if system == "wikidata":
                 normalized = [v.upper() for v in values]
+            elif system == "purview":
+                normalized = [_purview_key(v) for v in values]
             elif d3m_bare:
                 normalized = [v.rsplit("/", 1)[-1] for v in values]
             else:

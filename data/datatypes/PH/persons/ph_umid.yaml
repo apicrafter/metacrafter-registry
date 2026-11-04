@@ -1,0 +1,24 @@
+id: ph_umid
+name: Philippine Unified Multi-Purpose ID number (UMID)
+status: draft
+doc: 'Common reference number of the Philippine Unified Multi-Purpose ID card: four digits, seven digits
+  and one digit, separated by hyphens.'
+categories:
+- pii
+- persons
+country:
+- PH
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: ^\d{4}-\d{7}-\d$
+mappings:
+  purview:
+  - Philippines Unified Multi-Purpose ID Number
+  - Philippines unified multi-purpose identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-philippines-unified-multi-purpose-identification-number
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Unified_Multi-Purpose_ID

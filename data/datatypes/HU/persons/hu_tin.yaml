@@ -1,0 +1,23 @@
+id: hu_tin
+name: Hungarian tax identification number
+status: draft
+doc: 'Tax identification number of a Hungarian private person (adóazonosító jel): ten digits that start
+  with 8 and end with a check digit.'
+categories:
+- pii
+- persons
+country:
+- HU
+langs:
+- hu
+is_pii: true
+classification: identifier
+regexp: ^8\d{9}$
+mappings:
+  purview:
+  - Hungary tax identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-hungary-tax-identification-number

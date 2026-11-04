@@ -1,0 +1,21 @@
+id: surgical_procedure
+name: Surgical procedure
+status: draft
+doc: Name of a surgical operation, for example appendectomy.
+categories:
+- medical
+langs:
+- en
+is_pii: false
+classification: categorical
+mappings:
+  purview:
+  - Surgical procedures
+  - All medical terms and conditions
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-surgical-procedures
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Surgery
+- type: schema.org
+  url: https://schema.org/SurgicalProcedure

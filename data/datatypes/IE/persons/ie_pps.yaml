@@ -22,6 +22,12 @@ examples:
 - value: 0966186QA7
   valid: false
   description: One character too many
+mappings:
+  purview:
+  - Ireland personal public service (PPS) number
+  - EU national identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Personal_Public_Service_Number

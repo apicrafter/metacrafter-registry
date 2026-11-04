@@ -1,0 +1,18 @@
+id: hu_passport
+name: Hungarian passport number
+status: draft
+doc: Number of a passport issued by Hungary. Microsoft Purview looks for two letters and six or seven
+  digits.
+semantic_type: passport
+country:
+- HU
+langs:
+- hu
+regexp: ^[A-Z]{2}\d{6,7}$
+mappings:
+  purview:
+  - Hungary passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-hungary-passport-number

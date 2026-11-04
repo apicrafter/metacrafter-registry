@@ -21,6 +21,12 @@ examples:
 - value: '612101008307'
   valid: false
   description: One character too many
+mappings:
+  purview:
+  - Lithuania personal code
+  - EU national identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
 links:
 - type: wikipedia
   url: https://lt.wikipedia.org/wiki/Asmens_kodas

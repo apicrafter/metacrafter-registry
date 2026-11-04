@@ -12,6 +12,10 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[A-Z0-9]{6,10}$
+mappings:
+  purview:
+  - Poland Passport Number
+  - EU passport number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Passport

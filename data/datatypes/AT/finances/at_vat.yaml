@@ -24,6 +24,10 @@ examples:
 - value: AT13585627
   valid: false
   description: the letter U is missing
+mappings:
+  purview:
+  - Austria Value Added Tax (VAT) Number
+  - Austria value added tax
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/VAT_identification_number

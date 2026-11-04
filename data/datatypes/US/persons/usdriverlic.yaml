@@ -15,7 +15,7 @@ regexp: ([A-Z][0-9]{3,6}|[A-Z][0-9]{5,9}|[A-Z][0-9]{6,8}|[A-Z][0-9]{4,8}|[A-Z][0
 mappings:
   google_dlp: US_DRIVERS_LICENSE_NUMBER
   presidio: US_DRIVER_LICENSE
-  purview: U.S. driver's license number
+  purview: U.S. drivers license number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Driver%27s_licenses_in_the_United_States

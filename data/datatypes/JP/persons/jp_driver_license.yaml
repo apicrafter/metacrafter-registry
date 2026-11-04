@@ -21,7 +21,7 @@ examples:
   description: separators are not part of the number
 mappings:
   google_dlp: JAPAN_DRIVERS_LICENSE_NUMBER
-  purview: Japan driver's license number
+  purview: Japan drivers license number
 links:
 - type: wikipedia
   url: https://ja.wikipedia.org/wiki/%E9%81%8B%E8%BB%A2%E5%85%8D%E8%A8%B1%E8%A8%BC

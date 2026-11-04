@@ -31,7 +31,9 @@ examples:
   description: One character too many
 mappings:
   google_dlp: SPAIN_DNI_NUMBER
-  purview: Spain DNI
+  purview:
+  - Spain DNI
+  - EU national identification number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Documento_Nacional_de_Identidad_(Spain)

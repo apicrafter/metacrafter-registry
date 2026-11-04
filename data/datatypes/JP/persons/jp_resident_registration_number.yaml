@@ -1,0 +1,20 @@
+id: jp_resident_registration_number
+name: Japanese resident registration number
+status: draft
+doc: Eleven-digit number that Microsoft Purview detects as the Japanese resident registration number;
+  the resident record code (住民票コード) of the Basic Resident Register has 11 digits.
+categories:
+- pii
+- persons
+country:
+- JP
+langs:
+- ja
+is_pii: true
+classification: identifier
+regexp: ^\d{11}$
+mappings:
+  purview: Japan resident registration number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-japan-resident-registration-number

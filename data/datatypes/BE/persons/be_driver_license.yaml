@@ -1,0 +1,23 @@
+id: be_driver_license
+name: Belgian driver's license number
+status: draft
+doc: Number of a driving licence issued in Belgium. Microsoft Purview looks for ten digits.
+categories:
+- pii
+- persons
+country:
+- BE
+langs:
+- nl
+- fr
+- de
+is_pii: true
+classification: identifier
+regexp: ^\d{10}$
+mappings:
+  purview:
+  - Belgium drivers license number
+  - EU drivers license number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-belgium-drivers-license-number

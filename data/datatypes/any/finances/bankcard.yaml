@@ -15,7 +15,9 @@ checksum: luhn
 mappings:
   google_dlp: CREDIT_CARD_NUMBER
   presidio: CREDIT_CARD
-  purview: Credit card number
+  purview:
+  - Credit card number
+  - EU debit card number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Bank_card

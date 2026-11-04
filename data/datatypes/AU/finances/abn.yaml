@@ -13,4 +13,6 @@ classification: identifier
 regexp: ^[0-9]{11}$
 mappings:
   presidio: AU_ABN
-  purview: Australian Business Number
+  purview:
+  - Australian Business Number
+  - Australia business number

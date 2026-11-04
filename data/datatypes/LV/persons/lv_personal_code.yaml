@@ -1,0 +1,25 @@
+id: lv_personal_code
+name: Latvian personal code
+status: draft
+doc: Latvian personal code (personas kods), 11 digits. Codes issued before July 2017 start with the date
+  of birth (DDMMYY), followed by a hyphen, a century digit and four digits. Newer codes start with 32
+  and carry no date of birth.
+categories:
+- pii
+- persons
+country:
+- LV
+langs:
+- lv
+is_pii: true
+classification: identifier
+regexp: ^(?:(?:0[1-9]|[12]\d|3[01])(?:0[1-9]|1[0-2])\d{2}-?[012]\d{4}|32\d{4}-?\d{5})$
+mappings:
+  purview:
+  - Latvia personal code
+  - EU national identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-latvia-personal-code

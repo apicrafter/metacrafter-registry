@@ -1,0 +1,22 @@
+id: in_driver_license
+name: Indian driver's license number
+status: draft
+doc: Number of a driving licence issued in India. Microsoft Purview looks for a two-letter state code,
+  a two-digit office code, the four-digit year of issue and seven digits, optionally separated by spaces
+  or hyphens.
+categories:
+- pii
+- persons
+country:
+- IN
+langs:
+- en
+- hi
+is_pii: true
+classification: identifier
+regexp: ^[A-Z]{2}[ -]?\d{2}[ -]?\d{4}[ -]?\d{7}$
+mappings:
+  purview: India Drivers License Number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-india-drivers-license-number
