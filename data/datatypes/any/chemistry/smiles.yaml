@@ -5,15 +5,16 @@ doc: 'Simplified Molecular-Input Line-Entry System (SMILES): a line notation tha
   of a molecule as a short ASCII string. Atoms are written by their element symbols, double and triple
   bonds by = and #, branches in parentheses and ring closures by digits; lowercase letters mark aromatic
   atoms. One molecule has many valid SMILES strings. Canonical SMILES picks one of them, and isomeric
-  SMILES also records stereochemistry and isotopes. The record has no regexp: the SMILES character set
-  also matches ordinary words, so a chemistry parser such as RDKit or Open Babel is needed to check a
-  value.'
+  SMILES also records stereochemistry and isotopes. PubChem and Wikidata publish both forms. The record
+  has no regexp: the SMILES character set also matches ordinary words, so a chemistry parser such as RDKit
+  or Open Babel is needed to check a value.'
 categories:
 - chemistry
 - science
 langs:
 - common
 is_pii: false
+classification: identifier
 examples:
 - value: CCO
   description: Ethanol
@@ -23,7 +24,14 @@ examples:
   description: Benzene, aromatic form
 - value: O=C=O
   description: Carbon dioxide
+- value: CC(=O)OC1=CC=CC=C1C(=O)O
+  description: Aspirin
+- value: '[Au]'
+  description: Gold
+- value: O=C(O)[C@@H](N)C
+  description: L-alanine, isomeric SMILES
 mappings:
+  schema_org: smiles
   autotype: smile
 links:
 - type: wikipedia
@@ -32,6 +40,8 @@ links:
   url: https://www.wikidata.org/wiki/Property:P233
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P2017
+- type: schema.org
+  url: https://schema.org/smiles
 - type: doc
   url: http://opensmiles.org/opensmiles.html
 - type: other
