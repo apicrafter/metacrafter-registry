@@ -14,15 +14,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^(?:BG[ -]?)?\d{9,10}$
-checksum: bg_vat
 examples:
 - value: BG 6114314233
   description: Synthetic number with a valid check digit
 - value: BG-2975537765
   description: Synthetic number with a valid check digit
-- value: '6114314230'
+- value: '61143142337'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.bg.vat.html

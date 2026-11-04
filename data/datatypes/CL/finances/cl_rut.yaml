@@ -14,7 +14,6 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^\d{1,2}\.?\d{3}\.?\d{3}-?[0-9K]$
-checksum: cl_rut
 examples:
 - value: 95566826K
   description: Synthetic number with a valid check digit

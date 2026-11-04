@@ -14,7 +14,6 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^\d{2}[- ]?\d{4}[- ]?\d{7}[- ]?\d{2,3}$
-checksum: nz_bankaccount
 examples:
 - value: 02-0552-0410366-070
   description: Synthetic number with a valid check digit

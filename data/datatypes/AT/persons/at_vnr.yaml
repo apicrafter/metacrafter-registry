@@ -14,15 +14,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[1-9]\d{3} ?\d{6}$
-checksum: at_vnr
 examples:
 - value: 5928 843905
   description: Synthetic number with a valid check digit
 - value: 1122 810516
   description: Synthetic number with a valid check digit
-- value: '5928843900'
+- value: '59288439057'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://de.wikipedia.org/wiki/Sozialversicherungsnummer#%C3%96sterreich

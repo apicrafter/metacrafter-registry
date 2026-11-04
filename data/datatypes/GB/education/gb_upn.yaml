@@ -15,15 +15,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[A-HJ-NP-RT-Z]\d{11}[0-9A-HJ-NP-RT-Z]$
-checksum: gb_upn
 examples:
 - value: Q202066535762
   description: Synthetic number with a valid check digit
 - value: Z208803304719
   description: Synthetic number with a valid check digit
-- value: Q202066535760
+- value: Q2020665357627
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: doc
   url: https://www.gov.uk/government/publications/unique-pupil-numbers

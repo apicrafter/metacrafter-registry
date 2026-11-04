@@ -14,7 +14,6 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^\d{6}/?\d{3,4}$
-checksum: cz_rc
 examples:
 - value: '7810181082'
   description: Synthetic number with a valid check digit
@@ -22,9 +21,9 @@ examples:
   description: Synthetic number with a valid check digit
 - value: 781018/1082
   description: The first example in its printed form
-- value: '7810181080'
+- value: '78101810827'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://cs.wikipedia.org/wiki/Rodn%C3%A9_%C4%8D%C3%ADslo

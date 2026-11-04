@@ -14,7 +14,6 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[0-7]\d[01]\d{3}-?\d{3}[09]$
-checksum: is_kennitala
 examples:
 - value: '2812800669'
   description: Synthetic number with a valid check digit

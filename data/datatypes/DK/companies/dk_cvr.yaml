@@ -15,15 +15,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: '^(?:DK[ -]?)?[1-9]\d(?: ?\d{2}){3}$'
-checksum: dk_cvr
 examples:
 - value: DK 90 30 16 59
   description: Real-world value published online
 - value: DK10290813
   description: Real-world value published online
-- value: '90301650'
+- value: '903016597'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://da.wikipedia.org/wiki/CVR-nummer

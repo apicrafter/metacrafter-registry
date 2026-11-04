@@ -13,15 +13,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:EE[ -]?)?\d{3} ?\d{3} ?\d{3}$
-checksum: ee_kmkr
 examples:
 - value: EE 101288941
   description: Real-world value published online
 - value: EE 100594102
   description: Real-world value published online
-- value: '101288940'
+- value: '1012889417'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ee.kmkr.html

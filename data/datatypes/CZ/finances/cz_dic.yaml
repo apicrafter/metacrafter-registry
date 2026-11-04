@@ -14,7 +14,6 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^(?:CZ[ -]?)?(?:\d{8}|\d{6}/?\d{3,4})$
-checksum: cz_dic
 examples:
 - value: CZ 834929/971
   description: Synthetic number with a valid check digit

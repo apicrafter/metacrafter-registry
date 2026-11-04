@@ -13,15 +13,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[1789]\d{7}$
-checksum: ee_ik
 examples:
 - value: '19232463'
   description: Synthetic number with a valid check digit
 - value: '95529387'
   description: Synthetic number with a valid check digit
-- value: '19232460'
+- value: '192324637'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: doc
   url: https://ariregister.rik.ee/

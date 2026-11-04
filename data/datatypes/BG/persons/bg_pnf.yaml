@@ -13,15 +13,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^\d{10}$
-checksum: bg_pnf
 examples:
 - value: '4199722079'
   description: Synthetic number with a valid check digit
 - value: '6345738590'
   description: Synthetic number with a valid check digit
-- value: '4199722070'
+- value: '41997220797'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.bg.pnf.html

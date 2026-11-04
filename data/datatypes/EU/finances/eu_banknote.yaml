@@ -13,15 +13,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[B-HJLMNPR-Z][A-Z0-9]\d{10}$
-checksum: eu_banknote
 examples:
 - value: VA0436214792
   description: Real-world value published online
 - value: U71220515711
   description: Real-world value published online
-- value: VA0436214790
+- value: VA04362147927
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Euro_banknotes#Serial_number

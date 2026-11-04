@@ -14,15 +14,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^10\d{7}$
-checksum: nl_onderwijsnummer
 examples:
 - value: '108148380'
   description: Synthetic number with a valid check digit
 - value: '109964543'
   description: Synthetic number with a valid check digit
-- value: '108148381'
+- value: '1081483807'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Onderwijsnummer

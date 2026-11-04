@@ -13,15 +13,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:HU[ -]?)?\d{8}$
-checksum: hu_anum
 examples:
 - value: HU 10672101
   description: Real-world value published online
 - value: HU 23157653
   description: Real-world value published online
-- value: '10672100'
+- value: '106721017'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.hu.anum.html

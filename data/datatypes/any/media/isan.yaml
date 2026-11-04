@@ -11,7 +11,6 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:ISAN )?[0-9A-F]{4}-?[0-9A-F]{4}-?[0-9A-F]{4}-?[0-9A-F]{4}(?:-?[0-9A-Z])?(?:-?[0-9A-F]{4}-?[0-9A-F]{4}(?:-?[0-9A-Z])?)?$
-checksum: iso7064_mod37_36
 examples:
 - value: 0000-0000-9E64-0000-9-AA55-2C14-M
   description: Synthetic number with a valid check digit

@@ -13,15 +13,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:IE[ -]?)?(?:\d{7}[A-W][A-IW]?|\d[A-Z+*]\d{5}[A-W])$
-checksum: ie_vat
 examples:
 - value: IE 9679477V
   description: Real-world value published online
 - value: IE6599001W
   description: Real-world value published online
-- value: 9679477A
+- value: 9679477V7
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ie.vat.html

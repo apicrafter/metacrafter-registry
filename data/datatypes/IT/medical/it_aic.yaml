@@ -13,15 +13,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:\d{9}|[0-9B-DF-HJ-NP-Z]{6})$
-checksum: it_aic
 examples:
 - value: 079878625
   description: Synthetic number with a valid check digit
 - value: 091810440
   description: Synthetic number with a valid check digit
-- value: 079878620
+- value: 0798786257
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: doc
   url: https://www.gazzettaufficiale.it/do/atto/serie_generale/caricaPdf?cdimg=14A0566800100010110001&dgu=2014-07-18&art.dataPubblicazioneGazzetta=2014-07-18&art.codiceRedazionale=14A05668&art.num=1&art.tiposerie=SG

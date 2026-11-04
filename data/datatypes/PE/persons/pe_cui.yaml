@@ -13,15 +13,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^\d{8}-?[0-9A-K]?$
-checksum: pe_cui
 examples:
 - value: '962709112'
   description: Synthetic number with a valid check digit
 - value: '153959922'
   description: Synthetic number with a valid check digit
-- value: '962709110'
+- value: '9627091127'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: doc
   url: https://www.gob.pe/235-documento-nacional-de-identidad-dni

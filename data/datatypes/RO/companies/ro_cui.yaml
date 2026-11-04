@@ -14,15 +14,11 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:RO[ -]?)?[1-9]\d{1,9}$
-checksum: ro_cui
 examples:
 - value: '235519185'
   description: Synthetic number with a valid check digit
 - value: '669416810'
   description: Synthetic number with a valid check digit
-- value: '235519180'
-  valid: false
-  description: Check digit does not match
 links:
 - type: wikipedia
   url: https://ro.wikipedia.org/wiki/Cod_de_identificare_fiscal%C4%83

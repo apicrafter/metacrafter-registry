@@ -14,15 +14,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^\d{2}[A-Z][0-9A-Z-]{12}[0-9A-Z]$
-checksum: eu_eic
 examples:
 - value: 59Z000000001534U
   description: Real-world value published online
 - value: 19XENIONENERGIAM
   description: Real-world value published online
-- value: 59Z000000001534A
+- value: 59Z000000001534U7
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Energy_Identification_Code

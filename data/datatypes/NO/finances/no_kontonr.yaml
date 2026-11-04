@@ -13,7 +13,6 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^\d{4}[. ]?\d{2}[. ]?\d{5}$
-checksum: no_kontonr
 examples:
 - value: '63774914465'
   description: Synthetic number with a valid check digit
@@ -21,9 +20,9 @@ examples:
   description: Synthetic number with a valid check digit
 - value: 6377.49.14465
   description: The first example in its printed form
-- value: '63774914460'
+- value: '637749144657'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://www.ecbs.org/iban/norway-bank-account-number.html

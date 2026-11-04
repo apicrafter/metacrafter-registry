@@ -12,17 +12,16 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[1-9]-?\d{4}-?\d{4}-?\d{4}$
-checksum: jp_cn
 examples:
-- value: '8166975505797'
+- value: '1878613755182'
   description: Real-world value published online
-- value: '7896877317434'
+- value: '2506450764947'
   description: Real-world value published online
-- value: 8-1669-7550-5797
+- value: 1-8786-1375-5182
   description: The first example in its printed form
-- value: '8166975505790'
+- value: '18786137551827'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Corporate_Number

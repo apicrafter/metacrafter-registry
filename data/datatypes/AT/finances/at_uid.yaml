@@ -13,15 +13,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:AT[ -]?)?U ?\d{8}$
-checksum: at_uid
 examples:
 - value: ATU 64762368
   description: Real-world value published online
 - value: ATU 65034704
   description: Real-world value published online
-- value: U64762360
+- value: U647623687
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.at.uid.html

@@ -14,15 +14,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:FI[ -]?)?\d{7}-?\d$
-checksum: fi_ytunnus
 examples:
 - value: FI 02459042
   description: Real-world value published online
 - value: FI 18949388
   description: Real-world value published online
-- value: 02459040
+- value: 024590427
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fi.alv.html

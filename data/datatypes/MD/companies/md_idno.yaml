@@ -12,15 +12,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^\d{13}$
-checksum: md_idno
 examples:
-- value: '1003601000988'
+- value: '1007601009037'
   description: Real-world value published online
-- value: '1002600037724'
+- value: '1006601004943'
   description: Real-world value published online
-- value: '1003601000980'
+- value: '10076010090377'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.md.idno.html

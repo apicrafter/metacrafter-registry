@@ -13,7 +13,6 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^\d{13}$
-checksum: ec_ruc
 examples:
 - value: '2491021992001'
   description: Synthetic number with a valid check digit

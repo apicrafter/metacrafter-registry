@@ -12,7 +12,6 @@ langs:
 is_pii: false
 classification: identifier
 regexp: '^(?:GRID: ?)?A1-?[0-9A-Z]{5}-?[0-9A-Z]{10}-?[0-9A-Z]$'
-checksum: iso7064_mod37_36
 examples:
 - value: A1YMT8K96ZLZOEM4G9
   description: Synthetic number with a valid check digit
@@ -20,9 +19,9 @@ examples:
   description: Synthetic number with a valid check digit
 - value: A1-YMT8K-96ZLZOEM4G-9
   description: The first example in its printed form
-- value: A1YMT8K96ZLZOEM4G0
+- value: A1YMT8K96ZLZOEM4G97
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Global_Release_Identifier

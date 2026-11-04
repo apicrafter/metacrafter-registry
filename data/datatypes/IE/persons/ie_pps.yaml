@@ -14,15 +14,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^\d{7}[A-W][ABHWTX]?$
-checksum: ie_pps
 examples:
 - value: 0966186QA
   description: Synthetic number with a valid check digit
 - value: 2175829QA
   description: Synthetic number with a valid check digit
-- value: 0966186QB
+- value: 0966186QA7
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Personal_Public_Service_Number

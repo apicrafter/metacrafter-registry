@@ -13,15 +13,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:LT[ -]?)?(?:\d{9}|\d{12})$
-checksum: lt_pvm
 examples:
-- value: LT 119511515
+- value: LT 354991917
   description: Real-world value published online
-- value: LT 100005929611
+- value: LT 100002922012
   description: Real-world value published online
-- value: '119511510'
+- value: '3549919177'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.lt.pvm.html

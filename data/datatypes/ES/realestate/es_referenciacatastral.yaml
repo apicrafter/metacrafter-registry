@@ -13,7 +13,6 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[0-9A-ZÑ]{7} ?[0-9A-ZÑ]{7} ?[0-9A-ZÑ]{4} ?[A-Z]{2}$
-checksum: es_referenciacatastral
 examples:
 - value: 10118A004030320000PY
   description: Real-world value published online
@@ -21,9 +20,9 @@ examples:
   description: Real-world value published online
 - value: 10118A0 0403032 0000 PY
   description: The first example in its printed form
-- value: 10118A004030320000PA
+- value: 10118A004030320000PY7
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/Catastro#Referencia_catastral

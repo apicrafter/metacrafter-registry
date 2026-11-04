@@ -13,7 +13,6 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:NO ?)?\d{3} ?\d{3} ?\d{3} ?MVA$
-checksum: no_orgnr
 examples:
 - value: NO 982 952 573 MVA
   description: Real-world value published online

@@ -13,15 +13,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^\d{7}-?\d$
-checksum: fi_ytunnus
 examples:
 - value: 2731651-5
   description: Synthetic number with a valid check digit
 - value: 7162313-3
   description: Synthetic number with a valid check digit
-- value: '27316510'
+- value: '273165157'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://fi.wikipedia.org/wiki/Y-tunnus

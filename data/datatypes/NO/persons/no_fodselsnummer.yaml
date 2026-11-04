@@ -13,7 +13,6 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^\d{6}[ -]?\d{5}$
-checksum: no_fodselsnummer
 examples:
 - value: '27051338311'
   description: Synthetic number with a valid check digit
@@ -21,9 +20,9 @@ examples:
   description: Synthetic number with a valid check digit
 - value: 270513 38311
   description: The first example in its printed form
-- value: '27051338310'
+- value: '270513383117'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://no.wikipedia.org/wiki/F%C3%B8dselsnummer

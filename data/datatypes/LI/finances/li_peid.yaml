@@ -13,9 +13,9 @@ is_pii: true
 classification: identifier
 regexp: ^\d{4,12}$
 examples:
-- value: '6892921637'
+- value: '4021582970'
   description: Synthetic number in the documented format
-- value: '312066637'
+- value: '50770'
   description: Synthetic number in the documented format
 links:
 - type: other

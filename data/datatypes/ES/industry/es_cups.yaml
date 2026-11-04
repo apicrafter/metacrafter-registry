@@ -13,15 +13,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^ES\d{16}[A-Z]{2}(?:\d[A-Z])?$
-checksum: es_cups
 examples:
 - value: ES0341392425346906CP
   description: Synthetic number with a valid check digit
 - value: ES0116359966285471RN
   description: Synthetic number with a valid check digit
-- value: ES0341392425346906CA
+- value: ES0341392425346906CP7
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/C%C3%B3digo_Unificado_de_Punto_de_Suministro

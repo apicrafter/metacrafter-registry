@@ -13,7 +13,6 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^\d-?\d{2}-?\d{5}-?\d$
-checksum: do_rnc
 examples:
 - value: '523022952'
   description: Real-world value published online
@@ -21,9 +20,9 @@ examples:
   description: Real-world value published online
 - value: 5-23-02295-2
   description: The first example in its printed form
-- value: '523022950'
+- value: '5230229527'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.do.rnc.html

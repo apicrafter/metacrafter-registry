@@ -15,15 +15,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[A-Z]\d{12}[0-9A-Z]$
-checksum: mu_nid
 examples:
 - value: R281297722816D
   description: Synthetic number with a valid check digit
 - value: T0911658291658
   description: Synthetic number with a valid check digit
-- value: R281297722816A
+- value: R281297722816D7
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.mu.nid.html

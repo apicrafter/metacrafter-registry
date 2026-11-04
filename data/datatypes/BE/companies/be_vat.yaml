@@ -17,15 +17,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:BE[ -]?)?[01]?\d{3}[. ]?\d{3}[. ]?\d{3}$
-checksum: be_vat
 examples:
 - value: BE 0220.764.971
   description: Real-world value published online
 - value: BE 456.973.433
   description: Real-world value published online
-- value: 0220764970
+- value: 02207649717
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Ondernemingsnummer

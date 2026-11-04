@@ -15,15 +15,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:LU[ -]?)?\d{3} ?\d{3} ?\d{2}$
-checksum: lu_tva
 examples:
-- value: LU 19979983
+- value: LU 22991225
   description: Real-world value published online
-- value: LU 11082217
+- value: LU 19406747
   description: Real-world value published online
-- value: '19979980'
+- value: '229912257'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.lu.tva.html

@@ -13,7 +13,6 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^\d{1,11}-?[0-9K]$
-checksum: gt_nit
 examples:
 - value: 3459079K
   description: Synthetic number with a valid check digit

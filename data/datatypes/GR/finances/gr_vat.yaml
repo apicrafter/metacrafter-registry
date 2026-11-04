@@ -13,15 +13,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^(?:(?:EL|GR)[ -]?)?\d{9}$
-checksum: gr_vat
 examples:
 - value: 072830684
   description: Synthetic number with a valid check digit
 - value: '652909339'
   description: Synthetic number with a valid check digit
-- value: 072830680
+- value: 0728306847
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gr.vat.html

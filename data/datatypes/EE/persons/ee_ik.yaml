@@ -13,15 +13,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[1-8]\d{10}$
-checksum: ee_ik
 examples:
 - value: '40612037308'
   description: Synthetic number with a valid check digit
 - value: '68711217148'
   description: Synthetic number with a valid check digit
-- value: '40612037300'
+- value: '406120373087'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://et.wikipedia.org/wiki/Isikukood

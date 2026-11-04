@@ -14,15 +14,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[A-Z]{6}[0-9LMNPQRSTUV]{2}[ABCDEHLMPRST][0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{3}[A-Z]$
-checksum: it_codicefiscale
 examples:
 - value: DYMMTM43M45I436N
   description: Synthetic number with a valid check digit
 - value: LVFGNC77T47H353V
   description: Synthetic number with a valid check digit
-- value: DYMMTM43M45I436A
+- value: DYMMTM43M45I436N7
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Italian_fiscal_code

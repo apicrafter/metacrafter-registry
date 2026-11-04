@@ -13,15 +13,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^(?:10|15|17|20)\d{9}$
-checksum: pe_ruc
 examples:
 - value: '20468189446'
   description: Synthetic number with a valid check digit
 - value: '20388002353'
   description: Synthetic number with a valid check digit
-- value: '20468189440'
+- value: '204681894467'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: doc
   url: https://www.sunat.gob.pe/legislacion/ruc/

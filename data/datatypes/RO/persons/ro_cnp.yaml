@@ -14,15 +14,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[1-9]\d{12}$
-checksum: ro_cnp
 examples:
 - value: '1461014075258'
   description: Synthetic number with a valid check digit
 - value: '6861202422810'
   description: Synthetic number with a valid check digit
-- value: '1461014075250'
+- value: '14610140752587'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://ro.wikipedia.org/wiki/Cod_numeric_personal

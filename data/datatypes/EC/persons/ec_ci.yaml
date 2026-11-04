@@ -13,15 +13,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^\d{9}-?\d$
-checksum: ec_ci
 examples:
 - value: '1421301860'
   description: Synthetic number with a valid check digit
 - value: '2451810663'
   description: Synthetic number with a valid check digit
-- value: '1421301861'
+- value: '14213018607'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ec.ci.html

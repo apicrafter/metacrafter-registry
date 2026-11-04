@@ -14,15 +14,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^(?:LV[ -]?)?\d{11}$
-checksum: lv_pvn
 examples:
-- value: '48146577057'
+- value: '40700043818'
   description: Synthetic number with a valid check digit
-- value: '45806572111'
+- value: '44466923465'
   description: Synthetic number with a valid check digit
-- value: '48146577050'
+- value: '407000438187'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/National_identification_number#Latvia

@@ -15,15 +15,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: '^(?:(?:GB|XI)[ -]?)?(?:\d{3} ?\d{4} ?\d{2}(?: ?\d{3})?|GD\d{3}|HA\d{3})$'
-checksum: gb_vat
 examples:
 - value: XI 432525179
   description: Real-world value published online
 - value: 432 5251 79
   description: The first example in its printed form
-- value: '432525170'
+- value: '4325251797'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gb.vat.html

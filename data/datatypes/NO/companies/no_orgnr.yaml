@@ -12,7 +12,6 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^\d{3} ?\d{3} ?\d{3}$
-checksum: no_orgnr
 examples:
 - value: '986992928'
   description: Synthetic number with a valid check digit
@@ -20,9 +19,9 @@ examples:
   description: Synthetic number with a valid check digit
 - value: 986 992 928
   description: The first example in its printed form
-- value: '986992920'
+- value: '9869929287'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://no.wikipedia.org/wiki/Organisasjonsnummer

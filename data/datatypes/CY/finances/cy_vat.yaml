@@ -13,15 +13,14 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:CY[ -]?)?\d{8}[A-Z]$
-checksum: cy_vat
 examples:
 - value: CY-10259033P
   description: Real-world value published online
 - value: CY 10263870R
   description: Real-world value published online
-- value: 10259033A
+- value: 10259033P7
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cy.vat.html

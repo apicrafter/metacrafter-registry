@@ -15,15 +15,14 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^(?:PT[ -]?)?[1-9]\d{2} ?\d{3} ?\d{3}$
-checksum: pt_nif
 examples:
 - value: '301211760'
   description: Synthetic number with a valid check digit
 - value: '290048842'
   description: Synthetic number with a valid check digit
-- value: '301211761'
+- value: '3012117607'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://pt.wikipedia.org/wiki/N%C3%BAmero_de_identifica%C3%A7%C3%A3o_fiscal

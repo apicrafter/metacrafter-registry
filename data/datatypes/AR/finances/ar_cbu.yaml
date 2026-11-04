@@ -14,7 +14,6 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^\d{8} ?\d{14}$
-checksum: ar_cbu
 examples:
 - value: 0546356555736828044859
   description: Synthetic number with a valid check digit
@@ -22,9 +21,9 @@ examples:
   description: Synthetic number with a valid check digit
 - value: 05463565 55736828044859
   description: The first example in its printed form
-- value: 0546356555736828044850
+- value: 05463565557368280448597
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/Clave_Bancaria_Uniforme

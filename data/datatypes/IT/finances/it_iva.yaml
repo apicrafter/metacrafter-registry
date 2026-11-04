@@ -15,11 +15,11 @@ classification: identifier
 regexp: ^(?:IT[ -]?)?\d{11}$
 checksum: luhn
 examples:
-- value: IT 00118439991
-  description: Real-world value published online
-- value: IT 04894530635
-  description: Real-world value published online
-- value: 00118439990
+- value: '61248020200'
+  description: Synthetic number with a valid check digit
+- value: '21360460394'
+  description: Synthetic number with a valid check digit
+- value: '61248020201'
   valid: false
   description: Check digit does not match
 links:

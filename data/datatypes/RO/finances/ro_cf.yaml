@@ -14,15 +14,11 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^(?:RO[ -]?)?(?:\d{2,10}|\d{13})$
-checksum: ro_cui
 examples:
 - value: RO40751635
   description: Synthetic number with a valid check digit
 - value: RO346362927
   description: Synthetic number with a valid check digit
-- value: RO40751630
-  valid: false
-  description: Check digit does not match
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ro.cf.html

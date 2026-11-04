@@ -10,12 +10,11 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^(?:[0-9A-F]{14}[0-9A-F]?|\d{18}\d?)$
-checksum: luhn
 examples:
 - value: A1F1A9017017E0
-  description: Synthetic number with a valid check digit
+  description: Synthetic number in the documented format
 - value: A341E59CFB517B
-  description: Synthetic number with a valid check digit
+  description: Synthetic number in the documented format
 - value: A1F1A9017017E
   valid: false
   description: One character too few

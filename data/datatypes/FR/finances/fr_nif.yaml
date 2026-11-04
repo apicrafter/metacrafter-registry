@@ -14,7 +14,6 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[0-3]\d ?\d{2} ?\d{3} ?\d{3} ?\d{3}$
-checksum: fr_nif
 examples:
 - value: '3251768311393'
   description: Synthetic number with a valid check digit
@@ -22,9 +21,9 @@ examples:
   description: Synthetic number with a valid check digit
 - value: 32 51 768 311 393
   description: The first example in its printed form
-- value: '3251768311390'
+- value: '32517683113937'
   valid: false
-  description: Check digit does not match
+  description: One character too many
 links:
 - type: wikipedia
   url: https://fr.wikipedia.org/wiki/Num%C3%A9ro_d%27Immatriculation_Fiscale#France
