@@ -16,6 +16,27 @@ WARNING = "warning"
 # Constructs Python accepts but ECMAScript (browser) regexps do not.
 _PYTHON_ONLY_RE = re.compile(r"\(\?P[<=]|\\[AZ]|\(\?[aiLmsux]+\)|\(\?#")
 
+# Opcodes that only Python 3.11+ understands (possessive quantifiers such as
+# ``\d{1,4}+`` and atomic groups ``(?>...)``). Consumers run older Pythons and
+# browsers, so these are errors even when the local interpreter accepts them.
+_PY311_ONLY_OPCODES = {"POSSESSIVE_REPEAT", "ATOMIC_GROUP"}
+
+
+def _uses_py311_only_syntax(pattern: str) -> bool:
+    try:
+        from re import _parser  # Python 3.11+
+    except ImportError:  # Python 3.10: such patterns already fail to compile
+        return False
+
+    def walk(node) -> bool:
+        if isinstance(node, _parser.SubPattern):
+            return any(str(op) in _PY311_ONLY_OPCODES or walk(av) for op, av in node.data)
+        if isinstance(node, (list, tuple)):
+            return any(walk(item) for item in node)
+        return False
+
+    return walk(_parser.parse(pattern))
+
 
 @dataclass(frozen=True)
 class Issue:
@@ -156,6 +177,16 @@ def _regexp_issues(sources: RegistrySources) -> list[Issue]:
         except re.error as exc:
             issues.append(Issue(ERROR, rec.relpath, rec.id, f"regexp does not compile: {exc}"))
             continue
+        if _uses_py311_only_syntax(pattern):
+            issues.append(
+                Issue(
+                    ERROR,
+                    rec.relpath,
+                    rec.id,
+                    "regexp uses possessive quantifiers or atomic groups "
+                    "(Python 3.11+ only, not portable)",
+                )
+            )
         if not (pattern.startswith("^") and pattern.endswith("$")):
             issues.append(Issue(WARNING, rec.relpath, rec.id, "regexp is not anchored (^...$)"))
         if _PYTHON_ONLY_RE.search(pattern):

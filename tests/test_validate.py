@@ -29,6 +29,19 @@ def test_regexp_must_compile(mini_data):
     assert any("bad: regexp does not compile" in m for m in messages(mini_data))
 
 
+def test_possessive_quantifier_is_rejected(mini_data):
+    write_record(
+        mini_data / "datatypes/any/pii/num.yaml",
+        "id: num\nname: Num\ndoc: Number\nlangs: [en]\nis_pii: 'False'\nregexp: '^\\d{1,4}+$'\n",
+    )
+    errors = messages(mini_data)
+    # Python 3.11+ reports the portability error; 3.10 cannot compile it at all.
+    assert any(
+        m.startswith("num: regexp uses possessive") or m.startswith("num: regexp does not compile")
+        for m in errors
+    ), errors
+
+
 def test_example_must_match_regexp(mini_data):
     write_record(
         mini_data / "datatypes/any/pii/code.yaml",
