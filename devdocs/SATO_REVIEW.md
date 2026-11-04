@@ -54,7 +54,7 @@ The repository is licensed Apache 2.0.
   disagree on a type, a separate key can be added then.
 - **No new records.** The 8 records that Sherlock types needed were added by
   the Sherlock and FTA reviews. The 46 Sherlock types that have no registry
-  record were checked again against the 259 records added since the Sherlock
+  record were checked again against the 263 records added since the Sherlock
   review. None of them has the same meaning as one of those types. For example, the new
   `state` record is a state of India, and the Sherlock `state` type is not
   limited to one country.
