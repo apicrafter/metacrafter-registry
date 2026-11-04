@@ -1,0 +1,35 @@
+id: ncitcode
+name: NCI Thesaurus code
+status: draft
+doc: Concept code in the NCI Thesaurus (NCIt), the reference vocabulary of the US National Cancer Institute
+  for drugs, diseases, genes, anatomy and other biomedical concepts. A concept code is "C" followed by
+  digits.
+categories:
+- medical
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^C\d{3,7}$
+examples:
+- value: C287
+  description: Aspirin
+- value: C19409
+  description: HLA-DRB1 gene
+- value: C75016
+  description: Cornelia de Lange syndrome
+- value: '287'
+  valid: false
+  description: The "C" prefix is missing
+mappings:
+  wikidata: P1748
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1748
+- type: doc
+  url: https://evsexplore.semantics.cancer.gov/evsexplore/welcome
+translations:
+  ru:
+    name: Код тезауруса NCI
+    doc: Код понятия в тезаурусе Национального института рака США (NCI Thesaurus).

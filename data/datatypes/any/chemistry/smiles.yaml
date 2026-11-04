@@ -1,0 +1,44 @@
+id: smiles
+name: SMILES chemical notation
+status: draft
+doc: Line notation that writes the structure of a molecule as a short ASCII string of atoms, bonds, branches
+  in parentheses and ring-closure digits (Simplified Molecular Input Line Entry System). A canonical SMILES
+  is the single string that a canonicalization algorithm produces for a structure; an isomeric SMILES
+  adds stereochemistry with @, / and \. PubChem and Wikidata publish both forms.
+categories:
+- chemistry
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Za-z0-9+\-*=#$:().>@\\/\[\]%]+$
+examples:
+- value: CC(=O)OC1=CC=CC=C1C(=O)O
+  description: Aspirin
+- value: CCO
+  description: Ethanol
+- value: '[Au]'
+  description: Gold
+- value: O=C(O)[C@@H](N)C
+  description: L-alanine, isomeric SMILES
+- value: C C O
+  valid: false
+  description: Spaces are not allowed
+mappings:
+  wikidata: P233
+  schema_org: smiles
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Simplified_Molecular_Input_Line_Entry_System
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P233
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2017
+- type: schema.org
+  url: https://schema.org/smiles
+- type: doc
+  url: http://opensmiles.org/opensmiles.html
+translations:
+  ru:
+    name: Нотация SMILES
+    doc: Строковая запись структуры молекулы в нотации SMILES.

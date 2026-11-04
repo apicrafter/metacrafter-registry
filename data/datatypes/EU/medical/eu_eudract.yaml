@@ -1,0 +1,38 @@
+id: eu_eudract
+name: EudraCT number (EU Clinical Trials Register)
+status: draft
+doc: Number of a clinical trial of a medicinal product in EudraCT, the European Union clinical trials
+  database, and in the EU Clinical Trials Register that publishes it. The form is YYYY-NNNNNN-CC; the
+  year when the number was issued, a six-digit sequence and a check number. The register may add a member
+  state code to show one national protocol, as in 2006-002830-38/GB. EudraCT numbers were issued from
+  2004 until 2023; the Clinical Trials Information System (CTIS) issues EU CT numbers instead.
+categories:
+- medical
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^20\d{2}-\d{6}-\d{2}(?:/[A-Z]{2})?$
+examples:
+- value: 2006-002830-38
+  description: Phase 1/2 study of ABT-751 with Alimta in non-small cell lung cancer
+- value: 2019-000844-81
+  description: Treatment of growth failure in children with primary IGF-1 deficiency
+- value: 2006-2830-38
+  valid: false
+  description: The sequence is not zero-padded to six digits
+mappings:
+  wikidata: P9306
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/EudraCT
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9306
+- type: doc
+  url: https://www.clinicaltrialsregister.eu/
+translations:
+  ru:
+    name: Номер EudraCT
+    doc: Номер клинического исследования в базе данных EudraCT и Регистре клинических исследований ЕС.
