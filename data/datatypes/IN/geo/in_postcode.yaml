@@ -1,0 +1,31 @@
+id: in_postcode
+name: Indian postal code (PIN code)
+status: draft
+doc: 'Postal Index Number (PIN code) in India: six digits, sometimes with a space after the third. The
+  first digit is a postal zone: 1 to 8 for regions of India, 9 for the Army Postal Service.'
+semantic_type: postindex
+country:
+- IN
+langs:
+- en
+- hi
+regexp: ^[1-9]\d{2} ?\d{3}$
+examples:
+- value: '110001'
+  description: New Delhi
+- value: '400001'
+  description: Mumbai
+- value: 560 001
+  description: Bengaluru
+- value: '056001'
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_IN
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_Index_Number
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Индии (PIN)

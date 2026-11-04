@@ -1,0 +1,23 @@
+id: hr_id_card
+name: Croatian identity card number
+status: draft
+doc: Number of the Croatian identity card (osobna iskaznica). Microsoft Purview looks for nine digits.
+categories:
+- pii
+- persons
+country:
+- HR
+langs:
+- hr
+is_pii: true
+classification: identifier
+regexp: ^\d{9}$
+mappings:
+  purview:
+  - Croatia identity card number
+  - EU national identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-croatia-identity-card-number

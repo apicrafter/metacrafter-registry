@@ -1,0 +1,21 @@
+id: hu_driver_license
+name: Hungarian driver's license number
+status: draft
+doc: Number of a driving licence issued in Hungary. Microsoft Purview looks for two letters and six digits.
+categories:
+- pii
+- persons
+country:
+- HU
+langs:
+- hu
+is_pii: true
+classification: identifier
+regexp: ^[A-Z]{2}\d{6}$
+mappings:
+  purview:
+  - Hungary drivers license number
+  - EU drivers license number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-hungary-drivers-license-number

@@ -1,0 +1,17 @@
+id: dk_passport
+name: Danish passport number
+status: draft
+doc: Number of a passport issued by Denmark. Microsoft Purview looks for nine digits.
+semantic_type: passport
+country:
+- DK
+langs:
+- da
+regexp: ^\d{9}$
+mappings:
+  purview:
+  - Denmark passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-denmark-passport-number

@@ -10,6 +10,15 @@ langs:
 - ru
 is_pii: false
 classification: identifier
+regexp: ^\d{4}[0-9A-Z]{2}\d{3}$
+examples:
+- value: '772501001'
+  description: KPP of an organization registered with a Moscow tax office
+- value: '770901001'
+  description: KPP of an organization registered with a Moscow tax office
+- value: '7725262013'
+  valid: false
+  description: Ten-digit INN, not a KPP
 translations:
   ru:
     name: Код постановки на учёт (КПП)

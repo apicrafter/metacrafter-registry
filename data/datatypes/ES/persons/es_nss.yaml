@@ -1,0 +1,23 @@
+id: es_nss
+name: Spanish social security number
+status: draft
+doc: 'Spanish social security affiliation number (número de la Seguridad Social): a two-digit province
+  code, seven or eight digits and two check digits, optionally separated by slashes.'
+categories:
+- pii
+- persons
+country:
+- ES
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^\d{2}/?\d{7,8}/?\d{2}$
+mappings:
+  purview:
+  - Spain social security number (SSN)
+  - EU Social Security Number (SSN) or Equivalent ID
+  - EU social security number or equivalent identification
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-spain-social-security-number

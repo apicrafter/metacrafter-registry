@@ -1,0 +1,21 @@
+id: medication_class
+name: Medication class
+status: draft
+doc: Group of medicines with a similar action or use, for example antibiotics or beta blockers.
+categories:
+- medical
+langs:
+- en
+is_pii: false
+classification: categorical
+mappings:
+  purview:
+  - Types of medication
+  - All medical terms and conditions
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-types-of-medication
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Drug_class
+- type: schema.org
+  url: https://schema.org/DrugClass

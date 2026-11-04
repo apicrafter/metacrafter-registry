@@ -1,0 +1,29 @@
+id: au_state
+name: Australian state or territory
+status: draft
+doc: Name of one of the six states of Australia (New South Wales, Victoria, Queensland, Western Australia,
+  South Australia, Tasmania) or of its two mainland territories (Australian Capital Territory, Northern
+  Territory). The abbreviation is the pattern au_state_code.
+categories:
+- geo
+- government
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: New South Wales
+- value: Victoria
+- value: Australian Capital Territory
+mappings:
+  fta: STATE_PROVINCE.STATE_NAME_AU
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/States_and_territories_of_Australia
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Штат или территория Австралии

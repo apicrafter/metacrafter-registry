@@ -16,6 +16,7 @@ regexp: '[0-9]{9}'
 mappings:
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/EmployerIdentificationNumber
   google_dlp: US_EMPLOYER_IDENTIFICATION_NUMBER
+  fta: IDENTITY.EIN_US
 links:
 - type: other
   url: https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers

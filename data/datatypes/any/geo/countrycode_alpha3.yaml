@@ -15,6 +15,7 @@ examples:
   description: Germany
 mappings:
   wikidata: P298
+  fta: COUNTRY.ISO-3166-3
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3

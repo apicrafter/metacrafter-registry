@@ -1,0 +1,28 @@
+id: br_postcode
+name: Brazilian postal code (CEP)
+status: draft
+doc: 'Brazilian postal code (CEP, Código de Endereçamento Postal): eight digits, usually written as five
+  digits, a hyphen and three digits.'
+semantic_type: postindex
+country:
+- BR
+langs:
+- pt
+regexp: ^\d{5}-?\d{3}$
+examples:
+- value: 01001-000
+  description: Praça da Sé, São Paulo
+- value: 01310-100
+  description: Avenida Paulista, São Paulo
+- value: 1001-000
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_BR
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Brazil
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Бразилии (CEP)

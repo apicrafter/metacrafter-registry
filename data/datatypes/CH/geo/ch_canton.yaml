@@ -1,0 +1,30 @@
+id: ch_canton
+name: Swiss canton
+status: draft
+doc: Name of one of the 26 cantons of Switzerland, such as Zürich, Bern or Ticino, in German, French,
+  Italian or English. The two-letter abbreviation is the pattern ch_canton_code.
+categories:
+- geo
+- government
+country:
+- CH
+langs:
+- de
+- fr
+- it
+is_pii: false
+classification: categorical
+examples:
+- value: Zürich
+- value: Genève
+- value: Ticino
+mappings:
+  fta: STATE_PROVINCE.CANTON_NAME_CH
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Cantons_of_Switzerland
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Кантон Швейцарии

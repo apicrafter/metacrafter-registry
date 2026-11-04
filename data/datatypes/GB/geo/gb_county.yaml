@@ -1,0 +1,28 @@
+id: gb_county
+name: United Kingdom county
+status: draft
+doc: Name of a county or a similar area of the United Kingdom, such as Kent, Greater Manchester, Aberdeenshire
+  or Antrim. Lists mix ceremonial, historic and administrative counties with Scottish council areas.
+categories:
+- geo
+- government
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Kent
+- value: Greater Manchester
+- value: Aberdeenshire
+mappings:
+  fta: STATE_PROVINCE.COUNTY_UK
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Counties_of_the_United_Kingdom
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Графство Великобритании

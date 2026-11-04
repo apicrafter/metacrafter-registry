@@ -23,6 +23,8 @@ examples:
 - value: '1473883307'
   valid: false
   description: One character too many
+mappings:
+  purview: New Zealand inland revenue number
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.nz.ird.html

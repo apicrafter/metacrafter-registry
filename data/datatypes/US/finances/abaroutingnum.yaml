@@ -15,6 +15,7 @@ regexp: '[0123678]\d{3}-\d{4}-\d'
 mappings:
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/RoutingTransitNumber
   purview: ABA Routing Number
+  fta: CHECKDIGIT.ABA
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ABA_routing_transit_number

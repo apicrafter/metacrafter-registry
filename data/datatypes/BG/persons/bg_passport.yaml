@@ -1,0 +1,17 @@
+id: bg_passport
+name: Bulgarian passport number
+status: draft
+doc: Number of a passport issued by Bulgaria. Microsoft Purview looks for nine digits.
+semantic_type: passport
+country:
+- BG
+langs:
+- bg
+regexp: ^\d{9}$
+mappings:
+  purview:
+  - Bulgaria passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-bulgaria-passport-number

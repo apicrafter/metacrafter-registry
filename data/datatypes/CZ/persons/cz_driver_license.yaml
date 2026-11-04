@@ -1,0 +1,22 @@
+id: cz_driver_license
+name: Czech driver's license number
+status: draft
+doc: Number of a driving licence issued in the Czech Republic. Microsoft Purview looks for the letter
+  E, a second letter, an optional space and six digits.
+categories:
+- pii
+- persons
+country:
+- CZ
+langs:
+- cs
+is_pii: true
+classification: identifier
+regexp: ^E[A-Z] ?\d{6}$
+mappings:
+  purview:
+  - Czech drivers license number
+  - EU drivers license number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-czech-drivers-license-number

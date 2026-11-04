@@ -1,0 +1,23 @@
+id: fi_driver_license
+name: Finnish driver's license number
+status: draft
+doc: Number of a driving licence issued in Finland. Microsoft Purview looks for six digits, a hyphen,
+  three digits and a final digit or letter.
+categories:
+- pii
+- persons
+country:
+- FI
+langs:
+- fi
+- sv
+is_pii: true
+classification: identifier
+regexp: ^\d{6}-\d{3}[0-9A-Z]$
+mappings:
+  purview:
+  - Finland drivers license number
+  - EU drivers license number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-finland-drivers-license-number

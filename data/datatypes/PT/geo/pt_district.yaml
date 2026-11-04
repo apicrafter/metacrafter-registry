@@ -1,0 +1,28 @@
+id: pt_district
+name: Portuguese district
+status: draft
+doc: Name of one of the 18 districts of mainland Portugal, such as Lisboa, Porto or Bragança. Lists often
+  add the autonomous regions of the Azores and Madeira.
+categories:
+- geo
+- government
+country:
+- PT
+langs:
+- pt
+is_pii: false
+classification: categorical
+examples:
+- value: Lisboa
+- value: Porto
+- value: Bragança
+mappings:
+  fta: STATE_PROVINCE.DISTRICT_NAME_PT
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Districts_of_Portugal
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Округ Португалии

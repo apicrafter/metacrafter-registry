@@ -1,0 +1,29 @@
+id: ie_county
+name: Irish county
+status: draft
+doc: 'Name of a traditional county of Ireland, such as Dublin, Cork or Galway, in English or Irish (Corcaigh).
+  The island has 32 traditional counties: 26 in the Republic of Ireland and six in Northern Ireland.'
+categories:
+- geo
+- government
+country:
+- IE
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Dublin
+- value: Galway
+- value: Corcaigh
+  description: Cork, in Irish
+mappings:
+  fta: STATE_PROVINCE.COUNTY_IE
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Counties_of_Ireland
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Графство Ирландии

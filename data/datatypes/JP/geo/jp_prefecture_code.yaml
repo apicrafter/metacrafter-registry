@@ -1,0 +1,28 @@
+id: jp_prefecture_code
+name: Japanese prefecture code (JIS X 0401)
+status: draft
+doc: Two-digit code of a Japanese prefecture from JIS X 0401, from 01 (Hokkaido) to 47 (Okinawa), for
+  example 13 for Tokyo. ISO 3166-2:JP uses the same number after JP-.
+semantic_type: prefecture
+country:
+- JP
+regexp: ^(?:0[1-9]|[1-3]\d|4[0-7])$
+examples:
+- value: '01'
+  description: Hokkaido
+- value: '13'
+  description: Tokyo
+- value: '27'
+  description: Osaka
+- value: '48'
+  valid: false
+mappings:
+  fta: STATE_PROVINCE.PREFECTURE_CODE_JA
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Prefectures_of_Japan
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Код префектуры Японии (JIS X 0401)

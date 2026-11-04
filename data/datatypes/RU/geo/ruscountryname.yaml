@@ -7,3 +7,5 @@ country:
 - RU
 langs:
 - ru
+mappings:
+  fta: COUNTRY.TEXT_RU

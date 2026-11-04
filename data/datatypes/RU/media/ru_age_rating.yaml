@@ -1,0 +1,25 @@
+id: ru_age_rating
+name: Russian age rating of information products
+status: draft
+doc: Age category of information products under the Russian Federal Law No. 436-FZ on the protection of
+  children from information harmful to their health and development. The law sets five categories, marked
+  0+, 6+, 12+, 16+ and 18+. Films, books, events and websites carry the mark.
+categories:
+- media
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:0|6|12|16|18)\+$
+examples:
+- value: 0+
+- value: 12+
+- value: 18+
+- value: 14+
+  valid: false
+  description: Not a category of the law
+translations:
+  ru:
+    name: Возрастная категория информационной продукции

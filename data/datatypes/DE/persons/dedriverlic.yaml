@@ -11,6 +11,11 @@ langs:
 - de
 is_pii: true
 classification: identifier
+mappings:
+  purview:
+  - German Driver's License Number
+  - Germany driver's license number
+  - EU drivers license number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Driving_licence_in_Germany

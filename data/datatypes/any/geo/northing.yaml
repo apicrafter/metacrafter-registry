@@ -1,0 +1,31 @@
+id: northing
+name: Northing (projected coordinate)
+status: draft
+doc: Northward coordinate of a point in a projected coordinate reference system, such as a UTM zone or
+  the British National Grid, usually in metres from a false origin. It is paired with an easting. Unlike
+  latitude, its origin and scale depend on the projection, so the value has a meaning only together with
+  its coordinate reference system.
+categories:
+- geo
+langs:
+- common
+is_pii: false
+regexp: ^-?\d+(?:\.\d+)?$
+examples:
+- value: '180000'
+  description: British National Grid northing in metres, central London
+- value: '4419987.2'
+  description: UTM northing in metres
+- value: 180 000 m
+  valid: false
+  description: unit and digit grouping are not part of the value
+mappings:
+  fta: COORDINATE.NORTHING
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Easting_and_northing
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Северная координата (нординг)

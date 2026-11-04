@@ -9,3 +9,7 @@ langs:
 - common
 is_pii: true
 classification: categorical
+mappings:
+  fta:
+  - NATIONALITY_JA
+  - NATIONALITY_NL

@@ -1,0 +1,18 @@
+id: si_passport
+name: Slovenian passport number
+status: draft
+doc: Number of a passport issued by Slovenia. Microsoft Purview looks for the letter P, a second letter
+  and seven digits.
+semantic_type: passport
+country:
+- SI
+langs:
+- sl
+regexp: ^P[A-Z]\d{7}$
+mappings:
+  purview:
+  - Slovenia passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-slovenia-passport-number

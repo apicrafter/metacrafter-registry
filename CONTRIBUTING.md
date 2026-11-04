@@ -18,6 +18,12 @@ pytest -q
 You can also edit a single file on GitHub: each record page on the site has an
 "edit on GitHub" link. CI then validates the change on the pull request.
 
+If you do not want to write YAML, open an issue with a form:
+- [Propose a datatype](https://github.com/apicrafter/metacrafter-registry/issues/new?template=new-datatype.yml)
+- [Fix a datatype](https://github.com/apicrafter/metacrafter-registry/issues/new?template=fix-datatype.yml)
+
+A maintainer or contributor then turns the issue into a `draft` record.
+
 ## Adding or changing a datatype
 
 1. Put the file in `data/datatypes/<COUNTRY>/<category>/<id>.yaml` for a
@@ -107,3 +113,14 @@ configure this once on pypi.org: add a trusted publisher for
 
 Changes to the data model, the URL contract or the build go through an
 OpenSpec proposal in `openspec/changes/`. See `AGENTS.md`.
+
+## License of contributions
+
+The repository, code and data, is under the
+[Apache License 2.0](LICENSE). By section 5 of that license, your contribution
+is under the same license unless you state otherwise. There is no contributor
+license agreement (CLA): you keep the copyright to your work, and anyone may
+use and redistribute the registry under the same terms.
+
+Do not submit material that you may not publish under this license. Quote
+other sources only briefly, and link to them.

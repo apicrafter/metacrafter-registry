@@ -23,6 +23,9 @@ examples:
 mappings:
   wikidata: P1035
   schema_org: honorificSuffix
+  fta:
+  - HONORIFIC_JA
+  - NAME.SUFFIX
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Name_suffix

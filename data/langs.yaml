@@ -123,3 +123,12 @@
 - id: sq
   name: Albanian
   kind: language
+- id: sk
+  name: Slovak
+  kind: language
+- id: sl
+  name: Slovenian
+  kind: language
+- id: uk
+  name: Ukrainian
+  kind: language

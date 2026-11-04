@@ -1,0 +1,31 @@
+id: street_address
+name: Street address line
+status: draft
+doc: 'First line of a postal address: the house or building number and the street name, such as 10 Downing
+  Street or Unter den Linden 77. The full address with the city and postal code is the datatype address,
+  and the street name alone is street.'
+categories:
+- geo
+- pii
+langs:
+- common
+is_pii: true
+examples:
+- value: 10 Downing Street
+- value: 1600 Pennsylvania Avenue NW
+- value: Unter den Linden 77
+mappings:
+  schema_org: streetAddress
+  fta:
+  - STREET_ADDRESS_<LANGUAGE>
+  - STREET_ADDRESS_EN
+links:
+- type: schema.org
+  url: https://schema.org/streetAddress
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Address
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Адрес (улица и дом)

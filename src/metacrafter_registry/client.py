@@ -47,6 +47,11 @@ def _tokens(text: str) -> set[str]:
     return set(_TOKEN.findall(_CAMEL.sub(" ", str(text)).lower()))
 
 
+def _purview_key(name: str) -> str:
+    """Compare Purview type names without case, periods and apostrophes."""
+    return " ".join(re.sub(r"[.'’]", "", name).casefold().split())
+
+
 def _cache_dir() -> Path:
     base = os.environ.get("XDG_CACHE_HOME") or Path.home() / ".cache"
     return Path(base) / "metacrafter-registry"
@@ -438,8 +443,12 @@ class Registry:
     def crosswalk(self, system: str, external_id: str) -> list[dict[str, Any]]:
         """Records mapped to ``external_id`` in another vocabulary (wikidata, fibo, presidio, ...).
 
-        For wikidata, a property id or its URL; for fibo, a class path or its full IRI.
+        For wikidata, a property id or its URL; for fibo, a class path or its full IRI;
+        for fta, a semantic type as FTA reports it, including locale-bound names such
+        as MONTH.FULL_fr-FR or GENDER.TEXT_DE.
         """
+        if system == "fta":
+            return self._crosswalk_fta(str(external_id).strip())
         wanted = str(external_id).strip()
         if system == "wikidata":
             wanted = wanted.rstrip("/").rsplit("/", 1)[-1].removeprefix("Property:").upper()
@@ -450,12 +459,18 @@ class Registry:
         d3m_bare = system == "d3m" and "://" not in wanted
         if system == "d3m" and wanted.startswith("https://schema.org/"):
             wanted = "http://" + wanted.removeprefix("https://")
+        # Microsoft writes the same Purview type name with varying case and
+        # punctuation ("U.S. driver's license number", "U.S. Drivers License Number").
+        if system == "purview":
+            wanted = _purview_key(wanted)
         out = []
         for record in self.datatypes.values():
             value = record.get("mappings", {}).get(system)
             values = value if isinstance(value, list) else [value] if value else []
             if system == "wikidata":
                 normalized = [v.upper() for v in values]
+            elif system == "purview":
+                normalized = [_purview_key(v) for v in values]
             elif d3m_bare:
                 normalized = [v.rsplit("/", 1)[-1] for v in values]
             else:
@@ -463,3 +478,22 @@ class Registry:
             if wanted in normalized:
                 out.append(record)
         return out
+
+    def _crosswalk_fta(self, name: str) -> list[dict[str, Any]]:
+        # FTA binds <LANGUAGE>, <COUNTRY> and <LOCALE> to the locale of the
+        # analysis, so it reports GENDER.TEXT_DE for GENDER.TEXT_<LANGUAGE>.
+        # An exact name wins: GENDER.TEXT_JA has its own FTA plugin.
+        candidates = [[name]]
+        if "_" in name:
+            head = name.rsplit("_", 1)[0]
+            candidates.append([f"{head}_<{p}>" for p in ("LANGUAGE", "COUNTRY", "LOCALE")])
+        for names in candidates:
+            out = []
+            for record in self.datatypes.values():
+                value = record.get("mappings", {}).get("fta")
+                values = value if isinstance(value, list) else [value] if value else []
+                if any(n in values for n in names):
+                    out.append(record)
+            if out:
+                return out
+        return []

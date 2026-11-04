@@ -18,6 +18,7 @@ mappings:
   google_dlp: UK_NATIONAL_HEALTH_SERVICE_NUMBER
   presidio: UK_NHS
   purview: U.K. national health service number
+  fta: IDENTITY.NHS_UK
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/NHS_number

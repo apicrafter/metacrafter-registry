@@ -24,6 +24,10 @@ examples:
 - value: '106814590'
   valid: false
   description: Check digit does not match
+mappings:
+  purview:
+  - Israel National ID
+  - Israel national identification number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Israeli_identity_card

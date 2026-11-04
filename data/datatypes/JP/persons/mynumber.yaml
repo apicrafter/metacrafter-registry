@@ -14,4 +14,7 @@ classification: identifier
 regexp: ^[0-9]{12}$
 mappings:
   google_dlp: JAPAN_INDIVIDUAL_NUMBER
-  purview: Japanese My Number Personal
+  purview:
+  - Japanese My Number Personal
+  - Japan My Number - Personal
+  fta: IDENTITY.INDIVIDUAL_NUMBER_JA

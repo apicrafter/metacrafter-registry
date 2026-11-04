@@ -16,7 +16,13 @@ classification: identifier
 regexp: ^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])\d{2}[-]?\d{4}$
 mappings:
   google_dlp: DENMARK_CPR_NUMBER
-  purview: Denmark personal identification number
+  purview:
+  - Denmark personal identification number
+  - EU Social Security Number (SSN) or Equivalent ID
+  - EU social security number or equivalent identification
+  - EU national identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Personal_identification_number_(Denmark)

@@ -192,6 +192,10 @@
   - 13 of D3M's 90 types are mapped to 12 records, exact concept matches only, at d3m commit `244d552`.
   - New draft pattern `nanpphone` (North American phone number) for D3M's `AmericanPhoneNumber`.
   - Column roles, dataset structure and hyper-parameter types are not value types. They are not imported. The review is `devdocs/D3M_REVIEW.md`.
+- [x] 8.10 Review the FTA (Fast Text Analysis) semantic types (issue #38). Add the `fta` crosswalk key and the `fta` tool.
+  - 254 of FTA's 258 types are mapped to 180 records at FTA commit `51b3dd0`. `IDENTITY.VAT_<COUNTRY>` is mapped through its eight bound names.
+  - 73 new draft records: 21 value types, 18 postal code patterns and 34 administrative divisions. New countries: TZ, UY.
+  - `CHECKDIGIT.LUHN`, `FREE_TEXT` and the two North American union types are not mapped. The review is `devdocs/FTA_REVIEW.md`.
 - Data fixes found during this phase:
   - 9 regexps that matched the empty string were fixed, and the validator now rejects such regexps.
   - The `what3words` regexp had been copied from `geonamesid`.

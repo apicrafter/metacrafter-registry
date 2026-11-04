@@ -10,6 +10,15 @@ langs:
 - ru
 is_pii: false
 classification: categorical
+regexp: ^\d{2}(?:\.\d{1,2}){0,2}$
+examples:
+- value: '85.14'
+  description: OKVED code of an organization from the register of Moscow executive bodies
+- value: 31.62.1
+  description: OKVED subgroup code
+- value: 35.30.12.130
+  valid: false
+  description: OKPD2 product code, deeper than any OKVED code
 translations:
   ru:
     name: Код ОКВЭД

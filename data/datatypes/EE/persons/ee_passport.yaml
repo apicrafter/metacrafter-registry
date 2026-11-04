@@ -1,0 +1,17 @@
+id: ee_passport
+name: Estonian passport number
+status: draft
+doc: Number of a passport issued by Estonia. Microsoft Purview looks for a letter and seven digits.
+semantic_type: passport
+country:
+- EE
+langs:
+- et
+regexp: ^[A-Z]\d{7}$
+mappings:
+  purview:
+  - Estonia passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-estonia-passport-number

@@ -1,0 +1,23 @@
+id: si_tin
+name: Slovenian tax number
+status: draft
+doc: 'Slovenian tax number (davčna številka): eight digits; the first is not zero and the last is a check
+  digit.'
+categories:
+- pii
+- persons
+country:
+- SI
+langs:
+- sl
+is_pii: true
+classification: identifier
+regexp: ^[1-9]\d{7}$
+mappings:
+  purview:
+  - Slovenia tax identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-slovenia-tax-identification-number

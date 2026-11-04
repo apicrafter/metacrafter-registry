@@ -1,0 +1,20 @@
+id: lu_passport
+name: Luxembourg passport number
+status: draft
+doc: Number of a passport issued by Luxembourg. Microsoft Purview looks for seven or eight letters or
+  digits.
+semantic_type: passport
+country:
+- LU
+langs:
+- lb
+- fr
+- de
+regexp: ^[A-Z0-9]{7,8}$
+mappings:
+  purview:
+  - Luxembourg Passport Number
+  - Luxemburg passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-luxemburg-passport-number

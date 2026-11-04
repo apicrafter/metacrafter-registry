@@ -9,3 +9,5 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[0-9]{13}$
+mappings:
+  fta: CHECKDIGIT.EAN13

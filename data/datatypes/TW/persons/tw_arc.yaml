@@ -1,0 +1,22 @@
+id: tw_arc
+name: Taiwan resident certificate number (ARC/TARC)
+status: draft
+doc: Number of the Taiwan resident certificate issued to foreign residents (ARC) and to residents from
+  Hong Kong, Macau and mainland China (TARC). Microsoft Purview looks for two letters and eight digits.
+categories:
+- pii
+- persons
+country:
+- TW
+langs:
+- zh
+is_pii: true
+classification: identifier
+regexp: ^[A-Z]{2}\d{8}$
+mappings:
+  purview:
+  - Taiwan Resident Certificate (ARC/TARC)
+  - Taiwan-resident certificate (ARC/TARC) number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-taiwan-resident-certificate-number

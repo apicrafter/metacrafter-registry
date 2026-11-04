@@ -22,6 +22,9 @@ examples:
   description: Another valid French VAT identification number format
 - value: FRABCDEFGHIJ1
   description: French VAT identification number with letters in the alphanumeric part
+mappings:
+  purview: France value added tax number
+  fta: IDENTITY.VAT_FR
 links:
 - type: wikipedia
   url: https://fr.wikipedia.org/wiki/Num%C3%A9ro_d%27identification_%C3%A0_la_TVA_intracommunautaire

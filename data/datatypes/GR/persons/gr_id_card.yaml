@@ -1,0 +1,25 @@
+id: gr_id_card
+name: Greek identity card number
+status: draft
+doc: Number of the Greek police identity card. The old format is one Greek letter, a hyphen and six digits;
+  the newer format is two letters that look the same in the Greek and Latin alphabets, a hyphen and six
+  digits.
+categories:
+- pii
+- persons
+country:
+- GR
+langs:
+- el
+is_pii: true
+classification: identifier
+regexp: ^(?:[Α-Ω]-\d{6}|[ABEZHIKMNOPTYXΑΒΕΖΗΙΚΜΝΟΡΤΥΧ]{2}-\d{6})$
+mappings:
+  purview:
+  - Greece national ID card
+  - EU Social Security Number (SSN) or Equivalent ID
+  - EU social security number or equivalent identification
+  - EU national identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-greece-national-id-card

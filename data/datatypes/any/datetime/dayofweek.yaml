@@ -9,6 +9,9 @@ langs:
 is_pii: false
 mappings:
   cdm: means.calendar.dayOfWeek
+  fta:
+  - DAY.ABBR_<LOCALE>
+  - DAY.FULL_<LOCALE>
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Workweek_and_weekend

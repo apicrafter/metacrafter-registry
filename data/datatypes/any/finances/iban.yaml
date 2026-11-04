@@ -28,6 +28,7 @@ mappings:
   google_dlp: IBAN_CODE
   presidio: IBAN_CODE
   purview: International banking account number (IBAN)
+  fta: CHECKDIGIT.IBAN
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Bank_Account_Number

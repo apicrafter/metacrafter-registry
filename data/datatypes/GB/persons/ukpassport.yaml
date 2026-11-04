@@ -11,7 +11,9 @@ regexp: '[0-9]{9}'
 mappings:
   google_dlp: UK_PASSPORT
   presidio: UK_PASSPORT
-  purview: U.S./U.K. passport number
+  purview:
+  - U.S./U.K. passport number
+  - EU passport number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/British_passport
