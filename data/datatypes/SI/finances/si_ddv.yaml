@@ -1,0 +1,38 @@
+id: si_ddv
+name: Slovenian VAT number (ID za DDV)
+status: draft
+doc: 'Identifikacijska številka za DDV, the VAT number in Slovenia: SI followed by the 8-digit tax number
+  (davčna številka) of the payer. The first digit is not 0 and the last is a weighted modulo 11 check
+  digit.'
+parent: vatin
+categories:
+- finances
+country:
+- SI
+langs:
+- sl
+is_pii: true
+classification: identifier
+regexp: ^(?:SI[ -]?)?[1-9]\d{7}$
+checksum: si_ddv
+examples:
+- value: SI50223054
+  description: python-stdnum reference value
+- value: '50223054'
+  description: The same number without the country prefix
+- value: SI50223055
+  valid: false
+  description: Check digit does not match
+- value: SI5022305
+  valid: false
+  description: One digit short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/VAT_identification_number
+- type: doc
+  url: https://ec.europa.eu/taxation_customs/vies/
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.si.ddv.html
+translations:
+  sl:
+    name: Identifikacijska številka za DDV

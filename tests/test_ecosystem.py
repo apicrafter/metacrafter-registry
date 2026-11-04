@@ -303,6 +303,60 @@ def test_sherlock_mapping_must_be_a_sherlock_type(mini_data):
     assert validate(load_sources(mini_data)).errors == []
 
 
+# The labels of Sato's published model: "type78" in configs/types.json of
+# megagonlabs/sato at commit c19ace3 (see devdocs/SATO_REVIEW.md).
+SATO_TYPE78 = """
+address affiliate affiliation age album area artist birthDate birthPlace brand capacity
+category city class classification club code collection command company component
+continent country county creator credit currency day depth description director duration
+education elevation family fileSize format gender genre grades isbn industry jockey
+language location manufacturer name nationality notes operator order organisation origin
+owner person plays position product publisher range rank ranking region religion
+requirement result sales service sex species state status symbol team teamName type
+weight year
+""".split()
+
+
+def test_sato_types_are_the_sherlock_types():
+    schema = json.loads((REPO / "schema/datatype.schema.json").read_text("utf-8"))
+    sherlock = schema["$defs"]["sherlockType"]["enum"]
+
+    def key(label: str) -> str:
+        return "".join(label.split()).lower()
+
+    assert len(SATO_TYPE78) == len(set(SATO_TYPE78)) == 78
+    assert sorted(map(key, SATO_TYPE78)) == sorted(map(key, sherlock))
+
+
+def test_sato_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+
+    def ids(system: str, label: str) -> list[str]:
+        return [r["id"] for r in reg.crosswalk(system, label)]
+
+    assert ids("sato", "birthDate") == ["birthday"]
+    assert ids("sato", "birthPlace") == ["birthplace"]
+    assert ids("sato", "fileSize") == ["filesize"]
+    assert ids("sato", "company") == ["orgname"]
+    # generic header words and team names are not mapped
+    assert ids("sato", "code") == []
+    assert ids("sato", "teamName") == []
+    # every Sato label resolves exactly as the Sherlock label does
+    for label in SATO_TYPE78:
+        assert ids("sato", label) == ids("sherlock", label), label
+
+
+def test_sato_tool_lists_the_sherlock_records(repo_sources):
+    mapped = sorted(
+        rec.id for rec in repo_sources.datatypes if (rec.data.get("mappings") or {}).get("sherlock")
+    )
+    tool = next(t for t in repo_sources.tools if t.id == "sato")
+    assert tool.data["category"] == "detector"
+    assert sorted(tool.data["supported_types"]) == mapped
+
+
 def test_autotype_crosswalk(repo_sources):
     from metacrafter_registry import Registry
 
@@ -452,6 +506,10 @@ def test_javascript_checksums_match_python(tmp_path):
         "131052-308T",
         "131052A308T",
         "54362315-K",
+        "PL 856-734-62-15",
+        "SK 202 274 96 19",
+        "SI 5022 3054",
+        "SE556012579001",
     ]
     values += [str(rng.randrange(10**8, 10**15)) for _ in range(300)]
     values += [f"ATU{rng.randrange(10**8):08d}" for _ in range(100)]
@@ -461,6 +519,10 @@ def test_javascript_checksums_match_python(tmp_path):
         for _ in range(100)
     ]
     values += [f"{rng.randrange(10**11):011d}" for _ in range(1000)]
+    values += [f"PL{rng.randrange(10**10):010d}" for _ in range(300)]
+    values += [f"SK{rng.randrange(10**10):010d}" for _ in range(300)]
+    values += [f"SI{rng.randrange(10**8):08d}" for _ in range(300)]
+    values += [f"SE{rng.randrange(10**10):010d}0{rng.choice('12')}" for _ in range(300)]
     offices = ["001", "100", "121", "888", "500"]
     values += [
         f"IT{rng.randrange(10**7):07d}{rng.choice(offices)}{rng.randrange(10)}" for _ in range(100)
