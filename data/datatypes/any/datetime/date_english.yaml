@@ -1,0 +1,74 @@
+id: date_english
+name: Date with an English month name
+status: draft
+doc: Calendar date written in English with the month name, full or abbreviated, capitalised or in lower
+  case. The day comes first (5 May 2022, 5th May 2022, 5.May.2022, 5-May-2022, 25-Dec-20) or after the
+  month (May 5, 2022; Sept. 5, 2022; Dec 25th 2024). A weekday may come first (Monday, 5 May 2022; Mon,
+  Dec 5, 2022), also before a day-first numeric date (Monday, 25/12/2024).
+semantic_type: date
+langs:
+- en
+regexp: ^(?:(?:(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|[Mm]on|[Tt]ue|[Ww]ed|[Tt]hu|[Ff]ri|[Ss]at|[Ss]un),?
+  )?(?:(?:0?[1-9]|[12]\d|3[01])(?:st|nd|rd|th)?(?:\. ?| )(?:[Jj]an(?:uary)?|[Ff]eb(?:ruary)?|[Mm]ar(?:ch)?|[Aa]pr(?:il)?|[Mm]ay|[Jj]une?|[Jj]uly?|[Aa]ug(?:ust)?|[Ss]ep(?:t|tember)?|[Oo]ct(?:ober)?|[Nn]ov(?:ember)?|[Dd]ec(?:ember)?)(?:\.
+  ?|,? )\d{4}|(?:[Jj]an(?:uary)?|[Ff]eb(?:ruary)?|[Mm]ar(?:ch)?|[Aa]pr(?:il)?|[Mm]ay|[Jj]une?|[Jj]uly?|[Aa]ug(?:ust)?|[Ss]ep(?:t|tember)?|[Oo]ct(?:ober)?|[Nn]ov(?:ember)?|[Dd]ec(?:ember)?)\.?
+  (?:0?[1-9]|[12]\d|3[01])(?:st|nd|rd|th)?,? \d{4})|(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|[Mm]on|[Tt]ue|[Ww]ed|[Tt]hu|[Ff]ri|[Ss]at|[Ss]un),?
+  (?:0?[1-9]|[12]\d|3[01])/(?:0?[1-9]|1[0-2])/\d{4}|(?:0?[1-9]|[12]\d|3[01])-(?:[Jj]an(?:uary)?|[Ff]eb(?:ruary)?|[Mm]ar(?:ch)?|[Aa]pr(?:il)?|[Mm]ay|[Jj]une?|[Jj]uly?|[Aa]ug(?:ust)?|[Ss]ep(?:t|tember)?|[Oo]ct(?:ober)?|[Nn]ov(?:ember)?|[Dd]ec(?:ember)?)-(?:\d{4}|\d{2}))$
+examples:
+- value: 25 December 2024
+  description: Day first
+- value: December 25, 2024
+  description: Month first, as in the United States
+- value: Wednesday, 25 December 2024
+  description: With the weekday
+- value: 25th Dec 2024
+  description: Ordinal day, abbreviated month
+- value: 25-Dec-24
+  description: Day, abbreviated month and two-digit year
+- value: December 2024
+  valid: false
+- value: 25 Decembers 2024
+  valid: false
+mappings:
+  qddate:
+  - dt:date:date_eng1
+  - dt:date:date_eng1x
+  - dt:date:date_eng1_lc
+  - dt:date:date_eng1_short
+  - dt:date:date_eng2
+  - dt:date:date_eng2_lc
+  - dt:date:date_eng2_short
+  - dt:date:date_eng3
+  - dt:date:date_eng3_nolc
+  - dt:date:date_eng4_short
+  - dt:date:weekday_eng
+  - dt:date:weekday_eng_lc
+  - dt:date:weekday_eng_wshort
+  - dt:date:weekday_eng_mshort_wshort
+  - dt:date:weekday_eng_iso
+  - dt:date:weekday_short_eng_iso
+  - dt:date:weekday_eng_mixed
+  - dt:date:date_eng_abbrev1
+  - dt:date:date_eng_abbrev2
+  - dt:date:date_eng_abbrev3
+  - dt:date:weekday_eng_abbrev1
+  - dt:date:weekday_eng_abbrev2
+  - dt:date:weekday_eng_abbrev3
+  - dt:date:weekday_eng_us
+  - dt:date:weekday_eng_wshort_us
+  - dt:date:weekday_eng_abbrev_wshort_us
+  - dt:date:date_eng_abbrev_postfix
+  - dt:date:date_eng5
+  - dt:date:date_eng6
+  - dt:date:date_eng4
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_the_United_Kingdom
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_the_United_States
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/base.py
+translations:
+  ru:
+    name: Дата с английским названием месяца
+    doc: 'Календарная дата на английском языке с полным или сокращённым названием месяца: 5 May 2022,
+      May 5, 2022, Monday, 5 May 2022.'

@@ -1,0 +1,34 @@
+id: date_romanian
+name: Date with a Romanian month name
+status: draft
+doc: 'Calendar date written in Romanian with the month name, day first: 5 mai 2022 or, with an abbreviated
+  month, 5 ian. 2022. The month is capitalised or in lower case.'
+semantic_type: date
+langs:
+- ro
+regexp: ^(?:0?[1-9]|[12]\d|3[01]) (?:[Ii]an(?:uarie|\.)|[Ff]eb(?:ruarie|\.)|[Mm]ar(?:tie|\.)|[Aa]pr(?:ilie|\.)|[Mm]ai|[Ii]un(?:ie|\.)|[Ii]ul(?:ie|\.)|[Aa]ug(?:ust|\.)|[Ss]ept(?:embrie|\.)|[Oo]ct(?:ombrie|\.)|[Nn]oiembrie|[Nn]ov\.|[Dd]ec(?:embrie|\.))
+  \d{4}$
+examples:
+- value: 25 decembrie 2024
+  description: 25 December 2024
+- value: 5 ian. 2022
+  description: 5 January 2022, abbreviated month
+- value: decembrie 2024
+  valid: false
+- value: 25 december 2024
+  valid: false
+mappings:
+  qddate:
+  - dt:date:ro_base
+  - dt:date:ro_base_lc
+  - dt:date:ro_short
+  - dt:date:ro_short_lc
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_date_formats_by_country
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/ro.py
+translations:
+  ru:
+    name: Дата с румынским названием месяца
+    doc: Календарная дата на румынском языке с названием месяца, например 5 mai 2022.

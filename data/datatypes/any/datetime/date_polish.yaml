@@ -1,0 +1,37 @@
+id: date_polish
+name: Date with a Polish month name
+status: draft
+doc: Calendar date written in Polish with the month name, day first, usually with the month in the genitive
+  case (5 maja 2022), optionally followed by roku or r. (5 maja 2022 r.). The nominative month (5 maj
+  2022) and a dot after the day (5. maja 2022) are accepted too.
+semantic_type: date
+langs:
+- pl
+regexp: '^(?:0?[1-9]|[12]\d|3[01])\.? (?:[Ss]tycz(?:eń|nia)|[Ll]ut(?:y|ego)|[Mm]ar(?:zec|ca)|[Kk]wie(?:cień|tnia)|[Mm]aja?|[Cc]zerw(?:iec|ca)|[Ll]ip(?:iec|ca)|[Ss]ierp(?:ień|nia)|[Ww]rze(?:sień|śnia)|[Pp]aździernika?|[Ll]istopada?|[Gg]rud(?:zień|nia))
+  \d{4}(?: roku| ?r\.?)?$'
+examples:
+- value: 25 grudnia 2024
+  description: 25 December 2024
+- value: 25 grudnia 2024 r.
+  description: With the abbreviation of roku (year)
+- value: 5 maja 2022 roku
+  description: With roku (year)
+- value: grudnia 2024
+  valid: false
+- value: 25 grudnia
+  valid: false
+mappings:
+  qddate:
+  - dt:date:pl_base
+  - dt:date:pl_base_lc
+  - dt:date:pl_gen
+  - dt:date:pl_gen_lc
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_Poland
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/pl.py
+translations:
+  ru:
+    name: Дата с польским названием месяца
+    doc: Календарная дата на польском языке с названием месяца, например 5 maja 2022 r.

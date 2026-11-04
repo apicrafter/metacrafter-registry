@@ -1,0 +1,32 @@
+id: date_mdy_slash_yy
+name: Date as MM/DD/YY (United States)
+status: draft
+doc: Calendar date written as month, day and two-digit year separated by slashes, for example 12/25/24,
+  as in the United States. The century is not written and has to be inferred.
+semantic_type: date
+langs:
+- common
+regexp: ^(?:0?[1-9]|1[0-2])/(?:0?[1-9]|[12]\d|3[01])/\d{2}$
+examples:
+- value: 12/25/24
+  description: 25 December 2024
+- value: 7/4/22
+  description: 4 July 2022
+- value: 25/12/24
+  valid: false
+- value: 12/25/2024
+  valid: false
+mappings:
+  qddate: dt:date:date_usa_1
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_date_formats_by_country
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_the_United_States
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/base.py
+translations:
+  ru:
+    name: Дата в формате ММ/ДД/ГГ (США)
+    doc: 'Календарная дата в американском порядке: месяц, день и год из двух цифр через косую черту, например
+      12/25/24.'

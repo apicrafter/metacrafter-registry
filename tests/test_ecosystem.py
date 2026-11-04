@@ -514,6 +514,64 @@ def test_orgid_mapping_must_be_a_list_code(mini_data):
         assert validate(load_sources(mini_data)).errors == [], good
 
 
+def test_qddate_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+
+    def ids(key: str) -> list[str]:
+        return [r["id"] for r in reg.crosswalk("qddate", key)]
+
+    assert ids("dt:date:date_2") == ["date_dmy_dot"]
+    assert ids("dt:date:date_9") == ["date_ymd_dash"]
+    assert ids("dt:date:date_usa") == ["date_mdy_slash"]
+    # qddate calls dd-mm-yyyy "date_iso8601"; it is not the ISO 8601 order
+    assert ids("dt:date:date_iso8601") == ["date_dmy_dash"]
+    assert ids("dt:date:date_rus_lc2") == ["date_russian"]
+    assert ids("dt:date:weekday_eng_iso") == ["date_english"]
+    assert ids("dt:date:date_cjk_ko") == ["date_korean"]
+    assert ids("dt:date:date_eng_noyear_md") == ["monthday_english"]
+    # generated variants (a time, text after the date) resolve to the base pattern
+    assert ids("dt:date:date_2:time_1") == ["date_dmy_dot"]
+    assert ids("dt:date:date_2:time_left:t_right") == ["date_dmy_dot"]
+    assert ids("dt:date:de_base:t_right") == ["date_german"]
+    # the key without its dt:date: prefix
+    assert ids("date_6") == ["date_ymd_compact"]
+    assert ids("dt:date:no_such_pattern") == []
+    # every qddate 1.1.0 pattern maps to exactly one registry record
+    seen: dict[str, str] = {}
+    for record in reg.datatypes.values():
+        value = record.get("mappings", {}).get("qddate")
+        for key in value if isinstance(value, list) else [value] if value else []:
+            assert key not in seen, f"{key} is mapped by {seen[key]} and {record['id']}"
+            seen[key] = record["id"]
+    assert len(seen) == 151
+    # the records are representations of date and monthday
+    for rid in set(seen.values()):
+        assert reg.datatypes[rid]["semantic_type"] in ("date", "monthday"), rid
+
+
+def test_qddate_tool_lists_the_mapped_records(repo_sources):
+    mapped = {
+        rec.id for rec in repo_sources.datatypes if (rec.data.get("mappings") or {}).get("qddate")
+    }
+    assert effective_supported_types(repo_sources)["qddate"] == sorted(mapped)
+
+
+def test_qddate_mapping_must_be_a_pattern_key(mini_data):
+    path = mini_data / "datatypes/any/pii/email.yaml"
+    for bad in ("date_2", "dt:date:date_2:time_1", "dt:time:full"):
+        path.write_text(path.read_text().split("mappings:", 1)[0] + f"mappings:\n  qddate: {bad}\n")
+        errors = [str(i) for i in validate(load_sources(mini_data)).errors]
+        assert any("mappings" in e and "qddate" in e for e in errors), (bad, errors)
+
+    for good in ("dt:date:date_2", "[dt:date:date_rus, dt:date:date_rus_lc1]"):
+        path.write_text(
+            path.read_text().split("mappings:", 1)[0] + f"mappings:\n  qddate: {good}\n"
+        )
+        assert validate(load_sources(mini_data)).errors == [], good
+
+
 def test_changes_diff():
     old = [
         {"id": "a", "status": "draft", "name": "A"},

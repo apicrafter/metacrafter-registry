@@ -1,0 +1,25 @@
+id: monthday_korean
+name: Month and day with units (Korean)
+status: draft
+doc: Month and day without a year, written in Korean as numbers followed by the units for month (월) and
+  day (일), for example 12월 25일. A weekday may follow.
+semantic_type: monthday
+langs:
+- ko
+regexp: '^[0-9０-９]{1,2}월 ?[0-9０-９]{1,2}일(?: ?(?:[(（][월화수목금토일](?:요일)?[)）]|[월화수목금토일]요일))?$'
+examples:
+- value: 12월 25일
+  description: 25 December
+- value: 5월 5일 (목)
+  description: 5 May, Thursday
+- value: 2024년 12월 25일
+  valid: false
+mappings:
+  qddate: dt:date:date_cjk_ko_noyear
+links:
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/cjk.py
+translations:
+  ru:
+    name: Месяц и день с единицами (корейский)
+    doc: Месяц и день без года на корейском языке, например 12월 25일.

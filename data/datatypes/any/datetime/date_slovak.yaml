@@ -1,0 +1,36 @@
+id: date_slovak
+name: Date with a Slovak month name
+status: draft
+doc: Calendar date written in Slovak with the month name, day first, usually with a dot after the day
+  and the month in the genitive case (5. mája 2022). The nominative month (5. máj 2022) and a day without
+  the dot are accepted too. Month names that Slovak shares with English (5. September 2022) also match
+  date_english.
+semantic_type: date
+langs:
+- sk
+regexp: ^(?:0?[1-9]|[12]\d|3[01])\.? (?:[Jj]anuára?|[Ff]ebruára?|[Mm]ar(?:ec|ca)|[Aa]príla?|[Mm]ája?|[Jj]úna?|[Jj]úla?|[Aa]ugusta?|[Ss]eptemb(?:er|ra)|[Oo]któb(?:er|ra)|[Nn]ovemb(?:er|ra)|[Dd]ecemb(?:er|ra))
+  \d{4}$
+examples:
+- value: 25. decembra 2024
+  description: 25 December 2024
+- value: 5. mája 2022
+  description: 5 May 2022
+- value: december 2024
+  valid: false
+- value: 25. prosince 2024
+  valid: false
+mappings:
+  qddate:
+  - dt:date:sk_base
+  - dt:date:sk_base_lc
+  - dt:date:sk_gen
+  - dt:date:sk_gen_lc
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_date_formats_by_country
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/sk.py
+translations:
+  ru:
+    name: Дата со словацким названием месяца
+    doc: Календарная дата на словацком языке с названием месяца, например 5. mája 2022.

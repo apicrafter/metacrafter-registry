@@ -1,0 +1,31 @@
+id: date_ymd_dash
+name: Date as YYYY-MM-DD
+status: draft
+doc: Calendar date written as four-digit year, month and day separated by hyphens, for example 2024-12-25.
+  With two-digit month and day this is the extended format of ISO 8601 and the most common date in data
+  exchange; one-digit months and days (2022-5-5) are accepted too.
+semantic_type: date
+langs:
+- common
+regexp: ^\d{4}-(?:0?[1-9]|1[0-2])-(?:0?[1-9]|[12]\d|3[01])$
+examples:
+- value: '2024-12-25'
+  description: 25 December 2024
+- value: '2022-05-05'
+  description: 5 May 2022
+- value: 25-12-2024
+  valid: false
+- value: '20241225'
+  valid: false
+mappings:
+  qddate: dt:date:date_9
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/base.py
+translations:
+  ru:
+    name: Дата в формате ГГГГ-ММ-ДД
+    doc: 'Календарная дата: год из четырёх цифр, месяц и день через дефис, например 2024-12-25. С двузначными
+      месяцем и днём это расширенный формат ISO 8601.'

@@ -1,0 +1,26 @@
+id: date_ymd_dot
+name: Date as YYYY.MM.DD
+status: draft
+doc: Calendar date written as four-digit year, month and day separated by dots, for example 2024.12.25.
+semantic_type: date
+langs:
+- common
+regexp: ^\d{4}\.(?:0?[1-9]|1[0-2])\.(?:0?[1-9]|[12]\d|3[01])$
+examples:
+- value: 2024.12.25
+  description: 25 December 2024
+- value: 2022.5.5
+  description: 5 May 2022
+- value: 25.12.2024
+  valid: false
+mappings:
+  qddate: dt:date:date_10
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_date_formats_by_country
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/base.py
+translations:
+  ru:
+    name: Дата в формате ГГГГ.ММ.ДД
+    doc: 'Календарная дата: год из четырёх цифр, месяц и день через точки, например 2024.12.25.'

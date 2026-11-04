@@ -1,0 +1,39 @@
+id: date_ukrainian
+name: Date with a Ukrainian month name
+status: draft
+doc: 'Calendar date written in Ukrainian with the month name, day first: 5 травня 2022 (genitive), 5 травень
+  2022 (nominative) or 5 трав. 2022 (abbreviated), optionally followed by р. or року (year): 5 травня
+  2022 р. The month is capitalised or in lower case.'
+semantic_type: date
+langs:
+- uk
+regexp: '^(?:0?[1-9]|[12]\d|3[01]) (?:[Сс]іч(?:ень|ня|\.)|[Лл]ют(?:ий|ого|\.)|[Бб]ерез(?:ень|ня)|[Бб]ер\.|[Кк]віт(?:ень|ня|\.)|[Тт]рав(?:ень|ня|\.)|[Чч]ерв(?:ень|ня|\.)|[Лл]ип(?:ень|ня|\.)|[Сс]ерп(?:ень|ня|\.)|[Вв]ерес(?:ень|ня)|[Вв]ер\.|[Жж]овт(?:ень|ня|\.)|[Лл]истопада?|[Лл]истоп\.|[Гг]руд(?:ень|ня|\.))
+  \d{4}(?: ?р\.| року)?$'
+examples:
+- value: 25 грудня 2024
+  description: 25 December 2024
+- value: 5 трав. 2022
+  description: 5 May 2022, abbreviated month
+- value: 25 грудня 2024 р.
+  description: With the abbreviation of року (year)
+- value: грудень 2024
+  valid: false
+- value: 25 декабря 2024
+  valid: false
+mappings:
+  qddate:
+  - dt:date:uk_base
+  - dt:date:uk_base_lc
+  - dt:date:uk_gen
+  - dt:date:uk_gen_lc
+  - dt:date:uk_short
+  - dt:date:uk_short_lc
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_and_time_notation_in_Ukraine
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/uk.py
+translations:
+  ru:
+    name: Дата с украинским названием месяца
+    doc: Календарная дата на украинском языке с названием месяца, например 5 травня 2022.

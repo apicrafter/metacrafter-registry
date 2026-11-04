@@ -1,0 +1,29 @@
+id: date_dmy_compact
+name: Date as DDMMYYYY
+status: draft
+doc: 'Calendar date written as eight digits without separators: two-digit day, two-digit month and four-digit
+  year, for example 25122024. A column of such values is easy to take for integers.'
+semantic_type: date
+langs:
+- common
+regexp: ^(?:0[1-9]|[12]\d|3[01])(?:0[1-9]|1[0-2])\d{4}$
+examples:
+- value: '25122024'
+  description: 25 December 2024
+- value: '05052022'
+  description: 5 May 2022
+- value: '20241225'
+  valid: false
+- value: 25.12.2024
+  valid: false
+mappings:
+  qddate: dt:date:date_5
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_date_formats_by_country
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/base.py
+translations:
+  ru:
+    name: Дата в формате ДДММГГГГ
+    doc: 'Календарная дата из восьми цифр без разделителей: день, месяц и год, например 25122024.'

@@ -1,0 +1,32 @@
+id: monthday_english
+name: Month and day with an English month name
+status: draft
+doc: Month and day without a year, written in English with a capitalised month name, month first (May
+  5, Sept. 5, Dec 25th) or day first (5 May, 25th December).
+semantic_type: monthday
+langs:
+- en
+regexp: ^(?:(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?|Aug(?:ust)?|Sep(?:t|tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\.?
+  (?:0?[1-9]|[12]\d|3[01])(?:st|nd|rd|th)?|(?:0?[1-9]|[12]\d|3[01])(?:st|nd|rd|th)? (?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?|Aug(?:ust)?|Sep(?:t|tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?))$
+examples:
+- value: May 5
+  description: Month first
+- value: 25th December
+  description: Day first, ordinal day
+- value: Sept. 5
+  description: Abbreviated month with a dot
+- value: May 2022
+  valid: false
+- value: 5 May 2022
+  valid: false
+mappings:
+  qddate:
+  - dt:date:date_eng_noyear_md
+  - dt:date:date_eng_noyear_dm
+links:
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/base.py
+translations:
+  ru:
+    name: Месяц и день с английским названием месяца
+    doc: Месяц и день без года на английском языке, например May 5 или 25th December.
