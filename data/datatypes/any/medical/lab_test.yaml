@@ -1,0 +1,22 @@
+id: lab_test
+name: Laboratory test name
+status: draft
+doc: Name of a laboratory or blood test, for example complete blood count or HbA1c.
+categories:
+- medical
+langs:
+- en
+is_pii: false
+classification: categorical
+mappings:
+  purview:
+  - Blood test terms
+  - Lab test terms
+  - All medical terms and conditions
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-lab-test-terms
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Medical_test
+- type: schema.org
+  url: https://schema.org/MedicalTest

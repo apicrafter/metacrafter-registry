@@ -24,6 +24,50 @@ mappings:
   cdm: means.location.address
   d3m: http://schema.org/address
   fibo: FND/Places/Addresses/PhysicalAddress
+  purview:
+  - All Physical Addresses
+  - Australia physical addresses
+  - Austria physical addresses
+  - Belgium physical addresses
+  - Brazil physical addresses
+  - Bulgaria physical addresses
+  - Canada physical addresses
+  - Croatia physical addresses
+  - Cyprus physical addresses
+  - Czech Republic physical addresses
+  - Denmark physical addresses
+  - Estonia physical addresses
+  - Finland physical addresses
+  - France physical addresses
+  - Germany physical addresses
+  - Greece physical addresses
+  - Hungary physical addresses
+  - Iceland physical addresses
+  - Ireland physical addresses
+  - Italy physical addresses
+  - Japan physical addresses
+  - Latvia physical addresses
+  - Liechtenstein physical addresses
+  - Lithuania physical addresses
+  - Luxembourg Physical Addresses
+  - Luxemburg physical addresses
+  - Malta physical addresses
+  - Netherlands physical addresses
+  - New Zealand physical addresses
+  - Norway physical addresses
+  - Poland physical addresses
+  - Portuguese physical addresses
+  - Portugal physical addresses
+  - Romania physical addresses
+  - Slovakia physical addresses
+  - Slovenia physical addresses
+  - Spain physical addresses
+  - Sweden physical addresses
+  - Switzerland physical addresses
+  - Türkiye physical addresses
+  - Turkey physical addresses
+  - U.K. physical addresses
+  - U.S. physical addresses
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Address

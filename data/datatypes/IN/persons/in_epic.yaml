@@ -1,0 +1,23 @@
+id: in_epic
+name: Indian voter ID card number (EPIC)
+status: draft
+doc: 'Number of the Indian Electors Photo Identity Card (voter ID) issued by the Election Commission of
+  India: three letters and seven digits.'
+categories:
+- pii
+- persons
+country:
+- IN
+langs:
+- en
+- hi
+is_pii: true
+classification: identifier
+regexp: ^[A-Z]{3}\d{7}$
+mappings:
+  purview: India Voter ID Card
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-india-voter-id-card
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Elector%27s_Photo_Identity_Card

@@ -1,0 +1,20 @@
+id: gb_electoral_roll_number
+name: UK electoral roll number
+status: draft
+doc: 'Elector number on the electoral register of the United Kingdom: a two-letter polling district code
+  followed by one to four digits.'
+categories:
+- pii
+- persons
+country:
+- GB
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: ^[A-Z]{2}\d{1,4}$
+mappings:
+  purview: U.K. electoral roll number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number

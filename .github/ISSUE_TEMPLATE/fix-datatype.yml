@@ -1,0 +1,53 @@
+name: Fix a datatype
+description: Report a wrong regexp, example, description, link or mapping, or a duplicate record.
+title: "Fix datatype: "
+labels: ["improve semantic types"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Each record page on https://registry.apicrafter.io has an "edit on GitHub"
+        link. Use it if you can fix the record yourself. CI checks the change in
+        the pull request.
+  - type: input
+    id: id
+    attributes:
+      label: Datatype id
+      description: The id in the record URL, https://registry.apicrafter.io/datatype/<id>
+      placeholder: ru_inn
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What is wrong?
+      multiple: true
+      options:
+        - The regexp misses valid values
+        - The regexp matches invalid values
+        - An example is wrong
+        - The description is wrong or missing
+        - A link or mapping is wrong
+        - A translation is wrong
+        - It duplicates another record
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What is wrong and what is correct. For a duplicate, give the id of the other record.
+    validations:
+      required: true
+  - type: textarea
+    id: values
+    attributes:
+      label: Values that show the problem
+      description: One per line. Use published sample values. Never use the data of a real person, and never use a real secret.
+      render: text
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Links that confirm the correction, such as the standard or the issuing authority.

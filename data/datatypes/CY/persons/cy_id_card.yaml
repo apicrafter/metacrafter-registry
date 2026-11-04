@@ -1,0 +1,21 @@
+id: cy_id_card
+name: Cypriot identity card number
+status: draft
+doc: Number of the Cypriot identity card. Microsoft Purview looks for ten digits.
+categories:
+- pii
+- persons
+country:
+- CY
+langs:
+- el
+is_pii: true
+classification: identifier
+regexp: ^\d{10}$
+mappings:
+  purview:
+  - Cyprus identity card
+  - EU national identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-cyprus-identity-card

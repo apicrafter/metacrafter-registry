@@ -7,6 +7,8 @@ country:
 - AU
 langs:
 - en
+mappings:
+  purview: Australia passport number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Australian_passport

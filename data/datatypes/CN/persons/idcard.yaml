@@ -17,6 +17,7 @@ classification: identifier
 regexp: ^(?:\d{17}[\dX]|\d{15})$
 mappings:
   autotype: cin
+  purview: China resident identity card (PRC) number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Resident_Identity_Card

@@ -12,3 +12,7 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[A-Z0-9]{6,12}$
+mappings:
+  purview:
+  - Poland drivers license number
+  - EU drivers license number

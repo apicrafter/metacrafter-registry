@@ -94,6 +94,35 @@ def test_crosswalk_mappings(repo_sources):
     ]
 
 
+def test_purview_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+
+    def ids(name: str) -> list[str]:
+        return [r["id"] for r in reg.crosswalk("purview", name)]
+
+    # case, periods and apostrophes do not matter
+    assert ids("U.S. driver's license number") == ["usdriverlic"]
+    assert ids("u.s. drivers license number") == ["usdriverlic"]
+    # former names keep resolving after Microsoft renamed a type
+    assert ids("Azure AD client secret") == ids("Microsoft Entra client secret") == ["api_key"]
+    # a bundle resolves to the records of its member types
+    eu_passports = ids("EU passport number")
+    assert {"at_passport", "frpassport", "plpassport", "uspassport"} <= set(eu_passports)
+    assert "github_token" in ids("All credentials")
+    assert ids("Germany physical addresses") == ["address"]
+
+
+def test_purview_tool_lists_every_mapped_record(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+    mapped = {rid for rid, r in reg.datatypes.items() if r.get("mappings", {}).get("purview")}
+    assert set(reg.tools["microsoftpurview"]["supported_types"]) == mapped
+    assert len(mapped) > 200
+
+
 def test_cdm_crosswalk(repo_sources):
     from metacrafter_registry import Registry
 

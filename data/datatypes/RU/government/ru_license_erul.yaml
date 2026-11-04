@@ -1,0 +1,38 @@
+id: ru_license_erul
+name: Russian license number in the Unified Register of Licenses (ЕРУЛ)
+status: draft
+doc: Registration number of a license in the Russian Unified Register of Licenses (ЕРУЛ), in the format
+  "ЛNNN-NNNNN-NN/NNNNNNNN". Used by different licensing authorities, for example for private security
+  and for technical protection of confidential information. In the licence registers on the Moscow open
+  data portal (data.mos.ru) the first group depends on the licensed activity (Л035 education, Л041 medical,
+  Л042 pharmaceutical, Л017 narcotic drugs, Л028 scrap metal) and the second group on the licensing authority.
+  Some of these datasets write the separators as en dashes, which the regexp also accepts.
+parent: license_number
+categories:
+- legal
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^Л\d{3}[-–]\d{5}[-–]\d{2}/\d{8}$
+examples:
+- value: Л056-00106-77/00025315
+  description: Private security license of a company
+- value: Л024-00107-00/00580415
+  description: License of a joint-stock company
+- value: Л035-01298-77/00184869
+  description: Licence for educational activity issued in Moscow
+- value: Л035–01298–77/00185518
+  description: The same form written with en dashes, as in some data.mos.ru datasets
+- value: ЛО-34-02-001434
+  valid: false
+- value: 90Л01
+  valid: false
+  description: Series of a licence blank form, not the registration number
+translations:
+  ru:
+    name: Номер лицензии в ЕРУЛ
+    doc: Регистрационный номер лицензии в Едином реестре учёта лицензий в формате «ЛNNN-NNNNN-NN/NNNNNNNN».

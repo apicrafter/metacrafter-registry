@@ -12,6 +12,17 @@ langs:
 - ru
 is_pii: false
 classification: categorical
+regexp: ^\d{2}\s?\d{3}\s?\d{3}(?:\s?\d{3})?$
+examples:
+- value: '45000000'
+  description: City of Moscow
+- value: '45397000'
+  description: Municipal district Akademicheskiy, Moscow
+- value: 45 397 000
+  description: The same code written in groups, as in the Moscow classifier OMK MO
+- value: '4500000'
+  valid: false
+  description: Seven digits
 mappings:
   wikidata: P764
 links:

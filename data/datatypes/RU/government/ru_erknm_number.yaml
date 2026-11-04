@@ -1,0 +1,28 @@
+id: ru_erknm_number
+name: Russian control (supervisory) measure number in ЕРКНМ
+status: draft
+doc: Registration number of a control (supervisory) measure, such as a planned inspection, in the Russian
+  Unified Register of Control (Supervisory) Measures (ФГИС ЕРКНМ). It is a 20-digit number, so it has
+  the same form as a budget classification code or a bank account number and is identified by the field
+  name, for example "учетный номер КНМ в системе ФГИС ЕРКНМ".
+categories:
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^\d{20}$
+examples:
+- value: '78260771000019251788'
+  description: Planned inspection of a federal enterprise, Saint Petersburg
+- value: '66261271000119505902'
+  description: Planned external control of an audit company, Chelyabinsk
+- value: '7826077100001925178'
+  valid: false
+translations:
+  ru:
+    name: Учётный номер КНМ в ЕРКНМ
+    doc: Учётный номер контрольного (надзорного) мероприятия в Едином реестре контрольных (надзорных)
+      мероприятий.

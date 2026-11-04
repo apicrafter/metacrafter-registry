@@ -1,0 +1,20 @@
+id: nz_swn
+name: New Zealand social welfare number
+status: draft
+doc: 'Client number of the New Zealand social welfare system: nine digits, optionally in groups of three
+  separated by hyphens.'
+categories:
+- pii
+- persons
+country:
+- NZ
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: ^\d{3}-?\d{3}-?\d{3}$
+mappings:
+  purview: New Zealand social welfare number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-new-zealand-social-welfare-number

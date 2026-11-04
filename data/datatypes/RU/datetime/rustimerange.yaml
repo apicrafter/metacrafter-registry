@@ -7,3 +7,12 @@ country:
 - RU
 langs:
 - ru
+regexp: ^с (?:[01]?\d|2[0-4])[:.][0-5]\d (?:до|по) (?:[01]?\d|2[0-4])[:.][0-5]\d$
+examples:
+- value: с 08:00 до 20:00
+  description: Opening hours
+- value: с 09:00 по 18:00
+  description: Opening hours
+- value: круглосуточно
+  valid: false
+  description: '"Around the clock": opening hours, but not a time range'

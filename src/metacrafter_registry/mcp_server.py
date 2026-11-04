@@ -116,8 +116,10 @@ def create_server(registry: Registry):
         ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier,
         or the part after /ontology/. For cdm, a Common Data Model trait name
         (means.identity.service.email). For d3m, a D3M semantic type URI
-        (http://schema.org/email) or its bare name (FileName). For autotype, an
-        AutoType benchmark test case (isbn, date-chinese) or its file name (isbn.txt).
+        (http://schema.org/email) or its bare name (FileName). For purview, a
+        Microsoft Purview sensitive information type name; case, periods and
+        apostrophes are ignored. For autotype, an AutoType benchmark test case
+        (isbn, date-chinese) or its file name (isbn.txt).
         """
         return [_summary(registry, r) for r in registry.crosswalk(system, external_id)]
 

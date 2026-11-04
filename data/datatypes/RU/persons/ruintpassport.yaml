@@ -8,7 +8,9 @@ country:
 langs:
 - ru
 mappings:
-  purview: Russian Passport Number (Domestic)
+  purview:
+  - Russian Passport Number (Domestic)
+  - Russia passport number domestic
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Internal_passport_of_Russia

@@ -1,0 +1,23 @@
+id: ru_yearmonth
+name: Month and year (Russian)
+status: draft
+doc: Month written as a Russian month name followed by a year, optionally with "года" or "г.", for example
+  "Февраль 2027 года" or "январь 2013".
+semantic_type: yearmonth
+country:
+- RU
+langs:
+- ru
+regexp: '^(?:[Яя]нвар[ья]|[Фф]еврал[ья]|[Мм]арта?|[Аа]прел[ья]|[Мм]а[йя]|[Ии]юн[ья]|[Ии]юл[ья]|[Аа]вгуста?|[Сс]ентябр[ья]|[Оо]ктябр[ья]|[Нн]оябр[ья]|[Дд]екабр[ья])
+  \d{4}(?: года| г\.)?$'
+examples:
+- value: Февраль 2027 года
+  description: February 2027
+- value: январь 2013
+  description: January 2013
+- value: 1 квартал 2026 года
+  valid: false
+translations:
+  ru:
+    name: Месяц и год
+    doc: Месяц и год в русской записи.

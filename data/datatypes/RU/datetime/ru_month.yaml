@@ -1,0 +1,21 @@
+id: ru_month
+name: Month name (Russian)
+status: draft
+doc: Name of a month in Russian in the nominative case, for example "январь" or "Февраль".
+semantic_type: month
+country:
+- RU
+langs:
+- ru
+regexp: ^(?:[Яя]нварь|[Фф]евраль|[Мм]арт|[Аа]прель|[Мм]ай|[Ии]юнь|[Ии]юль|[Аа]вгуст|[Сс]ентябрь|[Оо]ктябрь|[Нн]оябрь|[Дд]екабрь)$
+examples:
+- value: январь
+  description: January
+- value: Февраль
+  description: February
+- value: понедельник
+  valid: false
+translations:
+  ru:
+    name: Название месяца
+    doc: Название месяца на русском языке в именительном падеже.

@@ -8,6 +8,10 @@ country:
 langs:
 - sv
 regexp: ^[0-9]{8}$
+mappings:
+  purview:
+  - Sweden passport number
+  - EU passport number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Swedish_passport

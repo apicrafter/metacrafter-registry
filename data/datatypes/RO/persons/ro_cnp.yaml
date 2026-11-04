@@ -22,6 +22,12 @@ examples:
 - value: '14610140752587'
   valid: false
   description: One character too many
+mappings:
+  purview:
+  - Romania personal numeric code (CNP)
+  - EU national identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
 links:
 - type: wikipedia
   url: https://ro.wikipedia.org/wiki/Cod_numeric_personal

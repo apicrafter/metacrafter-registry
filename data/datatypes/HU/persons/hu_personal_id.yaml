@@ -1,0 +1,22 @@
+id: hu_personal_id
+name: Hungarian personal identification number
+status: draft
+doc: 'Hungarian personal identification number (személyi azonosító): 11 digits made of a sex and century
+  digit, the date of birth (YYMMDD), a three-digit serial number and a check digit.'
+categories:
+- pii
+- persons
+country:
+- HU
+langs:
+- hu
+is_pii: true
+classification: identifier
+regexp: ^\d{11}$
+mappings:
+  purview:
+  - Hungary personal identification number
+  - EU national identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-hungary-personal-identification-number
