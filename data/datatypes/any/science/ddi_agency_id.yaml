@@ -7,9 +7,10 @@ doc: Identifier of an organization that maintains metadata in the Data Documenta
   bodies use int, as in int.esseric), and may extend it with sub-agency labels separated by dots (us.mpc.ipums).
   The DDI Lifecycle schema allows labels of letters, digits and hyphens, up to 63 characters each and
   253 in total. It also accepts a single label, but the identifiers listed in the registry all have a
-  prefix, so the regexp requires at least one dot. The agency identifier is the namespace part of DDI
-  URNs (urn:ddi:<agency>:<id>:<version>) and the registration authority in ISO/IEC 11179-6 identifiers
-  (IRDI).
+  prefix, so the regexp requires at least one dot and a first label of two or three letters (the country
+  code or int). Without that, dates such as 01.01.2015 and decimal numbers matched. The agency identifier
+  is the namespace part of DDI URNs (urn:ddi:<agency>:<id>:<version>) and the registration authority in
+  ISO/IEC 11179-6 identifiers (IRDI).
 categories:
 - science
 - government
@@ -17,7 +18,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^(?=.{3,253}$)[A-Za-z0-9-]{1,63}(?:\.[A-Za-z0-9-]{1,63})+$
+regexp: ^(?=.{3,253}$)[A-Za-z]{2,3}(?:\.[A-Za-z0-9-]{1,63})+$
 examples:
 - value: dk.dst
   description: Statistics Denmark
@@ -30,6 +31,9 @@ examples:
 - value: urn:ddi:us.mpc:V321:2
   valid: false
   description: Full DDI URN, not the agency identifier alone
+- value: 01.01.2015
+  valid: false
+  description: A date, not an agency identifier
 links:
 - type: doc
   url: https://registry.ddialliance.org/Agency

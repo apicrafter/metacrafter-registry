@@ -1,0 +1,25 @@
+id: ru_mos_metro_station
+name: Moscow Metro station name
+status: draft
+doc: Name of a station of the Moscow Metro, including the stations of the Moscow Central Circle. Datasets
+  of the Moscow open data portal use it to give the nearest station of an object. The portal publishes
+  the list of stations, with their lines, as the dataset "Станции Московского метрополитена".
+categories:
+- transport
+- geo
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+examples:
+- value: Комсомольская
+- value: Деловой центр
+- value: Ботанический сад
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_Moscow_Metro_stations
+translations:
+  ru:
+    name: Станция Московского метрополитена

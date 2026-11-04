@@ -1,0 +1,32 @@
+id: ru_license_regnum
+name: Russian licence registration number
+status: draft
+doc: Registration number of a licence in the Russian unified register of licences, written as the letter
+  Л and three digits, then five digits and two digits, a slash and eight digits, for example Л035-01298-77/00184869.
+  In the licence registers on the Moscow open data portal the first group depends on the licensed activity
+  (Л035 education, Л041 medical, Л042 pharmaceutical, Л017 narcotic drugs, Л028 scrap metal) and the second
+  group on the licensing authority. Older licences have numbers of other forms, which this regexp does
+  not cover.
+categories:
+- legal
+- government
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^Л\d{3}[-–]\d{5}[-–]\d{2}/\d{8}$
+examples:
+- value: Л035-01298-77/00184869
+  description: Licence for educational activity issued in Moscow
+- value: Л035–01298–77/00185518
+  description: The same form written with en dashes, as in some data.mos.ru datasets
+- value: 90Л01
+  valid: false
+  description: Series of a licence blank form, not the registration number
+translations:
+  ru:
+    name: Регистрационный номер лицензии
+    doc: Номер записи о лицензии в едином реестре лицензий вида Л035-01298-77/00184869. Первая группа
+      зависит от лицензируемого вида деятельности, вторая - от лицензирующего органа.

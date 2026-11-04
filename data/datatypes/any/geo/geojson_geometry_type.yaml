@@ -1,0 +1,30 @@
+id: geojson_geometry_type
+name: GeoJSON geometry type
+status: draft
+doc: Value of the type member of a GeoJSON geometry object. RFC 7946 defines seven case-sensitive geometry
+  types - Point, MultiPoint, LineString, MultiLineString, Polygon, MultiPolygon and GeometryCollection.
+  Tabular datasets often keep it in a column next to the coordinates, for example geoData.type in the
+  datasets of the Moscow open data portal.
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:Point|MultiPoint|LineString|MultiLineString|Polygon|MultiPolygon|GeometryCollection)$
+examples:
+- value: Point
+- value: MultiPolygon
+- value: LineString
+- value: Feature
+  valid: false
+  description: GeoJSON object type, not a geometry type
+- value: point
+  valid: false
+  description: Geometry types are case-sensitive
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc7946
+translations:
+  ru:
+    name: Тип геометрии GeoJSON
