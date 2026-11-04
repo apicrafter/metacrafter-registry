@@ -7,6 +7,8 @@ categories:
 langs:
 - common
 is_pii: false
+mappings:
+  d3m: http://schema.org/DateTime
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Date_and_time_notation
