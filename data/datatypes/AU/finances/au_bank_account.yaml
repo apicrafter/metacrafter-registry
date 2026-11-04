@@ -1,0 +1,16 @@
+id: au_bank_account
+name: Australian bank account number
+status: draft
+doc: Number of a bank account held in Australia. Microsoft Purview looks for six to ten digits; the bank
+  state branch (BSB) number is written separately.
+semantic_type: bankaccount
+country:
+- AU
+langs:
+- en
+regexp: ^\d{6,10}$
+mappings:
+  purview: Australia bank account number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-australia-bank-account-number

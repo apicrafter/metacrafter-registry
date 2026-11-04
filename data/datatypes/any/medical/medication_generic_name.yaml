@@ -1,0 +1,22 @@
+id: medication_generic_name
+name: Medication generic name
+status: draft
+doc: Non-proprietary (generic) name of a medicine or its active ingredient, such as an International Nonproprietary
+  Name (INN).
+categories:
+- medical
+langs:
+- en
+is_pii: false
+classification: categorical
+mappings:
+  purview:
+  - Generic medication names
+  - All medical terms and conditions
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-generic-medication-names
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Generic_drug
+- type: schema.org
+  url: https://schema.org/nonProprietaryName

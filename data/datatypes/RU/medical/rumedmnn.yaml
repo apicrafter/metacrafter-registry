@@ -3,6 +3,7 @@ name: International nonproprietary name (Russia)
 status: draft
 doc: An international nonproprietary name (INN) is an official generic and non-proprietary name given
   to a pharmaceutical drug or an active ingredient. (Russian)
+parent: medication_generic_name
 categories:
 - medical
 country:

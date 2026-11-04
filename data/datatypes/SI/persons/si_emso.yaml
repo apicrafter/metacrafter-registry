@@ -1,0 +1,24 @@
+id: si_emso
+name: Slovenian unique master citizen number (EMŠO)
+status: draft
+doc: 'Slovenian unique master citizen number (EMŠO): 13 digits made of the date of birth (DDMMYYY), a
+  register code, a serial number and a check digit.'
+categories:
+- pii
+- persons
+country:
+- SI
+langs:
+- sl
+is_pii: true
+classification: identifier
+regexp: ^\d{13}$
+mappings:
+  purview:
+  - Slovenia Unique Master Citizen Number
+  - EU national identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-slovenia-unique-master-citizen-number
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Unique_Master_Citizen_Number

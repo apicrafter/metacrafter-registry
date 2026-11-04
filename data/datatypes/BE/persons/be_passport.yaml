@@ -1,0 +1,19 @@
+id: be_passport
+name: Belgian passport number
+status: draft
+doc: Number of a passport issued by Belgium. Microsoft Purview looks for two letters and six digits.
+semantic_type: passport
+country:
+- BE
+langs:
+- nl
+- fr
+- de
+regexp: ^[A-Z]{2}\d{6}$
+mappings:
+  purview:
+  - Belgium passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-belgium-passport-number

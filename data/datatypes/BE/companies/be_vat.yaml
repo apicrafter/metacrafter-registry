@@ -25,6 +25,8 @@ examples:
 - value: 02207649717
   valid: false
   description: One character too many
+mappings:
+  purview: Belgium value added tax number
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Ondernemingsnummer

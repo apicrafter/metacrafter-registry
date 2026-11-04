@@ -18,6 +18,7 @@ examples:
 mappings:
   google_dlp: ICD10_CODE
   wikidata: P494
+  purview: International classification of diseases (ICD-10-CM)
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ICD-10

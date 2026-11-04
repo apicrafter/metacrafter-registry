@@ -26,6 +26,8 @@ examples:
 - value: '61248020201'
   valid: false
   description: Check digit does not match
+mappings:
+  purview: Italy value added tax number
 links:
 - type: wikipedia
   url: https://it.wikipedia.org/wiki/Partita_IVA

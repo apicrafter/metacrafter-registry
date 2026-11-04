@@ -31,7 +31,9 @@ examples:
   description: One character too many
 mappings:
   google_dlp: NORWAY_NI_NUMBER
-  purview: Norway identification number
+  purview:
+  - Norway Identity Number
+  - Norway identification number
 links:
 - type: wikipedia
   url: https://no.wikipedia.org/wiki/F%C3%B8dselsnummer

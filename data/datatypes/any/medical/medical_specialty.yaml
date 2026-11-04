@@ -1,0 +1,21 @@
+id: medical_specialty
+name: Medical specialty
+status: draft
+doc: Branch of medical practice, for example cardiology or pediatrics.
+categories:
+- medical
+langs:
+- en
+is_pii: false
+classification: categorical
+mappings:
+  purview:
+  - Medical Specialities
+  - All medical terms and conditions
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-medical-specialities
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Medical_specialty
+- type: schema.org
+  url: https://schema.org/MedicalSpecialty

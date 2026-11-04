@@ -13,6 +13,10 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[A-Z9]{5}\d{6}[A-Z9]{2}\d[A-Z]{2}$
+mappings:
+  purview:
+  - U.K. drivers license number
+  - EU drivers license number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Driving_licence_in_the_United_Kingdom

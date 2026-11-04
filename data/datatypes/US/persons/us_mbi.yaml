@@ -1,0 +1,30 @@
+id: us_mbi
+name: US Medicare Beneficiary Identifier (MBI)
+status: draft
+doc: Medicare Beneficiary Identifier, the 11-character number on the Medicare card that replaced the SSN-based
+  number from 2018. Letters S, L, O, I, B and Z are not used. It is often written with hyphens after the
+  4th and 7th characters.
+categories:
+- pii
+- persons
+- medical
+country:
+- US
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: ^[1-9][AC-HJKMNP-RT-Y][AC-HJKMNP-RT-Y0-9]\d-?[AC-HJKMNP-RT-Y][AC-HJKMNP-RT-Y0-9]\d-?[AC-HJKMNP-RT-Y]{2}\d{2}$
+examples:
+- value: 1EG4-TE5-MK73
+  description: Format example published by CMS
+- value: 1EG4-TE5-MK7S
+  valid: false
+  description: The letter S is not used
+mappings:
+  purview: Medicare Beneficiary Identifier (MBI) card
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-medicare-beneficiary-identifier-card
+- type: doc
+  url: https://www.cms.gov/medicare/new-medicare-card

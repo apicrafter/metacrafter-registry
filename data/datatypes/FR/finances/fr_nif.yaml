@@ -24,6 +24,12 @@ examples:
 - value: '32517683113937'
   valid: false
   description: One character too many
+mappings:
+  purview:
+  - France Tax Identification Number (numéro SPI.)
+  - France tax identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
 links:
 - type: wikipedia
   url: https://fr.wikipedia.org/wiki/Num%C3%A9ro_d%27Immatriculation_Fiscale#France

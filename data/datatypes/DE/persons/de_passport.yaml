@@ -1,0 +1,20 @@
+id: de_passport
+name: German passport number
+status: draft
+doc: 'Number of a passport issued by Germany. Microsoft Purview looks for nine to eleven characters: one
+  of the letters C, F, G, H, J or K, eight digits or letters from a reduced alphabet, an optional check
+  digit and an optional D.'
+semantic_type: passport
+country:
+- DE
+langs:
+- de
+regexp: ^[CFGHJK][0-9CFGHJKLMNPRTVWXYZ]{8}\d?D?$
+mappings:
+  purview:
+  - German Passport Number
+  - Germany passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-germany-passport-number

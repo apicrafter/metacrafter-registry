@@ -22,6 +22,8 @@ examples:
 - value: '13122664590'
   valid: false
   description: Check digit does not match
+mappings:
+  purview: Greece Social Security Number (AMKA)
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gr.amka.html

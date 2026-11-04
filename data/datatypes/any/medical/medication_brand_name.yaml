@@ -1,0 +1,19 @@
+id: medication_brand_name
+name: Medication brand name
+status: draft
+doc: Proprietary (trade) name under which a medicine is sold.
+categories:
+- medical
+langs:
+- en
+is_pii: false
+classification: categorical
+mappings:
+  purview:
+  - Brand medication names
+  - All medical terms and conditions
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-brand-medication-names
+- type: schema.org
+  url: https://schema.org/proprietaryName

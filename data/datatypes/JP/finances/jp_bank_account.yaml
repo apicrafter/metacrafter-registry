@@ -1,0 +1,16 @@
+id: jp_bank_account
+name: Japanese bank account number
+status: draft
+doc: Number of a bank account held in Japan. Microsoft Purview looks for seven or eight digits; the four-digit
+  bank code and three-digit branch code are written separately.
+semantic_type: bankaccount
+country:
+- JP
+langs:
+- ja
+regexp: ^\d{7,8}$
+mappings:
+  purview: Japan bank account number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-japan-bank-account-number

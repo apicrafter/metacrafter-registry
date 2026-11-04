@@ -24,6 +24,8 @@ examples:
 - value: 95566826K7
   valid: false
   description: One character too many
+mappings:
+  purview: Chile identity card number
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/Rol_%C3%9Anico_Tributario

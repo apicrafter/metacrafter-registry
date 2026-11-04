@@ -1,0 +1,17 @@
+id: lt_passport
+name: Lithuanian passport number
+status: draft
+doc: Number of a passport issued by Lithuania. Microsoft Purview looks for eight letters or digits.
+semantic_type: passport
+country:
+- LT
+langs:
+- lt
+regexp: ^[A-Z0-9]{8}$
+mappings:
+  purview:
+  - Lithuania passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-lithuania-passport-number

@@ -1,0 +1,21 @@
+id: fi_ehic
+name: Finnish European Health Insurance Card number
+status: draft
+doc: 'Number of the European Health Insurance Card issued in Finland: 20 digits that start with 8024680246.'
+categories:
+- pii
+- persons
+- medical
+country:
+- FI
+langs:
+- fi
+- sv
+is_pii: true
+classification: identifier
+regexp: ^8024680246[ -]?\d{10}$
+mappings:
+  purview: Finland european health insurance number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-finland-european-health-insurance-number

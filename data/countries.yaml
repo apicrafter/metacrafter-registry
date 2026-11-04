@@ -213,3 +213,27 @@
 - id: RO
   name: Romania
   kind: country
+- id: HK
+  name: Hong Kong
+  kind: country
+- id: PH
+  name: Philippines
+  kind: country
+- id: QA
+  name: Qatar
+  kind: country
+- id: SI
+  name: Slovenia
+  kind: country
+- id: SK
+  name: Slovakia
+  kind: country
+- id: TW
+  name: Taiwan
+  kind: country
+- id: UA
+  name: Ukraine
+  kind: country
+- id: ZA
+  name: South Africa
+  kind: country
