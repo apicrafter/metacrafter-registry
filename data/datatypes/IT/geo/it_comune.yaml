@@ -1,0 +1,28 @@
+id: it_comune
+name: Italian municipality (comune)
+status: draft
+doc: Name of a comune, the basic municipality of Italy, such as Roma, Bergamo or Abano Terme. Italy has
+  about 7,900 comuni.
+categories:
+- geo
+- government
+country:
+- IT
+langs:
+- it
+is_pii: false
+classification: categorical
+examples:
+- value: Roma
+- value: Bergamo
+- value: Abano Terme
+mappings:
+  fta: STATE_PROVINCE.COMMUNE_IT
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Comune
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Коммуна Италии

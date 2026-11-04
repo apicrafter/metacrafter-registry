@@ -1,0 +1,30 @@
+id: mx_postcode
+name: Mexican postal code
+status: draft
+doc: 'Postal code (código postal) in Mexico: five digits. The first two digits identify the state; codes
+  of Mexico City start with 01 to 16.'
+semantic_type: postindex
+country:
+- MX
+langs:
+- es
+regexp: ^\d{5}$
+examples:
+- value: '06000'
+  description: Centro, Mexico City
+- value: '44100'
+  description: Guadalajara
+- value: '64000'
+  description: Monterrey
+- value: '6000'
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_MX
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Mexico
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Мексики

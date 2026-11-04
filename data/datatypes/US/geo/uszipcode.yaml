@@ -15,6 +15,9 @@ langs:
 mappings:
   autotype: zipcode-correct
   d3m: http://schema.org/postalCode
+  fta:
+  - POSTAL_CODE.ZIP5_PLUS4_US
+  - POSTAL_CODE.ZIP5_US
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ZIP_Code

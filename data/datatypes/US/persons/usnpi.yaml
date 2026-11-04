@@ -16,6 +16,7 @@ mappings:
   autotype: npi
   google_dlp: US_HEALTHCARE_NPI
   presidio: US_NPI
+  fta: IDENTITY.NPI_US
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/National_Provider_Identifier

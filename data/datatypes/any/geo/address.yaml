@@ -19,7 +19,6 @@ mappings:
   - usaddress1
   - usaddress2
   - usaddress3
-  - usaddress4
   - usaddress5
   cdm: means.location.address
   d3m: http://schema.org/address
@@ -68,6 +67,10 @@ mappings:
   - Turkey physical addresses
   - U.K. physical addresses
   - U.S. physical addresses
+  fta:
+  - FULL_ADDRESS_EN
+  - STREET_ADDRESS_JA
+  sherlock: address
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Address

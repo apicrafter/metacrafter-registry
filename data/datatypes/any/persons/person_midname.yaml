@@ -10,3 +10,6 @@ langs:
 is_pii: true
 mappings:
   cdm: means.identity.person.middleName
+  fta:
+  - NAME.MIDDLE
+  - NAME.MIDDLE_INITIAL

@@ -16,6 +16,7 @@ examples:
 mappings:
   autotype: countrycode
   wikidata: P297
+  fta: COUNTRY.ISO-3166-2
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2

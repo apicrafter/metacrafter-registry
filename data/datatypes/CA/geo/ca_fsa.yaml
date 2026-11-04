@@ -1,7 +1,7 @@
 id: ca_fsa
 name: Canadian forward sortation area (FSA)
 status: draft
-doc: 'First three characters of a Canadian postal code (ca_postalcode): letter, digit, letter, for example
+doc: 'First three characters of a Canadian postal code (ca_postcode): letter, digit, letter, for example
   K1A. A forward sortation area is the area covered by all postal codes that start with these characters.
   The letter is a postal district within one province or territory, and a 0 as the digit marks a rural
   area. Statistics Canada and other publishers release data and boundary files by FSA when full postal

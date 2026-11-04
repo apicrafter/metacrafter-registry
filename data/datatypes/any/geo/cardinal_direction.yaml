@@ -1,0 +1,27 @@
+id: cardinal_direction
+name: Cardinal direction
+status: draft
+doc: 'Compass direction written as a word or an abbreviation: a cardinal direction (North, East, South,
+  West or N, E, S, W), an intercardinal direction (Northeast, SW), or a travel direction on a road (Northbound,
+  WB).'
+categories:
+- geo
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: N
+- value: SW
+- value: Northeast
+- value: Westbound
+mappings:
+  fta: DIRECTION
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Cardinal_direction
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Сторона света

@@ -12,6 +12,7 @@ examples:
 - value: 839 megabyte
   description: FreeCAD
 mappings:
+  sherlock: file Size
   wikidata: P3575
 links:
 - type: wikidata

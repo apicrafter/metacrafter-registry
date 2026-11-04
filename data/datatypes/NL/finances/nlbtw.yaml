@@ -23,6 +23,7 @@ examples:
   description: Dutch VAT identification number with letters in the alphanumeric part
 mappings:
   purview: Netherlands value added tax number
+  fta: IDENTITY.VAT_NL
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/BTW-nummer

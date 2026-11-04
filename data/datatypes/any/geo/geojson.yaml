@@ -1,0 +1,31 @@
+id: geojson
+name: GeoJSON geometry
+status: draft
+doc: Geometry, feature or feature collection written in GeoJSON (RFC 7946), the JSON format for geographic
+  data. Positions are longitude first, then latitude, in WGS 84.
+categories:
+- geo
+langs:
+- common
+is_pii: false
+regexp: ^\{.*"type"\s*:\s*"(?:Point|MultiPoint|LineString|MultiLineString|Polygon|MultiPolygon|GeometryCollection|Feature|FeatureCollection)".*\}$
+examples:
+- value: '{"type": "Point", "coordinates": [30.5234, 50.4501]}'
+  description: a point (longitude, latitude)
+- value: '{"type": "LineString", "coordinates": [[30.0, 10.0], [10.0, 30.0], [40.0, 40.0]]}'
+  description: a line
+- value: POINT (30.5234 50.4501)
+  valid: false
+  description: WKT, not GeoJSON
+mappings:
+  fta: SPATIAL.GEOJSON
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/GeoJSON
+- type: doc
+  url: https://datatracker.ietf.org/doc/html/rfc7946
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Геометрия GeoJSON

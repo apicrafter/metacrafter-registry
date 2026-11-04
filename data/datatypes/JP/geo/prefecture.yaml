@@ -10,3 +10,5 @@ langs:
 - ja
 is_pii: false
 classification: identifier
+mappings:
+  fta: STATE_PROVINCE.PREFECTURE_NAME_JA

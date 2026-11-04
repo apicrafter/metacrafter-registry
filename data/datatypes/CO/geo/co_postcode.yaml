@@ -1,0 +1,30 @@
+id: co_postcode
+name: Colombian postal code
+status: draft
+doc: 'Postal code (código postal) in Colombia: six digits. The first two digits are the department, such
+  as 11 for Bogotá and 05 for Antioquia.'
+semantic_type: postindex
+country:
+- CO
+langs:
+- es
+regexp: ^\d{6}$
+examples:
+- value: '110111'
+  description: Bogotá
+- value: '050001'
+  description: Medellín
+- value: '760001'
+  description: Cali
+- value: '11011'
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_CO
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Colombia
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Колумбии

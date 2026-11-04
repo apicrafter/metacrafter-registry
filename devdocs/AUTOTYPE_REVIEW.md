@@ -36,15 +36,17 @@ All numbers below were computed from that commit.
     schema rejects other values, such as `isbn.txt`.
     `crosswalk("autotype", ...)` also accepts the file name (`isbn.txt`) and
     its `data_release/` path.
-  - 118 of the 142 test cases are mapped to 81 records. A test case maps to
+  - 119 of the 142 test cases are mapped to 83 records. A test case maps to
     at most one record (a test checks this).
-  - 19 new draft records for benchmark types the registry did not have. See
+  - 18 new draft records for benchmark types the registry did not have. See
     [New records](#new-records).
+  - `ca_postalcode` is added to the aliases of `ca_postcode` (from the FTA
+    review), because metacrafter-rules uses that rule key.
   - The regexp of `idcard` (Chinese Resident Identity Card number) accepted
     8 to 15 digits, so it rejected every current 18-character number. It now
     accepts 18 characters (17 digits and a check digit, 0-9 or X) or the
     older 15 digits. Its description is rewritten.
-- **Not done, on purpose:** 24 test cases are not mapped. They are message
+- **Not done, on purpose:** 23 test cases are not mapped. They are message
   formats, free text, formats without a standard notation, and four unclear
   or mislabelled files. See [Test cases that are not mapped](#test-cases-that-are-not-mapped).
 
@@ -71,8 +73,9 @@ codes (ICD-10, airport codes), notations (SMILES, MGRS) and formats of dates,
 phone numbers and addresses. Some are whole messages or documents (SWIFT MT,
 FIX, NOTAM, SQL), and a few are free text (book titles, drug names).
 
-The registry and the benchmark meet at the value types. Messages, documents
-and free text are not value types with a fixed form, so they are not mapped.
+The registry and the benchmark meet at the value types. Messages and documents
+are not mapped. Free text is mapped only where the registry has a record for
+it, such as drug names.
 
 ## Mapping (in `mappings.autotype`)
 
@@ -97,6 +100,7 @@ problems in the benchmark or at registry regexps to review; see
 | `dea` | 12 | `usdeanumber` | 12 of 12 |
 | `icd9` | 35 | `icd9` (new) | 35 of 35 |
 | `ICD10_correct` | 38 | `icd10` | 38 of 38 |
+| `drug` | 28 | `medication_generic_name` | no regexp |
 
 **Finance and commerce**
 
@@ -190,7 +194,7 @@ problems in the benchmark or at registry regexps to review; see
 | `usaddress1` | 100 | `address` | no regexp |
 | `usaddress2` | 83 | `address` | no regexp |
 | `usaddress3` | 100 | `address` | no regexp |
-| `usaddress4` | 34 | `address` | no regexp |
+| `usaddress4` | 34 | `street_address` | no regexp |
 | `usaddress5` | 34 | `address` | no regexp |
 | `austraddr` | 40 | `address` | no regexp |
 | `chinaaddr` | 33 | `address` | no regexp |
@@ -246,6 +250,7 @@ problems in the benchmark or at registry regexps to review; see
 | `date-y` | 49 | `yearmonth` | no regexp |
 | `date11` | 13 | `yearmonth` | no regexp |
 
+
 Notes on the mapping:
 
 - **Formats of one type map to one record.** All 27 date and time test cases
@@ -253,14 +258,18 @@ Notes on the mapping:
   values hold. The registry describes these types, not each written format.
   The Hijri dates (`date-hijri`) and the BCE dates (`date4`) map to `date`.
 - **Partial addresses.** `usaddress1` (city, state, ZIP), `usaddress2` (city,
-  state), `usaddress3` (city, ZIP) and `usaddress4` (street line) map to
-  `address`, like the full addresses. The registry has no record for these
-  parts.
+  state) and `usaddress3` (city, ZIP) map to `address`, like the full
+  addresses; the registry has no record for these parts. `usaddress4` holds
+  street lines (`2325 140th St`) and maps to `street_address`.
+- **Drug names.** The `drug` values are non-proprietary names of medicines and
+  ingredients (`Metronidazole`, `MORPHINE SULFATE`), so the test case maps to
+  `medication_generic_name`.
 - **Canada postal code.** The paper's type is "Canada postal code", but the
   `canpost` values are only the first three characters, the forward sortation
-  area (`K0H`, `T4A`). So `canpost` maps to the new `ca_fsa`. The new
-  `ca_postalcode` record describes the full code. metacrafter-rules already
-  used the rule key `ca_postalcode`, which had no registry record until now.
+  area (`K0H`, `T4A`). So `canpost` maps to the new `ca_fsa`. The full code
+  is `ca_postcode`, which the FTA review added. metacrafter-rules uses the
+  rule key `ca_postalcode`, which had no registry record, so this change adds
+  it to the aliases of `ca_postcode`.
 - **Duplicates.** Where the registry has two records for one type, the
   mapping uses the stable, more complete one: `abaroutingnum` (not `aba`),
   `swiftcode` (not `bic`), `usnpi` (not `npi`), `uknhsnum` (not
@@ -289,7 +298,6 @@ can tell apart from other text.
 | `user_agent` | `useragentstring` | HTTP User-Agent string | No regexp (RFC 9110 grammar is too loose) | |
 | `uic_wagon_number` | `uic` | UIC wagon number (EVN) | Wikipedia; Luhn check digit | 7 of 10; the others carry operator markings such as `RIV` or `GB-EIL` |
 | `ca_fsa` | `canpost` | Canadian forward sortation area | Wikipedia, Postal codes in Canada | 20 of 20 |
-| `ca_postalcode` | | Canadian postal code (pattern of `postindex`) | Wikipedia, Postal codes in Canada | |
 | `mgrs` | `mgrs` | MGRS coordinate | Wikipedia | 20 of 20 |
 | `rgbcolor` | `rgb` | RGB color triplet (pattern of `color`) | CSS Color 4, `rgb()` | 45 of 45 |
 | `hslcolor` | `hsl` | HSL color (pattern of `color`) | CSS Color 4, `hsl()` | 54 of 54 |
@@ -333,7 +341,6 @@ Notes on the new records:
 | `sql` | SQL statements | Code |
 | `apa`, `apacite`, `iso690` | Bibliographic citations | Free text |
 | `booktitles` | Book titles with author names | Free text |
-| `drug` | Drug names | Free text; see recommendation 3 |
 | `iupac` | Chemical names (`Butane`, `2-methyl propane`) | Free text |
 | `cmyk` | CMYK colors as four fractions | No standard written form |
 | `utm` | UTM coordinates as easting, northing, zone | No standard written form |
@@ -355,7 +362,8 @@ for them, so there is no test case name to map.
 | PubChem ID | `pubchemid` |
 | OID number | `oid` |
 | International Standard Name Identifier (ISNI) | `isni` |
-| Life Science Identifier (LSID), EVMPD, International Code of Zoological Nomenclature, HL7 message, FDA drug code, Active Ingredient Group number, NATO stock number, International Standard Text Code (ISTC), GeoJSON, International Geo Sample Number (IGSN), ONIX, National Bibliography Number (NBN), Electronic Textbook Track Number (ETTN), FEI identifier, HTML, JSON, XML | None; see recommendation 3 |
+| GeoJSON | `geojson` |
+| Life Science Identifier (LSID), EVMPD, International Code of Zoological Nomenclature, HL7 message, FDA drug code, Active Ingredient Group number, NATO stock number, International Standard Text Code (ISTC), International Geo Sample Number (IGSN), ONIX, National Bibliography Number (NBN), Electronic Textbook Track Number (ETTN), FEI identifier, HTML, JSON, XML | None; see recommendation 3 |
 | Personal Identifiable Information (PII) | None; a class of types, which the registry marks with `is_pii` |
 
 ## Findings in existing records
@@ -393,7 +401,7 @@ numbers (`1-800-flowers`) and invalid central office codes, which
    records: NATO stock number (13 digits, `NNNN-NN-NNN-NNNN`), ISTC (16
    hexadecimal characters), LSID (`urn:lsid:...`), NBN (`urn:nbn:...`),
    IGSN, FDA National Drug Code, ISO 8601 date intervals, and NMEA 0183 and
-   AIS sentences. Free-text types (drug name, chemical name, citation, book
+   AIS sentences. Free-text types (chemical name, citation, book
    title) could be records without a regexp, if metacrafter gets detectors for
    them.
 4. **Merge duplicate records.** `aba` and `abaroutingnum`, `bic` and

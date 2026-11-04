@@ -13,6 +13,8 @@ is_pii: true
 mappings:
   cdm: means.location.city
   d3m: http://schema.org/City
+  fta: CITY
+  sherlock: city
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/City

@@ -1,0 +1,31 @@
+id: elevation
+name: Elevation above sea level
+status: draft
+doc: Height of a place, such as a mountain summit, a town or a weather station, above mean sea level.
+  Datasets store it as a number in metres or feet, sometimes with the unit after the number. Places below
+  sea level have negative values. Schema.org reads a number without a unit as metres.
+parent: numeric
+categories:
+- geo
+- values
+langs:
+- common
+is_pii: false
+examples:
+- value: '8848.86'
+  description: summit of Mount Everest, in metres
+- value: 1,000 m
+  description: number with a unit
+mappings:
+  sherlock: elevation
+  wikidata: P2044
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Elevation
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2044
+- type: schema.org
+  url: https://schema.org/elevation
+translations:
+  ru:
+    name: Высота над уровнем моря

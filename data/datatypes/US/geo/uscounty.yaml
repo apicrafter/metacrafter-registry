@@ -10,3 +10,5 @@ langs:
 - en
 is_pii: false
 classification: categorical
+mappings:
+  fta: STATE_PROVINCE.COUNTY_US

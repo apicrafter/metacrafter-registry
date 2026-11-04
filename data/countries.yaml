@@ -237,3 +237,9 @@
 - id: ZA
   name: South Africa
   kind: country
+- id: TZ
+  name: Tanzania
+  kind: country
+- id: UY
+  name: Uruguay
+  kind: country

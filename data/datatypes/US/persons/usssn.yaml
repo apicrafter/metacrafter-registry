@@ -23,6 +23,7 @@ mappings:
   google_dlp: US_SOCIAL_SECURITY_NUMBER
   presidio: US_SSN
   purview: U.S. social security number (SSN)
+  fta: SSN
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Social_Security_number

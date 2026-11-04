@@ -20,6 +20,8 @@ examples:
   description: department 2A
 - value: La Réunion
   description: overseas department 974
+mappings:
+  fta: STATE_PROVINCE.DEPARTMENT_NAME_FR
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Departments_of_France

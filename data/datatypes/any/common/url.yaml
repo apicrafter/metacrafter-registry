@@ -22,6 +22,7 @@ mappings:
   google_dlp: URL
   presidio: URL
   wikidata: P2699
+  fta: URI.URL
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/URL

@@ -13,6 +13,7 @@ langs:
 mappings:
   autotype: ukpost
   presidio: UK_POSTCODE
+  fta: POSTAL_CODE.POSTAL_CODE_UK
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom

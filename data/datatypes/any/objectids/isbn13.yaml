@@ -21,6 +21,7 @@ examples:
   description: 'Dolle mythes: een frisse factcheck van feminisme toen en nu'
 mappings:
   wikidata: P212
+  fta: CHECKDIGIT.ISBN
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Standard_Book_Number

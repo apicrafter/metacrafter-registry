@@ -10,3 +10,4 @@ is_pii: false
 classification: identifier
 mappings:
   autotype: vin
+  fta: VIN

@@ -1,0 +1,28 @@
+id: birth_year
+name: Year of birth
+status: draft
+doc: Year in which a person was born, written with four digits, for example 1984. Data sets publish it
+  instead of the full date of birth to make people harder to identify, but it is still personal data.
+parent: year
+categories:
+- persons
+- pii
+- datetime
+langs:
+- common
+is_pii: true
+regexp: ^\d{4}$
+examples:
+- value: '1984'
+- value: '2001'
+- value: '1984-05-17'
+  valid: false
+  description: a full date of birth is the datatype birthday
+mappings:
+  fta: PERSON.YEAR_OF_BIRTH
+links:
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Год рождения

@@ -47,6 +47,11 @@ def _tokens(text: str) -> set[str]:
     return set(_TOKEN.findall(_CAMEL.sub(" ", str(text)).lower()))
 
 
+def _sherlock_key(label: str) -> str:
+    """A Sherlock type label without case and whitespace: "birth Date" -> "birthdate"."""
+    return re.sub(r"\s+", "", str(label)).lower()
+
+
 def _purview_key(name: str) -> str:
     """Compare Purview type names without case, periods and apostrophes."""
     return " ".join(re.sub(r"[.'’]", "", name).casefold().split())
@@ -446,8 +451,13 @@ class Registry:
         """Records mapped to ``external_id`` in another vocabulary (wikidata, fibo, presidio, ...).
 
         For wikidata, a property id or its URL; for fibo, a class path or its full IRI;
-        for autotype, a benchmark test case name, its file name or its data_release path.
+        for fta, a semantic type as FTA reports it, including locale-bound names such
+        as MONTH.FULL_fr-FR or GENDER.TEXT_DE; for sherlock, a type label, compared
+        without case and spaces; for autotype, a benchmark test case name, its file
+        name or its data_release path.
         """
+        if system == "fta":
+            return self._crosswalk_fta(str(external_id).strip())
         wanted = str(external_id).strip()
         if system == "wikidata":
             wanted = wanted.rstrip("/").rsplit("/", 1)[-1].removeprefix("Property:").upper()
@@ -461,6 +471,10 @@ class Registry:
         d3m_bare = system == "d3m" and "://" not in wanted
         if system == "d3m" and wanted.startswith("https://schema.org/"):
             wanted = "http://" + wanted.removeprefix("https://")
+        # Sherlock returns labels such as "birth Date"; the paper writes "Birth
+        # date". Compare without case and spaces, so "birthDate" matches too.
+        if system == "sherlock":
+            wanted = _sherlock_key(wanted)
         # Microsoft writes the same Purview type name with varying case and
         # punctuation ("U.S. driver's license number", "U.S. Drivers License Number").
         if system == "purview":
@@ -471,6 +485,8 @@ class Registry:
             values = value if isinstance(value, list) else [value] if value else []
             if system == "wikidata":
                 normalized = [v.upper() for v in values]
+            elif system == "sherlock":
+                normalized = [_sherlock_key(v) for v in values]
             elif system == "purview":
                 normalized = [_purview_key(v) for v in values]
             elif d3m_bare:
@@ -480,3 +496,22 @@ class Registry:
             if wanted in normalized:
                 out.append(record)
         return out
+
+    def _crosswalk_fta(self, name: str) -> list[dict[str, Any]]:
+        # FTA binds <LANGUAGE>, <COUNTRY> and <LOCALE> to the locale of the
+        # analysis, so it reports GENDER.TEXT_DE for GENDER.TEXT_<LANGUAGE>.
+        # An exact name wins: GENDER.TEXT_JA has its own FTA plugin.
+        candidates = [[name]]
+        if "_" in name:
+            head = name.rsplit("_", 1)[0]
+            candidates.append([f"{head}_<{p}>" for p in ("LANGUAGE", "COUNTRY", "LOCALE")])
+        for names in candidates:
+            out = []
+            for record in self.datatypes.values():
+                value = record.get("mappings", {}).get("fta")
+                values = value if isinstance(value, list) else [value] if value else []
+                if any(n in values for n in names):
+                    out.append(record)
+            if out:
+                return out
+        return []

@@ -1,0 +1,29 @@
+id: at_postcode
+name: Austrian postal code
+status: draft
+doc: 'Postal code (Postleitzahl) in Austria: four digits. The first digit is the region, 1 for Vienna.'
+semantic_type: postindex
+country:
+- AT
+langs:
+- de
+regexp: ^[1-9]\d{3}$
+examples:
+- value: '1010'
+  description: Vienna, Innere Stadt
+- value: '5020'
+  description: Salzburg
+- value: '6020'
+  description: Innsbruck
+- value: '0101'
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_AT
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Austria
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Австрии

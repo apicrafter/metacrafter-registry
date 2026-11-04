@@ -13,3 +13,4 @@ mappings:
   autotype:
   - EAN13_correct
   - ean
+  fta: CHECKDIGIT.EAN13

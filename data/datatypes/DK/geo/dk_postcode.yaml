@@ -1,0 +1,30 @@
+id: dk_postcode
+name: Danish postal code
+status: draft
+doc: 'Postal code (postnummer) in Denmark: four digits, such as 1050 for central Copenhagen. Greenland
+  uses codes from the same series.'
+semantic_type: postindex
+country:
+- DK
+langs:
+- da
+regexp: ^\d{4}$
+examples:
+- value: '1050'
+  description: Copenhagen K
+- value: '8000'
+  description: Aarhus C
+- value: '5000'
+  description: Odense C
+- value: '10500'
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_DK
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Denmark
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Дании

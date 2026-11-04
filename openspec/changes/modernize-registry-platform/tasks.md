@@ -192,9 +192,18 @@
   - 13 of D3M's 90 types are mapped to 12 records, exact concept matches only, at d3m commit `244d552`.
   - New draft pattern `nanpphone` (North American phone number) for D3M's `AmericanPhoneNumber`.
   - Column roles, dataset structure and hyper-parameter types are not value types. They are not imported. The review is `devdocs/D3M_REVIEW.md`.
-- [x] 8.10 Review the AutoType benchmark of Microsoft Research (issue #39). Add the `autotype` crosswalk key, which holds benchmark test case names.
-  - 118 of the 142 test cases are mapped to 81 records, at AutoType commit `600df80`.
-  - 19 new draft records for benchmark types the registry lacked, such as `bibcode`, `iswc`, `uniprot_id`, `ensembl_id`, `icd9`, `asin` and `ca_fsa`.
+- [x] 8.10 Review the FTA (Fast Text Analysis) semantic types (issue #38). Add the `fta` crosswalk key and the `fta` tool.
+  - 254 of FTA's 258 types are mapped to 180 records at FTA commit `51b3dd0`. `IDENTITY.VAT_<COUNTRY>` is mapped through its eight bound names.
+  - 73 new draft records: 21 value types, 18 postal code patterns and 34 administrative divisions. New countries: TZ, UY.
+  - `CHECKDIGIT.LUHN`, `FREE_TEXT` and the two North American union types are not mapped. The review is `devdocs/FTA_REVIEW.md`.
+- [x] 8.11 Review the Sherlock semantic types (issue #37). `mappings.sherlock` now holds Sherlock type labels, checked against the list of 78 labels in the schema.
+  - 32 of Sherlock's 78 types are mapped to 30 records, same-meaning matches only, at sherlock-project commit `f194013`.
+  - 6 new draft records: `birthplace`, `brand`, `religion`, `weight`, `elevation` and `species`. `industry` and `language` came from the FTA review (8.10) and now carry the Sherlock mapping too.
+  - New tool `sherlock` (detector). A test checks that its `supported_types` are the records that carry `mappings.sherlock`.
+  - Generic header words (`code`, `type`, `rank`, ...) and roles over names (`director`, `owner`, ...) are not imported. The review is `devdocs/SHERLOCK_REVIEW.md`.
+- [x] 8.12 Review the AutoType benchmark of Microsoft Research (issue #39). Add the `autotype` crosswalk key, which holds benchmark test case names.
+  - 119 of the 142 test cases are mapped to 83 records, at AutoType commit `600df80`.
+  - 18 new draft records for benchmark types the registry lacked, such as `bibcode`, `iswc`, `uniprot_id`, `ensembl_id`, `icd9`, `asin` and `ca_fsa`. `ca_postalcode` (a metacrafter-rules key) becomes an alias of `ca_postcode`.
   - Message formats (SWIFT MT, FIX, NOTAM, NMEA), free-text types and mislabelled test cases are not mapped. The review is `devdocs/AUTOTYPE_REVIEW.md`.
 - Data fixes found during this phase:
   - 9 regexps that matched the empty string were fixed, and the validator now rejects such regexps.

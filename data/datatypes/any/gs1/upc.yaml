@@ -11,3 +11,4 @@ classification: identifier
 checksum: gtin
 mappings:
   autotype: upc
+  fta: CHECKDIGIT.UPC

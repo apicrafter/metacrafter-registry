@@ -1,0 +1,64 @@
+id: language
+name: Language
+status: draft
+doc: 'Human language written as a name, such as English, Deutsch or allemand (German in French), or as
+  a code. Codes have their own patterns: iso639_1 (two letters) and iso639_2 (three letters). A language
+  tag with region or script subtags, such as en-GB, is the datatype languagetag.'
+categories:
+- common
+langs:
+- cs
+- da
+- de
+- en
+- es
+- fi
+- fr
+- it
+- ja
+- nl
+- pl
+- pt
+- ro
+- ru
+- sv
+is_pii: false
+classification: categorical
+examples:
+- value: English
+- value: Deutsch
+  description: German, in German
+- value: allemand
+  description: German, in French
+mappings:
+  fta:
+  - LANGUAGE.TEXT_CS
+  - LANGUAGE.TEXT_DA
+  - LANGUAGE.TEXT_DE
+  - LANGUAGE.TEXT_EN
+  - LANGUAGE.TEXT_ES
+  - LANGUAGE.TEXT_FI
+  - LANGUAGE.TEXT_FR
+  - LANGUAGE.TEXT_IT
+  - LANGUAGE.TEXT_JA
+  - LANGUAGE.TEXT_NL
+  - LANGUAGE.TEXT_PL
+  - LANGUAGE.TEXT_PT
+  - LANGUAGE.TEXT_RO
+  - LANGUAGE.TEXT_RU
+  - LANGUAGE.TEXT_SV
+  sherlock: language
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_639
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Language
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q34770
+- type: schema.org
+  url: https://schema.org/Language
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Язык

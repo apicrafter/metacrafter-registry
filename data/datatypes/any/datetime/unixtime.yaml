@@ -18,6 +18,9 @@ mappings:
   autotype:
   - unixback
   - unixtime
+  fta:
+  - EPOCH.MILLISECONDS
+  - EPOCH.SECONDS
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Unix_time

@@ -12,3 +12,6 @@ is_pii: false
 classification: categorical
 mappings:
   autotype: usstate
+  fta:
+  - STATE_PROVINCE.STATE_NAME_US
+  - STATE_PROVINCE.STATE_US

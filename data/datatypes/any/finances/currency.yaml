@@ -11,6 +11,8 @@ is_pii: false
 classification: categorical
 mappings:
   fibo: FND/Accounting/CurrencyAmount/Currency
+  fta: CURRENCY.TEXT_JA
+  sherlock: currency
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Currency
