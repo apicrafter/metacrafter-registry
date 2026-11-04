@@ -1,8 +1,10 @@
 id: no_fodselsnummer
 name: Norwegian national identity number (fødselsnummer)
 status: draft
-doc: 'Fødselsnummer, the 11-digit national identity number in Norway: the date of birth (DDMMYY), a 3-digit
-  individual number that also gives the sex, and two check digits.'
+doc: 'Fødselsnummer, the 11-digit national identity number in Norway, kept in the National Population
+  Register by the Norwegian Tax Administration: the date of birth (DDMMYY), a 3-digit individual number
+  that also gives the sex, and two mod-11 check digits. A D-number, given to people who are not registered
+  as residents, has the same layout with 4 added to the first digit.'
 categories:
 - pii
 - persons
@@ -12,7 +14,8 @@ langs:
 - 'no'
 is_pii: true
 classification: identifier
-regexp: ^\d{6}[ -]?\d{5}$
+regexp: ^(?:0[1-9]|[12]\d|3[01]|4[1-9]|[56]\d|7[01])(?:0[1-9]|1[0-2])\d{2}[ -]?\d{5}$
+checksum: no_fnr
 examples:
 - value: '27051338311'
   description: Synthetic number with a valid check digit
@@ -20,12 +23,20 @@ examples:
   description: Synthetic number with a valid check digit
 - value: 270513 38311
   description: The first example in its printed form
+- value: '27051338312'
+  valid: false
+  description: Check digits do not match
 - value: '270513383117'
   valid: false
   description: One character too many
+mappings:
+  google_dlp: NORWAY_NI_NUMBER
+  purview: Norway identification number
 links:
 - type: wikipedia
   url: https://no.wikipedia.org/wiki/F%C3%B8dselsnummer
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_identity_number_(Norway)
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/National_identification_number#Norway
 - type: other

@@ -12,3 +12,6 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[0-9]{12}$
+mappings:
+  google_dlp: JAPAN_INDIVIDUAL_NUMBER
+  purview: Japanese My Number Personal

@@ -2,7 +2,9 @@ id: it_iva
 name: Italian VAT number (partita IVA)
 status: draft
 doc: 'Partita IVA, the 11-digit VAT number in Italy: seven digits that identify the taxpayer, a 3-digit
-  province code and a Luhn check digit.'
+  tax office code (mostly the province code; 888 and 999 are used for special regimes and for non-residents)
+  and a Luhn check digit. In the EU form it has the IT prefix. For companies the 11 digits are also the
+  fiscal code.'
 parent: vatin
 categories:
 - finances
@@ -13,18 +15,22 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:IT[ -]?)?\d{11}$
-checksum: luhn
+checksum: it_iva
 examples:
 - value: '61248020200'
   description: Synthetic number with a valid check digit
 - value: '21360460394'
   description: Synthetic number with a valid check digit
+- value: IT00743110157
+  description: python-stdnum test value in the EU form
 - value: '61248020201'
   valid: false
   description: Check digit does not match
 links:
 - type: wikipedia
   url: https://it.wikipedia.org/wiki/Partita_IVA
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/VAT_identification_number
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.it.iva.html
 - type: other

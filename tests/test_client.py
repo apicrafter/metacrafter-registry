@@ -8,12 +8,17 @@ from metacrafter_registry import Registry
 from metacrafter_registry.checksums import (
     at_uid,
     bg_vat,
+    es_dni,
+    fi_hetu,
     fr_nir,
     gtin,
     iban_mod97,
     isbn10,
     isbn13,
+    it_codicefiscale,
+    it_iva,
     luhn,
+    no_fnr,
     ru_inn,
     ru_ogrn,
     ru_snils,
@@ -43,6 +48,13 @@ def test_checksum_reference_values():
     assert not fr_nir("253072C07300443")
     assert at_uid("ATU13585627") and at_uid("U13585627") and not at_uid("ATU13585626")
     assert bg_vat("BG175074752") and bg_vat("175074752") and not bg_vat("BG175074751")
+    assert no_fnr("151086 95088") and not no_fnr("15108695077")
+    assert it_codicefiscale("RCCMNL83S18D969H") and it_codicefiscale("CNTCHR83T41D969D")
+    assert not it_codicefiscale("RCCMNL83S18D969A") and not it_codicefiscale("RCCMNL83Z18D969H")
+    assert it_iva("IT 00743110157") and it_iva("00743110157") and not it_iva("00743110158")
+    assert not it_iva("00743115007")  # 500 is not a tax office code
+    assert fi_hetu("131052-308T") and not fi_hetu("131052-308U") and not fi_hetu("131052308T")
+    assert es_dni("54362315-K") and not es_dni("54362315Z")
 
 
 def test_lookup_and_aliases(reg):

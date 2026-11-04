@@ -267,6 +267,13 @@ def test_javascript_checksums_match_python(tmp_path):
         "U13585626",
         "BG175074752",
         "BG 175 074 751",
+        "151086 95088",
+        "RCCMNL83S18D969H",
+        "CNTCHR83T41D969D",
+        "IT 00743110157",
+        "131052-308T",
+        "131052A308T",
+        "54362315-K",
     ]
     values += [str(rng.randrange(10**8, 10**15)) for _ in range(300)]
     values += [f"ATU{rng.randrange(10**8):08d}" for _ in range(100)]
@@ -275,6 +282,23 @@ def test_javascript_checksums_match_python(tmp_path):
         f"{rng.randrange(10**5):05d}2{rng.choice('AB')}{rng.randrange(10**8):08d}"
         for _ in range(100)
     ]
+    values += [f"{rng.randrange(10**11):011d}" for _ in range(1000)]
+    offices = ["001", "100", "121", "888", "500"]
+    values += [
+        f"IT{rng.randrange(10**7):07d}{rng.choice(offices)}{rng.randrange(10)}" for _ in range(100)
+    ]
+    values += [
+        f"{rng.randrange(10**6):06d}{rng.choice('-+ABCDEFUVWXY')}{rng.randrange(1000):03d}"
+        f"{rng.choice('0123456789ABCDEFHJKLMNPRSTUVWXY')}"
+        for _ in range(200)
+    ]
+    values += [
+        f"{rng.randrange(10**8):08d}{rng.choice('TRWAGMYFPDXBNJZSQVHLCKE')}" for _ in range(200)
+    ]
+    letters, digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "0123456789LMNPQRSTUV"
+    fiscal_code = [letters] * 6 + [digits] * 2 + ["ABCDEHLMPRST"] + [digits] * 2
+    fiscal_code += [letters] + [digits] * 3 + [letters]
+    values += ["".join(rng.choice(chars) for chars in fiscal_code) for _ in range(500)]
     script = tmp_path / "checksums.js"
     script.write_text(
         "const core = require(process.argv[2]);\n"
