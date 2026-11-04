@@ -144,6 +144,7 @@
   - `Registry.load`, `fetch`, `get` (alias-aware), `search`, `url_for`, `match`
   - checksum validators: `luhn`, `iban_mod97`, `isbn10`, `isbn13`, `gtin`, `ru_inn`, `ru_snils`, `ru_ogrn`
   - Added on top: `identify` (ranking by regexp hit rate × specificity, check digits and field-name similarity) and `crosswalk`.
+  - `identify` also counts a value written with spaces or hyphens as a hit when it matches without them, unless the regexp of another record that is at least as specific matches the value as written. So an ISO date is not an eight-digit `okpo` or `oktmo` hit when a date regexp matches it. `match` keeps every compact-form match. The `/identify` page (`identify-core.js`) uses the same rule and gives the same scores.
   - `fetch` verifies SHA-256 against the manifest and caches the data.
   - `checksum` is now set on 12 records. Validation checks examples against the check digit.
   - `iban` and `email` gained regexps and examples.
