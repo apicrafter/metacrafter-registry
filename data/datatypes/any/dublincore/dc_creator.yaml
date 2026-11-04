@@ -1,10 +1,13 @@
 id: dc_creator
-name: Dublin Core creator by field name
-status: draft
-doc: Dublin Core creator by field name
+name: Creator (Dublin Core)
+status: stable
+doc: 'Dublin Core element ''creator'': an entity primarily responsible for making the resource: a person,
+  an organization or a service.'
 categories:
 - dublincore
 langs:
-- en
+- common
 is_pii: false
-classification: identifier
+links:
+- type: dublincore
+  url: http://purl.org/dc/terms/creator

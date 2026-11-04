@@ -1,10 +1,16 @@
 id: dc_rights
-name: Dublin Core rights by field name
-status: draft
-doc: Dublin Core rights by field name
+name: Rights (Dublin Core)
+status: stable
+doc: 'Dublin Core element ''rights'': information about rights held in and over the resource, such as
+  a license or a copyright statement.'
 categories:
 - dublincore
 langs:
-- en
+- common
 is_pii: false
-classification: identifier
+examples:
+- value: CC BY 4.0
+  description: license name
+links:
+- type: dublincore
+  url: http://purl.org/dc/terms/rights
