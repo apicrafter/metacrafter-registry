@@ -452,6 +452,10 @@ def test_javascript_checksums_match_python(tmp_path):
         "131052-308T",
         "131052A308T",
         "54362315-K",
+        "PL 856-734-62-15",
+        "SK 202 274 96 19",
+        "SI 5022 3054",
+        "SE556012579001",
     ]
     values += [str(rng.randrange(10**8, 10**15)) for _ in range(300)]
     values += [f"ATU{rng.randrange(10**8):08d}" for _ in range(100)]
@@ -461,6 +465,10 @@ def test_javascript_checksums_match_python(tmp_path):
         for _ in range(100)
     ]
     values += [f"{rng.randrange(10**11):011d}" for _ in range(1000)]
+    values += [f"PL{rng.randrange(10**10):010d}" for _ in range(300)]
+    values += [f"SK{rng.randrange(10**10):010d}" for _ in range(300)]
+    values += [f"SI{rng.randrange(10**8):08d}" for _ in range(300)]
+    values += [f"SE{rng.randrange(10**10):010d}0{rng.choice('12')}" for _ in range(300)]
     offices = ["001", "100", "121", "888", "500"]
     values += [
         f"IT{rng.randrange(10**7):07d}{rng.choice(offices)}{rng.randrange(10)}" for _ in range(100)

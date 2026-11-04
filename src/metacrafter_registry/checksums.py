@@ -257,6 +257,59 @@ def es_dni(value: str) -> bool:
     return "TRWAGMYFPDXBNJZSQVHLCKE"[int(compact[:8]) % 23] == compact[8]
 
 
+def _strip_prefix(value: str, prefix: str) -> str:
+    compact = _compact(value).upper()
+    return compact[len(prefix) :] if compact.startswith(prefix) else compact
+
+
+def pl_nip(value: str) -> bool:
+    """Polish tax number (NIP): 10 digits, optionally prefixed with PL.
+
+    The last digit is the sum of the first nine digits weighted 6 5 7 2 3 4 5
+    6 7, modulo 11. A sum that gives 10 makes the number invalid.
+    """
+    compact = _strip_prefix(value, "PL")
+    if not re.fullmatch(r"\d{10}", compact):
+        return False
+    digits = [int(c) for c in compact]
+    weights = (6, 5, 7, 2, 3, 4, 5, 6, 7)
+    return sum(w * d for w, d in zip(weights, digits, strict=False)) % 11 == digits[9]
+
+
+def sk_dph(value: str) -> bool:
+    """Slovak VAT number (IČ DPH): 10 digits, optionally prefixed with SK.
+
+    The first digit is not 0 and the whole number is divisible by 11.
+    """
+    compact = _strip_prefix(value, "SK")
+    return bool(re.fullmatch(r"[1-9]\d{9}", compact)) and int(compact) % 11 == 0
+
+
+def si_ddv(value: str) -> bool:
+    """Slovenian VAT number (ID za DDV): 8 digits, optionally prefixed with SI.
+
+    The first digit is not 0. The check digit is 11 minus the sum of the first
+    seven digits weighted 8 down to 2, modulo 11; a result of 10 gives 0 and a
+    result of 11 makes the number invalid.
+    """
+    compact = _strip_prefix(value, "SI")
+    if not re.fullmatch(r"[1-9]\d{7}", compact):
+        return False
+    digits = [int(c) for c in compact]
+    check = 11 - sum((8 - i) * d for i, d in enumerate(digits[:7])) % 11
+    return check != 11 and check % 10 == digits[7]
+
+
+def se_vat(value: str) -> bool:
+    """Swedish VAT number (momsregistreringsnummer): 12 digits, optionally prefixed with SE.
+
+    The first ten digits are the organisation or personal number with a Luhn
+    check digit, and the last two are 01.
+    """
+    compact = _strip_prefix(value, "SE")
+    return bool(re.fullmatch(r"\d{10}01", compact)) and luhn(compact[:10])
+
+
 ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "luhn": luhn,
     "iban_mod97": iban_mod97,
@@ -274,6 +327,10 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "it_iva": it_iva,
     "fi_hetu": fi_hetu,
     "es_dni": es_dni,
+    "pl_nip": pl_nip,
+    "sk_dph": sk_dph,
+    "si_ddv": si_ddv,
+    "se_vat": se_vat,
 }
 
 

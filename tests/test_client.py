@@ -19,9 +19,13 @@ from metacrafter_registry.checksums import (
     it_iva,
     luhn,
     no_fnr,
+    pl_nip,
     ru_inn,
     ru_ogrn,
     ru_snils,
+    se_vat,
+    si_ddv,
+    sk_dph,
 )
 from metacrafter_registry.serve import running_server
 
@@ -55,6 +59,11 @@ def test_checksum_reference_values():
     assert not it_iva("00743115007")  # 500 is not a tax office code
     assert fi_hetu("131052-308T") and not fi_hetu("131052-308U") and not fi_hetu("131052308T")
     assert es_dni("54362315-K") and not es_dni("54362315Z")
+    assert pl_nip("PL 8567346215") and pl_nip("856-734-62-15") and not pl_nip("PL 8567346216")
+    assert sk_dph("SK 202 274 96 19") and not sk_dph("SK 202 274 96 18")
+    assert si_ddv("SI 5022 3054") and si_ddv("50223054") and not si_ddv("SI 50223055")
+    assert se_vat("SE556012579001") and se_vat("556012-5790 01")
+    assert not se_vat("SE556012579101") and not se_vat("SE556012579002")
 
 
 def test_lookup_and_aliases(reg):
