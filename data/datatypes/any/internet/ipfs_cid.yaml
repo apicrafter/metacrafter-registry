@@ -1,0 +1,33 @@
+id: ipfs_cid
+name: IPFS content identifier (CID)
+status: draft
+doc: 'Self-describing content address of IPFS and IPLD: a multihash of the content, normally SHA-256,
+  with the content type and the CID version. A CIDv0 is the Base58btc multihash and always starts with
+  Qm (46 characters). A CIDv1 starts with a multibase prefix: b for lowercase Base32 (the default, so
+  the value starts with ba) or z for Base58btc.'
+categories:
+- internet
+- identifiers
+- cryptography
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:Qm[1-9A-HJ-NP-Za-km-z]{44}|ba[a-z2-7]{57,}|z[1-9A-HJ-NP-Za-km-z]{47,})$
+examples:
+- value: QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
+  description: CIDv0 example of the IPFS documentation
+- value: bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
+  description: The same CID as CIDv1 in Base32
+- value: zb2rhe5P4gXftAwvA4eXQ5HJwsER2owDyS9sKaQRRVQPn93bA
+  description: CIDv1 in Base58btc of the CID specification (raw block, SHA-256)
+- value: QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMn
+  valid: false
+  description: CIDv0 one character short
+links:
+- type: other
+  url: https://github.com/multiformats/cid
+- type: doc
+  url: https://docs.ipfs.tech/concepts/content-addressing/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/InterPlanetary_File_System

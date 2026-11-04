@@ -1,0 +1,30 @@
+id: sri_hash
+name: Subresource Integrity (SRI) hash
+status: draft
+doc: 'Integrity metadata of W3C Subresource Integrity, as written in the integrity attribute of HTML script
+  and link elements: the hash algorithm (sha256, sha384 or sha512), a hyphen and the Base64 digest of
+  the resource. An integrity attribute may hold several such values separated by spaces; the regexp matches
+  one.'
+categories:
+- cryptography
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:sha256-[A-Za-z0-9+/]{43}=|sha384-[A-Za-z0-9+/]{64}|sha512-[A-Za-z0-9+/]{86}==)$
+examples:
+- value: sha384-H8BRh8j48O9oYatfu5AZzq6A9RINhZO5H16dQZngK7T62em8MUt1FLm52t+eX6xO
+  description: 'Example of the W3C specification: digest of the script alert(''Hello, world.'');'
+- value: sha256-qznLcsROx4GACP2dm0UCKCzCG+HiZ1guq6ZZDob/Tng=
+  description: SHA-256 integrity value of the same script
+- value: sha256:5b0bcabd1ed22e9fb1310cf6c2dec7cdef19f0ad69efa1f392e94a4333501270
+  valid: false
+  description: OCI content digest (hexadecimal, colon)
+links:
+- type: doc
+  url: https://www.w3.org/TR/sri/
+- type: other
+  url: https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Subresource_Integrity

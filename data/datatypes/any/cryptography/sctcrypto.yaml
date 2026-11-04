@@ -1,14 +1,26 @@
 id: sctcrypto
 name: Signed certificate timestamp (SCT)
 status: stable
-doc: Signed certificate timestamp (SCT). The SCT is the log's promise to incorporate the certificate in
-  the Merkle Tree within a fixed amount of time known as the Maximum Merge Delay (MMD
+doc: 'Signed certificate timestamp (SCT) of Certificate Transparency (RFC 6962): a log''s signed promise
+  to add a certificate to its public Merkle tree within the maximum merge delay. SCTs are embedded in
+  certificates, sent in a TLS extension or stapled to OCSP responses. In data an SCT is usually the Base64
+  encoding of its binary form. A version 1 SCT starts with a zero byte, so its Base64 starts with A; the
+  regexp also requires the length of a 32-byte log ID, a timestamp and a signature.'
 categories:
 - cryptography
 langs:
 - common
 is_pii: false
-regexp: ^(?=.)(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$
+classification: identifier
+regexp: ^A[A-P][A-Za-z0-9+/]{140,}={0,2}$
+examples:
+- value: AETCvQzpFA5kpclKAZMKWqG7NZcOAO4RFoloKhxE17VmAAABoSW/+T4AAAQDAEYwRAIgTeyg6KAfX/46fQ8nvPsns52uWMnjMgcQ5c+pvT4tFBYCIBW4NkWlBKOjfM4SDzLUgf6mSlY1x1HmffO6b1VemlKD
+  description: SCT embedded in the certificate of www.rfc-editor.org (October 2026)
+- value: SGVsbG8sIHdvcmxkIQ==
+  valid: false
+  description: Base64 of the text 'Hello, world!', not an SCT
 links:
-- type: other
-  url: https://www.rfc-editor.org/rfc/rfc6962.html
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc6962#section-3.2
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Certificate_Transparency

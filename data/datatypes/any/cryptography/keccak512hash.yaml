@@ -2,8 +2,10 @@ id: keccak512hash
 name: Keccak-512 hash
 status: stable
 doc: 'Digest of the original Keccak-512 hash function (512 bits). It differs from the standardized SHA3-512,
-  which uses different padding. It is written as 128 hexadecimal digits. SHA-512, Keccak-512 and BLAKE2b-512
-  digests have the same length, so the value alone does not tell them apart: use the field name or context.'
+  which uses different padding. It is written as 128 hexadecimal digits. Other 512-bit digests (SHA-512,
+  SHA3-512, BLAKE2b-512 and Streebog-512) have the same length, so the value alone does not tell them
+  apart: use the field name or context.'
+parent: hash
 categories:
 - cryptography
 langs:
@@ -22,3 +24,5 @@ examples:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SHA-3
+- type: other
+  url: https://keccak.team/keccak.html

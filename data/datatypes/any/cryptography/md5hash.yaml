@@ -3,6 +3,7 @@ name: MD5 hash
 status: stable
 doc: Digest of the MD5 hash function (128 bits), often used as a checksum of a file or as a record fingerprint.
   MD5 is not collision-resistant and must not be used for security. It is written as 32 hexadecimal digits.
+parent: hash
 aliases:
 - md5
 categories:
@@ -26,3 +27,5 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/MD5
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc1321

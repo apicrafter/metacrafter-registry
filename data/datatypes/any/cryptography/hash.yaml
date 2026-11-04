@@ -1,7 +1,9 @@
 id: hash
 name: Hash by field name (generic)
 status: draft
-doc: Hash by field name (generic)
+doc: Column whose name says that it holds a hash value (hash, checksum, digest, fingerprint, hash_value
+  or hash_code) when the algorithm cannot be told from the values. Records of specific algorithms, such
+  as md5hash, sha1hash and sha256hash, refine it.
 categories:
 - cryptography
 langs:

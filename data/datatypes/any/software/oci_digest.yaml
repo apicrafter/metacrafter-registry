@@ -1,0 +1,25 @@
+id: oci_digest
+name: OCI content digest (container image digest)
+status: draft
+doc: 'Content identifier of the OCI image and distribution specifications, used for container images and
+  their layers (as in image@sha256:...): the algorithm, a colon and the digest in lowercase hexadecimal.
+  The registered algorithms are sha256 (64 digits, the default), sha512 (128 digits) and blake3 (64 digits).'
+categories:
+- software
+- cryptography
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:sha256:[a-f0-9]{64}|sha512:[a-f0-9]{128}|blake3:[a-f0-9]{64})$
+examples:
+- value: sha256:5b0bcabd1ed22e9fb1310cf6c2dec7cdef19f0ad69efa1f392e94a4333501270
+  description: Digest of the example manifest of the OCI descriptor specification
+- value: sha256:6c3c624b58dbbcd3c0dd82b4c53f04194d1247c6eebdaab7c610cf7d66709b3b
+  description: Example digest string of the OCI descriptor specification
+- value: sha256:6C3C624B58DBBCD3C0DD82B4C53F04194D1247C6EEBDAAB7C610CF7D66709B3B
+  valid: false
+  description: Uppercase hexadecimal, which the specification forbids
+links:
+- type: doc
+  url: https://github.com/opencontainers/image-spec/blob/main/descriptor.md#digests

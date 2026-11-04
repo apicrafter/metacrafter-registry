@@ -1,0 +1,37 @@
+id: pgp_public_key_block
+name: OpenPGP public key block
+status: draft
+doc: 'OpenPGP public key (certificate) in ASCII armor: Radix-64 text between -----BEGIN PGP PUBLIC KEY
+  BLOCK----- and -----END PGP PUBLIC KEY BLOCK----- (RFC 9580, section 6.2), as exported by gpg --armor
+  --export and published on key servers. It holds no secret material; for the secret key see pgp_private_key_block.'
+categories:
+- cryptography
+langs:
+- common
+is_pii: false
+regexp: ^-----BEGIN PGP PUBLIC KEY BLOCK-----[\s\S]+-----END PGP PUBLIC KEY BLOCK-----$
+examples:
+- value: '-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+
+    xjMEU/NfCxYJKwYBBAHaRw8BAQdAPwmJlL3ZFu1AUxl5NOSofIBzOhKA1i+AEJku
+
+    Q+47JAY=
+
+    -----END PGP PUBLIC KEY BLOCK-----'
+  description: Sample version 4 Ed25519 key of RFC 9580, appendix A.1
+- value: '-----BEGIN PGP SIGNATURE-----
+
+
+    iF4EABYIAAYFAlX5X5UACgkQjP3hIZeWWpr2IgD/VvkMypjiECY3vZg/2xbBMd/S
+
+    ftgr9N3lYG4NdWrtM2YBANCcT6EVJ/A44PV/IgHYLy6iyQMyZfps60iehUuuYbQE
+
+    -----END PGP SIGNATURE-----'
+  valid: false
+  description: OpenPGP signature of RFC 9580, appendix A.2
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc9580#section-6.2
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Pretty_Good_Privacy

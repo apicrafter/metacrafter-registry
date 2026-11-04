@@ -1,0 +1,27 @@
+id: sha224hash
+name: SHA-224 hash
+status: draft
+doc: 'Digest of the SHA-224 hash function (SHA-2 family, 224 bits): a SHA-256 variant with different initial
+  values and a truncated output. It is written as 56 hexadecimal digits. SHA3-224 digests have the same
+  length, so the value alone does not tell them apart: use the field name or context.'
+parent: hash
+categories:
+- cryptography
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-fA-F]{56}$
+examples:
+- value: d14a028c2a3a2bc9476102bb288234c415a2b01f828ea62ac5b3e42f
+  description: SHA-224 hash of the empty string
+- value: 23097d223405d8228642a477bda255b32aadbce4bda0b3f7e36c9da7
+  description: SHA-224 hash of the string 'abc'
+- value: d14a028c2a3a2bc9476102bb288234c415a2b01f828ea62ac5b3e42
+  valid: false
+  description: one hex digit short (55 instead of 56)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SHA-2
+- type: doc
+  url: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf

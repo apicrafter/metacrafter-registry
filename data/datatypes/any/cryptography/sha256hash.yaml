@@ -2,8 +2,10 @@ id: sha256hash
 name: SHA-256 hash
 status: stable
 doc: 'Digest of the SHA-256 hash function (SHA-2 family, 256 bits), widely used for file checksums, content
-  addressing and digital signatures. It is written as 64 hexadecimal digits. SHA-256, Keccak-256 and BLAKE2b-256
-  digests have the same length, so the value alone does not tell them apart: use the field name or context.'
+  addressing and digital signatures. It is written as 64 hexadecimal digits. Other 256-bit digests (SHA3-256,
+  Keccak-256, BLAKE2b-256, BLAKE3 and Streebog-256) have the same length, so the value alone does not
+  tell them apart: use the field name or context.'
+parent: hash
 aliases:
 - sha256
 categories:
@@ -28,3 +30,5 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SHA-2
+- type: doc
+  url: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf

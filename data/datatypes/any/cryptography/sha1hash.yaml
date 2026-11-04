@@ -5,6 +5,7 @@ doc: 'Digest of the SHA-1 hash function (160 bits), used for example as a Git ob
   SHA-1 is no longer considered collision-resistant. It is written as 40 hexadecimal digits. SHA-1 and
   RIPEMD-160 digests have the same length, so the value alone does not tell them apart: use the field
   name or context.'
+parent: hash
 aliases:
 - sha1
 categories:
@@ -29,3 +30,5 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SHA-1
+- type: doc
+  url: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf
