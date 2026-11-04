@@ -23,6 +23,7 @@ examples:
 - value: 30303M102
   description: Facebook Inc. Class A common stock
 mappings:
+  fibo: SEC/Securities/SecuritiesIdentificationIndividuals/CommitteeOnUniformSecuritiesIdentificationProceduresNumber
   wikidata: P5198
 links:
 - type: wikipedia

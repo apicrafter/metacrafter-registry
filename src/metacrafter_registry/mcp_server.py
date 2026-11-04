@@ -20,7 +20,7 @@ INSTRUCTIONS = (
     "Metacrafter Registry: a catalog of semantic datatypes (identifiers, personal data, "
     "codes). Use identify_values to label a column from sample values and its field name, "
     "search_datatypes to find types by keyword, get_datatype for full details, and "
-    "crosswalk to map ids from other vocabularies (e.g. Wikidata). Cite the record url. "
+    "crosswalk to map ids from other vocabularies (e.g. Wikidata, FIBO). Cite the record url. "
     + DRAFT_NOTE
 )
 
@@ -110,11 +110,13 @@ def create_server(registry: Registry):
     def crosswalk(system: str, external_id: str) -> list[dict[str, Any]]:
         """Registry records mapped to an id in another vocabulary.
 
-        system: wikidata, schema_org, dpv, presidio, google_dlp, purview, d3m,
-        sherlock or cdm. For wikidata, a property id (P968) or its URL. For cdm,
-        a Common Data Model trait name (means.identity.service.email). For d3m,
-        a D3M semantic type URI (http://schema.org/email) or its bare name
-        (FileName).
+        system: wikidata, fibo, schema_org, dpv, presidio, google_dlp, purview, d3m,
+        sherlock or cdm. For wikidata, a property id (P968) or its URL. For fibo, a
+        FIBO class IRI, e.g. https://spec.edmcouncil.org/fibo/ontology/FBC/
+        ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier,
+        or the part after /ontology/. For cdm, a Common Data Model trait name
+        (means.identity.service.email). For d3m, a D3M semantic type URI
+        (http://schema.org/email) or its bare name (FileName).
         """
         return [_summary(registry, r) for r in registry.crosswalk(system, external_id)]
 

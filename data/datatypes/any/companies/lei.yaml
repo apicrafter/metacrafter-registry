@@ -19,6 +19,7 @@ examples:
 - value: 2594007XIACKNMUAW223
   description: MakoLab
 mappings:
+  fibo: BE/LegalEntities/LEIEntities/LegalEntityIdentifier
   wikidata: P1278
 links:
 - type: wikipedia
