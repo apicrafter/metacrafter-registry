@@ -1,0 +1,29 @@
+id: tag_uri
+name: Tag URI
+status: draft
+doc: Unique identifier in the tag URI scheme defined by RFC 4151. It has the form tag:<authority>,<date>:<specific>.
+  The authority is a domain name or an email address that the issuer controlled on the given date. The
+  date is written as YYYY, YYYY-MM or YYYY-MM-DD. Anyone who holds a domain name or email address can
+  mint tags without central registration. YAML uses tag URIs to name its data types.
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^tag:(?:[A-Za-z0-9._-]+@)?[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)*,\d{4}(?:-\d{2}(?:-\d{2})?)?:[^\s#]*(?:#\S*)?$
+examples:
+- value: tag:example.com,2004:1234
+  description: Date abbreviated to the year
+- value: tag:example.com,2004-01-01:1234
+  description: Full date
+- value: tag:yaml.org,2002:str
+  description: YAML core schema tag for strings
+- value: tag:example.com:1234
+  valid: false
+  description: The date is missing
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Tag_URI_scheme
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc4151

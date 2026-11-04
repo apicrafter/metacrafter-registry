@@ -1,0 +1,35 @@
+id: coden
+name: CODEN bibliographic code
+status: draft
+doc: Six-character code for the title of a periodical or non-serial publication, defined by ASTM E250
+  and assigned by the International CODEN Service at Chemical Abstracts Service. For periodicals, four
+  letters come from the title, the fifth letter is A to F, and the sixth character is a check character.
+  For non-serial publications such as conference proceedings, the code starts with two digits. CODEN is
+  common in chemistry and other science citations.
+categories:
+- publishing
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[A-Z]{4}[A-F]|\d{2}[A-Z]{3})[A-Z0-9]$
+examples:
+- value: NATUAS
+  description: Nature
+- value: TEREAU
+  description: Technology Review
+- value: NARHAD
+  description: Nucleic Acids Research
+- value: 66HYAL
+  description: Conference proceedings (non-serial publication)
+- value: NATUGS
+  valid: false
+  description: The fifth letter of a periodical CODEN is A to F
+mappings:
+  wikidata: P1159
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/CODEN
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1159

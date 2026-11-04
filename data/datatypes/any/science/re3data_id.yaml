@@ -1,0 +1,29 @@
+id: re3data_id
+name: re3data repository ID
+status: draft
+doc: Identifier of a research data repository in re3data, the Registry of Research Data Repositories.
+  It is r3d followed by a number of up to nine digits.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^r3d[1-9]\d{0,8}$
+examples:
+- value: r3d100010134
+  description: PANGAEA
+- value: r3d100010327
+  description: RCSB Protein Data Bank
+- value: r3d0100010134
+  valid: false
+  description: The number cannot start with 0
+mappings:
+  wikidata: P5874
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Registry_of_Research_Data_Repositories
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5874
+- type: doc
+  url: https://www.re3data.org/

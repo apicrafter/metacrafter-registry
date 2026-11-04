@@ -1,0 +1,31 @@
+id: formal_public_identifier
+name: Formal Public Identifier (FPI)
+status: draft
+doc: Structured text identifier from SGML (ISO 8879 and ISO/IEC 9070) used in DOCTYPE declarations of
+  SGML, HTML and XML documents. It consists of an owner identifier, a double slash and a text identifier.
+  The owner starts with -// (unregistered), +// (registered) or ISO. The text identifier starts with a
+  public text class such as DTD or ENTITIES, followed by a description and, after another double slash,
+  a language code.
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:ISO[^/]*(?:/[^/]+)*|[+-]//[^/]+(?:/[^/]+)*)//(?:CAPACITY|CHARSET|DOCUMENT|DTD|ELEMENTS|ENTITIES|LPD|NONSGML|NOTATION|SD|SHORTREF|SUBDOC|SYNTAX|TEXT)
+  (?:-//)?[^/]+(?:/[^/]+)*//[^/]+(?:/[^/]+)*(?://[^/]+)?$
+examples:
+- value: -//W3C//DTD HTML 4.01//EN
+  description: HTML 4.01 document type definition
+- value: ISO 8879:1986//ENTITIES Added Latin 1//EN
+  description: SGML Latin-1 entity set
+- value: -//W3C//HTML 4.01//EN
+  valid: false
+  description: The public text class is missing
+mappings:
+  wikidata: P4506
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Formal_Public_Identifier
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4506

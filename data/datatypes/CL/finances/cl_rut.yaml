@@ -34,6 +34,8 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cl.rut.html
 - type: other
   url: https://docs.dataprep.ai/user_guide/clean/clean_cl_rut.html
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Unique_National_Role
 translations:
   es:
     name: Rol Único Tributario (RUT)

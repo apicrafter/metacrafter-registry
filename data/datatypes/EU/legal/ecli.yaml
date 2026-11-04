@@ -1,0 +1,37 @@
+id: ecli
+name: European Case Law Identifier (ECLI)
+status: draft
+doc: 'Identifier of a court decision, introduced by conclusions of the Council of the European Union published
+  in 2011. It has five parts separated by colons: ECLI, the country code, a court code of at most seven
+  characters, the year of the decision and a unique part of at most 25 letters, digits and dots. Country
+  codes follow the EU style guide, so Greece is EL and the United Kingdom UK; the EU courts use EU and
+  the European Court of Human Rights CE.'
+categories:
+- legal
+- government
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^ECLI:[A-Z]{2}:[A-Z0-9]{1,7}:\d{4}:[A-Za-z0-9.]{1,25}$
+examples:
+- value: ECLI:NL:HR:1841:1
+  description: Decision of the Supreme Court of the Netherlands
+- value: ECLI:EU:C:2009:344
+  description: Judgment of the Court of Justice of the European Union
+- value: ECLI:CZ:NS:2015:32.CDO.2051.2013.1
+  description: Decision of the Czech Supreme Court
+- value: ECLI:NL:HR:1841
+  valid: false
+  description: The unique part is missing
+mappings:
+  wikidata: P3570
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/European_Case_Law_Identifier
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3570
+- type: doc
+  url: https://e-justice.europa.eu/topics/legislation-and-case-law/european-case-law-identifier-ecli_en

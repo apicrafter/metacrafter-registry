@@ -14,3 +14,6 @@ mappings:
   - EAN13_correct
   - ean
   fta: CHECKDIGIT.EAN13
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Article_Number
