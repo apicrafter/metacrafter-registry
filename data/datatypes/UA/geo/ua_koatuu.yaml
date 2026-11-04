@@ -1,0 +1,29 @@
+id: ua_koatuu
+name: Ukrainian KOATUU code
+status: draft
+doc: Ten-digit code of a settlement or administrative unit in the Classifier of objects of the administrative-territorial
+  structure of Ukraine (KOATUU), replaced by KATOTTH in 2020 but still found in older data.
+categories:
+- geo
+country:
+- UA
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{10}$
+examples:
+- value: '0111645700'
+  description: Koktebel
+- value: '4410345900'
+- value: '1811000000'
+  description: Новоград-Волынская городская община
+mappings:
+  wikidata: P1077
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1077
+translations:
+  ru:
+    name: Код КОАТУУ
+    doc: Десятизначный код по Классификатору объектов административно-территориального устройства Украины.

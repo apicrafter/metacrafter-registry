@@ -1,0 +1,27 @@
+id: mesh_tree_number
+name: MeSH tree number
+status: draft
+doc: 'Position of a descriptor in the MeSH hierarchy: a letter and two digits for the top category, then
+  groups of three digits separated by dots, such as C04.557. One descriptor can have several tree numbers.'
+categories:
+- medical
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]\d{2}(?:\.\d{3})*$
+examples:
+- value: A07.231.114.056
+  description: aorta
+- value: C10.228.662.262.249.750
+  description: Huntington's disease
+- value: A07
+  description: circulatory system
+mappings:
+  wikidata: P672
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Medical_Subject_Headings
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P672

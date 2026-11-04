@@ -12,13 +12,25 @@ langs:
 - bg
 is_pii: false
 classification: identifier
+regexp: ^(?:\d{9}|\d{13})$
 examples:
 - value: '204853663'
   description: example from ORG-ID.guide
+- value: '831447150'
+  description: Central Cooperative Bank
+- value: '040534040'
+  description: Teximbank
+- value: '131409398'
+  description: EPay.bg
 mappings:
   orgid: BG-EIK
+  wikidata: P8894
 links:
 - type: doc
   url: https://public.brra.bg/CheckUps/Verifications/VerificationPersonOrg.ra
 - type: other
   url: https://org-id.guide/list/BG-EIK
+- type: doc
+  url: https://portal.registryagency.bg/en/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8894

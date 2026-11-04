@@ -31,3 +31,6 @@ build/
 *.code-workspace
 .DS_Store
 .changes/
+
+# Wikidata property dump (scripts/wikidata_properties.py fetch)
+wikidata_properties.json

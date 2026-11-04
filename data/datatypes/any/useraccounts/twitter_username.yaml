@@ -12,6 +12,11 @@ langs:
 is_pii: true
 classification: identifier
 regexp: '[0-9A-Za-z_]{1,20}'
+examples:
+- value: NASA
+  description: National Aeronautics and Space Administration
+- value: KenyaRedCross
+  description: Kenya Red Cross Society
 mappings:
   cdm: means.identity.service.twitter
   wikidata: P2002

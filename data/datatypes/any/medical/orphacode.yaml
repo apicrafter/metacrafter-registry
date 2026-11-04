@@ -1,0 +1,26 @@
+id: orphacode
+name: ORPHAcode (Orphanet rare disease ID)
+status: draft
+doc: Number of a rare disease or group of diseases in the Orphanet nomenclature. It is often written with
+  the prefix ORPHA:, which this format leaves out.
+categories:
+- medical
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-9]\d{0,5}$
+examples:
+- value: '82038'
+  description: ataluren
+- value: '723'
+  description: pneumocystosis
+mappings:
+  wikidata: P1550
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Orphanet
+- type: doc
+  url: https://www.orpha.net/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1550

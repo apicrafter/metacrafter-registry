@@ -1,0 +1,28 @@
+id: hasc
+name: HASC code (Hierarchical administrative subdivision code)
+status: draft
+doc: 'Code of a country subdivision in the Statoids system: the ISO 3166-1 alpha-2 country code followed
+  by two-letter codes of the first and second level divisions, separated by dots.'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{2}(?:\.[A-Z]{2}){0,2}$
+examples:
+- value: US.CA.LO
+  description: Los Angeles County
+- value: FR.NC
+  description: Hauts-de-France
+- value: FR.NC.NO
+  description: Nord
+mappings:
+  wikidata: P8119
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Hierarchical_administrative_subdivision_codes
+- type: doc
+  url: https://www.statoids.com/ihasc.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8119

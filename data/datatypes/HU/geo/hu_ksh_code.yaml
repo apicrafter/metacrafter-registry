@@ -1,0 +1,24 @@
+id: hu_ksh_code
+name: Hungarian KSH settlement code
+status: draft
+doc: Five-digit identifier of a Hungarian town or village assigned by the Hungarian Central Statistical
+  Office (KSH).
+categories:
+- geo
+country:
+- HU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '23959'
+  description: Mohács
+- value: 09566
+  description: Budapest District I
+mappings:
+  wikidata: P939
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P939

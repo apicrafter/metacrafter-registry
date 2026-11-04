@@ -11,8 +11,17 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[0-9]{11}$
+examples:
+- value: '28008984049'
+  description: Wesfarmers
+- value: '82502109138'
+  description: Amikumu
 mappings:
   presidio: AU_ABN
   purview:
   - Australian Business Number
   - Australia business number
+  wikidata: P3548
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3548

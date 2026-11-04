@@ -148,24 +148,29 @@ def test_identify_iso_dates_are_not_compact_digit_codes(reg_with_date, field):
         assert candidates.get(rid, {"score": 0})["score"] < candidates["date"]["score"]
 
 
-def test_compact_match_yields_to_an_at_least_as_specific_raw_match():
-    def record(rid, regexp, example):
-        return {
-            "id": rid,
-            "name": rid,
-            "kind": "datatype",
-            "status": "stable",
-            "is_pii": False,
-            "regexp": regexp,
-            "examples": [{"value": example}],
-        }
+def _record(rid, regexp, example, **fields):
+    """A normalized stable datatype record; ``regexp`` None leaves it out."""
+    record = {
+        "id": rid,
+        "name": rid,
+        "kind": "datatype",
+        "status": "stable",
+        "is_pii": False,
+        "examples": [{"value": example}],
+        **fields,
+    }
+    if regexp is not None:
+        record["regexp"] = regexp
+    return record
 
+
+def test_compact_match_yields_to_an_at_least_as_specific_raw_match():
     reg = Registry(
         [
-            record("iso_date", r"^\d{4}-\d{2}-\d{2}$", "2025-05-15"),
-            record("eight_digits", r"^\d{8}$", "12345678"),
-            record("sixteen_digits", r"^\d{16}$", "4111111111111111"),
-            record("digits_and_spaces", r"^[\d ]+$", "1 2"),
+            _record("iso_date", r"^\d{4}-\d{2}-\d{2}$", "2025-05-15"),
+            _record("eight_digits", r"^\d{8}$", "12345678"),
+            _record("sixteen_digits", r"^\d{16}$", "4111111111111111"),
+            _record("digits_and_spaces", r"^[\d ]+$", "1 2"),
         ]
     )
     assert reg._broadness == {
@@ -183,6 +188,59 @@ def test_compact_match_yields_to_an_at_least_as_specific_raw_match():
     assert hits == {"iso_date": 0.5, "sixteen_digits": 0.5, "digits_and_spaces": 0.5}
 
 
+def test_a_match_as_written_outweighs_a_compact_form_match():
+    reg = Registry(
+        [
+            _record("dash_date", r"^\d{4}-\d{2}-\d{2}$", "2024-12-25", status="draft"),
+            _record("eight_digits", r"^\d{8}$", "12345678"),
+            _record("issue_date", None, "2023-01-31"),
+            _record("card16", r"^\d{16}$", "4111111111111111", checksum="luhn"),
+        ]
+    )
+    # dash_date also matches the example of issue_date, so it is broader than
+    # eight_digits and does not claim "20241225": both regexps count the dates.
+    assert reg._broadness["dash_date"] > reg._broadness["eight_digits"]
+    candidates = {c["id"]: c for c in reg.identify(["2024-12-25", "2023-01-31"])}
+    assert list(candidates) == ["dash_date", "eight_digits"]
+    assert candidates["eight_digits"]["regexp_hit_rate"] == 1.0
+    # Matched only without hyphens, the dates count half: 60 x 0.5.
+    assert candidates["eight_digits"]["score"] == 30
+    assert candidates["dash_date"]["score"] == 35  # 60 x 1 x (1 - 1/3) - 5 for a draft
+
+    # A compact-form match whose check digit passes counts in full.
+    valid, invalid = reg.identify(["4111 1111 1111 1111"]), reg.identify(["4111 1111 1111 1112"])
+    assert [(c["id"], c["score"]) for c in valid] == [("card16", 85)]  # 60 + 25 for luhn
+    assert [(c["id"], c["score"]) for c in invalid] == [("card16", 30)]
+
+
+def test_identify_iso_dates_rank_date_records_above_digit_codes(reg):
+    # A draft date pattern with a broad regexp (date_ymd_dash, built here; the
+    # registry maps YYYY-MM-DD to date itself). Stable eight-digit codes (okpo,
+    # am_tin, ...) match ISO dates only without their hyphens and must not
+    # outrank it. The stable date record, whose regexp also accepts ISO dates,
+    # may rank above it.
+    records = dict(reg.datatypes)
+    records.setdefault(
+        "date_ymd_dash",
+        _record(
+            "date_ymd_dash",
+            r"^\d{4}-(?:0?[1-9]|1[0-2])-(?:0?[1-9]|[12]\d|3[01])$",
+            "2024-12-25",
+            status="draft",
+            kind="pattern",
+            semantic_type="date",
+        ),
+    )
+    with_dates = Registry(records.values(), aliases=reg.aliases, manifest=reg.manifest)
+    assert "okpo" in [r["id"] for r in with_dates.match("20241225")]
+    candidates = {c["id"]: c for c in with_dates.identify(["2024-12-25", "2023-01-31"], limit=100)}
+    assert next(iter(candidates)) in {"date", "date_ymd_dash"}
+    dash = candidates["date_ymd_dash"]
+    assert dash["regexp_hit_rate"] == 1.0
+    for rid in ("okpo", "am_tin", "companyhouseid"):
+        assert candidates.get(rid, {"score": 0})["score"] < dash["score"]
+
+
 def test_catch_all_regexps_rank_low(reg):
     candidates = {c["id"]: c for c in reg.identify(["user@example.com"], limit=50)}
     assert candidates["email"]["score"] > candidates.get("fqdn", {"score": 0})["score"]
@@ -195,8 +253,8 @@ def test_search_and_filters(reg):
 
 
 def test_crosswalk_and_match(reg):
-    wikidata_url = "https://www.wikidata.org/wiki/Property:P2817"
-    assert [r["id"] for r in reg.crosswalk("wikidata", wikidata_url)] == ["mac_address"]
+    wikidata_url = "https://www.wikidata.org/wiki/Property:P1243"
+    assert [r["id"] for r in reg.crosswalk("wikidata", wikidata_url)] == ["isrc"]
     matches = [r["id"] for r in reg.match("0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed")]
     assert "ethereum_address" in matches
     assert "bankcard" in [r["id"] for r in reg.match("4111111111111111")]

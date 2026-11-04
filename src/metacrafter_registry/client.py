@@ -45,6 +45,11 @@ _CAMEL = re.compile(r"(?<=[a-z0-9])(?=[A-Z])")
 
 # How a regexp matches one value (see _match_kind).
 _NO_MATCH, _RAW, _COMPACT = 0, 1, 2
+# A value that a regexp matches only without its spaces and hyphens is weaker
+# evidence than a match as written: in the score it counts this much of a hit,
+# unless the record's check digit passes on it. identify-core.js uses the same
+# weight.
+_COMPACT_WEIGHT = 0.5
 
 
 def _tokens(text: str) -> set[str]:
@@ -431,7 +436,7 @@ class Registry:
     ) -> list[dict[str, Any]]:
         """Rank candidate datatypes for sample values of one column.
 
-        Score (0-100): 60 x regexp hit rate x regexp specificity
+        Score (0-100): 60 x weighted regexp hit rate x regexp specificity
         + 25 x check-digit pass rate + 25 x field-name similarity, +5 for a
         matching country, -10 for a different country, -5 for drafts; capped at
         100. Specificity is 1 minus the share of other records' examples that the
@@ -443,6 +448,14 @@ class Registry:
         "2025-05-15" is not a hit for an eight-digit number such as ``okpo``
         when a date regexp matches it. That check uses every record with a
         regexp, whatever ``status`` filters.
+
+        In the weighted hit rate a value matched as written counts 1 and a value
+        matched only without its spaces and hyphens counts 0.5, so a regexp that
+        fits the notation of the values outranks one that fits only their
+        digits. A value matched without separators whose check digit passes
+        counts 1: its spaces are presentation, as in grouped card numbers.
+        ``regexp_hit_rate`` in the result is the unweighted share of values that
+        are hits in either form.
         """
         samples = [str(v).strip() for v in values if v is not None and str(v).strip()]
         country = country.upper() if country else None
@@ -463,24 +476,33 @@ class Registry:
             if status and record["status"] != status:
                 continue
             hit_rate = None
+            weighted_rate = 0.0
+            algorithm = record.get("checksum")
+            checks = (
+                [ALGORITHMS[algorithm](v) for v in samples]
+                if samples and algorithm in ALGORITHMS
+                else None
+            )
             if rid in kinds:
                 own = self._broadness[rid]
-                hits = sum(
-                    1
-                    for i, kind in enumerate(kinds[rid])
-                    if kind == _RAW or (kind == _COMPACT and claimed[i] > own)
-                )
+                hits, weight = 0, 0.0
+                for i, kind in enumerate(kinds[rid]):
+                    if kind == _RAW:
+                        hits += 1
+                        weight += 1.0
+                    elif kind == _COMPACT and claimed[i] > own:
+                        hits += 1
+                        weight += 1.0 if checks and checks[i] else _COMPACT_WEIGHT
                 hit_rate = hits / len(samples)
+                weighted_rate = weight / len(samples)
             checksum = None
-            algorithm = record.get("checksum")
-            if samples and algorithm in ALGORITHMS:
-                passed = sum(1 for v in samples if ALGORITHMS[algorithm](v))
-                checksum = {"algorithm": algorithm, "pass_rate": passed / len(samples)}
+            if checks is not None:
+                checksum = {"algorithm": algorithm, "pass_rate": sum(checks) / len(samples)}
             similarity = self._name_similarity(record, field_name) if field_name else 0.0
             if not (hit_rate or (checksum and checksum["pass_rate"]) or similarity >= 0.5):
                 continue
             specificity = 1.0 - self._broadness.get(rid, 0.0)
-            score = 60 * (hit_rate or 0) * specificity + 25 * similarity
+            score = 60 * weighted_rate * specificity + 25 * similarity
             if checksum:
                 score += 25 * checksum["pass_rate"]
             if country and record.get("country"):

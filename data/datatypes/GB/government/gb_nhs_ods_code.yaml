@@ -12,6 +12,7 @@ langs:
 - en
 is_pii: false
 classification: identifier
+regexp: ^[A-Z0-9]{3,9}$
 examples:
 - value: 01F
   description: example from ORG-ID.guide
@@ -21,8 +22,19 @@ examples:
   description: example from ORG-ID.guide
 - value: RAX
   description: example from ORG-ID.guide
+- value: '706'
+  description: London Borough of Islington
+- value: R1H12
+  description: The Royal London Hospital
+- value: RRK15
+  description: Queen Elizabeth Hospital Birmingham
 mappings:
   orgid: GB-NHS
+  wikidata: P9372
 links:
 - type: other
   url: https://org-id.guide/list/GB-NHS
+- type: doc
+  url: https://digital.nhs.uk/services/organisation-data-service
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9372

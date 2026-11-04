@@ -25,10 +25,7 @@ mappings:
   autotype: mac
   google_dlp: MAC_ADDRESS
   presidio: MAC_ADDRESS
-  wikidata: P2817
   fta: MACADDRESS
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/MAC_address
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P2817

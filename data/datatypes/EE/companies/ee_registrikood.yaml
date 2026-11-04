@@ -25,6 +25,7 @@ mappings:
   orgid:
   - EE-KMKR
   - EE-RIK
+  wikidata: P6518
 links:
 - type: doc
   url: https://ariregister.rik.ee/
@@ -32,6 +33,8 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ee.registrikood.html
 - type: other
   url: https://docs.dataprep.ai/user_guide/clean/clean_ee_registrikood.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6518
 translations:
   et:
     name: Registrikood

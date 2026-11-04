@@ -1,0 +1,29 @@
+id: pubchem_cid
+name: PubChem Compound ID (CID)
+status: draft
+doc: Number of a unique chemical structure in the PubChem Compound database of the US National Center
+  for Biotechnology Information. Substance records (SIDs) deposited by data sources are standardized into
+  compounds.
+categories:
+- chemistry
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,8}$
+examples:
+- value: '5426'
+  description: thalidomide
+- value: '5284603'
+  description: oxycodone
+- value: '11125'
+  description: lithium carbonate
+mappings:
+  wikidata: P662
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/PubChem
+- type: doc
+  url: https://pubchem.ncbi.nlm.nih.gov/docs/compounds
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P662

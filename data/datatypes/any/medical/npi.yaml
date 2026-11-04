@@ -8,6 +8,18 @@ langs:
 - en
 is_pii: true
 classification: identifier
+regexp: ^\d{10}$
+examples:
+- value: '1467536276'
+  description: Seattle Children's
+- value: '1194083568'
+  description: Seattle Children's
+- value: '1750599809'
+  description: Sinai Hospital
 mappings:
   google_dlp: US_HEALTHCARE_NPI
   presidio: US_NPI
+  wikidata: P9450
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9450

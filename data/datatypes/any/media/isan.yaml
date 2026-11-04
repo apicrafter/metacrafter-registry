@@ -21,8 +21,11 @@ examples:
   description: One character too few
 mappings:
   autotype: isan
+  wikidata: P3212
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Standard_Audiovisual_Number
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.isan.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3212

@@ -1,0 +1,29 @@
+id: ru_gvr_code
+name: State Water Register code (Russia)
+status: draft
+doc: 'Code of a water body in the State Water Register of Russia: 23 digits that encode the hydrographic
+  units it belongs to and the water body.'
+categories:
+- environment
+- geo
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{23}$
+examples:
+- value: '17040200112117600008474'
+  description: Voyevolikhan
+- value: '16010100111116200000013'
+  description: Lake Baikal
+mappings:
+  wikidata: P884
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P884
+translations:
+  ru:
+    name: Код водного объекта в ГВР
+    doc: Код водного объекта в Государственном водном реестре России.

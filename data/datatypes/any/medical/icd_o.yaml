@@ -1,0 +1,25 @@
+id: icd_o
+name: ICD-O morphology code
+status: draft
+doc: 'Code of a tumour type in the International Classification of Diseases for Oncology: four digits
+  for the histology and a behaviour digit after a slash, such as 8140/3 for adenocarcinoma. The code is
+  sometimes written with the prefix M.'
+categories:
+- medical
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^M?[89]\d{3}(?:/[0-3])?$
+examples:
+- value: 8561/0
+  description: Warthin's tumor
+- value: M9860/3
+  description: myeloid leukemia
+mappings:
+  wikidata: P563
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Classification_of_Diseases_for_Oncology
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P563

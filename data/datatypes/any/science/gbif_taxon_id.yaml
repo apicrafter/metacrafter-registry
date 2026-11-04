@@ -1,0 +1,30 @@
+id: gbif_taxon_id
+name: GBIF taxon key
+status: draft
+doc: Numeric key of a taxon in the GBIF Backbone Taxonomy of the Global Biodiversity Information Facility,
+  used in occurrence data downloads. Wikidata keeps the taxon identifiers of the taxonomy that GBIF introduced
+  in 2026, which are short alphanumeric codes, in a separate property (P14607).
+categories:
+- science
+- environment
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,8}$
+examples:
+- value: '5963040'
+  description: tailed tailless bat
+- value: '3239598'
+  description: Apidium
+- value: '1948418'
+  description: Unkana (Hesperiidae)
+mappings:
+  wikidata: P846
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Global_Biodiversity_Information_Facility
+- type: doc
+  url: https://www.gbif.org/species/search
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P846

@@ -1,0 +1,28 @@
+id: mx_inegi_locality
+name: Mexican INEGI locality code
+status: draft
+doc: 'Nine-digit code of a locality of Mexico in the INEGI geostatistical framework: two digits for the
+  state, three for the municipality and four for the locality.'
+categories:
+- geo
+country:
+- MX
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{9}$
+examples:
+- value: '310380004'
+  description: Sisal
+- value: '180190918'
+  description: Los Pachecos
+- value: '260030090'
+  description: El Chino
+mappings:
+  wikidata: P1976
+links:
+- type: doc
+  url: https://www.inegi.org.mx/app/ageeml/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1976

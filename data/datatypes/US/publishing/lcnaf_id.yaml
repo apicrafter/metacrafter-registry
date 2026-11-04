@@ -1,0 +1,32 @@
+id: lcnaf_id
+name: Library of Congress authority ID (LCCN of an authority record)
+status: draft
+doc: 'Identifier of a name, subject or genre authority record of the Library of Congress: a prefix such
+  as n, nb, nr, no or sh, then the year and a serial number. It is used in library catalogues and in id.loc.gov.'
+parent: lccn
+categories:
+- publishing
+- objectids
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(cf|ct|gf|n|nb|nr|no|ns|sh|sj)([4-9][0-9]|00|01|20[0-2][0-9])[0-9]{6}$
+examples:
+- value: sh2020006558
+  description: astronomical survey
+- value: n81092084
+  description: Royal Society for the Prevention of Cruelty to Animals
+- value: n84023326
+  description: Baranagar
+mappings:
+  wikidata: P244
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Library_of_Congress_Name_Authority_File
+- type: doc
+  url: https://id.loc.gov/authorities/names.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P244

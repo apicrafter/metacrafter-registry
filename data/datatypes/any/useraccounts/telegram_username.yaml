@@ -1,0 +1,24 @@
+id: telegram_username
+name: Telegram username
+status: draft
+doc: Username of a Telegram user, channel or group, as in t.me/<username>, written without the @.
+parent: username
+categories:
+- pii
+- persons
+- useraccounts
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^[A-Za-z0-9_]{5,32}$
+examples:
+- value: telegram
+  description: Telegram
+- value: wikipedia_zh_n
+  description: Chinese Wikipedia
+mappings:
+  wikidata: P3789
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3789

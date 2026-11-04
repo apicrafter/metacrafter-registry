@@ -48,7 +48,8 @@ schema/                     JSON Schemas of datatype, pattern and tool records
 src/metacrafter_registry/   package and CLI `metacrafter-registry`
   templates/, static/       site templates, CSS and JS
 tests/                      pytest suite
-scripts/                    builder.py (wrapper), export.py (DataHub), generate_missing_entries.py
+scripts/                    builder.py (wrapper), export.py (DataHub), generate_missing_entries.py,
+                            wikidata_properties.py (compare with Wikidata identifier properties)
 .github/workflows/          ci.yml, pages.yml (deploy), release.yml (tags)
 .github/ISSUE_TEMPLATE/     issue forms: propose a datatype, fix a datatype
 openspec/                   OpenSpec config and change proposals

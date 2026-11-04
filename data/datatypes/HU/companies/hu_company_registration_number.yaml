@@ -12,13 +12,21 @@ langs:
 - hu
 is_pii: false
 classification: identifier
+regexp: ^(0[1-9]|1\d|20)-(0[1-9]|1\d|2[0-3])-\d{6}$
 examples:
 - value: 01-03-022165
   description: example from ORG-ID.guide
+- value: 01-10-041928
+  description: Magyar Telekom
+- value: 01-10-043037
+  description: BKV
 mappings:
   orgid: HU-AFA
+  wikidata: P2619
 links:
 - type: doc
   url: http://www.e-cegjegyzek.hu/?cegkereses
 - type: other
   url: https://org-id.guide/list/HU-AFA
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2619

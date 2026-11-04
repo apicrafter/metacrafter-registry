@@ -1,0 +1,27 @@
+id: icd10cm
+name: ICD-10-CM code
+status: draft
+doc: 'Diagnosis code in ICD-10-CM, the US clinical modification of ICD-10: a letter, two digits and up
+  to four more characters after a dot. The CDC National Center for Health Statistics maintains it.'
+parent: icd10
+categories:
+- medical
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]\d{2}(?:\.[A-Z\d]{1,4})?$
+examples:
+- value: G47.52
+  description: REM sleep behavior disorder
+- value: G71.2
+  description: congenital merosin-deficient muscular dystrophy 1A
+mappings:
+  wikidata: P4229
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ICD-10_Clinical_Modification
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4229

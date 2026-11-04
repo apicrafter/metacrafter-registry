@@ -1,0 +1,27 @@
+id: omim_id
+name: OMIM number
+status: draft
+doc: Six-digit number of an entry in Online Mendelian Inheritance in Man, the catalogue of human genes
+  and genetic disorders run by Johns Hopkins University.
+categories:
+- medical
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{6}$
+examples:
+- value: '143100'
+  description: Huntington's disease
+- value: '614371'
+  description: dengue fever
+mappings:
+  wikidata: P492
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Online_Mendelian_Inheritance_in_Man
+- type: doc
+  url: https://www.omim.org/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P492

@@ -242,6 +242,10 @@
   // COMPACT when it matches only once spaces and hyphens are removed
   // ("4111 1111 1111 1111"), 0 otherwise.
   var RAW = 1, COMPACT = 2;
+  // In the score a COMPACT hit counts this much of a RAW hit (_COMPACT_WEIGHT
+  // in client.py): a match of the value as written is stronger evidence. A
+  // COMPACT hit whose check digit passes counts as a RAW one.
+  var COMPACT_WEIGHT = 0.5;
 
   function matchValues(re, values) {
     return values.map(function (value) {
@@ -291,26 +295,35 @@
   // Score one record; returns null when there is no evidence at all. matched is
   // matchValues() of the record's regexp (null without one) and claimed is
   // claims() over the whole index: a compact-form match counts only when no
-  // regexp that is at least as specific matches the value as written.
+  // regexp that is at least as specific matches the value as written, and then
+  // counts COMPACT_WEIGHT in the score unless the check digit passes.
   function scoreRecord(record, matched, values, field, country, claimed) {
-    var hitRate = null;
-    if (values.length && matched) {
-      var own = record.b || 0, hits = 0;
-      for (var i = 0; i < values.length; i += 1) {
-        if (matched[i] === RAW || (matched[i] === COMPACT && claimed[i] > own)) hits += 1;
-      }
-      hitRate = hits / values.length;
-    }
-    var checksum = null;
+    var checks = null, checksum = null;
     if (values.length && record.ck && CHECKSUMS[record.ck]) {
       var passed = 0;
-      for (var j = 0; j < values.length; j += 1) if (CHECKSUMS[record.ck](values[j])) passed += 1;
+      checks = values.map(function (v) { return CHECKSUMS[record.ck](v); });
+      for (var j = 0; j < checks.length; j += 1) if (checks[j]) passed += 1;
       checksum = { algorithm: record.ck, pass_rate: passed / values.length };
+    }
+    var hitRate = null, weightedRate = 0;
+    if (values.length && matched) {
+      var own = record.b || 0, hits = 0, weight = 0;
+      for (var i = 0; i < values.length; i += 1) {
+        if (matched[i] === RAW) {
+          hits += 1;
+          weight += 1;
+        } else if (matched[i] === COMPACT && claimed[i] > own) {
+          hits += 1;
+          weight += checks && checks[i] ? 1 : COMPACT_WEIGHT;
+        }
+      }
+      hitRate = hits / values.length;
+      weightedRate = weight / values.length;
     }
     var similarity = field ? nameSimilarity(record, field) : 0;
     if (!(hitRate || (checksum && checksum.pass_rate) || similarity >= 0.5)) return null;
     var specificity = 1 - (record.b || 0);
-    var score = 60 * (hitRate || 0) * specificity + 25 * similarity;
+    var score = 60 * weightedRate * specificity + 25 * similarity;
     if (checksum) score += 25 * checksum.pass_rate;
     if (country && record.c && record.c.length) score += record.c.indexOf(country) !== -1 ? 5 : -10;
     if (record.s === "draft") score -= 5;

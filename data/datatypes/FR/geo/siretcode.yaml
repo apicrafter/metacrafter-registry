@@ -11,6 +11,18 @@ langs:
 - fr
 is_pii: false
 classification: categorical
+regexp: ^\d{14}$
+examples:
+- value: '62272015900012'
+  description: Hôtel du Palais Biarritz
+- value: '32116456800024'
+  description: Galerie Vrais Rêves
+- value: '78072481100010'
+  description: Château de Crèvecœur-en-Auge
+mappings:
+  wikidata: P3215
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SIRET_code
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3215

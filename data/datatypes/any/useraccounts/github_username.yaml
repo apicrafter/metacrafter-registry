@@ -12,6 +12,9 @@ langs:
 is_pii: true
 classification: identifier
 regexp: '[0-9A-Za-z]([0-9A-Za-z\-]{0,37}[0-9A-Za-z])?'
+examples:
+- value: google
+  description: Google
 mappings:
   wikidata: P2037
 links:

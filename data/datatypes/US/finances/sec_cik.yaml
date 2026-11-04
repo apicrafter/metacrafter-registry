@@ -1,0 +1,31 @@
+id: sec_cik
+name: SEC Central Index Key (CIK)
+status: draft
+doc: Number of up to ten digits that the US Securities and Exchange Commission assigns to a company or
+  person filing disclosures in the EDGAR system. Filings often write it with leading zeros.
+categories:
+- finances
+- companies
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{1,10}$
+examples:
+- value: 0000831001
+  description: Citigroup
+- value: 0000104169
+  description: Walmart
+- value: 0000829224
+  description: Starbucks
+mappings:
+  wikidata: P5531
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Central_Index_Key
+- type: doc
+  url: https://www.sec.gov/edgar/searchedgar/companysearch
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5531

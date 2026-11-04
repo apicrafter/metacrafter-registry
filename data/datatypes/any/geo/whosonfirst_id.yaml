@@ -1,0 +1,26 @@
+id: whosonfirst_id
+name: Who's On First ID
+status: draft
+doc: Number of a place (country, region, locality, neighbourhood, postal code area) in the Who's On First
+  gazetteer.
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d*$
+examples:
+- value: '101883255'
+  description: Gaël
+- value: '102086125'
+  description: Washington County
+- value: '101785253'
+  description: Čebovce
+mappings:
+  wikidata: P6766
+links:
+- type: doc
+  url: https://whosonfirst.org/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6766

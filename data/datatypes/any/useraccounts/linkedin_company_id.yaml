@@ -1,0 +1,23 @@
+id: linkedin_company_id
+name: LinkedIn company page ID
+status: draft
+doc: Name of a company, school or showcase page in the LinkedIn address linkedin.com/company/<id>.
+categories:
+- useraccounts
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[a-z\d][a-z\d-]+[a-z\d]$
+examples:
+- value: linkedin
+  description: LinkedIn
+- value: cruzvermelhabrasileira
+  description: Brazilian Red Cross
+- value: british-airways
+  description: British Airways
+mappings:
+  wikidata: P4264
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4264

@@ -11,6 +11,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
+regexp: ^10\.5240/(?:[0-9A-Z]{4}-){5}[0-9A-Z]$
 examples:
 - value: 10.5240/58DD-06EB-3EED-A705-EE28-7
   description: The Simpsons

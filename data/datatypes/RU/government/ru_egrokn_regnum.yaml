@@ -31,6 +31,10 @@ examples:
   description: Chinese Theatre in Tsarskoye Selo, a monument of federal significance (Wikidata example)
 - value: '771420520120016'
   description: Ensemble of federal significance in Moscow, from data.mos.ru
+- value: '691731293250006'
+  description: Source of the Volga (Wikidata example)
+- value: '911510359770006'
+  description: Tsar's Kurgan (Wikidata example)
 - value: 56-142
   valid: false
   description: Accounting number of the register, the datatype ru_egrokn_accounting_number

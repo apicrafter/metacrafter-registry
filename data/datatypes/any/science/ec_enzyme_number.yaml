@@ -1,0 +1,28 @@
+id: ec_enzyme_number
+name: Enzyme Commission (EC) number
+status: draft
+doc: 'Classification number of an enzyme by the reaction it catalyses, assigned by the IUBMB: four numbers
+  separated by dots, such as 3.4.21.5. A hyphen stands for an unassigned level and an n prefix marks a
+  preliminary number. It differs from the European Community (EC) number of a chemical substance.'
+categories:
+- science
+- chemistry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d\.(?:-|n?\d{1,2})\.(?:-|n?\d{1,2})\.(?:-|n?\d{1,3})$
+examples:
+- value: 2.7.3.2
+  description: creatine kinase
+- value: 3.2.1.1
+  description: alpha-amylase
+- value: 3.4.21.5
+  description: thrombin
+mappings:
+  wikidata: P591
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Enzyme_Commission_number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P591

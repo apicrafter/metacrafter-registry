@@ -31,7 +31,6 @@ examples:
 - value: Italien
   description: Italy
 mappings:
-  wikidata: P297
   fta: COUNTRY.TEXT_DE
 links:
 - type: wikipedia

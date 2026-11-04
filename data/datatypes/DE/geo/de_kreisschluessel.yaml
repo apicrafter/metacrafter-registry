@@ -1,0 +1,26 @@
+id: de_kreisschluessel
+name: German district key (Kreisschlüssel)
+status: draft
+doc: Five-digit official code of a German district or independent city, the first five digits of the municipality
+  key.
+categories:
+- geo
+country:
+- DE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: 03459
+  description: Osnabrück District
+- value: '07132'
+  description: Altenkirchen district
+mappings:
+  wikidata: P440
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Kreisschl%C3%BCssel
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P440

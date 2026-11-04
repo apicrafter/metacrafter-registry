@@ -1,0 +1,27 @@
+id: umls_cui
+name: UMLS concept unique identifier (CUI)
+status: draft
+doc: 'Identifier of a concept in the Unified Medical Language System Metathesaurus of the US National
+  Library of Medicine: the letter C and seven digits. It links terms from many vocabularies such as SNOMED
+  CT, MeSH and ICD.'
+categories:
+- medical
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^C\d{7}$
+examples:
+- value: C0037379
+  description: snakebite
+- value: C0011551
+  description: depersonalization
+- value: C1274928
+  description: Trigeminal trophic lesion
+mappings:
+  wikidata: P2892
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Unified_Medical_Language_System
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2892

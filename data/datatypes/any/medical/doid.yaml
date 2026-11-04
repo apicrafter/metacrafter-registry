@@ -1,0 +1,26 @@
+id: doid
+name: Disease Ontology ID (DOID)
+status: draft
+doc: 'Identifier of a human disease in the Disease Ontology: the prefix DOID: and a number.'
+categories:
+- medical
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^DOID:(?:[0-9]{7}|[1-9][0-9]{0,4})$
+examples:
+- value: DOID:769
+  description: neuroblastoma
+- value: DOID:8778
+  description: Crohn's disease
+mappings:
+  wikidata: P699
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Disease_Ontology
+- type: doc
+  url: https://disease-ontology.org/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P699

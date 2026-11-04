@@ -25,10 +25,7 @@ examples:
 mappings:
   autotype: cusip
   fibo: SEC/Securities/SecuritiesIdentificationIndividuals/CommitteeOnUniformSecuritiesIdentificationProceduresNumber
-  wikidata: P5198
   fta: CHECKDIGIT.CUSIP
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/CUSIP
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P5198

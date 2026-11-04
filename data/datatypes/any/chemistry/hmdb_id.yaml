@@ -1,0 +1,27 @@
+id: hmdb_id
+name: Human Metabolome Database ID
+status: draft
+doc: 'Accession of a metabolite in the Human Metabolome Database: HMDB and a number, five digits in old
+  accessions and seven in current ones.'
+categories:
+- chemistry
+- medical
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^HMDB\d+$
+examples:
+- value: HMDB0034235
+  description: 2-pentanone
+- value: HMDB0002111
+  description: water
+mappings:
+  wikidata: P2057
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Human_Metabolome_Database
+- type: doc
+  url: https://hmdb.ca/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2057

@@ -1,0 +1,27 @@
+id: loinc
+name: LOINC code
+status: draft
+doc: 'Code of a laboratory test, clinical observation or document type in LOINC (Logical Observation Identifiers
+  Names and Codes): digits, a hyphen and a check digit. Regenstrief Institute maintains it. Part and answer
+  codes (LP, LA prefixes) are not covered.'
+categories:
+- medical
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{1,7}-\d$
+examples:
+- value: 41995-2
+  description: glycated haemoglobin
+- value: 69723-5
+  description: Patient Health Questionnaire
+mappings:
+  wikidata: P4338
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/LOINC
+- type: doc
+  url: https://loinc.org/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4338
