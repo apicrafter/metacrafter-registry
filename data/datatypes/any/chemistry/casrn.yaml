@@ -1,0 +1,31 @@
+id: casrn
+name: CAS Registry Number
+status: draft
+doc: 'Identifier that the Chemical Abstracts Service (CAS) gives to a chemical substance: two to seven
+  digits, a hyphen, two digits, a hyphen and a check digit.'
+categories:
+- chemistry
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{1,6}-\d{2}-\d$
+examples:
+- value: 7732-18-5
+  description: Water
+- value: 64-17-5
+  description: Ethanol
+- value: 50-00-0
+  description: Formaldehyde
+- value: '7732-18-57'
+  valid: false
+  description: One character too many
+mappings:
+  wikidata: P231
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/CAS_Registry_Number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P231
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.casrn.html

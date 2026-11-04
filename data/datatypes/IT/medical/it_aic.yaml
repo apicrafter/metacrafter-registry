@@ -1,0 +1,33 @@
+id: it_aic
+name: Italian medicine authorisation code (AIC)
+status: draft
+doc: Codice AIC (autorizzazione all'immissione in commercio), the code that the Italian Medicines Agency
+  (AIFA) gives to each medicine pack authorised for sale in Italy. It has nine digits including a check
+  digit, or six characters in its base-32 form.
+categories:
+- medical
+country:
+- IT
+langs:
+- it
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{9}|[0-9B-DF-HJ-NP-Z]{6})$
+examples:
+- value: 079878625
+  description: Synthetic number with a valid check digit
+- value: 091810440
+  description: Synthetic number with a valid check digit
+- value: 0798786257
+  valid: false
+  description: One character too many
+links:
+- type: doc
+  url: https://www.gazzettaufficiale.it/do/atto/serie_generale/caricaPdf?cdimg=14A0566800100010110001&dgu=2014-07-18&art.dataPubblicazioneGazzetta=2014-07-18&art.codiceRedazionale=14A05668&art.num=1&art.tiposerie=SG
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.it.aic.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_it_aic.html
+translations:
+  it:
+    name: Codice AIC

@@ -1,0 +1,31 @@
+id: lt_pvm
+name: Lithuanian VAT number (PVM)
+status: draft
+doc: 'PVM mokėtojo kodas, the VAT code in Lithuania: nine digits for legal entities or twelve digits for
+  temporarily registered taxpayers, with a check digit.'
+parent: vatin
+categories:
+- finances
+country:
+- LT
+langs:
+- lt
+is_pii: false
+classification: identifier
+regexp: ^(?:LT[ -]?)?(?:\d{9}|\d{12})$
+examples:
+- value: LT 354991917
+  description: Real-world value published online
+- value: LT 100002922012
+  description: Real-world value published online
+- value: '3549919177'
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.lt.pvm.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_lt_pvm.html
+translations:
+  lt:
+    name: PVM mokėtojo kodas

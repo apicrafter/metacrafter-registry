@@ -1,0 +1,36 @@
+id: is_kennitala
+name: Icelandic identity number (kennitala)
+status: draft
+doc: Kennitala, the 10-digit identity code of individuals and organisations in Iceland. It starts with
+  a date (DDMMYY; organisations add 40 to the day), then two digits, a check digit and a century digit
+  (9 for the 1900s, 0 for the 2000s). A hyphen usually follows the sixth digit.
+categories:
+- pii
+- persons
+country:
+- IS
+langs:
+- is
+is_pii: true
+classification: identifier
+regexp: ^[0-7]\d[01]\d{3}-?\d{3}[09]$
+examples:
+- value: '2812800669'
+  description: Synthetic number with a valid check digit
+- value: 0701527979
+  description: Synthetic number with a valid check digit
+- value: 281280-0669
+  description: The first example in its printed form
+- value: '28128006697'
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Kennitala
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.is_.kennitala.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_is_kennitala.html
+translations:
+  is:
+    name: Kennitala

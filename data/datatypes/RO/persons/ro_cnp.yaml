@@ -1,0 +1,34 @@
+id: ro_cnp
+name: Romanian personal numerical code (CNP)
+status: draft
+doc: Cod numeric personal, the 13-digit personal identifier in Romania. It encodes the sex and century
+  of birth, the date of birth (YYMMDD), the county of birth or registration, a serial number and a check
+  digit.
+categories:
+- pii
+- persons
+country:
+- RO
+langs:
+- ro
+is_pii: true
+classification: identifier
+regexp: ^[1-9]\d{12}$
+examples:
+- value: '1461014075258'
+  description: Synthetic number with a valid check digit
+- value: '6861202422810'
+  description: Synthetic number with a valid check digit
+- value: '14610140752587'
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://ro.wikipedia.org/wiki/Cod_numeric_personal
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ro.cnp.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_ro_cnp.html
+translations:
+  ro:
+    name: Cod numeric personal (CNP)

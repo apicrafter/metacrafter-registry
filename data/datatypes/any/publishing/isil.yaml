@@ -1,0 +1,25 @@
+id: isil
+name: International Standard Identifier for Libraries (ISIL)
+status: draft
+doc: 'ISO 15511 identifier of libraries, archives, museums and related organisations. It has up to 15
+  characters: a prefix (a 2-letter country code or a non-national agency prefix), a hyphen and an identifier
+  given by that agency. Letters, digits, hyphens, colons and slashes are used.'
+categories:
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?=.{3,15}$)[A-Za-z0-9]{1,4}-[A-Za-z0-9:/-]+$
+examples:
+- value: NL-HlGH
+  description: Real-world value published online
+- value: AT-NMW-Z
+  description: Real-world value published online
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Standard_Identifier_for_Libraries_and_Related_Organizations
+- type: doc
+  url: https://biblstandard.dk/isil/
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.isil.html

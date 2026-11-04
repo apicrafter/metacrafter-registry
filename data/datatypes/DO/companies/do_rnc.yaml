@@ -1,0 +1,33 @@
+id: do_rnc
+name: Dominican Republic taxpayer registration number (RNC)
+status: draft
+doc: Registro Nacional del Contribuyente, the 9-digit tax number of companies and institutions in the
+  Dominican Republic. It ends with a check digit and is often written with hyphens.
+categories:
+- companies
+- finances
+country:
+- DO
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d-?\d{2}-?\d{5}-?\d$
+examples:
+- value: '523022952'
+  description: Real-world value published online
+- value: '505072412'
+  description: Real-world value published online
+- value: 5-23-02295-2
+  description: The first example in its printed form
+- value: '5230229527'
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.do.rnc.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_do_rnc.html
+translations:
+  es:
+    name: Registro Nacional del Contribuyente (RNC)

@@ -1,0 +1,31 @@
+id: ee_kmkr
+name: Estonian VAT number (KMKR)
+status: draft
+doc: KMKR number (käibemaksukohustuslase registreerimisnumber), the 9-digit VAT registration number in
+  Estonia. The last digit is a check digit.
+parent: vatin
+categories:
+- finances
+country:
+- EE
+langs:
+- et
+is_pii: false
+classification: identifier
+regexp: ^(?:EE[ -]?)?\d{3} ?\d{3} ?\d{3}$
+examples:
+- value: EE 101288941
+  description: Real-world value published online
+- value: EE 100594102
+  description: Real-world value published online
+- value: '1012889417'
+  valid: false
+  description: One character too many
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ee.kmkr.html
+- type: other
+  url: https://docs.dataprep.ai/user_guide/clean/clean_ee_kmkr.html
+translations:
+  et:
+    name: Käibemaksukohustuslase registreerimisnumber (KMKR)

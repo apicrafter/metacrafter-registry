@@ -1,0 +1,32 @@
+id: at_vnr
+name: Austrian social insurance number (VNR)
+status: draft
+doc: 'Versicherungsnummer (also SVNR or VSNR), the personal number of the Austrian social insurance. It
+  has ten digits: a 3-digit serial number, a check digit and six digits that usually hold the date of
+  birth (DDMMYY).'
+categories:
+- pii
+- persons
+country:
+- AT
+langs:
+- de
+is_pii: true
+classification: identifier
+regexp: ^[1-9]\d{3} ?\d{6}$
+examples:
+- value: 5928 843905
+  description: Synthetic number with a valid check digit
+- value: 1122 810516
+  description: Synthetic number with a valid check digit
+- value: '59288439057'
+  valid: false
+  description: One character too many
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Sozialversicherungsnummer#%C3%96sterreich
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.at.vnr.html
+translations:
+  de:
+    name: Sozialversicherungsnummer
