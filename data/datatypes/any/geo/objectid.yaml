@@ -1,0 +1,43 @@
+id: objectid
+name: ArcGIS object ID (OBJECTID)
+status: draft
+doc: Row identifier that Esri ArcGIS adds to every geodatabase table and feature class. The default field
+  name is OBJECTID, or OBJECTID_1 when a column of that name already exists, and ArcGIS displays it as
+  OID or ObjectID, and as FID in shapefiles and web feature layers. ArcGIS maintains the values. Each
+  is a non-null integer that is unique only within its table, so the same number names different rows
+  in different layers; Global IDs serve to identify rows across geodatabases. The field is a 32-bit integer
+  by default, up to 2,147,483,647, and ArcGIS Pro can migrate it to a 64-bit object ID limited to 9,007,199,254,740,991.
+  Datasets exported from ArcGIS keep it as an objectid or OBJECTID column, for example on Opendatasoft
+  portals next to geo_point_2d and geo_shape, where it is sometimes stored as a decimal number such as
+  89.0. It is not the MongoDB ObjectId (mongodbid).
+parent: id
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:0|[1-9]\d{0,15})(?:\.0)?$
+examples:
+- value: '38'
+  description: Land use dataset of Loire-Atlantique on Opendatasoft
+- value: '89.0'
+  description: Pedestrian crossings dataset of La Réunion, where the column is a decimal number
+- value: '2147483647'
+  description: Largest value of a 32-bit object ID
+- value: 507f1f77bcf86cd799439011
+  valid: false
+  description: MongoDB ObjectId, see mongodbid
+- value: '12.5'
+  valid: false
+  description: Object IDs are integers
+links:
+- type: doc
+  url: https://doc.esri.com/en/arcgis-pro/latest/help/data/geodatabases/overview/arcgis-field-data-types.html
+- type: doc
+  url: https://desktop.arcgis.com/en/arcmap/latest/manage-data/using-sql-with-gdbs/object-id.htm
+translations:
+  fr:
+    name: Identifiant d'objet ArcGIS (OBJECTID)
+  ru:
+    name: Идентификатор объекта ArcGIS (OBJECTID)
