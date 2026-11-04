@@ -11,12 +11,16 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: \d{13}
+regexp: ^\d{13}$
+checksum: gs1_mod10
 examples:
 - value: 0865321000104
   description: Google
 - value: 0860484000404
   description: The Coca-Cola Company
+- value: 0860484000405
+  valid: false
+  description: 'Last digit changed: fails the GS1 check digit'
 mappings:
   autotype: gln
   wikidata: P9860

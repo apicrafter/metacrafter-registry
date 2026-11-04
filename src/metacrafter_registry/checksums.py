@@ -46,14 +46,64 @@ def iban_mod97(value: str) -> bool:
     return int("".join(str(int(c, 36)) for c in rearranged)) % 97 == 1
 
 
+def gs1_mod10(value: str) -> bool:
+    """GS1 standard check digit of a numeric key of any length.
+
+    Weights 3 and 1 alternate from the right, starting with 3 next to the
+    check digit. Used by GLN (13 digits), GSIN (17), GSRN and SSCC (18).
+    Leading zeros do not change the result, so an SSCC written with its
+    Application Identifier (00) passes too.
+    """
+    digits = _digits(value)
+    if not digits or len(digits) < 2:
+        return False
+    body, check = digits[:-1], digits[-1]
+    total = sum(d * (3 if i % 2 == 0 else 1) for i, d in enumerate(reversed(body)))
+    return (10 - total % 10) % 10 == check
+
+
 def gtin(value: str) -> bool:
     """GS1 mod 10 for GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN) and GTIN-14."""
     digits = _digits(value)
     if not digits or len(digits) not in (8, 12, 13, 14):
         return False
-    body, check = digits[:-1], digits[-1]
-    total = sum(d * (3 if i % 2 == 0 else 1) for i, d in enumerate(reversed(body)))
-    return (10 - total % 10) % 10 == check
+    return gs1_mod10(value)
+
+
+# GS1 character sets of the General Specifications, in weight order.
+_GS1_CSET82 = "!\"%&'()*+,-./0123456789:;<=>?ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz"
+_GS1_CSET32 = "23456789ABCDEFGHJKLMNPQRSTUVWXYZ"
+
+
+def _primes(count: int) -> list[int]:
+    primes: list[int] = []
+    candidate = 2
+    while len(primes) < count:
+        if all(candidate % p for p in primes if p * p <= candidate):
+            primes.append(candidate)
+        candidate += 1
+    return primes
+
+
+def gs1_checkpair(value: str) -> bool:
+    """GS1 check character pair: Global Model Number (GMN) and HIDRI.
+
+    Each character before the pair has its position in CSET 82 as its value.
+    The values are weighted by the primes 2, 3, 5, ... from the right and
+    summed modulo 1021; the two 5-bit halves of the sum, looked up in CSET 32,
+    are the check characters. Hyphens and dots are data here, not separators.
+    """
+    data = str(value).strip()
+    if len(data) < 2:
+        return False
+    body, pair = data[:-2], data[-2:]
+    if any(c not in _GS1_CSET82 for c in body):
+        return False
+    weights = _primes(len(body))
+    total = (
+        sum(_GS1_CSET82.index(c) * w for c, w in zip(reversed(body), weights, strict=True)) % 1021
+    )
+    return pair == _GS1_CSET32[total >> 5] + _GS1_CSET32[total & 31]
 
 
 def isbn13(value: str) -> bool:
@@ -314,6 +364,8 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "luhn": luhn,
     "iban_mod97": iban_mod97,
     "gtin": gtin,
+    "gs1_mod10": gs1_mod10,
+    "gs1_checkpair": gs1_checkpair,
     "isbn10": isbn10,
     "isbn13": isbn13,
     "ru_inn": ru_inn,

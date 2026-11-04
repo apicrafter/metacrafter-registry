@@ -12,6 +12,16 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^02(\d{14})$
+examples:
+- value: 0209506000134352
+  description: GS1's example GTIN 09506000134352 as the contained item
+- value: 0209528765000123
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: 020950600013435
+  valid: false
+  description: Thirteen-digit GTIN
+mappings:
+  gs1_ai: '02'
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Global_Trade_Item_Number

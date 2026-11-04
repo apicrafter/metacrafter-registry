@@ -1,0 +1,28 @@
+id: gs1_ai_8020
+name: Payment slip reference number (GS1 AI 8020)
+status: draft
+doc: 'GS1 element string of Application Identifier (8020): ''8020'' followed by the reference number of
+  a payment slip, up to 25 characters, used with the GLN of the invoicing party in AI (415). GS1 format
+  N4+X..25. It is a key qualifier in GS1 Digital Link. In the human-readable text under a barcode it is
+  written as (8020) and the value.'
+categories:
+- gs1
+- finances
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^8020[!%-?A-Z_a-z\x22]{1,25}$
+examples:
+- value: 8020INV2026-0017
+  description: Synthetic reference INV2026-0017
+- value: 8020RF-88213
+  description: Synthetic reference RF-88213
+- value: '8020'
+  valid: false
+  description: No reference
+mappings:
+  gs1_ai: '8020'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8020

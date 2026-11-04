@@ -209,6 +209,12 @@
   - No new mapping key: Sato labels resolve through `mappings.sherlock`, and `crosswalk("sato", ...)` is the same lookup as `crosswalk("sherlock", ...)`.
   - New tool `sato` (detector). A test checks that its `supported_types` are the records that carry `mappings.sherlock`.
   - The 46 unmapped types were checked again against the records added since 8.11; none has a same-meaning record yet. The review is `devdocs/SATO_REVIEW.md`.
+- [x] 8.14 Review the GS1 Application Identifiers (issue #20). Add the `gs1_ai` crosswalk key and the `gs1_mod10` and `gs1_checkpair` check-digit algorithms.
+  - Source: the GS1 AI vocabulary version 1.2 (541 AIs, 2026-01-26), checked against the GS1 Barcode Syntax Dictionary.
+  - The 26 identification-key AIs and 8 of the 9 GS1 Digital Link key qualifiers have one record per AI, holding the element string: 31 new `gs1_ai_<AI>` records, plus the mapping on `sssc`, `gtin` and `gtin02`. AIs 8007, 8040, 8041 and 716 map to `iban`, `imei` and `it_aic`.
+  - 11 new draft records for bare GS1 keys (`gdti`, `gcn`, `ginc`, `gsin`, `grai`, `giai`, `gsrn`, `cpid`, `gmn`, `hidri`, `itip`); the element strings of these keys and of `gln` are their patterns.
+  - Fixed: the `sssc` regexp (`d{18}`) and description, the unanchored `gln` regexp.
+  - Dates, measures, amounts, addresses and other data attributes (503 AIs) are not imported. The review is `devdocs/GS1_AI_REVIEW.md`.
 - Data fixes found during this phase:
   - 9 regexps that matched the empty string were fixed, and the validator now rejects such regexps.
   - The `what3words` regexp had been copied from `geonamesid`.

@@ -1,0 +1,28 @@
+id: gs1_ai_235
+name: Third-party controlled serialised extension of GTIN (TPX) (GS1 AI 235)
+status: draft
+doc: 'GS1 element string of Application Identifier (235): ''235'' followed by a serialised extension of
+  the GTIN in AI (01), up to 28 characters, that a third party assigns and controls. GS1 format N3+X..28.
+  It is a key qualifier in GS1 Digital Link. In the human-readable text under a barcode it is written
+  as (235) and the value.'
+categories:
+- gs1
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^235[!%-?A-Z_a-z\x22]{1,28}$
+examples:
+- value: 235XC5F7G8H9J2
+  description: Synthetic extension XC5F7G8H9J2
+- value: 235TPX7781QW
+  description: Synthetic extension TPX7781QW
+- value: 235AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  valid: false
+  description: Longer than 28 characters
+mappings:
+  gs1_ai: '235'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/235

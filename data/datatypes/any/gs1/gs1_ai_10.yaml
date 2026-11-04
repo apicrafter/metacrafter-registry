@@ -1,0 +1,30 @@
+id: gs1_ai_10
+name: Batch or lot number (GS1 AI 10)
+status: draft
+doc: 'GS1 element string of Application Identifier (10): ''10'' followed by the batch or lot number of
+  a trade item, up to 20 characters of GS1 character set 82. GS1 format N2+X..20. It qualifies the GTIN
+  in AI (01), (02) or (03) or the ITIP in AI (8006) or (8026). It is a key qualifier in GS1 Digital Link.
+  In the human-readable text under a barcode it is written as (10) and the value.'
+categories:
+- gs1
+- industry
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^10[!%-?A-Z_a-z\x22]{1,20}$
+examples:
+- value: 10L4711B
+  description: Batch L4711B
+- value: 102026-11B
+  description: Batch 2026-11B
+- value: '10'
+  valid: false
+  description: No batch number
+mappings:
+  gs1_ai: '10'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/10
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Lot_number

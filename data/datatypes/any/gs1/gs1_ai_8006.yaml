@@ -1,0 +1,23 @@
+id: gs1_ai_8006
+name: Individual trade item piece (ITIP) (GS1 AI 8006)
+status: draft
+doc: 'GS1 element string of Application Identifier (8006): ''8006'' followed by an 18-digit ITIP: a GTIN,
+  the piece number and the total. GS1 format N4+N14+N2+N2. In the human-readable text under a barcode
+  it is written as (8006) and the value.'
+semantic_type: itip
+langs:
+- common
+regexp: ^8006\d{14}(?:0[1-9]|[1-9]\d){2}$
+examples:
+- value: '8006095060001343520102'
+  description: GS1's example GTIN, piece 1 of 2
+- value: '8006095060001343520303'
+  description: GS1's example GTIN, piece 3 of 3
+- value: '8006095060001343520200'
+  valid: false
+  description: Total 00
+mappings:
+  gs1_ai: '8006'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8006

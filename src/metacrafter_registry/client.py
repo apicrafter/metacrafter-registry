@@ -455,7 +455,9 @@ class Registry:
         as MONTH.FULL_fr-FR or GENDER.TEXT_DE; for sherlock, a type label, compared
         without case and spaces; for sato, a Sato type label (Sato predicts the
         Sherlock types, written birthDate); for autotype, a benchmark test case name,
-        its file name or its data_release path.
+        its file name or its data_release path;
+        for gs1_ai, an Application Identifier as written in a barcode's
+        human-readable text ((414) or 414) or its https://ref.gs1.org/ai/ IRI.
         """
         if system == "fta":
             return self._crosswalk_fta(str(external_id).strip())
@@ -471,6 +473,8 @@ class Registry:
         elif system == "autotype":
             # Test cases are data_release/<name>.txt files; accept the bare name too.
             wanted = wanted.rsplit("/", 1)[-1].removesuffix(".txt")
+        elif system == "gs1_ai":
+            wanted = wanted.rstrip("/").rsplit("/", 1)[-1].strip("()")
         # D3M writes semantic types as URIs (http://schema.org/email). Also
         # accept https://schema.org/... and a bare type name (FileName, email).
         d3m_bare = system == "d3m" and "://" not in wanted

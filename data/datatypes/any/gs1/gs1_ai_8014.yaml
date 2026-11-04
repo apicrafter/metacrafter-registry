@@ -1,0 +1,23 @@
+id: gs1_ai_8014
+name: Highly Individualised Device Registration Identifier (GS1 AI 8014)
+status: draft
+doc: 'GS1 element string of Application Identifier (8014): ''8014'' followed by a HIDRI of up to 25 characters
+  ending in a check character pair. GS1 format N4+X..25. It is used with a GTIN in AI (01). In the human-readable
+  text under a barcode it is written as (8014) and the value.'
+semantic_type: hidri
+langs:
+- common
+regexp: ^8014(?=.*[^0-9])\d{4}[!%-?A-Z_a-z\x22]{0,19}[2-9A-HJ-NP-Z]{2}$
+examples:
+- value: 80149528765LENS-0042F6
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: 80149528765SPEC-L71ER
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '801495287654321022'
+  valid: false
+  description: Digits only
+mappings:
+  gs1_ai: '8014'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8014

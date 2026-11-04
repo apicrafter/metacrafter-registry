@@ -1,0 +1,24 @@
+id: gs1_ai_416
+name: GLN of the production or service location (GS1 AI 416)
+status: draft
+doc: 'GS1 element string of Application Identifier (416): ''416'' followed by the 13-digit Global Location
+  Number of the place where the item was produced or the service was performed. GS1 format N3+N13. The
+  GLN ends in a GS1 check digit. In the human-readable text under a barcode it is written as (416) and
+  the value.'
+semantic_type: gln
+langs:
+- common
+regexp: ^416\d{13}$
+examples:
+- value: '4169528765000017'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '4169528765000253'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '416952876500001'
+  valid: false
+  description: Twelve-digit GLN
+mappings:
+  gs1_ai: '416'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/416
