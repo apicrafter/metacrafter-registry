@@ -1,0 +1,29 @@
+id: imdb_id
+name: IMDb ID
+status: draft
+doc: 'Identifier of a page in the Internet Movie Database: a two-letter prefix and at least seven digits.
+  tt is a title, nm a person, co a company, ev an event, ch a character and ni a news item.'
+categories:
+- media
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:tt|nm|co|ev|ch|ni)\d{7,8}$
+examples:
+- value: co0071326
+  description: Lucasfilm
+- value: ch0000985
+  description: Harry Potter
+- value: ni61008607
+  description: ‘Captain Marvel’ Finds Directors in Anna Boden, Ryan Fleck (EXCLUSIVE)
+mappings:
+  wikidata: P345
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/IMDb
+- type: doc
+  url: https://developer.imdb.com/documentation/key-concepts
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P345

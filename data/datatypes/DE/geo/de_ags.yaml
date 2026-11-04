@@ -1,0 +1,26 @@
+id: de_ags
+name: German municipality key (Amtlicher Gemeindeschlüssel, AGS)
+status: draft
+doc: 'Eight-digit official code of a German municipality: two digits for the state, one for the government
+  region, two for the district and three for the municipality.'
+categories:
+- geo
+country:
+- DE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{8}$
+examples:
+- value: 03459033
+  description: Wallenhorst
+- value: '12060020'
+  description: Bernau bei Berlin
+mappings:
+  wikidata: P439
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Community_Identification_Number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P439

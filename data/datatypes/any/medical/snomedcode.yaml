@@ -1,10 +1,24 @@
 id: snomedcode
 name: SNOMED CT concept code
 status: draft
-doc: Datatype for 'SNOMED CT concept code' (snomedcode) from rules in context 'medical'.
+doc: 'Identifier of a concept in SNOMED CT, the clinical terminology of SNOMED International: a number
+  of 6 to 18 digits whose last digit is a Verhoeff check digit.'
 categories:
 - medical
 langs:
 - en
 is_pii: false
 classification: identifier
+regexp: ^[1-9]\d{5,17}$
+examples:
+- value: '64859006'
+  description: osteoporosis
+- value: '267718000'
+  description: age related macular degeneration
+- value: '464035001'
+  description: orthokeratology
+mappings:
+  wikidata: P5806
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5806

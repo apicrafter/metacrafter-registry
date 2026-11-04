@@ -1,12 +1,23 @@
 id: ukprn
 name: UK provider UKPRN
 status: draft
-doc: Datatype for 'UK provider UKPRN' (ukprn) from rules in context 'education'.
+doc: 'UK Provider Reference Number (UKPRN): eight-digit identifier of a learning provider in the UK Register
+  of Learning Providers (UKRLP).'
 categories:
 - education
 langs:
 - en
 is_pii: false
 classification: identifier
+regexp: ^[1-9][0-9]{7}$
+examples:
+- value: '10007835'
+  description: Royal Academy of Music
+- value: '10008408'
+  description: Old Palace of John Whitgift School
 mappings:
   orgid: GB-UKPRN
+  wikidata: P4971
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4971

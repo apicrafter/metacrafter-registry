@@ -1,0 +1,27 @@
+id: fi_kuntanumero
+name: Finnish municipality number (kuntanumero)
+status: draft
+doc: Three-digit code of a Finnish municipality in the classification of Statistics Finland.
+categories:
+- geo
+country:
+- FI
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{3}$
+examples:
+- value: '905'
+  description: Vaasa
+- value: '010'
+  description: Alavus
+- value: '218'
+  description: Karijoki
+mappings:
+  wikidata: P1203
+links:
+- type: wikipedia
+  url: https://fi.wikipedia.org/wiki/Kuntanumero
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1203

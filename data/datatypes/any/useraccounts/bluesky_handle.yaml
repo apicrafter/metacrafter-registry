@@ -1,0 +1,22 @@
+id: bluesky_handle
+name: Bluesky handle
+status: draft
+doc: 'Handle of a Bluesky account: a domain name, such as name.bsky.social or a custom domain.'
+parent: username
+categories:
+- pii
+- persons
+- useraccounts
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z][a-z0-9-]{0,61}[a-z0-9]$
+examples:
+- value: bsky.app
+  description: Bluesky
+mappings:
+  wikidata: P12361
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P12361

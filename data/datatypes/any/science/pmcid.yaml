@@ -1,0 +1,26 @@
+id: pmcid
+name: PubMed Central ID (PMCID)
+status: draft
+doc: Number of a full-text article in PubMed Central, the free archive of the US National Library of Medicine.
+  It is written with the prefix PMC, which the Wikidata form leaves out; this format accepts both.
+categories:
+- science
+- publishing
+- medical
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:PMC)?[1-9]\d{0,7}$
+examples:
+- value: '1201091'
+- value: '3682911'
+mappings:
+  wikidata: P932
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/PubMed_Central
+- type: doc
+  url: https://www.ncbi.nlm.nih.gov/pmc/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P932

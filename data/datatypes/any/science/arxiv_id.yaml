@@ -1,0 +1,26 @@
+id: arxiv_id
+name: arXiv identifier
+status: draft
+doc: Identifier of a preprint in arXiv. Since 2007 it is YYMM.NNNNN (four digits before 2015); older papers
+  use the archive name and a seven-digit number, such as hep-th/9711200. A version suffix such as v2 may
+  follow.
+categories:
+- science
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{4}\.\d{4,5}|[a-z-]+(?:\.[A-Z]{2})?/\d{7})(?:v\d+)?$
+examples:
+- value: '0806.2878'
+- value: '1109.1746'
+mappings:
+  wikidata: P818
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ArXiv
+- type: doc
+  url: https://info.arxiv.org/help/arxiv_identifier.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P818

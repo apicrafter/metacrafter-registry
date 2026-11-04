@@ -8,8 +8,17 @@ langs:
 - common
 is_pii: false
 classification: categorical
+regexp: ^[A-Z]{2}-[A-Z0-9]{1,3}$
+examples:
+- value: BE-VWV
+  description: West Flanders
+- value: US-AL
+  description: Alabama
+- value: AT-4
+  description: Upper Austria
 mappings:
   fta: STATE_PROVINCE.PREFECTURE_ISO_JA
+  wikidata: P300
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P300

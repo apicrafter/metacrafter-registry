@@ -11,13 +11,28 @@ langs:
 - uk
 is_pii: false
 classification: identifier
+regexp: ^\d{8}$
 examples:
 - value: '38422948'
   description: example from ORG-ID.guide
 - value: '19280108'
   description: example from ORG-ID.guide
+- value: '01566117'
+  description: State University of Trade and Economics
+- value: '20077720'
+  description: Naftogaz of Ukraine
 mappings:
   orgid: UA-EDR
+  wikidata: P3125
 links:
 - type: other
   url: https://org-id.guide/list/UA-EDR
+- type: wikipedia
+  url: https://uk.wikipedia.org/wiki/%D0%84%D0%94%D0%A0%D0%9F%D0%9E%D0%A3
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3125
+translations:
+  ru:
+    name: Код ЕГРПОУ
+    doc: Восьмизначный идентификационный код юридического лица в Едином государственном реестре предприятий
+      и организаций Украины.

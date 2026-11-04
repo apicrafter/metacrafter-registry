@@ -1,0 +1,29 @@
+id: e_number
+name: E number (food additive)
+status: draft
+doc: 'Code of a food additive approved in the European Union: the letter E and three or four digits, sometimes
+  with a letter or a roman numeral for a subclass, such as E330 for citric acid.'
+categories:
+- chemistry
+- industry
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^E\d{3,4}[a-z]?(?:\([ivx]+\))?$
+examples:
+- value: E307a
+  description: RRR-alpha-tocopherol
+- value: E621
+  description: monosodium L-glutamate
+- value: E100
+  description: curcumin
+mappings:
+  wikidata: P628
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/E_number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P628

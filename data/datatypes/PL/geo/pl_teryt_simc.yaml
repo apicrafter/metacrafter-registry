@@ -1,0 +1,26 @@
+id: pl_teryt_simc
+name: Polish TERYT SIMC place ID
+status: draft
+doc: Seven-digit identifier of a locality in the SIMC part of the TERYT register of Statistics Poland.
+categories:
+- geo
+country:
+- PL
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{7}$
+examples:
+- value: 0697900
+  description: Gruszczyce
+- value: '1046790'
+  description: Klekotowo (Stawiguda)
+- value: '1065384'
+mappings:
+  wikidata: P4046
+links:
+- type: wikipedia
+  url: https://pl.wikipedia.org/wiki/TERYT
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4046

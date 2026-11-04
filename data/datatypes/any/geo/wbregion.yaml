@@ -13,8 +13,6 @@ examples:
   description: South Asia
 - value: Europe & Central Asia
   description: Europe & Central Asia
-mappings:
-  wikidata: P30
 links:
 - type: other
   url: https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups

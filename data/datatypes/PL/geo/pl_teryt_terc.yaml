@@ -1,0 +1,28 @@
+id: pl_teryt_terc
+name: Polish TERYT TERC code
+status: draft
+doc: 'Code of a Polish voivodeship, county or municipality in the TERC part of the TERYT register of Statistics
+  Poland: two digits per level and, for municipalities, a digit for the municipality type.'
+categories:
+- geo
+country:
+- PL
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{2}(?:\d{2}(?:\d{3})?)?$
+examples:
+- value: '1428'
+  description: Sochaczew County
+- value: '2004'
+  description: Grajewo County
+- value: '2262011'
+  description: Gdynia
+mappings:
+  wikidata: P1653
+links:
+- type: wikipedia
+  url: https://pl.wikipedia.org/wiki/TERYT
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1653

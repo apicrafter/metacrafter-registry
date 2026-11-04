@@ -12,15 +12,23 @@ langs:
 - en
 is_pii: false
 classification: identifier
+regexp: ^\d{13}$
 examples:
 - value: '9429046393920'
   description: example from ORG-ID.guide
 - value: '9429050294954'
   description: example from ORG-ID.guide
+- value: '9429042872504'
+  description: Royal New Zealand Ballet
+- value: '9429046844125'
+  description: Cofactor
 mappings:
   orgid: NZ-NZBN
+  wikidata: P5687
 links:
 - type: doc
   url: https://www.nzbn.govt.nz/
 - type: other
   url: https://org-id.guide/list/NZ-NZBN
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5687

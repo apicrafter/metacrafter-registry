@@ -12,6 +12,7 @@ langs:
 - lv
 is_pii: false
 classification: identifier
+regexp: ^\d{11}$
 examples:
 - value: '40008124830'
   description: example from ORG-ID.guide
@@ -19,10 +20,20 @@ examples:
   description: example from ORG-ID.guide
 - value: '40003108882'
   description: example from ORG-ID.guide
+- value: '40003032949'
+  description: Latvenergo
+- value: '90000270634'
+  description: Register of Enterprises of the Republic of Latvia
+- value: '40008291442'
 mappings:
   orgid: LV-RE
+  wikidata: P8053
 links:
 - type: doc
   url: http://www.ur.gov.lv/
 - type: other
   url: https://org-id.guide/list/LV-RE
+- type: doc
+  url: https://www.ur.gov.lv/en/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8053

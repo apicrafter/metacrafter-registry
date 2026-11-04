@@ -11,6 +11,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
+regexp: ^[1-9]\d*$
 examples:
 - value: '4295895031'
   description: example from ORG-ID.guide
@@ -18,10 +19,19 @@ examples:
   description: example from ORG-ID.guide
 - value: '5035254535'
   description: example from ORG-ID.guide
+- value: '5000098751'
+  description: British Film Institute
+- value: '4295899948'
+  description: Google
 mappings:
   orgid: XI-PID
+  wikidata: P3347
 links:
 - type: doc
   url: https://permid.org
 - type: other
   url: https://org-id.guide/list/XI-PID
+- type: doc
+  url: https://permid.org/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3347

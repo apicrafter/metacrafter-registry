@@ -1,0 +1,26 @@
+id: es_ine_municipio
+name: Spanish INE municipality code
+status: draft
+doc: Code of a Spanish province (two digits), municipality (five digits) or populated entity (eleven digits)
+  assigned by the National Statistics Institute (INE).
+categories:
+- geo
+country:
+- ES
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(0[1-9]|[1-4][0-9]|5[0-2])(|\d{3}|\d{9})$
+examples:
+- value: '11015'
+  description: Chiclana de la Frontera
+- value: '42071000100'
+  description: Almarail
+- value: '44'
+  description: Teruel Province
+mappings:
+  wikidata: P772
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P772

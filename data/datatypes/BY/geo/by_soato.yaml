@@ -1,0 +1,28 @@
+id: by_soato
+name: Belarusian SOATO code
+status: draft
+doc: 'Code of an administrative-territorial unit or settlement in the Belarusian System of designations
+  of objects of administrative-territorial division and settlements (SOATO): ten digits.'
+categories:
+- geo
+country:
+- BY
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{10}$
+examples:
+- value: '6220857156'
+  description: Rakaŭ
+- value: '6222817000'
+  description: Dziaržynski sieĺsaviet
+mappings:
+  wikidata: P2672
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2672
+translations:
+  ru:
+    name: Код СОАТО
+    doc: Код административно-территориальной единицы или населённого пункта Беларуси по СОАТО.

@@ -12,6 +12,7 @@ langs:
 - cs
 is_pii: false
 classification: identifier
+regexp: ^[0-9]{8}$
 examples:
 - value: '28179609'
   description: example from ORG-ID.guide
@@ -19,8 +20,19 @@ examples:
   description: example from ORG-ID.guide
 - value: '01146131'
   description: example from ORG-ID.guide
+- value: '45274649'
+  description: ČEZ Group
+- value: '00426547'
+  description: Czech Red Cross
+- value: 00022985
+  description: Ministry of Education, Youth and Sports
 mappings:
   orgid: CZ-ICO
+  wikidata: P4156
 links:
 - type: other
   url: https://org-id.guide/list/CZ-ICO
+- type: wikipedia
+  url: https://cs.wikipedia.org/wiki/Identifika%C4%8Dn%C3%AD_%C4%8D%C3%ADslo_osoby
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4156

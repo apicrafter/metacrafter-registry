@@ -1,0 +1,29 @@
+id: cn_uscc
+name: Chinese Unified Social Credit Code
+status: draft
+doc: 'Eighteen-character identifier of a legal entity or other organization in China (GB 32100-2015):
+  registration authority, entity type, division code, organization code and a check character.'
+categories:
+- companies
+- finances
+country:
+- CN
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-HJ-NPQRTUWXY]{2}\d{6}[0-9A-HJ-NPQRTUWXY]{10}$
+examples:
+- value: 71310106424845496E
+  description: Jing'an Temple
+- value: '111000000000116154'
+  description: Supreme People's Court of the People's Republic of China
+- value: '531000005000160090'
+  description: China Red Cross Foundation
+mappings:
+  wikidata: P6795
+links:
+- type: wikipedia
+  url: https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E7%A4%BE%E4%BC%9A%E4%BF%A1%E7%94%A8%E4%BB%A3%E7%A0%81
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6795

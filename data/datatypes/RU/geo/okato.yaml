@@ -14,6 +14,14 @@ langs:
 - ru
 is_pii: false
 classification: categorical
+regexp: ^(?:\d{2}|\d{5}|\d{8}|\d{11})$
+examples:
+- value: '28'
+  description: Tver Oblast
+- value: '41420000000'
+  description: Gatchina
+- value: '80228825007'
+  description: Kuznetsovka (Iglinsky District)
 mappings:
   wikidata: P721
 links:

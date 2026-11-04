@@ -252,8 +252,8 @@ def test_search_and_filters(reg):
 
 
 def test_crosswalk_and_match(reg):
-    wikidata_url = "https://www.wikidata.org/wiki/Property:P2817"
-    assert [r["id"] for r in reg.crosswalk("wikidata", wikidata_url)] == ["mac_address"]
+    wikidata_url = "https://www.wikidata.org/wiki/Property:P1243"
+    assert [r["id"] for r in reg.crosswalk("wikidata", wikidata_url)] == ["isrc"]
     matches = [r["id"] for r in reg.match("0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed")]
     assert "ethereum_address" in matches
     assert "bankcard" in [r["id"] for r in reg.match("4111111111111111")]

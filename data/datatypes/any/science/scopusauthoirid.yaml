@@ -9,6 +9,9 @@ langs:
 - common
 is_pii: false
 classification: identifier
+regexp: ^[1-9]\d{9,11}$
+mappings:
+  wikidata: P1153
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1153

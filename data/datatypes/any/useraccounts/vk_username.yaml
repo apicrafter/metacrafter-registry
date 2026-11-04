@@ -1,0 +1,22 @@
+id: vk_username
+name: VK username
+status: draft
+doc: Short name of a VK (VKontakte) account, page or community, as in vk.com/<name>.
+parent: username
+categories:
+- pii
+- persons
+- useraccounts
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^[0-9A-Za-z_\.]{2,32}$
+examples:
+- value: russia_rc
+  description: The Russian Red Cross
+mappings:
+  wikidata: P3185
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3185

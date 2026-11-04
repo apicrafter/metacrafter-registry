@@ -1,7 +1,9 @@
 id: openalexid
 name: OpenAlex ID
 status: stable
-doc: Identifier for works, authors, institutes, venues, concepts/subjects in OpenAlex
+doc: 'Identifier of an entity in OpenAlex, the open catalogue of scholarly works: a letter for the entity
+  type and a number. W is a work, A an author, S a source (journal or repository), I an institution, C
+  a concept, T a topic, P a publisher and F a funder; V was used for venues before sources replaced them.'
 categories:
 - science
 - identifiers
@@ -9,7 +11,16 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: '[ACIVW][1-9]\d{3,9}'
+regexp: ^[ACFIPSTVWacfipstvw][1-9]\d{3,9}$
+examples:
+- value: S4306525036
+  description: PubMed
+- value: I114027177
+  description: University of North Carolina at Chapel Hill
+- value: P4310320990
+  description: Elsevier
+- value: F4320321001
+  description: National Natural Science Foundation of China
 mappings:
   wikidata: P10283
 links:

@@ -1,0 +1,21 @@
+id: facebook_username
+name: Facebook username
+status: draft
+doc: Username of a Facebook profile or page, the part of the address after facebook.com/.
+parent: username
+categories:
+- pii
+- persons
+- useraccounts
+langs:
+- common
+is_pii: true
+classification: identifier
+examples:
+- value: le.chantier.theatre
+  description: Le Chantier-Théâtre
+mappings:
+  wikidata: P2013
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2013

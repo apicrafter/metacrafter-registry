@@ -1,0 +1,26 @@
+id: ncbi_taxon_id
+name: NCBI Taxonomy ID
+status: draft
+doc: Number of a taxon in the Taxonomy database of the US National Center for Biotechnology Information,
+  which names the organisms in the GenBank sequence databases, such as 9606 for Homo sapiens.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9][0-9]{0,6}$
+examples:
+- value: '9606'
+  description: Homo sapiens
+- value: '10090'
+  description: house mouse
+- value: '562'
+  description: Escherichia coli
+mappings:
+  wikidata: P685
+links:
+- type: doc
+  url: https://www.ncbi.nlm.nih.gov/taxonomy
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P685

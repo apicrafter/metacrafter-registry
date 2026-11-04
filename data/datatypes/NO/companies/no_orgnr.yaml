@@ -24,6 +24,7 @@ examples:
   description: One character too many
 mappings:
   orgid: NO-BRC
+  wikidata: P2333
 links:
 - type: wikipedia
   url: https://no.wikipedia.org/wiki/Organisasjonsnummer
@@ -31,6 +32,8 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.no.orgnr.html
 - type: other
   url: https://docs.dataprep.ai/user_guide/clean/clean_no_orgnr.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2333
 translations:
   'no':
     name: Organisasjonsnummer

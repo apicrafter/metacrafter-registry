@@ -1,0 +1,27 @@
+id: ocd_division_id
+name: Open Civic Data Division ID
+status: draft
+doc: 'Identifier of a political division in the Open Civic Data scheme: ocd-division/country:xx followed
+  by type:name pairs separated by slashes, such as ocd-division/country:us/state:ny.'
+categories:
+- geo
+- government
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^ocd-division/country:[a-z]{2}(?:/[a-z_-]+:[a-z0-9._~-]+)*$
+examples:
+- value: ocd-division/country:ca/ed:13004
+  description: Fundy Royal
+- value: ocd-division/country:us/state:wi/cd:2
+  description: Wisconsin's 2nd congressional district
+- value: ocd-division/country:us
+  description: United States
+mappings:
+  wikidata: P8651
+links:
+- type: doc
+  url: https://open-civic-data.readthedocs.io/en/latest/proposals/0002.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8651

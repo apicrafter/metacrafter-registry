@@ -18,6 +18,10 @@ examples:
   description: Example MMSI
 - value: '366123456'
   description: US MMSI example
+mappings:
+  wikidata: P587
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Maritime_Mobile_Service_Identity
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P587

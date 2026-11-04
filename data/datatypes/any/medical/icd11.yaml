@@ -1,0 +1,29 @@
+id: icd11
+name: ICD-11 code (MMS)
+status: draft
+doc: Code of a disease or health condition in the Mortality and Morbidity Statistics linearization of
+  ICD-11, the WHO classification in force since 2022. Stem codes have four characters and may have a dot
+  and one or two more; extension codes start with X.
+categories:
+- medical
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[1-9A-HJ-NP-W][A-HJ-NP-Z]\d[0-9A-HJ-NP-Z](?:\.[0-9A-HJ-NP-Z]{1,2})?|X[A-HJ-NP-Z][0-9A-HJ-NP-Z]{2,4})$
+examples:
+- value: 9D00.0
+  description: myopia
+- value: EJ40.0
+  description: sunburn
+- value: 9B75.0
+  description: age related macular degeneration
+mappings:
+  wikidata: P7329
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ICD-11
+- type: doc
+  url: https://icd.who.int/browse/2024-01/mms/en
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P7329

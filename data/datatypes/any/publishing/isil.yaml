@@ -16,6 +16,8 @@ examples:
   description: Real-world value published online
 - value: AT-NMW-Z
   description: Real-world value published online
+mappings:
+  wikidata: P791
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Standard_Identifier_for_Libraries_and_Related_Organizations
@@ -23,3 +25,5 @@ links:
   url: https://biblstandard.dk/isil/
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.isil.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P791

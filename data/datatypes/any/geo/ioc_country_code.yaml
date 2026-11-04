@@ -1,0 +1,26 @@
+id: ioc_country_code
+name: IOC country code
+status: draft
+doc: Three-letter code of a National Olympic Committee assigned by the International Olympic Committee.
+  It is used in sports results and often differs from ISO 3166-1 alpha-3, such as GER for Germany.
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{3}$
+examples:
+- value: ASA
+  description: American Samoa
+- value: ITA
+  description: Italy
+- value: INA
+  description: Indonesia
+mappings:
+  wikidata: P984
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_IOC_country_codes
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P984

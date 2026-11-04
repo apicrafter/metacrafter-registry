@@ -1,12 +1,25 @@
 id: ukurn
 name: UK school URN
 status: draft
-doc: Datatype for 'UK school URN' (ukurn) from rules in context 'education'.
+doc: 'Unique Reference Number (URN) of a school or other educational establishment in the Get Information
+  about Schools register of the UK Department for Education: six digits.'
 categories:
 - education
 langs:
 - en
 is_pii: false
 classification: identifier
+regexp: ^[14]\d{5}$
+examples:
+- value: '101846'
+  description: Old Palace of John Whitgift School
+- value: '133863'
+  description: University of Oxford
+- value: '133801'
+  description: University of Cambridge
 mappings:
   orgid: GB-EDU
+  wikidata: P2253
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2253

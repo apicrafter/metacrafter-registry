@@ -1,0 +1,25 @@
+id: se_kommunkod
+name: Swedish municipality code (kommunkod)
+status: draft
+doc: 'Four-digit code of a Swedish municipality: two digits for the county and two for the municipality.'
+categories:
+- geo
+country:
+- SE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d\d\d\d$
+examples:
+- value: '1083'
+  description: Sölvesborg Municipality
+- value: '1480'
+  description: Gothenburg Municipality
+mappings:
+  wikidata: P525
+links:
+- type: wikipedia
+  url: https://sv.wikipedia.org/wiki/Kommunkod
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P525

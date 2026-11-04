@@ -1,0 +1,26 @@
+id: be_nis_code
+name: Belgian NIS/INS code
+status: draft
+doc: Five-digit code of a Belgian municipality maintained by Statbel, the Belgian statistical office.
+  The first digit is the province. Codes with a trailing letter denote a part (section) of a municipality.
+categories:
+- geo
+country:
+- BE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{5}[A-Z]?$
+examples:
+- value: '40000'
+  description: East Flanders
+- value: '44021'
+  description: Ghent
+mappings:
+  wikidata: P1567
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/NIS_code
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1567

@@ -26,6 +26,8 @@ examples:
 - value: '62.107'
   valid: false
   description: One character too many
+mappings:
+  wikidata: P4496
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Statistical_Classification_of_Economic_Activities_in_the_European_Community
@@ -33,3 +35,5 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.eu.nace.html
 - type: other
   url: https://docs.dataprep.ai/user_guide/clean/clean_eu_nace.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4496

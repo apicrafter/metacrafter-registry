@@ -1,0 +1,26 @@
+id: it_codice_catastale
+name: Italian cadastral municipality code (codice catastale)
+status: draft
+doc: 'Code of an Italian municipality in the land registry: a letter and three digits, such as H501 for
+  Rome. Characters 12 to 15 of the Italian tax code (codice fiscale) are this code of the place of birth.'
+categories:
+- geo
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]\d{3}$
+examples:
+- value: F839
+  description: Naples
+- value: A004
+  description: Abbadia Cerreto
+mappings:
+  wikidata: P806
+links:
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Codice_catastale
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P806

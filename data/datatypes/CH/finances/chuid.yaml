@@ -22,3 +22,7 @@ mappings:
   orgid:
   - CH-FDJP
   - CH_BS-CR
+  wikidata: P4829
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4829

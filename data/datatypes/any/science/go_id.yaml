@@ -1,0 +1,26 @@
+id: go_id
+name: Gene Ontology term ID
+status: draft
+doc: 'Identifier of a term in the Gene Ontology, which describes molecular functions, cellular components
+  and biological processes: GO: and seven digits.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^GO:\d{7}$
+examples:
+- value: GO:0005773
+  description: vacuole
+- value: GO:0046872
+  description: metal ion binding
+mappings:
+  wikidata: P686
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Gene_Ontology
+- type: doc
+  url: https://geneontology.org/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P686

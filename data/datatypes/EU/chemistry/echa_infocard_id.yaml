@@ -1,0 +1,28 @@
+id: echa_infocard_id
+name: ECHA substance InfoCard ID
+status: draft
+doc: Identifier of a substance in the information on chemicals of the European Chemicals Agency, in the
+  form 100.xxx.xxx.
+categories:
+- chemistry
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{3}\.\d{3}\.\d{3}$
+examples:
+- value: 100.003.829
+  description: diethylhexyl phthalate
+- value: 100.028.311
+  description: titanium
+- value: 100.028.337
+  description: vanadium
+mappings:
+  wikidata: P2566
+links:
+- type: doc
+  url: https://echa.europa.eu/information-on-chemicals
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2566

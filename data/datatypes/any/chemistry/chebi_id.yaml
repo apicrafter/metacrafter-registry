@@ -1,0 +1,29 @@
+id: chebi_id
+name: ChEBI ID
+status: draft
+doc: Number of an entry in ChEBI (Chemical Entities of Biological Interest), the EMBL-EBI dictionary of
+  small molecules. It is often written with the prefix CHEBI:, which this format leaves out.
+categories:
+- chemistry
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d*$
+examples:
+- value: '27518'
+  description: acetylene
+- value: '18153'
+  description: ethylene
+- value: '28969'
+  description: dimethyltryptamine
+mappings:
+  wikidata: P683
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ChEBI
+- type: doc
+  url: https://www.ebi.ac.uk/chebi/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P683

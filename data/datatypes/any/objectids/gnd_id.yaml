@@ -20,6 +20,10 @@ examples:
   description: 'Geographic name: Dakar'
 - value: 1231643-X
   description: 'Corporate body: Slovenian Red Cross'
+- value: 4132700-7
+  description: 'Subject heading: member of parliament'
+- value: 7505698-7
+  description: Tomb of the Scipios
 - value: '4079154'
   valid: false
   description: The check character is missing

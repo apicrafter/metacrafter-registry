@@ -13,6 +13,7 @@ langs:
 - sk
 is_pii: false
 classification: identifier
+regexp: ^\d{8}$
 examples:
 - value: '47686065'
   description: example from ORG-ID.guide
@@ -26,11 +27,18 @@ examples:
   description: example from ORG-ID.guide
 - value: '36781673'
   description: example from ORG-ID.guide
+- value: '35848863'
+  description: O2 Slovakia
+- value: 00686930
+  description: Tatra banka
+- value: '31562141'
+  description: Železiarne Podbrezová
 mappings:
   orgid:
   - SK-ICO
   - SK-ORSR
   - SK-ZRSR
+  wikidata: P8174
 links:
 - type: doc
   url: https://rpo.statistics.sk/
@@ -42,3 +50,7 @@ links:
   url: https://org-id.guide/list/SK-ORSR
 - type: other
   url: https://org-id.guide/list/SK-ZRSR
+- type: wikipedia
+  url: https://sk.wikipedia.org/wiki/Identifika%C4%8Dn%C3%A9_%C4%8D%C3%ADslo_organiz%C3%A1cie
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8174

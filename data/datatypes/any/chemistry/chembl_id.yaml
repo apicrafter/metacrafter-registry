@@ -1,0 +1,29 @@
+id: chembl_id
+name: ChEMBL ID
+status: draft
+doc: 'Identifier of a compound, target, assay or document in ChEMBL, the EMBL-EBI database of bioactive
+  molecules: CHEMBL and a number.'
+categories:
+- chemistry
+- medical
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^CHEMBL\d+$
+examples:
+- value: CHEMBL417016
+  description: β-lactose
+- value: CHEMBL1200604
+  description: tropicamide
+- value: CHEMBL113
+  description: caffeine
+mappings:
+  wikidata: P592
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ChEMBL
+- type: doc
+  url: https://www.ebi.ac.uk/chembl/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P592

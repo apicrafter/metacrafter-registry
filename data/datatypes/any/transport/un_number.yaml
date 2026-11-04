@@ -1,0 +1,26 @@
+id: un_number
+name: UN number (dangerous goods)
+status: draft
+doc: Four-digit number that the UN Committee of Experts on the Transport of Dangerous Goods assigns to
+  a hazardous substance or article, such as 1203 for petrol. It appears on transport documents and orange
+  hazard plates.
+categories:
+- transport
+- chemistry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{4}$
+examples:
+- value: '1687'
+  description: sodium azide
+- value: '1170'
+  description: ethanol
+mappings:
+  wikidata: P695
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/UN_number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P695

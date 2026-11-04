@@ -1,0 +1,29 @@
+id: bnf_id
+name: Bibliothèque nationale de France ID
+status: draft
+doc: 'Identifier of an authority or bibliographic record in the catalogue of the National Library of France:
+  eight or nine digits and a check character, as in ark:/12148/cb<id>.'
+categories:
+- publishing
+- objectids
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{8,9}[0-9bcdfghjkmnpqrstvwxz]$
+examples:
+- value: '124343565'
+  description: dinosaur
+- value: 11865672n
+  description: Ukraine
+mappings:
+  wikidata: P268
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Biblioth%C3%A8que_nationale_de_France
+- type: doc
+  url: https://catalogue.bnf.fr/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P268

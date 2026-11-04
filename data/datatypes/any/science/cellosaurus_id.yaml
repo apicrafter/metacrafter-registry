@@ -1,0 +1,27 @@
+id: cellosaurus_id
+name: Cellosaurus accession (RRID:CVCL)
+status: draft
+doc: 'Accession of a cell line in Cellosaurus, the cell line knowledge resource of the SIB Swiss Institute
+  of Bioinformatics: CVCL_ and four characters. It is also the research resource identifier RRID:CVCL_xxxx.'
+categories:
+- science
+- medical
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^CVCL_[A-Z\d][A-Z\d][A-Z\d][A-Z\d]$
+examples:
+- value: CVCL_0030
+  description: HeLa
+- value: CVCL_0440
+  description: MRC-5
+mappings:
+  wikidata: P3289
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Cellosaurus
+- type: doc
+  url: https://www.cellosaurus.org/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3289

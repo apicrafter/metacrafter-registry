@@ -11,12 +11,20 @@ langs:
 - en
 is_pii: false
 classification: identifier
-regexp: \d{3}\s\d{3}\s\d{3}
+regexp: ^\d{3} ?\d{3} ?\d{3}$
+examples:
+- value: 008984049
+  description: Wesfarmers
+- value: '158571852'
+  description: Australian National Line
 mappings:
   presidio: AU_ACN
   purview:
   - Australia company number
   - Australian Company Number
+  wikidata: P3549
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Australian_Company_Number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3549

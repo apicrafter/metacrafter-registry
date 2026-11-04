@@ -21,9 +21,9 @@ examples:
   description: Example ISRC
 mappings:
   autotype: ISRC2_correct
-  wikidata: P435
+  wikidata: P1243
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Standard_Recording_Code
 - type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P435
+  url: https://www.wikidata.org/wiki/Property:P1243

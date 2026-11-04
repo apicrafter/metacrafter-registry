@@ -1,0 +1,29 @@
+id: iso639_3
+name: ISO 639-3 language code
+status: draft
+doc: Three-letter code of an individual language, macrolanguage or special code in ISO 639-3. It extends
+  ISO 639-2 to cover all known living, extinct and constructed languages; SIL International maintains
+  it.
+categories:
+- common
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[a-z]{3}$
+examples:
+- value: jpn
+  description: Japanese
+- value: ukr
+  description: Ukrainian
+- value: pnb
+  description: Punjabi
+mappings:
+  wikidata: P220
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_639-3
+- type: doc
+  url: https://iso639-3.sil.org/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P220

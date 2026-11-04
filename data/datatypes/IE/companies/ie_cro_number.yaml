@@ -11,6 +11,7 @@ langs:
 - en
 is_pii: false
 classification: identifier
+regexp: ^[1-9]\d{3,11}[A-Z]?$
 examples:
 - value: '123260'
   description: example from ORG-ID.guide
@@ -18,8 +19,19 @@ examples:
   description: example from ORG-ID.guide
 - value: '549061'
   description: example from ORG-ID.guide
+- value: '246488'
+  description: Ryanair
+- value: '98788'
+  description: An Post
+- value: '397094'
+  description: Scouting Ireland
 mappings:
   orgid: IE-CRO
+  wikidata: P9679
 links:
 - type: other
   url: https://org-id.guide/list/IE-CRO
+- type: doc
+  url: https://core.cro.ie/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9679
