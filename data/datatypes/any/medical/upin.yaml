@@ -8,3 +8,6 @@ langs:
 - en
 is_pii: true
 classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Unique_physician_identification_number

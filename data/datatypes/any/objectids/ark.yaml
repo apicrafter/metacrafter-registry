@@ -1,0 +1,34 @@
+id: ark
+name: Archival Resource Key (ARK)
+status: draft
+doc: Persistent identifier for digital, physical or abstract objects, used by libraries, archives, publishers
+  and research institutions. The core is ark:<NAAN>/<name>, where the Name Assigning Authority Number
+  (NAAN) identifies the organization that named the object. Older ARKs write ark:/<NAAN>/<name>. An ARK
+  can be prefixed with the host of a resolver, such as n2t.net or the host of the institution that serves
+  the object. The NAAN registry is kept by the ARK Alliance.
+categories:
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:https?://[A-Za-z0-9.-]+/)?ark:/?[0-9bcdfghjkmnpqrstvwxz]+/\S+$
+examples:
+- value: ark:/12148/cb11865278m
+  description: Bibliothèque nationale de France authority record for Paris
+- value: ark:12148/cb11865278m
+  description: 'The same ARK without the slash after ark:'
+- value: https://catalogue.bnf.fr/ark:/12148/cb11865278m
+  description: The same ARK with a resolver host
+- value: ark:/12148
+  valid: false
+  description: The name part is missing
+mappings:
+  wikidata: P8054
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Archival_Resource_Key
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8054
+- type: doc
+  url: https://arks.org/

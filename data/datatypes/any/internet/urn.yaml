@@ -1,0 +1,37 @@
+id: urn
+name: Uniform Resource Name (URN)
+status: draft
+doc: Persistent, location-independent name in the urn URI scheme, defined by RFC 8141. It has the form
+  urn:<NID>:<NSS>. The namespace identifier (NID) is a name registered with IANA, 2 to 32 letters, digits
+  and hyphens long, such as isbn, uuid or ietf. The namespace-specific string (NSS) follows the rules
+  of that namespace. The urn prefix is case-insensitive. A URN names a resource; it does not say where
+  to retrieve it.
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[Uu][Rr][Nn]:[A-Za-z0-9][A-Za-z0-9-]{0,30}[A-Za-z0-9]:(?:[A-Za-z0-9._~!$&'()*+,;=:@-]|%[0-9A-Fa-f]{2})(?:[A-Za-z0-9._~!$&'()*+,;=:@/-]|%[0-9A-Fa-f]{2})*$
+examples:
+- value: urn:isbn:0451450523
+  description: Book identified by its ISBN
+- value: urn:ietf:rfc:2648
+  description: IETF RFC 2648
+- value: urn:uuid:6e8bc430-9c3a-11d9-9669-0800200c9a66
+  description: UUID namespace
+- value: urn:nbn:de:bvb:19-146642
+  description: National Bibliography Number (Germany)
+- value: urn:a:123
+  valid: false
+  description: The namespace identifier must be at least two characters long
+- value: https://example.org/a
+  valid: false
+  description: A URL, not a URN
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Uniform_Resource_Name
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc8141
+- type: doc
+  url: https://www.iana.org/assignments/urn-namespaces/urn-namespaces.xhtml

@@ -1,0 +1,33 @@
+id: nato_stock_number
+name: NATO Stock Number (NSN)
+status: draft
+doc: 'Thirteen-digit code of a standardized item of supply in the NATO Codification System, called National
+  Stock Number in the United States. The first four digits are the NATO Supply Classification group and
+  class. The remaining nine digits are the National Item Identification Number (NIIN): two digits for
+  the National Codification Bureau of the country that first codified the item, then seven digits. The
+  usual notation is NNNN-NN-NNN-NNNN; the hyphens are optional.'
+categories:
+- industry
+- government
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4}(?:-\d{2}-\d{3}-|\d{5})\d{4}$
+examples:
+- value: 7110-01-482-1192
+  description: Desk
+- value: 2350-01-087-1095
+  description: M1 Abrams tank
+- value: '7110014821192'
+  description: Desk, without hyphens
+- value: 7110-1-482-1192
+  valid: false
+  description: The country code must have two digits
+mappings:
+  wikidata: P5581
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/NATO_Stock_Number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5581

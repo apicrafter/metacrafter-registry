@@ -1,0 +1,20 @@
+id: in_tan
+name: Indian Tax Deduction and Collection Account Number (TAN)
+status: draft
+doc: Ten-character number that the Indian Income Tax Department issues to persons and organizations that
+  must deduct or collect tax at source. It must be quoted on TDS and TCS returns, payments and certificates.
+  It has four letters, five digits and a letter. The first three letters stand for the city or state of
+  issue and the fourth is the first letter of the deductor's name.
+categories:
+- finances
+- government
+country:
+- IN
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{4}\d{5}[A-Z]$
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Tax_Deduction_and_Collection_Account_Number

@@ -1,0 +1,31 @@
+id: us_eccn
+name: US Export Control Classification Number (ECCN)
+status: draft
+doc: 'Code of an item on the Commerce Control List of the US Export Administration Regulations. It has
+  five characters: a digit for one of the ten categories, a letter from A to E for the product group,
+  and three digits. The ECCN decides whether exporting the item needs a license. Items that are subject
+  to the regulations but not listed are designated EAR99. Paragraph references such as .a.1 after the
+  ECCN are not covered by the regexp.'
+categories:
+- legal
+- industry
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:\d[A-E]\d{3}|EAR99)$
+examples:
+- value: 3A001
+  description: Category 3 (electronics), product group A (systems, equipment and components)
+- value: EAR99
+  description: Item subject to the EAR but not on the Commerce Control List
+- value: 3F001
+  valid: false
+  description: The product group letter is A to E
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Export_Administration_Regulations
+- type: doc
+  url: https://www.ecfr.gov/current/title-15/subtitle-B/chapter-VII/subchapter-C/part-774
