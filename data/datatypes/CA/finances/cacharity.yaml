@@ -16,3 +16,5 @@ examples:
   description: Charity registration number with 9-digit BN, 'RR' program identifier and 4-digit reference
 - value: 987654321RR0002
   description: Another valid charity registration number format
+mappings:
+  fibo: FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/RegisteredCharityProgramNumber

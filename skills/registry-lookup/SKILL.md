@@ -65,10 +65,13 @@ Example:
 - **"Is this PII?"** The record's `is_pii` is the registry's answer. Categories
   such as `pii` and `persons` add context.
 - **Crosswalk.** `crosswalk("wikidata", "P968")` finds the registry record for
-  an id in another vocabulary. The systems are `wikidata`, `schema_org`, `dpv`,
-  `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock` and `cdm`. Coverage
-  outside Wikidata is still small. For a Microsoft Common Data Model column,
-  pass the meaning trait of its data type: `crosswalk("cdm",
+  an id in another vocabulary. The systems are `wikidata`, `fibo`, `schema_org`,
+  `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock` and `cdm`.
+  Coverage outside Wikidata is still small. For `fibo`, pass a FIBO class IRI,
+  for example
+  `https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier`;
+  it links glossary terms to registry types. For a Microsoft Common Data Model
+  column, pass the meaning trait of its data type: `crosswalk("cdm",
   "means.location.postalCode")` returns `postindex`. For a D3M dataset column,
   pass a semantic type URI from its metadata: `crosswalk("d3m",
   "http://schema.org/email")` returns `email`. Column roles such as

@@ -17,6 +17,7 @@
       "uniqueItems": true
     },
     "nonEmptyString": {"type": "string", "minLength": 1},
+    "fiboPath": {"type": "string", "pattern": "^[A-Z]+/([A-Za-z0-9-]+/)+[A-Za-z0-9]+$"},
     "stringOrList": {
       "oneOf": [
         {"$ref": "#/$defs/nonEmptyString"},
@@ -93,6 +94,13 @@
           "minProperties": 1,
           "properties": {
             "wikidata": {"type": "string", "pattern": "^[PQ][0-9]+$"},
+            "fibo": {
+              "description": "FIBO class: its IRI without the https://spec.edmcouncil.org/fibo/ontology/ prefix, e.g. FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier",
+              "oneOf": [
+                {"$ref": "#/$defs/fiboPath"},
+                {"type": "array", "items": {"$ref": "#/$defs/fiboPath"}, "minItems": 1, "uniqueItems": true}
+              ]
+            },
             "schema_org": {"$ref": "#/$defs/stringOrList"},
             "dpv": {"$ref": "#/$defs/stringOrList"},
             "presidio": {"$ref": "#/$defs/stringOrList"},

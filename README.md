@@ -41,7 +41,7 @@ personal attribute or a commonly used data class. Fields (see
 | `regexp` | | Python `re` pattern, anchored with `^...$`; every example must match it |
 | `checksum` | | Name of the check-digit algorithm, e.g. `luhn` |
 | `examples` | | List of `{value, description, valid}`; `valid: false` marks a negative example |
-| `mappings` | | Ids in other vocabularies: `wikidata` (e.g. `P968`), `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m` (D3M semantic type URI, e.g. `http://schema.org/email`), `sherlock`, `cdm` (Microsoft Common Data Model trait, e.g. `means.identity.service.email`) |
+| `mappings` | | Ids in other vocabularies: `wikidata` (e.g. `P968`), `fibo` (FIBO class IRI without `https://spec.edmcouncil.org/fibo/ontology/`), `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m` (D3M semantic type URI, e.g. `http://schema.org/email`), `sherlock`, `cdm` (Microsoft Common Data Model trait, e.g. `means.identity.service.email`) |
 | `links` | | List of `{type, url}`; `type` is one of `wikipedia`, `wikidata`, `schema.org`, `doc`, `dublincore`, `bioschemas`, `datadrivendiscovery`, `other` |
 | `translations` | | `{<lang>: {name, doc}}` |
 
@@ -184,6 +184,35 @@ metacrafter-registry build
 CI checks the summary against the pinned commit. A weekly workflow
 (`weekly.yml`) does two more checks: it compares coverage with the latest
 rules, and it checks external links. It reports both in tracking issues.
+
+# FIBO mappings
+
+`mappings.fibo` links a record to a class of
+[FIBO](https://github.com/edmcouncil/fibo), the Financial Industry Business
+Ontology. Glossaries that use FIBO terms, such as a DataHub business glossary,
+can then reach the registry's regexps and examples. The value is the class IRI
+without `https://spec.edmcouncil.org/fibo/ontology/`:
+
+```yaml
+mappings:
+  fibo: FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier
+```
+
+The FIBO server answers any path, so links cannot catch a typo. Instead,
+`data/vocabularies/fibo.json` pins the label, definition and maturity of every
+mapped class at one FIBO commit, and `validate` rejects classes that it does not
+list. After adding or changing a mapping:
+
+```bash
+git clone --depth 1 https://github.com/edmcouncil/fibo /tmp/fibo
+metacrafter-registry fibo search bank account identifier --fibo-dir /tmp/fibo
+metacrafter-registry fibo update --fibo-dir /tmp/fibo
+metacrafter-registry build
+```
+
+Map only exact concept matches. The FIBO IRIs appear in `/registry.ttl`
+(`skos:exactMatch`), in the pages' JSON-LD (`sameAs`), and in
+`crosswalk("fibo", ...)`. See `devdocs/FIBO_ANALYSIS.md` for the analysis.
 
 # Publishing
 

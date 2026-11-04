@@ -18,6 +18,7 @@ examples:
   description: International Civil Aviation Organization
 mappings:
   cdm: means.identity.service.phone
+  fibo: FND/Places/VirtualPlaces/TelephoneNumber
   google_dlp: PHONE_NUMBER
   presidio: PHONE_NUMBER
   wikidata: P1329

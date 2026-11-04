@@ -8,3 +8,5 @@ langs:
 - common
 is_pii: false
 classification: identifier
+mappings:
+  fibo: FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/RoutingTransitNumber

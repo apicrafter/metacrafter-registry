@@ -16,6 +16,8 @@ regexp: '[0-9.]{7}'
 examples:
 - value: 0263494
   description: BAE Systems
+mappings:
+  fibo: SEC/Securities/SecuritiesIdentificationIndividuals/StockExchangeDailyOfficialListCode
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SEDOL

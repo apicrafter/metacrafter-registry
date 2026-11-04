@@ -81,6 +81,15 @@ pip install -e ".[dev]"
 - **Patterns:** a pattern sets `semantic_type: <datatype id>` and inherits
   `categories`, `is_pii` and `classification` unless it overrides them.
 - **No empty values:** omit a field rather than writing `''` or `[]`.
+- **FIBO mappings** (`mappings.fibo`) are for financial identifiers and codes:
+  - Map only when the FIBO class and the record denote the same kind of
+    value. Leave out a FIBO class that is broader or narrower than the record.
+  - Write the class IRI without `https://spec.edmcouncil.org/fibo/ontology/`.
+  - Find classes with `metacrafter-registry fibo search <words> --fibo-dir
+    <fibo checkout>`.
+  - Then run `metacrafter-registry fibo update --fibo-dir <fibo checkout>`.
+    Validation rejects classes that are not pinned in
+    `data/vocabularies/fibo.json`.
 
 ## Improve existing records
 

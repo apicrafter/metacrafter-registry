@@ -17,6 +17,7 @@ examples:
 - value: '512240'
   description: recording studio
 mappings:
+  fibo: FBC/FunctionalEntities/BusinessRegistries/NorthAmericanIndustryClassificationSystemCode
   wikidata: P3224
 links:
 - type: wikidata

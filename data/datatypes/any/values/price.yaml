@@ -11,3 +11,4 @@ langs:
 is_pii: false
 mappings:
   cdm: means.measurement.currency.price
+  fibo: FND/Accounting/CurrencyAmount/Price

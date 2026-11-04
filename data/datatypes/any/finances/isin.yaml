@@ -18,6 +18,7 @@ examples:
 - value: NL0000235190
   description: Airbus Group
 mappings:
+  fibo: SEC/Securities/SecuritiesIdentification/InternationalSecuritiesIdentificationNumber
   wikidata: P946
 links:
 - type: wikipedia
