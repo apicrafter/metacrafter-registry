@@ -64,23 +64,38 @@
 
 ## 4. Phase 1: Site
 
-- [ ] 4.1 Create the template set under `site/templates/`: base layout with light and dark themes, home, datatype list, entity page, category, country, tool list, tool, about and 404.
-- [ ] 4.2 Build the entity page with every field required by the `registry-site` spec. It includes "Edit on GitHub", JSON and Markdown alternate links, and the canonical link.
-- [ ] 4.3 Add client-side filters on the datatype list: category, country, PII, status and coverage.
-- [ ] 4.4 Add search: build `search-index.json` and use vendored MiniSearch. Index IDs, names, aliases, docs and translated names.
-- [ ] 4.5 Add `sitemap.xml`, `robots.txt`, OpenGraph tags and JSON-LD `DefinedTerm` blocks.
-- [ ] 4.6 Add an accessibility pass (check that pages work without JavaScript, check contrast), plus an internal link checker in CI.
+- [x] 4.1 Create the template set: base layout with light and dark themes, home, datatype list, entity page, category, country, tool list, tool, about and 404.
+  - The templates live in `src/metacrafter_registry/templates/` (package data), with CSS and JS in `static/`. There are no third-party assets.
+  - A search page was added as well.
+- [x] 4.2 Build the entity page with every field required by the `registry-site` spec. It includes "Edit on GitHub", JSON and Markdown alternate links, and the canonical link.
+  - The page shows every field the data has today, plus the tools that list the type.
+  - Status, quality score, metacrafter rule coverage and provenance dates are added when the data model provides them (6.6, 6.7, 8.2).
+  - The Markdown alternate is added with the Markdown twins (7.1).
+- [x] 4.3 Add client-side filters on the datatype list: category, country, PII, status and coverage.
+  - Done: text, category, country (including "global"), kind and PII. The filter state is kept in the URL.
+  - Status and coverage filters follow when those fields exist (6.7, 8.2).
+- [x] 4.4 Add search: build `search-index.json` ~~and use vendored MiniSearch~~. Index IDs, names, aliases, docs and translated names.
+  - Implemented as about 60 lines of plain JS ranking over `search-index.json`. There is no vendored library, and nothing leaves the browser.
+  - Aliases are indexed once they exist (6.8).
+- [x] 4.5 Add `sitemap.xml`, `robots.txt`, OpenGraph tags and JSON-LD `DefinedTerm` blocks.
+- [x] 4.6 Add an accessibility pass (check that pages work without JavaScript, check contrast), plus an internal link checker in CI.
+  - Pages include a skip link, labelled inputs and `aria-current` navigation.
+  - The filter form is hidden until JS loads, so the full table always renders.
+  - Colour tokens are set for light and dark themes.
+  - `metacrafter-registry check-links` runs in CI and in tests: 21k+ internal links, 0 broken.
 
 ## 5. Phase 1: API v1 and releases
 
-- [ ] 5.1 Write the normalised record emitter:
+- [x] 5.1 Write the normalised record emitter:
   - `/api/v1/datatypes/<id>.json`, `/api/v1/tools/<id>.json`
   - collection files in JSON and JSONL, and CSV
   - reference lists
-- [ ] 5.2 Write the `index.json` manifest: version, `git_sha`, commit-time `generated_at`, license, counts, file hashes and `datatype_url_template`.
-- [ ] 5.3 Write the OpenAPI 3.1 document for the static endpoints. Validate it in CI.
-- [ ] 5.4 Add a reproducibility test: build twice and compare tree hashes.
-- [ ] 5.5 Add the `release.yml` workflow. On a `v*` tag it attaches the bulk assets to a GitHub Release. Document the SemVer policy in `CONTRIBUTING.md`.
+- [x] 5.2 Write the `index.json` manifest: version, `git_sha`, commit-time `generated_at`, license, counts, file hashes and `datatype_url_template`.
+  - `license` reports the repository license (`Apache-2.0`) until the owner chooses a data license (9.1).
+- [x] 5.3 Write the OpenAPI 3.1 document for the static endpoints. Validate it in CI.
+  - The tests validate the document and validate every published record against its component schema.
+- [x] 5.4 Add a reproducibility test: build twice and compare tree hashes.
+- [x] 5.5 Add the `release.yml` workflow. On a `v*` tag it attaches the bulk assets to a GitHub Release. Document the SemVer policy in `CONTRIBUTING.md`.
 
 ## 6. Phase 2: Data model v2 and migration
 

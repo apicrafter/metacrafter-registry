@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Semantic data types{% endblock %}
+{% block content %}
+<h1>Metacrafter Registry</h1>
+<p class="lead">An open registry of semantic data types: identifiers, personal data, codes and classifiers. Each type has a description, a regular expression, examples and links to Wikidata, Schema.org and standards. <a href="https://github.com/apicrafter/metacrafter">Metacrafter</a> and other tools use these types to label data.</p>
+
+<form role="search" action="{{ base }}/search" method="get" class="filters">
+  <label for="home-q">Search datatypes
+    <input id="home-q" type="search" name="q" placeholder="e.g. passport, IBAN, почта" size="32">
+  </label>
+  <button type="submit">Search</button>
+</form>
+
+<div class="stats">
+  <div class="stat"><strong>{{ reg.kind_count('datatype') }}</strong><span>datatypes</span></div>
+  <div class="stat"><strong>{{ reg.kind_count('pattern') }}</strong><span>patterns</span></div>
+  <div class="stat"><strong>{{ categories|length }}</strong><span>categories</span></div>
+  <div class="stat"><strong>{{ countries|length }}</strong><span>countries and regions</span></div>
+  <div class="stat"><strong>{{ reg.tools|length }}</strong><span>tools</span></div>
+</div>
+
+<p><a href="{{ base }}/datatype/">Browse all datatypes</a> · <a href="{{ base }}/datatype/?pii=yes">Personal data (PII) only</a></p>
+
+<h2>Categories</h2>
+<div class="grid">
+{% for c in categories %}
+  <a class="card" href="{{ base }}/category/{{ c.id }}">{{ c.name }}<br><span class="count">{{ c.count }} types · <code>{{ c.id }}</code></span></a>
+{% endfor %}
+</div>
+
+<h2>Countries and regions</h2>
+<ul class="inline-list">
+{% for c in countries %}
+  <li><a href="{{ base }}/country/{{ c.id }}">{{ c.name }}</a> <span class="muted small">{{ c.count }}</span></li>
+{% endfor %}
+</ul>
+
+<h2>For developers and AI agents</h2>
+<ul class="plain">
+  <li><a href="{{ base }}/api/v1/index.json">API manifest</a>: version, counts, file hashes, URL template</li>
+  <li><a href="{{ base }}/api/v1/openapi.json">OpenAPI description</a> of all JSON endpoints</li>
+  <li>Bulk data: <a href="{{ base }}/api/v1/datatypes.json">JSON</a>, <a href="{{ base }}/api/v1/datatypes.jsonl">JSONL</a>, <a href="{{ base }}/api/v1/datatypes.csv">CSV</a></li>
+  <li>Legacy files used by metacrafter: <a href="{{ base }}/registry.json">registry.json</a>, <code>/datatype/&lt;id&gt;.json</code></li>
+  <li><a href="{{ base }}/about">About the registry, API reference and contributing</a></li>
+</ul>
+{% endblock %}

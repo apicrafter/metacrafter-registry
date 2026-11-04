@@ -77,6 +77,17 @@ def cmd_check_contract(args: argparse.Namespace) -> int:
     return 1 if failed else 0
 
 
+def cmd_check_links(args: argparse.Namespace) -> int:
+    from .linkcheck import check_links
+
+    directory = Path(args.dir) if args.dir else find_data_dir().parent / "dist"
+    checked, broken = check_links(directory, args.base_path)
+    for link in broken:
+        print(f"BROKEN {link}")
+    print(f"{checked} internal links checked, {len(broken)} broken")
+    return 1 if broken else 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="metacrafter-registry", description=__doc__)
     parser.add_argument("--version", action="version", version=__version__)
@@ -109,6 +120,15 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--expect-sha", help="fail unless the deployed manifest has this git SHA")
     p.add_argument("--retries", type=int, default=0, help="retry rounds (10 s apart)")
     p.set_defaults(func=cmd_check_contract)
+
+    p = sub.add_parser("check-links", help="check internal links in a built site")
+    p.add_argument("--dir", help="built site directory (default: <repo>/dist)")
+    p.add_argument(
+        "--base-path",
+        default="",
+        help="path prefix the site was built for, e.g. /metacrafter-registry",
+    )
+    p.set_defaults(func=cmd_check_links)
 
     args = parser.parse_args(argv)
     logging.basicConfig(

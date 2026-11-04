@@ -9,6 +9,7 @@ from conftest import write_record
 
 from metacrafter_registry.build import BuildError, build
 from metacrafter_registry.contract import check_contract
+from metacrafter_registry.linkcheck import check_links
 from metacrafter_registry.serve import running_server
 
 
@@ -34,8 +35,63 @@ def test_site_layout(built_site):
         "tool/index.html",
         "tool/presidio.html",
         "tool/presidio.json",
+        "datatype/index.html",
+        "category/index.html",
+        "category/pii.html",
+        "country/index.html",
+        "country/RU.html",
+        "about.html",
+        "search.html",
+        "search-index.json",
+        "sitemap.xml",
+        "robots.txt",
+        "assets/site.css",
+        "assets/site.js",
+        "api/v1/datatypes/email.json",
+        "api/v1/datatypes.json",
+        "api/v1/datatypes.jsonl",
+        "api/v1/datatypes.csv",
+        "api/v1/tools/presidio.json",
+        "api/v1/tools.json",
+        "api/v1/categories.json",
+        "api/v1/countries.json",
+        "api/v1/languages.json",
+        "api/v1/openapi.json",
     ):
         assert (built_site / rel).is_file(), rel
+
+
+def test_no_third_party_assets(built_site):
+    for page in ("index.html", "datatype/email.html", "datatype/index.html"):
+        html = (built_site / page).read_text("utf-8")
+        assert '<script src="http' not in html and 'stylesheet" href="http' not in html
+
+
+def test_internal_links_resolve(built_site):
+    checked, broken = check_links(built_site)
+    assert checked > 10000
+    assert [str(b) for b in broken] == []
+
+
+def test_internal_links_with_project_base_path(mini_data, tmp_path):
+    out = tmp_path / "dist"
+    build(
+        mini_data,
+        out,
+        base_url="https://apicrafter.github.io/metacrafter-registry",
+        update_data_files=False,
+    )
+    checked, broken = check_links(out, "/metacrafter-registry")
+    assert checked > 0
+    assert [str(b) for b in broken] == []
+
+
+def test_full_site_build_is_reproducible(repo_sources, tmp_path):
+    from conftest import DATA
+
+    build(DATA, tmp_path / "a", update_data_files=False, sources=repo_sources)
+    build(DATA, tmp_path / "b", update_data_files=False, sources=repo_sources)
+    assert tree_hash(tmp_path / "a") == tree_hash(tmp_path / "b")
 
 
 def test_manifest(built_site):
@@ -73,7 +129,7 @@ def test_project_path_base_url(mini_data, tmp_path):
         base_url="https://apicrafter.github.io/metacrafter-registry",
         update_data_files=False,
     )
-    html = (out / "index.html").read_text("utf-8")
+    html = (out / "datatype/index.html").read_text("utf-8")
     assert 'href="/metacrafter-registry/datatype/email"' in html
     page = (out / "datatype/email.html").read_text("utf-8")
     assert (

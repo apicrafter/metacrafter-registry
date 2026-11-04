@@ -58,8 +58,23 @@ def _json_check(predicate: Callable[[object], bool], what: str) -> Callable[[byt
 
 
 CHECKS: list[tuple[str, str, Callable[[bytes], str | None]]] = [
-    ("/", "text/html", _html_mentions("/datatype/email")),
+    ("/", "text/html", _html_mentions("Metacrafter Registry")),
+    ("/datatype/", "text/html", _html_mentions("/datatype/email")),
     ("/datatype/email", "text/html", _html_mentions("email")),
+    (
+        "/api/v1/datatypes/email.json",
+        "application/json",
+        _json_check(
+            lambda d: d.get("id") == "email" and d.get("kind") == "datatype",
+            "id == email, kind == datatype",
+        ),
+    ),
+    (
+        "/api/v1/openapi.json",
+        "application/json",
+        _json_check(lambda d: str(d.get("openapi", "")).startswith("3.1"), "OpenAPI 3.1"),
+    ),
+    ("/sitemap.xml", "xml", _html_mentions("/datatype/email")),
     (
         "/datatype/email.json",
         "application/json",

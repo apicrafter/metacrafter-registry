@@ -179,21 +179,39 @@ These URLs are a contract: metacrafter links every detected type to
 `https://registry.apicrafter.io/datatype/<id>`, and its `RegistryClient` reads the
 JSON files.
 
+Site pages:
+
 | Path | Description |
 |---|---|
-| `/` | HTML list of datatypes |
-| `/datatype/<id>` | HTML page for one datatype or pattern |
-| `/datatype/<id>.json` | Single datatype as JSON |
-| `/registry.json` | All datatypes and patterns as JSON, keyed by id |
-| `/datatypes.jsonl` | All datatypes and patterns as JSON Lines |
-| `/tool` | HTML list of tools |
-| `/tool/<id>` | HTML page for one tool |
-| `/tool/<id>.json` | Single tool as JSON |
-| `/tools.json` | All tools as JSON, keyed by id |
-| `/api/v1/index.json` | Manifest: version, git SHA, counts, file hashes, datatype URL template |
+| `/` | Home: search, statistics, categories, countries |
+| `/datatype/` | All datatypes and patterns, with filters (category, country, kind, PII) |
+| `/datatype/<id>` | Page for one datatype or pattern (with schema.org JSON-LD) |
+| `/category/`, `/category/<id>` | Categories and their datatypes |
+| `/country/`, `/country/<CC>` | Countries and their datatypes |
+| `/tool/`, `/tool/<id>` | Tools and the types they support (`/tool` redirects to `/tool/`) |
+| `/search?q=` | Client-side search (runs in the browser) |
+| `/about` | About, API reference, license, contributing |
+| `/sitemap.xml`, `/robots.txt` | For crawlers |
 
-The static site has no server-side search: the `?q=` filter and `/health`
-endpoint of the old Flask server are not available.
+JSON API (static files, described in `/api/v1/openapi.json`):
+
+| Path | Description |
+|---|---|
+| `/api/v1/index.json` | Manifest: version, git SHA, license, counts, file sizes and SHA-256, URL templates |
+| `/api/v1/datatypes/<id>.json` | One datatype or pattern, normalized (references are id strings) |
+| `/api/v1/datatypes.json`, `.jsonl`, `.csv` | All datatypes and patterns |
+| `/api/v1/tools/<id>.json`, `/api/v1/tools.json`, `.jsonl` | Tools |
+| `/api/v1/categories.json`, `countries.json`, `languages.json` | Reference lists with record counts |
+| `/api/v1/openapi.json` | OpenAPI 3.1 description |
+| `/registry.json` | Legacy: all records keyed by id (release 1.02 shape) |
+| `/datatype/<id>.json` | Legacy: one record (release 1.02 shape) |
+| `/datatypes.jsonl`, `/tools.json`, `/tool/<id>.json` | Legacy bulk and tool files |
+
+The legacy files keep the release 1.02 shape: fields may be added, never removed
+or retyped. The static site has no server-side search: the `?q=` filter and the
+`/health` endpoint of the old Flask server are not available.
+
+Releases are published by pushing a `v*` tag (see `CONTRIBUTING.md`).
 
 ## Identification rules
 

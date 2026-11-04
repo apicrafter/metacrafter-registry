@@ -145,6 +145,7 @@ metacrafter-registry validate      # schema + semantic checks; -w lists warnings
 metacrafter-registry build         # dist/ (site + JSON) and data/*_latest.json(l)
 metacrafter-registry serve         # preview dist/ with GitHub Pages URL rules
 metacrafter-registry check-contract <base-url>   # verify public URLs
+metacrafter-registry check-links    # internal links of dist/ resolve
 pytest -q
 ```
 
@@ -155,8 +156,11 @@ Modules:
   do not remove or retype fields
 - `build.py` - renders `dist/`, writes the manifest `api/v1/index.json` and the
   transitional `data/*_latest.*` files
+- `model.py` - normalized records for `/api/v1/` and the site (ids, no empty values)
+- `openapi.py` - OpenAPI 3.1 description of the static endpoints
 - `serve.py`, `contract.py` - local Pages-like server and URL contract check
-- `templates/` - Jinja2 templates of the site
+- `linkcheck.py` - internal link checker for the built site
+- `templates/`, `static/` - Jinja2 templates, CSS and JS (no third-party assets)
 
 **Validation gates.** The build fails, and writes nothing, on any of these:
 - schema error

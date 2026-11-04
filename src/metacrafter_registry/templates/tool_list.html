@@ -1,32 +1,22 @@
 {% extends "base.html" %}
-{% block pagetitle %}Tools with semantic data types support{% endblock %}
+{% block title %}Tools{% endblock %}
+{% block description %}Data classification, PII detection and data catalog tools, with the semantic data types they support.{% endblock %}
 {% block content %}
-<h1>Tools with semantic data types support</h1>
-
-</p>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Category</th>
-          <th>Types num</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        {% for o in objects %}
-        <tr>
-          <td>{{ o.id }}</td>
-          <td><a href="{{ base }}/tool/{{o.id}}">{{ o.name }}</a></td>
-          <td>{{ o.category }}</td>
-          <td>{{ o.num }}</td>
-          <td>{{o.doc}}</td>
-        </tr>
-        {% endfor %}
-
-      </tbody>
-    </table>
-
+<h1>Tools</h1>
+<p class="lead">Software that detects or uses semantic data types, with the registry types each one supports.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th scope="col">Tool</th><th scope="col">Category</th><th scope="col">Supported types</th><th scope="col">Description</th></tr></thead>
+  <tbody>
+  {% for t in tools %}
+    <tr>
+      <td><a href="{{ base }}/tool/{{ t.id }}">{{ t.name }}</a></td>
+      <td>{{ t.category }}</td>
+      <td>{{ t.supported_types|length }}</td>
+      <td class="doc">{{ t.doc|truncate(160) }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
 {% endblock %}
