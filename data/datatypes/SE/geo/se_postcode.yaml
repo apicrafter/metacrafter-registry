@@ -1,0 +1,29 @@
+id: se_postcode
+name: Swedish postal code
+status: draft
+doc: 'Postal code (postnummer) in Sweden: five digits, written as three digits, a space and two digits.'
+semantic_type: postindex
+country:
+- SE
+langs:
+- sv
+regexp: ^[1-9]\d{2} ?\d{2}$
+examples:
+- value: 111 20
+  description: Stockholm
+- value: 211 20
+  description: Malmö
+- value: '11120'
+  description: written without the space
+- value: 011 20
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_SE
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Sweden
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Швеции

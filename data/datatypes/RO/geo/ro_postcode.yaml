@@ -1,0 +1,28 @@
+id: ro_postcode
+name: Romanian postal code
+status: draft
+doc: 'Postal code (cod poștal) in Romania: six digits, used since 2003. Bucharest codes start with 0,
+  and their second digit is the sector.'
+semantic_type: postindex
+country:
+- RO
+langs:
+- ro
+regexp: ^\d{6}$
+examples:
+- value: '050563'
+  description: Bucharest, sector 5
+- value: 011791
+  description: Bucharest, sector 1
+- value: '05056'
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_RO
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Romania
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Румынии

@@ -1,0 +1,29 @@
+id: no_postcode
+name: Norwegian postal code
+status: draft
+doc: 'Postal code (postnummer) in Norway: four digits. Oslo codes start with 0.'
+semantic_type: postindex
+country:
+- 'NO'
+langs:
+- 'no'
+regexp: ^\d{4}$
+examples:
+- value: '0150'
+  description: Oslo
+- value: '5003'
+  description: Bergen
+- value: '7011'
+  description: Trondheim
+- value: '150'
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_NO
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Norway
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Норвегии

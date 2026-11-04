@@ -14,6 +14,10 @@ examples:
   description: '2022-05-10T13:43:14+00:00'
 - value: '915148800'
   description: '1998-12-31T23:59:60.25'
+mappings:
+  fta:
+  - EPOCH.MILLISECONDS
+  - EPOCH.SECONDS
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Unix_time

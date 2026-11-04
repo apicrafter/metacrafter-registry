@@ -1,0 +1,26 @@
+id: payment_card_brand
+name: Payment card brand (card network)
+status: draft
+doc: Brand or network of a payment card, such as Visa, Mastercard, American Express, Discover, JCB or
+  Diners Club. It is the type of the card, not its number; the card number is the datatype bankcard.
+categories:
+- finances
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: VISA
+- value: Mastercard
+- value: AMEX
+  description: American Express
+mappings:
+  fta: CREDIT_CARD_TYPE
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Payment_card_number
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Платёжная система карты

@@ -1,0 +1,32 @@
+id: nl_municipality_code
+name: Dutch municipality code (CBS)
+status: draft
+doc: Four-digit code of a Dutch municipality assigned by Statistics Netherlands (CBS), often written with
+  the prefix GM, for example GM0363 for Amsterdam. Codes of merged municipalities are not reused.
+semantic_type: nl_municipality
+country:
+- NL
+regexp: ^(?:GM)?\d{4}$
+examples:
+- value: GM0363
+  description: Amsterdam
+- value: 0599
+  description: Rotterdam
+- value: 0518
+  description: '''s-Gravenhage (The Hague)'
+- value: '363'
+  valid: false
+  description: leading zero dropped
+mappings:
+  wikidata: P382
+  fta: STATE_PROVINCE.MUNICIPALITY_CODE_NL
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Municipalities_of_the_Netherlands
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P382
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Код муниципалитета Нидерландов (CBS)

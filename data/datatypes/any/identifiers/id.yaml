@@ -10,3 +10,4 @@ is_pii: false
 classification: identifier
 mappings:
   cdm: means.identity.entityId
+  fta: IDENTIFIER

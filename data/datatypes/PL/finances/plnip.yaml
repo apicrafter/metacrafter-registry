@@ -10,3 +10,5 @@ langs:
 - pl
 is_pii: false
 classification: identifier
+mappings:
+  fta: IDENTITY.VAT_PL

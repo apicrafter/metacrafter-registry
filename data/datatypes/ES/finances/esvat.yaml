@@ -22,6 +22,8 @@ examples:
   description: Another valid Spanish VAT identification number format
 - value: ESB12345678
   description: Spanish VAT identification number with letter in the alphanumeric part
+mappings:
+  fta: IDENTITY.VAT_ES
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal

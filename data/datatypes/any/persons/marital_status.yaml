@@ -1,0 +1,31 @@
+id: marital_status
+name: Marital status
+status: draft
+doc: 'Civil status of a person with respect to marriage: single, married, divorced, widowed, separated
+  or in a civil partnership. Data sets also use one-letter codes such as S, M, D and W.'
+categories:
+- persons
+- pii
+langs:
+- en
+- ja
+is_pii: true
+classification: categorical
+examples:
+- value: Married
+- value: Single
+- value: Widowed
+- value: 既婚
+  description: married, in Japanese
+mappings:
+  fta:
+  - PERSON.MARITAL_STATUS_EN
+  - PERSON.MARITAL_STATUS_JA
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Marital_status
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Семейное положение

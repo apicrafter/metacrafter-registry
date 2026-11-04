@@ -1,0 +1,28 @@
+id: hu_county
+name: Hungarian county (vármegye)
+status: draft
+doc: Name of one of the 19 counties (vármegye) of Hungary, such as Pest, Baranya or Bács-Kiskun. Budapest,
+  the capital, is not part of a county but is often listed with them.
+categories:
+- geo
+- government
+country:
+- HU
+langs:
+- hu
+is_pii: false
+classification: categorical
+examples:
+- value: Pest
+- value: Baranya
+- value: Bács-Kiskun
+mappings:
+  fta: STATE_PROVINCE.COUNTY_HU
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Counties_of_Hungary
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Медье Венгрии

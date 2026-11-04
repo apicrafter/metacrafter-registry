@@ -1,0 +1,28 @@
+id: pe_region
+name: Peruvian region (department)
+status: draft
+doc: Name of a first-level division of Peru, a region or department, such as Cusco, Arequipa or Loreto.
+  Peru has 24 departments and the Constitutional Province of Callao.
+categories:
+- geo
+- government
+country:
+- PE
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Cusco
+- value: Arequipa
+- value: Loreto
+mappings:
+  fta: STATE_PROVINCE.REGION_NAME_PE
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Regions_of_Peru
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Регион Перу

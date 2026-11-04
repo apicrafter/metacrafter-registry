@@ -10,3 +10,5 @@ examples:
   description: Belorussian nationality
 - value: Spanish
   description: Spanish nationality
+mappings:
+  fta: NATIONALITY_EN

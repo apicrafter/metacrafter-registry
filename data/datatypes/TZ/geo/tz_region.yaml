@@ -1,0 +1,27 @@
+id: tz_region
+name: Tanzanian region
+status: draft
+doc: Name of one of the 31 regions (mikoa) of Tanzania, such as Dar es Salaam, Arusha or Dodoma.
+categories:
+- geo
+- government
+country:
+- TZ
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Dar es Salaam
+- value: Arusha
+- value: Dodoma
+mappings:
+  fta: STATE_PROVINCE.REGION_NAME_TZ
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Regions_of_Tanzania
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Область Танзании

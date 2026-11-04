@@ -13,6 +13,9 @@ is_pii: false
 mappings:
   cdm: means.location.longitude
   d3m: http://schema.org/longitude
+  fta:
+  - COORDINATE.LONGITUDE_DECIMAL
+  - COORDINATE.LONGITUDE_DMS
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Longitude

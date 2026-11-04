@@ -1,0 +1,27 @@
+id: nl_province
+name: Dutch province
+status: draft
+doc: Name of one of the 12 provinces of the Netherlands, such as Noord-Holland, Utrecht or Fryslân (Friesland).
+categories:
+- geo
+- government
+country:
+- NL
+langs:
+- nl
+is_pii: false
+classification: categorical
+examples:
+- value: Noord-Holland
+- value: Utrecht
+- value: Fryslân
+mappings:
+  fta: STATE_PROVINCE.PROVINCE_NAME_NL
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Provinces_of_the_Netherlands
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Провинция Нидерландов

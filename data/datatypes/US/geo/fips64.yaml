@@ -20,6 +20,7 @@ examples:
   description: Autauga Country
 mappings:
   wikidata: P882
+  fta: STATE_PROVINCE.COUNTY_FIPS_US
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P882

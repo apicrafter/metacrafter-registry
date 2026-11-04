@@ -1,0 +1,30 @@
+id: au_postcode
+name: Australian postcode
+status: draft
+doc: 'Postcode in Australia: four digits. Codes in the Northern Territory start with 0, such as 0800 for
+  Darwin.'
+semantic_type: postindex
+country:
+- AU
+langs:
+- en
+regexp: ^\d{4}$
+examples:
+- value: '2000'
+  description: Sydney
+- value: '3000'
+  description: Melbourne
+- value: 0800
+  description: Darwin
+- value: '20000'
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_AU
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postcodes_in_Australia
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Австралии

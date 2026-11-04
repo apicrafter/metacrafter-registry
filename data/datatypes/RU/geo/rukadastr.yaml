@@ -11,6 +11,15 @@ langs:
 - ru
 is_pii: false
 classification: identifier
+regexp: ^\d{2}:\d{2}:\d{6,7}:\d+$
+examples:
+- value: 77:01:0002020:1045
+  description: Building in Moscow (cadastral district 77), from the data.mos.ru open data
+- value: 50:27:0030528:123
+  description: Land plot in the Moscow region (cadastral district 50)
+- value: 77:01:0002020
+  valid: false
+  description: Number of a cadastral quarter, without the number of the object
 translations:
   ru:
     name: Кадастровый номер

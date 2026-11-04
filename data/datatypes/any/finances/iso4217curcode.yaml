@@ -17,6 +17,7 @@ mappings:
   - means.measurement.currency.iSOCode
   fibo: FND/Accounting/CurrencyAmount/CurrencyIdentifier
   wikidata: P498
+  fta: CURRENCY_CODE.ISO-4217
 links:
 - type: other
   url: https://www.iso.org/iso-4217-currency-codes.html

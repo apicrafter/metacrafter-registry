@@ -1,0 +1,32 @@
+id: jp_region
+name: Japanese region
+status: draft
+doc: 'Name of one of the eight traditional regions of Japan that group the prefectures: Hokkaido, Tohoku,
+  Kanto, Chubu, Kansai (Kinki), Chugoku, Shikoku and Kyushu with Okinawa. It is written in Japanese, with
+  or without 地方 (region), or in English.'
+categories:
+- geo
+- government
+country:
+- JP
+langs:
+- ja
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: 関東
+  description: Kanto
+- value: 東北地方
+  description: Tohoku region
+- value: Kansai
+mappings:
+  fta: STATE_PROVINCE.REGION_NAME_JA
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_regions_of_Japan
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Регион Японии

@@ -23,6 +23,8 @@ examples:
 - value: da39a3ee5e6b4b0d3255bfef95601890afd8070
   valid: false
   description: one hex digit short (39 instead of 40)
+mappings:
+  fta: HASH.SHA1_HEX
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SHA-1

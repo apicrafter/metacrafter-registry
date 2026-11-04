@@ -192,9 +192,13 @@
   - 13 of D3M's 90 types are mapped to 12 records, exact concept matches only, at d3m commit `244d552`.
   - New draft pattern `nanpphone` (North American phone number) for D3M's `AmericanPhoneNumber`.
   - Column roles, dataset structure and hyper-parameter types are not value types. They are not imported. The review is `devdocs/D3M_REVIEW.md`.
-- [x] 8.10 Review the Sherlock semantic types (issue #37). `mappings.sherlock` now holds Sherlock type labels, checked against the list of 78 labels in the schema.
+- [x] 8.10 Review the FTA (Fast Text Analysis) semantic types (issue #38). Add the `fta` crosswalk key and the `fta` tool.
+  - 254 of FTA's 258 types are mapped to 180 records at FTA commit `51b3dd0`. `IDENTITY.VAT_<COUNTRY>` is mapped through its eight bound names.
+  - 73 new draft records: 21 value types, 18 postal code patterns and 34 administrative divisions. New countries: TZ, UY.
+  - `CHECKDIGIT.LUHN`, `FREE_TEXT` and the two North American union types are not mapped. The review is `devdocs/FTA_REVIEW.md`.
+- [x] 8.11 Review the Sherlock semantic types (issue #37). `mappings.sherlock` now holds Sherlock type labels, checked against the list of 78 labels in the schema.
   - 32 of Sherlock's 78 types are mapped to 30 records, same-meaning matches only, at sherlock-project commit `f194013`.
-  - 8 new draft records: `birthplace`, `brand`, `religion`, `industry`, `language`, `weight`, `elevation` and `species`.
+  - 6 new draft records: `birthplace`, `brand`, `religion`, `weight`, `elevation` and `species`. `industry` and `language` came from the FTA review (8.10) and now carry the Sherlock mapping too.
   - New tool `sherlock` (detector). A test checks that its `supported_types` are the records that carry `mappings.sherlock`.
   - Generic header words (`code`, `type`, `rank`, ...) and roles over names (`director`, `owner`, ...) are not imported. The review is `devdocs/SHERLOCK_REVIEW.md`.
 - Data fixes found during this phase:

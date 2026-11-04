@@ -1,0 +1,34 @@
+id: ru_mos_global_id
+name: Moscow open data portal record identifier (global_id)
+status: draft
+doc: Numeric identifier of a record in a dataset of the Moscow open data portal data.mos.ru. Every dataset
+  of the portal has it in the field global_id, and rows of nested tables carry their own global_id. The
+  portal assigns the number; it is not derived from the object that the record describes. In the snapshot
+  of November 2026 the values have 7 to 10 digits, and a few have 12.
+categories:
+- government
+- objectids
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,11}$
+examples:
+- value: '2639269538'
+  description: Record of the dataset "Дома культуры и клубы" (houses of culture and clubs)
+- value: '638863251'
+  description: Record of a data.mos.ru dataset
+- value: 0638863251
+  valid: false
+  description: Leading zero
+links:
+- type: other
+  url: https://data.mos.ru/
+translations:
+  ru:
+    name: Идентификатор записи на портале открытых данных Москвы (global_id)
+    doc: Числовой идентификатор записи набора данных на портале data.mos.ru. Есть в поле global_id каждого
+      набора данных портала и во вложенных таблицах. Номер присваивает портал, он не зависит от описываемого
+      объекта.

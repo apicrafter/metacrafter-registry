@@ -66,7 +66,7 @@ Example:
   such as `pii` and `persons` add context.
 - **Crosswalk.** `crosswalk("wikidata", "P968")` finds the registry record for
   an id in another vocabulary. The systems are `wikidata`, `fibo`, `schema_org`,
-  `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock` and `cdm`.
+  `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm` and `fta`.
   Coverage outside Wikidata is still small. For `fibo`, pass a FIBO class IRI,
   for example
   `https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier`;
@@ -79,7 +79,10 @@ Example:
   Purview sensitive information type, pass its name: case, periods and
   apostrophes do not matter, former names still resolve, and a bundle such as
   "EU passport number" returns the records of all its member types. For a
-  column that Sherlock labelled, pass its label: `crosswalk("sherlock",
+  column that FTA (Fast Text Analysis) labelled, pass FTA's semantic type as it
+  reports it: `crosswalk("fta", "POSTAL_CODE.ZIP5_US")` returns `uszipcode`,
+  and `crosswalk("fta", "MONTH.FULL_fr-FR")` returns `month`.
+  For a column that Sherlock labelled, pass its label: `crosswalk("sherlock",
   "birth Date")` returns `birthday`; case and spaces are ignored. 32 of
   Sherlock's 78 types are mapped. Generic labels such as `code`, `type` or
   `rank` return nothing.

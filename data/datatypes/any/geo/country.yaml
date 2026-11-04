@@ -16,6 +16,19 @@ mappings:
   d3m:
   - http://schema.org/Country
   - http://schema.org/addressCountry
+  fta:
+  - COUNTRY.TEXT_CS
+  - COUNTRY.TEXT_DA
+  - COUNTRY.TEXT_ES
+  - COUNTRY.TEXT_FI
+  - COUNTRY.TEXT_FR
+  - COUNTRY.TEXT_IT
+  - COUNTRY.TEXT_JA
+  - COUNTRY.TEXT_NL
+  - COUNTRY.TEXT_PL
+  - COUNTRY.TEXT_PT
+  - COUNTRY.TEXT_RO
+  - COUNTRY.TEXT_SV
   sherlock: country
 links:
 - type: wikipedia

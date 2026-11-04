@@ -13,6 +13,7 @@ langs:
 is_pii: true
 mappings:
   cdm: means.demographic.birthDate
+  fta: PERSON.DATE_OF_BIRTH
   sherlock: birth Date
 links:
 - type: wikipedia

@@ -28,6 +28,7 @@ examples:
   description: Check digit does not match
 mappings:
   purview: Italy value added tax number
+  fta: IDENTITY.VAT_IT
 links:
 - type: wikipedia
   url: https://it.wikipedia.org/wiki/Partita_IVA

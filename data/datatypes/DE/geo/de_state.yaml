@@ -1,0 +1,30 @@
+id: de_state
+name: German state (Land)
+status: draft
+doc: Name of one of the 16 states (Länder) of Germany, such as Bayern, Nordrhein-Westfalen or Berlin,
+  in German or English (Bavaria).
+categories:
+- geo
+- government
+country:
+- DE
+langs:
+- de
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Bayern
+- value: Nordrhein-Westfalen
+- value: Bavaria
+  description: Bayern, in English
+mappings:
+  fta: STATE_PROVINCE.STATE_NAME_DE
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/States_of_Germany
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Земля Германии

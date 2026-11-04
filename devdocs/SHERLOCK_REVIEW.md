@@ -41,9 +41,10 @@ Sources reviewed:
   - 32 Sherlock types are mapped to 30 records, only where the record has the
     same meaning as the type. A Sherlock type maps to at most one record (a
     test checks this).
-  - 8 new draft records for types the registry did not have: `birthplace`,
-    `brand`, `religion`, `industry`, `language`, `weight`, `elevation` and
-    `species`.
+  - 6 new draft records for types the registry did not have: `birthplace`,
+    `brand`, `religion`, `weight`, `elevation` and `species`. The FTA review
+    (issue #38, `devdocs/FTA_REVIEW.md`) added `industry` and `language` at the
+    same time; they now carry the Sherlock mapping too.
   - `crosswalk("sherlock", ...)` ignores case and spaces, so `birth Date`,
     `Birth date` (the paper) and `birthDate` (Sato) all return `birthday`.
   - New tool record `sherlock` (category `detector`). Its `supported_types` are
@@ -75,7 +76,9 @@ Sources reviewed:
 | `gender` | `gender` | |
 | `sex` | `gender` | See the note below. |
 | `genre` | `genre` | |
+| `industry` | `industry` | Added by the FTA review. Names of sectors; the codes are `isicrev4`, `eu_nace`, `naicscode` and `okved`. |
 | `isbn` | `isbn` | `isbn10` and `isbn13` are separate records; the type maps to the general one. |
+| `language` | `language` | Added by the FTA review. Language names or codes; this change adds links to Wikipedia, the Wikidata item Q34770 and Schema.org `Language`. |
 | `name` | `name` | |
 | `nationality` | `nationality` | |
 | `notes` | `comment` | The record is "Comment / Note". |
@@ -103,15 +106,14 @@ term that were checked.
 | `birth Place` | `birthplace` | persons, pii, geo | P19 (place of birth) | `birthPlace` | `is_pii: true` |
 | `brand` | `brand` | companies, ecommerce | P1716 (brand) | `brand` | |
 | `religion` | `religion` | persons, pii | P140 (religion or worldview) | | `is_pii: true`; a special category of personal data under the GDPR |
-| `industry` | `industry` | industry, companies | P452 (industry) | `industry` | Names of sectors; the codes are `isicrev4`, `eu_nace` and `naicscode` |
-| `language` | `language` | common | | `Language` | Language names; the codes are `languagetag`. Links to the Wikidata item Q34770 |
 | `weight` | `weight` | values, common | P2067 (mass) | `weight` | Child of `numeric`. The regexp matches only values with a unit (kg, g, mg, lb, lbs, oz) |
 | `elevation` | `elevation` | geo, values | P2044 (elevation above sea level) | `elevation` | Child of `numeric`. No regexp: a plain number cannot be told apart from other numbers |
 | `species` | `species` | science | | | Scientific or common names. Links to the Wikidata item Q7432 |
 
-`language` and `species` have no Wikidata property mapping on purpose. P407
-(language of work or name) and P1412 (languages spoken) are narrower than
-`language`; P225 (taxon name) covers taxa of every rank, not only species.
+`species` has no Wikidata property mapping on purpose: P225 (taxon name)
+covers taxa of every rank, not only species. For the same reason `language`
+gets no property mapping: P407 (language of work or name) and P1412 (languages
+spoken) are narrower.
 
 ## Sherlock types with no registry equivalent
 

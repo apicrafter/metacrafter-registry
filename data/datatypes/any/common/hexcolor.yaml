@@ -15,6 +15,7 @@ examples:
   description: short three-digit form
 mappings:
   wikidata: P465
+  fta: COLOR.HEX
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P465

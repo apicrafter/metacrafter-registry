@@ -1,0 +1,32 @@
+id: ch_postcode
+name: Swiss postal code
+status: draft
+doc: 'Postal code (Postleitzahl, numéro postal) in Switzerland: four digits. Liechtenstein uses the same
+  system.'
+semantic_type: postindex
+country:
+- CH
+langs:
+- de
+- fr
+- it
+regexp: ^[1-9]\d{3}$
+examples:
+- value: '8001'
+  description: Zürich
+- value: '3011'
+  description: Bern
+- value: '1201'
+  description: Geneva
+- value: 0800
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_CH
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Switzerland
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Швейцарии

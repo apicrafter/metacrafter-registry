@@ -13,4 +13,7 @@ mappings:
   google_dlp: PERSON_NAME
   presidio: PERSON
   purview: All full names
+  fta:
+  - NAME.FIRST_LAST
+  - NAME.LAST_FIRST
   sherlock: person

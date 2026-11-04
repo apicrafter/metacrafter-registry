@@ -85,7 +85,7 @@ When a record has a `regexp`, these rules apply:
 - **THEN** validation fails
 
 ### Requirement: Typed mappings to external vocabularies
-A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock` and `cdm`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
+A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm` and `fta`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
 
 `mappings.wikidata` SHALL match `^[PQ]\d+$`.
 
@@ -104,6 +104,16 @@ A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`
 #### Scenario: D3M type given as a bare name
 - **WHEN** a record has `mappings: {d3m: "FileName"}`
 - **THEN** validation fails with a schema error on `mappings.d3m`
+
+`mappings.fta` SHALL hold FTA (Fast Text Analysis) semantic types as FTA documents them, such as `EMAIL` or `COUNTRY.ISO-3166-2`. A locale-bound type keeps FTA's placeholder (`MONTH.FULL_<LOCALE>`), except `IDENTITY.VAT_<COUNTRY>`, whose bound names (`IDENTITY.VAT_FR`) map to different records. `crosswalk("fta", ...)` SHALL resolve a bound name, such as `MONTH.FULL_fr-FR`, through its placeholder when no record has the exact name.
+
+#### Scenario: FTA type in lowercase
+- **WHEN** a record has `mappings: {fta: "email"}`
+- **THEN** validation fails with a schema error on `mappings.fta`
+
+#### Scenario: Locale-bound FTA type
+- **WHEN** a client calls `crosswalk("fta", "GENDER.TEXT_DE")`
+- **THEN** it gets the record that maps `GENDER.TEXT_<LANGUAGE>`
 
 `mappings.sherlock` SHALL hold one or more of the 78 Sherlock semantic type labels, spelled as the trained Sherlock model returns them (for example `city` or `birth Date`). A Sherlock type SHALL be mapped to at most one record, and only when that record has the same meaning. The `sherlock` tool SHALL list exactly the records that carry `mappings.sherlock`.
 

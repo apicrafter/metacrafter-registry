@@ -19,6 +19,7 @@ examples:
   description: Mende
 mappings:
   wikidata: P374
+  fta: STATE_PROVINCE.INSEE_CODE_FR
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/INSEE_code

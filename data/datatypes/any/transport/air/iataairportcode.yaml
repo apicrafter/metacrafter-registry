@@ -17,6 +17,7 @@ examples:
   description: Paris
 mappings:
   wikidata: P238
+  fta: AIRPORT_CODE.IATA
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/IATA_airport_code

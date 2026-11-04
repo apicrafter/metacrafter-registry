@@ -1,0 +1,29 @@
+id: bg_postcode
+name: Bulgarian postal code
+status: draft
+doc: 'Postal code (пощенски код) in Bulgaria: four digits, from 1000 for central Sofia.'
+semantic_type: postindex
+country:
+- BG
+langs:
+- bg
+regexp: ^[1-9]\d{3}$
+examples:
+- value: '1000'
+  description: Sofia
+- value: '4000'
+  description: Plovdiv
+- value: '9000'
+  description: Varna
+- value: '100'
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_BG
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Bulgaria
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Болгарии

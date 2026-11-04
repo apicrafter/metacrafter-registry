@@ -1,0 +1,28 @@
+id: nl_municipality
+name: Dutch municipality (gemeente)
+status: draft
+doc: Name of a municipality (gemeente) of the Netherlands, such as Amsterdam, Aalsmeer or Aa en Hunze.
+  Mergers reduce their number almost every year; there are about 340. Their codes are the pattern nl_municipality_code.
+categories:
+- geo
+- government
+country:
+- NL
+langs:
+- nl
+is_pii: false
+classification: categorical
+examples:
+- value: Amsterdam
+- value: Aalsmeer
+- value: Aa en Hunze
+mappings:
+  fta: STATE_PROVINCE.MUNICIPALITY_NL
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Municipalities_of_the_Netherlands
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Муниципалитет Нидерландов

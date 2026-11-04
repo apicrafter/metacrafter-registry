@@ -1,0 +1,28 @@
+id: ie_province
+name: Irish province
+status: draft
+doc: 'Name of one of the four historic provinces of Ireland: Connacht, Leinster, Munster or Ulster. They
+  have no administrative role today but are used in statistics and sport.'
+categories:
+- geo
+- government
+country:
+- IE
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Leinster
+- value: Munster
+- value: Connacht
+mappings:
+  fta: STATE_PROVINCE.PROVINCE_NAME_IE
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Provinces_of_Ireland
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Провинция Ирландии

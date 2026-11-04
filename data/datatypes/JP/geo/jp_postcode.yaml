@@ -1,0 +1,28 @@
+id: jp_postcode
+name: Japanese postal code
+status: draft
+doc: 'Postal code (郵便番号) in Japan: seven digits, written as three digits, a hyphen and four digits, often
+  after the 〒 mark.'
+semantic_type: postindex
+country:
+- JP
+langs:
+- ja
+regexp: ^\d{3}-?\d{4}$
+examples:
+- value: 100-0001
+  description: Chiyoda, Tokyo
+- value: 530-0001
+  description: Umeda, Kita-ku, Osaka
+- value: 1000-001
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_JP
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Japan
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Японии

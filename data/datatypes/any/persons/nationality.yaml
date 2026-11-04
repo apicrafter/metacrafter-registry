@@ -10,4 +10,7 @@ langs:
 is_pii: true
 classification: categorical
 mappings:
+  fta:
+  - NATIONALITY_JA
+  - NATIONALITY_NL
   sherlock: nationality

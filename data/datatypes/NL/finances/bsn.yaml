@@ -30,6 +30,7 @@ mappings:
   - EU national identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  fta: IDENTITY.BSN_NL
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Burgerservicenummer

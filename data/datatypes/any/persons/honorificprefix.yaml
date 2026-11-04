@@ -22,6 +22,7 @@ examples:
 mappings:
   wikidata: P511
   schema_org: honorificPrefix
+  fta: HONORIFIC_EN
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/English_honorifics

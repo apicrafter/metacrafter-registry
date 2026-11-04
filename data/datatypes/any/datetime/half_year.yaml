@@ -1,0 +1,26 @@
+id: half_year
+name: Half-year
+status: draft
+doc: Half of a calendar or fiscal year, written H1 for the first half (January to June of a calendar year)
+  or H2 for the second half.
+categories:
+- datetime
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[Hh][12]$
+examples:
+- value: H1
+- value: H2
+- value: H3
+  valid: false
+  description: a year has two halves
+mappings:
+  fta: PERIOD.HALF
+links:
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Полугодие
