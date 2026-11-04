@@ -443,8 +443,12 @@ class Registry:
     def crosswalk(self, system: str, external_id: str) -> list[dict[str, Any]]:
         """Records mapped to ``external_id`` in another vocabulary (wikidata, fibo, presidio, ...).
 
-        For wikidata, a property id or its URL; for fibo, a class path or its full IRI.
+        For wikidata, a property id or its URL; for fibo, a class path or its full IRI;
+        for fta, a semantic type as FTA reports it, including locale-bound names such
+        as MONTH.FULL_fr-FR or GENDER.TEXT_DE.
         """
+        if system == "fta":
+            return self._crosswalk_fta(str(external_id).strip())
         wanted = str(external_id).strip()
         if system == "wikidata":
             wanted = wanted.rstrip("/").rsplit("/", 1)[-1].removeprefix("Property:").upper()
@@ -474,3 +478,22 @@ class Registry:
             if wanted in normalized:
                 out.append(record)
         return out
+
+    def _crosswalk_fta(self, name: str) -> list[dict[str, Any]]:
+        # FTA binds <LANGUAGE>, <COUNTRY> and <LOCALE> to the locale of the
+        # analysis, so it reports GENDER.TEXT_DE for GENDER.TEXT_<LANGUAGE>.
+        # An exact name wins: GENDER.TEXT_JA has its own FTA plugin.
+        candidates = [[name]]
+        if "_" in name:
+            head = name.rsplit("_", 1)[0]
+            candidates.append([f"{head}_<{p}>" for p in ("LANGUAGE", "COUNTRY", "LOCALE")])
+        for names in candidates:
+            out = []
+            for record in self.datatypes.values():
+                value = record.get("mappings", {}).get("fta")
+                values = value if isinstance(value, list) else [value] if value else []
+                if any(n in values for n in names):
+                    out.append(record)
+            if out:
+                return out
+        return []

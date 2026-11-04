@@ -21,6 +21,8 @@ examples:
 - value: 3443BX7
   valid: false
   description: One character too many
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_NL
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Postal_codes_in_the_Netherlands

@@ -1,0 +1,27 @@
+id: address_line2
+name: Address line 2 (secondary address line)
+status: draft
+doc: 'Additional line of a postal address after the street line. It holds the part of a building or the
+  delivery point: apartment, suite, unit, floor, building name or PO box, such as Apt 4B or Suite 200.
+  Forms often have two or three such lines.'
+categories:
+- geo
+- pii
+langs:
+- en
+is_pii: true
+examples:
+- value: Apt 4B
+- value: Suite 200
+- value: PO Box 1234
+mappings:
+  fta:
+  - STREET_ADDRESS2_EN
+  - STREET_ADDRESS3_EN
+  - STREET_ADDRESS4_EN
+links:
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Вторая строка адреса

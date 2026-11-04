@@ -1,0 +1,24 @@
+id: age_range
+name: Age range
+status: draft
+doc: Range of ages in years that groups people, such as 18-24, 65+ or <18. Surveys, census tables and
+  marketing data use it instead of an exact age.
+parent: age
+categories:
+- persons
+langs:
+- common
+is_pii: true
+classification: categorical
+examples:
+- value: 18-24
+- value: 65+
+- value: <18
+mappings:
+  fta: PERSON.AGE_RANGE
+links:
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Возрастной диапазон

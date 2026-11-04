@@ -1,0 +1,28 @@
+id: au_state_code
+name: Australian state or territory abbreviation
+status: draft
+doc: 'Abbreviation of an Australian state or mainland territory, as written in addresses: ACT, NSW, NT,
+  QLD, SA, TAS, VIC or WA. ISO 3166-2:AU uses the same letters after AU-.'
+semantic_type: au_state
+country:
+- AU
+regexp: ^(?:ACT|NSW|NT|QLD|SA|TAS|VIC|WA)$
+examples:
+- value: NSW
+  description: New South Wales
+- value: VIC
+  description: Victoria
+- value: ACT
+  description: Australian Capital Territory
+- value: QL
+  valid: false
+mappings:
+  fta: STATE_PROVINCE.STATE_AU
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/States_and_territories_of_Australia
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Сокращение штата Австралии

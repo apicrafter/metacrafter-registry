@@ -1,0 +1,30 @@
+id: it_region
+name: Italian region
+status: draft
+doc: Name of one of the 20 regions of Italy, such as Lombardia, Lazio or Sicilia, in Italian or English
+  (Lombardy, Sicily). Five of them have special autonomy.
+categories:
+- geo
+- government
+country:
+- IT
+langs:
+- it
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Lombardia
+- value: Lazio
+- value: Sicily
+  description: Sicilia, in English
+mappings:
+  fta: STATE_PROVINCE.REGION_NAME_IT
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Regions_of_Italy
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Область Италии

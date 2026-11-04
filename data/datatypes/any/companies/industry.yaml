@@ -1,0 +1,33 @@
+id: industry
+name: Industry (line of business)
+status: draft
+doc: Name of the industry or line of business of an organization, such as Banking, Retail or Telecommunications.
+  Codes of industry classifications are separate datatypes, for example naicscode, isicrev4, eu_nace and
+  okved.
+categories:
+- companies
+- industry
+langs:
+- en
+- ja
+is_pii: false
+classification: categorical
+examples:
+- value: Banking
+- value: Retail
+- value: Telecommunications
+mappings:
+  wikidata: P452
+  fta:
+  - INDUSTRY_EN
+  - INDUSTRY_JA
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Industry_(economics)
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P452
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Отрасль

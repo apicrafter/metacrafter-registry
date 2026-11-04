@@ -16,6 +16,7 @@ mappings:
   google_dlp: CANADA_SOCIAL_INSURANCE_NUMBER
   presidio: CA_SIN
   purview: Canada social insurance number
+  fta: IDENTITY.SIN_CA
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Social_insurance_number

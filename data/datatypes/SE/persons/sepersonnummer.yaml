@@ -23,6 +23,7 @@ mappings:
   - EU social security number or equivalent identification
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  fta: IDENTITY.PERSONNUMMER_SE
 links:
 - type: other
   url: https://en.wikipedia.org/wiki/Personal_identity_number_(Sweden)

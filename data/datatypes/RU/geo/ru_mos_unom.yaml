@@ -1,0 +1,33 @@
+id: ru_mos_unom
+name: Moscow address register object number (UNOM)
+status: draft
+doc: Number of an addressed object (a building or a structure) in the Address register of real estate
+  objects of Moscow. Datasets of the Moscow open data portal publish it in the field UNOM, labelled "Код
+  адреса по АР" or "УНОМ", to link their records to buildings, and the register itself is published there
+  as a dataset. Values are positive integers of up to 7 digits.
+categories:
+- geo
+- realestate
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,7}$
+examples:
+- value: '2127711'
+  description: UNOM from a data.mos.ru dataset
+- value: '67028'
+  description: UNOM from a data.mos.ru dataset
+- value: 77:01:0002020:1045
+  valid: false
+  description: Cadastral number of a building, not a UNOM
+links:
+- type: other
+  url: https://data.mos.ru/
+translations:
+  ru:
+    name: Уникальный номер объекта адресации в Адресном реестре Москвы (УНОМ)
+    doc: Номер объекта адресации (здания, сооружения) в Адресном реестре объектов недвижимости города
+      Москвы. В наборах данных портала data.mos.ru публикуется в поле UNOM и связывает записи со зданиями.

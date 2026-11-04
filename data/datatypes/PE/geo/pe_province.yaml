@@ -1,0 +1,28 @@
+id: pe_province
+name: Peruvian province
+status: draft
+doc: Name of a province of Peru, the level between the region and the district, such as Abancay or Alto
+  Amazonas. Peru has about 196 provinces.
+categories:
+- geo
+- government
+country:
+- PE
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Abancay
+- value: Alto Amazonas
+- value: Huamanga
+mappings:
+  fta: STATE_PROVINCE.PROVINCE_NAME_PE
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Provinces_of_Peru
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Провинция Перу

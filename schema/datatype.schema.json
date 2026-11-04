@@ -34,6 +34,11 @@
       "pattern": "^(https://metadata\\.datadrivendiscovery\\.org/types/|http://schema\\.org/)[A-Za-z0-9]+$",
       "description": "A D3M semantic type URI as D3M metadata writes it, for example https://metadata.datadrivendiscovery.org/types/FileName or http://schema.org/email"
     },
+    "ftaType": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_]*(\\.[A-Z0-9][A-Z0-9_-]*)?(<(LANGUAGE|COUNTRY|LOCALE)>)?$",
+      "description": "An FTA (Fast Text Analysis) semantic type as FTA documents it, for example EMAIL, COUNTRY.ISO-3166-2 or MONTH.FULL_<LOCALE>"
+    },
     "record": {
       "type": "object",
       "additionalProperties": false,
@@ -119,6 +124,13 @@
               "oneOf": [
                 {"$ref": "#/$defs/cdmTrait"},
                 {"type": "array", "items": {"$ref": "#/$defs/cdmTrait"}, "minItems": 1, "uniqueItems": true}
+              ]
+            },
+            "fta": {
+              "description": "FTA (Fast Text Analysis) semantic types, for example EMAIL or POSTAL_CODE.ZIP5_US. Locale-bound types keep FTA's <LANGUAGE>, <COUNTRY> or <LOCALE> placeholder.",
+              "oneOf": [
+                {"$ref": "#/$defs/ftaType"},
+                {"type": "array", "items": {"$ref": "#/$defs/ftaType"}, "minItems": 1, "uniqueItems": true}
               ]
             }
           }

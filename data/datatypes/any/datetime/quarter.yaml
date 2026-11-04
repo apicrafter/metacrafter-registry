@@ -15,6 +15,7 @@ examples:
   description: Secord quarter
 mappings:
   cdm: means.calendar.quarterOfYear
+  fta: PERIOD.QUARTER
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Calendar_year#Quarters

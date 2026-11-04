@@ -1,0 +1,33 @@
+id: ca_postcode
+name: Canadian postal code
+status: draft
+doc: 'Canadian postal code: six characters in the form A1A 1A1, a letter, a digit and a letter, a space,
+  then a digit, a letter and a digit. The letters D, F, I, O, Q and U are not used, and W and Z do not
+  start a code.'
+semantic_type: postindex
+country:
+- CA
+langs:
+- en
+- fr
+regexp: ^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z] ?\d[ABCEGHJ-NPRSTV-Z]\d$
+examples:
+- value: K1A 0B1
+  description: Ottawa
+- value: H0H 0H0
+  description: Santa Claus, used by Canada Post for letters to him
+- value: M5V3L9
+  description: Toronto, written without the space
+- value: W1A 1AA
+  valid: false
+  description: a UK postcode
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_CA
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Canada
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Канады

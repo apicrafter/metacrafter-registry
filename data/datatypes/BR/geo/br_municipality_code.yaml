@@ -1,0 +1,33 @@
+id: br_municipality_code
+name: Brazilian municipality code (IBGE)
+status: draft
+doc: Seven-digit code of a Brazilian municipality assigned by IBGE, the Brazilian Institute of Geography
+  and Statistics. The first two digits are the code of the state, for example 35 for São Paulo, and the
+  last digit is a check digit.
+semantic_type: br_municipality
+country:
+- BR
+regexp: ^[1-5]\d{6}$
+examples:
+- value: '3550308'
+  description: São Paulo
+- value: '3304557'
+  description: Rio de Janeiro
+- value: '5300108'
+  description: Brasília
+- value: '355030'
+  valid: false
+  description: the older six-digit form without the check digit
+mappings:
+  wikidata: P1585
+  fta: STATE_PROVINCE.MUNICIPALITY_CODE_BR
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Municipalities_of_Brazil
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1585
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Код муниципалитета Бразилии (IBGE)

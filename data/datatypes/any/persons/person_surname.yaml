@@ -10,6 +10,7 @@ langs:
 is_pii: true
 mappings:
   cdm: means.identity.person.lastName
+  fta: NAME.LAST
 links:
 - type: schema.org
   url: https://schema.org/familyName

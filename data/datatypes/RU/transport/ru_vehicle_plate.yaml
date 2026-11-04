@@ -10,3 +10,15 @@ langs:
 - ru
 is_pii: false
 classification: identifier
+regexp: ^(?:[АВЕКМНОРСТУХ]\d{3}[АВЕКМНОРСТУХ]{2}|[АВЕКМНОРСТУХ]{2}\d{4})\d{2,3}$
+examples:
+- value: В512ОР750
+  description: Format of a passenger car plate (letter, three digits, two letters, region code)
+- value: АУ815250
+  description: Format of a trailer plate (two letters, four digits, region code)
+- value: В512ЖР750
+  valid: false
+  description: Ж is not used on Russian plates
+translations:
+  ru:
+    name: Государственный регистрационный знак транспортного средства

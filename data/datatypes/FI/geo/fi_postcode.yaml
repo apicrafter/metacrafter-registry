@@ -1,0 +1,30 @@
+id: fi_postcode
+name: Finnish postal code
+status: draft
+doc: 'Postal code (postinumero) in Finland: five digits. Helsinki codes start with 00.'
+semantic_type: postindex
+country:
+- FI
+langs:
+- fi
+- sv
+regexp: ^\d{5}$
+examples:
+- value: '00100'
+  description: Helsinki
+- value: '33100'
+  description: Tampere
+- value: '20100'
+  description: Turku
+- value: '0010'
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_FI
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Finland
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Финляндии

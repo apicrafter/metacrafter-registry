@@ -11,6 +11,22 @@ classification: categorical
 mappings:
   cdm: means.measurement.color
   wikidata: P462
+  fta:
+  - COLOR.TEXT_CS
+  - COLOR.TEXT_DA
+  - COLOR.TEXT_DE
+  - COLOR.TEXT_EN
+  - COLOR.TEXT_ES
+  - COLOR.TEXT_FI
+  - COLOR.TEXT_FR
+  - COLOR.TEXT_IT
+  - COLOR.TEXT_JA
+  - COLOR.TEXT_NL
+  - COLOR.TEXT_PL
+  - COLOR.TEXT_PT
+  - COLOR.TEXT_RO
+  - COLOR.TEXT_RU
+  - COLOR.TEXT_SV
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P462

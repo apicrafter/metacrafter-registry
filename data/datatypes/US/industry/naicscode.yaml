@@ -19,6 +19,7 @@ examples:
 mappings:
   fibo: FBC/FunctionalEntities/BusinessRegistries/NorthAmericanIndustryClassificationSystemCode
   wikidata: P3224
+  fta: INDUSTRY_CODE.NAICS
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P3224

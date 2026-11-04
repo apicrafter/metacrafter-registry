@@ -50,6 +50,7 @@ src/metacrafter_registry/   package and CLI `metacrafter-registry`
 tests/                      pytest suite
 scripts/                    builder.py (wrapper), export.py (DataHub), generate_missing_entries.py
 .github/workflows/          ci.yml, pages.yml (deploy), release.yml (tags)
+.github/ISSUE_TEMPLATE/     issue forms: propose a datatype, fix a datatype
 openspec/                   OpenSpec config and change proposals
 devdocs/                    audit and analysis notes
 archive/                    historical material; not maintained, not built

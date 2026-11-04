@@ -1,0 +1,29 @@
+id: br_municipality
+name: Brazilian municipality
+status: draft
+doc: Name of a municipality (município) of Brazil, the level of local government below the state, such
+  as São Paulo or Salvador. IBGE lists 5,570 of them, counting the Federal District; their codes are the
+  pattern br_municipality_code.
+categories:
+- geo
+- government
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: categorical
+examples:
+- value: São Paulo
+- value: Rio de Janeiro
+- value: Salvador
+mappings:
+  fta: STATE_PROVINCE.MUNICIPALITY_BR
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Municipalities_of_Brazil
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Муниципалитет Бразилии

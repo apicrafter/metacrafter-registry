@@ -8,3 +8,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
+mappings:
+  fta:
+  - COORDINATE_PAIR.DECIMAL
+  - COORDINATE_PAIR.DECIMAL_PAREN

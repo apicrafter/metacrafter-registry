@@ -1,0 +1,25 @@
+id: street_suffix
+name: Street suffix (street type)
+status: draft
+doc: Word or abbreviation after a street name that tells the type of the street, such as Street (St),
+  Avenue (Ave), Road (Rd) or Boulevard (Blvd). The US Postal Service publishes the standard abbreviations.
+categories:
+- geo
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: St
+- value: Avenue
+- value: Blvd
+mappings:
+  fta: STREET_MARKER_EN
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Street_suffix
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Тип улицы

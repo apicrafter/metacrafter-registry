@@ -1,0 +1,30 @@
+id: cryptocurrency
+name: Cryptocurrency name
+status: draft
+doc: Name of a cryptocurrency, such as Bitcoin, Ethereum, Litecoin or Monero, in English or another language.
+  A wallet address is the datatype crypto_address.
+categories:
+- cryptocurrency
+- finances
+langs:
+- en
+- ja
+is_pii: false
+classification: categorical
+examples:
+- value: Bitcoin
+- value: Ethereum
+- value: ビットコイン
+  description: Bitcoin in Japanese
+mappings:
+  fta:
+  - CRYPTOCURRENCY.TEXT_EN
+  - CRYPTOCURRENCY.TEXT_JA
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Cryptocurrency
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Название криптовалюты

@@ -7,12 +7,18 @@ categories:
 langs:
 - common
 is_pii: true
-regexp: '[\d:a-f\/]{4,30}'
+regexp: ^[0-9A-Fa-f]{0,4}(?::[0-9A-Fa-f]{0,4}){2,7}/(?:12[0-8]|1[01]\d|\d{1,2})$
 examples:
 - value: 2001:610::/29
   description: SURFNet
 - value: 2001:630:440::/44
   description: University of Oxford
+- value: 08:00-22:00
+  valid: false
+  description: A time range, not an IPv6 prefix
+- value: '2001:db8::'
+  valid: false
+  description: An IPv6 address without the prefix length
 mappings:
   wikidata: P3793
 links:

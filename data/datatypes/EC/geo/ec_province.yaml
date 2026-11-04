@@ -1,0 +1,27 @@
+id: ec_province
+name: Ecuadorian province
+status: draft
+doc: Name of one of the 24 provinces of Ecuador, such as Pichincha, Guayas or Galápagos.
+categories:
+- geo
+- government
+country:
+- EC
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Pichincha
+- value: Guayas
+- value: Galápagos
+mappings:
+  fta: STATE_PROVINCE.PROVINCE_NAME_EC
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Provinces_of_Ecuador
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Провинция Эквадора
