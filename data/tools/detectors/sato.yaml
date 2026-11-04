@@ -1,0 +1,42 @@
+id: sato
+name: Sato
+category: detector
+doc: Sato is a research model from Megagon Labs, published at VLDB 2020, that predicts the semantic type
+  of every column of a table. It extends the Sherlock column network with a topic model of the whole table
+  and adds a conditional random field that predicts the types of all columns together, so the other columns
+  of a table help to choose the type of each one. The published model predicts the same 78 semantic types
+  as Sherlock, written in camelCase, such as birthDate or fileSize. The registry maps these types through
+  mappings.sherlock, so this list is the same as the one of the sherlock tool. The code and the pretrained
+  model are released under the Apache 2.0 license.
+website: https://github.com/megagonlabs/sato
+supported_types:
+- address
+- age
+- birthday
+- birthplace
+- brand
+- category
+- city
+- comment
+- continent
+- country
+- currency
+- dc_creator
+- dc_publisher
+- description
+- duration
+- elevation
+- filesize
+- gender
+- genre
+- industry
+- isbn
+- language
+- name
+- nationality
+- orgname
+- person_fullname
+- religion
+- species
+- weight
+- year

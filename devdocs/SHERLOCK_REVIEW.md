@@ -142,6 +142,6 @@ spoken) are narrower.
    megagonlabs/sato at commit `c19ace3`) is the same 78 types, written in
    camelCase (`birthDate`, `fileSize`, `teamName`). `crosswalk("sherlock",
    ...)` already resolves these labels, so issue #33 can reuse
-   `mappings.sherlock`.
+   `mappings.sherlock`. Done: see `devdocs/SATO_REVIEW.md`.
 4. **Re-check is unlikely to be needed.** The model's class list is fixed by
    the published weights. The last commit on `master` is from June 2023.

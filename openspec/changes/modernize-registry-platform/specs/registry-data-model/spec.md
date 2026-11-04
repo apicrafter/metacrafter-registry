@@ -115,7 +115,7 @@ A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`
 - **WHEN** a client calls `crosswalk("fta", "GENDER.TEXT_DE")`
 - **THEN** it gets the record that maps `GENDER.TEXT_<LANGUAGE>`
 
-`mappings.sherlock` SHALL hold one or more of the 78 Sherlock semantic type labels, spelled as the trained Sherlock model returns them (for example `city` or `birth Date`). A Sherlock type SHALL be mapped to at most one record, and only when that record has the same meaning. The `sherlock` tool SHALL list exactly the records that carry `mappings.sherlock`.
+`mappings.sherlock` SHALL hold one or more of the 78 Sherlock semantic type labels, spelled as the trained Sherlock model returns them (for example `city` or `birth Date`). A Sherlock type SHALL be mapped to at most one record, and only when that record has the same meaning. The `sherlock` tool SHALL list exactly the records that carry `mappings.sherlock`. Sato predicts the same 78 types in camelCase (`birthDate`), so the registry SHALL NOT add a separate Sato mapping key: the `sato` tool SHALL list the same records as the `sherlock` tool, and `crosswalk("sato", label)` SHALL resolve through `mappings.sherlock`.
 
 #### Scenario: Unknown Sherlock label
 - **WHEN** a record has `mappings: {sherlock: "email"}`
