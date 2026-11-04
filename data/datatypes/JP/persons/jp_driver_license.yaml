@@ -5,6 +5,7 @@ doc: Twelve-digit number of a Japanese driver's license. The first two digits id
   public safety commission that first issued the license, the next two are the last two digits of the
   year it was first obtained, then come a six-digit serial number, a check digit and a last digit that
   counts reissues.
+parent: driver_license
 categories:
 - pii
 - persons

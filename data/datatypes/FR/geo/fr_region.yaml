@@ -4,6 +4,7 @@ status: draft
 doc: Name of an administrative region of France, the level above the department, for example Île-de-France
   or Bretagne. France has 18 regions, five of them overseas. The INSEE code of a region is the pattern
   fr_region_code.
+parent: admin_area_1
 categories:
 - geo
 - government

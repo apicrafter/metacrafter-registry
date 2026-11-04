@@ -2,6 +2,7 @@ id: ie_driver_license
 name: Irish driver's license number
 status: draft
 doc: Number of a driving licence issued in Ireland. Microsoft Purview looks for six digits and four letters.
+parent: driver_license
 categories:
 - pii
 - persons

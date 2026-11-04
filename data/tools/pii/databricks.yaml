@@ -14,10 +14,13 @@ supported_types:
 - autfn
 - bankaccount
 - bankcard
+- bankcard_cvv
+- bankcard_expiry
 - bic
 - birthday
 - brcpf
 - bsn
+- ca_pr_card
 - casin
 - chahv
 - cif
@@ -26,6 +29,7 @@ supported_types:
 - curp
 - depersonalausweis
 - dkcprnum
+- driver_license
 - email
 - es_dni
 - esnie
@@ -42,6 +46,7 @@ supported_types:
 - in_epic
 - ipaddr
 - it_codicefiscale
+- it_id_card
 - it_iva
 - jp_pension_number
 - krbusinessreg
@@ -56,6 +61,7 @@ supported_types:
 - nric
 - nz_ird
 - nz_nhi
+- nz_nzbn
 - pan
 - passport
 - person_fullname

@@ -10,6 +10,8 @@ doc: 'Microsoft Power BI is a business intelligence service with a desktop repor
 website: https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-data-categorization
 supported_types:
 - address
+- admin_area_1
+- admin_area_2
 - city
 - continent
 - country

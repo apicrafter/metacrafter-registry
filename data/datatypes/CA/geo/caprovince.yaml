@@ -2,6 +2,7 @@ id: caprovince
 name: Province of Canada
 status: stable
 doc: Provinces and territories of Canada
+parent: admin_area_1
 categories:
 - geo
 country:

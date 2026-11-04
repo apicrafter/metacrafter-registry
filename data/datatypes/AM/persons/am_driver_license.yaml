@@ -2,6 +2,7 @@ id: am_driver_license
 name: Armenian Driver License Number
 status: stable
 doc: Armenian driver license number used for vehicle operation authorization
+parent: driver_license
 categories:
 - pii
 - persons

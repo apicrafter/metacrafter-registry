@@ -2,6 +2,7 @@ id: vndriverlic
 name: Vietnamese driver license by field name
 status: stable
 doc: Vietnamese driver license by field name identifier
+parent: driver_license
 categories:
 - pii
 - persons

@@ -10,6 +10,7 @@ supported_types:
 - aws_access_key_id
 - facebook_app_access_token
 - github_token
+- gitlab_pat
 - google_api_key
 - heroku_oauth_token
 - jfrog_api_key
@@ -17,7 +18,9 @@ supported_types:
 - jwt
 - mailchimp_api_key
 - npm_access_token
+- openai_api_key
 - pgp_private_key_block
+- pypi_token
 - sendgrid_api_key
 - slack_token
 - slack_webhook_url

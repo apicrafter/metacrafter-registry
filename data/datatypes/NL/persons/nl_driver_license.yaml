@@ -2,6 +2,7 @@ id: nl_driver_license
 name: Dutch driver's license number
 status: draft
 doc: Number of a driving licence issued in the Netherlands. Microsoft Purview looks for ten digits.
+parent: driver_license
 categories:
 - pii
 - persons

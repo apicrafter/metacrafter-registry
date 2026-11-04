@@ -2,6 +2,7 @@ id: dk_driver_license
 name: Danish driver's license number
 status: draft
 doc: Number of a driving licence issued in Denmark. Microsoft Purview looks for eight digits.
+parent: driver_license
 categories:
 - pii
 - persons

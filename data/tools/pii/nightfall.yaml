@@ -28,6 +28,7 @@ supported_types:
 - brcpf
 - bsb
 - ca_bank_account
+- ca_pr_card
 - cabcphn
 - cadriverlic
 - caonohip
@@ -52,6 +53,7 @@ supported_types:
 - gb_electoral_roll_number
 - geopoint
 - github_token
+- gitlab_pat
 - google_api_key
 - hk_hkid
 - hu_passport
@@ -113,7 +115,9 @@ supported_types:
 - uknino
 - ukpassport
 - ukutr
+- us_hicn
 - us_mbi
+- us_ndc
 - usdriverlic
 - usein
 - usitin
