@@ -1,10 +1,12 @@
 id: dc_publisher
-name: Dublin Core publisher by field name
-status: draft
-doc: Dublin Core publisher by field name
+name: Publisher (Dublin Core)
+status: stable
+doc: 'Dublin Core element ''publisher'': an entity responsible for making the resource available.'
 categories:
 - dublincore
 langs:
-- en
+- common
 is_pii: false
-classification: identifier
+links:
+- type: dublincore
+  url: http://purl.org/dc/terms/publisher

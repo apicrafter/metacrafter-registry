@@ -1,10 +1,25 @@
 id: ethereum_address
-name: Ethereum address by field name
-status: draft
-doc: Ethereum address by field name
+name: Ethereum address
+status: stable
+doc: 'Address of an Ethereum account or contract: 0x followed by 40 hexadecimal digits (the last 20 bytes
+  of the Keccak-256 hash of the public key). Mixed upper and lower case encodes an EIP-55 checksum.'
 categories:
 - cryptocurrency
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+regexp: ^0x[0-9a-fA-F]{40}$
+examples:
+- value: '0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed'
+  description: EIP-55 test vector (checksummed)
+- value: '0xfb6916095ca1df60bb79ce92ce3ea74c37c5d359'
+  description: EIP-55 test vector, all lower case
+- value: '0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAe'
+  valid: false
+  description: 39 hex digits
+links:
+- type: doc
+  url: https://eips.ethereum.org/EIPS/eip-55
+- type: doc
+  url: https://ethereum.org/en/developers/docs/accounts/

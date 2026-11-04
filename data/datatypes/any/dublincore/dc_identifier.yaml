@@ -1,10 +1,17 @@
 id: dc_identifier
-name: Dublin Core identifier by field name
-status: draft
-doc: Dublin Core identifier by field name identifier
+name: Identifier (Dublin Core)
+status: stable
+doc: 'Dublin Core element ''identifier'': an unambiguous reference to the resource in a given context,
+  such as a URI, a DOI or an ISBN.'
 categories:
 - dublincore
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+examples:
+- value: https://doi.org/10.1000/182
+  description: DOI of the DOI Handbook, as a URI
+links:
+- type: dublincore
+  url: http://purl.org/dc/terms/identifier

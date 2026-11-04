@@ -1,10 +1,12 @@
 id: dc_relation
-name: Dublin Core relation by field name
-status: draft
-doc: Dublin Core relation by field name
+name: Relation (Dublin Core)
+status: stable
+doc: 'Dublin Core element ''relation'': a related resource, usually referenced by its identifier.'
 categories:
 - dublincore
 langs:
-- en
+- common
 is_pii: false
-classification: identifier
+links:
+- type: dublincore
+  url: http://purl.org/dc/terms/relation
