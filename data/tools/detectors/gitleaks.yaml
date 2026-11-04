@@ -1,0 +1,29 @@
+id: gitleaks
+name: Gitleaks
+category: detector
+doc: Open-source (MIT) secret scanner that finds hard-coded credentials, such as API keys, access tokens
+  and private keys, in git history, directories and standard input. Its rules combine regular expressions
+  with keywords and entropy checks. The list of supported types covers only the registry datatypes that
+  match a gitleaks rule.
+website: https://github.com/gitleaks/gitleaks
+supported_types:
+- aws_access_key_id
+- facebook_app_access_token
+- github_token
+- google_api_key
+- heroku_oauth_token
+- jfrog_api_key
+- jfrog_reference_token
+- jwt
+- mailchimp_api_key
+- npm_access_token
+- pgp_private_key_block
+- sendgrid_api_key
+- slack_token
+- slack_webhook_url
+- sonarqube_token
+- square_access_token
+- stripe_api_key
+- telegram_bot_token
+- twilio_api_key_sid
+- x509_private_key
