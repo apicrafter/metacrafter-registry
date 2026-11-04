@@ -1,7 +1,7 @@
 categories:
 - finances
 country:
-- RU
+- US
 doc: A bank account in the financial institutuin in United States
 id: usbankaccount
 is_pii: 'False'

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}About and API{% endblock %}
+{% block description %}How the Metacrafter Registry is built, its static JSON API, bulk downloads and how to contribute.{% endblock %}
+{% block content %}
+<h1>About the registry</h1>
+<p class="lead">The Metacrafter Registry is a reference catalog of <em>semantic data types</em>: what a value means, not only how it is stored. Examples are an email address, a Russian INN, an IBAN or an ISO country code.</p>
+
+<p>Each <strong>datatype</strong> has an ID, a name and a description. It may also have:</p>
+<ul class="plain">
+  <li>categories (contexts of use)</li>
+  <li>countries and languages</li>
+  <li>a flag that marks personal data (PII)</li>
+  <li>a regular expression</li>
+  <li>examples</li>
+  <li>translations</li>
+  <li>links to Wikipedia, Wikidata, Schema.org and standards</li>
+</ul>
+<p>A <strong>pattern</strong> is one specific representation of a datatype, for example the UK passport number format. A <strong>tool</strong> record lists the registry types that a piece of software supports.</p>
+
+<p><a href="https://github.com/apicrafter/metacrafter">Metacrafter</a> labels the fields of tables and data files with these IDs. For every detected type, it links to <code>{{ site_url }}/datatype/&lt;id&gt;</code>. Its detection rules live in <a href="https://github.com/apicrafter/metacrafter-rules">metacrafter-rules</a>, and each rule key is a registry ID.</p>
+
+<h2>How it is built</h2>
+<p>The source of truth is one YAML file per record in the <a href="https://github.com/apicrafter/metacrafter-registry/tree/main/data">GitHub repository</a>. Every change is validated in CI. Each merge to <code>main</code> rebuilds this static site and the JSON files, and deploys them to GitHub Pages. This build:</p>
+<p class="muted">version {{ version }}{% if git_sha %}, commit <a href="https://github.com/apicrafter/metacrafter-registry/commit/{{ git_sha }}">{{ git_sha[:7] }}</a>{% endif %}{% if generated_at %}, {{ generated_at[:10] }}{% endif %}.</p>
+
+<h2>API</h2>
+<p>All endpoints are static files: plain <code>GET</code> requests, with no key, no rate limit and no query parameters. They are described in <a href="{{ base }}/api/v1/openapi.json">OpenAPI 3.1</a>.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th scope="col">Path</th><th scope="col">Content</th></tr></thead>
+  <tbody>
+    <tr><td class="id"><a href="{{ base }}/api/v1/index.json">/api/v1/index.json</a></td><td>Manifest: data version, git SHA, counts, size and SHA-256 of every bulk file, datatype URL template</td></tr>
+    <tr><td class="id">/api/v1/datatypes/&lt;id&gt;.json</td><td>One datatype or pattern, normalized: references are ID strings</td></tr>
+    <tr><td class="id"><a href="{{ base }}/api/v1/datatypes.json">/api/v1/datatypes.json</a></td><td>All datatypes and patterns (array); also <a href="{{ base }}/api/v1/datatypes.jsonl">.jsonl</a> and <a href="{{ base }}/api/v1/datatypes.csv">.csv</a></td></tr>
+    <tr><td class="id">/api/v1/tools/&lt;id&gt;.json</td><td>One tool; all tools in <a href="{{ base }}/api/v1/tools.json">/api/v1/tools.json</a></td></tr>
+    <tr><td class="id"><a href="{{ base }}/api/v1/categories.json">/api/v1/categories.json</a></td><td>Categories with counts; also <a href="{{ base }}/api/v1/countries.json">countries.json</a>, <a href="{{ base }}/api/v1/languages.json">languages.json</a></td></tr>
+    <tr><td class="id"><a href="{{ base }}/registry.json">/registry.json</a></td><td>Legacy: all records keyed by ID, in the shape used by metacrafter's <code>RegistryClient</code></td></tr>
+    <tr><td class="id">/datatype/&lt;id&gt;.json</td><td>Legacy: one record, same shape as in <code>registry.json</code></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="small muted">The legacy files keep the release 1.02 shape: fields are added, never removed or retyped. New integrations should use <code>/api/v1/</code>.</p>
+
+<h2>License</h2>
+<p>The repository, code and data, is published under the <a href="https://github.com/apicrafter/metacrafter-registry/blob/main/LICENSE">Apache License 2.0</a>. Some descriptions quote Wikipedia, which is licensed under CC BY-SA 4.0; their source is linked on each record.</p>
+
+<h2>Contributing</h2>
+<p>Every record page has an “edit on GitHub” link. To propose a new datatype, open a pull request or an <a href="https://github.com/apicrafter/metacrafter-registry/issues">issue</a>. The rules are in <a href="https://github.com/apicrafter/metacrafter-registry/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+<p>Maintainer: Ivan Begtin, <a href="mailto:ivan@begtin.tech">ivan@begtin.tech</a>.</p>
+{% endblock %}

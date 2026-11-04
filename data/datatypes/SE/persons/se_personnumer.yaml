@@ -9,7 +9,7 @@ doc: 'The personal identity number (Swedish: personnummer) is the Swedish nation
 id: sepersonnummer
 is_pii: 'True'
 langs:
-- se
+- sv
 links:
 - type: other
   url: https://en.wikipedia.org/wiki/Personal_identity_number_(Sweden)

@@ -11,12 +11,12 @@ langs:
 - it
 links: []
 name: Swiss UID
-regexp: '^(CHE[0-9]{9}TVA|[0-9]{3}\\.[0-9]{3}\\.[0-9]{3})$'
+regexp: '^CHE-?\d{3}\.?\d{3}\.?\d{3}(?: ?(?:MWST|TVA|IVA))?$'
 examples:
-- value: "CHE123456789TVA"
-  description: Example Swiss UID
-- value: "123.456.789"
-  description: Example Swiss UID (alternative format)
+- value: 'CHE-123.456.788'
+  description: Swiss UID (valid MOD-11 check digit)
+- value: 'CHE-123.456.788 TVA'
+  description: Swiss UID used as VAT number
 classification: identifier
 wikidata_property: ''
 translations: {}

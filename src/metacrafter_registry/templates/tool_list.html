@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Tools{% endblock %}
+{% block description %}Data classification, PII detection and data catalog tools, with the semantic data types they support.{% endblock %}
+{% block content %}
+<h1>Tools</h1>
+<p class="lead">Software that detects or uses semantic data types, with the registry types each one supports.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th scope="col">Tool</th><th scope="col">Category</th><th scope="col">Supported types</th><th scope="col">Description</th></tr></thead>
+  <tbody>
+  {% for t in tools %}
+    <tr>
+      <td><a href="{{ base }}/tool/{{ t.id }}">{{ t.name }}</a></td>
+      <td>{{ t.category }}</td>
+      <td>{{ t.supported_types|length }}</td>
+      <td class="doc">{{ t.doc|truncate(160) }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

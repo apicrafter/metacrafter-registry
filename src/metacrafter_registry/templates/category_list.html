@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Categories{% endblock %}
+{% block description %}Contexts that group semantic data types, used by Metacrafter to select detection rules.{% endblock %}
+{% block content %}
+<h1>Categories</h1>
+<p class="lead">A category is a context of use. Metacrafter uses categories to choose which rules to apply to a dataset.</p>
+<div class="grid">
+{% for c in categories %}
+  <a class="card" href="{{ base }}/category/{{ c.id }}">{{ c.name }}<br><span class="count">{{ c.count }} types · <code>{{ c.id }}</code></span></a>
+{% endfor %}
+</div>
+{% endblock %}

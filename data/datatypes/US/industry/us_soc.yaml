@@ -15,7 +15,7 @@ langs:
 - en
 name: Standard Occupational Classification System (US and GB)
 wikidata_property: P919
-regexp: \d{2}\-\d{6}
+regexp: '^\d{2}-\d{4}$'
 examples:
 - value: 15-1242
   description: Database Administrators

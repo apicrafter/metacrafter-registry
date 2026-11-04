@@ -12,12 +12,12 @@ links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/VAT_identification_number
 name: INN (Russian tax identifier)
-regexp: \d{10}
+regexp: '^(?:\d{10}|\d{12})$'
 examples:
-- value: ''
-  description: ''
-- value: ''
-  description: ''
+- value: '7707083893'
+  description: Organization INN (10 digits), Sberbank
+- value: '7728168971'
+  description: Organization INN (10 digits), Alfa-Bank
 classification: identifier
 wikidata_property: ''
 translations: {}

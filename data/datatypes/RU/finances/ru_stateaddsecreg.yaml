@@ -12,7 +12,7 @@ links:
 - type: other
   url: http://pravo.gov.ru/proxy/ips/?doc_itself=&nd=102096289&page=1&rdk=3#I0
 name: State registration number of the additional issue of equity securities (Russia)
-regexp: '[0-9A-Z]{13}'
+regexp: '^\d-\d{2}-\d{5}-[A-ZА-ЯЁ]-\d{3}[A-ZА-ЯЁ]$'
 examples:
 - value: 1-01-55192-Е-003D
   description: Обыкновенные акции закрытая подписка Публичное акционерное общество

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-base="{{ base }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %} · Metacrafter Registry</title>
+  <meta name="description" content="{% block description %}Open registry of semantic data types: identifiers, personal data, codes and classifiers, with regular expressions, examples and links to Wikidata and Schema.org.{% endblock %}">
+  {% if canonical %}<link rel="canonical" href="{{ site_url }}{{ canonical }}">
+  <meta property="og:url" content="{{ site_url }}{{ canonical }}">{% endif %}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Metacrafter Registry">
+  <meta property="og:title" content="{{ self.title() }}">
+  <meta property="og:description" content="{{ self.description() }}">
+  {% block head %}{% endblock %}
+  <link rel="stylesheet" href="{{ base }}/assets/site.css">
+  <script src="{{ base }}/assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ base }}/">Metacrafter <span>Registry</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="{{ base }}/datatype/"{% if section == 'datatypes' %} aria-current="page"{% endif %}>Datatypes</a>
+      <a href="{{ base }}/category/"{% if section == 'categories' %} aria-current="page"{% endif %}>Categories</a>
+      <a href="{{ base }}/country/"{% if section == 'countries' %} aria-current="page"{% endif %}>Countries</a>
+      <a href="{{ base }}/tool/"{% if section == 'tools' %} aria-current="page"{% endif %}>Tools</a>
+      <a href="{{ base }}/about"{% if section == 'about' %} aria-current="page"{% endif %}>About &amp; API</a>
+    </nav>
+    <form class="header-search" role="search" action="{{ base }}/search" method="get">
+      <label for="header-q" class="skip-link">Search datatypes</label>
+      <input id="header-q" type="search" name="q" placeholder="Search datatypes…">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+{% block content %}{% endblock %}
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Metacrafter Registry {{ version }}{% if git_sha %} · <a href="https://github.com/apicrafter/metacrafter-registry/commit/{{ git_sha }}">{{ git_sha[:7] }}</a>{% endif %}</span>
+    <a href="{{ base }}/api/v1/index.json">API manifest</a>
+    <a href="{{ base }}/registry.json">registry.json</a>
+    <a href="https://github.com/apicrafter/metacrafter-registry">GitHub</a>
+    <a href="https://github.com/apicrafter/metacrafter">Metacrafter</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -9,16 +9,16 @@ langs:
 - common
 links:
 - type: wikipedia
-- url: https://en.wikipedia.org/wiki/International_Standard_Book_Number
+  url: https://en.wikipedia.org/wiki/International_Standard_Book_Number
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P212
 name: International Standard Book Number 13-digits (ISBN13)
-regexp: \d[\d\-]{15}\d
+regexp: '^97[89](?:[- ]?\d){10}$'
 wikidata_property: P212
 examples:
-- value: 0-521-29366-9
-  description: Hamlet, Prince of Denmark
-- value: 0-521-22151-X
-  description: Hamlet, Prince of Denmark
+- value: '978-0-521-29366-2'
+  description: Hamlet, Prince of Denmark (ISBN-10 0-521-29366-9)
+- value: '978-0-521-22151-1'
+  description: Hamlet, Prince of Denmark (ISBN-10 0-521-22151-X)
 classification: identifier
 translations: {}

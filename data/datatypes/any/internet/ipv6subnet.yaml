@@ -8,7 +8,7 @@ langs:
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P3793
-name: IPv4 routing prefix (subnet)
+name: IPv6 routing prefix (subnet)
 wikidata_property: P3793
 regexp: '[\d:a-f\/]{4,30}'
 examples:

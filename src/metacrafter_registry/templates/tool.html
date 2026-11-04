@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% from "_macros.html" import datatype_table with context %}
+{% block title %}{{ object.name }} — tool{% endblock %}
+{% block description %}{{ object.doc|truncate(200) }}{% endblock %}
+{% block head %}
+  <link rel="alternate" type="application/json" href="{{ base }}/api/v1/tools/{{ object.id }}.json" title="API v1 record">
+  <link rel="alternate" type="application/json" href="{{ base }}/tool/{{ object.id }}.json" title="Legacy record">
+{% endblock %}
+{% block content %}
+<p class="small muted"><a href="{{ base }}/tool/">Tools</a></p>
+<h1>{{ object.name }}</h1>
+<p class="id-line">ID <code>{{ object.id }}</code></p>
+<div class="badges"><span class="badge neutral">{{ object.category }}</span></div>
+<p>{{ object.doc }}</p>
+<dl class="facts">
+  {% if object.website %}<dt>Website</dt><dd><a href="{{ object.website }}" rel="noopener">{{ object.website }}</a></dd>{% endif %}
+  <dt>Supported types</dt><dd>{{ object.supported_types|length }}</dd>
+</dl>
+{% if records %}
+<h2>Supported semantic types</h2>
+{{ datatype_table(records) }}
+{% endif %}
+<h2>Use this record</h2>
+<ul class="plain">
+  <li>JSON: <a href="{{ base }}/api/v1/tools/{{ object.id }}.json">API v1</a> · <a href="{{ base }}/tool/{{ object.id }}.json">legacy shape</a></li>
+  <li>Improve it: <a href="{{ object.source.edit_url }}">edit <code>{{ object.source.path }}</code> on GitHub</a></li>
+</ul>
+{% endblock %}

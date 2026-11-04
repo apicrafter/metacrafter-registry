@@ -1,0 +1,79 @@
+name: Deploy site to GitHub Pages
+
+# Requires: Settings → Pages → Source: "GitHub Actions".
+# The custom domain (registry.apicrafter.io) is configured in Settings → Pages;
+# with Actions-based deployment a CNAME file in the artifact is not used.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      base_url: ${{ steps.pages.outputs.base_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install
+        run: pip install .
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build
+        env:
+          BASE_URL: ${{ steps.pages.outputs.base_url }}
+        run: metacrafter-registry build --base-url "$BASE_URL" --no-data-files
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  verify:
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install .
+
+      - name: Check public URL contract on the deployed site
+        env:
+          BASE_URL: ${{ needs.build.outputs.base_url }}
+          EXPECTED_SHA: ${{ github.sha }}
+        run: metacrafter-registry check-contract "$BASE_URL" --expect-sha "$EXPECTED_SHA" --retries 6

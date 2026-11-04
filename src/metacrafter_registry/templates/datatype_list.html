@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% from "_macros.html" import datatype_table with context %}
+{% block title %}All datatypes and patterns{% endblock %}
+{% block content %}
+<h1>Datatypes and patterns</h1>
+<p class="lead">{{ reg.kind_count('datatype') }} semantic datatypes and {{ reg.kind_count('pattern') }} patterns. A <em>pattern</em> is one specific representation of a datatype, for example a national passport number format.</p>
+
+<form id="filters" class="filters" hidden>
+  <label for="f-q">Text
+    <input id="f-q" type="search" name="q" placeholder="id, name, description">
+  </label>
+  <label for="f-category">Category
+    <select id="f-category" name="category">
+      <option value="">All</option>
+      {% for c in categories %}<option value="{{ c.id }}">{{ c.name }} ({{ c.count }})</option>{% endfor %}
+    </select>
+  </label>
+  <label for="f-country">Country
+    <select id="f-country" name="country">
+      <option value="">All</option>
+      <option value="any">Global (no country)</option>
+      {% for c in countries %}<option value="{{ c.id }}">{{ c.name }} ({{ c.count }})</option>{% endfor %}
+    </select>
+  </label>
+  <label for="f-kind">Kind
+    <select id="f-kind" name="kind">
+      <option value="">All</option>
+      <option value="datatype">Datatypes</option>
+      <option value="pattern">Patterns</option>
+    </select>
+  </label>
+  <label for="f-pii">Personal data
+    <select id="f-pii" name="pii">
+      <option value="">All</option>
+      <option value="yes">PII</option>
+      <option value="no">Not PII</option>
+    </select>
+  </label>
+</form>
+<p id="result-count" class="result-count" aria-live="polite">{{ records|length }} records</p>
+
+{{ datatype_table(records, 'datatype-table') }}
+{% endblock %}

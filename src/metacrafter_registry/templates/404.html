@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Not found{% endblock %}
+{% block content %}
+<h1>Page not found</h1>
+<p>This page does not exist. If you followed a link to a datatype, its ID may have changed or it may not be in the registry yet.</p>
+<ul class="plain">
+  <li><a href="{{ base }}/search">Search the registry</a></li>
+  <li><a href="{{ base }}/datatype/">Browse all datatypes</a></li>
+  <li><a href="https://github.com/apicrafter/metacrafter-registry/issues">Report a missing datatype</a></li>
+</ul>
+{% endblock %}

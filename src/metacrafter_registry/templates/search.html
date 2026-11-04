@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Search{% endblock %}
+{% block content %}
+<h1>Search</h1>
+<form role="search" class="filters" action="{{ base }}/search" method="get" onsubmit="return false">
+  <label for="search-q">IDs, names, translated names and descriptions
+    <input id="search-q" type="search" name="q" size="40" autofocus>
+  </label>
+</form>
+<p id="search-status" class="result-count" aria-live="polite"></p>
+<ul id="search-results" class="search-results"></ul>
+<noscript><p class="notice">Search needs JavaScript. Without it, use the <a href="{{ base }}/datatype/">full list of datatypes</a> and your browser's find-in-page.</p></noscript>
+<p class="small muted">Search runs in your browser. Your query is not sent anywhere.</p>
+{% endblock %}

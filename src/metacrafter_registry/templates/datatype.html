@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% from "_macros.html" import pii_badge, kind_badge, country_links, category_links, datatype_table with context %}
+{% block title %}{{ object.name }} ({{ object.id }}){% endblock %}
+{% block description %}{{ object.doc|truncate(200) }}{% endblock %}
+{% block head %}
+  <link rel="alternate" type="application/json" href="{{ base }}/api/v1/datatypes/{{ object.id }}.json" title="API v1 record">
+  <link rel="alternate" type="application/json" href="{{ base }}/datatype/{{ object.id }}.json" title="Legacy record">
+  <script type="application/ld+json">{{ jsonld|tojson }}</script>
+{% endblock %}
+{% block content %}
+<p class="small muted"><a href="{{ base }}/datatype/">Datatypes</a>{% if object.semantic_type %} › <a href="{{ base }}/datatype/{{ object.semantic_type }}">{{ object.semantic_type }}</a>{% endif %}</p>
+<h1>{{ object.name }}</h1>
+<p class="id-line">ID <code>{{ object.id }}</code> <button type="button" class="copy-btn" data-copy="{{ object.id }}" hidden>Copy</button></p>
+<div class="badges">
+  {% if object.kind == 'pattern' %}<span class="badge neutral">Pattern of {{ object.semantic_type }}</span>{% else %}<span class="badge">Datatype</span>{% endif %}
+  {% if object.is_pii %}<span class="badge pii">Personal data (PII)</span>{% else %}<span class="badge ok">Not PII</span>{% endif %}
+  {% if object.classification %}<span class="badge neutral">{{ object.classification }}</span>{% endif %}
+</div>
+
+<p>{{ object.doc }}</p>
+
+<dl class="facts">
+  {% if object.semantic_type %}
+  <dt>Pattern of</dt>
+  <dd><a href="{{ base }}/datatype/{{ object.semantic_type }}">{{ reg.datatypes[object.semantic_type].name }}</a> <code>{{ object.semantic_type }}</code></dd>
+  {% endif %}
+  {% if object.parent %}
+  <dt>Parent datatype</dt>
+  <dd><a href="{{ base }}/datatype/{{ object.parent }}">{{ reg.datatypes[object.parent].name }}</a> <code>{{ object.parent }}</code></dd>
+  {% endif %}
+  <dt>Categories</dt>
+  <dd>{% for c in object.categories or [] %}<a href="{{ base }}/category/{{ c }}">{{ reg.categories[c].name }}</a>{% if not loop.last %}, {% endif %}{% else %}<span class="muted">none</span>{% endfor %}</dd>
+  <dt>Countries</dt>
+  <dd>{% for c in object.country or [] %}<a href="{{ base }}/country/{{ c }}">{{ reg.countries[c].name }}</a>{% if not loop.last %}, {% endif %}{% else %}<span class="muted">Global (not tied to a country)</span>{% endfor %}</dd>
+  <dt>Languages</dt>
+  <dd>{% for l in object.langs or [] %}{{ reg.langs[l].name }}{% if not loop.last %}, {% endif %}{% else %}<span class="muted">not specified</span>{% endfor %}</dd>
+  {% if object.mappings and object.mappings.wikidata %}
+  <dt>Wikidata</dt>
+  <dd><a href="https://www.wikidata.org/wiki/{{ 'Property:' if object.mappings.wikidata.startswith('P') else '' }}{{ object.mappings.wikidata }}">{{ object.mappings.wikidata }}</a></dd>
+  {% endif %}
+  <dt>Supported by tools</dt>
+  <dd>{% for t in (object.detected_by or {}).get('tools', []) %}<a href="{{ base }}/tool/{{ t }}">{{ reg.tools[t].name }}</a>{% if not loop.last %}, {% endif %}{% else %}<span class="muted">no tool record lists this type yet</span>{% endfor %}</dd>
+</dl>
+
+{% if object.regexp %}
+<h2>Regular expression</h2>
+<pre><code>{{ object.regexp }}</code></pre>
+<p class="small muted">Python <code>re</code> syntax.{% if not (object.regexp.startswith('^') and object.regexp.endswith('$')) %} Not anchored: it can match inside longer text.{% endif %}</p>
+{% endif %}
+
+{% if object.examples %}
+<h2>Examples</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th scope="col">Value</th><th scope="col">Description</th></tr></thead>
+  <tbody>
+  {% for e in object.examples %}
+    <tr><td class="id">{{ e.value }}{% if not e.valid %} <span class="badge pii">invalid</span>{% endif %}</td><td>{{ e.description }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+
+{% if patterns %}
+<h2>Patterns</h2>
+<p class="muted">Specific representations of this datatype.</p>
+{{ datatype_table(patterns) }}
+{% endif %}
+
+{% if children %}
+<h2>Child datatypes</h2>
+{{ datatype_table(children) }}
+{% endif %}
+
+{% if object.translations %}
+<h2>Translations</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th scope="col">Language</th><th scope="col">Name</th><th scope="col">Description</th></tr></thead>
+  <tbody>
+  {% for lang, t in object.translations.items() %}
+    <tr><td>{{ reg.langs[lang].name if lang in reg.langs else lang }}</td><td lang="{{ lang }}">{{ t.name }}</td><td lang="{{ lang }}">{{ t.doc }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+
+{% if object.links %}
+<h2>Sources</h2>
+<ul class="plain">
+  {% for link in object.links %}<li><span class="muted">{{ link.type }}</span>: <a href="{{ link.url }}" rel="noopener">{{ link.url }}</a></li>{% endfor %}
+</ul>
+{% endif %}
+
+<h2>Use this record</h2>
+<ul class="plain">
+  <li>Page URL: <code>{{ site_url }}/datatype/{{ object.id }}</code></li>
+  <li>JSON: <a href="{{ base }}/api/v1/datatypes/{{ object.id }}.json">API v1</a> · <a href="{{ base }}/datatype/{{ object.id }}.json">legacy shape</a> (used by metacrafter)</li>
+  <li>Improve it: <a href="{{ object.source.edit_url }}">edit <code>{{ object.source.path }}</code> on GitHub</a></li>
+</ul>
+{% endblock %}

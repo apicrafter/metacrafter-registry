@@ -16,7 +16,7 @@ links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P213
 name: International Standard Name Identifier
-regexp: (\d{4})(\d{4})(\d{4})(\d{4})
+regexp: '^\d{4} ?\d{4} ?\d{4} ?\d{3}[\dX]$'
 wikidata_property: P213
 examples:
 - value: 0000 0001 2197 5163

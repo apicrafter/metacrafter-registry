@@ -16,8 +16,6 @@
   name: Danish
 - id: fi
   name: Finnish
-- id: se
-  name: Swedish
 - id: th
   name: Thai
 - id: de
@@ -47,4 +45,4 @@
 - id: tr
   name: Turkish
 - id: sv
-  name: Swedish (ISO 639-1)
+  name: Swedish

@@ -1,8 +1,6 @@
 categories:
 - persons
 - companies
-country:
-- RU
 doc: Work positions / job title
 id: jobtitle
 is_pii: 'False'

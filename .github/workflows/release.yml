@@ -1,0 +1,51 @@
+name: Release
+
+# Push a tag like v1.3.0 to publish a GitHub Release with the bulk data files.
+# Versioning policy: see CONTRIBUTING.md ("Releases and versioning").
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install
+        run: pip install .
+
+      - name: Build
+        run: metacrafter-registry build --no-data-files
+
+      - name: Collect release assets
+        run: |
+          mkdir -p release
+          cp dist/api/v1/datatypes.json release/datatypes.json
+          cp dist/api/v1/datatypes.jsonl release/datatypes.jsonl
+          cp dist/api/v1/datatypes.csv release/datatypes.csv
+          cp dist/api/v1/tools.json release/tools.json
+          cp dist/api/v1/categories.json release/categories.json
+          cp dist/api/v1/countries.json release/countries.json
+          cp dist/api/v1/languages.json release/languages.json
+          cp dist/api/v1/openapi.json release/openapi.json
+          cp dist/api/v1/index.json release/manifest.json
+          cp dist/registry.json release/registry-legacy.json
+          (cd dist && zip -qr ../release/site.zip .)
+          (cd release && sha256sum * > SHA256SUMS)
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: gh release create "$TAG" release/* --title "$TAG" --generate-notes --verify-tag

@@ -1,133 +1,38 @@
 #!/usr/bin/env python
-import yaml
+"""Legacy entry point kept for existing docs and habits.
+
+`build` and `validate` delegate to the `metacrafter-registry` package
+(`pip install -e .`, then `metacrafter-registry build|validate|serve`).
+`stats` and `report` still read data/datatypes_latest.json directly.
+"""
 import json
 import logging
 import argparse
-from pprint import pprint
-try:
-    from yaml import CLoader as Loader, CDumper as Dumper
-except ImportError:
-    from yaml import Loader, Dumper
-import csv
 import os
+import sys
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(BASE_DIR, '..', 'data')
+DATA_PATH = os.path.normpath(os.path.join(BASE_DIR, '..', 'data'))
 FORMAT = '%(asctime)s %(message)s'
 logging.basicConfig(format=FORMAT)
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-def load_dict(filename):
-    f = open(filename, 'r', encoding='utf8')
-    data = yaml.load(f, Loader=Loader)
-    f.close()
-    out = {}
-    for r in data:
-        out[r['id']] = r['name']
-    return out
 
-def load_path(dirpath):
-    subfolders = [f.path for f in os.scandir(dirpath) if f.is_dir()]
-    all = []
-    for root, dirs, files in os.walk(dirpath, topdown=False):
-        for filename in files:
-            if filename.lower().rsplit('.', 1)[-1] != 'yaml': continue
-            logging.info('Load %s' % (filename))
-            f = open(os.path.join(root, filename), 'r', encoding='utf8')
-            all.append(yaml.load(f, Loader=Loader))
-            f.close()
-    return all
+def _package_cli(args):
+    try:
+        from metacrafter_registry.cli import main as cli_main
+    except ImportError:
+        sys.path.insert(0, os.path.join(BASE_DIR, '..', 'src'))
+        from metacrafter_registry.cli import main as cli_main
+    return cli_main(['--data-dir', DATA_PATH, *args])
+
 
 def load_json(filepath):
     f = open(filepath, 'r', encoding='utf8')
     data = json.load(f)
     f.close()
     return data
-
-
-def update_by_dict(arr, adict):
-    aindex = []
-
-    for c in arr:
-        name = adict.get(c)
-        if name is None:
-            logging.warning("Unknown key '%s' in mapping, skipping", c)
-            continue
-        aindex.append({'id': c, 'name': name})
-    return aindex
-
-
-
-def datatypes_yaml_to_jsonl():
-    output = {}
-    countries = load_dict(os.path.join(DATA_PATH, 'countries.yaml'))
-    categories = load_dict(os.path.join(DATA_PATH, 'categories.yaml'))
-    langs = load_dict(os.path.join(DATA_PATH, 'langs.yaml'))
-
-    fjsonl = open(os.path.join(DATA_PATH, 'datatypes_latest.jsonl'), 'w', encoding='utf8')
-    f = open(os.path.join(DATA_PATH, 'datatypes_latest.json'), 'w', encoding='utf8')
-
-    pindex = {}
-    dindex = {}
-    patterns = {}
-
-
-    datatypes = load_path(os.path.join(DATA_PATH, 'datatypes'))
-    print('Loaded %d datatypes and patterns' % (len(datatypes)))
-    for d in datatypes:
-        if 'semantic_type' in d.keys():
-            plist = pindex.get(d['semantic_type'], [])
-            plist.append(d['id'])
-            pindex[d['semantic_type']] = plist
-            patterns[d['id']] = d
-        else:
-            dindex[d['id']] = d
-
-    finallist = []
-    for d in datatypes:
-        if 'semantic_type' in d.keys():
-            d['type'] = 'pattern'
-            d['is_pii'] = True if dindex[d['semantic_type']]['is_pii'] == 'True' else False
-            if 'classification' not in d.keys():
-                if 'classification' in dindex[d['semantic_type']].keys():
-                    d['classification'] = dindex[d['semantic_type']]['classification']
-        else:
-            d['type'] = 'datatype'        
-            d['is_pii'] = True if d['is_pii'] == 'True' else False
-        if 'categories' in d.keys():
-            d['categories'] = update_by_dict(d['categories'], categories)
-        if 'country' in d.keys():
-            d['country'] = update_by_dict(d['country'], countries)
-        if 'langs' in d.keys():
-            d['langs'] = update_by_dict(d['langs'], langs)
-        output[d['id']] = d        
-        if d['id'] in pindex.keys():
-            d['patterns'] = [] 
-            for pid in pindex[d['id']]:
-                d['patterns'].append(patterns[pid])
-        finallist.append(d)
-        fjsonl.write(json.dumps(d, ensure_ascii=False) + '\n')
-
-    f.write(json.dumps(output, ensure_ascii=False))
-    f.close()
-    fjsonl.close()
-
-def tools_yaml_to_jsonl():
-    output = {}
-
-    fjsonl = open(os.path.join(DATA_PATH, 'tools_latest.jsonl'), 'w', encoding='utf8')
-    f = open(os.path.join(DATA_PATH, 'tools_latest.json'), 'w', encoding='utf8')
-
-    tools = load_path(os.path.join(DATA_PATH, 'tools'))
-    print('Loaded %d tools' % (len(tools)))
-    for d in tools:
-        d['num'] = len(d['supported_types'])
-        fjsonl.write(json.dumps(d, ensure_ascii=False) + '\n')
-        output[d['id']] = d
-    f.write(json.dumps(output, ensure_ascii=False))
-    f.close()
-    fjsonl.close()
 
 
 
@@ -457,218 +362,26 @@ def report():
     print('=' * 80)
 
 
-def check_cross_references():
-    """Verify pattern semantic_type and tool supported_types resolve to real IDs.
-
-    Returns the number of cross-reference errors found (0 = OK).
-    """
-    datatypes = [d for d in load_path(os.path.join(DATA_PATH, 'datatypes')) if d]
-    tools = [t for t in load_path(os.path.join(DATA_PATH, 'tools')) if t]
-
-    datatype_ids = {str(d['id']) for d in datatypes if d.get('id')}
-    errors = 0
-
-    for d in datatypes:
-        semantic_type = d.get('semantic_type')
-        if semantic_type and str(semantic_type) not in datatype_ids:
-            print("Cross-ref error: pattern '%s' references unknown semantic_type '%s'"
-                  % (d.get('id', 'unknown'), semantic_type))
-            errors += 1
-
-    for t in tools:
-        for st in (t.get('supported_types') or []):
-            if str(st) not in datatype_ids:
-                print("Cross-ref error: tool '%s' references unknown supported_type '%s'"
-                      % (t.get('id', 'unknown'), st))
-                errors += 1
-
-    if errors == 0:
-        print('Cross-reference check passed (semantic_type and supported_types resolve).')
-    return errors
-
-
-def validate():
-    try:
-        from cerberus import Validator
-    except ImportError:
-        print('Error: cerberus module is not installed.')
-        print('Please install it with: pip install cerberus')
-        return
-    
-    # Validate datatypes
-    schema_file = os.path.join(DATA_PATH, 'schemes/datatype.json')
-    if not os.path.exists(schema_file):
-        print('Error: datatype schema file not found: %s' % schema_file)
-        return
-    
-    try:
-        with open(schema_file, 'r', encoding='utf8') as f:
-            schema = json.load(f)
-    except Exception as e:
-        print('Error loading datatype schema: %s' % str(e))
-        return
-    
-    datatypes = load_path(os.path.join(DATA_PATH, 'datatypes'))
-    print('Loaded %d datatypes and patterns' % (len(datatypes)))
-    
-    v = Validator(schema)
-    datatype_errors = []
-    datatype_valid = 0
-    
-    for d in datatypes:
-        if d:
-            try:
-                item_id = d.get('id', 'unknown')
-                r = v.validate(d)
-                if not r:
-                    error_msg = '%s is not valid: %s' % (item_id, str(v.errors))
-                    print(error_msg)
-                    datatype_errors.append((item_id, v.errors))
-                else:
-                    datatype_valid += 1
-            except Exception as e:
-                item_id = d.get('id', 'unknown')
-                error_msg = '%s error: %s' % (item_id, str(e))
-                print(error_msg)
-                datatype_errors.append((item_id, str(e)))
-    
-    # Validate tools
-    tools_schema_file = os.path.join(DATA_PATH, 'schemes/tool.json')
-    if not os.path.exists(tools_schema_file):
-        print('Error: tool schema file not found: %s' % tools_schema_file)
-        return
-    
-    try:
-        with open(tools_schema_file, 'r', encoding='utf8') as f:
-            tools_schema = json.load(f)
-    except Exception as e:
-        print('Error loading tool schema: %s' % str(e))
-        return
-    
-    tools = load_path(os.path.join(DATA_PATH, 'tools'))
-    print('Loaded %d tools' % (len(tools)))
-    
-    v_tools = Validator(tools_schema)
-    tool_errors = []
-    tool_valid = 0
-    
-    for d in tools:
-        if d:
-            try:
-                item_id = d.get('id', 'unknown')
-                r = v_tools.validate(d)
-                if not r:
-                    error_msg = '%s is not valid: %s' % (item_id, str(v_tools.errors))
-                    print(error_msg)
-                    tool_errors.append((item_id, v_tools.errors))
-                else:
-                    tool_valid += 1
-            except Exception as e:
-                item_id = d.get('id', 'unknown')
-                error_msg = '%s error: %s' % (item_id, str(e))
-                print(error_msg)
-                tool_errors.append((item_id, str(e)))
-    
-    # Cross-reference integrity checks
-    print('')
-    crossref_errors = check_cross_references()
-
-    # Print summary
-    print('')
-    print('=' * 80)
-    print('VALIDATION SUMMARY')
-    print('=' * 80)
-    print('Datatypes: %d valid, %d invalid' % (datatype_valid, len(datatype_errors)))
-    print('Tools: %d valid, %d invalid' % (tool_valid, len(tool_errors)))
-    print('Cross-reference errors: %d' % crossref_errors)
-    total_valid = datatype_valid + tool_valid
-    total_invalid = len(datatype_errors) + len(tool_errors)
-    total_items = total_valid + total_invalid
-    if total_items > 0:
-        print('Overall: %d valid (%.1f%%), %d invalid (%.1f%%)' % (
-            total_valid, 
-            (total_valid * 100.0 / total_items),
-            total_invalid,
-            (total_invalid * 100.0 / total_items)
-        ))
-    print('=' * 80)
-    if datatype_errors or tool_errors or crossref_errors:
-        raise SystemExit(1)
-
-
-def check_unique_ids():
-    """Verify all datatype and tool IDs in the built JSONL files are unique.
-
-    Raises SystemExit(1) on any duplicate so the build fails fast.
-    """
-    from collections import defaultdict
-
-    def collect(path):
-        ids = defaultdict(list)
-        if not os.path.exists(path):
-            return ids
-        with open(path, 'r', encoding='utf-8') as handle:
-            for line_num, line in enumerate(handle, 1):
-                line = line.strip()
-                if not line:
-                    continue
-                record = json.loads(line)
-                rid = record.get('id')
-                if rid:
-                    ids[rid].append(line_num)
-        return ids
-
-    datatype_ids = collect(os.path.join(DATA_PATH, 'datatypes_latest.jsonl'))
-    tool_ids = collect(os.path.join(DATA_PATH, 'tools_latest.jsonl'))
-
-    dup_dt = {k: v for k, v in datatype_ids.items() if len(v) > 1}
-    dup_tool = {k: v for k, v in tool_ids.items() if len(v) > 1}
-    conflicts = set(datatype_ids) & set(tool_ids)
-
-    if dup_dt or dup_tool or conflicts:
-        for rid, lines in sorted(dup_dt.items()):
-            print('DUPLICATE datatype id: %s (lines %s)' % (rid, lines))
-        for rid, lines in sorted(dup_tool.items()):
-            print('DUPLICATE tool id: %s (lines %s)' % (rid, lines))
-        for rid in sorted(conflicts):
-            print('ID CONFLICT (datatype vs tool): %s' % rid)
-        raise SystemExit(1)
-
-    print('ID uniqueness check passed (%d datatypes, %d tools)' % (
-        len(datatype_ids), len(tool_ids)))
-
-
-def build():
-    datatypes_yaml_to_jsonl()
-    print('Build new datatypes JSON and JSON lines files')
-    tools_yaml_to_jsonl()
-    print('Build new tools JSON and JSON lines files')
-    check_unique_ids()
-
-
-def stats():
-    calculate_stats()
-
 
 def main():
     parser = argparse.ArgumentParser(description="Metacrafter registry builder and validator")
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
 
-    subparsers.add_parser("build", help="Build JSON and JSONL files from YAML datatypes and tools")
+    subparsers.add_parser("build", help="Build the site and data/*_latest.* (same as 'metacrafter-registry build')")
     subparsers.add_parser("stats", help="Calculate statistics for datatypes")
     subparsers.add_parser("report", help="Report missing fields for each datatype")
-    subparsers.add_parser("validate", help="Validate datatypes and tools against JSON schemas")
+    subparsers.add_parser("validate", help="Validate sources (same as 'metacrafter-registry validate')")
 
     args = parser.parse_args()
 
     if args.command == "build":
-        build()
+        raise SystemExit(_package_cli(["build"]))
     elif args.command == "stats":
-        stats()
+        calculate_stats()
     elif args.command == "report":
         report()
     elif args.command == "validate":
-        validate()
+        raise SystemExit(_package_cli(["validate"]))
     else:
         parser.print_help()
 
