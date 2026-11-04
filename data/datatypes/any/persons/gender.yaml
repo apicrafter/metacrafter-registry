@@ -11,3 +11,7 @@ is_pii: true
 classification: categorical
 mappings:
   cdm: means.demographic.gender
+  fta:
+  - GENDER.TEXT_<LANGUAGE>
+  - GENDER.TEXT_JA
+  - GENDER.TEXT_ZH

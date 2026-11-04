@@ -23,6 +23,10 @@ examples:
 - value: '4325251797'
   valid: false
   description: One character too many
+mappings:
+  fta:
+  - IDENTITY.VAT_GB
+  - IDENTITY.VAT_UK
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gb.vat.html

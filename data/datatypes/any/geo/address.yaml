@@ -57,6 +57,9 @@ mappings:
   - Turkey physical addresses
   - U.K. physical addresses
   - U.S. physical addresses
+  fta:
+  - FULL_ADDRESS_EN
+  - STREET_ADDRESS_JA
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Address

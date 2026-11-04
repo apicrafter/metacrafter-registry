@@ -10,6 +10,8 @@ langs:
 - es
 is_pii: false
 classification: categorical
+mappings:
+  fta: STATE_PROVINCE.STATE_NAME_MX
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/List_of_states_of_Mexico

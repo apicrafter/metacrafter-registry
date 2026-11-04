@@ -1,0 +1,32 @@
+id: iso639_1
+name: ISO 639-1 language code (two letters)
+status: draft
+doc: Two-letter code of a language from ISO 639-1, such as en (English), de (German) or ja (Japanese).
+  About 180 languages have such a code. It is written in lowercase, but data sets often use uppercase.
+semantic_type: language
+langs:
+- common
+regexp: ^(?:[a-z]{2}|[A-Z]{2})$
+examples:
+- value: en
+  description: English
+- value: de
+  description: German
+- value: JA
+  description: Japanese, in uppercase
+- value: eng
+  valid: false
+  description: a three-letter ISO 639-2 code
+mappings:
+  wikidata: P218
+  fta: LANGUAGE.ISO-639-1
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_639-1
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P218
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Код языка ISO 639-1

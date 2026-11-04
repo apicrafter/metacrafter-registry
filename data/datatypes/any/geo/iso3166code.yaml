@@ -8,6 +8,8 @@ langs:
 - common
 is_pii: false
 classification: categorical
+mappings:
+  fta: STATE_PROVINCE.PREFECTURE_ISO_JA
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P300

@@ -1,0 +1,30 @@
+id: it_postcode
+name: Italian postal code (CAP)
+status: draft
+doc: 'Italian postal code (CAP, codice di avviamento postale): five digits. San Marino and Vatican City
+  also use codes from this system.'
+semantic_type: postindex
+country:
+- IT
+langs:
+- it
+regexp: ^\d{5}$
+examples:
+- value: 00184
+  description: Rome
+- value: '20121'
+  description: Milan
+- value: '50122'
+  description: Florence
+- value: 0018
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_IT
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Italy
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Италии (CAP)

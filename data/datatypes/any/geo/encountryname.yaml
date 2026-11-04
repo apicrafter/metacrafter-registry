@@ -10,3 +10,5 @@ examples:
   description: Afghanistan (country name)
 - value: Mexico
   description: Mexico (country name)
+mappings:
+  fta: COUNTRY.TEXT_EN

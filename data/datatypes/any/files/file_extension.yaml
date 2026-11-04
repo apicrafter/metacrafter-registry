@@ -1,0 +1,32 @@
+id: file_extension
+name: File name extension
+status: draft
+doc: Suffix of a file name that tells the format of the file, such as pdf, docx or csv, written with or
+  without the leading dot. The full name of a file is the datatype filename.
+categories:
+- common
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\.?[A-Za-z0-9]{1,10}$
+examples:
+- value: pdf
+- value: .docx
+- value: CSV
+- value: report.pdf
+  valid: false
+  description: a file name, not an extension
+mappings:
+  wikidata: P1195
+  fta: FILENAME_EXT
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Filename_extension
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1195
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Расширение имени файла

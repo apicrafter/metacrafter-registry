@@ -25,6 +25,7 @@ examples:
 mappings:
   fibo: SEC/Securities/SecuritiesIdentificationIndividuals/CommitteeOnUniformSecuritiesIdentificationProceduresNumber
   wikidata: P5198
+  fta: CHECKDIGIT.CUSIP
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/CUSIP

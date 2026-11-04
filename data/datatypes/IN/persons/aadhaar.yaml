@@ -16,3 +16,4 @@ mappings:
   google_dlp: INDIA_AADHAAR_INDIVIDUAL
   presidio: IN_AADHAAR
   purview: India unique identification (Aadhaar) number
+  fta: IDENTITY.AADHAAR_IN

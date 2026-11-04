@@ -1,0 +1,25 @@
+id: year_range
+name: Year range
+status: draft
+doc: Span of calendar years written as two four-digit years joined by a hyphen, such as 2019-2020. It
+  often names a season, an academic or fiscal year, or a reporting period.
+categories:
+- datetime
+langs:
+- common
+is_pii: false
+regexp: ^\d{4}-\d{4}$
+examples:
+- value: 2019-2020
+- value: 1914-1918
+- value: 2019-20
+  valid: false
+  description: short form of the second year is not covered
+mappings:
+  fta: PERIOD.YEAR_RANGE
+links:
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Диапазон лет

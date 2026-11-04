@@ -1,0 +1,29 @@
+id: es_province
+name: Spanish province
+status: draft
+doc: Name of one of the 50 provinces of Spain, such as Madrid, Barcelona or A Coruña, in Spanish or in
+  a co-official language (Alacant). Ceuta and Melilla are autonomous cities outside the provinces.
+categories:
+- geo
+- government
+country:
+- ES
+langs:
+- es
+- ca
+is_pii: false
+classification: categorical
+examples:
+- value: Madrid
+- value: Barcelona
+- value: A Coruña
+mappings:
+  fta: STATE_PROVINCE.PROVINCE_NAME_ES
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Provinces_of_Spain
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Провинция Испании

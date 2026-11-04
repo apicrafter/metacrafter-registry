@@ -1,0 +1,35 @@
+id: iso639_2
+name: ISO 639-2 language code (three letters)
+status: draft
+doc: 'Three-letter code of a language from ISO 639-2, such as eng (English) or rus (Russian). About twenty
+  languages have two codes: a bibliographic one based on the English name (ger, fre) and a terminology
+  one based on the native name (deu, fra).'
+semantic_type: language
+langs:
+- common
+regexp: ^(?:[a-z]{3}|[A-Z]{3})$
+examples:
+- value: eng
+  description: English
+- value: rus
+  description: Russian
+- value: deu
+  description: German, terminology code
+- value: ger
+  description: German, bibliographic code
+- value: en
+  valid: false
+  description: a two-letter ISO 639-1 code
+mappings:
+  wikidata: P219
+  fta: LANGUAGE.ISO-639-2
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_639-2
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P219
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Код языка ISO 639-2

@@ -1,0 +1,29 @@
+id: br_state_code
+name: Brazilian state abbreviation (UF)
+status: draft
+doc: Two-letter abbreviation (sigla) of a Brazilian federative unit, such as SP for São Paulo or DF for
+  the Federal District. ISO 3166-2:BR uses the same letters after BR-.
+semantic_type: br_state
+country:
+- BR
+regexp: ^(?:AC|AL|AM|AP|BA|CE|DF|ES|GO|MA|MG|MS|MT|PA|PB|PE|PI|PR|RJ|RN|RO|RR|RS|SC|SE|SP|TO)$
+examples:
+- value: SP
+  description: São Paulo
+- value: RJ
+  description: Rio de Janeiro
+- value: DF
+  description: Distrito Federal
+- value: BR
+  valid: false
+  description: the country code, not a state
+mappings:
+  fta: STATE_PROVINCE.STATE_BR
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Federative_units_of_Brazil
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Сокращение штата Бразилии

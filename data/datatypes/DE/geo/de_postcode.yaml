@@ -19,6 +19,8 @@ examples:
 - value: '1011'
   valid: false
   description: four digits, the system used before 1993
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_DE
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Postal_codes_in_Germany

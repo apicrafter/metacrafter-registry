@@ -9,6 +9,7 @@ langs:
 is_pii: false
 mappings:
   cdm: means.calendar.dayOfMonth
+  fta: DAY.DIGITS
 translations:
   ru:
     name: День месяца

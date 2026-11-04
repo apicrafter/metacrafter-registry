@@ -18,6 +18,8 @@ examples:
 - value: AM
   valid: false
   description: not a continent code
+mappings:
+  fta: CONTINENT.CODE_EN
 links:
 - type: doc
   url: https://download.geonames.org/export/dump/readme.txt

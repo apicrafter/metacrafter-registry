@@ -15,6 +15,7 @@ examples:
 mappings:
   cdm: means.fileName
   d3m: https://metadata.datadrivendiscovery.org/types/FileName
+  fta: FILENAME
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Filename

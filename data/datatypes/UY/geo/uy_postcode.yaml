@@ -1,0 +1,25 @@
+id: uy_postcode
+name: Uruguayan postal code
+status: draft
+doc: 'Postal code (código postal) in Uruguay: five digits. Montevideo codes start with 11 or 12.'
+semantic_type: postindex
+country:
+- UY
+langs:
+- es
+regexp: ^\d{5}$
+examples:
+- value: '11000'
+  description: Montevideo
+- value: '11100'
+  description: Montevideo
+- value: '1100'
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_UY
+links:
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Уругвая

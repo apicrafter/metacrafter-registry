@@ -1,0 +1,28 @@
+id: pt_postcode
+name: Portuguese postal code
+status: draft
+doc: 'Postal code (código postal) in Portugal: four digits, a hyphen and three digits. The first four
+  digits name the area, the last three a street or a large customer.'
+semantic_type: postindex
+country:
+- PT
+langs:
+- pt
+regexp: ^[1-9]\d{3}-\d{3}$
+examples:
+- value: 1100-365
+  description: Lisbon
+- value: 1249-068
+  description: Lisbon
+- value: '1100365'
+  valid: false
+mappings:
+  fta: POSTAL_CODE.POSTAL_CODE_PT
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Portugal
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Почтовый индекс Португалии

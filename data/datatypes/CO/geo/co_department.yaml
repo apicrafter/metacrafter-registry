@@ -1,0 +1,28 @@
+id: co_department
+name: Colombian department
+status: draft
+doc: Name of one of the 32 departments of Colombia, such as Antioquia, Cundinamarca or Valle del Cauca.
+  Bogotá, the Capital District, is often listed with them.
+categories:
+- geo
+- government
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Antioquia
+- value: Cundinamarca
+- value: Valle del Cauca
+mappings:
+  fta: STATE_PROVINCE.DEPARTMENT_CO
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Departments_of_Colombia
+- type: other
+  url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
+translations:
+  ru:
+    name: Департамент Колумбии
