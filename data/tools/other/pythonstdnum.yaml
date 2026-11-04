@@ -199,6 +199,7 @@ supported_types:
 - sedol
 - seorgnumber
 - sepersonnummer
+- sg_uen
 - si_ddv
 - si_emso
 - si_maticna_stevilka

@@ -3,6 +3,7 @@ name: Finnish driver's license number
 status: draft
 doc: Number of a driving licence issued in Finland. Microsoft Purview looks for six digits, a hyphen,
   three digits and a final digit or letter.
+parent: driver_license
 categories:
 - pii
 - persons

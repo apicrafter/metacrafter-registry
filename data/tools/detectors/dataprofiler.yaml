@@ -14,6 +14,7 @@ supported_types:
 - bankcard
 - date
 - datetime
+- driver_license
 - email
 - ipv4
 - ipv6

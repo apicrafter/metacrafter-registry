@@ -3,6 +3,7 @@ name: Peruvian region (department)
 status: draft
 doc: Name of a first-level division of Peru, a region or department, such as Cusco, Arequipa or Loreto.
   Peru has 24 departments and the Constitutional Province of Callao.
+parent: admin_area_1
 categories:
 - geo
 - government

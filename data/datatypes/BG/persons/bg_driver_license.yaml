@@ -2,6 +2,7 @@ id: bg_driver_license
 name: Bulgarian driver's license number
 status: draft
 doc: Number of a driving licence issued in Bulgaria. Microsoft Purview looks for nine digits.
+parent: driver_license
 categories:
 - pii
 - persons

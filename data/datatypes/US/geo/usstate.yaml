@@ -2,6 +2,7 @@ id: usstate
 name: US State
 status: draft
 doc: Name or code of US State
+parent: admin_area_1
 categories:
 - geo
 country:

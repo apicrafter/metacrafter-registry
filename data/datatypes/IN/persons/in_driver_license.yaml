@@ -4,6 +4,7 @@ status: draft
 doc: Number of a driving licence issued in India. Microsoft Purview looks for a two-letter state code,
   a two-digit office code, the four-digit year of issue and seven digits, optionally separated by spaces
   or hyphens.
+parent: driver_license
 categories:
 - pii
 - persons

@@ -1,0 +1,21 @@
+id: ca_pr_card
+name: Canadian permanent resident card number
+status: draft
+doc: Document number of the permanent resident card, the status document that Immigration, Refugees and
+  Citizenship Canada (IRCC) issues to permanent residents of Canada. It identifies the card, not the person,
+  so a renewed card has a new number.
+categories:
+- pii
+- persons
+country:
+- CA
+langs:
+- en
+- fr
+is_pii: true
+classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Canada_permanent_resident_card
+- type: doc
+  url: https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/permanent-residence/card/departmental-policy.html

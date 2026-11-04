@@ -28,6 +28,8 @@ supported_types:
 - azure_storage_account_key
 - bankaccount
 - bankcard
+- bankcard_cvv
+- bankcard_expiry
 - be_vat
 - benatcardid
 - bg_egn
@@ -56,6 +58,7 @@ supported_types:
 - depersonalausweis
 - deust
 - dkcprnum
+- driver_license
 - ee_ik
 - email
 - es_dni

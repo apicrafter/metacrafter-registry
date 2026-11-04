@@ -4,6 +4,7 @@ status: draft
 doc: Name of one of the six states of Australia (New South Wales, Victoria, Queensland, Western Australia,
   South Australia, Tasmania) or of its two mainland territories (Australian Capital Territory, Northern
   Territory). The abbreviation is the pattern au_state_code.
+parent: admin_area_1
 categories:
 - geo
 - government

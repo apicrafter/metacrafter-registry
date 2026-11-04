@@ -3,6 +3,7 @@ name: Maltese driver's license number
 status: draft
 doc: Number of a driving licence issued in Malta. Microsoft Purview looks for two letters or digits and
   six digits in groups of three.
+parent: driver_license
 categories:
 - pii
 - persons
