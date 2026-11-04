@@ -17,6 +17,8 @@ examples:
   description: IBM being traded on the New York Stock Exchang
 - value: IBM.L
   description: IBM being traded on London Stock Exchange
+mappings:
+  fibo: SEC/Securities/SecuritiesIdentificationIndividuals/RefinitivInstrumentCode
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Reuters_Instrument_Code

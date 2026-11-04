@@ -16,6 +16,8 @@ examples:
   description: Canada Business Number with 9 digits
 - value: '987654321'
   description: Another valid Canada Business Number with 9 digits
+mappings:
+  fibo: FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/BusinessNumber
 links:
 - type: doc
   url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/business-number.html

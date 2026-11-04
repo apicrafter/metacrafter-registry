@@ -120,7 +120,17 @@ SCHEMAS: dict[str, Any] = {
             "mappings": {
                 "type": "object",
                 "description": "Identifiers of the same concept in other vocabularies",
-                "properties": {"wikidata": {"type": "string", "pattern": "^[PQ][0-9]+$"}},
+                "properties": {
+                    "wikidata": {"type": "string", "pattern": "^[PQ][0-9]+$"},
+                    "fibo": {
+                        "oneOf": [
+                            {"type": "string"},
+                            {"type": "array", "items": {"type": "string"}},
+                        ],
+                        "description": "FIBO class IRI without the "
+                        "https://spec.edmcouncil.org/fibo/ontology/ prefix",
+                    },
+                },
                 "additionalProperties": {
                     "oneOf": [{"type": "string"}, {"type": "array", "items": {"type": "string"}}]
                 },

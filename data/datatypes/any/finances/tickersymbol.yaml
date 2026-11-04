@@ -17,6 +17,7 @@ examples:
   description: Amazon
 mappings:
   cdm: means.identity.tickerSymbol
+  fibo: SEC/Securities/SecuritiesIdentification/TickerSymbol
   wikidata: P249
 links:
 - type: wikipedia

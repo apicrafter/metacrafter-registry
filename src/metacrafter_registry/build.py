@@ -21,6 +21,7 @@ from xml.sax.saxutils import escape as xml_escape
 from jinja2 import Environment, PackageLoader, select_autoescape
 
 from . import DEFAULT_BASE_URL, __version__, agents, legacy
+from .fibo import fibo_iris
 from .loader import RegistrySources, load_sources
 from .model import CSV_COLUMNS, RegistryModel, build_registry, csv_row
 from .openapi import build_openapi
@@ -206,6 +207,7 @@ def _jsonld(record: dict[str, Any], site_url: str) -> dict[str, Any]:
     for link in record.get("links", []):
         if link["type"] in ("schema.org", "wikidata") and link["url"] not in same_as:
             same_as.append(link["url"])
+    same_as += [i for i in fibo_iris(record.get("mappings", {})) if i not in same_as]
     data: dict[str, Any] = {
         "@context": "https://schema.org",
         "@type": "DefinedTerm",

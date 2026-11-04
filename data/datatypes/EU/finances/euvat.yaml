@@ -32,6 +32,7 @@ examples:
   description: UK VAT identification number (pre-Brexit format) with country code GB and 9 alphanumeric
     characters
 mappings:
+  fibo: BE/LegalEntities/FormalBusinessOrganizations/ValueAddedTaxIdentificationNumber
   google_dlp: VAT_NUMBER
 links:
 - type: wikipedia

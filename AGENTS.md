@@ -70,6 +70,7 @@ metacrafter-registry check-links     # internal links of dist/ resolve
 metacrafter-registry check-contract <base-url>   # public URLs work
 metacrafter-registry coverage report # metacrafter-rules coverage and orphan rule keys
 metacrafter-registry coverage update --rules-dir <metacrafter-rules>/rules   # bump the pinned rules
+metacrafter-registry fibo update --fibo-dir <fibo checkout>   # pin the FIBO classes that records map to
 metacrafter-registry changes --old <prev datatypes.jsonl>   # changelog between versions
 metacrafter-registry mcp             # MCP server over stdio (needs the [mcp] extra)
 metacrafter-registry snapshot        # bundle dist/ data into the package (release only)
@@ -108,6 +109,7 @@ examples:
   valid: false              # negative example: must not match the regexp
 mappings:                   # ids in other vocabularies; only ones you verified
   wikidata: P968            # an id, never a URL (P968 is shown for illustration)
+  fibo: FBC/...             # FIBO class IRI without https://spec.edmcouncil.org/fibo/ontology/
 links:
 - type: wikipedia           # wikipedia | wikidata | schema.org | doc | dublincore | bioschemas | datadrivendiscovery | other
   url: https://en.wikipedia.org/wiki/Taxpayer_Identification_Number
@@ -159,6 +161,7 @@ The build fails, and writes nothing, on:
 - an example that does not match its regexp, or a negative example that
   matches it
 - a directory that does not match the record's country
+- a `mappings.fibo` class missing from `data/vocabularies/fibo.json`
 
 Warnings: unanchored regexps, Python-only regexp syntax, placeholder-like
 examples.
@@ -186,6 +189,10 @@ examples.
   rules commit, and `data/coverage/metacrafter-rules.json` is its committed
   summary, so builds need no network. The list of the `metacrafter` tool's
   `supported_types` is generated from it; do not edit it by hand.
+- `fibo.py`: FIBO mappings. `data/vocabularies/fibo.json` pins the label,
+  definition and maturity of each mapped FIBO class at one FIBO commit, so
+  validation needs no network. Regenerate it with `fibo update`; do not edit it
+  by hand.
 - `changes.py`: the changelog between two data versions, used for release
   notes and the `/changes` page.
 - `mcp_server.py`: the MCP server: tools `identify_values`,
