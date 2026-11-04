@@ -22,6 +22,8 @@ examples:
 - value: '02055204103660707'
   valid: false
   description: One character too many
+mappings:
+  purview: New Zealand bank account number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/New_Zealand_bank_account_number

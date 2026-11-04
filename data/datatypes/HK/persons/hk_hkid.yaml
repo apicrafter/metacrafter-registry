@@ -1,0 +1,23 @@
+id: hk_hkid
+name: Hong Kong identity card number (HKID)
+status: draft
+doc: 'Number of the Hong Kong identity card: one or two letters, six digits and a check character (a digit
+  or A), which is often written in parentheses.'
+categories:
+- pii
+- persons
+country:
+- HK
+langs:
+- zh
+- en
+is_pii: true
+classification: identifier
+regexp: ^[A-Z]{1,2}\d{6} ?(?:[0-9A]|\([0-9A]\))$
+mappings:
+  purview: Hong Kong identity card (HKID) number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-hong-kong-identity-card-number
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Hong_Kong_identity_card

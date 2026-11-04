@@ -1,0 +1,27 @@
+id: ru_ornz
+name: Russian auditor registration number (ОРНЗ)
+status: draft
+doc: Main registration number of an entry (ОРНЗ) in the Russian register of auditors and audit organizations.
+  It is an 11-digit number; datasets often publish it together with the OGRN as "ОГРН / ОРНЗ". The form
+  overlaps with other 11-digit codes, so the field name is needed to identify it.
+categories:
+- companies
+- finances
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^\d{11}$
+examples:
+- value: '11606065345'
+  description: Audit company in a federal treasury control dataset
+- value: '11606064704'
+  description: Audit and consulting company in a federal treasury control dataset
+- value: '1021900518078'
+  valid: false
+translations:
+  ru:
+    name: ОРНЗ
+    doc: Основной регистрационный номер записи в реестре аудиторов и аудиторских организаций.

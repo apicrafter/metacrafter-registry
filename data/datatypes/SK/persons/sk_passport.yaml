@@ -1,0 +1,18 @@
+id: sk_passport
+name: Slovak passport number
+status: draft
+doc: Number of a passport issued by Slovakia. Microsoft Purview looks for a letter and seven digits, or
+  two letters and six or seven digits.
+semantic_type: passport
+country:
+- SK
+langs:
+- sk
+regexp: ^(?:[A-Z]\d{7}|[A-Z]{2}\d{6,7})$
+mappings:
+  purview:
+  - Slovakia passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-slovakia-passport-number

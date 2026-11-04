@@ -32,7 +32,13 @@ examples:
   description: One character too many
 mappings:
   google_dlp: FINLAND_NATIONAL_ID_NUMBER
-  purview: Finland national ID
+  purview:
+  - Finland national ID
+  - EU Social Security Number (SSN) or Equivalent ID
+  - EU social security number or equivalent identification
+  - EU national identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
 links:
 - type: wikipedia
   url: https://fi.wikipedia.org/wiki/Henkil%C3%B6tunnus

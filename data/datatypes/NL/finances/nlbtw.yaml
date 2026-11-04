@@ -21,6 +21,8 @@ examples:
   description: Another valid Dutch VAT identification number format
 - value: NLABCDEFGHIJ01
   description: Dutch VAT identification number with letters in the alphanumeric part
+mappings:
+  purview: Netherlands value added tax number
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/BTW-nummer

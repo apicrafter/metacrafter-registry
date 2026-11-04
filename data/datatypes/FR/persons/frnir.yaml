@@ -23,7 +23,10 @@ examples:
   description: 2C is not a department code
 mappings:
   google_dlp: FRANCE_NIR
-  purview: France social security number (INSEE)
+  purview:
+  - France social security number (INSEE)
+  - EU Social Security Number (SSN) or Equivalent ID
+  - EU social security number or equivalent identification
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/INSEE_code

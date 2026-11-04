@@ -1,0 +1,17 @@
+id: cy_passport
+name: Cypriot passport number
+status: draft
+doc: Number of a passport issued by Cyprus. Microsoft Purview looks for a letter and six to eight digits.
+semantic_type: passport
+country:
+- CY
+langs:
+- el
+regexp: ^[A-Z]\d{6,8}$
+mappings:
+  purview:
+  - Cyprus passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-cyprus-passport-number

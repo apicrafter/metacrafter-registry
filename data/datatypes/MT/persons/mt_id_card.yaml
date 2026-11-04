@@ -1,0 +1,23 @@
+id: mt_id_card
+name: Maltese identity card number
+status: draft
+doc: 'Number of the Maltese identity card: seven digits followed by one of the letters M, G, A, P, L,
+  H, B or Z.'
+categories:
+- pii
+- persons
+country:
+- MT
+langs:
+- mt
+- en
+is_pii: true
+classification: identifier
+regexp: ^\d{7}[MGAPLHBZ]$
+mappings:
+  purview:
+  - Malta identity card number
+  - EU national identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-malta-identity-card-number

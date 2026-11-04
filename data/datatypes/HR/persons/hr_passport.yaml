@@ -1,0 +1,17 @@
+id: hr_passport
+name: Croatian passport number
+status: draft
+doc: Number of a passport issued by Croatia. Microsoft Purview looks for nine digits.
+semantic_type: passport
+country:
+- HR
+langs:
+- hr
+regexp: ^\d{9}$
+mappings:
+  purview:
+  - Croatia passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-croatia-passport-number

@@ -1,0 +1,16 @@
+id: tw_passport
+name: Taiwanese passport number
+status: draft
+doc: Number of a passport issued by Taiwan. Microsoft Purview looks for nine digits; numbers of biometric
+  passports start with 3.
+semantic_type: passport
+country:
+- TW
+langs:
+- zh
+regexp: ^\d{9}$
+mappings:
+  purview: Taiwan passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-taiwan-passport-number

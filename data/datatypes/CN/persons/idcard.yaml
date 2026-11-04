@@ -12,3 +12,5 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[0-9]{8,15}$
+mappings:
+  purview: China resident identity card (PRC) number

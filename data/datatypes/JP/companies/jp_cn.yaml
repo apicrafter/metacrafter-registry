@@ -22,6 +22,10 @@ examples:
 - value: '18786137551827'
   valid: false
   description: One character too many
+mappings:
+  purview:
+  - Japanese My Number Corporate
+  - Japan My Number - Corporate
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Corporate_Number

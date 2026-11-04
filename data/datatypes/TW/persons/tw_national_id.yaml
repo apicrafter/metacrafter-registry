@@ -1,0 +1,24 @@
+id: tw_national_id
+name: Taiwanese national identification number
+status: draft
+doc: 'Taiwanese national identification number: a letter, the digit 1 or 2 for sex, and eight digits,
+  the last of which is a check digit.'
+categories:
+- pii
+- persons
+country:
+- TW
+langs:
+- zh
+is_pii: true
+classification: identifier
+regexp: ^[A-Z][12]\d{8}$
+mappings:
+  purview:
+  - Taiwan National ID
+  - Taiwan national identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-taiwan-national-identification-number
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_identification_card_(Taiwan)

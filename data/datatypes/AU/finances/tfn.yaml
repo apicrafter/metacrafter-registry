@@ -11,3 +11,5 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[0-9]{8,9}$
+mappings:
+  purview: Australia tax file number

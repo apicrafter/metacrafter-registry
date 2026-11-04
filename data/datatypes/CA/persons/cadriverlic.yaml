@@ -12,6 +12,8 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[A-Z](?:\d[- ]*){14}$
+mappings:
+  purview: Canada drivers license number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Driver%27s_licences_in_Canada

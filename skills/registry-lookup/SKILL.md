@@ -75,9 +75,13 @@ Example:
   "means.location.postalCode")` returns `postindex`. For a D3M dataset column,
   pass a semantic type URI from its metadata: `crosswalk("d3m",
   "http://schema.org/email")` returns `email`. Column roles such as
-  `.../types/PrimaryKey` or `.../types/Target` are not mapped. For a column
-  that Sherlock labelled, pass its label: `crosswalk("sherlock", "birth Date")`
-  returns `birthday`; case and spaces are ignored. 32 of Sherlock's 78 types
-  are mapped. Generic labels such as `code`, `type` or `rank` return nothing.
+  `.../types/PrimaryKey` or `.../types/Target` are not mapped. For a Microsoft
+  Purview sensitive information type, pass its name: case, periods and
+  apostrophes do not matter, former names still resolve, and a bundle such as
+  "EU passport number" returns the records of all its member types. For a
+  column that Sherlock labelled, pass its label: `crosswalk("sherlock",
+  "birth Date")` returns `birthday`; case and spaces are ignored. 32 of
+  Sherlock's 78 types are mapped. Generic labels such as `code`, `type` or
+  `rank` return nothing.
 - **Former ids.** `get_datatype("ssn")` returns `usssn` with
   `resolved_from_alias`. Always cite the canonical id.

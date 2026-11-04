@@ -1,0 +1,25 @@
+id: lu_matricule
+name: Luxembourg national identification number
+status: draft
+doc: 'National identification number (matricule) of a natural person in Luxembourg: 13 digits, of which
+  the last two are check digits.'
+categories:
+- pii
+- persons
+country:
+- LU
+langs:
+- lb
+- fr
+- de
+is_pii: true
+classification: identifier
+regexp: ^\d{13}$
+mappings:
+  purview:
+  - Luxembourg National Identification Number (Natural persons)
+  - Luxemburg national identification number (natural persons)
+  - EU national identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-luxemburg-national-identification-number-natural-persons

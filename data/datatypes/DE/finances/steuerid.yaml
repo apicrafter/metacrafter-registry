@@ -20,7 +20,10 @@ examples:
   description: Another valid German tax identification number format
 mappings:
   presidio: DE_TAX_ID
-  purview: Germany tax identification number
+  purview:
+  - Germany tax identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
 links:
 - type: doc
   url: https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/steuerliche_identifikationsnummer_node.html

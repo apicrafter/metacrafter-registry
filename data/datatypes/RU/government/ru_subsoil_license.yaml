@@ -1,0 +1,26 @@
+id: ru_subsoil_license
+name: Russian subsoil use license number
+status: draft
+doc: Number of a license for the use of subsoil in Russia. It consists of a three-letter series, a five-
+  or six-digit number and a two-letter license type, separated by spaces, for example "ВЛГ 90001 ТЭ".
+categories:
+- legal
+- industry
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^[А-ЯЁ]{3} ?\d{5,6} ?[А-ЯЁ]{2}$
+examples:
+- value: ВЛГ 90001 ТЭ
+  description: Clay exploration and mining license of a company, Volgograd region
+- value: ХМН 00016 ТЭ
+  description: Sand mining license of a company, Khanty-Mansi Autonomous Okrug
+- value: ВЛГ-90001-ТЭ
+  valid: false
+translations:
+  ru:
+    name: Номер лицензии на пользование недрами
+    doc: Номер лицензии на пользование недрами из серии (три буквы), номера и вида лицензии (две буквы).

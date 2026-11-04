@@ -116,9 +116,10 @@ def create_server(registry: Registry):
         ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier,
         or the part after /ontology/. For cdm, a Common Data Model trait name
         (means.identity.service.email). For d3m, a D3M semantic type URI
-        (http://schema.org/email) or its bare name (FileName). For sherlock, a
-        Sherlock semantic type label (city, birth Date); case and spaces are
-        ignored.
+        (http://schema.org/email) or its bare name (FileName). For purview, a
+        Microsoft Purview sensitive information type name; case, periods and
+        apostrophes are ignored. For sherlock, a Sherlock semantic type label
+        (city, birth Date); case and spaces are ignored.
         """
         return [_summary(registry, r) for r in registry.crosswalk(system, external_id)]
 

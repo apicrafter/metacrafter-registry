@@ -1,0 +1,26 @@
+id: opening_hours
+name: Opening hours
+status: draft
+doc: Days and hours when an organization, office or facility is open or receives visitors, for example
+  weekdays from 8:00 to 17:00 with a lunch break. Usually free text; OpenStreetMap defines a formal syntax.
+categories:
+- datetime
+langs:
+- common
+is_pii: false
+examples:
+- value: Mo-Fr 08:00-17:00
+  description: Weekdays from 8:00 to 17:00 in OpenStreetMap syntax
+- value: 24/7
+  description: Always open in OpenStreetMap syntax
+mappings:
+  schema_org: openingHours
+links:
+- type: schema.org
+  url: https://schema.org/openingHours
+- type: other
+  url: https://wiki.openstreetmap.org/wiki/Key:opening_hours
+translations:
+  ru:
+    name: Режим работы
+    doc: Дни и часы работы организации, учреждения или объекта, в том числе часы приёма посетителей.

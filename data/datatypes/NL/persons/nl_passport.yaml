@@ -1,0 +1,15 @@
+id: nl_passport
+name: Dutch passport number
+status: draft
+doc: Number of a passport issued by the Netherlands. Microsoft Purview looks for nine letters or digits.
+semantic_type: passport
+country:
+- NL
+langs:
+- nl
+regexp: ^[A-Z0-9]{9}$
+mappings:
+  purview: Netherlands passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-netherlands-passport-number

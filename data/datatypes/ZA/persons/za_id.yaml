@@ -1,0 +1,22 @@
+id: za_id
+name: South African identity number
+status: draft
+doc: 'South African identity number: 13 digits made of the date of birth (YYMMDD), four digits, a citizenship
+  digit, a digit that is usually 8 and a check digit.'
+categories:
+- pii
+- persons
+country:
+- ZA
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: ^\d{13}$
+mappings:
+  purview: South Africa identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-south-africa-identification-number
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/South_African_identity_card

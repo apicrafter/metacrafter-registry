@@ -1,0 +1,18 @@
+id: ua_intpassport
+name: Ukrainian international passport number
+status: draft
+doc: Number of a Ukrainian passport for travel abroad. Microsoft Purview looks for two letters or digits
+  followed by six digits.
+semantic_type: passport
+country:
+- UA
+langs:
+- uk
+regexp: ^[A-Z0-9]{2}\d{6}$
+mappings:
+  purview:
+  - Ukraine Passport Number (International)
+  - Ukraine passport international
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-ukraine-passport-international

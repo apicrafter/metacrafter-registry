@@ -52,6 +52,11 @@ def _sherlock_key(label: str) -> str:
     return re.sub(r"\s+", "", str(label)).lower()
 
 
+def _purview_key(name: str) -> str:
+    """Compare Purview type names without case, periods and apostrophes."""
+    return " ".join(re.sub(r"[.'’]", "", name).casefold().split())
+
+
 def _cache_dir() -> Path:
     base = os.environ.get("XDG_CACHE_HOME") or Path.home() / ".cache"
     return Path(base) / "metacrafter-registry"
@@ -460,6 +465,10 @@ class Registry:
         # date". Compare without case and spaces, so "birthDate" matches too.
         if system == "sherlock":
             wanted = _sherlock_key(wanted)
+        # Microsoft writes the same Purview type name with varying case and
+        # punctuation ("U.S. driver's license number", "U.S. Drivers License Number").
+        if system == "purview":
+            wanted = _purview_key(wanted)
         out = []
         for record in self.datatypes.values():
             value = record.get("mappings", {}).get(system)
@@ -468,6 +477,8 @@ class Registry:
                 normalized = [v.upper() for v in values]
             elif system == "sherlock":
                 normalized = [_sherlock_key(v) for v in values]
+            elif system == "purview":
+                normalized = [_purview_key(v) for v in values]
             elif d3m_bare:
                 normalized = [v.rsplit("/", 1)[-1] for v in values]
             else:

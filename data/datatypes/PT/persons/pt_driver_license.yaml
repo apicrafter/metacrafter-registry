@@ -1,0 +1,23 @@
+id: pt_driver_license
+name: Portuguese driver's license number
+status: draft
+doc: Number of a driving licence issued in Portugal. Microsoft Purview looks for two letters, a hyphen,
+  five or six digits, a space and a digit, or one letter, a hyphen, six or eight digits, a space and a
+  digit.
+categories:
+- pii
+- persons
+country:
+- PT
+langs:
+- pt
+is_pii: true
+classification: identifier
+regexp: ^(?:[A-Z]{2}-\d{5,6} \d|[A-Z]-\d{6}(?:\d{2})? \d)$
+mappings:
+  purview:
+  - Portugal drivers license number
+  - EU drivers license number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-portugal-drivers-license-number

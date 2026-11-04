@@ -1,0 +1,23 @@
+id: mt_driver_license
+name: Maltese driver's license number
+status: draft
+doc: Number of a driving licence issued in Malta. Microsoft Purview looks for two letters or digits and
+  six digits in groups of three.
+categories:
+- pii
+- persons
+country:
+- MT
+langs:
+- mt
+- en
+is_pii: true
+classification: identifier
+regexp: ^[A-Z0-9]{2} ?\d{3} ?\d{3}$
+mappings:
+  purview:
+  - Malta drivers license number
+  - EU drivers license number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-malta-drivers-license-number
