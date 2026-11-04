@@ -1,0 +1,43 @@
+id: temperature
+name: Temperature
+status: draft
+doc: A measured or set temperature, such as an air, water or body temperature reading. Datasets store
+  it as a number in degrees Celsius, degrees Fahrenheit or kelvins, with the unit either in the value
+  or in the column name or metadata. The regular expression recognizes only values that carry a unit symbol.
+  Semantic MediaWiki has a Temperature datatype that accepts K, °C, °F and °R and stores values in kelvins.
+parent: numeric
+categories:
+- values
+- science
+- environment
+langs:
+- common
+is_pii: false
+regexp: ^[-+]?\d+(?:[.,]\d+)?(?:\s?(?:°\s?[CFR]|℃|℉)|\sK)$
+examples:
+- value: 21.5 °C
+  description: air temperature in degrees Celsius
+- value: 36.6°C
+  description: body temperature without a space before the unit
+- value: -40 °F
+  description: negative temperature in degrees Fahrenheit
+- value: 273.15 K
+  description: water freezing point in kelvins
+- value: 25K
+  valid: false
+  description: K without a space usually means thousands
+- value: °C
+  valid: false
+  description: unit without a number
+mappings:
+  wikidata: P2076
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Temperature
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2076
+- type: doc
+  url: https://www.semantic-mediawiki.org/wiki/Help:Type_Temperature
+translations:
+  ru:
+    name: Температура

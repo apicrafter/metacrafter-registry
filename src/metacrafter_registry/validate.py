@@ -325,6 +325,51 @@ def _coverage_issues(sources: RegistrySources) -> list[Issue]:
     return []
 
 
+def _fibo_issues(sources: RegistrySources) -> list[Issue]:
+    """Every FIBO mapping must name a class in the committed FIBO term list."""
+    from .fibo import VOCABULARY_FILE, load_vocabulary
+
+    vocabulary = load_vocabulary(sources.data_dir) or {}
+    terms = vocabulary.get("terms", {})
+    ref = (vocabulary.get("source") or {}).get("ref", "")
+    hint = "run: metacrafter-registry fibo update --fibo-dir <edmcouncil/fibo checkout>"
+    issues = []
+    used = set()
+    for rec in sources.datatypes:
+        value = (rec.data.get("mappings") or {}).get("fibo")
+        for path in value if isinstance(value, list) else [value] if value else []:
+            if not isinstance(path, str):
+                continue  # reported by the schema check
+            used.add(path)
+            if path not in terms:
+                where = f"FIBO {ref[:12]}" if ref else str(VOCABULARY_FILE)
+                issues.append(
+                    Issue(
+                        ERROR,
+                        rec.relpath,
+                        rec.id,
+                        f"mappings.fibo: '{path}' is not in {where}; {hint}",
+                    )
+                )
+            elif terms[path].get("maturity") not in (None, "Release"):
+                issues.append(
+                    Issue(
+                        WARNING,
+                        rec.relpath,
+                        rec.id,
+                        f"mappings.fibo: '{path}' has FIBO maturity "
+                        f"{terms[path]['maturity']}, not Release",
+                    )
+                )
+    for path in sorted(set(terms) - used):
+        issues.append(
+            Issue(
+                WARNING, str(VOCABULARY_FILE), "-", f"'{path}' is not mapped by any record; {hint}"
+            )
+        )
+    return issues
+
+
 def validate(sources: RegistrySources, schema_dir: Path | None = None) -> ValidationResult:
     schema_dir = schema_dir or default_schema_dir(sources.data_dir)
     issues = [Issue(ERROR, path, "-", message) for path, message in sources.load_errors]
@@ -335,4 +380,5 @@ def validate(sources: RegistrySources, schema_dir: Path | None = None) -> Valida
     issues += _regexp_issues(sources)
     issues += _checksum_issues(sources)
     issues += _coverage_issues(sources)
+    issues += _fibo_issues(sources)
     return ValidationResult(issues=issues)

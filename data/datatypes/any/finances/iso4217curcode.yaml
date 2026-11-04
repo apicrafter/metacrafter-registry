@@ -15,6 +15,7 @@ mappings:
   cdm:
   - means.measurement.currencyCode
   - means.measurement.currency.iSOCode
+  fibo: FND/Accounting/CurrencyAmount/CurrencyIdentifier
   wikidata: P498
 links:
 - type: other

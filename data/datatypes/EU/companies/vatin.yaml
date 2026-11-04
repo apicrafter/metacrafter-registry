@@ -18,6 +18,7 @@ examples:
 - value: BG200356710
   description: Ontotext
 mappings:
+  fibo: BE/LegalEntities/FormalBusinessOrganizations/ValueAddedTaxIdentificationNumber
   google_dlp: VAT_NUMBER
   wikidata: P3608
 links:

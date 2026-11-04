@@ -25,6 +25,7 @@ from typing import Any
 
 from . import DEFAULT_BASE_URL
 from .checksums import ALGORITHMS
+from .fibo import normalize as fibo_normalize
 
 SNAPSHOT_FILES = (
     "index.json",
@@ -440,10 +441,15 @@ class Registry:
     # --- crosswalk ---------------------------------------------------------
 
     def crosswalk(self, system: str, external_id: str) -> list[dict[str, Any]]:
-        """Records mapped to ``external_id`` in another vocabulary (wikidata, presidio, ...)."""
+        """Records mapped to ``external_id`` in another vocabulary (wikidata, fibo, presidio, ...).
+
+        For wikidata, a property id or its URL; for fibo, a class path or its full IRI.
+        """
         wanted = str(external_id).strip()
         if system == "wikidata":
             wanted = wanted.rstrip("/").rsplit("/", 1)[-1].removeprefix("Property:").upper()
+        elif system == "fibo":
+            wanted = fibo_normalize(wanted)
         # D3M writes semantic types as URIs (http://schema.org/email). Also
         # accept https://schema.org/... and a bare type name (FileName, email).
         d3m_bare = system == "d3m" and "://" not in wanted
