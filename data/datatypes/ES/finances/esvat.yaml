@@ -1,10 +1,11 @@
 id: esvat
-name: IVA intracomunitario por nombre de campo
+name: Spanish intra-Community VAT number (NIF-IVA)
 status: stable
-doc: ES datatype for 'IVA intracomunitario por nombre de campo' (esvat) from rules in context 'finances'.
-  The Spanish VAT identification number (IVA intracomunitario) is a unique identifier assigned to businesses
-  for VAT purposes within the European Union. It consists of the country code 'ES' followed by 9 alphanumeric
-  characters (letters and/or digits).
+doc: 'NIF-IVA, the Spanish VAT number for intra-Community trade: ES followed by the 9-character tax identification
+  number (NIF). Spanish citizens use their DNI, eight digits and a check letter. Foreigners use their
+  NIE, which starts with X, Y or Z. Companies and other entities have a NIF that starts with a letter
+  for the legal form (formerly the CIF). The last character is a check digit or a check letter.'
+parent: vatin
 categories:
 - finances
 country:
@@ -13,15 +14,20 @@ langs:
 - es
 is_pii: true
 classification: identifier
-regexp: ^ES[0-9A-Z]{9}$
+regexp: ^ES(?:[A-Z]\d{7}[A-Z0-9]|\d{8}[A-Z])$
 examples:
-- value: ES123456789
-  description: Spanish VAT identification number (IVA intracomunitario) with country code ES and 9 alphanumeric
-    characters
-- value: ES987654321
-  description: Another valid Spanish VAT identification number format
-- value: ESB12345678
-  description: Spanish VAT identification number with letter in the alphanumeric part
+- value: ESB64717838
+  description: Company, python-stdnum reference value
+- value: ES54362315K
+  description: Resident person (DNI), python-stdnum reference value
+- value: ESX5253868R
+  description: Foreign person (NIE), python-stdnum reference value
+- value: ES543623150
+  valid: false
+  description: The first or the last character must be a letter
+- value: ESB6471783
+  valid: false
+  description: One character short
 mappings:
   fta: IDENTITY.VAT_ES
 links:
@@ -29,3 +35,8 @@ links:
   url: https://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal
 - type: doc
   url: https://www.agenciatributaria.gob.es/AEAT.internet/Inicio/Ayuda/Modelos__Procedimientos_y_Servicios/Comun/Informacion_General/Numero_de_Identificacion_Fiscal_NIF_/Numero_de_Identificacion_Fiscal_NIF_.shtml
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.es.nif.html
+translations:
+  es:
+    name: Número de identificación fiscal a efectos del IVA (NIF-IVA)

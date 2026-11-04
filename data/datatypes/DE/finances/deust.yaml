@@ -1,10 +1,11 @@
 id: deust
-name: USt-IdNr. anhand Feldname
+name: German VAT identification number (USt-IdNr.)
 status: stable
-doc: DE datatype for 'USt-IdNr. anhand Feldname' (deust) from rules in context 'finances'. The German
-  VAT identification number (Umsatzsteuer-Identifikationsnummer, USt-IdNr.) is a unique identifier assigned
-  to businesses for VAT purposes within the European Union. It consists of the country code 'DE' followed
-  by 9 digits.
+doc: Umsatzsteuer-Identifikationsnummer (USt-IdNr.), the VAT identification number that the Federal Central
+  Tax Office (BZSt) issues to businesses in Germany for trade with other EU member states. It is DE followed
+  by nine digits; the last digit is an ISO 7064 MOD 11,10 check digit. It is not the domestic tax number
+  (Steuernummer) or the personal tax identification number (Steuer-ID).
+parent: vatin
 categories:
 - finances
 country:
@@ -15,12 +16,23 @@ is_pii: true
 classification: identifier
 regexp: ^DE[0-9]{9}$
 examples:
-- value: DE123456789
-  description: German VAT identification number (USt-IdNr.) with country code DE and 9 digits
-- value: DE987654321
-  description: Another valid German VAT identification number format
+- value: DE136695976
+  description: python-stdnum reference value
+- value: DE13669597
+  valid: false
+  description: One digit short
+- value: '136695976'
+  valid: false
+  description: The DE prefix is part of the number
 mappings:
   purview: Germany value added tax number
 links:
 - type: doc
   url: https://www.bzst.de/DE/Unternehmen/SteuerlicheIdentifikationsnummern/UStIdNr/ustidnr_node.html
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Umsatzsteuer-Identifikationsnummer
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.de.vat.html
+translations:
+  de:
+    name: Umsatzsteuer-Identifikationsnummer (USt-IdNr.)
