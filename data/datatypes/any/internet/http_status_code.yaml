@@ -1,0 +1,45 @@
+id: http_status_code
+name: HTTP status code
+status: draft
+doc: 'Three-digit code with which an HTTP server reports the result of a request. The first digit gives
+  the class: 1xx informational, 2xx successful, 3xx redirection, 4xx client error and 5xx server error,
+  and all valid codes are between 100 and 599. Examples are 200 (OK), 301 (Moved Permanently), 404 (Not
+  Found) and 500 (Internal Server Error). RFC 9110 defines the codes, and IANA keeps their registry. Web
+  server logs and API monitoring data store them.'
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-5]\d{2}$
+examples:
+- value: '200'
+  description: OK
+- value: '404'
+  description: Not Found
+- value: '503'
+  description: Service Unavailable
+- value: '101'
+  description: Switching Protocols
+- value: '600'
+  valid: false
+  description: Outside the range 100 to 599
+- value: '99'
+  valid: false
+  description: Two digits
+mappings:
+  autotype: httpstatus
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc9110.html#name-status-codes
+- type: doc
+  url: https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/httpstatus.txt
+translations:
+  ru:
+    name: Код состояния HTTP
+    doc: Трёхзначный код результата обработки HTTP-запроса от 100 до 599; первая цифра задаёт класс ответа.

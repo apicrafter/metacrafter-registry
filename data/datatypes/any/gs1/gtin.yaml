@@ -21,6 +21,7 @@ examples:
   valid: false
   description: Thirteen-digit GTIN
 mappings:
+  autotype: gtin
   gs1_ai: '01'
 links:
 - type: wikipedia

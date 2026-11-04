@@ -23,6 +23,7 @@ examples:
   valid: false
   description: one hex digit short (63 instead of 64)
 mappings:
+  autotype: sha256
   fta: HASH.SHA256_HEX
 links:
 - type: wikipedia

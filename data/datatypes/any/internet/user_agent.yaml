@@ -1,0 +1,33 @@
+id: user_agent
+name: HTTP User-Agent string
+status: draft
+doc: 'Value of the User-Agent header that a browser, crawler, library or other HTTP client sends to describe
+  itself. RFC 9110 defines it as one or more product identifiers, each a name with an optional /version,
+  followed by comments in parentheses, such as the operating system. Most browsers start it with Mozilla/5.0
+  for historical compatibility. Web server logs and analytics data store it to tell browsers, devices
+  and bots apart. The record has no regexp: the grammar is too loose to tell a user agent from other text.'
+categories:
+- internet
+langs:
+- common
+is_pii: false
+examples:
+- value: curl/8.4.0
+  description: Command-line client
+- value: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
+  description: Firefox on Linux
+- value: Googlebot/2.1 (+http://www.google.com/bot.html)
+  description: Search engine crawler
+mappings:
+  autotype: useragentstring
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/User-Agent_header
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc9110.html#name-user-agent
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/useragentstring.txt
+translations:
+  ru:
+    name: Строка User-Agent
+    doc: Значение HTTP-заголовка User-Agent, которым браузер, робот или другой клиент описывает себя.

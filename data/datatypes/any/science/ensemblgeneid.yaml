@@ -1,0 +1,37 @@
+id: ensemblgeneid
+name: Ensembl gene ID
+status: draft
+doc: Stable identifier of a gene in Ensembl, the genome database of EMBL-EBI. It is "ENS", a three-letter
+  species code (none for human, MUS for mouse, GAL for chicken), the feature letter G for gene and eleven
+  digits. A version number may follow after a dot. Transcripts (T), proteins (P) and exons (E) use the
+  same scheme with their own letter and are not covered here.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^ENS(?:[A-Z]{3})?G\d{11}(?:\.\d+)?$
+examples:
+- value: ENSG00000196126
+  description: HLA-DRB1, human
+- value: ENSMUSG00000018893
+  description: Mb (myoglobin), mouse
+- value: ENSGALG00010022038
+  description: GAPDH, chicken
+- value: ENST00000623907
+  valid: false
+  description: Ensembl transcript ID, not a gene ID
+mappings:
+  wikidata: P594
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Ensembl_genome_database_project
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P594
+- type: doc
+  url: https://www.ensembl.org/info/genome/stable_ids/index.html
+translations:
+  ru:
+    name: Идентификатор гена Ensembl
+    doc: Постоянный идентификатор гена в геномной базе данных Ensembl.

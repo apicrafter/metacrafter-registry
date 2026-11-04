@@ -1,0 +1,41 @@
+id: mgrs
+name: Military Grid Reference System (MGRS) coordinate
+status: draft
+doc: 'Position written in the Military Grid Reference System of NATO, which is based on UTM. It is a grid
+  zone designator (a UTM zone number from 1 to 60 and a latitude band letter from C to X without I and
+  O), a two-letter identifier of a 100 km square, and an even number of digits, up to ten, that give the
+  easting and then the northing within the square: four digits locate a 1 km square, ten digits a 1 m
+  square. Spaces between the parts are optional. The regexp does not cover the polar regions, which use
+  the UPS form with bands A, B, Y and Z.'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+regexp: '^(?:[1-9]|[1-5][0-9]|60)[C-HJ-NP-X] ?[A-HJ-NP-Z][A-HJ-NP-V](?: ?(?:\d ?\d|\d{2} ?\d{2}|\d{3}
+  ?\d{3}|\d{4} ?\d{4}|\d{5} ?\d{5}))?$'
+examples:
+- value: 4Q FJ 1234 6789
+  description: 10 m precision, example from the Wikipedia article
+- value: 4QFJ12346789
+  description: The same position without spaces
+- value: 4QFJ
+  description: 100 km square only
+- value: 4Q FJ 123 6789
+  valid: false
+  description: Easting and northing of different lengths
+- value: 61Q FJ 1234 6789
+  valid: false
+  description: There are only 60 zones
+mappings:
+  autotype: mgrs
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Military_Grid_Reference_System
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/mgrs.txt
+translations:
+  ru:
+    name: Координата MGRS
+    doc: 'Положение в военной системе координатной сетки НАТО (MGRS): зона UTM, квадрат 100 км и чётное
+      число цифр восточного и северного смещения.'

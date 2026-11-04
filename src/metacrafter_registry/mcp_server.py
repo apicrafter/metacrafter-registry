@@ -111,8 +111,8 @@ def create_server(registry: Registry):
         """Registry records mapped to an id in another vocabulary.
 
         system: wikidata, fibo, schema_org, dpv, presidio, google_dlp, purview, d3m,
-        sherlock, cdm, fta or gs1_ai. For wikidata, a property id (P968) or its URL. For fibo, a
-        FIBO class IRI, e.g. https://spec.edmcouncil.org/fibo/ontology/FBC/
+        sherlock, sato, cdm, fta, autotype or gs1_ai. For wikidata, a property id (P968)
+        or its URL. For fibo, a FIBO class IRI, e.g. https://spec.edmcouncil.org/fibo/ontology/FBC/
         ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier,
         or the part after /ontology/. For cdm, a Common Data Model trait name
         (means.identity.service.email). For d3m, a D3M semantic type URI
@@ -121,8 +121,11 @@ def create_server(registry: Registry):
         apostrophes are ignored. For fta, a semantic type as FTA (Fast Text
         Analysis) reports it (POSTAL_CODE.ZIP5_US, MONTH.FULL_fr-FR). For
         sherlock, a Sherlock semantic type label (city, birth Date); case and
-        spaces are ignored. For gs1_ai, a GS1 Application Identifier (8003 or
-        (8003)) or its https://ref.gs1.org/ai/ IRI.
+        spaces are ignored. For sato, a Sato type label (birthDate); Sato
+        predicts the Sherlock types. For autotype, an AutoType benchmark test
+        case (isbn, date-chinese) or its file name (isbn.txt).
+        For gs1_ai, a GS1 Application Identifier (8003 or (8003)) or its
+        https://ref.gs1.org/ai/ IRI.
         """
         return [_summary(registry, r) for r in registry.crosswalk(system, external_id)]
 

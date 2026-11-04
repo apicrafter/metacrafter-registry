@@ -1,0 +1,37 @@
+id: rgbcolor
+name: RGB color triplet
+status: draft
+doc: 'Color written as its red, green and blue components: three integers from 0 to 255 separated by commas,
+  either bare (220,220,220) or in the CSS functional notation rgb(220, 220, 220). Design tools, data exports
+  and stylesheets use it; the hexadecimal form of the same color is hexcolor. The regexp does not cover
+  percentages, an alpha channel or the space-separated syntax of CSS Color Level 4.'
+semantic_type: color
+langs:
+- common
+regexp: ^(?:rgb\(\s*(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\s*,\s*(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\s*,\s*(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\s*\)|(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\s*,\s*(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\s*,\s*(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d))$
+examples:
+- value: 220,220,220
+  description: CSS named color gainsboro
+- value: rgb(255, 99, 71)
+  description: CSS named color tomato
+- value: 0, 0, 0
+  description: Black
+- value: 256,0,0
+  valid: false
+  description: A component above 255
+- value: '#FF6347'
+  valid: false
+  description: Hexadecimal form
+mappings:
+  autotype: rgb
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/RGB_color_model
+- type: doc
+  url: https://www.w3.org/TR/css-color-4/#rgb-functions
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/rgb.txt
+translations:
+  ru:
+    name: Цвет RGB
+    doc: Цвет, записанный тремя компонентами (красный, зелёный, синий) от 0 до 255.

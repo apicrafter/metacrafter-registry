@@ -17,6 +17,7 @@ examples:
 - value: 0-521-22151-X
   description: Hamlet, Prince of Denmark
 mappings:
+  autotype: isbn
   wikidata: P957
 links:
 - type: wikipedia

@@ -25,6 +25,7 @@ examples:
   valid: false
   description: No @
 mappings:
+  autotype: email
   cdm: means.identity.service.email
   d3m: http://schema.org/email
   fibo: FND/Places/VirtualPlaces/ElectronicMailAddress

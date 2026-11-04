@@ -22,6 +22,7 @@ examples:
   valid: false
   description: 'Last digit changed: fails the GS1 check digit'
 mappings:
+  autotype: gln
   wikidata: P9860
 links:
 - type: schema.org

@@ -66,7 +66,8 @@ Example:
   such as `pii` and `persons` add context.
 - **Crosswalk.** `crosswalk("wikidata", "P968")` finds the registry record for
   an id in another vocabulary. The systems are `wikidata`, `fibo`, `schema_org`,
-  `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm`, `fta`
+  `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `sato`, `cdm`, `fta`,
+  `autotype` (AutoType benchmark test cases, such as `isbn` or `date-chinese`)
   and `gs1_ai`.
   Coverage outside Wikidata is still small. For `fibo`, pass a FIBO class IRI,
   for example
@@ -86,7 +87,9 @@ Example:
   For a column that Sherlock labelled, pass its label: `crosswalk("sherlock",
   "birth Date")` returns `birthday`; case and spaces are ignored. 32 of
   Sherlock's 78 types are mapped. Generic labels such as `code`, `type` or
-  `rank` return nothing. For a field of a GS1 barcode, pass its Application
+  `rank` return nothing. Sato predicts the same 78 types, written in camelCase:
+  `crosswalk("sato", "birthDate")` also returns `birthday`.
+  For a field of a GS1 barcode, pass its Application
   Identifier: `crosswalk("gs1_ai", "(8003)")` returns `gs1_ai_8003`, the GRAI
   element string, whose `semantic_type` is `grai`; `crosswalk("gs1_ai",
   "8007")` returns `iban`. GS1 identification keys and their qualifiers are

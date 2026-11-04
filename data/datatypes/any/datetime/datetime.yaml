@@ -8,6 +8,22 @@ langs:
 - common
 is_pii: false
 mappings:
+  autotype:
+  - date-R
+  - date-chinese2
+  - date-f
+  - date-g
+  - date-german
+  - date-mixed
+  - date-o
+  - date-s
+  - date-spanish
+  - date-u
+  - date5
+  - date6
+  - date7
+  - date8
+  - date9
   d3m: http://schema.org/DateTime
 links:
 - type: wikipedia

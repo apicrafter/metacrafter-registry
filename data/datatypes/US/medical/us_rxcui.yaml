@@ -1,0 +1,40 @@
+id: us_rxcui
+name: RxNorm concept unique identifier (RXCUI)
+status: draft
+doc: Numeric identifier of a concept in RxNorm, the US National Library of Medicine vocabulary of normalized
+  names for clinical drugs on the US market. Ingredients, brand names and clinical drugs each have their
+  own RXCUI.
+categories:
+- medical
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,7}$
+examples:
+- value: '1191'
+  description: Aspirin
+- value: '6448'
+  description: Lithium
+- value: RX1191
+  valid: false
+  description: An RXCUI has no letter prefix
+mappings:
+  wikidata: P3345
+  schema_org: rxcui
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/RxNorm
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3345
+- type: schema.org
+  url: https://schema.org/rxcui
+- type: doc
+  url: https://www.nlm.nih.gov/research/umls/rxnorm/index.html
+translations:
+  ru:
+    name: Идентификатор понятия RxNorm (RXCUI)
+    doc: Числовой идентификатор понятия в словаре лекарственных средств RxNorm Национальной медицинской
+      библиотеки США.

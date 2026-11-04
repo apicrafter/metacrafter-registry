@@ -1,0 +1,39 @@
+id: roman_numeral
+name: Roman numeral
+status: draft
+doc: Number from 1 to 3999 written in Roman numerals, with the letters I, V, X, L, C, D and M in the standard
+  subtractive form, where IV is 4 and CM is 900. Roman numerals number volumes, chapters, monarchs and
+  recurring events, and some copyright notices and inscriptions give years in them. The regexp accepts
+  uppercase standard forms only, not additive variants such as IIII or numbers above 3999.
+categories:
+- values
+langs:
+- common
+is_pii: false
+regexp: ^(?=[MDCLXVI])M{0,3}(?:CM|CD|D?C{0,3})(?:XC|XL|L?X{0,3})(?:IX|IV|V?I{0,3})$
+examples:
+- value: XIV
+  description: '14'
+- value: MCMXCIX
+  description: '1999'
+- value: MMXXVI
+  description: '2026'
+- value: IV
+  description: '4'
+- value: XIIII
+  valid: false
+  description: Additive form of 14
+- value: IC
+  valid: false
+  description: Not a standard form of 99 (XCIX)
+mappings:
+  autotype: roman
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Roman_numerals
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/roman.txt
+translations:
+  ru:
+    name: Римское число
+    doc: Число от 1 до 3999, записанное римскими цифрами I, V, X, L, C, D и M.

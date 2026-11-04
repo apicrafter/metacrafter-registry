@@ -1,0 +1,36 @@
+id: icscnumber
+name: International Chemical Safety Card (ICSC) number
+status: draft
+doc: Four-digit, zero-padded number of an International Chemical Safety Card. The cards summarize the
+  hazards of a chemical and the protective measures for it; the International Labour Organization and
+  the World Health Organization publish them.
+categories:
+- chemistry
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4}$
+examples:
+- value: 0822
+  description: Aspirin (acetylsalicylic acid)
+- value: '0044'
+  description: Ethanol
+- value: '0240'
+  description: Copper
+- value: '822'
+  valid: false
+  description: Not zero-padded to four digits
+mappings:
+  wikidata: P5220
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Chemical_Safety_Cards
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5220
+- type: doc
+  url: https://chemicalsafety.ilo.org/dyn/icsc/showcard.home
+translations:
+  ru:
+    name: Номер международной карты химической безопасности (ICSC)
+    doc: Номер международной карты химической безопасности, которую публикуют МОТ и ВОЗ.

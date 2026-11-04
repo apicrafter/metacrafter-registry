@@ -42,7 +42,7 @@
   <dt>Languages</dt>
   <dd>{% for l in object.langs or [] %}{{ reg.langs[l].name }}{% if not loop.last %}, {% endif %}{% else %}<span class="muted">not specified</span>{% endfor %}</dd>
   {% for system, value in (object.mappings or {}).items() if system not in ('wikidata', 'fibo') %}
-  <dt>{{ {'schema_org': 'Schema.org', 'dpv': 'W3C DPV', 'presidio': 'Presidio', 'google_dlp': 'Google DLP', 'purview': 'Microsoft Purview', 'd3m': 'D3M', 'sherlock': 'Sherlock', 'cdm': 'Microsoft CDM', 'fta': 'FTA', 'gs1_ai': 'GS1 Application Identifier'}.get(system, system) }}</dt>
+  <dt>{{ {'schema_org': 'Schema.org', 'dpv': 'W3C DPV', 'presidio': 'Presidio', 'google_dlp': 'Google DLP', 'purview': 'Microsoft Purview', 'd3m': 'D3M', 'sherlock': 'Sherlock and Sato', 'cdm': 'Microsoft CDM', 'fta': 'FTA', 'autotype': 'AutoType benchmark', 'gs1_ai': 'GS1 Application Identifier'}.get(system, system) }}</dt>
   {% if system == 'gs1_ai' %}
   <dd>{% for v in ([value] if value is string else value) %}<a href="https://ref.gs1.org/ai/{{ v }}"><code>({{ v }})</code></a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>
   {% else %}

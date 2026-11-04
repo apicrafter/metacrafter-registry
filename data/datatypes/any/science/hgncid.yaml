@@ -1,0 +1,37 @@
+id: hgncid
+name: HGNC gene ID
+status: draft
+doc: Stable numeric identifier that the HUGO Gene Nomenclature Committee (HGNC) assigns to each human
+  gene with an approved symbol. The ID stays the same when the gene symbol or name changes. Wikidata stores
+  the number; HGNC and PubChem write it with the prefix "HGNC:".
+categories:
+- science
+- medical
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:HGNC:)?[1-9]\d{0,4}$
+examples:
+- value: HGNC:4948
+  description: HLA-DRB1 gene
+- value: '108'
+  description: ACHE gene
+- value: '9957'
+  description: RELN gene
+- value: HGNC:04948
+  valid: false
+  description: No leading zeros
+mappings:
+  wikidata: P354
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/HUGO_Gene_Nomenclature_Committee
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P354
+- type: doc
+  url: https://www.genenames.org/
+translations:
+  ru:
+    name: Идентификатор гена HGNC
+    doc: Постоянный числовой идентификатор гена человека, который присваивает комитет HGNC.
