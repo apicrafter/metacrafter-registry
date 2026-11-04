@@ -1,0 +1,29 @@
+id: gs1_ai_8011
+name: Component/Part Identifier serial number (GS1 AI 8011)
+status: draft
+doc: 'GS1 element string of Application Identifier (8011): ''8011'' followed by the serial number of one
+  component or part whose CPID is in AI (8010): up to 12 digits without a leading zero. GS1 format N4+N..12.
+  It is a key qualifier in GS1 Digital Link. In the human-readable text under a barcode it is written
+  as (8011) and the value.'
+categories:
+- gs1
+- objectids
+- industry
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^8011[1-9]\d{0,11}$
+examples:
+- value: '801145120'
+  description: Serial number 45120
+- value: '80119'
+  description: Serial number 9
+- value: '801104512'
+  valid: false
+  description: Leading zero
+mappings:
+  gs1_ai: '8011'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8011

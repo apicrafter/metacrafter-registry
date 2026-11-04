@@ -451,7 +451,8 @@ class Registry:
         For wikidata, a property id or its URL; for fibo, a class path or its full IRI;
         for fta, a semantic type as FTA reports it, including locale-bound names such
         as MONTH.FULL_fr-FR or GENDER.TEXT_DE; for sherlock, a type label, compared
-        without case and spaces.
+        without case and spaces; for gs1_ai, an Application Identifier as written in
+        a barcode's human-readable text ((414) or 414) or its https://ref.gs1.org/ai/ IRI.
         """
         if system == "fta":
             return self._crosswalk_fta(str(external_id).strip())
@@ -460,6 +461,8 @@ class Registry:
             wanted = wanted.rstrip("/").rsplit("/", 1)[-1].removeprefix("Property:").upper()
         elif system == "fibo":
             wanted = fibo_normalize(wanted)
+        elif system == "gs1_ai":
+            wanted = wanted.rstrip("/").rsplit("/", 1)[-1].strip("()")
         # D3M writes semantic types as URIs (http://schema.org/email). Also
         # accept https://schema.org/... and a bare type name (FileName, email).
         d3m_bare = system == "d3m" and "://" not in wanted

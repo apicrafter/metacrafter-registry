@@ -1,0 +1,31 @@
+id: hidri
+name: Highly Individualised Device Registration Identifier (HIDRI)
+status: draft
+doc: GS1 identification key for the registration of highly individualised medical devices. It is a GS1
+  Company Prefix, a reference and two check characters, up to 25 characters of GS1 character set 82 with
+  at least one character that is not a digit; the check pair is computed as for the Global Model Number.
+  Application Identifier (8014), data title MUDI, carries it next to a GTIN in AI (01); the element string
+  is the pattern gs1_ai_8014.
+categories:
+- gs1
+- objectids
+- medical
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?=.*[^0-9])\d{4}[!%-?A-Z_a-z\x22]{0,19}[2-9A-HJ-NP-Z]{2}$
+checksum: gs1_checkpair
+examples:
+- value: 9528765LENS-0042F6
+  description: Synthetic value with the GS1 demonstration prefix 952 and a valid check character pair
+- value: 9528765SPEC-L71ER
+  description: Synthetic value with the GS1 demonstration prefix 952 and a valid check character pair
+- value: 9528765LENS-004222
+  valid: false
+  description: 'Check characters changed: fails the check pair'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8014
+- type: doc
+  url: https://ref.gs1.org/standards/genspecs/

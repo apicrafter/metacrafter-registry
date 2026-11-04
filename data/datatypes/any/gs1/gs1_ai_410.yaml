@@ -1,0 +1,23 @@
+id: gs1_ai_410
+name: Ship to / deliver to GLN (GS1 AI 410)
+status: draft
+doc: 'GS1 element string of Application Identifier (410): ''410'' followed by the 13-digit Global Location
+  Number of the place where the goods are to be delivered. GS1 format N3+N13. The GLN ends in a GS1 check
+  digit. In the human-readable text under a barcode it is written as (410) and the value.'
+semantic_type: gln
+langs:
+- common
+regexp: ^410\d{13}$
+examples:
+- value: '4109528765000017'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '4109528765000253'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '410952876500001'
+  valid: false
+  description: Twelve-digit GLN
+mappings:
+  gs1_ai: '410'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/410

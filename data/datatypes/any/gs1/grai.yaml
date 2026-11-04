@@ -1,0 +1,29 @@
+id: grai
+name: Global Returnable Asset Identifier (GRAI)
+status: draft
+doc: GS1 identification key for a returnable asset, such as a pallet, crate, keg or gas cylinder. Thirteen
+  digits (a GS1 Company Prefix, an asset type and a GS1 check digit) identify the asset type; an optional
+  serial component of up to 16 characters of GS1 character set 82 identifies one asset. Application Identifier
+  (8003) writes a filler zero before the 13 digits; the element string is the pattern gs1_ai_8003.
+categories:
+- gs1
+- objectids
+- shipping
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{13}[!%-?A-Z_a-z\x22]{0,16}$
+examples:
+- value: '9528765000116'
+  description: 'Synthetic value with the GS1 demonstration prefix 952: asset type only'
+- value: 9528765000116RT1042
+  description: 'Synthetic value with the GS1 demonstration prefix 952: asset type and serial component'
+- value: '952876500011'
+  valid: false
+  description: 'Twelve digits: too short'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8003
+- type: doc
+  url: https://ref.gs1.org/standards/genspecs/

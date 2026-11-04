@@ -1,0 +1,24 @@
+id: gs1_ai_7023
+name: GIAI of an assembly (GS1 AI 7023)
+status: draft
+doc: 'GS1 element string of Application Identifier (7023): ''7023'' followed by the Global Individual
+  Asset Identifier of an assembly of parts, up to 30 characters. GS1 format N4+X..30. GS1 restricts AIs
+  of the 7 series to some sectors or regions. In the human-readable text under a barcode it is written
+  as (7023) and the value.'
+semantic_type: giai
+langs:
+- common
+regexp: ^7023\d{4}[!%-?A-Z_a-z\x22]{0,26}$
+examples:
+- value: 70239528765ASSET-7781
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: 70239528765PC-0193
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: 7023ASSET-7781
+  valid: false
+  description: No GS1 Company Prefix
+mappings:
+  gs1_ai: '7023'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/7023

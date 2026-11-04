@@ -64,10 +64,12 @@ pip install -e ".[dev]"
     use placeholders like `1234567890`.
   - Every positive example must match the regexp.
   - With `checksum`, every positive example must also pass the check digit.
-    Known algorithms are `luhn`, `iban_mod97`, `gtin`, `isbn10`, `isbn13`,
-    `ru_inn`, `ru_snils`, `ru_ogrn`, `fr_nir`, `at_uid`, `bg_vat`, `no_fnr`,
-    `it_codicefiscale`, `it_iva`, `fi_hetu` and `es_dni`
-    (`src/metacrafter_registry/checksums.py`).
+    Known algorithms are `luhn`, `iban_mod97`, `gtin`, `gs1_mod10`,
+    `gs1_checkpair`, `isbn10`, `isbn13`, `ru_inn`, `ru_snils`, `ru_ogrn`,
+    `fr_nir`, `at_uid`, `bg_vat`, `no_fnr`, `it_codicefiscale`, `it_iva`,
+    `fi_hetu` and `es_dni` (`src/metacrafter_registry/checksums.py`).
+  - GS1 records: use the GS1 Prefix 952 (reserved for demonstrations) or
+    GS1's example GTIN `09506000134352` for examples.
   - Compute check digits with code. Do not do it by hand.
 - **Status:**
   - Keep `status: draft` unless the record has a real description and

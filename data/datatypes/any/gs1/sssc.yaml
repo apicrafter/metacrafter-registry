@@ -1,9 +1,11 @@
 id: sssc
 name: Serial shipping container code
 status: stable
-doc: The Serial Shipping Container Code (SSCC) is an 18-digit number used to identify logistics units.
-  In order to automate the reading process, the SSCC is often encoded in a barcode, generally GS1-128,
-  and can also be encoded in an RFID tag. It is used in electronic commerce transactions.
+doc: 'Serial Shipping Container Code (SSCC) written as a GS1 element string with Application Identifier
+  (00): ''00'' followed by the 18 digits of the SSCC. The SSCC identifies one logistic unit, such as a
+  pallet or a parcel, for its whole journey through the supply chain; it is an extension digit, a GS1
+  Company Prefix, a serial reference and a GS1 check digit. It is usually printed in a GS1-128 barcode
+  on the logistic label or stored in an RFID tag.'
 categories:
 - transport
 - objectids
@@ -13,7 +15,18 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^00(d{18})$
+regexp: ^00(\d{18})$
+checksum: gs1_mod10
+examples:
+- value: 00095287650000315043
+  description: Synthetic value with the GS1 demonstration prefix 952 and a valid check digit
+- value: 00195287650000315057
+  description: Synthetic value with the GS1 demonstration prefix 952, extension digit 1
+- value: 00095287650000315044
+  valid: false
+  description: 'Last digit changed: fails the GS1 check digit'
+mappings:
+  gs1_ai: '00'
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Serial_shipping_container_code

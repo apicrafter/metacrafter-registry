@@ -11,6 +11,8 @@ from metacrafter_registry.checksums import (
     es_dni,
     fi_hetu,
     fr_nir,
+    gs1_checkpair,
+    gs1_mod10,
     gtin,
     iban_mod97,
     isbn10,
@@ -31,6 +33,30 @@ def reg(repo_sources):
     from conftest import DATA
 
     return Registry.from_sources(DATA)
+
+
+def test_gs1_checksums():
+    # GS1 check digit of any length: GTIN-14, GLN, SSCC, and the SSCC element string
+    assert gs1_mod10("09506000134352") and not gs1_mod10("09506000134353")
+    assert gs1_mod10("0865321000104")
+    assert gs1_mod10("095287650000315043") and gs1_mod10("00095287650000315043")
+    assert not gs1_mod10("7") and not gs1_mod10("95A")
+    # GS1 check character pair: test values of lint_csumalpha.c (GS1 Barcode Syntax Engine)
+    for good in (
+        "22",
+        "!22",
+        "1987654Ad4X4bL5ttr2310c2K",
+        "12345678901234567890123NT",
+        "12345_ABCDEFGHIJKLMCP",
+        "12345_abcdefghijklmN3",
+        "12345_!\"%&'()*+,-./LC",
+        "12345_0123456789:;<=>?62",
+        "7907665Bm8v2AB",
+        "97850l6KZm0yCD",
+    ):
+        assert gs1_checkpair(good), good
+    for bad in ("", "2", "33", "1987654Ad4X4bL5ttr2310cXK", "1987654Ad4X4bL5ttr2310c2X"):
+        assert not gs1_checkpair(bad), bad
 
 
 def test_checksum_reference_values():

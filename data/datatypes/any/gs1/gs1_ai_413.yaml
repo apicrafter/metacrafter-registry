@@ -1,0 +1,24 @@
+id: gs1_ai_413
+name: Ship for / deliver for / forward to GLN (GS1 AI 413)
+status: draft
+doc: 'GS1 element string of Application Identifier (413): ''413'' followed by the 13-digit Global Location
+  Number of the final recipient when the goods are delivered through an intermediate party. GS1 format
+  N3+N13. The GLN ends in a GS1 check digit. In the human-readable text under a barcode it is written
+  as (413) and the value.'
+semantic_type: gln
+langs:
+- common
+regexp: ^413\d{13}$
+examples:
+- value: '4139528765000017'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '4139528765000253'
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: '413952876500001'
+  valid: false
+  description: Twelve-digit GLN
+mappings:
+  gs1_ai: '413'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/413

@@ -1,0 +1,28 @@
+id: gs1_ai_03
+name: Made-to-Order GTIN (GS1 AI 03)
+status: draft
+doc: 'GS1 element string of Application Identifier (03): ''03'' followed by the 14-digit GTIN of a made-to-order
+  trade item, one produced to the specification of a customer. GS1 format N2+N14. The GTIN ends in a GS1
+  check digit. In the human-readable text under a barcode it is written as (03) and the value.'
+categories:
+- gs1
+- objectids
+- industry
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^03\d{14}$
+examples:
+- value: 0309506000134352
+  description: GS1's example GTIN 09506000134352
+- value: 0309528765000123
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: 030950600013435
+  valid: false
+  description: Thirteen digits
+mappings:
+  gs1_ai: '03'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/03

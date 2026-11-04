@@ -10,6 +10,11 @@
     return /^\d+$/.test(compact) ? compact.split("").map(Number) : null;
   }
 
+  function isPrime(n) {
+    for (var p = 2; p * p <= n; p += 1) if (n % p === 0) return false;
+    return n > 1;
+  }
+
   var CHECKSUMS = {
     luhn: function (v) {
       var d = digitsOf(v);
@@ -34,12 +39,32 @@
       }
       return rem === 1;
     },
-    gtin: function (v) {
+    gs1_mod10: function (v) {
       var d = digitsOf(v);
-      if (!d || [8, 12, 13, 14].indexOf(d.length) === -1) return false;
+      if (!d || d.length < 2) return false;
       var check = d[d.length - 1], body = d.slice(0, -1), total = 0;
       for (var i = 0; i < body.length; i += 1) total += body[body.length - 1 - i] * (i % 2 === 0 ? 3 : 1);
       return (10 - (total % 10)) % 10 === check;
+    },
+    gtin: function (v) {
+      var d = digitsOf(v);
+      if (!d || [8, 12, 13, 14].indexOf(d.length) === -1) return false;
+      return CHECKSUMS.gs1_mod10(v);
+    },
+    gs1_checkpair: function (v) {
+      var cset82 = "!\"%&'()*+,-./0123456789:;<=>?ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz";
+      var cset32 = "23456789ABCDEFGHJKLMNPQRSTUVWXYZ";
+      var s = String(v).trim();
+      if (s.length < 2) return false;
+      var body = s.slice(0, -2), total = 0, prime = 1;
+      for (var i = body.length - 1; i >= 0; i -= 1) {
+        var weight = cset82.indexOf(body[i]);
+        if (weight === -1) return false;
+        do { prime += 1; } while (!isPrime(prime));
+        total += weight * prime;
+      }
+      total %= 1021;
+      return s.slice(-2) === cset32[total >> 5] + cset32[total & 31];
     },
     isbn13: function (v) { var d = digitsOf(v); return !!d && d.length === 13 && CHECKSUMS.gtin(v); },
     isbn10: function (v) {
