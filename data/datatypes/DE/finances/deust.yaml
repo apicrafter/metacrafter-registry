@@ -19,6 +19,8 @@ examples:
   description: German VAT identification number (USt-IdNr.) with country code DE and 9 digits
 - value: DE987654321
   description: Another valid German VAT identification number format
+mappings:
+  purview: Germany value added tax number
 links:
 - type: doc
   url: https://www.bzst.de/DE/Unternehmen/SteuerlicheIdentifikationsnummern/UStIdNr/ustidnr_node.html

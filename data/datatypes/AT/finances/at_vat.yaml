@@ -25,6 +25,9 @@ examples:
   valid: false
   description: the letter U is missing
 mappings:
+  purview:
+  - Austria Value Added Tax (VAT) Number
+  - Austria value added tax
   fta: IDENTITY.VAT_AT
 links:
 - type: wikipedia

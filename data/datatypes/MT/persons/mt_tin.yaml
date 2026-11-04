@@ -1,0 +1,25 @@
+id: mt_tin
+name: Maltese tax identification number
+status: draft
+doc: Maltese tax identification number. For Maltese nationals it is seven digits and a letter (the identity
+  card number); for other persons and for entities it is nine digits.
+categories:
+- pii
+- persons
+country:
+- MT
+langs:
+- mt
+- en
+is_pii: true
+classification: identifier
+regexp: ^(?:\d{7}[A-Z]|\d{9})$
+mappings:
+  purview:
+  - Malta Tax ID Number
+  - Malta tax identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-malta-tax-identification-number

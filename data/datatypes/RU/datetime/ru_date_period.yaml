@@ -1,0 +1,25 @@
+id: ru_date_period
+name: Date period (Russian)
+status: draft
+doc: Period between two dates, months or years written in Russian notation, for example "с 01.2025 по
+  12.2025" or "01.01.2025-31.12.2025". Often used for the period covered by an inspection or a project.
+semantic_type: timespan
+country:
+- RU
+langs:
+- ru
+regexp: '^(?:(?:[Сс] )?\d{2}\.(?:\d{2}\.)?\d{4} ?(?:-|–|—|по) ?\d{2}\.(?:\d{2}\.)?\d{4}|\d{4} ?[-–] ?\d{4}(?:
+  ?гг?\.| годы)?)$'
+examples:
+- value: с 01.2025 по 12.2025
+  description: Months from January to December 2025
+- value: 01.01.2025-31.12.2025
+  description: Calendar year 2025
+- value: 2015-2020 гг.
+  description: Years 2015 to 2020
+- value: 01.01.2025
+  valid: false
+translations:
+  ru:
+    name: Период
+    doc: Период между двумя датами, месяцами или годами в русской записи.

@@ -21,6 +21,12 @@ examples:
 - value: 0728306847
   valid: false
   description: One character too many
+mappings:
+  purview:
+  - Greek Tax Identification Number
+  - Greece tax identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gr.vat.html

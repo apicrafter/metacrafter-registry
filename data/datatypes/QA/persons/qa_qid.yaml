@@ -1,0 +1,22 @@
+id: qa_qid
+name: Qatari identity card number (QID)
+status: draft
+doc: 'Number of the Qatari identity card: 11 digits. The first digit is 2 or 3, then come the last two
+  digits of the year of birth and a three-digit country code.'
+categories:
+- pii
+- persons
+country:
+- QA
+langs:
+- ar
+is_pii: true
+classification: identifier
+regexp: ^[23]\d{10}$
+mappings:
+  purview:
+  - Qatari ID Card Number
+  - Qatari identification card number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-qatari-id-card-number

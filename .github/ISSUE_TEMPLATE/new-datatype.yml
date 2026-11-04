@@ -1,0 +1,105 @@
+name: Propose a datatype
+description: Suggest a new semantic datatype, such as an identifier, a code or a PII field.
+title: "Add datatype: "
+labels: ["improve semantic types"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing a datatype. A maintainer or contributor turns the
+        proposal into a `draft` record. You can also open a pull request with the
+        YAML file yourself: see
+        [CONTRIBUTING.md](https://github.com/apicrafter/metacrafter-registry/blob/main/CONTRIBUTING.md).
+
+        Search the registry first: https://registry.apicrafter.io/search
+        If the datatype exists under another name, report it with the
+        "Fix a datatype" form instead.
+
+        Leave a field empty if you are not sure. Do not guess.
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: What the value is, in English.
+      placeholder: Russian taxpayer number (INN)
+    validations:
+      required: true
+  - type: input
+    id: id
+    attributes:
+      label: Suggested id
+      description: Lowercase letters, digits and underscores. Country-specific ids start with the country code, for example `ru_inn`.
+      placeholder: ru_inn
+  - type: textarea
+    id: doc
+    attributes:
+      label: Description
+      description: What the value identifies, who issues it and where it is used. Write it in your own words. Do not paste Wikipedia text.
+    validations:
+      required: true
+  - type: input
+    id: country
+    attributes:
+      label: Countries
+      description: ISO 3166-1 alpha-2 codes, comma-separated. Leave it empty for a global datatype.
+      placeholder: RU
+  - type: input
+    id: categories
+    attributes:
+      label: Categories
+      description: Ids from data/categories.yaml, comma-separated, for example `finances, pii`.
+  - type: dropdown
+    id: is_pii
+    attributes:
+      label: Is it personal data?
+      description: Does a value identify or describe a person?
+      options:
+        - "Yes"
+        - "No"
+        - "Not sure"
+    validations:
+      required: true
+  - type: textarea
+    id: format
+    attributes:
+      label: Format
+      description: The structure of a value, such as its length, allowed characters, prefix or check digit. Add a regular expression only if you have tested it.
+      render: text
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples
+      description: Values in the real format, one per line. Use published sample values. Never use the data of a real person, and never use a real secret, such as a live API key.
+      render: text
+  - type: textarea
+    id: negative_examples
+    attributes:
+      label: Values that look similar but are not valid
+      description: For example, a value with a wrong check digit. One per line.
+      render: text
+  - type: textarea
+    id: links
+    attributes:
+      label: Sources
+      description: Links to the standard, the issuing authority or the vendor's documentation, one per line. Also add Wikipedia or Wikidata pages for this datatype, if they exist. Do not link a general page, such as the article about the country.
+    validations:
+      required: true
+  - type: input
+    id: wikidata
+    attributes:
+      label: Wikidata property or item
+      description: Only an id that you checked, for example `P968`.
+  - type: textarea
+    id: detection
+    attributes:
+      label: Detection
+      description: Tools that detect this datatype, and the column names it usually has. This helps metacrafter-rules.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched the registry, and this datatype is not in it.
+          required: true
+        - label: The examples contain no data of real people and no real secrets.
+          required: true

@@ -75,8 +75,11 @@ Example:
   "means.location.postalCode")` returns `postindex`. For a D3M dataset column,
   pass a semantic type URI from its metadata: `crosswalk("d3m",
   "http://schema.org/email")` returns `email`. Column roles such as
-  `.../types/PrimaryKey` or `.../types/Target` are not mapped. For a column
-  that FTA (Fast Text Analysis) labelled, pass FTA's semantic type as it
+  `.../types/PrimaryKey` or `.../types/Target` are not mapped. For a Microsoft
+  Purview sensitive information type, pass its name: case, periods and
+  apostrophes do not matter, former names still resolve, and a bundle such as
+  "EU passport number" returns the records of all its member types. For a
+  column that FTA (Fast Text Analysis) labelled, pass FTA's semantic type as it
   reports it: `crosswalk("fta", "POSTAL_CODE.ZIP5_US")` returns `uszipcode`,
   and `crosswalk("fta", "MONTH.FULL_fr-FR")` returns `month`.
 - **Former ids.** `get_datatype("ssn")` returns `usssn` with

@@ -31,8 +31,8 @@ below were computed from that commit.
     FTA types (`color` carries the 15 `COLOR.TEXT_*` types); an FTA type maps
     to at most one record (a test checks this).
   - **73 new draft records**: 21 value types, 18 postal code patterns and 34
-    administrative divisions. Countries TZ (Tanzania), UY (Uruguay) and ZA
-    (South Africa) are added to `data/countries.yaml`.
+    administrative divisions. Countries TZ (Tanzania) and UY (Uruguay) are
+    added to `data/countries.yaml`.
   - New tool `fta` (`data/tools/detectors/fta.yaml`). Its `supported_types`
     are the records that carry `mappings.fta`; a test keeps them in step.
   - `crosswalk("fta", ...)` resolves names that FTA binds to a locale at run

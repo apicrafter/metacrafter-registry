@@ -1,0 +1,17 @@
+id: ro_passport
+name: Romanian passport number
+status: draft
+doc: Number of a passport issued by Romania. Microsoft Purview looks for eight or nine digits.
+semantic_type: passport
+country:
+- RO
+langs:
+- ro
+regexp: ^\d{8,9}$
+mappings:
+  purview:
+  - Romania passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-romania-passport-number

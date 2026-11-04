@@ -15,4 +15,8 @@ regexp: ^[0-9]{11}$
 mappings:
   google_dlp: POLAND_PESEL_NUMBER
   presidio: PL_PESEL
-  purview: Poland national ID (PESEL)
+  purview:
+  - Poland national ID (PESEL)
+  - Poland tax identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number

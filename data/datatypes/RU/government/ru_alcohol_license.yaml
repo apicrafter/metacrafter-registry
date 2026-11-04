@@ -1,0 +1,28 @@
+id: ru_alcohol_license
+name: Russian alcohol retail license number
+status: draft
+doc: Number of a license for retail sale of alcoholic products issued by a regional authority. It consists
+  of the two-digit region code, three letters and a seven-digit sequence number, for example "37РАО0000001".
+  The letters РПА and РАО are both seen in regional registers on data.gov.ru.
+categories:
+- legal
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^\d{2}[А-ЯЁ]{3}\d{7}$
+examples:
+- value: 37РАО0000001
+  description: License of a company, Ivanovo region register
+- value: 86РПА0000003
+  description: License of a company, Khanty-Mansi Autonomous Okrug register
+- value: 37-РАО-0000001
+  valid: false
+translations:
+  ru:
+    name: Номер лицензии на розничную продажу алкогольной продукции
+    doc: Номер лицензии на розничную продажу алкогольной продукции из кода региона, трёх букв и семизначного
+      порядкового номера.

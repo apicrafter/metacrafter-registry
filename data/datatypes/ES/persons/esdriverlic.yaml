@@ -11,6 +11,10 @@ langs:
 - es
 is_pii: true
 classification: identifier
+mappings:
+  purview:
+  - Spain drivers license number
+  - EU drivers license number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Driving_licence_in_Spain

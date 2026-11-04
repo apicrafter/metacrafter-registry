@@ -1,0 +1,17 @@
+id: gr_passport
+name: Greek passport number
+status: draft
+doc: Number of a passport issued by Greece. Microsoft Purview looks for two letters and seven digits.
+semantic_type: passport
+country:
+- GR
+langs:
+- el
+regexp: ^[A-Z]{2}\d{7}$
+mappings:
+  purview:
+  - Greece passport number
+  - EU passport number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-greece-passport-number

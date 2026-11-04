@@ -1,0 +1,22 @@
+id: orgunit
+name: Organizational unit (department)
+status: draft
+doc: Name of a structural unit inside an organization, such as a department, division or office. It names
+  a part of an organization, not the organization itself.
+categories:
+- companies
+langs:
+- common
+is_pii: false
+examples:
+- value: Finance Department
+  description: Department of an organization
+mappings:
+  schema_org: department
+links:
+- type: schema.org
+  url: https://schema.org/department
+translations:
+  ru:
+    name: Структурное подразделение
+    doc: Наименование структурного подразделения организации (отдела, управления, службы).

@@ -21,6 +21,12 @@ examples:
 - value: '406120373087'
   valid: false
   description: One character too many
+mappings:
+  purview:
+  - Estonia personal identification code
+  - EU national identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
 links:
 - type: wikipedia
   url: https://et.wikipedia.org/wiki/Isikukood

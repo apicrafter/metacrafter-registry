@@ -2,6 +2,7 @@ id: rumedicinetradename
 name: Medicine trade name (Russian)
 status: draft
 doc: Trade name of the medicine in Russian.
+parent: medication_brand_name
 categories:
 - medical
 country:

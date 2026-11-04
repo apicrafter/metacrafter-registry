@@ -15,7 +15,10 @@ classification: identifier
 regexp: '[0-9]{10}'
 mappings:
   google_dlp: UK_TAXPAYER_REFERENCE
-  purview: U.K. Unique Taxpayer Reference Number
+  purview:
+  - U.K. Unique Taxpayer Reference Number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
 links:
 - type: other
   url: https://www.gov.uk/find-lost-utr-number

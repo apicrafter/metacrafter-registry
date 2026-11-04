@@ -1,0 +1,24 @@
+id: hu_taj
+name: Hungarian social security number (TAJ)
+status: draft
+doc: 'Hungarian social security number (TAJ szám) used in health insurance: nine digits, the last of which
+  is a check digit.'
+categories:
+- pii
+- persons
+country:
+- HU
+langs:
+- hu
+is_pii: true
+classification: identifier
+regexp: ^\d{9}$
+mappings:
+  purview:
+  - Hungarian Social Security Number (TAJ)
+  - Hungary social security number (TAJ)
+  - EU Social Security Number (SSN) or Equivalent ID
+  - EU social security number or equivalent identification
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-hungary-social-security-number

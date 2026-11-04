@@ -24,6 +24,14 @@ examples:
 - value: '78101810827'
   valid: false
   description: One character too many
+mappings:
+  purview:
+  - Czech personal identity number
+  - EU Social Security Number (SSN) or Equivalent ID
+  - EU social security number or equivalent identification
+  - EU national identification number
+  - EU Tax Identification Number (TIN)
+  - EU Tax identification number
 links:
 - type: wikipedia
   url: https://cs.wikipedia.org/wiki/Rodn%C3%A9_%C4%8D%C3%ADslo

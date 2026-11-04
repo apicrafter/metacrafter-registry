@@ -1,0 +1,21 @@
+id: fr_health_insurance_number
+name: French health insurance card number
+status: draft
+doc: Number of the French health insurance card (carte Vitale). Microsoft Purview looks for 21 digits
+  in groups of ten, ten and one.
+categories:
+- pii
+- persons
+- medical
+country:
+- FR
+langs:
+- fr
+is_pii: true
+classification: identifier
+regexp: ^\d{10} ?\d{10} ?\d$
+mappings:
+  purview: France health insurance number
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-france-health-insurance-number

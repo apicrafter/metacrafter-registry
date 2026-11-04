@@ -10,7 +10,9 @@ langs:
 regexp: ^[0-9]{2}[A-z]{2}[0-9]{5}$
 mappings:
   google_dlp: FRANCE_PASSPORT
-  purview: France passport number
+  purview:
+  - France passport number
+  - EU passport number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/French_passport

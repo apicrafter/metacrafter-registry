@@ -23,6 +23,7 @@ examples:
 - value: FRABCDEFGHIJ1
   description: French VAT identification number with letters in the alphanumeric part
 mappings:
+  purview: France value added tax number
   fta: IDENTITY.VAT_FR
 links:
 - type: wikipedia

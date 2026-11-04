@@ -1,0 +1,19 @@
+id: pl_id_card
+name: Polish identity card number
+status: draft
+doc: 'Number of the Polish identity card (dowód osobisty): three letters and six digits.'
+categories:
+- pii
+- persons
+country:
+- PL
+langs:
+- pl
+is_pii: true
+classification: identifier
+regexp: ^[A-Z]{3}\d{6}$
+mappings:
+  purview: Poland identity card
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-poland-identity-card
