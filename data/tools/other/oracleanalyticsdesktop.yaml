@@ -1,0 +1,25 @@
+id: oracleanalyticsdesktop
+name: Oracle Analytics Desktop
+category: other
+doc: Oracle Analytics Desktop is a desktop application for preparing, exploring and visualizing data.
+  When a dataset is created, it profiles each column and detects its semantic type, either from value
+  patterns (dates, US Social Security numbers, credit card numbers, email addresses, North American phone
+  numbers, US addresses) or from the reference data shipped with the product (names and codes of countries
+  and states, county and city names, ZIP codes). It also recognizes first-name and last-name columns.
+  The detected types drive its recommendations to enrich, split, concatenate, mask or delete columns.
+  A column gets a type when at least 85% of its values match it.
+website: https://docs.oracle.com/en/middleware/bi/analytics-desktop/bidvd/data-profiles-semantic-recommendations.html
+supported_types:
+- date
+- usssn
+- bankcard
+- email
+- nanpphone
+- address
+- country
+- usstate
+- uscounty
+- city
+- uszipcode
+- person_firstname
+- person_surname
