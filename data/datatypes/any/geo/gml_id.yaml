@@ -1,0 +1,47 @@
+id: gml_id
+name: GML object identifier (gml:id)
+status: draft
+doc: Value of the gml:id attribute, the handle of an object in a Geography Markup Language (GML) document,
+  such as a feature or a geometry in a WFS response. Its XML Schema type is ID, so the value is an XML
+  NCName (it starts with a letter or an underscore and has no colon or space) and it is unique only within
+  the document that contains it. It serves internal cross-references and is not a persistent identifier;
+  GML carries stable identifiers in gml:identifier instead. GeoServer builds it from the feature type
+  name and a number, as in states.1. GDAL reads the attribute into a string field called gml_id, so tables
+  exported from GML or WFS data with ogr2ogr or QGIS keep it as a column. The regexp covers the NCName
+  characters of the Basic Multilingual Plane.
+parent: id
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD][A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\-.0-9\u00B7\u0300-\u036F\u203F-\u2040]*$
+examples:
+- value: states.1
+  description: GeoServer feature of the topp:states sample layer
+- value: states.1.1
+  description: GeoServer geometry of feature states.1 in GML 3.2 output
+- value: myFeature.1
+  description: GDAL GML driver documentation
+- value: table1-1
+  description: GDAL GML driver documentation, WFS join
+- value: topp:states.1
+  valid: false
+  description: an NCName has no colon; topp is the namespace prefix of the feature type
+- value: '1.1'
+  valid: false
+  description: an NCName cannot start with a digit
+- value: states 1
+  valid: false
+  description: an NCName has no space
+links:
+- type: doc
+  url: https://gdal.org/en/stable/drivers/vector/gml.html
+- type: doc
+  url: https://schemas.opengis.net/gml/3.2.1/gmlBase.xsd
+- type: doc
+  url: https://www.w3.org/TR/xml-names/#NT-NCName
+translations:
+  ru:
+    name: Идентификатор объекта GML (gml:id)
