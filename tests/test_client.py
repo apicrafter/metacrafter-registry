@@ -119,6 +119,70 @@ def test_identify_card_numbers_written_with_spaces(reg):
     assert reg.identify(["4111 1111 1111 1111"], field_name="card")[0]["id"] == "bankcard"
 
 
+@pytest.mark.parametrize(
+    ("values", "field", "expected"),
+    [
+        (["4111 1111 1111 1111"], "", "bankcard"),
+        (["4111-1111-1111-1111", "5500 0000 0000 0004"], "card", "bankcard"),
+        (["45 397 000", "45 397 000 001"], "oktmo", "oktmo"),
+        (["GB82 WEST 1234 5698 7654 32"], "", "iban"),
+    ],
+)
+def test_identify_values_written_with_separators(reg_with_date, values, field, expected):
+    top = reg_with_date.identify(values, field_name=field)[0]
+    assert top["id"] == expected and top["regexp_hit_rate"] == 1.0
+
+
+@pytest.mark.parametrize("field", ["birthday", "cardPeriod", ""])
+def test_identify_iso_dates_are_not_compact_digit_codes(reg_with_date, field):
+    from conftest import ISO_DATES
+
+    # Without hyphens an ISO date is eight digits: match() still accepts that.
+    assert "okpo" in [r["id"] for r in reg_with_date.match(ISO_DATES[0])]
+    candidates = {
+        c["id"]: c for c in reg_with_date.identify(ISO_DATES, field_name=field, limit=100)
+    }
+    assert next(iter(candidates)) == "date"
+    for rid in ("okpo", "oktmo"):
+        assert not candidates.get(rid, {}).get("regexp_hit_rate")
+        assert candidates.get(rid, {"score": 0})["score"] < candidates["date"]["score"]
+
+
+def test_compact_match_yields_to_an_at_least_as_specific_raw_match():
+    def record(rid, regexp, example):
+        return {
+            "id": rid,
+            "name": rid,
+            "kind": "datatype",
+            "status": "stable",
+            "is_pii": False,
+            "regexp": regexp,
+            "examples": [{"value": example}],
+        }
+
+    reg = Registry(
+        [
+            record("iso_date", r"^\d{4}-\d{2}-\d{2}$", "2025-05-15"),
+            record("eight_digits", r"^\d{8}$", "12345678"),
+            record("sixteen_digits", r"^\d{16}$", "4111111111111111"),
+            record("digits_and_spaces", r"^[\d ]+$", "1 2"),
+        ]
+    )
+    assert reg._broadness == {
+        "iso_date": 0.0,
+        "eight_digits": 0.0,
+        "sixteen_digits": 0.0,
+        "digits_and_spaces": 0.667,
+    }
+    hits = {
+        c["id"]: c["regexp_hit_rate"] for c in reg.identify(["2025-05-15", "4111 1111 1111 1111"])
+    }
+    # "20250515" is not counted for eight_digits or digits_and_spaces: iso_date
+    # matches "2025-05-15" as written and is at least as specific. The broader
+    # digits_and_spaces does not stop sixteen_digits.
+    assert hits == {"iso_date": 0.5, "sixteen_digits": 0.5, "digits_and_spaces": 0.5}
+
+
 def test_catch_all_regexps_rank_low(reg):
     candidates = {c["id"]: c for c in reg.identify(["user@example.com"], limit=50)}
     assert candidates["email"]["score"] > candidates.get("fqdn", {"score": 0})["score"]

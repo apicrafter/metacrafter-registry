@@ -42,11 +42,20 @@
   }
 
   function run(values, field, country) {
-    var results = [], skipped = [], worker = null, timer = null, current = -1;
+    // matches[i]: how index[i]'s regexp matches the values (null without a
+    // regexp); undefined when its pattern was skipped as too slow.
+    var matches = [], skipped = [], worker = null, timer = null, current = -1;
 
     function finish() {
       clearTimeout(timer);
       if (worker) worker.terminate();
+      var claimed = IdentifyCore.claims(index, matches, values.length);
+      var results = [];
+      index.forEach(function (record, i) {
+        if (matches[i] === undefined) return;
+        var r = IdentifyCore.scoreRecord(record, matches[i], values, field, country, claimed);
+        if (r) results.push(r);
+      });
       render(IdentifyCore.rank(results, 15), skipped);
     }
 
@@ -66,7 +75,7 @@
             else finish();
           }, PATTERN_BUDGET_MS);
         } else if (msg.type === "result") {
-          if (msg.result) results.push(msg.result);
+          matches[msg.i] = msg.matched;
         } else if (msg.type === "done") {
           finish();
         }

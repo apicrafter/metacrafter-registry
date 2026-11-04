@@ -238,10 +238,32 @@
     }
   }
 
-  function fullmatch(re, value) {
-    if (re.test(value)) return true;
-    var compact = value.replace(SEPARATORS, "");
-    return compact !== value && re.test(compact);
+  // How a regexp matches each value: RAW when it matches the value as written,
+  // COMPACT when it matches only once spaces and hyphens are removed
+  // ("4111 1111 1111 1111"), 0 otherwise.
+  var RAW = 1, COMPACT = 2;
+
+  function matchValues(re, values) {
+    return values.map(function (value) {
+      if (re.test(value)) return RAW;
+      var compact = value.replace(SEPARATORS, "");
+      return compact !== value && re.test(compact) ? COMPACT : 0;
+    });
+  }
+
+  // Per value, the broadness of the most specific regexp that matches it as
+  // written (Infinity when none does). matches[i] is matchValues() of index[i],
+  // or null/undefined when that record has no regexp or its pattern was skipped.
+  function claims(index, matches, count) {
+    var out = [];
+    for (var j = 0; j < count; j += 1) out.push(Infinity);
+    for (var i = 0; i < index.length; i += 1) {
+      var m = matches[i];
+      if (!m) continue;
+      var b = index[i].b || 0;
+      for (var k = 0; k < count; k += 1) if (m[k] === RAW && b < out[k]) out[k] = b;
+    }
+    return out;
   }
 
   function nameSimilarity(record, field) {
@@ -266,12 +288,17 @@
     return best;
   }
 
-  // Score one record; returns null when there is no evidence at all.
-  function scoreRecord(record, re, values, field, country) {
+  // Score one record; returns null when there is no evidence at all. matched is
+  // matchValues() of the record's regexp (null without one) and claimed is
+  // claims() over the whole index: a compact-form match counts only when no
+  // regexp that is at least as specific matches the value as written.
+  function scoreRecord(record, matched, values, field, country, claimed) {
     var hitRate = null;
-    if (values.length && re) {
-      var hits = 0;
-      for (var i = 0; i < values.length; i += 1) if (fullmatch(re, values[i])) hits += 1;
+    if (values.length && matched) {
+      var own = record.b || 0, hits = 0;
+      for (var i = 0; i < values.length; i += 1) {
+        if (matched[i] === RAW || (matched[i] === COMPACT && claimed[i] > own)) hits += 1;
+      }
       hitRate = hits / values.length;
     }
     var checksum = null;
@@ -311,9 +338,14 @@
   function identify(index, values, field, country, limit) {
     var samples = values.map(function (v) { return String(v).trim(); }).filter(Boolean);
     var c = country ? String(country).toUpperCase() : null;
+    var matches = index.map(function (record) {
+      var re = compile(record);
+      return re ? matchValues(re, samples) : null;
+    });
+    var claimed = claims(index, matches, samples.length);
     var results = [];
-    index.forEach(function (record) {
-      var r = scoreRecord(record, compile(record), samples, field, c);
+    index.forEach(function (record, i) {
+      var r = scoreRecord(record, matches[i], samples, field, c, claimed);
       if (r) results.push(r);
     });
     return rank(results, limit);
@@ -322,6 +354,8 @@
   var api = {
     CHECKSUMS: CHECKSUMS,
     compile: compile,
+    matchValues: matchValues,
+    claims: claims,
     scoreRecord: scoreRecord,
     rank: rank,
     identify: identify
