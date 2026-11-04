@@ -1,0 +1,32 @@
+id: ru_goskatalog_regnum
+name: Registration number of a museum object in the Russian State Catalogue (Goskatalog)
+status: draft
+doc: Registration number of a museum object in the State Catalogue of the Museum Fund of the Russian Federation
+  (Госкаталог), which the Ministry of Culture keeps at goskatalog.ru. In the open data of the Ministry
+  it is an integer of seven or eight digits.
+categories:
+- objectids
+- government
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{6,7}$
+examples:
+- value: '1968551'
+- value: '9881829'
+- value: '10170632'
+  description: Teapot from a tea set in a municipal museum
+- value: КП 296809/249
+  valid: false
+  description: Number in the museum's book of acquisitions, not the catalogue number
+links:
+- type: doc
+  url: https://goskatalog.ru
+- type: doc
+  url: https://opendata.mkrf.ru/opendata/7705851331-museum-exhibits
+translations:
+  ru:
+    name: Регистрационный номер музейного предмета в Госкаталоге

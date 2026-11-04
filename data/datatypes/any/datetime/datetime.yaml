@@ -1,12 +1,27 @@
 id: datetime
 name: Date and time
 status: stable
-doc: Date and time with one of known notations
+doc: Date and time of day. The regexp covers the ISO 8601 extended form YYYY-MM-DDThh:mm[:ss[.fff]] with
+  an optional time zone (Z or an offset), and the RFC 3339 variant with a space instead of T. Some data
+  sets store plain dates as timestamps at midnight local time, for example 2021-05-24T21:00:00.000Z for
+  25 May 2021 in Moscow.
 categories:
 - datetime
 langs:
 - common
 is_pii: false
+regexp: ^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])[T ](?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:[.,]\d+)?)?(?:Z|[+-](?:[01]\d|2[0-3])(?::?[0-5]\d)?)?$
+examples:
+- value: '2024-08-30T12:00:00.000Z'
+  description: UTC timestamp with milliseconds
+- value: '2018-10-10T12:58:52Z'
+- value: '2024-11-29 12:00:00'
+  description: Space separator, as allowed by RFC 3339
+- value: '2019-07-19T09:00:00+03:00'
+  description: Local time with an offset
+- value: '2024-08-30'
+  valid: false
+  description: A date without a time is the datatype date
 mappings:
   autotype:
   - date-R
@@ -28,9 +43,12 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Date_and_time_notation
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_8601
 - type: schema.org
   url: https://schema.org/DateTime
 translations:
   ru:
     name: Дата и время
-    doc: Дата и время в одной из общепринятых нотаций
+    doc: Дата и время суток. Регулярное выражение описывает форму ISO 8601 ГГГГ-ММ-ДДTчч:мм[:сс[.fff]]
+      с необязательным часовым поясом (Z или смещение) и вариант RFC 3339 с пробелом вместо T.

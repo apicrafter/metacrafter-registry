@@ -1,0 +1,21 @@
+id: ru_historical_dating
+name: Historical dating in Russian
+status: draft
+doc: Approximate date of creation of a historical or museum object written in Russian, with a century
+  in Roman numerals, a millennium, a decade or a year and qualifiers such as начало, конец or вторая половина.
+  Registers of cultural heritage and museum objects use this free form, so it has no regular expression.
+categories:
+- datetime
+country:
+- RU
+langs:
+- ru
+is_pii: false
+examples:
+- value: XIX в.
+- value: Конец XVIII века
+- value: III тыс. до н.э.
+- value: 1980-е гг.
+translations:
+  ru:
+    name: Датировка

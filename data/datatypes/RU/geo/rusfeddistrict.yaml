@@ -1,7 +1,9 @@
 id: rusfeddistrict
 name: Russian federal district name
 status: draft
-doc: Name of the federal district of Russia. Full or short.
+doc: Name of one of the eight federal districts of Russia, written in full (Центральный федеральный округ)
+  or as the usual abbreviation (ЦФО). The districts are the Central, Northwestern, Southern, North Caucasian,
+  Volga, Ural, Siberian and Far Eastern. The Ural district is abbreviated both УФО and УрФО.
 categories:
 - geo
 country:
@@ -10,7 +12,23 @@ langs:
 - ru
 is_pii: false
 classification: categorical
+regexp: ^(?:(?:Центральный|Северо-Западный|Южный|Северо-Кавказский|Приволжский|Уральский|Сибирский|Дальневосточный)
+  федеральный округ|ЦФО|СЗФО|ЮФО|СКФО|ПФО|УФО|УрФО|СФО|ДФО)$
+examples:
+- value: Центральный федеральный округ
+- value: Приволжский федеральный округ
+- value: ЦФО
+- value: СЗФО
+- value: УрФО
+  description: Second abbreviation of the Ural Federal District
+- value: Крымский федеральный округ
+  valid: false
+  description: Existed in 2014-2016 and was merged into the Southern district
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Federal_districts_of_Russia
 translations:
   ru:
     name: Наименование федерального округа России
-    doc: Наименование федерального округа России полное или сокращённое
+    doc: Наименование одного из восьми федеральных округов России, полное (Центральный федеральный округ)
+      или сокращённое (ЦФО).
