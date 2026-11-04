@@ -22,6 +22,8 @@ examples:
 - value: 024590427
   valid: false
   description: One character too many
+mappings:
+  orgid: FI-VERO
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fi.alv.html

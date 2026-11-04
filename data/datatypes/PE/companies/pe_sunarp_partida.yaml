@@ -1,0 +1,26 @@
+id: pe_sunarp_partida
+name: Peruvian SUNARP registry entry number (partida)
+status: draft
+doc: Number of the registry entry (partida) of a legal entity in the Register of Legal Entities of the
+  National Superintendency of Public Registries (SUNARP) of Peru. ORG-ID.guide lists the register as PE-SUNARP;
+  with that prefix an identifier reads PE-SUNARP-12623829.
+categories:
+- companies
+country:
+- PE
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: '12623829'
+  description: example from ORG-ID.guide
+- value: 00890227
+  description: example from ORG-ID.guide
+- value: '13964442'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: PE-SUNARP
+links:
+- type: other
+  url: https://org-id.guide/list/PE-SUNARP

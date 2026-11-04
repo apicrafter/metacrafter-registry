@@ -1,0 +1,23 @@
+id: ye_mopic_number
+name: Yemeni Ministry of Planning registration number
+status: draft
+doc: Registration number of an organisation at the Ministry of Planning and International Cooperation
+  of Yemen. ORG-ID.guide lists the register as YE-MOPIC; with that prefix an identifier reads YE-MOPIC-0036.
+categories:
+- companies
+country:
+- YE
+langs:
+- ar
+is_pii: false
+classification: identifier
+examples:
+- value: '0036'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: YE-MOPIC
+links:
+- type: doc
+  url: https://mopic-yemen.org/
+- type: other
+  url: https://org-id.guide/list/YE-MOPIC

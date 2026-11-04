@@ -1,0 +1,29 @@
+id: gb_srs_identifier
+name: UK Supplier Registration Service identifier
+status: draft
+doc: 'Identifier that the UK Government Supplier Registration Service (Crown Commercial Service) gives
+  to a registered organisation: a domain, a slash and a unique string. ORG-ID.guide lists the register
+  as GB-SRS; with that prefix an identifier reads GB-SRS-sid4gov.cabinetoffice.gov.uk/tBq37PN7.'
+categories:
+- companies
+- government
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: sid4gov.cabinetoffice.gov.uk/tBq37PN7
+  description: example from ORG-ID.guide
+- value: supplierregistration.cabinetoffice.gov.uk/B85F8jBe
+  description: example from ORG-ID.guide
+- value: sid4gov.cabinetoffice.gov.uk/9dg3Y6Xv
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GB-SRS
+links:
+- type: doc
+  url: https://supplierregistration.cabinetoffice.gov.uk/
+- type: other
+  url: https://org-id.guide/list/GB-SRS

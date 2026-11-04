@@ -1,0 +1,23 @@
+id: kh_ngo_number
+name: Cambodian NGO registration number
+status: draft
+doc: Registration number of a national non-governmental organisation at the Ministry of Interior of Cambodia.
+  ORG-ID.guide lists the register as KH-NNGO; with that prefix an identifier reads KH-NNGO-502.
+categories:
+- companies
+country:
+- KH
+langs:
+- km
+is_pii: false
+classification: identifier
+examples:
+- value: '502'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: KH-NNGO
+links:
+- type: doc
+  url: https://cambodiacounsel.com/ngo-registration/
+- type: other
+  url: https://org-id.guide/list/KH-NNGO

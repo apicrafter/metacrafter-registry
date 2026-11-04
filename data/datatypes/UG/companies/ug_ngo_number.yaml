@@ -1,0 +1,25 @@
+id: ug_ngo_number
+name: Ugandan NGO registration number
+status: draft
+doc: Registration number of a non-governmental organisation at the National Bureau for NGOs of Uganda.
+  ORG-ID.guide lists the register as UG-NGO; with that prefix an identifier reads UG-NGO-INDR160665542NB.
+categories:
+- companies
+country:
+- UG
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: INDR160665542NB
+  description: example from ORG-ID.guide
+- value: FORR69845421NB
+  description: example from ORG-ID.guide
+mappings:
+  orgid: UG-NGO
+links:
+- type: doc
+  url: https://ngobureau.go.ug/
+- type: other
+  url: https://org-id.guide/list/UG-NGO

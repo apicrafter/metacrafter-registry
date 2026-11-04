@@ -1,0 +1,28 @@
+id: lv_registration_number
+name: Latvian registration number
+status: draft
+doc: Reģistrācijas numurs, the 11-digit registration number of a company in the Register of Enterprises
+  of the Republic of Latvia. With the LV prefix it is the VAT number (lv_pvn). ORG-ID.guide lists the
+  register as LV-RE; with that prefix an identifier reads LV-RE-40008124830.
+categories:
+- companies
+country:
+- LV
+langs:
+- lv
+is_pii: false
+classification: identifier
+examples:
+- value: '40008124830'
+  description: example from ORG-ID.guide
+- value: '51203041201'
+  description: example from ORG-ID.guide
+- value: '40003108882'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: LV-RE
+links:
+- type: doc
+  url: http://www.ur.gov.lv/
+- type: other
+  url: https://org-id.guide/list/LV-RE

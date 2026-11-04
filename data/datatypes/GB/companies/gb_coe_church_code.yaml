@@ -1,0 +1,27 @@
+id: gb_coe_church_code
+name: Church of England church code
+status: draft
+doc: Code of a church or other body in the church codes of the Church of England. ORG-ID.guide lists the
+  register as GB-COE; with that prefix an identifier reads GB-COE-608393.
+categories:
+- companies
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '608393'
+  description: example from ORG-ID.guide
+- value: '616142'
+  description: example from ORG-ID.guide
+- value: '625011'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GB-COE
+links:
+- type: doc
+  url: https://facultyonline.churchofengland.org/churches
+- type: other
+  url: https://org-id.guide/list/GB-COE

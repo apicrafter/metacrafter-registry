@@ -1,0 +1,25 @@
+id: eori
+name: Economic Operators Registration and Identification number (EORI)
+status: draft
+doc: EORI number, the identifier of a business or other economic operator in the customs procedures of
+  the European Union. It starts with the code of the country that issued it. ORG-ID.guide lists the register
+  as XI-EORI; with that prefix an identifier reads XI-EORI-NL810656371.
+categories:
+- companies
+- finances
+country:
+- EU
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: NL810656371
+  description: example from ORG-ID.guide
+mappings:
+  orgid: XI-EORI
+links:
+- type: doc
+  url: http://ec.europa.eu/taxation_customs/dds2/eos/eori_validation.jsp
+- type: other
+  url: https://org-id.guide/list/XI-EORI

@@ -1,0 +1,22 @@
+id: bj_ifu
+name: Beninese unique tax identifier (IFU)
+status: draft
+doc: Identifiant fiscal unique (IFU), the tax identifier of taxpayers in Benin, including companies and
+  public bodies. ORG-ID.guide lists the register as BJ-IFU; with that prefix an identifier reads BJ-IFU-3200901353510.
+categories:
+- finances
+- companies
+country:
+- BJ
+langs:
+- fr
+is_pii: true
+classification: identifier
+examples:
+- value: '3200901353510'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: BJ-IFU
+links:
+- type: other
+  url: https://org-id.guide/list/BJ-IFU

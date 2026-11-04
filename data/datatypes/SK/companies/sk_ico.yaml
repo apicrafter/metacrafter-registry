@@ -1,0 +1,44 @@
+id: sk_ico
+name: Slovak organisation identification number (IČO)
+status: draft
+doc: Identifikačné číslo organizácie (IČO), the 8-digit identification number that the Statistical Office
+  of the Slovak Republic gives to legal entities, entrepreneurs and public authorities. Companies are
+  found by it in the Business Register of the Ministry of Justice. ORG-ID.guide lists it under SK-ICO,
+  SK-ORSR and SK-ZRSR; with that prefix an identifier reads SK-ICO-47686065.
+categories:
+- companies
+country:
+- SK
+langs:
+- sk
+is_pii: false
+classification: identifier
+examples:
+- value: '47686065'
+  description: example from ORG-ID.guide
+- value: '31398871'
+  description: example from ORG-ID.guide
+- value: '48112739'
+  description: example from ORG-ID.guide
+- value: '35919043'
+  description: example from ORG-ID.guide
+- value: '47364319'
+  description: example from ORG-ID.guide
+- value: '36781673'
+  description: example from ORG-ID.guide
+mappings:
+  orgid:
+  - SK-ICO
+  - SK-ORSR
+  - SK-ZRSR
+links:
+- type: doc
+  url: https://rpo.statistics.sk/
+- type: doc
+  url: http://www.orsr.sk/search_subjekt.asp?lan=en
+- type: other
+  url: https://org-id.guide/list/SK-ICO
+- type: other
+  url: https://org-id.guide/list/SK-ORSR
+- type: other
+  url: https://org-id.guide/list/SK-ZRSR

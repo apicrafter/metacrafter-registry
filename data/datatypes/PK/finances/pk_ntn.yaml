@@ -1,0 +1,25 @@
+id: pk_ntn
+name: Pakistani national tax number (NTN)
+status: draft
+doc: National Tax Number (NTN) of taxpayers in Pakistan, including companies, charities and trusts. ORG-ID.guide
+  lists the register as PK-NTN; with that prefix an identifier reads PK-NTN-4174941-3.
+categories:
+- finances
+- companies
+country:
+- PK
+langs:
+- ur
+- en
+is_pii: true
+classification: identifier
+examples:
+- value: 4174941-3
+  description: example from ORG-ID.guide
+mappings:
+  orgid: PK-NTN
+links:
+- type: doc
+  url: https://e.fbr.gov.pk/esbn/Verification#
+- type: other
+  url: https://org-id.guide/list/PK-NTN

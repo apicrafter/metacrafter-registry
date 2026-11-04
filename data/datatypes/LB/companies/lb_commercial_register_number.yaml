@@ -1,0 +1,27 @@
+id: lb_commercial_register_number
+name: Lebanese commercial register number
+status: draft
+doc: Number of a company in the Commercial Register of the Ministry of Justice of Lebanon. ORG-ID.guide
+  lists the register as LB-CR; with that prefix an identifier reads LB-CR-77621.
+categories:
+- companies
+country:
+- LB
+langs:
+- ar
+is_pii: false
+classification: identifier
+examples:
+- value: '77621'
+  description: example from ORG-ID.guide
+- value: '77668'
+  description: example from ORG-ID.guide
+- value: '1500001'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: LB-CR
+links:
+- type: doc
+  url: http://cr.justice.gov.lb/desc/desc.aspx
+- type: other
+  url: https://org-id.guide/list/LB-CR

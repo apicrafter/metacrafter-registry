@@ -1,0 +1,20 @@
+id: th_moi_registration_number
+name: Thai Ministry of Interior registration number
+status: draft
+doc: Registration number that the Ministry of Interior of Thailand gives to foundations, associations
+  and other organisations; it usually starts with Thai letters. ORG-ID.guide lists the register as TH-MOI.
+categories:
+- companies
+country:
+- TH
+langs:
+- th
+is_pii: false
+classification: identifier
+mappings:
+  orgid: TH-MOI
+links:
+- type: doc
+  url: https://moi.go.th/moi/
+- type: other
+  url: https://org-id.guide/list/TH-MOI

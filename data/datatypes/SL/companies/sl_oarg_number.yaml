@@ -1,0 +1,22 @@
+id: sl_oarg_number
+name: Sierra Leonean business registration number
+status: draft
+doc: Registration number of a company, business name or other entity at the Office of the Administrator
+  and Registrar General of Sierra Leone. ORG-ID.guide lists the register as SL-OARG; with that prefix
+  an identifier reads SL-OARG-CF-218-2018.
+categories:
+- companies
+country:
+- SL
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: CF-218-2018
+  description: example from ORG-ID.guide
+mappings:
+  orgid: SL-OARG
+links:
+- type: other
+  url: https://org-id.guide/list/SL-OARG

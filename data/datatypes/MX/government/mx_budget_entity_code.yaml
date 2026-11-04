@@ -1,0 +1,25 @@
+id: mx_budget_entity_code
+name: Mexican public entity budget code
+status: draft
+doc: Code of a public entity in the federal budget classification of public entities of Mexico (Clasificación
+  Administrativa). ORG-ID.guide lists the register as MX-CPA; with that prefix an identifier reads MX-CPA-4-121.
+categories:
+- government
+country:
+- MX
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: 4-121
+  description: example from ORG-ID.guide
+- value: 10-156
+  description: example from ORG-ID.guide
+- value: 16-713
+  description: example from ORG-ID.guide
+mappings:
+  orgid: MX-CPA
+links:
+- type: other
+  url: https://org-id.guide/list/MX-CPA

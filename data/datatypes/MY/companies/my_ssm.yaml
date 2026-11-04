@@ -1,0 +1,23 @@
+id: my_ssm
+name: Malaysian company registration number (SSM)
+status: draft
+doc: Registration number of a company at the Companies Commission of Malaysia (Suruhanjaya Syarikat Malaysia,
+  SSM). ORG-ID.guide lists the register as MY-SSM; with that prefix an identifier reads MY-SSM-993856H.
+categories:
+- companies
+country:
+- MY
+langs:
+- ms
+is_pii: false
+classification: identifier
+examples:
+- value: 993856H
+  description: example from ORG-ID.guide
+- value: 255990P
+  description: example from ORG-ID.guide
+mappings:
+  orgid: MY-SSM
+links:
+- type: other
+  url: https://org-id.guide/list/MY-SSM

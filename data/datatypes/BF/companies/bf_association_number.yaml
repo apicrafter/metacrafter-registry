@@ -1,0 +1,21 @@
+id: bf_association_number
+name: Burkinabé association registration number
+status: draft
+doc: Registration number of an association at the Ministry of Territorial Administration and Decentralisation
+  of Burkina Faso. ORG-ID.guide lists the register as BF-MATD; with that prefix an identifier reads BF-MATD-RNRD00045.
+categories:
+- companies
+country:
+- BF
+langs:
+- fr
+is_pii: false
+classification: identifier
+examples:
+- value: RNRD00045
+  description: example from ORG-ID.guide
+mappings:
+  orgid: BF-MATD
+links:
+- type: other
+  url: https://org-id.guide/list/BF-MATD

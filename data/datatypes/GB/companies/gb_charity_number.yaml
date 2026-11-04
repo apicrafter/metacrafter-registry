@@ -1,0 +1,27 @@
+id: gb_charity_number
+name: Registered charity number (England and Wales)
+status: draft
+doc: Number of a charity in the register of the Charity Commission for England and Wales. ORG-ID.guide
+  lists the register as GB-CHC; with that prefix an identifier reads GB-CHC-279417.
+categories:
+- companies
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '279417'
+  description: example from ORG-ID.guide
+- value: '1090095'
+  description: example from ORG-ID.guide
+- value: '1173575'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GB-CHC
+links:
+- type: doc
+  url: https://www.gov.uk/government/organisations/charity-commission
+- type: other
+  url: https://org-id.guide/list/GB-CHC

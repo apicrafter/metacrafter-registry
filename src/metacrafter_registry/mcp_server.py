@@ -111,7 +111,7 @@ def create_server(registry: Registry):
         """Registry records mapped to an id in another vocabulary.
 
         system: wikidata, fibo, schema_org, dpv, presidio, google_dlp, purview, d3m,
-        sherlock, sato, cdm, fta, autotype or gs1_ai. For wikidata, a property id (P968)
+        sherlock, sato, cdm, fta, autotype, gs1_ai or orgid. For wikidata, a property id (P968)
         or its URL. For fibo, a FIBO class IRI, e.g. https://spec.edmcouncil.org/fibo/ontology/FBC/
         ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier,
         or the part after /ontology/. For cdm, a Common Data Model trait name
@@ -126,6 +126,8 @@ def create_server(registry: Registry):
         case (isbn, date-chinese) or its file name (isbn.txt).
         For gs1_ai, a GS1 Application Identifier (8003 or (8003)) or its
         https://ref.gs1.org/ai/ IRI.
+        For orgid, an ORG-ID.guide list code (GB-COH), its org-id.guide URL or a
+        whole organization identifier (GB-COH-09506232).
         """
         return [_summary(registry, r) for r in registry.crosswalk(system, external_id)]
 

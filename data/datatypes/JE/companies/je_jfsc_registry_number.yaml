@@ -1,0 +1,26 @@
+id: je_jfsc_registry_number
+name: Jersey Financial Services Commission registry number
+status: draft
+doc: 'Number of a company or other entity in the registry of the Jersey Financial Services Commission
+  (JFSC). The number alone is not unique: ORG-ID.guide adds the registry type, such as RC_ for companies.
+  ORG-ID.guide lists the register as JE-FSC; with that prefix an identifier reads JE-FSC-RC_119821.'
+categories:
+- companies
+country:
+- JE
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: RC_119821
+  description: example from ORG-ID.guide
+- value: RC_87846
+  description: example from ORG-ID.guide
+- value: RBN_94687
+  description: example from ORG-ID.guide
+mappings:
+  orgid: JE-FSC
+links:
+- type: other
+  url: https://org-id.guide/list/JE-FSC

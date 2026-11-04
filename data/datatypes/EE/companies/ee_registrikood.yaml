@@ -21,6 +21,10 @@ examples:
 - value: '192324637'
   valid: false
   description: One character too many
+mappings:
+  orgid:
+  - EE-KMKR
+  - EE-RIK
 links:
 - type: doc
   url: https://ariregister.rik.ee/

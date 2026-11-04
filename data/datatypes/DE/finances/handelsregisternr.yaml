@@ -17,3 +17,5 @@ examples:
   description: Handelsregisternummer with single-letter prefix and 5-digit number
 - value: A1
   description: Handelsregisternummer with single-letter prefix and 1-digit number
+mappings:
+  orgid: DE-CR

@@ -64,6 +64,11 @@
       "pattern": "^[0-9]{2,4}$",
       "description": "A GS1 Application Identifier as GS1 writes it, with its leading zeros and without parentheses, for example 01, 414 or 8003"
     },
+    "orgidCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}(_[A-Z]{2})?-[A-Z0-9]+(_[A-Z0-9]+)?$",
+      "description": "An ORG-ID.guide list code, for example GB-COH, XI-LEI or CA_ON-ONT"
+    },
     "record": {
       "type": "object",
       "additionalProperties": false,
@@ -176,6 +181,13 @@
               "oneOf": [
                 {"$ref": "#/$defs/gs1Ai"},
                 {"type": "array", "items": {"$ref": "#/$defs/gs1Ai"}, "minItems": 1, "uniqueItems": true}
+              ]
+            },
+            "orgid": {
+              "description": "ORG-ID.guide list codes of the organization identifier lists that use this identifier, for example GB-COH. Deprecated codes that ORG-ID.guide replaced with a listed code may follow the current ones.",
+              "oneOf": [
+                {"$ref": "#/$defs/orgidCode"},
+                {"type": "array", "items": {"$ref": "#/$defs/orgidCode"}, "minItems": 1, "uniqueItems": true}
               ]
             }
           }

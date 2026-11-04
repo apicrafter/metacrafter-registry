@@ -1,0 +1,25 @@
+id: sb_company_number
+name: Solomon Islands company number
+status: draft
+doc: Number of a company or business in the Solomon Islands Business Registry. ORG-ID.guide lists the
+  register as SB-BR; with that prefix an identifier reads SB-BR-20242661.
+categories:
+- companies
+country:
+- SB
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '20242661'
+  description: example from ORG-ID.guide
+- value: '20115645'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: SB-BR
+links:
+- type: doc
+  url: https://www.solomonbusinessregistry.gov.sb/
+- type: other
+  url: https://org-id.guide/list/SB-BR

@@ -1,0 +1,23 @@
+id: et_trade_registration_number
+name: Ethiopian Ministry of Trade registration number
+status: draft
+doc: Registration number of a company or other organisation at the Ministry of Trade of Ethiopia. ORG-ID.guide
+  lists the register as ET-MOT; with that prefix an identifier reads ET-MOT-020/4/007.
+categories:
+- companies
+country:
+- ET
+langs:
+- am
+is_pii: false
+classification: identifier
+examples:
+- value: 020/4/007
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ET-MOT
+links:
+- type: doc
+  url: http://www.mot.gov.et
+- type: other
+  url: https://org-id.guide/list/ET-MOT

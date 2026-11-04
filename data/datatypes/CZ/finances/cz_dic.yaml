@@ -19,6 +19,8 @@ examples:
   description: Synthetic number with a valid check digit
 - value: '87623153'
   description: Synthetic number with a valid check digit
+mappings:
+  orgid: CZ-DIC
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cz.dic.html

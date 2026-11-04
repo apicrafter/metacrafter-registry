@@ -18,6 +18,7 @@ examples:
   description: Sainsbury's
 mappings:
   wikidata: P2622
+  orgid: GB-COH
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Companies_House

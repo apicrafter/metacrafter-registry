@@ -1,0 +1,39 @@
+id: org_id_scheme
+name: ORG-ID.guide list code (organization identifier scheme)
+status: draft
+doc: Code of an organization identifier list in the ORG-ID.guide register, such as GB-COH for Companies
+  House or XI-LEI for the Global Legal Entity Identifier Index. The code is the ISO 3166-1 country code
+  of the list (or XI, XM, XR or ZZ for international lists), optionally an underscore and a subdivision
+  code, a hyphen and an abbreviation of the register. It is the prefix of an org_id identifier and the
+  value of identifier.scheme in Open Contracting data. The registry maps each list code to a datatype
+  record through mappings.orgid.
+categories:
+- companies
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{2}(?:_[A-Z]{2})?-[A-Z0-9]+(?:_[A-Z0-9]+)?$
+examples:
+- value: GB-COH
+  description: Companies House (United Kingdom)
+- value: XI-LEI
+  description: Global Legal Entity Identifier Index
+- value: CA_ON-ONT
+  description: ServiceOntario corporate registry (Canada, Ontario)
+- value: BE-BCE_KBO
+  description: Crossroads Bank for Enterprises (Belgium)
+- value: gb-coh
+  valid: false
+  description: list codes are upper case
+- value: GB-COH-09506232
+  valid: false
+  description: a whole identifier is org_id
+links:
+- type: doc
+  url: https://org-id.guide/download
+- type: doc
+  url: https://standard.open-contracting.org/latest/en/schema/identifiers/
+translations:
+  ru:
+    name: Код списка идентификаторов организаций ORG-ID.guide

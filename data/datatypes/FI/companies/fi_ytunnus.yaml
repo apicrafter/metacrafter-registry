@@ -21,6 +21,8 @@ examples:
 - value: '273165157'
   valid: false
   description: One character too many
+mappings:
+  orgid: FI-PRO
 links:
 - type: wikipedia
   url: https://fi.wikipedia.org/wiki/Y-tunnus

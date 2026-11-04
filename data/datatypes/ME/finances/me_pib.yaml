@@ -1,0 +1,22 @@
+id: me_pib
+name: Montenegrin tax identification number (PIB)
+status: draft
+doc: Poreski identifikacioni broj (PIB), the tax identification number of companies and other organisations
+  in Montenegro. ORG-ID.guide lists the register as ME-PIB; with that prefix an identifier reads ME-PIB-04252361.
+categories:
+- finances
+- companies
+country:
+- ME
+langs:
+- sr
+is_pii: true
+classification: identifier
+examples:
+- value: '04252361'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ME-PIB
+links:
+- type: other
+  url: https://org-id.guide/list/ME-PIB

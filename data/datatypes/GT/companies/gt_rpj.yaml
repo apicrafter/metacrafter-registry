@@ -1,0 +1,26 @@
+id: gt_rpj
+name: Guatemalan legal entity registration number (RPJ)
+status: draft
+doc: Registration number of a legal entity in the Registry of Legal Entities (Registro de las Personas
+  Jurídicas) of Guatemala. ORG-ID.guide lists the register as GT-RPJ; with that prefix an identifier reads
+  GT-RPJ-38634663461.
+categories:
+- companies
+country:
+- GT
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: '38634663461'
+  description: example from ORG-ID.guide
+- value: '17272'
+  description: example from ORG-ID.guide
+- value: '23641345'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GT-RPJ
+links:
+- type: other
+  url: https://org-id.guide/list/GT-RPJ

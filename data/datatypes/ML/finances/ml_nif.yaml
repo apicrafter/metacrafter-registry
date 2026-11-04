@@ -1,0 +1,22 @@
+id: ml_nif
+name: Malian tax identification number (NIF)
+status: draft
+doc: Numéro d'identification fiscale (NIF), the tax identification number of taxpayers in Mali. ORG-ID.guide
+  lists the register as ML-NIF; with that prefix an identifier reads ML-NIF-085101101W.
+categories:
+- finances
+- companies
+country:
+- ML
+langs:
+- fr
+is_pii: true
+classification: identifier
+examples:
+- value: 085101101W
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ML-NIF
+links:
+- type: other
+  url: https://org-id.guide/list/ML-NIF

@@ -1,0 +1,26 @@
+id: gb_welsh_school_number
+name: Welsh school number
+status: draft
+doc: School number, the 7-digit identifier of a school or other education establishment in the Register
+  of Schools of the Welsh Government. ORG-ID.guide lists the register as GB-WALEDU; with that prefix an
+  identifier reads GB-WALEDU-6602130.
+categories:
+- education
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '6602130'
+  description: example from ORG-ID.guide
+- value: '6612060'
+  description: example from ORG-ID.guide
+- value: '6614039'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GB-WALEDU
+links:
+- type: other
+  url: https://org-id.guide/list/GB-WALEDU

@@ -1,0 +1,25 @@
+id: mg_nif
+name: Malagasy tax identification number (NIF)
+status: draft
+doc: Numéro d'identification fiscale (NIF) that the Directorate General of Taxes of Madagascar gives to
+  taxpayers. ORG-ID.guide lists the register as MG-NIF; with that prefix an identifier reads MG-NIF-4001257310.
+categories:
+- finances
+- companies
+country:
+- MG
+langs:
+- mg
+- fr
+is_pii: true
+classification: identifier
+examples:
+- value: '4001257310'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: MG-NIF
+links:
+- type: doc
+  url: https://www.impots.mg/
+- type: other
+  url: https://org-id.guide/list/MG-NIF

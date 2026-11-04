@@ -1,0 +1,26 @@
+id: am_legal_entity_registration_number
+name: Armenian legal entity state registration number
+status: draft
+doc: State registration number of a legal entity in the register of the State Register Agency of Legal
+  Entities of the Ministry of Justice of Armenia. ORG-ID.guide lists the register as AM-SRALE; with that
+  prefix an identifier reads AM-SRALE-16.110.00666.
+categories:
+- companies
+country:
+- AM
+langs:
+- hy
+is_pii: false
+classification: identifier
+examples:
+- value: 16.110.00666
+  description: example from ORG-ID.guide
+- value: 26.180.01938
+  description: example from ORG-ID.guide
+mappings:
+  orgid: AM-SRALE
+links:
+- type: doc
+  url: https://www.e-register.am/
+- type: other
+  url: https://org-id.guide/list/AM-SRALE

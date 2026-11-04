@@ -1,0 +1,28 @@
+id: cl_mercado_publico_code
+name: Chilean Mercado Público organisation code
+status: draft
+doc: Code of a supplier or a buying unit on Mercado Público, the public procurement platform of Chile
+  run by ChileCompra. ORG-ID.guide lists the register as CL-MP; with that prefix an identifier reads CL-MP-2544.
+categories:
+- companies
+- government
+country:
+- CL
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: '2544'
+  description: example from ORG-ID.guide
+- value: '2391'
+  description: example from ORG-ID.guide
+- value: '26797'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: CL-MP
+links:
+- type: doc
+  url: https://www.mercadopublico.cl/Home
+- type: other
+  url: https://org-id.guide/list/CL-MP

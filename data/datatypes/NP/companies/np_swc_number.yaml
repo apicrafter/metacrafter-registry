@@ -1,0 +1,27 @@
+id: np_swc_number
+name: Nepalese Social Welfare Council registration number
+status: draft
+doc: Registration number of a non-governmental organisation at the Social Welfare Council of Nepal. ORG-ID.guide
+  lists the register as NP-SWC; with that prefix an identifier reads NP-SWC-37625.
+categories:
+- companies
+country:
+- NP
+langs:
+- ne
+is_pii: false
+classification: identifier
+examples:
+- value: '37625'
+  description: example from ORG-ID.guide
+- value: '14902'
+  description: example from ORG-ID.guide
+- value: '28632'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: NP-SWC
+links:
+- type: doc
+  url: http://www.swc.org.np/
+- type: other
+  url: https://org-id.guide/list/NP-SWC

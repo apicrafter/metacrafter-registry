@@ -17,6 +17,9 @@ mappings:
   purview:
   - Australian Business Number
   - Australia business number
+  orgid:
+  - AU-ABN
+  - AU-ACNC
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Australian_Business_Number

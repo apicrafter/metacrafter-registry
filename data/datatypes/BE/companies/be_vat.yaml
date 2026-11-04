@@ -27,6 +27,7 @@ examples:
   description: One character too many
 mappings:
   purview: Belgium value added tax number
+  orgid: BE-BCE_KBO
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Ondernemingsnummer

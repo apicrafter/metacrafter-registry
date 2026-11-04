@@ -1,0 +1,21 @@
+id: sz_company_number
+name: Eswatini company registration number
+status: draft
+doc: Registration number of a company or other entity at the Ministry of Commerce, Industry and Trade
+  of Eswatini. ORG-ID.guide lists the register as SZ-CIT; with that prefix an identifier reads SZ-CIT-201710132021804.
+categories:
+- companies
+country:
+- SZ
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '201710132021804'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: SZ-CIT
+links:
+- type: other
+  url: https://org-id.guide/list/SZ-CIT

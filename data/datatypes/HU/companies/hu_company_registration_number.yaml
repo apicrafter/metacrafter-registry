@@ -1,0 +1,24 @@
+id: hu_company_registration_number
+name: Hungarian company registration number (cégjegyzékszám)
+status: draft
+doc: Cégjegyzékszám, the registration number of a company in the Hungarian company register, which the
+  Information and Electronic Company Registration Service of the Ministry of Justice publishes. ORG-ID.guide
+  lists the register as HU-AFA; with that prefix an identifier reads HU-AFA-01-03-022165.
+categories:
+- companies
+country:
+- HU
+langs:
+- hu
+is_pii: false
+classification: identifier
+examples:
+- value: 01-03-022165
+  description: example from ORG-ID.guide
+mappings:
+  orgid: HU-AFA
+links:
+- type: doc
+  url: http://www.e-cegjegyzek.hu/?cegkereses
+- type: other
+  url: https://org-id.guide/list/HU-AFA

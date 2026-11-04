@@ -1,0 +1,25 @@
+id: ml_association_number
+name: Malian association registration number
+status: draft
+doc: Registration number of an association at the Ministry of Territorial Administration of Mali. ORG-ID.guide
+  lists the register as ML-MAT; with that prefix an identifier reads ML-MAT-0003.
+categories:
+- companies
+country:
+- ML
+langs:
+- fr
+is_pii: false
+classification: identifier
+examples:
+- value: '0003'
+  description: example from ORG-ID.guide
+- value: 0603-G-DB
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ML-MAT
+links:
+- type: doc
+  url: http://www.matcl.gov.ml/
+- type: other
+  url: https://org-id.guide/list/ML-MAT

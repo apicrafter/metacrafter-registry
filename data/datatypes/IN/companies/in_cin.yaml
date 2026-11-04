@@ -1,0 +1,25 @@
+id: in_cin
+name: Indian corporate identification number (CIN)
+status: draft
+doc: Corporate Identification Number (CIN), the 21-character number that the Ministry of Corporate Affairs
+  of India gives to companies. ORG-ID.guide lists the register as IN-MCA; with that prefix an identifier
+  reads IN-MCA-L24111UR1986PLC015895.
+categories:
+- companies
+country:
+- IN
+langs:
+- en
+- hi
+is_pii: false
+classification: identifier
+examples:
+- value: L24111UR1986PLC015895
+  description: example from ORG-ID.guide
+- value: U01111UR1995PLC017979
+  description: example from ORG-ID.guide
+mappings:
+  orgid: IN-MCA
+links:
+- type: other
+  url: https://org-id.guide/list/IN-MCA

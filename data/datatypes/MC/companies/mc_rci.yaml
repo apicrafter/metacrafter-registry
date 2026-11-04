@@ -1,0 +1,27 @@
+id: mc_rci
+name: Monaco trade and industry register number (RCI)
+status: draft
+doc: Number of a business in the Trade and Industry Register (Répertoire du commerce et de l'industrie,
+  RCI) of Monaco. ORG-ID.guide lists the register as MC-RCI; with that prefix an identifier reads MC-RCI-00S03773.
+categories:
+- companies
+country:
+- MC
+langs:
+- fr
+is_pii: false
+classification: identifier
+examples:
+- value: 00S03773
+  description: example from ORG-ID.guide
+- value: 01S03983
+  description: example from ORG-ID.guide
+- value: 17P07673
+  description: example from ORG-ID.guide
+mappings:
+  orgid: MC-RCI
+links:
+- type: doc
+  url: https://service-public-entreprises.gouv.mc/Creation-d-activite/Demarches-de-creation/Immatriculation-et-declaration-d-existence/Le-Repertoire-du-Commerce-et-de-l-Industrie-RCI
+- type: other
+  url: https://org-id.guide/list/MC-RCI

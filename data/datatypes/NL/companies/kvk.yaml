@@ -22,6 +22,8 @@ examples:
   description: Dutch KvK number with leading zero
 - value: '87654321'
   description: Another valid Dutch KvK number format
+mappings:
+  orgid: NL-KVK
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Kamer_van_Koophandel

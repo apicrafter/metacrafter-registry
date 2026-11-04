@@ -1,0 +1,24 @@
+id: ke_ngo_number
+name: Kenyan NGO registration number
+status: draft
+doc: Registration number of a non-governmental organisation at the NGOs Co-ordination Board of Kenya.
+  ORG-ID.guide lists the register as KE-NCB; with that prefix an identifier reads KE-NCB-218051120898201.
+categories:
+- companies
+country:
+- KE
+langs:
+- en
+- sw
+is_pii: false
+classification: identifier
+examples:
+- value: '218051120898201'
+  description: example from ORG-ID.guide
+- value: '200201282375'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: KE-NCB
+links:
+- type: other
+  url: https://org-id.guide/list/KE-NCB

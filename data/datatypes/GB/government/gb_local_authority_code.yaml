@@ -1,0 +1,55 @@
+id: gb_local_authority_code
+name: UK local authority register code
+status: draft
+doc: Three-letter code of a local authority in the local authority registers of the UK Government Digital
+  Service for England, Northern Ireland, Scotland and Wales. The codes follow the second part of the ISO
+  3166-2:GB subdivision codes where one exists. ORG-ID.guide lists it under GB-LAE, GB-LANI, GB-LAS and
+  GB-PLA; with that prefix an identifier reads GB-LAE-WOT.
+categories:
+- government
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: WOT
+  description: example from ORG-ID.guide
+- value: BAS
+  description: example from ORG-ID.guide
+- value: GED
+  description: example from ORG-ID.guide
+- value: ANN
+  description: example from ORG-ID.guide
+- value: AND
+  description: example from ORG-ID.guide
+- value: BFS
+  description: example from ORG-ID.guide
+- value: ZET
+  description: example from ORG-ID.guide
+- value: WLN
+  description: example from ORG-ID.guide
+- value: ORK
+  description: example from ORG-ID.guide
+- value: AGY
+  description: example from ORG-ID.guide
+- value: TOF
+  description: example from ORG-ID.guide
+- value: NTL
+  description: example from ORG-ID.guide
+mappings:
+  orgid:
+  - GB-LAE
+  - GB-LANI
+  - GB-LAS
+  - GB-PLA
+links:
+- type: other
+  url: https://org-id.guide/list/GB-LAE
+- type: other
+  url: https://org-id.guide/list/GB-LANI
+- type: other
+  url: https://org-id.guide/list/GB-LAS
+- type: other
+  url: https://org-id.guide/list/GB-PLA

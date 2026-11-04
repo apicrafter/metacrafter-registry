@@ -12,3 +12,4 @@ is_pii: false
 classification: identifier
 mappings:
   purview: Poland REGON number
+  orgid: PL-REGON

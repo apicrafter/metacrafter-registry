@@ -85,7 +85,7 @@ When a record has a `regexp`, these rules apply:
 - **THEN** validation fails
 
 ### Requirement: Typed mappings to external vocabularies
-A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm`, `fta`, `autotype` and `gs1_ai`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
+A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm`, `fta`, `autotype`, `gs1_ai` and `orgid`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
 
 `mappings.wikidata` SHALL match `^[PQ]\d+$`.
 
@@ -136,6 +136,16 @@ A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`
 #### Scenario: GS1 AI from a barcode's human-readable text
 - **WHEN** a client calls `crosswalk("gs1_ai", "(8003)")`
 - **THEN** it gets the record `gs1_ai_8003`, whose `semantic_type` is `grai`
+
+`mappings.orgid` SHALL hold ORG-ID.guide list codes, such as `GB-COH` or `CA_ON-ONT`, of the organization identifier lists whose identifiers the record describes. A list code SHALL be mapped to at most one record. A deprecated code MAY be mapped when ORG-ID.guide names the list that replaced it and both lists use the same identifier. `crosswalk("orgid", ...)` SHALL accept a list code in any case, its `https://org-id.guide/list/<code>` URL or a whole ORG-ID.guide identifier such as `GB-COH-09506232`.
+
+#### Scenario: ORG-ID.guide identifier instead of a list code
+- **WHEN** a record has `mappings: {orgid: "GB-COH-09506232"}`
+- **THEN** validation fails with a schema error on `mappings.orgid`
+
+#### Scenario: Crosswalk from a whole identifier
+- **WHEN** a client calls `crosswalk("orgid", "GB-COH-09506232")`
+- **THEN** it gets the record that maps `GB-COH`
 
 ### Requirement: Pattern inheritance
 A pattern SHALL reference an existing datatype through `semantic_type`.

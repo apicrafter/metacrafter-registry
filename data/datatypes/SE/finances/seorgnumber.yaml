@@ -13,3 +13,7 @@ classification: identifier
 regexp: ^[0-9]{9}$
 mappings:
   presidio: SE_ORGANISATIONSNUMMER
+  orgid:
+  - SE-ON
+  - SE-BLV
+  - SE-KK

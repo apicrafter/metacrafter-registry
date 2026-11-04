@@ -1,0 +1,27 @@
+id: im_charity_number
+name: Isle of Man registered charity number
+status: draft
+doc: Number of a charity in the Isle of Man Index of Registered Charities. ORG-ID.guide lists the register
+  as IM-GR; with that prefix an identifier reads IM-GR-1184.
+categories:
+- companies
+country:
+- IM
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '1184'
+  description: example from ORG-ID.guide
+- value: '962'
+  description: example from ORG-ID.guide
+- value: '1169'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: IM-GR
+links:
+- type: doc
+  url: http://www.gov.im/registries/courts/charities/
+- type: other
+  url: https://org-id.guide/list/IM-GR

@@ -1,0 +1,26 @@
+id: gt_cisp
+name: Guatemalan public sector institution code
+status: draft
+doc: Code of an institution in the Public Sector Institution Classifications (Clasificador Institucional
+  del Sector Público) of Guatemala. ORG-ID.guide lists the register as GT-CISP; with that prefix an identifier
+  reads GT-CISP-21100078.
+categories:
+- government
+country:
+- GT
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: '21100078'
+  description: example from ORG-ID.guide
+- value: '11120002'
+  description: example from ORG-ID.guide
+- value: '12100102'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GT-CISP
+links:
+- type: other
+  url: https://org-id.guide/list/GT-CISP

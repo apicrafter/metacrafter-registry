@@ -21,6 +21,8 @@ examples:
 - value: '204681894467'
   valid: false
   description: One character too many
+mappings:
+  orgid: PE-RUC
 links:
 - type: doc
   url: https://www.sunat.gob.pe/legislacion/ruc/

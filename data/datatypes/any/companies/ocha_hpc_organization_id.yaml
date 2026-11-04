@@ -1,0 +1,23 @@
+id: ocha_hpc_organization_id
+name: OCHA Humanitarian Programme Cycle organisation identifier
+status: draft
+doc: 'Identifier that the UN Office for the Coordination of Humanitarian Affairs (OCHA) gives to organisations
+  that fund or deliver humanitarian work, used in the Humanitarian Programme Cycle tools and the Financial
+  Tracking Service: HPC and the organisation''s id. ORG-ID.guide lists the register as XM-OCHA; with that
+  prefix an identifier reads XM-OCHA-HPC8597.'
+categories:
+- companies
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: HPC8597
+  description: example from ORG-ID.guide
+- value: HPC9324
+  description: example from ORG-ID.guide
+mappings:
+  orgid: XM-OCHA
+links:
+- type: other
+  url: https://org-id.guide/list/XM-OCHA

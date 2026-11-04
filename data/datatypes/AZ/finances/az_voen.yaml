@@ -1,0 +1,24 @@
+id: az_voen
+name: Azerbaijani taxpayer identification number (VÖEN)
+status: draft
+doc: VÖEN (vergi ödəyicisinin eyniləşdirmə nömrəsi), the 10-digit taxpayer identification number that
+  also serves as the registration number of a commercial entity in the State Register of Commercial Entities
+  of the Ministry of Taxes of Azerbaijan. ORG-ID.guide lists the register as AZ-IVI; with that prefix
+  an identifier reads AZ-IVI-3100073821.
+categories:
+- finances
+- companies
+country:
+- AZ
+langs:
+- az
+is_pii: true
+classification: identifier
+examples:
+- value: '3100073821'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: AZ-IVI
+links:
+- type: other
+  url: https://org-id.guide/list/AZ-IVI

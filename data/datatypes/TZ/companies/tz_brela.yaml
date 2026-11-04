@@ -1,0 +1,27 @@
+id: tz_brela
+name: Tanzanian business registration number (BRELA)
+status: draft
+doc: Registration number of a company or business name at the Business Registrations and Licensing Agency
+  (BRELA) of Tanzania. ORG-ID.guide lists the register as TZ-BRLA; with that prefix an identifier reads
+  TZ-BRLA-135919098.
+categories:
+- companies
+country:
+- TZ
+langs:
+- sw
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '135919098'
+  description: example from ORG-ID.guide
+- value: '435285'
+  description: example from ORG-ID.guide
+- value: '402006'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: TZ-BRLA
+links:
+- type: other
+  url: https://org-id.guide/list/TZ-BRLA

@@ -1,0 +1,23 @@
+id: zw_pvo_number
+name: Zimbabwean private voluntary organisation number
+status: draft
+doc: Registration number of a private voluntary organisation in Zimbabwe. ORG-ID.guide lists the register
+  as ZW-PVO; with that prefix an identifier reads ZW-PVO-15/2003.
+categories:
+- companies
+country:
+- ZW
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: 15/2003
+  description: example from ORG-ID.guide
+- value: 42/10
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ZW-PVO
+links:
+- type: other
+  url: https://org-id.guide/list/ZW-PVO
