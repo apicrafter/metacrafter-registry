@@ -102,7 +102,7 @@ Example:
   column of list codes (`identifier.scheme`) is `org_id_scheme`.
   For a date column, metacrafter reports the qddate pattern that read it as
   the `format` of its `datetime` match. Pass that key to get the notation:
-  `crosswalk("qddate", "dt:date:date_2")` returns `date_dmy_dot`
+  `crosswalk("qddate", "dt:date:date_2")` returns `date_dmy`
   (25.12.2024), and `crosswalk("qddate", "dt:date:date_rus_lc2")` returns
   `date_russian`. A key with a time or trailing text
   (`dt:date:date_2:time_1`) resolves to the notation of its date part.

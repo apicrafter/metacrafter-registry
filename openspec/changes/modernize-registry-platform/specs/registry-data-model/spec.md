@@ -147,7 +147,7 @@ A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`
 - **WHEN** a client calls `crosswalk("orgid", "GB-COH-09506232")`
 - **THEN** it gets the record that maps `GB-COH`
 
-`mappings.qddate` SHALL hold keys of qddate date patterns, such as `dt:date:date_2`, as qddate defines them and as metacrafter reports them in the `format` of a date match. A key SHALL be mapped to at most one record, and only to a pattern of `date` or `monthday` that describes the same notation. The keys of generated variants (`dt:date:date_2:time_1`, `...:t_right`) SHALL NOT be mapped; `crosswalk("qddate", ...)` SHALL resolve such a key to the record of its base pattern, and SHALL accept a key without its `dt:date:` prefix. The `qddate` tool SHALL list exactly the records that carry `mappings.qddate`.
+`mappings.qddate` SHALL hold keys of qddate date patterns, such as `dt:date:date_2`, as qddate defines them and as metacrafter reports them in the `format` of a date match. A key SHALL be mapped to at most one record that describes the same notation: `date` itself (whose regexp is the ISO 8601 form) or a pattern of `date` or `monthday`. The keys of generated variants (`dt:date:date_2:time_1`, `...:t_right`) SHALL NOT be mapped; `crosswalk("qddate", ...)` SHALL resolve such a key to the record of its base pattern, and SHALL accept a key without its `dt:date:` prefix. The `qddate` tool SHALL list exactly the records that carry `mappings.qddate`.
 
 #### Scenario: Generated qddate variant in a mapping
 - **WHEN** a record has `mappings: {qddate: "dt:date:date_2:time_1"}`

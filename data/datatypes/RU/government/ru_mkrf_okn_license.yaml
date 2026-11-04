@@ -1,0 +1,31 @@
+id: ru_mkrf_okn_license
+name: Russian Ministry of Culture license number for heritage preservation
+status: draft
+doc: Number of a license for activities to preserve cultural heritage objects, which the Russian Ministry
+  of Culture issued before licenses moved to the Unified Register of Licenses. It is written as МКРФ and
+  five digits, such as МКРФ 24056; duplicates of a license use the same form. Licenses issued later have
+  numbers of the type ru_license_erul.
+parent: license_number
+categories:
+- legal
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^МКРФ \d{5}$
+examples:
+- value: МКРФ 24056
+- value: МКРФ 00040
+  description: Number of a duplicate license
+- value: Л040-00103-00/01031577
+  valid: false
+  description: Number in the Unified Register of Licenses, the datatype ru_license_erul
+links:
+- type: doc
+  url: https://opendata.mkrf.ru/opendata/7705851331-heritage_safekeeping_licenses
+translations:
+  ru:
+    name: Номер лицензии Минкультуры России на сохранение объектов культурного наследия

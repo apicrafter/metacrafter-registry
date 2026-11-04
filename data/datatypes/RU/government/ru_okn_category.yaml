@@ -1,0 +1,30 @@
+id: ru_okn_category
+name: Category of historical and cultural significance of a Russian heritage object
+status: draft
+doc: Category of historical and cultural significance of a cultural heritage object under Article 4 of
+  Federal Law No. 73-FZ. An object is of federal, regional or local (municipal) significance. The register
+  of cultural heritage objects (ЕГРОКН) writes the categories as Федерального значения, Регионального
+  значения and Местного (муниципального) значения.
+categories:
+- government
+- realestate
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: ^(?:Федерального|Регионального|Местного \(муниципального\)) значения$
+examples:
+- value: Федерального значения
+- value: Регионального значения
+- value: Местного (муниципального) значения
+- value: Республиканского значения
+  valid: false
+  description: Not a category of Law No. 73-FZ
+links:
+- type: doc
+  url: https://opendata.mkrf.ru/opendata/7705851331-egrkn
+translations:
+  ru:
+    name: Категория историко-культурного значения объекта культурного наследия

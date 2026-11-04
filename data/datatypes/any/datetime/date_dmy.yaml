@@ -1,0 +1,29 @@
+id: date_dmy
+name: Date in DD.MM.YYYY notation
+status: draft
+doc: Calendar date written as a two-digit day, a two-digit month and a four-digit year separated by dots,
+  such as 31.12.2022. This day-first notation is the usual one in Russia, Germany and many other countries.
+semantic_type: date
+langs:
+- common
+regexp: ^(?:0[1-9]|[12]\d|3[01])\.(?:0[1-9]|1[0-2])\.\d{4}$
+examples:
+- value: 31.12.2022
+- value: 01.10.2021
+  description: Start date of archaeological works in the open data of the Russian Ministry of Culture
+- value: 2022.12.31
+  valid: false
+  description: Year-first notation
+- value: 32.01.2022
+  valid: false
+  description: There is no day 32
+mappings:
+  qddate: dt:date:date_2
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Date_format_by_country
+- type: other
+  url: https://github.com/ivbeg/qddate/blob/v1.1.0/qddate/patterns/base.py
+translations:
+  ru:
+    name: Дата в формате ДД.ММ.ГГГГ

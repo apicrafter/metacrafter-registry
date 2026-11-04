@@ -222,7 +222,8 @@
   - `crosswalk("orgid", ...)` accepts a list code in any case, its org-id.guide URL or a whole identifier. A test checks that each code maps to at most one record.
   - Not imported: 250 generated Chart of Accounts lists, 52 lists without an example identifier and 16 deprecated lists. The review is `devdocs/ORGID_REVIEW.md`.
 - [x] 8.16 Add the date patterns of qddate as registry types (issue #12). Add the `qddate` crosswalk key, which holds qddate pattern keys, and the `qddate` tool.
-  - All 151 base patterns of qddate 1.1.0 (commit `ec1f57a`) are mapped to 35 new draft patterns: 30 of `date` and 5 of `monthday`. There are 13 numeric notations (`date_dmy_dot`, `date_ymd_dash`, `date_mdy_slash`, ...), one record per language for dates with a month name (15 languages), and Chinese/Japanese and Korean dates with units.
+  - All 151 base patterns of qddate 1.1.0 (commit `ec1f57a`) are mapped to 35 records. 33 are new draft patterns: 28 of `date` and 5 of `monthday`. YYYY-MM-DD maps to `date` itself, and DD.MM.YYYY maps to the existing pattern `date_dmy`.
+  - There are 13 numeric notations (`date_dmy`, `date_mdy_slash`, `date_ymd_compact`, ...), one record per language for dates with a month name (15 languages), and Chinese/Japanese and Korean dates with units.
   - `crosswalk("qddate", ...)` resolves generated variants with a time or trailing text to their base pattern, so the `format` that metacrafter reports for a date column finds its notation.
   - Every regexp and example was checked against the qddate grammars: each example is read by qddate with a mapped key, and each month name form of qddate matches the language record. The review is `devdocs/QDDATE_REVIEW.md`.
 - Data fixes found during this phase:

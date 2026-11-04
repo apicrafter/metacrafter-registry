@@ -1,0 +1,27 @@
+id: ru_goskatalog_typology
+name: Typology of a museum object in the Russian State Catalogue (Goskatalog)
+status: draft
+doc: Typology group of a museum object in the State Catalogue of the Museum Fund of the Russian Federation
+  (Госкаталог). The open data of the Ministry of Culture uses fifteen groups, such as graphic art, painting,
+  sculpture, numismatics, documents, photographs and negatives, rare books and archaeology.
+categories:
+- objectids
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+examples:
+- value: графика
+- value: живопись
+- value: предметы нумизматики
+- value: предметы прикладного искусства, быта и этнографии
+- value: фотографии и негативы
+links:
+- type: doc
+  url: https://opendata.mkrf.ru/opendata/7705851331-museum-exhibits
+translations:
+  ru:
+    name: Типология музейного предмета в Госкаталоге

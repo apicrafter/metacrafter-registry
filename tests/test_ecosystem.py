@@ -522,8 +522,9 @@ def test_qddate_crosswalk(repo_sources):
     def ids(key: str) -> list[str]:
         return [r["id"] for r in reg.crosswalk("qddate", key)]
 
-    assert ids("dt:date:date_2") == ["date_dmy_dot"]
-    assert ids("dt:date:date_9") == ["date_ymd_dash"]
+    assert ids("dt:date:date_2") == ["date_dmy"]
+    # YYYY-MM-DD is the regexp of the datatype date itself
+    assert ids("dt:date:date_9") == ["date"]
     assert ids("dt:date:date_usa") == ["date_mdy_slash"]
     # qddate calls dd-mm-yyyy "date_iso8601"; it is not the ISO 8601 order
     assert ids("dt:date:date_iso8601") == ["date_dmy_dash"]
@@ -532,8 +533,8 @@ def test_qddate_crosswalk(repo_sources):
     assert ids("dt:date:date_cjk_ko") == ["date_korean"]
     assert ids("dt:date:date_eng_noyear_md") == ["monthday_english"]
     # generated variants (a time, text after the date) resolve to the base pattern
-    assert ids("dt:date:date_2:time_1") == ["date_dmy_dot"]
-    assert ids("dt:date:date_2:time_left:t_right") == ["date_dmy_dot"]
+    assert ids("dt:date:date_2:time_1") == ["date_dmy"]
+    assert ids("dt:date:date_2:time_left:t_right") == ["date_dmy"]
     assert ids("dt:date:de_base:t_right") == ["date_german"]
     # the key without its dt:date: prefix
     assert ids("date_6") == ["date_ymd_compact"]
@@ -546,8 +547,8 @@ def test_qddate_crosswalk(repo_sources):
             assert key not in seen, f"{key} is mapped by {seen[key]} and {record['id']}"
             seen[key] = record["id"]
     assert len(seen) == 151
-    # the records are representations of date and monthday
-    for rid in set(seen.values()):
+    # the records are date or patterns of date and monthday
+    for rid in set(seen.values()) - {"date"}:
         assert reg.datatypes[rid]["semantic_type"] in ("date", "monthday"), rid
 
 

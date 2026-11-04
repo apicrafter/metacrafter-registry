@@ -2,7 +2,7 @@ id: date_dmy_dash
 name: Date as DD-MM-YYYY
 status: draft
 doc: Calendar date written as day, month and four-digit year separated by hyphens, for example 25-12-2024.
-  It is not the ISO 8601 order, which puts the year first (date_ymd_dash).
+  It is not the ISO 8601 order, which puts the year first (the regexp of date).
 semantic_type: date
 langs:
 - common

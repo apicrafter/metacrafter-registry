@@ -1,0 +1,22 @@
+id: ru_age_rating_number
+name: Russian age rating as a number
+status: draft
+doc: Age category of information products under Federal Law No. 436-FZ written as a bare number without
+  the plus sign (0, 6, 12, 16 or 18), as in the age limit field of the Russian film register. Older film
+  records also contain 14, a category of the classification used before the law; it is not covered.
+semantic_type: ru_age_rating
+country:
+- RU
+langs:
+- common
+regexp: ^(?:0|6|12|16|18)$
+examples:
+- value: '12'
+- value: '16'
+- value: '0'
+- value: '14'
+  valid: false
+  description: Category of the film classification used before Law No. 436-FZ
+translations:
+  ru:
+    name: Возрастная категория числом

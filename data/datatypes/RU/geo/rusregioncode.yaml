@@ -1,9 +1,27 @@
 id: rusregioncode
 name: Russian region unique code
 status: draft
-doc: Russian unique code of country subdivision (regions/federal subjects)
+doc: Two-digit code of a federal subject of Russia, numbered in the order of the list of subjects in the
+  Constitution, such as 05 for Dagestan or 77 for Moscow. The register of cultural heritage objects (ЕГРОКН)
+  uses these codes for regions and as the first two digits of its registration numbers.
 semantic_type: rusregion
 country:
 - RU
 langs:
 - ru
+regexp: ^(?:0[1-9]|[1-9]\d)$
+examples:
+- value: '77'
+  description: Moscow
+- value: '05'
+  description: Republic of Dagestan
+- value: '69'
+  description: Tver Oblast
+- value: '5'
+  valid: false
+  description: Codes are written with a leading zero
+translations:
+  ru:
+    name: Код субъекта Российской Федерации
+    doc: Двузначный код субъекта Российской Федерации в порядке перечня субъектов в Конституции, например
+      05 — Дагестан, 77 — Москва.

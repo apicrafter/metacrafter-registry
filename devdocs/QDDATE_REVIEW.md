@@ -35,9 +35,12 @@ PyPI.
     mapped. `crosswalk("qddate", ...)` resolves a variant to its base pattern
     (`dt:date:date_2:time_1` gives the record of `dt:date:date_2`) and
     accepts a key without the `dt:date:` prefix (`date_2`).
-  - **35 new draft patterns**: 30 of `date` and 5 of `monthday`. All 151
-    qddate patterns are mapped, each to exactly one record (a test checks
-    this). See [Mapping](#mapping-in-mappingsqddate).
+  - **33 new draft patterns**: 28 of `date` and 5 of `monthday`. Two
+    notations already had a record on `main`: YYYY-MM-DD is the regexp of
+    `date` itself, and DD.MM.YYYY is the pattern `date_dmy`. Their qddate
+    keys map to those records. All 151 qddate patterns are mapped to 35
+    records, each pattern to exactly one record (a test checks this). See
+    [Mapping](#mapping-in-mappingsqddate).
   - New tool `qddate` (detector). A test checks that its `supported_types`
     are the records that carry `mappings.qddate`.
   - `scripts/check_qddate.py` checks the mappings against an installed
@@ -75,17 +78,20 @@ read, so one registry record per notation is enough:
   and `date_korean` (`2024년 12월 25일`), whose units differ.
 - **Dates without a year** are patterns of `monthday`, not of `date`.
 
-Record ids name the field order and separator (`date_dmy_dot`, `date_ymd_dash`)
-or the language (`date_english`), as the AutoType benchmark does
+Record ids name the field order and separator (`date_dmy_slash`,
+`date_ymd_dot`) or the language (`date_english`), as the AutoType benchmark does
 (`date-german`, `date-chinese`). A language record has no country, because a
 language is written in several countries, so all records are in
-`data/datatypes/any/datetime/`.
+`data/datatypes/any/datetime/`. The exception is `date_dmy`, the pattern for
+DD.MM.YYYY that `main` added before this change (from the review of
+opendata.mkrf.ru); its id is kept.
 
 ## Mapping (in `mappings.qddate`)
 
 | Record | Example | qddate keys (without `dt:date:`) |
 |---|---|---|
-| `date_dmy_dot` | 25.12.2024 | `date_2` |
+| `date` (existing datatype) | 2024-12-25 | `date_9` |
+| `date_dmy` (existing pattern) | 25.12.2024 | `date_2` |
 | `date_dmy_dot_yy` | 25.12.24 | `date_4`, `date_4_point` |
 | `date_dmy_slash` | 25/12/2024 | `date_1` |
 | `date_dmy_slash_yy` | 25/12/24 | `date_8` |
@@ -93,7 +99,6 @@ language is written in several countries, so all records are in
 | `date_dmy_dash_yy` | 25-12-24 | `date_iso8601_short` |
 | `date_mdy_slash` | 12/25/2024 | `date_usa` |
 | `date_mdy_slash_yy` | 12/25/24 | `date_usa_1` |
-| `date_ymd_dash` | 2024-12-25 | `date_9` |
 | `date_ymd_slash` | 2024/12/25 | `date_3` |
 | `date_ymd_dot` | 2024.12.25 | `date_10` |
 | `date_ymd_compact` | 20241225 | `date_6` |
@@ -124,8 +129,12 @@ language is written in several countries, so all records are in
 Notes:
 
 - **`date_rus3`** reads a numeric date followed by the Russian year word
-  (`05.05.2022 г.`). It is mapped to `date_russian`, not to `date_dmy_dot`,
+  (`05.05.2022 г.`). It is mapped to `date_russian`, not to `date_dmy`,
   because the year word is Russian text.
+- **`date` and `date_dmy`** take two-digit days and months only, as the ISO
+  8601 form and the usual written form have them. qddate's `date_9` and
+  `date_2` also read one-digit ones (`2022-5-5`, `5.5.2022`); the regexps of
+  these two records were not widened.
 - **`weekday_eng_iso` and `weekday_short_eng_iso`** read an English weekday
   before a numeric date (`Monday, 25/12/2024`). They are mapped to
   `date_english` for the same reason.
@@ -238,17 +247,18 @@ These do not block the mapping. They are worth fixing in qddate:
 
 1. **metacrafter:** link a qddate match to the notation record. With the
    `format` key, `crosswalk("qddate", format)` gives the record, for example
-   `date_dmy_dot`, whose page and JSON say what the column holds.
+   `date_dmy`, whose page and JSON say what the column holds.
 2. **Registry `identify`:** `identify` also tries a value without hyphens and
    spaces, so `2024-12-25` used to match every `\d{8}` regexp (`am_tin`,
-   `okpo`, ...), and those stable records outranked the draft
-   `date_ymd_dash`. Commit `b32688d` on `main` fixed this: a compact-form
-   hit no longer counts when a regexp at least as specific matches the value
-   as written, and `date_ymd_dash` now ranks first for ISO dates. A column of
-   `20241225` values still ranks the eight-digit codes first: without
-   separators, a date and an eight-digit code look alike.
-3. **Records per date-and-time notation** (`datetime` patterns such as
-   `YYYY-MM-DDTHH:MM:SS`) would give the generated variants a record of
-   their own. They need a decision on how many time forms to list.
+   `okpo`, ...), and those stable records outranked the date records.
+   Commit `b32688d` on `main` fixed this: a compact-form hit no longer counts
+   when a regexp at least as specific matches the value as written, and
+   `date` now ranks first for ISO dates. A column of `20241225` values still
+   ranks the eight-digit codes first: without separators, a date and an
+   eight-digit code look alike.
+3. **Records per date-and-time notation** would give the generated variants a
+   record of their own. `datetime` now has a regexp for the ISO 8601 and
+   RFC 3339 forms (`2024-12-25T14:30:00`); other forms, such as
+   `25.12.2024 14:30`, need a decision on how many time forms to list.
 4. **qddate:** the findings above. When qddate adds or renames a pattern,
    run `scripts/check_qddate.py` and map the new keys.
