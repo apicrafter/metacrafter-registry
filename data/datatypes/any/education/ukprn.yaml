@@ -16,6 +16,7 @@ examples:
 - value: '10008408'
   description: Old Palace of John Whitgift School
 mappings:
+  orgid: GB-UKPRN
   wikidata: P4971
 links:
 - type: wikidata

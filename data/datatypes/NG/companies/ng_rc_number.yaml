@@ -1,0 +1,21 @@
+id: ng_rc_number
+name: Nigerian CAC registration number (RC number)
+status: draft
+doc: Registration number of a company at the Corporate Affairs Commission (CAC) of Nigeria; for companies
+  it starts with RC. ORG-ID.guide lists the register as NG-CAC; with that prefix an identifier reads NG-CAC-RC1726083.
+categories:
+- companies
+country:
+- NG
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: RC1726083
+  description: example from ORG-ID.guide
+mappings:
+  orgid: NG-CAC
+links:
+- type: other
+  url: https://org-id.guide/list/NG-CAC

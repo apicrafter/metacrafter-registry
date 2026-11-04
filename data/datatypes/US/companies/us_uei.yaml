@@ -1,0 +1,29 @@
+id: us_uei
+name: Unique Entity ID (SAM.gov UEI)
+status: draft
+doc: Unique Entity ID (UEI), the 12-character identifier of an entity registered in the US System for
+  Award Management (SAM.gov). It replaced the DUNS number as the identifier of federal award recipients
+  in 2022. ORG-ID.guide lists the register as US-SAM; with that prefix an identifier reads US-SAM-YNDUZMUZF8H8.
+categories:
+- companies
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: YNDUZMUZF8H8
+  description: example from ORG-ID.guide
+- value: T53MCMLTWK59
+  description: example from ORG-ID.guide
+- value: UYDJJ1S8DR85
+  description: example from ORG-ID.guide
+mappings:
+  orgid: US-SAM
+links:
+- type: doc
+  url: https://sam.gov/content/entity-registration
+- type: other
+  url: https://org-id.guide/list/US-SAM

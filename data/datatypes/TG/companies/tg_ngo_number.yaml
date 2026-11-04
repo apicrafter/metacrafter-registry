@@ -1,0 +1,23 @@
+id: tg_ngo_number
+name: Togolese NGO registration number
+status: draft
+doc: Registration number of a non-governmental organisation in Togo. ORG-ID.guide lists the register as
+  TG-ONE; with that prefix an identifier reads TG-ONE-0932.
+categories:
+- companies
+country:
+- TG
+langs:
+- fr
+is_pii: false
+classification: identifier
+examples:
+- value: 0932
+  description: example from ORG-ID.guide
+mappings:
+  orgid: TG-ONE
+links:
+- type: doc
+  url: https://service-public.gouv.tg/service/650355ca26be2564074f87c6/creation-dissolution/demande-d-attestation-de-reconnaissance-de-la-qualite-d-ong
+- type: other
+  url: https://org-id.guide/list/TG-ONE

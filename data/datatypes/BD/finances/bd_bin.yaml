@@ -1,0 +1,25 @@
+id: bd_bin
+name: Bangladeshi business identification number (BIN)
+status: draft
+doc: Business Identification Number (BIN) on the VAT registration certificate that the National Board
+  of Revenue of Bangladesh gives to registered organisations and companies. ORG-ID.guide lists the register
+  as BD-NBR; with that prefix an identifier reads BD-NBR-000697679-0101.
+categories:
+- finances
+- companies
+country:
+- BD
+langs:
+- bn
+is_pii: false
+classification: identifier
+examples:
+- value: 000697679-0101
+  description: example from ORG-ID.guide
+mappings:
+  orgid: BD-NBR
+links:
+- type: doc
+  url: https://nbr.gov.bd/
+- type: other
+  url: https://org-id.guide/list/BD-NBR

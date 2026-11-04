@@ -1,0 +1,26 @@
+id: hn_rtn
+name: Honduran national tax registry number (RTN)
+status: draft
+doc: Registro Tributario Nacional (RTN), the tax registration number of taxpayers in Honduras. ORG-ID.guide
+  lists the register as HN-RTN; with that prefix an identifier reads HN-RTN-05019002058739.
+categories:
+- finances
+- companies
+country:
+- HN
+langs:
+- es
+is_pii: true
+classification: identifier
+examples:
+- value: 05019002058739
+  description: example from ORG-ID.guide
+- value: 07039015796732
+  description: example from ORG-ID.guide
+mappings:
+  orgid: HN-RTN
+links:
+- type: doc
+  url: https://sde.gob.hn/registro-tributario-nacional-numerico-rtn/
+- type: other
+  url: https://org-id.guide/list/HN-RTN

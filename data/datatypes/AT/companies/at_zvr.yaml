@@ -1,0 +1,24 @@
+id: at_zvr
+name: Austrian association register number (ZVR-Zahl)
+status: draft
+doc: ZVR-Zahl, the number of an association (Verein) in the Central Register of Associations (Zentrales
+  Vereinsregister) of Austria. ORG-ID.guide lists the register as AT-ZVR; with that prefix an identifier
+  reads AT-ZVR-555769679.
+categories:
+- companies
+country:
+- AT
+langs:
+- de
+is_pii: false
+classification: identifier
+examples:
+- value: '555769679'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: AT-ZVR
+links:
+- type: doc
+  url: https://www.bmi.gv.at/609/zvr.aspx
+- type: other
+  url: https://org-id.guide/list/AT-ZVR

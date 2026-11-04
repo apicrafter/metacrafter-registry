@@ -23,6 +23,7 @@ examples:
   valid: false
   description: Check digit does not match
 mappings:
+  orgid: IL-ROC
   wikidata: P10889
 links:
 - type: wikipedia

@@ -1,0 +1,39 @@
+id: gg_registry_number
+name: Guernsey Registry number
+status: draft
+doc: Number of a company, charity or other entity in the Guernsey Registry. ORG-ID.guide lists the register
+  as GG-RCE; with that prefix an identifier reads GG-RCE-56234.
+categories:
+- companies
+country:
+- GG
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '56234'
+  description: example from ORG-ID.guide
+- value: CH441
+  description: example from ORG-ID.guide
+- value: NP3
+  description: example from ORG-ID.guide
+- value: '14392'
+  description: example from ORG-ID.guide
+- value: '28419'
+  description: example from ORG-ID.guide
+- value: CH1
+  description: example from ORG-ID.guide
+- value: CH545
+  description: example from ORG-ID.guide
+- value: NP126
+  description: example from ORG-ID.guide
+- value: NP219
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GG-RCE
+links:
+- type: doc
+  url: http://www.guernseyregistry.com/
+- type: other
+  url: https://org-id.guide/list/GG-RCE

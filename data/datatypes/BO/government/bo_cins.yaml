@@ -1,0 +1,27 @@
+id: bo_cins
+name: Bolivian institutional classifier code
+status: draft
+doc: Code of a public sector entity in the Bolivian Institutional Classifier (Clasificador Institucional).
+  ORG-ID.guide lists the register as BO-CINS; with that prefix an identifier reads BO-CINS-0065-10.
+categories:
+- government
+country:
+- BO
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: 0065-10
+  description: example from ORG-ID.guide
+- value: 0025-57
+  description: example from ORG-ID.guide
+- value: 0359-00
+  description: example from ORG-ID.guide
+mappings:
+  orgid: BO-CINS
+links:
+- type: doc
+  url: https://www.sicoes.gob.bo/portal/clasificadores/institucional.php
+- type: other
+  url: https://org-id.guide/list/BO-CINS

@@ -26,6 +26,7 @@ mappings:
   purview:
   - Japanese My Number Corporate
   - Japan My Number - Corporate
+  orgid: JP-JCN
   wikidata: P3225
 links:
 - type: wikipedia

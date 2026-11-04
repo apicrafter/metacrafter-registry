@@ -1,0 +1,27 @@
+id: oecd_dac_code
+name: OECD DAC donor, agency or channel code
+status: draft
+doc: Code of a donor, an agency or a channel of delivery in the codelists of the OECD Development Assistance
+  Committee (DAC), used to report official development assistance. ORG-ID.guide lists the register as
+  XM-DAC; with that prefix an identifier reads XM-DAC-963-1.
+categories:
+- government
+- finances
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: 963-1
+  description: example from ORG-ID.guide
+- value: 1-8
+  description: example from ORG-ID.guide
+- value: '41301'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: XM-DAC
+links:
+- type: doc
+  url: https://development-finance-codelists.oecd.org/CodesList.aspx
+- type: other
+  url: https://org-id.guide/list/XM-DAC

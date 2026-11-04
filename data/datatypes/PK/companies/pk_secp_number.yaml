@@ -1,0 +1,26 @@
+id: pk_secp_number
+name: Pakistani SECP company registration number
+status: draft
+doc: Registration number of a company at the Securities and Exchange Commission of Pakistan (SECP). ORG-ID.guide
+  lists the register as PK-SEC; with that prefix an identifier reads PK-SEC-0086650.
+categories:
+- companies
+country:
+- PK
+langs:
+- ur
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: 0086650
+  description: example from ORG-ID.guide
+- value: 0081550
+  description: example from ORG-ID.guide
+- value: 0078867
+  description: example from ORG-ID.guide
+mappings:
+  orgid: PK-SEC
+links:
+- type: other
+  url: https://org-id.guide/list/PK-SEC

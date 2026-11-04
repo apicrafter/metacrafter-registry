@@ -1,0 +1,24 @@
+id: okfn_public_body
+name: Public Bodies identifier (Open Knowledge Foundation)
+status: draft
+doc: 'Identifier of a public body in Public Bodies, a database of the Open Knowledge Foundation: a country
+  code, a slash and a slug of the body''s name. ORG-ID.guide lists the register as XI-PB; with that prefix
+  an identifier reads XI-PB-gb/aberdeen-city-council.'
+categories:
+- government
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: gb/aberdeen-city-council
+  description: example from ORG-ID.guide
+- value: de/14-panzergrenadierdivision-hanse
+  description: example from ORG-ID.guide
+- value: ch/bundesrat-eidgenoessisches-departement-fuer-auswaertige-angelegenheiten-direktion-fuer-ressourcen-logistik-eda-bundesreisezentrale-pool-2-evd-edi-uvek-vbs-ejpd
+  description: example from ORG-ID.guide
+mappings:
+  orgid: XI-PB
+links:
+- type: other
+  url: https://org-id.guide/list/XI-PB

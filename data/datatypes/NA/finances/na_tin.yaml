@@ -1,0 +1,26 @@
+id: na_tin
+name: Namibian taxpayer identification number
+status: draft
+doc: Taxpayer number that the Namibia Revenue Agency (NamRA) gives to taxpayers. ORG-ID.guide lists the
+  register as NA-NAMRA; with that prefix an identifier reads NA-NAMRA-04822224.
+categories:
+- finances
+- companies
+country:
+- NA
+langs:
+- en
+is_pii: true
+classification: identifier
+examples:
+- value: 04822224
+  description: example from ORG-ID.guide
+- value: '04413362'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: NA-NAMRA
+links:
+- type: doc
+  url: https://www.namra.org.na/
+- type: other
+  url: https://org-id.guide/list/NA-NAMRA

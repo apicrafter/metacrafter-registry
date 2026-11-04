@@ -1,0 +1,23 @@
+id: ps_ngo_number
+name: Palestinian NGO registration number
+status: draft
+doc: Registration number of a non-governmental organisation at the Ministry of Interior of Palestine.
+  ORG-ID.guide lists the register as PS-MOI; with that prefix an identifier reads PS-MOI-HB-4157-C.
+categories:
+- companies
+country:
+- PS
+langs:
+- ar
+is_pii: false
+classification: identifier
+examples:
+- value: HB-4157-C
+  description: example from ORG-ID.guide
+- value: JN-8179-C
+  description: example from ORG-ID.guide
+mappings:
+  orgid: PS-MOI
+links:
+- type: other
+  url: https://org-id.guide/list/PS-MOI

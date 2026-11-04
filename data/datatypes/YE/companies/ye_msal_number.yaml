@@ -1,0 +1,21 @@
+id: ye_msal_number
+name: Yemeni Ministry of Social Affairs registration number
+status: draft
+doc: Registration number of an association or foundation at the Ministry of Social Affairs and Labour
+  of Yemen. ORG-ID.guide lists the register as YE-MSAL; with that prefix an identifier reads YE-MSAL-4/M/2012.
+categories:
+- companies
+country:
+- YE
+langs:
+- ar
+is_pii: false
+classification: identifier
+examples:
+- value: 4/M/2012
+  description: example from ORG-ID.guide
+mappings:
+  orgid: YE-MSAL
+links:
+- type: other
+  url: https://org-id.guide/list/YE-MSAL

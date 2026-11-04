@@ -21,6 +21,8 @@ examples:
 - value: 0798786257
   valid: false
   description: One character too many
+mappings:
+  gs1_ai: '716'
 links:
 - type: doc
   url: https://www.gazzettaufficiale.it/do/atto/serie_generale/caricaPdf?cdimg=14A0566800100010110001&dgu=2014-07-18&art.dataPubblicazioneGazzetta=2014-07-18&art.codiceRedazionale=14A05668&art.num=1&art.tiposerie=SG

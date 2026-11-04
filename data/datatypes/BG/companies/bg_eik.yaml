@@ -1,18 +1,21 @@
 id: bg_eik
-name: Bulgarian EIK / BULSTAT code
+name: Bulgarian unified identification code (EIK)
 status: draft
-doc: 'Unified identification code of a Bulgarian company in the Commercial Register (EIK) or BULSTAT code
-  of another legal entity: nine digits, or thirteen for a branch.'
+doc: ЕИК (единен идентификационен код), the unified identification code under which a company is entered
+  in the Commercial Register of Bulgaria. With the BG prefix it forms the VAT number (bg_vat). ORG-ID.guide
+  lists the register as BG-EIK; with that prefix an identifier reads BG-EIK-204853663.
 categories:
 - companies
 country:
 - BG
 langs:
-- common
+- bg
 is_pii: false
 classification: identifier
 regexp: ^(?:\d{9}|\d{13})$
 examples:
+- value: '204853663'
+  description: example from ORG-ID.guide
 - value: '831447150'
   description: Central Cooperative Bank
 - value: '040534040'
@@ -20,8 +23,13 @@ examples:
 - value: '131409398'
   description: EPay.bg
 mappings:
+  orgid: BG-EIK
   wikidata: P8894
 links:
+- type: doc
+  url: https://public.brra.bg/CheckUps/Verifications/VerificationPersonOrg.ra
+- type: other
+  url: https://org-id.guide/list/BG-EIK
 - type: doc
   url: https://portal.registryagency.bg/en/
 - type: wikidata

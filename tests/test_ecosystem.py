@@ -303,6 +303,60 @@ def test_sherlock_mapping_must_be_a_sherlock_type(mini_data):
     assert validate(load_sources(mini_data)).errors == []
 
 
+# The labels of Sato's published model: "type78" in configs/types.json of
+# megagonlabs/sato at commit c19ace3 (see devdocs/SATO_REVIEW.md).
+SATO_TYPE78 = """
+address affiliate affiliation age album area artist birthDate birthPlace brand capacity
+category city class classification club code collection command company component
+continent country county creator credit currency day depth description director duration
+education elevation family fileSize format gender genre grades isbn industry jockey
+language location manufacturer name nationality notes operator order organisation origin
+owner person plays position product publisher range rank ranking region religion
+requirement result sales service sex species state status symbol team teamName type
+weight year
+""".split()
+
+
+def test_sato_types_are_the_sherlock_types():
+    schema = json.loads((REPO / "schema/datatype.schema.json").read_text("utf-8"))
+    sherlock = schema["$defs"]["sherlockType"]["enum"]
+
+    def key(label: str) -> str:
+        return "".join(label.split()).lower()
+
+    assert len(SATO_TYPE78) == len(set(SATO_TYPE78)) == 78
+    assert sorted(map(key, SATO_TYPE78)) == sorted(map(key, sherlock))
+
+
+def test_sato_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+
+    def ids(system: str, label: str) -> list[str]:
+        return [r["id"] for r in reg.crosswalk(system, label)]
+
+    assert ids("sato", "birthDate") == ["birthday"]
+    assert ids("sato", "birthPlace") == ["birthplace"]
+    assert ids("sato", "fileSize") == ["filesize"]
+    assert ids("sato", "company") == ["orgname"]
+    # generic header words and team names are not mapped
+    assert ids("sato", "code") == []
+    assert ids("sato", "teamName") == []
+    # every Sato label resolves exactly as the Sherlock label does
+    for label in SATO_TYPE78:
+        assert ids("sato", label) == ids("sherlock", label), label
+
+
+def test_sato_tool_lists_the_sherlock_records(repo_sources):
+    mapped = sorted(
+        rec.id for rec in repo_sources.datatypes if (rec.data.get("mappings") or {}).get("sherlock")
+    )
+    tool = next(t for t in repo_sources.tools if t.id == "sato")
+    assert tool.data["category"] == "detector"
+    assert sorted(tool.data["supported_types"]) == mapped
+
+
 def test_autotype_crosswalk(repo_sources):
     from metacrafter_registry import Registry
 
@@ -341,6 +395,123 @@ def test_autotype_mapping_must_be_a_test_case_name(mini_data):
 
     path.write_text(path.read_text().replace("autotype: email.txt", "autotype: email"))
     assert validate(load_sources(mini_data)).errors == []
+
+
+def test_gs1_ai_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+
+    def ids(ai: str) -> list[str]:
+        return [r["id"] for r in reg.crosswalk("gs1_ai", ai)]
+
+    assert ids("00") == ["sssc"]
+    assert ids("01") == ["gtin"]
+    # as printed under a barcode, and as a GS1 vocabulary IRI
+    assert ids("(414)") == ["gs1_ai_414"]
+    assert ids("https://ref.gs1.org/ai/8003") == ["gs1_ai_8003"]
+    assert reg.get("gs1_ai_8003")["semantic_type"] == "grai"
+    assert reg.get("gs1_ai_410")["semantic_type"] == "gln"
+    # AIs that carry a non-GS1 identifier map to its record
+    assert ids("8007") == ["iban"]
+    assert ids("8041") == ["imei"]
+    # data attributes are not mapped
+    assert ids("17") == []
+    assert ids("3103") == []
+    # every AI maps to at most one record
+    seen: dict[str, str] = {}
+    for record in reg.datatypes.values():
+        value = record.get("mappings", {}).get("gs1_ai")
+        for ai in value if isinstance(value, list) else [value] if value else []:
+            assert ai not in seen, f"{ai} is mapped by {seen[ai]} and {record['id']}"
+            seen[ai] = record["id"]
+    assert len(seen) == 38
+
+
+def test_gs1_element_string_records_are_consistent(repo_sources):
+    """gs1_ai_<AI> maps to <AI>; its examples start with the AI and, for a
+    pattern, the data field after the AI is a valid value of the key record."""
+    import re
+
+    from metacrafter_registry.checksums import ALGORITHMS
+
+    records = {rec.id: rec.data for rec in repo_sources.datatypes}
+    element = {rid: data for rid, data in records.items() if rid.startswith("gs1_ai_")}
+    assert len(element) == 31
+    for rid, data in element.items():
+        ai = rid.removeprefix("gs1_ai_")
+        assert data["mappings"]["gs1_ai"] == ai, rid
+        assert data["regexp"].startswith(f"^{ai}"), rid
+        key = records.get(data.get("semantic_type"))
+        for example in data["examples"]:
+            if example.get("valid") is False:
+                continue
+            assert example["value"].startswith(ai), (rid, example)
+            if key is None:
+                continue
+            field = example["value"][len(ai) :]
+            if ai == "8003":  # AI 8003 writes a filler zero before the GRAI
+                field = field[1:]
+            assert re.search(key["regexp"], field), (rid, field)
+            if key.get("checksum"):
+                assert ALGORITHMS[key["checksum"]](field), (rid, field)
+
+
+def test_gs1_ai_mapping_must_be_an_ai_string(mini_data):
+    path = mini_data / "datatypes/any/pii/email.yaml"
+    original = path.read_text()
+    for bad in ("1", "'(01)'", "'01a'", "'80030'"):
+        path.write_text(original + f"mappings:\n  gs1_ai: {bad}\n")
+        errors = [str(i) for i in validate(load_sources(mini_data)).errors]
+        assert any("mappings" in e and "gs1_ai" in e for e in errors), (bad, errors)
+
+    for good in ("'01'", "'8003'", "['8040', '8041']"):
+        path.write_text(original + f"mappings:\n  gs1_ai: {good}\n")
+        assert validate(load_sources(mini_data)).errors == [], good
+
+
+def test_orgid_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+
+    def ids(value: str) -> list[str]:
+        return [r["id"] for r in reg.crosswalk("orgid", value)]
+
+    assert ids("GB-COH") == ["companyhouseid"]
+    assert ids("XI-LEI") == ["lei"]
+    # a whole ORG-ID.guide identifier, any case, or the list page URL
+    assert ids("GB-COH-09506232") == ["companyhouseid"]
+    assert ids("gb-coh") == ["companyhouseid"]
+    assert ids("https://org-id.guide/list/RU-INN") == ["inn"]
+    assert ids("XI-PB-gb/aberdeen-city-council") == ["okfn_public_body"]
+    assert ids("CA_NS-NVS_NVE-1542067") == ["ca_ns_registry_id"]
+    # deprecated codes resolve to the record of the list that replaced them
+    assert ids("SE-BLV") == ["seorgnumber"]
+    assert ids("IT-RI") == ["it_iva"]
+    assert ids("XE-EXAMPLE") == []
+    # every ORG-ID.guide code maps to at most one registry record
+    seen: dict[str, str] = {}
+    for record in reg.datatypes.values():
+        value = record.get("mappings", {}).get("orgid")
+        for code in value if isinstance(value, list) else [value] if value else []:
+            assert code not in seen, f"{code} is mapped by {seen[code]} and {record['id']}"
+            seen[code] = record["id"]
+    assert len(seen) >= 250
+
+
+def test_orgid_mapping_must_be_a_list_code(mini_data):
+    path = mini_data / "datatypes/any/pii/email.yaml"
+    path.write_text(path.read_text() + "mappings:\n  orgid: gb-coh\n")
+    errors = [str(i) for i in validate(load_sources(mini_data)).errors]
+    assert any("mappings" in e and "orgid" in e for e in errors), errors
+
+    path.write_text(path.read_text().replace("orgid: gb-coh", "orgid: GB-COH-09506232"))
+    assert validate(load_sources(mini_data)).errors
+
+    for good in ("GB-COH", "CA_ON-ONT", "BE-BCE_KBO", "[XI-LEI, XI-GRID]"):
+        path.write_text(path.read_text().rsplit("  orgid:", 1)[0] + f"  orgid: {good}\n")
+        assert validate(load_sources(mini_data)).errors == [], good
 
 
 def test_changes_diff():
@@ -384,6 +555,33 @@ def test_identify_page_sends_no_values():
     assert code.count("fetch(") == 1 and 'fetch(base + "/identify-index.json")' in code
 
 
+def _javascript_identify(tmp_path, index_path, cases, limit):
+    """[[id, score], ...] from identify-core.js for each (values, field_name) case."""
+    script = tmp_path / "run.js"
+    script.write_text(
+        "const core = require(process.argv[2]);\n"
+        "const index = require(process.argv[3]);\n"
+        "const cases = JSON.parse(process.argv[4]);\n"
+        "const limit = Number(process.argv[5]);\n"
+        "console.log(JSON.stringify(cases.map(([v, f]) => "
+        "core.identify(index, v, f, null, limit).map(r => [r.id, r.score]))));\n"
+    )
+    out = subprocess.run(
+        [
+            "node",
+            str(script),
+            str(REPO / "src/metacrafter_registry/static/identify-core.js"),
+            str(index_path),
+            json.dumps(cases),
+            str(limit),
+        ],
+        capture_output=True,
+        text=True,
+        check=True,
+    ).stdout
+    return json.loads(out)
+
+
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
 def test_javascript_identify_matches_python(built_site, tmp_path):
     """The browser scorer and Registry.identify rank the same top candidates."""
@@ -396,31 +594,40 @@ def test_javascript_identify_matches_python(built_site, tmp_path):
         (["4111 1111 1111 1111"], "card"),
         (["user@example.com", "first.last+tag@mail.example.org"], ""),
         (["e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"], "sha256"),
+        (["2025-05-15", "1990-01-31"], "birthday"),
     ]
-    script = tmp_path / "run.js"
-    script.write_text(
-        "const core = require(process.argv[2]);\n"
-        "const index = require(process.argv[3]);\n"
-        "const cases = JSON.parse(process.argv[4]);\n"
-        "console.log(JSON.stringify(cases.map(([v, f]) => "
-        "core.identify(index, v, f, null, 3).map(r => [r.id, r.score]))));\n"
-    )
-    out = subprocess.run(
-        [
-            "node",
-            str(script),
-            str(REPO / "src/metacrafter_registry/static/identify-core.js"),
-            str(built_site / "identify-index.json"),
-            json.dumps(cases),
-        ],
-        capture_output=True,
-        text=True,
-        check=True,
-    ).stdout
-    js = json.loads(out)
+    js = _javascript_identify(tmp_path, built_site / "identify-index.json", cases, 3)
     for (values, field), js_top in zip(cases, js, strict=True):
         py_top = [[r["id"], r["score"]] for r in reg.identify(values, field_name=field, limit=3)]
         assert js_top[0] == py_top[0], (values, js_top, py_top)
+
+
+@pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
+def test_javascript_compact_matches_match_python(reg_with_date, tmp_path):
+    """Both scorers ignore a compact-form match that a more specific regexp claims."""
+    from conftest import ISO_DATES
+
+    from metacrafter_registry.agents import identify_index
+
+    index = tmp_path / "identify-index.json"
+    index.write_text(
+        json.dumps(identify_index(reg_with_date.datatypes.values(), reg_with_date._broadness))
+    )
+    cases = [
+        (ISO_DATES, "birthday"),
+        (ISO_DATES, "cardPeriod"),
+        (["4111 1111 1111 1111"], ""),
+        (["4111-1111-1111-1111", "5500 0000 0000 0004"], "card"),
+        (["45 397 000"], ""),
+        (["GB82 WEST 1234 5698 7654 32"], ""),
+    ]
+    js = _javascript_identify(tmp_path, index, cases, 5)
+    for (values, field), js_top in zip(cases, js, strict=True):
+        py_top = [
+            [r["id"], r["score"]] for r in reg_with_date.identify(values, field_name=field, limit=5)
+        ]
+        assert js_top == py_top, (values, js_top, py_top)
+    assert js[0][0][0] == js[1][0][0] == "date"
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
@@ -452,7 +659,20 @@ def test_javascript_checksums_match_python(tmp_path):
         "131052-308T",
         "131052A308T",
         "54362315-K",
+        "00095287650000315043",
+        "1987654Ad4X4bL5ttr2310c2K",
+        "1987654Ad4X4bL5ttr2310cXK",
+        "12345_!\"%&'()*+,-./LC",
+        "9528765Model-A7NM",
+        "22",
+        "!22",
+        "2",
+        "PL 856-734-62-15",
+        "SK 202 274 96 19",
+        "SI 5022 3054",
+        "SE556012579001",
     ]
+    values += [str(rng.randrange(10**16, 10**18)) for _ in range(300)]
     values += [str(rng.randrange(10**8, 10**15)) for _ in range(300)]
     values += [f"ATU{rng.randrange(10**8):08d}" for _ in range(100)]
     values += [f"BG{rng.randrange(10**10):010d}" for _ in range(100)]
@@ -461,6 +681,10 @@ def test_javascript_checksums_match_python(tmp_path):
         for _ in range(100)
     ]
     values += [f"{rng.randrange(10**11):011d}" for _ in range(1000)]
+    values += [f"PL{rng.randrange(10**10):010d}" for _ in range(300)]
+    values += [f"SK{rng.randrange(10**10):010d}" for _ in range(300)]
+    values += [f"SI{rng.randrange(10**8):08d}" for _ in range(300)]
+    values += [f"SE{rng.randrange(10**10):010d}0{rng.choice('12')}" for _ in range(300)]
     offices = ["001", "100", "121", "888", "500"]
     values += [
         f"IT{rng.randrange(10**7):07d}{rng.choice(offices)}{rng.randrange(10)}" for _ in range(100)

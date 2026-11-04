@@ -1,0 +1,25 @@
+id: cm_niu
+name: Cameroonian taxpayer number (NIU)
+status: draft
+doc: Numéro d'identifiant unique (NIU), the tax identification number of taxpayers in Cameroon. ORG-ID.guide
+  lists the register as CM-NIU; with that prefix an identifier reads CM-NIU-M099600009248R.
+categories:
+- finances
+- companies
+country:
+- CM
+langs:
+- fr
+- en
+is_pii: true
+classification: identifier
+examples:
+- value: M099600009248R
+  description: example from ORG-ID.guide
+mappings:
+  orgid: CM-NIU
+links:
+- type: doc
+  url: https://www.impots.cm/
+- type: other
+  url: https://org-id.guide/list/CM-NIU

@@ -1,0 +1,28 @@
+id: ca_gov_department_number
+name: Government of Canada department number
+status: draft
+doc: Number that the Receiver General gives to a federal department or agency of Canada that may use the
+  Consolidated Revenue Fund, as published in the list of legal department names. ORG-ID.guide lists the
+  register as CA-GOV; with that prefix an identifier reads CA-GOV-001.
+categories:
+- government
+country:
+- CA
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '001'
+  description: example from ORG-ID.guide
+- value: 097
+  description: example from ORG-ID.guide
+- value: '124'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: CA-GOV
+links:
+- type: doc
+  url: http://open.canada.ca/data/en/dataset/22090865-f8a6-4b83-9bad-e9d61f26a821
+- type: other
+  url: https://org-id.guide/list/CA-GOV

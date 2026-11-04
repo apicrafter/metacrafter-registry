@@ -1,0 +1,27 @@
+id: pl_krs
+name: Polish National Court Register number (KRS)
+status: draft
+doc: Numer KRS, the 10-digit number of an entity in the National Court Register (Krajowy Rejestr Sądowy)
+  of Poland. ORG-ID.guide lists the register as PL-KRS; with that prefix an identifier reads PL-KRS-0000359730.
+categories:
+- companies
+country:
+- PL
+langs:
+- pl
+is_pii: false
+classification: identifier
+examples:
+- value: 0000359730
+  description: example from ORG-ID.guide
+- value: 0000511485
+  description: example from ORG-ID.guide
+- value: '0000172011'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: PL-KRS
+links:
+- type: doc
+  url: https://ems.ms.gov.pl/krs/wyszukiwaniepodmiotu
+- type: other
+  url: https://org-id.guide/list/PL-KRS

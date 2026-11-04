@@ -18,6 +18,7 @@ examples:
   description: Shopping Pátio Higienópolis
 mappings:
   purview: Brazil legal entity number (CNPJ)
+  orgid: BR-CNPJ
   wikidata: P6204
 links:
 - type: wikidata

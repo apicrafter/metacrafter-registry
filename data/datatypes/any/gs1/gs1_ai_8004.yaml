@@ -1,0 +1,22 @@
+id: gs1_ai_8004
+name: Global Individual Asset Identifier (GS1 AI 8004)
+status: draft
+doc: 'GS1 element string of Application Identifier (8004): ''8004'' followed by a GIAI of up to 30 characters.
+  GS1 format N4+X..30. In the human-readable text under a barcode it is written as (8004) and the value.'
+semantic_type: giai
+langs:
+- common
+regexp: ^8004\d{4}[!%-?A-Z_a-z\x22]{0,26}$
+examples:
+- value: 80049528765ASSET-7781
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: 80049528765PC-0193
+  description: Synthetic value with the GS1 demonstration prefix 952
+- value: 8004ASSET-7781
+  valid: false
+  description: No GS1 Company Prefix
+mappings:
+  gs1_ai: '8004'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8004

@@ -1,0 +1,20 @@
+id: tr_mersis
+name: Turkish MERSIS number
+status: draft
+doc: MERSIS number of a company in the Central Registration System (Merkezi Sicil Kayıt Sistemi, MERSIS)
+  of the Ministry of Trade of Türkiye. ORG-ID.guide lists the register as TR-MERSIS.
+categories:
+- companies
+country:
+- TR
+langs:
+- tr
+is_pii: false
+classification: identifier
+mappings:
+  orgid: TR-MERSIS
+links:
+- type: doc
+  url: https://mersis.gtb.gov.tr/
+- type: other
+  url: https://org-id.guide/list/TR-MERSIS

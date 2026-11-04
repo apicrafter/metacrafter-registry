@@ -1,0 +1,24 @@
+id: gs1_ai_8026
+name: ITIP of pieces contained in a logistic unit (GS1 AI 8026)
+status: draft
+doc: 'GS1 element string of Application Identifier (8026): ''8026'' followed by the 18-digit ITIP of the
+  trade item pieces contained in a logistic unit. GS1 format N4+N14+N2+N2. It is used together with AI
+  (37), the count of the contained items. In the human-readable text under a barcode it is written as
+  (8026) and the value.'
+semantic_type: itip
+langs:
+- common
+regexp: ^8026\d{14}(?:0[1-9]|[1-9]\d){2}$
+examples:
+- value: '8026095060001343520102'
+  description: GS1's example GTIN, piece 1 of 2
+- value: '8026095060001343520303'
+  description: GS1's example GTIN, piece 3 of 3
+- value: '802609506000134352'
+  valid: false
+  description: Piece and total missing
+mappings:
+  gs1_ai: '8026'
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8026

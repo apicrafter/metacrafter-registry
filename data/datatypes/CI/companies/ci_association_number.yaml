@@ -1,0 +1,26 @@
+id: ci_association_number
+name: Ivorian association registration number
+status: draft
+doc: Registration number that the Ministry of the Interior of Côte d'Ivoire gives to associations and
+  other organisations. ORG-ID.guide lists the register as CI-MOI; with that prefix an identifier reads
+  CI-MOI-474-MIS-DGAT-DAG-SDVA.
+categories:
+- companies
+country:
+- CI
+langs:
+- fr
+is_pii: false
+classification: identifier
+examples:
+- value: 474-MIS-DGAT-DAG-SDVA
+  description: example from ORG-ID.guide
+- value: 395-INT-DGAT-DAG-SDVA
+  description: example from ORG-ID.guide
+mappings:
+  orgid: CI-MOI
+links:
+- type: doc
+  url: http://interieur.gouv.ci/
+- type: other
+  url: https://org-id.guide/list/CI-MOI

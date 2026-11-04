@@ -1,0 +1,26 @@
+id: ar_cenoc
+name: Argentine community organisation number (CENOC)
+status: draft
+doc: Number of a civil society organisation in the register of the National Centre of Community Organisations
+  (Centro Nacional de Organizaciones de la Comunidad, CENOC) of Argentina. ORG-ID.guide lists the register
+  as AR-CENOC; with that prefix an identifier reads AR-CENOC-9316-A.
+categories:
+- companies
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: 9316-A
+  description: example from ORG-ID.guide
+- value: 10434-A
+  description: example from ORG-ID.guide
+- value: 11890-A
+  description: example from ORG-ID.guide
+mappings:
+  orgid: AR-CENOC
+links:
+- type: other
+  url: https://org-id.guide/list/AR-CENOC

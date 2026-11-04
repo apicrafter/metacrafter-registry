@@ -19,6 +19,9 @@ examples:
 - value: CHE-123.456.788 TVA
   description: Swiss UID used as VAT number
 mappings:
+  orgid:
+  - CH-FDJP
+  - CH_BS-CR
   wikidata: P4829
 links:
 - type: wikidata

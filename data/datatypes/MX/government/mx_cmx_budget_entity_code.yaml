@@ -1,0 +1,25 @@
+id: mx_cmx_budget_entity_code
+name: Mexico City public entity budget code
+status: draft
+doc: Code of a public entity in the budget classification of public entities of Mexico City. ORG-ID.guide
+  lists the register as MX-CMX_CPA; with that prefix an identifier reads MX-CMX_CPA-01C001.
+categories:
+- government
+country:
+- MX
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: 01C001
+  description: example from ORG-ID.guide
+- value: 01CD03
+  description: example from ORG-ID.guide
+- value: 01CD06
+  description: example from ORG-ID.guide
+mappings:
+  orgid: MX-CMX_CPA
+links:
+- type: other
+  url: https://org-id.guide/list/MX-CMX_CPA

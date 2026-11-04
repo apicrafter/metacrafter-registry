@@ -1,0 +1,28 @@
+id: py_budget_entity_code
+name: Paraguayan national budget entity code
+status: draft
+doc: Code of a public entity in the classification of entities of the General Budget of the Nation (Presupuesto
+  General de la Nación) of Paraguay. ORG-ID.guide lists the register as PY-PGN; with that prefix an identifier
+  reads PY-PGN-12.
+categories:
+- government
+country:
+- PY
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: '12'
+  description: example from ORG-ID.guide
+- value: '12.001'
+  description: example from ORG-ID.guide
+- value: '12.002'
+  description: example from ORG-ID.guide
+- value: '12.006'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: PY-PGN
+links:
+- type: other
+  url: https://org-id.guide/list/PY-PGN

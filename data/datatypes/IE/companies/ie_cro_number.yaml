@@ -1,0 +1,37 @@
+id: ie_cro_number
+name: Irish company number (CRO)
+status: draft
+doc: Number of a company in the register of the Companies Registration Office (CRO) of Ireland. ORG-ID.guide
+  lists the register as IE-CRO; with that prefix an identifier reads IE-CRO-123260.
+categories:
+- companies
+country:
+- IE
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{3,11}[A-Z]?$
+examples:
+- value: '123260'
+  description: example from ORG-ID.guide
+- value: '83424'
+  description: example from ORG-ID.guide
+- value: '549061'
+  description: example from ORG-ID.guide
+- value: '246488'
+  description: Ryanair
+- value: '98788'
+  description: An Post
+- value: '397094'
+  description: Scouting Ireland
+mappings:
+  orgid: IE-CRO
+  wikidata: P9679
+links:
+- type: other
+  url: https://org-id.guide/list/IE-CRO
+- type: doc
+  url: https://core.cro.ie/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9679

@@ -1,0 +1,31 @@
+id: giai
+name: Global Individual Asset Identifier (GIAI)
+status: draft
+doc: GS1 identification key for one asset that a company owns or uses, such as a machine, a computer or
+  an aircraft part. It is a GS1 Company Prefix followed by an individual asset reference, up to 30 characters
+  of GS1 character set 82 in total; the first four characters are digits because the shortest GS1 Company
+  Prefix has four. Application Identifier (8004) carries it, and (7023) carries the GIAI of an assembly;
+  the element strings are the patterns gs1_ai_8004 and gs1_ai_7023.
+categories:
+- gs1
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4}[!%-?A-Z_a-z\x22]{0,26}$
+examples:
+- value: 9528765ASSET-7781
+  description: Synthetic value with the GS1 demonstration prefix 952 and an asset reference
+- value: 9528765PC-0193
+  description: Synthetic value with the GS1 demonstration prefix 952 and an asset reference
+- value: ASSET-7781
+  valid: false
+  description: Does not start with a GS1 Company Prefix
+links:
+- type: doc
+  url: https://ref.gs1.org/ai/8004
+- type: doc
+  url: https://ref.gs1.org/ai/7023
+- type: doc
+  url: https://ref.gs1.org/standards/genspecs/

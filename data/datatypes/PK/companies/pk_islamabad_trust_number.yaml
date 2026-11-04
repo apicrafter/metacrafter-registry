@@ -1,0 +1,24 @@
+id: pk_islamabad_trust_number
+name: Islamabad trust registration number
+status: draft
+doc: Registration number of a trust at the Registrar of Trusts of Islamabad, Pakistan. ORG-ID.guide lists
+  the register as PK_IS-IRT; with that prefix an identifier reads PK_IS-IRT-11352.
+categories:
+- companies
+country:
+- PK
+langs:
+- ur
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '11352'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: PK_IS-IRT
+links:
+- type: doc
+  url: https://ictadministration.gov.pk/
+- type: other
+  url: https://org-id.guide/list/PK_IS-IRT

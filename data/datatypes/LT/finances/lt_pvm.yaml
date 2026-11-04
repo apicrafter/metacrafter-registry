@@ -21,6 +21,8 @@ examples:
 - value: '3549919177'
   valid: false
   description: One character too many
+mappings:
+  orgid: LT-PVM
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.lt.pvm.html

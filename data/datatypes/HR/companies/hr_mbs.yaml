@@ -1,0 +1,25 @@
+id: hr_mbs
+name: Croatian court register number (MBS)
+status: draft
+doc: Matični broj subjekta (MBS), the number of a company in the court register (sudski registar) of Croatia.
+  ORG-ID.guide lists the register as HR-MBS; with that prefix an identifier reads HR-MBS-080229250.
+categories:
+- companies
+country:
+- HR
+langs:
+- hr
+is_pii: false
+classification: identifier
+examples:
+- value: 080229250
+  description: example from ORG-ID.guide
+- value: 080026895
+  description: example from ORG-ID.guide
+mappings:
+  orgid: HR-MBS
+links:
+- type: doc
+  url: https://sudreg.pravosudje.hr/registar
+- type: other
+  url: https://org-id.guide/list/HR-MBS

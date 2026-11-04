@@ -22,6 +22,9 @@ mappings:
   purview:
   - Australian Business Number
   - Australia business number
+  orgid:
+  - AU-ABN
+  - AU-ACNC
   wikidata: P3548
 links:
 - type: wikipedia

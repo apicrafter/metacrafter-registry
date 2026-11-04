@@ -1,0 +1,29 @@
+id: ebid
+name: European Business Identifier (EBID)
+status: draft
+doc: EBID, the identifier of a company or production site in the directory of German and Austrian companies
+  of the CAS Group (Unternehmensverzeichnis.org). ORG-ID.guide lists the register as ZZ-EBID; with that
+  prefix an identifier reads ZZ-EBID-2-500897-444478.
+categories:
+- companies
+country:
+- DE
+- AT
+langs:
+- de
+is_pii: false
+classification: identifier
+examples:
+- value: 2-500897-444478
+  description: example from ORG-ID.guide
+- value: 2-511576-798133
+  description: example from ORG-ID.guide
+- value: 2-510004-542942
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ZZ-EBID
+links:
+- type: doc
+  url: https://www.ebid.org/en/
+- type: other
+  url: https://org-id.guide/list/ZZ-EBID

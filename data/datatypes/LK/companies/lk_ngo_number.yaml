@@ -1,0 +1,29 @@
+id: lk_ngo_number
+name: Sri Lankan NGO registration number
+status: draft
+doc: Registration number of a non-governmental organisation at the National Secretariat for Non-Governmental
+  Organisations of Sri Lanka. ORG-ID.guide lists the register as LK-NGO; with that prefix an identifier
+  reads LK-NGO-80505.
+categories:
+- companies
+country:
+- LK
+langs:
+- si
+- ta
+is_pii: false
+classification: identifier
+examples:
+- value: '80505'
+  description: example from ORG-ID.guide
+- value: '146512'
+  description: example from ORG-ID.guide
+- value: '32912'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: LK-NGO
+links:
+- type: doc
+  url: http://www.ngosecretariat.gov.lk/
+- type: other
+  url: https://org-id.guide/list/LK-NGO

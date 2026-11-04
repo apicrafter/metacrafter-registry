@@ -16,6 +16,7 @@ examples:
 - value: 12.345.678.9-012.345
   description: Example Indonesian NPWP
 mappings:
+  orgid: ID-DJP
   wikidata: P8346
 links:
 - type: wikidata

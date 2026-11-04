@@ -19,6 +19,7 @@ examples:
   description: Sberbank of Russia
 mappings:
   wikidata: P7011
+  orgid: RU-OGRN
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P7011

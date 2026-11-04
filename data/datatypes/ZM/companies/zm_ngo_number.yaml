@@ -1,0 +1,25 @@
+id: zm_ngo_number
+name: Zambian NGO registration number
+status: draft
+doc: Registration number of a non-governmental organisation at the Department of the Registrar for NGOs
+  of Zambia. ORG-ID.guide lists the register as ZM-RNGO; with that prefix an identifier reads ZM-RNGO-1010147.
+categories:
+- companies
+country:
+- ZM
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '1010147'
+  description: example from ORG-ID.guide
+- value: '1010060'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ZM-RNGO
+links:
+- type: doc
+  url: https://www.mcdss.gov.zm/?page_id=1990
+- type: other
+  url: https://org-id.guide/list/ZM-RNGO

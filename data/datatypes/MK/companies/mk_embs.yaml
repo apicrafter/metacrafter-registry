@@ -1,0 +1,24 @@
+id: mk_embs
+name: North Macedonian entity registration number (EMBS)
+status: draft
+doc: ЕМБС (единствен матичен број на субјектот), the 7-digit number of a legal entity in the Central Registry
+  of the Republic of North Macedonia. ORG-ID.guide lists the register as MK-CR; with that prefix an identifier
+  reads MK-CR-6524710.
+categories:
+- companies
+country:
+- MK
+langs:
+- mk
+is_pii: false
+classification: identifier
+examples:
+- value: '6524710'
+  description: example from ORG-ID.guide
+- value: '6456112'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: MK-CR
+links:
+- type: other
+  url: https://org-id.guide/list/MK-CR

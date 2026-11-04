@@ -1,0 +1,27 @@
+id: ng_bpp_number
+name: Nigerian BPP contractor registration number
+status: draft
+doc: Registration number of a contractor in the Contractor Registration System of the Bureau of Public
+  Procurement (BPP) of Nigeria. ORG-ID.guide lists the register as NG-BPP; with that prefix an identifier
+  reads NG-BPP-BPP_5125283435.
+categories:
+- companies
+- government
+country:
+- NG
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: BPP_5125283435
+  description: example from ORG-ID.guide
+- value: BPP_1383871299
+  description: example from ORG-ID.guide
+mappings:
+  orgid: NG-BPP
+links:
+- type: doc
+  url: http://federalcontractors.bpp.gov.ng/
+- type: other
+  url: https://org-id.guide/list/NG-BPP

@@ -1,0 +1,21 @@
+id: vn_most_number
+name: Vietnamese Ministry of Science and Technology registration number
+status: draft
+doc: Registration number of an organisation at the Ministry of Science and Technology of Viet Nam. ORG-ID.guide
+  lists the register as VN-MOST; with that prefix an identifier reads VN-MOST-A399.
+categories:
+- companies
+country:
+- VN
+langs:
+- vi
+is_pii: false
+classification: identifier
+examples:
+- value: A399
+  description: example from ORG-ID.guide
+mappings:
+  orgid: VN-MOST
+links:
+- type: other
+  url: https://org-id.guide/list/VN-MOST

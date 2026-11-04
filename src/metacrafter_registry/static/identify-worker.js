@@ -1,6 +1,8 @@
 // Runs regexps off the main thread. It reports progress after every record so
 // that the page can stop it if one pattern takes too long (catastrophic
-// backtracking) and continue with the next record.
+// backtracking) and continue with the next record. It returns how each
+// record's regexp matches the values; the page scores the records once all of
+// them are matched, because a compact-form match depends on the other regexps.
 /* global IdentifyCore */
 importScripts("identify-core.js");
 
@@ -16,9 +18,8 @@ self.onmessage = function (event) {
   var values = msg.values;
   for (var i = msg.start; i < index.length; i += 1) {
     self.postMessage({ type: "progress", i: i });
-    var record = index[i];
-    var result = IdentifyCore.scoreRecord(record, IdentifyCore.compile(record), values, msg.field, msg.country);
-    self.postMessage({ type: "result", i: i, result: result });
+    var re = IdentifyCore.compile(index[i]);
+    self.postMessage({ type: "result", i: i, matched: re ? IdentifyCore.matchValues(re, values) : null });
   }
   self.postMessage({ type: "done" });
 };

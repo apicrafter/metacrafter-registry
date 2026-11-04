@@ -1,0 +1,18 @@
+id: nz_charity_number
+name: New Zealand registered charity number
+status: draft
+doc: Registration number of a charity in the New Zealand Charities Register; it starts with CC. ORG-ID.guide
+  lists the register as NZ-CR.
+categories:
+- companies
+country:
+- NZ
+langs:
+- en
+is_pii: false
+classification: identifier
+mappings:
+  orgid: NZ-CR
+links:
+- type: other
+  url: https://org-id.guide/list/NZ-CR

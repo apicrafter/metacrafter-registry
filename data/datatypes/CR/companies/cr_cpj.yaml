@@ -22,6 +22,8 @@ examples:
 - value: '31012691607'
   valid: false
   description: One character too many
+mappings:
+  orgid: CR-RPJ
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cr.cpj.html

@@ -1,0 +1,27 @@
+id: bi_nif
+name: Burundian tax identification number (NIF)
+status: draft
+doc: Numéro d'identification fiscale (NIF), the tax identification number of taxpayers in Burundi, including
+  companies, charities and trusts. ORG-ID.guide lists the register as BI-NIF; with that prefix an identifier
+  reads BI-NIF-4000742330.
+categories:
+- finances
+- companies
+country:
+- BI
+langs:
+- fr
+is_pii: true
+classification: identifier
+examples:
+- value: '4000742330'
+  description: example from ORG-ID.guide
+- value: '4000942310'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: BI-NIF
+links:
+- type: doc
+  url: https://www.obr.bi/index.php/en/
+- type: other
+  url: https://org-id.guide/list/BI-NIF

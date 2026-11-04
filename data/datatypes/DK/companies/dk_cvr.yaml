@@ -24,6 +24,7 @@ examples:
   valid: false
   description: One character too many
 mappings:
+  orgid: DK-CVR
   wikidata: P1059
 links:
 - type: wikipedia

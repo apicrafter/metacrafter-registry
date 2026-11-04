@@ -1,10 +1,11 @@
 id: frvat
-name: TVA intracommunautaire par nom de champ
+name: French VAT number (numéro de TVA intracommunautaire)
 status: stable
-doc: FR datatype for 'TVA intracommunautaire par nom de champ' (frvat) from rules in context 'finances'.
-  The French VAT identification number (TVA intracommunautaire, Taxe sur la Valeur Ajoutée) is a unique
-  identifier assigned to businesses for VAT purposes within the European Union. It consists of the country
-  code 'FR' followed by 11 alphanumeric characters (letters and/or digits).
+doc: 'Numéro de TVA intracommunautaire, the VAT identification number of businesses in France: FR, a 2-character
+  key and the 9-digit SIREN number of the business. In older numbers the key is two digits computed from
+  the SIREN; in newer numbers at least one character of the key is a letter, never I or O. Businesses
+  in Monaco receive numbers of the same form (see mc_tva).'
+parent: vatin
 categories:
 - finances
 country:
@@ -13,15 +14,20 @@ langs:
 - fr
 is_pii: true
 classification: identifier
-regexp: ^FR[0-9A-Z]{11}$
+regexp: ^FR[0-9A-HJ-NP-Z]{2}\d{9}$
 examples:
-- value: FR12345678901
-  description: French VAT identification number (TVA intracommunautaire) with country code FR and 11 alphanumeric
-    characters
-- value: FR98765432109
-  description: Another valid French VAT identification number format
-- value: FRABCDEFGHIJ1
-  description: French VAT identification number with letters in the alphanumeric part
+- value: FR40303265045
+  description: python-stdnum reference value
+- value: FR23334175221
+  description: python-stdnum reference value
+- value: FRK7399859412
+  description: Key with a letter, python-stdnum reference value
+- value: FRIO334175221
+  valid: false
+  description: The key cannot contain the letters I or O
+- value: FR4030326504
+  valid: false
+  description: One digit short
 mappings:
   purview: France value added tax number
   fta: IDENTITY.VAT_FR
@@ -30,3 +36,8 @@ links:
   url: https://fr.wikipedia.org/wiki/Num%C3%A9ro_d%27identification_%C3%A0_la_TVA_intracommunautaire
 - type: doc
   url: https://www.service-public.fr/professionnels-entreprises/vosdroits/F23500
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fr.tva.html
+translations:
+  fr:
+    name: Numéro de TVA intracommunautaire

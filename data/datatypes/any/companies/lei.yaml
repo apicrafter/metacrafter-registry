@@ -22,6 +22,7 @@ mappings:
   autotype: lei
   fibo: BE/LegalEntities/LEIEntities/LegalEntityIdentifier
   wikidata: P1278
+  orgid: XI-LEI
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Legal_Entity_Identifier

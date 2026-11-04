@@ -1,0 +1,27 @@
+id: pg_ipa
+name: Papua New Guinea IPA registration number
+status: draft
+doc: Registration number of a company or association at the Investment Promotion Authority (IPA) of Papua
+  New Guinea. ORG-ID.guide lists the register as PG-IPA; with that prefix an identifier reads PG-IPA-6-321352.
+categories:
+- companies
+country:
+- PG
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: 6-321352
+  description: example from ORG-ID.guide
+- value: 1-103585
+  description: example from ORG-ID.guide
+- value: 6-123136632
+  description: example from ORG-ID.guide
+mappings:
+  orgid: PG-IPA
+links:
+- type: doc
+  url: http://www.ipa.gov.pg/
+- type: other
+  url: https://org-id.guide/list/PG-IPA

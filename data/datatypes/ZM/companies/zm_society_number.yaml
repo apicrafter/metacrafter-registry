@@ -1,0 +1,23 @@
+id: zm_society_number
+name: Zambian society registration number
+status: draft
+doc: Registration number of a society at the Registrar of Societies of Zambia. ORG-ID.guide lists the
+  register as ZM-RS; with that prefix an identifier reads ZM-RS-10235225.
+categories:
+- companies
+country:
+- ZM
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '10235225'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ZM-RS
+links:
+- type: doc
+  url: https://www.mohais.gov.zm/?page_id=1562
+- type: other
+  url: https://org-id.guide/list/ZM-RS

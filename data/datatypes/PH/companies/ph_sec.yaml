@@ -1,0 +1,26 @@
+id: ph_sec
+name: Philippine SEC registration number
+status: draft
+doc: Registration number of a corporation or partnership at the Securities and Exchange Commission (SEC)
+  of the Philippines. ORG-ID.guide lists the register as PH-SEC; with that prefix an identifier reads
+  PH-SEC-FS200813283.
+categories:
+- companies
+country:
+- PH
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: FS200813283
+  description: example from ORG-ID.guide
+- value: CS2010407120
+  description: example from ORG-ID.guide
+- value: AN094003039
+  description: example from ORG-ID.guide
+mappings:
+  orgid: PH-SEC
+links:
+- type: other
+  url: https://org-id.guide/list/PH-SEC

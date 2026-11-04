@@ -25,6 +25,7 @@ mappings:
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/EmployerIdentificationNumber
   google_dlp: US_EMPLOYER_IDENTIFICATION_NUMBER
   fta: IDENTITY.EIN_US
+  orgid: US-EIN
   wikidata: P1297
 links:
 - type: other

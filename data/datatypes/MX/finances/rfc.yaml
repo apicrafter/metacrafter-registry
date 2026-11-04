@@ -11,3 +11,5 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[A-Z]{4}[0-9]{6}[A-Z0-9]{3}$
+mappings:
+  orgid: MX-RFC

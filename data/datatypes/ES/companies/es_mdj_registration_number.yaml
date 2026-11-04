@@ -1,0 +1,26 @@
+id: es_mdj_registration_number
+name: Spanish Ministry of Justice registration number
+status: draft
+doc: Registration number of an organisation, such as a foundation or a religious entity, in one of the
+  public registers of the Ministry of Justice of Spain. ORG-ID.guide lists the register as ES-MDJ; with
+  that prefix an identifier reads ES-MDJ-539SND.
+categories:
+- companies
+country:
+- ES
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: 539SND
+  description: example from ORG-ID.guide
+- value: 842EDU
+  description: example from ORG-ID.guide
+mappings:
+  orgid: ES-MDJ
+links:
+- type: doc
+  url: https://www.mjusticia.gob.es/ca/ciudadania/registros
+- type: other
+  url: https://org-id.guide/list/ES-MDJ

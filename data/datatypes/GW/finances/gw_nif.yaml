@@ -1,0 +1,24 @@
+id: gw_nif
+name: Guinea-Bissau tax identification number (NIF)
+status: draft
+doc: Número de identificação fiscal (NIF), the tax identification number of taxpayers in Guinea-Bissau.
+  ORG-ID.guide lists the register as GW-NIF; with that prefix an identifier reads GW-NIF-910000069.
+categories:
+- finances
+- companies
+country:
+- GW
+langs:
+- pt
+is_pii: true
+classification: identifier
+examples:
+- value: '910000069'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GW-NIF
+links:
+- type: doc
+  url: https://kontaktu.mef.gw/
+- type: other
+  url: https://org-id.guide/list/GW-NIF

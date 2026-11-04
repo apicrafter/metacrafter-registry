@@ -11,6 +11,8 @@ from metacrafter_registry.checksums import (
     es_dni,
     fi_hetu,
     fr_nir,
+    gs1_checkpair,
+    gs1_mod10,
     gtin,
     iban_mod97,
     isbn10,
@@ -19,9 +21,13 @@ from metacrafter_registry.checksums import (
     it_iva,
     luhn,
     no_fnr,
+    pl_nip,
     ru_inn,
     ru_ogrn,
     ru_snils,
+    se_vat,
+    si_ddv,
+    sk_dph,
 )
 from metacrafter_registry.serve import running_server
 
@@ -31,6 +37,30 @@ def reg(repo_sources):
     from conftest import DATA
 
     return Registry.from_sources(DATA)
+
+
+def test_gs1_checksums():
+    # GS1 check digit of any length: GTIN-14, GLN, SSCC, and the SSCC element string
+    assert gs1_mod10("09506000134352") and not gs1_mod10("09506000134353")
+    assert gs1_mod10("0865321000104")
+    assert gs1_mod10("095287650000315043") and gs1_mod10("00095287650000315043")
+    assert not gs1_mod10("7") and not gs1_mod10("95A")
+    # GS1 check character pair: test values of lint_csumalpha.c (GS1 Barcode Syntax Engine)
+    for good in (
+        "22",
+        "!22",
+        "1987654Ad4X4bL5ttr2310c2K",
+        "12345678901234567890123NT",
+        "12345_ABCDEFGHIJKLMCP",
+        "12345_abcdefghijklmN3",
+        "12345_!\"%&'()*+,-./LC",
+        "12345_0123456789:;<=>?62",
+        "7907665Bm8v2AB",
+        "97850l6KZm0yCD",
+    ):
+        assert gs1_checkpair(good), good
+    for bad in ("", "2", "33", "1987654Ad4X4bL5ttr2310cXK", "1987654Ad4X4bL5ttr2310c2X"):
+        assert not gs1_checkpair(bad), bad
 
 
 def test_checksum_reference_values():
@@ -55,6 +85,11 @@ def test_checksum_reference_values():
     assert not it_iva("00743115007")  # 500 is not a tax office code
     assert fi_hetu("131052-308T") and not fi_hetu("131052-308U") and not fi_hetu("131052308T")
     assert es_dni("54362315-K") and not es_dni("54362315Z")
+    assert pl_nip("PL 8567346215") and pl_nip("856-734-62-15") and not pl_nip("PL 8567346216")
+    assert sk_dph("SK 202 274 96 19") and not sk_dph("SK 202 274 96 18")
+    assert si_ddv("SI 5022 3054") and si_ddv("50223054") and not si_ddv("SI 50223055")
+    assert se_vat("SE556012579001") and se_vat("556012-5790 01")
+    assert not se_vat("SE556012579101") and not se_vat("SE556012579002")
 
 
 def test_lookup_and_aliases(reg):
@@ -82,6 +117,70 @@ def test_identify_iban_without_field_name(reg):
 
 def test_identify_card_numbers_written_with_spaces(reg):
     assert reg.identify(["4111 1111 1111 1111"], field_name="card")[0]["id"] == "bankcard"
+
+
+@pytest.mark.parametrize(
+    ("values", "field", "expected"),
+    [
+        (["4111 1111 1111 1111"], "", "bankcard"),
+        (["4111-1111-1111-1111", "5500 0000 0000 0004"], "card", "bankcard"),
+        (["45 397 000", "45 397 000 001"], "oktmo", "oktmo"),
+        (["GB82 WEST 1234 5698 7654 32"], "", "iban"),
+    ],
+)
+def test_identify_values_written_with_separators(reg_with_date, values, field, expected):
+    top = reg_with_date.identify(values, field_name=field)[0]
+    assert top["id"] == expected and top["regexp_hit_rate"] == 1.0
+
+
+@pytest.mark.parametrize("field", ["birthday", "cardPeriod", ""])
+def test_identify_iso_dates_are_not_compact_digit_codes(reg_with_date, field):
+    from conftest import ISO_DATES
+
+    # Without hyphens an ISO date is eight digits: match() still accepts that.
+    assert "okpo" in [r["id"] for r in reg_with_date.match(ISO_DATES[0])]
+    candidates = {
+        c["id"]: c for c in reg_with_date.identify(ISO_DATES, field_name=field, limit=100)
+    }
+    assert next(iter(candidates)) == "date"
+    for rid in ("okpo", "oktmo"):
+        assert not candidates.get(rid, {}).get("regexp_hit_rate")
+        assert candidates.get(rid, {"score": 0})["score"] < candidates["date"]["score"]
+
+
+def test_compact_match_yields_to_an_at_least_as_specific_raw_match():
+    def record(rid, regexp, example):
+        return {
+            "id": rid,
+            "name": rid,
+            "kind": "datatype",
+            "status": "stable",
+            "is_pii": False,
+            "regexp": regexp,
+            "examples": [{"value": example}],
+        }
+
+    reg = Registry(
+        [
+            record("iso_date", r"^\d{4}-\d{2}-\d{2}$", "2025-05-15"),
+            record("eight_digits", r"^\d{8}$", "12345678"),
+            record("sixteen_digits", r"^\d{16}$", "4111111111111111"),
+            record("digits_and_spaces", r"^[\d ]+$", "1 2"),
+        ]
+    )
+    assert reg._broadness == {
+        "iso_date": 0.0,
+        "eight_digits": 0.0,
+        "sixteen_digits": 0.0,
+        "digits_and_spaces": 0.667,
+    }
+    hits = {
+        c["id"]: c["regexp_hit_rate"] for c in reg.identify(["2025-05-15", "4111 1111 1111 1111"])
+    }
+    # "20250515" is not counted for eight_digits or digits_and_spaces: iso_date
+    # matches "2025-05-15" as written and is at least as specific. The broader
+    # digits_and_spaces does not stop sixteen_digits.
+    assert hits == {"iso_date": 0.5, "sixteen_digits": 0.5, "digits_and_spaces": 0.5}
 
 
 def test_catch_all_regexps_rank_low(reg):

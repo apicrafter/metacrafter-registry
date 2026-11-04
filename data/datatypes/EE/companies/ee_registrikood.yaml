@@ -22,6 +22,9 @@ examples:
   valid: false
   description: One character too many
 mappings:
+  orgid:
+  - EE-KMKR
+  - EE-RIK
   wikidata: P6518
 links:
 - type: doc

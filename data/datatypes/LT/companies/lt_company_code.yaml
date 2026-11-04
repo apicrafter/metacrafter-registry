@@ -1,0 +1,27 @@
+id: lt_company_code
+name: Lithuanian legal entity code (juridinio asmens kodas)
+status: draft
+doc: Juridinio asmens kodas, the 9-digit code of a legal entity in the Register of Legal Entities of Lithuania
+  (Registrų centras). ORG-ID.guide lists the register as LT-RC; with that prefix an identifier reads LT-RC-111484678.
+categories:
+- companies
+country:
+- LT
+langs:
+- lt
+is_pii: false
+classification: identifier
+examples:
+- value: '111484678'
+  description: example from ORG-ID.guide
+- value: '304140248'
+  description: example from ORG-ID.guide
+- value: '302308327'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: LT-RC
+links:
+- type: doc
+  url: http://www.registrucentras.lt/jar/index_en.php
+- type: other
+  url: https://org-id.guide/list/LT-RC

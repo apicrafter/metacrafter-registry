@@ -1,0 +1,38 @@
+id: ge_identification_code
+name: Georgian legal entity identification code
+status: draft
+doc: Identification code (საიდენტიფიკაციო კოდი) of a legal entity in Georgia. The National Agency of Public
+  Registry assigns it, and the Revenue Service uses the same code, which is also the VAT number. ORG-ID.guide
+  lists it under GE-NAPR and GE-RS; with that prefix an identifier reads GE-NAPR-233105449.
+categories:
+- companies
+country:
+- GE
+langs:
+- ka
+is_pii: false
+classification: identifier
+examples:
+- value: '233105449'
+  description: example from ORG-ID.guide
+- value: '416337084'
+  description: example from ORG-ID.guide
+- value: '202378480'
+  description: example from ORG-ID.guide
+- value: '226166895'
+  description: example from ORG-ID.guide
+- value: '404384297'
+  description: example from ORG-ID.guide
+- value: '401985027'
+  description: example from ORG-ID.guide
+mappings:
+  orgid:
+  - GE-NAPR
+  - GE-RS
+links:
+- type: doc
+  url: https://enreg.reestri.gov.ge/main.php?m=new_index
+- type: other
+  url: https://org-id.guide/list/GE-NAPR
+- type: other
+  url: https://org-id.guide/list/GE-RS

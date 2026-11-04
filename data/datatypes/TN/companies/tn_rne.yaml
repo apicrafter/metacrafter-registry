@@ -1,0 +1,27 @@
+id: tn_rne
+name: Tunisian national register of companies identifier (RNE)
+status: draft
+doc: Identifier of a company in the National Register of Companies (Registre National des Entreprises,
+  RNE) of Tunisia. ORG-ID.guide lists the register as TN-RNE; with that prefix an identifier reads TN-RNE-1540791/F.
+categories:
+- companies
+country:
+- TN
+langs:
+- ar
+is_pii: false
+classification: identifier
+examples:
+- value: 1540791/F
+  description: example from ORG-ID.guide
+- value: 1616343A
+  description: example from ORG-ID.guide
+- value: C18022000
+  description: example from ORG-ID.guide
+mappings:
+  orgid: TN-RNE
+links:
+- type: doc
+  url: https://www.registre-entreprises.tn/rne-public/#/recherche-pm
+- type: other
+  url: https://org-id.guide/list/TN-RNE

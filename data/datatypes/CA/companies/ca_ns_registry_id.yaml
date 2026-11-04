@@ -1,0 +1,25 @@
+id: ca_ns_registry_id
+name: Nova Scotia Registry of Joint Stock Companies number
+status: draft
+doc: Number of a company, society or other entity in the Registry of Joint Stock Companies of Nova Scotia,
+  Canada. ORG-ID.guide lists the register as CA_NS-NVS_NVE; with that prefix an identifier reads CA_NS-NVS_NVE-1542067.
+categories:
+- companies
+country:
+- CA
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '1542067'
+  description: example from ORG-ID.guide
+- value: '3276546'
+  description: example from ORG-ID.guide
+mappings:
+  orgid: CA_NS-NVS_NVE
+links:
+- type: doc
+  url: http://novascotia.ca/sns/access/business/registry-joint-stock-companies.asp
+- type: other
+  url: https://org-id.guide/list/CA_NS-NVS_NVE

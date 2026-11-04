@@ -22,6 +22,10 @@ examples:
   description: Swedish Red Cross
 mappings:
   presidio: SE_ORGANISATIONSNUMMER
+  orgid:
+  - SE-ON
+  - SE-BLV
+  - SE-KK
   wikidata: P6460
 links:
 - type: wikidata

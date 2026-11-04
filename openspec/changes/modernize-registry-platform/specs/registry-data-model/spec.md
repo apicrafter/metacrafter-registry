@@ -85,7 +85,7 @@ When a record has a `regexp`, these rules apply:
 - **THEN** validation fails
 
 ### Requirement: Typed mappings to external vocabularies
-A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm`, `fta` and `autotype`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
+A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm`, `fta`, `autotype`, `gs1_ai` and `orgid`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
 
 `mappings.wikidata` SHALL match `^[PQ]\d+$`.
 
@@ -115,7 +115,7 @@ A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`
 - **WHEN** a client calls `crosswalk("fta", "GENDER.TEXT_DE")`
 - **THEN** it gets the record that maps `GENDER.TEXT_<LANGUAGE>`
 
-`mappings.sherlock` SHALL hold one or more of the 78 Sherlock semantic type labels, spelled as the trained Sherlock model returns them (for example `city` or `birth Date`). A Sherlock type SHALL be mapped to at most one record, and only when that record has the same meaning. The `sherlock` tool SHALL list exactly the records that carry `mappings.sherlock`.
+`mappings.sherlock` SHALL hold one or more of the 78 Sherlock semantic type labels, spelled as the trained Sherlock model returns them (for example `city` or `birth Date`). A Sherlock type SHALL be mapped to at most one record, and only when that record has the same meaning. The `sherlock` tool SHALL list exactly the records that carry `mappings.sherlock`. Sato predicts the same 78 types in camelCase (`birthDate`), so the registry SHALL NOT add a separate Sato mapping key: the `sato` tool SHALL list the same records as the `sherlock` tool, and `crosswalk("sato", label)` SHALL resolve through `mappings.sherlock`.
 
 #### Scenario: Unknown Sherlock label
 - **WHEN** a record has `mappings: {sherlock: "email"}`
@@ -126,6 +126,26 @@ A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`
 #### Scenario: AutoType test case given as a file name
 - **WHEN** a record has `mappings: {autotype: "isbn.txt"}`
 - **THEN** validation fails with a schema error on `mappings.autotype`
+
+`mappings.gs1_ai` SHALL hold GS1 Application Identifiers as GS1 writes them: two to four digits with their leading zeros, as strings (`01`, `414`, `8003`). A GS1 AI SHALL be mapped to at most one record: the record of the AI's element string when the registry has one, otherwise the record of the value that the AI carries. `crosswalk("gs1_ai", ...)` SHALL also accept the AI in parentheses, as printed under a barcode, and its `https://ref.gs1.org/ai/` IRI.
+
+#### Scenario: GS1 AI without its leading zero
+- **WHEN** a record has `mappings: {gs1_ai: 1}`
+- **THEN** validation fails with a schema error on `mappings.gs1_ai`
+
+#### Scenario: GS1 AI from a barcode's human-readable text
+- **WHEN** a client calls `crosswalk("gs1_ai", "(8003)")`
+- **THEN** it gets the record `gs1_ai_8003`, whose `semantic_type` is `grai`
+
+`mappings.orgid` SHALL hold ORG-ID.guide list codes, such as `GB-COH` or `CA_ON-ONT`, of the organization identifier lists whose identifiers the record describes. A list code SHALL be mapped to at most one record. A deprecated code MAY be mapped when ORG-ID.guide names the list that replaced it and both lists use the same identifier. `crosswalk("orgid", ...)` SHALL accept a list code in any case, its `https://org-id.guide/list/<code>` URL or a whole ORG-ID.guide identifier such as `GB-COH-09506232`.
+
+#### Scenario: ORG-ID.guide identifier instead of a list code
+- **WHEN** a record has `mappings: {orgid: "GB-COH-09506232"}`
+- **THEN** validation fails with a schema error on `mappings.orgid`
+
+#### Scenario: Crosswalk from a whole identifier
+- **WHEN** a client calls `crosswalk("orgid", "GB-COH-09506232")`
+- **THEN** it gets the record that maps `GB-COH`
 
 ### Requirement: Pattern inheritance
 A pattern SHALL reference an existing datatype through `semantic_type`.

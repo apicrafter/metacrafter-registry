@@ -44,17 +44,19 @@ Sources, all read on 2026-11-04:
   **6 mappings were wrong.**
 - **Done in this change:**
   - Fixed 6 wrong mappings: 5 removed, 1 corrected.
-  - Mapped 35 existing records to the property that has the same meaning.
+  - Mapped 35 existing records to the property that has the same meaning,
+    and 10 records that the ORG-ID.guide review
+    ([#17](https://github.com/apicrafter/metacrafter-registry/issues/17))
+    added at the same time.
   - Corrected the regexp of 8 records (5 of them rejected almost every
     Wikidata value) and added a regexp to 16 records that had none.
   - Added examples from Wikidata to 25 existing records.
-  - Added **108 new draft records**, one per Wikidata property, with a regexp
-    tested against Wikidata values (107 of them) and examples from Wikidata.
+  - Added **98 new draft records**, one per Wikidata property, with a regexp
+    tested against Wikidata values (97 of them) and examples from Wikidata.
   - Added `scripts/wikidata_properties.py`, which repeats the comparison.
-  - Added Kazakhstan (`KZ`) to `data/countries.yaml` for `kz_kato`.
-- After this change 282 records map to 274 Wikidata properties. The share of
-  records with a regexp went from 63.0% to 67.9%, and with examples from 50.7%
-  to 57.6%.
+- After this change 282 records map to 274 Wikidata properties (144 before).
+  Compared with `main` at the time of the merge, the share of records with a
+  regexp went from 55.7% to 60.8%, and with examples from 59.7% to 64.5%.
 
 ## Method
 
@@ -145,6 +147,27 @@ already did.
 | `usnpi` | [P9450](https://www.wikidata.org/wiki/Property:P9450) | National Provider Identifier | regexp, examples |
 | `npi` | [P9450](https://www.wikidata.org/wiki/Property:P9450) | National Provider Identifier | regexp, examples |
 
+
+### Records added by the ORG-ID.guide review
+
+The ORG-ID.guide review (#17) added these records while this change was open.
+This change keeps their ids, names and descriptions and adds the Wikidata
+mapping, the Wikidata link, examples of named organizations and, where the
+record had none, the regexp tested against Wikidata values.
+
+| Record | Property | Wikidata label |
+|---|---|---|
+| `bg_eik` | [P8894](https://www.wikidata.org/wiki/Property:P8894) | BG EIK |
+| `cz_ico` | [P4156](https://www.wikidata.org/wiki/Property:P4156) | Czech Registration ID (IČO) |
+| `gb_nhs_ods_code` | [P9372](https://www.wikidata.org/wiki/Property:P9372) | NHS Organisation Data Service ID |
+| `hu_company_registration_number` | [P2619](https://www.wikidata.org/wiki/Property:P2619) | Hungarian company ID |
+| `ie_cro_number` | [P9679](https://www.wikidata.org/wiki/Property:P9679) | Companies Registration Office (Ireland) Registration Number |
+| `lv_registration_number` | [P8053](https://www.wikidata.org/wiki/Property:P8053) | Latvian unified registration number |
+| `nz_nzbn` | [P5687](https://www.wikidata.org/wiki/Property:P5687) | New Zealand Business Number |
+| `permid` | [P3347](https://www.wikidata.org/wiki/Property:P3347) | PermID |
+| `sk_ico` | [P8174](https://www.wikidata.org/wiki/Property:P8174) | Slovak Registration ID |
+| `ua_edrpou` | [P3125](https://www.wikidata.org/wiki/Property:P3125) | EDRPOU code |
+
 ### Corrected regexps
 
 Wikidata values showed that these regexps were wrong. "Matches" counts the
@@ -178,7 +201,7 @@ Wikidata values that the regexp accepts, before and after.
 
 ## New records
 
-108 new records, all `status: draft`. "Uses" is the number of Wikidata
+98 new records, all `status: draft`. "Uses" is the number of Wikidata
 statements with the property; "Matches" is the share of up to 3,000 Wikidata values that
 the record regexp accepts.
 
@@ -195,7 +218,6 @@ the record regexp accepts.
 | `ioc_country_code` | [P984](https://www.wikidata.org/wiki/Property:P984) | IOC country code | 265 | 254/254 |
 | `fips10_4` | [P901](https://www.wikidata.org/wiki/Property:P901) | FIPS 10-4 (countries and regions) | 4,350 | 3000/3000 |
 | `sec_cik` | [P5531](https://www.wikidata.org/wiki/Property:P5531) | Central Index Key | 3,783 | 3000/3000 |
-| `permid` | [P3347](https://www.wikidata.org/wiki/Property:P3347) | PermID | 6,132 | 2997/3000 |
 | `us_ndc` | [P3640](https://www.wikidata.org/wiki/Property:P3640) | National Drug Code | 502 | 502/502 |
 
 ### Medicine and life sciences
@@ -272,7 +294,6 @@ the record regexp accepts.
 | `ru_egrokn` | [P5381](https://www.wikidata.org/wiki/Property:P5381) | EGROKN ID | 51,978 | 2977/3000 |
 | `ua_katottg` | [P9435](https://www.wikidata.org/wiki/Property:P9435) | KATOTTH ID | 31,981 | 3000/3000 |
 | `ua_koatuu` | [P1077](https://www.wikidata.org/wiki/Property:P1077) | KOATUU ID | 41,393 | 3000/3000 |
-| `ua_edrpou` | [P3125](https://www.wikidata.org/wiki/Property:P3125) | EDRPOU code | 1,407 | 1398/1404 |
 | `by_soato` | [P2672](https://www.wikidata.org/wiki/Property:P2672) | SOATO ID | 22,902 | 3000/3000 |
 | `kz_kato` | [P4838](https://www.wikidata.org/wiki/Property:P4838) | CATO ID | 9,666 | 3000/3000 |
 
@@ -309,18 +330,10 @@ the record regexp accepts.
 
 | Record | Property | Wikidata label | Uses | Matches |
 |---|---|---|---:|---:|
-| `cz_ico` | [P4156](https://www.wikidata.org/wiki/Property:P4156) | Czech Registration ID (IČO) | 77,558 | 3000/3000 |
-| `sk_ico` | [P8174](https://www.wikidata.org/wiki/Property:P8174) | Slovak Registration ID | 4,319 | 2967/3000 |
-| `bg_eik` | [P8894](https://www.wikidata.org/wiki/Property:P8894) | BG EIK | 7,407 | 2990/3000 |
-| `lv_regnum` | [P8053](https://www.wikidata.org/wiki/Property:P8053) | Latvian unified registration number | 4,292 | 2995/3000 |
 | `cn_uscc` | [P6795](https://www.wikidata.org/wiki/Property:P6795) | Unified Social Credit ID | 2,706 | 2666/2690 |
 | `sg_uen` | [P13194](https://www.wikidata.org/wiki/Property:P13194) | Singapore Unique Entity Number | 450 | 451/452 |
-| `nz_nzbn` | [P5687](https://www.wikidata.org/wiki/Property:P5687) | New Zealand Business Number | 165 | 166/166 |
 | `at_firmenbuchnummer` | [P5285](https://www.wikidata.org/wiki/Property:P5285) | Firmenbuchnummer | 446 | 440/446 |
-| `hu_cegjegyzekszam` | [P2619](https://www.wikidata.org/wiki/Property:P2619) | Hungarian company ID | 556 | 549/554 |
 | `kr_crn` | [P6859](https://www.wikidata.org/wiki/Property:P6859) | Corporate Number (South Korea) | 91 | 95/96 |
-| `ie_cro` | [P9679](https://www.wikidata.org/wiki/Property:P9679) | Companies Registration Office (Ireland) Registration Number | 308 | 306/308 |
-| `gb_ods_code` | [P9372](https://www.wikidata.org/wiki/Property:P9372) | NHS Organisation Data Service ID | 10,226 | 3000/3000 |
 
 ### Online accounts
 

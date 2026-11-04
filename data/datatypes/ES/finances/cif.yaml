@@ -20,3 +20,5 @@ examples:
   description: Valid CIF format with letter A, 7 digits, and check character
 - value: B98765432
   description: Another valid CIF format example
+mappings:
+  orgid: ES-NIF

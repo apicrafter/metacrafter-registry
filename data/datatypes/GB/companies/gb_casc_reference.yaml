@@ -1,0 +1,28 @@
+id: gb_casc_reference
+name: UK community amateur sports club identifier (CASC)
+status: draft
+doc: Identifier of a community amateur sports club (CASC) registered with HM Revenue and Customs, as published
+  in the CASC list that ORG-ID.guide enhanced with unique identifiers. ORG-ID.guide lists the register
+  as GB-CASC; with that prefix an identifier reads GB-CASC-df679063.
+categories:
+- companies
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: df679063
+  description: example from ORG-ID.guide
+- value: 2a36d1ee
+  description: example from ORG-ID.guide
+- value: 18e597ee
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GB-CASC
+links:
+- type: doc
+  url: https://github.com/ThreeSixtyGiving/cascs/blob/master/readme.md
+- type: other
+  url: https://org-id.guide/list/GB-CASC

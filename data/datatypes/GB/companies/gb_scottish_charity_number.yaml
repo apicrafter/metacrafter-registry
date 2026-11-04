@@ -1,0 +1,27 @@
+id: gb_scottish_charity_number
+name: Scottish charity number
+status: draft
+doc: Number of a charity in the Scottish Charity Register. ORG-ID.guide lists the register as GB-SC; with
+  that prefix an identifier reads GB-SC-SC042386.
+categories:
+- companies
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: SC042386
+  description: example from ORG-ID.guide
+- value: SC025693
+  description: example from ORG-ID.guide
+- value: SC000587
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GB-SC
+links:
+- type: doc
+  url: http://www.oscr.org.uk/
+- type: other
+  url: https://org-id.guide/list/GB-SC

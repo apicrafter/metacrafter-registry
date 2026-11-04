@@ -18,6 +18,7 @@ examples:
 - value: '133801'
   description: University of Cambridge
 mappings:
+  orgid: GB-EDU
   wikidata: P2253
 links:
 - type: wikidata

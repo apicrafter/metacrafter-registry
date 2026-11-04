@@ -1,0 +1,24 @@
+id: gb_hesa_instid
+name: HESA institution identifier (INSTID)
+status: draft
+doc: INSTID, the identifier of a higher education provider that returns data to the Higher Education Statistics
+  Agency (HESA) of the United Kingdom. ORG-ID.guide lists the register as GB-HESA; with that prefix an
+  identifier reads GB-HESA-0177.
+categories:
+- education
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: '0177'
+  description: example from ORG-ID.guide
+- value: 0069
+  description: example from ORG-ID.guide
+mappings:
+  orgid: GB-HESA
+links:
+- type: other
+  url: https://org-id.guide/list/GB-HESA
