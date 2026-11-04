@@ -12,6 +12,7 @@ langs:
 is_pii: true
 classification: identifier
 mappings:
+  autotype: ipv4
   cdm: means.identity.IP4Address
   purview: IP Address v4
   fta: IPADDRESS.IPV4

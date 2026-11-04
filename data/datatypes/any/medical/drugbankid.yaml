@@ -1,0 +1,37 @@
+id: drugbankid
+name: DrugBank ID
+status: draft
+doc: Accession number of a drug in DrugBank, a database of drugs and drug targets started at the University
+  of Alberta. A drug accession is "DB" followed by five digits; salts use "DBSALT" and drug categories
+  "DBCAT", each followed by six digits.
+categories:
+- medical
+- chemistry
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^DB(?:SALT\d|CAT\d)?\d{5}$
+examples:
+- value: DB00945
+  description: Aspirin (acetylsalicylic acid)
+- value: DB00126
+  description: Vitamin C
+- value: DB09145
+  description: Water
+- value: DB945
+  valid: false
+  description: Digits are not zero-padded to five
+mappings:
+  wikidata: P715
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/DrugBank
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P715
+- type: doc
+  url: https://go.drugbank.com/
+translations:
+  ru:
+    name: Идентификатор DrugBank
+    doc: Номер лекарственного средства в базе данных DrugBank.

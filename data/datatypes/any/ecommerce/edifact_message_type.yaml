@@ -1,0 +1,43 @@
+id: edifact_message_type
+name: UN/EDIFACT message type
+status: draft
+doc: Six-letter code that names a standard message of UN/EDIFACT, the United Nations rules for electronic
+  data interchange in trade, transport and administration, for example ORDERS for a purchase order or
+  INVOIC for an invoice. The code is written in the message header (UNH segment) together with the directory
+  version. UN/CEFACT publishes the message types in each release of the UN/EDIFACT directories.
+categories:
+- ecommerce
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{6}$
+examples:
+- value: ORDERS
+  description: Purchase order message
+- value: INVOIC
+  description: Invoice message
+- value: DESADV
+  description: Despatch advice message
+- value: APERAK
+  description: Application error and acknowledgement message
+- value: ORDER
+  valid: false
+  description: Five letters
+- value: orders
+  valid: false
+  description: Lowercase
+mappings:
+  autotype: EDIFACT_correct
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/EDIFACT
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/EDIFACT
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/EDIFACT_correct.txt
+translations:
+  ru:
+    name: Тип сообщения UN/EDIFACT
+    doc: Код из шести заглавных букв, обозначающий стандартное сообщение UN/EDIFACT, например ORDERS (заказ)
+      или INVOIC (счёт).

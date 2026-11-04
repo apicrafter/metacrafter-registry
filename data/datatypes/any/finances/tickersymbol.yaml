@@ -16,6 +16,7 @@ examples:
 - value: AMZN
   description: Amazon
 mappings:
+  autotype: stocksymbol
   cdm: means.identity.tickerSymbol
   fibo: SEC/Securities/SecuritiesIdentification/TickerSymbol
   wikidata: P249

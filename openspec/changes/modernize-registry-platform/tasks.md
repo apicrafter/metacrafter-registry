@@ -201,6 +201,10 @@
   - 6 new draft records: `birthplace`, `brand`, `religion`, `weight`, `elevation` and `species`. `industry` and `language` came from the FTA review (8.10) and now carry the Sherlock mapping too.
   - New tool `sherlock` (detector). A test checks that its `supported_types` are the records that carry `mappings.sherlock`.
   - Generic header words (`code`, `type`, `rank`, ...) and roles over names (`director`, `owner`, ...) are not imported. The review is `devdocs/SHERLOCK_REVIEW.md`.
+- [x] 8.12 Review the AutoType benchmark of Microsoft Research (issue #39). Add the `autotype` crosswalk key, which holds benchmark test case names.
+  - 119 of the 142 test cases are mapped to 83 records, at AutoType commit `600df80`.
+  - 18 new draft records for benchmark types the registry lacked, such as `bibcode`, `iswc`, `uniprot_id`, `ensembl_id`, `icd9`, `asin` and `ca_fsa`. `ca_postalcode` (a metacrafter-rules key) becomes an alias of `ca_postcode`.
+  - Message formats (SWIFT MT, FIX, NOTAM, NMEA), free-text types and mislabelled test cases are not mapped. The review is `devdocs/AUTOTYPE_REVIEW.md`.
 - Data fixes found during this phase:
   - 9 regexps that matched the empty string were fixed, and the validator now rejects such regexps.
   - The `what3words` regexp had been copied from `geonamesid`.

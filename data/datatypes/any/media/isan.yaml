@@ -19,6 +19,8 @@ examples:
 - value: 000000009E640000AA552C1
   valid: false
   description: One character too few
+mappings:
+  autotype: isan
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Standard_Audiovisual_Number

@@ -16,6 +16,7 @@ examples:
 - value: '9224752'
   description: TI Asia
 mappings:
+  autotype: IMO_correct
   wikidata: P458
 links:
 - type: wikipedia

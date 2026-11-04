@@ -13,6 +13,7 @@ examples:
 - value: H₂O
   description: water
 mappings:
+  autotype: chemical
   wikidata: P274
 links:
 - type: wikipedia

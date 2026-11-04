@@ -1,0 +1,51 @@
+id: ensembl_id
+name: Ensembl stable ID (gene, transcript or protein)
+status: draft
+doc: Stable identifier that the Ensembl genome database gives to a gene, transcript or protein of a vertebrate
+  genome. It is ENS, a three-letter species code (none for human, MUS for mouse, RNO for rat, DAR for
+  zebrafish), a feature letter (G for gene, T for transcript, P for protein) and eleven digits. A version
+  suffix such as .8 may follow; it grows when the feature changes. Ensembl Genomes (plants, fungi, protists,
+  bacteria) and some model organisms, such as fly and yeast, use other identifiers, which the regexp does
+  not cover.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^ENS(?:[A-Z]{3})?[GTP]\d{11}(?:\.\d+)?$
+examples:
+- value: ENSG00000139618
+  description: Human gene BRCA2
+- value: ENST00000380152.8
+  description: Human transcript BRCA2-201, with its version
+- value: ENSP00000369497
+  description: Human protein encoded by BRCA2-201
+- value: ENSMUSG00000017167
+  description: Mouse gene Cntnap1
+- value: ENSG0000013961
+  valid: false
+  description: Ten digits instead of eleven
+- value: ENSX00000139618
+  valid: false
+  description: X is not a feature letter
+mappings:
+  autotype: ensembl
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Ensembl_genome_database_project
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P594
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P704
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P705
+- type: doc
+  url: https://www.ensembl.org/info/genome/stable_ids/index.html
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/ensembl.txt
+translations:
+  ru:
+    name: Стабильный идентификатор Ensembl
+    doc: 'Идентификатор гена, транскрипта или белка позвоночных в базе Ensembl: ENS, код вида, буква типа
+      объекта и 11 цифр.'

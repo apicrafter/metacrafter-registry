@@ -20,6 +20,7 @@ examples:
 - value: GBUM71500123
   description: Example ISRC
 mappings:
+  autotype: ISRC2_correct
   wikidata: P435
 links:
 - type: wikipedia

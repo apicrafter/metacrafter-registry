@@ -1,0 +1,44 @@
+id: bibcode
+name: Bibcode (ADS bibliographic code)
+status: draft
+doc: 'Nineteen-character identifier of a publication in the NASA Astrophysics Data System (ADS) and other
+  astronomy databases. Its fixed fields are the year (4 digits), the publication code (5 characters),
+  the volume (4), a qualifier (1), the first page (4) and the initial of the first author''s surname (1).
+  Periods fill unused positions: 1970ApJ...161L..77K is a 1970 letter (L) in The Astrophysical Journal,
+  volume 161, page 77, by Kemp and others. The qualifier can also hold a Physical Review issue as a lowercase
+  letter, or the letter of an article number. The regexp is adapted from the Wikidata format of property
+  P819, with any letter allowed as the qualifier.'
+categories:
+- science
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4}[A-Za-z.&]{5}[A-Za-z0-9_.]{4}[A-Za-z.][\d.]{4}[A-Z]$
+examples:
+- value: 1970ApJ...161L..77K
+  description: The Astrophysical Journal letter
+- value: 1924MNRAS..84..308E
+  description: Eddington, Monthly Notices of the Royal Astronomical Society
+- value: 1974AJ.....79..819H
+  description: Heintz, The Astronomical Journal
+- value: 1970ApJ..161L..77K
+  valid: false
+  description: Eighteen characters
+mappings:
+  autotype: bibcode
+  wikidata: P819
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Bibcode
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P819
+- type: doc
+  url: https://ui.adsabs.harvard.edu/help/actions/bibcode
+- type: other
+  url: https://github.com/congy/AutoType/blob/master/data_release/bibcode.txt
+translations:
+  ru:
+    name: Библиографический код ADS (bibcode)
+    doc: Девятнадцатисимвольный идентификатор публикации в астрофизической системе данных NASA (ADS).
