@@ -1,0 +1,34 @@
+id: at_vat
+name: Austrian VAT identification number (UID)
+status: draft
+doc: Austrian VAT identification number (Umsatzsteuer-Identifikationsnummer, UID). In the EU form it is
+  ATU followed by eight digits. The last digit is a check digit.
+parent: euvat
+categories:
+- finances
+- companies
+country:
+- AT
+langs:
+- de
+is_pii: true
+classification: identifier
+regexp: ^ATU\d{8}$
+checksum: at_uid
+examples:
+- value: ATU13585627
+  description: valid check digit
+- value: ATU13585626
+  valid: false
+  description: wrong check digit
+- value: AT13585627
+  valid: false
+  description: the letter U is missing
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/VAT_identification_number
+- type: doc
+  url: https://ec.europa.eu/taxation_customs/vies/
+translations:
+  de:
+    name: Umsatzsteuer-Identifikationsnummer (UID)

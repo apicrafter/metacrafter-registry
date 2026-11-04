@@ -1,0 +1,26 @@
+id: animal
+name: Animal
+status: draft
+doc: Common name of an animal or a kind of animal, such as dog, cat or horse. Typical columns hold pet
+  types, livestock or animals in observation records.
+categories:
+- common
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Dog
+  description: pet
+- value: Horse
+  description: livestock
+- value: Red fox
+  description: wild animal
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Animal
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q729
+translations:
+  ru:
+    name: Животное

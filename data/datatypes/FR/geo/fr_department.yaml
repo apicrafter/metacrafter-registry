@@ -1,0 +1,34 @@
+id: fr_department
+name: French department (département)
+status: draft
+doc: Name of a department of France, the administrative level between the region and the commune, for
+  example Ain or Corse-du-Sud. France has 101 departments, five of them overseas. The INSEE code of a
+  department is the pattern fr_department_code.
+categories:
+- geo
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+examples:
+- value: Ain
+  description: department 01
+- value: Corse-du-Sud
+  description: department 2A
+- value: La Réunion
+  description: overseas department 974
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Departments_of_France
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q6465
+- type: doc
+  url: https://www.insee.fr/fr/information/2560452
+translations:
+  fr:
+    name: Département
+  ru:
+    name: Департамент Франции

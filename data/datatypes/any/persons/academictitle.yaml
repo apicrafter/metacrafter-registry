@@ -1,0 +1,27 @@
+id: academictitle
+name: Academic and professional title
+status: draft
+doc: Title written before a person's name that shows an academic degree, an academic rank or a professional
+  status, such as Dr, Prof. or Eur Ing. Degrees and qualifications written after the name, such as PhD,
+  are name suffixes (namesuffix).
+parent: honorificprefix
+categories:
+- persons
+- education
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Dr
+  description: holder of a doctoral degree or a medical practitioner
+- value: Prof.
+  description: holder of the academic rank of professor
+- value: Eur Ing
+  description: engineer registered as a European Engineer
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/English_honorifics
+translations:
+  ru:
+    name: Академическое или профессиональное звание перед именем

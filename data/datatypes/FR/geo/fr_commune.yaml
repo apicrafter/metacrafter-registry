@@ -1,0 +1,34 @@
+id: fr_commune
+name: French municipality (commune)
+status: draft
+doc: Name of a commune, the smallest administrative unit of France, for example Paris or Mende. Many names
+  occur in more than one department, so a name alone does not identify a commune; its INSEE code (inseecode)
+  does.
+categories:
+- geo
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+examples:
+- value: Paris
+  description: INSEE code 75056
+- value: Lyon
+  description: INSEE code 69123
+- value: Mende
+  description: INSEE code 48095
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Communes_of_France
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q484170
+- type: doc
+  url: https://www.insee.fr/fr/information/2560452
+translations:
+  fr:
+    name: Commune
+  ru:
+    name: Коммуна Франции

@@ -1,0 +1,26 @@
+id: beverage
+name: Beverage
+status: draft
+doc: Name of a drink or a kind of drink, such as coffee, tea, beer or orange juice, for example in menus,
+  product catalogs or food surveys.
+categories:
+- common
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Coffee
+  description: hot drink
+- value: Orange juice
+  description: soft drink
+- value: Beer
+  description: alcoholic drink
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Drink
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q40050
+translations:
+  ru:
+    name: Напиток
