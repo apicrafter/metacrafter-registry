@@ -11,6 +11,15 @@ from metacrafter_registry.checksums import (
     bech32,
     bech32m,
     bg_vat,
+    de_fsnr,
+    de_idnr,
+    de_ik,
+    de_kvnr,
+    de_lanr,
+    de_pzn,
+    de_rvnr,
+    de_ustidnr,
+    de_widnr,
     es_dni,
     fi_hetu,
     fr_nir,
@@ -20,6 +29,7 @@ from metacrafter_registry.checksums import (
     iban_mod97,
     isbn10,
     isbn13,
+    iso7064_mod97_10,
     it_codicefiscale,
     it_iva,
     kz_iin_bin,
@@ -97,6 +107,21 @@ def test_checksum_reference_values():
     assert kz_iin_bin("950440001673") and kz_iin_bin("500101100010")
     assert kz_iin_bin("500101100106")  # the first weights give 10
     assert not kz_iin_bin("950440001674") and not kz_iin_bin("95044000167")
+    assert de_ustidnr("DE136695976") and de_ustidnr("136695976") and not de_ustidnr("136695978")
+    assert de_widnr("DE136695976-00001") and not de_widnr("DE136695978-00001")
+    assert not de_widnr("DE136695976")
+    assert de_idnr("36 574 261 809") and not de_idnr("36574261890")
+    assert not de_idnr("36554266806")  # two digits repeated
+    assert de_idnr("36574261868") and de_idnr("36657426182")  # a digit three times
+    assert not de_idnr("36665742182")  # three equal digits side by side
+    assert de_rvnr("15 070649 C 103") and not de_rvnr("15 070649 C 104")
+    assert de_kvnr("A123456780") and not de_kvnr("A123456781")
+    assert de_ik("260326822") and not de_ik("260326823")
+    assert de_lanr("381925801") and not de_lanr("381925301")
+    assert de_pzn("27580899") and de_pzn("PZN-27580899") and de_pzn("2758089")
+    assert not de_pzn("27580898")
+    assert de_fsnr("B072RRE2I55") and de_fsnr("B072RRE21X1") and not de_fsnr("B072RRE2I45")
+    assert iso7064_mod97_10("991-03730-19") and not iso7064_mod97_10("991-03730-18")
 
 
 def test_crypto_checksum_reference_values():

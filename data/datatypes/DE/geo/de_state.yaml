@@ -27,5 +27,7 @@ links:
 - type: other
   url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
 translations:
+  de:
+    name: Bundesland
   ru:
     name: Земля Германии

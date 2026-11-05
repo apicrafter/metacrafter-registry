@@ -1,0 +1,43 @@
+id: de_leitweg_id
+name: German e-invoice routing ID (Leitweg-ID)
+status: draft
+doc: 'Leitweg-ID, the address of a public contracting authority that receives electronic invoices in Germany,
+  given as the buyer reference (BT-10) of an XRechnung. It has three parts separated by hyphens: a coarse
+  address of 2 to 12 digits that starts with the state code (01 to 16) or 99 for the federal administration,
+  an optional fine address of up to 30 letters and digits, and two check digits by ISO 7064 MOD 97-10.'
+categories:
+- finances
+- government
+country:
+- DE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:0[1-9]|1[0-6]|99)\d{0,10}(?:-[0-9A-Z]{1,30})?-\d{2}$
+checksum: iso7064_mod97_10
+examples:
+- value: 991-03730-19
+  description: python-stdnum reference value
+- value: 16055000-A1B2C3-61
+  description: Synthetic ID with a fine address and valid check digits
+- value: 991-03730-18
+  valid: false
+  description: Check digits do not match
+- value: 1-03730-19
+  valid: false
+  description: The coarse address starts with two digits
+links:
+- type: doc
+  url: https://leitweg-id.de/
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Leitweg-ID
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.de.leitweg.html
+translations:
+  de:
+    name: Leitweg-ID
+  ru:
+    name: Маршрутный идентификатор электронного счёта Германии (Leitweg-ID)
+    doc: Адрес государственного заказчика для получения электронных счетов (XRechnung) - грубый адрес
+      из 2-12 цифр, необязательный точный адрес и две контрольные цифры ISO 7064 MOD 97-10.

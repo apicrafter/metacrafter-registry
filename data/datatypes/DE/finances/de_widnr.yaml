@@ -1,0 +1,43 @@
+id: de_widnr
+name: German business identification number (Wirtschafts-Identifikationsnummer, W-IdNr.)
+status: draft
+doc: 'Wirtschafts-Identifikationsnummer (W-IdNr., § 139c AO), the permanent number of a business, legal
+  entity or self-employed person for German tax and administrative purposes. The Federal Central Tax Office
+  (BZSt) has issued it in stages since November 2024. It is DE, nine digits built like the VAT number
+  (USt-IdNr.) and a five-digit suffix (Unterscheidungsmerkmal) for each economic activity: -00001 for
+  the first, -00002 for the second and so on. A business that already had a USt-IdNr. keeps those nine
+  digits.'
+categories:
+- finances
+- companies
+country:
+- DE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^DE[1-9]\d{8}-\d{5}$
+checksum: de_widnr
+examples:
+- value: DE900979098-00001
+  description: Synthetic number for a first economic activity
+- value: DE181947868-00002
+  description: Synthetic number for a second economic activity
+- value: DE136695976
+  valid: false
+  description: A VAT number without the suffix
+- value: DE900979097-00001
+  valid: false
+  description: Check digit does not match
+links:
+- type: doc
+  url: https://www.bzst.de/DE/Unternehmen/Identifikationsnummern/Wirtschafts-Identifikationsnummer/wirtschaftsidentifikationsnummer_node.html
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Wirtschafts-Identifikationsnummer
+translations:
+  de:
+    name: Wirtschafts-Identifikationsnummer (W-IdNr.)
+  ru:
+    name: Хозяйственный идентификационный номер Германии (W-IdNr.)
+    doc: Постоянный налоговый номер предприятия или самозанятого, который BZSt выдаёт с ноября 2024 года,
+      - DE, девять цифр как в номере плательщика НДС и пятизначный суффикс вида деятельности (-00001).

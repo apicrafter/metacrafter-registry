@@ -1,12 +1,44 @@
 id: de_vehicle_plate
-name: German vehicle license plate by field name
+name: German vehicle registration plate (Kfz-Kennzeichen)
 status: draft
-doc: German vehicle license plate by field name
+doc: Registration number of a vehicle in Germany as shown on the plate. It has a distinguishing sign of
+  one to three capital letters for the registration district (umlauts possible), such as B (Berlin) or
+  M (München), then an identification number of one or two letters (no umlauts) and one to four digits
+  without a leading zero, at most eight characters in all. E marks electric vehicles and H historic vehicles.
+  The euro plates, the only ones issued since November 2000, dropped the hyphen after the district sign,
+  but it is still common in data. Official, military, diplomatic, seasonal and red dealer plates follow
+  other rules and are not covered.
 categories:
 - transport
 country:
 - DE
 langs:
-- de
+- common
 is_pii: false
 classification: identifier
+regexp: ^[A-ZÄÖÜ]{1,3}[- ]?[A-Z]{1,2} ?[1-9]\d{0,3}[EH]?$
+examples:
+- value: AB CD 123H
+  description: Format example of a historic vehicle plate from German Wikipedia
+- value: M-XY 1234
+  description: Synthetic plate of München written with a hyphen
+- value: B-AB 0123
+  valid: false
+  description: The number never starts with 0
+- value: M-ÄB 123
+  valid: false
+  description: The letters of the identification number have no umlauts
+mappings:
+  presidio: DE_KFZ
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Kfz-Kennzeichen_(Deutschland)
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Germany
+translations:
+  de:
+    name: Kfz-Kennzeichen
+  ru:
+    name: Номерной знак транспортного средства Германии
+    doc: Регистрационный номер автомобиля в Германии - от одной до трёх букв района регистрации, одна-две
+      буквы и от одной до четырёх цифр (не более восьми символов), E для электромобилей и H для исторических.

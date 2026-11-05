@@ -4,7 +4,8 @@ status: draft
 doc: Steuernummer (St.-Nr.), the number that a regional German tax office gives to taxable individuals
   and organisations. The regional form has 10 or 11 digits and is usually written with slashes; the form
   that is unique in all of Germany has 13 digits. It holds the tax office number, a district number, a
-  serial number and a check digit. The tax identification number (Steuer-ID) is replacing it.
+  serial number and a check digit. The tax identification number (Steuer-ID) and, for businesses, the
+  W-IdNr. are replacing it.
 categories:
 - finances
 country:
@@ -24,6 +25,8 @@ examples:
 - value: '315565025'
   valid: false
   description: One character too few
+mappings:
+  presidio: DE_TAX_NUMBER
 links:
 - type: wikipedia
   url: https://de.wikipedia.org/wiki/Steuernummer
@@ -34,3 +37,7 @@ links:
 translations:
   de:
     name: Steuernummer (St.-Nr.)
+  ru:
+    name: Налоговый номер Германии (Steuernummer)
+    doc: Номер, который региональная налоговая инспекция присваивает налогоплательщику, - 10-11 цифр в
+      региональной форме или 13 цифр в общефедеральной.

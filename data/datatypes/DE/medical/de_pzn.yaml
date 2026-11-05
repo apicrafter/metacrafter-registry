@@ -1,0 +1,45 @@
+id: de_pzn
+name: German pharmacy product number (Pharmazentralnummer, PZN)
+status: draft
+doc: 'Pharmazentralnummer (PZN), the number that the Informationsstelle für Arzneispezialitäten (IFA)
+  assigns to each pack of a medicine, medical device or other pharmacy product sold in Germany; a different
+  pack size gets a different number. Since 2013 it has eight digits: seven digits and a check digit, the
+  sum of the first seven weighted 1 to 7 modulo 11 (a result of 10 is never issued). The seven-digit numbers
+  issued before were kept with a leading 0. Packs show it as PZN-12345678 next to a Code 39 barcode.'
+categories:
+- medical
+country:
+- DE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:PZN[- ]?)?\d{7,8}$
+checksum: de_pzn
+examples:
+- value: '27580899'
+  description: Example of the IFA coding rules
+- value: PZN-27580899
+  description: The same number as printed on a pack
+- value: '12571417'
+  description: Synthetic number with a valid check digit
+- value: '27580898'
+  valid: false
+  description: Check digit does not match
+- value: '275808991'
+  valid: false
+  description: Nine digits
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Pharmazentralnummer
+- type: doc
+  url: https://ig.fhir.de/igs/terminologie-basis-de/CodeSystem-pzn.html
+- type: other
+  url: https://www.ifaffm.de/
+translations:
+  de:
+    name: Pharmazentralnummer (PZN)
+  ru:
+    name: Фармацевтический центральный номер Германии (PZN)
+    doc: Номер упаковки лекарства или другого аптечного товара в Германии, который присваивает IFA, -
+      семь цифр и контрольная цифра (сумма первых семи цифр с весами 1-7 по модулю 11).

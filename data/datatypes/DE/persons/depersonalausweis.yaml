@@ -1,18 +1,36 @@
 id: depersonalausweis
-name: Germany national identity card
+name: German identity card number (Personalausweis)
 status: stable
-doc: The German Identity Card is issued to German citizens by local registration offices in Germany and
-  diplomatic missions abroad, while they are produced at the Bundesdruckerei in Berlin.
+doc: 'Serial number (Ausweisnummer) of a German identity card (Personalausweis). Cards issued since 1
+  November 2010 have nine characters: a four-character code of the issuing authority and a five-character
+  random number, from the digits and the consonants C, F, G, H, J, K, L, M, N, P, R, T, V, W, X, Y and
+  Z (0 is no longer used since November 2021). Microsoft Purview expects the first character to be L,
+  M, N, P, R, T, V, W, X or Y; in the machine-readable zone a check digit follows. Cards issued from April
+  1987 to October 2010 have a nine-digit number and a check digit. The cards are produced by the Bundesdruckerei
+  and issued by local registration offices and missions abroad.'
 categories:
 - pii
 - persons
 country:
 - DE
 langs:
-- de
+- common
 is_pii: true
 classification: identifier
-regexp: ^[0-9]{12}$
+regexp: ^(?:[LMNPRTVWXY][0-9CFGHJKLMNPRTVWXYZ]{8}\d?D?|\d{10})$
+examples:
+- value: LF5HT23N4
+  description: Synthetic number in the format used since 2010
+- value: TGP2M723J5
+  description: Synthetic number with its machine-readable zone check digit
+- value: '5259324215'
+  description: Synthetic number in the format used until 2010, with its check digit
+- value: CJ383NJ2P
+  valid: false
+  description: Passport numbers start with C, F, G, H, J or K
+- value: '525932421501'
+  valid: false
+  description: Twelve digits
 mappings:
   google_dlp: GERMANY_IDENTITY_CARD_NUMBER
   presidio: DE_ID_CARD
@@ -24,3 +42,14 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/German_identity_card
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Ausweisnummer
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-germany-identity-card-number
+translations:
+  de:
+    name: Personalausweisnummer
+  ru:
+    name: Номер удостоверения личности Германии (Personalausweis)
+    doc: Серийный номер немецкого удостоверения личности - с ноября 2010 года девять букв и цифр, до этого
+      девять цифр и контрольная цифра.

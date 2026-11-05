@@ -1,7 +1,12 @@
 id: opscode
-name: OPS-Prozedurcode
+name: OPS procedure code (Operationen- und Prozedurenschlüssel)
 status: stable
-doc: DE datatype for 'OPS-Prozedurcode anhand Feldnamen' (opscode) from rules in context 'medical'.
+doc: Code of a medical procedure in the OPS, the German procedure classification that the Federal Institute
+  for Drugs and Medical Devices (BfArM) publishes every year and that hospitals use for DRG billing. A
+  code has up to six characters, written as a chapter digit (1, 3, 5, 6, 8 or 9), a hyphen, three characters
+  and, after a dot, up to two more, as in 5-314.11. The first three characters are digits; the others
+  can also be lowercase letters, with x for other and y for unspecified procedures. Data files sometimes
+  leave out the hyphen and the dot.
 categories:
 - medical
 country:
@@ -9,10 +14,34 @@ country:
 langs:
 - de
 is_pii: false
-classification: identifier
-regexp: ^[0-9]{4}(\.[0-9]{1,2})?$
+classification: categorical
+regexp: ^[135689]-?[0-9]{2}[0-9a-z](?:\.?[0-9a-z]{1,2})?$
 examples:
-- value: '1234'
-  description: OPS procedure code with 4 digits without fractional part
-- value: '1234.5'
-  description: OPS procedure code with 4 digits and a 1-digit fractional part
+- value: 5-314.11
+  description: Resektion der Trachea mit End-zu-End-Anastomose
+- value: 5-314.1
+  description: Resektion der Trachea
+- value: 1-790
+  description: Polysomnographie (Wikidata example of P1691)
+- value: 2-314.11
+  valid: false
+  description: There is no chapter 2
+- value: '2024'
+  valid: false
+  description: A year, not a procedure code
+mappings:
+  wikidata: P1691
+links:
+- type: doc
+  url: https://www.bfarm.de/DE/Kodiersysteme/Klassifikationen/OPS-ICHI/OPS/_node.html
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Operationen-_und_Prozedurenschl%C3%BCssel
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1691
+translations:
+  de:
+    name: OPS-Kode
+  ru:
+    name: Код процедуры OPS
+    doc: Код медицинской процедуры в немецком классификаторе OPS, который ежегодно издаёт BfArM, - цифра
+      главы, дефис, три символа и до двух символов после точки, например 5-314.11.

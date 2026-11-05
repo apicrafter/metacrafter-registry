@@ -68,7 +68,9 @@ pip install -e ".[dev]"
     `gs1_checkpair`, `isbn10`, `isbn13`, `ru_inn`, `ru_snils`, `ru_ogrn`,
     `fr_nir`, `at_uid`, `bg_vat`, `no_fnr`, `it_codicefiscale`, `it_iva`,
     `fi_hetu`, `es_dni`, `pl_nip`, `sk_dph`, `si_ddv`, `se_vat`, `kz_iin_bin`,
-    `base58check`, `bech32` and `bech32m`
+    `iso7064_mod97_10`, `de_ustidnr`, `de_widnr`, `de_idnr`, `de_rvnr`,
+    `de_kvnr`, `de_ik`, `de_lanr`, `de_pzn`, `de_fsnr`, `base58check`, `bech32`
+    and `bech32m`
     (`src/metacrafter_registry/checksums.py`).
   - GS1 records: use the GS1 Prefix 952 (reserved for demonstrations) or
     GS1's example GTIN `09506000134352` for examples.

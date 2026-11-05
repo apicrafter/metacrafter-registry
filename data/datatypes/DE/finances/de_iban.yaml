@@ -1,0 +1,41 @@
+id: de_iban
+name: German IBAN
+status: draft
+doc: 'International Bank Account Number of a bank account in Germany. It has 22 characters, all digits
+  after the country code: DE, two IBAN check digits, the 8-digit bank code (Bankleitzahl) and a 10-digit
+  account number padded with leading zeros. Since SEPA replaced the national transfer formats in 2014
+  it is the usual form of a German account number.'
+parent: iban
+categories:
+- finances
+country:
+- DE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '^DE\d{2}(?: ?\d{4}){4} ?\d{2}$'
+checksum: iban_mod97
+examples:
+- value: DE89370400440532013000
+  description: German documentation example
+- value: DE89 3704 0044 0532 0130 00
+  description: The same IBAN in its printed form
+- value: DE89370400440532013001
+  valid: false
+  description: Check digits do not match
+- value: DE8937040044053201300
+  valid: false
+  description: 21 characters
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Internationale_Bankkontonummer
+- type: other
+  url: https://www.iban.com/structure
+translations:
+  de:
+    name: Deutsche IBAN
+  ru:
+    name: IBAN Германии
+    doc: Международный номер банковского счёта в Германии - 22 символа - DE, две контрольные цифры, восьмизначный
+      код банка (Bankleitzahl) и десятизначный номер счёта.

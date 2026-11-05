@@ -1,8 +1,8 @@
 id: decountryname
-name: Country name by value in German
+name: Country name in German
 status: stable
-doc: DE datatype for 'Country name by value in German' (decountryname) from rules in context 'geo'. Represents
-  country names as written in German language.
+doc: Name of a country written in German, such as Deutschland, Österreich, Frankreich or Vereinigte Staaten.
+  Official short and long forms both occur, for example Russland and Russische Föderation.
 semantic_type: country
 country:
 - DE
@@ -35,3 +35,8 @@ mappings:
 links:
 - type: wikipedia
   url: https://de.wikipedia.org/wiki/Liste_der_Staaten_der_Erde
+translations:
+  de:
+    name: Staatenname auf Deutsch
+  ru:
+    name: Название страны на немецком языке

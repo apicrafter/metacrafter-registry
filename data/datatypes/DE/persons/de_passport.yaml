@@ -1,16 +1,34 @@
 id: de_passport
 name: German passport number
 status: draft
-doc: 'Number of a passport issued by Germany. Microsoft Purview looks for nine to eleven characters: one
-  of the letters C, F, G, H, J or K, eight digits or letters from a reduced alphabet, an optional check
-  digit and an optional D.'
+doc: 'Serial number of a German passport (Reisepass): nine characters, a four-character code of the issuing
+  authority and a five-character random number. Since November 2007 it is alphanumeric and avoids vowels
+  and the letters B, D, Q and S; since November 2021 the digit 0 is no longer used. Microsoft Purview
+  expects the first character of a passport number to be C, F, G, H, J or K, and also accepts the check
+  digit and the D (Germany) that follow the number in the machine-readable zone. Temporary passports use
+  a letter and seven digits instead.'
 semantic_type: passport
 country:
 - DE
 langs:
-- de
+- common
 regexp: ^[CFGHJK][0-9CFGHJKLMNPRTVWXYZ]{8}\d?D?$
+examples:
+- value: CJ383NJ2P
+  description: Synthetic number in the documented format
+- value: CJ383NJ2P6
+  description: The same number with its machine-readable zone check digit
+- value: F48TTP2PP
+  description: Synthetic number in the documented format
+- value: BJ383NJ2P
+  valid: false
+  description: B is not used
+- value: CJ383NJ2
+  valid: false
+  description: Eight characters
 mappings:
+  presidio: DE_PASSPORT
+  google_dlp: GERMANY_PASSPORT
   purview:
   - German Passport Number
   - Germany passport number
@@ -18,3 +36,14 @@ mappings:
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-germany-passport-number
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Ausweisnummer
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/German_passport
+translations:
+  de:
+    name: Reisepassnummer
+  ru:
+    name: Номер паспорта Германии
+    doc: Серийный номер немецкого заграничного паспорта - девять букв и цифр - код выдавшего органа и
+      случайный номер.

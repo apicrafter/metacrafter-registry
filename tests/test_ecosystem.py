@@ -702,6 +702,8 @@ def test_javascript_checksums_match_python(tmp_path):
     from metacrafter_registry.checksums import ALGORITHMS
 
     rng = random.Random(3)
+    letters_az = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    alnum = "0123456789" + letters_az
     values = [
         "4111 1111 1111 1111",
         "GB82 WEST 1234 5698 7654 32",
@@ -752,6 +754,18 @@ def test_javascript_checksums_match_python(tmp_path):
         "addr1vx2fxv2umyhttkxyxp8x0dlpdt3k6cwng5pxj3jhsydzers66hrl8",
         "1qqqqqq",
         "",
+        "DE136695976",
+        "DE136695976-00001",
+        "36 574 261 809",
+        "36665742182",
+        "15 070649 C 103",
+        "A123456780",
+        "260326822",
+        "PZN-27580899",
+        "2758089",
+        "B072RRE2I55",
+        "B072RRE21X1",
+        "991-03730-19",
     ]
     values += [str(rng.randrange(10**16, 10**18)) for _ in range(300)]
     values += [str(rng.randrange(10**8, 10**15)) for _ in range(300)]
@@ -785,6 +799,22 @@ def test_javascript_checksums_match_python(tmp_path):
         values.append("1" * (len(raw) - len(raw.lstrip(b"\0"))) + text)
     charset = "qpzry9x8gf2tvdw0s3jn54khce6mua7l"
     values += ["bc1" + "".join(rng.choice(charset) for _ in range(39)) for _ in range(200)]
+    values += [f"DE{rng.randrange(10**9):09d}-{rng.randrange(10**5):05d}" for _ in range(300)]
+    values += [
+        f"{rng.randrange(10**8):08d}{rng.choice(letters_az)}{rng.randrange(1000):03d}"
+        for _ in range(300)
+    ]
+    values += [f"{rng.choice(letters_az)}{rng.randrange(10**9):09d}" for _ in range(300)]
+    values += [f"{rng.randrange(10**9):09d}" for _ in range(500)]
+    values += [
+        "".join(rng.choice(alnum) for _ in range(9)) + rng.choice("0123456789X") + rng.choice(alnum)
+        for _ in range(500)
+    ]
+    values += [
+        f"{rng.randrange(1, 17):02d}{rng.randrange(10**6)}-{rng.randrange(10**4)}-"
+        f"{rng.randrange(100):02d}"
+        for _ in range(300)
+    ]
     offices = ["001", "100", "121", "888", "500"]
     values += [
         f"IT{rng.randrange(10**7):07d}{rng.choice(offices)}{rng.randrange(10)}" for _ in range(100)

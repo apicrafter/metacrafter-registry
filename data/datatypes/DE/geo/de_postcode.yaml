@@ -1,8 +1,8 @@
 id: de_postcode
 name: German postal code (Postleitzahl)
-status: draft
-doc: Five-digit postal code (Postleitzahl, PLZ) used in Germany since 1993. The first digit is the postal
-  zone and the first two digits are the postal region.
+status: stable
+doc: Five-digit postal code (Postleitzahl, PLZ) used in Germany since 1 July 1993, in the range 01001
+  to 99998. The first digit is the postal zone and the first two digits are the postal region.
 semantic_type: postindex
 country:
 - DE
@@ -21,9 +21,12 @@ examples:
   description: four digits, the system used before 1993
 mappings:
   fta: POSTAL_CODE.POSTAL_CODE_DE
+  presidio: DE_PLZ
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Postal_codes_in_Germany
 translations:
   de:
     name: Postleitzahl
+  ru:
+    name: Почтовый индекс Германии

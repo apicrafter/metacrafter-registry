@@ -1,0 +1,39 @@
+id: de_blz
+name: German bank code (Bankleitzahl, BLZ)
+status: draft
+doc: Bankleitzahl (BLZ), the eight-digit code of a bank or bank branch in Germany, introduced in 1970.
+  The first three digits are the location number of the Bundesbank branch area (the first digit is the
+  clearing area), the fourth is the banking group and the last four are chosen by the bank. The Deutsche
+  Bundesbank publishes the directory of bank codes. Since SEPA it no longer appears alone in transfers
+  but it is digits 5 to 12 of every German IBAN. It is often written in groups, as in 640 901 00.
+categories:
+- finances
+country:
+- DE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{3} ?\d{3} ?\d{2}$
+examples:
+- value: '64090100'
+  description: Volksbank Reutlingen, the example of German Wikipedia
+- value: 640 901 00
+  description: The same code in its printed form
+- value: '37040044'
+  description: Bank code of the German IBAN documentation example DE89370400440532013000
+- value: '6409010'
+  valid: false
+  description: Seven digits
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Bankleitzahl
+- type: doc
+  url: https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen
+translations:
+  de:
+    name: Bankleitzahl (BLZ)
+  ru:
+    name: Банковский код Германии (Bankleitzahl)
+    doc: Восьмизначный код банка или отделения банка в Германии; справочник кодов ведёт Бундесбанк. Входит
+      в немецкий IBAN (символы 5-12).
