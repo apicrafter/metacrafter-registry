@@ -1,0 +1,23 @@
+id: gr_postcode
+name: Greece postal code
+status: draft
+doc: 'Postal code in Greece: five digits, written as three digits, a space and two digits; the space may
+  be omitted.'
+semantic_type: postindex
+country:
+- GR
+langs:
+- el
+regexp: ^\d{3} ?\d{2}$
+examples:
+- value: 151 24
+- value: 151 10
+- value: 101 88
+- value: 151 2
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Greece
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/GR

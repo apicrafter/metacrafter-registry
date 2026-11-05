@@ -1,0 +1,30 @@
+id: mgi_id
+name: Mouse Genome Informatics (MGI) accession ID
+status: draft
+doc: 'Accession ID of an object in Mouse Genome Informatics (MGI), the database of the laboratory mouse,
+  such as a gene or another genome feature. It is MGI: and a number, as in MGI:97490 for the gene Pax6.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^MGI:\d+$
+examples:
+- value: MGI:97490
+  description: Pax6, paired box 6
+- value: MGI:6017782
+  description: Tssr90015, a transcription start site region; Bioregistry example
+- value: '97490'
+  valid: false
+  description: 'Number without the MGI: prefix'
+mappings:
+  bioregistry: mgi
+  wikidata: P671
+links:
+- type: doc
+  url: https://www.informatics.jax.org/
+- type: other
+  url: https://bioregistry.io/registry/mgi
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P671

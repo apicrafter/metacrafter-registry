@@ -13,3 +13,5 @@ classification: identifier
 regexp: ^[0-9]{4,10}$
 mappings:
   fta: POSTAL_CODE.POSTAL_CODE_PL
+  dpv: pd:PostalCode
+  schema_org: postalCode

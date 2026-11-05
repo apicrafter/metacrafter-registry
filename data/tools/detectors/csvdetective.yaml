@@ -1,0 +1,55 @@
+id: csvdetective
+name: csv-detective
+category: detector
+doc: 'Python package by the data.gouv.fr team that detects what the columns of a tabular file (CSV, Excel,
+  ODS, Parquet) contain. For each column it combines checks of the values (regular expressions, casting,
+  comparison with official lists) with hints from the header. Version 0.13.0 has 55 formats: generic ones
+  such as dates, emails, URLs, UUIDs and WGS 84 or Lambert-93 coordinates, and many French ones such as
+  SIREN, SIRET, INSEE commune and department codes, postal codes, UAI school codes, RNA association numbers,
+  NAF activity codes, FANTOIR street codes and RNB building identifiers; several of them use the frformat
+  library. udata-hydra runs it on the tabular files published on data.gouv.fr. Formats without a registry
+  datatype (int, float, json, binary, canton names, socio-professional categories and historical association
+  numbers) are not listed. Released under the MIT license.'
+website: https://github.com/datagouv/csv-detective
+supported_types:
+- address
+- boolean
+- country
+- countrycode_alpha2
+- countrycode_alpha3
+- countrycode_num
+- date
+- datetime
+- dayofweek
+- easting
+- email
+- epcicode
+- fr_commune
+- fr_department
+- fr_department_code
+- fr_naf
+- fr_region
+- fr_region_code
+- fr_rivoli
+- fr_rna
+- fr_rnb_id
+- fr_uai
+- frpostcode
+- gender
+- geojson
+- geopoint
+- inseecode
+- latitude
+- longitude
+- money
+- mongodbid
+- month
+- northing
+- percentage
+- phone
+- siren
+- siret
+- url
+- username
+- uuid
+- year

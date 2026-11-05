@@ -18,6 +18,7 @@ examples:
   description: example from ORG-ID.guide
 mappings:
   orgid: CM-NIU
+  schema_org: taxID
 links:
 - type: doc
   url: https://www.impots.cm/

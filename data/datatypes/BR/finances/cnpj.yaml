@@ -20,6 +20,8 @@ mappings:
   purview: Brazil legal entity number (CNPJ)
   orgid: BR-CNPJ
   wikidata: P6204
+  schema_org: taxID
+  stdnum: br.cnpj
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P6204

@@ -68,8 +68,11 @@ Example:
   an id in another vocabulary. The systems are `wikidata`, `fibo`, `schema_org`,
   `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `sato`, `cdm`, `fta`,
   `autotype` (AutoType benchmark test cases, such as `isbn` or `date-chinese`),
-  `gs1_ai`, `orgid` (ORG-ID.guide list codes, such as `GB-COH`) and `qddate`
-  (qddate date pattern keys, such as `dt:date:date_2`).
+  `gs1_ai`, `orgid` (ORG-ID.guide list codes, such as `GB-COH`), `qddate`
+  (qddate date pattern keys, such as `dt:date:date_2`), `bioregistry`
+  (Bioregistry prefixes or CURIEs, such as `chebi` or `CHEBI:15377`), `stdnum`
+  (python-stdnum modules, such as `br.cpf`) and `fhir` (HL7 FHIR identifier
+  system URIs, such as `http://hl7.org/fhir/sid/us-ssn`).
   Coverage outside Wikidata is still small. For `fibo`, pass a FIBO class IRI,
   for example
   `https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier`;

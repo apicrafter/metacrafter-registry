@@ -21,6 +21,8 @@ examples:
 - value: '4254227'
   valid: false
   description: One character too many
+mappings:
+  stdnum: fi.associationid
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fi.associationid.html

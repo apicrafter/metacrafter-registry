@@ -15,6 +15,8 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^\d{11}$
+mappings:
+  fhir: http://fhir.nl/fhir/NamingSystem/big
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/BIG-register

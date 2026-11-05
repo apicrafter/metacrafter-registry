@@ -1,0 +1,21 @@
+id: ec_postcode
+name: Ecuador postal code
+status: draft
+doc: 'Postal code in Ecuador: six digits.'
+semantic_type: postindex
+country:
+- EC
+langs:
+- es
+regexp: ^\d{6}$
+examples:
+- value: 090105
+- value: 092301
+- value: 09010
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Ecuador
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/EC

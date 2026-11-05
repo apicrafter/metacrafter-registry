@@ -33,6 +33,7 @@ examples:
 mappings:
   orgid: DE-CR
   presidio: DE_HANDELSREGISTER
+  stdnum: de.handelsregisternummer
 links:
 - type: doc
   url: https://www.handelsregister.de/

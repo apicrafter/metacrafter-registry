@@ -1,0 +1,25 @@
+id: pride_project_id
+name: PRIDE project accession
+status: draft
+doc: 'Accession of a project in PRIDE, the EMBL-EBI public repository of protein and peptide identifications
+  from proteomics experiments: P, a letter (X, R or A), D and six digits, as in PXD000440.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^P(X|R|A)D\d{6}$
+examples:
+- value: PXD000440
+  description: T cell responses to IL-2 versus IL-15; Bioregistry example
+- value: PXD440
+  valid: false
+  description: Fewer than six digits
+mappings:
+  bioregistry: pride.project
+links:
+- type: doc
+  url: https://www.ebi.ac.uk/pride/
+- type: other
+  url: https://bioregistry.io/registry/pride.project

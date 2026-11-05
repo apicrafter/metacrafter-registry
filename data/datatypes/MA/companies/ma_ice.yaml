@@ -1,0 +1,39 @@
+id: ma_ice
+name: Moroccan common company identifier (ICE)
+status: draft
+doc: 'Identifiant Commun de l''Entreprise (ICE), the 15-digit number that identifies a company and each
+  of its establishments in the same way for all Moroccan administrations. It does not replace the tax
+  identifier (IF), the trade register number (RC) or the CNSS number. The first nine digits identify the
+  enterprise, the next four the establishment, and the last two are check digits: the whole number is
+  divisible by 97. It applies to natural persons as well as to legal entities.'
+categories:
+- companies
+- finances
+country:
+- MA
+langs:
+- fr
+- ar
+is_pii: false
+classification: identifier
+regexp: ^\d{15}$
+examples:
+- value: 001561191000066
+  description: Example from the python-stdnum documentation
+- value: 002136093000040
+  description: Example from the python-stdnum documentation
+- value: '12345'
+  valid: false
+  description: Too short
+mappings:
+  stdnum: ma.ice
+links:
+- type: doc
+  url: https://www.ice.gov.ma/
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ma.ice.html
+translations:
+  fr:
+    name: Identifiant Commun de l'Entreprise (ICE)
+  ar:
+    name: التعريف الموحد للمقاولة

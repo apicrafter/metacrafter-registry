@@ -27,6 +27,8 @@ examples:
   description: One character too few
 mappings:
   presidio: DE_TAX_NUMBER
+  schema_org: taxID
+  stdnum: de.stnr
 links:
 - type: wikipedia
   url: https://de.wikipedia.org/wiki/Steuernummer

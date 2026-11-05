@@ -13,6 +13,7 @@ classification: categorical
 mappings:
   wikidata: Q10864048
   cdm: means.location.stateOrProvince
+  schema_org: addressRegion
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Administrative_division

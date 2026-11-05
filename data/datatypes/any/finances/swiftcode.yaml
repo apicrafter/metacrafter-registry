@@ -19,6 +19,9 @@ mappings:
   google_dlp: SWIFT_CODE
   purview: SWIFT code
   wikidata: P2627
+  stdnum:
+  - bic
+  - iso9362
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ISO_9362

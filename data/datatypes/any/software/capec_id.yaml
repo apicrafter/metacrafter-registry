@@ -1,0 +1,29 @@
+id: capec_id
+name: CAPEC identifier
+status: draft
+doc: 'Identifier of an attack pattern in MITRE''s Common Attack Pattern Enumeration and Classification
+  (CAPEC): CAPEC- followed by a number of one to five digits without leading zeros. CVE records use it
+  to describe the impact of a vulnerability, and MITRE ATT&CK techniques refer to related CAPEC entries
+  with it.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^CAPEC-[1-9][0-9]{0,4}$
+examples:
+- value: CAPEC-66
+  description: SQL Injection
+- value: CAPEC-13
+  description: Subverting Environment Variable Values, referenced by ATT&CK technique HISTCONTROL
+- value: CAPEC-0
+  valid: false
+  description: Zero is not a valid number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/CAPEC
+- type: doc
+  url: https://capec.mitre.org/data/definitions/66.html
+- type: doc
+  url: https://github.com/CVEProject/cve-schema/blob/main/schema/CVE_Record_Format.json

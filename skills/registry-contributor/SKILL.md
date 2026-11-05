@@ -99,6 +99,14 @@ pip install -e ".[dev]"
     Validation rejects classes that are not pinned in
     `data/vocabularies/fibo.json`.
 
+- **Bioregistry, python-stdnum and FHIR mappings** follow the same rule: map
+  only when the other side denotes the same identifier.
+  - `mappings.bioregistry`: the lowercase Bioregistry prefix (`chebi`). The
+    Bioregistry pattern describes the local id, without the `CHEBI:` prefix.
+  - `mappings.stdnum`: the module path without `stdnum.` (`br.cpf`).
+  - `mappings.fhir`: the `Identifier.system` URI from terminology.hl7.org
+    (`http://hl7.org/fhir/sid/us-ssn`).
+
 ## Improve existing records
 
 Find the records that need work most:

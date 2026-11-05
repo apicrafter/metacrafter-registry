@@ -11,6 +11,7 @@ langs:
 regexp: ^\d{9}$
 mappings:
   purview: Taiwan passport number
+  fhir: http://hl7.org/fhir/sid/passport-TWN
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-taiwan-passport-number

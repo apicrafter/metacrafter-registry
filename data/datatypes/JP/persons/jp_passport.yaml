@@ -16,6 +16,7 @@ examples:
 mappings:
   google_dlp: JAPAN_PASSPORT
   purview: Japan passport number
+  fhir: http://hl7.org/fhir/sid/passport-JPN
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Japanese_passport

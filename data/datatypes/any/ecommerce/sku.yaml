@@ -11,3 +11,4 @@ classification: identifier
 regexp: ^[A-Z0-9-]{3,20}$
 mappings:
   cdm: means.identity.SKU
+  schema_org: sku

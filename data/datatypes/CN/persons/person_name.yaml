@@ -10,3 +10,5 @@ langs:
 - zh
 is_pii: true
 classification: identifier
+mappings:
+  dpv: pd:Name

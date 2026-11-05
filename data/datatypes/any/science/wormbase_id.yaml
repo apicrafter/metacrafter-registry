@@ -1,0 +1,33 @@
+id: wormbase_id
+name: WormBase ID
+status: draft
+doc: 'Identifier of an object in WormBase, the database of Caenorhabditis elegans and other nematodes:
+  WB, a capitalized class name and digits, as in WBGene00000898 for the gene daf-2. Bioregistry also accepts
+  CE and five digits.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(CE[0-9]{5}|WB[A-Z][a-z]+\d+)$
+examples:
+- value: WBGene00000898
+  description: Gene daf-2; example of Wikidata property P3860
+- value: WBGene00000875
+  description: Gene cyk-4; example of Wikidata property P3860
+- value: WBGene00000001
+  description: Bioregistry example
+- value: WBGene
+  valid: false
+  description: No number
+mappings:
+  bioregistry: wormbase
+  wikidata: P3860
+links:
+- type: doc
+  url: https://wormbase.org/
+- type: other
+  url: https://bioregistry.io/registry/wormbase
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3860

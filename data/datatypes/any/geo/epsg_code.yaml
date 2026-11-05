@@ -1,0 +1,40 @@
+id: epsg_code
+name: EPSG coordinate reference system code
+status: draft
+doc: 'Identifier of a coordinate reference system (CRS) in the EPSG Geodetic Parameter Dataset. The regexp
+  covers the forms that name the authority: EPSG:4326, used by PROJ and many GIS tools, the OGC URN urn:ogc:def:crs:EPSG::4326
+  and the OGC URI http://www.opengis.net/def/crs/EPSG/0/4326. The code itself is a number of four or five
+  digits, and Wikidata stores only that number; a bare number is not covered because it looks like any
+  other number.'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:EPSG:|urn:ogc:def:crs:EPSG::|https?://www\.opengis\.net/def/crs/EPSG/0/)[1-9]\d{3,4}$
+examples:
+- value: EPSG:4326
+  description: WGS 84, geographic 2D
+- value: EPSG:3857
+  description: WGS 84 / Pseudo-Mercator, projected
+- value: EPSG:25832
+  description: ETRS89 / UTM zone 32N, projected
+- value: urn:ogc:def:crs:EPSG::4326
+  description: OGC URN form
+- value: http://www.opengis.net/def/crs/EPSG/0/4326
+  description: OGC URI form
+- value: '4326'
+  valid: false
+  description: Bare code without the authority
+mappings:
+  wikidata: P1338
+links:
+- type: doc
+  url: https://epsg.org/home.html
+- type: doc
+  url: https://proj.org/en/stable/apps/projinfo.html
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/EPSG_Geodetic_Parameter_Dataset
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1338

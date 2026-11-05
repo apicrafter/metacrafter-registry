@@ -13,6 +13,8 @@ langs:
 - en
 is_pii: true
 classification: identifier
+mappings:
+  stdnum: us.ptin
 links:
 - type: other
   url: https://en.wikipedia.org/wiki/Preparer_Tax_Identification_Number

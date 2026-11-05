@@ -19,6 +19,7 @@ examples:
   description: (RS)-rabeprazole
 mappings:
   wikidata: P267
+  bioregistry: atc
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Anatomical_Therapeutic_Chemical_Classification_System

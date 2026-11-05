@@ -20,6 +20,7 @@ mappings:
   fta:
   - PERSON.RACE_ABBR_EN
   - PERSON.RACE_EN
+  dpv: pd:Ethnicity
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Race_and_ethnicity_in_the_United_States_census

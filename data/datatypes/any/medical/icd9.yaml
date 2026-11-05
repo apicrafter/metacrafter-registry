@@ -32,6 +32,7 @@ examples:
 mappings:
   autotype: icd9
   wikidata: P493
+  bioregistry: icd9
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ICD-9

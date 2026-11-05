@@ -14,3 +14,6 @@ regexp: ^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$
 mappings:
   google_dlp: BRAZIL_CPF_NUMBER
   purview: Brazil CPF number
+  dpv: pd:OfficialID
+  schema_org: taxID
+  stdnum: br.cpf

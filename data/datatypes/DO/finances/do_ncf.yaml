@@ -21,6 +21,8 @@ examples:
 - value: B01362219957
   valid: false
   description: One character too many
+mappings:
+  stdnum: do.ncf
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.do.ncf.html

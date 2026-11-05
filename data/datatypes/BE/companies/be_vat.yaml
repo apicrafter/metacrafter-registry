@@ -50,6 +50,8 @@ mappings:
   purview: Belgium value added tax number
   orgid: BE-BCE_KBO
   wikidata: P3376
+  schema_org: vatID
+  stdnum: be.vat
 links:
 - type: doc
   url: https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html

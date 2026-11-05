@@ -13,3 +13,4 @@ classification: identifier
 mappings:
   purview: Poland REGON number
   orgid: PL-REGON
+  stdnum: pl.regon

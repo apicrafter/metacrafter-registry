@@ -1,0 +1,21 @@
+id: ma_postcode
+name: Morocco postal code
+status: draft
+doc: 'Postal code in Morocco: five digits.'
+semantic_type: postindex
+country:
+- MA
+langs:
+- ar
+regexp: ^\d{5}$
+examples:
+- value: '53000'
+- value: '10000'
+- value: '20050'
+- value: '16052'
+- value: '5300'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/MA

@@ -20,6 +20,7 @@ mappings:
   - Luxembourg Driver's License Number
   - Luxemburg driver's license number
   - EU drivers license number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-luxemburg-drivers-license-number

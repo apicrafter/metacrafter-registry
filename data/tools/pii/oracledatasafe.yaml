@@ -1,0 +1,33 @@
+id: oracledatasafe
+name: Oracle Data Safe
+category: pii
+doc: Oracle Data Safe is a security service for Oracle databases. Its Data Discovery feature finds sensitive
+  columns with sensitive types, each defined by regular expressions over column names, comments and data,
+  and stores the results in a sensitive data model that data masking can reuse. Oracle ships more than
+  180 predefined sensitive types in categories for identification, biographic, IT, financial, healthcare,
+  employment and academic data, and users can create their own. The complete list of predefined types
+  is shown only in the console; the documentation names some of them as examples, and only those are listed
+  here.
+website: https://docs.oracle.com/en-us/iaas/data-safe/doc/data-discovery-overview.html
+supported_types:
+- address
+- bankaccount
+- bankcard
+- birthday
+- casin
+- city
+- country
+- email
+- income
+- ipaddr
+- jobtitle
+- orgunit
+- password
+- person_firstname
+- person_fullname
+- person_surname
+- phone
+- postindex
+- religion
+- userid
+- usssn

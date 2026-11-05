@@ -15,6 +15,7 @@ examples:
 mappings:
   wikidata: P229
   fta: AIRLINE.IATA_CODE
+  schema_org: iataCode
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Airline_codes

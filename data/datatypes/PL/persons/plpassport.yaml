@@ -16,6 +16,8 @@ mappings:
   purview:
   - Poland Passport Number
   - EU passport number
+  dpv: pd:Passport
+  fhir: http://hl7.org/fhir/sid/passport-POL
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Passport

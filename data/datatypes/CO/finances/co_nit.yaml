@@ -24,6 +24,8 @@ mappings:
   orgid:
   - CO-NIT
   - CO-RUE
+  schema_org: taxID
+  stdnum: co.nit
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.co.nit.html

@@ -1,0 +1,22 @@
+id: lk_postcode
+name: Sri Lanka postal code
+status: draft
+doc: 'Postal code in Sri Lanka: five digits.'
+semantic_type: postindex
+country:
+- LK
+langs:
+- si
+- ta
+regexp: ^\d{5}$
+examples:
+- value: '20000'
+- value: '00100'
+- value: '2000'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Sri_Lanka
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/LK

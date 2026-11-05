@@ -1,0 +1,32 @@
+id: meddra_code
+name: MedDRA term code
+status: draft
+doc: Numeric code of a term in MedDRA, the Medical Dictionary for Regulatory Activities, a standard medical
+  terminology developed by the International Council for Harmonisation (ICH) for sharing regulatory information
+  on medical products. It is used in regulatory processes and safety monitoring. The terms form a hierarchy
+  from System Organ Classes down to Lowest Level Terms.
+categories:
+- medical
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d+$
+examples:
+- value: '10015919'
+  description: Bioregistry example
+- value: '10000304'
+  description: abscess of prostate; example of Wikidata property P3201
+- value: 1000030A
+  valid: false
+  description: Contains a letter
+mappings:
+  bioregistry: meddra
+  wikidata: P3201
+links:
+- type: doc
+  url: https://www.meddra.org/
+- type: other
+  url: https://bioregistry.io/registry/meddra
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3201

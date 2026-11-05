@@ -17,6 +17,7 @@ examples:
   description: The Russian Red Cross
 mappings:
   wikidata: P3185
+  dpv: pd:Username
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P3185

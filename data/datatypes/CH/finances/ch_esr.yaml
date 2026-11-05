@@ -25,6 +25,8 @@ examples:
 - value: '3063563604038282948256687807'
   valid: false
   description: One character too many
+mappings:
+  stdnum: ch.esr
 links:
 - type: doc
   url: https://www.paymentstandards.ch/dam/downloads/ig-qr-bill-en.pdf

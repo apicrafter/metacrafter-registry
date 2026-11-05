@@ -21,6 +21,9 @@ examples:
 - value: '7712'
   valid: false
   description: One character too few
+mappings:
+  schema_org: vatID
+  stdnum: is_.vsk
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.is_.vsk.html

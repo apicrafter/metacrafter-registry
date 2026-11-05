@@ -1,0 +1,20 @@
+id: om_postcode
+name: Oman postal code
+status: draft
+doc: 'Postal code in Oman: three digits, optionally preceded by PC and a space.'
+semantic_type: postindex
+country:
+- OM
+langs:
+- ar
+regexp: ^(?:PC )?\d{3}$
+examples:
+- value: '133'
+- value: '112'
+- value: '111'
+- value: '13'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/OM

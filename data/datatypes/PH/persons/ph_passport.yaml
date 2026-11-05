@@ -11,6 +11,7 @@ langs:
 regexp: ^(?:[A-Z]\d{6}|[A-Z]{2}\d{6,7}|[A-Z]\d{7}[A-Z])$
 mappings:
   purview: Philippines passport number
+  fhir: http://hl7.org/fhir/sid/passport-PHL
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-philippines-passport-number

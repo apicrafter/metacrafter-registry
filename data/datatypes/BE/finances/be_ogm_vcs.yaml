@@ -35,6 +35,8 @@ examples:
 - value: +++090/9337/5549+++
   valid: false
   description: Eleven digits
+mappings:
+  stdnum: be.ogm_vcs
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Gestructureerde_mededeling

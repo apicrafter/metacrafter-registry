@@ -1,0 +1,23 @@
+id: is_postcode
+name: Iceland postal code
+status: draft
+doc: 'Postal code in Iceland: three digits.'
+semantic_type: postindex
+country:
+- IS
+langs:
+- is
+regexp: ^\d{3}$
+examples:
+- value: '320'
+- value: '121'
+- value: '220'
+- value: '110'
+- value: '32'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Iceland
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/IS

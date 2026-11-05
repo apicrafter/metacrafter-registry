@@ -1,0 +1,41 @@
+id: plus_code
+name: Plus Code (Open Location Code)
+status: draft
+doc: 'Full Plus Code of the Open Location Code system published by Google, which encodes a WGS84 latitude
+  and longitude as a grid cell. It uses 20 symbols (23456789CFGHJMPQRVWX): eight digits, the separator
+  +, and usually two or more digits after it; a ten-digit code is a cell of about 14 by 14 metres. Shorter
+  codes pad the eight positions before the separator with pairs of 0 and end with +. The first digit encodes
+  latitude and the second longitude, which limits them to 2-9 and C, and to 2-9 and C-V. Codes are case-insensitive.
+  Shortened codes that need a reference place are the pattern plus_code_short.'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[2-9Cc][2-9CFGHJMPQRVcfghjmpqrv](?:000000\+|[2-9CFGHJMPQRVWXcfghjmpqrvwx]{2}(?:0000\+|[2-9CFGHJMPQRVWXcfghjmpqrvwx]{2}(?:00\+|[2-9CFGHJMPQRVWXcfghjmpqrvwx]{2}\+(?:[2-9CFGHJMPQRVWXcfghjmpqrvwx]{2,})?)))$
+examples:
+- value: 8FVC9G8F+6W
+  description: Example from the specification, centre 47.365562,8.524813 (Zurich)
+- value: 796RWF8Q+WF
+  description: Example from the specification (Praia)
+- value: 8FWCX400+
+  description: Padded code from the reference validity tests
+- value: 849VGJQF+VX7QR3J
+  description: Fifteen-digit code from the reference validity tests
+- value: 8FWC2345+G
+  valid: false
+  description: One digit after the separator
+- value: 84900000+
+  valid: false
+  description: Padding must come in pairs
+- value: 9G8F+6W
+  valid: false
+  description: 'Short code: the pattern plus_code_short'
+links:
+- type: doc
+  url: https://github.com/google/open-location-code/blob/main/Documentation/Specification/specification.md
+- type: other
+  url: https://github.com/google/open-location-code/blob/main/test_data/validityTests.csv
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Open_Location_Code

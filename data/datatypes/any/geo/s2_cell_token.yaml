@@ -1,0 +1,30 @@
+id: s2_cell_token
+name: S2 cell token
+status: draft
+doc: Token of a cell of the S2 Geometry library, which projects the sphere onto the six faces of a cube
+  and divides each face into a hierarchy of cells along a Hilbert curve. The token is the 64-bit cell
+  id in lowercase hexadecimal with the trailing zeros removed, so larger cells have shorter tokens, up
+  to 16 characters. The top three bits hold the cube face (0 to 5), so a token begins with 0-9, a or b
+  and does not end in 0; the id 0 is written X. The regexp only checks this shape, so it also matches
+  other short hexadecimal strings.
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[1-9ab]|[0-9ab][0-9a-f]{0,14}[1-9a-f])$
+examples:
+- value: 89c25
+  description: Token used in the S2 library tests
+- value: X
+  valid: false
+  description: Token of the invalid cell id 0
+- value: 89c250
+  valid: false
+  description: Trailing zeros are removed
+links:
+- type: doc
+  url: http://s2geometry.io/devguide/s2cell_hierarchy
+- type: doc
+  url: https://github.com/google/s2geometry/blob/master/src/s2/s2cell_id.h

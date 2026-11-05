@@ -24,6 +24,7 @@ examples:
   description: No leading zeros
 mappings:
   wikidata: P354
+  bioregistry: hgnc
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/HUGO_Gene_Nomenclature_Committee

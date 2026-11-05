@@ -25,6 +25,7 @@ examples:
   description: P2WPKH address (p2wpkhaddr)
 mappings:
   presidio: CRYPTO
+  stdnum: bitcoin
 links:
 - type: doc
   url: https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki

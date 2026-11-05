@@ -23,6 +23,8 @@ examples:
   description: One character too many
 mappings:
   orgid: LT-PVM
+  schema_org: vatID
+  stdnum: lt.pvm
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.lt.pvm.html

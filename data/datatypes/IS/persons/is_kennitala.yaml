@@ -26,6 +26,8 @@ examples:
   description: One character too many
 mappings:
   orgid: IS-KEN
+  dpv: pd:OfficialID
+  stdnum: is_.kennitala
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Kennitala

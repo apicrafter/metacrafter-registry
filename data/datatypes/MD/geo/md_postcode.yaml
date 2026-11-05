@@ -1,0 +1,21 @@
+id: md_postcode
+name: Moldova postal code
+status: draft
+doc: 'Postal code in Moldova: four digits. In addresses the code may be written after the prefix MD-.'
+semantic_type: postindex
+country:
+- MD
+langs:
+- ro
+regexp: ^\d{4}$
+examples:
+- value: '2012'
+- value: '2019'
+- value: '201'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Moldova
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/MD

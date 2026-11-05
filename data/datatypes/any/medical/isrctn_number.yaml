@@ -1,0 +1,28 @@
+id: isrctn_number
+name: ISRCTN registration number
+status: draft
+doc: Registration number of a study in the ISRCTN registry, a primary clinical study registry recognised
+  by the WHO International Clinical Trials Registry Platform and by medical journal editors. It is ISRCTN
+  followed by digits; the name first stood for International Standard Randomised Controlled Trial Number.
+categories:
+- medical
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^ISRCTN\d+$
+examples:
+- value: ISRCTN10175490
+  description: Effects of a supplement on cognitive function and brain activity in middle-aged and older
+    healthy adults; Bioregistry example
+- value: '10175490'
+  valid: false
+  description: Number without the ISRCTN prefix
+mappings:
+  bioregistry: isrctn
+links:
+- type: doc
+  url: https://www.isrctn.com/
+- type: other
+  url: https://bioregistry.io/registry/isrctn

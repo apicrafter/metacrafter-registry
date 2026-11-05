@@ -17,6 +17,7 @@ mappings:
   fta:
   - COORDINATE.LATITUDE_DECIMAL
   - COORDINATE.LATITUDE_DMS
+  schema_org: latitude
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Latitude

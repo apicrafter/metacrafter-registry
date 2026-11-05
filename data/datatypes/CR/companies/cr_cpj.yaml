@@ -24,6 +24,7 @@ examples:
   description: One character too many
 mappings:
   orgid: CR-RPJ
+  stdnum: cr.cpj
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cr.cpj.html

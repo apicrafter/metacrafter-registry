@@ -1,0 +1,33 @@
+id: uberon_id
+name: Uberon anatomy ontology ID
+status: draft
+doc: 'Identifier of an anatomical structure in Uberon, a cross-species anatomy ontology that links the
+  anatomy terms of expression and phenotype data across species. It is UBERON: and seven digits; OBO PURLs
+  write UBERON_ instead.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^UBERON[:_]\d{7}$
+examples:
+- value: UBERON:0002107
+  description: liver
+- value: UBERON:2005080
+  description: anterior mesenteric artery; Bioregistry example
+- value: UBERON_0002107
+  description: liver, underscore form
+- value: UBERON:2107
+  valid: false
+  description: Not padded to seven digits
+mappings:
+  bioregistry: uberon
+  wikidata: P1554
+links:
+- type: doc
+  url: https://obophenotype.github.io/uberon/
+- type: other
+  url: https://bioregistry.io/registry/uberon
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1554

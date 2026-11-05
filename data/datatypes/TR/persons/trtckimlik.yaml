@@ -16,3 +16,5 @@ mappings:
   purview:
   - Türkiye national identification number
   - Turkey national identification number
+  dpv: pd:OfficialID
+  stdnum: tr.tckimlik

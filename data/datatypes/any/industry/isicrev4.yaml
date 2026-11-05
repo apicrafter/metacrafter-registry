@@ -16,6 +16,7 @@ examples:
   description: locomotive manufacturing
 mappings:
   wikidata: P1796
+  schema_org: isicV4
 links:
 - type: other
   url: https://www.oecd-ilibrary.org/content/publication/8722852c-en

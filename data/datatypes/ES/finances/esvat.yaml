@@ -30,6 +30,8 @@ examples:
   description: One character short
 mappings:
   fta: IDENTITY.VAT_ES
+  schema_org: vatID
+  stdnum: es.nif
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal

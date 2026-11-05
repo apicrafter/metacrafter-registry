@@ -18,6 +18,7 @@ examples:
 mappings:
   orgid: ID-DJP
   wikidata: P8346
+  stdnum: id.npwp
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P8346

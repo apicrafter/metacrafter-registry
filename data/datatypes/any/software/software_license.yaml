@@ -1,10 +1,28 @@
 id: software_license
 name: Software license by field name
 status: draft
-doc: Software license by field name
+doc: Name or identifier of the license of a software package, usually written as a short SPDX license
+  identifier such as MIT or Apache-2.0. The SPDX License List, maintained by the Linux Foundation's SPDX
+  project, assigns these identifiers to common open source licenses. Package metadata, software bills
+  of materials and code hosting sites use them. Values are recognised by field name and by membership
+  in the SPDX list, not by a regular expression.
 categories:
 - software
 langs:
 - en
 is_pii: false
 classification: identifier
+examples:
+- value: MIT
+  description: MIT License
+- value: Apache-2.0
+  description: Apache License 2.0
+- value: GPL-3.0-or-later
+  description: GNU General Public License v3.0 or later
+mappings:
+  wikidata: P2479
+links:
+- type: doc
+  url: https://spdx.org/licenses/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2479

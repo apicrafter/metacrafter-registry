@@ -18,6 +18,7 @@ regexp: ^(?:\d{6,10}|[A-Z0-9]{6}|\d{2}[ -]?\d{2}[ -]?\d{4}|\d{3}[ -]?\d{3}[ -]?\
   -]?\d{3})$
 mappings:
   purview: Australia Driver's License Number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-australia-drivers-license-number

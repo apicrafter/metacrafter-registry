@@ -21,6 +21,9 @@ examples:
 - value: '371106930167'
   valid: false
   description: One character too many
+mappings:
+  dpv: pd:OfficialID
+  stdnum: cu.ni
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cu.ni.html

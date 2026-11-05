@@ -1,0 +1,47 @@
+id: sdmx_reporting_period
+name: SDMX reporting time period
+status: draft
+doc: 'Reporting period in SDMX statistical data and metadata, written as a four-digit year, a hyphen,
+  a period letter and a number: A1 for the year, S1-S2 for half-years, T1-T3 for four-month trimesters,
+  Q1-Q4 for quarters, M01-M12 for months, W01-W53 for weeks and D001-D366 for days, with an optional time
+  zone (Z, +hh:mm or -hh:mm). Periods count from the start of the reporting year, 1 January unless a reporting
+  year start day is given, and the year is the year in which the reporting year begins. The SDMX time
+  period (TIME_PERIOD) may also hold Gregorian values such as 2024, 2024-01 or 2024-01-15, date-times
+  and time ranges; those are the datatypes year, yearmonth, date and datetime.'
+categories:
+- datetime
+langs:
+- common
+is_pii: false
+regexp: ^\d{4}-(?:A1|S[12]|T[1-3]|Q[1-4]|M(?:0[1-9]|1[0-2])|W(?:0[1-9]|[1-4]\d|5[0-3])|D(?:00[1-9]|0[1-9]\d|[12]\d{2}|3[0-5]\d|36[0-6]))(?:Z|[+-](?:14:00|(?:0\d|1[0-3]):[0-5]\d))?$
+examples:
+- value: 2000-A1
+  description: Reporting year
+- value: 2000-S1
+  description: First semester
+- value: 2000-T1
+  description: First trimester
+- value: 2000-Q1
+  description: First quarter
+- value: 2000-M01
+  description: January
+- value: 2000-W01
+  description: First week
+- value: 2000-D001
+  description: First day
+- value: 2000-Q5
+  valid: false
+  description: A year has four quarters
+- value: 2000-M13
+  valid: false
+  description: A year has twelve months
+- value: 2000-01
+  valid: false
+  description: 'Gregorian month: the datatype yearmonth'
+links:
+- type: doc
+  url: https://github.com/sdmx-twg/sdmx-ml/blob/master/schemas/SDMXCommon.xsd
+- type: doc
+  url: https://sdmx.org/standards-2/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SDMX

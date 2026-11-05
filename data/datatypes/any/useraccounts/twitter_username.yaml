@@ -20,6 +20,7 @@ examples:
 mappings:
   cdm: means.identity.service.twitter
   wikidata: P2002
+  dpv: pd:Username
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P2002

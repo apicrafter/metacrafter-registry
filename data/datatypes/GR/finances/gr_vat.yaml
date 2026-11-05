@@ -27,6 +27,10 @@ mappings:
   - Greece tax identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  schema_org:
+  - taxID
+  - vatID
+  stdnum: gr.vat
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gr.vat.html

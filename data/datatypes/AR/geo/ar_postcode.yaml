@@ -1,0 +1,24 @@
+id: ar_postcode
+name: Argentina postal code
+status: draft
+doc: 'Postal code in Argentina: the Código Postal Argentino (CPA) of eight characters, a letter (not I
+  or O), four digits and three letters.'
+semantic_type: postindex
+country:
+- AR
+langs:
+- es
+regexp: ^[A-HJ-NP-Z]\d{4}[A-Z]{3}$
+examples:
+- value: C1070AAM
+- value: C1000WAM
+- value: B1000TBU
+- value: X5187XAB
+- value: C1070AA
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Argentina
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/AR

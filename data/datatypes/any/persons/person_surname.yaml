@@ -11,6 +11,7 @@ is_pii: true
 mappings:
   cdm: means.identity.person.lastName
   fta: NAME.LAST
+  schema_org: familyName
 links:
 - type: schema.org
   url: https://schema.org/familyName

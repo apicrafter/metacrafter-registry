@@ -25,6 +25,7 @@ examples:
 mappings:
   orgid: NO-BRC
   wikidata: P2333
+  stdnum: no.orgnr
 links:
 - type: wikipedia
   url: https://no.wikipedia.org/wiki/Organisasjonsnummer

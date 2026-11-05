@@ -16,6 +16,8 @@ classification: identifier
 regexp: ^[A-HJ-NP-Z]{3}\d{4}$
 mappings:
   purview: New Zealand ministry of health number
+  dpv: pd:OfficialID
+  fhir: https://standards.digital.health.nz/ns/nhi-id
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-new-zealand-ministry-of-health-number

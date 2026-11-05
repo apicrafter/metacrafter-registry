@@ -18,6 +18,7 @@ examples:
 - value: Galápagos
 mappings:
   fta: STATE_PROVINCE.PROVINCE_NAME_EC
+  schema_org: addressRegion
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Provinces_of_Ecuador

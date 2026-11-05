@@ -17,6 +17,9 @@ checksum: iban_mod97
 examples:
 - value: CH9300762011623852957
   description: Swiss IBAN (21 characters, valid MOD-97 checksum)
+mappings:
+  dpv: pd:BankAccount
+  stdnum: iban
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Bank_Account_Number

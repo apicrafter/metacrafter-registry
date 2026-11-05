@@ -24,6 +24,7 @@ examples:
   description: Ensembl transcript ID, not a gene ID
 mappings:
   wikidata: P594
+  bioregistry: ensembl
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Ensembl_genome_database_project

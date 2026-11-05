@@ -18,6 +18,7 @@ examples:
   description: Brisbane Airport
 mappings:
   wikidata: P239
+  schema_org: icaoCode
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ICAO_airport_code

@@ -1,0 +1,22 @@
+id: si_postcode
+name: Slovenia postal code
+status: draft
+doc: 'Postal code in Slovenia: four digits. In addresses the code may be written after the prefix SI-.'
+semantic_type: postindex
+country:
+- SI
+langs:
+- sl
+regexp: ^\d{4}$
+examples:
+- value: '4000'
+- value: '1001'
+- value: '2500'
+- value: '400'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Slovenia
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/SI

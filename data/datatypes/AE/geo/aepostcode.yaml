@@ -15,3 +15,6 @@ regexp: ^[0-9]{5,6}$
 examples:
 - value: '00000'
   description: Example UAE postal code
+mappings:
+  dpv: pd:PostalCode
+  schema_org: postalCode

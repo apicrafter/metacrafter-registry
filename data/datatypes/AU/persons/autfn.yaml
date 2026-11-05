@@ -17,6 +17,9 @@ mappings:
   google_dlp: AUSTRALIA_TAX_FILE_NUMBER
   presidio: AU_TFN
   purview: Australia tax file number
+  dpv: pd:OfficialID
+  schema_org: taxID
+  stdnum: au.tfn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Tax_file_number

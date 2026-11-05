@@ -1,0 +1,36 @@
+id: esco_occupation
+name: ESCO occupation URI
+status: draft
+doc: URI of an occupation in ESCO (European Skills, Competences, Qualifications and Occupations), the
+  multilingual classification of the European Commission. The URI is http://data.europa.eu/esco/occupation/
+  followed by a lowercase UUID; Wikidata stores only the UUID. Every ESCO occupation sits under an ISCO-08
+  unit group (isco08), and ESCO links it to its essential and optional skills (esco_skill).
+categories:
+- industry
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^https?://data\.europa\.eu/esco/occupation/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+examples:
+- value: http://data.europa.eu/esco/occupation/f2b15a0e-e65a-438a-affb-29b9d50b77d1
+  description: Software developer (ISCO-08 unit group 2512)
+- value: http://data.europa.eu/esco/occupation/d0aa0792-4345-474b-9365-686cf4869d2e
+  description: Software architect
+- value: http://data.europa.eu/esco/skill/0c0488b3-fca5-4deb-865b-8dc605c3d909
+  valid: false
+  description: A skill URI, not an occupation
+- value: f2b15a0e-e65a-438a-affb-29b9d50b77d1
+  valid: false
+  description: UUID without the URI prefix
+mappings:
+  wikidata: P4652
+links:
+- type: doc
+  url: https://esco.ec.europa.eu/en/classification/occupation_main
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/European_Skills,_Competences,_Qualifications_and_Occupations
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4652

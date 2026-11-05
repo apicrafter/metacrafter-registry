@@ -22,6 +22,7 @@ examples:
 mappings:
   autotype: isan
   wikidata: P3212
+  stdnum: isan
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Standard_Audiovisual_Number

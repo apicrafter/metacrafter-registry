@@ -1,0 +1,23 @@
+id: my_postcode
+name: Malaysia postal code
+status: draft
+doc: 'Postal code in Malaysia: five digits.'
+semantic_type: postindex
+country:
+- MY
+langs:
+- ms
+regexp: ^\d{5}$
+examples:
+- value: '43000'
+- value: '50754'
+- value: '88990'
+- value: '50670'
+- value: '4300'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Malaysia
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/MY

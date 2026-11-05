@@ -24,6 +24,9 @@ examples:
 - value: 05463565557368280448597
   valid: false
   description: One character too many
+mappings:
+  dpv: pd:BankAccount
+  stdnum: ar.cbu
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/Clave_Bancaria_Uniforme

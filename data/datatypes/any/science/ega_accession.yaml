@@ -1,0 +1,27 @@
+id: ega_accession
+name: European Genome-phenome Archive (EGA) accession
+status: draft
+doc: Accession of an object in the European Genome-phenome Archive, run by EMBL-EBI and the Centre for
+  Genomic Regulation to archive and share personally identifiable genetic, phenotypic and clinical data
+  from biomedical research. It is EGA, one letter for the kind of object, such as S for a study or D for
+  a dataset, and eleven digits.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^EGA[SCPNRXZDBF][0-9]{11}$
+examples:
+- value: EGAD00001008392
+  description: Dataset "Rare Disease Synthetic Dataset"; Bioregistry example
+- value: EGAD0000100839
+  valid: false
+  description: Ten digits instead of eleven
+mappings:
+  bioregistry: ega
+links:
+- type: doc
+  url: https://ega-archive.org/
+- type: other
+  url: https://bioregistry.io/registry/ega

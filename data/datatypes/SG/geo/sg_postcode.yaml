@@ -1,0 +1,25 @@
+id: sg_postcode
+name: Singapore postal code
+status: draft
+doc: 'Postal code in Singapore: six digits.'
+semantic_type: postindex
+country:
+- SG
+langs:
+- en
+- ms
+- ta
+- zh
+regexp: ^\d{6}$
+examples:
+- value: '546080'
+- value: '308125'
+- value: '408600'
+- value: '54608'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Singapore
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/SG

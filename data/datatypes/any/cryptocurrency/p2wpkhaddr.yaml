@@ -29,6 +29,7 @@ examples:
   description: mixed case is not allowed
 mappings:
   presidio: CRYPTO
+  stdnum: bitcoin
 links:
 - type: doc
   url: https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki

@@ -1,0 +1,22 @@
+id: gg_postcode
+name: Guernsey postal code
+status: draft
+doc: 'Postal code in Guernsey: the letters GY, a digit and an optional digit or letter, an optional space,
+  then a digit and two letters. Guernsey, Alderney and Sark form the GY postcode area.'
+semantic_type: postindex
+country:
+- GG
+langs:
+- en
+regexp: ^GY\d[\dA-Z]? ?\d[ABD-HJLN-UW-Z]{2}$
+examples:
+- value: GY1 1AA
+- value: GY2 2BT
+- value: GY1 1A
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/GY_postcode_area
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/GG

@@ -1,0 +1,20 @@
+id: ni_postcode
+name: Nicaragua postal code
+status: draft
+doc: 'Postal code in Nicaragua: five digits.'
+semantic_type: postindex
+country:
+- NI
+langs:
+- es
+regexp: ^\d{5}$
+examples:
+- value: '52000'
+- value: '5200'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Nicaragua
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/NI

@@ -20,6 +20,7 @@ examples:
 mappings:
   autotype: orcid
   wikidata: P496
+  bioregistry: orcid
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ORCID

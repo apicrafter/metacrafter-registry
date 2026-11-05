@@ -16,6 +16,7 @@ classification: identifier
 regexp: ^[A-Z]{1,2}\d{6} ?(?:[0-9A]|\([0-9A]\))$
 mappings:
   purview: Hong Kong identity card (HKID) number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-hong-kong-identity-card-number

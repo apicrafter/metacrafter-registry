@@ -21,6 +21,7 @@ mappings:
   fta:
   - PERSON.MARITAL_STATUS_EN
   - PERSON.MARITAL_STATUS_JA
+  dpv: pd:MaritalStatus
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Marital_status

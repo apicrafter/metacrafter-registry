@@ -1,0 +1,24 @@
+id: pe_postcode
+name: Peru postal code
+status: draft
+doc: 'Postal code in Peru: five digits starting with 0, 1 or 2; the older codes of Lima and Callao, such
+  as LIMA 23 or CALLAO 2, are also accepted.'
+semantic_type: postindex
+country:
+- PE
+langs:
+- es
+regexp: ^(?:(?:LIMA \d{1,2}|CALLAO 0?\d)|[0-2]\d{4})$
+examples:
+- value: LIMA 23
+- value: LIMA 42
+- value: CALLAO 2
+- value: '02001'
+- value: '0200'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Peru
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/PE

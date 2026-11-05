@@ -16,6 +16,7 @@ examples:
   description: zeolite Y
 mappings:
   wikidata: P2153
+  bioregistry: pubchem.substance
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/PubChem

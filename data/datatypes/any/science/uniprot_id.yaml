@@ -29,6 +29,8 @@ examples:
 mappings:
   autotype: uniprot
   wikidata: P352
+  fhir: https://www.uniprot.org
+  bioregistry: uniprot
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/UniProt

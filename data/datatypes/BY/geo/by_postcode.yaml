@@ -1,0 +1,21 @@
+id: by_postcode
+name: Belarus postal code
+status: draft
+doc: 'Postal code in Belarus: six digits.'
+semantic_type: postindex
+country:
+- BY
+langs:
+- be
+- ru
+regexp: ^\d{6}$
+examples:
+- value: '223016'
+- value: '225860'
+- value: '220050'
+- value: '22301'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/BY

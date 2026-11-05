@@ -17,6 +17,7 @@ examples:
   description: Bluesky
 mappings:
   wikidata: P12361
+  dpv: pd:Username
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P12361

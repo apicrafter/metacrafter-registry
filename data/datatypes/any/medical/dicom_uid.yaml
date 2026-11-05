@@ -1,0 +1,40 @@
+id: dicom_uid
+name: DICOM unique identifier (UID)
+status: draft
+doc: 'Unique identifier that DICOM medical imaging data uses for studies, series, image and other SOP
+  instances, SOP classes, transfer syntaxes and other items. It has the numeric form of an ISO/IEC 8824
+  object identifier: an organization root followed by a suffix, both made of numbers separated by dots.
+  A number has no leading zero unless it is the single digit 0, and the whole UID has at most 64 characters.
+  The root 1.2.840.10008 is reserved for UIDs that the DICOM Standard defines itself. DICOM PS3.5, chapter
+  9, sets these rules. In a DICOM file a UID of odd length ends with a NUL padding byte, which the regexp
+  does not accept.'
+parent: oid
+categories:
+- medical
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?=[0-9.]{1,64}$)(?:0|[1-9]\d*)(?:\.(?:0|[1-9]\d*))+$
+examples:
+- value: 1.2.840.10008.1.2
+  description: Implicit VR Little Endian, the default DICOM transfer syntax (PS3.6 Table A-1)
+- value: 1.2.840.10008.5.1.4.1.1.2
+  description: CT Image Storage SOP class (PS3.6 Table A-1)
+- value: 1.2.840.10008.1.1
+  description: Verification SOP class (PS3.6 Table A-1)
+- value: 1.2.840.010008.1.2
+  valid: false
+  description: A component with a leading zero
+- value: 1.2.840.10008.
+  valid: false
+  description: Ends with a separator
+mappings:
+  fhir: urn:dicom:uid
+links:
+- type: doc
+  url: https://dicom.nema.org/medical/dicom/current/output/chtml/part05/chapter_9.html
+- type: doc
+  url: https://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_A.html
+- type: doc
+  url: https://terminology.hl7.org/NamingSystem-dui.html

@@ -1,0 +1,32 @@
+id: cell_ontology_id
+name: Cell Ontology (CL) term ID
+status: draft
+doc: 'Identifier of a cell type in the Cell Ontology, a structured vocabulary of cell types from prokaryotes
+  to mammals, plants and fungi. It is CL: and seven digits; OBO PURLs and Wikidata write CL_ instead.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^CL[:_]\d{7}$
+examples:
+- value: CL:0000236
+  description: B cell
+- value: CL:0000062
+  description: osteoblast; Bioregistry example
+- value: CL_0000236
+  description: B cell, underscore form
+- value: CL:236
+  valid: false
+  description: Not padded to seven digits
+mappings:
+  bioregistry: cl
+  wikidata: P7963
+links:
+- type: doc
+  url: https://obophenotype.github.io/cell-ontology/
+- type: other
+  url: https://bioregistry.io/registry/cl
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P7963

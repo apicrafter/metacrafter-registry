@@ -1,0 +1,30 @@
+id: worms_aphia_id
+name: WoRMS AphiaID
+status: draft
+doc: Number of a taxon name in the World Register of Marine Species (WoRMS), the expert-curated list of
+  names of marine organisms with their synonyms. WoRMS calls this number the AphiaID.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d+$
+examples:
+- value: '145548'
+  description: Fucus vesiculosus; example of Wikidata property P850
+- value: '146421'
+  description: Class Appendicularia; Bioregistry example
+- value: Fucus vesiculosus
+  valid: false
+  description: Taxon name instead of its number
+mappings:
+  bioregistry: worms
+  wikidata: P850
+links:
+- type: doc
+  url: https://www.marinespecies.org/
+- type: other
+  url: https://bioregistry.io/registry/worms
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P850

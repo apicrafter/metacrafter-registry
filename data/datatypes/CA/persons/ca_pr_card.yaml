@@ -14,6 +14,8 @@ langs:
 - fr
 is_pii: true
 classification: identifier
+mappings:
+  dpv: pd:OfficialID
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Canada_permanent_resident_card

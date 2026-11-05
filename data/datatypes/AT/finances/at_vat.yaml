@@ -30,6 +30,8 @@ mappings:
   - Austria value added tax
   fta: IDENTITY.VAT_AT
   orgid: AT-UID
+  schema_org: vatID
+  stdnum: at.uid
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/VAT_identification_number

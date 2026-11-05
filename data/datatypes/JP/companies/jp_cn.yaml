@@ -28,6 +28,7 @@ mappings:
   - Japan My Number - Corporate
   orgid: JP-JCN
   wikidata: P3225
+  stdnum: jp.cn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Corporate_Number

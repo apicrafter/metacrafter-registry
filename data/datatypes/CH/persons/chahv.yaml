@@ -22,6 +22,8 @@ mappings:
   - Swiss Social Security Number AHV
   - Switzerland SSN AHV number
   fta: IDENTITY.SSN_CH
+  dpv: pd:OfficialID
+  stdnum: ch.ssn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Swiss_social_security_number

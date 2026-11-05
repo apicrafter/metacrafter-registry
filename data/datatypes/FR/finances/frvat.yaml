@@ -31,6 +31,8 @@ examples:
 mappings:
   purview: France value added tax number
   fta: IDENTITY.VAT_FR
+  schema_org: vatID
+  stdnum: fr.tva
 links:
 - type: wikipedia
   url: https://fr.wikipedia.org/wiki/Num%C3%A9ro_d%27identification_%C3%A0_la_TVA_intracommunautaire

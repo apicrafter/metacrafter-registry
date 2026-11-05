@@ -16,6 +16,7 @@ classification: identifier
 regexp: ^\d{10} ?\d{10} ?\d$
 mappings:
   purview: France health insurance number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-france-health-insurance-number

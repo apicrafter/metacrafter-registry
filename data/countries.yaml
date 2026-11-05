@@ -414,3 +414,87 @@
 - id: ZW
   name: Zimbabwe
   kind: country
+- id: MA
+  name: Morocco
+  kind: country
+- id: VE
+  name: Venezuela
+  kind: country
+- id: BB
+  name: Barbados
+  kind: country
+- id: BH
+  name: Bahrain
+  kind: country
+- id: BN
+  name: Brunei
+  kind: country
+- id: BT
+  name: Bhutan
+  kind: country
+- id: CV
+  name: Cabo Verde
+  kind: country
+- id: DZ
+  name: Algeria
+  kind: country
+- id: FM
+  name: Micronesia
+  kind: country
+- id: GN
+  name: Guinea
+  kind: country
+- id: HT
+  name: Haiti
+  kind: country
+- id: IR
+  name: Iran
+  kind: country
+- id: KW
+  name: Kuwait
+  kind: country
+- id: LA
+  name: Laos
+  kind: country
+- id: MH
+  name: Marshall Islands
+  kind: country
+- id: MM
+  name: Myanmar
+  kind: country
+- id: MN
+  name: Mongolia
+  kind: country
+- id: MV
+  name: Maldives
+  kind: country
+- id: MZ
+  name: Mozambique
+  kind: country
+- id: NI
+  name: Nicaragua
+  kind: country
+- id: OM
+  name: Oman
+  kind: country
+- id: PW
+  name: Palau
+  kind: country
+- id: SD
+  name: Sudan
+  kind: country
+- id: SM
+  name: San Marino
+  kind: country
+- id: TM
+  name: Turkmenistan
+  kind: country
+- id: TT
+  name: Trinidad and Tobago
+  kind: country
+- id: VA
+  name: Vatican City
+  kind: country
+- id: VC
+  name: Saint Vincent and the Grenadines
+  kind: country

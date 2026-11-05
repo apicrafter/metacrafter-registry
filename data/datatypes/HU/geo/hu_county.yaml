@@ -19,6 +19,7 @@ examples:
 - value: Bács-Kiskun
 mappings:
   fta: STATE_PROVINCE.COUNTY_HU
+  schema_org: addressRegion
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Counties_of_Hungary

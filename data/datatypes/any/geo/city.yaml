@@ -15,6 +15,8 @@ mappings:
   d3m: http://schema.org/City
   fta: CITY
   sherlock: city
+  dpv: pd:City
+  schema_org: addressLocality
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/City

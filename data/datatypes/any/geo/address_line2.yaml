@@ -19,6 +19,7 @@ mappings:
   - STREET_ADDRESS2_EN
   - STREET_ADDRESS3_EN
   - STREET_ADDRESS4_EN
+  schema_org: extendedAddress
 links:
 - type: other
   url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md

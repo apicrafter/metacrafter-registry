@@ -19,6 +19,7 @@ mappings:
   autotype: airport
   wikidata: P238
   fta: AIRPORT_CODE.IATA
+  schema_org: iataCode
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/IATA_airport_code

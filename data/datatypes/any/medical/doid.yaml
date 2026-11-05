@@ -17,6 +17,7 @@ examples:
   description: Crohn's disease
 mappings:
   wikidata: P699
+  bioregistry: doid
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Disease_Ontology

@@ -14,6 +14,7 @@ examples:
 mappings:
   sherlock: file Size
   wikidata: P3575
+  schema_org: contentSize
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P3575

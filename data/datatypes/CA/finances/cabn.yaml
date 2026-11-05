@@ -20,6 +20,7 @@ mappings:
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/BusinessNumber
   orgid: CA-CRA_ACR
   wikidata: P8860
+  stdnum: ca.bn
 links:
 - type: doc
   url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/business-number.html

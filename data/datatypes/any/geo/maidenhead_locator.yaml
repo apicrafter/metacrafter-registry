@@ -1,0 +1,36 @@
+id: maidenhead_locator
+name: Maidenhead locator (QTH locator)
+status: draft
+doc: 'Grid square of the Maidenhead Locator System, used by radio amateurs to give a station position;
+  the IARU adopted it in 1980. Pairs of characters give longitude then latitude: a field of two letters
+  A to R (20 by 10 degrees), a square of two digits, a subsquare of two letters A to X and an extended
+  square of two digits, giving two, four, six or eight characters. Field letters are upper case; subsquare
+  letters are often written in lower case. A two-character locator looks like many other two-letter codes.'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-R]{2}(?:\d{2}(?:[A-Xa-x]{2}(?:\d{2})?)?)?$
+examples:
+- value: FN31pr
+  description: Station W1AW of the ARRL in Newington, Connecticut (Wikipedia)
+- value: KN28LH
+  description: Six-character locator from Wikipedia
+- value: BL11BH16
+  description: Eight-character locator from Wikipedia
+- value: FN31
+  description: Four-character square
+- value: SN31
+  valid: false
+  description: Field letters end at R
+- value: FN31PZ
+  valid: false
+  description: Subsquare letters end at X
+- value: FN3
+  valid: false
+  description: Odd number of characters
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Maidenhead_Locator_System

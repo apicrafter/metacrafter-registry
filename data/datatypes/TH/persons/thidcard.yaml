@@ -15,6 +15,8 @@ regexp: ^\b\d{1}-\d{4}-\d{5}-\d{2}-\d\b$
 mappings:
   presidio: TH_TNIN
   purview: Thai population identification code
+  dpv: pd:OfficialID
+  stdnum: th.pin
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Thai_identity_card

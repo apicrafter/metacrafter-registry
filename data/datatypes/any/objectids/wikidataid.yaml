@@ -16,6 +16,7 @@ examples:
   description: Gurk
 mappings:
   orgid: XI-WIKIDATA
+  bioregistry: wikidata.entity
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Wikidata:Identifiers

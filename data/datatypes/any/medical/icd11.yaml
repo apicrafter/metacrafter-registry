@@ -20,6 +20,7 @@ examples:
   description: age related macular degeneration
 mappings:
   wikidata: P7329
+  bioregistry: icd11.code
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ICD-11

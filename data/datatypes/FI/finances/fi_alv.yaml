@@ -24,6 +24,8 @@ examples:
   description: One character too many
 mappings:
   orgid: FI-VERO
+  schema_org: vatID
+  stdnum: fi.alv
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fi.alv.html

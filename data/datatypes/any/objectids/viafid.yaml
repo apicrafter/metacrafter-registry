@@ -26,6 +26,7 @@ examples:
   description: leading zero
 mappings:
   wikidata: P214
+  bioregistry: viaf
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Virtual_International_Authority_File

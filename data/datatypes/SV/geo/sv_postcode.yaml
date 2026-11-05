@@ -1,0 +1,19 @@
+id: sv_postcode
+name: El Salvador postal code
+status: draft
+doc: 'Postal code in El Salvador: four digits; the first is 1 to 3, the second 1 to 7 and the third 0
+  to 2.'
+semantic_type: postindex
+country:
+- SV
+langs:
+- es
+regexp: ^[1-3][1-7][0-2]\d$
+examples:
+- value: '1101'
+- value: '110'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/SV

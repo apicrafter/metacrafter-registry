@@ -1,0 +1,23 @@
+id: mk_postcode
+name: North Macedonia postal code
+status: draft
+doc: 'Postal code in North Macedonia: four digits.'
+semantic_type: postindex
+country:
+- MK
+langs:
+- mk
+regexp: ^\d{4}$
+examples:
+- value: '1314'
+- value: '1321'
+- value: '1443'
+- value: '1062'
+- value: '131'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_North_Macedonia
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/MK

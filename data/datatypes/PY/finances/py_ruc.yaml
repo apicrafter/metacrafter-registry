@@ -22,6 +22,8 @@ examples:
   description: The first example in its printed form
 mappings:
   orgid: PY-RUC
+  schema_org: taxID
+  stdnum: py.ruc
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.py.ruc.html

@@ -1,0 +1,20 @@
+id: iq_postcode
+name: Iraq postal code
+status: draft
+doc: 'Postal code in Iraq: five digits.'
+semantic_type: postindex
+country:
+- IQ
+langs:
+- ar
+regexp: ^\d{5}$
+examples:
+- value: '31001'
+- value: '3100'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Iraq
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/IQ

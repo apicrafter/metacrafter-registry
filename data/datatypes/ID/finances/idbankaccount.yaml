@@ -14,3 +14,5 @@ regexp: ^[0-9]{8,17}$
 examples:
 - value: '12345678901234567'
   description: Example Indonesian bank account number
+mappings:
+  dpv: pd:BankAccount

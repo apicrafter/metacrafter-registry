@@ -1,0 +1,19 @@
+id: pw_postcode
+name: Palau postal code
+status: draft
+doc: 'Postal code in Palau: a ZIP code, 96939 or 96940, optionally followed by a space or hyphen and four
+  more digits.'
+semantic_type: postindex
+country:
+- PW
+langs:
+- en
+regexp: ^(969(?:39|40))(?:[ \-](\d{4}))?$
+examples:
+- value: '96940'
+- value: '9694'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/PW

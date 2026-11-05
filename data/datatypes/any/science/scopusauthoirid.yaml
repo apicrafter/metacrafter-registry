@@ -12,6 +12,7 @@ classification: identifier
 regexp: ^[1-9]\d{9,11}$
 mappings:
   wikidata: P1153
+  bioregistry: scopus
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1153

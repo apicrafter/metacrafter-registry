@@ -1,0 +1,26 @@
+id: mitre_attack_group_id
+name: MITRE ATT&CK group ID
+status: draft
+doc: 'Identifier of a threat group (intrusion set) in MITRE ATT&CK: G followed by four digits.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^G[0-9]{4}$
+examples:
+- value: G0007
+  description: APT28
+- value: G0016
+  description: APT29
+- value: G007
+  valid: false
+  description: Three digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ATT%26CK
+- type: doc
+  url: https://attack.mitre.org/groups/G0016
+- type: other
+  url: https://github.com/mitre-attack/attack-stix-data

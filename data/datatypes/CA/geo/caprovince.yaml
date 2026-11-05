@@ -13,6 +13,7 @@ is_pii: false
 classification: categorical
 mappings:
   fta: STATE_PROVINCE.PROVINCE_NAME_CA
+  schema_org: addressRegion
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Provinces_and_territories_of_Canada

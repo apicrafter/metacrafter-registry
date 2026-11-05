@@ -25,6 +25,7 @@ examples:
   description: The sequence is not zero-padded to six digits
 mappings:
   wikidata: P9306
+  bioregistry: euclinicaltrials
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/EudraCT

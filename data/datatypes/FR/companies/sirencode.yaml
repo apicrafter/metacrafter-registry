@@ -23,6 +23,7 @@ mappings:
   orgid:
   - FR-RCS
   - FR-INSEE
+  stdnum: fr.siren
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SIREN_code

@@ -1,0 +1,24 @@
+id: sm_postcode
+name: San Marino postal code
+status: draft
+doc: 'Postal code in San Marino: five digits from 47890 to 47899. San Marino is part of the Italian postal
+  code system.'
+semantic_type: postindex
+country:
+- SM
+langs:
+- it
+regexp: ^4789\d$
+examples:
+- value: '47890'
+- value: '47891'
+- value: '47895'
+- value: '47899'
+- value: '4789'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Codice_di_avviamento_postale
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/SM

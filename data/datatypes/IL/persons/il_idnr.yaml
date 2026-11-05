@@ -28,6 +28,8 @@ mappings:
   purview:
   - Israel National ID
   - Israel national identification number
+  dpv: pd:OfficialID
+  stdnum: il.idnr
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Israeli_identity_card

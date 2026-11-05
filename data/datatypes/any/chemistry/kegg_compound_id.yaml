@@ -1,0 +1,29 @@
+id: kegg_compound_id
+name: KEGG COMPOUND identifier
+status: draft
+doc: 'Identifier of a small molecule or other chemical substance in KEGG COMPOUND, one of the KEGG LIGAND
+  databases: C and a number, as in C00031 for D-glucose. Other KEGG entries use other letters, for example
+  D for KEGG DRUG, G for GLYCAN and R for REACTION.'
+categories:
+- chemistry
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^C\d+$
+examples:
+- value: C00031
+  description: D-Glucose
+- value: C12345
+  description: 1,3-Dimethyl-6,8-isoquinolinediol; Bioregistry example
+- value: D00123
+  valid: false
+  description: KEGG DRUG entry, not a compound
+mappings:
+  bioregistry: kegg.compound
+links:
+- type: doc
+  url: https://www.genome.jp/kegg/compound/
+- type: other
+  url: https://bioregistry.io/registry/kegg.compound

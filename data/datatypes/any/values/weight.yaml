@@ -30,6 +30,7 @@ examples:
 mappings:
   sherlock: weight
   wikidata: P2067
+  schema_org: weight
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Mass

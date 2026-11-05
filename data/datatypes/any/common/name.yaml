@@ -11,6 +11,7 @@ mappings:
   cdm: means.identity.name
   sherlock: name
   wikidata: P2561
+  schema_org: name
 links:
 - type: schema.org
   url: https://schema.org/name

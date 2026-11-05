@@ -23,6 +23,8 @@ examples:
 mappings:
   autotype: cas
   wikidata: P231
+  bioregistry: cas
+  stdnum: casrn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/CAS_Registry_Number

@@ -10,3 +10,6 @@ langs:
 - en
 is_pii: true
 classification: identifier
+mappings:
+  dpv: pd:Name
+  schema_org: givenName

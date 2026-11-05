@@ -1,0 +1,31 @@
+id: kegg_pathway_id
+name: KEGG pathway map identifier
+status: draft
+doc: 'Identifier of a pathway map in KEGG PATHWAY, the hand-drawn maps of molecular interaction and reaction
+  networks of the Kyoto Encyclopedia of Genes and Genomes. It is a prefix of two to four characters and
+  five digits: map for the reference pathway or a KEGG organism code, such as hsa for human, for the pathway
+  of one organism.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\w{2,4}\d{5}$
+examples:
+- value: map00010
+  description: Glycolysis / Gluconeogenesis, reference pathway
+- value: hsa00010
+  description: Glycolysis / Gluconeogenesis in Homo sapiens
+- value: rsk00410
+  description: beta-Alanine metabolism in Cereibacter sphaeroides KD131; Bioregistry example
+- value: hsa0010
+  valid: false
+  description: Four digits instead of five
+mappings:
+  bioregistry: kegg.pathway
+links:
+- type: doc
+  url: https://www.genome.jp/kegg/pathway.html
+- type: other
+  url: https://bioregistry.io/registry/kegg.pathway

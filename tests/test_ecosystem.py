@@ -925,3 +925,79 @@ def test_javascript_checksums_match_python(tmp_path):
     for name, js in zip(names, json.loads(out), strict=True):
         assert js is not None, f"{name} is missing from identify-core.js"
         assert js == [ALGORITHMS[name](v) for v in values], name
+
+
+@pytest.mark.parametrize(
+    ("key", "bad", "good"),
+    [
+        (
+            "bioregistry",
+            ("CHEBI", "'chebi:15377'", "https://bioregistry.io/chebi"),
+            ("chebi", "pubchem.compound", "[ncbitaxon, taxrank]"),
+        ),
+        (
+            "stdnum",
+            ("stdnum.br.cpf", "br/cpf", "BR.CPF"),
+            ("br.cpf", "iban", "in_.aadhaar", "[eu.vat, de.vat]"),
+        ),
+        (
+            "fhir",
+            ("hl7.org/fhir/sid/us-ssn", "'urn:oid:x.1'", "'http://hl7.org/fhir/sid/us ssn'"),
+            (
+                "http://hl7.org/fhir/sid/us-ssn",
+                "'urn:oid:2.16.840.1.113883.4.1'",
+                "[http://hl7.org/fhir/sid/us-npi, 'urn:oid:2.16.840.1.113883.4.6']",
+            ),
+        ),
+    ],
+)
+def test_new_mapping_keys_check_their_format(mini_data, key, bad, good):
+    path = mini_data / "datatypes/any/pii/email.yaml"
+    original = path.read_text()
+    for value in bad:
+        path.write_text(original + f"mappings:\n  {key}: {value}\n")
+        errors = [str(i) for i in validate(load_sources(mini_data)).errors]
+        assert any("mappings" in e and key in e for e in errors), (value, errors)
+    for value in good:
+        path.write_text(original + f"mappings:\n  {key}: {value}\n")
+        assert validate(load_sources(mini_data)).errors == [], value
+
+
+def test_new_mapping_keys_crosswalk_normalization():
+    from metacrafter_registry.client import _bioregistry_prefix, _stdnum_module
+
+    for value in (
+        "chebi",
+        "CHEBI",
+        "CHEBI:15377",
+        "https://bioregistry.io/chebi",
+        "https://bioregistry.io/registry/chebi/",
+    ):
+        assert _bioregistry_prefix(value) == "chebi", value
+    assert _bioregistry_prefix("pubchem.compound:2244") == "pubchem.compound"
+    for value in (
+        "br.cpf",
+        "stdnum.br.cpf",
+        "br/cpf",
+        "stdnum/br/cpf.py",
+        "https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.br.cpf.html",
+    ):
+        assert _stdnum_module(value) == "br.cpf", value
+
+
+def test_bioregistry_stdnum_fhir_crosswalk(repo_sources):
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+
+    def ids(system: str, value: str) -> list[str]:
+        return [r["id"] for r in reg.crosswalk(system, value)]
+
+    assert ids("bioregistry", "CHEBI:15377") == ["chebi_id"]
+    assert ids("bioregistry", "https://bioregistry.io/ncbitaxon") == ["ncbi_taxon_id"]
+    assert ids("stdnum", "stdnum.ru.inn") == ["inn"]
+    assert "iban" in ids(
+        "stdnum", "https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.iban.html"
+    )
+    assert ids("fhir", "http://hl7.org/fhir/sid/us-ssn") == ["usssn"]
+    assert ids("fhir", "urn:dicom:uid") == ["dicom_uid"]

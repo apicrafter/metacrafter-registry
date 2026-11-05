@@ -1,0 +1,28 @@
+id: sequence_ontology_id
+name: Sequence Ontology (SO) term ID
+status: draft
+doc: 'Identifier of a term in the Sequence Ontology, the controlled vocabulary for the parts of genome
+  annotations and for sequence variants, such as missense_variant. It is SO: and seven digits; OBO PURLs
+  write SO_ instead.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^SO[:_]\d{7}$
+examples:
+- value: SO:0001583
+  description: missense_variant
+- value: SO:0001157
+  description: DMv4_motif; Bioregistry example
+- value: SO:1583
+  valid: false
+  description: Not padded to seven digits
+mappings:
+  bioregistry: so
+links:
+- type: doc
+  url: https://www.ebi.ac.uk/ols4/ontologies/so
+- type: other
+  url: https://bioregistry.io/registry/so

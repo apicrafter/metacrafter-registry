@@ -25,6 +25,8 @@ examples:
   description: One character too many
 mappings:
   purview: New Zealand inland revenue number
+  schema_org: taxID
+  stdnum: nz.ird
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.nz.ird.html

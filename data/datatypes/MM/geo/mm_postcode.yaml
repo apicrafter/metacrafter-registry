@@ -1,0 +1,20 @@
+id: mm_postcode
+name: Myanmar postal code
+status: draft
+doc: 'Postal code in Myanmar: five digits.'
+semantic_type: postindex
+country:
+- MM
+langs:
+- my
+regexp: ^\d{5}$
+examples:
+- value: '11181'
+- value: '1118'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Myanmar
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/MM

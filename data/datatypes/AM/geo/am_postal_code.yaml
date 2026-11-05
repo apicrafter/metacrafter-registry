@@ -16,6 +16,9 @@ examples:
   description: Example Armenian postal code (Yerevan)
 - value: '3101'
   description: Example Armenian postal code
+mappings:
+  dpv: pd:PostalCode
+  schema_org: postalCode
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Postal_codes_in_Armenia

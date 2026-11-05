@@ -1,0 +1,44 @@
+id: fr_naf
+name: French activity code (NAF rév. 2 subclass, APE code)
+status: draft
+doc: Code of a subclass of the French classification of activities NAF rév. 2 (2008), which has the same
+  structure as the European NACE. INSEE gives every company and establishment in the SIRENE register an
+  APE code (activité principale exercée) taken from it, so the APE code is also called the NAF code. A
+  subclass code has four digits and a letter, usually written with a dot after the second digit, as in
+  79.11Z; data sets often leave the dot out. From 1 January 2027 APE codes are assigned from NAF 2025
+  instead.
+categories:
+- industry
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^\d{2}\.?\d{2}[A-Z]$
+examples:
+- value: 13.94Z
+  description: Manufacture of cordage, rope and netting, an example of Wikidata P10564
+- value: 32.50A
+  description: Manufacture of medical and dental equipment, an example of Wikidata P10564
+- value: 79.11Z
+  description: Travel agency activities, an example of Wikidata P10564
+- value: 0116Z
+  description: Test value of the insee_ape700 format of csv-detective, without the dot
+- value: '62.01'
+  valid: false
+  description: NACE class without the NAF subclass letter
+mappings:
+  wikidata: P10564
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Code_APE
+- type: doc
+  url: https://www.insee.fr/fr/information/2406147
+- type: doc
+  url: https://entreprendre.service-public.fr/vosdroits/F31190
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P10564
+translations:
+  fr:
+    name: Code APE (code NAF rév. 2)

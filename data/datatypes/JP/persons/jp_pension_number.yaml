@@ -16,6 +16,7 @@ classification: identifier
 regexp: ^\d{4}-?\d{6}$
 mappings:
   purview: Japan social insurance number (SIN)
+  dpv: pd:OfficialID
 links:
 - type: wikipedia
   url: https://ja.wikipedia.org/wiki/%E5%9F%BA%E7%A4%8E%E5%B9%B4%E9%87%91%E7%95%AA%E5%8F%B7

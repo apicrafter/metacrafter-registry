@@ -1,0 +1,20 @@
+id: np_postcode
+name: Nepal postal code
+status: draft
+doc: 'Postal code in Nepal: five digits.'
+semantic_type: postindex
+country:
+- NP
+langs:
+- ne
+regexp: ^\d{5}$
+examples:
+- value: '44601'
+- value: '4460'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Nepal
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/NP

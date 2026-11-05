@@ -1,0 +1,27 @@
+id: mitre_attack_software_id
+name: MITRE ATT&CK software ID
+status: draft
+doc: 'Identifier of a piece of software in MITRE ATT&CK, either malware or a tool that adversaries use:
+  S followed by four digits.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^S[0-9]{4}$
+examples:
+- value: S0002
+  description: Mimikatz
+- value: S0039
+  description: Net
+- value: S00002
+  valid: false
+  description: Five digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ATT%26CK
+- type: doc
+  url: https://attack.mitre.org/software/S0002
+- type: other
+  url: https://github.com/mitre-attack/attack-stix-data

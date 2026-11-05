@@ -24,6 +24,8 @@ examples:
 mappings:
   autotype: gln
   wikidata: P9860
+  fhir: http://www.gs1.org/gln
+  schema_org: globalLocationNumber
 links:
 - type: schema.org
   url: https://schema.org/globalLocationNumber

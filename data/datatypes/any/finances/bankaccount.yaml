@@ -11,6 +11,7 @@ is_pii: false
 classification: identifier
 mappings:
   fibo: FBC/ProductsAndServices/ClientsAndAccounts/BankAccountIdentifier
+  dpv: pd:BankAccount
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Bank_account

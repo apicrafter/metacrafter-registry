@@ -1,0 +1,26 @@
+id: bioproject_accession
+name: BioProject accession
+status: draft
+doc: Accession of a research project in BioProject, the project registry shared by NCBI, ENA and DDBJ.
+  A BioProject groups the sequence reads, assemblies, samples and other data that one project deposits.
+  It is PRJ, a letter for the issuing centre (N, E or D), one more letter and a number.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^PRJ[DEN][A-Z]\d+$
+examples:
+- value: PRJDB3
+  description: Gordonia otitidis NBRC 100426 genome sequencing project; Bioregistry example
+- value: PRJDB
+  valid: false
+  description: No number
+mappings:
+  bioregistry: bioproject
+links:
+- type: doc
+  url: https://www.ncbi.nlm.nih.gov/bioproject
+- type: other
+  url: https://bioregistry.io/registry/bioproject

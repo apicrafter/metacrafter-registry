@@ -24,6 +24,7 @@ examples:
 mappings:
   autotype: ismn
   wikidata: P1208
+  stdnum: ismn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Standard_Music_Number

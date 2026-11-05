@@ -1,0 +1,38 @@
+id: sitc
+name: Standard International Trade Classification (SITC) code
+status: draft
+doc: Code of the UN Standard International Trade Classification of goods, used in international trade
+  statistics. Revision 4 (SITC Rev. 4) has sections (one digit), divisions (two digits), groups (three
+  digits), subgroups (four digits) and basic headings (five digits), and each code begins with the code
+  of the level above it. The UN Statistics Division and UN Comtrade write the codes without separators.
+  The regexp only checks for one to five digits, so it also matches other short numbers.
+categories:
+- industry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{1,5}$
+examples:
+- value: '00111'
+  description: 'Basic heading (SITC Rev. 4): pure-bred bovine breeding animals, live'
+- value: '0011'
+  description: 'Subgroup: bovine animals, live'
+- value: '001'
+  description: 'Group: live animals other than animals of division 03'
+- value: '07111'
+  description: 'Basic heading: coffee, not roasted, not decaffeinated'
+- value: '9710'
+  description: 'Subgroup: gold, non-monetary'
+- value: '0'
+  description: 'Section: food and live animals'
+- value: '001111'
+  valid: false
+  description: Six digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Standard_International_Trade_Classification
+- type: doc
+  url: https://unstats.un.org/unsd/classifications/Econ
+- type: other
+  url: https://unstats.un.org/unsd/classifications/Econ/Download/In%20Text/SITCCodeandDescription.xlsx

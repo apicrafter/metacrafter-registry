@@ -15,6 +15,7 @@ classification: identifier
 regexp: ^[A-Z](?:\d[- ]*){14}$
 mappings:
   purview: Canada drivers license number
+  dpv: pd:OfficialID
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Driver%27s_licences_in_Canada

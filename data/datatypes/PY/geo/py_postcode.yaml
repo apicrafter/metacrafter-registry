@@ -1,0 +1,20 @@
+id: py_postcode
+name: Paraguay postal code
+status: draft
+doc: 'Postal code in Paraguay: six digits.'
+semantic_type: postindex
+country:
+- PY
+langs:
+- es
+regexp: ^\d{6}$
+examples:
+- value: '001001'
+- value: '051103'
+- value: '110407'
+- value: '00100'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/PY

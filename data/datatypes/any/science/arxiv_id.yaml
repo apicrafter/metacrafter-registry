@@ -17,6 +17,7 @@ examples:
 - value: '1109.1746'
 mappings:
   wikidata: P818
+  bioregistry: arxiv
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ArXiv

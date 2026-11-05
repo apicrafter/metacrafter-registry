@@ -21,6 +21,8 @@ examples:
 - value: ES0341392425346906CP7
   valid: false
   description: One character too many
+mappings:
+  stdnum: es.cups
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/C%C3%B3digo_Unificado_de_Punto_de_Suministro

@@ -17,6 +17,9 @@ examples:
   description: Synthetic number in the documented format
 - value: '50770'
   description: Synthetic number in the documented format
+mappings:
+  schema_org: taxID
+  stdnum: li.peid
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.li.peid.html

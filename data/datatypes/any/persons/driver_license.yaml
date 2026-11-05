@@ -11,6 +11,8 @@ langs:
 - common
 is_pii: true
 classification: identifier
+mappings:
+  dpv: pd:OfficialID
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Driver%27s_license

@@ -1,0 +1,27 @@
+id: clinvar_rcv_accession
+name: ClinVar RCV accession
+status: draft
+doc: Accession of a ClinVar reference record (RCV), which combines the interpretations that submitters
+  gave for one variation and one condition. It is RCV, a number and an optional version. Single submissions
+  have SCV accessions, which are not covered.
+categories:
+- medical
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^RCV\d+(\.\d+)?$
+examples:
+- value: RCV000033555.3
+  description: Bioregistry example
+- value: SCV000151292
+  valid: false
+  description: Submission (SCV) accession; Bioregistry example of clinvar.submission
+mappings:
+  bioregistry: clinvar.record
+links:
+- type: doc
+  url: https://www.ncbi.nlm.nih.gov/clinvar/
+- type: other
+  url: https://bioregistry.io/registry/clinvar.record

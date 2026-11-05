@@ -17,6 +17,7 @@ mappings:
   purview:
   - Taiwan Resident Certificate (ARC/TARC)
   - Taiwan-resident certificate (ARC/TARC) number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-taiwan-resident-certificate-number

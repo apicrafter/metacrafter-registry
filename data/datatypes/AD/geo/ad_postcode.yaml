@@ -1,0 +1,23 @@
+id: ad_postcode
+name: Andorra postal code
+status: draft
+doc: 'Postal code in Andorra: the letters AD and three digits; the first digit is 1 to 7 and the second
+  is 0.'
+semantic_type: postindex
+country:
+- AD
+langs:
+- ca
+regexp: ^AD[1-7]0\d$
+examples:
+- value: AD100
+- value: AD501
+- value: AD700
+- value: AD10
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Andorra
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/AD

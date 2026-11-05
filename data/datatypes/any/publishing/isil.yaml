@@ -18,6 +18,7 @@ examples:
   description: Real-world value published online
 mappings:
   wikidata: P791
+  stdnum: isil
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Standard_Identifier_for_Libraries_and_Related_Organizations

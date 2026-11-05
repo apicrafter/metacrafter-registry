@@ -1,0 +1,18 @@
+id: cu_postcode
+name: Cuba postal code
+status: draft
+doc: 'Postal code in Cuba: five digits.'
+semantic_type: postindex
+country:
+- CU
+langs:
+- es
+regexp: ^\d{5}$
+examples:
+- value: '10700'
+- value: '1070'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/CU

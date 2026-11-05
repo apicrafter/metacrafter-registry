@@ -35,6 +35,7 @@ mappings:
   presidio: URL
   wikidata: P2699
   fta: URI.URL
+  schema_org: url
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/URL

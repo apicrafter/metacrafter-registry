@@ -1,0 +1,21 @@
+id: ee_postcode
+name: Estonia postal code
+status: draft
+doc: 'Postal code in Estonia: five digits.'
+semantic_type: postindex
+country:
+- EE
+langs:
+- et
+regexp: ^\d{5}$
+examples:
+- value: '69501'
+- value: '11212'
+- value: '6950'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/EE
+- type: other
+  url: https://www.omniva.ee/postiindeks/

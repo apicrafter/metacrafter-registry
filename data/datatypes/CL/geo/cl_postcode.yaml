@@ -1,0 +1,23 @@
+id: cl_postcode
+name: Chile postal code
+status: draft
+doc: 'Postal code in Chile: seven digits.'
+semantic_type: postindex
+country:
+- CL
+langs:
+- es
+regexp: ^\d{7}$
+examples:
+- value: '8340457'
+- value: '8720019'
+- value: '1230000'
+- value: '8329100'
+- value: '834045'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Chile
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/CL

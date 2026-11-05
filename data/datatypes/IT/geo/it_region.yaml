@@ -21,6 +21,7 @@ examples:
   description: Sicilia, in English
 mappings:
   fta: STATE_PROVINCE.REGION_NAME_IT
+  schema_org: addressRegion
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Regions_of_Italy

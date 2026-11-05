@@ -16,6 +16,7 @@ examples:
 - value: <18
 mappings:
   fta: PERSON.AGE_RANGE
+  dpv: pd:AgeRange
 links:
 - type: other
   url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md

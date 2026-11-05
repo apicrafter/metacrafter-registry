@@ -1,0 +1,22 @@
+id: bt_postcode
+name: Bhutan postal code
+status: draft
+doc: 'Postal code in Bhutan: five digits.'
+semantic_type: postindex
+country:
+- BT
+langs:
+- dz
+regexp: ^\d{5}$
+examples:
+- value: '11001'
+- value: '31101'
+- value: '35003'
+- value: '1100'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Bhutan
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/BT

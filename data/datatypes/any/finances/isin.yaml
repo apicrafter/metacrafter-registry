@@ -22,6 +22,7 @@ mappings:
   fibo: SEC/Securities/SecuritiesIdentification/InternationalSecuritiesIdentificationNumber
   wikidata: P946
   fta: CHECKDIGIT.ISIN
+  stdnum: isin
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Securities_Identification_Number

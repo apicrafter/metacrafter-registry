@@ -19,6 +19,7 @@ examples:
   description: IBM UN
 mappings:
   fibo: SEC/Securities/SecuritiesIdentificationIndividuals/FinancialInstrumentGlobalIdentifier
+  stdnum: figi
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Financial_Instrument_Global_Identifier

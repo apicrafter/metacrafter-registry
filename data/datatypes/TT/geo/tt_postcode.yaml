@@ -1,0 +1,20 @@
+id: tt_postcode
+name: Trinidad and Tobago postal code
+status: draft
+doc: 'Postal code in Trinidad and Tobago: six digits.'
+semantic_type: postindex
+country:
+- TT
+langs:
+- en
+regexp: ^\d{6}$
+examples:
+- value: '500234'
+- value: '50023'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Trinidad_and_Tobago
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/TT

@@ -1,0 +1,22 @@
+id: va_postcode
+name: Vatican City postal code
+status: draft
+doc: 'Postal code in Vatican City: a single code, 00120. Vatican City is part of the Italian postal code
+  system.'
+semantic_type: postindex
+country:
+- VA
+langs:
+- la
+- it
+regexp: ^00120$
+examples:
+- value: '00120'
+- value: '0012'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Codice_di_avviamento_postale
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/VA

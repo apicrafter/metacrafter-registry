@@ -17,3 +17,5 @@ mappings:
   presidio: IN_AADHAAR
   purview: India unique identification (Aadhaar) number
   fta: IDENTITY.AADHAAR_IN
+  dpv: pd:OfficialID
+  stdnum: in_.aadhaar

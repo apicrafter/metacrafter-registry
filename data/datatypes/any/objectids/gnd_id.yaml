@@ -29,6 +29,7 @@ examples:
   description: The check character is missing
 mappings:
   wikidata: P227
+  bioregistry: gnd
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Integrated_Authority_File

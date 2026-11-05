@@ -14,6 +14,7 @@ mappings:
   purview:
   - U.S./U.K. passport number
   - EU passport number
+  fhir: http://hl7.org/fhir/sid/passport-GBR
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/British_passport

@@ -22,6 +22,7 @@ examples:
   description: testosterone
 mappings:
   wikidata: P652
+  bioregistry: unii
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Unique_Ingredient_Identifier

@@ -16,3 +16,4 @@ mappings:
   fta:
   - STATE_PROVINCE.STATE_NAME_US
   - STATE_PROVINCE.STATE_US
+  schema_org: addressRegion

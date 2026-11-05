@@ -1,0 +1,34 @@
+id: mk_edb
+name: North Macedonian tax number (EDB)
+status: draft
+doc: ЕДБ (единствен даночен број), the unique tax number of North Macedonia. It has 13 digits, the last
+  of which is a check digit, and is sometimes written with the prefix MK in Latin or Cyrillic letters.
+categories:
+- finances
+country:
+- MK
+langs:
+- mk
+is_pii: false
+classification: identifier
+regexp: ^(?:(?:MK|МК) ?)?\d{13}$
+examples:
+- value: '4030000375897'
+  description: Example from the python-stdnum documentation
+- value: МК 4020990116747
+  description: Example with the Cyrillic prefix from the python-stdnum documentation
+- value: MK4057009501106
+  description: Example with the Latin prefix from the python-stdnum documentation
+- value: '403000037589'
+  valid: false
+  description: Twelve digits
+mappings:
+  stdnum: mk.edb
+links:
+- type: doc
+  url: http://www.ujp.gov.mk/en
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.mk.edb.html
+translations:
+  mk:
+    name: Единствен даночен број (ЕДБ)

@@ -1,0 +1,28 @@
+id: geo_accession
+name: Gene Expression Omnibus (GEO) accession
+status: draft
+doc: 'Accession of a record in the Gene Expression Omnibus, the NCBI repository of gene expression and
+  other functional genomics data. The prefix gives the kind of record: GSE for a series (usually one study),
+  GSM for a sample, GPL for a platform and GDS for a curated dataset; digits follow.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^G(PL|SM|SE|DS)\d+$
+examples:
+- value: GSE2034
+  description: Series "Breast cancer relapse free survival"
+- value: GDS1234
+  description: Curated dataset; Bioregistry example
+- value: GSE-2034
+  valid: false
+  description: Hyphen between prefix and number
+mappings:
+  bioregistry: geo
+links:
+- type: doc
+  url: https://www.ncbi.nlm.nih.gov/geo/
+- type: other
+  url: https://bioregistry.io/registry/geo

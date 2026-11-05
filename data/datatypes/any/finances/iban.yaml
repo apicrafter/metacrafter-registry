@@ -31,6 +31,8 @@ mappings:
   purview: International banking account number (IBAN)
   fta: CHECKDIGIT.IBAN
   gs1_ai: '8007'
+  dpv: pd:BankAccount
+  stdnum: iban
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Bank_Account_Number

@@ -85,7 +85,7 @@ When a record has a `regexp`, these rules apply:
 - **THEN** validation fails
 
 ### Requirement: Typed mappings to external vocabularies
-A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm`, `fta`, `autotype`, `gs1_ai`, `orgid` and `qddate`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
+A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm`, `fta`, `autotype`, `gs1_ai`, `orgid`, `qddate`, `bioregistry`, `stdnum` and `fhir`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
 
 `mappings.wikidata` SHALL match `^[PQ]\d+$`.
 
@@ -156,6 +156,28 @@ A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`
 #### Scenario: Crosswalk from a date with a time
 - **WHEN** a client calls `crosswalk("qddate", "dt:date:date_2:time_1")`
 - **THEN** it gets the record that maps `dt:date:date_2`, the notation of the date part
+
+`mappings.bioregistry` SHALL hold normalized, lowercase Bioregistry prefixes (`chebi`, `ncbitaxon`) of the identifier resources whose local identifiers the record describes. `crosswalk("bioregistry", ...)` SHALL accept a prefix in any case, its bioregistry.io URL or a CURIE (`CHEBI:15377`).
+
+#### Scenario: Crosswalk from a CURIE
+- **WHEN** a client calls `crosswalk("bioregistry", "CHEBI:15377")`
+- **THEN** it gets the record that maps `chebi`
+
+`mappings.stdnum` SHALL hold python-stdnum module paths without the `stdnum.` prefix (`br.cpf`, `iban`, `in_.aadhaar`) of the modules that validate the record's identifier. `crosswalk("stdnum", ...)` SHALL also accept the module with its prefix, a file path (`br/cpf`) or the module's documentation URL.
+
+#### Scenario: stdnum module with its package prefix
+- **WHEN** a record has `mappings: {stdnum: "stdnum.br.cpf"}`
+- **THEN** validation fails with a schema error on `mappings.stdnum`; the record must write `br.cpf`
+
+#### Scenario: Crosswalk from a full module name
+- **WHEN** a client calls `crosswalk("stdnum", "stdnum.br.cpf")`
+- **THEN** it gets the record that maps `br.cpf`
+
+`mappings.fhir` SHALL hold HL7 FHIR identifier system URIs (`Identifier.system`) as HL7 Terminology or the base implementation guide of a national HL7 affiliate publishes them: an http(s) URI (`http://hl7.org/fhir/sid/us-ssn`), an OID URN (`urn:oid:2.16.840.1.113883.4.1`) or another URN (`urn:dicom:uid`).
+
+#### Scenario: FHIR system without a scheme
+- **WHEN** a record has `mappings: {fhir: "hl7.org/fhir/sid/us-ssn"}`
+- **THEN** validation fails with a schema error on `mappings.fhir`
 
 ### Requirement: Pattern inheritance
 A pattern SHALL reference an existing datatype through `semantic_type`.

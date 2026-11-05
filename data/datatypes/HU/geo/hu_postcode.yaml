@@ -1,0 +1,22 @@
+id: hu_postcode
+name: Hungary postal code
+status: draft
+doc: 'Postal code in Hungary: four digits.'
+semantic_type: postindex
+country:
+- HU
+langs:
+- hu
+regexp: ^\d{4}$
+examples:
+- value: '1037'
+- value: '2380'
+- value: '1540'
+- value: '103'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Hungary
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/HU

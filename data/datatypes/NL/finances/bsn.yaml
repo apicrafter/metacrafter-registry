@@ -42,6 +42,9 @@ mappings:
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
   fta: IDENTITY.BSN_NL
+  dpv: pd:OfficialID
+  fhir: http://fhir.nl/fhir/NamingSystem/bsn
+  stdnum: nl.bsn
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Burgerservicenummer

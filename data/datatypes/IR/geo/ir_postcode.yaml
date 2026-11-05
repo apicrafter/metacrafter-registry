@@ -1,0 +1,18 @@
+id: ir_postcode
+name: Iran postal code
+status: draft
+doc: 'Postal code in Iran: ten digits, optionally written as two groups of five joined by a hyphen.'
+semantic_type: postindex
+country:
+- IR
+langs:
+- fa
+regexp: ^\d{5}-?\d{5}$
+examples:
+- value: 11936-12345
+- value: 11936-1234
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/IR

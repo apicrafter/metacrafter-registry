@@ -27,6 +27,9 @@ examples:
 - value: KZ24435000001234456
   valid: false
   description: 19 characters
+mappings:
+  dpv: pd:BankAccount
+  stdnum: iban
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Bank_Account_Number

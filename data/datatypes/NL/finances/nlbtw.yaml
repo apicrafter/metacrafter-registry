@@ -36,6 +36,8 @@ examples:
 mappings:
   purview: Netherlands value added tax number
   fta: IDENTITY.VAT_NL
+  schema_org: vatID
+  stdnum: nl.btw
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Btw-nummer_(Nederland)

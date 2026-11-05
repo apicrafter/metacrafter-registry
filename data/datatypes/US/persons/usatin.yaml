@@ -14,6 +14,10 @@ langs:
 is_pii: true
 classification: identifier
 regexp: '[0-9]{9}'
+mappings:
+  dpv: pd:OfficialID
+  schema_org: taxID
+  stdnum: us.atin
 links:
 - type: other
   url: https://www.irs.gov/individuals/adoption-taxpayer-identification-number

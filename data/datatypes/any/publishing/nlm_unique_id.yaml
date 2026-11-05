@@ -18,6 +18,7 @@ examples:
   description: Radiochimica Acta
 mappings:
   wikidata: P1055
+  bioregistry: nlm
 links:
 - type: doc
   url: https://www.ncbi.nlm.nih.gov/nlmcatalog/

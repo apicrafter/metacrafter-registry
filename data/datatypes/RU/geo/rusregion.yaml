@@ -11,6 +11,8 @@ langs:
 - ru
 is_pii: false
 classification: categorical
+mappings:
+  schema_org: addressRegion
 translations:
   ru:
     name: Код или наименование субъекта Российской Федерации

@@ -19,6 +19,7 @@ examples:
   description: sulfuric acid
 mappings:
   wikidata: P661
+  bioregistry: chemspider
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ChemSpider

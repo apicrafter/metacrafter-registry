@@ -20,6 +20,7 @@ examples:
 mappings:
   autotype: doi
   wikidata: P356
+  bioregistry: doi
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Digital_object_identifier

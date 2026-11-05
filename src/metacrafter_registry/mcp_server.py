@@ -111,7 +111,8 @@ def create_server(registry: Registry):
         """Registry records mapped to an id in another vocabulary.
 
         system: wikidata, fibo, schema_org, dpv, presidio, google_dlp, purview, d3m,
-        sherlock, sato, cdm, fta, autotype, gs1_ai, orgid or qddate. For wikidata, a property
+        sherlock, sato, cdm, fta, autotype, gs1_ai, orgid, qddate, bioregistry, stdnum or fhir.
+        For wikidata, a property
         id (P968) or its URL. For fibo, a FIBO class IRI, e.g. https://spec.edmcouncil.org/fibo/ontology/FBC/
         ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier,
         or the part after /ontology/. For cdm, a Common Data Model trait name
@@ -131,6 +132,10 @@ def create_server(registry: Registry):
         For qddate, a date pattern key as qddate and metacrafter report it
         (dt:date:date_2, dt:date:date_rus_lc2); a variant with a time or trailing
         text (dt:date:date_2:time_1) resolves to the notation of its date part.
+        For bioregistry, a Bioregistry prefix (chebi), its bioregistry.io URL or a
+        CURIE (CHEBI:15377). For stdnum, a python-stdnum module (br.cpf or
+        stdnum.br.cpf). For fhir, an HL7 FHIR identifier system URI
+        (http://hl7.org/fhir/sid/us-ssn).
         """
         return [_summary(registry, r) for r in registry.crosswalk(system, external_id)]
 

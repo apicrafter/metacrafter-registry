@@ -17,6 +17,7 @@ examples:
   description: metal ion binding
 mappings:
   wikidata: P686
+  bioregistry: go
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Gene_Ontology

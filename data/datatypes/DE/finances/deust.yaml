@@ -33,6 +33,8 @@ examples:
   description: Check digit does not match
 mappings:
   purview: Germany value added tax number
+  schema_org: vatID
+  stdnum: de.vat
 links:
 - type: doc
   url: https://www.bzst.de/DE/Unternehmen/Identifikationsnummern/Umsatzsteuer-Identifikationsnummer/umsatzsteuer-identifikationsnummer_node.html

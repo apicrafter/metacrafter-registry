@@ -24,6 +24,7 @@ examples:
 mappings:
   orgid: UA-EDR
   wikidata: P3125
+  stdnum: ua.edrpou
 links:
 - type: other
   url: https://org-id.guide/list/UA-EDR

@@ -17,6 +17,8 @@ mappings:
   purview:
   - Portugal citizen card number
   - EU national identification number
+  dpv: pd:OfficialID
+  stdnum: pt.cc
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-portugal-citizen-card-number

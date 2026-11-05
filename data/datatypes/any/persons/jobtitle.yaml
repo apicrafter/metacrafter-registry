@@ -15,6 +15,8 @@ mappings:
   fta:
   - JOB_TITLE_EN
   - JOB_TITLE_JA
+  dpv: pd:Job
+  schema_org: jobTitle
 links:
 - type: schema.org
   url: https://schema.org/jobTitle

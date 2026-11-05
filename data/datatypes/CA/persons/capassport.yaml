@@ -10,6 +10,7 @@ langs:
 mappings:
   google_dlp: CANADA_PASSPORT
   purview: Canada passport number
+  fhir: http://hl7.org/fhir/sid/passport-CAN
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Canadian_passport

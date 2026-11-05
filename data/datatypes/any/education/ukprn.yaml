@@ -18,6 +18,7 @@ examples:
 mappings:
   orgid: GB-UKPRN
   wikidata: P4971
+  bioregistry: ukprn
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P4971

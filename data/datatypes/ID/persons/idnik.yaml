@@ -17,3 +17,5 @@ examples:
   description: Example Indonesian NIK
 mappings:
   purview: Indonesia identity card (KTP) number
+  dpv: pd:OfficialID
+  stdnum: id.nik

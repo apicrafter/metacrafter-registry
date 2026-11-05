@@ -16,6 +16,7 @@ examples:
   description: Le Chantier-Théâtre
 mappings:
   wikidata: P2013
+  dpv: pd:Username
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P2013

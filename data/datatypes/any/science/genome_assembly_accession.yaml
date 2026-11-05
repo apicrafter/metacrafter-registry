@@ -1,0 +1,32 @@
+id: genome_assembly_accession
+name: Genome assembly accession (GCA, GCF)
+status: draft
+doc: 'Accession of a genome assembly in the assembly databases of NCBI, ENA and DDBJ: GCA_ for an assembly
+  as submitted to the INSDC archives or GCF_ for an assembly in the NCBI RefSeq collection, then nine
+  digits and an optional version such as .1.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^GC[AF]_[0-9]{9}(\.[0-9]+)?$
+examples:
+- value: GCA_000155495.1
+  description: ASM15549v1, assembly of Helicobacter pullorum MIT 98-5489; Bioregistry example
+- value: GCF_000001405
+  description: RefSeq assembly accession without version; Bioregistry example
+- value: GCA_155495.1
+  valid: false
+  description: Fewer than nine digits
+mappings:
+  bioregistry:
+  - insdc.gca
+  - insdc.gcf
+links:
+- type: doc
+  url: https://www.ncbi.nlm.nih.gov/datasets/genome/
+- type: other
+  url: https://bioregistry.io/registry/insdc.gca
+- type: other
+  url: https://bioregistry.io/registry/insdc.gcf

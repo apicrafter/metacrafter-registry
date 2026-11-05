@@ -20,6 +20,7 @@ examples:
 - value: Australian Capital Territory
 mappings:
   fta: STATE_PROVINCE.STATE_NAME_AU
+  schema_org: addressRegion
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/States_and_territories_of_Australia

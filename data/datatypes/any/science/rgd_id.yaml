@@ -1,0 +1,32 @@
+id: rgd_id
+name: Rat Genome Database (RGD) ID
+status: draft
+doc: Number of a gene or other object in the Rat Genome Database (RGD). Bioregistry gives the format as
+  four or more digits. Rat strains and quantitative trait loci have RGD numbers too.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4,}$
+examples:
+- value: '2243'
+  description: Ca5a gene; example of Wikidata property P3853
+- value: '1584682'
+  description: Slbp gene; example of Wikidata property P3853
+- value: '7499841'
+  description: Bioregistry example
+- value: '224'
+  valid: false
+  description: Fewer than four digits
+mappings:
+  bioregistry: rgd
+  wikidata: P3853
+links:
+- type: doc
+  url: https://rgd.mcw.edu/
+- type: other
+  url: https://bioregistry.io/registry/rgd
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3853

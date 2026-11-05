@@ -14,3 +14,6 @@ regexp: ^[0-9]{9,15}$
 examples:
 - value: '123456789'
   description: Example Egyptian tax number
+mappings:
+  schema_org: taxID
+  stdnum: eg.tn

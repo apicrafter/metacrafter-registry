@@ -32,6 +32,7 @@ examples:
 mappings:
   wikidata: P13194
   presidio: SG_UEN
+  stdnum: sg.uen
 links:
 - type: doc
   url: https://www.uen.gov.sg/ueninternet/faces/pages/uenFAQ.jspx

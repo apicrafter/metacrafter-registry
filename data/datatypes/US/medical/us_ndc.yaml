@@ -25,6 +25,8 @@ examples:
 - value: 50242-090
   valid: false
   description: Labeler and product only; the package code is missing
+mappings:
+  bioregistry: ndc
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/National_drug_code

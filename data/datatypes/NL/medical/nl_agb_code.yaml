@@ -16,6 +16,8 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^\d{8}$
+mappings:
+  fhir: http://fhir.nl/fhir/NamingSystem/agb-z
 links:
 - type: doc
   url: https://www.vektis.nl/agb-register

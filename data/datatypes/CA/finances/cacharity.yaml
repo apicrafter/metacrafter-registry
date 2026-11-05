@@ -18,3 +18,4 @@ examples:
   description: Another valid charity registration number format
 mappings:
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/RegisteredCharityProgramNumber
+  stdnum: ca.bn

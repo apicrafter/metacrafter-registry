@@ -30,6 +30,8 @@ mappings:
   purview:
   - Malaysia Identity Card Number
   - Malaysia identification card number
+  dpv: pd:OfficialID
+  stdnum: my.nric
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Malaysian_identity_card

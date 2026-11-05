@@ -1,0 +1,35 @@
+id: rf_creditor_reference
+name: Structured creditor reference (ISO 11649, RF reference)
+status: draft
+doc: 'Payment reference defined by ISO 11649 that a creditor prints on an invoice so that incoming payments
+  can be matched to it automatically; it was first used in the SEPA rulebook. It is the letters RF, two
+  check digits and a reference of up to 21 letters or digits, 25 characters at most, and is usually printed
+  in groups of four. The check digits work as in an IBAN: RF and the check digits are moved to the end,
+  letters are replaced by numbers, and the result modulo 97 is 1.'
+categories:
+- finances
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '^RF\d{2}(?: ?[0-9A-Z]){1,21}$'
+examples:
+- value: RF18 5390 0754 7034
+  description: Example from the python-stdnum documentation
+- value: RF18539007547034
+  description: The same reference without spaces
+- value: RF18 5390 0754 70Y
+  description: Reference with a letter, from the python-stdnum documentation
+- value: RF18
+  valid: false
+  description: No reference after the check digits
+- value: RF18 5390 0754 7034 5678 9012 34
+  valid: false
+  description: Reference longer than 21 characters
+mappings:
+  stdnum: iso11649
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Creditor_Reference
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.iso11649.html

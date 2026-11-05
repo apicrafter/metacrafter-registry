@@ -1,0 +1,18 @@
+id: tm_postcode
+name: Turkmenistan postal code
+status: draft
+doc: 'Postal code in Turkmenistan: six digits.'
+semantic_type: postindex
+country:
+- TM
+langs:
+- tk
+regexp: ^\d{6}$
+examples:
+- value: '744000'
+- value: '74400'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/TM

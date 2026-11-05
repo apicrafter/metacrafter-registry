@@ -17,6 +17,7 @@ examples:
   description: Germanwings Flight 9525
 mappings:
   wikidata: P3090
+  schema_org: flightNumber
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Flight_number

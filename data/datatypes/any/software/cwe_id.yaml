@@ -1,0 +1,31 @@
+id: cwe_id
+name: CWE identifier
+status: draft
+doc: 'Identifier of an entry in MITRE''s Common Weakness Enumeration (CWE), the catalog of software and
+  hardware weakness types: CWE- followed by a number without leading zeros. CVE records and security advisories
+  use it to name the root cause of a vulnerability, for example CWE-79 for cross-site scripting. Wikidata
+  stores the number without the CWE- prefix.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^CWE-[1-9][0-9]*$
+examples:
+- value: CWE-79
+  description: Improper Neutralization of Input During Web Page Generation (cross-site scripting)
+- value: CWE-89
+  description: Improper Neutralization of Special Elements used in an SQL Command (SQL injection)
+- value: CWE-079
+  valid: false
+  description: Leading zero
+mappings:
+  wikidata: P3624
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Common_Weakness_Enumeration
+- type: doc
+  url: https://cwe.mitre.org/data/definitions/79.html
+- type: doc
+  url: https://github.com/CVEProject/cve-schema/blob/main/schema/CVE_Record_Format.json

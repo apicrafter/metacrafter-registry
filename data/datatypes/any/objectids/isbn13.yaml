@@ -22,6 +22,9 @@ examples:
 mappings:
   wikidata: P212
   fta: CHECKDIGIT.ISBN
+  schema_org: isbn
+  bioregistry: isbn
+  stdnum: isbn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Standard_Book_Number

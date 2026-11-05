@@ -12,6 +12,8 @@ checksum: gtin
 mappings:
   autotype: upc
   fta: CHECKDIGIT.UPC
+  schema_org: gtin12
+  stdnum: ean
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Universal_Product_Code

@@ -12,6 +12,8 @@ langs:
 is_pii: false
 classification: identifier
 checksum: ru_ogrn
+mappings:
+  stdnum: ru.ogrn
 translations:
   ru:
     name: Код ОГРН или ОГРНИП

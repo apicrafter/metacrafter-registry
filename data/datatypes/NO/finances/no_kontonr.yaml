@@ -23,6 +23,9 @@ examples:
 - value: '637749144657'
   valid: false
   description: One character too many
+mappings:
+  dpv: pd:BankAccount
+  stdnum: no.kontonr
 links:
 - type: other
   url: https://www.ecbs.org/iban/norway-bank-account-number.html

@@ -19,6 +19,8 @@ examples:
   description: example from ORG-ID.guide
 mappings:
   orgid: AZ-IVI
+  schema_org: taxID
+  stdnum: az.voen
 links:
 - type: other
   url: https://org-id.guide/list/AZ-IVI

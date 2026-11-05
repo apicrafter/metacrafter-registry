@@ -39,6 +39,7 @@ mappings:
   cdm: means.identity.IP6Address
   purview: IP Address v6
   fta: IPADDRESS.IPV6
+  dpv: pd:IPAddress
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/IPv6_address

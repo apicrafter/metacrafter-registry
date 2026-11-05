@@ -29,6 +29,8 @@ examples:
 - value: '26032682'
   valid: false
   description: Without the check digit
+mappings:
+  fhir: http://fhir.de/sid/arge-ik/iknr
 links:
 - type: wikipedia
   url: https://de.wikipedia.org/wiki/Institutionskennzeichen

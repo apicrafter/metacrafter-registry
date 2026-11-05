@@ -34,6 +34,8 @@ examples:
 - value: http://example.com/a b
   valid: false
   description: Unencoded space
+mappings:
+  fhir: urn:ietf:rfc:3986
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier

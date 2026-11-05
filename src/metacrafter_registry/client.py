@@ -108,6 +108,32 @@ def _qddate_key(value: str) -> str:
     return key if key.startswith("dt:") else "dt:date:" + key
 
 
+def _bioregistry_prefix(value: str) -> str:
+    """The normalized Bioregistry prefix of a prefix, its URL or a CURIE.
+
+    ``CHEBI``, ``https://bioregistry.io/chebi``, ``https://bioregistry.io/registry/chebi``
+    and ``CHEBI:15377`` all give ``chebi``, the form ``mappings.bioregistry`` holds.
+    """
+    value = str(value).strip().rstrip("/")
+    if "bioregistry.io/" in value:
+        value = value.split("bioregistry.io/", 1)[1].removeprefix("registry/")
+    return value.split(":", 1)[0].casefold()
+
+
+def _stdnum_module(value: str) -> str:
+    """The python-stdnum module path of a module name, its file path or its documentation URL.
+
+    ``stdnum.br.cpf``, ``br/cpf``, ``br.cpf`` and
+    ``https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.br.cpf.html`` all give
+    ``br.cpf``, the form ``mappings.stdnum`` holds.
+    """
+    value = str(value).strip().rstrip("/")
+    if "://" in value:
+        value = value.rsplit("/", 1)[-1].removesuffix(".html")
+    value = value.removesuffix(".py").replace("/", ".")
+    return value.removeprefix("stdnum.").casefold()
+
+
 def _cache_dir() -> Path:
     base = os.environ.get("XDG_CACHE_HOME") or Path.home() / ".cache"
     return Path(base) / "metacrafter-registry"
@@ -547,7 +573,12 @@ class Registry:
         for qddate, a date pattern key as qddate and metacrafter report it
         (dt:date:date_2), a generated variant of it (dt:date:date_2:time_1,
         dt:date:date_2:t_right), which resolves to the notation of its date part,
-        or the key without dt:date: (date_2).
+        or the key without dt:date: (date_2);
+        for bioregistry, a Bioregistry prefix (chebi, CHEBI), its bioregistry.io URL or a
+        CURIE (CHEBI:15377);
+        for stdnum, a python-stdnum module (br.cpf, stdnum.br.cpf, br/cpf) or its
+        documentation URL;
+        for fhir, an HL7 FHIR identifier system URI (http://hl7.org/fhir/sid/us-ssn).
         """
         if system == "fta":
             return self._crosswalk_fta(str(external_id).strip())
@@ -582,6 +613,10 @@ class Registry:
             wanted = _orgid_code(wanted)
         if system == "qddate":
             wanted = _qddate_key(wanted)
+        if system == "bioregistry":
+            wanted = _bioregistry_prefix(wanted)
+        if system == "stdnum":
+            wanted = _stdnum_module(wanted)
         out = []
         for record in self.datatypes.values():
             value = record.get("mappings", {}).get(system)

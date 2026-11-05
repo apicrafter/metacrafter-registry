@@ -20,6 +20,8 @@ mappings:
   google_dlp: US_HEALTHCARE_NPI
   presidio: US_NPI
   wikidata: P9450
+  fhir: http://hl7.org/fhir/sid/us-npi
+  schema_org: usNPI
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P9450

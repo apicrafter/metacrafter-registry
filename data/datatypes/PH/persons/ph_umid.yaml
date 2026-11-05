@@ -17,6 +17,7 @@ mappings:
   purview:
   - Philippines Unified Multi-Purpose ID Number
   - Philippines unified multi-purpose identification number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-philippines-unified-multi-purpose-identification-number

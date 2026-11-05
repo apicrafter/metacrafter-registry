@@ -23,6 +23,8 @@ examples:
   description: One character too many
 mappings:
   orgid: EC-RUC
+  schema_org: taxID
+  stdnum: ec.ruc
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ec.ruc.html

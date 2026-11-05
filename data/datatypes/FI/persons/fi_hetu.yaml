@@ -39,6 +39,8 @@ mappings:
   - EU national identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  dpv: pd:OfficialID
+  stdnum: fi.hetu
 links:
 - type: wikipedia
   url: https://fi.wikipedia.org/wiki/Henkil%C3%B6tunnus

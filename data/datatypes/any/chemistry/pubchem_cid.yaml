@@ -20,6 +20,7 @@ examples:
   description: lithium carbonate
 mappings:
   wikidata: P662
+  bioregistry: pubchem.compound
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/PubChem

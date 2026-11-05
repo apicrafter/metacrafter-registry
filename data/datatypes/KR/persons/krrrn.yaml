@@ -15,3 +15,5 @@ regexp: ^[0-9]{6}-[0-9]{7}$
 mappings:
   presidio: KR_RRN
   purview: South Korea resident registration number
+  dpv: pd:OfficialID
+  stdnum: kr.rrn

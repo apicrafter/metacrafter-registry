@@ -32,6 +32,8 @@ mappings:
   orgid:
   - IT-CF
   - IT-RI
+  schema_org: vatID
+  stdnum: it.iva
 links:
 - type: wikipedia
   url: https://it.wikipedia.org/wiki/Partita_IVA

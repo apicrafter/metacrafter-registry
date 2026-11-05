@@ -15,6 +15,7 @@ examples:
 mappings:
   autotype: chemical
   wikidata: P274
+  schema_org: molecularFormula
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Chemical_formula

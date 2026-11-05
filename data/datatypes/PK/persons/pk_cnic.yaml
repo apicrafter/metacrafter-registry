@@ -1,0 +1,40 @@
+id: pk_cnic
+name: Pakistani national identity card number (CNIC)
+status: draft
+doc: 'Number of the Computerised National Identity Card (CNIC), or Smart National Identity Card, that
+  NADRA issues to citizens of Pakistan aged 18 or older. It has 13 digits, written as 5, 7 and 1 digits
+  separated by hyphens: a five-digit locality code whose first digit is the province, a seven-digit serial
+  number, and a last digit that is odd for men and even for women.'
+categories:
+- pii
+- persons
+country:
+- PK
+langs:
+- ur
+- en
+is_pii: true
+classification: identifier
+regexp: ^[1-7]\d{4}-?\d{7}-?[1-9]$
+examples:
+- value: 34201-0891231-8
+  description: Example from the python-stdnum documentation
+- value: 42201-0397640-8
+  description: Example from the python-stdnum documentation
+- value: '3420108912318'
+  description: The first example without hyphens
+- value: 34201-0891231-0
+  valid: false
+  description: Last digit 0 does not encode a gender
+- value: 84201-0891231-8
+  valid: false
+  description: Unknown province digit 8
+mappings:
+  stdnum: pk.cnic
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/CNIC_(Pakistan)
+- type: doc
+  url: https://www.nadra.gov.pk/identity/identity-cnic/
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.pk.cnic.html

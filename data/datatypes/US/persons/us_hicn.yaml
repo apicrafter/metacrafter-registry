@@ -25,6 +25,9 @@ examples:
 - value: 1EG4TE5MK73
   valid: false
   description: An MBI, not a HICN
+mappings:
+  dpv: pd:OfficialID
+  fhir: http://hl7.org/fhir/sid/us-medicare
 links:
 - type: doc
   url: https://www.cms.gov/files/document/chapter-4-code-descriptions.pdf

@@ -1,0 +1,20 @@
+id: sd_postcode
+name: Sudan postal code
+status: draft
+doc: 'Postal code in Sudan: five digits.'
+semantic_type: postindex
+country:
+- SD
+langs:
+- ar
+- en
+regexp: ^\d{5}$
+examples:
+- value: '11042'
+- value: '11113'
+- value: '1104'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/SD

@@ -27,6 +27,8 @@ mappings:
   - Austria social security number
   - EU Social Security Number (SSN) or Equivalent ID
   - EU social security number or equivalent identification
+  dpv: pd:OfficialID
+  stdnum: at.vnr
 links:
 - type: wikipedia
   url: https://de.wikipedia.org/wiki/Sozialversicherungsnummer#%C3%96sterreich

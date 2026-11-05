@@ -18,6 +18,7 @@ examples:
   description: water
 mappings:
   wikidata: P2057
+  bioregistry: hmdb
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Human_Metabolome_Database

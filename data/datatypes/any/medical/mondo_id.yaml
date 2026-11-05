@@ -1,0 +1,33 @@
+id: mondo_id
+name: Mondo Disease Ontology ID
+status: draft
+doc: 'Identifier of a disease in Mondo, an ontology that harmonizes disease definitions from many terminologies.
+  It is MONDO: and seven digits; OBO PURLs and Wikidata write MONDO_ instead.'
+categories:
+- medical
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^MONDO[:_]\d{7}$
+examples:
+- value: MONDO:0005148
+  description: type 2 diabetes mellitus
+- value: MONDO:0000001
+  description: disease; Bioregistry example
+- value: MONDO_0005148
+  description: type 2 diabetes mellitus, underscore form
+- value: MONDO:5148
+  valid: false
+  description: Not padded to seven digits
+mappings:
+  bioregistry: mondo
+  wikidata: P5270
+links:
+- type: doc
+  url: https://mondo.monarchinitiative.org/
+- type: other
+  url: https://bioregistry.io/registry/mondo
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5270

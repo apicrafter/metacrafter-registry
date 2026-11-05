@@ -18,6 +18,7 @@ mappings:
   purview:
   - Sweden drivers license number
   - EU drivers license number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-sweden-drivers-license-number

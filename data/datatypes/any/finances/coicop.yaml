@@ -1,0 +1,42 @@
+id: coicop
+name: COICOP code (Classification of Individual Consumption According to Purpose)
+status: draft
+doc: 'Code of the UN Classification of Individual Consumption According to Purpose (COICOP), which classifies
+  consumption expenditure by its purpose. Codes are written with dots: a two-digit division (01 to 15
+  in COICOP 2018) followed by one digit each for the group, class and subclass, as in 01.1.1.1. The COICOP
+  2018 structure published by the UN Statistics Division adds a fifth level under some subclasses (01.1.1.1.1).
+  COICOP 1999 uses the same notation with fewer divisions, so the version cannot be told from the code
+  alone.'
+categories:
+- finances
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:0[1-9]|1[0-5])(?:\.\d){0,4}$
+examples:
+- value: 01.1.1.1
+  description: 'Subclass: cereals'
+- value: 01.1.1
+  description: 'Class: cereals and cereal products'
+- value: '01.1'
+  description: 'Group: food'
+- value: '01'
+  description: 'Division: food and non-alcoholic beverages'
+- value: 07.2.2.1
+  description: 'Subclass: diesel'
+- value: 01.1.1.1.1
+  description: 'Fifth level of COICOP 2018: wheat'
+- value: '16.1'
+  valid: false
+  description: There is no division 16
+- value: '0111'
+  valid: false
+  description: Digits without dots
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Classification_of_Individual_Consumption_by_Purpose
+- type: doc
+  url: https://unstats.un.org/unsd/classifications/Econ
+- type: other
+  url: https://unstats.un.org/unsd/classifications/Econ/Download/COICOP_2018_English_structure.xlsx

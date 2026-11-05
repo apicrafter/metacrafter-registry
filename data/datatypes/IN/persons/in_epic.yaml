@@ -16,6 +16,8 @@ classification: identifier
 regexp: ^[A-Z]{3}\d{7}$
 mappings:
   purview: India Voter ID Card
+  dpv: pd:OfficialID
+  stdnum: in_.epic
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-india-voter-id-card

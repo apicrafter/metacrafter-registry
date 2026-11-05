@@ -20,3 +20,5 @@ mappings:
   - Poland tax identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  dpv: pd:OfficialID
+  stdnum: pl.pesel

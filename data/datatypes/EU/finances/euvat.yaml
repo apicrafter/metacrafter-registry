@@ -50,6 +50,8 @@ examples:
 mappings:
   fibo: BE/LegalEntities/FormalBusinessOrganizations/ValueAddedTaxIdentificationNumber
   google_dlp: VAT_NUMBER
+  schema_org: vatID
+  stdnum: eu.vat
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/VAT_identification_number

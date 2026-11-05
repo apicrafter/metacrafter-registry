@@ -1,0 +1,28 @@
+id: biosample_accession
+name: BioSample accession
+status: draft
+doc: Accession of a biological sample description in the BioSample databases of NCBI, EMBL-EBI and DDBJ.
+  Sequencing, gene expression and proteomics submissions point to it to say which material was analysed.
+  It is SAM, a letter for the issuing centre (N, E or D), an optional further letter and digits.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^SAM[NED](\w)?\d+$
+examples:
+- value: SAMEA2397676
+  description: Sample "CheeseA Period 3 24h ripening"; Bioregistry example
+- value: ERS368772
+  valid: false
+  description: ENA sample accession of the same sample, not a BioSample accession
+mappings:
+  bioregistry: biosample
+links:
+- type: doc
+  url: https://www.ebi.ac.uk/biosamples/
+- type: doc
+  url: https://www.ncbi.nlm.nih.gov/biosample/
+- type: other
+  url: https://bioregistry.io/registry/biosample

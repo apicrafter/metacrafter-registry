@@ -20,6 +20,7 @@ examples:
   description: congenital merosin-deficient muscular dystrophy 1A
 mappings:
   wikidata: P4229
+  bioregistry: icd10cm
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ICD-10_Clinical_Modification

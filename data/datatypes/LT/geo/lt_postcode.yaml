@@ -1,0 +1,21 @@
+id: lt_postcode
+name: Lithuania postal code
+status: draft
+doc: 'Postal code in Lithuania: five digits. In addresses the code may be written after the prefix LT-.'
+semantic_type: postindex
+country:
+- LT
+langs:
+- lt
+regexp: ^\d{5}$
+examples:
+- value: '04340'
+- value: '03500'
+- value: '0434'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Lithuania
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/LT

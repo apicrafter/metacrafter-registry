@@ -19,6 +19,7 @@ mappings:
   purview:
   - Finland drivers license number
   - EU drivers license number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-finland-drivers-license-number

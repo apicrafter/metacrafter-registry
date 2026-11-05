@@ -37,6 +37,8 @@ mappings:
   presidio: EMAIL_ADDRESS
   fta: EMAIL
   wikidata: P968
+  dpv: pd:EmailAddress
+  schema_org: email
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Email_address

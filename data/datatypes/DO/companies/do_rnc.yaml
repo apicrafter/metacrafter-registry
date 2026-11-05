@@ -23,6 +23,9 @@ examples:
 - value: '5230229527'
   valid: false
   description: One character too many
+mappings:
+  schema_org: taxID
+  stdnum: do.rnc
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.do.rnc.html

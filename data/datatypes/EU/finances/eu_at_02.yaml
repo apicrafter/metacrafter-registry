@@ -18,6 +18,8 @@ examples:
   description: Synthetic number with a valid check digit
 - value: DE54ZZZ69403467
   description: Synthetic number with a valid check digit
+mappings:
+  stdnum: eu.at_02
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.eu.at_02.html

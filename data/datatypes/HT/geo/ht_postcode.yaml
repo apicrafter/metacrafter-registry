@@ -1,0 +1,22 @@
+id: ht_postcode
+name: Haiti postal code
+status: draft
+doc: 'Postal code in Haiti: four digits. In addresses the code may be written after the prefix HT.'
+semantic_type: postindex
+country:
+- HT
+langs:
+- ht
+- fr
+regexp: ^\d{4}$
+examples:
+- value: '6120'
+- value: '5310'
+- value: '6110'
+- value: '8510'
+- value: '612'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/HT

@@ -27,6 +27,8 @@ mappings:
   fta:
   - IDENTITY.VAT_GB
   - IDENTITY.VAT_UK
+  schema_org: vatID
+  stdnum: gb.vat
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gb.vat.html

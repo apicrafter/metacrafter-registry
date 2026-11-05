@@ -22,3 +22,5 @@ examples:
   description: Another valid CIF format example
 mappings:
   orgid: ES-NIF
+  schema_org: taxID
+  stdnum: es.cif

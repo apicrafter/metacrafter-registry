@@ -17,6 +17,7 @@ mappings:
   purview:
   - Hungary personal identification number
   - EU national identification number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-hungary-personal-identification-number

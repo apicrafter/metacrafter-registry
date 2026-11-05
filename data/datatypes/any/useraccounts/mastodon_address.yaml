@@ -18,6 +18,8 @@ examples:
   description: LibreOffice
 mappings:
   wikidata: P4033
+  dpv: pd:Username
+  bioregistry: mastodon
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P4033

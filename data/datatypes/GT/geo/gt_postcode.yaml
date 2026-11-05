@@ -1,0 +1,21 @@
+id: gt_postcode
+name: Guatemala postal code
+status: draft
+doc: 'Postal code in Guatemala: five digits.'
+semantic_type: postindex
+country:
+- GT
+langs:
+- es
+regexp: ^\d{5}$
+examples:
+- value: 09001
+- value: '01501'
+- value: 0900
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Guatemala
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/GT

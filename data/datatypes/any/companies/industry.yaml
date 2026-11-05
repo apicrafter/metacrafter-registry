@@ -22,6 +22,7 @@ mappings:
   - INDUSTRY_EN
   - INDUSTRY_JA
   sherlock: industry
+  schema_org: industry
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Industry_(economics)

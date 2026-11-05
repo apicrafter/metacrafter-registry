@@ -27,6 +27,8 @@ examples:
 mappings:
   google_dlp: NETHERLANDS_PASSPORT
   purview: Netherlands passport number
+  fhir: http://hl7.org/fhir/sid/passport-NLD
+  stdnum: nl.identiteitskaartnummer
 links:
 - type: doc
   url: https://www.rvig.nl/node/356

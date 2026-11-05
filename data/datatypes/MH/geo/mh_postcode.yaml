@@ -1,0 +1,21 @@
+id: mh_postcode
+name: Marshall Islands postal code
+status: draft
+doc: 'Postal code in the Marshall Islands: a ZIP code of five digits from 96960 to 96979, optionally followed
+  by a space or hyphen and four more digits.'
+semantic_type: postindex
+country:
+- MH
+langs:
+- mh
+- en
+regexp: ^(969[67]\d)(?:[ \-](\d{4}))?$
+examples:
+- value: '96960'
+- value: '96970'
+- value: '9696'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/MH

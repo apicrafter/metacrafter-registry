@@ -12,6 +12,7 @@ examples:
   description: Linux
 mappings:
   wikidata: P277
+  schema_org: programmingLanguage
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P277

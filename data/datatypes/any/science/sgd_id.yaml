@@ -1,0 +1,31 @@
+id: sgd_id
+name: Saccharomyces Genome Database (SGD) ID
+status: draft
+doc: Identifier of a feature in the Saccharomyces Genome Database, the database of the budding yeast Saccharomyces
+  cerevisiae. Each feature has an SGDID, S and nine digits; Bioregistry also accepts systematic open reading
+  frame names, such as YDR086C.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:S\d+|Y[A-Z]{2}\d{3}[a-zA-Z](?:-[A-Z])?)$
+examples:
+- value: S000002493
+  description: SSS1, systematic name YDR086C; Bioregistry example
+- value: YDR086C
+  description: Systematic name of SSS1
+- value: SSS1
+  valid: false
+  description: Standard gene name, not an identifier
+mappings:
+  bioregistry: sgd
+  wikidata: P3406
+links:
+- type: doc
+  url: https://www.yeastgenome.org/
+- type: other
+  url: https://bioregistry.io/registry/sgd
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3406

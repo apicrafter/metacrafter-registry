@@ -18,6 +18,7 @@ examples:
   description: Patient Health Questionnaire
 mappings:
   wikidata: P4338
+  bioregistry: loinc
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/LOINC

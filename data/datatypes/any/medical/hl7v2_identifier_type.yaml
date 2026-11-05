@@ -1,0 +1,38 @@
+id: hl7v2_identifier_type
+name: HL7 identifier type code (HL7 Table 0203)
+status: draft
+doc: Code from HL7 Table 0203 that tells what kind of identifier a value is, for example MR for a medical
+  record number, SS for a Social Security number, PPN for a passport number, DL for a driver's license
+  number or NPI for a national provider identifier. HL7 version 2 messages carry it in the CX, PLN, PPN,
+  XCN and XON data types. HL7 maintains the table as the code system v2-0203 in HL7 Terminology (THO).
+  The codes are case-sensitive and uppercase. The regexp lists the codes of version 5.0.0 of the code
+  system (HL7 Terminology 7.5.0); NNxxx stands for NN followed by an ISO 3166 three-letter country code.
+categories:
+- medical
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:PAYERID|FDRFN|LACSN|NBSNR|NN[A-Z]{3}|SNBSN|ACSN|ANON|APRN|ASID|BCFN|BSNR|CAAI|CONM|DCFN|ETIN|FILL|KZVA|LANR|NIIH|NIIP|PLAC|PPIN|SAMN|UCID|UPIN|USID|ZANR|AIN|AMA|ANC|AND|ANT|BCT|BRN|DDS|DEA|DFN|DPM|DSG|ESN|FDR|FGN|GIN|GKV|IND|JHN|L&I|MCD|MCN|MCR|MCT|MRT|NCT|NII|NPI|OBI|PCN|PEN|PGN|PHC|PHE|PHO|PIN|PKV|PNT|PPN|PRC|PRN|RPH|RRI|RRP|SID|SNO|SRX|STN|TAX|TPR|TRL|UDI|UMB|WCN|AC|AM|AN|BA|BC|BR|CC|CY|CZ|DC|DI|DL|DN|DO|DP|DR|DS|EI|EN|FI|GI|GL|GN|HC|LI|LN|LR|MA|MB|MC|MD|MI|MR|MS|NE|NH|NI|NP|OD|PA|PC|PE|PI|PN|PT|QA|RI|RN|RR|SB|SL|SN|SP|SR|SS|TN|VN|VP|VS|WC|WP|XV|XX|U)$
+examples:
+- value: MR
+  description: Medical record number
+- value: SS
+  description: Social Security number
+- value: PPN
+  description: Passport number
+- value: DL
+  description: Driver's license number
+- value: NPI
+  description: National provider identifier
+- value: mr
+  valid: false
+  description: Codes are uppercase
+- value: SSN
+  valid: false
+  description: Not a code of the table
+links:
+- type: doc
+  url: https://terminology.hl7.org/CodeSystem-v2-0203.html
+- type: doc
+  url: https://terminology.hl7.org/ValueSet-v2-0203.html

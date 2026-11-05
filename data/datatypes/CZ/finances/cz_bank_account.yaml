@@ -30,6 +30,8 @@ examples:
 - value: 19-2000145399
   valid: false
   description: The bank code is missing
+mappings:
+  stdnum: cz.bankaccount
 links:
 - type: doc
   url: https://www.zakonyprolidi.cz/cs/2011-169

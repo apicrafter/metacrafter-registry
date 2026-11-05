@@ -1,0 +1,34 @@
+id: clinvar_variation_id
+name: ClinVar Variation ID
+status: draft
+doc: Number of a variation record in ClinVar, the NCBI archive of reports on how human genetic variants
+  relate to health conditions. The same record has an accession made of VCV and the number padded to nine
+  digits, as in VCV000012345 for Variation ID 12345.
+categories:
+- medical
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d+$
+examples:
+- value: '12345'
+  description: NM_001065.4(TNFRSF1A):c.295T>A (p.Cys99Ser); Bioregistry example
+- value: '7105'
+  description: CFTR p.Phe508del; example of Wikidata property P1929
+- value: '13961'
+  description: BRAF V600E; example of Wikidata property P1929
+- value: VCV000012345
+  valid: false
+  description: VCV accession of the same record, not the Variation ID
+mappings:
+  bioregistry: clinvar.variation
+  wikidata: P1929
+links:
+- type: doc
+  url: https://www.ncbi.nlm.nih.gov/clinvar/
+- type: other
+  url: https://bioregistry.io/registry/clinvar.variation
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1929

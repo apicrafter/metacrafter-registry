@@ -1,0 +1,21 @@
+id: ie_postcode
+name: Ireland postal code
+status: draft
+doc: 'Postal code in Ireland: the Eircode, introduced in 2015. It has seven letters and digits, written
+  as a group of three and a group of four with an optional space.'
+semantic_type: postindex
+country:
+- IE
+langs:
+- en
+regexp: ^[\dA-Z]{3} ?[\dA-Z]{4}$
+examples:
+- value: A65 F4E2
+- value: A65 F4E
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_addresses_in_the_Republic_of_Ireland
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/IE

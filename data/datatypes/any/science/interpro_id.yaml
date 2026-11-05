@@ -1,0 +1,30 @@
+id: interpro_id
+name: InterPro entry accession
+status: draft
+doc: Accession of an entry in InterPro, the EMBL-EBI database that combines the protein signatures of
+  member databases such as Pfam into families, domains and functional sites. It is IPR and six digits.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^IPR\d{6}$
+examples:
+- value: IPR000719
+  description: Protein kinase domain
+- value: IPR016380
+  description: Signal transduction histidine kinase, nitrate/nitrite-sensing; Bioregistry example
+- value: PF00069
+  valid: false
+  description: Pfam accession, not an InterPro entry
+mappings:
+  bioregistry: interpro
+  wikidata: P2926
+links:
+- type: doc
+  url: https://www.ebi.ac.uk/interpro/
+- type: other
+  url: https://bioregistry.io/registry/interpro
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2926

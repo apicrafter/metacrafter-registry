@@ -1,0 +1,19 @@
+id: jo_postcode
+name: Jordan postal code
+status: draft
+doc: 'Postal code in Jordan: five digits.'
+semantic_type: postindex
+country:
+- JO
+langs:
+- ar
+regexp: ^\d{5}$
+examples:
+- value: '11937'
+- value: '11190'
+- value: '1193'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/JO

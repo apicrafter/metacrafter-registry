@@ -23,6 +23,8 @@ mappings:
   - EU national identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  dpv: pd:OfficialID
+  stdnum: dk.cpr
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Personal_identification_number_(Denmark)

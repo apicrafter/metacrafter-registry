@@ -19,6 +19,9 @@ examples:
   description: Synthetic number in the documented format
 - value: '12516350370'
   description: Synthetic number in the documented format
+mappings:
+  dpv: pd:OfficialID
+  stdnum: cr.cr
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cr.cr.html

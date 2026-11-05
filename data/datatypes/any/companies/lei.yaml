@@ -23,6 +23,9 @@ mappings:
   fibo: BE/LegalEntities/LEIEntities/LegalEntityIdentifier
   wikidata: P1278
   orgid: XI-LEI
+  schema_org: leiCode
+  bioregistry: lei
+  stdnum: lei
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Legal_Entity_Identifier

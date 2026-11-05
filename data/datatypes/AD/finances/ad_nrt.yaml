@@ -23,6 +23,9 @@ examples:
 - value: E790360O7
   valid: false
   description: One character too many
+mappings:
+  schema_org: taxID
+  stdnum: ad.nrt
 links:
 - type: doc
   url: https://www.oecd.org/tax/automatic-exchange/crs-implementation-and-assistance/tax-identification-numbers/Andorra-TIN.pdf

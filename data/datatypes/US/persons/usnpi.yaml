@@ -26,6 +26,8 @@ mappings:
   presidio: US_NPI
   fta: IDENTITY.NPI_US
   wikidata: P9450
+  fhir: http://hl7.org/fhir/sid/us-npi
+  schema_org: usNPI
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/National_Provider_Identifier

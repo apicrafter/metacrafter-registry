@@ -27,6 +27,9 @@ examples:
 - value: CZ650800000019200014539
   valid: false
   description: 23 characters
+mappings:
+  dpv: pd:BankAccount
+  stdnum: iban
 links:
 - type: doc
   url: https://www.cnb.cz/cs/platebni-styk/iban/iban-mezinarodni-format-cisla-uctu/

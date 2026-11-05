@@ -11,3 +11,4 @@ classification: identifier
 mappings:
   autotype: vin
   fta: VIN
+  schema_org: vehicleIdentificationNumber

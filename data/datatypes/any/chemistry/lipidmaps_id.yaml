@@ -1,0 +1,32 @@
+id: lipidmaps_id
+name: LIPID MAPS ID (LM ID)
+status: draft
+doc: Identifier of a lipid in the LIPID MAPS Structure Database. It is LM, a two-letter code of one of
+  the eight LIPID MAPS lipid categories, such as FA or PR, four digits for its place in the classification
+  and, for an individual lipid, four to six more letters or digits.
+categories:
+- chemistry
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^LM(FA|GL|GP|SP|ST|PR|SL|PK)[0-9]{4}([0-9a-zA-Z]{4,6})?$
+examples:
+- value: LMFA01010001
+  description: Palmitic acid
+- value: LMPR0102010012
+  description: (-)-Citronellol; Bioregistry example
+- value: LMXX01010001
+  valid: false
+  description: XX is not a lipid category
+mappings:
+  bioregistry: lipidmaps
+  wikidata: P2063
+links:
+- type: doc
+  url: https://www.lipidmaps.org/
+- type: other
+  url: https://bioregistry.io/registry/lipidmaps
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2063

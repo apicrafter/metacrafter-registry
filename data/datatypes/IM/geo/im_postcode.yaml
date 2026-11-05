@@ -1,0 +1,22 @@
+id: im_postcode
+name: Isle of Man postal code
+status: draft
+doc: 'Postal code in Isle of Man: the letters IM, a digit and an optional digit or letter, an optional
+  space, then a digit and two letters.'
+semantic_type: postindex
+country:
+- IM
+langs:
+- en
+regexp: ^IM\d[\dA-Z]? ?\d[ABD-HJLN-UW-Z]{2}$
+examples:
+- value: IM2 1AA
+- value: IM99 1PS
+- value: IM2 1A
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/IM_postcode_area
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/IM

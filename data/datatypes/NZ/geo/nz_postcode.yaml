@@ -1,0 +1,24 @@
+id: nz_postcode
+name: New Zealand postal code
+status: draft
+doc: 'Postal code in New Zealand: four digits.'
+semantic_type: postindex
+country:
+- NZ
+langs:
+- en
+regexp: ^\d{4}$
+examples:
+- value: '6001'
+- value: '6015'
+- value: '6332'
+- value: '8252'
+- value: '1030'
+- value: '600'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postcodes_in_New_Zealand
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/NZ

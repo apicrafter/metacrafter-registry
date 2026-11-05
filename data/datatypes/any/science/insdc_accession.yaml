@@ -1,0 +1,32 @@
+id: insdc_accession
+name: INSDC sequence accession (GenBank, ENA, DDBJ)
+status: draft
+doc: 'Accession number of a sequence record in the databases of the International Nucleotide Sequence
+  Database Collaboration: GenBank at NCBI, the European Nucleotide Archive (ENA) at EMBL-EBI and DDBJ.
+  The three exchange their records and share one accession space. Older nucleotide records have one letter
+  and five digits or two letters and six digits; bulk records such as whole-genome shotgun contigs have
+  four to six letters and eight to ten digits; coding sequence (protein) records have three letters and
+  five digits, as in AAA35559. A version such as .1 may follow. RefSeq, read archive, BioSample and BioProject
+  accessions are separate datatypes.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^([A-Z]\d{5}|[A-Z]{2}\d{6}|[A-Z]{4,6}\d{8,10}|[A-J][A-Z]{2}\d{5})(\.\d+)?$
+examples:
+- value: X58356
+  description: Nicotiana sylvestris gene for a 33 kDa chloroplast ribonucleoprotein; Bioregistry example
+- value: X58356.1
+  description: The same record with its version
+- value: NM_000546
+  valid: false
+  description: RefSeq accession, not an INSDC one
+mappings:
+  bioregistry: insdc
+links:
+- type: doc
+  url: https://www.insdc.org/
+- type: other
+  url: https://bioregistry.io/registry/insdc

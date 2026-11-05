@@ -17,6 +17,7 @@ examples:
   description: Example UAE Emirates ID number
 mappings:
   purview: U.A.E. identity card number
+  dpv: pd:OfficialID
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Emirates_ID

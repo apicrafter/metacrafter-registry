@@ -17,6 +17,8 @@ examples:
   description: example from ORG-ID.guide
 mappings:
   orgid: SV-NIT
+  schema_org: taxID
+  stdnum: sv.nit
 links:
 - type: doc
   url: https://www.mh.gob.sv/

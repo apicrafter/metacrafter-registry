@@ -1,0 +1,25 @@
+id: ph_postcode
+name: Philippines postal code
+status: draft
+doc: 'Postal code in the Philippines: the ZIP code, four digits.'
+semantic_type: postindex
+country:
+- PH
+langs:
+- en
+regexp: ^\d{4}$
+examples:
+- value: '1008'
+- value: '1050'
+- value: '1135'
+- value: '1207'
+- value: '2000'
+- value: '1000'
+- value: '100'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ZIP_codes_in_the_Philippines
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/PH

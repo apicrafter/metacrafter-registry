@@ -21,6 +21,7 @@ examples:
   description: Six digits instead of seven
 mappings:
   wikidata: P657
+  bioregistry: rtecs
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Registry_of_Toxic_Effects_of_Chemical_Substances

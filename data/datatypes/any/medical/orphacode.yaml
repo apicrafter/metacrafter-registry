@@ -17,6 +17,7 @@ examples:
   description: pneumocystosis
 mappings:
   wikidata: P1550
+  bioregistry: orpha
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Orphanet

@@ -23,6 +23,9 @@ mappings:
   - CH-FDJP
   - CH_BS-CR
   wikidata: P4829
+  stdnum:
+  - ch.uid
+  - ch.vat
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P4829

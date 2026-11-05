@@ -27,6 +27,7 @@ examples:
 mappings:
   autotype: iswc
   wikidata: P1827
+  schema_org: iswcCode
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Standard_Musical_Work_Code

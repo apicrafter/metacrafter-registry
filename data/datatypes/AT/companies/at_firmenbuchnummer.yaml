@@ -19,6 +19,7 @@ examples:
   description: Verbund
 mappings:
   wikidata: P5285
+  stdnum: at.businessid
 links:
 - type: wikipedia
   url: https://de.wikipedia.org/wiki/Firmenbuch

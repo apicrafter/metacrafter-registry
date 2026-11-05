@@ -1,0 +1,19 @@
+id: kg_postcode
+name: Kyrgyzstan postal code
+status: draft
+doc: 'Postal code in Kyrgyzstan: six digits.'
+semantic_type: postindex
+country:
+- KG
+langs:
+- ky
+- ru
+regexp: ^\d{6}$
+examples:
+- value: '720001'
+- value: '72000'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/KG
