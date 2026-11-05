@@ -1,0 +1,34 @@
+id: bitcoin_cash_address
+name: Bitcoin Cash address (CashAddr)
+status: draft
+doc: 'Address of Bitcoin Cash in the CashAddr format: the network prefix bitcoincash (it may be omitted),
+  a colon and a Base32 payload with a version byte, the hash and a 40-bit BCH-code checksum. With a 160-bit
+  hash the payload has 42 characters and starts with q (P2PKH) or p (P2SH). Lower case is preferred and
+  upper case is allowed, never mixed. Addresses with longer hashes, testnet prefixes (bchtest, bchreg)
+  and legacy Base58 addresses, which look like Bitcoin''s, are not matched.'
+parent: crypto_address
+categories:
+- cryptocurrency
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:(?:bitcoincash:)?[qp][02-9ac-hj-np-z]{41}|(?:BITCOINCASH:)?[QP][02-9AC-HJ-NP-Z]{41})$
+examples:
+- value: bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a
+  description: P2PKH example of the CashAddr specification (legacy 1BpEi6DfDAUFd7GtittLSdBeYJvcoaVggu)
+- value: bitcoincash:ppm2qsznhks23z7629mms6s4cwef74vcwvn0h829pq
+  description: P2SH example of the CashAddr specification
+- value: qr95sy3j9xwd2ap32xkykttr4cvcu7as4y0qverfuy
+  description: Example of the CashAddr specification without the prefix
+- value: bitcoincash:Qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a
+  valid: false
+  description: mixed case is not allowed
+links:
+- type: doc
+  url: https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Bitcoin_Cash
+translations:
+  ru:
+    name: Адрес Bitcoin Cash (CashAddr)

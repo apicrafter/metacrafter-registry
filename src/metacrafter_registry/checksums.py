@@ -7,6 +7,7 @@ character makes the value invalid.
 
 from __future__ import annotations
 
+import hashlib
 import re
 from collections.abc import Callable
 
@@ -377,6 +378,75 @@ def kz_iin_bin(value: str) -> bool:
     return check != 10 and check == digits[11]
 
 
+_BASE58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+
+
+def base58check(value: str) -> bool:
+    """Base58Check with the Bitcoin alphabet.
+
+    The decoded bytes end with a 4-byte checksum: the first four bytes of the
+    double SHA-256 of the bytes before it. Each leading '1' stands for a zero
+    byte. Used by legacy Bitcoin addresses (P2PKH, P2SH), WIF private keys,
+    BIP-32 extended keys and the addresses of Litecoin, Dogecoin and TRON.
+    """
+    compact = _compact(value)
+    if not compact or any(c not in _BASE58 for c in compact):
+        return False
+    number = 0
+    for c in compact:
+        number = number * 58 + _BASE58.index(c)
+    zeros = len(compact) - len(compact.lstrip("1"))
+    raw = b"\0" * zeros + number.to_bytes((number.bit_length() + 7) // 8, "big")
+    if len(raw) < 5:
+        return False
+    payload, checksum = raw[:-4], raw[-4:]
+    return hashlib.sha256(hashlib.sha256(payload).digest()).digest()[:4] == checksum
+
+
+_BECH32 = "qpzry9x8gf2tvdw0s3jn54khce6mua7l"
+_BECH32_GENERATOR = (0x3B6A57B2, 0x26508E6D, 0x1EA119FA, 0x3D4233DD, 0x2A1462B3)
+
+
+def _bech32_verify(value: str, constant: int) -> bool:
+    """BIP-173 checksum: HRP, the separator '1', data characters, 6 of them the checksum.
+
+    Upper or lower case, never mixed. The 90-character limit of BIP-173 is not
+    enforced: Lightning invoices and Cardano addresses use longer strings.
+    """
+    compact = _compact(value)
+    if not compact or any(not 33 <= ord(c) <= 126 for c in compact):
+        return False
+    if compact != compact.lower() and compact != compact.upper():
+        return False
+    compact = compact.lower()
+    pos = compact.rfind("1")
+    if pos < 1 or len(compact) - pos - 1 < 6:
+        return False
+    hrp, data = compact[:pos], compact[pos + 1 :]
+    if any(c not in _BECH32 for c in data):
+        return False
+    values = [ord(c) >> 5 for c in hrp] + [0] + [ord(c) & 31 for c in hrp]
+    values += [_BECH32.index(c) for c in data]
+    chk = 1
+    for v in values:
+        top = chk >> 25
+        chk = (chk & 0x1FFFFFF) << 5 ^ v
+        for i, generator in enumerate(_BECH32_GENERATOR):
+            if (top >> i) & 1:
+                chk ^= generator
+    return chk == constant
+
+
+def bech32(value: str) -> bool:
+    """Bech32 (BIP-173): SegWit v0 addresses, Lightning invoices, Cardano addresses."""
+    return _bech32_verify(value, 1)
+
+
+def bech32m(value: str) -> bool:
+    """Bech32m (BIP-350): SegWit v1+ addresses such as Bitcoin Taproot (bc1p...)."""
+    return _bech32_verify(value, 0x2BC830A3)
+
+
 ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "luhn": luhn,
     "iban_mod97": iban_mod97,
@@ -401,6 +471,9 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "si_ddv": si_ddv,
     "se_vat": se_vat,
     "kz_iin_bin": kz_iin_bin,
+    "base58check": base58check,
+    "bech32": bech32,
+    "bech32m": bech32m,
 }
 
 

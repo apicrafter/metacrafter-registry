@@ -1,19 +1,38 @@
 id: p2pkhaddr
-name: Pubkey hash (P2PKH address)
+name: Bitcoin P2PKH address
 status: stable
-doc: A Bitcoin address is only a hash, so the sender can't provide a full public key in scriptPubKey.
-  When redeeming coins that have been sent to a Bitcoin address, the recipient provides both the signature
-  and the public key. The script verifies that the provided public key does hash to the hash in scriptPubKey,
-  and then it also checks the signature against the public key.
+doc: Legacy Bitcoin address of the pay-to-public-key-hash (P2PKH) type. It is the Base58Check encoding
+  of the version byte 0 and the 20-byte RIPEMD-160 hash of the SHA-256 hash of a public key, so it always
+  starts with 1. Most such addresses have 33 or 34 characters; each leading zero byte of the hash adds
+  a 1 and makes the address shorter. Testnet P2PKH addresses start with m or n and are not matched.
+parent: crypto_address
 categories:
 - cryptocurrency
 langs:
 - common
 is_pii: false
 classification: identifier
+regexp: ^1[1-9A-HJ-NP-Za-km-z]{25,33}$
+checksum: base58check
+examples:
+- value: 1PMycacnJaSqwwJqjawXBErnLsZ7RkXUAs
+  description: Address derived step by step in the Bitcoin Wiki article on version 1 addresses
+- value: 1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2
+  description: Example address of the Bitcoin Wiki article on invoice addresses
+- value: 1PMycacnJaSqwwJqjawXBErnLsZ7RkXUAt
+  valid: false
+  description: last character changed, the checksum fails
+- value: 3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy
+  valid: false
+  description: P2SH address (p2shaddr)
 mappings:
   autotype: bitcoin
   presidio: CRYPTO
 links:
 - type: other
-  url: https://allprivatekeys.com/bitcoin-address-format
+  url: https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses
+- type: other
+  url: https://en.bitcoin.it/wiki/Invoice_address
+translations:
+  ru:
+    name: Адрес Bitcoin P2PKH

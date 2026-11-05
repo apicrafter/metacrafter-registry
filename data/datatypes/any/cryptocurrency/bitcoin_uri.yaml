@@ -1,0 +1,32 @@
+id: bitcoin_uri
+name: Bitcoin payment URI (bitcoin:)
+status: draft
+doc: 'URI of the bitcoin: scheme that wallets open from links and QR codes to start a payment (BIP 321,
+  which replaces BIP 21). It holds an address and query parameters such as amount (in BTC), label, message,
+  lightning (a BOLT 11 invoice) or further addresses. The scheme and the parameter names are case-insensitive,
+  and QR codes often use upper case. The address part may be empty when the parameters carry the payment
+  instructions.'
+categories:
+- cryptocurrency
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[Bb][Ii][Tt][Cc][Oo][Ii][Nn]:(?:[0-9A-Za-z]+(?:\?\S+)?|\?\S+)$
+examples:
+- value: bitcoin:175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W?amount=20.3&label=Luke-Jr
+  description: Example of BIP 21 and BIP 321 (the address in it is illustrative and fails Base58Check)
+- value: BITCOIN:BC1QUFGY354J3KMVUCH987XE4S40836X3H0LG8F5NQ?BC=BC1P5SWKUGEZN97763TL0YTY6556856UUG0Q6JFLLJVEP9M4P7339X5QZYRH4Q
+  description: Upper-case example of BIP 321 for QR codes (illustrative addresses)
+- value: bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a
+  valid: false
+  description: Bitcoin Cash address (bitcoin_cash_address)
+links:
+- type: doc
+  url: https://github.com/bitcoin/bips/blob/master/bip-0321.mediawiki
+- type: doc
+  url: https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
+translations:
+  ru:
+    name: Платёжный URI Bitcoin (bitcoin:)

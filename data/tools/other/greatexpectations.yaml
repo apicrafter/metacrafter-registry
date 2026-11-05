@@ -10,12 +10,14 @@ website: https://github.com/fivetran/great_expectations/tree/develop/contrib/gre
 supported_types:
 - arxiv_id
 - bic
+- bitcoin_txid
 - city
 - colorhextriplet
 - country
 - countrycode_alpha2
 - countrycode_alpha3
 - countrycode_num
+- cryptocurrency_ticker
 - date
 - doi
 - ean

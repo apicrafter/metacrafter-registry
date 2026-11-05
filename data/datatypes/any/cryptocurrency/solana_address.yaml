@@ -1,0 +1,32 @@
+id: solana_address
+name: Solana address
+status: draft
+doc: 'Address of a Solana account or program: a 32-byte Ed25519 public key or program derived address,
+  written in Base58 with the Bitcoin alphabet in 32 to 44 characters. It has no checksum and no prefix,
+  so other Base58 values of that length match too: rely on the field name or context.'
+parent: crypto_address
+categories:
+- cryptocurrency
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9A-HJ-NP-Za-km-z]{32,44}$
+examples:
+- value: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+  description: SPL Token program
+- value: TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb
+  description: SPL Token-2022 program
+- value: '0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed'
+  valid: false
+  description: Ethereum address (ethereum_address)
+links:
+- type: doc
+  url: https://solana.com/docs/core/accounts
+- type: other
+  url: https://github.com/anza-xyz/solana-sdk/blob/master/address/src/lib.rs
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Solana_(blockchain_platform)
+translations:
+  ru:
+    name: Адрес Solana

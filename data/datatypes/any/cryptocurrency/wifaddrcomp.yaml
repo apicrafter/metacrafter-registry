@@ -1,16 +1,37 @@
 id: wifaddrcomp
-name: WIF, compressed pubkey
-status: draft
-doc: WIF, compressed pubkey
+name: Bitcoin private key in WIF (compressed public key)
+status: stable
+doc: 'Bitcoin private key in Wallet Import Format (WIF) for a compressed public key: the Base58Check encoding
+  of the byte 0x80, the 32-byte private key and the flag byte 0x01. Such keys have 52 characters and start
+  with K or L. The value is a secret: whoever knows it can spend the funds. Testnet keys start with c
+  and are not matched; keys for an uncompressed public key are wifaddruncomp.'
+parent: private_key
 categories:
 - cryptocurrency
+- secrets
 langs:
 - common
 is_pii: false
 classification: identifier
+regexp: ^[KL][1-9A-HJ-NP-Za-km-z]{51}$
+checksum: base58check
 examples:
 - value: L1aW4aubDFB7yfras2S1mN3bqg9nwySY8nkoLmJebSLD5BWv3ENZ
   description: Example from https://allprivatekeys.com/bitcoin-address-format
+- value: KwdMAjGmerYanjeui5SHS7JkmpZvVipYvB2LJGU1ZxJwYvP98617
+  description: Sample key of the Bitcoin Wiki article on WIF with the compression flag; never import or
+    fund it
+- value: L1aW4aubDFB7yfras2S1mN3bqg9nwySY8nkoLmJebSLD5BWv3ENa
+  valid: false
+  description: last character changed, the checksum fails
+- value: 5HueCGU8rMjxEXxiPuD5BDku4MkFqeZyd4dZ1jvhTVqvbTLvyTJ
+  valid: false
+  description: key for an uncompressed public key (wifaddruncomp)
 links:
 - type: other
+  url: https://en.bitcoin.it/wiki/Wallet_import_format
+- type: other
   url: https://allprivatekeys.com/bitcoin-address-format
+translations:
+  ru:
+    name: Закрытый ключ Bitcoin в формате WIF (сжатый открытый ключ)

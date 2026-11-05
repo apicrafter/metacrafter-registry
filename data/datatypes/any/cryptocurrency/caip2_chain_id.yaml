@@ -1,0 +1,31 @@
+id: caip2_chain_id
+name: Blockchain ID (CAIP-2)
+status: draft
+doc: 'Chain-agnostic identifier of a blockchain defined by CAIP-2: a namespace of 3 to 8 lower-case letters,
+  digits or hyphens that names an ecosystem (eip155 for EVM chains, bip122 for Bitcoin-like chains, cosmos,
+  solana and others), a colon and a reference of up to 32 characters that identifies the chain within
+  it, such as the EIP-155 chain ID or the start of the genesis block hash.'
+categories:
+- cryptocurrency
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[-a-z0-9]{3,8}:[-_a-zA-Z0-9]{1,32}$
+examples:
+- value: eip155:1
+  description: Ethereum mainnet
+- value: bip122:000000000019d6689c085ae165831e93
+  description: Bitcoin mainnet
+- value: cosmos:cosmoshub-3
+  description: Cosmos Hub
+- value: eip155:1:0xab16a96D359eC26a11e2C2b3d8f8B8942d5Bfcdb
+  valid: false
+  description: account ID (caip10_account_id)
+links:
+- type: doc
+  url: https://chainagnostic.org/CAIPs/caip-2
+translations:
+  ru:
+    name: Идентификатор блокчейна (CAIP-2)

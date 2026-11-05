@@ -1,0 +1,31 @@
+id: ethereum_tx_hash
+name: Ethereum transaction hash
+status: draft
+doc: 'Identifier of an Ethereum transaction: the Keccak-256 hash of the signed, encoded transaction, written
+  as 0x and 64 hexadecimal digits. Block hashes and the transaction hashes of other EVM networks have
+  the same form, so the value alone does not tell them apart.'
+parent: keccak256hash
+categories:
+- cryptocurrency
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^0x[0-9a-fA-F]{64}$
+examples:
+- value: '0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b'
+  description: Example of eth_getTransactionByHash in the Ethereum JSON-RPC documentation
+- value: '0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944'
+  valid: false
+  description: one hex digit short (63 instead of 64)
+- value: '0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed'
+  valid: false
+  description: account address (ethereum_address)
+links:
+- type: doc
+  url: https://ethereum.org/en/developers/docs/transactions/
+- type: doc
+  url: https://ethereum.org/en/developers/docs/apis/json-rpc/
+translations:
+  ru:
+    name: Хеш транзакции Ethereum
