@@ -1,0 +1,40 @@
+id: dti
+name: Digital Token Identifier (ISO 24165 DTI)
+status: draft
+doc: 'Identifier of a digital token (a native cryptocurrency or a token issued on another blockchain)
+  under ISO 24165, assigned by the Digital Token Identifier Foundation (DTIF) and listed in its public
+  registry. It has 9 characters: an 8-character random base made of digits and consonants (no vowels and
+  no Y, the first character is never 0) and a check character. The check character follows Annex A of
+  ISO 24165-1, but codes registered before the algorithm keep their original check character, so no checksum
+  is enforced here. DTIs identify crypto-assets in financial and regulatory reporting.'
+categories:
+- cryptocurrency
+- finances
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9B-DF-HJ-NP-TV-XZ][0-9B-DF-HJ-NP-TV-XZ]{8}$
+examples:
+- value: 4H95J0R2X
+  description: Bitcoin
+- value: X9J9K872S
+  description: Ether
+- value: 820B7G1NL
+  description: Dogecoin
+- value: 0H95J0R2X
+  valid: false
+  description: the first character cannot be 0
+- value: 4H95J0R2A
+  valid: false
+  description: vowels are not used
+links:
+- type: doc
+  url: https://dtif.org/
+- type: doc
+  url: https://www.iso.org/standard/85546.html
+- type: other
+  url: https://www.legal500.com/intelligence/australia/technology/crypto-asset-identifiers-%E2%80%93-dtis-as-underliers-for-upis
+translations:
+  ru:
+    name: Идентификатор цифрового токена (ISO 24165 DTI)

@@ -1,13 +1,35 @@
 id: p2wshaddr
-name: P2WSH address
-status: draft
-doc: P2WSH address
+name: Bitcoin P2WSH address (native SegWit, bc1q)
+status: stable
+doc: 'Native SegWit address of the pay-to-witness-script-hash (P2WSH) type: witness version 0 with the
+  32-byte SHA-256 hash of a witness script (BIP 141), encoded with Bech32 (BIP 173). Mainnet addresses
+  have the prefix bc1q and 62 characters, which tells them apart from 42-character P2WPKH addresses. Lower
+  or upper case, never mixed. Testnet addresses (tb1q) are not matched.'
+parent: crypto_address
 categories:
 - cryptocurrency
 langs:
 - common
 is_pii: false
 classification: identifier
+regexp: ^(?:bc1q[02-9ac-hj-np-z]{58}|BC1Q[02-9AC-HJ-NP-Z]{58})$
+checksum: bech32
+examples:
+- value: bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3
+  description: P2WSH example of BIP 173
+- value: bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv4
+  valid: false
+  description: last character changed, the checksum fails
+- value: bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4
+  valid: false
+  description: P2WPKH address (p2wpkhaddr)
+mappings:
+  presidio: CRYPTO
 links:
-- type: other
-  url: https://allprivatekeys.com/bitcoin-address-format
+- type: doc
+  url: https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki
+- type: doc
+  url: https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki
+translations:
+  ru:
+    name: Адрес Bitcoin P2WSH (SegWit, bc1q)

@@ -1,0 +1,35 @@
+id: dogecoin_address
+name: Dogecoin address
+status: draft
+doc: Mainnet address of Dogecoin, encoded with Base58Check in 34 characters. P2PKH addresses use version
+  byte 30 and start with D; P2SH addresses use version byte 22 and start with 9 or A. Testnet addresses
+  are not matched.
+parent: crypto_address
+categories:
+- cryptocurrency
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:D[5-9A-HJ-NP-U]|9[r-z]|A[1-9A-F])[1-9A-HJ-NP-Za-km-z]{32}$
+checksum: base58check
+examples:
+- value: DD4KSSuBJqcjuTcvUg1CgUKeurPUFeEZkE
+  description: P2PKH address from the test data of Dogecoin Core (base58_keys_valid.json)
+- value: A7HRQk3GFCW2QasvdZxXuYj8kkQK5QrYLs
+  description: P2SH address from the test data of Dogecoin Core
+- value: 9zYnVRaekPtdKBYuPw5QiBtv3NNrzD2LLW
+  description: P2SH address from the test data of Dogecoin Core
+- value: DD4KSSuBJqcjuTcvUg1CgUKeurPUFeEZkF
+  valid: false
+  description: last character changed, the checksum fails
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Dogecoin
+- type: doc
+  url: https://github.com/dogecoin/dogecoin/blob/master/src/chainparams.cpp
+- type: other
+  url: https://github.com/dogecoin/dogecoin/blob/master/src/test/data/base58_keys_valid.json
+translations:
+  ru:
+    name: Адрес Dogecoin

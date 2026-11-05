@@ -1,0 +1,32 @@
+id: ens_name
+name: ENS name (.eth)
+status: draft
+doc: Name in the Ethereum Name Service (ENS), such as foo.eth, that resolves to an Ethereum address and
+  other records. A name is a sequence of labels separated by dots and normalized by ENSIP-15, which is
+  based on Unicode UTS-46, so labels may contain non-Latin letters and emoji. The regexp covers names
+  under the .eth top-level domain; ENS can also resolve imported DNS names, which look like ordinary domain
+  names.
+categories:
+- cryptocurrency
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[^.\s]+\.)+eth$
+examples:
+- value: beercoin.eth
+  description: Example name of ENSIP-1
+- value: foo.eth
+  description: Example name of ENSIP-1
+- value: mysite.swarm
+  valid: false
+  description: not under .eth
+links:
+- type: doc
+  url: https://docs.ens.domains/ensip/1
+- type: doc
+  url: https://docs.ens.domains/ensip/15
+translations:
+  ru:
+    name: Имя ENS (.eth)

@@ -1,0 +1,32 @@
+id: monero_address
+name: Monero address
+status: draft
+doc: 'Mainnet address of Monero: the network byte, the public spend key, the public view key and a 4-byte
+  Keccak-256 checksum, encoded with Monero''s own Base58 variant that converts 8-byte blocks into 11 characters.
+  Standard addresses (network byte 18) have 95 characters and start with 4, subaddresses (42) have 95
+  characters and start with 8, and integrated addresses (19), which add an 8-byte payment ID, have 106
+  characters and start with 4.'
+parent: crypto_address
+categories:
+- cryptocurrency
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:(?:4[1-9AB]|8[2-9A-C])[1-9A-HJ-NP-Za-km-z]{93}|4[B-HJ-M][1-9A-HJ-NP-Za-km-z]{104})$
+examples:
+- value: 4AdUndXHHZ6cfufTMvppY6JwXNouMBzSkbLYfpAV5Usx3skxNgYeYTRj5UzqtReoS44qo9mtmXCqY45DJ852K5Jv2684Rge
+  description: Example standard address of the Monero documentation
+- value: 4AdUndXHHZ6cfufTMvppY6JwXNouMBzSkbLYfpAV5Usx3skxNgYeYTRj5UzqtReoS44qo9mtmXCqY45DJ852K5Jv2684Rg
+  valid: false
+  description: 94 characters
+links:
+- type: doc
+  url: https://docs.getmonero.org/public-address/standard-address/
+- type: doc
+  url: https://github.com/monero-project/monero/blob/master/src/cryptonote_config.h
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Monero
+translations:
+  ru:
+    name: Адрес Monero

@@ -1,0 +1,35 @@
+id: bip39_mnemonic
+name: BIP-39 mnemonic phrase (seed phrase)
+status: draft
+doc: 'Recovery phrase of a cryptocurrency wallet as defined by BIP 39: 12, 15, 18, 21 or 24 words from
+  a fixed list of 2048 words, where the last word also carries a checksum of the entropy. The phrase,
+  with an optional passphrase, gives the wallet seed from which BIP-32 keys are derived, so whoever knows
+  it controls the wallet. The regexp covers the English word list (lower-case words of 3 to 8 letters
+  separated by single spaces); BIP 39 also has word lists for other languages.'
+parent: private_key
+categories:
+- cryptocurrency
+- secrets
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: '^[a-z]{3,8}(?: [a-z]{3,8}){11}(?:(?: [a-z]{3,8}){3}){0,4}$'
+examples:
+- value: abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about
+  description: BIP 39 test vector, 12 words (entropy of zeros); never use it for a wallet
+- value: legal winner thank year wave sausage worth useful legal winner thank yellow
+  description: BIP 39 test vector, 12 words; never use it for a wallet
+- value: abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about
+  valid: false
+  description: 11 words
+links:
+- type: doc
+  url: https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki
+- type: doc
+  url: https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt
+- type: other
+  url: https://github.com/trezor/python-mnemonic/blob/master/vectors.json
+translations:
+  ru:
+    name: Мнемоническая фраза BIP-39 (seed-фраза)

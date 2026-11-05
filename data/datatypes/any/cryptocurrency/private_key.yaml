@@ -1,10 +1,24 @@
 id: private_key
-name: Private key by field name (generic)
+name: Private key or wallet seed (generic)
 status: draft
-doc: Private key by field name (generic)
+doc: 'Secret key of an asymmetric key pair, or the seed or mnemonic phrase from which a cryptocurrency
+  wallet derives its keys. Whoever knows it can sign on behalf of the owner or spend the wallet''s funds.
+  Specific formats are separate datatypes: wifaddrcomp and wifaddruncomp (Bitcoin WIF keys), bip32addr
+  (extended keys), bip39_mnemonic (seed phrases), x509_private_key and pgp_private_key_block. Use this
+  record when only the field name tells that a value is a private key.'
 categories:
+- secrets
 - cryptocurrency
+- cryptography
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Public-key_cryptography
+- type: other
+  url: https://en.bitcoin.it/wiki/Private_key
+translations:
+  ru:
+    name: Закрытый ключ или seed кошелька

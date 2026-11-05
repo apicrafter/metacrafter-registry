@@ -1,0 +1,27 @@
+id: cryptocurrency_ticker
+name: Cryptocurrency ticker symbol
+status: draft
+doc: Short code of a cryptocurrency or token used by exchanges, wallets and price services, such as BTC
+  for Bitcoin or ETH for Ether. No authority assigns these codes and ISO 4217 does not include them, so
+  the same ticker can denote different tokens on different platforms. A registered, unambiguous identifier
+  of a token is the ISO 24165 Digital Token Identifier (dti).
+categories:
+- cryptocurrency
+- finances
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: BTC
+  description: Bitcoin
+- value: ETH
+  description: Ether
+- value: XRP
+  description: XRP
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_cryptocurrencies
+translations:
+  ru:
+    name: Тикер криптовалюты

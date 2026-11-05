@@ -696,6 +696,7 @@ def test_javascript_compact_matches_match_python(reg_with_date, tmp_path):
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
 def test_javascript_checksums_match_python(tmp_path):
     """Every check-digit algorithm exists in identify-core.js and gives the same answers."""
+    import hashlib
     import random
 
     from metacrafter_registry.checksums import ALGORITHMS
@@ -738,6 +739,21 @@ def test_javascript_checksums_match_python(tmp_path):
         "SE556012579001",
         "950440001673",
         "500101100106",
+        "1PMycacnJaSqwwJqjawXBErnLsZ7RkXUAs",
+        "1PMycacnJaSqwwJqjawXBErnLsZ7RkXUAt",
+        "1111111111111111111114oLvT2",
+        "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
+        "5HueCGU8rMjxEXxiPuD5BDku4MkFqeZyd4dZ1jvhTVqvbTLvyTJ",
+        "xpub661MyMwAqRbcFtXgS5sYJABqqG9YLmC4Q1Rdap9gSE8NqtwybGhePY2gZ29ESFjqJoCu1Rupje8YtGqsefD265TMg7usUDFdp6W1EGMcet8",
+        "TNPeeaaFB7K9cmo4uQpcU32zGK8G1NYqeL",
+        "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4",
+        "BC1QW508D6QEJXTDG4Y5R3ZARVARY0C5XW7KV8F3T4",
+        "bc1qW508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4",
+        "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t5",
+        "bc1p0xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqzk5jj0",
+        "addr1vx2fxv2umyhttkxyxp8x0dlpdt3k6cwng5pxj3jhsydzers66hrl8",
+        "1qqqqqq",
+        "",
         "DE136695976",
         "DE136695976-00001",
         "36 574 261 809",
@@ -765,6 +781,24 @@ def test_javascript_checksums_match_python(tmp_path):
     values += [f"SI{rng.randrange(10**8):08d}" for _ in range(300)]
     values += [f"SE{rng.randrange(10**10):010d}0{rng.choice('12')}" for _ in range(300)]
     values += [f"{rng.randrange(10**12):012d}" for _ in range(500)]
+    base58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+    values += ["1" + "".join(rng.choice(base58) for _ in range(33)) for _ in range(200)]
+    values += [
+        "1" * rng.randrange(6) + "".join(rng.choice(base58) for _ in range(rng.randrange(1, 60)))
+        for _ in range(200)
+    ]
+    for _ in range(200):  # valid Base58Check strings of 1 to 3 SHA-256 blocks
+        payload = bytes(rng.randrange(256) for _ in range(rng.randrange(1, 130)))
+        if rng.random() < 0.3:
+            payload = b"\0" * rng.randrange(1, 4) + payload
+        raw = payload + hashlib.sha256(hashlib.sha256(payload).digest()).digest()[:4]
+        number, text = int.from_bytes(raw, "big"), ""
+        while number:
+            number, digit = divmod(number, 58)
+            text = base58[digit] + text
+        values.append("1" * (len(raw) - len(raw.lstrip(b"\0"))) + text)
+    charset = "qpzry9x8gf2tvdw0s3jn54khce6mua7l"
+    values += ["bc1" + "".join(rng.choice(charset) for _ in range(39)) for _ in range(200)]
     values += [f"DE{rng.randrange(10**9):09d}-{rng.randrange(10**5):05d}" for _ in range(300)]
     values += [
         f"{rng.randrange(10**8):08d}{rng.choice(letters_az)}{rng.randrange(1000):03d}"
@@ -801,18 +835,21 @@ def test_javascript_checksums_match_python(tmp_path):
     script.write_text(
         "const core = require(process.argv[2]);\n"
         "const names = JSON.parse(process.argv[3]);\n"
-        "const values = JSON.parse(process.argv[4]);\n"
+        "const values = JSON.parse(require('fs').readFileSync(process.argv[4], 'utf8'));\n"
         "console.log(JSON.stringify(names.map(n => core.CHECKSUMS[n] ? "
         "values.map(v => core.CHECKSUMS[n](v)) : null)));\n"
     )
     names = sorted(ALGORITHMS)
+    # The values go through a file: as one argument they exceed Linux's 128 KiB limit.
+    values_file = tmp_path / "values.json"
+    values_file.write_text(json.dumps(values), encoding="utf-8")
     out = subprocess.run(
         [
             "node",
             str(script),
             str(REPO / "src/metacrafter_registry/static/identify-core.js"),
             json.dumps(names),
-            json.dumps(values),
+            str(values_file),
         ],
         capture_output=True,
         text=True,

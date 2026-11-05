@@ -1,0 +1,31 @@
+id: tron_address
+name: TRON address
+status: draft
+doc: 'Address of a TRON account or contract: a 21-byte value made of the prefix byte 0x41 and a 20-byte
+  account hash, encoded with Base58Check in 34 characters that start with T. APIs also show the same value
+  as 42 hexadecimal digits starting with 41; that form is not matched here.'
+parent: crypto_address
+categories:
+- cryptocurrency
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^T[1-9A-HJ-NP-Za-km-z]{33}$
+checksum: base58check
+examples:
+- value: TNPeeaaFB7K9cmo4uQpcU32zGK8G1NYqeL
+  description: Example of the TRON developer documentation (hex 418840E6C55B9ADA326D211D818C34A994AECED808)
+- value: TDp4x8kCJ6aHz8wnqZgkaVQAm2ajH1og3L
+  description: Address derived from the example public key of the TRON developer documentation
+- value: TNPeeaaFB7K9cmo4uQpcU32zGK8G1NYqeM
+  valid: false
+  description: last character changed, the checksum fails
+links:
+- type: doc
+  url: https://developers.tron.network/docs/account
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Tron_(cryptocurrency)
+translations:
+  ru:
+    name: Адрес TRON

@@ -7,6 +7,9 @@ import pytest
 from metacrafter_registry import Registry
 from metacrafter_registry.checksums import (
     at_uid,
+    base58check,
+    bech32,
+    bech32m,
     bg_vat,
     de_fsnr,
     de_idnr,
@@ -119,6 +122,39 @@ def test_checksum_reference_values():
     assert not de_pzn("27580898")
     assert de_fsnr("B072RRE2I55") and de_fsnr("B072RRE21X1") and not de_fsnr("B072RRE2I45")
     assert iso7064_mod97_10("991-03730-19") and not iso7064_mod97_10("991-03730-18")
+
+
+def test_crypto_checksum_reference_values():
+    # Bitcoin Wiki sample address and WIF key; BIP-32 test vector 1 (chain m)
+    assert base58check("1PMycacnJaSqwwJqjawXBErnLsZ7RkXUAs")
+    assert base58check("3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy")
+    assert base58check("5HueCGU8rMjxEXxiPuD5BDku4MkFqeZyd4dZ1jvhTVqvbTLvyTJ")
+    assert base58check(
+        "xpub661MyMwAqRbcFtXgS5sYJABqqG9YLmC4Q1Rdap9gSE8NqtwybGhePY2gZ29ESFjqJoCu1Rupje8YtGqsefD265TMg7usUDFdp6W1EGMcet8"
+    )
+    assert base58check("1111111111111111111114oLvT2")  # leading zero bytes
+    assert not base58check("1PMycacnJaSqwwJqjawXBErnLsZ7RkXUAt")
+    assert not base58check("175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W")  # BIP 21 example, bad checksum
+    assert not base58check("0PMycacnJaSqwwJqjawXBErnLsZ7RkXUAs") and not base58check("")
+    assert not base58check("1111")
+    # BIP-173 and BIP-350 test vectors
+    assert bech32("bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4")
+    assert bech32("BC1QW508D6QEJXTDG4Y5R3ZARVARY0C5XW7KV8F3T4")
+    assert bech32("bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3")
+    assert not bech32("bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t5")
+    assert not bech32("bc1qW508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4")  # mixed case
+    assert not bech32("bc1p0xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqzk5jj0")
+    assert bech32m("bc1p0xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqzk5jj0")
+    assert not bech32m("bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4")
+    assert (
+        not bech32("1qqqqqq")
+        and not bech32("bc1qqqqq")
+        and not bech32("bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3tb")
+    )
+    # no 90-character limit: a BOLT 11 example invoice
+    assert bech32(
+        "lnbc2500u1pvjluezsp5zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygspp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqdq5xysxxatsyp3k7enxv4jsxqzpu9qrsgquk0rl77nj30yxdy8j9vdx85fkpmdla2087ne0xh8nhedh8w27kyke0lp53ut353s06fv3qfegext0eh0ymjpf39tuven09sam30g4vgpfna3rh"
+    )
 
 
 def test_lookup_and_aliases(reg):

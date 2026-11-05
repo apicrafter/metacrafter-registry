@@ -1,0 +1,30 @@
+id: caip10_account_id
+name: Blockchain account ID (CAIP-10)
+status: draft
+doc: 'Chain-agnostic identifier of an account defined by CAIP-10: a CAIP-2 blockchain ID, a colon and
+  the account address in the format of that chain, up to 128 characters. It tells both the network and
+  the address, which an address alone often does not.'
+categories:
+- cryptocurrency
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[-a-z0-9]{3,8}:[-_a-zA-Z0-9]{1,32}:[-.%a-zA-Z0-9]{1,128}$
+examples:
+- value: eip155:1:0xab16a96D359eC26a11e2C2b3d8f8B8942d5Bfcdb
+  description: Account on Ethereum mainnet
+- value: bip122:000000000019d6689c085ae165831e93:128Lkh3S7CkDTBZ8W7BbpsN3YYizJMp8p6
+  description: Account on Bitcoin mainnet
+- value: cosmos:cosmoshub-3:cosmos1t2uflqwqe0fsj0shcfkrvpukewcw40yjj6hdc0
+  description: Account on Cosmos Hub
+- value: 0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb@eip155:1
+  valid: false
+  description: legacy syntax used before 2021-08-21
+links:
+- type: doc
+  url: https://chainagnostic.org/CAIPs/caip-10
+translations:
+  ru:
+    name: Идентификатор аккаунта в блокчейне (CAIP-10)

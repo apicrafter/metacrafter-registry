@@ -1,0 +1,31 @@
+id: xrp_address
+name: XRP Ledger address
+status: draft
+doc: 'Classic address of an XRP Ledger account: an account ID with a 4-byte checksum, encoded with the
+  XRP Ledger''s own Base58 alphabet (rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz). It starts
+  with r and has 25 to 35 characters. The alphabet differs from Bitcoin''s, so the Bitcoin Base58Check
+  algorithm does not verify it. X-addresses, which also encode a destination tag, are not matched.'
+parent: crypto_address
+categories:
+- cryptocurrency
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^r[1-9A-HJ-NP-Za-km-z]{24,34}$
+examples:
+- value: rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh
+  description: Genesis account of the XRP Ledger (XRP Ledger documentation)
+- value: rDTXLQ7ZKZVKz33zJbHjgVShjsBnqMBhmN
+  description: Output of the address encoding sample of the XRP Ledger documentation
+- value: 1PMycacnJaSqwwJqjawXBErnLsZ7RkXUAs
+  valid: false
+  description: Bitcoin P2PKH address (p2pkhaddr)
+links:
+- type: doc
+  url: https://xrpl.org/docs/concepts/accounts/addresses
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/XRP_Ledger
+translations:
+  ru:
+    name: Адрес XRP Ledger
