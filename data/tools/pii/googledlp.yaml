@@ -18,6 +18,10 @@ supported_types:
 - casin
 - cpf
 - curp
+- cz_passport
+- cz_rc
+- de_passport
+- dedriverlic
 - depersonalausweis
 - dkcprnum
 - email
@@ -50,6 +54,7 @@ supported_types:
 - plpesel
 - sepersonnummer
 - sgnric
+- steuerid
 - swiftcode
 - uknhsnum
 - uknino
