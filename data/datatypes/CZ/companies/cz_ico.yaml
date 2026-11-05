@@ -1,9 +1,13 @@
 id: cz_ico
 name: Czech business identification number (IČO)
-status: draft
-doc: Identifikační číslo osoby (IČO), the 8-digit identification number of a company, public body or other
-  organisation in the Czech registers of economic subjects (ARES). ORG-ID.guide lists the register as
-  CZ-ICO; with that prefix an identifier reads CZ-ICO-28179609.
+status: stable
+doc: Identifikační číslo osoby (IČO), the eight-digit number that identifies a company, cooperative, association,
+  public body or self-employed person in the Czech Republic. It was introduced on 1 January 1990. Registry
+  courts assign it to companies, trade licensing offices to self-employed persons, and the Czech Statistical
+  Office to the remaining economic subjects. Older, shorter numbers are padded with leading zeros. The
+  last digit is a check digit (weights 8 to 2, modulo 11). Numbers can be looked up in ARES, the register
+  of economic subjects. The DIČ of a legal entity is CZ followed by its IČO. ORG-ID.guide lists the register
+  as CZ-ICO; with that prefix an identifier reads CZ-ICO-28179609.
 categories:
 - companies
 country:
@@ -13,6 +17,7 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[0-9]{8}$
+checksum: cz_ico
 examples:
 - value: '28179609'
   description: example from ORG-ID.guide
@@ -21,18 +26,37 @@ examples:
 - value: '01146131'
   description: example from ORG-ID.guide
 - value: '45274649'
-  description: ČEZ Group
+  description: ČEZ Group, an example of Wikidata P4156
 - value: '00426547'
-  description: Czech Red Cross
+  description: Czech Red Cross, an example of Wikidata P4156
 - value: 00022985
-  description: Ministry of Education, Youth and Sports
+  description: Ministry of Education, Youth and Sports, an example of Wikidata P4156
+- value: '25596641'
+  description: Example of the check digit calculation in Czech Wikipedia
+- value: '25596642'
+  valid: false
+  description: Check digit does not match
+- value: '2559664'
+  valid: false
+  description: Seven digits; leading zeros must be kept
 mappings:
   orgid: CZ-ICO
   wikidata: P4156
 links:
+- type: doc
+  url: https://ares.gov.cz/
 - type: other
   url: https://org-id.guide/list/CZ-ICO
 - type: wikipedia
   url: https://cs.wikipedia.org/wiki/Identifika%C4%8Dn%C3%AD_%C4%8D%C3%ADslo_osoby
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P4156
+translations:
+  cs:
+    name: Identifikační číslo osoby (IČO)
+    doc: Osmimístné identifikační číslo právnické osoby, podnikající fyzické osoby nebo orgánu veřejné
+      moci; poslední číslice je kontrolní.
+  ru:
+    name: Идентификационный номер организации Чехии (IČO)
+    doc: Восьмизначный номер компании, учреждения или индивидуального предпринимателя в Чехии; последняя
+      цифра контрольная.

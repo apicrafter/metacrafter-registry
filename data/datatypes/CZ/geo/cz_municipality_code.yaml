@@ -1,0 +1,45 @@
+id: cz_municipality_code
+name: Czech municipality code (kód obce)
+status: draft
+doc: Six-digit code of a Czech municipality (obec), such as 554782 for Prague, from the code list of municipalities
+  of the Czech Statistical Office and the register of territorial identification RÚIAN. It starts with
+  5 and does not change over time; the Czech Statistical Office describes five digits starting with 5
+  followed by a check digit.
+categories:
+- geo
+country:
+- CZ
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^5\d{5}$
+examples:
+- value: '554782'
+  description: Prague, an example of Wikidata P7606
+- value: '554791'
+  description: Plzeň, an example of Wikidata P7606
+- value: '578878'
+  description: Telecí, an example of Wikidata P7606
+- value: '582271'
+  description: Rozseč nad Kunštátem, an example of Wikidata P7606
+- value: '454782'
+  valid: false
+  description: Municipality codes start with 5
+- value: '55478'
+  valid: false
+  description: Five digits
+mappings:
+  wikidata: P7606
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P7606
+- type: doc
+  url: https://vdp.cuzk.cz/vdp/ruian/obce/554782
+translations:
+  cs:
+    name: Kód obce
+  ru:
+    name: Код муниципалитета Чехии (kód obce)
+    doc: Шестизначный код чешской общины (obec) в справочнике Чешского статистического управления и в
+      реестре RÚIAN, начинается с 5.

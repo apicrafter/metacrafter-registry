@@ -596,6 +596,98 @@ def de_fsnr(value: str) -> bool:
     return compact[9] == ("X" if check == 10 else str(check))
 
 
+def cz_ico(value: str) -> bool:
+    """Czech identification number of a person or organisation (IČO): 8 digits.
+
+    The first seven digits are weighted 8 down to 2. The check digit is 11
+    minus the sum modulo 11, modulo 10: a remainder of 0 gives 1 and a
+    remainder of 1 gives 0.
+    """
+    digits = _digits(value)
+    if not digits or len(digits) != 8:
+        return False
+    total = sum((8 - i) * d for i, d in enumerate(digits[:7]))
+    return (11 - total % 11) % 10 == digits[7]
+
+
+def cz_rc(value: str) -> bool:
+    """Czech or Slovak birth number (rodné číslo): YYMMDD and 3 or 4 digits, often after a slash.
+
+    A 10-digit number ends with the remainder of its first nine digits divided
+    by 11, where a remainder of 10 gives 0 (used until 1985). 9-digit numbers
+    have no check digit and were issued only before 1954. The date is not
+    checked.
+    """
+    compact = _compact(value).replace("/", "")
+    if not re.fullmatch(r"\d{9,10}", compact):
+        return False
+    if len(compact) == 9:
+        return not 54 <= int(compact[:2]) <= 79
+    return int(compact[:9]) % 11 % 10 == int(compact[9])
+
+
+def cz_dic(value: str) -> bool:
+    """Czech VAT number (DIČ): 8, 9 or 10 digits, optionally prefixed with CZ.
+
+    8 digits (legal entities, the IČO) use the IČO check digit and do not start
+    with 9. 9 digits starting with 6 (numbers assigned by the tax authority)
+    weight digits 2 to 8 by 8 down to 2; the last digit is 8 minus (10 minus
+    the sum modulo 11) modulo 11, modulo 10. Other numbers are birth numbers.
+    """
+    compact = _strip_prefix(value, "CZ").replace("/", "")
+    if not re.fullmatch(r"\d{8,10}", compact):
+        return False
+    if len(compact) == 8:
+        return compact[0] != "9" and cz_ico(compact)
+    if len(compact) == 9 and compact[0] == "6":
+        total = sum((8 - i) * int(c) for i, c in enumerate(compact[1:8])) % 11
+        return (8 - (10 - total) % 11) % 10 == int(compact[8])
+    return cz_rc(compact)
+
+
+def cz_bank_account(value: str) -> bool:
+    """Czech bank account number in the national format: [prefix-]number/bank code.
+
+    The prefix has up to 6 digits and the number 2 to 10 digits, at least two
+    of them not 0; the bank code has 4 digits. Each part, padded to 10 digits
+    and weighted 6 3 7 9 10 5 8 4 2 1, must give a sum divisible by 11
+    (Czech National Bank decree 169/2011).
+    """
+    match = re.fullmatch(r"(?:(\d{1,6})-)?(\d{2,10})/\d{4}", re.sub(r"\s", "", str(value)))
+    if not match:
+        return False
+    prefix, number = match.group(1) or "0", match.group(2)
+    if sum(c != "0" for c in number) < 2:
+        return False
+    weights = (6, 3, 7, 9, 10, 5, 8, 4, 2, 1)
+    return all(
+        sum(w * int(c) for w, c in zip(weights, part.zfill(10), strict=True)) % 11 == 0
+        for part in (prefix, number)
+    )
+
+
+_CZ_ISDS_ALPHABET = "abcdefghijkmnpqrstuvwxyz23456789"
+
+
+def cz_isds(value: str) -> bool:
+    """Czech data box identifier (ID datové schránky): 7 characters, Luhn mod 32.
+
+    The alphabet is abcdefghijkmnpqrstuvwxyz23456789 (no o, l, 0 or 1), giving
+    values 0 to 31. Of the first six values those at odd positions (counted
+    from 0) are doubled; the quotients and remainders of the results divided
+    by 32 are added; the seventh character is 32 minus the sum modulo 32
+    (0 stays 0).
+    """
+    compact = _compact(value).lower()
+    if not re.fullmatch(r"[a-km-np-z2-9]{7}", compact):
+        return False
+    total = 0
+    for i, c in enumerate(compact[:6]):
+        n = _CZ_ISDS_ALPHABET.index(c) * (2 if i % 2 else 1)
+        total += n // 32 + n % 32
+    return _CZ_ISDS_ALPHABET[-total % 32] == compact[6]
+
+
 ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "luhn": luhn,
     "iban_mod97": iban_mod97,
@@ -633,6 +725,11 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "de_lanr": de_lanr,
     "de_pzn": de_pzn,
     "de_fsnr": de_fsnr,
+    "cz_ico": cz_ico,
+    "cz_rc": cz_rc,
+    "cz_dic": cz_dic,
+    "cz_bank_account": cz_bank_account,
+    "cz_isds": cz_isds,
 }
 
 

@@ -1,0 +1,49 @@
+id: cz_data_box_id
+name: Czech data box ID (ID datové schránky)
+status: draft
+doc: 'Identifier of a data box (datová schránka) in the Czech information system of data boxes (ISDS),
+  which public authorities, companies, entrepreneurs and individuals use for official electronic delivery.
+  It has seven characters from an alphabet of 32: lowercase Latin letters without o and l and the digits
+  2 to 9. The first six encode the box number, generated at random, and the seventh is a check character
+  computed with the Luhn algorithm in base 32, as described in the ISDS web service documentation of the
+  Ministry of the Interior. Boxes of individuals identify a person.'
+categories:
+- government
+- identifiers
+country:
+- CZ
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^[a-km-np-z2-9]{7}$
+checksum: cz_isds
+examples:
+- value: aydaadk
+  description: Worked example of the check character in the ISDS web service documentation
+- value: 6bnaawp
+  description: Data box of the Ministry of the Interior
+- value: kv62bqf
+  description: Recipient in a request example of the ISDS web service documentation
+- value: aydaadl
+  valid: false
+  description: Check character does not match
+- value: aydaa0k
+  valid: false
+  description: The digit 0 is not used
+links:
+- type: doc
+  url: https://info.mojedatovaschranka.cz/info/cs/74.html
+- type: wikipedia
+  url: https://cs.wikipedia.org/wiki/Datov%C3%A1_schr%C3%A1nka
+- type: other
+  url: https://mv.gov.cz/clanek/dotazy.aspx
+translations:
+  cs:
+    name: Identifikátor datové schránky
+    doc: Sedmiznakový identifikátor datové schránky (malá písmena bez o a l, číslice 2 až 9); sedmý znak
+      je kontrolní podle algoritmu Luhn v základu 32.
+  ru:
+    name: Идентификатор ящика данных Чехии (ID datové schránky)
+    doc: Семизначный идентификатор ящика в чешской системе электронной доставки ISDS (строчные латинские
+      буквы без o и l, цифры 2-9); седьмой символ - контрольный по алгоритму Луна по основанию 32.

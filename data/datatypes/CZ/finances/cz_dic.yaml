@@ -1,9 +1,13 @@
 id: cz_dic
 name: Czech VAT number (DIČ)
 status: draft
-doc: Daňové identifikační číslo, the Czech tax identification number used for VAT (DPH). Legal entities
-  have eight digits; individuals use their 9- or 10-digit birth number, or a 9-digit number starting with
-  6 if they have no birth number.
+doc: 'Daňové identifikační číslo (DIČ), the Czech tax identification number, also used as the VAT (DPH)
+  number. It is CZ followed by a base part: for a legal entity its 8-digit IČO, for an individual the
+  9- or 10-digit birth number (rodné číslo), or a number that the tax administrator assigns instead (vlastní
+  identifikátor, VČP), for example to people without a birth number. Since 1 January 2021 an individual
+  can ask for such a number so that the DIČ no longer contains the birth number. python-stdnum validates
+  assigned numbers of 9 digits that start with 6 with their own check digit. The CZ prefix is often omitted
+  or followed by a space.'
 parent: vatin
 categories:
 - finances
@@ -14,14 +18,27 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^(?:CZ[ -]?)?(?:\d{8}|\d{6}/?\d{3,4})$
+checksum: cz_dic
 examples:
-- value: CZ 834929/971
-  description: Synthetic number with a valid check digit
-- value: '87623153'
-  description: Synthetic number with a valid check digit
+- value: CZ25123891
+  description: Legal entity, example from the python-stdnum documentation
+- value: '7103192745'
+  description: Individual with a birth number, example from the python-stdnum documentation
+- value: '640903926'
+  description: Number assigned by the tax administrator, example from the python-stdnum documentation
+- value: CZ 87623153
+  description: Synthetic 8-digit number with a valid check digit
+- value: CZ25123890
+  valid: false
+  description: Check digit does not match
+- value: '95123891'
+  valid: false
+  description: python-stdnum rejects 8-digit numbers that start with 9
 mappings:
   orgid: CZ-DIC
 links:
+- type: doc
+  url: https://financnisprava.gov.cz/assets/cs/prilohy/d-sprava-dani-a-poplatku/79651_20_MP_ke_zmene_DIC_na_zadost_subjektu.pdf
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cz.dic.html
 - type: other
@@ -29,3 +46,9 @@ links:
 translations:
   cs:
     name: Daňové identifikační číslo (DIČ)
+    doc: Kód CZ a kmenová část tvořená IČO právnické osoby, rodným číslem fyzické osoby nebo vlastním
+      identifikátorem přiděleným správcem daně (VČP).
+  ru:
+    name: Налоговый номер Чехии (DIČ)
+    doc: Код CZ и основная часть - IČO юридического лица, персональный номер (rodné číslo) физического
+      лица или номер, присвоенный налоговой службой.

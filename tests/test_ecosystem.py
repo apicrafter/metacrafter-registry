@@ -766,6 +766,14 @@ def test_javascript_checksums_match_python(tmp_path):
         "B072RRE2I55",
         "B072RRE21X1",
         "991-03730-19",
+        "710319/2745",
+        "991231123",
+        "CZ 25123891",
+        "640903926",
+        "34278-0727558021/0100",
+        "19-2000145399/0800",
+        "aydaadk",
+        "6bnaawp",
     ]
     values += [str(rng.randrange(10**16, 10**18)) for _ in range(300)]
     values += [str(rng.randrange(10**8, 10**15)) for _ in range(300)]
@@ -815,6 +823,16 @@ def test_javascript_checksums_match_python(tmp_path):
         f"{rng.randrange(100):02d}"
         for _ in range(300)
     ]
+    values += [f"6{rng.randrange(10**8):08d}" for _ in range(300)]
+    values += [f"CZ{rng.randrange(10**8):08d}" for _ in range(300)]
+    values += [f"{rng.randrange(10**6):06d}/{rng.randrange(10**4):04d}" for _ in range(300)]
+    values += [
+        f"{rng.randrange(10**6)}-{rng.randrange(10**10)}/{rng.randrange(10**4):04d}"
+        for _ in range(300)
+    ]
+    values += [f"{rng.randrange(10**10)}/0800" for _ in range(300)]
+    isds = "abcdefghijkmnpqrstuvwxyz23456789"
+    values += ["".join(rng.choice(isds) for _ in range(7)) for _ in range(500)]
     offices = ["001", "100", "121", "888", "500"]
     values += [
         f"IT{rng.randrange(10**7):07d}{rng.choice(offices)}{rng.randrange(10)}" for _ in range(100)
