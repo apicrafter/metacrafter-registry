@@ -5,6 +5,7 @@ doc: Unique identifier in the tag URI scheme defined by RFC 4151. It has the for
   The authority is a domain name or an email address that the issuer controlled on the given date. The
   date is written as YYYY, YYYY-MM or YYYY-MM-DD. Anyone who holds a domain name or email address can
   mint tags without central registration. YAML uses tag URIs to name its data types.
+parent: uri
 categories:
 - internet
 langs:
@@ -27,3 +28,7 @@ links:
   url: https://en.wikipedia.org/wiki/Tag_URI_scheme
 - type: doc
   url: https://www.rfc-editor.org/rfc/rfc4151
+translations:
+  ru:
+    name: Tag URI
+    doc: Уникальный идентификатор схемы tag (RFC 4151) вида tag:<домен или email>,<дата>:<строка>.

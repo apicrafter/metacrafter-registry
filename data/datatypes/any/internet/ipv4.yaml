@@ -1,9 +1,12 @@
 id: ipv4
-name: Internet Protocol version 4 (IPv4)
-status: draft
-doc: Internet Protocol version 4 (IPv4) is the fourth version of the Internet Protocol (IP). It is one
-  of the core protocols of standards-based internetworking methods in the Internet and other packet-switched
-  networks.
+name: IPv4 address
+status: stable
+doc: 32-bit address of Internet Protocol version 4 (RFC 791), written in dotted-decimal notation as four
+  numbers from 0 to 255, such as 192.0.2.1. The regexp rejects parts with leading zeros (192.0.2.01),
+  because some software reads them as octal numbers. Private networks use 10.0.0.0/8, 172.16.0.0/12 and
+  192.168.0.0/16 (RFC 1918), and 192.0.2.0/24, 198.51.100.0/24 and 203.0.113.0/24 are reserved for documentation
+  (RFC 5737).
+parent: ipaddr
 categories:
 - internet
 - pii
@@ -11,8 +14,36 @@ langs:
 - common
 is_pii: true
 classification: identifier
+regexp: ^(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3}$
+examples:
+- value: 192.0.2.1
+  description: Documentation range TEST-NET-1 (RFC 5737)
+- value: 198.51.100.42
+  description: Documentation range TEST-NET-2 (RFC 5737)
+- value: 203.0.113.255
+  description: Documentation range TEST-NET-3 (RFC 5737)
+- value: 256.1.1.1
+  valid: false
+  description: The first part is larger than 255
+- value: 192.0.2
+  valid: false
+  description: Three parts instead of four
+- value: 192.0.2.01
+  valid: false
+  description: A part with a leading zero
 mappings:
   autotype: ipv4
   cdm: means.identity.IP4Address
   purview: IP Address v4
   fta: IPADDRESS.IPV4
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/IPv4
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc791
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc5737
+translations:
+  ru:
+    name: IPv4-адрес
+    doc: '32-битный адрес протокола IPv4: четыре числа от 0 до 255 через точку, например 192.0.2.1.'

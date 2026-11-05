@@ -1,22 +1,37 @@
 id: message_id
 name: Message-ID (Email Message Identifier)
 status: stable
-doc: Message-ID is a unique identifier for an email message, as defined in RFC 5322. It is used to identify
-  individual messages in email systems and is typically in the format <unique-string@domain>.
+doc: 'Globally unique identifier of an email message, which the sending client or server writes in the
+  Message-ID header (RFC 5322, section 3.6.4). It has the form <left@right>: the right part is usually
+  the domain name of the host that created it, and the left part is a unique string such as a timestamp
+  with a random suffix. Replies refer to it in their In-Reply-To and References headers.'
 categories:
 - internet
 langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^<[^<>@]+@[^<>@]+>$
+regexp: ^<[^<>@\s]+@[^<>@\s]+>$
 examples:
-- value: <CABcD1234@example.com>
-  description: Standard Message-ID format
-- value: <20240115123456.ABC123@mail.example.com>
-  description: Message-ID with timestamp
-- value: <user+1234567890@example.org>
-  description: Message-ID with user identifier
+- value: <1234@local.machine.example>
+  description: Example of RFC 5322, appendix A.1.1
+- value: <5678.21-Nov-1997@example.com>
+  description: Example of RFC 5322, appendix A.1.2
+- value: <testabcd.1234@silly.example>
+  description: Example of RFC 5322, appendix A.1.3
+- value: 1234@local.machine.example
+  valid: false
+  description: No angle brackets
+- value: <1234@local.machine.example> <3456@example.net>
+  valid: false
+  description: Two identifiers, as in a References header
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Message-ID
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc5322.html#section-3.6.4
+translations:
+  ru:
+    name: Идентификатор письма (Message-ID)
+    doc: Уникальный идентификатор письма из заголовка Message-ID в форме <левая_часть@правая_часть> (RFC
+      5322).

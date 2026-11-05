@@ -1,9 +1,13 @@
 id: email
-name: Email (Electronic mail)
+name: Email address
 status: stable
-doc: Electronic mail (email or e-mail) is a method of exchanging messages ("mail") between people using
-  electronic devices. Email was thus conceived as the electronic (digital) version of, or counterpart
-  to, mail, at a time when "mail" meant only physical mail (hence e- + mail).
+doc: 'Address of an electronic mailbox in the form local-part@domain, defined in section 3.4.1 of RFC
+  5322. The local part names the mailbox, and the domain says which mail server accepts messages for it.
+  The standard grammar also allows quoted local parts, comments and IP address literals, and RFC 6531
+  allows non-ASCII characters; the regexp covers the common form: letters, digits and . _ % + - in the
+  local part and a dotted domain name.'
+aliases:
+- email_person
 categories:
 - common
 - internet
@@ -32,14 +36,17 @@ mappings:
   google_dlp: EMAIL_ADDRESS
   presidio: EMAIL_ADDRESS
   fta: EMAIL
+  wikidata: P968
 links:
 - type: wikipedia
-  url: https://en.wikipedia.org/wiki/Email
+  url: https://en.wikipedia.org/wiki/Email_address
 - type: schema.org
   url: https://schema.org/email
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P968
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc5322.html#section-3.4.1
 translations:
   ru:
-    name: Электронная почта (email)
-    doc: Электро́нная по́чта (англ. email, e-mail [iˈmeɪl], от англ. electronic mail) — технология и служба
-      по пересылке и получению электронных сообщений (называемых «письма», «электронные письма» или «сообщения»)
-      между пользователями компьютерной сети (в том числе — Интернета).
+    name: Адрес электронной почты
+    doc: Адрес почтового ящика в форме локальная_часть@домен (RFC 5322).

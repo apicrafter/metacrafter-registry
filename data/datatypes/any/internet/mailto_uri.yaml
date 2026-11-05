@@ -1,0 +1,39 @@
+id: mailto_uri
+name: Mailto URI
+status: draft
+doc: 'URI of the mailto: scheme (RFC 6068) that opens a new email message: one or more email addresses
+  separated by commas, optionally followed by ? and header fields such as subject, cc or body. Web pages
+  use it in mailto: links, and Wikidata stores email addresses (property P968) in this form. Spaces and
+  other special characters in the header values are percent-encoded.'
+parent: uri
+categories:
+- internet
+- pii
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^[Mm][Aa][Ii][Ll][Tt][Oo]:(?:[^\s?,@]+@[^\s?,@]+(?:,[^\s?,@]+@[^\s?,@]+)*(?:\?\S*)?|\?\S+)$
+examples:
+- value: mailto:chris@example.com
+  description: Example of RFC 6068, section 6.1
+- value: mailto:infobot@example.com?subject=current-issue
+  description: Example of RFC 6068 with a subject
+- value: mailto:joe@example.com?cc=bob@example.com&body=hello
+  description: Example of RFC 6068 with cc and body
+- value: chris@example.com
+  valid: false
+  description: 'An email address without the mailto: scheme'
+- value: mailto:chris.example.com
+  valid: false
+  description: No @ in the address
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Mailto
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc6068
+translations:
+  ru:
+    name: 'URI mailto:'
+    doc: 'URI схемы mailto: с одним или несколькими адресами электронной почты и необязательными полями
+      письма (RFC 6068).'

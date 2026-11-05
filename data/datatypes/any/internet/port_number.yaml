@@ -1,0 +1,46 @@
+id: port_number
+name: TCP/UDP port number
+status: draft
+doc: 16-bit number from 0 to 65535 that identifies an endpoint of a transport protocol such as TCP, UDP
+  or SCTP on a host, for example 80 for HTTP or 443 for HTTPS. RFC 6335 divides the range into system
+  ports 0-1023 and user ports 1024-49151, which IANA assigns to services, and dynamic ports 49152-65535,
+  which are never assigned and serve short-lived client connections. Firewall rules, network flow logs
+  and service inventories store it. Any integer in the range matches the regexp, so the column name is
+  needed to tell a port from another number.
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:6553[0-5]|655[0-2][0-9]|65[0-4][0-9]{2}|6[0-4][0-9]{3}|[1-5][0-9]{4}|[1-9][0-9]{0,3}|0)$
+examples:
+- value: '80'
+  description: HTTP
+- value: '443'
+  description: HTTPS
+- value: '5432'
+  description: PostgreSQL
+- value: '49152'
+  description: First dynamic port
+- value: '65536'
+  valid: false
+  description: Larger than 16 bits
+- value: '-1'
+  valid: false
+  description: Negative number
+mappings:
+  wikidata: P1641
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Port_(computer_networking)
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1641
+- type: doc
+  url: https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc6335
+translations:
+  ru:
+    name: Номер порта TCP/UDP
+    doc: 16-битный номер порта транспортного протокола (0–65535), например 80 для HTTP или 443 для HTTPS.

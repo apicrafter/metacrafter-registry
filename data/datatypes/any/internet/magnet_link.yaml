@@ -1,10 +1,12 @@
 id: magnet_link
 name: Magnet URI (BitTorrent)
 status: stable
-doc: 'A magnet link is a type of hyperlink that uses the magnet: URI scheme to reference a resource by
-  its content hash (using a hash function such as SHA-1), rather than by its location. Magnet links are
-  commonly used in BitTorrent and other peer-to-peer file sharing protocols to identify files by their
-  content hash rather than by a specific server location.'
+doc: 'URI of the magnet: scheme that identifies a file or a torrent by a hash of its content instead of
+  by its location, used by BitTorrent and other peer-to-peer clients. The parameter xt (exact topic) holds
+  a URN such as urn:btih:<info hash> for BitTorrent v1 (BEP 9) or urn:btmh:<multihash> for v2 (BEP 52);
+  optional parameters include dn (display name), tr (tracker URL), ws (web seed) and xs (exact source).
+  The regexp requires an xt parameter, in any position.'
+parent: uri
 categories:
 - internet
 - identifiers
@@ -12,14 +14,30 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^magnet:\?xt=urn:btih:[0-9a-fA-F]{40}
+regexp: ^magnet:\?(?:[^\s&#]*&)*xt(?:\.[0-9]+)?=urn:[A-Za-z0-9][A-Za-z0-9-]{0,31}:[^\s&#]+(?:&[^\s#]*)?$
 examples:
-- value: magnet:?xt=urn:btih:0123456789abcdef0123456789abcdef01234567&dn=example
-  description: Basic magnet link with info hash and display name
-- value: magnet:?xt=urn:btih:ABCDEF0123456789ABCDEF0123456789ABCDEF01&dn=file.torrent&tr=http://tracker.example.com:8080/announce
-  description: Magnet link with tracker URL
-- value: magnet:?xt=urn:btih:fedcba9876543210fedcba9876543210fedcba98
-  description: Minimal magnet link with only info hash
+- value: magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel&tr=udp%3A%2F%2Fexplodie.org%3A6969
+  description: Sintel magnet link published by WebTorrent, cut to one tracker
+- value: magnet:?xt=urn:btih:dd8255ecdc7ca55fb0bbf81323d87062db1f6d1c&dn=Big+Buck+Bunny
+  description: Big Buck Bunny, published by WebTorrent
+- value: magnet:?dn=Sintel&xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10
+  description: Display name before the exact topic
+- value: magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10
+  description: Exact topic only
+- value: magnet:?dn=Sintel&tr=udp%3A%2F%2Fexplodie.org%3A6969
+  valid: false
+  description: No exact topic (xt)
+- value: https://webtorrent.io/torrents/sintel.torrent
+  valid: false
+  description: URL of a .torrent file
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Magnet_URI_scheme
+- type: doc
+  url: https://www.bittorrent.org/beps/bep_0009.html
+- type: doc
+  url: https://www.bittorrent.org/beps/bep_0052.html
+translations:
+  ru:
+    name: Magnet-ссылка
+    doc: URI схемы magnet:, который указывает файл или торрент по хешу содержимого, а не по адресу.

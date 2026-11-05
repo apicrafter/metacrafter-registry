@@ -1,8 +1,12 @@
 id: fqdn
-name: Full qualified domain name (FQDN)
+name: Fully qualified domain name (FQDN)
 status: stable
-doc: A domain name is an identification string that defines a realm of administrative autonomy, authority
-  or control within the Internet.
+doc: Complete domain name of a host or zone, written as labels separated by dots from the host up to the
+  top-level domain, such as www.example.com. A trailing dot stands for the DNS root and is left out in
+  most data. Each label has 1 to 63 letters, digits or hyphens and does not start or end with a hyphen,
+  and the whole name has at most 253 characters (RFC 1035, RFC 1123). Internationalized names are stored
+  as Punycode labels that start with xn--. The regexp requires at least two labels and rejects an all-numeric
+  last label, so IPv4 addresses do not match.
 categories:
 - internet
 langs:
@@ -30,6 +34,19 @@ examples:
 - value: 192.0.2.1
   valid: false
   description: IPv4 address; the top-level label must not be all-numeric
+mappings:
+  wikidata: P13337
+  google_dlp: DOMAIN_NAME
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Fully_qualified_domain_name
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P13337
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc1035
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc1123
+translations:
+  ru:
+    name: Полное доменное имя (FQDN)
+    doc: 'Полное доменное имя узла: метки через точку до домена верхнего уровня, например www.example.com.'

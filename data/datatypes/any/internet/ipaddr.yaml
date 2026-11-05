@@ -1,7 +1,11 @@
 id: ipaddr
-name: IPv4 or IPv6 address
-status: draft
-doc: Internet Protocol version 4 (IPv4) or Internet Protocol version 6 (IPv6) address
+name: IP address (IPv4 or IPv6)
+status: stable
+doc: 'Address of a network interface in the Internet Protocol: a 32-bit IPv4 address in dotted-decimal
+  form (192.0.2.1) or a 128-bit IPv6 address in hexadecimal groups (2001:db8::1). Use this record for
+  columns that mix both versions; ipv4 and ipv6 describe each form. The IP address of a user''s device
+  or connection can single out a person, so data protection laws such as the GDPR may treat it as personal
+  data.'
 categories:
 - internet
 - pii
@@ -9,7 +13,26 @@ langs:
 - common
 is_pii: true
 classification: identifier
+regexp: ^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3}|(?:(?:[0-9A-Fa-f]{1,4}:){6}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|::(?:[0-9A-Fa-f]{1,4}:){5}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){4}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){3}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){2}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}:(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(?:(?:[0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::))$
+examples:
+- value: 192.0.2.1
+  description: IPv4 address from the documentation range (RFC 5737)
+- value: 2001:db8::1
+  description: IPv6 address from the documentation prefix (RFC 3849)
+- value: 192.0.2.0/24
+  valid: false
+  description: A network prefix, not an address
+- value: 192.0.2.256
+  valid: false
+  description: The last part is larger than 255
 mappings:
   google_dlp: IP_ADDRESS
   presidio: IP_ADDRESS
   purview: IP address
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/IP_address
+translations:
+  ru:
+    name: IP-адрес (IPv4 или IPv6)
+    doc: Адрес сетевого интерфейса в протоколе IP версии 4 или 6.

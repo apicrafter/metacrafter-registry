@@ -12,7 +12,7 @@ def test_llms_txt(built_site):
         assert f"https://registry.apicrafter.io{link}" in text
     assert "Draft records have not been reviewed" in text
     full = (built_site / "llms-full.txt").read_text("utf-8")
-    assert "## Email (Electronic mail)" in full and "id `email`" in full
+    assert "## Email address" in full and "id `email`" in full
 
 
 def test_markdown_twins(built_site):
@@ -31,7 +31,7 @@ def test_rag_corpus_and_manifest(built_site):
     lines = (built_site / "api/v1/rag/corpus.jsonl").read_text("utf-8").splitlines()
     entries = [json.loads(line) for line in lines]
     email = next(e for e in entries if e["id"] == "email")
-    assert email["text"].startswith("Name: Email (Electronic mail)\nID: email\n")
+    assert email["text"].startswith("Name: Email address\nID: email\n")
     assert email["metadata"]["status"] == "stable"
     manifest = json.loads((built_site / "api/v1/index.json").read_text("utf-8"))
     assert manifest["rag_template_version"] == "1"

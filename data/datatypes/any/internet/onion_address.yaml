@@ -1,0 +1,37 @@
+id: onion_address
+name: Tor onion service address (.onion)
+status: draft
+doc: Address of a Tor onion service, reachable only through the Tor network. A version 3 address, the
+  only kind that current Tor releases support, is 56 base32 characters followed by .onion. The characters
+  encode the 32-byte ed25519 public key of the service, a 2-byte SHA3-256 checksum and the version byte
+  3, so the last character is always d. Subdomains may precede it, as in www.<address>.onion. The 16-character
+  version 2 addresses were retired in 2021 and do not match. The regexp checks the form, not the checksum.
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[a-z0-9-]+\.)*[a-z2-7]{54}[aiqy]d\.onion$
+examples:
+- value: pg6mmjiyjmcrsslvykfwnntlaru7p5svn6y2ymmju6nubxndf4pscryd.onion
+  description: Example of the Tor onion address specification
+- value: sp3k262uwy4r2k3ycr5awluarykdpag6a7y33jxop4cs2lu5uz5sseqd.onion
+  description: Example of the Tor onion address specification
+- value: www.xa4r2iadxm55fbnqgwwi5mymqdcofiu3w6rpbtqn7b2dyn7mgwj64jyd.onion
+  description: Address from the Tor specification with a www subdomain added
+- value: pg6mmjiyjmcrsslvykfwnntlaru7p5svn6y2ymmju6nubxndf4pscrya.onion
+  valid: false
+  description: The last character must be d (version 3)
+- value: pg6mmjiyjmcrsslvykfwnntlaru7p5svn6y2ymmju6nubxndf4pscryd.com
+  valid: false
+  description: Not under .onion
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/.onion
+- type: doc
+  url: https://spec.torproject.org/rend-spec/encoding-onion-addresses.html
+translations:
+  ru:
+    name: Адрес onion-сервиса Tor (.onion)
+    doc: 'Адрес onion-сервиса сети Tor версии 3: 56 символов base32 и суффикс .onion.'
