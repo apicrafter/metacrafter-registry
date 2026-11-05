@@ -1,0 +1,31 @@
+id: br_renavam
+name: Brazilian vehicle registry code (RENAVAM)
+status: draft
+doc: Code of a vehicle in the Registro Nacional de Veículos Automotores of Brazil. Since April 2013 it
+  has eleven digits, ten digits and a check digit computed modulo 11; older nine-digit codes are padded
+  with leading zeros.
+categories:
+- transport
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: identifier
+regexp: ^\d{11}$
+examples:
+- value: 07179272869
+  description: Synthetic value in the documented format
+- value: 00638591767
+  description: Synthetic former nine-digit code padded with zeros
+- value: '638591767'
+  valid: false
+  description: A nine-digit code without padding
+links:
+- type: wikipedia
+  url: https://pt.wikipedia.org/wiki/Registro_Nacional_de_Ve%C3%ADculos_Automotores
+- type: doc
+  url: https://www.normasbrasil.com.br/norma/portaria-27-2013_250594.html
+translations:
+  pt:
+    name: Código RENAVAM

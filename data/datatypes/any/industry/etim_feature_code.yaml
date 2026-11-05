@@ -1,0 +1,24 @@
+id: etim_feature_code
+name: ETIM feature code
+status: draft
+doc: 'Language-independent code of an ETIM feature, assigned by ETIM International in its classification
+  model of technical products: the prefix EF and six digits. Features are the technical characteristics
+  that describe the products of a class.'
+categories:
+- industry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^EF\d{6}$
+examples:
+- value: EF000138
+  description: Example from the ETIM International classification guidelines
+- value: EF00016
+  valid: false
+  description: Five digits instead of six
+links:
+- type: doc
+  url: https://www.etim-international.com/wp-content/uploads/2019/07/ETIM-International-Guidelines-V3-2020.pdf
+- type: doc
+  url: https://viewer.etim-international.com/about

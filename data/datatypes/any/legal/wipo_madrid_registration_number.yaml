@@ -1,0 +1,29 @@
+id: wipo_madrid_registration_number
+name: WIPO Madrid international trademark registration number
+status: draft
+doc: Sequential number that the International Bureau of WIPO gives to a mark registered under the Madrid
+  System; current numbers have seven digits. When part of a registration is assigned to a new holder,
+  that part keeps the number followed by a capital letter. The Gazette prints numbers with spaces, and
+  old registrations have fewer digits; the regexp covers the compact six- and seven-digit forms only,
+  so it is weak without column context.
+categories:
+- legal
+- companies
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{5,6}[A-Z]?$
+examples:
+- value: '1050457'
+  description: International registration listed in WIPO Gazette No. 39/2010
+- value: 561534A
+  description: Part of registration 561534 recorded for a new holder
+- value: '10504571'
+  valid: false
+  description: Eight digits
+links:
+- type: doc
+  url: https://www.wipo.int/export/sites/www/madridgazette/en/remarks/2010/5/gaz_st60.htm
+- type: doc
+  url: https://www3.wipo.int/madrid/monitor/en/

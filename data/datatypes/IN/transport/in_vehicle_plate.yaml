@@ -1,0 +1,33 @@
+id: in_vehicle_plate
+name: Indian vehicle registration number
+status: draft
+doc: Registration mark of a vehicle in India, issued by the regional transport offices of the states and
+  union territories under the Motor Vehicles Act 1988. The usual mark has a two-letter state code, a one-
+  or two-digit RTO number, up to three series letters (never I or O) and a four-digit number with leading
+  zeros, such as TN 60 AG 3333. Bharat series marks for vehicles that move between states have the two-digit
+  year of registration, BH, four digits and one or two letters. Parts are separated by spaces or hyphens
+  or not at all. The regexp does not check the list of state codes.
+categories:
+- transport
+country:
+- IN
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[A-Z]{2}[ -]?\d{1,2}[ -]?(?:[A-HJ-NP-Z][ -]?){0,3}\d{4}|\d{2}[ -]?BH[ -]?\d{4}[ -]?[A-HJ-NP-Z]{1,2})$
+examples:
+- value: TN 60 AG 3333
+  description: Example from the English Wikipedia article
+- value: AN 01 Z 0123
+  description: General format example from the English Wikipedia article
+- value: 12 BH 3456 XX
+  description: Bharat series format example from the English Wikipedia article
+- value: MH 12 ABCD 1234
+  valid: false
+  description: Four series letters
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_India
+- type: doc
+  url: https://taxguru.in/?p=784612

@@ -1,0 +1,24 @@
+id: ie_mprn
+name: Irish electricity Meter Point Reference Number (MPRN)
+status: draft
+doc: Meter Point Reference Number that ESB Networks assigns to each electricity connection point in Ireland.
+  It identifies the connection and its address and is printed on supplier bills. It has 11 digits and
+  always starts with 10. No check digit is documented.
+categories:
+- energy
+country:
+- IE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^10\d{9}$
+examples:
+- value: '10526018159'
+  description: Synthetic value in the documented format
+- value: '20305584286'
+  valid: false
+  description: Does not start with 10
+links:
+- type: doc
+  url: https://esbnetworks.ie/existing-connections/meters-and-readings/how-to-find-your-mprn

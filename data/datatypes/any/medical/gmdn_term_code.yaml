@@ -1,0 +1,26 @@
+id: gmdn_term_code
+name: GMDN term code
+status: draft
+doc: Five-digit code of a generic device term in the Global Medical Device Nomenclature, maintained by
+  the GMDN Agency. Each term has a name, a definition and a code; regulators and UDI databases such as
+  the FDA GUDID record the code. Collective term codes are a different scheme and are not covered.
+categories:
+- medical
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{5}$
+examples:
+- value: '47569'
+  description: Scalpel, single-use
+- value: '47017'
+  description: General-purpose syringe, single-use
+- value: '4756'
+  valid: false
+  description: Four digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Global_Medical_Device_Nomenclature
+- type: doc
+  url: https://www.gmdnagency.org/wp-content/uploads/2024/03/GMDN-User-Guide-Basic-Membership-1.pdf

@@ -1,0 +1,31 @@
+id: fo_vn
+name: Faroese V-number (Vinnutal)
+status: draft
+doc: V-tal (Vinnutal), the number that the Faroese Tax Administration (TAKS) gives to businesses. It is
+  the tax identification number of legal persons in the Faroe Islands. It is a six-digit consecutive number,
+  sometimes written with an FO prefix.
+categories:
+- finances
+- companies
+country:
+- FO
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:FO)?\d{3} ?\d{3}$
+examples:
+- value: '623857'
+  description: Example from the python-stdnum documentation
+- value: 602 590
+  description: Example from the python-stdnum documentation, written in groups
+- value: 12345X
+  valid: false
+  description: Letters are not allowed
+mappings:
+  stdnum: fo.vn
+links:
+- type: doc
+  url: https://www.oecd.org/tax/automatic-exchange/crs-implementation-and-assistance/tax-identification-numbers/Faroe-islands-TIN.pdf
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fo.vn.html

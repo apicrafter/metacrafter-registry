@@ -1,0 +1,30 @@
+id: onet_soc_code
+name: O*NET-SOC occupation code
+status: draft
+doc: 'Occupation code of the O*NET-SOC taxonomy published by the National Center for O*NET Development
+  for the US Department of Labor: a SOC code followed by a dot and a two-digit extension. The extension
+  00 marks an occupation taken directly from SOC; 01, 02 and so on mark more detailed O*NET occupations.'
+categories:
+- industry
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[1-4][13579]|5[135])-\d{4}\.\d{2}$
+examples:
+- value: 15-1252.00
+  description: Software Developers
+- value: 17-2112.01
+  description: Human Factors Engineers and Ergonomists
+- value: 15-1252
+  valid: false
+  description: The extension is missing
+mappings:
+  wikidata: P8734
+links:
+- type: doc
+  url: https://www.onetcenter.org/taxonomy.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8734

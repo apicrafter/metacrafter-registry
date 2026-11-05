@@ -1,0 +1,32 @@
+id: ph_tin
+name: Philippine taxpayer identification number (TIN)
+status: draft
+doc: Taxpayer Identification Number issued by the Bureau of Internal Revenue to individuals and businesses
+  in the Philippines. The TIN proper has nine digits, written as three groups of three. A branch code
+  may follow it; the head office uses zeros. Revenue Regulations 11-2008 describe a 9 to 13 digit code
+  with a 4-digit branch code, older rules a 3-digit one, and newer forms show 5 digits.
+categories:
+- finances
+- pii
+country:
+- PH
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{3}[- ]?\d{3}[- ]?\d{3}(?:[- ]?\d{3,5})?$
+examples:
+- value: 214-735-680-000
+  description: Synthetic value with the 3-digit head office branch code
+- value: '214735680'
+  description: Synthetic value without a branch code
+- value: 214-735-680-00000
+  description: Synthetic value with the 5-digit head office branch code
+- value: 214-735-68
+  valid: false
+  description: Only eight digits in the TIN proper
+links:
+- type: doc
+  url: https://dev.lawyerly.ph/laws/56964
+- type: other
+  url: https://www.odoo.com/documentation/16.0/applications/finance/fiscal_localizations/philippines.html

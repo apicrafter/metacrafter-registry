@@ -1,0 +1,21 @@
+id: gb_mpan_full
+name: UK electricity MPAN, full 21-character form
+status: draft
+doc: 'Full Meter Point Administration Number as printed on electricity bills in Great Britain, without
+  the separating spaces: a 2-digit profile class (00 to 08), a 3-digit meter time switch code, a 3-character
+  line loss factor class and the 13-digit MPAN core.'
+semantic_type: gb_mpan
+country:
+- GB
+langs:
+- common
+regexp: ^0[0-8]\d{3}[0-9A-Z]{3}\d{13}$
+examples:
+- value: 018018121022916926424
+  description: Synthetic full number with profile class 01
+- value: 098018121022916926424
+  valid: false
+  description: Profile class 09 does not exist
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Meter_Point_Administration_Number

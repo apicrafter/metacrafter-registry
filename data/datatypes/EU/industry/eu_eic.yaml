@@ -6,6 +6,7 @@ doc: Energy Identification Code, the 16-character code of the European electrici
   office, an object type letter, twelve characters for the object and a check character. Digits, capital
   letters and hyphens are used.
 categories:
+- energy
 - industry
 country:
 - EU

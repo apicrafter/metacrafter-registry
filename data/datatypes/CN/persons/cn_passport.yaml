@@ -1,0 +1,30 @@
+id: cn_passport
+name: Chinese ordinary passport number
+status: draft
+doc: 'Number of an ordinary passport issued by the National Immigration Administration of the People''s
+  Republic of China: nine characters. E-passports used E and eight digits until that range ran out in
+  2017, then E, a letter other than I and O, and seven digits, starting with EA0000001. Older ordinary
+  passports, and now border tourism passports, use G and eight digits. Diplomatic, service and Hong Kong
+  and Macao documents are not covered.'
+semantic_type: passport
+country:
+- CN
+langs:
+- common
+regexp: ^(?:E\d{8}|E[A-HJ-NP-Z]\d{7}|G\d{8})$
+examples:
+- value: EA0000001
+  description: First number of the E-letter range, published by the immigration administration
+- value: E68984978
+  description: Synthetic e-passport number of the first series
+- value: EI2345678
+  valid: false
+  description: The second letter is never I
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Chinese_passport
+- type: doc
+  url: https://www.thepaper.cn/newsDetail_forward_4186634
+translations:
+  zh:
+    name: 普通护照号码

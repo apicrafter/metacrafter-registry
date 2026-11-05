@@ -1,0 +1,32 @@
+id: ph_psn
+name: Philippine PhilSys Number (PSN)
+status: draft
+doc: PhilSys Number, the permanent 12-digit number that the Philippine Statistics Authority generates
+  at random for each person registered in the Philippine Identification System. It is confidential, is
+  microprinted on the back of the PhilID card and should not be used in everyday transactions, where the
+  PhilSys Card Number is used instead. It is often written in three groups of four digits.
+categories:
+- pii
+- persons
+country:
+- PH
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{4}[- ]?\d{4}[- ]?\d{4}$
+examples:
+- value: 6381-2047-5519
+  description: Synthetic value in the grouped format
+- value: '638120475519'
+  description: Synthetic value in the compact format
+- value: 6381-2047-551
+  valid: false
+  description: Eleven digits instead of twelve
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Philippine_national_identity_card
+- type: doc
+  url: https://www.biometricupdate.com/202105/philippines-government-calls-on-government-to-accept-government-issued-id-cards
+- type: other
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-philippines-national-identification-number

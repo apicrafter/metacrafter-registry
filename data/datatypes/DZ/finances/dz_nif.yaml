@@ -1,0 +1,37 @@
+id: dz_nif
+name: Algerian tax identification number (NIF)
+status: draft
+doc: Numéro d'Identification Fiscale, the tax number that the Algerian tax administration has assigned
+  since 2006 in place of the older NIS number. It is given to individuals, companies, public bodies, associations
+  and branches of foreign companies. It has 15 digits; a 20-digit form identifies a branch or secondary
+  establishment. Digits are often written in groups of three separated by spaces.
+categories:
+- finances
+- companies
+country:
+- DZ
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: '^(?:\d{3} ?){4}\d{3}(?: ?\d{5})?$'
+examples:
+- value: '416001000000007'
+  description: Example from the python-stdnum documentation
+- value: 408 020 000 150 039
+  description: Example from the python-stdnum documentation, written in groups
+- value: '41201600000606600001'
+  description: 20-digit branch form, example from the python-stdnum documentation
+- value: X1600100000000V
+  valid: false
+  description: Letters are not allowed
+mappings:
+  stdnum: dz.nif
+links:
+- type: doc
+  url: https://www.mf.gov.dz/index.php/fr/fiscalite
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.dz.nif.html
+translations:
+  fr:
+    name: Numéro d'Identification Fiscale (NIF)

@@ -1,0 +1,24 @@
+id: etim_value_code
+name: ETIM value code
+status: draft
+doc: 'Language-independent code of an ETIM value, assigned by ETIM International in its classification
+  model of technical products: the prefix EV and six digits. Values are the allowed values of alphanumeric
+  features.'
+categories:
+- industry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^EV\d{6}$
+examples:
+- value: EV000147
+  description: Example from the ETIM International classification guidelines
+- value: EV00016
+  valid: false
+  description: Five digits instead of six
+links:
+- type: doc
+  url: https://www.etim-international.com/wp-content/uploads/2019/07/ETIM-International-Guidelines-V3-2020.pdf
+- type: doc
+  url: https://viewer.etim-international.com/about

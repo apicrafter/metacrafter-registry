@@ -68,3 +68,7 @@
   name: Publishing and print
 - id: secrets
   name: Secrets and credentials (passwords, keys, tokens)
+- id: energy
+  name: Energy (electricity, gas, metering)
+- id: agriculture
+  name: Agriculture, livestock and food

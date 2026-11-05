@@ -5,6 +5,7 @@ doc: 'Código Unificado de Punto de Suministro, the identifier of an electricity
   in Spain. It has 20 or 22 characters: ES, a 4-digit distribution company code, a 12-digit supply point
   number, two check letters and, optionally, a border point digit and letter.'
 categories:
+- energy
 - industry
 country:
 - ES

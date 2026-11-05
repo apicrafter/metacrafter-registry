@@ -1,0 +1,30 @@
+id: br_vehicle_plate
+name: Brazilian vehicle registration plate
+status: draft
+doc: Registration number on the plate of a vehicle in Brazil, issued by the state DETRANs. The national
+  format used from 1990 has three letters and four digits, written ABC-1234 or ABC·1234, and is still
+  valid. The Mercosur format introduced in 2018 has seven characters in the order letter, letter, letter,
+  digit, letter, digit, digit; converted plates replace the second digit with a letter, 0 by A to 9 by
+  J.
+categories:
+- transport
+country:
+- BR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{3}(?:[-·• ]?\d{4}|\d[A-Z]\d{2})$
+examples:
+- value: ABC1C34
+  description: Mercosur form of ABC1234, the conversion example of CONTRAN
+- value: ABC-1234
+  description: Example of the 1990 format
+- value: ABC12D3
+  valid: false
+  description: A letter in the wrong position
+links:
+- type: wikipedia
+  url: https://pt.wikipedia.org/wiki/Placas_de_identifica%C3%A7%C3%A3o_de_ve%C3%ADculos_no_Brasil
+- type: doc
+  url: https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/resolucao9692022anexos.pdf

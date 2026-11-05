@@ -1,0 +1,32 @@
+id: ep_publication_number
+name: European patent publication number
+status: draft
+doc: 'Number under which the European Patent Office publishes documents from one European patent application:
+  EP, a seven-digit serial number shared by all publications of the application, and an optional kind
+  code. A1 to A4 mark application publications and search reports, B1 and B2 patent specifications; 8
+  and 9 in place of the digit mark corrections and corrected reprints. Databases that drop the leading
+  zeros of the serial number are not covered.'
+categories:
+- legal
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '^EP ?\d{7}(?: ?(?:A[1-489]|B[1-389]))?$'
+examples:
+- value: EP1000000A1
+  description: Application publication of European patent application 1000000
+- value: EP1000000B1
+  description: Patent specification of the same application
+- value: EP 1000000
+  description: Publication number written without a kind code
+- value: EP12345678A1
+  valid: false
+  description: Eight digits instead of seven
+links:
+- type: doc
+  url: https://www.wipo.int/documents/d/standards/docs-en-07-02-02.pdf
+- type: doc
+  url: https://www.wipo.int/documents/d/standards/docs-en-07-03-02.pdf
+- type: doc
+  url: https://www.wipo.int/documents/d/standards/docs-en-03-16-01.pdf

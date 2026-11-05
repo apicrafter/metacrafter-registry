@@ -1,0 +1,35 @@
+id: gn_nifp
+name: Guinean permanent tax identification number (NIFp)
+status: draft
+doc: Numéro d'Identification Fiscale Permanent, the tax number of taxpayers in Guinea issued by the Direction
+  Générale des Impôts. It has nine digits, usually written as three groups separated by hyphens. The first
+  eight digits are assigned pseudorandomly and the ninth is a Luhn check digit.
+categories:
+- finances
+- companies
+country:
+- GN
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{3}-?\d{3}-?\d{3}$
+checksum: luhn
+examples:
+- value: '693770885'
+  description: Example from the python-stdnum documentation
+- value: 693-770-885
+  description: The same number in the hyphenated presentation form
+- value: '12345'
+  valid: false
+  description: Too short
+mappings:
+  stdnum: gn.nifp
+links:
+- type: doc
+  url: https://dgi.gov.gn/wp-content/uploads/2022/09/N%C2%B0-12-Cahier-de-Charges-NIF-p.pdf
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gn.nifp.html
+translations:
+  fr:
+    name: Numéro d'Identification Fiscale Permanent (NIFp)

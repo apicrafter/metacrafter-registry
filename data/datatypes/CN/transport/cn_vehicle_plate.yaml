@@ -1,0 +1,36 @@
+id: cn_vehicle_plate
+name: Chinese civil vehicle registration plate
+status: draft
+doc: 'Registration number on the plate of a civil vehicle in mainland China under the standard GA 36-2018:
+  the one-character abbreviation of the province, a letter of the issuing authority, often a separating
+  dot, and a serial. Ordinary plates have five digits and letters, never I or O. Green new-energy plates
+  have six characters: small vehicles start with an energy letter (D, A, B, C or E for pure electric,
+  F, G, H, J or K for others), large vehicles end with it. Police, learner, trailer, Hong Kong, Macao
+  and diplomatic plates are not covered.'
+categories:
+- transport
+country:
+- CN
+langs:
+- zh
+is_pii: false
+classification: identifier
+regexp: ^[京津冀晋蒙辽吉黑沪苏浙皖闽赣鲁豫鄂湘粤桂琼渝川贵云藏陕甘青宁新][A-Z][·• -]?(?:[A-HJ-NP-Z0-9]{5}|[A-HJKP][A-HJ-NP-Z0-9]\d{4}|\d{5}[A-HJK])$
+examples:
+- value: 京A·F0236
+  description: Synthetic ordinary plate of Beijing
+- value: 粤B·D73519
+  description: Synthetic plate of a small pure electric vehicle of Shenzhen
+- value: 苏E·60318F
+  description: Synthetic plate of a large new-energy vehicle of Suzhou
+- value: 京A·12O45
+  valid: false
+  description: The letter O is never used
+links:
+- type: wikipedia
+  url: https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%B0%91%E7%94%A8%E6%9C%BA%E5%8A%A8%E8%BD%A6%E5%8F%B7%E7%89%8C
+- type: doc
+  url: https://commons.wikimedia.org/wiki/File:GA_36-2018.pdf
+translations:
+  zh:
+    name: 民用机动车号牌

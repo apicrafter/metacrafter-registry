@@ -1,0 +1,31 @@
+id: br_pis
+name: Brazilian PIS/PASEP/NIT/NIS number
+status: draft
+doc: Eleven-digit worker number of Brazil used for labour and social security benefits. Caixa issues it
+  as the PIS number; the PASEP number of public servants, the NIT of the INSS and the NIS share the same
+  numbering. The last digit is a check digit. It is often written as NNN.NNNNN.NN-N.
+categories:
+- pii
+- persons
+- government
+country:
+- BR
+langs:
+- pt
+is_pii: true
+classification: identifier
+regexp: ^\d{3}\.?\d{5}\.?\d{2}-?\d$
+examples:
+- value: 121.51144.13-7
+  description: Example from the documentation of the Perl module Business::BR::PIS
+- value: '12151144137'
+  description: The same number without separators
+- value: '1291692642'
+  valid: false
+  description: Ten digits
+links:
+- type: wikipedia
+  url: https://pt.wikipedia.org/wiki/PIS/PASEP
+translations:
+  pt:
+    name: PIS/PASEP/NIT/NIS

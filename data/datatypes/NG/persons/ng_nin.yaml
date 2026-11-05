@@ -1,0 +1,30 @@
+id: ng_nin
+name: Nigerian National Identification Number (NIN)
+status: draft
+doc: National Identification Number, the 11-digit number that the National Identity Management Commission
+  (NIMC) gives to a Nigerian citizen or legal resident after enrolment in the national identity database.
+  It is printed without separators on the NIN slip and the national ID card. No check-digit rule is published.
+  It has the same shape as the Bank Verification Number (BVN).
+categories:
+- pii
+- persons
+country:
+- NG
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{11}$
+examples:
+- value: '13478900989'
+  description: Format example from the English Wikipedia article on national identification numbers
+- value: '40217583906'
+  description: Synthetic value in the documented format
+- value: '4021758390'
+  valid: false
+  description: Ten digits instead of eleven
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_identification_number
+- type: doc
+  url: https://ncc.gov.ng/node/736

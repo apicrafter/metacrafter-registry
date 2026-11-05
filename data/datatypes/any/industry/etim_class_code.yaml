@@ -1,0 +1,24 @@
+id: etim_class_code
+name: ETIM class code
+status: draft
+doc: 'Language-independent code of an ETIM class, assigned by ETIM International in its classification
+  model of technical products: the prefix EC and six digits. Classes group products of the same kind,
+  such as screwdrivers for slot head screws (EC000158).'
+categories:
+- industry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^EC\d{6}$
+examples:
+- value: EC000016
+  description: Example from the ETIM International classification guidelines
+- value: EC00016
+  valid: false
+  description: Five digits instead of six
+links:
+- type: doc
+  url: https://www.etim-international.com/wp-content/uploads/2019/07/ETIM-International-Guidelines-V3-2020.pdf
+- type: doc
+  url: https://viewer.etim-international.com/about

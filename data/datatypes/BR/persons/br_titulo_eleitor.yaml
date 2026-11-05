@@ -1,0 +1,32 @@
+id: br_titulo_eleitor
+name: Brazilian voter registration number (título de eleitor)
+status: draft
+doc: 'Número de inscrição of a voter, assigned by the Superior Electoral Court of Brazil: up to twelve
+  digits, an eight-digit sequential number, a two-digit code of the state (01 to 27, 28 for voters abroad)
+  and two check digits computed modulo 11. Leading zeros are often dropped in print; the regexp expects
+  all twelve digits, optionally grouped with spaces.'
+categories:
+- pii
+- persons
+- government
+country:
+- BR
+langs:
+- pt
+is_pii: true
+classification: identifier
+regexp: ^\d{4} ?\d{4} ?(?:0[1-9]|1\d|2[0-8]) ?\d{2}$
+examples:
+- value: 0043 5687 09 06
+  description: Worked example of the Portuguese Wikipedia article
+- value: 004356870906
+  description: The same number without spaces
+- value: 004356872906
+  valid: false
+  description: State code 29 does not exist
+links:
+- type: wikipedia
+  url: https://pt.wikipedia.org/wiki/T%C3%ADtulo_de_eleitor
+translations:
+  pt:
+    name: Número do título de eleitor

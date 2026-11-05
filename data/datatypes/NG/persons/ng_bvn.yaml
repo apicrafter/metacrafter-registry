@@ -1,0 +1,29 @@
+id: ng_bvn
+name: Nigerian Bank Verification Number (BVN)
+status: draft
+doc: Bank Verification Number, a biometric identifier of bank customers in Nigeria introduced by the Central
+  Bank of Nigeria in 2014 and run with the Nigeria Inter-Bank Settlement System (NIBSS). One person has
+  one BVN across all banks. It has 11 digits. No check-digit rule is published, and it has the same shape
+  as the National Identification Number (NIN).
+categories:
+- pii
+- persons
+- finances
+country:
+- NG
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{11}$
+examples:
+- value: '22158306471'
+  description: Synthetic value in the documented format
+- value: '22390417582'
+  description: Synthetic value in the documented format
+- value: 2215830647A
+  valid: false
+  description: Letters are not allowed
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Bank_Verification_Number

@@ -1,0 +1,33 @@
+id: gh_card_pin
+name: Ghana Card personal identification number (PIN)
+status: draft
+doc: 'Personal ID Number on the Ghana Card, issued by the National Identification Authority. Since April
+  2021 it is also the taxpayer identification number of individuals. It has three parts separated by hyphens:
+  a three-letter country code of the holder''s nationality at first registration (GHA for citizens), an
+  8- or 9-digit number and a check character, a digit or a letter, whose algorithm is not published.'
+categories:
+- pii
+- persons
+- finances
+country:
+- GH
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^[A-Z]{3}-?\d{8,9}-?[0-9A-Z]$
+examples:
+- value: GHA-724915036-4
+  description: Synthetic value of a citizen with a 9-digit number
+- value: GHA-72491503-K
+  description: Synthetic value with an 8-digit number and a letter as check character
+- value: GH-724915036-4
+  valid: false
+  description: The country code has three letters
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Ghana_Card
+- type: doc
+  url: https://www.oecd.org/tax/automatic-exchange/crs-implementation-and-assistance/tax-identification-numbers/Ghana-TIN.pdf
+- type: doc
+  url: https://gra.gov.gh/tin/tin-faq/
