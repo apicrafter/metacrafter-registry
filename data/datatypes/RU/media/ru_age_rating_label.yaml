@@ -17,6 +17,11 @@ examples:
 - value: Зрителям, достигшим 14 лет
   valid: false
   description: Category of the film classification used before Law No. 436-FZ
+links:
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/Возрастная_классификация_информационной_продукции_в_России
+- type: doc
+  url: https://opendata.mkrf.ru/opendata/7705851331-register_movies
 translations:
   ru:
     name: Возрастная категория с пояснением

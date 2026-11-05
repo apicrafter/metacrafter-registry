@@ -1,0 +1,37 @@
+id: gb_bbfc_rating
+name: BBFC age rating (United Kingdom)
+status: draft
+doc: 'Age rating of a film, video or online programme by the British Board of Film Classification: U (universal),
+  PG (parental guidance), 12A (cinema films: 12 and over, younger children with an adult), 12 (videos:
+  12 and over), 15, 18 and R18 (restricted, sold only in licensed shops). Uc (universal, particularly
+  suitable for young children) was used for videos until 2009.'
+parent: content_rating
+categories:
+- media
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:Uc|U|PG|12A|12|15|18|R18)$
+examples:
+- value: U
+- value: 12A
+- value: '15'
+- value: R18
+- value: PG-13
+  valid: false
+  description: MPA film rating (us_mpa_rating)
+mappings:
+  wikidata: P2629
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/British_Board_of_Film_Classification
+- type: doc
+  url: https://www.bbfc.co.uk/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2629
+translations:
+  ru:
+    name: Возрастной рейтинг BBFC (Великобритания)

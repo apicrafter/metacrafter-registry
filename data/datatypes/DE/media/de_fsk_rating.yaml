@@ -1,0 +1,35 @@
+id: de_fsk_rating
+name: FSK film age rating (Germany)
+status: draft
+doc: 'Age rating of a film or video in Germany by the Freiwillige Selbstkontrolle der Filmwirtschaft (FSK):
+  released for ages 0, 6, 12, 16 or 18. The mark reads FSK ab 12 freigegeben; the short form FSK 12 and
+  the bare number are common. Video games are rated by the USK (de_usk_rating) with the same ages.'
+parent: content_rating
+categories:
+- media
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: categorical
+regexp: '^(?:FSK (?:ab )?)?(?:0|6|12|16|18)(?: freigegeben)?$'
+examples:
+- value: FSK ab 12 freigegeben
+- value: FSK 16
+- value: FSK 0
+- value: USK 12
+  valid: false
+  description: USK rating (de_usk_rating)
+mappings:
+  wikidata: P1981
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Freiwillige_Selbstkontrolle_der_Filmwirtschaft
+- type: doc
+  url: https://www.fsk.de/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1981
+translations:
+  ru:
+    name: Возрастной рейтинг фильма FSK (Германия)

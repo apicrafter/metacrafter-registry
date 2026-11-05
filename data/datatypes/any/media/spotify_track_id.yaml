@@ -1,0 +1,31 @@
+id: spotify_track_id
+name: Spotify track ID
+status: draft
+doc: 'Spotify ID of a track, as in open.spotify.com/track/<id> and spotify:track:<id>: 22 letters and
+  digits in base 62.'
+parent: spotify_id
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Za-z]{22}$
+examples:
+- value: 6rqhFgbbKwnb9MLmUQDhG6
+  description: Example of the Spotify Web API documentation
+- value: 7H6ev70Weq6DdpZyyTmUXk
+  description: Say My Name
+- value: 3WrFJ7ztbogyGnTHbHJFl
+  valid: false
+  description: 21 characters, one too few
+mappings:
+  wikidata: P2207
+links:
+- type: doc
+  url: https://developer.spotify.com/documentation/web-api/concepts/spotify-uris-ids
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2207
+translations:
+  ru:
+    name: Идентификатор трека в Spotify

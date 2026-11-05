@@ -3,8 +3,10 @@ name: International Standard Book Number 10-digits (ISBN10)
 status: stable
 doc: 10-digit International Standard Book Number, used for books published before 2007. The last character
   is a check digit (0-9 or X).
+parent: isbn
 categories:
 - objectids
+- publishing
 langs:
 - common
 is_pii: false

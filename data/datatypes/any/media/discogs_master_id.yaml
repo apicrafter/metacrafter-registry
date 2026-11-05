@@ -1,0 +1,34 @@
+id: discogs_master_id
+name: Discogs master release ID
+status: draft
+doc: Numeric identifier of a master release, which groups all editions of an album, single or other release,
+  in Discogs, the database and marketplace of music recordings, as in discogs.com/master/<id>. Artists,
+  labels, masters and releases are numbered separately, so the same number can name entities of different
+  kinds, and the field name matters.
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,7}$
+examples:
+- value: '10362'
+  description: The Dark Side of the Moon
+- value: '8883'
+  description: Thriller
+- value: '0'
+  valid: false
+  description: Discogs numbers start at 1
+mappings:
+  wikidata: P1954
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Discogs
+- type: doc
+  url: https://data.discogs.com/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1954
+translations:
+  ru:
+    name: Идентификатор мастер-релиза в Discogs

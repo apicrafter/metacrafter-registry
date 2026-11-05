@@ -1,0 +1,34 @@
+id: smpte_timecode
+name: SMPTE timecode
+status: draft
+doc: Position in a video or audio recording as hours, minutes, seconds and frames (HH:MM:SS:FF), as defined
+  by the SMPTE 12M standard and used in editing, subtitles and broadcast logs. Drop-frame timecode, used
+  with 29.97 frames per second, puts a semicolon before the frames, as in 01:00:03;18. The highest frame
+  number depends on the frame rate, so the regexp accepts 00 to 59.
+categories:
+- media
+- datetime
+langs:
+- common
+is_pii: false
+regexp: ^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d[:;][0-5]\d$
+examples:
+- value: 01:00:00:00
+  description: One hour, non-drop-frame
+- value: 01:00:03;18
+  description: Drop-frame timecode
+- value: 00:59:56:12
+- value: 01:00:00
+  valid: false
+  description: Time of day without frames
+- value: '25:00:00:00'
+  valid: false
+  description: Hour out of range
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SMPTE_timecode
+translations:
+  ru:
+    name: Тайм-код SMPTE
+    doc: Позиция в видео- или аудиозаписи в часах, минутах, секундах и кадрах (ЧЧ:ММ:СС:КК) по стандарту
+      SMPTE 12M.

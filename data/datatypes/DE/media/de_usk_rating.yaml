@@ -1,0 +1,35 @@
+id: de_usk_rating
+name: USK video game age rating (Germany)
+status: draft
+doc: 'Age rating of a video game in Germany by the Unterhaltungssoftware Selbstkontrolle (USK): released
+  for ages 0, 6, 12, 16 or 18. The mark reads USK ab 12 freigegeben; the short form USK 12 and the bare
+  number are common. Films are rated by the FSK (de_fsk_rating) with the same ages.'
+parent: content_rating
+categories:
+- media
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: categorical
+regexp: '^(?:USK (?:ab )?)?(?:0|6|12|16|18)(?: freigegeben)?$'
+examples:
+- value: USK ab 12 freigegeben
+- value: USK 18
+- value: USK 6
+- value: FSK 12
+  valid: false
+  description: FSK rating (de_fsk_rating)
+mappings:
+  wikidata: P914
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Unterhaltungssoftware_Selbstkontrolle
+- type: doc
+  url: https://usk.de/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P914
+translations:
+  ru:
+    name: Возрастной рейтинг видеоигры USK (Германия)

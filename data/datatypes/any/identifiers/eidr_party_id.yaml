@@ -1,0 +1,34 @@
+id: eidr_party_id
+name: EIDR party ID
+status: draft
+doc: Identifier of a party, a company such as a studio, producer, broadcaster or distributor, in the Entertainment
+  Identifier Registry. It is a DOI with the prefix 10.5237 and two groups of four characters. Films and
+  programmes have EIDR content IDs (eidr) with the prefix 10.5240.
+parent: doi
+categories:
+- identifiers
+- media
+- companies
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^10\.5237/[0-9A-F]{4}-[0-9A-Z]{4}$
+examples:
+- value: 10.5237/C844-63E8
+  description: Pixar
+- value: 10.5237/1854-12B6
+  description: Sony Pictures Animation
+- value: 10.5240/8069-0CF7-DB0F-3696-D2D4-X
+  valid: false
+  description: EIDR content ID of Toy Story (eidr)
+mappings:
+  wikidata: P12142
+links:
+- type: doc
+  url: https://www.eidr.org/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P12142
+translations:
+  ru:
+    name: Идентификатор участника EIDR

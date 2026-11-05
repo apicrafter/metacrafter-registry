@@ -3,7 +3,8 @@ name: International Standard Audiovisual Number (ISAN)
 status: draft
 doc: 'ISO 15706 identifier of audiovisual works, such as films and episodes. It is hexadecimal: a 12-digit
   root and a 4-digit episode or part, an optional check character, then optionally an 8-digit version
-  and a second check character. The check characters use ISO 7064 mod 37,36.'
+  and a second check character. The check characters use ISO 7064 mod 37,36. Wikidata sometimes stores
+  only the 12-digit root, such as 0000-0005-9DBA; the regexp does not accept it.'
 categories:
 - media
 langs:
@@ -16,6 +17,10 @@ examples:
   description: Synthetic number with a valid check digit
 - value: 0000-0000-2279-0000-M-B381-1B6A-3
   description: Synthetic number with a valid check digit
+- value: 0000-0000-2435-0000-2-0000-0000-V
+  description: Toy Story
+- value: 0000-0001-4669-0000-Z-0000-0000-6
+  description: The Godfather
 - value: 000000009E640000AA552C1
   valid: false
   description: One character too few
@@ -30,3 +35,8 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.isan.html
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P3212
+translations:
+  ru:
+    name: Международный стандартный номер аудиовизуального произведения (ISAN)
+    doc: Шестнадцатеричный идентификатор аудиовизуального произведения по ISO 15706 с контрольными символами
+      по ISO 7064 mod 37,36.

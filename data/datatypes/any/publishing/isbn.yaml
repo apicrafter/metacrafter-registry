@@ -1,0 +1,40 @@
+id: isbn
+name: International Standard Book Number (ISBN)
+status: stable
+doc: 'ISO 2108 identifier of a book edition, in either of its two forms: the 10-character ISBN used until
+  2007, whose last character is a check digit or X (isbn10), and the 13-digit ISBN with the prefix 978
+  or 979 used since then (isbn13). Use this record when a column mixes both forms. The regexp accepts
+  the compact form and the form with hyphens or spaces between the parts.'
+categories:
+- publishing
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:(?:\d[- ]?){9}[\dX]|97[89](?:[- ]?\d){10})$
+examples:
+- value: '9780521293662'
+  description: Hamlet, Prince of Denmark
+- value: 0-521-29366-9
+  description: The same book with its ISBN-10
+- value: 052122151X
+  description: ISBN-10 with the check character X
+- value: '9770521293662'
+  valid: false
+  description: Thirteen digits without the prefix 978 or 979
+mappings:
+  sherlock: isbn
+  schema_org: isbn
+  stdnum: isbn
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Standard_Book_Number
+- type: doc
+  url: https://www.isbn-international.org/
+- type: schema.org
+  url: https://schema.org/isbn
+translations:
+  ru:
+    name: Международный стандартный книжный номер (ISBN)
+    doc: Идентификатор издания книги по ISO 2108 из 10 или 13 символов; последний символ контрольный.

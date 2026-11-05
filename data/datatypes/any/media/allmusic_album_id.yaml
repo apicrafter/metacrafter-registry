@@ -1,0 +1,30 @@
+id: allmusic_album_id
+name: AllMusic album ID
+status: draft
+doc: 'Identifier of an album in the AllMusic database: the letters mw and ten digits. The two-letter prefix
+  tells the kind of entry.'
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^mw\d{10}$
+examples:
+- value: mw0000191308
+  description: The Dark Side of the Moon
+- value: mw0000056882
+  description: Thriller
+- value: mn0000754032
+  valid: false
+  description: AllMusic artist ID (allmusic_artist_id)
+mappings:
+  wikidata: P1729
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/AllMusic
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1729
+translations:
+  ru:
+    name: Идентификатор альбома в AllMusic

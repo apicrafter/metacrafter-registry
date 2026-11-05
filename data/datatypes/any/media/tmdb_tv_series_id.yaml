@@ -1,0 +1,30 @@
+id: tmdb_tv_series_id
+name: TMDB TV series ID
+status: draft
+doc: Numeric identifier of a television series in The Movie Database (TMDB), as in themoviedb.org/tv/<id>
+  and the TMDB API. TV series are numbered apart from films (tmdb_movie_id), so the field name matters.
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,7}$
+examples:
+- value: '1398'
+  description: The Sopranos
+- value: '52'
+  description: That '70s Show
+- value: tt0141842
+  valid: false
+  description: IMDb ID of The Sopranos (imdb_id)
+mappings:
+  wikidata: P4983
+links:
+- type: doc
+  url: https://developer.themoviedb.org/reference/tv-series-details
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4983
+translations:
+  ru:
+    name: Идентификатор сериала в TMDB

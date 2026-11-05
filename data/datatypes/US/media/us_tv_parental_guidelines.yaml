@@ -1,0 +1,34 @@
+id: us_tv_parental_guidelines
+name: TV Parental Guidelines rating (United States)
+status: draft
+doc: 'Rating of a television programme in the United States under the TV Parental Guidelines, which the
+  broadcasters apply themselves and V-chip receivers read. There are six ratings: TV-Y (all children),
+  TV-Y7 (children 7 and older), TV-G (general audience), TV-PG (parental guidance suggested), TV-14 (parents
+  strongly cautioned) and TV-MA (mature audience only). TV-Y7-FV marks fantasy violence. The letters D,
+  L, S and V for the kind of content can follow the rating; the regexp does not accept them.'
+parent: content_rating
+categories:
+- media
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^TV-(?:Y7-FV|Y7|Y|G|PG|14|MA)$
+examples:
+- value: TV-Y
+- value: TV-Y7-FV
+- value: TV-14
+- value: TV-MA
+- value: PG-13
+  valid: false
+  description: MPA film rating (us_mpa_rating)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/TV_Parental_Guidelines
+- type: doc
+  url: http://www.tvguidelines.org/
+translations:
+  ru:
+    name: Рейтинг телепрограммы TV Parental Guidelines (США)

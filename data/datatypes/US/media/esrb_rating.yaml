@@ -1,0 +1,40 @@
+id: esrb_rating
+name: ESRB video game rating
+status: draft
+doc: 'Age rating of a video game or app by the Entertainment Software Rating Board, used in the United
+  States, Canada and Mexico: E (everyone), E10+ (everyone 10 and older), T (teen, 13 and older), M (mature,
+  17 and older), AO (adults only, 18 and older) and RP (rating pending). EC (early childhood) was retired
+  in 2018; the regexp accepts it for older data. The regexp does not accept the ratings written in full,
+  such as Mature 17+.'
+parent: content_rating
+categories:
+- media
+country:
+- US
+- CA
+- MX
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:EC|E|E10\+|T|M|AO|RP)$
+examples:
+- value: E
+- value: E10+
+- value: T
+- value: M
+- value: PEGI 18
+  valid: false
+  description: PEGI rating (pegi_rating)
+mappings:
+  wikidata: P852
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Entertainment_Software_Rating_Board
+- type: doc
+  url: https://www.esrb.org/ratings-guide/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P852
+translations:
+  ru:
+    name: Рейтинг видеоигры ESRB

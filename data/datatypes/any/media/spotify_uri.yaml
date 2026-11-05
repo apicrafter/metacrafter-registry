@@ -1,0 +1,28 @@
+id: spotify_uri
+name: Spotify URI
+status: draft
+doc: 'Resource identifier of the Spotify app and Web API: spotify:, the kind of resource (artist, album,
+  track, playlist, show or episode), a colon and the 22-character Spotify ID (spotify_id). The Spotify
+  app opens such URIs directly.'
+categories:
+- media
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^spotify:(?:artist|album|track|playlist|show|episode):[0-9A-Za-z]{22}$
+examples:
+- value: spotify:track:6rqhFgbbKwnb9MLmUQDhG6
+  description: Example of the Spotify Web API documentation
+- value: spotify:artist:3WrFJ7ztbogyGnTHbHJFl2
+  description: The Beatles
+- value: https://open.spotify.com/track/6rqhFgbbKwnb9MLmUQDhG6
+  valid: false
+  description: Web address of the same track
+links:
+- type: doc
+  url: https://developer.spotify.com/documentation/web-api/concepts/spotify-uris-ids
+translations:
+  ru:
+    name: URI Spotify

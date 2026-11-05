@@ -1,10 +1,31 @@
 id: vimeovideoid
-name: Vimeo video ID by field name
+name: Vimeo video ID
 status: draft
-doc: Vimeo video ID by field name identifier
+doc: 'Numeric identifier of a video on Vimeo, as in vimeo.com/<id> and player.vimeo.com/video/<id>. Vimeo
+  numbers videos in sequence: the oldest videos have four to seven digits, recent ones nine or ten. The
+  value is a plain integer and cannot be told apart from other numbers without the field name. Vimeo user
+  and channel names, such as staff or user13301326, are a different identifier.'
 categories:
 - media
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+regexp: ^[1-9]\d{0,9}$
+examples:
+- value: '76979871'
+  description: The New Vimeo Player (You Know, For Videos), a video by Vimeo staff
+- value: '1084537'
+  description: Big Buck Bunny, uploaded by Blender
+- value: user13301326
+  valid: false
+  description: Vimeo user ID, not a video ID
+links:
+- type: doc
+  url: https://developer.vimeo.com/api/reference/videos
+- type: doc
+  url: https://developer.vimeo.com/api/oembed/videos
+translations:
+  ru:
+    name: Идентификатор видео Vimeo
+    doc: Числовой идентификатор видео на Vimeo, как в адресе vimeo.com/<id>.

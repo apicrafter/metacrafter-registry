@@ -1,0 +1,34 @@
+id: ipi_name_number
+name: IPI name number
+status: draft
+doc: 'Interested Parties Information (IPI) name number: an 11-digit number that the IPI system of CISAC
+  gives to each name under which a composer, lyricist, arranger, music publisher or other rights holder
+  is registered with collecting societies. One party can have several name numbers, for the real name
+  and for pseudonyms, but has one IPI base number (ipi_base_number). Works registered with an ISWC (iswc)
+  list the IPI name numbers of their creators.'
+categories:
+- media
+- persons
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{11}$
+examples:
+- value: 00119750569
+  description: Pablo Picasso
+- value: I-001068130-6
+  valid: false
+  description: IPI base number (ipi_base_number)
+mappings:
+  wikidata: P1828
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Interested_Parties_Information
+- type: doc
+  url: https://www.cisac.org/services/information-services/ipi
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1828
+translations:
+  ru:
+    name: Номер имени IPI

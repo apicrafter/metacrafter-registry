@@ -1,0 +1,30 @@
+id: spotify_id
+name: Spotify ID
+status: draft
+doc: 'Base-62 identifier of a Spotify resource, such as an artist, album, track, playlist, show or episode:
+  22 letters and digits. It is the last part of a Spotify URI (spotify_uri) and of an open.spotify.com
+  address. The ID does not tell the kind of resource; the records spotify_artist_id, spotify_album_id
+  and spotify_track_id name one kind.'
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Za-z]{22}$
+examples:
+- value: 6rqhFgbbKwnb9MLmUQDhG6
+  description: Track ID from the Spotify Web API documentation
+- value: 3WrFJ7ztbogyGnTHbHJFl2
+  description: The Beatles (artist)
+- value: spotify:track:6rqhFgbbKwnb9MLmUQDhG6
+  valid: false
+  description: Spotify URI (spotify_uri)
+links:
+- type: doc
+  url: https://developer.spotify.com/documentation/web-api/concepts/spotify-uris-ids
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Spotify
+translations:
+  ru:
+    name: Идентификатор Spotify

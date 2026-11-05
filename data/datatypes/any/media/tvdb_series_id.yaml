@@ -1,0 +1,32 @@
+id: tvdb_series_id
+name: TheTVDB series ID
+status: draft
+doc: Numeric identifier of a television series in TheTVDB, a community database of television programmes
+  used by media centre software, as in its API and web addresses.
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,6}$
+examples:
+- value: '75299'
+  description: The Sopranos
+- value: '79488'
+  description: 30 Rock
+- value: tt0141842
+  valid: false
+  description: IMDb ID of The Sopranos (imdb_id)
+mappings:
+  wikidata: P4835
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/TheTVDB
+- type: doc
+  url: https://thetvdb.github.io/v4-api/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4835
+translations:
+  ru:
+    name: Идентификатор сериала в TheTVDB

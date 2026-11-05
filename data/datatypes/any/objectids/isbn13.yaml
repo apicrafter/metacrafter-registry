@@ -2,8 +2,10 @@ id: isbn13
 name: International Standard Book Number 13-digits (ISBN13)
 status: stable
 doc: 13-digit International Standard Book Number, used since 2007. It starts with the prefix 978 or 979.
+parent: isbn
 categories:
 - objectids
+- publishing
 langs:
 - common
 is_pii: false

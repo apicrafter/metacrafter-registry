@@ -1,0 +1,37 @@
+id: steam_app_id
+name: Steam application ID (App ID)
+status: draft
+doc: Numeric identifier (App ID) of a game, demo, soundtrack, software or other product on the Steam platform
+  of Valve, as in store.steampowered.com/app/<id> and the Steamworks API.
+categories:
+- media
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,7}$
+examples:
+- value: '440'
+  description: Team Fortress 2
+- value: '400'
+  description: Portal
+- value: '70300'
+  description: VVVVVV
+- value: '0'
+  valid: false
+  description: App IDs start at 1
+mappings:
+  wikidata: P1733
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Steam_(service)
+- type: doc
+  url: https://partner.steamgames.com/doc/store/application
+- type: doc
+  url: https://developer.valvesoftware.com/wiki/Steam_Application_IDs
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1733
+translations:
+  ru:
+    name: Идентификатор приложения Steam (App ID)

@@ -1,12 +1,14 @@
 id: youtubevideoid
-name: YouTube video ID by field name
+name: YouTube video ID
 status: draft
-doc: 'Eleven-character identifier of a YouTube video, as in youtube.com/watch?v=<id>: letters, digits,
-  hyphens and underscores.'
+doc: 'Eleven-character identifier of a YouTube video, as in youtube.com/watch?v=<id>, youtu.be/<id> and
+  youtube.com/shorts/<id>: letters, digits, hyphens and underscores. Any eleven-character token of these
+  characters matches the regexp, so the field name matters. Channel IDs (youtube_channel_id) have 24 characters
+  and start with UC.'
 categories:
 - media
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
 regexp: ^[-_0-9A-Za-z]{11}$
@@ -17,8 +19,20 @@ examples:
   description: Levitate
 - value: uv_1AKKKJnk
   description: Levitate
+- value: -v3Zh43WOHw
+  description: Example of the Wikidata property, starting with a hyphen
+- value: UCpDJl2EmP7Oh90Vylx0dZtA
+  valid: false
+  description: YouTube channel ID
 mappings:
   wikidata: P1651
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1651
+- type: doc
+  url: https://developers.google.com/youtube/v3/docs/videos
+translations:
+  ru:
+    name: Идентификатор видео YouTube
+    doc: Идентификатор видео YouTube из 11 символов (буквы, цифры, дефис и подчёркивание), как в адресе
+      youtube.com/watch?v=<id>.
