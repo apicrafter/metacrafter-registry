@@ -1,0 +1,35 @@
+id: tmdb_movie_id
+name: TMDB movie ID
+status: draft
+doc: Numeric identifier of a film in The Movie Database (TMDB), as in themoviedb.org/movie/<id> and the
+  TMDB API. Films, TV series and people are numbered separately, so the field name matters. The MovieLens
+  datasets give it in the tmdbId column.
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,7}$
+examples:
+- value: '862'
+  description: Toy Story
+- value: '238'
+  description: The Godfather
+- value: '603'
+  description: The Matrix
+- value: tt0114709
+  valid: false
+  description: IMDb ID of Toy Story (imdb_id)
+mappings:
+  wikidata: P4947
+links:
+- type: doc
+  url: https://developer.themoviedb.org/reference/movie-details
+- type: doc
+  url: https://files.grouplens.org/datasets/movielens/ml-latest-small-README.html
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4947
+translations:
+  ru:
+    name: Идентификатор фильма в TMDB

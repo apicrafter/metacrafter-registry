@@ -1,0 +1,30 @@
+id: allmusic_artist_id
+name: AllMusic artist ID
+status: draft
+doc: 'Identifier of an artist, group or record label (AllMusic lists labels as artists) in the AllMusic
+  database: the letters mn and ten digits. The two-letter prefix tells the kind of entry.'
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^mn\d{10}$
+examples:
+- value: mn0000754032
+  description: The Beatles
+- value: mn0000346336
+  description: Pink Floyd
+- value: mw0000191308
+  valid: false
+  description: AllMusic album ID (allmusic_album_id)
+mappings:
+  wikidata: P1728
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/AllMusic
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1728
+translations:
+  ru:
+    name: Идентификатор исполнителя в AllMusic

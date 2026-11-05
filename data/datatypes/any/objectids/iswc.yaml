@@ -9,6 +9,7 @@ doc: ISO 15707 identifier of a musical work as a composition, apart from its rec
 categories:
 - objectids
 - publishing
+- media
 langs:
 - common
 is_pii: false

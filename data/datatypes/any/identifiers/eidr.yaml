@@ -1,8 +1,11 @@
 id: eidr
-name: Entertainment Identifier Registry (EIDR)
+name: Entertainment Identifier Registry (EIDR) content ID
 status: stable
-doc: The Entertainment Identifier Registry, or EIDR, is a global unique identifier system for a broad
-  array of audio visual objects, including motion pictures, television, and radio programs.
+doc: Identifier of a film, television or radio work in the Entertainment Identifier Registry, which studios,
+  broadcasters and distributors use to refer to the same title, edit or encoding. An EIDR content ID is
+  a DOI with the prefix 10.5240 and a suffix of five groups of four hexadecimal digits and a check character
+  (ISO 7064 mod 37,36). EIDR party IDs (prefix 10.5237) and video service IDs (prefix 10.5239) are other
+  identifiers of the same registry.
 parent: doi
 categories:
 - identifiers
@@ -11,15 +14,20 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^10\.5240/(?:[0-9A-Z]{4}-){5}[0-9A-Z]$
+regexp: ^10\.5240/(?:[0-9A-F]{4}-){5}[0-9A-Z]$
 examples:
 - value: 10.5240/58DD-06EB-3EED-A705-EE28-7
   description: The Simpsons
 - value: 10.5240/E058-3983-F191-9805-DD81-Q
   description: Never Say Never Again
+- value: 10.5240/8069-0CF7-DB0F-3696-D2D4-X
+  description: Toy Story
 - value: 10.1000/182
   valid: false
   description: DOI outside the EIDR prefix 10.5240
+- value: 10.5237/C844-63E8
+  valid: false
+  description: EIDR party ID
 mappings:
   wikidata: P2704
 links:
@@ -27,11 +35,13 @@ links:
   url: https://en.wikipedia.org/wiki/EIDR
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P2704
+- type: doc
+  url: https://www.eidr.org/
 - type: schema.org
   url: https://schema.org/editEIDR
 - type: schema.org
   url: https://schema.org/titleEIDR
 translations:
   ru:
-    name: Код EIDR
-    doc: Entertainment Identifier Registry ID
+    name: Идентификатор контента EIDR
+    doc: Идентификатор фильма, телевизионной или радиопрограммы в реестре EIDR. Это DOI с префиксом 10.5240.

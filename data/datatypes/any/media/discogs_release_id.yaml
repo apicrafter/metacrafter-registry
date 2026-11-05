@@ -1,0 +1,32 @@
+id: discogs_release_id
+name: Discogs release ID
+status: draft
+doc: Numeric identifier of a release, one edition of a recording with its own format, label, country and
+  catalogue number, in Discogs, the database and marketplace of music recordings, as in discogs.com/release/<id>.
+  Artists, labels, masters and releases are numbered separately, so the same number can name entities
+  of different kinds, and the field name matters.
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,7}$
+examples:
+- value: '7066950'
+  description: Koska sä eroot
+- value: '0'
+  valid: false
+  description: Discogs numbers start at 1
+mappings:
+  wikidata: P2206
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Discogs
+- type: doc
+  url: https://data.discogs.com/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2206
+translations:
+  ru:
+    name: Идентификатор релиза в Discogs

@@ -1,0 +1,36 @@
+id: content_rating
+name: Content rating (age rating)
+status: draft
+doc: Rating that tells which audience a film, television programme, video game or other work suits, given
+  by a rating board or under a law, such as PG-13, TV-MA, PEGI 16 or 12+. Each country or industry has
+  its own system, and many datasets mix several systems in one column. The records of the individual systems
+  name this record as their parent.
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: PG-13
+  description: MPA film rating (us_mpa_rating)
+- value: TV-MA
+  description: TV Parental Guidelines rating (us_tv_parental_guidelines)
+- value: PEGI 16
+  description: PEGI video game rating (pegi_rating)
+- value: 12+
+  description: Russian age category (ru_age_rating)
+mappings:
+  schema_org: contentRating
+links:
+- type: schema.org
+  url: https://schema.org/contentRating
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Motion_picture_content_rating_system
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Video_game_content_rating_system
+translations:
+  ru:
+    name: Возрастной рейтинг (рейтинг контента)
+    doc: Обозначение аудитории, для которой подходит фильм, телепрограмма, видеоигра или другое произведение,
+      например PG-13, TV-MA, PEGI 16 или 12+.

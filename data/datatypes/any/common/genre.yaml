@@ -5,6 +5,7 @@ doc: Genre of the creative work, broadcast channel or group.
 parent: category
 categories:
 - common
+- media
 langs:
 - common
 is_pii: false
@@ -21,4 +22,4 @@ links:
 translations:
   ru:
     name: Жанр
-    doc: Жанр картины, музыки, фильма, документа или иного произведения исскуства или иного созданного
+    doc: Жанр картины, музыки, фильма, документа или иного произведения искусства или иного созданного

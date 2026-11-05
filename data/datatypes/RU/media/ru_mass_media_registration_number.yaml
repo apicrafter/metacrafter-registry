@@ -1,0 +1,46 @@
+id: ru_mass_media_registration_number
+name: Russian mass media registration number
+status: draft
+doc: Number of the registration certificate, or the register entry, of a mass media outlet in Russia (свидетельство
+  о регистрации СМИ), recorded by Roskomnadzor in the register of registered mass media. It gives the
+  form of the outlet, the registering office and a sequence number. The forms are ПИ for a printed periodical,
+  ЭЛ for an online periodical, a TV or a radio channel, and ИА for a news agency. ФС 77 marks the central
+  office, and ТУ with a region code a territorial office. Spacing, the dash and the case of Эл vary. Certificates
+  of the 1990s and early 2000s may use forms that the regexp does not accept.
+categories:
+- media
+- legal
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^(?:ЭЛ|Эл|ПИ|ИА)\.? ?(?:№ ?)?(?:ФС ?77|ТУ ?\d{2}) ?[-–—−] ?\d{2} ?\d{2,3}$
+examples:
+- value: ЭЛ № ФС 77 - 42043
+  description: Lenta.ru
+- value: ЭЛ № ФС 77 — 50252
+  description: Первый канал
+- value: ПИ № ФС77-61630
+  description: Журнал «Если»
+- value: ИА № ФС 77-51367
+  description: Regnum
+- value: ЭЛ № ТУ 66 - 01150
+  description: ОТВ, Екатеринбург
+- value: ПИ № ТУ 02-00459
+  description: Газета «Восход»
+- value: 1995-0861
+  valid: false
+  description: ISSN of a journal
+links:
+- type: doc
+  url: https://rkn.gov.ru/mass-communications/reestr/media/
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/Закон_о_СМИ
+translations:
+  ru:
+    name: Регистрационный номер СМИ
+    doc: 'Номер свидетельства о регистрации средства массовой информации (записи в реестре зарегистрированных
+      СМИ Роскомнадзора): форма СМИ (ПИ, ЭЛ, ИА), регистрирующий орган (ФС 77 или ТУ и код региона) и
+      порядковый номер.'

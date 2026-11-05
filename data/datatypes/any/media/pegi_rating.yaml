@@ -1,0 +1,34 @@
+id: pegi_rating
+name: PEGI video game rating
+status: draft
+doc: 'Age rating of a video game under Pan European Game Information (PEGI), used in most European countries:
+  3, 7, 12, 16 or 18, often written with the prefix PEGI. Content descriptors, such as violence or bad
+  language, are given separately.'
+parent: content_rating
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:PEGI ?)?(?:3|7|12|16|18)$
+examples:
+- value: PEGI 3
+- value: PEGI 12
+- value: PEGI 18
+- value: '16'
+- value: PEGI 15
+  valid: false
+  description: Not a PEGI age
+mappings:
+  wikidata: P908
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Pan_European_Game_Information
+- type: doc
+  url: https://pegi.info/what-do-the-labels-mean
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P908
+translations:
+  ru:
+    name: Рейтинг видеоигры PEGI

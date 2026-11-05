@@ -1,0 +1,35 @@
+id: ipi_base_number
+name: IPI base number
+status: draft
+doc: 'Interested Parties Information (IPI) base number: the identifier of a rights holder, a person or
+  a legal entity, in the IPI system of CISAC, which collecting societies share. It is written as a letter,
+  nine digits and a check digit separated by hyphens, such as I-001068130-6. Each name of the party has
+  its own IPI name number (ipi_name_number).'
+categories:
+- media
+- persons
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]-\d{9}-\d$
+examples:
+- value: I-001068130-6
+  description: Pablo Picasso
+- value: I-001896807-3
+  description: Jean Carlu
+- value: 00119750569
+  valid: false
+  description: IPI name number (ipi_name_number)
+mappings:
+  wikidata: P3453
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Interested_Parties_Information
+- type: doc
+  url: https://www.cisac.org/services/information-services/ipi
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3453
+translations:
+  ru:
+    name: Базовый номер IPI

@@ -1,0 +1,33 @@
+id: discogs_label_id
+name: Discogs label ID
+status: draft
+doc: Numeric identifier of a record label, studio, series or company in Discogs, the database and marketplace
+  of music recordings, as in discogs.com/label/<id>. Artists, labels, masters and releases are numbered
+  separately, so the same number can name entities of different kinds, and the field name matters.
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,7}$
+examples:
+- value: '2564'
+  description: Harvest
+- value: '206806'
+  description: Brennus Music
+- value: '0'
+  valid: false
+  description: Discogs numbers start at 1
+mappings:
+  wikidata: P1955
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Discogs
+- type: doc
+  url: https://data.discogs.com/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1955
+translations:
+  ru:
+    name: Идентификатор лейбла в Discogs

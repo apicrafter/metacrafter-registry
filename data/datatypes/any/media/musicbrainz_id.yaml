@@ -1,0 +1,31 @@
+id: musicbrainz_id
+name: MusicBrainz Identifier (MBID)
+status: draft
+doc: 'Permanent identifier of an entity in MusicBrainz, the open music encyclopedia: an artist, release
+  group, release, recording, work, label, area, place, URL or track. It is a UUID in lower case with hyphens.
+  The value does not tell the kind of entity, so the field name matters; the records musicbrainz_artist_id,
+  musicbrainz_release_group_id and others name one kind.'
+parent: uuid
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+examples:
+- value: b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d
+  description: The Beatles (artist)
+- value: f5093c06-23e3-404f-aeaa-40f72885ee3a
+  description: The Dark Side of the Moon (release group)
+- value: b10bbbfccf9e42e0be17e2c3e1d2600d
+  valid: false
+  description: The Beatles without hyphens
+links:
+- type: doc
+  url: https://musicbrainz.org/doc/MusicBrainz_Identifier
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/MusicBrainz
+translations:
+  ru:
+    name: Идентификатор MusicBrainz (MBID)

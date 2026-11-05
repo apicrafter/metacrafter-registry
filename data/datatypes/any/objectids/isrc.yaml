@@ -1,24 +1,31 @@
 id: isrc
 name: International Standard Recording Code (ISRC)
 status: stable
-doc: The International Standard Recording Code (ISRC) is an international standard code for uniquely identifying
-  sound recordings and music video recordings. The code was developed by the recording industry and is
-  officially designated as the ISO 3901 standard. An ISRC identifies a particular recording, not the work
-  (composition and lyrical content) itself. Therefore, different recordings, edits, and remixes of the
-  same work should have different ISRCs.
+doc: 'ISO 3901 code of one sound recording or music video recording, not of the composition (iswc): every
+  recording, edit and remix of a song gets its own ISRC. It has 12 characters: a two-letter country code,
+  a three-character registrant code, the last two digits of the reference year and a five-digit designation
+  code. It is often printed with hyphens between the parts, after the word ISRC. There is no check digit.'
 categories:
 - objectids
 - publishing
+- media
 langs:
 - common
 is_pii: false
 classification: identifier
-regexp: '[A-Z]{2}[A-Z0-9]{3}\d{7}'
+regexp: ^(?:ISRC:? ?)?[A-Z]{2}-?[A-Z0-9]{3}-?\d{2}-?\d{5}$
 examples:
 - value: USRC17607839
-  description: Example ISRC
-- value: GBUM71500123
-  description: Example ISRC
+  description: Example of the Wikipedia article
+- value: US-RC1-76-07839
+  description: The same code in its printed form
+- value: GBAYE7700223
+  description: Example of the Wikidata property
+- value: GBAYE7800109
+  description: Example of the Wikidata property
+- value: USRC1760783
+  valid: false
+  description: One digit too few
 mappings:
   autotype: ISRC2_correct
   wikidata: P1243
@@ -29,3 +36,10 @@ links:
   url: https://en.wikipedia.org/wiki/International_Standard_Recording_Code
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1243
+- type: doc
+  url: https://isrc.ifpi.org/
+translations:
+  ru:
+    name: Международный стандартный код звукозаписи (ISRC)
+    doc: Код звукозаписи или музыкального видео по ISO 3901 из 12 символов. Каждая запись, редакция и
+      ремикс получают отдельный код.

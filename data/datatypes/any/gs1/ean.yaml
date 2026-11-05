@@ -1,0 +1,44 @@
+id: ean
+name: European Article Number (EAN-13, EAN-8)
+status: stable
+doc: 'GS1 barcode number of a trade item, the form of the GTIN printed under EAN-13 and EAN-8 barcodes
+  on retail goods, books, music releases and video discs. EAN-13 has 13 digits: a GS1 prefix, a company
+  number, an item reference and a check digit. EAN-8 has 8 digits and is used on small packages. The last
+  digit is a GS1 mod 10 check digit. Books carry their ISBN-13 as an EAN-13 with the prefix 978 or 979.
+  A GS1 element string (gtin) carries the same number as 14 digits, with leading zeros, after the Application
+  Identifier 01.'
+categories:
+- gs1
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{8}|\d{13})$
+checksum: gtin
+examples:
+- value: '9506000134352'
+  description: GS1's example GTIN 09506000134352 as an EAN-13
+- value: '9520000000011'
+  description: Synthetic number with the GS1 demonstration prefix 952
+- value: '9780521293662'
+  description: ISBN-13 978-0-521-29366-2 as an EAN-13
+- value: '95060001343520'
+  valid: false
+  description: Fourteen digits, a GTIN-14
+mappings:
+  autotype:
+  - EAN13_correct
+  - ean
+  fta: CHECKDIGIT.EAN13
+  schema_org: gtin13
+  stdnum: ean
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Article_Number
+- type: doc
+  url: https://www.gs1.org/standards/id-keys/gtin
+translations:
+  ru:
+    name: Европейский код товара (EAN-13, EAN-8)
+    doc: Штрихкод товара по стандарту GS1 из 13 или 8 цифр; последняя цифра контрольная.

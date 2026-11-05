@@ -1,0 +1,41 @@
+id: us_mpa_rating
+name: MPA film rating (United States)
+status: draft
+doc: 'Rating of a film by the Motion Picture Association of the United States (MPAA until 2019): G (general
+  audiences), PG (parental guidance suggested), PG-13 (parents strongly cautioned), R (restricted: under
+  17 only with a parent or guardian) and NC-17 (no one 17 and under admitted). The system is voluntary
+  and has been in use since 1968. Films without a rating are often marked NR (not rated) or UR (unrated);
+  these labels are not MPA ratings.'
+parent: content_rating
+categories:
+- media
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:G|PG|PG-13|R|NC-17)$
+examples:
+- value: G
+- value: PG-13
+- value: R
+- value: NC-17
+- value: TV-MA
+  valid: false
+  description: TV Parental Guidelines rating (us_tv_parental_guidelines)
+- value: NR
+  valid: false
+  description: Not rated, not an MPA rating
+mappings:
+  wikidata: P1657
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Motion_Picture_Association_film_rating_system
+- type: doc
+  url: https://www.motionpictures.org/film-ratings/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1657
+translations:
+  ru:
+    name: Рейтинг фильма MPA (США)

@@ -1,0 +1,31 @@
+id: spotify_artist_id
+name: Spotify artist ID
+status: draft
+doc: 'Spotify ID of an artist, as in open.spotify.com/artist/<id> and spotify:artist:<id>: 22 letters
+  and digits in base 62.'
+parent: spotify_id
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Za-z]{22}$
+examples:
+- value: 3WrFJ7ztbogyGnTHbHJFl2
+  description: The Beatles
+- value: 0k17h0D3J5VfsdmQ1iZtE9
+  description: Pink Floyd
+- value: 3WrFJ7ztbogyGnTHbHJFl
+  valid: false
+  description: 21 characters, one too few
+mappings:
+  wikidata: P1902
+links:
+- type: doc
+  url: https://developer.spotify.com/documentation/web-api/concepts/spotify-uris-ids
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1902
+translations:
+  ru:
+    name: Идентификатор исполнителя в Spotify

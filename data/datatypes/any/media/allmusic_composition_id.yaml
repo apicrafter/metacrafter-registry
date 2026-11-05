@@ -1,0 +1,30 @@
+id: allmusic_composition_id
+name: AllMusic composition ID
+status: draft
+doc: 'Identifier of a composition, mostly of classical music in the AllMusic database: the letters mc
+  and ten digits. The two-letter prefix tells the kind of entry.'
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^mc\d{10}$
+examples:
+- value: mc0002370727
+  description: Turandot
+- value: mc0002373040
+  description: Yesterday
+- value: mt0045598310
+  valid: false
+  description: AllMusic song ID (allmusic_song_id)
+mappings:
+  wikidata: P1994
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/AllMusic
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1994
+translations:
+  ru:
+    name: Идентификатор композиции в AllMusic

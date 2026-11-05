@@ -1,0 +1,33 @@
+id: kinopoisk_film_id
+name: Kinopoisk film ID
+status: draft
+doc: Numeric identifier of a film or television series on Kinopoisk, a Russian film database and streaming
+  service, as in kinopoisk.ru/film/<id>/. People have separate numbers (kinopoisk.ru/name/<id>/).
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,7}$
+examples:
+- value: '325'
+  description: The Godfather
+- value: '301'
+  description: The Matrix
+- value: '79848'
+  description: The Sopranos
+- value: tt0068646
+  valid: false
+  description: IMDb ID of The Godfather (imdb_id)
+mappings:
+  wikidata: P2603
+links:
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/Кинопоиск
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2603
+translations:
+  ru:
+    name: Идентификатор фильма на Кинопоиске
+    doc: Числовой идентификатор фильма или сериала на Кинопоиске, как в адресе kinopoisk.ru/film/<id>/.

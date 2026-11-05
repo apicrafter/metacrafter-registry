@@ -1,0 +1,31 @@
+id: musicbrainz_artist_id
+name: MusicBrainz artist ID
+status: draft
+doc: 'MBID of an artist in MusicBrainz: a person, group, orchestra or other performer or creator credited
+  on releases, recordings or works, as in musicbrainz.org/artist/<id>.'
+parent: musicbrainz_id
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+examples:
+- value: b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d
+  description: The Beatles
+- value: 83d91898-7763-47d7-b03b-b92132375c47
+  description: Pink Floyd
+- value: B10BBBFC-CF9E-42E0-BE17-E2C3E1D2600D
+  valid: false
+  description: Upper case; MusicBrainz writes MBIDs in lower case
+mappings:
+  wikidata: P434
+links:
+- type: doc
+  url: https://musicbrainz.org/doc/Artist
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P434
+translations:
+  ru:
+    name: Идентификатор исполнителя в MusicBrainz

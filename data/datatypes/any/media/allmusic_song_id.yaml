@@ -1,0 +1,28 @@
+id: allmusic_song_id
+name: AllMusic song ID
+status: draft
+doc: 'Identifier of a song in the AllMusic database: the letters mt and ten digits. The two-letter prefix
+  tells the kind of entry.'
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^mt\d{10}$
+examples:
+- value: mt0045598310
+  description: Gangnam Style
+- value: mc0002373040
+  valid: false
+  description: AllMusic composition ID (allmusic_composition_id)
+mappings:
+  wikidata: P1730
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/AllMusic
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1730
+translations:
+  ru:
+    name: Идентификатор песни в AllMusic

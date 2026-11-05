@@ -1,8 +1,11 @@
 id: imdb_id
 name: IMDb ID
 status: draft
-doc: 'Identifier of a page in the Internet Movie Database: a two-letter prefix and at least seven digits.
-  tt is a title, nm a person, co a company, ev an event, ch a character and ni a news item.'
+doc: 'Identifier of a page in the Internet Movie Database: a two-letter prefix and seven or eight digits.
+  tt is a title (film, series, episode or game), nm a person or group, co a company, ev an event, ch a
+  character and ni a news item. An event edition adds the year, as in ev0000003/2015. Some datasets store
+  title IDs without the tt prefix, as the digits only (MovieLens writes 0114709 for tt0114709); the regexp
+  does not accept that form.'
 categories:
 - media
 - objectids
@@ -10,14 +13,25 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^(?:tt|nm|co|ev|ch|ni)\d{7,8}$
+regexp: ^(?:(?:tt|nm|co|ch|ni)\d{7,8}|ev\d{7}(?:/(?:19|20)\d{2}(?:/[12])?)?)$
 examples:
+- value: tt0068646
+  description: The Godfather
+- value: tt0114709
+  description: Toy Story
+- value: nm1397313
+  description: The Beatles
 - value: co0071326
   description: Lucasfilm
 - value: ch0000985
   description: Harry Potter
+- value: ev0000003/2015
+  description: 87th Academy Awards
 - value: ni61008607
   description: ‘Captain Marvel’ Finds Directors in Anna Boden, Ryan Fleck (EXCLUSIVE)
+- value: 0114709
+  valid: false
+  description: Toy Story without the tt prefix, as in the MovieLens links file
 mappings:
   wikidata: P345
 links:
@@ -27,3 +41,8 @@ links:
   url: https://developer.imdb.com/documentation/key-concepts
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P345
+translations:
+  ru:
+    name: Идентификатор IMDb
+    doc: Идентификатор страницы в Internet Movie Database из двухбуквенного префикса (tt, nm, co, ev,
+      ch, ni) и семи или восьми цифр.
