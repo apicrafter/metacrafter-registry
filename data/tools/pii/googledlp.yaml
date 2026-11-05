@@ -30,6 +30,7 @@ supported_types:
 - espassport
 - euvat
 - fi_hetu
+- fqdn
 - frcni
 - frnir
 - frpassport
@@ -64,6 +65,7 @@ supported_types:
 - usdeanumber
 - usdriverlic
 - usein
+- user_agent
 - usitin
 - usnpi
 - uspassport

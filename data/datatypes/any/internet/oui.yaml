@@ -25,3 +25,7 @@ links:
   url: https://en.wikipedia.org/wiki/Organizationally_unique_identifier
 - type: doc
   url: https://standards.ieee.org/products-programs/regauth/
+translations:
+  ru:
+    name: Уникальный идентификатор организации (OUI)
+    doc: 24-битный номер, который IEEE выдаёт производителю; он образует первые три октета MAC-адресов.

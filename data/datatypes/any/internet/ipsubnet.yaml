@@ -1,9 +1,35 @@
 id: ipsubnet
-name: IPv4 or IPv6 subnet
-status: draft
-doc: Subnetwork of IPv4 or IPv6 addresses
+name: IP network prefix (IPv4 or IPv6 subnet)
+status: stable
+doc: 'Block of IPv4 or IPv6 addresses in CIDR notation: an address, a slash and the length of the prefix
+  in bits, as in 192.0.2.0/24 or 2001:db8::/32 (RFC 4632, RFC 4291). Routing tables, firewall rules, WHOIS
+  records and IP geolocation data use it. Use this record for columns that mix both versions; ipv4subnet
+  and ipv6subnet describe each form. The regexp does not require the host bits to be zero, so the interface
+  notation 192.0.2.1/24 also matches.'
 categories:
 - internet
 langs:
 - common
 is_pii: true
+classification: identifier
+regexp: ^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3}/(?:3[0-2]|[12]?[0-9])|(?:(?:[0-9A-Fa-f]{1,4}:){6}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|::(?:[0-9A-Fa-f]{1,4}:){5}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){4}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){3}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){2}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}:(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(?:(?:[0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)/(?:12[0-8]|1[01][0-9]|[1-9]?[0-9]))$
+examples:
+- value: 192.0.2.0/24
+  description: IPv4 documentation range (RFC 5737)
+- value: 2001:db8::/32
+  description: IPv6 documentation prefix (RFC 3849)
+- value: 192.0.2.0
+  valid: false
+  description: No prefix length
+- value: 192.0.2.0/33
+  valid: false
+  description: An IPv4 prefix length is at most 32
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc4632
+translations:
+  ru:
+    name: IP-подсеть (префикс IPv4 или IPv6)
+    doc: 'Блок IPv4- или IPv6-адресов в нотации CIDR: адрес, косая черта и длина префикса, например 192.0.2.0/24.'

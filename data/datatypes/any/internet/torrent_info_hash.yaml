@@ -34,3 +34,7 @@ links:
   url: https://www.bittorrent.org/beps/bep_0009.html
 - type: doc
   url: https://www.bittorrent.org/beps/bep_0052.html
+translations:
+  ru:
+    name: Хеш info торрента (BTIH)
+    doc: 'Идентификатор торрента: SHA-1-хеш словаря info файла .torrent, 40 шестнадцатеричных цифр.'

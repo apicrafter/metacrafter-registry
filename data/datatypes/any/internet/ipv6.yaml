@@ -1,9 +1,13 @@
 id: ipv6
-name: Internet Protocol version 6 (IPv6)
-status: draft
-doc: Internet Protocol version 6 (IPv6) is the most recent version of the Internet Protocol (IP), the
-  communications protocol that provides an identification and location system for computers on networks
-  and routes traffic across the Internet.
+name: IPv6 address
+status: stable
+doc: 128-bit address of Internet Protocol version 6, written as eight groups of up to four hexadecimal
+  digits separated by colons (RFC 4291, section 2.2). One run of zero groups may be shortened to ::, and
+  the last 32 bits may be written as an IPv4 address, as in ::ffff:192.0.2.128. RFC 5952 recommends lowercase
+  and the shortest form, but data also holds full and uppercase forms, and the regexp accepts all of them.
+  It does not accept a zone index (fe80::1%eth0) or a prefix length. 2001:db8::/32 is reserved for documentation
+  (RFC 3849).
+parent: ipaddr
 categories:
 - internet
 - pii
@@ -11,8 +15,39 @@ langs:
 - common
 is_pii: true
 classification: identifier
+regexp: ^(?:(?:[0-9A-Fa-f]{1,4}:){6}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|::(?:[0-9A-Fa-f]{1,4}:){5}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){4}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){3}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){2}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}:(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(?:(?:[0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)$
+examples:
+- value: 2001:db8::1
+  description: Shortest form, documentation prefix (RFC 3849)
+- value: 2001:0db8:0000:0000:0000:ff00:0042:8329
+  description: Full form with leading zeros
+- value: ::ffff:192.0.2.128
+  description: IPv4-mapped address
+- value: ::1
+  description: Loopback address
+- value: 2001:db8::1::2
+  valid: false
+  description: ':: used twice'
+- value: 2001:db8:0:0:0:0:0:0:1
+  valid: false
+  description: Nine groups
+- value: 2001:db8::/32
+  valid: false
+  description: A prefix, not an address
 mappings:
   autotype: ipv6
   cdm: means.identity.IP6Address
   purview: IP Address v6
   fta: IPADDRESS.IPV6
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/IPv6_address
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc4291#section-2.2
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc5952
+translations:
+  ru:
+    name: IPv6-адрес
+    doc: '128-битный адрес протокола IPv6: восемь групп шестнадцатеричных цифр через двоеточие, допускается
+      сокращение ::.'

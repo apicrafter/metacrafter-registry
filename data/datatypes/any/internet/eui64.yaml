@@ -1,0 +1,41 @@
+id: eui64
+name: EUI-64 identifier
+status: draft
+doc: '64-bit Extended Unique Identifier of the IEEE: an OUI or a longer company identifier followed by
+  an extension that the organization assigns. IEEE 802.15.4 networks such as Zigbee and Thread, FireWire
+  and InfiniBand use it as a hardware address, and IPv6 can derive interface identifiers from it. It is
+  written as eight pairs of hexadecimal digits separated by hyphens or colons; a MAC address (EUI-48)
+  has six pairs and is described by mac_address. RFC 9542 reserves 00-00-5E-EF-10-00-00-00 to 00-00-5E-EF-10-00-00-FF
+  for documentation.'
+categories:
+- internet
+- identifiers
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^(?:[0-9A-Fa-f]{2}(?:-[0-9A-Fa-f]{2}){7}|[0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){7})$
+examples:
+- value: 00-00-5E-EF-10-00-00-01
+  description: Documentation value of RFC 9542
+- value: 00:00:5e:ef:10:00:00:ff
+  description: Documentation value of RFC 9542 with colons
+- value: 00-00-5E-FF-FE-00-53-01
+  description: EUI-48-derived documentation value of RFC 9542
+- value: 00-00-5E-00-53-01
+  valid: false
+  description: 'Six octets: a MAC address (EUI-48)'
+- value: 00-00-5E-EF-10-00-00
+  valid: false
+  description: Seven octets
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/MAC_address
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc9542
+- type: doc
+  url: https://standards.ieee.org/wp-content/uploads/import/documents/tutorials/eui.pdf
+translations:
+  ru:
+    name: Идентификатор EUI-64
+    doc: '64-битный расширенный уникальный идентификатор IEEE: восемь пар шестнадцатеричных цифр.'

@@ -117,7 +117,7 @@ def test_manifest_hashes_cover_bulk_files(built_site):
 def test_search_index(built_site):
     index = load(built_site, "search-index.json")
     email = next(e for e in index if e["id"] == "email")
-    assert "почта" in email["t"].lower()
+    assert "электронной почты" in email["t"].lower()
     assert len(index) == len(load(built_site, "api/v1/datatypes.json"))
 
 

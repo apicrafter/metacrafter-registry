@@ -6,6 +6,7 @@ doc: Persistent, location-independent name in the urn URI scheme, defined by RFC
   and hyphens long, such as isbn, uuid or ietf. The namespace-specific string (NSS) follows the rules
   of that namespace. The urn prefix is case-insensitive. A URN names a resource; it does not say where
   to retrieve it.
+parent: uri
 categories:
 - internet
 langs:
@@ -35,3 +36,7 @@ links:
   url: https://www.rfc-editor.org/rfc/rfc8141
 - type: doc
   url: https://www.iana.org/assignments/urn-namespaces/urn-namespaces.xhtml
+translations:
+  ru:
+    name: Унифицированное имя ресурса (URN)
+    doc: Постоянное имя ресурса в схеме urn (RFC 8141) вида urn:<пространство имён>:<строка>.

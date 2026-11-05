@@ -1,0 +1,37 @@
+id: uri_scheme
+name: URI scheme
+status: draft
+doc: 'Name of a URI scheme, the part of a URI before the first colon, such as http, https, mailto, urn
+  or data. It starts with a letter followed by letters, digits, +, - or ., and is case-insensitive, with
+  lowercase as the canonical form (RFC 3986, section 3.1). IANA keeps the registry of permanent, provisional
+  and historical schemes (RFC 7595). The record has no regexp: the syntax matches almost any word.'
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: https
+  description: Hypertext Transfer Protocol Secure
+- value: mailto
+  description: Email address
+- value: urn
+  description: Uniform Resource Name
+- value: coap+tcp
+  description: Constrained Application Protocol over TCP
+mappings:
+  wikidata: P4742
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_URI_schemes
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4742
+- type: doc
+  url: https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc3986#section-3.1
+translations:
+  ru:
+    name: Схема URI
+    doc: Название схемы URI — часть до первого двоеточия, например https, mailto или urn.
