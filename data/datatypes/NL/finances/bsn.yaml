@@ -1,12 +1,16 @@
 id: bsn
-name: Burgerservicenummer op veldnaam
+name: Dutch citizen service number (BSN)
 status: stable
-doc: NL datatype for 'Burgerservicenummer op veldnaam' (bsn) from rules in context 'finances'. The Burgerservicenummer
-  (BSN) is a unique 9-digit personal identification number assigned to every Dutch citizen and resident.
-  It is used for identification in interactions with government agencies, healthcare providers, and for
-  tax purposes. The BSN replaced the former Social Security Number (SoFi-nummer) in 2007. It consists
-  of exactly 9 digits and uses an 11-proef (11-check) algorithm for validation.
+doc: Burgerservicenummer (BSN), the personal number of everyone registered in the Dutch population register
+  (BRP). It replaced the sofinummer in 2007 and keeps its numbers. The government uses it to identify
+  a person in contacts with public bodies, the tax service, healthcare and education. The Rijksdienst
+  voor Identiteitsgegevens (RvIG) issues the numbers, which carry no information about the person. A BSN
+  has nine digits and passes the 11-proef (elfproef). The first eight digits are weighted 9 down to 2
+  and the last one -1, and the sum must be divisible by 11. Systems that store it as a number drop the
+  leading zero, so 8-digit values occur; they are checked with the zero restored.
 categories:
+- pii
+- persons
 - finances
 country:
 - NL
@@ -14,14 +18,21 @@ langs:
 - nl
 is_pii: true
 classification: identifier
-regexp: ^[0-9]{9}$
+regexp: ^\d{8,9}$
+checksum: nl_bsn
 examples:
-- value: '123456782'
-  description: Dutch BSN (Burgerservicenummer) with 9 digits
-- value: '987654321'
-  description: Another valid Dutch BSN format
-- value: '111222333'
-  description: Example Dutch BSN number
+- value: '999990068'
+  description: Test person of the RvIG test environment
+- value: '999994931'
+  description: Test person of the RvIG test environment
+- value: '999999990'
+  description: Personal number on the RvIG specimen passport of 2014
+- value: '999990069'
+  valid: false
+  description: The RvIG test number 999990068 with a wrong last digit
+- value: '9999900681'
+  valid: false
+  description: Ten digits
 mappings:
   google_dlp: NETHERLANDS_BSN_NUMBER
   purview:
@@ -35,9 +46,21 @@ links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Burgerservicenummer
 - type: doc
-  url: https://www.rijksoverheid.nl/onderwerpen/identificatie-en-reisdocumenten/vraag-en-antwoord/wat-is-het-burgerservicenummer-bsn
+  url: https://www.rijksoverheid.nl/onderwerpen/privacy-en-persoonsgegevens/burgerservicenummer-bsn
+- type: doc
+  url: https://www.rvig.nl/sites/default/files/2023-12/Logisch%20Ontwerp%20BSN%202024.Q1.pdf
+- type: doc
+  url: https://rvig.nl/sites/default/files/2025-05/Aansluiting%20testen%20en%20toetsen%20BSN.pdf
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-netherlands-citizens-service-number
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.nl.bsn.html
 translations:
-  en:
-    name: Citizen Service Number (BSN)
   nl:
     name: Burgerservicenummer (BSN)
+    doc: Persoonsnummer van iedereen die in de BRP is ingeschreven; negen cijfers die aan de elfproef
+      voldoen. Opvolger van het sofinummer sinds 2007.
+  ru:
+    name: Номер гражданина Нидерландов (BSN)
+    doc: Персональный номер каждого, кто зарегистрирован в базе населения BRP; девять цифр, проходящих
+      проверку 11-proef. С 2007 года заменил sofinummer.

@@ -1,0 +1,45 @@
+id: nl_buurt_code
+name: Dutch neighbourhood code (CBS buurtcode)
+status: draft
+doc: Code of a neighbourhood (buurt) in the Wijk- en Buurtkaart of Statistics Netherlands (CBS), BU followed
+  by eight characters, the 4-digit municipality code (nl_municipality_code), the 2-character district
+  number (nl_wijk_code) and a 2-digit neighbourhood number, as in BU05990110 for Stadsdriehoek in Rotterdam.
+  In 2026 only Amsterdam uses letters in the district part, as in BU0363AA01. CBS open data table 86358NED
+  lists the codes of 2026.
+categories:
+- geo
+- government
+country:
+- NL
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^BU\d{4}[0-9A-Z]{2}\d{2}$
+examples:
+- value: BU05990110
+  description: Stadsdriehoek, Rotterdam
+- value: BU03440111
+  description: Welgelegen, Den Hommel, Utrecht
+- value: BU0363AA01
+  description: Planciusbuurt-Noord, Amsterdam
+- value: WK059901
+  valid: false
+  description: A district code (nl_wijk_code)
+- value: BU0363AA0A
+  valid: false
+  description: The neighbourhood number has a letter
+links:
+- type: doc
+  url: https://www.cbs.nl/nl-nl/faq/regionale-en-ruimtelijke-statistieken/regionale-indelingen/krijgen-wijken-en-buurten-in-nieuwe-gemeenten-ook-nieuwe-codes-
+- type: doc
+  url: https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/informatie-voor-gemeenten/codering-gebieden
+- type: other
+  url: https://opendata.cbs.nl/ODataApi/odata/86358NED/WijkenEnBuurten
+translations:
+  nl:
+    name: Buurtcode (CBS)
+    doc: BU gevolgd door de gemeentecode, het wijknummer en een buurtnummer van twee cijfers, zoals BU05990110.
+  ru:
+    name: Код квартала Нидерландов (CBS)
+    doc: BU, код муниципалитета, номер района и двузначный номер квартала, например BU05990110.

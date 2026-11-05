@@ -1,11 +1,11 @@
 id: kvk
-name: KvK-nummer op veldnaam
+name: Dutch Chamber of Commerce number (KVK-nummer)
 status: stable
-doc: NL datatype for 'KvK-nummer op veldnaam' (kvk) from rules in context 'companies'. The KvK-nummer
-  (Kamer van Koophandel nummer) is a unique 8-digit registration number assigned to businesses and organizations
-  in the Netherlands by the Chamber of Commerce (Kamer van Koophandel). Every business entity registered
-  in the Netherlands receives a KvK number, which is used for official identification and registration
-  purposes. The number consists of exactly 8 digits, sometimes with leading zeros.
+doc: KVK-nummer, the eight-digit number that the Netherlands Chamber of Commerce (Kamer van Koophandel,
+  KVK) gives to every company, legal entity and other organisation registered in the Business Register
+  (Handelsregister). An organisation has one KVK number; each of its locations (vestigingen) has a separate
+  12-digit vestigingsnummer (nl_kvk_vestigingsnummer), and a legal entity also gets an RSIN (rsin). KVK
+  publishes no check-digit rule. The Wikidata format constraint also accepts seven digits.
 categories:
 - companies
 country:
@@ -14,26 +14,40 @@ langs:
 - nl
 is_pii: false
 classification: identifier
-regexp: ^[0-9]{8}$
+regexp: ^\d{8}$
 examples:
-- value: '12345678'
-  description: Dutch KvK number with 8 digits
-- value: '01234567'
-  description: Dutch KvK number with leading zero
-- value: '87654321'
-  description: Another valid Dutch KvK number format
+- value: '68750110'
+  description: Fictitious BV of the KVK API test environment
+- value: '69599084'
+  description: Fictitious eenmanszaak of the KVK API test environment
+- value: '59581883'
+  description: Example of the KVK Zoeken API specification
+- value: '687501101'
+  valid: false
+  description: Nine digits, the length of an RSIN
+- value: 000038509504
+  valid: false
+  description: A 12-digit vestigingsnummer of the KVK test environment
 mappings:
   orgid: NL-KVK
   wikidata: P3220
 links:
+- type: doc
+  url: https://www.kvk.nl/over-het-handelsregister/kvk-nummer-alles-wat-je-moet-weten/
+- type: doc
+  url: https://developers.kvk.nl/documentation/testing
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Kamer_van_Koophandel
-- type: doc
-  url: https://www.kvk.nl/
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P3220
+- type: other
+  url: https://org-id.guide/list/NL-KVK
 translations:
   en:
-    name: Chamber of Commerce Number (KvK)
+    name: Chamber of Commerce number (KVK)
   nl:
-    name: KvK-nummer (Kamer van Koophandel nummer)
+    name: KVK-nummer
+    doc: Achtcijferig nummer van een organisatie in het Handelsregister van de Kamer van Koophandel.
+  ru:
+    name: Номер Торговой палаты Нидерландов (KVK)
+    doc: Восьмизначный номер организации в Торговом реестре (Handelsregister) Торговой палаты Нидерландов.

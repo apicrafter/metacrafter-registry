@@ -1,0 +1,45 @@
+id: nl_oin
+name: Dutch organisation identification number (OIN)
+status: draft
+doc: Organisatie-identificatienummer (OIN), the 20-digit number that identifies a government organisation
+  or another party in Dutch government data exchange (Digikoppeling) and in PKIoverheid certificates.
+  Logius keeps the register. An OIN is an 8-digit prefix naming the source register, the main number from
+  that register and zeros up to 20 digits. The prefixes are 00000001 RSIN, 00000002 Fi-nummer, 00000003
+  KVK number (preferred for new OINs), 00000004 sub-OIN, 00000006 main number issued by Logius, 00000007
+  BRIN, 00000008 foreign organisation, 00000009 UZI, 00000010 TRR-BD of the tax service, and 00000099
+  test OINs.
+categories:
+- government
+- companies
+country:
+- NL
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:000000(?:0[1-46-9]|10)|00000099)\d{12}$
+examples:
+- value: '00000001002220647000'
+  description: Gemeente Utrecht, built from its RSIN
+- value: 00000004194049711000
+  description: Logius (Digilevering Integrator), a sub-OIN
+- value: 00000008823631400000
+  description: A foreign organisation (Deloitte Global Tax Center Europe)
+- value: '00000005002220647000'
+  valid: false
+  description: Prefix 00000005 is not assigned
+- value: '0000000100222064700'
+  valid: false
+  description: 19 digits
+links:
+- type: doc
+  url: https://gitdocumentatie.logius.nl/publicatie/dk/oin/2.2.2/
+translations:
+  nl:
+    name: Organisatie-identificatienummer (OIN)
+    doc: Twintigcijferig nummer van een organisatie in Digikoppeling en PKIoverheid - een prefix van acht
+      cijfers voor het bronregister, het hoofdnummer en nullen.
+  ru:
+    name: Идентификационный номер организации Нидерландов (OIN)
+    doc: Двадцатизначный номер организации в государственном обмене данными (Digikoppeling) и сертификатах
+      PKIoverheid - восьмизначный префикс реестра-источника, номер из этого реестра и нули.

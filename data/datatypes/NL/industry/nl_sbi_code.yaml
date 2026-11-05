@@ -1,0 +1,48 @@
+id: nl_sbi_code
+name: Dutch standard industrial classification code (SBI)
+status: draft
+doc: Code of the Standaard Bedrijfsindeling (SBI), the classification of economic activities of Statistics
+  Netherlands (CBS), which the Chamber of Commerce (KVK) also uses to record the activities of businesses.
+  Sections are letters; divisions, groups, classes and subclasses have two to five digits, which CBS writes
+  with dots, as in 62.10.0. The first two digits follow the UN ISIC classification and the first four
+  NACE (eu_nace), with a few exceptions; the fifth digit adds Dutch subclasses. SBI 2025 follows NACE
+  Rev. 2.1 and gives four-digit classes without a subclass a fifth digit 0. KVK uses SBI 2025 since 6
+  September 2025, and CBS moves its statistics to it from 2026; the older SBI 2008 codes stay in many
+  data sets.
+categories:
+- industry
+country:
+- NL
+langs:
+- nl
+is_pii: false
+classification: categorical
+regexp: ^(?:[A-V]|\d{2}(?:\.\d(?:\d(?:\.\d)?)?)?|\d{3,5})$
+examples:
+- value: 62.10.0
+  description: 'SBI 2025: computer programming activities'
+- value: 43.31.0
+  description: 'SBI 2025: plastering'
+- value: 64.19.1
+  description: 'SBI 2025: activities of cooperative banks'
+- value: 84.11.0
+  description: 'SBI 2025: general public administration activities'
+- value: 62.10.00
+  valid: false
+  description: Six digits
+links:
+- type: doc
+  url: https://www.cbs.nl/en-gb/our-services/methods/classifications/activiteiten/standard-industrial-classifications
+- type: doc
+  url: https://www.cbs.nl/en-gb/faq/sbi/sbi-2025-what-are-the-main-changes-
+- type: doc
+  url: https://www.kvk.nl/pers/nieuwe-sbi-codes-van-kracht-in-het-kvk-handelsregister/
+translations:
+  nl:
+    name: SBI-code (Standaard Bedrijfsindeling)
+    doc: Code van de Standaard Bedrijfsindeling van het CBS, tot vijf cijfers, zoals 62.10.0; de eerste
+      vier cijfers volgen NACE.
+  ru:
+    name: Код отраслевого классификатора Нидерландов (SBI)
+    doc: Код классификатора видов экономической деятельности CBS (Standaard Bedrijfsindeling), до пяти
+      цифр, например 62.10.0; первые четыре цифры соответствуют NACE.

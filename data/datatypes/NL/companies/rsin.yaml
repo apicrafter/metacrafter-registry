@@ -1,12 +1,43 @@
 id: rsin
-name: RSIN op veldnaam
+name: Dutch legal entity information number (RSIN)
 status: draft
-doc: NL datatype for 'RSIN op veldnaam' (rsin) from rules in context 'companies'.
+doc: Rechtspersonen en Samenwerkingsverbanden Informatienummer (RSIN), the nine-digit number that a legal
+  entity or partnership gets automatically when it registers with the Netherlands Chamber of Commerce
+  (KVK), next to its KVK number. It is the counterpart of the citizen service number (bsn) for organisations;
+  sole proprietorships (eenmanszaken) get none and use the owner's BSN. Before 2010 the tax service called
+  it the Fi-nummer. The tax service builds the older VAT number (omzetbelastingnummer) and the payroll
+  tax number from it. A company with an RSIN that files its own customs declarations composes its EORI
+  number as NL followed by the RSIN (nl_eori). python-stdnum checks the RSIN part of a btw-nummer with
+  the BSN 11-proef, but no official source publishes a check digit for the RSIN.
 categories:
 - companies
+- finances
 country:
 - NL
 langs:
 - nl
 is_pii: false
 classification: identifier
+regexp: ^\d{9}$
+examples:
+- value: '823807071'
+  description: Example of the KVK Zoeken API specification
+- value: '002220647'
+  description: Gemeente Utrecht, the RSIN in its published OIN 00000001002220647000
+- value: '68750110'
+  valid: false
+  description: Eight digits, the length of a KVK number
+links:
+- type: doc
+  url: https://ondernemersplein.overheid.nl/rsin-voor-uw-onderneming/
+- type: doc
+  url: https://developers.kvk.nl/cms/api/uploads/api_zoeken.yaml
+translations:
+  nl:
+    name: RSIN
+    doc: Negencijferig informatienummer dat een rechtspersoon of samenwerkingsverband bij inschrijving
+      bij de KVK krijgt; vroeger het fi-nummer.
+  ru:
+    name: Информационный номер юридического лица Нидерландов (RSIN)
+    doc: Девятизначный номер, который юридическое лицо или товарищество получает при регистрации в Торговой
+      палате (KVK); до 2010 года назывался Fi-nummer.

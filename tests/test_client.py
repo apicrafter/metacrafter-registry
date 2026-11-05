@@ -44,6 +44,9 @@ from metacrafter_registry.checksums import (
     it_iva,
     kz_iin_bin,
     luhn,
+    nl_bsn,
+    nl_btw,
+    nl_onderwijsnummer,
     no_fnr,
     pl_nip,
     ru_inn,
@@ -159,6 +162,17 @@ def test_checksum_reference_values():
     assert be_mod97("591-2010999-97")  # remainder 0 gives 97
     assert be_mod97("+++090/9337/55493+++") and be_mod97("+++010/8068/17183+++")
     assert not be_mod97("000-0011032-25") and not be_mod97("010/8068/17180")
+    # Reference values from the python-stdnum documentation.
+    assert nl_bsn("1112.22.333") and nl_bsn("111222333") and not nl_bsn("1112.52.333")
+    assert not nl_bsn("000000000") and not nl_bsn("1112223334")
+    # RvIG test persons and the specimen number; 123456789 "is geen BSN".
+    assert nl_bsn("999990068") and nl_bsn("999999990") and not nl_bsn("123456789")
+    assert nl_bsn("12345672") and nl_bsn("012345672")  # leading zero dropped
+    assert nl_onderwijsnummer("1012.22.331") and not nl_onderwijsnummer("100252333")
+    assert not nl_onderwijsnummer("111222333")  # a BSN, does not start with 10
+    assert nl_btw("NL004495445B01") and nl_btw("004495445B01") and not nl_btw("123456789B90")
+    assert nl_btw("NL002455799B11")  # MOD 97-10, issued since 2020
+    assert not nl_btw("NL004495445B00") and not nl_btw("NL004495445")
 
 
 def test_crypto_checksum_reference_values():

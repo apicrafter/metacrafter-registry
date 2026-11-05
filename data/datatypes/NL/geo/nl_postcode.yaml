@@ -1,8 +1,11 @@
 id: nl_postcode
 name: Dutch postal code
-status: draft
-doc: 'Postcode in the Netherlands: four digits, the first not 0, followed by two capital letters and normally
-  separated from them by a space. The letter pairs SA, SD and SS are not used.'
+status: stable
+doc: 'Postcode in the Netherlands: four digits, the first not 0, a space and two capital letters, from
+  1000 AA upwards. The letter pairs SA, SD and SS are not used because of their association with Nazi
+  Germany. The letters F, I, O, Q, U and Y were left out at first but are now used. The digits 0000-0999
+  are kept for the Caribbean Netherlands and are not in use. A full postcode covers a part of a street,
+  so with a house number it identifies an address.'
 parent: postindex
 categories:
 - geo
@@ -12,15 +15,23 @@ langs:
 - nl
 is_pii: true
 classification: categorical
-regexp: ^[1-9]\d{3} ?[A-Z]{2}$
+regexp: ^[1-9]\d{3} ?(?!SA|SD|SS)[A-Z]{2}$
 examples:
+- value: 2601 DC
+  description: python-stdnum reference value
 - value: 3443 BX
-  description: Synthetic number in the documented format
-- value: 8205 WZ
-  description: Synthetic number in the documented format
-- value: 3443BX7
+  description: Synthetic postcode
+- value: 8205WZ
+  description: Synthetic postcode written without the space
+- value: 2611 SS
   valid: false
-  description: One character too many
+  description: SS is not used (python-stdnum reference value)
+- value: 26112 ET
+  valid: false
+  description: Five digits (python-stdnum reference value)
+- value: 0123 AB
+  valid: false
+  description: The first digit is 0
 mappings:
   fta: POSTAL_CODE.POSTAL_CODE_NL
 links:
@@ -35,3 +46,8 @@ links:
 translations:
   nl:
     name: Postcode
+    doc: Vier cijfers (de eerste geen 0), een spatie en twee hoofdletters; de combinaties SA, SD en SS
+      worden niet gebruikt.
+  ru:
+    name: Почтовый индекс Нидерландов
+    doc: Четыре цифры (первая не 0), пробел и две заглавные буквы; сочетания SA, SD и SS не используются.

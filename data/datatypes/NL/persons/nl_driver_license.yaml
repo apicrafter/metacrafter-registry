@@ -1,7 +1,9 @@
 id: nl_driver_license
 name: Dutch driver's license number
 status: draft
-doc: Number of a driving licence issued in the Netherlands. Microsoft Purview looks for ten digits.
+doc: Document number of a driving licence (rijbewijs) issued in the Netherlands by the RDW, ten digits
+  printed in field 5 of the card. Microsoft Purview looks for ten digits without spaces or delimiters
+  and no check digit.
 parent: driver_license
 categories:
 - pii
@@ -13,6 +15,12 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^\d{10}$
+examples:
+- value: '6236186433'
+  description: Number of the RDW specimen driving licence, model 2025
+- value: '623618643'
+  valid: false
+  description: Nine digits
 mappings:
   purview:
   - Netherlands drivers license number
@@ -20,3 +28,14 @@ mappings:
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-netherlands-drivers-license-number
+- type: doc
+  url: https://www.knv.nl/wp-content/uploads/2025/06/Nieuw-rijbewijs-model-2025_RDW.pdf
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Rijbewijs
+translations:
+  nl:
+    name: Rijbewijsnummer
+    doc: Documentnummer van een Nederlands rijbewijs, tien cijfers in veld 5.
+  ru:
+    name: Номер водительского удостоверения Нидерландов
+    doc: Номер нидерландского водительского удостоверения - десять цифр в поле 5.

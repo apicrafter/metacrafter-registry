@@ -22,3 +22,11 @@ mappings:
 links:
 - type: other
   url: https://org-id.guide/list/NL-OWMS
+translations:
+  nl:
+    name: OWMS-identificatie van een overheidsorganisatie
+    doc: Laatste deel van de URI van een overheidsorganisatie in de waardelijsten van de Overheid.nl Web
+      Metadata Standaard (OWMS).
+  ru:
+    name: Идентификатор государственной организации Нидерландов (OWMS)
+    doc: Последняя часть URI государственной организации в списках стандарта метаданных Overheid.nl (OWMS).

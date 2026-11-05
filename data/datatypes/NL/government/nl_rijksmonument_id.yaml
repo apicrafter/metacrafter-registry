@@ -1,0 +1,40 @@
+id: nl_rijksmonument_id
+name: Dutch national monument number (rijksmonumentnummer)
+status: draft
+doc: Number of a national monument (rijksmonument) in the register of the Cultural Heritage Agency of
+  the Netherlands (Rijksdienst voor het Cultureel Erfgoed, RCE); Wikidata expects one to six digits. The
+  monument register shows a monument at https://monumentenregister.cultureelerfgoed.nl/monumenten/ followed
+  by the number. Complexes of monuments have their own numbers (Wikidata P7135).
+categories:
+- government
+- realestate
+country:
+- NL
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,6}$
+examples:
+- value: '19264'
+  description: Example of Wikidata
+- value: '530906'
+  description: Example of Wikidata
+- value: '5309061'
+  valid: false
+  description: Seven digits
+mappings:
+  wikidata: P359
+links:
+- type: doc
+  url: https://monumentenregister.cultureelerfgoed.nl/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P359
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Rijksmonument
+translations:
+  nl:
+    name: Rijksmonumentnummer
+  ru:
+    name: Номер памятника национального значения Нидерландов (rijksmonument)
+    doc: Номер памятника в реестре Государственной службы культурного наследия Нидерландов (RCE).

@@ -47,6 +47,7 @@ supported_types:
 - mynumber
 - nhsnumber
 - nif
+- nl_passport
 - no_fodselsnummer
 - npi
 - nric

@@ -1,0 +1,33 @@
+id: nl_bag_woonplaats_code
+name: Dutch BAG place code (woonplaatscode)
+status: draft
+doc: Four-digit code of a place (woonplaats) in the Dutch register of addresses and buildings (BAG), from
+  0001 to 9999, as in 3594 for Amsterdam. A woonplaats is the named place of an address and is not the
+  same as a municipality, which can contain several places.
+categories:
+- geo
+country:
+- NL
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?!0000)\d{4}$
+examples:
+- value: '3594'
+  description: Amsterdam
+- value: '35940'
+  valid: false
+  description: Five digits
+mappings:
+  wikidata: P981
+links:
+- type: doc
+  url: https://imbag.github.io/catalogus/hoofdstukken/attributen--relaties
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P981
+translations:
+  nl:
+    name: Woonplaatscode (BAG)
+  ru:
+    name: Код населённого пункта в реестре BAG (Нидерланды)

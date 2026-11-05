@@ -1,0 +1,37 @@
+id: nl_cbs_province_code
+name: Dutch province code (CBS)
+status: draft
+doc: Code of a Dutch province used by Statistics Netherlands (CBS) in its regional tables, PV and two
+  digits from PV20 (Groningen) to PV31 (Limburg). The other provinces are PV21 Fryslân, PV22 Drenthe,
+  PV23 Overijssel, PV24 Flevoland, PV25 Gelderland, PV26 Utrecht, PV27 Noord-Holland, PV28 Zuid-Holland,
+  PV29 Zeeland and PV30 Noord-Brabant. The ISO 3166-2 codes are the pattern nl_province_code.
+semantic_type: nl_province
+country:
+- NL
+langs:
+- common
+regexp: ^PV(?:2\d|3[01])$
+examples:
+- value: PV27
+  description: Noord-Holland
+- value: PV20
+  description: Groningen
+- value: PV31
+  description: Limburg
+- value: PV32
+  valid: false
+  description: Not a province code
+- value: NL-NH
+  valid: false
+  description: An ISO 3166-2 code (nl_province_code)
+links:
+- type: doc
+  url: https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/informatie-voor-gemeenten/codering-gebieden
+- type: other
+  url: https://opendata.cbs.nl/ODataApi/odata/86247NED
+translations:
+  nl:
+    name: Provinciecode (CBS)
+  ru:
+    name: Код провинции Нидерландов (CBS)
+    doc: Код провинции в таблицах статистического бюро CBS, от PV20 (Гронинген) до PV31 (Лимбург).

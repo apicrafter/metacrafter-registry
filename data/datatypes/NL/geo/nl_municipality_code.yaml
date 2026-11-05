@@ -1,8 +1,12 @@
 id: nl_municipality_code
 name: Dutch municipality code (CBS)
-status: draft
+status: stable
 doc: Four-digit code of a Dutch municipality assigned by Statistics Netherlands (CBS), often written with
-  the prefix GM, for example GM0363 for Amsterdam. Codes of merged municipalities are not reused.
+  the prefix GM, as in GM0363 for Amsterdam. CBS never reuses a whole code; a municipality created by
+  a merger or renamed gets a new code that starts with 1, which may repeat the last three digits of an
+  abolished municipality (1892 Zuidplas, from 0892). The code is the first four digits of the CBS district
+  (nl_wijk_code) and neighbourhood (nl_buurt_code) codes; BAG identifiers (nl_bag_id) start with the code
+  of the municipality that assigned them.
 semantic_type: nl_municipality
 country:
 - NL
@@ -14,13 +18,22 @@ examples:
   description: Rotterdam
 - value: 0518
   description: '''s-Gravenhage (The Hague)'
+- value: GM0344
+  description: Utrecht
 - value: '363'
   valid: false
-  description: leading zero dropped
+  description: Leading zero dropped
+- value: WK036300
+  valid: false
+  description: A district code, not a municipality code
 mappings:
   wikidata: P382
   fta: STATE_PROVINCE.MUNICIPALITY_CODE_NL
 links:
+- type: doc
+  url: https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/informatie-voor-gemeenten/codering-gebieden
+- type: doc
+  url: https://www.cbs.nl/nl-nl/onze-diensten/methoden/classificaties/overig/gemeentelijke-indelingen-per-jaar/indeling-per-jaar/gemeentelijke-indeling-op-1-januari-2026
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Municipalities_of_the_Netherlands
 - type: wikidata
@@ -28,5 +41,11 @@ links:
 - type: other
   url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
 translations:
+  nl:
+    name: Gemeentecode (CBS)
+    doc: Viercijferige code van een gemeente van het CBS, vaak met het voorvoegsel GM, zoals GM0363 voor
+      Amsterdam.
   ru:
     name: Код муниципалитета Нидерландов (CBS)
+    doc: Четырёхзначный код муниципалитета, присвоенный статистическим бюро CBS, часто с префиксом GM,
+      например GM0363 (Амстердам).

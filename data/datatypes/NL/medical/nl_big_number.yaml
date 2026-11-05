@@ -1,0 +1,29 @@
+id: nl_big_number
+name: Dutch healthcare professional registration number (BIG-nummer)
+status: draft
+doc: BIG-nummer, the personal registration number of a healthcare professional, in the BIG register, which
+  the CIBG keeps for the Ministry of Health, Welfare and Sport under the Wet BIG (Wet op de beroepen in
+  de individuele gezondheidszorg). Dutch Wikipedia gives its length as 11 digits.
+categories:
+- medical
+- persons
+- pii
+country:
+- NL
+langs:
+- nl
+is_pii: true
+classification: identifier
+regexp: ^\d{11}$
+links:
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/BIG-register
+- type: doc
+  url: https://english.bigregister.nl/about-the-big-register
+translations:
+  nl:
+    name: BIG-nummer
+    doc: Persoonlijk registratienummer van een zorgverlener in het BIG-register van het CIBG.
+  ru:
+    name: Регистрационный номер медицинского работника Нидерландов (BIG)
+    doc: Личный номер медицинского работника в реестре BIG, который ведёт CIBG.
