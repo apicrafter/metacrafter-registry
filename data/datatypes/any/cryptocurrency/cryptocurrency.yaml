@@ -2,7 +2,7 @@ id: cryptocurrency
 name: Cryptocurrency name
 status: draft
 doc: Name of a cryptocurrency, such as Bitcoin, Ethereum, Litecoin or Monero, in English or another language.
-  A wallet address is the datatype crypto_address.
+  A ticker such as BTC is the datatype cryptocurrency_ticker, a wallet address is crypto_address.
 categories:
 - cryptocurrency
 - finances
@@ -23,6 +23,8 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Cryptocurrency
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q13479982
 - type: other
   url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
 translations:

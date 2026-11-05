@@ -1,16 +1,34 @@
 id: bip32addr
-name: BIP-32 key
+name: BIP-32 extended key (xpub, xprv)
 status: stable
-doc: The BIP-32 mainly describes the way of building the hierarchical deterministic wallet basing on the
-  BIP-39 features. What does it mean? BIP-32 is exactly explaining how the bitcoin master private key
-  and the master chain code is being created from delivered by BIP-39 bitcoin seed. The bitcoin seed generated
-  by BIP-39 is the base for generating deterministic and hierarchical deterministic wallets.
+doc: 'Extended public or private key of a hierarchical deterministic (HD) wallet in the serialization
+  of BIP-32: 4 version bytes, depth, fingerprint of the parent key, child number, 32-byte chain code and
+  33-byte key data, followed by a 4-byte checksum and encoded with Base58Check into 111 characters. Mainnet
+  keys start with xpub (public) or xprv (private), testnet keys with tpub or tprv. An xprv value is a
+  wallet secret that controls all funds below it; an xpub value reveals every address of its branch. Keys
+  with the prefixes of SLIP-132 (ypub, zpub and others) use the same structure but are not matched here.'
 categories:
 - cryptocurrency
+- secrets
 langs:
 - common
 is_pii: false
 classification: identifier
+regexp: ^[xt](?:pub|prv)[1-9A-HJ-NP-Za-km-z]{107}$
+checksum: base58check
+examples:
+- value: xpub661MyMwAqRbcFtXgS5sYJABqqG9YLmC4Q1Rdap9gSE8NqtwybGhePY2gZ29ESFjqJoCu1Rupje8YtGqsefD265TMg7usUDFdp6W1EGMcet8
+  description: BIP-32 test vector 1, extended public key of the master node (chain m)
+- value: xprv9s21ZrQH143K3QTDL4LXw2F7HEK3wJUD2nW2nRk4stbPy6cq3jPPqjiChkVvvNKmPGJxWUtg6LnF5kejMRNNU3TGtRBeJgk33yuGBxrMPHi
+  description: BIP-32 test vector 1, extended private key of the master node (chain m)
+- value: xpub661MyMwAqRbcFtXgS5sYJABqqG9YLmC4Q1Rdap9gSE8NqtwybGhePY2gZ29ESFjqJoCu1Rupje8YtGqsefD265TMg7usUDFdp6W1EGMcet9
+  valid: false
+  description: test vector with the last character changed, the checksum fails
 links:
+- type: doc
+  url: https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
 - type: other
-  url: https://allprivatekeys.com/bitcoin-address-format
+  url: https://en.bitcoin.it/wiki/BIP_0032
+translations:
+  ru:
+    name: Расширенный ключ BIP-32 (xpub, xprv)

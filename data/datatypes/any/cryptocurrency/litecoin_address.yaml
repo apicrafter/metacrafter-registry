@@ -1,0 +1,37 @@
+id: litecoin_address
+name: Litecoin address
+status: draft
+doc: Mainnet address of Litecoin. P2PKH addresses are Base58Check with version byte 48 and start with
+  L; P2SH addresses use version byte 50 and start with M; native SegWit addresses use the prefix ltc1
+  (Bech32 for witness version 0, Bech32m for Taproot). Older P2SH addresses with version byte 5 start
+  with 3 like Bitcoin's and are not matched, nor are MWEB addresses (ltcmweb1).
+parent: crypto_address
+categories:
+- cryptocurrency
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[LM][1-9A-HJ-NP-Za-km-z]{33}|ltc1q[02-9ac-hj-np-z]{38}|ltc1[qp][02-9ac-hj-np-z]{58})$
+examples:
+- value: LT2KVaAy1ppRuxRgrS5RNU3vBsy7RibPeA
+  description: P2PKH address from the test data of Litecoin Core (key_io_valid.json)
+- value: MHrYRxAiMNBTku3eoDHwhA1LQGDjUStZW2
+  description: P2SH address from the test data of Litecoin Core
+- value: ltc1qhdhvrwe6rgqns8fz28tee0hphr5x7ulw5exv4w
+  description: P2WPKH address from the test data of Litecoin Core
+- value: ltc1ppu2gv0tujus0f6eggrk7eqmaf0567x6zer4fcuhz4z7ztzq9u9yseqxltc
+  description: Taproot address from the test data of Litecoin Core
+- value: 1PMycacnJaSqwwJqjawXBErnLsZ7RkXUAs
+  valid: false
+  description: Bitcoin P2PKH address (p2pkhaddr)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Litecoin
+- type: doc
+  url: https://github.com/litecoin-project/litecoin/blob/master/src/chainparams.cpp
+- type: other
+  url: https://github.com/litecoin-project/litecoin/blob/master/src/test/data/key_io_valid.json
+translations:
+  ru:
+    name: Адрес Litecoin

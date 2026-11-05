@@ -1,0 +1,33 @@
+id: lightning_invoice
+name: Lightning Network invoice (BOLT 11)
+status: draft
+doc: Payment request of the Lightning Network as defined by BOLT 11. The human-readable part is ln, the
+  network (bc for Bitcoin mainnet, tb for testnet, tbs for signet, bcrt for regtest) and an optional amount
+  with a multiplier (m, u, n or p). The Bech32 data part, without the 90-character limit of BIP 173, holds
+  a timestamp, tagged fields such as the payment hash, description and expiry, and the signature of the
+  payee. Invoices are written in lower case, or in upper case in QR codes.
+categories:
+- cryptocurrency
+- finances
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:ln(?:bcrt|bc|tbs|tb)[0-9]*[munp]?1[02-9ac-hj-np-z]+|LN(?:BCRT|BC|TBS|TB)[0-9]*[MUNP]?1[02-9AC-HJ-NP-Z]+)$
+checksum: bech32
+examples:
+- value: lnbc1pvjluezsp5zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygspp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqdpl2pkx2ctnv5sxxmmwwd5kgetjypeh2ursdae8g6twvus8g6rfwvs8qun0dfjkxaq9qrsgq357wnc5r2ueh7ck6q93dj32dlqnls087fxdwk8qakdyafkq3yap9us6v52vjjsrvywa6rt52cm9r9zqt8r2t7mlcwspyetp5h2tztugp9lfyql
+  description: BOLT 11 example, donation of any amount
+- value: lnbc2500u1pvjluezsp5zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygspp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqdq5xysxxatsyp3k7enxv4jsxqzpu9qrsgquk0rl77nj30yxdy8j9vdx85fkpmdla2087ne0xh8nhedh8w27kyke0lp53ut353s06fv3qfegext0eh0ymjpf39tuven09sam30g4vgpfna3rh
+  description: BOLT 11 example, 2500 micro-BTC for a cup of coffee
+- value: lnbc2500u1pvjluezsp5zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygspp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqdq5xysxxatsyp3k7enxv4jsxqzpu9qrsgquk0rl77nj30yxdy8j9vdx85fkpmdla2087ne0xh8nhedh8w27kyke0lp53ut353s06fv3qfegext0eh0ymjpf39tuven09sam30g4vgpfna3rj
+  valid: false
+  description: last character changed, the checksum fails
+links:
+- type: doc
+  url: https://github.com/lightning/bolts/blob/master/11-payment-encoding.md
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Lightning_Network
+translations:
+  ru:
+    name: Счёт Lightning Network (BOLT 11)

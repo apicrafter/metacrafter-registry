@@ -1,10 +1,21 @@
 id: crypto_address
-name: Cryptocurrency address by field name (generic)
+name: Cryptocurrency address
 status: draft
-doc: Cryptocurrency address by field name (generic)
+doc: 'Address that receives payments on a blockchain network. It is derived from a public key or a script
+  and identifies an account or wallet without naming its owner. Each network has its own format; the registry
+  describes them as separate datatypes: p2pkhaddr, p2shaddr, p2wpkhaddr, p2wshaddr and p2traddr (Bitcoin),
+  ethereum_address (Ethereum and other EVM networks), litecoin_address, dogecoin_address, bitcoin_cash_address,
+  tron_address, xrp_address, monero_address, solana_address and cardano_address. Use this record when
+  only the field name tells that a value is an address.'
 categories:
 - cryptocurrency
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Cryptocurrency_wallet
+translations:
+  ru:
+    name: Адрес криптовалютного кошелька

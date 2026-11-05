@@ -1,13 +1,39 @@
 id: p2wpkhaddr
-name: P2WPKH address
-status: draft
-doc: P2WPKH address
+name: Bitcoin P2WPKH address (native SegWit, bc1q)
+status: stable
+doc: 'Native SegWit address of the pay-to-witness-public-key-hash (P2WPKH) type: witness version 0 with
+  a 20-byte public key hash (BIP 141), encoded with Bech32 (BIP 173). Mainnet addresses have the prefix
+  bc1q and 42 characters. They are written in lower case, or in upper case in QR codes, but never in mixed
+  case. Testnet addresses (tb1q) are not matched.'
+parent: crypto_address
 categories:
 - cryptocurrency
 langs:
 - common
 is_pii: false
 classification: identifier
+regexp: ^(?:bc1q[02-9ac-hj-np-z]{38}|BC1Q[02-9AC-HJ-NP-Z]{38})$
+checksum: bech32
+examples:
+- value: bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4
+  description: P2WPKH example of BIP 173
+- value: BC1QW508D6QEJXTDG4Y5R3ZARVARY0C5XW7KV8F3T4
+  description: The same address in upper case (BIP 173 test vector)
+- value: bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq
+  description: Example address of the Bitcoin Wiki article on invoice addresses
+- value: bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t5
+  valid: false
+  description: last character changed, the checksum fails
+- value: bc1qW508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4
+  valid: false
+  description: mixed case is not allowed
+mappings:
+  presidio: CRYPTO
 links:
-- type: other
-  url: https://allprivatekeys.com/bitcoin-address-format
+- type: doc
+  url: https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki
+- type: doc
+  url: https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki
+translations:
+  ru:
+    name: Адрес Bitcoin P2WPKH (SegWit, bc1q)

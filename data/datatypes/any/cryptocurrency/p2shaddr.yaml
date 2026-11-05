@@ -1,18 +1,38 @@
 id: p2shaddr
-name: Script hash (P2SH address)
+name: Bitcoin P2SH address
 status: stable
-doc: Pay to script hash (P2SH) transactions were standardised in BIP 16. They allow transactions to be
-  sent to a script hash (address starting with 3) instead of a public key hash (addresses starting with
-  1). To spend bitcoins sent via P2SH, the recipient must provide a script matching the script hash and
-  data which makes the script evaluate to true.
+doc: Bitcoin address of the pay-to-script-hash (P2SH) type, defined by BIP 13 and BIP 16. It is the Base58Check
+  encoding of the version byte 5 and the 20-byte hash of a redeem script (for example a multisignature
+  script or wrapped SegWit), so it has 34 characters and starts with 3. Older Litecoin P2SH addresses
+  use the same version byte and cannot be told apart. Testnet P2SH addresses start with 2 and are not
+  matched.
+parent: crypto_address
 categories:
 - cryptocurrency
 langs:
 - common
 is_pii: false
 classification: identifier
+regexp: ^3[1-9A-HJ-NP-Za-km-z]{33}$
+checksum: base58check
+examples:
+- value: 3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy
+  description: Example address of the Bitcoin Wiki article on invoice addresses
+- value: 3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLz
+  valid: false
+  description: last character changed, the checksum fails
+- value: 1PMycacnJaSqwwJqjawXBErnLsZ7RkXUAs
+  valid: false
+  description: P2PKH address (p2pkhaddr)
 mappings:
   presidio: CRYPTO
 links:
+- type: doc
+  url: https://github.com/bitcoin/bips/blob/master/bip-0013.mediawiki
+- type: doc
+  url: https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki
 - type: other
-  url: https://allprivatekeys.com/bitcoin-address-format
+  url: https://en.bitcoin.it/wiki/Invoice_address
+translations:
+  ru:
+    name: Адрес Bitcoin P2SH

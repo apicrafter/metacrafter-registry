@@ -14,7 +14,6 @@ supported_types:
 - autfn
 - bankaccount
 - bankcard
-- bip32addr
 - date
 - email
 - esnif
@@ -22,6 +21,7 @@ supported_types:
 - it_id_card
 - p2pkhaddr
 - p2shaddr
+- p2traddr
 - p2wpkhaddr
 - p2wshaddr
 - phone
@@ -34,5 +34,3 @@ supported_types:
 - usitin
 - uspassport
 - usssn
-- wifaddrcomp
-- wifaddruncomp

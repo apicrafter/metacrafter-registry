@@ -1,0 +1,36 @@
+id: p2traddr
+name: Bitcoin P2TR address (Taproot, bc1p)
+status: draft
+doc: 'Taproot address of the pay-to-taproot (P2TR) type: witness version 1 with a 32-byte x-only public
+  key (BIP 341), encoded with Bech32m (BIP 350), not Bech32. Mainnet addresses have the prefix bc1p and
+  62 characters. Lower or upper case, never mixed. Testnet addresses (tb1p) are not matched.'
+parent: crypto_address
+categories:
+- cryptocurrency
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:bc1p[02-9ac-hj-np-z]{58}|BC1P[02-9AC-HJ-NP-Z]{58})$
+checksum: bech32m
+examples:
+- value: bc1p0xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqzk5jj0
+  description: BIP 350 test vector
+- value: bc1p0xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqzk5jj2
+  valid: false
+  description: last character changed, the checksum fails
+- value: bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3
+  valid: false
+  description: witness version 0 address (p2wshaddr)
+mappings:
+  presidio: CRYPTO
+links:
+- type: doc
+  url: https://github.com/bitcoin/bips/blob/master/bip-0350.mediawiki
+- type: doc
+  url: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki
+- type: other
+  url: https://en.bitcoin.it/wiki/Taproot
+translations:
+  ru:
+    name: Адрес Bitcoin P2TR (Taproot, bc1p)

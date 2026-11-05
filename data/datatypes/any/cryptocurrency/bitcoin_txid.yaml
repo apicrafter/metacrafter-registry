@@ -1,0 +1,29 @@
+id: bitcoin_txid
+name: Bitcoin transaction ID (txid)
+status: draft
+doc: 'Identifier of a Bitcoin transaction: the double SHA-256 hash of the serialized transaction without
+  its witness data, written as 64 hexadecimal digits in reversed byte order, as block explorers and the
+  Bitcoin Core RPC show it. Block hashes and the transaction IDs of Bitcoin forks (Litecoin, Bitcoin Cash,
+  Dogecoin) have the same form, so the value alone does not tell them apart.'
+parent: sha256hash
+categories:
+- cryptocurrency
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-fA-F]{64}$
+examples:
+- value: 4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b
+  description: Coinbase transaction of the genesis block
+- value: 4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33
+  valid: false
+  description: one hex digit short (63 instead of 64)
+links:
+- type: doc
+  url: https://developer.bitcoin.org/reference/transactions.html
+- type: other
+  url: https://en.bitcoin.it/wiki/Genesis_block
+translations:
+  ru:
+    name: Идентификатор транзакции Bitcoin (txid)

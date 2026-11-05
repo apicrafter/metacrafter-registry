@@ -1,8 +1,12 @@
 id: ethereum_address
 name: Ethereum address
 status: stable
-doc: 'Address of an Ethereum account or contract: 0x followed by 40 hexadecimal digits (the last 20 bytes
-  of the Keccak-256 hash of the public key). Mixed upper and lower case encodes an EIP-55 checksum.'
+doc: 'Address of an Ethereum account or contract: 0x followed by 40 hexadecimal digits, the last 20 bytes
+  of the Keccak-256 hash of the public key (or the address computed for a contract). Mixed upper and lower
+  case encodes the EIP-55 checksum; all lower case or all upper case carries no checksum. Other EVM networks
+  (BNB Smart Chain, Polygon, Arbitrum, Optimism, Avalanche C-Chain and others) use the same format, so
+  the value alone does not tell the network.'
+parent: crypto_address
 categories:
 - cryptocurrency
 langs:
@@ -15,6 +19,8 @@ examples:
   description: EIP-55 test vector (checksummed)
 - value: '0xfb6916095ca1df60bb79ce92ce3ea74c37c5d359'
   description: EIP-55 test vector, all lower case
+- value: '0xdbF03B407c01E7cD3CBea99509d93f8DDDC8C6FB'
+  description: EIP-55 test vector (checksummed)
 - value: '0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAe'
   valid: false
   description: 39 hex digits
@@ -23,3 +29,6 @@ links:
   url: https://eips.ethereum.org/EIPS/eip-55
 - type: doc
   url: https://ethereum.org/en/developers/docs/accounts/
+translations:
+  ru:
+    name: Адрес Ethereum
