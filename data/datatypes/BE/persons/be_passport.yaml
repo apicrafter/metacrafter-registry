@@ -1,7 +1,9 @@
 id: be_passport
 name: Belgian passport number
 status: draft
-doc: Number of a passport issued by Belgium. Microsoft Purview looks for two letters and six digits.
+doc: Number of a passport issued by Belgium, which FPS Foreign Affairs produces on request of a municipality
+  or an embassy. It has eight characters, two letters followed by six digits, and no check digit. Microsoft
+  Purview expects it without spaces or delimiters.
 semantic_type: passport
 country:
 - BE
@@ -10,6 +12,16 @@ langs:
 - fr
 - de
 regexp: ^[A-Z]{2}\d{6}$
+examples:
+- value: QX 417263
+  valid: false
+  description: Purview expects no spaces
+- value: Q4172635
+  valid: false
+  description: One letter and seven digits
+- value: QX41726
+  valid: false
+  description: Five digits
 mappings:
   purview:
   - Belgium passport number
@@ -17,3 +29,15 @@ mappings:
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-belgium-passport-number
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Belgian_passport
+translations:
+  nl:
+    name: Paspoortnummer
+  fr:
+    name: Numéro de passeport
+  de:
+    name: Reisepassnummer
+  ru:
+    name: Номер паспорта Бельгии
+    doc: Номер бельгийского паспорта - две буквы и шесть цифр без пробелов.

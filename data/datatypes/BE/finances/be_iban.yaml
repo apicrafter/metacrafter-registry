@@ -1,8 +1,11 @@
 id: be_iban
 name: Belgian IBAN
-status: draft
+status: stable
 doc: 'International Bank Account Number of a bank account in Belgium. It has 16 characters: BE, two IBAN
-  check digits, a 3-digit bank code, a 7-digit account number and two national check digits.'
+  check digits and the 12 digits of the national account number (be_bank_account): a 3-digit bank identification
+  code, a 7-digit account number and two national check digits, the remainder of the first ten digits
+  divided by 97 (97 when it is 0). The National Bank of Belgium publishes the list of bank identification
+  codes. It is printed in groups of four, as in BE71 0961 2345 6769.'
 parent: iban
 categories:
 - finances
@@ -17,19 +20,41 @@ classification: identifier
 regexp: ^BE\d{2} ?\d{4} ?\d{4} ?\d{4}$
 checksum: iban_mod97
 examples:
+- value: BE71096123456769
+  description: Example of a Belgian IBAN from iban.com (account 096-1234567-69)
+- value: BE71 0961 2345 6769
+  description: The same IBAN in its printed form
 - value: BE41761551657010
-  description: Synthetic number with a valid check digit
+  description: Synthetic number with valid check digits
 - value: BE23729339420191
-  description: Synthetic number with a valid check digit
-- value: BE41 7615 5165 7010
-  description: The first example in its printed form
+  description: Synthetic number with valid check digits
 - value: BE41761551657011
   valid: false
-  description: Check digit does not match
+  description: Check digits do not match
+- value: BE7109612345676
+  valid: false
+  description: 15 characters
 links:
 - type: doc
   url: https://www.nbb.be/en/payment-systems/payment-standards/bank-identification-codes
 - type: other
+  url: https://www.iban.com/structure
+- type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.be.iban.html
 - type: other
   url: https://docs.dataprep.ai/user_guide/clean/clean_be_iban.html
+translations:
+  nl:
+    name: Belgisch IBAN-rekeningnummer
+    doc: Internationaal bankrekeningnummer in België - 16 tekens - BE, twee controlecijfers en het twaalfcijferige
+      Belgische rekeningnummer.
+  fr:
+    name: IBAN belge
+    doc: Numéro de compte bancaire international en Belgique - 16 caractères - BE, deux chiffres de contrôle
+      et le numéro de compte belge à douze chiffres.
+  de:
+    name: Belgische IBAN
+  ru:
+    name: IBAN Бельгии
+    doc: Международный номер банковского счёта в Бельгии - 16 символов - BE, две контрольные цифры и двенадцатизначный
+      национальный номер счёта.

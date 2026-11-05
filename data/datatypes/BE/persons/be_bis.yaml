@@ -1,0 +1,64 @@
+id: be_bis
+name: Belgian BIS number
+status: draft
+doc: 'BIS number (BIS-nummer, numéro BIS), the 11-digit number that the Crossroads Bank for Social Security
+  (KSZ/BCSS) assigns to people who have a link with Belgium but are not in the National Register, such
+  as cross-border workers, owners of property in Belgium and people with Belgian social security rights
+  who live abroad. It is built like the national register number (benatcardid): date of birth as YYMMDD,
+  a serial number (even for women, odd for men or when the sex is unknown) and two check digits modulo
+  97, with a 2 put before the first nine digits for people born from 2000. The month is increased by 40
+  when the sex was known at creation and by 20 when it was not, so it is 20 to 32 or 40 to 52. The date
+  and sex reflect what was known when the number was created and are not updated.'
+parent: be_insz
+categories:
+- pii
+- persons
+country:
+- BE
+langs:
+- nl
+- fr
+- de
+is_pii: true
+classification: identifier
+regexp: ^\d{2}\.?(?:[24]\d|[35][0-2])\.?(?:[0-2]\d|3[01])[-. ]?\d{3}[-. ]?\d{2}$
+checksum: be_bis
+examples:
+- value: 76.47.03-285.95
+  description: Synthetic number of a man born on 3 July 1976 whose sex was known (month 47)
+- value: 09.23.11-065.81
+  description: Synthetic number of a person born on 11 March 2009 whose sex was unknown (month 23)
+- value: '76470328595'
+  description: The first example without separators
+- value: 76.47.03-285.96
+  valid: false
+  description: Check digits do not match
+- value: 83.09.14-276.43
+  valid: false
+  description: National register number (month 01 to 12), not a BIS number
+- value: 76.53.03-285.95
+  valid: false
+  description: Month 53 is not used
+links:
+- type: doc
+  url: https://www.ksz-bcss.fgov.be/nl/project/rijksregisterksz-registers
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Rijksregisternummer
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.be.bis.html
+translations:
+  nl:
+    name: BIS-nummer
+    doc: Elfcijferig identificatienummer dat de KSZ toekent aan personen die niet in het Rijksregister
+      staan; opgebouwd zoals het rijksregisternummer, met de geboortemaand verhoogd met 20 of 40.
+  fr:
+    name: Numéro BIS
+    doc: Numéro d'identification à onze chiffres attribué par la BCSS aux personnes absentes du Registre
+      national; construit comme le numéro de registre national, avec le mois de naissance augmenté de
+      20 ou 40.
+  de:
+    name: BIS-Nummer
+  ru:
+    name: Номер BIS Бельгии
+    doc: Одиннадцатизначный номер, который Банк-перекрёсток социального обеспечения присваивает лицам
+      вне Национального реестра; устроен как номер реестра, но к месяцу рождения прибавлено 20 или 40.

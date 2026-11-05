@@ -688,6 +688,68 @@ def cz_isds(value: str) -> bool:
     return _CZ_ISDS_ALPHABET[-total % 32] == compact[6]
 
 
+def be_kbo(value: str) -> bool:
+    """Belgian enterprise or establishment unit number (KBO/BCE): 10 digits.
+
+    An optional BE prefix is ignored, and a 9-digit number of the older format
+    gets a leading 0. The last two digits are 97 minus the
+    remainder of the first eight digits divided by 97.
+    """
+    compact = _strip_prefix(value, "BE")
+    if len(compact) == 9:
+        compact = "0" + compact
+    if not re.fullmatch(r"\d{10}", compact):
+        return False
+    return 97 - int(compact[:8]) % 97 == int(compact[8:])
+
+
+def _be_person_number(value: str, month_ok: Callable[[int], bool]) -> bool:
+    compact = _compact(value)
+    if not re.fullmatch(r"\d{11}", compact) or not month_ok(int(compact[2:4])):
+        return False
+    check = int(compact[9:])
+    return check in (97 - int(compact[:9]) % 97, 97 - int("2" + compact[:9]) % 97)
+
+
+def be_nn(value: str) -> bool:
+    """Belgian national register number (Rijksregisternummer): 11 digits.
+
+    YYMMDD, a 3-digit serial number and two check digits: 97 minus the
+    remainder of the first nine digits divided by 97, where a 2 is put before
+    the nine digits for people born from 2000. Both forms of the check are
+    accepted whatever the year. The month is 00 to 12 (00 when unknown); the
+    date is not otherwise checked.
+    """
+    return _be_person_number(value, lambda month: month <= 12)
+
+
+def be_bis(value: str) -> bool:
+    """Belgian BIS number: built like the national register number, with 20
+    (sex unknown) or 40 (sex known) added to the month: 20 to 32 or 40 to 52."""
+    return _be_person_number(value, lambda month: 20 <= month <= 32 or 40 <= month <= 52)
+
+
+def be_insz(value: str) -> bool:
+    """Belgian social security identification number (INSZ/NISS): a national
+    register number or a BIS number."""
+    return be_nn(value) or be_bis(value)
+
+
+def be_mod97(value: str) -> bool:
+    """Belgian modulo 97 check of a 12-digit number.
+
+    The last two digits are the remainder of the first ten digits divided by
+    97, or 97 when the remainder is 0. Used by the eID card number, the
+    structured communication (OGM/VCS, as in +++090/9337/55493+++) and the
+    national bank account number; slashes, plus signs and asterisks are
+    ignored.
+    """
+    compact = re.sub(r"[/+*]", "", _compact(value))
+    if not re.fullmatch(r"\d{12}", compact):
+        return False
+    return (int(compact[:10]) % 97 or 97) == int(compact[10:])
+
+
 def _nl_elfproef(digits: list[int]) -> int:
     """Dutch 11-proef sum of 9 digits: weights 9 down to 2, the last digit subtracted, modulo 11."""
     return (sum((9 - i) * d for i, d in enumerate(digits[:8])) - digits[8]) % 11
@@ -773,6 +835,11 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "cz_dic": cz_dic,
     "cz_bank_account": cz_bank_account,
     "cz_isds": cz_isds,
+    "be_kbo": be_kbo,
+    "be_nn": be_nn,
+    "be_bis": be_bis,
+    "be_insz": be_insz,
+    "be_mod97": be_mod97,
     "nl_bsn": nl_bsn,
     "nl_onderwijsnummer": nl_onderwijsnummer,
     "nl_btw": nl_btw,

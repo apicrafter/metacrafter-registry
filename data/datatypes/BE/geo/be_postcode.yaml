@@ -1,8 +1,12 @@
 id: be_postcode
 name: Belgian postal code
-status: draft
-doc: Four-digit postal code used in Belgium since 1969. The first digit mostly shows the province. bpost
-  asks not to write a country prefix such as B- before the code.
+status: stable
+doc: 'Four-digit postal code used in Belgium since 1969; it never starts with 0. The first digit mostly
+  shows the province, though some ranges are shared: 1xxx covers Brussels, western Flemish Brabant and
+  Walloon Brabant, 3xxx eastern Flemish Brabant and Limburg, 6xxx parts of Hainaut and Luxembourg. The
+  main town of an area has the round number, as in 8000 (Bruges) and 8500 (Kortrijk). Some institutions
+  such as the EU institutions, NATO and the broadcasters have codes of their own. bpost asks not to write
+  a country prefix such as B- before the code.'
 semantic_type: postindex
 country:
 - BE
@@ -18,14 +22,32 @@ examples:
   description: Antwerp
 - value: '8500'
   description: Kortrijk
+- value: '9000'
+  description: Ghent
 - value: B-8500
   valid: false
-  description: country prefix is not part of the code
+  description: Country prefix is not part of the code
+- value: '85000'
+  valid: false
+  description: Five digits
+- value: 0850
+  valid: false
+  description: Codes do not start with 0
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Postal_codes_in_Belgium
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Lijst_van_postcodes_in_Belgi%C3%AB
 translations:
   nl:
     name: Postcode
+    doc: Viercijferige Belgische postcode (sinds 1969); het eerste cijfer geeft meestal de provincie aan.
   fr:
     name: Code postal
+    doc: Code postal belge à quatre chiffres (depuis 1969); le premier chiffre indique le plus souvent
+      la province.
+  de:
+    name: Postleitzahl
+  ru:
+    name: Почтовый индекс Бельгии
+    doc: Четырёхзначный почтовый индекс Бельгии (с 1969 года); первая цифра обычно обозначает провинцию.

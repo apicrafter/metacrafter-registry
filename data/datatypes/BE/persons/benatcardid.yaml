@@ -1,18 +1,50 @@
 id: benatcardid
-name: Belgium national card ID
+name: Belgian national register number (Rijksregisternummer)
 status: stable
-doc: Belgium identity card is a national identity card issued to all citizens of Belgium aged 12 years
-  old and above.
+doc: 'Rijksregisternummer (numéro de registre national, Nationalregisternummer), the 11-digit number of
+  a person in the Belgian National Register, often called the national number. It is printed on the identity
+  card, but it is not the card number (be_eid). The first six digits are the date of birth as YYMMDD,
+  the next three a serial number of the people born that day, odd for men (001 to 997) and even for women
+  (002 to 998), and the last two a check number: 97 minus the remainder of the first nine digits divided
+  by 97. For people born from 2000 a 2 is put before the nine digits for that calculation. When only the
+  year, or the year and month, of birth is known the unknown parts are 00, and when the serial numbers
+  of such a date run out the day becomes 01, 02 and so on; a fully unknown date is written as 000001.
+  It is usually written as 85.07.30-033.28. Together with the BIS number it forms the social security
+  identification number (be_insz).'
+parent: be_insz
 categories:
 - pii
 - persons
 country:
 - BE
 langs:
+- nl
 - fr
+- de
 is_pii: true
 classification: identifier
-regexp: '[0-9]{2}\.(0[1-9]|1[0-2])\.(0[1-9]|[1-2][0-9]|3[0-1])-[0-9]{3}\.[0-9]{2}'
+regexp: ^\d{2}\.?(?:0\d|1[0-2])\.?(?:[0-2]\d|3[01])[-. ]?\d{3}[-. ]?\d{2}$
+checksum: be_nn
+examples:
+- value: 42.01.22-051.81
+  description: Man born on 22 January 1942, example of the National Register instruction IT000
+- value: '40000095381'
+  description: Birth date with unknown month and day, example of the National Register instruction IT000
+- value: 40.00.01-001.33
+  description: Only the year of birth known and the serial numbers of 40.00.00 used up, example of IT000
+- value: 83.09.14-276.43
+  description: Synthetic number of a woman born on 14 September 1983
+- value: 05.06.13-418.47
+  description: Synthetic number of a woman born on 13 June 2005 (check over 2050613418)
+- value: 42.01.22-051.82
+  valid: false
+  description: Check digits do not match
+- value: 83.13.14-276.71
+  valid: false
+  description: There is no month 13
+- value: 76.47.03-285.95
+  valid: false
+  description: BIS number (month plus 40), not a national register number
 mappings:
   purview:
   - Belgium national number
@@ -22,5 +54,29 @@ mappings:
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
 links:
+- type: doc
+  url: https://www.rijksregister.fgov.be/sites/default/files/documents/nl/rijksregister/onderrichtingen/IT-lijst/IT000_Rijksregisternummer.pdf
 - type: wikipedia
-  url: https://en.wikipedia.org/wiki/Belgian_identity_card
+  url: https://nl.wikipedia.org/wiki/Rijksregisternummer
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Num%C3%A9ro_de_registre_national
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-belgium-national-number
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.be.nn.html
+translations:
+  nl:
+    name: Rijksregisternummer
+    doc: Elfcijferig identificatienummer van een persoon in het Rijksregister - geboortedatum (JJMMDD),
+      volgnummer (oneven voor mannen, even voor vrouwen) en controlegetal modulo 97.
+  fr:
+    name: Numéro de registre national
+    doc: Numéro d'identification à onze chiffres d'une personne au Registre national - date de naissance
+      (AAMMJJ), numéro d'ordre (impair pour les hommes, pair pour les femmes) et chiffre de contrôle modulo
+      97.
+  de:
+    name: Nationalregisternummer
+  ru:
+    name: Номер Национального реестра Бельгии
+    doc: Одиннадцатизначный номер физического лица в Национальном реестре Бельгии - дата рождения (ГГММДД),
+      порядковый номер (нечётный у мужчин, чётный у женщин) и контрольное число по модулю 97.
