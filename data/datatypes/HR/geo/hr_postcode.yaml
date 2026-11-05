@@ -1,0 +1,22 @@
+id: hr_postcode
+name: Croatia postal code
+status: draft
+doc: 'Postal code in Croatia: five digits. In addresses the code may be written after the prefix HR-.'
+semantic_type: postindex
+country:
+- HR
+langs:
+- hr
+regexp: ^\d{5}$
+examples:
+- value: '10000'
+- value: '21001'
+- value: '10002'
+- value: '1000'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Croatia
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/HR

@@ -1,0 +1,39 @@
+id: isced_f_2013
+name: ISCED-F 2013 field of education and training
+status: draft
+doc: Code of a field in the ISCED Fields of Education and Training 2013 (ISCED-F 2013) of UNESCO, the
+  companion of ISCED 2011. Broad fields have two digits (00 to 10, and 99 for an unknown field), narrow
+  fields three and detailed fields four, and each code begins with the code of the field above it. A detailed
+  code ending in 0 means not further defined and one ending in 9 not elsewhere classified; narrow fields
+  ending in 8 hold interdisciplinary programmes.
+categories:
+- education
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:0\d|10|99)\d{0,2}$
+examples:
+- value: '0613'
+  description: 'Detailed field: software and applications development and analysis'
+- value: '061'
+  description: 'Narrow field: information and communication technologies'
+- value: '06'
+  description: 'Broad field: information and communication technologies'
+- value: 0912
+  description: 'Detailed field: medicine'
+- value: '1014'
+  description: 'Detailed field: sports'
+- value: '11'
+  valid: false
+  description: There is no broad field 11
+- value: '06131'
+  valid: false
+  description: Five digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Standard_Classification_of_Education
+- type: doc
+  url: https://ec.europa.eu/eurostat/statistics-explained/index.php?title=International_Standard_Classification_of_Education_(ISCED)
+- type: other
+  url: https://www.statistik.at/kdb/downloads/pdf/prod/ISCEDF_KategorienlisteDeutsch_final.pdf

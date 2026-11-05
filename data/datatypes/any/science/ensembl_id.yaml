@@ -31,6 +31,7 @@ examples:
   description: X is not a feature letter
 mappings:
   autotype: ensembl
+  bioregistry: ensembl
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Ensembl_genome_database_project

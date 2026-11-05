@@ -37,6 +37,7 @@ examples:
   description: The fifth digit 3 is not a BIN entity type
 mappings:
   orgid: KZ-BIN
+  schema_org: taxID
 links:
 - type: doc
   url: https://www.oecd.org/tax/automatic-exchange/crs-implementation-and-assistance/tax-identification-numbers/Kazakhstan-TIN.pdf

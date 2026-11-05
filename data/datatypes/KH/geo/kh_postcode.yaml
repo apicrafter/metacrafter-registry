@@ -1,0 +1,19 @@
+id: kh_postcode
+name: Cambodia postal code
+status: draft
+doc: 'Postal code in Cambodia: five or six digits.'
+semantic_type: postindex
+country:
+- KH
+langs:
+- km
+regexp: ^\d{5,6}$
+examples:
+- value: '120101'
+- value: '120108'
+- value: '1201'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/KH

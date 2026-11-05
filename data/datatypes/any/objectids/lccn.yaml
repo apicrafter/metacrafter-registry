@@ -26,6 +26,7 @@ examples:
   description: The serial number must have six digits
 mappings:
   wikidata: P1144
+  bioregistry: lccn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Library_of_Congress_Control_Number

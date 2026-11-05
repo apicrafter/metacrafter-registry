@@ -30,6 +30,9 @@ mappings:
   - France tax identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  dpv: pd:OfficialID
+  schema_org: taxID
+  stdnum: fr.nif
 links:
 - type: wikipedia
   url: https://fr.wikipedia.org/wiki/Num%C3%A9ro_d%27Immatriculation_Fiscale#France

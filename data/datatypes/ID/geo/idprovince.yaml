@@ -16,3 +16,5 @@ examples:
   description: Example Indonesian province
 - value: Jawa Barat
   description: Example Indonesian province
+mappings:
+  schema_org: addressRegion

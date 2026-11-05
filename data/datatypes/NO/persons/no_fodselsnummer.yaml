@@ -34,6 +34,8 @@ mappings:
   purview:
   - Norway Identity Number
   - Norway identification number
+  dpv: pd:OfficialID
+  stdnum: no.fodselsnummer
 links:
 - type: wikipedia
   url: https://no.wikipedia.org/wiki/F%C3%B8dselsnummer

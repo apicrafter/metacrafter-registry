@@ -23,6 +23,8 @@ examples:
 - value: Q2020665357627
   valid: false
   description: One character too many
+mappings:
+  stdnum: gb.upn
 links:
 - type: doc
   url: https://www.gov.uk/government/publications/unique-pupil-numbers

@@ -10,3 +10,5 @@ langs:
 - ko
 is_pii: false
 classification: identifier
+mappings:
+  schema_org: addressLocality

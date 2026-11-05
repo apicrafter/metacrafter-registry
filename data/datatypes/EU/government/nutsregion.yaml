@@ -29,6 +29,7 @@ examples:
 mappings:
   wikidata: P605
   orgid: XR-NUTS
+  bioregistry: nuts
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Nomenclature_of_Territorial_Units_for_Statistics

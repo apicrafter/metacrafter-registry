@@ -32,6 +32,8 @@ examples:
 - value: 'did:example:'
   valid: false
   description: Empty method-specific identifier
+mappings:
+  bioregistry: did
 links:
 - type: doc
   url: https://www.w3.org/TR/did-1.0/

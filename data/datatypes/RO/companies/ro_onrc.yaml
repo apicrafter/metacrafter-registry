@@ -22,6 +22,8 @@ examples:
 - value: C22/4/20187
   valid: false
   description: One character too many
+mappings:
+  stdnum: ro.onrc
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ro.onrc.html

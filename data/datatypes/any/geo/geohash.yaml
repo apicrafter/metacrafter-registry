@@ -1,0 +1,31 @@
+id: geohash
+name: Geohash
+status: draft
+doc: Geohash, a geocode invented by Gustavo Niemeyer in 2008. It interleaves the bits of longitude and
+  latitude and writes them in a base-32 alphabet of digits and lowercase letters without a, i, l and o.
+  Each added character makes the rectangle smaller, and codes with a common prefix are usually close to
+  each other. The regexp allows 1 to 12 characters, the precision range of common implementations such
+  as Elasticsearch; short values look like ordinary words and numbers.
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9b-hjkmnp-z]{1,12}$
+examples:
+- value: u4pruydqqvj
+  description: Point near the tip of Jutland, Denmark (example in Wikipedia)
+- value: ezs42
+  description: Worked decoding example in Wikipedia
+- value: u4pruydqqva
+  valid: false
+  description: The letter a is not in the alphabet
+- value: u4pruydqqvjuu
+  valid: false
+  description: Thirteen characters
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Geohash
+- type: doc
+  url: https://www.elastic.co/docs/reference/aggregations/search-aggregations-bucket-geohashgrid-aggregation

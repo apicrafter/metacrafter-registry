@@ -1,0 +1,20 @@
+id: ge_postcode
+name: Georgia postal code
+status: draft
+doc: 'Postal code in Georgia: four digits.'
+semantic_type: postindex
+country:
+- GE
+langs:
+- ka
+regexp: ^\d{4}$
+examples:
+- value: '0101'
+- value: '010'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/GE
+- type: other
+  url: https://www.gpost.ge/help/postal-codes

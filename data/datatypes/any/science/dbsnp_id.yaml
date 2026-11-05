@@ -27,6 +27,7 @@ examples:
 mappings:
   autotype: SNPID_correct
   wikidata: P6861
+  bioregistry: dbsnp
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/DbSNP

@@ -1,0 +1,44 @@
+id: fr_rnb_id
+name: French national building identifier (ID-RNB)
+status: draft
+doc: Identifier of a building in the Référentiel National des Bâtiments (RNB), the French national register
+  of buildings. It has 12 characters drawn at random from the digits 1 to 9 and the capital letters except
+  I, L, O and U, so that it cannot be misread, and is often written in three groups of four separated
+  by hyphens, as in W7WG-YK8D-C68P.
+categories:
+- geo
+- realestate
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9A-HJKMNP-TV-Z]{4}-?[1-9A-HJKMNP-TV-Z]{4}-?[1-9A-HJKMNP-TV-Z]{4}$
+examples:
+- value: W7WG-YK8D-C68P
+  description: Town hall of Aimargues, an example of Wikidata P12461
+- value: MJ2W-7QT2-4SYB
+  description: Maison à l'enseigne du Faucheur, an example of Wikidata P12461
+- value: FT4RKBXBVH9S
+  description: Test value of the id_rnb format of csv-detective
+- value: NIDE2W8HE3X3
+  valid: false
+  description: Contains the letter I, a negative test value of csv-detective
+- value: FT4RKBXBVH9
+  valid: false
+  description: Eleven characters
+mappings:
+  wikidata: P12461
+links:
+- type: doc
+  url: https://rnb.beta.gouv.fr/definition
+- type: other
+  url: https://github.com/fab-geocommuns/RNB-coeur/blob/main/app/batid/services/rnb_id.py
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rentiel_National_des_B%C3%A2timents
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P12461
+translations:
+  fr:
+    name: Identifiant RNB (ID-RNB)

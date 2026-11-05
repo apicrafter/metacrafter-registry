@@ -18,6 +18,8 @@ examples:
   description: Trial of Treatments for COVID-19 in Hospitalized Adults
 mappings:
   wikidata: P3098
+  fhir: https://clinicaltrials.gov/nctid
+  bioregistry: clinicaltrials
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ClinicalTrials.gov

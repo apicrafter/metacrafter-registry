@@ -1,0 +1,45 @@
+id: fr_rna
+name: French association number (RNA)
+status: draft
+doc: Number of an association in the Répertoire national des associations (RNA), the register of associations
+  declared under the 1901 law that the Ministry of the Interior keeps; it replaced the Waldec register
+  in 2010. In metropolitan France it is the letter W and nine digits; Wikidata also accepts W followed
+  by 2A or 2B, or by 9 and one of the letters G, M, C, T, R or N, and seven digits. Wikidata keeps numbers
+  of the earlier register, such as 751P00105292, in a separate property (P6309). Associations of Alsace-Moselle
+  law are not in the RNA.
+categories:
+- companies
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^W(?:\d{2}|2[AB]|9[GMCTRN])\d{7}$
+examples:
+- value: W751053021
+  description: Action contre la faim, an example of Wikidata P3918
+- value: W263000264
+  description: CRIIRAD, an example of Wikidata P3918
+- value: W751173311
+  description: Le Bal, an example of Wikidata P3918
+- value: W751515517
+  description: Test value of the code_rna format of csv-detective
+- value: w143788974
+  valid: false
+  description: Lower-case w, a negative test value of csv-detective
+- value: W12
+  valid: false
+  description: Too short
+mappings:
+  wikidata: P3918
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/R%C3%A9pertoire_national_des_associations
+- type: doc
+  url: https://www.data.gouv.fr/datasets/repertoire-national-des-associations
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3918
+translations:
+  fr:
+    name: Numéro RNA (Répertoire national des associations)

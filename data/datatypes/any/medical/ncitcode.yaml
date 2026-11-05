@@ -24,6 +24,7 @@ examples:
   description: The "C" prefix is missing
 mappings:
   wikidata: P1748
+  bioregistry: ncit
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1748

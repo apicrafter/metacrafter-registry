@@ -24,6 +24,9 @@ examples:
 - value: BG175074751
   valid: false
   description: wrong check digit
+mappings:
+  schema_org: vatID
+  stdnum: bg.vat
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/VAT_identification_number

@@ -1,0 +1,20 @@
+id: il_postcode
+name: Israel postal code
+status: draft
+doc: 'Postal code in Israel: the mikud, seven digits; the five-digit codes used before 2013 are also accepted.'
+semantic_type: postindex
+country:
+- IL
+langs:
+- he
+regexp: ^\d{5}(?:\d{2})?$
+examples:
+- value: '9614303'
+- value: '961430'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Israel
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/IL

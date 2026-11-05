@@ -11,6 +11,9 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^TR[0-9]{2}[A-Z0-9]{4}[0-9]{16,24}$
+mappings:
+  dpv: pd:BankAccount
+  stdnum: iban
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Bank_Account_Number

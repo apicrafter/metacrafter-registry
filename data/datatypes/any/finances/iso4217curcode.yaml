@@ -19,6 +19,7 @@ mappings:
   fibo: FND/Accounting/CurrencyAmount/CurrencyIdentifier
   wikidata: P498
   fta: CURRENCY_CODE.ISO-4217
+  schema_org: currency
 links:
 - type: other
   url: https://www.iso.org/iso-4217-currency-codes.html

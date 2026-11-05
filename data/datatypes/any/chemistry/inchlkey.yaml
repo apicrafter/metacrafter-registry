@@ -17,6 +17,8 @@ examples:
   description: gold
 mappings:
   wikidata: P235
+  schema_org: inChIKey
+  bioregistry: inchikey
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P235

@@ -14,3 +14,5 @@ regexp: ^[A-Z]{4}[0-9]{6}[HM][A-Z]{5}[0-9A-Z]{1}[0-9]{1}$
 mappings:
   google_dlp: MEXICO_CURP_NUMBER
   purview: Mexico Unique Population Registry Code (CURP)
+  dpv: pd:OfficialID
+  stdnum: mx.curp

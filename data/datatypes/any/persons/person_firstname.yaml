@@ -11,6 +11,8 @@ is_pii: true
 mappings:
   cdm: means.identity.person.firstName
   fta: NAME.FIRST
+  dpv: pd:Name
+  schema_org: givenName
 links:
 - type: schema.org
   url: https://schema.org/givenName

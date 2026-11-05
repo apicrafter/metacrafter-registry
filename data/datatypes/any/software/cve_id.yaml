@@ -1,0 +1,35 @@
+id: cve_id
+name: CVE identifier
+status: draft
+doc: 'Identifier that the CVE Program gives to a publicly disclosed cybersecurity vulnerability: CVE-,
+  a four-digit year and a sequence number of at least four digits. The year is the year the vulnerability
+  was discovered or the year the identifier was published. The CVE JSON 5 record format allows up to 19
+  digits in the sequence number. NVD, OSV.dev and the GitHub Advisory Database refer to vulnerabilities
+  by their CVE identifier.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^CVE-[0-9]{4}-[0-9]{4,19}$
+examples:
+- value: CVE-2021-44228
+  description: Remote code execution through JNDI lookups in Apache Log4j 2 (Log4Shell)
+- value: CVE-2014-0160
+  description: OpenSSL TLS heartbeat information disclosure (Heartbleed)
+- value: CVE-2021-34527
+  description: Windows Print Spooler remote code execution; five-digit sequence number
+- value: CVE-2021-123
+  valid: false
+  description: Sequence number has fewer than four digits
+- value: CVE-21-44228
+  valid: false
+  description: Two-digit year
+mappings:
+  wikidata: P3587
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures
+- type: doc
+  url: https://github.com/CVEProject/cve-schema/blob/main/schema/CVE_Record_Format.json

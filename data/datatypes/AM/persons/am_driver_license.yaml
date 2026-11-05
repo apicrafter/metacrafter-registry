@@ -16,6 +16,8 @@ regexp: '[A-Z0-9]{6,10}'
 examples:
 - value: '12345678'
   description: Example Armenian driver license number
+mappings:
+  dpv: pd:OfficialID
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Driving_licence_in_Armenia

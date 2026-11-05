@@ -17,6 +17,7 @@ examples:
   description: example from ORG-ID.guide
 mappings:
   orgid: TJ-TIN
+  schema_org: taxID
 links:
 - type: doc
   url: http://andoz.tj/

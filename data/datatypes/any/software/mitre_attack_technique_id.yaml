@@ -1,0 +1,31 @@
+id: mitre_attack_technique_id
+name: MITRE ATT&CK technique ID
+status: draft
+doc: 'Identifier of a technique in MITRE ATT&CK, the knowledge base of adversary behavior: T followed
+  by four digits. A sub-technique adds a dot and three digits, so T1059.001 (PowerShell) is a sub-technique
+  of T1059 (Command and Scripting Interpreter). The Enterprise, Mobile and ICS matrices share the format.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^T[0-9]{4}(?:\.[0-9]{3})?$
+examples:
+- value: T1059
+  description: Command and Scripting Interpreter
+- value: T1059.001
+  description: PowerShell, a sub-technique of T1059
+- value: T1059.1
+  valid: false
+  description: Sub-technique part needs three digits
+- value: TA0001
+  valid: false
+  description: Tactic ID
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ATT%26CK
+- type: doc
+  url: https://attack.mitre.org/techniques/T1059/001
+- type: other
+  url: https://github.com/mitre-attack/attack-stix-data

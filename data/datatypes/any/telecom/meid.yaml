@@ -24,6 +24,8 @@ examples:
 - value: AF0123450ABCD
   valid: false
   description: One character too few
+mappings:
+  stdnum: meid
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Mobile_equipment_identifier

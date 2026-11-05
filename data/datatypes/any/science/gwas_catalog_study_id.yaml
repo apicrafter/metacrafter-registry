@@ -1,0 +1,26 @@
+id: gwas_catalog_study_id
+name: GWAS Catalog study accession
+status: draft
+doc: Accession of a study in the GWAS Catalog, the EMBL-EBI database of published genome-wide association
+  studies and their SNP-trait associations. It is GCST and six or more digits.
+categories:
+- science
+- medical
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^GCST\d{6}\d*$
+examples:
+- value: GCST000035
+  description: GWAS Catalog study; Bioregistry example
+- value: GCST35
+  valid: false
+  description: Fewer than six digits
+mappings:
+  bioregistry: gcst
+links:
+- type: doc
+  url: https://www.ebi.ac.uk/gwas/
+- type: other
+  url: https://bioregistry.io/registry/gcst

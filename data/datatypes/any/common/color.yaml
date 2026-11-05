@@ -27,6 +27,7 @@ mappings:
   - COLOR.TEXT_RO
   - COLOR.TEXT_RU
   - COLOR.TEXT_SV
+  schema_org: color
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P462

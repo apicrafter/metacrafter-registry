@@ -19,6 +19,7 @@ examples:
   description: Bhutan Red Cross
 mappings:
   wikidata: P2003
+  dpv: pd:Username
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P2003

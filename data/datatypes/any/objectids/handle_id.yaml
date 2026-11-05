@@ -23,6 +23,7 @@ examples:
   description: A date
 mappings:
   wikidata: P1184
+  bioregistry: hdl
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Handle_System

@@ -19,6 +19,8 @@ examples:
 mappings:
   sherlock: birth Place
   wikidata: P19
+  dpv: pd:BirthPlace
+  schema_org: birthPlace
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Place_of_birth

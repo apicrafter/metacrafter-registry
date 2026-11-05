@@ -22,6 +22,7 @@ examples:
   description: Only four digits
 mappings:
   presidio: IT_IDENTITY_CARD
+  dpv: pd:OfficialID
 links:
 - type: wikipedia
   url: https://it.wikipedia.org/wiki/Carta_d%27identit%C3%A0_elettronica_italiana

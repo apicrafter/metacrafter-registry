@@ -1,0 +1,21 @@
+id: bd_postcode
+name: Bangladesh postal code
+status: draft
+doc: 'Postal code in Bangladesh: four digits.'
+semantic_type: postindex
+country:
+- BD
+langs:
+- bn
+regexp: ^\d{4}$
+examples:
+- value: '1340'
+- value: '1000'
+- value: '134'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Bangladesh
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/BD

@@ -24,6 +24,8 @@ examples:
   description: Check digit does not match
 mappings:
   purview: Greece Social Security Number (AMKA)
+  dpv: pd:OfficialID
+  stdnum: gr.amka
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gr.amka.html

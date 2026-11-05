@@ -18,6 +18,7 @@ examples:
   description: Uniform Resource Locator
 mappings:
   wikidata: P3743
+  bioregistry: oid
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Object_identifier

@@ -22,6 +22,8 @@ examples:
 - value: S0960-894X(96)0051-X
   valid: false
   description: The item number must have five digits
+mappings:
+  bioregistry: pii
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Publisher_Item_Identifier

@@ -24,6 +24,8 @@ examples:
 mappings:
   autotype: asin
   wikidata: P5749
+  schema_org: asin
+  bioregistry: asin
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number

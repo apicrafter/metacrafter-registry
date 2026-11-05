@@ -15,6 +15,9 @@ regexp: '[A-Z0-9]{6,9}'
 examples:
 - value: AB123456
   description: Example Armenian passport number
+mappings:
+  dpv: pd:Passport
+  fhir: http://hl7.org/fhir/sid/passport-ARM
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Armenian_passport

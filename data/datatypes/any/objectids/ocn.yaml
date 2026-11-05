@@ -21,6 +21,7 @@ examples:
   description: Iso suomen kielioppi
 mappings:
   wikidata: P243
+  bioregistry: oclc
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/OCLC

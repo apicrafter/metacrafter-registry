@@ -1,0 +1,28 @@
+id: ghsa_id
+name: GitHub Security Advisory ID (GHSA)
+status: draft
+doc: 'Identifier of an advisory in the GitHub Advisory Database: GHSA- and three groups of four characters
+  separated by hyphens. The characters are random and come from the set 23456789cfghjmpqrvwx, always in
+  lower case. An advisory that has a CVE identifier keeps its GHSA ID as well; OSV.dev also uses GHSA
+  IDs as entry ids.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^GHSA(?:-[23456789cfghjmpqrvwx]{4}){3}$
+examples:
+- value: GHSA-jfh8-c2jp-5v3q
+  description: Remote code injection in Log4j (CVE-2021-44228)
+- value: GHSA-vp9c-fpxx-744v
+  description: Example in the OSV schema documentation
+- value: GHSA-JFH8-C2JP-5V3Q
+  valid: false
+  description: Upper case
+- value: GHSA-jfh8-c2jp-5v3a
+  valid: false
+  description: The letter a is not in the alphabet
+links:
+- type: doc
+  url: https://docs.github.com/en/code-security/security-advisories/working-with-global-security-advisories-from-the-github-advisory-database/about-the-github-advisory-database

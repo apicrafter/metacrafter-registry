@@ -1,0 +1,38 @@
+id: cpe23
+name: CPE 2.3 formatted string
+status: draft
+doc: 'Name of an IT product in the formatted string binding of Common Platform Enumeration (CPE) 2.3,
+  maintained by NIST: cpe:2.3: followed by eleven colon-separated attributes - part (a for an application,
+  o for an operating system, h for hardware), vendor, product, version, update, edition, language, sw_edition,
+  target_sw, target_hw and other. An asterisk means any value and a hyphen means not applicable. The NVD
+  CPE dictionary and CVE records name affected products this way. The regexp is the one of the CPE 2.3
+  naming XML schema. The older CPE 2.2 URI form (cpe:/a:...) is not covered.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^cpe:2\.3:[aho*\-](:(((\?*|\*?)([a-zA-Z0-9\-._]|(\\[\\*?!"#$%&'()+,/:;<=>@\[\]\^`{|}~]))+(\?*|\*?))|[*\-])){5}(:(([a-zA-Z]{2,3}(-([a-zA-Z]{2}|[0-9]{3}))?)|[*\-]))(:(((\?*|\*?)([a-zA-Z0-9\-._]|(\\[\\*?!"#$%&'()+,/:;<=>@\[\]\^`{|}~]))+(\?*|\*?))|[*\-])){4}$
+examples:
+- value: cpe:2.3:a:apache:log4j:2.14.1:-:*:*:*:*:*:*
+  description: Apache Log4j 2.14.1 in the NVD CPE dictionary
+- value: cpe:2.3:o:linux:linux_kernel:5.10:-:*:*:*:*:*:*
+  description: Linux kernel 5.10 (operating system)
+- value: cpe:2.3:h:cisco:asa_5505:-:*:*:*:*:*:*:*
+  description: Cisco ASA 5505 (hardware)
+- value: cpe:2.3:a:microsoft:internet_explorer:8.0.6001:beta:*:*:*:*:*:*
+  description: Example from Wikipedia
+- value: cpe:/a:apache:log4j:2.14.1
+  valid: false
+  description: CPE 2.2 URI binding
+- value: cpe:2.3:a:apache:log4j:2.14.1
+  valid: false
+  description: Attributes after version are missing
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Common_Platform_Enumeration
+- type: doc
+  url: https://csrc.nist.gov/schema/cpe/2.3/cpe-naming_2.3.xsd
+- type: doc
+  url: https://nvd.nist.gov/products/cpe

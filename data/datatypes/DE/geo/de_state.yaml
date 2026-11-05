@@ -21,6 +21,7 @@ examples:
   description: Bayern, in English
 mappings:
   fta: STATE_PROVINCE.STATE_NAME_DE
+  schema_org: addressRegion
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/States_of_Germany

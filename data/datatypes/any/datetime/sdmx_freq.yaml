@@ -1,0 +1,42 @@
+id: sdmx_freq
+name: SDMX frequency code (CL_FREQ)
+status: draft
+doc: 'Code from the SDMX code list CL_FREQ (agency SDMX, version 2.1) for the frequency of a time series
+  or of data collection: A annual, S half-yearly, Q quarterly, M monthly, W weekly, D daily, B daily over
+  the business week, H hourly, N minutely and I irregular. A digit after the letter means every n periods
+  (A5 every five years, W2 every two weeks), an underscore and a digit mean n times per period (M_2 twice
+  a month), OA and OM are occasional annual and monthly, and _O, _U and _Z mean other, unspecified and
+  not applicable.'
+categories:
+- datetime
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:A(?:2|3|4|5|10|20|30|_3)?|S|Q|M(?:2|_2|_3)?|W(?:2|3|4|_2|_3)?|D(?:_2)?|H(?:2|3)?|B|N|I|O[AM]|_[OUZ])$
+examples:
+- value: A
+  description: Annual
+- value: Q
+  description: Quarterly
+- value: M
+  description: Monthly
+- value: B
+  description: Daily, business week
+- value: A_3
+  description: Three times a year
+- value: _Z
+  description: Not applicable
+- value: Y
+  valid: false
+  description: Not a code of CL_FREQ
+- value: A6
+  valid: false
+  description: Not a code of CL_FREQ
+links:
+- type: doc
+  url: https://registry.sdmx.org/sdmx/v2/structure/codelist/SDMX/CL_FREQ/2.1
+- type: doc
+  url: https://sdmx.org/standards-2/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SDMX

@@ -1,0 +1,48 @@
+id: hs_code
+name: Harmonized System (HS) code
+status: draft
+doc: Code of a goods category in the Harmonized Commodity Description and Coding System of the World Customs
+  Organization (WCO), used for customs tariffs and international trade statistics. A chapter has two digits,
+  a heading four and a subheading six. The WCO writes headings as 01.01 and subheadings as 0101.21; trade
+  databases such as UN Comtrade write the same codes without dots (010121). National tariffs add digits
+  to the six-digit subheading, for example the EU Combined Nomenclature (eu_cn_code) and the US HTS (us_hts_number).
+  The WCO publishes the nomenclature in editions such as HS 2022, and the meaning of a code depends on
+  the edition.
+categories:
+- industry
+- shipping
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:\d{2}|\d{4}|\d{6}|\d{2}\.\d{2}|\d{4}\.\d{2})$
+examples:
+- value: '0101.21'
+  description: 'Subheading as the WCO writes it: horses, pure-bred breeding animals'
+- value: '010121'
+  description: The same subheading without the dot, as in UN Comtrade
+- value: '01.01'
+  description: 'Heading: live horses, asses, mules and hinnies'
+- value: '2203'
+  description: 'Heading: beer made from malt'
+- value: '01'
+  description: 'Chapter: live animals'
+- value: '01012100'
+  valid: false
+  description: 'Eight digits: an EU Combined Nomenclature code'
+- value: '0101.2'
+  valid: false
+  description: Incomplete subheading
+mappings:
+  wikidata: P5471
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Harmonized_System
+- type: doc
+  url: https://www.wcoomd.org/en/topics/nomenclature/overview/what-is-the-harmonized-system.aspx
+- type: doc
+  url: https://www.wcoomd.org/-/media/wco/public/global/pdf/topics/nomenclature/instruments-and-tools/hs-nomenclature-2022/2022/0101_2022e.pdf
+- type: other
+  url: https://comtradeapi.un.org/files/v1/app/reference/HS.json
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5471

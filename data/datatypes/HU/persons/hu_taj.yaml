@@ -19,6 +19,7 @@ mappings:
   - Hungary social security number (TAJ)
   - EU Social Security Number (SSN) or Equivalent ID
   - EU social security number or equivalent identification
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-hungary-social-security-number

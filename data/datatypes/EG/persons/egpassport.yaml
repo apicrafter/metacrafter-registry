@@ -15,6 +15,9 @@ regexp: ^[A-Z0-9]{8,9}$
 examples:
 - value: A12345678
   description: Example Egyptian passport number
+mappings:
+  dpv: pd:Passport
+  fhir: http://hl7.org/fhir/sid/passport-EGY
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Egyptian_passport

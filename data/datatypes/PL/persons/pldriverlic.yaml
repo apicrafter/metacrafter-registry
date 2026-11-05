@@ -17,3 +17,4 @@ mappings:
   purview:
   - Poland drivers license number
   - EU drivers license number
+  dpv: pd:OfficialID

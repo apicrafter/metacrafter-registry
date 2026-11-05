@@ -1,0 +1,37 @@
+id: th_moa
+name: Thai company registration number (MOA number)
+status: draft
+doc: Registration number that the Department of Business Development (DBD) of Thailand gives to a juristic
+  person, also called the Memorandum of Association number; it is also the company's taxpayer identification
+  number. It has 13 digits and always starts with 0 to show that the DBD issued it; the last digit is
+  a check digit computed as for the personal number. It is written grouped as 0-99-4-000-61772-1.
+categories:
+- companies
+- finances
+country:
+- TH
+langs:
+- th
+is_pii: false
+classification: identifier
+regexp: ^0-?\d{2}-?\d-?\d{3}-?\d{5}-?\d$
+examples:
+- value: 0105519010951
+  description: Charoen Pokphand, an example of Wikidata P13857
+- value: '0107536000617'
+  description: Dusit Thani Group, an example of Wikidata P13857
+- value: 0-99-4-000-61772-1
+  description: Example from the python-stdnum documentation
+- value: '3100600445635'
+  valid: false
+  description: 'Starts with 3: a personal identification number from the python-stdnum documentation'
+mappings:
+  wikidata: P13857
+  stdnum: th.moa
+links:
+- type: doc
+  url: https://datawarehouse.dbd.go.th/index
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P13857
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.th.moa.html

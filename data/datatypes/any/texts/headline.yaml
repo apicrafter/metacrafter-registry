@@ -8,6 +8,8 @@ categories:
 langs:
 - common
 is_pii: false
+mappings:
+  schema_org: headline
 links:
 - type: schema.org
   url: https://schema.org/headline

@@ -34,6 +34,8 @@ mappings:
   purview:
   - Spain DNI
   - EU national identification number
+  dpv: pd:OfficialID
+  stdnum: es.dni
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Documento_Nacional_de_Identidad_(Spain)

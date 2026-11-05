@@ -21,6 +21,8 @@ examples:
 - value: VA04362147927
   valid: false
   description: One character too many
+mappings:
+  stdnum: eu.banknote
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Euro_banknotes#Serial_number

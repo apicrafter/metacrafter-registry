@@ -1,0 +1,33 @@
+id: eco_id
+name: Evidence and Conclusion Ontology (ECO) term ID
+status: draft
+doc: 'Identifier of a term in the Evidence and Conclusion Ontology, which classifies the kinds of evidence
+  behind scientific statements, so that gene and protein annotations can say how they were made. It is
+  ECO: and seven digits; OBO PURLs and Wikidata write ECO_ instead.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^ECO[:_]\d{7}$
+examples:
+- value: ECO:0000269
+  description: experimental evidence used in manual assertion
+- value: ECO:0007807
+  description: protein localization evidence used in automatic assertion; Bioregistry example
+- value: ECO_0000269
+  description: underscore form
+- value: ECO:269
+  valid: false
+  description: Not padded to seven digits
+mappings:
+  bioregistry: eco
+  wikidata: P3811
+links:
+- type: doc
+  url: https://www.evidenceontology.org/
+- type: other
+  url: https://bioregistry.io/registry/eco
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3811

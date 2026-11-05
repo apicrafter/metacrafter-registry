@@ -29,6 +29,8 @@ examples:
 - value: '2738274'
   valid: false
   description: Without the specialty group
+mappings:
+  fhir: https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR
 links:
 - type: wikipedia
   url: https://de.wikipedia.org/wiki/Lebenslange_Arztnummer

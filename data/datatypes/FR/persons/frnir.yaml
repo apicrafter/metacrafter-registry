@@ -28,6 +28,8 @@ mappings:
   - EU Social Security Number (SSN) or Equivalent ID
   - EU social security number or equivalent identification
   fta: IDENTITY.SSN_FR
+  dpv: pd:OfficialID
+  stdnum: fr.nir
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/INSEE_code

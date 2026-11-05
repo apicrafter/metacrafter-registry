@@ -1,0 +1,28 @@
+id: zfin_id
+name: ZFIN ID
+status: draft
+doc: 'Identifier of an object in ZFIN, the Zebrafish Information Network model organism database: ZDB-,
+  the kind of object, such as GENE, and two numbers separated by hyphens.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^ZDB-\w+-\d+-\d+$
+examples:
+- value: ZDB-GENE-041118-11
+  description: Gene pcdh2a36; Bioregistry example
+- value: ZDB-GENE-041118
+  valid: false
+  description: Missing the last number
+mappings:
+  bioregistry: zfin
+  wikidata: P3870
+links:
+- type: doc
+  url: https://zfin.org/
+- type: other
+  url: https://bioregistry.io/registry/zfin
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3870

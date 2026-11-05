@@ -1,0 +1,36 @@
+id: us_hts_number
+name: US Harmonized Tariff Schedule (HTS) number
+status: draft
+doc: Number of the Harmonized Tariff Schedule of the United States (HTSUS), published by the US International
+  Trade Commission. The first six digits are the HS subheading (hs_code); digits seven and eight make
+  the eight-digit subheading, written 0101.21.00, and a two-digit statistical suffix makes the ten-digit
+  statistical reporting number, written 0101.21.00.10. US Customs rulings often drop the last dot (6110.20.2079).
+  The regexp requires the dots, because ten digits without them cannot be told from other codes.
+categories:
+- industry
+- shipping
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{4}\.\d{2}\.\d{2}(?:\.?\d{2})?$
+examples:
+- value: 0101.21.00
+  description: 'Eight-digit subheading: purebred breeding horses'
+- value: 0101.21.00.10
+  description: 'Statistical reporting number: purebred breeding horses, males'
+- value: 6110.20.2079
+  description: Statistical reporting number 6110.20.20.79 written as in US Customs rulings
+- value: '0101.21'
+  valid: false
+  description: 'Six digits: the HS subheading'
+- value: '0101210010'
+  valid: false
+  description: Ten digits without dots
+links:
+- type: doc
+  url: https://hts.usitc.gov/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Harmonized_Tariff_Schedule_of_the_United_States

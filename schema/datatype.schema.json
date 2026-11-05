@@ -74,6 +74,21 @@
       "pattern": "^dt:date:[a-z0-9_]+$",
       "description": "The key of a qddate date pattern (ivbeg/qddate, qddate/patterns), for example dt:date:date_2. Generated variants such as dt:date:date_2:time_1 are not mapped; crosswalk resolves them to their base pattern."
     },
+    "bioregistryPrefix": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+      "description": "A normalized Bioregistry prefix, lowercase, for example chebi, ncbitaxon, pubchem.compound or iso.639-3"
+    },
+    "stdnumModule": {
+      "type": "string",
+      "pattern": "^(?!stdnum\\.)[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)*$",
+      "description": "A python-stdnum module path without the stdnum. prefix, for example br.cpf, iban or in_.aadhaar"
+    },
+    "fhirSystem": {
+      "type": "string",
+      "pattern": "^(https?://[^\\s]+|urn:oid:[0-2](\\.[0-9]+)+|urn:(?!oid:)[a-z0-9][a-z0-9-]{0,31}:[^\\s]+)$",
+      "description": "An HL7 FHIR identifier system: an http(s) URI, urn:oid: or another URN, for example http://hl7.org/fhir/sid/us-ssn or urn:dicom:uid"
+    },
     "record": {
       "type": "object",
       "additionalProperties": false,
@@ -200,6 +215,27 @@
               "oneOf": [
                 {"$ref": "#/$defs/qddateKey"},
                 {"type": "array", "items": {"$ref": "#/$defs/qddateKey"}, "minItems": 1, "uniqueItems": true}
+              ]
+            },
+            "bioregistry": {
+              "description": "Bioregistry (https://bioregistry.io) prefixes of the identifier resources whose local identifiers this record describes, for example chebi or ncbitaxon.",
+              "oneOf": [
+                {"$ref": "#/$defs/bioregistryPrefix"},
+                {"type": "array", "items": {"$ref": "#/$defs/bioregistryPrefix"}, "minItems": 1, "uniqueItems": true}
+              ]
+            },
+            "stdnum": {
+              "description": "python-stdnum modules that validate this identifier, as the module path after stdnum., for example br.cpf, iban or in_.aadhaar.",
+              "oneOf": [
+                {"$ref": "#/$defs/stdnumModule"},
+                {"type": "array", "items": {"$ref": "#/$defs/stdnumModule"}, "minItems": 1, "uniqueItems": true}
+              ]
+            },
+            "fhir": {
+              "description": "HL7 FHIR identifier system URIs (Identifier.system) for this identifier, as HL7 Terminology (terminology.hl7.org) or the base implementation guide of a national HL7 affiliate publishes them, for example http://hl7.org/fhir/sid/us-ssn or https://fhir.nhs.uk/Id/nhs-number.",
+              "oneOf": [
+                {"$ref": "#/$defs/fhirSystem"},
+                {"type": "array", "items": {"$ref": "#/$defs/fhirSystem"}, "minItems": 1, "uniqueItems": true}
               ]
             }
           }

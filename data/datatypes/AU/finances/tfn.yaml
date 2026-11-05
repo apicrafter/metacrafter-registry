@@ -13,3 +13,6 @@ classification: identifier
 regexp: ^[0-9]{8,9}$
 mappings:
   purview: Australia tax file number
+  dpv: pd:OfficialID
+  schema_org: taxID
+  stdnum: au.tfn

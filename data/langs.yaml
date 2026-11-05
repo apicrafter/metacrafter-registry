@@ -198,3 +198,30 @@
 - id: uz
   name: Uzbek
   kind: language
+- id: dz
+  name: Dzongkha
+  kind: language
+- id: ht
+  name: Haitian Creole
+  kind: language
+- id: lo
+  name: Lao
+  kind: language
+- id: mn
+  name: Mongolian
+  kind: language
+- id: my
+  name: Burmese
+  kind: language
+- id: dv
+  name: Dhivehi
+  kind: language
+- id: tk
+  name: Turkmen
+  kind: language
+- id: mh
+  name: Marshallese
+  kind: language
+- id: la
+  name: Latin
+  kind: language

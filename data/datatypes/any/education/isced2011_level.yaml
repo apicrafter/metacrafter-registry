@@ -1,0 +1,30 @@
+id: isced2011_level
+name: ISCED 2011 level of education
+status: draft
+doc: 'Level of education in the International Standard Classification of Education 2011 (ISCED 2011) of
+  UNESCO: 0 early childhood education, 1 primary, 2 lower secondary, 3 upper secondary, 4 post-secondary
+  non-tertiary, 5 short-cycle tertiary, 6 bachelor''s or equivalent, 7 master''s or equivalent and 8 doctoral
+  or equivalent. It replaced ISCED 1997, which had seven levels. The regexp covers the one-digit level
+  only, so it matches any digit from 0 to 8.'
+categories:
+- education
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[0-8]$
+examples:
+- value: '6'
+  description: Bachelor's or equivalent level
+- value: '3'
+  description: Upper secondary education
+- value: '0'
+  description: Early childhood education
+- value: '9'
+  valid: false
+  description: There is no level 9
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Standard_Classification_of_Education
+- type: doc
+  url: https://ec.europa.eu/eurostat/statistics-explained/index.php?title=International_Standard_Classification_of_Education_(ISCED)

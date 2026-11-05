@@ -1,0 +1,31 @@
+id: pfam_id
+name: Pfam family accession
+status: draft
+doc: Accession of a protein family or domain in Pfam, a collection of protein families described by multiple
+  sequence alignments and hidden Markov models, now maintained within InterPro at EMBL-EBI. It is PF and
+  five digits. Pfam clans, which group related families, have CL accessions and are not covered.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^PF\d{5}$
+examples:
+- value: PF00069
+  description: Protein kinase domain
+- value: PF11779
+  description: Small subunit of serine palmitoyltransferase-like; Bioregistry example
+- value: CL0192
+  valid: false
+  description: Pfam clan accession, not a family
+mappings:
+  bioregistry: pfam
+  wikidata: P3519
+links:
+- type: doc
+  url: https://www.ebi.ac.uk/interpro/
+- type: other
+  url: https://bioregistry.io/registry/pfam
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3519

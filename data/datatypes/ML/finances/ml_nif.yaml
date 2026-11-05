@@ -17,6 +17,7 @@ examples:
   description: example from ORG-ID.guide
 mappings:
   orgid: ML-NIF
+  schema_org: taxID
 links:
 - type: other
   url: https://org-id.guide/list/ML-NIF

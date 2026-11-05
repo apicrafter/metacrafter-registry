@@ -21,6 +21,7 @@ examples:
 mappings:
   autotype: useragentstring
   google_dlp: HTTP_USER_AGENT
+  dpv: pd:UserAgent
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/User-Agent_header

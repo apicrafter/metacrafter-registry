@@ -16,6 +16,7 @@ mappings:
   fta:
   - COORDINATE.LONGITUDE_DECIMAL
   - COORDINATE.LONGITUDE_DMS
+  schema_org: longitude
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Longitude

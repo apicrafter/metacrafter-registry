@@ -71,6 +71,8 @@ mappings:
   - FULL_ADDRESS_EN
   - STREET_ADDRESS_JA
   sherlock: address
+  dpv: pd:PhysicalAddress
+  schema_org: address
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Address

@@ -17,6 +17,7 @@ examples:
   description: Royal Society of Chemistry
 mappings:
   wikidata: P1662
+  bioregistry: doi.prefix
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Digital_object_identifier

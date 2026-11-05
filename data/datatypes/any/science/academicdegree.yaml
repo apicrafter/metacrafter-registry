@@ -9,6 +9,8 @@ langs:
 - common
 is_pii: false
 classification: categorical
+mappings:
+  dpv: pd:EducationQualification
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Academic_degree

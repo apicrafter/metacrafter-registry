@@ -25,6 +25,7 @@ examples:
   description: The name part is missing
 mappings:
   wikidata: P8054
+  bioregistry: ark
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Archival_Resource_Key

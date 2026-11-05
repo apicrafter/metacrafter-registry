@@ -1,0 +1,28 @@
+id: flybase_id
+name: FlyBase ID
+status: draft
+doc: 'Identifier of an object in FlyBase, the database of Drosophila genes and genomes: FB, two letters
+  for the kind of object and seven digits. Gene identifiers start with FBgn.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^FB\w{2}\d{7}$
+examples:
+- value: FBgn0011293
+  description: Gene 4Csp4 (4-Cysteine soluble protein 4) of Drosophila melanogaster; Bioregistry example
+- value: FBgn011293
+  valid: false
+  description: Six digits instead of seven
+mappings:
+  bioregistry: flybase
+  wikidata: P3852
+links:
+- type: doc
+  url: https://flybase.org/
+- type: other
+  url: https://bioregistry.io/registry/flybase
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3852

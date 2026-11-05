@@ -17,6 +17,8 @@ mappings:
   google_dlp: AUSTRALIA_MEDICARE_NUMBER
   presidio: AU_MEDICARE
   purview: Australia medical account number
+  dpv: pd:OfficialID
+  fhir: http://ns.electronichealth.net.au/id/medicare-number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Medicare_card_(Australia)

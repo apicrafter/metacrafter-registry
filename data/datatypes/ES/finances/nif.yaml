@@ -25,6 +25,8 @@ examples:
 mappings:
   google_dlp: SPAIN_NIF_NUMBER
   presidio: ES_NIF
+  schema_org: taxID
+  stdnum: es.nif
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal

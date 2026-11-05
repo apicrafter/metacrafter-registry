@@ -1,0 +1,18 @@
+id: hn_postcode
+name: Honduras postal code
+status: draft
+doc: 'Postal code in Honduras: five digits.'
+semantic_type: postindex
+country:
+- HN
+langs:
+- es
+regexp: ^\d{5}$
+examples:
+- value: '31301'
+- value: '3130'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/HN

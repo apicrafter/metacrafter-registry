@@ -19,6 +19,9 @@ mappings:
   - Spain tax identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  dpv: pd:OfficialID
+  schema_org: taxID
+  stdnum: es.nif
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal

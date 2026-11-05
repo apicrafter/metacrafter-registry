@@ -21,6 +21,7 @@ examples:
   description: Sony Music India
 mappings:
   wikidata: P7085
+  dpv: pd:Username
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P7085

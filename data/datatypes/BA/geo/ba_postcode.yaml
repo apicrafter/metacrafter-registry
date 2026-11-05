@@ -1,0 +1,22 @@
+id: ba_postcode
+name: Bosnia and Herzegovina postal code
+status: draft
+doc: 'Postal code in Bosnia and Herzegovina: five digits.'
+semantic_type: postindex
+country:
+- BA
+langs:
+- bs
+- hr
+- sr
+regexp: ^\d{5}$
+examples:
+- value: '71000'
+- value: '7100'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Bosnia_and_Herzegovina
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/BA

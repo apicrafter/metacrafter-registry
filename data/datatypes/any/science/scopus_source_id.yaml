@@ -20,6 +20,7 @@ examples:
   description: International Journal of Infectious Diseases
 mappings:
   wikidata: P1156
+  bioregistry: scopus.publication
 links:
 - type: doc
   url: https://www.scopus.com/sources

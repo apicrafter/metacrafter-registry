@@ -22,6 +22,8 @@ examples:
 - value: 59Z000000001534U7
   valid: false
   description: One character too many
+mappings:
+  stdnum: eu.eic
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Energy_Identification_Code

@@ -21,6 +21,8 @@ examples:
 - value: '352099001761481'
   valid: false
   description: A 15-digit IMEI with a check digit, not an IMEISV
+mappings:
+  stdnum: imei
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity

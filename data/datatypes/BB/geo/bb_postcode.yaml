@@ -1,0 +1,21 @@
+id: bb_postcode
+name: Barbados postal code
+status: draft
+doc: 'Postal code in Barbados: the letters BB and five digits.'
+semantic_type: postindex
+country:
+- BB
+langs:
+- en
+regexp: ^BB\d{5}$
+examples:
+- value: BB23026
+- value: BB22025
+- value: BB2302
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Barbados_Postal_Service
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/BB

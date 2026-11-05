@@ -24,6 +24,7 @@ examples:
 mappings:
   orgid: FI-PRO
   wikidata: P12980
+  stdnum: fi.ytunnus
 links:
 - type: wikipedia
   url: https://fi.wikipedia.org/wiki/Y-tunnus

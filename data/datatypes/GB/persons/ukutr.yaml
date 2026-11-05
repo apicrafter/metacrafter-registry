@@ -19,6 +19,9 @@ mappings:
   - U.K. Unique Taxpayer Reference Number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  dpv: pd:OfficialID
+  schema_org: taxID
+  stdnum: gb.utr
 links:
 - type: other
   url: https://www.gov.uk/find-lost-utr-number

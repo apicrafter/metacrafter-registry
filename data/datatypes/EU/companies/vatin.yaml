@@ -21,6 +21,11 @@ mappings:
   fibo: BE/LegalEntities/FormalBusinessOrganizations/ValueAddedTaxIdentificationNumber
   google_dlp: VAT_NUMBER
   wikidata: P3608
+  schema_org: vatID
+  bioregistry: vat
+  stdnum:
+  - vatin
+  - eu.vat
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/VAT_identification_number

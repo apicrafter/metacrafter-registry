@@ -10,6 +10,8 @@ langs:
 - common
 is_pii: false
 classification: identifier
+mappings:
+  bioregistry: wos.researcher
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ResearcherID

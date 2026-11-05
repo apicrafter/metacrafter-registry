@@ -17,6 +17,8 @@ regexp: \d{10}
 examples:
 - value: '1234567890'
   description: Example Armenian SSN
+mappings:
+  dpv: pd:OfficialID
 translations:
   hy:
     name: Հասարակական ապահովագրության համար

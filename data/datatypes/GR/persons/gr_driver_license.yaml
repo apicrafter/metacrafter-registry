@@ -17,6 +17,7 @@ mappings:
   purview:
   - Greece drivers license number
   - EU drivers license number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-greece-drivers-license-number

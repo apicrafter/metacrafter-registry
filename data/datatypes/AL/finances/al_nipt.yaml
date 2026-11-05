@@ -24,6 +24,8 @@ examples:
   description: One character too many
 mappings:
   orgid: AL-QKB
+  schema_org: taxID
+  stdnum: al.nipt
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.al.nipt.html

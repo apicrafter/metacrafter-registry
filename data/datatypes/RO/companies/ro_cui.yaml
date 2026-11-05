@@ -21,6 +21,8 @@ examples:
   description: Synthetic number with a valid check digit
 mappings:
   orgid: RO-CUI
+  schema_org: taxID
+  stdnum: ro.cui
 links:
 - type: wikipedia
   url: https://ro.wikipedia.org/wiki/Cod_de_identificare_fiscal%C4%83

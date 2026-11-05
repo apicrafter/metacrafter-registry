@@ -10,6 +10,7 @@ is_pii: false
 mappings:
   cdm: means.reference.description
   sherlock: description
+  schema_org: description
 links:
 - type: schema.org
   url: https://schema.org/description

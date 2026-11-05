@@ -1,0 +1,27 @@
+id: quadkey
+name: Bing Maps tile quadkey
+status: draft
+doc: Quadtree key of a map tile in the Bing Maps Tile System of Microsoft. The bits of the tile Y and
+  X coordinates are interleaved and written as base-4 digits 0 to 3, with leading zeros kept. The number
+  of digits equals the level of detail, from 1 to 23, and a tile's key begins with the key of its parent
+  tile. The regexp only checks this shape, so it also matches other numbers made of the digits 0 to 3.
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-3]{1,23}$
+examples:
+- value: '213'
+  description: Tile X 3, Y 5 at level 3 (example in the Microsoft documentation)
+- value: '130'
+  description: Child of tile 13 at level 3
+- value: '2'
+  description: Level 1 tile, parent of tiles 20 to 23
+- value: '2134'
+  valid: false
+  description: The digit 4 is not used
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/bingmaps/articles/bing-maps-tile-system

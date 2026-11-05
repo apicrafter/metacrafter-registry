@@ -1,0 +1,27 @@
+id: mitre_attack_tactic_id
+name: MITRE ATT&CK tactic ID
+status: draft
+doc: 'Identifier of a tactic in MITRE ATT&CK, that is, of an adversary''s goal such as Initial Access
+  or Credential Access: TA followed by four digits.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^TA[0-9]{4}$
+examples:
+- value: TA0001
+  description: Initial Access
+- value: TA0006
+  description: Credential Access
+- value: TA001
+  valid: false
+  description: Three digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ATT%26CK
+- type: doc
+  url: https://attack.mitre.org/tactics/TA0006
+- type: other
+  url: https://github.com/mitre-attack/attack-stix-data

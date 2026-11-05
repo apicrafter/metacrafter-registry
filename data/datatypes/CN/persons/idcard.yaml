@@ -18,6 +18,8 @@ regexp: ^(?:\d{17}[\dX]|\d{15})$
 mappings:
   autotype: cin
   purview: China resident identity card (PRC) number
+  dpv: pd:OfficialID
+  stdnum: cn.ric
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Resident_Identity_Card

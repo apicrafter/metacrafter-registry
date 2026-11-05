@@ -26,6 +26,8 @@ examples:
 - value: 310-150-123456789
   valid: false
   description: Separators are not used
+mappings:
+  stdnum: imsi
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_mobile_subscriber_identity

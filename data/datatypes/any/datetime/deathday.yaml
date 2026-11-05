@@ -9,6 +9,8 @@ categories:
 langs:
 - common
 is_pii: true
+mappings:
+  schema_org: deathDate
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Death_anniversary

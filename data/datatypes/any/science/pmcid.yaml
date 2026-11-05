@@ -17,6 +17,7 @@ examples:
 - value: '3682911'
 mappings:
   wikidata: P932
+  bioregistry: pmc
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/PubMed_Central

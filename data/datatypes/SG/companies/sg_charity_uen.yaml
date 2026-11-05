@@ -23,6 +23,7 @@ examples:
   description: example from ORG-ID.guide
 mappings:
   orgid: SG-COC
+  stdnum: sg.uen
 links:
 - type: other
   url: https://org-id.guide/list/SG-COC

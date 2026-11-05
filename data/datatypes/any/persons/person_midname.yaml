@@ -13,3 +13,4 @@ mappings:
   fta:
   - NAME.MIDDLE
   - NAME.MIDDLE_INITIAL
+  schema_org: additionalName

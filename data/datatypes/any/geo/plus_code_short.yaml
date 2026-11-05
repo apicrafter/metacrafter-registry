@@ -1,0 +1,40 @@
+id: plus_code_short
+name: Short Plus Code (Open Location Code)
+status: draft
+doc: Plus Code with leading digits removed, which is decoded relative to a reference location, often a
+  town written after it (WF8Q+WF Praia). Digits are removed in pairs and only while the reference is close
+  enough to recover the full code (plus_code). The specification describes removing two to six digits;
+  the test data of the reference implementations also removes all eight (+2VX). Short codes keep the separator
+  + and cannot contain padding. Short codes with nothing after the separator, such as 22+, are valid but
+  not covered, because they look like ordinary text.
+semantic_type: plus_code
+langs:
+- common
+regexp: ^(?:[2-9CFGHJMPQRVWXcfghjmpqrvwx]{2}){0,3}\+[2-9CFGHJMPQRVWXcfghjmpqrvwx]{2,}$
+examples:
+- value: 9G8F+6W
+  description: 8FVC9G8F+6W shortened near Zurich (specification)
+- value: 8F+6W
+  description: The same code shortened closer to its centre (specification)
+- value: WF8Q+WF
+  description: 796RWF8Q+WF shortened for Praia (specification)
+- value: WC2345+G6g
+  description: Mixed case, from the reference validity tests
+- value: +2VX
+  description: 9C3W9QCJ+2VX with all eight digits removed (reference short code tests)
+- value: WC2300+G6g
+  valid: false
+  description: Short codes cannot contain padding
+- value: WC2345+G
+  valid: false
+  description: One digit after the separator
+- value: 8FVC9G8F+6W
+  valid: false
+  description: 'Full code: the datatype plus_code'
+links:
+- type: doc
+  url: https://github.com/google/open-location-code/blob/main/Documentation/Specification/specification.md
+- type: other
+  url: https://github.com/google/open-location-code/blob/main/test_data/validityTests.csv
+- type: other
+  url: https://github.com/google/open-location-code/blob/main/test_data/shortCodeTests.csv

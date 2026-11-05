@@ -1,0 +1,26 @@
+id: ja3s_fingerprint
+name: JA3S TLS server fingerprint
+status: draft
+doc: 'Server-side counterpart of JA3: the MD5 hash of the TLS version, the chosen cipher suite and the
+  extensions of a ServerHello message, written as 32 lowercase hexadecimal digits. A server answers the
+  same client the same way, so a JA3 and JA3S pair identifies a client-server negotiation, for example
+  malware talking to its command and control server.'
+parent: md5hash
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-f]{32}$
+examples:
+- value: 623de93db17d313345d7ea481e7443cf
+  description: Trickbot command and control server response (JA3 README)
+- value: 80b3a14bccc8598a1f3bbe83e71f735f
+  description: Emotet command and control server response (JA3 README)
+- value: 623de93db17d313345d7ea481e7443c
+  valid: false
+  description: One hex digit short
+links:
+- type: doc
+  url: https://github.com/salesforce/ja3

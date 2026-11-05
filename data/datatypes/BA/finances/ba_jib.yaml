@@ -24,6 +24,7 @@ examples:
   description: example from ORG-ID.guide
 mappings:
   orgid: BA-JIB
+  schema_org: taxID
 links:
 - type: doc
   url: https://www.uino.gov.ba

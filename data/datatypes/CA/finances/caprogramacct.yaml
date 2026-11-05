@@ -21,6 +21,8 @@ examples:
 - value: 123456789RC0001
   description: CRA corporate income tax program account with 9-digit Business Number, 'RC' program identifier
     and 4-digit reference
+mappings:
+  stdnum: ca.bn
 links:
 - type: doc
   url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/changes-your-business/understand-your-business-number.html

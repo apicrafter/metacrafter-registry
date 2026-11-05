@@ -25,6 +25,8 @@ mappings:
   purview:
   - Hungarian Value Added Tax Number
   - Hungary value added tax number
+  schema_org: vatID
+  stdnum: hu.anum
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.hu.anum.html

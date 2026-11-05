@@ -16,6 +16,8 @@ regexp: \d{8,12}
 examples:
 - value: '1234567890'
   description: Example Armenian organization TIN
+mappings:
+  schema_org: taxID
 translations:
   hy:
     name: Կազմակերպության հարկային համար

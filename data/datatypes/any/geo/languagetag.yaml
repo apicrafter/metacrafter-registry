@@ -19,6 +19,8 @@ examples:
 mappings:
   cdm: means.reference.language.tag
   wikidata: P305
+  schema_org: inLanguage
+  bioregistry: ietf.language
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/IETF_language_tag

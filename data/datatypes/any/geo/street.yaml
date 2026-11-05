@@ -14,3 +14,4 @@ mappings:
   - STREET_NAME_BARE_<LANGUAGE>
   - STREET_NAME_BARE_EN
   - STREET_NAME_EN
+  dpv: pd:Street

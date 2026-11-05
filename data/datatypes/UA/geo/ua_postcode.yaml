@@ -1,0 +1,22 @@
+id: ua_postcode
+name: Ukraine postal code
+status: draft
+doc: 'Postal code in Ukraine: five digits.'
+semantic_type: postindex
+country:
+- UA
+langs:
+- uk
+regexp: ^\d{5}$
+examples:
+- value: '15432'
+- value: '01055'
+- value: '01001'
+- value: '1543'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Ukraine
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/UA

@@ -19,6 +19,7 @@ examples:
 mappings:
   sherlock: elevation
   wikidata: P2044
+  schema_org: elevation
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Elevation

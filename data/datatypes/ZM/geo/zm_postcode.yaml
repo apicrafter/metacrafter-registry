@@ -1,0 +1,19 @@
+id: zm_postcode
+name: Zambia postal code
+status: draft
+doc: 'Postal code in Zambia: five digits.'
+semantic_type: postindex
+country:
+- ZM
+langs:
+- en
+regexp: ^\d{5}$
+examples:
+- value: '50100'
+- value: '50101'
+- value: '5010'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/ZM

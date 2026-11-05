@@ -33,6 +33,8 @@ examples:
   description: The first character is a letter
 mappings:
   presidio: DE_HEALTH_INSURANCE
+  dpv: pd:OfficialID
+  fhir: http://fhir.de/sid/gkv/kvid-10
 links:
 - type: wikipedia
   url: https://de.wikipedia.org/wiki/Krankenversichertennummer

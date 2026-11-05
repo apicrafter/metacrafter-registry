@@ -33,6 +33,7 @@ examples:
 mappings:
   schema_org: smiles
   autotype: smile
+  bioregistry: smiles
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Simplified_Molecular_Input_Line_Entry_System

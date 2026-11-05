@@ -22,6 +22,9 @@ examples:
 - value: '784853122560498917857'
   valid: false
   description: One character too many
+mappings:
+  dpv: pd:BankAccount
+  stdnum: es.ccc
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/C%C3%B3digo_cuenta_cliente

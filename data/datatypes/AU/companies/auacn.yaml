@@ -23,6 +23,8 @@ mappings:
   - Australia company number
   - Australian Company Number
   wikidata: P3549
+  fhir: http://hl7.org.au/id/acn
+  stdnum: au.acn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Australian_Company_Number

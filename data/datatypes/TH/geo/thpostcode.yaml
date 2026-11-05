@@ -11,3 +11,6 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[0-9]{4,10}$
+mappings:
+  dpv: pd:PostalCode
+  schema_org: postalCode

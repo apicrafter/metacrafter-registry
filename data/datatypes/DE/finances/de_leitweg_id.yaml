@@ -27,6 +27,8 @@ examples:
 - value: 1-03730-19
   valid: false
   description: The coarse address starts with two digits
+mappings:
+  stdnum: de.leitweg
 links:
 - type: doc
   url: https://leitweg-id.de/

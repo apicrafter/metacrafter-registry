@@ -26,6 +26,9 @@ examples:
 - value: SI5022305
   valid: false
   description: One digit short
+mappings:
+  schema_org: vatID
+  stdnum: si.ddv
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/VAT_identification_number

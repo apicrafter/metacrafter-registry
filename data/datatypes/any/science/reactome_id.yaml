@@ -1,0 +1,31 @@
+id: reactome_id
+name: Reactome stable identifier
+status: draft
+doc: Stable identifier of a pathway, reaction or other entry in Reactome, the curated knowledgebase of
+  biological pathways. It is R-, a three-letter species code such as HSA, a hyphen and a number; a version
+  such as .1 may follow.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^R-[A-Z]{3}-\d+(-\d+)?(\.\d+)?$
+examples:
+- value: R-HSA-109582
+  description: Hemostasis
+- value: R-BTA-418592
+  description: ADP signalling through P2Y purinoceptor 1; Bioregistry example
+- value: R-HSA109582
+  valid: false
+  description: Missing hyphen before the number
+mappings:
+  bioregistry: reactome
+  wikidata: P3937
+links:
+- type: doc
+  url: https://reactome.org/
+- type: other
+  url: https://bioregistry.io/registry/reactome
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3937

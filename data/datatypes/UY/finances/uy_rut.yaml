@@ -1,0 +1,42 @@
+id: uy_rut
+name: Uruguayan tax registry number (RUT)
+status: draft
+doc: 'Registro Único Tributario (RUT), the number under which the Uruguayan tax office (DGI) registers
+  legal entities for tax purposes. It has 12 digits, often written as 21-100342-001-7: a two-digit registration
+  number from 01 to 22, a six-digit sequence number, the digits 001 and a modulo 11 check digit. The country
+  prefix UY is sometimes added.'
+categories:
+- finances
+- companies
+country:
+- UY
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:UY ?)?(?:0[1-9]|1\d|2[0-2])[- ]?\d{6}[- ]?001[- ]?\d$
+examples:
+- value: 21-100342-001-7
+  description: Example from the python-stdnum documentation
+- value: '211003420017'
+  description: The same number without separators
+- value: UY 21 140634 001 1
+  description: Example with the country prefix from the python-stdnum documentation
+- value: 23-100342-001-7
+  valid: false
+  description: Registration number above 22
+- value: 21-100342-002-7
+  valid: false
+  description: The digits 001 are missing
+mappings:
+  stdnum: uy.rut
+links:
+- type: doc
+  url: https://servicios.dgi.gub.uy/ServiciosEnLinea/dgi--servicios-en-linea--consulta-de-certifcado-unico
+- type: doc
+  url: https://www.agesic.gub.uy/innovaportal/file/1634/1/modelo_de_datos.pdf
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.uy.rut.html
+translations:
+  es:
+    name: Registro Único Tributario (RUT)

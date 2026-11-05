@@ -18,6 +18,8 @@ mappings:
   - Hungary tax identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  dpv: pd:OfficialID
+  schema_org: taxID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-hungary-tax-identification-number

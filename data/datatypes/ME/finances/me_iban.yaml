@@ -24,6 +24,9 @@ examples:
 - value: ME25678284986502522900
   valid: false
   description: Check digit does not match
+mappings:
+  dpv: pd:BankAccount
+  stdnum: me.iban
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.me.iban.html

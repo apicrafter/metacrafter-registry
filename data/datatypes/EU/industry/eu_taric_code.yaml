@@ -1,0 +1,35 @@
+id: eu_taric_code
+name: EU TARIC code
+status: draft
+doc: Ten-digit goods nomenclature code of TARIC, the integrated tariff of the European Union, which lists
+  the customs duties, trade measures and restrictions that apply to each kind of goods. The first eight
+  digits are the Combined Nomenclature code (eu_cn_code) and the last two are TARIC subdivisions, 00 where
+  there is none. TARIC additional codes are separate values and are not covered. The regexp only checks
+  for ten digits, so it also matches other ten-digit numbers.
+categories:
+- industry
+- shipping
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{10}$
+examples:
+- value: '0101210000'
+  description: Horses, pure-bred breeding animals (CN 0101 21 00, no TARIC subdivision)
+- value: 0303149011
+  description: TARIC subdivision under HS subheading 0303.14 (frozen trout)
+- value: '0303110020'
+  description: TARIC subdivision under HS subheading 0303.11 (frozen sockeye salmon)
+- value: '01012100'
+  valid: false
+  description: 'Eight digits: a CN code'
+links:
+- type: doc
+  url: https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp?Lang=en
+- type: doc
+  url: https://ec.europa.eu/taxation_customs/dds2/taric/help/index.jsp?Lang=en
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/TARIC

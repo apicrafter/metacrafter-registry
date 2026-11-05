@@ -18,6 +18,7 @@ examples:
 - value: Bondi Beach
 mappings:
   fta: STATE_PROVINCE.SUBURB_AU
+  schema_org: addressLocality
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Suburbs_and_localities_(Australia)

@@ -22,6 +22,10 @@ examples:
 - value: '1244878628427'
   valid: false
   description: One character too many
+mappings:
+  dpv: pd:OfficialID
+  schema_org: taxID
+  stdnum: fi.veronumero
 links:
 - type: doc
   url: https://www.vero.fi/en/detailed-guidance/guidance/48791/individual_tax_numbers__instructions_fo/

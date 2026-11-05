@@ -29,6 +29,8 @@ examples:
 - value: DE900979097-00001
   valid: false
   description: Check digit does not match
+mappings:
+  schema_org: taxID
 links:
 - type: doc
   url: https://www.bzst.de/DE/Unternehmen/Identifikationsnummern/Wirtschafts-Identifikationsnummer/wirtschaftsidentifikationsnummer_node.html

@@ -28,6 +28,8 @@ mappings:
   - EU national identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  dpv: pd:OfficialID
+  stdnum: ie.pps
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Personal_Public_Service_Number

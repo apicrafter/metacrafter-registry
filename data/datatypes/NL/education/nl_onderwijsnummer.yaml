@@ -29,6 +29,8 @@ examples:
 - value: '1081483807'
   valid: false
   description: Ten digits
+mappings:
+  stdnum: nl.onderwijsnummer
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Onderwijsnummer

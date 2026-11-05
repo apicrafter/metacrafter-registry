@@ -1,0 +1,22 @@
+id: bn_postcode
+name: Brunei postal code
+status: draft
+doc: 'Postal code in Brunei: two letters and four digits, optionally separated by a space.'
+semantic_type: postindex
+country:
+- BN
+langs:
+- ms
+regexp: ^[A-Z]{2} ?\d{4}$
+examples:
+- value: BT2328
+- value: KA1131
+- value: BA1511
+- value: BT232
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postcodes_in_Brunei
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/BN

@@ -39,6 +39,9 @@ examples:
 - value: 76.53.03-285.95
   valid: false
   description: Month 53 is not used
+mappings:
+  dpv: pd:OfficialID
+  stdnum: be.bis
 links:
 - type: doc
   url: https://www.ksz-bcss.fgov.be/nl/project/rijksregisterksz-registers

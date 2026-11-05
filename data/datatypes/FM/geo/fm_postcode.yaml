@@ -1,0 +1,20 @@
+id: fm_postcode
+name: Micronesia postal code
+status: draft
+doc: 'Postal code in Micronesia: a ZIP code of five digits from 96941 to 96944, optionally followed by
+  a space or hyphen and four more digits.'
+semantic_type: postindex
+country:
+- FM
+langs:
+- en
+regexp: ^(9694[1-4])(?:[ \-](\d{4}))?$
+examples:
+- value: '96941'
+- value: '96944'
+- value: '9694'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/FM

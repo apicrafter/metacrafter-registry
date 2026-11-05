@@ -1,0 +1,19 @@
+id: tj_postcode
+name: Tajikistan postal code
+status: draft
+doc: 'Postal code in Tajikistan: six digits.'
+semantic_type: postindex
+country:
+- TJ
+langs:
+- tg
+regexp: ^\d{6}$
+examples:
+- value: '735450'
+- value: '734025'
+- value: '73545'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/TJ

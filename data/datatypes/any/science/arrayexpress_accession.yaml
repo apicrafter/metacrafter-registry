@@ -1,0 +1,28 @@
+id: arrayexpress_accession
+name: ArrayExpress accession
+status: draft
+doc: Accession of an experiment or array design in ArrayExpress, the EMBL-EBI archive of functional genomics
+  data, now a collection of the BioStudies database. It is a letter (E for an experiment, A for an array
+  design), a hyphen, a four-character code of the submission route, such as MEXP or MTAB, a hyphen and
+  a number.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[AEP]-\w{4}-\d+$
+examples:
+- value: E-MEXP-1712
+  description: Transcription profiling of Streptococcus gordonii wild type and Brf mutants; Bioregistry
+    example
+- value: E-MEXP1712
+  valid: false
+  description: Missing hyphen before the number
+mappings:
+  bioregistry: arrayexpress
+links:
+- type: doc
+  url: https://www.ebi.ac.uk/biostudies/arrayexpress
+- type: other
+  url: https://bioregistry.io/registry/arrayexpress

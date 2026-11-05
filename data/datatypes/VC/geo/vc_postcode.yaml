@@ -1,0 +1,20 @@
+id: vc_postcode
+name: Saint Vincent and the Grenadines postal code
+status: draft
+doc: 'Postal code in Saint Vincent and the Grenadines: the letters VC and four digits.'
+semantic_type: postindex
+country:
+- VC
+langs:
+- en
+regexp: ^VC\d{4}$
+examples:
+- value: VC0100
+- value: VC0110
+- value: VC0400
+- value: VC010
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/VC

@@ -1,0 +1,36 @@
+id: eu_cn_code
+name: EU Combined Nomenclature (CN) code
+status: draft
+doc: Eight-digit goods code of the Combined Nomenclature, the goods classification of the European Union
+  for its common customs tariff and its foreign trade statistics. The CN is Annex I to Council Regulation
+  (EEC) No 2658/87 and is updated every year. The first six digits are the HS subheading (hs_code) and
+  the last two are EU subdivisions. The official text groups the digits as 1806 10 15; databases often
+  write them without spaces. TARIC codes (eu_taric_code) add two more digits.
+categories:
+- industry
+- shipping
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{4} ?\d{2} ?\d{2}$
+examples:
+- value: 1806 10 15
+  description: Cocoa powder with added sugar, containing no sucrose or less than 5 % sucrose by weight
+- value: '18061015'
+  description: The same code without spaces
+- value: '01012100'
+  description: Horses, pure-bred breeding animals
+- value: 1806 10
+  valid: false
+  description: 'Six digits: the HS subheading'
+- value: '0101210000'
+  valid: false
+  description: 'Ten digits: a TARIC code'
+links:
+- type: doc
+  url: https://taxation-customs.ec.europa.eu/customs-4/calculation-customs-duties/customs-tariff/combined-nomenclature_en
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Combined_Nomenclature

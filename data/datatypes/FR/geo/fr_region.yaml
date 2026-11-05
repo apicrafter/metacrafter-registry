@@ -23,6 +23,7 @@ examples:
   description: overseas region 01
 mappings:
   fta: STATE_PROVINCE.REGION_NAME_FR
+  schema_org: addressRegion
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Regions_of_France

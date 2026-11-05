@@ -1,0 +1,30 @@
+id: metabolights_id
+name: MetaboLights accession
+status: draft
+doc: 'Accession in MetaboLights, the EMBL-EBI database of metabolomics experiments and metabolites: MTBLS
+  and a number for a study, MTBLC and a number for a compound entry.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^MTBL[CS]\d+$
+examples:
+- value: MTBLS1
+  description: Study of urinary changes in type 2 diabetes in humans; Bioregistry example
+- value: MTBLC17170
+  description: Compound entry for dimethylamine; example of Wikidata property P3890
+- value: MTBL1
+  valid: false
+  description: No letter for the kind of entry
+mappings:
+  bioregistry: metabolights
+  wikidata: P3890
+links:
+- type: doc
+  url: https://www.ebi.ac.uk/metabolights/
+- type: other
+  url: https://bioregistry.io/registry/metabolights
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3890

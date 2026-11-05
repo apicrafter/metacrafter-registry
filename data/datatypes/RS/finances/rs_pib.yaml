@@ -17,6 +17,8 @@ examples:
   description: example from ORG-ID.guide
 mappings:
   orgid: RS-PIB
+  schema_org: taxID
+  stdnum: rs.pib
 links:
 - type: doc
   url: http://www.poreskauprava.gov.rs/pib.html

@@ -1,0 +1,35 @@
+id: ua_rntrc
+name: Ukrainian individual taxpayer number (RNOKPP)
+status: draft
+doc: РНОКПП (реєстраційний номер облікової картки платника податків), the ten-digit number of an individual
+  taxpayer in the State Register of Individuals of Ukraine (ДРФО). A person keeps it for life; it appears
+  in the plastic passport, the birth certificate and the Diia app. The last digit is a check digit.
+categories:
+- pii
+- persons
+- finances
+country:
+- UA
+langs:
+- uk
+is_pii: true
+classification: identifier
+regexp: ^\d{10}$
+examples:
+- value: '1759013776'
+  description: Example from the python-stdnum documentation
+- value: '2530414071'
+  description: Example from the python-stdnum documentation
+- value: '12345'
+  valid: false
+  description: Too short
+mappings:
+  stdnum: ua.rntrc
+links:
+- type: wikipedia
+  url: https://uk.wikipedia.org/wiki/%D0%A0%D0%9D%D0%9E%D0%9A%D0%9F%D0%9F
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ua.rntrc.html
+translations:
+  uk:
+    name: Реєстраційний номер облікової картки платника податків (РНОКПП)

@@ -15,6 +15,8 @@ classification: identifier
 regexp: ^\d{13}$
 mappings:
   purview: South Africa identification number
+  dpv: pd:OfficialID
+  stdnum: za.idnr
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-south-africa-identification-number

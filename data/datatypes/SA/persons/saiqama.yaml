@@ -11,3 +11,5 @@ langs:
 - ar
 is_pii: true
 classification: identifier
+mappings:
+  dpv: pd:OfficialID

@@ -19,6 +19,9 @@ examples:
 mappings:
   autotype: isbn
   wikidata: P957
+  schema_org: isbn
+  bioregistry: isbn
+  stdnum: isbn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Standard_Book_Number

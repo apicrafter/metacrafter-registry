@@ -1,0 +1,21 @@
+id: lv_postcode
+name: Latvia postal code
+status: draft
+doc: 'Postal code in Latvia: the letters LV, a hyphen and four digits.'
+semantic_type: postindex
+country:
+- LV
+langs:
+- lv
+regexp: ^LV-\d{4}$
+examples:
+- value: LV-1073
+- value: LV-1000
+- value: LV-107
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Latvia
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/LV

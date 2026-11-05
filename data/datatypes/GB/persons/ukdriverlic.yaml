@@ -18,6 +18,7 @@ mappings:
   purview:
   - U.K. drivers license number
   - EU drivers license number
+  dpv: pd:OfficialID
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Driving_licence_in_the_United_Kingdom

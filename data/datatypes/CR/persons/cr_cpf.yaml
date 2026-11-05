@@ -24,6 +24,9 @@ examples:
 - value: 07848492657
   valid: false
   description: One character too many
+mappings:
+  dpv: pd:OfficialID
+  stdnum: cr.cpf
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cr.cpf.html

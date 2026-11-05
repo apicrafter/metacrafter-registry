@@ -8,6 +8,8 @@ langs:
 - common
 is_pii: false
 classification: identifier
+mappings:
+  schema_org: iso6523Code
 links:
 - type: schema.org
   url: https://schema.org/iso6523Code

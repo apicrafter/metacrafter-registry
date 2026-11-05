@@ -29,6 +29,7 @@ examples:
   description: The location number has a letter
 mappings:
   wikidata: P3061
+  stdnum: nl.brin
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Basisregistratie_Instellingen

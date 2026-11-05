@@ -1,0 +1,18 @@
+id: pg_postcode
+name: Papua New Guinea postal code
+status: draft
+doc: 'Postal code in Papua New Guinea: three digits.'
+semantic_type: postindex
+country:
+- PG
+langs:
+- en
+regexp: ^\d{3}$
+examples:
+- value: '111'
+- value: '11'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/PG

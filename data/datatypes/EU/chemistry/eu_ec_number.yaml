@@ -25,6 +25,8 @@ examples:
   description: CAS Registry Number of aspirin, not an EC number
 mappings:
   wikidata: P232
+  bioregistry: ecn
+  stdnum: eu.ecnumber
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/European_Community_number

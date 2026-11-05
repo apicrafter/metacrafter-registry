@@ -1,0 +1,22 @@
+id: je_postcode
+name: Jersey postal code
+status: draft
+doc: 'Postal code in Jersey: the letters JE, a digit and an optional digit or letter, an optional space,
+  then a digit and two letters.'
+semantic_type: postindex
+country:
+- JE
+langs:
+- en
+regexp: ^JE\d[\dA-Z]? ?\d[ABD-HJLN-UW-Z]{2}$
+examples:
+- value: JE1 1AA
+- value: JE2 2BT
+- value: JE1 1A
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/JE_postcode_area
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/JE

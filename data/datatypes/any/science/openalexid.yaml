@@ -23,6 +23,7 @@ examples:
   description: National Natural Science Foundation of China
 mappings:
   wikidata: P10283
+  bioregistry: openalex
 links:
 - type: other
   url: https://docs.openalex.org/about-the-data#the-openalex-id

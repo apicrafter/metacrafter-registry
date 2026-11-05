@@ -20,6 +20,7 @@ examples:
 mappings:
   wikidata: P7011
   orgid: RU-OGRN
+  stdnum: ru.ogrn
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P7011

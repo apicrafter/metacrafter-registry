@@ -20,6 +20,7 @@ examples:
   description: The number cannot start with 0
 mappings:
   wikidata: P5874
+  bioregistry: re3data
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Registry_of_Research_Data_Repositories

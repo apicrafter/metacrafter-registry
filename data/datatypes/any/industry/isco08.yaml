@@ -1,0 +1,38 @@
+id: isco08
+name: ISCO-08 occupation code
+status: draft
+doc: 'Code of an occupation group in the International Standard Classification of Occupations 2008 (ISCO-08)
+  of the International Labour Organization. There are four levels: major group (one digit), sub-major
+  group (two digits), minor group (three digits) and unit group (four digits), and each code begins with
+  the code of the group above it. Major group 0 is the armed forces. ESCO occupations (esco_occupation)
+  sit under ISCO-08 unit groups; the US SOC (ensoc) is a separate national classification.'
+categories:
+- industry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{1,4}$
+examples:
+- value: '2512'
+  description: 'Unit group: software developers'
+- value: '251'
+  description: 'Minor group: software and applications developers and analysts'
+- value: '25'
+  description: 'Sub-major group: information and communications technology professionals'
+- value: '2'
+  description: 'Major group: professionals'
+- value: '0110'
+  description: 'Unit group: commissioned armed forces officers'
+- value: '25121'
+  valid: false
+  description: Five digits
+mappings:
+  wikidata: P8283
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Standard_Classification_of_Occupations
+- type: doc
+  url: https://esco.ec.europa.eu/en/classification/occupation_main
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8283

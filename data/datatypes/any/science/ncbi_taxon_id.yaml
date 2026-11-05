@@ -19,6 +19,7 @@ examples:
   description: Escherichia coli
 mappings:
   wikidata: P685
+  bioregistry: ncbitaxon
 links:
 - type: doc
   url: https://www.ncbi.nlm.nih.gov/taxonomy

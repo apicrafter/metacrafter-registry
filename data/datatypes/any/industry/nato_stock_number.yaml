@@ -26,6 +26,7 @@ examples:
   description: The country code must have two digits
 mappings:
   wikidata: P5581
+  schema_org: nsn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/NATO_Stock_Number

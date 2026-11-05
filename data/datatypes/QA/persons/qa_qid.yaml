@@ -17,6 +17,7 @@ mappings:
   purview:
   - Qatari ID Card Number
   - Qatari identification card number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-qatari-id-card-number

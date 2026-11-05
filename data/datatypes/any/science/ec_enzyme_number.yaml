@@ -21,6 +21,7 @@ examples:
   description: thrombin
 mappings:
   wikidata: P591
+  bioregistry: ec
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Enzyme_Commission_number

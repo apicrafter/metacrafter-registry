@@ -37,6 +37,8 @@ examples:
   description: Format of a residence card of an EU citizen
 mappings:
   google_dlp: BELGIUM_NATIONAL_ID_CARD_NUMBER
+  dpv: pd:OfficialID
+  stdnum: be.eid
 links:
 - type: doc
   url: https://eid.belgium.be/en/what-eid

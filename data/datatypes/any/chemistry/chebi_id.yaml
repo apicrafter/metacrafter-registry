@@ -20,6 +20,7 @@ examples:
   description: dimethyltryptamine
 mappings:
   wikidata: P683
+  bioregistry: chebi
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ChEBI

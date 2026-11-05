@@ -19,6 +19,7 @@ examples:
   description: orthokeratology
 mappings:
   wikidata: P5806
+  bioregistry: snomedct
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P5806

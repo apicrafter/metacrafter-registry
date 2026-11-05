@@ -19,6 +19,7 @@ examples:
   description: Another valid GST/HST account number format
 mappings:
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/GoodsServicesTaxHarmonizedSalesTaxRegistrationNumber
+  stdnum: ca.bn
 links:
 - type: doc
   url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/registration/gst-hst-account-number.html

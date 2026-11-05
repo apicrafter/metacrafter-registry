@@ -1,0 +1,24 @@
+id: li_postcode
+name: Liechtenstein postal code
+status: draft
+doc: 'Postal code in Liechtenstein: four digits from 9485 to 9498. In addresses the code may be written
+  after the prefix FL-. Liechtenstein is part of the Swiss postal code system.'
+semantic_type: postindex
+country:
+- LI
+langs:
+- de
+regexp: ^(?:948[5-9]|949[0-8])$
+examples:
+- value: '9496'
+- value: '9491'
+- value: '9490'
+- value: '9485'
+- value: '949'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Switzerland_and_Liechtenstein
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/LI

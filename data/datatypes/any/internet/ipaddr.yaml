@@ -29,6 +29,7 @@ mappings:
   google_dlp: IP_ADDRESS
   presidio: IP_ADDRESS
   purview: IP address
+  dpv: pd:IPAddress
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/IP_address

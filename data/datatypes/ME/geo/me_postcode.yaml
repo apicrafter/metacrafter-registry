@@ -1,0 +1,22 @@
+id: me_postcode
+name: Montenegro postal code
+status: draft
+doc: 'Postal code in Montenegro: five digits starting with 8.'
+semantic_type: postindex
+country:
+- ME
+langs:
+- sr
+regexp: ^8\d{4}$
+examples:
+- value: '81257'
+- value: '81258'
+- value: '81217'
+- value: '84314'
+- value: '85366'
+- value: '8125'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/ME

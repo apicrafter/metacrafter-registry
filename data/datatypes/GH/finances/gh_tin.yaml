@@ -17,6 +17,8 @@ examples:
   description: example from ORG-ID.guide
 mappings:
   orgid: GH-TIN
+  schema_org: taxID
+  stdnum: gh.tin
 links:
 - type: doc
   url: https://gra.gov.gh/tin/

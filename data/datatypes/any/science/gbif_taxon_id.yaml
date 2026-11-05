@@ -21,6 +21,7 @@ examples:
   description: Unkana (Hesperiidae)
 mappings:
   wikidata: P846
+  bioregistry: gbif
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Global_Biodiversity_Information_Facility

@@ -1,0 +1,39 @@
+id: fr_rcs
+name: French trade and companies register number (RCS)
+status: draft
+doc: 'Registration of a trader or a commercial company in the French Registre du commerce et des sociétés
+  (RCS), as written on its K or Kbis extract: RCS, the city of the registry, the letter A for an individual
+  trader or B for a company, and the nine-digit SIREN number, as in RCS Nancy B 323 159 715. The check
+  digit of the SIREN applies.'
+categories:
+- companies
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^RCS \S.*? [AB] ?(?:\d ?){8}\d$
+examples:
+- value: RCS Nancy B 323 159 715
+  description: Example from the python-stdnum documentation
+- value: RCS Nancy B 323159715
+  description: The same number with a compact SIREN
+- value: RCSNancy B 323 159 715
+  valid: false
+  description: No space after RCS
+- value: RCS Nancy C 323 159 715
+  valid: false
+  description: Letter other than A or B
+mappings:
+  stdnum: fr.rcs
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Registre_du_commerce_et_des_soci%C3%A9t%C3%A9s_(France)
+- type: doc
+  url: https://entreprendre.service-public.fr/vosdroits/F31190
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fr.rcs.html
+translations:
+  fr:
+    name: Numéro d'immatriculation au RCS

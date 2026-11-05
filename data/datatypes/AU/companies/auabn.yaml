@@ -26,6 +26,8 @@ mappings:
   - AU-ABN
   - AU-ACNC
   wikidata: P3548
+  fhir: http://hl7.org.au/id/abn
+  stdnum: au.abn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Australian_Business_Number

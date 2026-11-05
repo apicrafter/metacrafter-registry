@@ -21,6 +21,8 @@ examples:
   description: Nero
 mappings:
   wikidata: P213
+  bioregistry: isni
+  stdnum: isni
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Standard_Name_Identifier

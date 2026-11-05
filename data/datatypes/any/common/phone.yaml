@@ -25,6 +25,8 @@ mappings:
   presidio: PHONE_NUMBER
   wikidata: P1329
   fta: TELEPHONE
+  dpv: pd:TelephoneNumber
+  schema_org: telephone
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1329

@@ -19,6 +19,7 @@ examples:
 mappings:
   wikidata: P6782
   orgid: XI-ROR
+  bioregistry: ror
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Research_Organization_Registry

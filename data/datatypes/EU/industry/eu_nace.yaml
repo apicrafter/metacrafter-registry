@@ -28,6 +28,7 @@ examples:
   description: One character too many
 mappings:
   wikidata: P4496
+  stdnum: eu.nace
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Statistical_Classification_of_Economic_Activities_in_the_European_Community

@@ -18,6 +18,7 @@ examples:
   description: The Party Journalist
 mappings:
   wikidata: P1190
+  bioregistry: udc
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Universal_Decimal_Classification

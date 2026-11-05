@@ -16,6 +16,7 @@ examples:
   description: Baranagar
 mappings:
   wikidata: P1566
+  bioregistry: geonames
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1566

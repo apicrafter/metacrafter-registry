@@ -221,3 +221,75 @@
 4. libphonenumber и почтовые индексы.
 5. HS, ISCO и SDMX.
 6. HL7 и FHIR.
+
+## Что сделано (2026-11-05)
+
+Новые ключи маппинга: `bioregistry` (префикс Bioregistry), `stdnum` (модуль
+python-stdnum без `stdnum.`), `fhir` (URI системы идентификаторов HL7 FHIR).
+Для них есть схема, `crosswalk`, вывод на странице записи и тесты.
+
+| Ключ | Записей до | Записей после |
+|---|---|---|
+| `dpv` | 0 | 264 |
+| `schema_org` | 8 | 241 |
+| `bioregistry` | - | 130 |
+| `stdnum` | - | 259 |
+| `fhir` | - | 78 |
+
+Значения DPV взяты из DPV 2.3 с префиксом `pd:`. В DPV нет понятий для номеров
+социального страхования, национальных ID и налоговых номеров: они отображены на
+`pd:OfficialID`, паспорта на `pd:Passport`. Системы FHIR взяты из HL7
+Terminology и из базовых руководств национальных аффилиатов HL7 (UK Core, AU
+Base, DE Basisprofil, Nictiz, NZ Base).
+
+220 новых записей, все `draft`:
+
+- 101 почтовый индекс (паттерны `postindex`) по адресным метаданным Google,
+  сверены с GeoNames; в `data/countries.yaml` добавлено 28 стран, в
+  `data/langs.yaml` 9 языков.
+- 40 идентификаторов из Bioregistry (RefSeq, INSDC, SRA, BioSample,
+  BioProject, GEO, Pfam, InterPro, KEGG, Reactome, Rhea, MGI, ZFIN, FlyBase,
+  WormBase, HPO, MONDO, UBERON, ClinVar, ISRCTN, MedDRA, EU CT number и др.).
+- 25 типов токенов (Anthropic, Hugging Face, Shopify, HashiCorp Vault,
+  Databricks, DigitalOcean и др.) по правилам Gitleaks и детекторам
+  TruffleHog.
+- 15 идентификаторов безопасности: CVE, CWE, CAPEC, CPE 2.3, пять типов
+  MITRE ATT&CK, GHSA, OSV, JA3, JA3S, JA4, получатель age.
+- 21 классификатор, геосетка и формат SDMX: HS, CN, TARIC, HTS, ISCO-08,
+  ESCO (профессии и навыки), COICOP 2018, SITC Rev.4, ISCED 2011, ISCED-F
+  2013, EPSG, H3, geohash, S2, Plus Code (полный и короткий), Maidenhead,
+  quadkey, отчётные периоды SDMX, CL_FREQ.
+- 16 идентификаторов python-stdnum и csv-detective: VE RIF, MA ICE, UY RUT,
+  TW UBN, PK CNIC, ISO 11649 RF, UA РНОКПП, MK EDB, TH MOA, FR RCS, RNA, NAF,
+  FINESS, FANTOIR, RIVOLI, идентификатор RNB.
+- DICOM UID и коды HL7 v2 Table 0203.
+
+Инструменты: новые `csvdetective`, `awsglue` (199 типов), `oracledatasafe`
+(21 тип); `gitleaks` и `trufflehog` дополнены новыми типами токенов.
+`software_license` получил описание, ссылку на список SPDX и Wikidata P2479.
+
+### Не сделано
+
+- Телефоны по странам (libphonenumber) и форматы дат CLDR.
+- Ключ `misp`. Соответствия есть: `cve_id` - vulnerability, `cwe_id` -
+  weakness, `cpe23` - cpe, `ja3_fingerprint` - ja3-fingerprint-md5.
+- `supported_types` для BigID, Informatica и Ataccama: вендоры не
+  публикуют списки встроенных типов.
+- Оставшиеся модули stdnum без записей: dz.nif, gn.nifp, mz.nuit, sm.coe,
+  tn.mf, in_.vid и др.
+
+### Найденные ошибки в существующих записях (не исправлены)
+
+- `euid`: regexp без точки, настоящий EUID `CYDRCOR.HE139104` не проходит.
+- `icd10cm`: regexp не принимает коды вида `C4A.8`.
+- Почтовые индексы: `gbpostcode` и `plpostcode` (`^[0-9]{4,10}$`) отвергают
+  реальные индексы; у CN `postcode`, `krpostcode`, `sapostcode`,
+  `thpostcode`, `trpostcode`, `vnpostcode` тот же слишком широкий regexp;
+  `egpostcode`, `am_postal_code`, `espostcode`, `frpostcode` расходятся с
+  Google; у `aepostcode` пример-заглушка `00000`.
+- python-stdnum отвергает 23 положительных примера (семейство `cabn`,
+  `siret`, `idnik`, `be_ogm_vcs`, `handelsregisternr`, `ke_kra_pin`, `me_pib`
+  и др.); regexp `abaroutingnum`, `cusip`, `sedol`, `sepersonnummer`, `taxid`
+  расходятся с stdnum.
+- `checksums._compact` удаляет дефисы, поэтому `bech32` не проверяет
+  секретный ключ age (`AGE-SECRET-KEY-...`).

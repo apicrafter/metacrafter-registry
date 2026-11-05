@@ -12,6 +12,7 @@ classification: categorical
 mappings:
   sherlock: genre
   wikidata: P136
+  schema_org: genre
 links:
 - type: schema.org
   url: https://schema.org/genre

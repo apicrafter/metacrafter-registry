@@ -17,3 +17,6 @@ mappings:
   presidio: IN_PAN
   purview: India permanent account number (PAN)
   orgid: IN-PAN
+  dpv: pd:OfficialID
+  schema_org: taxID
+  stdnum: in_.pan

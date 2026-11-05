@@ -18,6 +18,8 @@ examples:
 mappings:
   autotype: inchi
   wikidata: P234
+  schema_org: inChI
+  bioregistry: inchi
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P234

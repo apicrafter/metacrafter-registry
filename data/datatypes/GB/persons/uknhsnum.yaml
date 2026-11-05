@@ -20,6 +20,9 @@ mappings:
   presidio: UK_NHS
   purview: U.K. national health service number
   fta: IDENTITY.NHS_UK
+  dpv: pd:OfficialID
+  fhir: https://fhir.nhs.uk/Id/nhs-number
+  stdnum: gb.nhs
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/NHS_number

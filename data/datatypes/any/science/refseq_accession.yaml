@@ -1,0 +1,31 @@
+id: refseq_accession
+name: NCBI RefSeq accession
+status: draft
+doc: Accession of a record in RefSeq, the curated, non-redundant collection of reference genomic, transcript
+  and protein sequences of the US National Center for Biotechnology Information (NCBI). Two letters and
+  an underscore give the kind of molecule, for example NM_ for an mRNA, NP_ for a protein and NC_ for
+  a complete genomic molecule, and digits follow. A version such as .6 may be added; it grows when the
+  sequence changes. Genome records of whole-genome shotgun projects start with NZ_ and a letter code.
+  GenBank, ENA and DDBJ accessions without an underscore are a separate datatype (insdc_accession).
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(((AC|AP|NC|NG|NM|NP|NR|NT|NW|WP|XM|XP|XR|YP|ZP)_\d+)|(NZ_[A-Z]{2,4}\d+))(\.\d+)?$
+examples:
+- value: NP_012345
+  description: 40S ribosomal protein uS8 (RPS22A) of Saccharomyces cerevisiae; Bioregistry example
+- value: NM_000546.6
+  description: Human TP53 mRNA, transcript variant 1, with its version
+- value: NM000546
+  valid: false
+  description: No underscore after the molecule code
+mappings:
+  bioregistry: refseq
+links:
+- type: doc
+  url: https://www.ncbi.nlm.nih.gov/refseq/
+- type: other
+  url: https://bioregistry.io/registry/refseq

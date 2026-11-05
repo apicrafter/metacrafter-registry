@@ -21,6 +21,7 @@ examples:
   description: Château de Crèvecœur-en-Auge
 mappings:
   wikidata: P3215
+  stdnum: fr.siret
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SIRET_code

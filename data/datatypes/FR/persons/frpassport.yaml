@@ -13,6 +13,7 @@ mappings:
   purview:
   - France passport number
   - EU passport number
+  fhir: http://hl7.org/fhir/sid/passport-FRA
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/French_passport

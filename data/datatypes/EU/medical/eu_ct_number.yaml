@@ -1,0 +1,32 @@
+id: eu_ct_number
+name: EU CT number (Clinical Trials Information System)
+status: draft
+doc: Number of a clinical trial in the Clinical Trials Information System (CTIS), the system that supports
+  running and supervising clinical trials in the European Union and the European Economic Area. It has
+  14 digits in four groups separated by hyphens (4, 6, 2 and 2 digits) and starts with the year, as in
+  2023-503698-40-00. CTIS numbers succeed EudraCT numbers, a separate datatype (eu_eudract).
+categories:
+- medical
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4}-\d{6}-\d{2}-\d{2}$
+examples:
+- value: 2023-503698-40-00
+  description: Bioregistry example
+- value: 2006-002830-38
+  valid: false
+  description: EudraCT number with three groups
+- value: 4111-1111-1111-1111
+  valid: false
+  description: Four groups of four digits
+mappings:
+  bioregistry: ctis
+links:
+- type: doc
+  url: https://euclinicaltrials.eu/
+- type: other
+  url: https://bioregistry.io/registry/ctis

@@ -16,6 +16,7 @@ mappings:
   purview:
   - Cyprus identity card
   - EU national identification number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-cyprus-identity-card

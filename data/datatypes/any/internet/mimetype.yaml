@@ -36,6 +36,7 @@ examples:
   description: Empty subtype
 mappings:
   wikidata: P1163
+  schema_org: encodingFormat
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Media_type

@@ -1,0 +1,35 @@
+id: osv_id
+name: OSV vulnerability ID
+status: draft
+doc: 'Identifier of an entry in the Open Source Vulnerability (OSV) format that OSV.dev aggregates: the
+  prefix of the entry''s home database, a hyphen and an id in that database''s own format, for example
+  PYSEC-2021-63, RUSTSEC-2021-0003, GO-2022-0969 or GHSA-... Local databases that OSV.dev does not aggregate
+  use the prefix x_. Ids contain only ASCII letters, digits and the characters : _ . -. The regexp lists
+  the database prefixes that the OSV JSON schema defined in November 2026; new databases are added over
+  time. CVE and GHSA identifiers are also OSV ids.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:x_|(?:ASB-A|PUB-A|ALPINE|ALSA|ALBA|ALEA|AZL|BELL|BIT|BREW|CGA|CLEANSTART|CLSA|CURL|CVE|DEBIAN|DHI|DRUPAL|DSA|DLA|ELA|DTSA|ECHO|EEF|FreeBSD|GHSA|GO|GSD|HSEC|JLSEC|KUBE|LBSEC|LSN|MAL|MINI|MGASA|OESA|OSEC|OSV|openSUSE-SU|PHSA|PSF|PYSEC|RHBA|RHEA|RHLW|RHSA|RLSA|RXSA|RPI|RSEC|ROOT|RUSTSEC|SUSE-[SRFO]U|UBUNTU|USN|V8|VCPKG)-)[A-Za-z0-9:_.-]+$
+examples:
+- value: OSV-2020-111
+  description: Example in the OSV schema documentation
+- value: PYSEC-2021-63
+  description: Entry for the cryptography package on PyPI
+- value: RUSTSEC-2021-0003
+  description: RustSec entry for smallvec
+- value: GO-2022-0969
+  description: Go vulnerability database entry for net/http
+- value: x_CUSTOM-0001
+  description: Local database, example in the OSV schema documentation
+- value: FOO-2021-0001
+  valid: false
+  description: FOO is not a defined database prefix
+links:
+- type: doc
+  url: https://ossf.github.io/osv-schema/
+- type: other
+  url: https://github.com/ossf/osv-schema/blob/main/validation/schema.json

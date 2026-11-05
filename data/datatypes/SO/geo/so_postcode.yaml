@@ -1,0 +1,19 @@
+id: so_postcode
+name: Somalia postal code
+status: draft
+doc: 'Postal code in Somalia: two letters and five digits, optionally separated by a space.'
+semantic_type: postindex
+country:
+- SO
+langs:
+- so
+regexp: ^[A-Z]{2} ?\d{5}$
+examples:
+- value: JH 09010
+- value: AD 11010
+- value: JH 0901
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/SO

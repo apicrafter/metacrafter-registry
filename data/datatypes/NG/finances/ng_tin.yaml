@@ -19,6 +19,7 @@ examples:
   description: example from ORG-ID.guide
 mappings:
   orgid: NG-TIN
+  schema_org: taxID
 links:
 - type: doc
   url: https://apps.firs.gov.ng/tinverification/

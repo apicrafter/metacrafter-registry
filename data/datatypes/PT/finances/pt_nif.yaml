@@ -29,6 +29,10 @@ mappings:
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
   orgid: PT-NIPPC
+  schema_org:
+  - taxID
+  - vatID
+  stdnum: pt.nif
 links:
 - type: wikipedia
   url: https://pt.wikipedia.org/wiki/N%C3%BAmero_de_identifica%C3%A7%C3%A3o_fiscal

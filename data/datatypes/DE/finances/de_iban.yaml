@@ -27,6 +27,9 @@ examples:
 - value: DE8937040044053201300
   valid: false
   description: 21 characters
+mappings:
+  dpv: pd:BankAccount
+  stdnum: iban
 links:
 - type: wikipedia
   url: https://de.wikipedia.org/wiki/Internationale_Bankkontonummer

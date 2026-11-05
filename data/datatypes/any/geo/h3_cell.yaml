@@ -1,0 +1,32 @@
+id: h3_cell
+name: H3 cell index
+status: draft
+doc: Index of a cell (hexagon or pentagon) of H3, the hierarchical hexagonal grid system developed at
+  Uber. The 64-bit index holds the index mode (1 for a cell), the resolution from 0 to 15, one of 122
+  base cells and one digit from 0 to 6 for each finer resolution; unused digits are set to 7. The canonical
+  text form is lowercase hexadecimal without padding or prefix, so a cell index has 15 characters, starts
+  with 8, and its second character is the resolution. H3 directed edge and vertex indexes use other modes
+  and are not covered.
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^8[0-9a-f]{14}$
+examples:
+- value: 85283473fffffff
+  description: Resolution 5 cell used in the H3 API documentation
+- value: 822d57fffffffff
+  description: Resolution 2 cell from the H3 API documentation
+- value: '0x85283473fffffff'
+  valid: false
+  description: The canonical form has no prefix
+- value: 85283473fffffff0
+  valid: false
+  description: Sixteen characters
+links:
+- type: doc
+  url: https://h3geo.org/docs/library/index/cell
+- type: doc
+  url: https://h3geo.org/docs/core-library/h3Indexing

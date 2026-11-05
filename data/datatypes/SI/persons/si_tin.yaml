@@ -19,6 +19,8 @@ mappings:
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
   orgid: SI-TIN
+  dpv: pd:OfficialID
+  schema_org: taxID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-slovenia-tax-identification-number

@@ -21,6 +21,7 @@ examples:
 mappings:
   sherlock: religion
   wikidata: P140
+  dpv: pd:Religion
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Religion

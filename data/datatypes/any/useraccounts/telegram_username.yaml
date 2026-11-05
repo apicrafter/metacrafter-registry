@@ -19,6 +19,7 @@ examples:
   description: Chinese Wikipedia
 mappings:
   wikidata: P3789
+  dpv: pd:Username
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P3789

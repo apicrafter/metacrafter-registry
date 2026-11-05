@@ -12,6 +12,9 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^[A-Z0-9]{6,10}$
+mappings:
+  dpv: pd:Passport
+  fhir: http://hl7.org/fhir/sid/passport-THA
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Passport

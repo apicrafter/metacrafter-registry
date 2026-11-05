@@ -1,0 +1,44 @@
+id: ve_rif
+name: Venezuelan tax information number (RIF)
+status: draft
+doc: 'Registro Único de Información Fiscal (RIF), the tax registration number that the Venezuelan tax
+  administration SENIAT assigns to individuals and legal entities; before 2006 it was called Registro
+  de Información Fiscal. It has ten characters, usually written as J-30468971-3: a letter for the kind
+  of holder (V a Venezuelan person, E a foreign person, J a legal entity, P a passport holder, G a government
+  body, C a communal council), eight digits (for a person, the identity card number) and a modulo 11 check
+  digit. python-stdnum 2.2 does not accept the letter C.'
+categories:
+- finances
+- pii
+country:
+- VE
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^[VEJPGC]-?\d{8}-?\d$
+examples:
+- value: J-30468971-3
+  description: RIF of Digitel, the worked check-digit example of the Spanish Wikipedia article
+- value: V-11470283-4
+  description: Example from the python-stdnum documentation
+- value: V114702834
+  description: The same number without hyphens
+- value: X-30468971-3
+  valid: false
+  description: Unknown holder letter
+- value: J-3046897-3
+  valid: false
+  description: Seven digits instead of eight
+mappings:
+  stdnum: ve.rif
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Registro_%C3%9Anico_de_Informaci%C3%B3n_Fiscal
+- type: doc
+  url: http://www.seniat.gob.ve/
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ve.rif.html
+translations:
+  es:
+    name: Registro Único de Información Fiscal (RIF)

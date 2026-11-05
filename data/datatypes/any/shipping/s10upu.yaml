@@ -12,6 +12,8 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[A-z]{2}\d{8}\d{1}[A-z]{2}$
+mappings:
+  schema_org: trackingNumber
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/S10_(UPU_standard)

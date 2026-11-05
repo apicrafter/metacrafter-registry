@@ -12,3 +12,6 @@ mappings:
   fibo: FBC/FunctionalEntities/FinancialServicesEntities/BusinessIdentifierCode
   google_dlp: SWIFT_CODE
   purview: SWIFT code
+  stdnum:
+  - bic
+  - iso9362

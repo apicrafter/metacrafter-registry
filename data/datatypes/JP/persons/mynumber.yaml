@@ -18,3 +18,5 @@ mappings:
   - Japanese My Number Personal
   - Japan My Number - Personal
   fta: IDENTITY.INDIVIDUAL_NUMBER_JA
+  dpv: pd:OfficialID
+  stdnum: jp.in_

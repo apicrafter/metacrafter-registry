@@ -1,0 +1,23 @@
+id: tn_postcode
+name: Tunisia postal code
+status: draft
+doc: 'Postal code in Tunisia: four digits.'
+semantic_type: postindex
+country:
+- TN
+langs:
+- ar
+regexp: ^\d{4}$
+examples:
+- value: '1002'
+- value: '8129'
+- value: '3100'
+- value: '1030'
+- value: '100'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Tunisia
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/TN

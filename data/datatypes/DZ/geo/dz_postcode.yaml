@@ -1,0 +1,21 @@
+id: dz_postcode
+name: Algeria postal code
+status: draft
+doc: 'Postal code in Algeria: five digits.'
+semantic_type: postindex
+country:
+- DZ
+langs:
+- ar
+regexp: ^\d{5}$
+examples:
+- value: '40304'
+- value: '16027'
+- value: '4030'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Algeria
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/DZ

@@ -26,6 +26,8 @@ examples:
 mappings:
   orgid: DK-CVR
   wikidata: P1059
+  schema_org: vatID
+  stdnum: dk.cvr
 links:
 - type: wikipedia
   url: https://da.wikipedia.org/wiki/CVR-nummer

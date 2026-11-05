@@ -230,6 +230,10 @@
 - Data fixes found during this phase:
   - 9 regexps that matched the empty string were fixed, and the validator now rejects such regexps.
   - The `what3words` regexp had been copied from `geonamesid`.
+- [x] 8.17 Add the external sources found in `devdocs/SOURCES_GAP_2026-11.md`. Add the `bioregistry`, `stdnum` and `fhir` crosswalk keys.
+  - Crosswalks: `bioregistry` on 130 records, `stdnum` on 259, `fhir` on 78; the existing `dpv` and `schema_org` keys now cover 264 and 241 records.
+  - 220 new draft records: 101 postal code patterns (Google address metadata), 40 Bioregistry identifiers, 25 secret token types (Gitleaks, TruffleHog), 15 security identifiers (CVE, CWE, CAPEC, CPE 2.3, ATT&CK, GHSA, OSV, JA3/JA4), 21 classifications, geo grids and SDMX formats, 16 python-stdnum and French csv-detective identifiers, DICOM UID and HL7 v2 identifier types.
+  - New tools: `csvdetective`, `awsglue`, `oracledatasafe`; `gitleaks` and `trufflehog` list the new secret types.
 
 ## 9. Release 2.0.0
 

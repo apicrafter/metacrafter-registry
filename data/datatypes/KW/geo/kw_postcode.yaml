@@ -1,0 +1,21 @@
+id: kw_postcode
+name: Kuwait postal code
+status: draft
+doc: 'Postal code in Kuwait: five digits.'
+semantic_type: postindex
+country:
+- KW
+langs:
+- ar
+regexp: ^\d{5}$
+examples:
+- value: '54541'
+- value: '54551'
+- value: '54404'
+- value: '13009'
+- value: '5454'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/KW

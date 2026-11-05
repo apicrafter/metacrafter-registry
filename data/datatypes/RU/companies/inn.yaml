@@ -20,6 +20,8 @@ examples:
 mappings:
   purview: Russia taxpayer identification number
   orgid: RU-INN
+  schema_org: taxID
+  stdnum: ru.inn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/VAT_identification_number

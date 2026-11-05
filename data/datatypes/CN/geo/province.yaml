@@ -11,3 +11,5 @@ langs:
 - zh
 is_pii: false
 classification: identifier
+mappings:
+  schema_org: addressRegion

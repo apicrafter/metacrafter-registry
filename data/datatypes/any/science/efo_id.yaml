@@ -1,0 +1,33 @@
+id: efo_id
+name: Experimental Factor Ontology (EFO) ID
+status: draft
+doc: 'Identifier of a term in the Experimental Factor Ontology of EMBL-EBI, which describes the variables
+  of experiments in EBI databases, such as diseases, anatomy, cell types and chemical compounds. It is
+  EFO: and seven digits; URIs write EFO_ instead.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^EFO[:_]\d{7}$
+examples:
+- value: EFO:0000270
+  description: asthma
+- value: EFO:0005147
+  description: Columbia ecotype; Bioregistry example
+- value: EFO_0000270
+  description: asthma, underscore form
+- value: EFO:270
+  valid: false
+  description: Not padded to seven digits
+mappings:
+  bioregistry: efo
+  wikidata: P11956
+links:
+- type: doc
+  url: https://www.ebi.ac.uk/ols4/ontologies/efo
+- type: other
+  url: https://bioregistry.io/registry/efo
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P11956

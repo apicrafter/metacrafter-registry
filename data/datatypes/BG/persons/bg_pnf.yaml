@@ -21,6 +21,9 @@ examples:
 - value: '41997220797'
   valid: false
   description: One character too many
+mappings:
+  dpv: pd:OfficialID
+  stdnum: bg.pnf
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.bg.pnf.html

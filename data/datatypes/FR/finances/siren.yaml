@@ -24,6 +24,7 @@ examples:
   description: Example SIREN code format (9 digits)
 mappings:
   wikidata: P1616
+  stdnum: fr.siren
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SIREN_code

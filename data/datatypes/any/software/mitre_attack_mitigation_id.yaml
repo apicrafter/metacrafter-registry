@@ -1,0 +1,28 @@
+id: mitre_attack_mitigation_id
+name: MITRE ATT&CK mitigation ID
+status: draft
+doc: 'Identifier of a mitigation in MITRE ATT&CK, a security measure that prevents a technique from succeeding:
+  M followed by four digits. Deprecated mitigations from early ATT&CK versions reused technique IDs and
+  are not covered.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^M[0-9]{4}$
+examples:
+- value: M1032
+  description: Multi-factor Authentication
+- value: M1031
+  description: Network Intrusion Prevention
+- value: M103
+  valid: false
+  description: Three digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ATT%26CK
+- type: doc
+  url: https://attack.mitre.org/mitigations/M1032
+- type: other
+  url: https://github.com/mitre-attack/attack-stix-data

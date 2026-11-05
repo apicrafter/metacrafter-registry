@@ -13,3 +13,5 @@ classification: identifier
 regexp: ^[0-9]{9,15}$
 mappings:
   orgid: TR-VKN
+  schema_org: taxID
+  stdnum: tr.vkn

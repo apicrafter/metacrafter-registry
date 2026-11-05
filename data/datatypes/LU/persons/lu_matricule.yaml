@@ -20,6 +20,7 @@ mappings:
   - Luxembourg National Identification Number (Natural persons)
   - Luxemburg national identification number (natural persons)
   - EU national identification number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-luxemburg-national-identification-number-natural-persons

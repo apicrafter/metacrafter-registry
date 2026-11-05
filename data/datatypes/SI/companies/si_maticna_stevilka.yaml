@@ -16,6 +16,7 @@ examples:
   description: example from ORG-ID.guide
 mappings:
   orgid: SI-PRS
+  stdnum: si.maticna
 links:
 - type: doc
   url: http://www.ajpes.eu/prs/

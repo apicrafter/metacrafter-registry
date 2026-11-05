@@ -1,0 +1,21 @@
+id: mn_postcode
+name: Mongolia postal code
+status: draft
+doc: 'Postal code in Mongolia: five digits.'
+semantic_type: postindex
+country:
+- MN
+langs:
+- mn
+regexp: ^\d{5}$
+examples:
+- value: '65030'
+- value: '65270'
+- value: '6503'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/MN
+- type: other
+  url: http://www.zipcode.mn/

@@ -17,6 +17,7 @@ examples:
   description: Call sign of the Swedish ship Asta av Smögen (Wikidata)
 mappings:
   wikidata: P2317
+  schema_org: callSign
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Call_sign

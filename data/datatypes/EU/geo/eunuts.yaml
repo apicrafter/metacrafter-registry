@@ -16,6 +16,7 @@ examples:
   description: Brussels-Capital Region
 mappings:
   wikidata: P605
+  bioregistry: nuts
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P605

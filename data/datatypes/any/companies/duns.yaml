@@ -20,6 +20,8 @@ mappings:
   wikidata: P2771
   fta: IDENTITY.DUNS
   orgid: XI-DUNS
+  fhir: http://terminology.hl7.org/NamingSystem/DUNSNumber
+  schema_org: duns
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Data_Universal_Numbering_System

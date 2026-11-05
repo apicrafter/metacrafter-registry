@@ -36,6 +36,10 @@ examples:
   description: python-stdnum rejects 8-digit numbers that start with 9
 mappings:
   orgid: CZ-DIC
+  schema_org:
+  - taxID
+  - vatID
+  stdnum: cz.dic
 links:
 - type: doc
   url: https://financnisprava.gov.cz/assets/cs/prilohy/d-sprava-dani-a-poplatku/79651_20_MP_ke_zmene_DIC_na_zadost_subjektu.pdf

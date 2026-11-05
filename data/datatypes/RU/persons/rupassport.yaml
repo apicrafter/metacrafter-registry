@@ -11,6 +11,7 @@ mappings:
   purview:
   - Russian Passport Number (International)
   - Russia passport number international
+  fhir: http://hl7.org/fhir/sid/passport-RUS
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Russian_passport

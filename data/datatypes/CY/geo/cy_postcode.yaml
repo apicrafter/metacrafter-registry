@@ -1,0 +1,23 @@
+id: cy_postcode
+name: Cyprus postal code
+status: draft
+doc: 'Postal code in Cyprus: four digits.'
+semantic_type: postindex
+country:
+- CY
+langs:
+- el
+- tr
+regexp: ^\d{4}$
+examples:
+- value: '2008'
+- value: '3304'
+- value: '1900'
+- value: '200'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Cyprus
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/CY

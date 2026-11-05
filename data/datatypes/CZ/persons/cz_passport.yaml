@@ -22,6 +22,7 @@ mappings:
   purview:
   - Czech passport number
   - EU passport number
+  fhir: http://hl7.org/fhir/sid/passport-CZE
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-czech-passport-number

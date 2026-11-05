@@ -21,6 +21,7 @@ examples:
   description: example from ORG-ID.guide
 mappings:
   orgid: BO-NIT
+  schema_org: taxID
 links:
 - type: other
   url: https://org-id.guide/list/BO-NIT

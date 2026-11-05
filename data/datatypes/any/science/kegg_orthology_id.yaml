@@ -1,0 +1,28 @@
+id: kegg_orthology_id
+name: KEGG Orthology (KO) identifier
+status: draft
+doc: 'Identifier of a KEGG Orthology group: a manually defined group of orthologous genes that matches
+  a node in KEGG pathway maps and BRITE hierarchies, used to assign functions to genes. It is K and a
+  number.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^K\d+$
+examples:
+- value: K00001
+  description: ADH, alcohol dehydrogenase; Bioregistry example
+- value: K00844
+  description: HK, hexokinase
+- value: k00001
+  valid: false
+  description: Lowercase k
+mappings:
+  bioregistry: kegg.orthology
+links:
+- type: doc
+  url: https://www.genome.jp/kegg/ko.html
+- type: other
+  url: https://bioregistry.io/registry/kegg.orthology

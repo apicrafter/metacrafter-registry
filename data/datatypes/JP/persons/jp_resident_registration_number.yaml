@@ -15,6 +15,7 @@ classification: identifier
 regexp: ^\d{11}$
 mappings:
   purview: Japan resident registration number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-japan-resident-registration-number

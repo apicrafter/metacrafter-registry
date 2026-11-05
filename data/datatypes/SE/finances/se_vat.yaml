@@ -26,6 +26,9 @@ examples:
 - value: SE5560125790
   valid: false
   description: The suffix 01 is missing
+mappings:
+  schema_org: vatID
+  stdnum: se.vat
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/VAT_identification_number

@@ -19,6 +19,7 @@ examples:
   description: Algorithms for Molecular Biology
 mappings:
   wikidata: P7363
+  stdnum: issn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ISSN#Linking_ISSN

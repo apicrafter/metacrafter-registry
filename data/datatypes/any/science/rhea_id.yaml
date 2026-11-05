@@ -1,0 +1,28 @@
+id: rhea_id
+name: Rhea reaction identifier
+status: draft
+doc: Number of a reaction in Rhea, the expert-curated knowledgebase of biochemical and transport reactions
+  whose participants are described with ChEBI. Rhea displays it with the prefix RHEA:, as in RHEA:15421;
+  this format is the number alone.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '15421'
+  description: a long-chain fatty acid + ATP + CoA = a long-chain fatty acyl-CoA + AMP + diphosphate
+- value: '10000'
+  description: pentanamide + H2O = pentanoate + NH4(+)
+- value: RHEA:15421
+  valid: false
+  description: 'With the RHEA: prefix'
+mappings:
+  bioregistry: rhea
+links:
+- type: doc
+  url: https://www.rhea-db.org/
+- type: other
+  url: https://bioregistry.io/registry/rhea

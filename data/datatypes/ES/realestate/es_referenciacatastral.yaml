@@ -23,6 +23,8 @@ examples:
 - value: 10118A004030320000PY7
   valid: false
   description: One character too many
+mappings:
+  stdnum: es.referenciacatastral
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/Catastro#Referencia_catastral

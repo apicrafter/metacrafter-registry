@@ -23,6 +23,7 @@ examples:
   description: No leading zeros
 mappings:
   wikidata: P351
+  bioregistry: ncbigene
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Entrez

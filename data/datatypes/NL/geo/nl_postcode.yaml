@@ -34,6 +34,9 @@ examples:
   description: The first digit is 0
 mappings:
   fta: POSTAL_CODE.POSTAL_CODE_NL
+  dpv: pd:PostalCode
+  schema_org: postalCode
+  stdnum: nl.postcode
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Postal_codes_in_the_Netherlands

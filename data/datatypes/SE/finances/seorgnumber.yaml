@@ -27,6 +27,7 @@ mappings:
   - SE-BLV
   - SE-KK
   wikidata: P6460
+  stdnum: se.orgnr
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P6460

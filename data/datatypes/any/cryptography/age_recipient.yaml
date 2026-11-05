@@ -1,0 +1,27 @@
+id: age_recipient
+name: age public key (X25519 recipient)
+status: draft
+doc: Public key of the age file encryption format and tool, that is, an X25519 recipient that files are
+  encrypted to. It is a 62-character lowercase Bech32 string with the human-readable part age, so it starts
+  with age1. Post-quantum recipients (age1pq1...) and recipients of age plugins are longer or use other
+  prefixes and are not covered.
+categories:
+- cryptography
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^age1[qpzry9x8gf2tvdw0s3jn54khce6mua7l]{58}$
+checksum: bech32
+examples:
+- value: age1zvkyg2lqzraa2lnjvqej32nkuu0ues2s82hzrye869xeexvn73equnujwj
+  description: Test vector of the age specification
+- value: age1zvkyg2lqzraa2lnjvqej32nkuu0ues2s82hzrye869xeexvn73equnujwq
+  valid: false
+  description: Wrong Bech32 checksum
+- value: age1zvkyg2lqzraa2lnjvqej32nkuu0ues2s82hzrye869xeexvn73equnujw
+  valid: false
+  description: One character short
+links:
+- type: doc
+  url: https://github.com/C2SP/C2SP/blob/main/age.md

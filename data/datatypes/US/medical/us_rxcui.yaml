@@ -24,6 +24,7 @@ examples:
 mappings:
   wikidata: P3345
   schema_org: rxcui
+  bioregistry: rxnorm
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/RxNorm

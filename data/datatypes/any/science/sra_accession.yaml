@@ -1,0 +1,33 @@
+id: sra_accession
+name: Sequence Read Archive accession (SRA, ENA, DDBJ)
+status: draft
+doc: Accession of an object in the sequence read archives of NCBI (SRA), EMBL-EBI (ENA) and DDBJ, which
+  store raw data from high-throughput sequencing. The first letter is S, E or D after the archive that
+  issued it, the second is R, and the third gives the kind of object, for example X for an experiment,
+  R for a run and S for a sample. Digits follow. Studies and samples also have BioProject and BioSample
+  accessions, which are separate datatypes.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[SED]R[APRSXZ]\d+$
+examples:
+- value: SRX000007
+  description: 454 sequencing of a paired-end library of HapMap individual NA18505 (experiment); Bioregistry
+    example
+- value: SRR000001
+  description: A sequencing run of that experiment
+- value: ERS368772
+  description: ENA sample accession of BioSample SAMEA2397676
+- value: SAMEA2397676
+  valid: false
+  description: BioSample accession, not a read archive accession
+mappings:
+  bioregistry: insdc.sra
+links:
+- type: doc
+  url: https://www.ncbi.nlm.nih.gov/sra
+- type: other
+  url: https://bioregistry.io/registry/insdc.sra

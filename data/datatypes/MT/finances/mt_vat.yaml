@@ -21,6 +21,9 @@ examples:
 - value: '206303217'
   valid: false
   description: One character too many
+mappings:
+  schema_org: vatID
+  stdnum: mt.vat
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.mt.vat.html

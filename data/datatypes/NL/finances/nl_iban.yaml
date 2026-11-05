@@ -28,6 +28,9 @@ examples:
 - value: NL91ABNA041716430
   valid: false
   description: 17 characters
+mappings:
+  dpv: pd:BankAccount
+  stdnum: iban
 links:
 - type: doc
   url: https://www.betaalvereniging.nl/betalingsverkeer/giraal-betalingsverkeer/bic-sepa-transacties/

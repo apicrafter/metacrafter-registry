@@ -15,3 +15,5 @@ regexp: ^[0-9]{14}$
 examples:
 - value: '12345678901234'
   description: Example Egyptian national ID number
+mappings:
+  dpv: pd:OfficialID

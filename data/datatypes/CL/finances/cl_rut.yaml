@@ -27,6 +27,8 @@ examples:
 mappings:
   purview: Chile identity card number
   orgid: CL-RUT
+  schema_org: taxID
+  stdnum: cl.rut
 links:
 - type: wikipedia
   url: https://es.wikipedia.org/wiki/Rol_%C3%9Anico_Tributario

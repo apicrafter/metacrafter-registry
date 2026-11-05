@@ -17,6 +17,7 @@ mappings:
   google_dlp: SINGAPORE_NATIONAL_REGISTRATION_ID_NUMBER
   presidio: SG_NRIC_FIN
   purview: Singapore national registration identity card (NRIC) number
+  dpv: pd:OfficialID
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/National_Registration_Identity_Card

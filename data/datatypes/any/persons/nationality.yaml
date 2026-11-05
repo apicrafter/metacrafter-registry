@@ -14,3 +14,5 @@ mappings:
   - NATIONALITY_JA
   - NATIONALITY_NL
   sherlock: nationality
+  dpv: pd:Nationality
+  schema_org: nationality

@@ -12,3 +12,6 @@ mappings:
   google_dlp: UK_NATIONAL_HEALTH_SERVICE_NUMBER
   presidio: UK_NHS
   purview: U.K. national health service number
+  dpv: pd:OfficialID
+  fhir: https://fhir.nhs.uk/Id/nhs-number
+  stdnum: gb.nhs

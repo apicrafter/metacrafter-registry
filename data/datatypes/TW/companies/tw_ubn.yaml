@@ -1,0 +1,45 @@
+id: tw_ubn
+name: Taiwanese unified business number (UBN)
+status: draft
+doc: 'Unified Business Number (統一編號), the eight-digit number of a business in Taiwan, used for tax (VAT)
+  purposes. Wikidata calls it the GUI number assigned by the Ministry of Economic Affairs, whose business
+  register (findbiz) can be searched by it. The last digit is a check digit: the digits are multiplied
+  by 1, 2, 1, 2, 1, 2, 4 and 1, and the digit sum of the products must end in 0, or in 9 when the seventh
+  digit is 7.'
+categories:
+- companies
+- finances
+country:
+- TW
+langs:
+- zh
+is_pii: false
+classification: identifier
+regexp: ^\d{8}$
+examples:
+- value: '22099131'
+  description: TSMC, an example of Wikidata P7729
+- value: '73251209'
+  description: Uni-President Enterprises, an example of Wikidata P7729
+- value: '04541302'
+  description: Foxconn, an example of Wikidata P7729
+- value: '00501503'
+  description: Example from the python-stdnum documentation
+- value: '12345'
+  valid: false
+  description: Too short
+mappings:
+  wikidata: P7729
+  stdnum: tw.ubn
+links:
+- type: wikipedia
+  url: https://zh.wikipedia.org/wiki/%E7%B5%B1%E4%B8%80%E7%B7%A8%E8%99%9F
+- type: doc
+  url: https://findbiz.nat.gov.tw/fts/query/QueryBar/queryInit.do?request_locale=en
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P7729
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.tw.ubn.html
+translations:
+  zh:
+    name: 統一編號

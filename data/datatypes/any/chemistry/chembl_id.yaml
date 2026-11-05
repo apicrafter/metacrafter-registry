@@ -20,6 +20,7 @@ examples:
   description: caffeine
 mappings:
   wikidata: P592
+  bioregistry: chembl
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ChEMBL

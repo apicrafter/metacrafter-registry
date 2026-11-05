@@ -53,6 +53,8 @@ mappings:
   - EU national identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  dpv: pd:OfficialID
+  stdnum: be.nn
 links:
 - type: doc
   url: https://www.rijksregister.fgov.be/sites/default/files/documents/nl/rijksregister/onderrichtingen/IT-lijst/IT000_Rijksregisternummer.pdf

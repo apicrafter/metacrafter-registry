@@ -1,0 +1,20 @@
+id: sz_postcode
+name: Eswatini postal code
+status: draft
+doc: 'Postal code in Eswatini: a letter (H, L, M or S) and three digits.'
+semantic_type: postindex
+country:
+- SZ
+langs:
+- en
+regexp: ^[HLMS]\d{3}$
+examples:
+- value: H100
+- value: H10
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Eswatini
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/SZ

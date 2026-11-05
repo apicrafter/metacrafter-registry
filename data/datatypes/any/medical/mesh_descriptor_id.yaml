@@ -21,6 +21,7 @@ examples:
   description: Uruguay
 mappings:
   wikidata: P486
+  bioregistry: mesh
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Medical_Subject_Headings

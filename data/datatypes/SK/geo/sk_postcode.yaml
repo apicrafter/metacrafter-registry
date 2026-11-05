@@ -1,0 +1,25 @@
+id: sk_postcode
+name: Slovakia postal code
+status: draft
+doc: 'Postal code in Slovakia: five digits, written as three digits, a space and two digits; the space
+  may be omitted.'
+semantic_type: postindex
+country:
+- SK
+langs:
+- sk
+regexp: ^\d{3} ?\d{2}$
+examples:
+- value: 010 01
+- value: 023 14
+- value: 972 48
+- value: 921 01
+- value: 975 99
+- value: 010 0
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Slovakia
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/SK

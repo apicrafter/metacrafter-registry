@@ -26,6 +26,9 @@ examples:
 - value: SK0022749619
   valid: false
   description: The first digit cannot be 0
+mappings:
+  schema_org: vatID
+  stdnum: sk.dph
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/VAT_identification_number

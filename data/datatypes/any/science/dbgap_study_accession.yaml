@@ -1,0 +1,28 @@
+id: dbgap_study_accession
+name: dbGaP study accession
+status: draft
+doc: Accession of a study in dbGaP, the NCBI database that archives and distributes the results of studies
+  of how genotype and phenotype interact. It is phs and six digits, optionally followed by the version
+  of the study and of its participant set, as in phs000768.v2.p1.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^phs[0-9]{6}(\.v\d+\.p\d+)?$
+examples:
+- value: phs000768.v2.p1
+  description: Study with version and participant set; Bioregistry example
+- value: phs000768
+  description: The same study without versions
+- value: phs768
+  valid: false
+  description: Fewer than six digits
+mappings:
+  bioregistry: dbgap
+links:
+- type: doc
+  url: https://www.ncbi.nlm.nih.gov/gap/
+- type: other
+  url: https://bioregistry.io/registry/dbgap

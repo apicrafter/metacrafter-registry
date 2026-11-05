@@ -1,0 +1,19 @@
+id: la_postcode
+name: Laos postal code
+status: draft
+doc: 'Postal code in Laos: five digits.'
+semantic_type: postindex
+country:
+- LA
+langs:
+- lo
+regexp: ^\d{5}$
+examples:
+- value: '01160'
+- value: '01000'
+- value: '0116'
+  valid: false
+  description: too short
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/LA

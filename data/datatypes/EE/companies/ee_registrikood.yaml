@@ -26,6 +26,7 @@ mappings:
   - EE-KMKR
   - EE-RIK
   wikidata: P6518
+  stdnum: ee.registrikood
 links:
 - type: doc
   url: https://ariregister.rik.ee/

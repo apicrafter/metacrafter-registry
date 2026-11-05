@@ -17,6 +17,7 @@ mappings:
   google_dlp: US_DRIVERS_LICENSE_NUMBER
   presidio: US_DRIVER_LICENSE
   purview: U.S. drivers license number
+  dpv: pd:OfficialID
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Driver%27s_licenses_in_the_United_States

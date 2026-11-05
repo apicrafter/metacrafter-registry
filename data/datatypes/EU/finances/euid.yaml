@@ -24,6 +24,8 @@ examples:
   description: EUID with Italian country code (IT) and 4 alphanumeric characters (minimum length)
 - value: ES123456789012345678
   description: EUID with Spanish country code (ES) and 18 alphanumeric characters (maximum length)
+mappings:
+  bioregistry: euid
 translations:
   en:
     name: European Unique Identifier

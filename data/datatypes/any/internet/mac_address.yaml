@@ -40,6 +40,9 @@ mappings:
   google_dlp: MAC_ADDRESS
   presidio: MAC_ADDRESS
   fta: MACADDRESS
+  dpv: pd:MACAddress
+  fhir: http://hl7.org/fhir/sid/eui-48/ethernet
+  stdnum: mac
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/MAC_address

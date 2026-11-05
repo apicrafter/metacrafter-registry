@@ -1,0 +1,36 @@
+id: fr_rivoli
+name: French RIVOLI street code
+status: draft
+doc: 'Code of a street, locality or housing estate within its commune in the FANTOIR file of the French
+  tax administration: the four-character RIVOLI code and its check letter, as in 3086F. It is the last
+  part of the FANTOIR identifier (fr_fantoir) and is unique only within one commune. The first character
+  of the RIVOLI code tells the kind of way: a digit for a street, A for a housing estate or condominium,
+  B to W for a locality (lieu-dit), X for a pseudo-street such as a canal or a metro station, Y or Z for
+  a provisional street.'
+categories:
+- geo
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^[\dA-Z]{4}[A-Z]$
+examples:
+- value: 3086F
+  description: RIVOLI code of the example in the DGFiP description of the FANTOIR file
+- value: 2660T
+  description: Rue Duguesclin (FANTOIR 3502382660T, an example of Wikidata P3182)
+- value: B150B
+  description: Test value of the code_fantoir format of csv-detective
+- value: '7755'
+  valid: false
+  description: The check letter is missing, a negative test value of csv-detective
+links:
+- type: doc
+  url: https://data.economie.gouv.fr/api/v2/catalog/datasets/fichier-fantoir-des-voies-et-lieux-dits/attachments/descriptif_du_fichier_national_fantoir_pdf
+- type: doc
+  url: https://www.data.gouv.fr/datasets/fichier-fantoir-des-voies-et-lieux-dits
+translations:
+  fr:
+    name: Code RIVOLI

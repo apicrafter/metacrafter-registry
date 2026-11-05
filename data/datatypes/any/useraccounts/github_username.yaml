@@ -17,6 +17,7 @@ examples:
   description: Google
 mappings:
   wikidata: P2037
+  dpv: pd:Username
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P2037

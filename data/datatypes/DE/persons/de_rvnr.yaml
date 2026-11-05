@@ -34,6 +34,7 @@ examples:
   description: The letter is missing
 mappings:
   presidio: DE_SOCIAL_SECURITY
+  dpv: pd:OfficialID
 links:
 - type: wikipedia
   url: https://de.wikipedia.org/wiki/Versicherungsnummer

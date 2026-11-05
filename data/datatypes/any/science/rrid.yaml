@@ -26,6 +26,7 @@ examples:
   description: 'Without the RRID: prefix the value is not recognized'
 mappings:
   wikidata: P9712
+  bioregistry: rrid
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SciCrunch

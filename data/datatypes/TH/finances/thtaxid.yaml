@@ -13,3 +13,5 @@ classification: identifier
 regexp: ^[0-9]{9,15}$
 mappings:
   orgid: TH-TIN
+  schema_org: taxID
+  stdnum: th.tin

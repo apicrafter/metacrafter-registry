@@ -1,0 +1,21 @@
+id: pk_postcode
+name: Pakistan postal code
+status: draft
+doc: 'Postal code in Pakistan: five digits.'
+semantic_type: postindex
+country:
+- PK
+langs:
+- ur
+- en
+regexp: ^\d{5}$
+examples:
+- value: '44000'
+- value: '4400'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Pakistan
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/PK

@@ -1,0 +1,21 @@
+id: na_postcode
+name: Namibia postal code
+status: draft
+doc: 'Postal code in Namibia: five digits.'
+semantic_type: postindex
+country:
+- NA
+langs:
+- en
+regexp: ^\d{5}$
+examples:
+- value: '10001'
+- value: '10017'
+- value: '1000'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Namibia
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/NA

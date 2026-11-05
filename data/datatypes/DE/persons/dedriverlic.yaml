@@ -36,6 +36,7 @@ mappings:
   - German Driver's License Number
   - Germany driver's license number
   - EU drivers license number
+  dpv: pd:OfficialID
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Driving_licence_in_Germany

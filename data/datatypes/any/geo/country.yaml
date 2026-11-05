@@ -30,6 +30,7 @@ mappings:
   - COUNTRY.TEXT_RO
   - COUNTRY.TEXT_SV
   sherlock: country
+  schema_org: addressCountry
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Country

@@ -28,6 +28,8 @@ mappings:
   - EU national identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  dpv: pd:OfficialID
+  stdnum: ro.cnp
 links:
 - type: wikipedia
   url: https://ro.wikipedia.org/wiki/Cod_numeric_personal

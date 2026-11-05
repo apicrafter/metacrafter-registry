@@ -16,3 +16,5 @@ regexp: ^[A-Z][0-9]{11,12}$
 examples:
 - value: A12345678901
   description: Example Indonesian driver license number
+mappings:
+  dpv: pd:OfficialID

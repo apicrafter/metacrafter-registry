@@ -23,6 +23,7 @@ examples:
   description: Too few digits
 mappings:
   wikidata: P3117
+  bioregistry: comptox
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/CompTox_Chemicals_Dashboard

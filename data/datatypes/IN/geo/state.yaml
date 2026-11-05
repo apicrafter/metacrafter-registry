@@ -15,3 +15,4 @@ mappings:
   fta:
   - STATE_PROVINCE.STATE_UNION_IN
   - STATE_PROVINCE.STATE_UNION_NAME_IN
+  schema_org: addressRegion

@@ -29,6 +29,10 @@ mappings:
   - EU Social Security Number (SSN) or Equivalent ID
   - EU social security number or equivalent identification
   orgid: HR-OIB
+  schema_org:
+  - taxID
+  - vatID
+  stdnum: hr.oib
 links:
 - type: wikipedia
   url: https://hr.wikipedia.org/wiki/Osobni_identifikacijski_broj

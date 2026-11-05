@@ -23,6 +23,9 @@ examples:
 - value: R281297722816D7
   valid: false
   description: One character too many
+mappings:
+  dpv: pd:OfficialID
+  stdnum: mu.nid
 links:
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.mu.nid.html

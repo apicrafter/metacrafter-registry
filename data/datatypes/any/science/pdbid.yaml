@@ -25,6 +25,7 @@ examples:
   description: Starts with a letter
 mappings:
   wikidata: P638
+  bioregistry: pdb
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Protein_Data_Bank

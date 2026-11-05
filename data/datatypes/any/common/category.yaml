@@ -10,6 +10,7 @@ is_pii: false
 classification: categorical
 mappings:
   sherlock: category
+  schema_org: category
 translations:
   ru:
     name: Категория

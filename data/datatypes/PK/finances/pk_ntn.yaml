@@ -18,6 +18,7 @@ examples:
   description: example from ORG-ID.guide
 mappings:
   orgid: PK-NTN
+  schema_org: taxID
 links:
 - type: doc
   url: https://e.fbr.gov.pk/esbn/Verification#

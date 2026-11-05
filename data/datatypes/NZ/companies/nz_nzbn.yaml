@@ -25,6 +25,7 @@ examples:
 mappings:
   orgid: NZ-NZBN
   wikidata: P5687
+  fhir: https://standards.digital.health.nz/ns/hpi-nzbn
 links:
 - type: doc
   url: https://www.nzbn.govt.nz/

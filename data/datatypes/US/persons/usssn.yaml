@@ -24,6 +24,9 @@ mappings:
   presidio: US_SSN
   purview: U.S. social security number (SSN)
   fta: SSN
+  dpv: pd:OfficialID
+  fhir: http://hl7.org/fhir/sid/us-ssn
+  stdnum: us.ssn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Social_Security_number

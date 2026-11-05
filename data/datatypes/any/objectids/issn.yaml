@@ -23,6 +23,9 @@ examples:
 mappings:
   autotype: issn
   wikidata: P236
+  schema_org: issn
+  bioregistry: issn
+  stdnum: issn
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Standard_Serial_Number

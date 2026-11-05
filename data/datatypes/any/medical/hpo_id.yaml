@@ -1,0 +1,33 @@
+id: hpo_id
+name: Human Phenotype Ontology (HPO) term ID
+status: draft
+doc: 'Identifier of a term in the Human Phenotype Ontology, a vocabulary of the phenotypic abnormalities
+  seen in human disease. It is HP: and seven digits; OBO PURLs write HP_ instead.'
+categories:
+- medical
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^HP[:_]\d{7}$
+examples:
+- value: HP:0001250
+  description: Seizure
+- value: HP:0011140
+  description: Gastrointestinal duplication; Bioregistry example
+- value: HP_0001250
+  description: Seizure, underscore form of the OBO PURL
+- value: HP:001250
+  valid: false
+  description: Six digits instead of seven
+mappings:
+  bioregistry: hp
+  wikidata: P3841
+links:
+- type: doc
+  url: https://hpo.jax.org/
+- type: other
+  url: https://bioregistry.io/registry/hp
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3841

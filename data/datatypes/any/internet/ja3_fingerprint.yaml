@@ -1,0 +1,30 @@
+id: ja3_fingerprint
+name: JA3 TLS client fingerprint
+status: draft
+doc: 'Fingerprint of a TLS client, created at Salesforce in 2017: the MD5 hash of a string built from
+  the ClientHello message (TLS version, cipher suites, extensions, elliptic curves and point formats,
+  in decimal, with GREASE values left out), written as 32 lowercase hexadecimal digits. Threat intelligence
+  feeds and network monitors such as Zeek and Suricata use it to recognize client software, including
+  malware, regardless of IP address or domain. The value alone cannot be told apart from other MD5 hashes;
+  MISP stores it as the ja3-fingerprint-md5 attribute.'
+parent: md5hash
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-f]{32}$
+examples:
+- value: e7d705a3286e19ea42f587b344ee6865
+  description: Standard Tor client (JA3 README)
+- value: 6734f37431670b3ab4292b8f60f29984
+  description: Trickbot malware (JA3 README)
+- value: ada70206e40642a3e4461f35503241d5
+  description: MD5 of the README example string 769,47-53-5-10-...,0-10-11,23-24-25,0
+- value: 769,47-53-5-10-49161-49162-49171-49172-50-56-19-4,0-10-11,23-24-25,0
+  valid: false
+  description: The JA3 string before hashing
+links:
+- type: doc
+  url: https://github.com/salesforce/ja3

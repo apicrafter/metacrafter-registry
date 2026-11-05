@@ -17,6 +17,7 @@ examples:
   description: example from ORG-ID.guide
 mappings:
   orgid: PS-TIN
+  schema_org: taxID
 links:
 - type: doc
   url: http://www.pmof.ps/

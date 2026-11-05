@@ -9,6 +9,7 @@ langs:
 - en
 mappings:
   purview: Australia passport number
+  fhir: http://hl7.org/fhir/sid/passport-AUS
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Australian_passport

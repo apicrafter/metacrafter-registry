@@ -18,6 +18,7 @@ examples:
   description: dengue fever
 mappings:
   wikidata: P492
+  bioregistry: omim
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Online_Mendelian_Inheritance_in_Man

@@ -9,6 +9,8 @@ langs:
 - common
 is_pii: false
 classification: identifier
+mappings:
+  schema_org: trackingNumber
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Tracking_number

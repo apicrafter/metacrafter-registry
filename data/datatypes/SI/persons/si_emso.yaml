@@ -17,6 +17,8 @@ mappings:
   purview:
   - Slovenia Unique Master Citizen Number
   - EU national identification number
+  dpv: pd:OfficialID
+  stdnum: si.emso
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-slovenia-unique-master-citizen-number

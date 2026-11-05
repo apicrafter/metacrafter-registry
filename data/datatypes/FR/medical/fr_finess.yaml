@@ -1,0 +1,37 @@
+id: fr_finess
+name: French health and social establishment number (FINESS)
+status: draft
+doc: Nine-character number of a legal entity or an establishment in FINESS, the French national register
+  of health, medico-social and social establishments, managed by the Agence du Numérique en Santé. The
+  register gives a FINESS juridique number to each legal entity and a FINESS géographique number to each
+  of its establishments (places of activity). The characters are digits, except that the second may be
+  A or B.
+categories:
+- medical
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^\d[\dAB]\d{7}$
+examples:
+- value: '750712184'
+  description: Assistance Publique - Hôpitaux de Paris, an example of Wikidata P4058
+- value: '970403606'
+  description: Hospital of the Groupe hospitalier Est Réunion, an example of Wikidata P4058
+- value: '75071218'
+  valid: false
+  description: Eight digits
+mappings:
+  wikidata: P4058
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/FINESS
+- type: doc
+  url: https://finess.esante.gouv.fr/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4058
+translations:
+  fr:
+    name: Numéro FINESS

@@ -49,6 +49,8 @@ mappings:
   - EU national identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  dpv: pd:OfficialID
+  stdnum: cz.rc
 links:
 - type: wikipedia
   url: https://cs.wikipedia.org/wiki/Rodn%C3%A9_%C4%8D%C3%ADslo

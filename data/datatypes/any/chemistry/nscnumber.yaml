@@ -24,6 +24,7 @@ examples:
   description: DSSTox substance ID of aspirin
 mappings:
   wikidata: P2840
+  bioregistry: nsc
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P2840

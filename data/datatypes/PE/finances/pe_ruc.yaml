@@ -23,6 +23,8 @@ examples:
   description: One character too many
 mappings:
   orgid: PE-RUC
+  schema_org: taxID
+  stdnum: pe.ruc
 links:
 - type: doc
   url: https://www.sunat.gob.pe/legislacion/ruc/

@@ -21,6 +21,9 @@ examples:
 - value: '9627091127'
   valid: false
   description: One character too many
+mappings:
+  dpv: pd:OfficialID
+  stdnum: pe.cui
 links:
 - type: doc
   url: https://www.gob.pe/235-documento-nacional-de-identidad-dni

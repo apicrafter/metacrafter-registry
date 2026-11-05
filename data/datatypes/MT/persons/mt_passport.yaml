@@ -13,6 +13,7 @@ mappings:
   purview:
   - Malta passport number
   - EU passport number
+  fhir: http://hl7.org/fhir/sid/passport-MLT
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-malta-passport-number

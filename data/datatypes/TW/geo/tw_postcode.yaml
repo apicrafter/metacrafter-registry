@@ -1,0 +1,24 @@
+id: tw_postcode
+name: Taiwan postal code
+status: draft
+doc: 'Postal code in Taiwan: three digits for the township or district, optionally followed by two or
+  three more digits.'
+semantic_type: postindex
+country:
+- TW
+langs:
+- zh
+regexp: ^\d{3}(?:\d{2,3})?$
+examples:
+- value: '104'
+- value: '106'
+- value: '10603'
+- value: '40867'
+- value: '10'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Taiwan
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/TW

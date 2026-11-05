@@ -20,6 +20,7 @@ mappings:
   autotype: SEDOL
   fibo: SEC/Securities/SecuritiesIdentificationIndividuals/StockExchangeDailyOfficialListCode
   fta: CHECKDIGIT.SEDOL
+  stdnum: gb.sedol
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SEDOL

@@ -24,6 +24,7 @@ examples:
   description: Digits are not zero-padded to five
 mappings:
   wikidata: P715
+  bioregistry: drugbank
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/DrugBank

@@ -14,6 +14,8 @@ regexp: \d{10,20}
 examples:
 - value: '1234567890123456'
   description: Example Armenian bank account number
+mappings:
+  dpv: pd:BankAccount
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Banking_in_Armenia

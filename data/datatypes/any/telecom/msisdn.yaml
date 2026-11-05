@@ -27,6 +27,7 @@ examples:
   description: National notation with the trunk prefix 0 instead of the country code
 mappings:
   autotype: msisdn
+  dpv: pd:TelephoneNumber
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/MSISDN

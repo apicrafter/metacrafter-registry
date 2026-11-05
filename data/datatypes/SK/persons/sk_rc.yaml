@@ -19,6 +19,8 @@ mappings:
   - EU national identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  dpv: pd:OfficialID
+  stdnum: sk.rc
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-slovakia-personal-number

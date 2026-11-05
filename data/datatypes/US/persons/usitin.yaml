@@ -17,6 +17,9 @@ mappings:
   google_dlp: US_INDIVIDUAL_TAXPAYER_IDENTIFICATION_NUMBER
   presidio: US_ITIN
   purview: U.S. individual taxpayer identification number (ITIN)
+  dpv: pd:OfficialID
+  schema_org: taxID
+  stdnum: us.itin
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Taxpayer_Identification_Number

@@ -1,0 +1,22 @@
+id: ng_postcode
+name: Nigeria postal code
+status: draft
+doc: 'Postal code in Nigeria: six digits.'
+semantic_type: postindex
+country:
+- NG
+langs:
+- en
+regexp: ^\d{6}$
+examples:
+- value: '930283'
+- value: '300001'
+- value: '931104'
+- value: '93028'
+  valid: false
+  description: too short
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Nigeria
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/NG

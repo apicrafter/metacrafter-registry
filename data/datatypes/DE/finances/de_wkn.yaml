@@ -24,6 +24,8 @@ examples:
 - value: AOMNRK
   valid: false
   description: The letter O is not used
+mappings:
+  stdnum: de.wkn
 links:
 - type: wikipedia
   url: https://de.wikipedia.org/wiki/Wertpapierkennnummer

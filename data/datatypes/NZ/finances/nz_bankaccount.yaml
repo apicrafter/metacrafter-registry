@@ -24,6 +24,8 @@ examples:
   description: One character too many
 mappings:
   purview: New Zealand bank account number
+  dpv: pd:BankAccount
+  stdnum: nz.bankaccount
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/New_Zealand_bank_account_number

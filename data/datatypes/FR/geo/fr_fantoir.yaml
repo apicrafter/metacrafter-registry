@@ -1,0 +1,46 @@
+id: fr_fantoir
+name: French FANTOIR street identifier
+status: draft
+doc: 'Identifier of a street, locality (lieu-dit), housing estate or pseudo-street in FANTOIR, the file
+  of streets and localities of the French tax administration (DGFiP), which TOPO replaced in July 2023.
+  It has ten characters and a check letter: the department and direction code (3 characters, such as 450,
+  2A0, 754 or 971), the INSEE code of the commune within the department (3 digits), the RIVOLI code of
+  the street (4 characters) and the RIVOLI key, as in 450 002 3086 F. The first character of the RIVOLI
+  code tells the kind of way: a digit for a street, A for a housing estate or condominium, B to W for
+  a locality (lieu-dit), X for a pseudo-street such as a canal or a metro station, Y or Z for a provisional
+  street.'
+categories:
+- geo
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^\d[\dAB]\d ?\d{3} ?[\dA-Z]{4} ?[A-Z]$
+examples:
+- value: 4500023086F
+  description: Example from the DGFiP description of the FANTOIR file
+- value: 450 002 3086 F
+  description: The same identifier as printed in that description
+- value: 3502382660T
+  description: Rue Duguesclin, an example of Wikidata P3182
+- value: 7541030759S
+  description: Rue Beaubourg, an example of Wikidata P3182
+- value: '4500023086'
+  valid: false
+  description: The RIVOLI key is missing
+mappings:
+  wikidata: P3182
+links:
+- type: doc
+  url: https://data.economie.gouv.fr/api/v2/catalog/datasets/fichier-fantoir-des-voies-et-lieux-dits/attachments/descriptif_du_fichier_national_fantoir_pdf
+- type: doc
+  url: https://www.data.gouv.fr/datasets/fichier-fantoir-des-voies-et-lieux-dits
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/FANTOIR
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3182
+translations:
+  fr:
+    name: Identifiant FANTOIR d'une voie

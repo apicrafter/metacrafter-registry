@@ -20,6 +20,7 @@ examples:
   description: Punjabi
 mappings:
   wikidata: P220
+  bioregistry: iso.639-3
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ISO_639-3

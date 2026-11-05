@@ -23,6 +23,7 @@ mappings:
   purview:
   - Czech drivers license number
   - EU drivers license number
+  dpv: pd:OfficialID
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-czech-drivers-license-number
