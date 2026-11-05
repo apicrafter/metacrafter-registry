@@ -1,0 +1,54 @@
+id: be_insz
+name: Belgian social security identification number (INSZ/NISS)
+status: draft
+doc: 'Identificatienummer van de sociale zekerheid (INSZ), numéro d''identification de la sécurité sociale
+  (NISS) or Erkennungsnummer der sozialen Sicherheit (ENSS): the key that identifies a person in data
+  exchanged within Belgian social security, for example in employer declarations and health insurance.
+  It is the national register number (benatcardid) of a person in the National Register, otherwise the
+  BIS number (be_bis) assigned by the Crossroads Bank for Social Security. Both have 11 digits: date of
+  birth as YYMMDD (month plus 20 or 40 in a BIS number), a serial number and two check digits modulo 97.'
+categories:
+- pii
+- persons
+country:
+- BE
+langs:
+- nl
+- fr
+- de
+is_pii: true
+classification: identifier
+regexp: ^\d{2}\.?(?:0\d|1[0-2]|[24]\d|3[0-2]|5[0-2])\.?(?:[0-2]\d|3[01])[-. ]?\d{3}[-. ]?\d{2}$
+checksum: be_insz
+examples:
+- value: 42.01.22-051.81
+  description: National register number, example of the National Register instruction IT000
+- value: 76.47.03-285.95
+  description: Synthetic BIS number
+- value: '83091427643'
+  description: Synthetic national register number without separators
+- value: 83.09.14-276.44
+  valid: false
+  description: Check digits do not match
+- value: 83.63.14-276.43
+  valid: false
+  description: Month 63 is not used
+links:
+- type: doc
+  url: https://www.ksz-bcss.fgov.be/nl/project/rijksregisterksz-registers
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.be.ssn.html
+translations:
+  nl:
+    name: Identificatienummer van de sociale zekerheid (INSZ)
+    doc: Rijksregisternummer of BIS-nummer van een persoon, gebruikt als sleutel in de sociale zekerheid.
+  fr:
+    name: Numéro d'identification de la sécurité sociale (NISS)
+    doc: Numéro de registre national ou numéro BIS d'une personne, utilisé comme clé dans la sécurité
+      sociale.
+  de:
+    name: Erkennungsnummer der sozialen Sicherheit (ENSS)
+  ru:
+    name: Идентификационный номер социального обеспечения Бельгии (INSZ/NISS)
+    doc: Номер Национального реестра или номер BIS - ключ, по которому лицо идентифицируется в системе
+      социального обеспечения Бельгии.

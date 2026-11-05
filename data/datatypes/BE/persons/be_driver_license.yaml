@@ -1,7 +1,10 @@
 id: be_driver_license
 name: Belgian driver's license number
 status: draft
-doc: Number of a driving licence issued in Belgium. Microsoft Purview looks for ten digits.
+doc: Number of a driving licence (rijbewijs, permis de conduire, Führerschein) issued in Belgium as a
+  card in the European format. Microsoft Purview looks for ten digits without spaces or delimiters and
+  no check digit. On the card models described in PRADO a changing image shows the photo of the holder
+  and the last five digits of the number.
 parent: driver_license
 categories:
 - pii
@@ -15,6 +18,13 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^\d{10}$
+examples:
+- value: 4027 591 836
+  valid: false
+  description: Purview expects no spaces
+- value: '402759183'
+  valid: false
+  description: Nine digits
 mappings:
   purview:
   - Belgium drivers license number
@@ -22,3 +32,15 @@ mappings:
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-belgium-drivers-license-number
+- type: doc
+  url: https://www.consilium.europa.eu/prado/en/BEL-FO-05001/index.html
+translations:
+  nl:
+    name: Rijbewijsnummer
+  fr:
+    name: Numéro de permis de conduire
+  de:
+    name: Führerscheinnummer
+  ru:
+    name: Номер водительского удостоверения Бельгии
+    doc: Номер бельгийского водительского удостоверения европейского образца - десять цифр без пробелов.

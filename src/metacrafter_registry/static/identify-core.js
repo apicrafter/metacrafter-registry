@@ -449,8 +449,37 @@
         t += Math.floor(n / 32) + (n % 32);
       }
       return a[(32 - (t % 32)) % 32] === s[6];
+    },
+    be_kbo: function (v) {
+      var s = stripPrefix(v, "BE");
+      if (s.length === 9) s = "0" + s;
+      if (!/^\d{10}$/.test(s)) return false;
+      return 97 - (Number(s.slice(0, 8)) % 97) === Number(s.slice(8));
+    },
+    be_nn: function (v) {
+      return bePersonNumber(v, function (m) { return m <= 12; });
+    },
+    be_bis: function (v) {
+      return bePersonNumber(v, function (m) { return (m >= 20 && m <= 32) || (m >= 40 && m <= 52); });
+    },
+    be_insz: function (v) {
+      return CHECKSUMS.be_nn(v) || CHECKSUMS.be_bis(v);
+    },
+    be_mod97: function (v) {
+      var s = String(v).replace(/[\s.\-\/+*]/g, "");
+      if (!/^\d{12}$/.test(s)) return false;
+      return (Number(s.slice(0, 10)) % 97 || 97) === Number(s.slice(10));
     }
   };
+
+  // Belgian national register and BIS numbers: YYMMDD, serial, 2 check digits.
+  function bePersonNumber(v, monthOk) {
+    var s = String(v).replace(/[\s.\-]/g, "");
+    if (!/^\d{11}$/.test(s) || !monthOk(Number(s.slice(2, 4)))) return false;
+    var nine = Number(s.slice(0, 9));
+    var check = Number(s.slice(9));
+    return check === 97 - (nine % 97) || check === 97 - ((2e9 + nine) % 97);
+  }
 
   // ISO 7064 MOD 11,10 over a digit string that ends with its check digit.
   function mod11_10(s) {

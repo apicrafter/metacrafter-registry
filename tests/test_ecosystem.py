@@ -789,6 +789,16 @@ def test_javascript_checksums_match_python(tmp_path):
         "19-2000145399/0800",
         "aydaadk",
         "6bnaawp",
+        "BE 0403.019.261",
+        "BE 428759497",
+        "2.190.679.276",
+        "42.01.22-051.81",
+        "17 07 30 033 84",
+        "98.47.28-997.65",
+        "000-0011032-71",
+        "591-2010999-97",
+        "+++090/9337/55493+++",
+        "***010/8068/17183***",
     ]
     values += [str(rng.randrange(10**16, 10**18)) for _ in range(300)]
     values += [str(rng.randrange(10**8, 10**15)) for _ in range(300)]
@@ -848,6 +858,20 @@ def test_javascript_checksums_match_python(tmp_path):
     values += [f"{rng.randrange(10**10)}/0800" for _ in range(300)]
     isds = "abcdefghijkmnpqrstuvwxyz23456789"
     values += ["".join(rng.choice(isds) for _ in range(7)) for _ in range(500)]
+    for _ in range(300):  # Belgian numbers, half of them with valid check digits
+        body = f"{rng.randrange(10**8):08d}"
+        values.append(f"BE{body}{97 - int(body) % 97:02d}")
+        values.append(f"{rng.randrange(10**9):09d}")
+        month = rng.choice([0, 1, 12, 13, 20, 32, 33, 40, 52, 53])
+        nine = (
+            f"{rng.randrange(100):02d}{month:02d}{rng.randrange(32):02d}{rng.randrange(1000):03d}"
+        )
+        prefix = rng.choice(["", "2"])
+        values.append(f"{nine}{97 - int(prefix + nine) % 97:02d}")
+        values.append(f"{nine}{rng.randrange(100):02d}")
+        ten = f"{rng.randrange(10**10):010d}"
+        values.append(f"+++{ten[:3]}/{ten[3:7]}/{ten[7:]}{int(ten) % 97 or 97:02d}+++")
+        values.append(f"{ten[:3]}-{ten[3:]}-{rng.randrange(100):02d}")
     offices = ["001", "100", "121", "888", "500"]
     values += [
         f"IT{rng.randrange(10**7):07d}{rng.choice(offices)}{rng.randrange(10)}" for _ in range(100)

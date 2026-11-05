@@ -1,9 +1,15 @@
 id: be_vat
-name: Belgian enterprise number (VAT number)
-status: draft
-doc: Ondernemingsnummer or numéro d'entreprise, the 10-digit number of a company in the Belgian Crossroads
-  Bank for Enterprises. With the BE prefix it is also the VAT number (BTW, TVA). It starts with 0 or 1
-  and ends with two check digits; older numbers had nine digits.
+name: Belgian enterprise number (KBO/BCE, VAT number)
+status: stable
+doc: 'Ondernemingsnummer (numéro d''entreprise, Unternehmensnummer), the 10-digit number of a company,
+  association, public body or self-employed person in the Crossroads Bank for Enterprises (KBO/BCE). With
+  the prefix BE it is also the VAT number (BTW, TVA). It is usually written as 0415.580.365. The first
+  digit is 0 or 1: the KBO started to assign numbers beginning with 1 on 19 September 2023, when the numbers
+  beginning with 0 ran out. The last two digits are 97 minus the remainder of the first eight digits divided
+  by 97. Older numbers had nine digits and are still often written without the leading 0, as in BE 428.759.497.
+  Establishment units of an enterprise have numbers of their own, beginning with 2 to 8. ORG-ID.guide
+  lists the register as BE-BCE_KBO, and Peppol identifies Belgian participants with ISO 6523 scheme 0208
+  and the 10 digits.'
 parent: vatin
 categories:
 - companies
@@ -17,11 +23,26 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:BE[ -]?)?[01]?\d{3}[. ]?\d{3}[. ]?\d{3}$
+checksum: be_kbo
 examples:
-- value: BE 0220.764.971
-  description: Real-world value published online
-- value: BE 456.973.433
-  description: Real-world value published online
+- value: 0415.580.365
+  description: King Baudouin Foundation, from the KBO public search and an example of Wikidata P3376
+- value: 0563775480
+  description: Wikimedia Belgium, an example of Wikidata P3376
+- value: 0521.749.439
+  description: Example from ORG-ID.guide
+- value: BE 0403.019.261
+  description: VAT number, example from the python-stdnum documentation
+- value: BE 428759497
+  description: Older nine-digit form without the leading 0, example from the python-stdnum documentation
+- value: 1004.738.272
+  description: Synthetic number of the series beginning with 1 (since 2023) with valid check digits
+- value: 0415580366
+  valid: false
+  description: Check digits do not match
+- value: '2190679276'
+  valid: false
+  description: Establishment unit number, not an enterprise number
 - value: 02207649717
   valid: false
   description: One character too many
@@ -30,16 +51,38 @@ mappings:
   orgid: BE-BCE_KBO
   wikidata: P3376
 links:
+- type: doc
+  url: https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html
+- type: doc
+  url: https://economie.fgov.be/en/themes/enterprises/crossroads-bank-enterprises
+- type: other
+  url: https://blog.forumforthefuture.be/nl/article/ondernemingsnummers-beginnen-nu-ook-met-het-cijfer-1/20147
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Ondernemingsnummer
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3376
+- type: other
+  url: https://org-id.guide/list/BE-BCE_KBO
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-belgium-value-added-tax-number
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.be.vat.html
 - type: other
   url: https://docs.dataprep.ai/user_guide/clean/clean_be_vat.html
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P3376
 translations:
   nl:
     name: Ondernemingsnummer
+    doc: Tiencijferig nummer van een onderneming in de Kruispuntbank van Ondernemingen (KBO); met het
+      voorvoegsel BE ook het btw-nummer. Het begint met 0 of 1, de laatste twee cijfers zijn een controlegetal
+      modulo 97.
   fr:
     name: Numéro d'entreprise
+    doc: Numéro à dix chiffres d'une entreprise dans la Banque-Carrefour des Entreprises (BCE); précédé
+      de BE, c'est aussi le numéro de TVA. Il commence par 0 ou 1 et se termine par deux chiffres de contrôle
+      modulo 97.
+  de:
+    name: Unternehmensnummer
+  ru:
+    name: Номер предприятия Бельгии (KBO/BCE, номер НДС)
+    doc: Десятизначный номер предприятия в Банке-перекрёстке предприятий (KBO/BCE); с префиксом BE это
+      также номер НДС. Начинается с 0 или 1, последние две цифры - контрольное число по модулю 97.

@@ -1,0 +1,63 @@
+id: be_eid
+name: Belgian eID card number
+status: draft
+doc: Number of a Belgian electronic identity card (eID), issued to Belgian citizens aged 12 and over.
+  It identifies the card, not the person, and changes with every new card; the national register number
+  (benatcardid) printed on the same card identifies the person. It has 12 digits written as 000-0011032-71.
+  The last two are the remainder of the first ten divided by 97, or 97 when the remainder is 0. Residence
+  cards of foreigners use other formats (a B and nine digits for citizens of the EU, EEA and Switzerland,
+  nine digits for others) and are not covered. Google Sensitive Data Protection detects it as BELGIUM_NATIONAL_ID_CARD_NUMBER.
+categories:
+- pii
+- persons
+country:
+- BE
+langs:
+- nl
+- fr
+- de
+is_pii: true
+classification: identifier
+regexp: ^\d{3}[- ]?\d{7}[- ]?\d{2}$
+checksum: be_mod97
+examples:
+- value: 000-0011032-71
+  description: Example from the python-stdnum documentation
+- value: 591-2010999-97
+  description: Example from the python-stdnum documentation; the remainder is 0, so the check is 97
+- value: 592-7408163-63
+  description: Synthetic number with valid check digits
+- value: '592740816363'
+  description: The synthetic number without separators
+- value: 000-0011032-25
+  valid: false
+  description: Check digits do not match, example from the python-stdnum documentation
+- value: B 4170263 58
+  valid: false
+  description: Format of a residence card of an EU citizen
+mappings:
+  google_dlp: BELGIUM_NATIONAL_ID_CARD_NUMBER
+links:
+- type: doc
+  url: https://eid.belgium.be/en/what-eid
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Belgian_identity_card
+- type: doc
+  url: https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.be.eid.html
+translations:
+  nl:
+    name: Kaartnummer van de elektronische identiteitskaart (eID)
+    doc: Twaalfcijferig nummer van een Belgische eID-kaart (xxx-xxxxxxx-yy); de laatste twee cijfers zijn
+      de rest van de deling van de eerste tien door 97.
+  fr:
+    name: Numéro de la carte d'identité électronique (eID)
+    doc: Numéro à douze chiffres d'une carte eID belge (xxx-xxxxxxx-yy); les deux derniers chiffres sont
+      le reste de la division des dix premiers par 97.
+  de:
+    name: Kartennummer des elektronischen Personalausweises (eID)
+  ru:
+    name: Номер бельгийской электронной ID-карты (eID)
+    doc: Двенадцатизначный номер бельгийской карты eID (xxx-xxxxxxx-yy); последние две цифры - остаток
+      от деления первых десяти на 97.

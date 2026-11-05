@@ -1,0 +1,56 @@
+id: be_vehicle_plate
+name: Belgian vehicle registration plate (nummerplaat)
+status: draft
+doc: 'Registration number of a vehicle in Belgium as shown on the European-format plate issued since 15
+  November 2010: an index character, three letters and three digits, written with hyphens as 1-ABC-123.
+  The index is a digit for ordinary plates: series 1 ran from 2010 and series 2 started with 2-AAA-001
+  in December 2020. Other indexes mark vehicle categories, among them M (motorcycles), S (mopeds), P (speed
+  pedelecs), Q (trailers), O (oldtimers), T (taxis), G (agricultural vehicles), Z (dealers), Y (test drives)
+  and V (repair businesses). The Vehicle Registration Service (DIV) issues the plates, and a plate normally
+  stays with its owner rather than with the car. Plates of the formats used before 2010 (ABC-123 until
+  2008, 123-ABC from 2008), personalised, diplomatic, temporary and export plates follow other rules and
+  are not covered.'
+categories:
+- transport
+country:
+- BE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9GMOPQSTVYZ]-?[A-Z]{3}-?\d{3}$
+examples:
+- value: 1-ABC-123
+  description: Format example of the current plate from Wikipedia
+- value: 2-AAA-001
+  description: First plate of series 2, pressed in December 2020
+- value: 1XKP083
+  description: Synthetic plate of series 1 written without hyphens
+- value: M-AAA-000
+  description: Format of motorcycle plates since 2014, from Dutch Wikipedia
+- value: ABC-123
+  valid: false
+  description: Format used until 2008, not covered
+- value: 1-AB-123
+  valid: false
+  description: Two letters
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Belgium
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Belgisch_kenteken
+translations:
+  nl:
+    name: Nummerplaat
+    doc: Kenteken op de Europese nummerplaat sinds 2010 - een indexteken, drie letters en drie cijfers
+      (1-ABC-123).
+  fr:
+    name: Plaque d'immatriculation
+    doc: Immatriculation sur la plaque européenne depuis 2010 - un caractère d'index, trois lettres et
+      trois chiffres (1-ABC-123).
+  de:
+    name: Kennzeichen
+  ru:
+    name: Номерной знак транспортного средства Бельгии
+    doc: Регистрационный номер на номерном знаке европейского образца с 2010 года - индексный символ,
+      три буквы и три цифры (1-ABC-123).
