@@ -52,15 +52,20 @@
 
 ## 3. Phase 0: Restore the production domain
 
-- [ ] 3.1 **Owner action.** Point `registry.apicrafter.io` at `apicrafter.github.io`:
+- [x] 3.1 **Owner action.** Point `registry.apicrafter.io` at `apicrafter.github.io`:
   1. Create a Cloudflare CNAME record, DNS-only.
   2. Set the custom domain in the Pages settings.
   3. Enforce HTTPS.
+  - Done on 2026-11-05. The Cloudflare record `registry` is now `CNAME apicrafter.github.io`, DNS-only. Before, it was a proxied A/AAAA record that pointed at an old server, which no longer answered.
+  - The Pages custom domain is `registry.apicrafter.io`. GitHub approved its certificate (valid until 2027-02-03), and HTTPS is enforced.
+  - `http://registry.apicrafter.io/` and `https://apicrafter.github.io/metacrafter-registry/` both redirect to `https://registry.apicrafter.io/` with a 301.
+  - Each change of the domain or of HTTPS needs a new Pages deploy, because `configure-pages` gives the base URL at build time. While HTTPS is not enforced, that base URL starts with `http://`.
 - [x] 3.2 Make the build use the production base URL.
   - The default base URL is `https://registry.apicrafter.io`.
   - `pages.yml` takes the base URL from `actions/configure-pages`, so the site follows the custom domain once it is set.
   - No `CNAME` file is needed: Actions-based Pages deployments ignore it, and the domain is set in the Pages settings.
-- [ ] 3.3 Run the URL contract test against production. Record the result in the PR.
+- [x] 3.3 Run the URL contract test against production. Record the result in the PR.
+  - On 2026-11-05, after deploy run 42066551146, `metacrafter-registry check-contract https://registry.apicrafter.io` passed 17/17 checks. `/api/v1/index.json` reports `base_url: https://registry.apicrafter.io`.
 
 ## 4. Phase 1: Site
 

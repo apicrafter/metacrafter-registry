@@ -33,8 +33,8 @@ registry ids.
 
 The YAML files in `data/` are the source of truth. A build turns them into a
 static site and JSON API that GitHub Pages serves at
-https://registry.apicrafter.io (currently also at
-https://apicrafter.github.io/metacrafter-registry/).
+https://registry.apicrafter.io. The old address
+https://apicrafter.github.io/metacrafter-registry/ redirects there.
 
 ## Repository structure
 
