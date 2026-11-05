@@ -11,6 +11,11 @@ from metacrafter_registry.checksums import (
     bech32,
     bech32m,
     bg_vat,
+    cz_bank_account,
+    cz_dic,
+    cz_ico,
+    cz_isds,
+    cz_rc,
     de_fsnr,
     de_idnr,
     de_ik,
@@ -122,6 +127,18 @@ def test_checksum_reference_values():
     assert not de_pzn("27580898")
     assert de_fsnr("B072RRE2I55") and de_fsnr("B072RRE21X1") and not de_fsnr("B072RRE2I45")
     assert iso7064_mod97_10("991-03730-19") and not iso7064_mod97_10("991-03730-18")
+    assert cz_ico("25596641") and cz_ico("00022985") and not cz_ico("25596642")
+    assert cz_rc("710319/2745") and cz_rc("991231123") and not cz_rc("7103192746")
+    assert not cz_rc("590312123")  # 9 digits after 1953
+    # Reference values from the python-stdnum documentation.
+    assert cz_dic("CZ 25123891") and cz_dic("7103192745") and cz_dic("640903926")
+    assert not cz_dic("25123890") and not cz_dic("95123891")
+    assert cz_bank_account("34278-0727558021/0100") and cz_bank_account("19-2000145399/0800")
+    assert not cz_bank_account("4278-727558021/0100") and not cz_bank_account("19-2000145399")
+    assert not cz_bank_account("00/0800")  # fewer than two digits that are not 0
+    # Worked example of the ISDS web service documentation and a public data box.
+    assert cz_isds("aydaadk") and cz_isds("6bnaawp") and not cz_isds("aydaadl")
+    assert not cz_isds("aydaa0k")
 
 
 def test_crypto_checksum_reference_values():

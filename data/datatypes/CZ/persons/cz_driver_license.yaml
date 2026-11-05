@@ -1,8 +1,9 @@
 id: cz_driver_license
 name: Czech driver's license number
 status: draft
-doc: Number of a driving licence issued in the Czech Republic. Microsoft Purview looks for the letter
-  E, a second letter, an optional space and six digits.
+doc: Number of a driving licence (řidičský průkaz) issued in the Czech Republic. Microsoft Purview describes
+  it as two letters and six digits, and matches the letter E, another letter, an optional space and six
+  digits, without a check digit. Older licences may use other series.
 parent: driver_license
 categories:
 - pii
@@ -14,6 +15,10 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^E[A-Z] ?\d{6}$
+examples:
+- value: E 408273
+  valid: false
+  description: The second letter is missing
 mappings:
   purview:
   - Czech drivers license number
@@ -21,3 +26,10 @@ mappings:
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-czech-drivers-license-number
+translations:
+  cs:
+    name: Číslo řidičského průkazu
+  ru:
+    name: Номер водительского удостоверения Чехии
+    doc: Номер чешского водительского удостоверения - по описанию Microsoft Purview буква E, ещё одна
+      буква и шесть цифр.

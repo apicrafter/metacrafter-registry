@@ -1,0 +1,42 @@
+id: cz_postal_code
+name: Czech postal code (PSČ)
+status: draft
+doc: 'Poštovní směrovací číslo (PSČ), the five-digit postal code of the Czech Republic, usually written
+  as three and two digits, as in 110 00. Czechoslovakia introduced it in 1973 and the system has not changed
+  since. The first digit is the postal zone of 1973: 1 Prague, 2 Central Bohemia, 3 western and southern
+  Bohemia, 4 northern Bohemia, 5 eastern Bohemia and western Moravia, 6 southern Moravia, 7 northern and
+  eastern Moravia. Codes starting with 8, 9 and 0 belong to Slovakia. Mail from abroad may put CZ- before
+  the code.'
+semantic_type: postindex
+country:
+- CZ
+langs:
+- common
+regexp: ^[1-7]\d{2} ?\d{2}$
+examples:
+- value: 110 00
+  description: Prague, main post office in Jindřišská street
+- value: '16000'
+  description: Prague 6 (Dejvice)
+- value: 370 01
+  description: České Budějovice
+- value: 779 00
+  description: Olomouc
+- value: 911 01
+  valid: false
+  description: Trenčín, a Slovak postal code
+- value: '1100'
+  valid: false
+  description: Four digits
+links:
+- type: wikipedia
+  url: https://cs.wikipedia.org/wiki/Po%C5%A1tovn%C3%AD_sm%C4%9Brovac%C3%AD_%C4%8D%C3%ADslo
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_the_Czech_Republic
+translations:
+  cs:
+    name: Poštovní směrovací číslo (PSČ)
+  ru:
+    name: Почтовый индекс Чехии (PSČ)
+    doc: Пятизначный почтовый индекс Чехии, обычно в виде трёх и двух цифр (110 00); первая цифра (1-7)
+      - почтовая зона.

@@ -1,0 +1,54 @@
+id: cz_vehicle_plate
+name: Czech vehicle registration plate (registrační značka)
+status: draft
+doc: 'Registration number of a car in the Czech Republic as shown on the plate (registrační značka, colloquially
+  SPZ). Plates issued since 2001 have seven characters shown as three and four, with no punctuation: a
+  serial digit, the letter of the region (A Praha, S Středočeský, C Jihočeský, P Plzeňský, K Karlovarský,
+  U Ústecký, L Liberecký, H Královéhradecký, E Pardubický, J Vysočina, B Jihomoravský, M Olomoucký, T
+  Moravskoslezský, Z Zlínský), a digit or letter, and four digits, as in 1A2 3456. When the numbers of
+  a region run out a letter replaces the next digit: Prague moved to 1AA A000 in 2023. Decree 343/2014
+  allows only the letters A-F, H-N, P, R-V and X-Z after the region code. Plates of electric vehicles
+  have EL and five letters or digits. Personalised plates (up to eight characters), historic (V), sport
+  (R), diplomatic and older district-based plates (before 2001) follow other rules and are not covered.
+  Since 2015 a plate stays with the vehicle when it moves to another region.'
+categories:
+- transport
+country:
+- CZ
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[1-9][ABCEHJKLMPSTUZ][0-9A-FH-NPR-VX-Z] ?[0-9A-FH-NPR-VX-Z]\d{3}|EL[0-9A-FH-NPR-VX-Z] ?[0-9A-FH-NPR-VX-Z]{4})$
+examples:
+- value: 1A2 3456
+  description: Format example of a Prague plate from Wikipedia
+- value: 1AA A000
+  description: First plate of the Prague series of 2023 with a letter in the fourth position
+- value: 5T80123
+  description: Synthetic plate of the Moravskoslezský kraj written without the space
+- value: 1O2 3456
+  valid: false
+  description: O is not a region letter
+- value: 1AQ 1234
+  valid: false
+  description: Q is not used
+- value: 1A2-3456
+  valid: false
+  description: Plates have no punctuation
+links:
+- type: doc
+  url: https://www.zakonyprolidi.cz/cs/2014-343
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_the_Czech_Republic
+- type: other
+  url: https://www.novinky.cz/clanek/auto-na-registracni-znacce-pro-prahu-pribylo-dalsi-pismeno-40433390
+translations:
+  cs:
+    name: Registrační značka vozidla (SPZ)
+    doc: Sedmimístná registrační značka automobilu vydávaná od roku 2001 - číslice, písmeno kraje, číslice
+      nebo písmeno a čtyři číslice (1A2 3456); u elektrických vozidel EL a pět znaků.
+  ru:
+    name: Номерной знак транспортного средства Чехии
+    doc: Семизначный регистрационный номер автомобиля с 2001 года - цифра, буква края, цифра или буква
+      и четыре цифры (1A2 3456); у электромобилей EL и пять знаков.

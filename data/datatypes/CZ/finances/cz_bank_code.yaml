@@ -1,0 +1,40 @@
+id: cz_bank_code
+name: Czech bank code (kód banky)
+status: draft
+doc: Four-digit code of a bank or other payment service provider in Czech payments (kód platebního styku,
+  usually called kód banky). It follows the slash in a national account number, as in 19-2000145399/0800,
+  and is characters 5 to 8 of a Czech IBAN. The Czech National Bank publishes the list of codes with the
+  provider names and BIC codes.
+categories:
+- finances
+country:
+- CZ
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4}$
+examples:
+- value: '0100'
+  description: Komerční banka, from the list of the Czech National Bank
+- value: '0300'
+  description: Československá obchodní banka, from the list of the Czech National Bank
+- value: 0800
+  description: Česká spořitelna, from the list of the Czech National Bank
+- value: '800'
+  valid: false
+  description: Leading zero dropped
+links:
+- type: doc
+  url: https://www.cnb.cz/cs/platebni-styk/ucty-kody-bank/
+- type: doc
+  url: https://www.zakonyprolidi.cz/cs/2011-169
+translations:
+  cs:
+    name: Kód banky (kód platebního styku)
+    doc: Čtyřmístný kód poskytovatele platebních služeb za lomítkem v čísle účtu; seznam kódů zveřejňuje
+      Česká národní banka.
+  ru:
+    name: Код банка Чехии
+    doc: Четырёхзначный код банка в чешском номере счёта (после косой черты) и в IBAN; список кодов публикует
+      Чешский национальный банк.

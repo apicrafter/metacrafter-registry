@@ -1,0 +1,48 @@
+id: cz_bank_account
+name: Czech bank account number
+status: draft
+doc: 'Number of a bank account in the Czech Republic in the national format, written as prefix-number/bank
+  code, for example 19-2000145399/0800. Czech National Bank decree 169/2011 defines it: an optional prefix
+  (předčíslí) of up to six digits, an account number of two to ten digits with at least two that are not
+  0, and the 4-digit bank code (kód platebního styku). Leading zeros of both parts have no meaning. Each
+  part has its own check: its digits, weighted 6 3 7 9 10 5 8 4 2 1 from the left after padding to ten
+  digits, must give a sum divisible by 11.'
+semantic_type: bankaccount
+country:
+- CZ
+langs:
+- cs
+regexp: ^(?:\d{1,6}-)?\d{2,10}/\d{4}$
+checksum: cz_bank_account
+examples:
+- value: 19-2000145399/0800
+  description: Example of the Czech National Bank, IBAN CZ6508000000192000145399
+- value: 000019-2000145399/0800
+  description: The same account with the prefix padded to six digits
+- value: 34278-0727558021/0100
+  description: Example from the python-stdnum documentation
+- value: 19-2000145398/0800
+  valid: false
+  description: The account number fails the check
+- value: 4278-727558021/0100
+  valid: false
+  description: The prefix fails the check, example from the python-stdnum documentation
+- value: 19-2000145399
+  valid: false
+  description: The bank code is missing
+links:
+- type: doc
+  url: https://www.zakonyprolidi.cz/cs/2011-169
+- type: doc
+  url: https://www.cnb.cz/cs/platebni-styk/iban/iban-mezinarodni-format-cisla-uctu/
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cz.bankaccount.html
+translations:
+  cs:
+    name: Číslo bankovního účtu
+    doc: Číslo účtu v národním formátu - předčíslí (až 6 číslic), číslo účtu (2 až 10 číslic) a za lomítkem
+      čtyřmístný kód banky; obě části mají kontrolu dělitelností jedenácti.
+  ru:
+    name: Номер банковского счёта в Чехии
+    doc: Номер счёта в национальном формате - префикс (до 6 цифр), номер (от 2 до 10 цифр) и после косой
+      черты четырёхзначный код банка; каждая часть проверяется делимостью на 11.

@@ -1,9 +1,14 @@
 id: cz_rc
 name: Czech birth number (rodné číslo)
 status: draft
-doc: Rodné číslo, the Czech national personal identifier; Slovakia uses the same scheme. It encodes the
-  date of birth and the sex. Numbers given after 1 January 1954 have ten digits, older ones nine. It is
-  usually written with a slash after the sixth digit.
+doc: 'Rodné číslo, the Czech personal number; Slovakia uses the same scheme. The first six digits are
+  the date of birth as YYMMDD. Women have 50 added to the month. Since 2004 (Act 53/2004) a further 20
+  is added to the month (70 for women) when the serial numbers of a day run out. Numbers of people born
+  before 1954 have nine digits. Later ones have a tenth, check digit: the number is divisible by 11, except
+  a few issued until 1985 whose first nine digits leave a remainder of 10 and that end in 0. It is usually
+  written with a slash after the sixth digit. The Ministry of the Interior also assigns birth numbers
+  to foreigners with long-term residence. Health insurance, social security and, by default, tax registration
+  use it.'
 categories:
 - pii
 - persons
@@ -13,18 +18,30 @@ langs:
 - cs
 is_pii: true
 classification: identifier
-regexp: ^\d{6}/?\d{3,4}$
+regexp: ^\d{2}(?:[0257][1-9]|[1368][0-2])(?:0[1-9]|[12]\d|3[01])/?\d{3,4}$
+checksum: cz_rc
 examples:
+- value: 710319/2745
+  description: Man born on 19 March 1971, example from the python-stdnum documentation
 - value: '7810181082'
   description: Synthetic number with a valid check digit
 - value: '1457090811'
-  description: Synthetic number with a valid check digit
-- value: 781018/1082
-  description: The first example in its printed form
+  description: Synthetic number of a woman born on 9 July 2014 (month 57)
+- value: 057214/4738
+  description: Synthetic number of a woman born on 14 February 2005 with the alternative month 72
+- value: '991231123'
+  description: Nine-digit number without a check digit, example from the python-stdnum documentation
+- value: '7103192746'
+  valid: false
+  description: Check digit does not match
+- value: 781318/1082
+  valid: false
+  description: There is no month 13
 - value: '78101810827'
   valid: false
   description: One character too many
 mappings:
+  google_dlp: CZECHIA_PERSONAL_ID_NUMBER
   purview:
   - Czech personal identity number
   - EU Social Security Number (SSN) or Equivalent ID
@@ -35,6 +52,8 @@ mappings:
 links:
 - type: wikipedia
   url: https://cs.wikipedia.org/wiki/Rodn%C3%A9_%C4%8D%C3%ADslo
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-czech-personal-identity-number
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cz.rc.html
 - type: other
@@ -42,3 +61,9 @@ links:
 translations:
   cs:
     name: Rodné číslo
+    doc: Datum narození ve tvaru RRMMDD (u žen měsíc + 50, od roku 2004 případně + 20) a za lomítkem tři
+      nebo čtyři číslice; desetimístné rodné číslo je dělitelné jedenácti.
+  ru:
+    name: Персональный номер Чехии (rodné číslo)
+    doc: Дата рождения в виде ГГММДД (у женщин к месяцу прибавляется 50, с 2004 года иногда ещё 20) и
+      после косой черты три или четыре цифры; десятизначный номер делится на 11.

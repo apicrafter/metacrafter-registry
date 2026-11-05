@@ -1,0 +1,36 @@
+id: cz_region_code
+name: Czech region code (ISO 3166-2:CZ)
+status: draft
+doc: Code of one of the 14 Czech regions (kraje) from ISO 3166-2:CZ, two digits after CZ-, such as CZ-10
+  (Prague), CZ-64 (Jihomoravský kraj) or CZ-80 (Moravskoslezský kraj), alone or with the country code.
+  Codes of districts (okresy) have a third character, as in CZ-201 (Benešov) or CZ-20A (Praha-západ),
+  and are not covered.
+semantic_type: iso3166code
+country:
+- CZ
+langs:
+- common
+regexp: ^(?:CZ-)?(?:10|20|31|32|41|42|51|52|53|63|64|71|72|80)$
+examples:
+- value: CZ-10
+  description: Praha, Hlavní město
+- value: CZ-64
+  description: Jihomoravský kraj
+- value: '80'
+  description: Moravskoslezský kraj
+- value: CZ-201
+  valid: false
+  description: Benešov district, not a region
+- value: CZ-60
+  valid: false
+  description: Not a region code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_3166-2:CZ
+- type: wikipedia
+  url: https://cs.wikipedia.org/wiki/ISO_3166-2:CZ
+translations:
+  cs:
+    name: Kód kraje (ISO 3166-2:CZ)
+  ru:
+    name: Код края Чехии (ISO 3166-2:CZ)

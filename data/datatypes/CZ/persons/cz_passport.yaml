@@ -1,17 +1,35 @@
 id: cz_passport
 name: Czech passport number
 status: draft
-doc: Number of a passport issued by the Czech Republic. Microsoft Purview looks for eight digits.
+doc: Number of a passport (cestovní pas) issued by the Czech Republic. Microsoft Purview describes it
+  as eight digits without spaces or delimiters and without a check digit; Google Sensitive Data Protection
+  detects it as CZECHIA_PASSPORT.
 semantic_type: passport
 country:
 - CZ
 langs:
 - cs
 regexp: ^\d{8}$
+examples:
+- value: 4108 2736
+  valid: false
+  description: Purview expects no spaces
+- value: '4108273'
+  valid: false
+  description: Seven digits
 mappings:
+  google_dlp: CZECHIA_PASSPORT
   purview:
   - Czech passport number
   - EU passport number
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-czech-passport-number
+- type: doc
+  url: https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference
+translations:
+  cs:
+    name: Číslo cestovního pasu
+  ru:
+    name: Номер паспорта Чехии
+    doc: Номер чешского заграничного паспорта - восемь цифр без пробелов и разделителей.
