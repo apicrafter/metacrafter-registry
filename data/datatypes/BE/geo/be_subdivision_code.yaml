@@ -1,0 +1,43 @@
+id: be_subdivision_code
+name: Belgian region and province code (ISO 3166-2:BE)
+status: draft
+doc: Code of a Belgian region or province from ISO 3166-2:BE, BE- and three letters, alone or with the
+  country code. The three regions are BE-BRU (Brussels-Capital), BE-VLG (Flemish Region) and BE-WAL (Walloon
+  Region). The ten provinces have codes that start with V in Flanders (BE-VAN Antwerp, BE-VBR Flemish
+  Brabant, BE-VLI Limburg, BE-VOV East Flanders, BE-VWV West Flanders) and with W in Wallonia (BE-WBR
+  Walloon Brabant, BE-WHT Hainaut, BE-WLG Liège, BE-WLX Luxembourg, BE-WNA Namur). Brussels has no province.
+semantic_type: iso3166code
+country:
+- BE
+langs:
+- common
+regexp: ^(?:BE-)?(?:BRU|VLG|WAL|V(?:AN|BR|LI|OV|WV)|W(?:BR|HT|LG|LX|NA))$
+examples:
+- value: BE-VWV
+  description: West Flanders
+- value: BE-BRU
+  description: Brussels-Capital Region
+- value: BE-WLX
+  description: Province of Luxembourg
+- value: WNA
+  description: Province of Namur without the country code
+- value: BE-BRA
+  valid: false
+  description: Brabant was split in 1995 and has no code
+- value: BE-ANT
+  valid: false
+  description: Not a code; Antwerp is BE-VAN
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_3166-2:BE
+- type: doc
+  url: https://www.iso.org/obp/ui/#iso:code:3166:BE
+translations:
+  nl:
+    name: Code van een gewest of provincie (ISO 3166-2:BE)
+  fr:
+    name: Code de région ou de province (ISO 3166-2:BE)
+  de:
+    name: Code einer Region oder Provinz (ISO 3166-2:BE)
+  ru:
+    name: Код региона или провинции Бельгии (ISO 3166-2:BE)

@@ -1,0 +1,53 @@
+id: be_bank_account
+name: Belgian bank account number (national format)
+status: draft
+doc: 'Belgian bank account number in the national format used before the IBAN replaced it in payments:
+  12 digits written as 3, 7 and 2, as in 096-1234567-69. The first three digits are the bank identification
+  code of the National Bank of Belgium, the next seven the account, and the last two the remainder of
+  the first ten digits divided by 97 (97 when the remainder is 0). The same 12 digits follow BE and the
+  two IBAN check digits in a Belgian IBAN (be_iban), so old account numbers are still found in historical
+  data and are converted to IBAN.'
+semantic_type: bankaccount
+country:
+- BE
+langs:
+- nl
+- fr
+- de
+regexp: ^\d{3}-?\d{7}-?\d{2}$
+checksum: be_mod97
+examples:
+- value: 096-1234567-69
+  description: Account of the iban.com example IBAN BE71096123456769
+- value: 761-5516570-10
+  description: Synthetic account with valid check digits (IBAN BE41761551657010)
+- value: '729339420191'
+  description: Synthetic account without separators (IBAN BE23729339420191)
+- value: 096-1234567-68
+  valid: false
+  description: Check digits do not match
+- value: BE71096123456769
+  valid: false
+  description: IBAN, not the national format
+links:
+- type: doc
+  url: https://www.nbb.be/en/payment-systems/payment-standards/bank-identification-codes
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Gestructureerde_mededeling
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.be.iban.html
+translations:
+  nl:
+    name: Belgisch rekeningnummer
+    doc: Bankrekeningnummer van twaalf cijfers (3-7-2) van vóór het IBAN; de laatste twee cijfers zijn
+      een controlegetal modulo 97.
+  fr:
+    name: Numéro de compte bancaire belge
+    doc: Numéro de compte à douze chiffres (3-7-2) d'avant l'IBAN; les deux derniers chiffres sont un
+      contrôle modulo 97.
+  de:
+    name: Belgische Kontonummer
+  ru:
+    name: Номер банковского счёта Бельгии (национальный формат)
+    doc: Двенадцатизначный номер счёта (3-7-2), использовавшийся до IBAN; последние две цифры - контрольное
+      число по модулю 97.

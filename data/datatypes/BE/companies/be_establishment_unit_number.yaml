@@ -1,0 +1,56 @@
+id: be_establishment_unit_number
+name: Belgian establishment unit number (vestigingseenheidsnummer)
+status: draft
+doc: 'Vestigingseenheidsnummer (numéro d''unité d''établissement), the 10-digit number that the Crossroads
+  Bank for Enterprises (KBO/BCE) gives to each establishment unit of an enterprise: a place, such as a
+  shop, office or school, where it carries out an activity. It differs from the enterprise number (be_vat):
+  its first digit is 2 to 8, and it is usually written as 2.190.679.276. Like the enterprise number it
+  ends with two check digits, 97 minus the remainder of the first eight digits divided by 97.'
+categories:
+- companies
+country:
+- BE
+langs:
+- nl
+- fr
+- de
+is_pii: false
+classification: identifier
+regexp: ^[2-8]\.?\d{3}\.?\d{3}\.?\d{3}$
+checksum: be_kbo
+examples:
+- value: 2.190.679.276
+  description: Establishment unit of the King Baudouin Foundation in Brussels, from the KBO public search
+- value: 2.368.621.026
+  description: Establishment unit of the King Baudouin Foundation in Kortrijk, from the KBO public search
+- value: '2190679276'
+  description: The first example without dots
+- value: 2.190.679.277
+  valid: false
+  description: Check digits do not match
+- value: 0415.580.365
+  valid: false
+  description: Enterprise number of the King Baudouin Foundation, not an establishment unit number
+- value: '9374621517'
+  valid: false
+  description: Establishment unit numbers do not start with 9
+links:
+- type: doc
+  url: https://www.vlaanderen.be/intern/werkplek/financien/de-vlaamse-overheid-in-de-kruispuntbank-van-ondernemingen-kbo
+- type: doc
+  url: https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html
+translations:
+  nl:
+    name: Vestigingseenheidsnummer
+    doc: Tiencijferig nummer van een vestigingseenheid van een onderneming in de KBO; het eerste cijfer
+      is 2 tot 8.
+  fr:
+    name: Numéro d'unité d'établissement
+    doc: Numéro à dix chiffres d'une unité d'établissement d'une entreprise dans la BCE; le premier chiffre
+      va de 2 à 8.
+  de:
+    name: Niederlassungseinheitsnummer
+  ru:
+    name: Номер подразделения предприятия Бельгии
+    doc: Десятизначный номер места деятельности (единицы предприятия) в Банке-перекрёстке предприятий
+      (KBO/BCE); первая цифра от 2 до 8.

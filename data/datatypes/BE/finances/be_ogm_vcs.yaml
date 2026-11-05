@@ -1,0 +1,59 @@
+id: be_ogm_vcs
+name: Belgian structured communication (OGM/VCS)
+status: draft
+doc: Gestructureerde mededeling (OGM) or communication structurée (VCS), the 12-digit payment reference
+  of Belgian credit transfers that lets the payee match a payment to an invoice or customer automatically.
+  It is written in groups of three, four and five digits between three plus signs or three asterisks,
+  as in +++090/9337/55493+++. The first ten digits are chosen by the payee, for example an invoice or
+  customer number; the last two are their remainder divided by 97, or 97 when the remainder is 0. Banks
+  refuse a transfer whose check digits do not match. In SEPA credit transfers it is sent as structured
+  remittance information.
+categories:
+- finances
+country:
+- BE
+langs:
+- nl
+- fr
+- de
+is_pii: false
+classification: identifier
+regexp: ^(?:\+{3}\d{3}/\d{4}/\d{5}\+{3}|\*{3}\d{3}/\d{4}/\d{5}\*{3}|\d{3}/?\d{4}/?\d{5})$
+checksum: be_mod97
+examples:
+- value: +++090/9337/55493+++
+  description: Example from Dutch Wikipedia
+- value: +++010/8068/17183+++
+  description: Example from the python-stdnum documentation
+- value: '***120/3004/81750***'
+  description: Synthetic reference written with asterisks
+- value: 450/0000/81595
+  description: Synthetic reference without the plus signs
+- value: +++090/9337/55494+++
+  valid: false
+  description: Check digits do not match
+- value: +++090/9337/5549+++
+  valid: false
+  description: Eleven digits
+links:
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Gestructureerde_mededeling
+- type: doc
+  url: https://febelfin.be/en/publications/2023/febelfin-banking-standards-for-online-banking
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.be.ogm_vcs.html
+translations:
+  nl:
+    name: Gestructureerde mededeling (OGM)
+    doc: Betalingsreferentie van twaalf cijfers, als +++090/9337/55493+++; de laatste twee cijfers zijn
+      een controlegetal modulo 97.
+  fr:
+    name: Communication structurée (VCS)
+    doc: Référence de paiement à douze chiffres, comme +++090/9337/55493+++; les deux derniers chiffres
+      sont un contrôle modulo 97.
+  de:
+    name: Strukturierte Mitteilung
+  ru:
+    name: Структурированное назначение платежа Бельгии (OGM/VCS)
+    doc: Двенадцатизначная платёжная ссылка вида +++090/9337/55493+++; последние две цифры - контрольное
+      число по модулю 97.

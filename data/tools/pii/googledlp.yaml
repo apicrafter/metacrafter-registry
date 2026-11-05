@@ -11,6 +11,7 @@ supported_types:
 - aumedicarenum
 - autfn
 - bankcard
+- be_eid
 - bic
 - brcpf
 - bsn

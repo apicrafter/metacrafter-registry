@@ -1,8 +1,14 @@
 id: be_nis_code
-name: Belgian NIS/INS code
-status: draft
-doc: Five-digit code of a Belgian municipality maintained by Statbel, the Belgian statistical office.
-  The first digit is the province. Codes with a trailing letter denote a part (section) of a municipality.
+name: Belgian NIS code (REFNIS)
+status: stable
+doc: 'Five-digit code of a Belgian administrative area in the REFNIS nomenclature of Statbel, the Belgian
+  statistical office (formerly NIS/INS), used since the 1970 census. The first digit is the province,
+  the second the arrondissement and the last three the municipality: 40000 is the province of East Flanders,
+  44000 the arrondissement of Ghent and 44021 the city of Ghent. The two provinces created when Brabant
+  was split in 1995 have 20001 (Flemish Brabant) and 20002 (Walloon Brabant). 01000 is Belgium and 02000,
+  03000 and 04000 are the Flemish, Walloon and Brussels-Capital regions. A merged municipality gets a
+  new code, so codes change with mergers (2019, 2025). A letter after the code denotes a former municipality
+  (deelgemeente, section) of a merged one, as in 71022E (Stokrooie, part of Hasselt).'
 categories:
 - geo
 country:
@@ -11,16 +17,49 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^\d{5}[A-Z]?$
+regexp: ^(?:[1-9]\d[01]\d{2}[A-HJ-NP-Y]?|0[1-4]000)$
 examples:
 - value: '40000'
-  description: East Flanders
+  description: Province of East Flanders, an example of Wikidata P1567
 - value: '44021'
-  description: Ghent
+  description: Ghent, an example of Wikidata P1567
+- value: '20001'
+  description: Province of Flemish Brabant
+- value: '04000'
+  description: Brussels-Capital Region
+- value: 71022E
+  description: Stokrooie, a section of Hasselt
+- value: 57081J
+  description: Gaurain-Ramecroix, a section of Tournai
+- value: '4402'
+  valid: false
+  description: Four digits
+- value: '05000'
+  valid: false
+  description: Not a region code
 mappings:
   wikidata: P1567
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/NIS_code
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/NIS-code
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1567
+- type: doc
+  url: https://statbel.fgov.be/sites/default/files/files/opendata/Nuts/20200105-Note%20Refnis%20et%20Nuts-FR.pdf
+translations:
+  nl:
+    name: NIS-code
+    doc: Vijfcijferige code van Statbel voor een provincie, arrondissement of gemeente; een letter achteraan
+      duidt een deelgemeente aan.
+  fr:
+    name: Code INS (REFNIS)
+    doc: Code à cinq chiffres de Statbel pour une province, un arrondissement ou une commune; une lettre
+      finale désigne une section de commune.
+  de:
+    name: NIS-Code
+  ru:
+    name: Код NIS Бельгии (REFNIS)
+    doc: Пятизначный код Statbel для провинции, округа или коммуны Бельгии; буква в конце обозначает часть
+      объединённой коммуны.

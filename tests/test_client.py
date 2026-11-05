@@ -8,6 +8,11 @@ from metacrafter_registry import Registry
 from metacrafter_registry.checksums import (
     at_uid,
     base58check,
+    be_bis,
+    be_insz,
+    be_kbo,
+    be_mod97,
+    be_nn,
     bech32,
     bech32m,
     bg_vat,
@@ -139,6 +144,21 @@ def test_checksum_reference_values():
     # Worked example of the ISDS web service documentation and a public data box.
     assert cz_isds("aydaadk") and cz_isds("6bnaawp") and not cz_isds("aydaadl")
     assert not cz_isds("aydaa0k")
+    # Reference values from the python-stdnum documentation, the example of the
+    # National Register (IT000) and establishment units from the KBO public search.
+    assert be_kbo("BE 0403.019.261") and be_kbo("BE 428759497") and be_kbo("2.190.679.276")
+    assert not be_kbo("BE431150351") and not be_kbo("0403019262")
+    assert not be_kbo("0000000000")  # the check digits are 01 to 97, never 00
+    assert be_nn("42.01.22-051.81") and be_nn("40 00 00 953-81") and be_nn("85.07.30-033 28")
+    assert be_nn("17 07 30 033 84")  # born in 2017: 2 before the nine digits
+    assert not be_nn("12345678901") and not be_nn("98.47.28-997.65")
+    assert be_bis("98.47.28-997.65") and be_bis("01 49 07 001 85")
+    assert not be_bis("85073003328") and not be_bis("98472899766")
+    assert be_insz("85073003328") and be_insz("98472899765") and not be_insz("85073003329")
+    assert be_mod97("000-0011032-71") and be_mod97("591-1917064-58")
+    assert be_mod97("591-2010999-97")  # remainder 0 gives 97
+    assert be_mod97("+++090/9337/55493+++") and be_mod97("+++010/8068/17183+++")
+    assert not be_mod97("000-0011032-25") and not be_mod97("010/8068/17180")
 
 
 def test_crypto_checksum_reference_values():

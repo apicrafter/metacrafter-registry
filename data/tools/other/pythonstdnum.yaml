@@ -25,7 +25,11 @@ supported_types:
 - autfn
 - az_voen
 - bankaccount
+- be_bis
+- be_eid
 - be_iban
+- be_insz
+- be_ogm_vcs
 - be_vat
 - benatcardid
 - bg_egn
