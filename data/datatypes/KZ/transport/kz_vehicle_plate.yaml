@@ -1,0 +1,38 @@
+id: kz_vehicle_plate
+name: Kazakh vehicle registration plate
+status: draft
+doc: 'Standard registration plate of a car in Kazakhstan in the format used since 2012: three digits,
+  three Latin letters and a two-digit region code, as in 123 ABC 02. The region codes run from 01 (Astana),
+  02 (Almaty) and 03 (Akmola Region) to 17 (Shymkent); 18 (Abai), 19 (Jetisu) and 20 (Ulytau) were added
+  for the regions formed in 2022. Plates of other vehicle types and of diplomatic missions, and the older
+  plates with a region letter first, have other layouts and are not covered.'
+categories:
+- transport
+country:
+- KZ
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{3} ?[A-Z]{3} ?(?:0[1-9]|1\d|20)$
+examples:
+- value: 123 ABC 02
+  description: Format example of a plate of Almaty
+- value: 123ABC02
+  description: The same plate written without spaces
+- value: A 502 BCD
+  valid: false
+  description: Plate of the format used before 2012
+- value: 123 ABC 21
+  valid: false
+  description: There is no region code 21
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Kazakhstan
+- type: other
+  url: https://tengrinews.kz/autonews/nomera-regionov-kazahstana-avtomobilnyih-nomerah-polnyiy-596775/
+translations:
+  ru:
+    name: Государственный регистрационный номерной знак Казахстана
+    doc: Стандартный номерной знак автомобиля в Казахстане образца 2012 года - три цифры, три латинские
+      буквы и двузначный код региона (01-20).

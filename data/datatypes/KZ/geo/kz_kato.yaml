@@ -1,8 +1,15 @@
 id: kz_kato
 name: Kazakh KATO code
-status: draft
-doc: Nine-digit code of an administrative-territorial object of Kazakhstan in the Classifier of administrative-territorial
-  objects (KATO).
+status: stable
+doc: 'Nine-digit code of an administrative-territorial object or settlement of Kazakhstan in the national
+  Classifier of administrative-territorial objects (KATO, НК РК 11), kept by the Bureau of National Statistics.
+  The code is hierarchical: AB is the region or city of republican significance (10 to 70 for regions,
+  above 70 for cities such as Astana 71 and Almaty 75), CD a district or a city of regional significance,
+  EF an object of district level such as a rural district or a town, and HIJ a village or another small
+  settlement. The first two, four or six digits alone may stand for the higher levels; zeros fill the
+  rest of a full code. The classifier also has a separate one-digit attribute K for the type of locality,
+  which is not part of the nine-digit code. The current edition НК РК 11-2025 took effect on 1 February
+  2025.'
 categories:
 - geo
 country:
@@ -13,16 +20,27 @@ is_pii: false
 classification: identifier
 regexp: ^\d{9}$
 examples:
+- value: '710000000'
+  description: Astana
+- value: '750000000'
+  description: Almaty
 - value: '351010000'
   description: Karaganda
 - value: '154200000'
-  description: Kobda District
+  description: Kobda District, Aktobe Region
+- value: '71000000'
+  valid: false
+  description: Eight digits
 mappings:
   wikidata: P4838
 links:
+- type: doc
+  url: https://stat.gov.kz/ru/classifiers/statistical/21/
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P4838
 translations:
   ru:
     name: Код КАТО
-    doc: Девятизначный код административно-территориального объекта Казахстана по классификатору КАТО.
+    doc: Девятизначный код административно-территориального объекта или населённого пункта Казахстана
+      по классификатору административно-территориальных объектов (КАТО, НК РК 11). Код иерархический (AB
+      CD EF HIJ) - область или город республиканского значения, район, сельский округ, село.

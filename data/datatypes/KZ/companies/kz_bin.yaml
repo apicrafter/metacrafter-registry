@@ -1,8 +1,16 @@
 id: kz_bin
 name: Kazakh business identification number (BIN)
-status: draft
-doc: Бизнес-идентификационный номер (BIN), the 12-digit identification number of a legal entity or branch
-  in Kazakhstan. ORG-ID.guide lists the register as KZ-BIN; with that prefix an identifier reads KZ-BIN-950440001673.
+status: stable
+doc: 'Business identification number (BIN) of Kazakhstan: the 12-digit number of a legal entity, of a
+  branch or representative office, or of an individual entrepreneur working in joint entrepreneurship.
+  It is also the tax identification number of these taxpayers. The first four digits are the year and
+  month of registration. The fifth digit is the type: 4 for a resident legal entity, 5 for a non-resident
+  legal entity, 6 for a joint individual entrepreneur. The sixth digit is 0 for a head office, 1 for a
+  branch, 2 for a representative office and 3 for a peasant farm in joint entrepreneurship. Five digits
+  of serial number follow (90001 to 99999 for bodies and participants of the Astana International Financial
+  Centre), and the last digit is a check digit. The BIN replaced the taxpayer registration number (RNN)
+  on 1 January 2013. Individuals have an IIN (kz_iin) instead. ORG-ID.guide lists the register as KZ-BIN,
+  so an identifier reads KZ-BIN-950440001673.'
 categories:
 - companies
 country:
@@ -12,15 +20,36 @@ langs:
 - ru
 is_pii: false
 classification: identifier
+regexp: ^\d{4}[456][0-3]\d{6}$
+checksum: kz_iin_bin
 examples:
 - value: '950440001673'
-  description: example from ORG-ID.guide
+  description: Example from ORG-ID.guide
 - value: '990940003030'
-  description: example from ORG-ID.guide
+  description: Example from ORG-ID.guide
 - value: '000640002067'
-  description: example from ORG-ID.guide
+  description: Example from ORG-ID.guide
+- value: '950440001674'
+  valid: false
+  description: Check digit does not match
+- value: '950430001673'
+  valid: false
+  description: The fifth digit 3 is not a BIN entity type
 mappings:
   orgid: KZ-BIN
 links:
+- type: doc
+  url: https://www.oecd.org/tax/automatic-exchange/crs-implementation-and-assistance/tax-identification-numbers/Kazakhstan-TIN.pdf
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/Бизнес-идентификационный_номер
 - type: other
   url: https://org-id.guide/list/KZ-BIN
+translations:
+  ru:
+    name: Бизнес-идентификационный номер (БИН)
+    doc: Двенадцатизначный номер юридического лица, его филиала или представительства, а также индивидуального
+      предпринимателя, действующего в форме совместного предпринимательства. Первые четыре цифры - год
+      и месяц регистрации, пятая - тип лица, шестая - признак головного подразделения, филиала или представительства,
+      затем пять цифр порядкового номера и контрольная цифра. С 1 января 2013 года заменил РНН.
+  kk:
+    name: Бизнес-сәйкестендіру нөмірі (БСН)

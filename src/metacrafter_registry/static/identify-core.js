@@ -214,6 +214,18 @@
     se_vat: function (v) {
       var s = stripPrefix(v, "SE");
       return /^\d{10}01$/.test(s) && CHECKSUMS.luhn(s.slice(0, 10));
+    },
+    kz_iin_bin: function (v) {
+      var d = digitsOf(v);
+      if (!d || d.length !== 12) return false;
+      var weighted = function (w) {
+        var t = 0;
+        for (var i = 0; i < 11; i += 1) t += w[i] * d[i];
+        return t % 11;
+      };
+      var check = weighted([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+      if (check === 10) check = weighted([3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2]);
+      return check !== 10 && check === d[11];
     }
   };
 

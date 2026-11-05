@@ -1,0 +1,33 @@
+id: kz_knp
+name: Kazakh payment purpose code (KNP)
+status: draft
+doc: Three-digit code of the purpose of a payment (код назначения платежа, КНП) in Kazakh payment orders
+  and bank transfers, from the list in the rules of the National Bank of Kazakhstan on economic sector
+  and payment purpose codes. Banks report it to the National Bank for payment statistics. It goes together
+  with the beneficiary code (kz_kbe).
+categories:
+- finances
+country:
+- KZ
+langs:
+- kk
+- ru
+is_pii: false
+classification: categorical
+regexp: ^\d{3}$
+examples:
+- value: '710'
+  description: Payment for goods other than real estate and the goods of codes 711, 712 and 713
+- value: '780'
+  description: Refund for goods that were not delivered
+- value: '7100'
+  valid: false
+  description: Four digits
+links:
+- type: other
+  url: https://bank.kz/wikibank/finansy/kod-naznacheniya-platezha-knp/
+translations:
+  ru:
+    name: Код назначения платежа (КНП)
+    doc: Трёхзначный код назначения платежа в платёжных документах Казахстана по Правилам применения кодов
+      секторов экономики и назначения платежей Национального Банка.

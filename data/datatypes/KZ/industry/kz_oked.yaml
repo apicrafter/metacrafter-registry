@@ -1,0 +1,42 @@
+id: kz_oked
+name: Kazakh economic activity code (OKED)
+status: draft
+doc: Code of the General classifier of economic activities of Kazakhstan (ОКЭД, НК РК 03-2019), kept by
+  the Bureau of National Statistics and built on NACE Rev. 2 (eu_nace). A section is a letter. Divisions,
+  groups, classes and subclasses have two to five digits, written with a dot after the second and after
+  the fourth digit, as in 06.10.0. The first four digits follow NACE, and the fifth digit adds national
+  subclasses. Data files of the Bureau write the codes without dots, as in 06100. The edition НК РК 03-2019
+  took effect on 1 January 2020.
+categories:
+- industry
+country:
+- KZ
+langs:
+- kk
+- ru
+is_pii: false
+classification: categorical
+regexp: ^(?:[A-U]|\d{2}(?:\.\d(?:\d(?:\.\d)?)?)?|\d{3,5})$
+examples:
+- value: 06.10.0
+  description: 'Subclass: extraction of crude petroleum and associated gas, the example of the classifier'
+- value: 62.01.1
+  description: 'Subclass: development and testing of software code'
+- value: '62.01'
+  description: 'Class: computer programming activities'
+- value: '01111'
+  description: 'Subclass written without dots: growing of cereals and leguminous crops'
+- value: C
+  description: 'Section: manufacturing'
+- value: 62.01.12
+  valid: false
+  description: One digit too many
+links:
+- type: doc
+  url: https://stat.gov.kz/ru/classifiers/statistical/21/
+translations:
+  ru:
+    name: Код ОКЭД
+    doc: Код общего классификатора видов экономической деятельности Республики Казахстан (ОКЭД, НК РК
+      03-2019), построенного на NACE Rev. 2. Секции обозначаются буквами, разделы, группы, классы и подклассы
+      - кодами вида ХХ, ХХ.Х, ХХ.ХХ и ХХ.ХХ.Х.

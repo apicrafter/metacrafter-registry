@@ -1,0 +1,39 @@
+id: kz_kbe
+name: Kazakh beneficiary code (KBe)
+status: draft
+doc: 'Two-digit code of the recipient in Kazakh payment documents (код бенефициара, КБе). The first digit
+  is residence: 1 for a resident of Kazakhstan, 2 for a non-resident. The second digit is the sector of
+  the economy: 1 government, 2 regional and local authorities, 3 central bank, 4 other deposit-taking
+  organizations, 5 other financial organizations, 6 state non-financial organizations, 7 non-state non-financial
+  organizations, 8 non-profit organizations serving households, 9 households. The code of the sender (КОд)
+  has the same form. The codes come from the rules of the National Bank of Kazakhstan on economic sector
+  and payment purpose codes, and go together with the payment purpose code (kz_knp).'
+categories:
+- finances
+country:
+- KZ
+langs:
+- kk
+- ru
+is_pii: false
+classification: categorical
+regexp: ^[12][1-9]$
+examples:
+- value: '17'
+  description: Resident non-state non-financial organization, such as a private company
+- value: '19'
+  description: Resident household (an individual)
+- value: '24'
+  description: Non-resident deposit-taking organization, such as a foreign bank
+- value: '30'
+  valid: false
+  description: The first digit is 1 or 2
+links:
+- type: other
+  url: https://bank.kz/wikibank/bankovskie-rekvizity-iik-bik-kbe/
+translations:
+  ru:
+    name: Код бенефициара (КБе)
+    doc: Двузначный код получателя денег в платёжных документах Казахстана. Первая цифра - признак резидентства
+      (1 - резидент, 2 - нерезидент), вторая - сектор экономики. Код отправителя денег (КОд) устроен так
+      же.
