@@ -1,0 +1,29 @@
+id: emdn_code
+name: European Medical Device Nomenclature (EMDN) code
+status: draft
+doc: Code of the European Medical Device Nomenclature, which the European Commission maintains for the
+  Medical Devices and In Vitro Diagnostic Regulations and EUDAMED. It is a category letter followed by
+  a two-digit group and up to five two-digit type levels, at most 13 characters. A bare category letter
+  is also a code but is not matched.
+categories:
+- medical
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z](?:\d{2}){1,6}$
+examples:
+- value: A01
+  description: Needles
+- value: Z120101
+  description: Arteriotomy ablators
+- value: A0101010
+  valid: false
+  description: An odd number of digits
+links:
+- type: doc
+  url: https://health.ec.europa.eu/medical-devices-topics-interest/european-medical-devices-nomenclature-emdn_en
+- type: doc
+  url: https://webgate.ec.europa.eu/udi-helpdesk/en/other-relevant-information/emdn-codes.html

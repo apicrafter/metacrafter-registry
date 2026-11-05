@@ -1,0 +1,27 @@
+id: eclass_class_code
+name: ECLASS classification class code
+status: draft
+doc: 'Coded name of a class in the ECLASS product classification maintained by ECLASS e.V.: eight digits,
+  two for each of four levels (segment, main group, group and commodity class). Higher levels end in 00
+  pairs. The code is also displayed with hyphens between the pairs.'
+categories:
+- industry
+- ecommerce
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:\d{8}|\d{2}-\d{2}-\d{2}-\d{2})$
+examples:
+- value: '27141120'
+  description: Feed-through terminal block
+- value: 16-04-03-01
+  description: Blackberry, in the hyphenated display form
+- value: '2714112'
+  valid: false
+  description: Seven digits
+links:
+- type: doc
+  url: https://eclass.eu/support/technical-specification/structure-and-elements/classification-class
+- type: doc
+  url: https://eclass.eu/support/guides/guides-for-implementers/classification-class-xml-mapping

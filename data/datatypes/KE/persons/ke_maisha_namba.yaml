@@ -1,0 +1,28 @@
+id: ke_maisha_namba
+name: Kenyan Maisha Namba (unique personal identifier)
+status: draft
+doc: Maisha Namba, the lifelong 9-digit unique personal identifier that the National Registration Bureau
+  of Kenya has issued since October 2023, also at birth, and that serves as the ID number of new registrants.
+  Holders of second-generation identity cards keep their old ID number, which is often shorter, as their
+  identifier; the regexp covers only the 9-digit Maisha Namba.
+categories:
+- pii
+- persons
+country:
+- KE
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{9}$
+examples:
+- value: '304817265'
+  description: Synthetic value in the documented format
+- value: '30481726'
+  valid: false
+  description: Eight digits, the length of many older ID numbers
+links:
+- type: doc
+  url: https://www.kenyanews.go.ke/kajiado-central-residents-sensitised-on-maisha-namba/
+- type: doc
+  url: https://www.kenyanews.go.ke/national-registration-department-to-launch-digital-personal-identity-in-october/

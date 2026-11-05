@@ -1,0 +1,30 @@
+id: in_vid
+name: Indian Aadhaar Virtual ID (VID)
+status: draft
+doc: Virtual ID, a temporary and revocable 16-digit number that UIDAI maps to an Aadhaar number. A resident
+  can use it instead of the Aadhaar number for authentication and e-KYC. VIDs are random, never start
+  with 0 or 1, and end with a Verhoeff check digit. They are often written in four groups of four digits;
+  the regexp describes the compact form.
+categories:
+- pii
+- persons
+country:
+- IN
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^[2-9]\d{15}$
+examples:
+- value: '2341234123412341'
+  description: Example from the python-stdnum documentation
+- value: '1341234123412341'
+  valid: false
+  description: A VID never starts with 0 or 1
+mappings:
+  stdnum: in_.vid
+links:
+- type: doc
+  url: https://uidai.gov.in/en/contact-support/have-any-question/284-faqs/aadhaar-online-services/virtual-id-vid.html
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.in_.vid.html

@@ -1,0 +1,31 @@
+id: in_upi_id
+name: Indian UPI ID (virtual payment address)
+status: draft
+doc: 'UPI ID, or virtual payment address, an alias of a bank account in the Unified Payments Interface
+  run by the National Payments Corporation of India. It has the form prefix@handle: the user chooses the
+  prefix, such as a name or mobile number, and the handle is fixed by the payment app or bank. NPCI does
+  not publish the allowed characters; the regexp follows those used by payment apps and rejects e-mail
+  addresses, whose domain has a dot.'
+categories:
+- finances
+- pii
+country:
+- IN
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^[A-Za-z0-9._-]+@[A-Za-z0-9]+$
+examples:
+- value: bivek@npci
+  description: Sample payee address in the NPCI UPI linking specification
+- value: bivekrath@npci
+  description: Sample payee address in the NPCI UPI linking specification
+- value: user@gmail.com
+  valid: false
+  description: An e-mail address, the handle has no dot
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Unified_Payments_Interface
+- type: doc
+  url: https://www.npci.org.in/uploads/BHIM_UPI_Guidelines_2026_012a0b1bce.pdf

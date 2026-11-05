@@ -1,0 +1,30 @@
+id: eu_bovine_id
+name: EU bovine animal identification code (ear tag number)
+status: draft
+doc: Unique code carried by the two ear tags or the electronic identifier of a kept bovine animal in the
+  European Union under Implementing Regulation (EU) 2021/520. It is the country code of the Member State
+  where the animal was first tagged, as ISO 3166-1 alpha-2 letters (EL for Greece, XI for Northern Ireland)
+  or three digits, followed by an individual code of at most 12 digits. Ear tags often print the digits
+  in groups. Older alphanumeric codes of some countries are not covered.
+categories:
+- agriculture
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[A-Z]{2}|\d{3}) ?(?:\d ?){0,11}\d$
+examples:
+- value: UK 555555 3 00002
+  description: Illustration of a UK ear tag number from ScotEID
+- value: UK555555200001
+  description: Illustration of a UK ear tag number from ScotEID, without spaces
+- value: DE0123456789012
+  valid: false
+  description: The individual code has 13 digits
+links:
+- type: doc
+  url: https://www.scoteid.com/Public/Documents/Bovine_EID_numbering.pdf
+- type: doc
+  url: https://eur-lex.europa.eu/eli/reg_impl/2021/520/oj

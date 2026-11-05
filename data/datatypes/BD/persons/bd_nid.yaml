@@ -1,0 +1,32 @@
+id: bd_nid
+name: Bangladeshi national identity card number (NID)
+status: draft
+doc: Number of the national identity card issued by the Bangladesh Election Commission. Cards issued from
+  2008 carry 13-digit numbers, and later registrations received 17-digit numbers; a 13-digit number can
+  be turned into the 17-digit form by putting the four-digit year of birth in front of it. Smart cards
+  carry a 10-digit number of nine random digits and a check digit, whose algorithm is not published.
+categories:
+- pii
+- persons
+country:
+- BD
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^(?:\d{10}|\d{13}|\d{17})$
+examples:
+- value: '5912783460'
+  description: Synthetic value in the 10-digit smart card format
+- value: '1592617403928'
+  description: Synthetic value in the 13-digit format
+- value: '19851592617403928'
+  description: The synthetic 13-digit value with the year of birth 1985 in front
+- value: '159261740392'
+  valid: false
+  description: Twelve digits is not a valid length
+links:
+- type: doc
+  url: https://bdnews24.com/bangladesh/election-commission-decides-on-10-digit-smart-nid-cards-for-bangladesh-nationals
+- type: doc
+  url: https://www.thedailystar.net/frontpage/how-get-smart-nid-card-1293733

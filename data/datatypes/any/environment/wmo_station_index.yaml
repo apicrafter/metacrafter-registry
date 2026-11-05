@@ -1,0 +1,32 @@
+id: wmo_station_index
+name: WMO station index number
+status: draft
+doc: 'Five-digit index number of a land meteorological station in SYNOP and other WMO code forms: a 2-digit
+  block number for a country or region followed by a 3-digit station number. Leading zeros are significant.
+  WMO publishes the list in WMO-No. 9, Volume A. Numbers that repeat one figure five times or end in 000
+  or 999 are not assigned; the regexp does not exclude them, so it is weak without column context.'
+categories:
+- environment
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '10962'
+  description: Hohenpeissenberg, Germany
+- value: '06702'
+  description: La Dole, Switzerland
+- value: '74492'
+  description: Blue Hill Observatory, United States
+- value: '6036'
+  valid: false
+  description: Four digits instead of five
+mappings:
+  wikidata: P9737
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9737
+- type: doc
+  url: https://wiki.openstreetmap.org/wiki/Key:ref:wmo

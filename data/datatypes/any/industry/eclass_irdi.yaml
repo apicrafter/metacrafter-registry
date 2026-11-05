@@ -1,0 +1,27 @@
+id: eclass_irdi
+name: ECLASS IRDI
+status: draft
+doc: 'International Registration Data Identifier of an ECLASS element, 20 characters long: the supplier
+  code 0173-1, a hash sign, a two-character element type (01 for classes, 02 for properties), a hyphen,
+  a six-character concept code, a hash sign and a three-digit version.'
+categories:
+- industry
+- ecommerce
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^0173-1#[0-9A-Z]{2}-[0-9A-Z]{6}#\d{3}$
+examples:
+- value: 0173-1#01-AFZ769#012
+  description: IRDI of the class Feed-through terminal block
+- value: 0173-1#01-AAB915#005
+  description: IRDI of an ECLASS class
+- value: 0173-1#01-AFZ769
+  valid: false
+  description: The version is missing
+links:
+- type: doc
+  url: https://eclass.eu/support/technical-specification/structure-and-elements/irdi
+- type: doc
+  url: https://eclass.eu/support/technical-specification/structure-and-elements/csv-file-description

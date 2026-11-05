@@ -1,0 +1,29 @@
+id: et_fayda_fin
+name: Ethiopian Fayda Identification Number (FIN)
+status: draft
+doc: Fayda Identification Number, the unique 12-digit number that Ethiopia's National ID Program gives
+  to a registered resident. It is sent by SMS after enrolment; a printed card is optional. No check-digit
+  rule is published.
+categories:
+- pii
+- persons
+country:
+- ET
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{12}$
+examples:
+- value: '572049318264'
+  description: Synthetic value in the documented format
+- value: '390615824703'
+  description: Synthetic value in the documented format
+- value: '57204931826'
+  valid: false
+  description: Eleven digits instead of twelve
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Fayda_ID
+- type: doc
+  url: https://id.et/services

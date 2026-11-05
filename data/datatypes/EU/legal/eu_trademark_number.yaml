@@ -1,0 +1,32 @@
+id: eu_trademark_number
+name: European Union trade mark (EUTM) number
+status: draft
+doc: Number of a European Union trade mark at the European Union Intellectual Property Office (EUIPO).
+  The same number serves as application and registration number. It has a fixed nine digits, an eight-digit
+  serial number and a check digit, and leading zeros are kept. The WIPO ST.13 form adds the office code
+  EM and a type code in front.
+categories:
+- legal
+- companies
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{9}$
+examples:
+- value: '001104306'
+  description: Example given by EUIPO in a WIPO numbering survey
+- value: 018889256
+  description: Example of Wikidata P12507
+- value: '18889256'
+  valid: false
+  description: The leading zero is missing
+mappings:
+  wikidata: P12507
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P12507
+- type: doc
+  url: https://www.wipo.int/de/web/standards/surveys/ipo-practices/current-num-sys/em-001

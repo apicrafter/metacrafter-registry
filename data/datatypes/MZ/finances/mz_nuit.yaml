@@ -1,0 +1,35 @@
+id: mz_nuit
+name: Mozambican taxpayer identification number (NUIT)
+status: draft
+doc: Número Único de Identificação Tributária, the tax number of individuals and organizations in Mozambique,
+  issued by the Autoridade Tributária. It has nine digits, sometimes written as three groups of three.
+  The first digit gives the type of taxpayer, the next seven are sequential, and the last is a check digit
+  computed with weights 8, 9, 4, 5, 6, 7, 8 and 9 modulo 11.
+categories:
+- finances
+- companies
+country:
+- MZ
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{3}[ .-]?\d{3}[ .-]?\d{3}$
+examples:
+- value: '400339910'
+  description: Example from the python-stdnum documentation
+- value: 400 005 834
+  description: Example from the python-stdnum documentation, written in groups
+- value: '12345'
+  valid: false
+  description: Too short
+mappings:
+  stdnum: mz.nuit
+links:
+- type: doc
+  url: https://www.at.gov.mz/por/Perguntas-Frequentes2/NUIT
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.mz.nuit.html
+translations:
+  pt:
+    name: Número Único de Identificação Tributária (NUIT)

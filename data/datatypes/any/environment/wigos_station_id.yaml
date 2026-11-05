@@ -1,0 +1,30 @@
+id: wigos_station_id
+name: WIGOS station identifier (WSI)
+status: draft
+doc: 'Identifier of an observing station in the WMO Integrated Global Observing System. It has four blocks
+  separated by hyphens: the identifier series (only 0 is defined), the issuer of identifier and the issue
+  number (each 0 to 65534, without leading zeros) and a local identifier of up to 16 characters. Stations
+  that already had a WMO index number IIiii received the identifier 0-20000-0-IIiii.'
+categories:
+- environment
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^0-(?:0|[1-9]\d{0,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-4])-(?:0|[1-9]\d{0,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-4])-[0-9A-Za-z._-]{1,16}$
+examples:
+- value: 0-20000-0-74492
+  description: Blue Hill Observatory, an example of Wikidata P4136
+- value: 0-20008-0-JFJ
+  description: Jungfraujoch station of the Global Atmosphere Watch
+- value: 0-020000-0-74492
+  valid: false
+  description: The issuer of identifier has a leading zero
+mappings:
+  wikidata: P4136
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4136
+- type: doc
+  url: https://community.wmo.int/node/37477

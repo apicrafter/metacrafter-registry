@@ -498,3 +498,123 @@
 - id: VC
   name: Saint Vincent and the Grenadines
   kind: country
+- id: AG
+  name: Antigua and Barbuda
+  kind: country
+- id: AO
+  name: Angola
+  kind: country
+- id: BS
+  name: Bahamas
+  kind: country
+- id: BZ
+  name: Belize
+  kind: country
+- id: CF
+  name: Central African Republic
+  kind: country
+- id: CG
+  name: Republic of the Congo
+  kind: country
+- id: DJ
+  name: Djibouti
+  kind: country
+- id: DM
+  name: Dominica
+  kind: country
+- id: ER
+  name: Eritrea
+  kind: country
+- id: FJ
+  name: Fiji
+  kind: country
+- id: FO
+  name: Faroe Islands
+  kind: country
+- id: GA
+  name: Gabon
+  kind: country
+- id: GD
+  name: Grenada
+  kind: country
+- id: GL
+  name: Greenland
+  kind: country
+- id: GM
+  name: Gambia
+  kind: country
+- id: GQ
+  name: Equatorial Guinea
+  kind: country
+- id: GY
+  name: Guyana
+  kind: country
+- id: JM
+  name: Jamaica
+  kind: country
+- id: KI
+  name: Kiribati
+  kind: country
+- id: KM
+  name: Comoros
+  kind: country
+- id: KN
+  name: Saint Kitts and Nevis
+  kind: country
+- id: KP
+  name: North Korea
+  kind: country
+- id: LC
+  name: Saint Lucia
+  kind: country
+- id: LY
+  name: Libya
+  kind: country
+- id: MO
+  name: Macao
+  kind: country
+- id: MR
+  name: Mauritania
+  kind: country
+- id: MW
+  name: Malawi
+  kind: country
+- id: NR
+  name: Nauru
+  kind: country
+- id: PR
+  name: Puerto Rico
+  kind: country
+- id: SC
+  name: Seychelles
+  kind: country
+- id: SR
+  name: Suriname
+  kind: country
+- id: SS
+  name: South Sudan
+  kind: country
+- id: ST
+  name: Sao Tome and Principe
+  kind: country
+- id: SY
+  name: Syria
+  kind: country
+- id: TD
+  name: Chad
+  kind: country
+- id: TL
+  name: Timor-Leste
+  kind: country
+- id: TO
+  name: Tonga
+  kind: country
+- id: TV
+  name: Tuvalu
+  kind: country
+- id: VU
+  name: Vanuatu
+  kind: country
+- id: WS
+  name: Samoa
+  kind: country

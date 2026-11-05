@@ -1,0 +1,30 @@
+id: id_vehicle_plate
+name: Indonesian vehicle registration plate (TNKB)
+status: draft
+doc: Registration number on the plate (tanda nomor kendaraan bermotor) of a vehicle in Indonesia, assigned
+  by the traffic corps of the National Police. It has a region code of one or two letters, such as B for
+  Jakarta or D for Bandung, a number of one to four digits without a leading zero and an optional series
+  of up to three letters, usually separated by spaces. Official, diplomatic, military and police plates
+  follow other rules and are not covered.
+categories:
+- transport
+country:
+- ID
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '^[A-Z]{1,2} ?[1-9]\d{0,3}(?: ?[A-Z]{1,3})?$'
+examples:
+- value: AB 4821 KC
+  description: Synthetic plate of Yogyakarta
+- value: D 77 QZ
+  description: Synthetic plate of Bandung
+- value: B 0123 XY
+  valid: false
+  description: The number never starts with 0
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Indonesia
+- type: doc
+  url: https://k3i.korlantas.polri.go.id/api/web/uploads/regulation_doc/PERPOL%20NOMOR%207%20TAHUN%202021%20TENTANG%20REGISTRASI%20DAN%20IDENTIFIKASI%20KENDARAAN%20BERMOTOR.pdf

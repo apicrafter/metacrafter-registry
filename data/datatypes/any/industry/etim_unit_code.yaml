@@ -1,0 +1,24 @@
+id: etim_unit_code
+name: ETIM unit code
+status: draft
+doc: 'Language-independent code of an ETIM unit, assigned by ETIM International in its classification
+  model of technical products: the prefix EU and six digits. Units are the measurement units of numeric
+  features.'
+categories:
+- industry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^EU\d{6}$
+examples:
+- value: EU000015
+  description: Example from the ETIM International classification guidelines
+- value: EU00016
+  valid: false
+  description: Five digits instead of six
+links:
+- type: doc
+  url: https://www.etim-international.com/wp-content/uploads/2019/07/ETIM-International-Guidelines-V3-2020.pdf
+- type: doc
+  url: https://viewer.etim-international.com/about

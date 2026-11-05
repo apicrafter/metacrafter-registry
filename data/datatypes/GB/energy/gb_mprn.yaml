@@ -1,0 +1,27 @@
+id: gb_mprn
+name: UK gas Meter Point Reference Number (MPRN)
+status: draft
+doc: Meter Point Reference Number, also called the M number, which identifies a gas supply meter point
+  in Great Britain. The gas transporter allocates it and Xoserve holds it in UK Link. National Grid documents
+  it as 10 digits, the last two being check digits whose algorithm is not published. Suppliers also report
+  shorter legacy numbers, which the regexp does not cover.
+categories:
+- energy
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{10}$
+examples:
+- value: '2860913909'
+  description: Synthetic value in the documented format
+- value: '32910477561'
+  valid: false
+  description: Eleven digits instead of ten
+links:
+- type: doc
+  url: https://nationalgas.com/sites/default/files/documents/12988-Meter%20Point%20Reference%20Number%20Process.pdf
+- type: doc
+  url: https://www.xoserve.com/help-centre/supply-points-metering/m-number-creation

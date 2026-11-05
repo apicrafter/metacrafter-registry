@@ -1,0 +1,28 @@
+id: pct_application_number
+name: PCT international application number
+status: draft
+doc: Number that the receiving Office gives to an international patent application under the Patent Cooperation
+  Treaty when it first receives it. Since 1 January 2004 it is PCT, a slash, the two-letter WIPO ST.3
+  code of the receiving Office (IB for the International Bureau), the four-digit year, a slash and a six-digit
+  serial number. Older numbers have a two-digit year and a five-digit serial number. The regexp does not
+  check that the two letters are an assigned ST.3 code.
+categories:
+- legal
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^PCT/[A-Z]{2}(?:(?:19|20)\d{2}/\d{6}|\d{2}/\d{5})$
+examples:
+- value: PCT/US2003/023187
+  description: Application filed with the United States receiving Office in 2003
+- value: PCT/US95/03744
+  description: Older form with a two-digit year, from the WIPO Handbook
+- value: PCT/IB2004/12345
+  valid: false
+  description: A four-digit year needs a six-digit serial number
+links:
+- type: doc
+  url: https://www.wipo.int/pct/en/texts/ai/s307.html
+- type: doc
+  url: https://www.wipo.int/documents/d/standards/docs-en-07-02-02.pdf

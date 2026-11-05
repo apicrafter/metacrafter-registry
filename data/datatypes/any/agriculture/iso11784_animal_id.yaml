@@ -1,0 +1,30 @@
+id: iso11784_animal_id
+name: Animal transponder code (ISO 11784/11785)
+status: draft
+doc: Code stored in a passive low-frequency transponder of an animal (ear tag, bolus or microchip) under
+  ISO 11784 and ISO 11785, usually shown as 15 digits. The first three digits are an ISO 3166 numeric
+  country code, used only with the national authority's permission, or an ICAR manufacturer code (900
+  shared, 901 to 998 assigned to one manufacturer each, 999 for test transponders). The last twelve digits
+  hold a 38-bit number, so they never exceed 274877906943.
+categories:
+- agriculture
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{3}[0-2]\d{11}$
+examples:
+- value: '840003456789012'
+  description: Example animal identification number of the USDA APHIS traceability standards
+- value: '999000000000001'
+  description: Test transponder code following the ICAR rule for 999
+- value: '840300000000000'
+  valid: false
+  description: The national part exceeds the 38-bit maximum
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_11784_and_ISO_11785
+- type: doc
+  url: https://www.icar.org/Guidelines/10-Procedure-2-Granting-Manufacturer-Code.pdf
+- type: doc
+  url: https://www.aphis.usda.gov/sites/default/files/adt-general-standards.pdf

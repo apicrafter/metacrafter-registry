@@ -1,0 +1,27 @@
+id: us_soc_code
+name: US Standard Occupational Classification (SOC) code
+status: draft
+doc: Six-digit code of the US Standard Occupational Classification, maintained by the Office of Management
+  and Budget and the SOC Policy Committee of the Bureau of Labor Statistics, with a hyphen after the second
+  digit. The 23 major groups are the odd numbers from 11 to 55; the ending of the code shows the level,
+  from major group (xx-0000) to detailed occupation. The format is the same in the 2010 and 2018 editions.
+categories:
+- industry
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[1-4][13579]|5[135])-\d{4}$
+examples:
+- value: 15-1252
+  description: Software Developers
+- value: 29-1022
+  description: Oral and Maxillofacial Surgeons
+- value: 12-1011
+  valid: false
+  description: 12 is not a major group
+links:
+- type: doc
+  url: https://www.bls.gov/soc/2018/soc_2018_user_guide.pdf

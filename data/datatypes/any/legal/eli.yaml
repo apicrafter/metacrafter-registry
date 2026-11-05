@@ -1,0 +1,33 @@
+id: eli
+name: European Legislation Identifier (ELI)
+status: draft
+doc: 'HTTP URI that identifies a piece of legislation under the European Legislation Identifier framework.
+  Each jurisdiction defines its own URI template from common components such as jurisdiction, type, year,
+  number, version and language, in an order it chooses; the EU level uses data.europa.eu/eli/. There is
+  no fixed syntax: the regexp only requires a web URI with an /eli/ path segment, which every known implementation
+  has but the framework does not mandate.'
+categories:
+- legal
+- government
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^https?://[A-Za-z0-9.-]+(?:/[^\s/?#]+)*/eli/[^\s?#]+$
+examples:
+- value: http://data.europa.eu/eli/dir/2009/138/oj
+  description: ELI of Directive 2009/138/EC
+- value: https://www.fedlex.admin.ch/eli/cc/1999/404/de
+  description: ELI of a Swiss federal act
+- value: http://www.irishstatutebook.ie/eli/2012/act/10/enacted/en
+  description: ELI of an Irish act
+- value: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679
+  valid: false
+  description: A EUR-Lex link without an ELI path
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/European_Legislation_Identifier
+- type: doc
+  url: https://data.consilium.europa.eu/doc/document/ST-14172-2017-INIT/en/pdf
+- type: doc
+  url: https://op.europa.eu/documents/2050822/2138819/ELI+Implementation+Methodology.pdf

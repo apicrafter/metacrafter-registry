@@ -1,0 +1,29 @@
+id: gb_mpan
+name: UK electricity Meter Point Administration Number (MPAN core)
+status: draft
+doc: 'Meter Point Administration Number, also called the supply number, which identifies an exit point
+  of the electricity network in Great Britain. The 13-digit core has a 2-digit distributor id, 10 digits
+  for the meter point and a check digit: the first twelve digits are multiplied by the primes 3, 5, 7,
+  13, 17, 19, 23, 29, 31, 37, 41 and 43, and the sum modulo 11 modulo 10 is the check digit. On bills
+  the core is preceded by a top line with the profile class, the meter time switch code and the line loss
+  factor class, which together make the full 21-character number.'
+categories:
+- energy
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{13}$
+examples:
+- value: '1022916926424'
+  description: Synthetic core with a valid check digit
+- value: '2371792728614'
+  description: Synthetic core with a valid check digit
+- value: '102291692642'
+  valid: false
+  description: Twelve digits instead of thirteen
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Meter_Point_Administration_Number

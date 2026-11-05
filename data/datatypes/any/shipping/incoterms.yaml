@@ -1,0 +1,28 @@
+id: incoterms
+name: Incoterms 2020 rule
+status: draft
+doc: Three-letter code of one of the eleven Incoterms 2020 trade terms published by the International
+  Chamber of Commerce. EXW, FCA, CPT, CIP, DAP, DPU and DDP apply to any mode of transport; FAS, FOB,
+  CFR and CIF only to sea and inland waterway transport. DPU replaced DAT of Incoterms 2010. Values with
+  a place or edition, such as FOB Shanghai Incoterms 2020, are not matched.
+categories:
+- shipping
+- ecommerce
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:EXW|FCA|CPT|CIP|DAP|DPU|DDP|FAS|FOB|CFR|CIF)$
+examples:
+- value: FOB
+  description: Free On Board
+- value: DPU
+  description: Delivered at Place Unloaded
+- value: DAT
+  valid: false
+  description: Incoterms 2010 rule replaced by DPU
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Incoterms
+- type: doc
+  url: https://iccwbo.org/business-solutions/incoterms-rules/incoterms-2020/

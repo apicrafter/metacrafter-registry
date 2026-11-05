@@ -1,0 +1,29 @@
+id: in_abha_address
+name: Indian ABHA address
+status: draft
+doc: ABHA address, a user name of the form name@abdm with which a person logs in to the consent managers
+  of the Ayushman Bharat Digital Mission and shares health records. Each ABHA number also gets a default
+  address made of its 14 digits and @abdm. The sandbox environment uses @sbx. The length and character
+  rules of the name part are not enforced by the regexp.
+categories:
+- medical
+- pii
+- useraccounts
+country:
+- IN
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^[A-Za-z0-9._]+@(?:abdm|sbx)$
+examples:
+- value: ramesh123@abdm
+  description: Example from the ABDM sandbox documentation
+- value: 22722548295255@abdm
+  description: Default address of the example ABHA number
+- value: ramesh123@okaxis
+  valid: false
+  description: A UPI ID, not an ABHA address
+links:
+- type: doc
+  url: https://kiranma72.github.io/abdm-docs/2-milestone1/abha-number/default-abha-address/index.html

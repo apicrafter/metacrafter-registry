@@ -1,0 +1,37 @@
+id: tn_mf
+name: Tunisian tax identification number (Matricule Fiscal)
+status: draft
+doc: 'Matricule Fiscal, the tax number of taxpayers in Tunisia. The full form has four parts, often separated
+  by slashes: the fiscal identifier (seven digits and a control letter other than I, O and U), the VAT
+  code (A, P, B, D or N), the category code (M, P, C, N or E) and a three-digit number of the secondary
+  establishment, 000 for the main one. The short form has only the fiscal identifier.'
+categories:
+- finances
+- companies
+country:
+- TN
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{7}[ /]?[A-HJ-NP-TV-Z](?:[ /]?[APBDN][ /]?[MPCNE][ /]?\d{3})?$
+examples:
+- value: 1234567/M/A/E/001
+  description: Example from the python-stdnum documentation
+- value: 1496298/T/P/N/000
+  description: Example from the python-stdnum documentation
+- value: 1282182 W
+  description: Short form, example from the python-stdnum documentation
+- value: 1234567/M/A/X/000
+  valid: false
+  description: X is not a category code
+mappings:
+  stdnum: tn.mf
+links:
+- type: doc
+  url: https://www.registre-entreprises.tn/
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.tn.mf.html
+translations:
+  fr:
+    name: Matricule Fiscal

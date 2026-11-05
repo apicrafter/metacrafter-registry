@@ -228,3 +228,73 @@ ISO 3166-1 и в справочнике тоже отсутствует.
    `eu_eic` и `es_cups` лежат в `industry`, `gsrn` — в `gs1` и `pii`,
    `animal` — в `common`, `species` — в `science`.
 6. Право и ИС: ELI, номера публикаций EPO и WIPO, номера товарных знаков.
+
+## Что сделано (2026-11-05)
+
+Добавлено 55 записей, все со статусом `draft`. Форматы проверены по
+документам выпускающих органов, стандартам, Wikipedia, Wikidata или
+python-stdnum. Синтетические примеры помечены в описании примера.
+
+Медиа (MusicBrainz, Discogs, Steam и др.) к этому времени уже закрыл PR #110,
+поэтому здесь не добавлялось.
+
+Справочники:
+
+- `data/countries.yaml`: 36 отсутствовавших государств — членов ООН и 4
+  территории (FO, GL, MO, PR).
+- `data/categories.yaml`: новые категории `energy` и `agriculture`. В
+  `energy` добавлены также `eu_eic` и `es_cups`.
+
+Страны:
+
+- Африка: `ng_nin`, `ng_bvn`, `gh_card_pin`, `ke_maisha_namba`,
+  `et_fayda_fin`; налоговые номера из python-stdnum `dz_nif`, `gn_nifp`,
+  `mz_nuit`, `tn_mf`.
+- Южная и Юго-Восточная Азия: `bd_nid`, `ph_psn`, `ph_pcn`, `ph_tin`,
+  `id_vehicle_plate`.
+- Индия: `in_vid`, `in_vehicle_plate`, `in_upi_id`, `in_abha_number`,
+  `in_abha_address`.
+- Китай: `cn_passport` (паттерн `passport`), `cn_vehicle_plate`.
+- Бразилия: `br_pis`, `br_cnh`, `br_renavam`, `br_titulo_eleitor`,
+  `br_cns`, `br_vehicle_plate`.
+- Фарерские острова: `fo_vn`.
+
+Предметные области:
+
+- Энергетика: `gb_mpan` и паттерн `gb_mpan_full`, `gb_mprn`, `ie_mprn`.
+- Экология и климат: `wmo_station_index`, `wigos_station_id`.
+- Сельское хозяйство: `iso11784_animal_id`, `eu_bovine_id`, `agrovoc_id`.
+- Право и ИС: `ep_publication_number`, `wo_publication_number`,
+  `pct_application_number`, `eu_trademark_number`,
+  `wipo_madrid_registration_number`, `eli`.
+- Продукция и торговля: `eclass_class_code`, `eclass_irdi`, коды ETIM
+  (`etim_class_code`, `etim_group_code`, `etim_feature_code`,
+  `etim_value_code`, `etim_unit_code`), `incoterms`.
+- Медицинские изделия: `gmdn_term_code`, `emdn_code`.
+- Труд: `us_soc_code`, `onet_soc_code`.
+
+### Не добавлено
+
+- Паспорта Индии и Пакистана: формат не удалось подтвердить по официальным
+  источникам, есть только сторонние сайты.
+- Ethiopian Fayda Alias Number (FAN): длина известна только из пересказов.
+- Номер счёта EU ETS и идентификатор установки: формат счёта подтверждён
+  одним национальным источником, у установки фиксированного формата нет.
+- Идентификатор объекта E-PRTR / Industrial Emissions Portal: это INSPIRE
+  `localId`, формат выбирает страна.
+- UDI-DI: у четырёх выпускающих организаций (GS1, HIBCC, ICCBBA, IFA) разные
+  форматы; для GS1 это GTIN, который уже есть.
+- Номерные знаки US и JP: у США формат свой в каждом штате, японские не
+  исследовались.
+
+### Что требует проверки
+
+- Алгоритмы контрольных цифр, которые известны, но не подтверждены
+  официально: PIS (Business::BR::PIS), RENAVAM, CNS, EUTM. Поле `checksum`
+  для них не заполнено. Для MPAN и Мозамбика алгоритм описан в `doc`, но в
+  `checksums.py` его нет.
+- Слабые регулярные выражения без контекста колонки: `wmo_station_index` и
+  `gmdn_term_code` (5 цифр), `eu_trademark_number` (9 цифр),
+  `wipo_madrid_registration_number`, `eu_bovine_id`, `eli`.
+- `in_vid` и `ph_pcn` описаны только компактной формой (16 цифр): с
+  пробелами они перехватывали номера банковских карт в `identify`.

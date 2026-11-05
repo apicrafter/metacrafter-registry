@@ -1,0 +1,30 @@
+id: in_abha_number
+name: Indian ABHA number (Ayushman Bharat Health Account)
+status: draft
+doc: Ayushman Bharat Health Account number, a random 14-digit health identifier issued by the National
+  Health Authority under the Ayushman Bharat Digital Mission. It is often written in groups of 2, 4, 4
+  and 4 digits separated by hyphens. No check digit is documented.
+categories:
+- medical
+- pii
+- persons
+country:
+- IN
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{2}[ -]?\d{4}[ -]?\d{4}[ -]?\d{4}$
+examples:
+- value: 22-7225-4829-5255
+  description: Example from the ABDM FHIR implementation guide of NRCeS
+- value: '22722548295255'
+  description: The same number without hyphens
+- value: 22-7225-4829-525
+  valid: false
+  description: Thirteen digits
+links:
+- type: doc
+  url: https://www.nrces.in/ndhm/fhir/r4/Patient-example-01.xml.html
+- type: doc
+  url: https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/sep/doc2024912393201.pdf
