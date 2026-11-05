@@ -835,18 +835,21 @@ def test_javascript_checksums_match_python(tmp_path):
     script.write_text(
         "const core = require(process.argv[2]);\n"
         "const names = JSON.parse(process.argv[3]);\n"
-        "const values = JSON.parse(process.argv[4]);\n"
+        "const values = JSON.parse(require('fs').readFileSync(process.argv[4], 'utf8'));\n"
         "console.log(JSON.stringify(names.map(n => core.CHECKSUMS[n] ? "
         "values.map(v => core.CHECKSUMS[n](v)) : null)));\n"
     )
     names = sorted(ALGORITHMS)
+    # The values go through a file: as one argument they exceed Linux's 128 KiB limit.
+    values_file = tmp_path / "values.json"
+    values_file.write_text(json.dumps(values), encoding="utf-8")
     out = subprocess.run(
         [
             "node",
             str(script),
             str(REPO / "src/metacrafter_registry/static/identify-core.js"),
             json.dumps(names),
-            json.dumps(values),
+            str(values_file),
         ],
         capture_output=True,
         text=True,
