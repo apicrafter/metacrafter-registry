@@ -1,7 +1,12 @@
 id: dedriverlic
 name: Germany driver license number
 status: stable
-doc: Alphanumeric value of the German driver license
+doc: 'Number (Führerscheinnummer) of a German card driving licence: eleven characters. The first four
+  are the key of the issuing authority (a letter for the state, A Baden-Württemberg to P Thüringen, two
+  digits for the district and one more character), the next five a serial number of digits and capital
+  letters, then a check digit and an issue number that grows with each new licence. For the check digit
+  the first nine characters count as base-36 values (A=10 ... Z=35), are weighted 9 down to 1, and the
+  sum modulo 11 is the digit, X for 10.'
 parent: driver_license
 categories:
 - pii
@@ -9,10 +14,24 @@ categories:
 country:
 - DE
 langs:
-- de
+- common
 is_pii: true
 classification: identifier
+regexp: ^[A-Z0-9]\d{2}[A-Z0-9]{6}[0-9X][A-Z0-9]$
+checksum: de_fsnr
+examples:
+- value: B072RRE2I55
+  description: Number of the specimen licence (Musterführerschein)
+- value: B072RRE21X1
+  description: Synthetic number whose check digit is X
+- value: B072RRE2I45
+  valid: false
+  description: Check digit does not match
+- value: B072RRE2I5
+  valid: false
+  description: Ten characters
 mappings:
+  google_dlp: GERMANY_DRIVERS_LICENSE_NUMBER
   purview:
   - German Driver's License Number
   - Germany driver's license number
@@ -20,3 +39,14 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Driving_licence_in_Germany
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/F%C3%BChrerscheinnummer
+- type: doc
+  url: https://learn.microsoft.com/en-us/purview/sit-defn-germany-drivers-license-number
+translations:
+  de:
+    name: Führerscheinnummer
+  ru:
+    name: Номер водительского удостоверения Германии
+    doc: Номер немецкого водительского удостоверения - 11 символов - код выдавшего органа, порядковый
+      номер, контрольная цифра (или X) и номер выдачи.

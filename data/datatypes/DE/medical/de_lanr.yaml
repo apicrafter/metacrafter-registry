@@ -1,0 +1,43 @@
+id: de_lanr
+name: German lifelong physician number (Lebenslange Arztnummer, LANR)
+status: draft
+doc: Lebenslange Arztnummer (LANR), the nine-digit number that the Associations of Statutory Health Insurance
+  Physicians (Kassenärztliche Vereinigungen) give to each doctor and psychotherapist who bills the statutory
+  health insurance, valid since 1 July 2008. Six digits identify the person for life, the seventh is a
+  check digit (the six digits weighted 4 and 9 alternately, 10 minus the sum modulo 10) and the last two
+  are the specialty group. A doctor in several specialties has several LANRs that share the first seven
+  digits.
+categories:
+- medical
+- persons
+country:
+- DE
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{9}$
+checksum: de_lanr
+examples:
+- value: '273827401'
+  description: Synthetic number with a valid check digit
+- value: '541561201'
+  description: Synthetic number with a valid check digit
+- value: '273827501'
+  valid: false
+  description: Check digit does not match
+- value: '2738274'
+  valid: false
+  description: Without the specialty group
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Lebenslange_Arztnummer
+- type: other
+  url: https://www.kbv.de/
+translations:
+  de:
+    name: Lebenslange Arztnummer (LANR)
+  ru:
+    name: Пожизненный номер врача в Германии (LANR)
+    doc: Девятизначный номер врача или психотерапевта, работающего с обязательным медицинским страхованием,
+      - шесть цифр личного номера, контрольная цифра и две цифры специальности.

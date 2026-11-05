@@ -1,31 +1,43 @@
 id: icd10code
-name: ICD-10-Code
+name: ICD-10-GM diagnosis code
 status: stable
-doc: DE datatype for 'ICD-10 diagnosis code by field name' (icd10code) from rules in context 'medical'.
-  Covers standard ICD-10 and ICD-10-GM codes used in Germany.
+doc: Diagnosis code in ICD-10-GM, the German modification of ICD-10 that the Federal Institute for Drugs
+  and Medical Devices (BfArM) publishes every year. Hospitals and doctors use it for billing and statistics.
+  A code is a letter, two digits and, after a dot, up to two more digits, as in E11.90. Chapter U holds
+  codes for special purposes, such as U07.1 for COVID-19.
+parent: icd10
 categories:
 - medical
 country:
 - DE
 langs:
 - de
-- en
-- es
-- fr
 is_pii: false
-classification: identifier
-regexp: ^[A-TV-Z][0-9]{2}[0-9A-Z]?(?:\.[0-9A-Z]{1,2})?$
+classification: categorical
+regexp: ^[A-Z][0-9]{2}(?:\.[0-9]{1,2})?$
 examples:
-- value: A09.9
-  description: Infectious gastroenteritis and colitis, unspecified
-- value: E11.0
-  description: Type 2 diabetes mellitus with coma
 - value: J18.9
-  description: Pneumonia, unspecified organism
+  description: Pneumonie, nicht näher bezeichnet
 - value: S72.0
-  description: Fracture of neck of femur
+  description: Schenkelhalsfraktur
+- value: E11.90
+  description: Diabetes mellitus, Typ 2, ohne Komplikationen
+- value: U07.1
+  description: COVID-19, Virus nachgewiesen
+- value: E1.90
+  valid: false
+  description: Only one digit after the letter
 mappings:
   wikidata: P494
 links:
 - type: doc
-  url: https://www.bfarm.de/DE/Kodiersysteme/ICD/ICD-10-GM
+  url: https://www.bfarm.de/DE/Kodiersysteme/Klassifikationen/ICD/ICD-10-GM/_node.html
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/ICD-10-GM
+translations:
+  de:
+    name: ICD-10-GM-Kode
+  ru:
+    name: Код диагноза ICD-10-GM
+    doc: Код диагноза в немецкой модификации МКБ-10 (ICD-10-GM), которую ежегодно издаёт BfArM, - буква,
+      две цифры и до двух цифр после точки.

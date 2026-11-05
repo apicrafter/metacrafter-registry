@@ -1,0 +1,45 @@
+id: de_kvnr
+name: German health insurance number (Krankenversichertennummer, KVNR)
+status: draft
+doc: 'Krankenversichertennummer (KVNR), the lifelong number of a person in the German statutory health
+  insurance (§ 290 SGB V), printed on the electronic health card. The fixed part has ten characters: a
+  random capital letter, eight random digits and a check digit. For the check, the letter becomes its
+  position in the alphabet as two digits (A=01 ... Z=26), the ten digits are weighted 1 2 1 2 ..., and
+  the digit sums of the products are added modulo 10. It is derived from the pension insurance number
+  in a way that cannot be reversed. In data exchange the insurer code (IK) and further check digits follow,
+  which gives 20 or 30 characters.'
+categories:
+- pii
+- persons
+- medical
+country:
+- DE
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^[A-Z]\d{9}$
+checksum: de_kvnr
+examples:
+- value: B512615085
+  description: Synthetic number with a valid check digit
+- value: Z187843209
+  description: Synthetic number with a valid check digit
+- value: B512615086
+  valid: false
+  description: Check digit does not match
+- value: '1512615085'
+  valid: false
+  description: The first character is a letter
+mappings:
+  presidio: DE_HEALTH_INSURANCE
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Krankenversichertennummer
+translations:
+  de:
+    name: Krankenversichertennummer (KVNR)
+  ru:
+    name: Номер застрахованного в обязательном медицинском страховании Германии (KVNR)
+    doc: Пожизненный номер застрахованного на электронной карте медицинского страхования - буква, восемь
+      случайных цифр и контрольная цифра.

@@ -1,8 +1,10 @@
 id: de_ags
 name: German municipality key (Amtlicher Gemeindeschlüssel, AGS)
-status: draft
-doc: 'Eight-digit official code of a German municipality: two digits for the state, one for the government
-  region, two for the district and three for the municipality.'
+status: stable
+doc: 'Eight-digit official code of a German municipality that the statistical offices publish in the municipality
+  directory (Gemeindeverzeichnis): two digits for the state (01 Schleswig-Holstein to 16 Thüringen), one
+  for the government region, two for the district and three for the municipality. The first five digits
+  are the district key (Kreisschlüssel).'
 categories:
 - geo
 country:
@@ -11,16 +13,31 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^\d{8}$
+regexp: ^(?:0[1-9]|1[0-6])\d{6}$
 examples:
 - value: 03459033
   description: Wallenhorst
 - value: '12060020'
   description: Bernau bei Berlin
+- value: '3459033'
+  valid: false
+  description: Leading zero dropped
+- value: '17060020'
+  valid: false
+  description: There is no state 17
 mappings:
   wikidata: P439
 links:
 - type: wikipedia
-  url: https://en.wikipedia.org/wiki/Community_Identification_Number
+  url: https://de.wikipedia.org/wiki/Amtlicher_Gemeindeschl%C3%BCssel
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P439
+- type: doc
+  url: https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/_inhalt.html
+translations:
+  de:
+    name: Amtlicher Gemeindeschlüssel (AGS)
+  ru:
+    name: Официальный код общины Германии (AGS)
+    doc: Восьмизначный код общины - две цифры земли, одна цифра административного округа, две цифры района
+      и три цифры общины.

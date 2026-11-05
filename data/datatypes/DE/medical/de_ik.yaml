@@ -1,0 +1,41 @@
+id: de_ik
+name: German institution code (Institutionskennzeichen, IK)
+status: draft
+doc: 'Institutionskennzeichen (IK), the nine-digit number that identifies health insurers, hospitals,
+  care services, pharmacies and other institutions that bill the German social insurance (§ 293 SGB V).
+  Two digits classify the kind of institution, two give the state, four are a serial number and the last
+  is a check digit: digits 3 to 8 weighted 2 1 2 1 2 1, 9 subtracted from products above 9, and the sum
+  modulo 10. The IK of a health insurer is printed on the health card as its insurer number.'
+categories:
+- medical
+- companies
+country:
+- DE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{9}$
+checksum: de_ik
+examples:
+- value: '260326822'
+  description: Worked example of the check digit in German Wikipedia
+- value: '600300081'
+  description: Patient transport company (class 60) in Niedersachsen (region 03), serial 0008, from the
+    German Wikipedia example
+- value: '260326823'
+  valid: false
+  description: Check digit does not match
+- value: '26032682'
+  valid: false
+  description: Without the check digit
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Institutionskennzeichen
+translations:
+  de:
+    name: Institutionskennzeichen (IK)
+  ru:
+    name: Код учреждения в системе социального страхования Германии (IK)
+    doc: Девятизначный номер больничных касс, больниц, аптек и других учреждений, которые выставляют счета
+      социальному страхованию; последняя цифра контрольная.
