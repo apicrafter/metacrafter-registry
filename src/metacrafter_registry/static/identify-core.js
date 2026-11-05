@@ -226,8 +226,91 @@
       var check = weighted([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
       if (check === 10) check = weighted([3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2]);
       return check !== 10 && check === d[11];
+    },
+    iso7064_mod97_10: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      if (!/^[0-9A-Z]{3,}$/.test(s)) return false;
+      var rem = 0;
+      for (var i = 0; i < s.length; i += 1) {
+        var chunk = String(parseInt(s[i], 36));
+        for (var j = 0; j < chunk.length; j += 1) rem = (rem * 10 + Number(chunk[j])) % 97;
+      }
+      return rem === 1;
+    },
+    de_ustidnr: function (v) {
+      var s = stripPrefix(v, "DE");
+      return /^[1-9]\d{8}$/.test(s) && mod11_10(s);
+    },
+    de_widnr: function (v) {
+      var s = stripPrefix(v, "DE");
+      return /^\d{14}$/.test(s) && CHECKSUMS.de_ustidnr(s.slice(0, 9));
+    },
+    de_idnr: function (v) {
+      var d = digitsOf(v);
+      if (!d || d.length !== 11 || d[0] === 0) return false;
+      var counts = {}, repeated = [], i;
+      for (i = 0; i < 10; i += 1) counts[d[i]] = (counts[d[i]] || 0) + 1;
+      for (var k in counts) if (counts[k] > 1) repeated.push(counts[k]);
+      if (repeated.length !== 1 || (repeated[0] !== 2 && repeated[0] !== 3)) return false;
+      for (i = 0; i < 8; i += 1) if (d[i] === d[i + 1] && d[i + 1] === d[i + 2]) return false;
+      return mod11_10(d.join(""));
+    },
+    de_rvnr: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      if (!/^\d{8}[A-Z]\d{3}$/.test(s)) return false;
+      var letter = s.charCodeAt(8) - 64;
+      var n = s.slice(0, 8) + (letter < 10 ? "0" : "") + letter + s.slice(9, 11);
+      var w = [2, 1, 2, 5, 7, 1, 2, 1, 2, 1, 2, 1], t = 0;
+      for (var i = 0; i < 12; i += 1) { var p = w[i] * Number(n[i]); t += Math.floor(p / 10) + (p % 10); }
+      return t % 10 === Number(s[11]);
+    },
+    de_kvnr: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      if (!/^[A-Z]\d{9}$/.test(s)) return false;
+      var letter = s.charCodeAt(0) - 64;
+      var n = (letter < 10 ? "0" : "") + letter + s.slice(1, 9), t = 0;
+      for (var i = 0; i < 10; i += 1) { var p = (1 + (i % 2)) * Number(n[i]); t += Math.floor(p / 10) + (p % 10); }
+      return t % 10 === Number(s[9]);
+    },
+    de_ik: function (v) {
+      var d = digitsOf(v);
+      if (!d || d.length !== 9) return false;
+      var t = 0;
+      for (var i = 0; i < 6; i += 1) { var p = d[2 + i] * (i % 2 === 0 ? 2 : 1); t += p > 9 ? p - 9 : p; }
+      return t % 10 === d[8];
+    },
+    de_lanr: function (v) {
+      var d = digitsOf(v);
+      if (!d || d.length !== 9) return false;
+      var t = 0;
+      for (var i = 0; i < 6; i += 1) t += d[i] * (i % 2 === 0 ? 4 : 9);
+      return (10 - (t % 10)) % 10 === d[6];
+    },
+    de_pzn: function (v) {
+      var s = stripPrefix(v, "PZN");
+      if (!/^\d{7,8}$/.test(s)) return false;
+      if (s.length === 7) s = "0" + s;
+      var t = 0;
+      for (var i = 0; i < 7; i += 1) t += (i + 1) * Number(s[i]);
+      var check = t % 11;
+      return check !== 10 && check === Number(s[7]);
+    },
+    de_fsnr: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      if (!/^[0-9A-Z]{9}[0-9X][0-9A-Z]$/.test(s)) return false;
+      var t = 0;
+      for (var i = 0; i < 9; i += 1) t += (9 - i) * parseInt(s[i], 36);
+      var check = t % 11;
+      return s[9] === (check === 10 ? "X" : String(check));
     }
   };
+
+  // ISO 7064 MOD 11,10 over a digit string that ends with its check digit.
+  function mod11_10(s) {
+    var check = 5;
+    for (var i = 0; i < s.length; i += 1) check = (((check || 10) * 2) % 11 + Number(s[i])) % 10;
+    return check === 1;
+  }
 
   function stripPrefix(value, prefix) {
     var s = String(value).replace(/[\s.\-]/g, "").toUpperCase();

@@ -1,0 +1,34 @@
+id: de_state_code
+name: German state code (ISO 3166-2:DE)
+status: draft
+doc: Two-letter code of a German state from ISO 3166-2:DE, such as BY (Bayern), NW (Nordrhein-Westfalen)
+  or BE (Berlin), alone or after the country code as in DE-BY.
+semantic_type: de_state
+country:
+- DE
+langs:
+- common
+regexp: ^(?:DE-)?(?:BB|BE|BW|BY|HB|HE|HH|MV|NI|NW|RP|SH|SL|SN|ST|TH)$
+examples:
+- value: DE-BY
+  description: Bayern
+- value: NW
+  description: Nordrhein-Westfalen
+- value: DE-HH
+  description: Hamburg
+- value: DE-BR
+  valid: false
+  description: Draft code for Brandenburg, replaced by DE-BB in ISO 3166-2:1998
+- value: DE-NS
+  valid: false
+  description: Niedersachsen is NI
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/ISO_3166-2:DE
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_3166-2:DE
+translations:
+  de:
+    name: Kürzel des Bundeslandes (ISO 3166-2:DE)
+  ru:
+    name: Код земли Германии (ISO 3166-2:DE)

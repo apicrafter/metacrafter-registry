@@ -3,8 +3,9 @@ name: German VAT identification number (USt-IdNr.)
 status: stable
 doc: Umsatzsteuer-Identifikationsnummer (USt-IdNr.), the VAT identification number that the Federal Central
   Tax Office (BZSt) issues to businesses in Germany for trade with other EU member states. It is DE followed
-  by nine digits; the last digit is an ISO 7064 MOD 11,10 check digit. It is not the domestic tax number
-  (Steuernummer) or the personal tax identification number (Steuer-ID).
+  by nine digits; the first digit is never 0 and the last one is an ISO 7064 MOD 11,10 check digit. It
+  is not the domestic tax number (Steuernummer) or the personal tax identification number (Steuer-ID).
+  Since November 2024 the business identification number (W-IdNr.) reuses it with a five-digit suffix.
 parent: vatin
 categories:
 - finances
@@ -14,21 +15,27 @@ langs:
 - de
 is_pii: true
 classification: identifier
-regexp: ^DE[0-9]{9}$
+regexp: ^DE[1-9][0-9]{8}$
+checksum: de_ustidnr
 examples:
 - value: DE136695976
   description: python-stdnum reference value
+- value: DE649565454
+  description: Synthetic number with a valid check digit
 - value: DE13669597
   valid: false
   description: One digit short
 - value: '136695976'
   valid: false
   description: The DE prefix is part of the number
+- value: DE136695978
+  valid: false
+  description: Check digit does not match
 mappings:
   purview: Germany value added tax number
 links:
 - type: doc
-  url: https://www.bzst.de/DE/Unternehmen/SteuerlicheIdentifikationsnummern/UStIdNr/ustidnr_node.html
+  url: https://www.bzst.de/DE/Unternehmen/Identifikationsnummern/Umsatzsteuer-Identifikationsnummer/umsatzsteuer-identifikationsnummer_node.html
 - type: wikipedia
   url: https://de.wikipedia.org/wiki/Umsatzsteuer-Identifikationsnummer
 - type: other
@@ -36,3 +43,8 @@ links:
 translations:
   de:
     name: Umsatzsteuer-Identifikationsnummer (USt-IdNr.)
+  ru:
+    name: Идентификационный номер плательщика НДС Германии (USt-IdNr.)
+    doc: Номер плательщика НДС, который Федеральное центральное налоговое ведомство (BZSt) присваивает
+      предприятиям для торговли внутри ЕС, - DE и девять цифр, последняя из которых контрольная (ISO 7064
+      MOD 11,10).

@@ -1,29 +1,60 @@
 id: steuerid
-name: Steuer-ID anhand Feldname
+name: German tax identification number (Steuer-ID, IdNr.)
 status: stable
-doc: DE datatype for 'Steuer-ID anhand Feldname' (steuerid) from rules in context 'finances'. The German
-  tax identification number (Steueridentifikationsnummer) is an 11-digit unique identifier assigned to
-  every German citizen and resident for tax purposes. It remains valid for life and does not change.
+doc: Steuerliche Identifikationsnummer (IdNr., Steuer-ID), the personal tax number that the Federal Central
+  Tax Office (BZSt) assigns once to every person registered in Germany and that stays the same for life.
+  It has 11 digits that are chosen at random and hold no personal data. The first digit is never 0; in
+  the first ten digits one digit occurs twice (since 2016 also three times, never three in a row) and
+  the others at most once. The last digit is an ISO 7064 MOD 11,10 check digit. It is often printed in
+  groups, as in 36 574 261 809. It is not the Steuernummer that a tax office gives.
+aliases:
+- de_steuerid
 categories:
 - finances
+- pii
 country:
 - DE
 langs:
 - de
 is_pii: true
 classification: identifier
-regexp: ^[0-9]{11}$
+regexp: '^[1-9][0-9](?: ?[0-9]{3}){3}$'
+checksum: de_idnr
 examples:
-- value: '12345678901'
-  description: German tax identification number (Steuer-ID) with 11 digits
-- value: '98765432109'
-  description: Another valid German tax identification number format
+- value: '36574261809'
+  description: python-stdnum reference value
+- value: 36 574 261 809
+  description: The same number in its printed form
+- value: '32571556483'
+  description: Synthetic number with a valid check digit
+- value: '36574261890'
+  valid: false
+  description: Check digit does not match
+- value: '36554266806'
+  valid: false
+  description: Two different digits are repeated
+- value: 06574261809
+  valid: false
+  description: The first digit is never 0
 mappings:
   presidio: DE_TAX_ID
+  google_dlp: GERMANY_TAXPAYER_IDENTIFICATION_NUMBER
   purview:
   - Germany tax identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
 links:
 - type: doc
-  url: https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/steuerliche_identifikationsnummer_node.html
+  url: https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/steuerlicheidentifikationsnummer_node.html
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Steuerliche_Identifikationsnummer
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.de.idnr.html
+translations:
+  de:
+    name: Steuerliche Identifikationsnummer (IdNr.)
+  ru:
+    name: Налоговый идентификационный номер Германии (Steuer-ID)
+    doc: Пожизненный личный налоговый номер, который Федеральное центральное налоговое ведомство (BZSt)
+      присваивает каждому зарегистрированному в Германии человеку, - 11 случайных цифр, последняя из которых
+      контрольная (ISO 7064 MOD 11,10).

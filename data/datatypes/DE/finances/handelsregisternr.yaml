@@ -1,9 +1,14 @@
 id: handelsregisternr
-name: Handelsregisternummer anhand Feldname
+name: German commercial register number (Handelsregisternummer)
 status: stable
-doc: DE datatype for 'Handelsregisternummer anhand Feldname' (handelsregisternr) from rules in context
-  'finances'.
+doc: 'Number of an entry in the German commercial register (Handelsregister), which the local courts (Amtsgerichte)
+  keep. It is the register section and a number of up to six digits: HRA for sole traders and partnerships
+  such as OHG and KG, HRB for corporations such as GmbH and AG. Some courts add a letter suffix, as in
+  HRB 12345 B. The cooperative (GnR), partnership (PR) and association (VR) registers number their entries
+  the same way. A number is unique only together with the court, as in Amtsgericht München HRB 123456.
+  HRA entries can name natural persons (sole traders).'
 categories:
+- companies
 - finances
 country:
 - DE
@@ -11,11 +16,35 @@ langs:
 - de
 is_pii: false
 classification: identifier
-regexp: ^[A-Z][0-9]{1,6}$
+regexp: '^(?:HRA|HRB|GnR|PR|VR) ?[1-9][0-9]{0,5}(?: ?[A-Z]{1,3})?$'
 examples:
+- value: HRA 11223
+  description: python-stdnum reference value (court Aachen)
+- value: HRB 12345 B
+  description: Format of the court Berlin-Charlottenburg, with a suffix letter
+- value: GnR 11223
+  description: Cooperative register
+- value: HRC 44123
+  valid: false
+  description: There is no section HRC
 - value: H12345
-  description: Handelsregisternummer with single-letter prefix and 5-digit number
-- value: A1
-  description: Handelsregisternummer with single-letter prefix and 1-digit number
+  valid: false
+  description: The section is HRA or HRB, not a single letter
 mappings:
   orgid: DE-CR
+  presidio: DE_HANDELSREGISTER
+links:
+- type: doc
+  url: https://www.handelsregister.de/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/German_Trade_Register
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.de.handelsregisternummer.html
+translations:
+  de:
+    name: Handelsregisternummer
+  ru:
+    name: Номер в торговом реестре Германии (Handelsregisternummer)
+    doc: Номер записи в торговом реестре, который ведут участковые суды, - раздел (HRA для единоличных
+      предпринимателей и товариществ, HRB для GmbH, AG и других корпораций) и номер до шести цифр. Номер
+      уникален только вместе с названием суда.

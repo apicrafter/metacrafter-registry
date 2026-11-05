@@ -377,6 +377,155 @@ def kz_iin_bin(value: str) -> bool:
     return check != 10 and check == digits[11]
 
 
+def _iso7064_mod11_10(digits: list[int]) -> bool:
+    """ISO 7064 MOD 11,10 over a digit sequence that ends with its check digit."""
+    check = 5
+    for d in digits:
+        check = ((check or 10) * 2 % 11 + d) % 10
+    return check == 1
+
+
+def iso7064_mod97_10(value: str) -> bool:
+    """ISO 7064 MOD 97-10 over digits and letters (A=10 ... Z=35): the number mod 97 is 1.
+
+    Used by the German Leitweg-ID, whose last two digits are the check digits.
+    """
+    compact = _compact(value).upper()
+    if not re.fullmatch(r"[0-9A-Z]{3,}", compact):
+        return False
+    return int("".join(str(int(c, 36)) for c in compact)) % 97 == 1
+
+
+def de_ustidnr(value: str) -> bool:
+    """German VAT number (USt-IdNr.): 9 digits, optionally prefixed with DE.
+
+    The first digit is not 0 and the last one is an ISO 7064 MOD 11,10 check digit.
+    """
+    compact = _strip_prefix(value, "DE")
+    return bool(re.fullmatch(r"[1-9]\d{8}", compact)) and _iso7064_mod11_10(
+        [int(c) for c in compact]
+    )
+
+
+def de_widnr(value: str) -> bool:
+    """German business identification number (W-IdNr.): DE, 9 digits and a 5-digit suffix.
+
+    The 9 digits follow the rules of the USt-IdNr.; the suffix (00001, 00002, ...)
+    numbers the economic activities and has no check digit.
+    """
+    compact = _strip_prefix(value, "DE")
+    return bool(re.fullmatch(r"\d{14}", compact)) and de_ustidnr(compact[:9])
+
+
+def de_idnr(value: str) -> bool:
+    """German tax identification number (Steuer-IdNr.): 11 digits.
+
+    The first digit is not 0. In the first ten digits exactly one digit occurs
+    twice or three times (three equal digits are never all adjacent) and the
+    others at most once. The last digit is an ISO 7064 MOD 11,10 check digit.
+    """
+    digits = _digits(value)
+    if not digits or len(digits) != 11 or digits[0] == 0:
+        return False
+    body = digits[:10]
+    repeated = [d for d in set(body) if body.count(d) > 1]
+    if len(repeated) != 1 or body.count(repeated[0]) not in (2, 3):
+        return False
+    if any(body[i] == body[i + 1] == body[i + 2] for i in range(8)):
+        return False
+    return _iso7064_mod11_10(digits)
+
+
+def de_rvnr(value: str) -> bool:
+    """German pension insurance number (Versicherungsnummer): 12 characters, NN DDMMYY L SS C.
+
+    The letter becomes its two-digit position in the alphabet (A=01 ... Z=26),
+    the resulting twelve digits are weighted 2 1 2 5 7 1 2 1 2 1 2 1, the digit
+    sums of the products are added and the total modulo 10 is the check digit.
+    """
+    compact = _compact(value).upper()
+    if not re.fullmatch(r"\d{8}[A-Z]\d{3}", compact):
+        return False
+    number = compact[:8] + f"{ord(compact[8]) - 64:02d}" + compact[9:11]
+    weights = (2, 1, 2, 5, 7, 1, 2, 1, 2, 1, 2, 1)
+    total = sum(sum(divmod(w * int(c), 10)) for w, c in zip(weights, number, strict=True))
+    return total % 10 == int(compact[11])
+
+
+def de_kvnr(value: str) -> bool:
+    """German health insurance number (Krankenversichertennummer): a letter and 9 digits.
+
+    The letter becomes its two-digit position in the alphabet (A=01 ... Z=26).
+    These two digits and the next eight are weighted 1 2 1 2 ..., the digit
+    sums of the products are added and the total modulo 10 is the last digit.
+    """
+    compact = _compact(value).upper()
+    if not re.fullmatch(r"[A-Z]\d{9}", compact):
+        return False
+    number = f"{ord(compact[0]) - 64:02d}" + compact[1:9]
+    total = sum(sum(divmod((1 + i % 2) * int(c), 10)) for i, c in enumerate(number))
+    return total % 10 == int(compact[9])
+
+
+def de_ik(value: str) -> bool:
+    """German institution code (Institutionskennzeichen, IK): 9 digits.
+
+    Digits 3 to 8 are weighted 2 1 2 1 2 1, 9 is subtracted from products above
+    9, and the sum modulo 10 is the ninth digit. The first two digits (the
+    classification) are not part of the check.
+    """
+    digits = _digits(value)
+    if not digits or len(digits) != 9:
+        return False
+    total = 0
+    for i, d in enumerate(digits[2:8]):
+        product = d * (2 if i % 2 == 0 else 1)
+        total += product - 9 if product > 9 else product
+    return total % 10 == digits[8]
+
+
+def de_lanr(value: str) -> bool:
+    """German lifelong physician number (LANR): 9 digits.
+
+    Digits 1 to 6 are weighted 4 and 9 alternately; the 7th digit is 10 minus
+    the sum modulo 10 (10 gives 0). Digits 8 and 9 are the specialty group.
+    """
+    digits = _digits(value)
+    if not digits or len(digits) != 9:
+        return False
+    total = sum(d * (4 if i % 2 == 0 else 9) for i, d in enumerate(digits[:6]))
+    return (10 - total % 10) % 10 == digits[6]
+
+
+def de_pzn(value: str) -> bool:
+    """German pharmacy product number (PZN): 8 digits, or the 7 digits used until 2012.
+
+    An optional PZN prefix is ignored. A 7-digit PZN is read with a leading 0.
+    The first seven digits are weighted 1 to 7 and the sum modulo 11 is the
+    check digit; a sum that gives 10 is never issued.
+    """
+    compact = _strip_prefix(value, "PZN")
+    if not re.fullmatch(r"\d{7,8}", compact):
+        return False
+    digits = [int(c) for c in compact.zfill(8)]
+    check = sum(w * d for w, d in zip(range(1, 8), digits, strict=False)) % 11
+    return check != 10 and check == digits[7]
+
+
+def de_fsnr(value: str) -> bool:
+    """German driving licence number (Führerscheinnummer): 11 letters and digits.
+
+    The first nine characters (authority key and serial) count as base-36
+    values (0-9, A=10 ... Z=35), are weighted 9 down to 1, and the sum modulo
+    11 is the tenth character, X for 10. The last character numbers the issues.
+    """
+    compact = _compact(value).upper()
+    if not re.fullmatch(r"[0-9A-Z]{9}[0-9X][0-9A-Z]", compact):
+        return False
+    check = sum(w * int(c, 36) for w, c in zip(range(9, 0, -1), compact, strict=False)) % 11
+    return compact[9] == ("X" if check == 10 else str(check))
+
+
 ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "luhn": luhn,
     "iban_mod97": iban_mod97,
@@ -401,6 +550,16 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "si_ddv": si_ddv,
     "se_vat": se_vat,
     "kz_iin_bin": kz_iin_bin,
+    "iso7064_mod97_10": iso7064_mod97_10,
+    "de_ustidnr": de_ustidnr,
+    "de_widnr": de_widnr,
+    "de_idnr": de_idnr,
+    "de_rvnr": de_rvnr,
+    "de_kvnr": de_kvnr,
+    "de_ik": de_ik,
+    "de_lanr": de_lanr,
+    "de_pzn": de_pzn,
+    "de_fsnr": de_fsnr,
 }
 
 

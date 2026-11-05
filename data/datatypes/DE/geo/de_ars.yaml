@@ -1,8 +1,10 @@
 id: de_ars
 name: German regional key (Amtlicher Regionalschlüssel, ARS)
-status: draft
+status: stable
 doc: 'Twelve-digit official regional key of a German municipality: the municipality key with a four-digit
-  code of the municipal association inserted after the district.'
+  code of the municipal association (Gemeindeverband) inserted after the district, so two digits for the
+  state, one for the government region, two for the district, four for the association and three for the
+  municipality. Keys that end in zeros denote a district or an association as a whole.'
 categories:
 - geo
 country:
@@ -11,7 +13,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^\d{12}$
+regexp: ^(?:0[1-9]|1[0-6])\d{10}$
 examples:
 - value: '034565404000'
   description: Uelsen
@@ -19,6 +21,12 @@ examples:
   description: Lalling
 - value: 010590000000
   description: Schleswig-Flensburg District
+- value: 03459033
+  valid: false
+  description: A municipality key (AGS), not a regional key
+- value: '174565404000'
+  valid: false
+  description: There is no state 17
 mappings:
   wikidata: P1388
 links:
@@ -26,3 +34,12 @@ links:
   url: https://de.wikipedia.org/wiki/Amtlicher_Gemeindeschl%C3%BCssel#Regionalschl%C3%BCssel
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1388
+- type: doc
+  url: https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/_inhalt.html
+translations:
+  de:
+    name: Amtlicher Regionalschlüssel (ARS)
+  ru:
+    name: Официальный региональный ключ Германии (ARS)
+    doc: Двенадцатизначный код общины - код общины (AGS) с четырёхзначным кодом объединения общин после
+      кода района.

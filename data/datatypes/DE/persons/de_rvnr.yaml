@@ -1,0 +1,47 @@
+id: de_rvnr
+name: German pension insurance number (Rentenversicherungsnummer)
+status: draft
+doc: 'Versicherungsnummer of the German statutory pension insurance (§ 147 SGB VI), also called social
+  insurance number (Sozialversicherungsnummer). It has 12 characters, as in 15 070649 C 103: a two-digit
+  area number of the pension insurance institution, the date of birth as DDMMYY, the first letter of the
+  birth name, a two-digit serial number (00-49 male, 50-99 female, diverse or no gender entry) and a check
+  digit. For the check, the letter becomes its position in the alphabet as two digits (A=01 ... Z=26),
+  the twelve digits are weighted 2 1 2 5 7 1 2 1 2 1 2 1, and the digit sums of the products are added
+  modulo 10. The day of birth can be raised above 31 when a serial range is used up.'
+aliases:
+- de_socialinsurance
+categories:
+- pii
+- persons
+country:
+- DE
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^\d{2} ?\d{6} ?[A-Z] ?\d{3}$
+checksum: de_rvnr
+examples:
+- value: 15 070649 C 103
+  description: Fictitious example of German Wikipedia
+- value: 15070649C103
+  description: The same number without spaces
+- value: 15 070649 C 104
+  valid: false
+  description: Check digit does not match
+- value: '15070649103'
+  valid: false
+  description: The letter is missing
+mappings:
+  presidio: DE_SOCIAL_SECURITY
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Versicherungsnummer
+translations:
+  de:
+    name: Versicherungsnummer der Rentenversicherung
+  ru:
+    name: Номер пенсионного страхования Германии (Rentenversicherungsnummer)
+    doc: Номер застрахованного в обязательном пенсионном страховании - код региона, дата рождения, первая
+      буква фамилии при рождении, порядковый номер (00-49 мужской пол, 50-99 женский, иной или не указанный)
+      и контрольная цифра.
