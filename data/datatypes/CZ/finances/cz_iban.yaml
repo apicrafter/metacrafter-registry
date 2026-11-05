@@ -1,0 +1,47 @@
+id: cz_iban
+name: Czech IBAN
+status: draft
+doc: 'International Bank Account Number of a bank account in the Czech Republic. Czech National Bank decree
+  169/2011 sets its form: 24 characters, CZ, two IBAN check digits, the 4-digit bank code (kód platebního
+  styku) and the 16-digit account identifier, which is the 6-digit prefix and the 10-digit account number
+  of the national format, both padded with leading zeros.'
+parent: iban
+categories:
+- finances
+country:
+- CZ
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '^CZ\d{2}(?: ?\d{4}){5}$'
+checksum: iban_mod97
+examples:
+- value: CZ6508000000192000145399
+  description: Example of the Czech National Bank for the account 19-2000145399/0800
+- value: CZ65 0800 0000 1920 0014 5399
+  description: The same IBAN in its printed form
+- value: CZ6508000000192000145398
+  valid: false
+  description: Check digits do not match
+- value: CZ650800000019200014539
+  valid: false
+  description: 23 characters
+links:
+- type: doc
+  url: https://www.cnb.cz/cs/platebni-styk/iban/iban-mezinarodni-format-cisla-uctu/
+- type: doc
+  url: https://www.zakonyprolidi.cz/cs/2011-169
+- type: other
+  url: https://www.iban.com/structure
+- type: wikipedia
+  url: https://cs.wikipedia.org/wiki/International_Bank_Account_Number
+translations:
+  cs:
+    name: Česká IBAN
+    doc: Mezinárodní číslo bankovního účtu - 24 znaků - CZ, dvě kontrolní číslice, kód banky a šestnáctimístný
+      identifikátor účtu (předčíslí a číslo účtu).
+  ru:
+    name: IBAN Чехии
+    doc: Международный номер банковского счёта в Чехии - 24 символа - CZ, две контрольные цифры, четырёхзначный
+      код банка и шестнадцатизначный идентификатор счёта.

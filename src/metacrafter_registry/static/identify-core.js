@@ -302,6 +302,59 @@
       for (var i = 0; i < 9; i += 1) t += (9 - i) * parseInt(s[i], 36);
       var check = t % 11;
       return s[9] === (check === 10 ? "X" : String(check));
+    },
+    cz_ico: function (v) {
+      var d = digitsOf(v);
+      if (!d || d.length !== 8) return false;
+      var t = 0;
+      for (var i = 0; i < 7; i += 1) t += (8 - i) * d[i];
+      return (11 - (t % 11)) % 10 === d[7];
+    },
+    cz_rc: function (v) {
+      var s = String(v).replace(/[\s.\-\/]/g, "");
+      if (!/^\d{9,10}$/.test(s)) return false;
+      if (s.length === 9) {
+        var yy = Number(s.slice(0, 2));
+        return yy < 54 || yy > 79;
+      }
+      var rem = 0;
+      for (var i = 0; i < 9; i += 1) rem = (rem * 10 + Number(s[i])) % 11;
+      return rem % 10 === Number(s[9]);
+    },
+    cz_dic: function (v) {
+      var s = stripPrefix(v, "CZ").replace(/\//g, "");
+      if (!/^\d{8,10}$/.test(s)) return false;
+      if (s.length === 8) return s[0] !== "9" && CHECKSUMS.cz_ico(s);
+      if (s.length === 9 && s[0] === "6") {
+        var t = 0;
+        for (var i = 0; i < 7; i += 1) t += (8 - i) * Number(s[i + 1]);
+        var check = (((8 - ((10 - (t % 11)) % 11)) % 10) + 10) % 10;
+        return check === Number(s[8]);
+      }
+      return CHECKSUMS.cz_rc(s);
+    },
+    cz_bank_account: function (v) {
+      var m = /^(?:(\d{1,6})-)?(\d{2,10})\/\d{4}$/.exec(String(v).replace(/\s/g, ""));
+      if (!m || m[2].replace(/0/g, "").length < 2) return false;
+      var w = [6, 3, 7, 9, 10, 5, 8, 4, 2, 1];
+      var part = function (p) {
+        p = ("0000000000" + p).slice(-10);
+        var t = 0;
+        for (var i = 0; i < 10; i += 1) t += w[i] * Number(p[i]);
+        return t % 11 === 0;
+      };
+      return part(m[1] || "0") && part(m[2]);
+    },
+    cz_isds: function (v) {
+      var a = "abcdefghijkmnpqrstuvwxyz23456789";
+      var s = String(v).replace(/[\s.\-]/g, "").toLowerCase();
+      if (!/^[a-km-np-z2-9]{7}$/.test(s)) return false;
+      var t = 0;
+      for (var i = 0; i < 6; i += 1) {
+        var n = a.indexOf(s[i]) * (i % 2 === 1 ? 2 : 1);
+        t += Math.floor(n / 32) + (n % 32);
+      }
+      return a[(32 - (t % 32)) % 32] === s[6];
     }
   };
 
