@@ -1,0 +1,39 @@
+id: data_uri
+name: 'Data URI (data: URL)'
+status: draft
+doc: 'URI of the data: scheme that carries a small file inline instead of pointing to it (RFC 2397): data:,
+  an optional media type with parameters, an optional ;base64 flag, a comma and the data, percent-encoded
+  or in Base64. HTML and CSS use it to embed images and fonts. Without a media type the data is text/plain;charset=US-ASCII.
+  Browsers parse it as the WHATWG Fetch Standard describes, which is more lenient than RFC 2397.'
+parent: uri
+categories:
+- internet
+langs:
+- common
+is_pii: false
+regexp: ^data:(?:[A-Za-z0-9!#$&^_.+-]+/[A-Za-z0-9!#$&^_.+-]+)?(?:;[A-Za-z0-9!#$&^_.+-]+=[^;,\s]+)*(?:;base64)?,\S*$
+examples:
+- value: data:,A%20brief%20note
+  description: 'Example of RFC 2397: plain text without a media type'
+- value: data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==
+  description: The text Hello, World! in Base64
+- value: data:application/vnd-xxx-query,select_vcount,fcol_from_fieldtable/local
+  description: Example of RFC 2397 with a media type
+- value: data:text/plain;base64
+  valid: false
+  description: No comma before the data
+- value: text/plain;base64,SGVsbG8sIFdvcmxkIQ==
+  valid: false
+  description: 'No data: scheme'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Data_URI_scheme
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc2397
+- type: doc
+  url: https://fetch.spec.whatwg.org/#data-urls
+translations:
+  ru:
+    name: Data URI
+    doc: URI схемы data:, который содержит небольшой файл прямо в адресе, например изображение в Base64
+      (RFC 2397).

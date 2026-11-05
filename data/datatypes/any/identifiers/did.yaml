@@ -8,6 +8,7 @@ doc: Identifier defined by the W3C Recommendation Decentralized Identifiers (DID
   bytes and colons, and does not end with a colon. A DID followed by a path, query or fragment is a DID
   URL, which the regexp does not accept. Bluesky and the AT Protocol identify accounts with did:plc and
   did:web DIDs.
+parent: uri
 categories:
 - identifiers
 langs:

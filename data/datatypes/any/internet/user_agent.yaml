@@ -20,6 +20,7 @@ examples:
   description: Search engine crawler
 mappings:
   autotype: useragentstring
+  google_dlp: HTTP_USER_AGENT
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/User-Agent_header

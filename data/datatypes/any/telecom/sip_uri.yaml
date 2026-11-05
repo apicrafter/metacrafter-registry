@@ -4,6 +4,7 @@ status: draft
 doc: Address of a user, a phone or a service in the Session Initiation Protocol (RFC 3261), used for voice
   over IP, video calls and instant messaging. It has the form sip:user@host or, for secure transport,
   sips:user@host; the user part may be a phone number, and parameters and headers may follow the host.
+parent: uri
 categories:
 - telecom
 - internet

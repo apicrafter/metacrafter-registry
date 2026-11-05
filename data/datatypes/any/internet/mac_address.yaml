@@ -1,8 +1,13 @@
 id: mac_address
 name: MAC address (Media Access Control)
 status: stable
-doc: A media access control address (MAC address) is a unique identifier assigned to a network interface
-  controller (NIC) for use as a network address in communications within a network segment.
+doc: 48-bit hardware address (EUI-48) of a network interface in Ethernet, Wi-Fi, Bluetooth and other IEEE
+  802 networks, used to deliver frames within one network segment. The first three octets usually hold
+  the OUI of the manufacturer; the second-lowest bit of the first octet marks a locally administered address,
+  such as the random addresses that phones use on Wi-Fi. It is written as six pairs of hexadecimal digits
+  separated by hyphens (IEEE style) or colons, or as three groups of four digits separated by dots (Cisco
+  style). RFC 9542 reserves 00-00-5E-00-53-00 to 00-00-5E-00-53-FF for documentation. 64-bit identifiers
+  are described by eui64.
 aliases:
 - eui48
 categories:
@@ -13,14 +18,23 @@ langs:
 - common
 is_pii: true
 classification: identifier
-regexp: ^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$
+regexp: ^(?:[0-9A-Fa-f]{2}(?:-[0-9A-Fa-f]{2}){5}|[0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){5}|[0-9A-Fa-f]{4}\.[0-9A-Fa-f]{4}\.[0-9A-Fa-f]{4})$
 examples:
-- value: 00:1B:44:11:3A:B7
-  description: MAC address with colons
-- value: 00-1B-44-11-3A-B7
-  description: MAC address with dashes
-- value: 08:00:27:3A:2E:5C
-  description: MAC address example
+- value: 00-00-5E-00-53-01
+  description: Documentation address of RFC 9542, IEEE notation
+- value: 00:00:5e:00:53:af
+  description: Documentation address of RFC 9542 with colons
+- value: 0000.5e00.5301
+  description: Documentation address of RFC 9542 in dotted notation
+- value: 00:00:5E-00-53:01
+  valid: false
+  description: Mixed separators
+- value: 00-00-5E-00-53
+  valid: false
+  description: Five octets
+- value: 00-00-5E-EF-10-00-00-01
+  valid: false
+  description: 'Eight octets: an EUI-64 identifier'
 mappings:
   autotype: mac
   google_dlp: MAC_ADDRESS
@@ -29,3 +43,12 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/MAC_address
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc9542
+- type: doc
+  url: https://standards.ieee.org/wp-content/uploads/import/documents/tutorials/eui.pdf
+translations:
+  ru:
+    name: MAC-адрес
+    doc: '48-битный аппаратный адрес сетевого интерфейса (EUI-48): шесть пар шестнадцатеричных цифр через
+      дефис или двоеточие.'

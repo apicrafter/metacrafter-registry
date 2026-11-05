@@ -6,6 +6,7 @@ doc: 'URI of the bitcoin: scheme that wallets open from links and QR codes to st
   lightning (a BOLT 11 invoice) or further addresses. The scheme and the parameter names are case-insensitive,
   and QR codes often use upper case. The address part may be empty when the parameters carry the payment
   instructions.'
+parent: uri
 categories:
 - cryptocurrency
 - internet

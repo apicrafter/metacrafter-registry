@@ -1,0 +1,44 @@
+id: dns_record_type
+name: DNS resource record type
+status: draft
+doc: Mnemonic of a DNS resource record type, such as A (IPv4 address), AAAA (IPv6 address), CNAME (alias),
+  MX (mail server), NS (name server), TXT (text) or SOA (start of authority). DNS zone files, resolver
+  and passive DNS logs and DNS APIs store it. IANA assigns the 16-bit type values and their mnemonics
+  in the DNS Parameters registry. The regexp lists the mnemonics registered in November 2026, the query
+  types AXFR, IXFR and ANY, and the generic form TYPE<number> of RFC 3597 for types without a mnemonic.
+  It accepts only uppercase, the usual form.
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:DELEGPARAM|NSEC3PARAM|OPENPGPKEY|AMTRELAY|IPSECKEY|NSAP-PTR|CDNSKEY|RESINFO|DNSKEY|NIMLOC|NXNAME|SMIMEA|TALINK|UNSPEC|WALLET|ZONEMD|AFSDB|CNAME|CSYNC|DELEG|DHCID|DNAME|DSYNC|EUI48|EUI64|HINFO|HTTPS|MAILA|MAILB|MINFO|NAPTR|NINFO|NSEC3|RRSIG|SSHFP|UINFO|UNECE|AAAA|ATMA|AXFR|BRID|CERT|GPOS|HHIT|ISDN|IXFR|NSAP|NSEC|NULL|RKEY|SINK|SVCB|TKEY|TLSA|TSIG|ANY|APL|AVC|CAA|CDS|CLA|DLV|DOA|EID|GID|HIP|IPN|ISO|KEY|L32|L64|LOC|NID|NXT|OPT|PTR|SIG|SOA|SPF|SRV|TXT|UID|URI|WKS|X25|A6|DS|KX|LP|MB|MD|MF|MG|MR|MX|NS|PX|RP|RT|TA|A|TYPE[0-9]{1,5})$
+examples:
+- value: A
+  description: IPv4 address
+- value: CNAME
+  description: Canonical name of an alias
+- value: MX
+  description: Mail exchange
+- value: HTTPS
+  description: HTTPS service binding (RFC 9460)
+- value: TYPE731
+  description: Generic notation of RFC 3597
+- value: a
+  valid: false
+  description: Lowercase
+- value: MAIL
+  valid: false
+  description: Not a record type
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_DNS_record_types
+- type: doc
+  url: https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc3597
+translations:
+  ru:
+    name: Тип ресурсной записи DNS
+    doc: Мнемоника типа записи DNS, например A, AAAA, CNAME, MX, NS или TXT.

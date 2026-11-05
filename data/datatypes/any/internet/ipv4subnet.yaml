@@ -1,20 +1,40 @@
 id: ipv4subnet
 name: IPv4 routing prefix (subnet)
-status: draft
-doc: Range of IPv4 addresses
+status: stable
+doc: 'Block of IPv4 addresses in CIDR notation (RFC 4632): a dotted-decimal address, a slash and a prefix
+  length from 0 to 32, such as 192.0.2.0/24. Wikidata records the address blocks of organizations in property
+  P3761. The regexp does not require the host bits to be zero.'
+parent: ipsubnet
 categories:
 - internet
 langs:
 - common
 is_pii: true
-regexp: (([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]?|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]?|25[0-5])\/([0-9]|[12][0-9]|3[0-2])
+classification: identifier
+regexp: ^(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3}/(?:3[0-2]|[12]?[0-9])$
 examples:
 - value: 163.1.0.0/16
-  description: University of Oxford
+  description: University of Oxford (example of Wikidata property P3761)
 - value: 193.166.190.0/24
-  description: Helsinki University Central Hospital
+  description: Helsinki University Hospital (example of Wikidata property P3761)
+- value: 192.0.2.0/24
+  description: Documentation range TEST-NET-1 (RFC 5737)
+- value: 192.0.2.0/33
+  valid: false
+  description: The prefix length is larger than 32
+- value: 192.0.2.0
+  valid: false
+  description: No prefix length
 mappings:
   wikidata: P3761
 links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P3761
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc4632
+translations:
+  ru:
+    name: Префикс сети IPv4 (подсеть)
+    doc: Блок IPv4-адресов в нотации CIDR, например 192.0.2.0/24.

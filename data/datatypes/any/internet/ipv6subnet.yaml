@@ -1,26 +1,44 @@
 id: ipv6subnet
 name: IPv6 routing prefix (subnet)
-status: draft
-doc: Range of IPv6 addresses
+status: stable
+doc: Block of IPv6 addresses written as an IPv6 address, a slash and a prefix length from 0 to 128 (RFC
+  4291, section 2.3), such as 2001:db8::/32. Most single network segments are /64, because the interface
+  identifier takes the last 64 bits of an address. Wikidata records the address blocks of organizations
+  in property P3793.
+parent: ipsubnet
 categories:
 - internet
 langs:
 - common
 is_pii: true
-regexp: ^[0-9A-Fa-f]{0,4}(?::[0-9A-Fa-f]{0,4}){2,7}/(?:12[0-8]|1[01]\d|\d{1,2})$
+classification: identifier
+regexp: ^(?:(?:[0-9A-Fa-f]{1,4}:){6}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|::(?:[0-9A-Fa-f]{1,4}:){5}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){4}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){3}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){2}(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}:(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(?:\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3})|(?:(?:[0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(?:(?:[0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)/(?:12[0-8]|1[01][0-9]|[1-9]?[0-9])$
 examples:
 - value: 2001:610::/29
-  description: SURFNet
+  description: SURFnet (example of Wikidata property P3793)
 - value: 2001:630:440::/44
-  description: University of Oxford
+  description: University of Oxford (example of Wikidata property P3793)
+- value: 2001:db8::/32
+  description: Documentation prefix (RFC 3849)
 - value: 08:00-22:00
   valid: false
   description: A time range, not an IPv6 prefix
 - value: '2001:db8::'
   valid: false
   description: An IPv6 address without the prefix length
+- value: 2001:db8::/129
+  valid: false
+  description: The prefix length is larger than 128
 mappings:
   wikidata: P3793
 links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/IPv6_address
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P3793
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc4291#section-2.3
+translations:
+  ru:
+    name: Префикс сети IPv6 (подсеть)
+    doc: 'Блок IPv6-адресов: адрес, косая черта и длина префикса до 128, например 2001:db8::/32.'

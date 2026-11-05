@@ -19,6 +19,7 @@ supported_types:
 - esnif
 - ipaddr
 - it_id_card
+- mac_address
 - p2pkhaddr
 - p2shaddr
 - p2traddr
@@ -28,6 +29,7 @@ supported_types:
 - sg_uen
 - sgnric
 - uknhsnum
+- url
 - usbankaccount
 - usdeanumber
 - usdriverlic

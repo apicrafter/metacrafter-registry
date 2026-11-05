@@ -26,3 +26,7 @@ links:
   url: https://en.wikipedia.org/wiki/Persistent_uniform_resource_locator
 - type: doc
   url: https://purl.archive.org/
+translations:
+  ru:
+    name: Постоянный URL (PURL)
+    doc: URL на сервере PURL, который перенаправляет на текущий адрес ресурса.

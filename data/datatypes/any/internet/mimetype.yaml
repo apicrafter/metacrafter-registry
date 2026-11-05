@@ -1,25 +1,51 @@
 id: mimetype
-name: Multipurpose Internet Mail Extensions (MIME)
+name: Media type (MIME type)
 status: stable
-doc: 'Mime type of the file/content. Used to identify contents of the stream or file. The MIME standard
-  is specified in a series of requests for comments: RFC 2045, RFC 2046, RFC 2047, RFC 4288, RFC 4289
-  and RFC 2049.'
+doc: Two-part identifier of a data format, type/subtype, such as text/html, image/png or application/vnd.ms-excel,
+  defined by RFC 6838 and registered by IANA. Email (MIME), the HTTP Content-Type header, file metadata
+  and data catalogs use it. The top-level type is one of application, audio, example, font, haptics, image,
+  message, model, multipart, text and video; vendor subtypes start with vnd., personal ones with prs.,
+  and unregistered ones often with x-. A value may carry parameters after a semicolon, as in text/html;
+  charset=utf-8. Type names are case-insensitive, but the regexp accepts only the usual lowercase top-level
+  type.
+aliases:
+- mime_type
 categories:
 - common
+- internet
 langs:
 - common
 is_pii: false
 classification: identifier
-regexp: (application|audio|example|font|image|message|model|multipart|text|video)/[a-zA-Z0-9\-+.]+
+regexp: ^(?:application|audio|example|font|haptics|image|message|model|multipart|text|video)/[A-Za-z0-9][A-Za-z0-9!#$&^_.+-]{0,126}(?:[
+  \t]*;[ \t]*[A-Za-z0-9!#$%&'*+.^_`|~-]+=(?:[A-Za-z0-9!#$%&'*+.^_`|~-]+|"[^"]*"))*$
 examples:
 - value: text/html
   description: HyperText Markup Language
 - value: image/jpeg
-  description: JPEG File Interchange Format, version 1.0
+  description: JPEG image
+- value: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+  description: Excel workbook (XLSX), a vendor subtype
+- value: text/html; charset=utf-8
+  description: Content-Type value with a parameter
+- value: html
+  valid: false
+  description: No subtype
+- value: text/
+  valid: false
+  description: Empty subtype
 mappings:
   wikidata: P1163
 links:
 - type: wikipedia
-  url: https://en.wikipedia.org/wiki/MIME
+  url: https://en.wikipedia.org/wiki/Media_type
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1163
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc6838
+- type: doc
+  url: https://www.iana.org/assignments/media-types/media-types.xhtml
+translations:
+  ru:
+    name: Тип медиа (MIME-тип)
+    doc: Идентификатор формата данных вида тип/подтип, например text/html (RFC 6838).

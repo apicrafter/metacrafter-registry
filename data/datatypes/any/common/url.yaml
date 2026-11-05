@@ -1,20 +1,32 @@
 id: url
 name: Uniform Resource Locator (URL)
 status: stable
-doc: A Uniform Resource Locator (URL), colloquially termed a web address, is a reference to a web resource
-  that specifies its location on a computer network and a mechanism for retrieving it. A URL is a specific
-  type of Uniform Resource Identifier (URI), although many people use the two terms interchangeably
+doc: 'Address of a resource on a network that also says how to retrieve it: a scheme such as https, a
+  host, an optional port, a path, a query and a fragment, as in https://www.example.com/docs?page=2#intro.
+  URLs are the most common kind of URI (RFC 3986), and browsers follow the WHATWG URL Standard. The regexp
+  covers http, https and ftp URLs whose host is a dotted domain name, an IPv4 address or an IPv6 address
+  in brackets; other schemes are covered by uri.'
+parent: uri
 categories:
 - common
+- internet
 langs:
 - common
 is_pii: false
-regexp: ^(?:https?|ftp)://(?:\S+\.)+\S+(?:/\S*)?$
+regexp: ^(?:https?|ftp)://(?:[^\s/?#@]+@)?(?:[^\s/?#@:.\[\]]+(?:\.[^\s/?#@:.\[\]]+)+\.?|\[[0-9A-Fa-f:.]+\])(?::[0-9]{1,5})?(?:[/?#]\S*)?$
 examples:
 - value: http://www.rdaregistry.info/xml/termList/AspectRatio.xml
   description: RDA aspect ratio designation
 - value: http://vocab.getty.edu/doc/
   description: Art & Architecture Thesaurus LOD Dataset
+- value: ftp://ftp.is.co.za/rfc/rfc1808.txt
+  description: Example of RFC 3986, section 1.1.2
+- value: www.example.com
+  valid: false
+  description: No scheme
+- value: mailto:John.Doe@example.com
+  valid: false
+  description: A URI without a host, not a web address
 mappings:
   autotype: url
   cdm: means.reference.URL
@@ -30,3 +42,11 @@ links:
   url: https://www.wikidata.org/wiki/Property:P2699
 - type: schema.org
   url: https://schema.org/URL
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc3986
+- type: doc
+  url: https://url.spec.whatwg.org/
+translations:
+  ru:
+    name: URL (адрес ресурса)
+    doc: Адрес ресурса в сети со схемой доступа, например https://www.example.com/docs.

@@ -1,0 +1,42 @@
+id: http_method
+name: HTTP request method
+status: draft
+doc: Token at the start of an HTTP request that says what the client wants done with the target resource,
+  such as GET, POST, PUT, DELETE or PATCH. RFC 9110 defines the core methods, other specifications such
+  as WebDAV (RFC 4918) add more, and IANA keeps the HTTP Method Registry. Method names are case-sensitive
+  and registered in uppercase. Web server and API gateway logs store them. The regexp lists the methods
+  registered in November 2026, so an unregistered extension method does not match.
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:ACL|BASELINE-CONTROL|BIND|CHECKIN|CHECKOUT|CONNECT|COPY|DELETE|GET|HEAD|LABEL|LINK|LOCK|MERGE|MKACTIVITY|MKCALENDAR|MKCOL|MKREDIRECTREF|MKWORKSPACE|MOVE|OPTIONS|ORDERPATCH|PATCH|POST|PRI|PROPFIND|PROPPATCH|PUT|QUERY|REBIND|REPORT|SEARCH|TRACE|UNBIND|UNCHECKOUT|UNLINK|UNLOCK|UPDATE|UPDATEREDIRECTREF|VERSION-CONTROL)$
+examples:
+- value: GET
+  description: Retrieve a representation of the resource
+- value: POST
+  description: Submit data to the resource
+- value: PATCH
+  description: Partial update (RFC 5789)
+- value: PROPFIND
+  description: WebDAV property lookup (RFC 4918)
+- value: get
+  valid: false
+  description: Method names are case-sensitive
+- value: FETCH
+  valid: false
+  description: Not a registered method
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/HTTP#Request_methods
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc9110.html#name-methods
+- type: doc
+  url: https://www.iana.org/assignments/http-methods/http-methods.xhtml
+translations:
+  ru:
+    name: Метод HTTP-запроса
+    doc: Метод HTTP-запроса, например GET, POST, PUT, DELETE или PATCH; имена методов чувствительны к
+      регистру.

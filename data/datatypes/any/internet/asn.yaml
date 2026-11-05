@@ -1,21 +1,48 @@
 id: asn
 name: Autonomous system number (ASN)
-status: draft
-doc: autonomous system number
+status: stable
+doc: 'Number that identifies an autonomous system: a network or group of networks under one routing policy,
+  such as an Internet service provider, a hosting company or a university, that exchanges routes with
+  its neighbours over BGP. IANA hands out blocks of numbers to the five regional Internet registries,
+  which assign them to network operators. Numbers were 16-bit (1 to 65535) until RFC 6793 extended them
+  to 32 bits (up to 4294967295). They are written as a plain decimal number, often with the prefix AS
+  (AS174). The regexp covers this asplain form, not the asdot form (1.10) of RFC 5396, and rejects AS
+  0, which is reserved (RFC 7607). RFC 5398 sets aside 64496-64511 and 65536-65551 for documentation.'
 categories:
 - internet
 langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^(?:AS)?[1-9]\d{0,9}$
+regexp: ^(?:[Aa][Ss])?(?:429496729[0-5]|42949672[0-8][0-9]|4294967[01][0-9]{2}|429496[0-6][0-9]{3}|42949[0-5][0-9]{4}|4294[0-8][0-9]{5}|429[0-3][0-9]{6}|42[0-8][0-9]{7}|4[01][0-9]{8}|[1-3][0-9]{9}|[1-9][0-9]{0,8})$
 examples:
-- value: '2532'
-  description: Library of Congress
 - value: '174'
-  description: Cogent Communications
+  description: Cogent Communications (example of Wikidata property P3797)
+- value: '2532'
+  description: Library of Congress (example of Wikidata property P3797)
+- value: AS64496
+  description: First 16-bit ASN reserved for documentation (RFC 5398)
+- value: '65551'
+  description: Last 32-bit ASN reserved for documentation (RFC 5398)
+- value: AS0
+  valid: false
+  description: AS 0 is reserved and never used in routing
+- value: '4294967296'
+  valid: false
+  description: Larger than a 32-bit number
 mappings:
   wikidata: P3797
 links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Autonomous_system_(Internet)
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P3797
+- type: doc
+  url: https://www.iana.org/assignments/as-numbers/as-numbers.xhtml
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc5398
+translations:
+  ru:
+    name: Номер автономной системы (ASN)
+    doc: 'Номер автономной системы в маршрутизации BGP: 16- или 32-битное число, часто с префиксом AS,
+      например AS174.'

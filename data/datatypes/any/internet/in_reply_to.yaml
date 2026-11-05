@@ -1,18 +1,31 @@
 id: in_reply_to
 name: In-Reply-To (Email Header)
 status: stable
-doc: In-Reply-To is an email header field that contains the Message-ID of the message to which this message
-  is a reply, as defined in RFC 5322.
+doc: 'Value of the In-Reply-To header of an email message (RFC 5322, section 3.6.4): the Message-ID of
+  the message that this one answers, or several of them when it answers more than one. Each identifier
+  is enclosed in angle brackets. Mail clients use it together with the References header to build conversation
+  threads.'
 categories:
 - internet
 langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^<[^<>@]+@[^<>@]+>$
+regexp: ^<[^<>@\s]+@[^<>@\s]+>(?:\s+<[^<>@\s]+@[^<>@\s]+>)*$
 examples:
-- value: <CABcD1234@example.com>
-  description: In-Reply-To header containing Message-ID
+- value: <1234@local.machine.example>
+  description: Reply example of RFC 5322, appendix A.2
+- value: <3456@example.net>
+  description: Reply to the reply in RFC 5322, appendix A.2
+- value: 1234@local.machine.example
+  valid: false
+  description: No angle brackets
 links:
 - type: wikipedia
-  url: https://en.wikipedia.org/wiki/Email#Message-ID
+  url: https://en.wikipedia.org/wiki/Message-ID
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc5322.html#section-3.6.4
+translations:
+  ru:
+    name: Заголовок письма In-Reply-To
+    doc: 'Значение заголовка In-Reply-To: Message-ID письма, на которое дан ответ (RFC 5322).'
