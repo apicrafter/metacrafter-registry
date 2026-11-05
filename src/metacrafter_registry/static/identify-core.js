@@ -449,8 +449,31 @@
         t += Math.floor(n / 32) + (n % 32);
       }
       return a[(32 - (t % 32)) % 32] === s[6];
+    },
+    nl_bsn: function (v) {
+      var d = digitsOf(v);
+      if (!d || (d.length !== 8 && d.length !== 9) || !/[1-9]/.test(d.join(""))) return false;
+      if (d.length === 8) d.unshift(0);
+      return elfproef(d) === 0;
+    },
+    nl_onderwijsnummer: function (v) {
+      var d = digitsOf(v);
+      if (!d || d.length !== 9 || d[0] !== 1 || d[1] !== 0) return false;
+      return elfproef(d) === 5;
+    },
+    nl_btw: function (v) {
+      var s = stripPrefix(v, "NL");
+      if (!/^\d{9}B\d{2}$/.test(s) || s.slice(10) === "00") return false;
+      return CHECKSUMS.nl_bsn(s.slice(0, 9)) || CHECKSUMS.iso7064_mod97_10("NL" + s);
     }
   };
+
+  // Dutch 11-proef sum of 9 digits: weights 9 down to 2, the last digit subtracted, modulo 11.
+  function elfproef(d) {
+    var t = -d[8];
+    for (var i = 0; i < 8; i += 1) t += (9 - i) * d[i];
+    return ((t % 11) + 11) % 11;
+  }
 
   // ISO 7064 MOD 11,10 over a digit string that ends with its check digit.
   function mod11_10(s) {

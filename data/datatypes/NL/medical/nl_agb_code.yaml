@@ -1,0 +1,32 @@
+id: nl_agb_code
+name: Dutch healthcare provider code (AGB-code)
+status: draft
+doc: AGB-code (Algemeen GegevensBeheer zorgverleners), the eight-digit code of a party in the AGB register,
+  which Vektis keeps for the Dutch health insurers. Individual caregivers (zorgverleners), care businesses
+  (ondernemingen) and their locations (vestigingen) each have their own code. It is the key that identifies
+  them in billing, in contracts with insurers and in referrals. The first two digits give the type of
+  care (zorgsoort).
+categories:
+- medical
+- persons
+country:
+- NL
+langs:
+- nl
+is_pii: true
+classification: identifier
+regexp: ^\d{8}$
+links:
+- type: doc
+  url: https://www.vektis.nl/agb-register
+- type: doc
+  url: https://www.vektis.nl/vektisnl-assets/prd/storage/uploads/AGB/AGB%20Registratie%20%26%20Controle.pdf
+translations:
+  nl:
+    name: AGB-code
+    doc: Achtcijferige code van een zorgverlener, onderneming of vestiging in het AGB-register van Vektis;
+      de eerste twee cijfers geven de zorgsoort.
+  ru:
+    name: Код поставщика медицинских услуг Нидерландов (AGB)
+    doc: Восьмизначный код медицинского работника, организации или её отделения в реестре AGB компании
+      Vektis; первые две цифры обозначают вид помощи.

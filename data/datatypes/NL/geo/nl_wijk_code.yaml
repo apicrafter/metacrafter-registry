@@ -1,0 +1,44 @@
+id: nl_wijk_code
+name: Dutch district code (CBS wijkcode)
+status: draft
+doc: Code of a district (wijk) of a Dutch municipality in the Wijk- en Buurtkaart of Statistics Netherlands
+  (CBS), WK followed by six characters, the 4-digit municipality code (nl_municipality_code) and a 2-character
+  district number, as in WK059901 for Rotterdam Centrum. In 2026 only Amsterdam uses letters in the district
+  number, as in WK0363AA. The codes of the neighbourhoods (buurten) of a district are nl_buurt_code.
+categories:
+- geo
+- government
+country:
+- NL
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^WK\d{4}[0-9A-Z]{2}$
+examples:
+- value: WK059901
+  description: Rotterdam Centrum
+- value: WK051804
+  description: Wijk 04 Benoordenhout, 's-Gravenhage
+- value: WK0363AA
+  description: Haarlemmerbuurt, Amsterdam
+- value: BU05990110
+  valid: false
+  description: A neighbourhood code (nl_buurt_code)
+- value: WK05991
+  valid: false
+  description: Five characters after WK
+links:
+- type: doc
+  url: https://www.cbs.nl/nl-nl/faq/regionale-en-ruimtelijke-statistieken/regionale-indelingen/krijgen-wijken-en-buurten-in-nieuwe-gemeenten-ook-nieuwe-codes-
+- type: doc
+  url: https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/informatie-voor-gemeenten/codering-gebieden
+- type: other
+  url: https://opendata.cbs.nl/ODataApi/odata/86358NED/WijkenEnBuurten
+translations:
+  nl:
+    name: Wijkcode (CBS)
+    doc: WK gevolgd door de gemeentecode van vier cijfers en een wijknummer van twee tekens, zoals WK059901.
+  ru:
+    name: Код района муниципалитета Нидерландов (CBS)
+    doc: WK, четырёхзначный код муниципалитета и двухсимвольный номер района, например WK059901.

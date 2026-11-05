@@ -789,6 +789,13 @@ def test_javascript_checksums_match_python(tmp_path):
         "19-2000145399/0800",
         "aydaadk",
         "6bnaawp",
+        "1112.22.333",
+        "1012.22.331",
+        "NL004495445B01",
+        "NL002455799B11",
+        "000000000",
+        "00000000",
+        "12345672",
     ]
     values += [str(rng.randrange(10**16, 10**18)) for _ in range(300)]
     values += [str(rng.randrange(10**8, 10**15)) for _ in range(300)]
@@ -846,6 +853,9 @@ def test_javascript_checksums_match_python(tmp_path):
         for _ in range(300)
     ]
     values += [f"{rng.randrange(10**10)}/0800" for _ in range(300)]
+    values += [f"10{rng.randrange(10**7):07d}" for _ in range(500)]
+    values += [f"{rng.randrange(10**8):08d}" for _ in range(500)]
+    values += [f"NL{rng.randrange(10**9):09d}B{rng.randrange(100):02d}" for _ in range(1000)]
     isds = "abcdefghijkmnpqrstuvwxyz23456789"
     values += ["".join(rng.choice(isds) for _ in range(7)) for _ in range(500)]
     offices = ["001", "100", "121", "888", "500"]

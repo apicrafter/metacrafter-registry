@@ -1,8 +1,10 @@
 id: nl_municipality
 name: Dutch municipality (gemeente)
 status: draft
-doc: Name of a municipality (gemeente) of the Netherlands, such as Amsterdam, Aalsmeer or Aa en Hunze.
-  Mergers reduce their number almost every year; there are about 340. Their codes are the pattern nl_municipality_code.
+doc: Name of a municipality (gemeente) of the Netherlands, the level below the province, such as Amsterdam,
+  Aalsmeer or Aa en Hunze. Mergers have reduced their number almost every year; Statistics Netherlands
+  (CBS) counts 342 on 1 January 2026, the same as in 2025. Their CBS codes are the pattern nl_municipality_code.
+parent: admin_area_2
 categories:
 - geo
 - government
@@ -16,13 +18,20 @@ examples:
 - value: Amsterdam
 - value: Aalsmeer
 - value: Aa en Hunze
+- value: '''s-Gravenhage'
+  description: The Hague, under its official name
 mappings:
   fta: STATE_PROVINCE.MUNICIPALITY_NL
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Municipalities_of_the_Netherlands
+- type: doc
+  url: https://www.cbs.nl/nl-nl/onze-diensten/methoden/classificaties/overig/gemeentelijke-indelingen-per-jaar/indeling-per-jaar/gemeentelijke-indeling-op-1-januari-2026
 - type: other
   url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
 translations:
+  nl:
+    name: Gemeente
   ru:
     name: Муниципалитет Нидерландов
+    doc: Название муниципалитета (gemeente) Нидерландов; на 1 января 2026 года их 342.

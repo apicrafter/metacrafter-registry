@@ -1,0 +1,54 @@
+id: nl_vehicle_plate
+name: Dutch vehicle registration number (kenteken)
+status: draft
+doc: 'Registration number (kenteken) of a car or van in the Netherlands, issued by the RDW. It has six
+  letters and digits in three groups separated by hyphens; the order of letter and digit groups is the
+  series (sidecode). Series 4 to 12 are covered: XX-99-XX, XX-XX-99, 99-XX-XX, 99-XXX-9, 9-XXX-99, XX-999-X,
+  X-999-XX, XXX-99-X (cars since June 2024) and X-99-XXX (vans since 2024). Since series 4 the letters
+  are consonants without C and Q, which look too much like a zero; Y appears only in series 4. Some letter
+  combinations, such as SS, SD, NSB and the names of political parties, are never issued. RDW open data
+  writes the number without hyphens. Older series 1 to 3 with vowels, mopeds, trailers and special plates
+  follow other rules and are not covered.'
+categories:
+- transport
+country:
+- NL
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[BDFGHJ-NPR-TV-Z]{2}-?\d{2}-?[BDFGHJ-NPR-TV-Z]{2}|[BDFGHJ-NPR-TV-Z]{2}-?[BDFGHJ-NPR-TV-Z]{2}-?\d{2}|\d{2}-?[BDFGHJ-NPR-TV-Z]{2}-?[BDFGHJ-NPR-TV-Z]{2}|\d{2}-?[BDFGHJ-NPR-TV-Z]{3}-?\d|\d-?[BDFGHJ-NPR-TV-Z]{3}-?\d{2}|[BDFGHJ-NPR-TV-Z]{2}-?\d{3}-?[BDFGHJ-NPR-TV-Z]|[BDFGHJ-NPR-TV-Z]-?\d{3}-?[BDFGHJ-NPR-TV-Z]{2}|[BDFGHJ-NPR-TV-Z]{3}-?\d{2}-?[BDFGHJ-NPR-TV-Z]|[BDFGHJ-NPR-TV-Z]-?\d{2}-?[BDFGHJ-NPR-TV-Z]{3})$
+examples:
+- value: GXR-12-B
+  description: Synthetic number of series 11, the current series for cars
+- value: K-123-BD
+  description: Synthetic number of series 10
+- value: 12HDZB
+  description: Synthetic number of series 6 written without hyphens, as in RDW open data
+- value: AB-123-C
+  valid: false
+  description: Vowels are not used since series 4
+- value: GC-123-R
+  valid: false
+  description: C is not used
+- value: GZ-12-34-5
+  valid: false
+  description: Seven characters
+links:
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Nederlands_kenteken
+- type: doc
+  url: https://www.rdw.nl/de-kentekenplaat/overzicht-van-kentekenseries
+- type: doc
+  url: https://www.rdw.nl/de-kentekenplaat/cijfers-en-letters-op-de-kentekenplaat
+- type: other
+  url: https://opendata.rdw.nl/Voertuigen/Open-Data-RDW-Gekentekende_voertuigen/m9d7-ebf2
+translations:
+  nl:
+    name: Kenteken
+    doc: Registratienummer van een auto of bestelauto van de RDW - zes letters en cijfers in drie groepen,
+      in de volgorde van de kentekenserie (sidecode), zoals XXX-99-X sinds 2024.
+  ru:
+    name: Номерной знак транспортного средства Нидерландов (kenteken)
+    doc: Регистрационный номер автомобиля, выдаваемый RDW - шесть букв и цифр в трёх группах, порядок
+      которых задаёт серия (sidecode), например XXX-99-X с 2024 года.

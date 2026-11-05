@@ -1,0 +1,29 @@
+id: nl_bag_building_id
+name: Dutch BAG building identifier (pand)
+status: draft
+doc: Identifier of a building (pand) in the Dutch register of addresses and buildings (BAG), a BAG object
+  identifier (nl_bag_id) with the object type 10 in digits 5 and 6.
+semantic_type: nl_bag_id
+country:
+- NL
+langs:
+- common
+regexp: ^\d{4}10\d{10}$
+examples:
+- value: 0363100012165291
+  description: Building in Amsterdam, from the PDOK BAG API
+- value: '0363010000544772'
+  valid: false
+  description: A verblijfsobject, object type 01
+mappings:
+  wikidata: P5208
+links:
+- type: doc
+  url: https://imbag.github.io/catalogus/hoofdstukken/attributen--relaties
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5208
+translations:
+  nl:
+    name: BAG-pandidentificatie
+  ru:
+    name: Идентификатор здания BAG (Нидерланды)

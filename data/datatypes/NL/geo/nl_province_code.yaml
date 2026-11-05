@@ -1,0 +1,38 @@
+id: nl_province_code
+name: Dutch province code (ISO 3166-2:NL)
+status: draft
+doc: Code of one of the 12 Dutch provinces from ISO 3166-2:NL, two letters after NL-, such as NL-NH (Noord-Holland),
+  NL-FR (Fryslân) or NL-ZH (Zuid-Holland), alone or with the country code. ISO 3166-2:NL also lists Aruba
+  (NL-AW), Curaçao (NL-CW) and Sint Maarten (NL-SX) as countries and Bonaire, Saba and Sint Eustatius
+  (NL-BQ1 to NL-BQ3) as special municipalities; they are not provinces and are not covered. Statistics
+  Netherlands uses its own codes, the pattern nl_cbs_province_code.
+semantic_type: iso3166code
+country:
+- NL
+langs:
+- common
+regexp: ^(?:NL-)?(?:DR|FL|FR|GE|GR|LI|NB|NH|OV|UT|ZE|ZH)$
+examples:
+- value: NL-NH
+  description: Noord-Holland
+- value: NL-FR
+  description: Fryslân
+- value: ZH
+  description: Zuid-Holland, without the country code
+- value: NL-BQ1
+  valid: false
+  description: Bonaire, a special municipality, not a province
+- value: NL-FS
+  valid: false
+  description: Not a province code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_3166-2:NL
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/ISO_3166-2:NL
+translations:
+  nl:
+    name: Provinciecode (ISO 3166-2:NL)
+  ru:
+    name: Код провинции Нидерландов (ISO 3166-2:NL)
+    doc: Код одной из 12 провинций Нидерландов по ISO 3166-2:NL, например NL-NH (Северная Голландия).

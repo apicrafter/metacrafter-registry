@@ -1,0 +1,41 @@
+id: nl_kvk_vestigingsnummer
+name: Dutch establishment number (KVK vestigingsnummer)
+status: draft
+doc: Vestigingsnummer, the 12-digit number that the Netherlands Chamber of Commerce (KVK) gives to each
+  location (vestiging) of a business registered in the Business Register, such as a shop, office or factory.
+  It is not derived from the organisation's 8-digit KVK number (kvk). Organisations without a location,
+  as many associations, foundations and owners' associations are, have none. The KVK API writes it with
+  leading zeros.
+categories:
+- companies
+country:
+- NL
+langs:
+- nl
+is_pii: false
+classification: identifier
+regexp: ^\d{12}$
+examples:
+- value: 000038509504
+  description: Fictitious eenmanszaak of the KVK API test environment
+- value: 000037178598
+  description: Fictitious BV of the KVK API test environment
+- value: 000015063097
+  description: Example of the KVK Zoeken API specification
+- value: '68750110'
+  valid: false
+  description: An 8-digit KVK number
+links:
+- type: doc
+  url: https://www.kvk.nl/over-het-handelsregister/vestigingsnummer/
+- type: doc
+  url: https://developers.kvk.nl/documentation/testing
+- type: doc
+  url: https://developers.kvk.nl/cms/api/uploads/api_zoeken.yaml
+translations:
+  nl:
+    name: Vestigingsnummer (KVK)
+    doc: Twaalfcijferig nummer van een vestiging in het Handelsregister van de KVK.
+  ru:
+    name: Номер филиала организации в Торговом реестре Нидерландов
+    doc: Двенадцатизначный номер места деятельности (vestiging) в Торговом реестре Торговой палаты Нидерландов.

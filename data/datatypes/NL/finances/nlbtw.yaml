@@ -2,9 +2,12 @@ id: nlbtw
 name: Dutch VAT identification number (btw-id)
 status: stable
 doc: 'Btw-identificatienummer, the VAT identification number of businesses in the Netherlands: NL, nine
-  digits, the letter B and a 2-digit sequence number. The older btw-nummer was built from the RSIN of
-  a company or the citizen service number (BSN) of a sole trader. Since 2020 sole traders have a btw-identificatienummer
-  that does not contain their BSN.'
+  digits, the letter B and a 2-digit sequence number that is not 00. The older btw-nummer (omzetbelastingnummer)
+  was built from the RSIN of a legal entity or the citizen service number (BSN) of a sole trader, and
+  its nine digits pass the 11-proef. Since 1 January 2020 sole traders have a separate btw-identificatienummer
+  that does not contain their BSN; it is used on invoices and in contacts with other businesses, while
+  the omzetbelastingnummer stays in use with the tax service. python-stdnum validates these newer numbers
+  with ISO 7064 MOD 97-10 over NL and the whole number; the tax service does not publish the check.'
 parent: vatin
 categories:
 - finances
@@ -15,6 +18,7 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^NL\d{9}B\d{2}$
+checksum: nl_btw
 examples:
 - value: NL004495445B01
   description: python-stdnum reference value
@@ -26,16 +30,25 @@ examples:
 - value: NL004495445B1
   valid: false
   description: The sequence number has two digits
+- value: NL123456789B90
+  valid: false
+  description: Fails both checks (python-stdnum reference value)
 mappings:
   purview: Netherlands value added tax number
   fta: IDENTITY.VAT_NL
 links:
 - type: wikipedia
-  url: https://nl.wikipedia.org/wiki/BTW-nummer
+  url: https://nl.wikipedia.org/wiki/Btw-nummer_(Nederland)
 - type: doc
-  url: https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/btw_nederland/btw_nummer
+  url: https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/content/gebruik-vanaf-1-januari-2020-uw-nieuwe-btw-identificatienummer
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.nl.btw.html
 translations:
   nl:
     name: Btw-identificatienummer
+    doc: NL, negen cijfers, de letter B en een volgnummer van twee cijfers; sinds 2020 bevat het btw-id
+      van een eenmanszaak geen bsn meer.
+  ru:
+    name: Номер плательщика НДС Нидерландов (btw-id)
+    doc: NL, девять цифр, буква B и двузначный порядковый номер; с 2020 года номер индивидуального предпринимателя
+      не содержит его BSN.

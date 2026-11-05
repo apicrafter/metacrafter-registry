@@ -1,0 +1,33 @@
+id: nl_eori
+name: Dutch EORI number
+status: draft
+doc: EORI number issued in the Netherlands for customs procedures in the European Union, NL followed by
+  nine digits. A company that has an RSIN and files its own customs declarations composes it from NL and
+  its RSIN, padded with leading zeros to nine digits. Other businesses, sole proprietorships among them,
+  request one from Dutch Customs (Douane).
+semantic_type: eori
+country:
+- NL
+langs:
+- common
+regexp: ^NL\d{9}$
+examples:
+- value: NL810656371
+  description: Example of ORG-ID.guide
+- value: NL823807071
+  description: Built from the RSIN example of the KVK Zoeken API
+- value: NL81065637
+  valid: false
+  description: Eight digits
+links:
+- type: doc
+  url: https://www.kvk.nl/internationaal/wat-is-een-eori-nummer/
+- type: other
+  url: https://org-id.guide/list/XI-EORI
+translations:
+  nl:
+    name: EORI-nummer
+    doc: NL gevolgd door negen cijfers; een bedrijf met een RSIN gebruikt NL en zijn RSIN.
+  ru:
+    name: Номер EORI Нидерландов
+    doc: NL и девять цифр; компания с RSIN составляет номер из NL и своего RSIN.

@@ -1,8 +1,11 @@
 id: nl_onderwijsnummer
 name: Dutch education number (onderwijsnummer)
-status: draft
-doc: Onderwijsnummer, the 9-digit number of pupils and students in the Netherlands who have no citizen
-  service number (BSN). It starts with 10 and has a check similar to the BSN's.
+status: stable
+doc: Onderwijsnummer, the 9-digit number that the Dienst Uitvoering Onderwijs (DUO) gives to a pupil or
+  student in government-funded education in the Netherlands who has no citizen service number (BSN), for
+  example a pupil from abroad. It starts with 10 and uses the weights of the BSN 11-proef, but the weighted
+  sum leaves a remainder of 5 when divided by 11 instead of 0, which tells the two numbers apart. When
+  the pupil gets a BSN, the BSN replaces it in school records.
 categories:
 - pii
 - persons
@@ -14,14 +17,18 @@ langs:
 is_pii: true
 classification: identifier
 regexp: ^10\d{7}$
+checksum: nl_onderwijsnummer
 examples:
+- value: '101222331'
+  description: python-stdnum reference value
 - value: '108148380'
   description: Synthetic number with a valid check digit
-- value: '109964543'
-  description: Synthetic number with a valid check digit
+- value: '100252333'
+  valid: false
+  description: The weighted sum does not leave 5 (python-stdnum reference value)
 - value: '1081483807'
   valid: false
-  description: One character too many
+  description: Ten digits
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Onderwijsnummer
@@ -32,3 +39,9 @@ links:
 translations:
   nl:
     name: Onderwijsnummer
+    doc: Negencijferig nummer dat DUO toekent aan een leerling of student zonder burgerservicenummer;
+      begint met 10 en voldoet aan een variant van de elfproef (rest 5).
+  ru:
+    name: Учебный номер учащегося Нидерландов (onderwijsnummer)
+    doc: Девятизначный номер, который DUO присваивает учащемуся без BSN; начинается с 10, взвешенная сумма
+      по правилу 11-proef даёт остаток 5.

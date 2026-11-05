@@ -1,9 +1,10 @@
 id: nl_brin
 name: Dutch school identification number (BRIN)
-status: draft
-doc: 'BRIN number (Basisregistratie Instellingen), the code of schools and other education institutions
-  in the Netherlands: two digits and two letters, sometimes followed by two digits for a specific location
-  (vestigingsnummer).'
+status: stable
+doc: BRIN number (Basisregistratie Instellingen), the code of a school or other education institution
+  in the Netherlands, kept by the Dienst Uitvoering Onderwijs (DUO) for the Ministry of Education. It
+  has four characters, two digits and two letters, as in 21AB. Two more digits may follow for a specific
+  location of the institution (vestigingsnummer), as in 16PK00. DUO publishes the register as open data.
 categories:
 - education
 country:
@@ -14,18 +15,27 @@ is_pii: false
 classification: identifier
 regexp: ^\d{2}[A-Z]{2}(?:\d{2})?$
 examples:
-- value: 74GY72
-  description: Synthetic number in the documented format
-- value: 09FX
-  description: Synthetic number in the documented format
-- value: 74GY727
+- value: 21AB
+  description: Barlaeus Gymnasium in Amsterdam, the example of Wikidata
+- value: 16PK00
+  description: Location of the Zuider Gymnasium in Rotterdam, the example of Wikidata
+- value: 05KO
+  description: python-stdnum reference value
+- value: 12KB1
   valid: false
-  description: One character too many
+  description: Five characters
+- value: 30AJ0A
+  valid: false
+  description: The location number has a letter
+mappings:
+  wikidata: P3061
 links:
 - type: wikipedia
   url: https://nl.wikipedia.org/wiki/Basisregistratie_Instellingen
 - type: doc
   url: https://www.duo.nl/open_onderwijsdata/databestanden/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3061
 - type: other
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.nl.brin.html
 - type: other
@@ -33,3 +43,9 @@ links:
 translations:
   nl:
     name: BRIN-nummer
+    doc: Code van een onderwijsinstelling in de Basisregistratie Instellingen van DUO - twee cijfers en
+      twee letters, eventueel gevolgd door twee cijfers voor een vestiging.
+  ru:
+    name: Номер учебного заведения Нидерландов (BRIN)
+    doc: Код школы или другого учебного заведения в реестре DUO - две цифры и две буквы, иногда с двумя
+      цифрами номера филиала.

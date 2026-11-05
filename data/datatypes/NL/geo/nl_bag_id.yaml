@@ -1,0 +1,52 @@
+id: nl_bag_id
+name: Dutch BAG object identifier
+status: draft
+doc: 'Identifier of an object in the Basisregistratie Adressen en Gebouwen (BAG), the Dutch register of
+  addresses and buildings that the municipalities keep and Kadaster publishes. It has 16 digits: the 4-digit
+  code of the municipality that assigned it (nl_municipality_code, possibly of a former municipality),
+  a 2-digit object type and a 10-digit serial number. The object types are 01 verblijfsobject (unit such
+  as a dwelling or office), 02 ligplaats (mooring), 03 standplaats (pitch), 10 pand (building, nl_bag_building_id),
+  20 nummeraanduiding (address) and 30 openbare ruimte (public space such as a street; Wikidata P5207).
+  Places (woonplaatsen) have a 4-digit code instead (nl_bag_woonplaats_code).'
+categories:
+- geo
+- realestate
+country:
+- NL
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4}(?:0[123]|[123]0)\d{10}$
+examples:
+- value: '0363010000544772'
+  description: Verblijfsobject in Amsterdam, from the PDOK BAG API
+- value: '0363200000447176'
+  description: Nummeraanduiding in Amsterdam, from the PDOK BAG API
+- value: 0363300000004696
+  description: Openbare ruimte Oudezijds Voorburgwal, Amsterdam
+- value: 0363020000963270
+  description: Ligplaats in Amsterdam, from the PDOK BAG API
+- value: 0363400000004696
+  valid: false
+  description: 40 is not an object type
+- value: '036301000054477'
+  valid: false
+  description: 15 digits
+links:
+- type: doc
+  url: https://imbag.github.io/catalogus/hoofdstukken/attributen--relaties
+- type: doc
+  url: https://imbag.github.io/catalogus/hoofdstukken/domeinwaarden
+- type: other
+  url: https://api.pdok.nl/kadaster/bag/ogc/v2/
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Basisregistratie_Adressen_en_Gebouwen
+translations:
+  nl:
+    name: BAG-identificatie
+    doc: Zestiencijferige identificatie van een BAG-object - gemeentecode, objecttypecode en volgnummer.
+  ru:
+    name: Идентификатор объекта BAG (Нидерланды)
+    doc: Шестнадцатизначный идентификатор объекта в реестре адресов и зданий BAG - код муниципалитета,
+      код типа объекта и порядковый номер.

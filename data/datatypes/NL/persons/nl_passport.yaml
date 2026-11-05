@@ -1,15 +1,47 @@
 id: nl_passport
 name: Dutch passport number
 status: draft
-doc: Number of a passport issued by the Netherlands. Microsoft Purview looks for nine letters or digits.
+doc: Document number of a Dutch passport; identity cards use the same format. It has nine characters.
+  The first two are letters, the next six are letters or digits, and the last is a digit. The letter O
+  is never used; documents issued since 1 December 2019 also leave out the digit 0. Microsoft Purview
+  looks for nine letters or digits.
 semantic_type: passport
 country:
 - NL
 langs:
 - nl
-regexp: ^[A-Z0-9]{9}$
+regexp: ^[A-NP-Z]{2}[A-NP-Z0-9]{6}\d$
+examples:
+- value: SPECI2014
+  description: Number of the RvIG specimen passport and identity card of 2014
+- value: SPECI2024
+  description: Number of the RvIG specimen passport of 2024
+- value: XR1001R58
+  description: python-stdnum reference value
+- value: XR1O01R58
+  valid: false
+  description: The letter O is not used (python-stdnum reference value)
+- value: 581001RXR
+  valid: false
+  description: Starts with digits and ends with a letter (python-stdnum reference value)
 mappings:
+  google_dlp: NETHERLANDS_PASSPORT
   purview: Netherlands passport number
 links:
 - type: doc
+  url: https://www.rvig.nl/node/356
+- type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-netherlands-passport-number
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Paspoort#Nederlands_paspoort
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.nl.identiteitskaartnummer.html
+translations:
+  nl:
+    name: Paspoortnummer
+    doc: Documentnummer van een Nederlands paspoort of identiteitskaart - twee letters, zes letters of
+      cijfers en een cijfer; de letter O komt niet voor.
+  ru:
+    name: Номер паспорта Нидерландов
+    doc: Номер нидерландского паспорта или удостоверения личности - две буквы, шесть букв или цифр и цифра;
+      буква O не используется.

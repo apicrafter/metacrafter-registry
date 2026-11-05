@@ -1,0 +1,46 @@
+id: nl_iban
+name: Dutch IBAN
+status: draft
+doc: 'International Bank Account Number of a bank account in the Netherlands: 18 characters, NL, two IBAN
+  check digits, the four-letter bank code and the ten-digit account number. The bank code is always the
+  first four letters of the BIC of the bank, as in ABNA for ABN AMRO. Betaalvereniging Nederland is the
+  registration authority and publishes the list of bank codes. It is printed in groups of four, as in
+  NL91 ABNA 0417 1643 00.'
+parent: iban
+categories:
+- finances
+country:
+- NL
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '^NL\d{2} ?[A-Z]{4}(?: ?\d{4}){2} ?\d{2}$'
+checksum: iban_mod97
+examples:
+- value: NL91ABNA0417164300
+  description: Example of the SWIFT IBAN Registry
+- value: NL91 ABNA 0417 1643 00
+  description: The same IBAN in its printed form
+- value: NL91ABNA0417164301
+  valid: false
+  description: Check digits do not match
+- value: NL91ABNA041716430
+  valid: false
+  description: 17 characters
+links:
+- type: doc
+  url: https://www.betaalvereniging.nl/betalingsverkeer/giraal-betalingsverkeer/bic-sepa-transacties/
+- type: other
+  url: https://www.iban.com/structure
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/International_Bank_Account_Number
+translations:
+  nl:
+    name: Nederlandse IBAN
+    doc: Internationaal bankrekeningnummer van 18 tekens - NL, twee controlecijfers, een bankcode van
+      vier letters en een rekeningnummer van tien cijfers.
+  ru:
+    name: IBAN Нидерландов
+    doc: Международный номер банковского счёта в Нидерландах - 18 символов, NL, две контрольные цифры,
+      четырёхбуквенный код банка и десятизначный номер счёта.

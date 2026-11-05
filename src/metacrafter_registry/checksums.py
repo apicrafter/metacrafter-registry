@@ -688,6 +688,49 @@ def cz_isds(value: str) -> bool:
     return _CZ_ISDS_ALPHABET[-total % 32] == compact[6]
 
 
+def _nl_elfproef(digits: list[int]) -> int:
+    """Dutch 11-proef sum of 9 digits: weights 9 down to 2, the last digit subtracted, modulo 11."""
+    return (sum((9 - i) * d for i, d in enumerate(digits[:8])) - digits[8]) % 11
+
+
+def nl_bsn(value: str) -> bool:
+    """Dutch citizen service number (BSN): 9 digits that pass the 11-proef.
+
+    The first eight digits are weighted 9 down to 2 and the last one -1; the
+    sum must be divisible by 11. An 8-digit number is checked with a leading
+    zero (RvIG, Logisch Ontwerp BSN). 000000000 is not valid.
+    """
+    digits = _digits(value)
+    if not digits or len(digits) not in (8, 9) or not any(digits):
+        return False
+    return _nl_elfproef([0] * (9 - len(digits)) + digits) == 0
+
+
+def nl_onderwijsnummer(value: str) -> bool:
+    """Dutch education number (onderwijsnummer): 9 digits starting with 10.
+
+    It uses the weights of the BSN 11-proef, but the sum modulo 11 must be 5.
+    """
+    digits = _digits(value)
+    if not digits or len(digits) != 9 or digits[:2] != [1, 0]:
+        return False
+    return _nl_elfproef(digits) == 5
+
+
+def nl_btw(value: str) -> bool:
+    """Dutch VAT number (btw-identificatienummer): 9 digits, B and 2 digits, optionally after NL.
+
+    The sequence number after B is not 00. Numbers built from an RSIN or BSN
+    pass the 11-proef on their first nine digits; numbers issued to sole
+    traders since 2020 instead pass ISO 7064 MOD 97-10 over NL and the whole
+    number.
+    """
+    compact = _strip_prefix(value, "NL")
+    if not re.fullmatch(r"\d{9}B\d{2}", compact) or compact[10:] == "00":
+        return False
+    return nl_bsn(compact[:9]) or iso7064_mod97_10("NL" + compact)
+
+
 ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "luhn": luhn,
     "iban_mod97": iban_mod97,
@@ -730,6 +773,9 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "cz_dic": cz_dic,
     "cz_bank_account": cz_bank_account,
     "cz_isds": cz_isds,
+    "nl_bsn": nl_bsn,
+    "nl_onderwijsnummer": nl_onderwijsnummer,
+    "nl_btw": nl_btw,
 }
 
 
