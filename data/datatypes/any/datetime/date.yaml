@@ -31,6 +31,7 @@ mappings:
   - date3
   - date4
   cdm: means.measurement.date
+  presidio: DATE_TIME
   qddate: dt:date:date_9
 links:
 - type: wikipedia

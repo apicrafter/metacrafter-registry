@@ -123,6 +123,21 @@ def test_purview_tool_lists_every_mapped_record(repo_sources):
     assert len(mapped) > 200
 
 
+@pytest.mark.parametrize(
+    ("tool_id", "system", "minimum"),
+    [("presidio", "presidio", 50), ("googledlp", "google_dlp", 50)],
+)
+def test_pii_tool_lists_the_mapped_records(repo_sources, tool_id, system, minimum):
+    # The tool's supported_types is the set of records that name one of its
+    # entities in mappings.<system>: add the mapping and the list entry together.
+    mapped = sorted(
+        rec.id for rec in repo_sources.datatypes if (rec.data.get("mappings") or {}).get(system)
+    )
+    tool = next(t for t in repo_sources.tools if t.id == tool_id)
+    assert sorted(tool.data["supported_types"]) == mapped
+    assert len(mapped) > minimum
+
+
 def test_cdm_crosswalk(repo_sources):
     from metacrafter_registry import Registry
 

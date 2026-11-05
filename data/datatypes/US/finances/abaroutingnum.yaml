@@ -16,6 +16,7 @@ mappings:
   autotype: routingnumber
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/RoutingTransitNumber
   purview: ABA Routing Number
+  presidio: ABA_ROUTING_NUMBER
   fta: CHECKDIGIT.ABA
 links:
 - type: wikipedia
