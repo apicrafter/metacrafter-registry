@@ -1,0 +1,26 @@
+id: kz_rnn
+name: Kazakh taxpayer registration number (RNN)
+status: draft
+doc: Taxpayer registration number (регистрационный номер налогоплательщика, РНН) that the tax authorities
+  of Kazakhstan gave to individuals and legal entities. The individual identification number (kz_iin)
+  and the business identification number (kz_bin) replaced it on 1 January 2013, but it still appears
+  in older registers, documents and data sets.
+categories:
+- finances
+- pii
+country:
+- KZ
+langs:
+- kk
+- ru
+is_pii: true
+classification: identifier
+links:
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/Индивидуальный_идентификационный_номер
+- type: other
+  url: https://org-id.guide/list/KZ-BIN
+translations:
+  ru:
+    name: Регистрационный номер налогоплательщика (РНН)
+    doc: Регистрационный номер налогоплательщика в Казахстане, с 1 января 2013 года заменённый ИИН и БИН.

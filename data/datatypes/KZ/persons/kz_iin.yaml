@@ -1,0 +1,46 @@
+id: kz_iin
+name: Kazakh individual identification number (IIN)
+status: draft
+doc: 'Individual identification number (IIN) of Kazakhstan: the 12-digit number that a citizen or a resident
+  foreigner receives at first registration. It never changes, is printed on the identity card and serves
+  as the tax identification number of individuals and of individual entrepreneurs working on their own.
+  Numbers formed before 26 August 2013 usually start with the date of birth (YYMMDD) and a digit for century
+  and sex, but the current rules give the digits no meaning, so the number must not be parsed. The last
+  digit is a check digit, computed as for the BIN (kz_bin). The IIN replaced the taxpayer registration
+  number (RNN) and the social individual code (SIK) on 1 January 2013.'
+categories:
+- pii
+- persons
+country:
+- KZ
+langs:
+- kk
+- ru
+is_pii: true
+classification: identifier
+regexp: ^\d{12}$
+checksum: kz_iin_bin
+examples:
+- value: '500101100010'
+  description: 'Synthetic: under the old structure it would belong to a man born on 1 January 1850'
+- value: '500101100106'
+  description: Synthetic; the first weights give 10, so the check digit comes from the second weights
+- value: '500101100011'
+  valid: false
+  description: Check digit does not match
+- value: '50010110001'
+  valid: false
+  description: Eleven digits
+links:
+- type: doc
+  url: https://www.oecd.org/tax/automatic-exchange/crs-implementation-and-assistance/tax-identification-numbers/Kazakhstan-TIN.pdf
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/Индивидуальный_идентификационный_номер
+translations:
+  ru:
+    name: Индивидуальный идентификационный номер (ИИН)
+    doc: Двенадцатизначный номер физического лица в Казахстане, неизменный с момента формирования. Указан
+      в удостоверении личности и служит налоговым номером. Последняя цифра контрольная. С 1 января 2013
+      года заменил РНН и СИК.
+  kk:
+    name: Жеке сәйкестендіру нөмірі (ЖСН)

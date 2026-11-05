@@ -734,6 +734,8 @@ def test_javascript_checksums_match_python(tmp_path):
         "SK 202 274 96 19",
         "SI 5022 3054",
         "SE556012579001",
+        "950440001673",
+        "500101100106",
     ]
     values += [str(rng.randrange(10**16, 10**18)) for _ in range(300)]
     values += [str(rng.randrange(10**8, 10**15)) for _ in range(300)]
@@ -748,6 +750,7 @@ def test_javascript_checksums_match_python(tmp_path):
     values += [f"SK{rng.randrange(10**10):010d}" for _ in range(300)]
     values += [f"SI{rng.randrange(10**8):08d}" for _ in range(300)]
     values += [f"SE{rng.randrange(10**10):010d}0{rng.choice('12')}" for _ in range(300)]
+    values += [f"{rng.randrange(10**12):012d}" for _ in range(500)]
     offices = ["001", "100", "121", "888", "500"]
     values += [
         f"IT{rng.randrange(10**7):07d}{rng.choice(offices)}{rng.randrange(10)}" for _ in range(100)

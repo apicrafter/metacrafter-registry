@@ -360,6 +360,23 @@ def se_vat(value: str) -> bool:
     return bool(re.fullmatch(r"\d{10}01", compact)) and luhn(compact[:10])
 
 
+def kz_iin_bin(value: str) -> bool:
+    """Kazakh individual (IIN) or business (BIN) identification number: 12 digits.
+
+    The 12th digit is the sum of the first eleven digits weighted 1 to 11,
+    modulo 11. When that gives 10, the weights 3 4 5 6 7 8 9 10 11 1 2 are
+    used instead; a second 10 means the number is never issued.
+    """
+    digits = _digits(value)
+    if not digits or len(digits) != 12:
+        return False
+    check = sum(w * d for w, d in zip(range(1, 12), digits, strict=False)) % 11
+    if check == 10:
+        weights = (3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2)
+        check = sum(w * d for w, d in zip(weights, digits, strict=False)) % 11
+    return check != 10 and check == digits[11]
+
+
 ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "luhn": luhn,
     "iban_mod97": iban_mod97,
@@ -383,6 +400,7 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "sk_dph": sk_dph,
     "si_ddv": si_ddv,
     "se_vat": se_vat,
+    "kz_iin_bin": kz_iin_bin,
 }
 
 

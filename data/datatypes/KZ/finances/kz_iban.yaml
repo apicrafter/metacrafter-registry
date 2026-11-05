@@ -1,0 +1,39 @@
+id: kz_iban
+name: Kazakh IBAN
+status: draft
+doc: 'International Bank Account Number of a bank account in Kazakhstan. Kazakhstan uses the IBAN as the
+  national account number, called the individual identification code of the account (ИИК). It has 20 characters:
+  KZ, two IBAN check digits, a 3-digit bank code and a 13-character account number that can contain letters.'
+parent: iban
+categories:
+- finances
+country:
+- KZ
+langs:
+- kk
+- ru
+is_pii: false
+classification: identifier
+regexp: '^KZ\d{2} ?\d{3}[A-Z0-9](?: ?[A-Z0-9]{4}){3}$'
+checksum: iban_mod97
+examples:
+- value: KZ244350000012344567
+  description: Example from iban.com
+- value: KZ24 4350 0000 1234 4567
+  description: The same IBAN in its printed form
+- value: KZ244350000012344568
+  valid: false
+  description: Check digits do not match
+- value: KZ24435000001234456
+  valid: false
+  description: 19 characters
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Bank_Account_Number
+- type: other
+  url: https://www.iban.com/structure
+translations:
+  ru:
+    name: IBAN (ИИК) Казахстана
+    doc: Номер банковского счёта в Казахстане в формате IBAN (индивидуальный идентификационный код, ИИК),
+      20 символов - KZ, две контрольные цифры, трёхзначный код банка и 13 символов номера счёта.

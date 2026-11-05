@@ -1,0 +1,37 @@
+id: kz_postal_code
+name: Kazakh postal code
+status: draft
+doc: 'Postal code of Kazakhstan. The rules on postal codes approved by order No. 66 of the Minister of
+  Information and Communications of 29 July 2016 give each building its own seven-character code: a Latin
+  letter for the region or city of republican significance, two digits for the district, then a letter,
+  a digit, a letter and a digit for the building. The older six-digit codes of post offices, such as 010000
+  for Astana, remain in wide use, and both forms appear in addresses.'
+semantic_type: postindex
+country:
+- KZ
+langs:
+- common
+regexp: ^(?:\d{6}|[A-Z]\d{2}[A-Z]\d[A-Z]\d)$
+examples:
+- value: R00H5A9
+  description: Seven-character postcode, example from the USPS country listing
+- value: '010000'
+  description: Six-digit code of Astana
+- value: '050000'
+  description: Six-digit code of Almaty
+- value: R00H5AA
+  valid: false
+  description: The seventh character must be a digit
+- value: '01000'
+  valid: false
+  description: Five digits
+links:
+- type: other
+  url: https://about.usps.com/postal-bulletin/2023/pb22626/html/updt_002.htm
+- type: other
+  url: https://www.zakon.kz/redaktsiia-zakonkz/4817004-utverzhdeny-pravila-po-prisvoeniju.html
+translations:
+  ru:
+    name: Почтовый индекс Казахстана
+    doc: 'Почтовый индекс Казахстана: семизначный код здания (буква, две цифры, буква, цифра, буква, цифра)
+      по Правилам присвоения почтовых индексов 2016 года или прежний шестизначный индекс почтового отделения.'

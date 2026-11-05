@@ -19,6 +19,7 @@ from metacrafter_registry.checksums import (
     isbn13,
     it_codicefiscale,
     it_iva,
+    kz_iin_bin,
     luhn,
     no_fnr,
     pl_nip,
@@ -90,6 +91,9 @@ def test_checksum_reference_values():
     assert si_ddv("SI 5022 3054") and si_ddv("50223054") and not si_ddv("SI 50223055")
     assert se_vat("SE556012579001") and se_vat("556012-5790 01")
     assert not se_vat("SE556012579101") and not se_vat("SE556012579002")
+    assert kz_iin_bin("950440001673") and kz_iin_bin("500101100010")
+    assert kz_iin_bin("500101100106")  # the first weights give 10
+    assert not kz_iin_bin("950440001674") and not kz_iin_bin("95044000167")
 
 
 def test_lookup_and_aliases(reg):
