@@ -1,0 +1,34 @@
+id: fao_asfis_code
+name: FAO ASFIS 3-alpha species code
+status: draft
+doc: Three-letter code of a species item in the ASFIS List of Species for Fishery Statistics Purposes
+  of the Food and Agriculture Organization of the United Nations, such as COD for Atlantic cod. FAO assigns
+  the letters at random and keeps them for the species item; fishery catch, landing and trade statistics
+  use them. Without column context the code cannot be told from other three-letter codes.
+categories:
+- agriculture
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{3}$
+examples:
+- value: COD
+  description: Gadus morhua (Atlantic cod)
+- value: HER
+  description: Clupea harengus (Atlantic herring)
+- value: SKJ
+  description: Katsuwonus pelamis (skipjack tuna)
+- value: Cod
+  valid: false
+  description: FAO writes the codes in capitals
+links:
+- type: doc
+  url: https://www.fao.org/fishery/en/collection/asfis/en
+- type: doc
+  url: https://www.fao.org/fishery/static/ASFIS/ASFIS_References_2026_EN.pdf
+translations:
+  ru:
+    name: Трёхбуквенный код вида FAO ASFIS
+    doc: Трёхбуквенный код вида из списка ASFIS, который FAO ведёт для статистики рыболовства, например
+      COD для атлантической трески.

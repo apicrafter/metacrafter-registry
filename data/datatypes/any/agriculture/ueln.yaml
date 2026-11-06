@@ -1,0 +1,39 @@
+id: ueln
+name: Universal Equine Life Number (UELN)
+status: draft
+doc: Lifelong 15-character number of a horse or other equine animal, required in the EU by Implementing
+  Regulation (EU) 2021/963 and used by studbooks in other countries. It is the three-digit ISO 3166-1
+  numeric code of the country of the database, three letters or digits for the database (for some Thoroughbred
+  studbooks the country letters, as in 2500FR) and a nine-character individual number, zero-padded on
+  the left.
+categories:
+- agriculture
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{3}[0-9A-Z]{3}[0-9A-Z]{9}$
+examples:
+- value: 25000105075734X
+  description: Romane du Theil (France); Wikidata example
+- value: '276441411396304'
+  description: Bella Rose (Germany); Wikidata example
+- value: 2500FR11467509Q
+  description: French Thoroughbred database code 0FR; Wikidata value
+- value: DE 431314403702
+  valid: false
+  description: Letter country code with a space and 14 characters
+mappings:
+  wikidata: P9544
+links:
+- type: doc
+  url: https://eur-lex.europa.eu/eli/reg_impl/2021/963/oj
+- type: doc
+  url: https://www.ueln.net/ueln-presentation/rules-of-attribution-of-the-ueln
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9544
+translations:
+  ru:
+    name: Универсальный пожизненный номер лошади (UELN)
+    doc: Пожизненный 15-символьный номер лошади или другого животного семейства лошадиных — числовой код
+      страны, код базы данных и индивидуальный номер из девяти символов.

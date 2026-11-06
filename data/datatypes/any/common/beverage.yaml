@@ -5,6 +5,7 @@ doc: Name of a drink or a kind of drink, such as coffee, tea, beer or orange jui
   product catalogs or food surveys.
 categories:
 - common
+- agriculture
 langs:
 - common
 is_pii: false

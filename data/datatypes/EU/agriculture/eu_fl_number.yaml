@@ -1,0 +1,37 @@
+id: eu_fl_number
+name: EU flavouring substance number (FL No)
+status: draft
+doc: Number of a flavouring substance in the Union list of flavourings, Annex I to Regulation (EC) No
+  1334/2008 as set up by Implementing Regulation (EU) No 872/2012. It is two digits, a dot and three digits,
+  such as 01.001 for limonene.
+categories:
+- agriculture
+- chemistry
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{2}\.\d{3}$
+examples:
+- value: '01.001'
+  description: Limonene
+- value: '02.001'
+  description: 2-Methylpropan-1-ol (isobutyl alcohol)
+- value: '1.001'
+  valid: false
+  description: Leading zero missing
+mappings:
+  wikidata: P9066
+links:
+- type: doc
+  url: https://eur-lex.europa.eu/eli/reg_impl/2012/872/oj
+- type: doc
+  url: https://food.ec.europa.eu/food-safety/food-improvement-agents/flavourings/eu-lists-flavourings_en
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9066
+translations:
+  ru:
+    name: Номер ароматизатора в списке ЕС (FL No)
+    doc: Номер ароматического вещества в Союзном списке ароматизаторов ЕС (Регламент 872/2012).

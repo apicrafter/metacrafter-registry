@@ -1,0 +1,36 @@
+id: ins_number
+name: International Numbering System (INS) number of a food additive
+status: draft
+doc: Number of a food additive in the International Numbering System of the Codex Alimentarius (guideline
+  CXG 36-1989). It has three or four digits, sometimes followed by a lowercase letter and a roman numeral
+  in parentheses for a subclass, such as 160a(ii). EU E numbers (e_number) are INS numbers of the additives
+  approved in the European Union, written with the letter E.
+categories:
+- agriculture
+- chemistry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{3,4}[a-z]?(?:\([ivx]{1,4}\))?$
+examples:
+- value: '330'
+  description: Citric acid; Wikidata example
+- value: 100(ii)
+  description: Turmeric; Wikidata example
+- value: 160a(ii)
+  description: Beta-carotenes, vegetable
+- value: E330
+  valid: false
+  description: EU E number form; see e_number
+mappings:
+  wikidata: P4849
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Numbering_System_for_Food_Additives
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4849
+translations:
+  ru:
+    name: Номер пищевой добавки в Международной системе нумерации (INS)
+    doc: Номер пищевой добавки в Международной системе нумерации Кодекса Алиментариус (CXG 36-1989).

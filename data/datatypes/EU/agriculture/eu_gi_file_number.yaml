@@ -1,0 +1,40 @@
+id: eu_gi_file_number
+name: EU geographical indication file number (eAmbrosia)
+status: draft
+doc: File number of a protected designation of origin (PDO), protected geographical indication (PGI) or
+  traditional speciality guaranteed (TSG) in eAmbrosia, the EU register of geographical indications. It
+  is the scheme, the code of the country or countries (UK(NI) for Northern Ireland, several joined with
+  + or -) and a number; wine files have A or N before the number, and amendments add -AM01 and so on.
+  Spirit drinks use the PGI prefix. Each application also has an eAmbrosia ID (eambrosia_id).
+categories:
+- agriculture
+- legal
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:PDO|PGI|TSG)-[A-Z]{2}(?:\([A-Z]{2}\))?(?:[+-][A-Z]{2}(?:\([A-Z]{2}\))?)*-[AN]?\d{2,5}(?:-(?:AM\d{2}|CANCEL))?$
+examples:
+- value: PDO-FR-0131
+  description: Roquefort
+- value: PDO-FR-A1359
+  description: Champagne (wine)
+- value: PGI-IE+UK(NI)-02057
+  description: Irish Cream (spirit drink, two countries)
+- value: TSG-IT-0031
+  description: Pizza Napoletana
+- value: AOP-FR-0131
+  valid: false
+  description: French national acronym, not used in file numbers
+links:
+- type: doc
+  url: https://ec.europa.eu/agriculture/eambrosia/geographical-indications-register/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Geographical_indications_and_traditional_specialities_in_the_European_Union
+translations:
+  ru:
+    name: Номер досье географического указания ЕС (eAmbrosia)
+    doc: Номер досье защищённого наименования места происхождения (PDO), географического указания (PGI)
+      или гарантированного традиционного продукта (TSG) в реестре ЕС eAmbrosia.

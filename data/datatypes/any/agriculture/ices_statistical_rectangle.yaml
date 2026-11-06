@@ -1,0 +1,35 @@
+id: ices_statistical_rectangle
+name: ICES statistical rectangle
+status: draft
+doc: Code of a statistical rectangle of the International Council for the Exploration of the Sea (ICES),
+  a grid of 30 minutes of latitude by 1 degree of longitude used to report catches and surveys in the
+  North-East Atlantic. Two digits number the row from 01 at 36°N northwards; a letter and a digit name
+  the column from A0, without A4 to A9 and without the letter I, up to M8.
+categories:
+- agriculture
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:0[1-9]|[1-9]\d)(?:A[0-3]|[B-HJ-L]\d|M[0-8])$
+examples:
+- value: 37F3
+  description: Example of the ICES rectangles page
+- value: 46F2
+  description: Northern North Sea
+- value: 31F1
+  description: Southern North Sea
+- value: 37I2
+  valid: false
+  description: The letter I is not used
+links:
+- type: doc
+  url: https://www.ices.dk/data/maps/Pages/ICES-statistical-rectangles.aspx
+- type: doc
+  url: https://vocab.ices.dk/?ref=60abda9d-bc5a-4b45-86fd-e4e1c47403c4
+translations:
+  ru:
+    name: Статистический прямоугольник ИКЕС
+    doc: Код статистического прямоугольника Международного совета по исследованию моря (ИКЕС) размером
+      30 минут широты на 1 градус долготы для отчётности об уловах в Северо-Восточной Атлантике.

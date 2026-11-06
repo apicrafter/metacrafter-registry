@@ -1,0 +1,36 @@
+id: fao_wiews_instcode
+name: FAO WIEWS institute code (INSTCODE)
+status: draft
+doc: Code of an institute (genebank, research station, herbarium) in WIEWS, the World Information and
+  Early Warning System on plant genetic resources of the Food and Agriculture Organization of the United
+  Nations. It is the ISO 3166-1 alpha-3 code of the institute's country and a number, as in COL001, and
+  is used as INSTCODE and DONORCODE in Multi-Crop Passport Descriptors (MCPD) of genebank accessions.
+  Codes with obsolete country codes stay in use.
+categories:
+- agriculture
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{3}\d{3,4}$
+examples:
+- value: COL001
+  description: Example in the MCPD v2.1 descriptors
+- value: AFG001
+  description: Plant Genetic Resources Unit, Ministry of Agriculture, Afghanistan
+- value: AGO013
+  description: Luanda Herbarium, Universidade Agostinho Neto, Angola
+- value: DE146
+  valid: false
+  description: Two-letter country code
+links:
+- type: doc
+  url: https://www.fao.org/wiews/data/organizations/en/
+- type: doc
+  url: https://cgspace.cgiar.org/server/api/core/bitstreams/7947d48c-5cf1-4164-8c61-fa276d658463/content
+translations:
+  ru:
+    name: Код учреждения FAO WIEWS (INSTCODE)
+    doc: Код учреждения (генбанка, опытной станции, гербария) в системе FAO WIEWS — трёхбуквенный код
+      страны ISO 3166-1 и номер.

@@ -1,0 +1,32 @@
+id: nova_food_group
+name: NOVA food processing group
+status: draft
+doc: 'Group of a food in the NOVA classification by extent and purpose of industrial processing: 1 unprocessed
+  or minimally processed foods, 2 processed culinary ingredients, 3 processed foods, 4 ultra-processed
+  foods. Used in nutrition research and product datasets such as Open Food Facts (nova_group); without
+  that context a single digit is ambiguous.'
+categories:
+- agriculture
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-4]$
+examples:
+- value: '1'
+  description: Unprocessed or minimally processed foods
+- value: '4'
+  description: Ultra-processed foods
+- value: '5'
+  valid: false
+  description: NOVA has four groups
+links:
+- type: doc
+  url: https://www.fao.org/3/ca5644en/ca5644en.pdf
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Nova_classification
+translations:
+  ru:
+    name: Группа NOVA по степени переработки пищевого продукта
+    doc: 'Группа продукта в классификации NOVA по степени промышленной переработки: 1 — необработанные
+      или минимально обработанные продукты, 4 — ультраобработанные.'

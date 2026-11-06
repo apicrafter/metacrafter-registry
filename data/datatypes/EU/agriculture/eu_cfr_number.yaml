@@ -1,0 +1,37 @@
+id: eu_cfr_number
+name: EU fishing fleet register (CFR) number
+status: draft
+doc: Number of a fishing vessel in the Union fishing fleet register, assigned by the Member State under
+  Implementing Regulation (EU) 2017/218. It is the ISO 3166-1 alpha-3 code of the Member State followed
+  by nine letters or digits, padded with zeros on the left. A vessel keeps its number for life and the
+  number is never given to another vessel.
+categories:
+- agriculture
+- transport
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{3}[0-9A-Z]{9}$
+examples:
+- value: ESP000026518
+  description: Spanish vessel ADVIENTO UNO; list of the Spanish fisheries ministry
+- value: IRL000I14607
+  description: Irish vessel ALANNAH RILEY; list of the Spanish fisheries ministry
+- value: PRT000020436
+  description: Portuguese vessel CIUDAD DE HUELVA; list of the Spanish fisheries ministry
+- value: ESP26518
+  valid: false
+  description: Series not padded to nine characters
+links:
+- type: doc
+  url: https://eur-lex.europa.eu/eli/reg_impl/2017/218/oj
+- type: doc
+  url: https://vessel-register.oceans-and-fisheries.ec.europa.eu/
+translations:
+  ru:
+    name: Номер рыболовного судна в реестре флота ЕС (CFR)
+    doc: Номер рыболовного судна в реестре флота Европейского союза (Регламент 2017/218) — трёхбуквенный
+      код страны ISO 3166-1 и девять букв или цифр.

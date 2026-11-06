@@ -1,0 +1,32 @@
+id: au_nlis_id
+name: Australian NLIS device number (NLIS ID)
+status: draft
+doc: Sixteen-character number printed on an ear tag or other device of the Australian National Livestock
+  Identification System (NLIS). Characters 1-8 are the PIC of the property the device was issued to (au_pic),
+  9 the manufacturer code, 10 the device type, 11 the year of manufacture (without I and O) and 12-16
+  a serial number whose first character is a digit or a letter other than I and O and the rest digits.
+categories:
+- agriculture
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Z]{9}[A-Z][A-HJ-NP-Z][0-9A-HJ-NP-Z]\d{4}$
+examples:
+- value: 3ABCD123XBD00235
+  description: Illustration from the ISC NLIS standard for RFID devices
+- value: TEST1234ABC00001
+  description: Test number printed on sample tags in the ISC NLIS standard
+- value: 3ABCD123XBO00235
+  valid: false
+  description: The year code O is not used
+links:
+- type: doc
+  url: https://www.integritysystems.com.au/globalassets/isc/pdf-files/rfid-standards.pdf
+translations:
+  ru:
+    name: Номер устройства NLIS (Австралия)
+    doc: Шестнадцатисимвольный номер на бирке Национальной системы идентификации скота Австралии (NLIS)
+      — PIC хозяйства, код производителя, тип устройства, год и серийный номер.

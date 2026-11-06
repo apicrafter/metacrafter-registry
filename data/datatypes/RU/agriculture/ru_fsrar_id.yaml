@@ -1,0 +1,40 @@
+id: ru_fsrar_id
+name: Russian EGAIS organization identifier (FSRAR ID)
+status: draft
+doc: Identifier of an organization or a place of business in EGAIS, the Russian state information system
+  for accounting of alcohol production and turnover run by Rosalkogoltabakkontrol. Producers, importers,
+  wholesalers and shops get it when they connect to EGAIS; it appears as FSRAR_ID and ClientRegId in EGAIS
+  documents. Current identifiers have 12 digits; the documentation also shows shorter legacy identifiers,
+  which the regexp does not accept.
+categories:
+- companies
+- agriculture
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^\d{12}$
+examples:
+- value: 030000255595
+  description: Shipper in an example of the EGAIS UTM documentation 4.2
+- value: '010000004120'
+  description: Beer producer in an example of the EGAIS UTM documentation 4.2
+- value: '050000005053'
+  description: Foreign wine producer in an example of the EGAIS UTM documentation 4.2
+- value: 03000025559
+  valid: false
+  description: Eleven digits
+links:
+- type: doc
+  url: https://web.archive.org/web/20180516194712/http://egais.ru/files/format_tara6.pdf
+- type: doc
+  url: https://web.archive.org/web/20211229004148/http://egais.ru/files/distr/documentation%204.2%20(01.11.2021).pdf
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/ЕГАИС
+translations:
+  ru:
+    name: Идентификатор организации в ЕГАИС (ФСРАР ID)
+    doc: Идентификатор организации или обособленного подразделения в Единой государственной автоматизированной
+      информационной системе учёта объёма производства и оборота алкогольной продукции (ЕГАИС).

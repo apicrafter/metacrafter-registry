@@ -1,9 +1,13 @@
 id: e_number
 name: E number (food additive)
 status: draft
-doc: 'Code of a food additive approved in the European Union: the letter E and three or four digits, sometimes
-  with a letter or a roman numeral for a subclass, such as E330 for citric acid.'
+doc: 'Code of a food additive approved in the European Union: the letter E and the additive''s INS number
+  (ins_number), three or four digits, sometimes with a letter or a roman numeral in parentheses for a
+  subclass, such as E330 for citric acid. EU regulations print a space after E and before the parentheses
+  (E 101 (i)); labels and data usually omit them.'
+parent: ins_number
 categories:
+- agriculture
 - chemistry
 - industry
 country:
@@ -12,7 +16,7 @@ langs:
 - common
 is_pii: false
 classification: categorical
-regexp: ^E\d{3,4}[a-z]?(?:\([ivx]+\))?$
+regexp: '^E ?\d{3,4}(?: ?[a-z])?(?: ?\([ivx]{1,4}\))?$'
 examples:
 - value: E307a
   description: RRR-alpha-tocopherol
@@ -20,6 +24,14 @@ examples:
   description: monosodium L-glutamate
 - value: E100
   description: curcumin
+- value: E 101 (i)
+  description: Riboflavin, as printed in Regulation (EU) No 231/2012
+- value: '330'
+  valid: false
+  description: INS number without the letter E; see ins_number
+- value: E14XX
+  valid: false
+  description: Group label for modified starches, not the number of one additive
 mappings:
   wikidata: P628
 links:
@@ -27,3 +39,12 @@ links:
   url: https://en.wikipedia.org/wiki/E_number
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P628
+- type: doc
+  url: https://food.ec.europa.eu/food-safety/food-improvement-agents/additives/database_en
+- type: doc
+  url: https://eur-lex.europa.eu/eli/reg/2012/231/oj
+translations:
+  ru:
+    name: E-номер пищевой добавки
+    doc: Код пищевой добавки, разрешённой в Европейском союзе, — буква E и номер добавки по Международной
+      системе нумерации (INS), например E330 для лимонной кислоты.

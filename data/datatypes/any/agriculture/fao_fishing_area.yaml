@@ -1,0 +1,38 @@
+id: fao_fishing_area
+name: FAO major fishing area code
+status: draft
+doc: Code of an FAO major fishing area for statistical purposes, defined by the Coordinating Working Party
+  on Fishery Statistics, optionally followed by subarea, division and subdivision parts separated by dots,
+  as in 27.4.a for the northern North Sea. The two-digit major area is one of 8 inland areas (01 to 08)
+  and 19 marine areas (18, 21, 27 ... 88). ICES writes NAFO divisions in lower case, FAO in upper case;
+  older EU texts use roman numerals (IVa), which the regexp does not accept.
+categories:
+- agriculture
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:0[1-8]|18|2[17]|3[147]|4[178]|5[178]|6[17]|7[17]|8[178])(?:\.(?:\d{1,2}|[A-Za-z])){0,4}$
+examples:
+- value: '27'
+  description: Atlantic, Northeast
+- value: 27.4.a
+  description: Northern North Sea
+- value: 37.1.1
+  description: Balearic
+- value: 27.3.d.28.2
+  description: East of Gotland, open sea
+- value: 27.IV.a
+  valid: false
+  description: Roman-numeral ICES notation
+links:
+- type: doc
+  url: https://www.fao.org/cwp-on-fishery-statistics/handbook/general-concepts/main-water-areas/en/
+- type: doc
+  url: https://github.com/fdiwg/fdi-codelists/blob/main/global/cwp/cl_fao_areas.csv
+translations:
+  ru:
+    name: Код района промысла FAO
+    doc: Код основного района промысла FAO для статистики рыболовства, с необязательными подрайонами и
+      участками через точку, например 27.4.a.

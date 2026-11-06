@@ -1,0 +1,44 @@
+id: ru_pesticide_registration_number
+name: Russian state registration number of a pesticide or agrochemical
+status: draft
+doc: Number under which the Russian Ministry of Agriculture registers a pesticide or agrochemical in the
+  State Catalogue of pesticides and agrochemicals permitted for use. No normative text describes its structure.
+  In the Ministry's open data it has four parts separated by hyphens. They are a three- or four-digit
+  code of the registrant (co-registrants in parentheses), a two-digit code that matches the product class
+  (02 for fungicides, 03 for herbicides), a sequence number and the digit 1 or, from 2022, 0. A suffix
+  /NNN sometimes follows. Numbers issued before 2013 by Rosselkhoznadzor have another form, which the
+  regexp does not accept.
+categories:
+- agriculture
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^\d{3,4}(?:\(\d{3,4}(?:, ?\d{3,4})*\))?-\d{2}(?:\(\d{2}\))?-\d{3,4}-[01](?:/\d{2,3})?$
+examples:
+- value: 164-02-453-1
+  description: Fungicide Chistoflor, registered 24.11.2014
+- value: 021-02-4515-0
+  description: Fungicide Rakurs of Avgust, registered 11.04.2024
+- value: 184(026)-03-2457-1
+  description: Herbicide Prometrin, registrant with a co-registrant
+- value: 188-15-9650-1
+  description: Liquid nitrogen fertiliser (agrochemical), registered 24.10.2025
+- value: 164-02-453
+  valid: false
+  description: The last part is missing
+links:
+- type: doc
+  url: http://opendata.mcx.ru/opendata/7708075454-pestitsidy
+- type: doc
+  url: http://opendata.mcx.ru/opendata/7708075454-agrokhimikaty
+translations:
+  ru:
+    name: Номер государственной регистрации пестицида или агрохимиката
+    doc: Номер государственной регистрации пестицида или агрохимиката в Государственном каталоге пестицидов
+      и агрохимикатов, разрешённых к применению на территории Российской Федерации (Минсельхоз России).
+      Структура номера нормативно не описана; в открытых данных Минсельхоза номер состоит из четырёх частей
+      через дефис.

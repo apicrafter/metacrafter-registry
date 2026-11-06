@@ -1,0 +1,40 @@
+id: usda_ndb_number
+name: USDA Nutrient Databank number (NDB number)
+status: draft
+doc: Five-digit number of a food in the USDA National Nutrient Database for Standard Reference (SR, now
+  SR Legacy in FoodData Central), such as 09003 for raw apples. Files that store it as a number lose the
+  leading zero, so four-digit values occur. FoodData Central gives each SR Legacy food its own FDC ID
+  (usda_fdc_id) and keeps the NDB number as an attribute.
+categories:
+- agriculture
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4,5}$
+examples:
+- value: 09003
+  description: Apples, raw, with skin; FDC ID 171688
+- value: '15167'
+  description: Oyster; Wikidata example
+- value: '9003'
+  description: The same apple record with the leading zero lost, as in the FoodData Central API
+- value: '81100500'
+  valid: false
+  description: Eight-digit FNDDS food code
+mappings:
+  wikidata: P1978
+links:
+- type: doc
+  url: https://www.ars.usda.gov/ARSUserFiles/80400525/Data/SR-Legacy/SR-Legacy_Doc.pdf
+- type: doc
+  url: https://fdc.nal.usda.gov/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1978
+translations:
+  ru:
+    name: Номер продукта в базе питательных веществ USDA (NDB number)
+    doc: Пятизначный номер продукта в Национальной базе данных питательных веществ Минсельхоза США (SR
+      Legacy).

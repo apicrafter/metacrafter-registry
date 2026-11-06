@@ -1,0 +1,39 @@
+id: usda_plants_symbol
+name: USDA PLANTS symbol
+status: draft
+doc: Symbol of a plant taxon in the PLANTS Database of the USDA Natural Resources Conservation Service.
+  A species symbol joins the first two letters of the genus and of the specific epithet (PSME for Pseudotsuga
+  menziesii), a genus symbol uses five letters (JUNCU for Juncus), and a number is appended when the letters
+  are already taken (ALST11). The symbols are used in US vegetation surveys, soil and range data.
+categories:
+- agriculture
+- science
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{3,5}\d{0,3}$
+examples:
+- value: PSME
+  description: Pseudotsuga menziesii (Douglas fir); Wikidata example
+- value: JUNCU
+  description: Genus Juncus; Wikidata example
+- value: ALST11
+  description: Alyxia stellata; Wikidata example
+- value: psme
+  valid: false
+  description: Lower case
+mappings:
+  wikidata: P1772
+links:
+- type: doc
+  url: https://plants.usda.gov/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1772
+translations:
+  ru:
+    name: Символ растения в базе USDA PLANTS
+    doc: Символ таксона растения в базе данных PLANTS Службы охраны природных ресурсов Минсельхоза США
+      (USDA NRCS).

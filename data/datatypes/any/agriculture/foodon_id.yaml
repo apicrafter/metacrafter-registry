@@ -1,0 +1,35 @@
+id: foodon_id
+name: FoodOn ontology ID
+status: draft
+doc: 'Identifier of a term in FoodOn, an open OBO Foundry ontology of food products, food sources and
+  food processing. It is FOODON: and eight digits; OBO PURLs write FOODON_ instead.'
+categories:
+- agriculture
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^FOODON[:_]\d{8}$
+examples:
+- value: FOODON:03310788
+  description: apple; Wikidata example
+- value: FOODON_03301355
+  description: almond, underscore form; Wikidata example
+- value: FOODON:3310788
+  valid: false
+  description: Not padded to eight digits
+mappings:
+  wikidata: P6767
+  bioregistry: foodon
+links:
+- type: doc
+  url: https://foodon.org/
+- type: other
+  url: https://bioregistry.io/registry/foodon
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6767
+translations:
+  ru:
+    name: Идентификатор онтологии FoodOn
+    doc: Идентификатор термина онтологии пищевых продуктов FoodOn (OBO Foundry).

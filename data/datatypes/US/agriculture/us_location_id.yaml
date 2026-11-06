@@ -1,0 +1,32 @@
+id: us_location_id
+name: US animal location identifier (LID)
+status: draft
+doc: Identifier that a US State or Tribal animal health official assigns to a location where animals are
+  kept or handled, as an alternative to the national premises identification number (us_premises_id) in
+  the USDA APHIS animal disease traceability system. It starts with the State postal abbreviation or the
+  Tribal code and has six or eight letters or digits in all.
+categories:
+- agriculture
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}[0-9A-Z]{4}(?:[0-9A-Z]{2})?$
+examples:
+- value: MN4321
+  description: Six-character illustration from the APHIS ADT General Standards
+- value: CA654321
+  description: Eight-character illustration from the APHIS ADT General Standards
+- value: MN43210
+  valid: false
+  description: Seven characters
+links:
+- type: doc
+  url: https://www.aphis.usda.gov/sites/default/files/adt-general-standards.pdf
+translations:
+  ru:
+    name: Идентификатор места содержания животных в США (LID)
+    doc: Идентификатор места содержания животных, который присваивает ветеринарная служба штата или племени
+      в системе прослеживаемости USDA APHIS.

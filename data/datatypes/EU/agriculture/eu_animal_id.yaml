@@ -1,0 +1,39 @@
+id: eu_animal_id
+name: EU identification code of kept bovine, ovine, caprine, camelid and cervid animals
+status: draft
+doc: Identification code that ear tags, boluses and other means of identification carry for kept cattle,
+  sheep, goats, camelids and deer in the European Union, under Article 12 of Implementing Regulation (EU)
+  2021/520. It is the country code of the Member State where the animal was first identified, as ISO 3166-1
+  alpha-2 letters (EL for Greece) or three ISO numeric digits, followed by an individual code of at most
+  12 digits. Electronic identifiers use the numeric country code. Tags often print the digits in groups.
+categories:
+- agriculture
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[A-Z]{2}|\d{3}) ?(?:\d ?){0,11}\d$
+examples:
+- value: UK 055555500001
+  description: Illustration of a UK sheep tag number for the first lamb of flock 555555, from ScotEID
+- value: UK 0 244220 00100
+  description: Illustration of a UK sheep tag number from a Defra leaflet
+- value: UK555555200001
+  description: Illustration of a UK cattle tag number from ScotEID
+- value: UK 0555555000010
+  valid: false
+  description: The individual code has 13 digits
+links:
+- type: doc
+  url: https://eur-lex.europa.eu/eli/reg_impl/2021/520/oj
+- type: doc
+  url: https://eur-lex.europa.eu/eli/reg_del/2019/2035/oj
+- type: doc
+  url: https://www.scoteid.com/Public/Documents/Bovine_EID_numbering.pdf
+translations:
+  ru:
+    name: Идентификационный код сельскохозяйственного животного в ЕС
+    doc: Идентификационный код крупного и мелкого рогатого скота, верблюдовых и оленей в ЕС (статья 12
+      Регламента 2021/520) — код страны и индивидуальный номер не длиннее 12 цифр.

@@ -1,0 +1,36 @@
+id: eu_rasff_reference
+name: EU RASFF notification reference
+status: draft
+doc: Reference of a notification in the EU Rapid Alert System for Food and Feed (RASFF), generated when
+  the Commission validates the notification and shown in RASFF Window. It is the year, a dot and a sequence
+  number padded to four digits, which grows to five digits after 9999 notifications in a year.
+categories:
+- agriculture
+- government
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^20\d{2}\.\d{4,5}$
+examples:
+- value: '2020.0001'
+  description: Aflatoxins in dried figs from Turkey
+- value: '2025.10001'
+  description: Suspected glass shards in preserved green beans from Belgium
+- value: '2026.9858'
+  description: Salmonella Kentucky in organic sunflower seed cakes from Bulgaria
+- value: 2024/1234
+  valid: false
+  description: Slash instead of dot
+links:
+- type: doc
+  url: https://webgate.ec.europa.eu/rasff-window/screen/search
+- type: doc
+  url: https://food.ec.europa.eu/food-safety/rasff_en
+translations:
+  ru:
+    name: Номер уведомления RASFF
+    doc: Номер уведомления в системе быстрого оповещения ЕС о пищевых продуктах и кормах (RASFF) — год,
+      точка и порядковый номер.

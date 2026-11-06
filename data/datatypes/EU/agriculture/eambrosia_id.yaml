@@ -1,0 +1,39 @@
+id: eambrosia_id
+name: eAmbrosia application ID
+status: draft
+doc: Identifier of an application (registration or amendment of a geographical indication or traditional
+  speciality) in eAmbrosia, the EU register of geographical indications, used in its web addresses. It
+  is EUGI and eleven digits. A product keeps its file number (eu_gi_file_number), while each amendment
+  gets a new eAmbrosia ID.
+categories:
+- agriculture
+- legal
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^EUGI\d{11}$
+examples:
+- value: EUGI00000012914
+  description: Roquefort, file PDO-FR-0131
+- value: EUGI00000013535
+  description: Ajo Morado de Las Pedroñeras, file PGI-ES-0228; Wikidata example
+- value: EUGI00000013043
+  description: Lübecker Marzipan; Wikidata example
+- value: PDO-FR-0131
+  valid: false
+  description: File number, not an eAmbrosia ID
+mappings:
+  wikidata: P9854
+links:
+- type: doc
+  url: https://ec.europa.eu/agriculture/eambrosia/geographical-indications-register/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9854
+translations:
+  ru:
+    name: Идентификатор заявки в eAmbrosia
+    doc: Идентификатор заявки (регистрации или изменения) в реестре географических указаний ЕС eAmbrosia
+      — EUGI и одиннадцать цифр.

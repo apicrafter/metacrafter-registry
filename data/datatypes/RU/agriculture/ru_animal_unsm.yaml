@@ -1,0 +1,37 @@
+id: ru_animal_unsm
+name: Russian unique number of an animal identification device (UNSM)
+status: draft
+doc: Federal number of the identification device (ear tag, bolus, chip) of a farm animal registered in
+  the Rosselkhoznadzor system Horriot under Government Decree No. 550 of 05.04.2023. As published by Rosselkhoznadzor
+  it has 11 characters, RU, the digit 1 for individual or 2 for group identification, seven lowercase
+  Latin letters or digits (digits only for numbers issued before May 2021) and a check digit computed
+  over the first ten characters. Electronic devices may carry a 15-digit numeric form starting with 643,
+  which this record does not cover.
+categories:
+- agriculture
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^RU[12][0-9a-z]{7}\d$
+examples:
+- value: RU1b3161006
+  description: Worked example of the check digit in a Rosselkhoznadzor news item of 16.04.2024
+- value: RU1a013f239
+  description: Example from a Rosselkhoznadzor news item of 28.04.2021
+- value: RU3a013f239
+  valid: false
+  description: The third character must be 1 or 2
+links:
+- type: doc
+  url: https://vetrf.ru/vetrf/print/news/48545.html
+- type: doc
+  url: https://vetrf.ru/vetrf/print/news/41414.html
+translations:
+  ru:
+    name: Уникальный номер средства маркирования животного (УНСМ)
+    doc: Федеральный уникальный номер средства маркирования сельскохозяйственного животного в ФГИС «ВетИС»
+      (компонент «Хорриот») — 11 символов, RU, признак индивидуальной или групповой идентификации, семь
+      символов и контрольная цифра.
