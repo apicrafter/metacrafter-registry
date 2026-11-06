@@ -1,0 +1,38 @@
+id: ru_pravo_eo_number
+name: Russian official publication number of a legal act (pravo.gov.ru)
+status: draft
+doc: 'Number that the Official Internet Portal of Legal Information (publication.pravo.gov.ru) assigns
+  to a legal act when it publishes it. Federal acts, acts of the regions and some court decisions get
+  one. The number has 16 digits: two digits of the region (00 for federal acts), two more digits, the
+  publication date as YYYYMMDD and a four-digit sequence number within the day. The portal calls it eoNumber
+  in its API. In 1.7 million acts published from November 2011 to October 2026 the date inside the number
+  is always the publication date. The meaning of the third and fourth digits (00 to 03) was not checked.'
+categories:
+- legal
+- government
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4}20\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])\d{4}$
+examples:
+- value: 0001201307080024
+  description: Federal law of 2 July 2013 No. 185-FZ, published on 8 July 2013
+- value: 0001202610230019
+  description: Decree of the President of 23 October 2026 No. 778
+- value: '6100202610220016'
+  description: Regional law of the Rostov region of 22 October 2026 No. 523-ZS
+- value: 0001201313080024
+  valid: false
+  description: Month 13 in the publication date
+- value: 000120130708002
+  valid: false
+  description: 15 digits
+translations:
+  ru:
+    name: Номер электронного опубликования правового акта
+    doc: 'Номер, который Официальный интернет-портал правовой информации (publication.pravo.gov.ru) присваивает
+      правовому акту при опубликовании. Состоит из 16 цифр: код региона (00 для федеральных актов), ещё
+      две цифры, дата опубликования ГГГГММДД и порядковый номер за день.'

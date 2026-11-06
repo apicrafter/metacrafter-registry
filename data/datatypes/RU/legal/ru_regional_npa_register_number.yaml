@@ -1,0 +1,37 @@
+id: ru_regional_npa_register_number
+name: Russian federal register number of a regional legal act
+status: draft
+doc: 'State registration number of a legal act of a Russian region in the federal register of regulatory
+  legal acts of the regions, kept by the Ministry of Justice and published at pravo-search.minjust.ru.
+  It is RU, a two-digit region code, three digits (000 in almost all numbers), a four-digit year and a
+  five-digit sequence number. The region code is the register''s own: for most regions it equals the constitutional
+  number of the region, but not for regions formed after 2004 (Perm Krai 90, Kamchatka Krai 91, Zabaykalsky
+  Krai 92, Crimea 93, Sevastopol 94) and for Bashkortostan (03), Buryatia (04) and the Altai Republic
+  (02). Some sources write the prefix in lower case.'
+categories:
+- legal
+- government
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^RU\d{5}(?:19|20)\d{2}\d{5}$
+examples:
+- value: RU02000199200008
+  description: Act of the Government of the Altai Republic of 1992
+- value: RU77000199200132
+  description: Act of the Government of Moscow of 1992
+- value: Р199602483
+  valid: false
+  description: Number in the Ministry of Justice bank of federal acts, another register
+- value: RU0200019920008
+  valid: false
+  description: Sequence number has four digits
+translations:
+  ru:
+    name: Номер государственной регистрации в федеральном регистре НПА субъектов РФ
+    doc: Номер государственной регистрации нормативного правового акта субъекта Российской Федерации в
+      федеральном регистре, который ведёт Минюст России. Состоит из RU, кода региона по кодировке регистра,
+      трёх цифр, года и пятизначного порядкового номера.

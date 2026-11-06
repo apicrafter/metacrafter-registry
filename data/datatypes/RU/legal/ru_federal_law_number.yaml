@@ -1,0 +1,31 @@
+id: ru_federal_law_number
+name: Russian federal law number
+status: draft
+doc: Number of a Russian federal law (suffix ФЗ) or federal constitutional law (suffix ФКЗ), for example
+  184-ФЗ. Numbering restarts every year, so a number identifies a law only together with the signing date.
+  Legal texts usually write it after the sign №.
+categories:
+- legal
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^\d{1,4}-ФК?З$
+examples:
+- value: 185-ФЗ
+  description: Federal law of 2 July 2013 on amendments related to the law on education
+- value: 312-ФЗ
+  description: Federal law passed from State Duma bill 1112335-7
+- value: 3-ФКЗ
+  description: Federal constitutional law
+- value: 1271-р
+  valid: false
+  description: Number of an order of the Government
+translations:
+  ru:
+    name: Номер федерального закона
+    doc: Номер федерального закона (ФЗ) или федерального конституционного закона (ФКЗ). Нумерация начинается
+      заново каждый год, поэтому закон однозначно определяют номер и дата подписания.
