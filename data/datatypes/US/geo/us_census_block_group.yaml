@@ -1,0 +1,32 @@
+id: us_census_block_group
+name: US census block group GEOID
+status: draft
+doc: Identifier of a census block group, a cluster of census blocks inside one tract, generally with 600
+  to 3,000 people. The 12-digit GEOID is the 11-digit tract GEOID followed by the block group number,
+  which is the first digit of the block numbers in the group.
+parent: us_census_geoid
+categories:
+- geo
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^\d{12}$
+examples:
+- value: '482012231001'
+  description: Block Group 1, Census Tract 2231, Harris County, TX
+- value: '170830104012'
+  description: Block Group 2, Census Tract 104.01, Jersey County, IL
+- value: '48201223100'
+  valid: false
+  description: 11 digits, a tract GEOID
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Census_block_group
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q5058963
+- type: doc
+  url: https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html

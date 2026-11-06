@@ -1,0 +1,40 @@
+id: us_census_tract
+name: US census tract
+status: draft
+doc: Census tract, a small and fairly permanent statistical subdivision of a US county, usually with 1,200
+  to 8,000 people. The tract number has a basic number of up to four digits and an optional two-digit
+  suffix, for example 1457.02. Files store it as a 6-digit code with leading zeros and an implied decimal
+  point (TRACTCE, 145702), unique within a county, or as an 11-digit GEOID with the state and county codes
+  in front. Some ranges are reserved for water and special land use areas.
+categories:
+- geo
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:\d{6}|\d{11}|\d{1,4}(?:\.\d{2})?)$
+examples:
+- value: '223100'
+  description: 6-digit code of Census Tract 2231
+- value: '2231'
+  description: tract number as displayed
+- value: '1457.02'
+  description: tract number with a suffix
+- value: '48201223100'
+  description: Census Tract 2231, Harris County, TX, as a GEOID
+- value: '14570'
+  valid: false
+  description: five digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Census_tract
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q107738887
+- type: doc
+  url: https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2023/TGRSHP2023_TechDoc.pdf
+translations:
+  ru:
+    name: Переписной участок США (census tract)

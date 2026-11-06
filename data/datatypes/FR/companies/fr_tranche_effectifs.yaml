@@ -1,0 +1,38 @@
+id: fr_tranche_effectifs
+name: French employee headcount band (Sirene tranche d'effectifs)
+status: draft
+doc: Two-character code of the band of salaried employees of a legal unit or establishment in the Sirene
+  register (trancheEffectifsUniteLegale, trancheEffectifsEtablissement) - NN for units without employees,
+  00 for no employee, then bands from 01 (1 or 2) to 53 (10 000 and more). Older INSEE files used slightly
+  different labels for 00 and 52.
+categories:
+- companies
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^(?:NN|0[0-3]|[1-4][12]|5[1-3])$
+examples:
+- value: NN
+  description: Unités non employeuses
+- value: '00'
+  description: 0 salarié
+- value: '12'
+  description: 20 à 49 salariés
+- value: '53'
+  description: 10 000 salariés et plus
+- value: '13'
+  valid: false
+  description: not a band code
+links:
+- type: other
+  url: https://github.com/etalab/sirene_as_api
+- type: doc
+  url: https://www.data.gouv.fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret
+translations:
+  fr:
+    name: Tranche d'effectifs salariés
+  ru:
+    name: Диапазон численности работников (Sirene)

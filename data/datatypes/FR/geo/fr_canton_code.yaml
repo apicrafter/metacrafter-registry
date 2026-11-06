@@ -1,0 +1,43 @@
+id: fr_canton_code
+name: French canton code (INSEE)
+status: draft
+doc: Code of a canton in the INSEE Official Geographic Code (COG) - the department code followed by two
+  digits, 4 characters in metropolitan France and 5 in overseas departments. The COG also lists pseudo-cantons
+  (canton-ville) that group whole communes, numbered from 99 downwards, and fictitious cantons for communes
+  nouvelles, numbered from 89 downwards.
+categories:
+- geo
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^(?:\d{2}|2[AB]|97[1-6])\d{2}$
+examples:
+- value: '0101'
+  description: Ambérieu-en-Bugey
+- value: 2A01
+  description: Ajaccio-1
+- value: '97101'
+  description: Les Abymes-1
+- value: '7599'
+  description: Paris (pseudo-canton)
+- value: 01-01
+  valid: false
+  description: separator is not used
+mappings:
+  wikidata: P2506
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2506
+- type: doc
+  url: https://www.insee.fr/fr/metadonnees/definition/c1725
+- type: doc
+  url: https://www.insee.fr/fr/information/8740222
+translations:
+  fr:
+    name: Code canton
+  ru:
+    name: Код кантона Франции (INSEE)

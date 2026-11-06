@@ -1,0 +1,41 @@
+id: fr_circonscription_legislative_code
+name: French legislative constituency code
+status: draft
+doc: Code of one of the 577 constituencies that elect the National Assembly - the department code followed
+  by a two-digit number, as in the official election results of the Ministry of the Interior. That file
+  writes department codes without a leading zero (101 for Ain 1re); other publishers pad them (0101).
+  ZX is used for Saint-Martin and Saint-Barthélemy and ZZ for French citizens abroad.
+categories:
+- geo
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^(?:\d{1,2}|2[AB]|Z[XZ]|97[1-6]|98[678])\d{2}$
+examples:
+- value: '101'
+  description: Ain, 1re circonscription
+- value: 2A01
+  description: Corse-du-Sud, 1re circonscription
+- value: '7501'
+  description: Paris, 1re circonscription
+- value: '97101'
+  description: Guadeloupe, 1re circonscription
+- value: ZZ01
+  description: Français établis hors de France, 1re circonscription
+- value: 75-01
+  valid: false
+  description: separator is not used
+links:
+- type: other
+  url: https://www.data.gouv.fr/datasets/6682d0c255dcda5df20b1d90/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Constituencies_of_the_National_Assembly_of_France
+translations:
+  fr:
+    name: Code circonscription législative
+  ru:
+    name: Код избирательного округа Национального собрания Франции

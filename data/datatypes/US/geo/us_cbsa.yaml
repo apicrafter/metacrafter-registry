@@ -1,0 +1,36 @@
+id: us_cbsa
+name: US core-based statistical area (CBSA) code
+status: draft
+doc: Five-digit code of a metropolitan or micropolitan statistical area of the United States, as delineated
+  by the Office of Management and Budget (OMB). Codes run from 10000 to 49999, are assigned in alphabetical
+  order of the area title and do not end in 4; codes ending in 4 belong to metropolitan divisions. Combined
+  statistical areas have separate 3-digit codes.
+categories:
+- geo
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^[1-4]\d{3}[0-35-9]$
+examples:
+- value: '35620'
+  description: New York-Newark-Jersey City, NY-NJ
+- value: '31080'
+  description: Los Angeles-Long Beach-Anaheim, CA
+- value: '16980'
+  description: Chicago-Naperville-Elgin, IL-IN
+- value: '35624'
+  valid: false
+  description: ends in 4, the form of a metropolitan division code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Core-based_statistical_area
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q5170155
+- type: doc
+  url: https://www.census.gov/programs-surveys/geography/about/glossary.html
+- type: other
+  url: https://www2.census.gov/programs-surveys/popest/datasets/2020-2023/metro/totals/cbsa-est2023-alldata.csv

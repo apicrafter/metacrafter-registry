@@ -1,0 +1,35 @@
+id: us_puma
+name: US Public Use Microdata Area (PUMA) code
+status: draft
+doc: Code of a Public Use Microdata Area, a statistical area for census and American Community Survey
+  microdata with at least 100,000 people that nests within a state. The PUMA code has 5 digits with leading
+  zeros; the 7-digit GEOID puts the 2-digit state code in front.
+categories:
+- geo
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:\d{2})?\d{5}$
+examples:
+- value: 00800
+  description: Calhoun County, Alabama (2020 PUMA)
+- value: 0100800
+  description: same PUMA as a GEOID with state code 01
+- value: '01403'
+  description: Birmingham City, Alabama (2020 PUMA)
+- value: '800'
+  valid: false
+  description: not zero-padded
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Public_Use_Microdata_Area
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q7257651
+- type: doc
+  url: https://www.census.gov/programs-surveys/geography/guidance/geo-areas/pumas.html
+- type: other
+  url: https://www2.census.gov/geo/pdfs/reference/puma2020/2020_PUMA_Names.pdf

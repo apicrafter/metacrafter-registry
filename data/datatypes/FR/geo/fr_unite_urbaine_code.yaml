@@ -1,0 +1,28 @@
+id: fr_unite_urbaine_code
+name: French urban unit code (INSEE unité urbaine)
+status: draft
+doc: Five-character code of an unité urbaine, an INSEE zoning of built-up areas (continuous buildings
+  with at least 2,000 inhabitants). Files name the columns uu2020 or uu2010 after the zoning year; communes
+  outside any urban unit can carry a special value instead of a code.
+categories:
+- geo
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+examples:
+- value: 00851
+  description: Paris (zonage 2020)
+links:
+- type: doc
+  url: https://www.insee.fr/fr/metadonnees/geographie/unite-urbaine-2020/00851-paris
+- type: doc
+  url: https://www.insee.fr/fr/metadonnees/source/fichier/BPE_evol_2025_dictionnaire_variables.html
+translations:
+  fr:
+    name: Code unité urbaine
+  ru:
+    name: Код городской агломерации Франции (INSEE unité urbaine)

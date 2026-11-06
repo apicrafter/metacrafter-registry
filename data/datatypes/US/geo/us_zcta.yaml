@@ -1,0 +1,31 @@
+id: us_zcta
+name: US ZIP Code Tabulation Area (ZCTA)
+status: draft
+doc: Five-character code of a ZIP Code Tabulation Area, the Census Bureau's area approximation of a USPS
+  5-digit ZIP Code built from census blocks. A 2020 ZCTA code is a valid ZIP Code, but not every ZIP Code
+  has a ZCTA, and ZCTAs are not used to deliver mail. Codes can start with zero.
+categories:
+- geo
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^\d{5}$
+examples:
+- value: '20746'
+  description: Suitland, MD
+- value: '15007'
+  description: ZCTA used in the Census Data API guide
+- value: 20746-1234
+  valid: false
+  description: a ZIP+4 code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ZIP_Code_Tabulation_Area
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q8063114
+- type: doc
+  url: https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html

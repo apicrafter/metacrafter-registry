@@ -1,0 +1,25 @@
+id: fr_bassin_vie_code
+name: French living area code (INSEE bassin de vie)
+status: draft
+doc: Five-character code of a bassin de vie, the smallest INSEE zoning in which residents have access
+  to the most common services and facilities. The 2022 zoning has 1,707 living areas, 26 of them overseas;
+  files name the columns bv2022 or bv2012 after the zoning year.
+categories:
+- geo
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+links:
+- type: doc
+  url: https://www.insee.fr/fr/information/6676988
+- type: doc
+  url: https://www.insee.fr/fr/information/7612722
+translations:
+  fr:
+    name: Code bassin de vie
+  ru:
+    name: Код бассейна жизни Франции (INSEE)
