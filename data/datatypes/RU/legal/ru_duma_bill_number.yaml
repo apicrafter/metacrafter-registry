@@ -1,0 +1,33 @@
+id: ru_duma_bill_number
+name: Russian State Duma bill number
+status: draft
+doc: Registration number of a bill in the Russian State Duma, as used by the legislative support system
+  (sozd.duma.gov.ru/bill/<number>). It is a sequence number, a hyphen and the number of the Duma convocation.
+  In the first and second convocations the number has eight digits that start with two digits of the year,
+  for example 98021437-2. In 36 793 bills from the Duma system the suffix equals the convocation in all
+  but 41.
+categories:
+- legal
+- government
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{2,8}-[1-9]$
+examples:
+- value: 1112335-7
+  description: Bill of the 7th convocation on the protection of public health
+- value: 319426-6
+  description: Bill of the 6th convocation on the law on education
+- value: 98021437-2
+  description: Bill of the 2nd convocation on the Civil Code
+- value: '1112335'
+  valid: false
+  description: Convocation is missing
+translations:
+  ru:
+    name: Номер законопроекта в Государственной Думе
+    doc: Регистрационный номер законопроекта в Государственной Думе (СОЗД). Состоит из порядкового номера,
+      дефиса и номера созыва.

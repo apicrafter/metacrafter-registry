@@ -1,0 +1,36 @@
+id: ru_npa_legal_status
+name: Legal force status of a Russian legal act
+status: draft
+doc: Whether a Russian legal act is in force, as shown by official legal information systems. The Ministry
+  of Justice (pravo-search.minjust.ru) uses Действующий, Недействующий, Недействующий в части, Не вступил
+  в силу, Действие приостановлено and Временно не действует. The legal information system of pravo.gov.ru
+  uses Действует без изменений, Действует с изменениями, Утратил силу, Не действует, Не вступил в силу
+  and Отменен.
+categories:
+- legal
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: ^(?:Действующий|Недействующий|Недействующий в части|Не вступил в силу|Действие приостановлено|Временно
+  не действует|Действует без изменений|Действует с изменениями|Утратил силу|Не действует|Отменен)$
+examples:
+- value: Действующий
+  description: In force (Ministry of Justice)
+- value: Недействующий
+  description: Not in force (Ministry of Justice)
+- value: Действует с изменениями
+  description: In force with amendments (pravo.gov.ru)
+- value: Утратил силу
+  description: Repealed (pravo.gov.ru)
+- value: Действует
+  valid: false
+  description: Not a status value of these systems
+translations:
+  ru:
+    name: Статус действия нормативного правового акта
+    doc: Статус действия правового акта в официальных системах правовой информации, например Действующий,
+      Недействующий, Утратил силу, Действует с изменениями.

@@ -1,0 +1,41 @@
+id: ru_legal_act_classifier_code
+name: Russian legal act classifier code
+status: draft
+doc: 'Code of a heading of the classifier of legal acts approved by Decree of the President of the Russian
+  Federation of 15 March 2000 No. 511, used to classify acts in legal information banks. A code has three
+  groups of three digits separated by dots: the section, the subsection and the item, for example 010.010.010
+  for the Constitution and acts of constitutional significance. The Ministry of Justice uses these codes
+  for acts in pravo-search.minjust.ru, and the State Duma uses them for the branch of legislation of a
+  bill. Other rubricators of legal acts use the same form: the Ministry of Justice bank of regional acts
+  also has headings 001.000.000 to 024.000.000 and from 220.000.000 on, which are not in the 2000 classifier.'
+categories:
+- legal
+- government
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{3}\.\d{3}\.\d{3}$
+examples:
+- value: 010.000.000
+  description: Constitutional system
+- value: 010.010.010
+  description: Constitution of the Russian Federation and acts of constitutional significance
+- value: 080.000.000
+  description: Finance
+- value: 090.000.000
+  description: Economic activity
+- value: 020.060.000
+  description: Administrative offences and administrative liability
+- value: '010.010'
+  valid: false
+  description: The item group is missing
+translations:
+  ru:
+    name: Код классификатора правовых актов
+    doc: 'Код рубрики классификатора правовых актов, утверждённого Указом Президента Российской Федерации
+      от 15 марта 2000 г. № 511. Три группы по три цифры через точку: раздел, подраздел, пункт, например
+      010.000.000 «Конституционный строй». Используется в банках правовой информации Минюста России и
+      в системе обеспечения законодательной деятельности Государственной Думы.'

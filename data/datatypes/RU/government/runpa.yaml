@@ -1,15 +1,29 @@
 id: runpa
 name: Russian regulatory legal act
 status: draft
-doc: 'Russian regulatory legal act. For example: Executive order'
+doc: 'Reference to a Russian legal act: its requisites (kind, issuing body, date and number), its title,
+  or both. Legal information systems write the requisites as Федеральный закон от 15.07.1995 № 101-ФЗ.
+  The title usually starts with О or Об, for example О международных договорах Российской Федерации. The
+  parts of a reference have their own types: ru_federal_law_number for the number of a federal law, runpakind
+  for the kind of act.'
 parent: legislationname
 categories:
 - government
+- legal
 country:
 - RU
 langs:
 - ru
 is_pii: false
+examples:
+- value: Федеральный закон от 15.07.1995 № 101-ФЗ
+  description: Requisites of a federal law, as written by the legal information system of pravo.gov.ru
+- value: Постановление Правительства Российской Федерации от 19.06.2012 № 610
+  description: Requisites of a resolution of the Government
+- value: Указ Президента Российской Федерации от 23.10.2026 № 778
+  description: Requisites of a decree of the President
+- value: О международных договорах Российской Федерации
+  description: Title of the federal law of 15.07.1995 No. 101-FZ
 translations:
   ru:
     name: Нормативно-правовой документ

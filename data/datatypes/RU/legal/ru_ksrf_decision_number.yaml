@@ -1,0 +1,39 @@
+id: ru_ksrf_decision_number
+name: Russian Constitutional Court decision number
+status: draft
+doc: 'Number of a decision of the Constitutional Court of the Russian Federation: a sequence number, a
+  hyphen and letters for the kind of decision. In 60 080 decisions listed by the court the letters match
+  the kind: П for a judgment (постановление); О, О-О, О-Р and О-П for a ruling (определение); ПР for a
+  protocol decision; ПРП for closing correspondence; Р for a decision; З for an opinion. Numbering restarts
+  every year, so datasets often add the year after a slash, for example 786-О/2021. A few early decisions
+  use other letters.'
+categories:
+- legal
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^\d{1,4}-(?:П|О|О-О|О-Р|О-П|ПР|ПРП|Р|З)(?:/(?:199[1-9]|20\d{2}))?$
+examples:
+- value: 19-П
+  description: Judgment of 11 October 2016 on the law on employment
+- value: 19-П/2016
+  description: The same judgment with the year
+- value: 786-О/2021
+  description: Ruling of 26 April 2021
+- value: 160-О-П/2007
+  description: Ruling of 16 January 2007
+- value: 392-О-О/2012
+  description: Ruling of 22 March 2012
+- value: 33-ФЗ
+  valid: false
+  description: Number of a federal law
+translations:
+  ru:
+    name: Номер решения Конституционного Суда РФ
+    doc: Номер решения Конституционного Суда Российской Федерации. Состоит из порядкового номера, дефиса
+      и букв вида решения (П — постановление, О — определение и др.). Нумерация начинается заново каждый
+      год, поэтому в наборах данных к номеру часто добавляют год через косую черту.

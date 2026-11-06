@@ -1,0 +1,36 @@
+id: ru_cadastral_quarter
+name: Russian cadastral quarter number
+status: draft
+doc: 'Number of a cadastral quarter, the smallest unit of the Russian cadastral division. It is the first
+  three parts of a cadastral number separated by colons: the cadastral okrug (2 digits), the cadastral
+  district (2 digits) and the quarter (6 or 7 digits). A full cadastral number of a property object adds
+  the object number after a third colon (see rukadastr). Legal acts on boundaries, zones and land categories
+  often list quarter numbers.'
+categories:
+- geo
+- realestate
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{2}:\d{2}:\d{6,7}$
+examples:
+- value: 77:01:0002020
+  description: Cadastral quarter in Moscow
+- value: 34:03:090002
+  description: Cadastral quarter in the Volgograd region, listed in a regional legal act
+- value: 09:01:0010301
+  description: Cadastral quarter in Karachay-Cherkessia, listed in a regional legal act
+- value: 77:01:0002020:1045
+  valid: false
+  description: Full cadastral number of a property object (rukadastr)
+links:
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B4%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80
+translations:
+  ru:
+    name: Номер кадастрового квартала
+    doc: 'Номер кадастрового квартала: кадастровый округ (2 цифры), кадастровый район (2 цифры) и квартал
+      (6 или 7 цифр) через двоеточие. Кадастровый номер объекта недвижимости добавляет к нему номер объекта.'

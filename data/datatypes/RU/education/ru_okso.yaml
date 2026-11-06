@@ -1,0 +1,39 @@
+id: ru_okso
+name: Russian code of a specialty or field of study (OKSO)
+status: draft
+doc: 'Code of a specialty, field of study or group of them in Russian education. The lists of specialties
+  and the federal educational standards use three pairs of digits: the enlarged group, the level of education
+  and the number, for example 40.03.01 Jurisprudence (bachelor), 40.04.01 Jurisprudence (master) and 31.08.01
+  Obstetrics and gynaecology (residency). Enlarged groups end in .00.00. The All-Russian classifier of
+  specialties by education (OKSO) writes the same code after a digit of the area of education: 5.40.03.01.
+  Older six-digit codes are not covered. Scientific specialty codes of the 2009 nomenclature have the
+  same three-pair form.'
+categories:
+- education
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[1-9]\.)?\d{2}\.0\d\.\d{2}$
+examples:
+- value: 40.03.01
+  description: Jurisprudence, bachelor
+- value: 40.04.01
+  description: Jurisprudence, master
+- value: 31.08.01
+  description: Obstetrics and gynaecology, residency
+- value: 5.40.03.01
+  description: Jurisprudence with the OKSO area digit
+- value: 7.48.00.00
+  description: Enlarged group Theology with the OKSO area digit
+- value: '40.03'
+  valid: false
+  description: The number is missing
+translations:
+  ru:
+    name: Код специальности, направления подготовки (ОКСО)
+    doc: Код специальности или направления подготовки из перечней специальностей и ФГОС (укрупнённая группа,
+      уровень образования, номер), например 40.03.01 Юриспруденция (бакалавриат). В ОКСО перед кодом стоит
+      цифра области образования, например 5.40.03.01.

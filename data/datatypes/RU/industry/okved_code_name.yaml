@@ -9,13 +9,16 @@ country:
 - RU
 langs:
 - ru
-regexp: ^\d{2}(?:\.\d{1,2}){0,2} [А-ЯЁ].+$
+regexp: ^\d{2}(?:\.\d{1,2}){0,2} (?![А-ЯЁ][а-яё]+ \d{4}$)[А-ЯЁ].+$
 examples:
 - value: 90.01 Деятельность в области исполнительских искусств
 - value: 94.99 Деятельность прочих общественных организаций, не включенных в другие группировки
 - value: '90.01'
   valid: false
   description: A code without a name is the datatype okved
+- value: 28 Декабря 2024
+  valid: false
+  description: A date with the month name written with a capital letter
 translations:
   ru:
     name: Код ОКВЭД с наименованием

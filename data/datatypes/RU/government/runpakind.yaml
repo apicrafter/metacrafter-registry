@@ -1,16 +1,33 @@
 id: runpakind
 name: Russian regulatory legal act type
 status: draft
-doc: 'Type of the Russian legal document: order, executive order and so on'
+doc: 'Kind of a Russian legal act: federal law, decree, resolution, order and so on. The official publication
+  portal publication.pravo.gov.ru distinguishes 47 kinds, from federal laws and decrees to regional statutes,
+  international treaties and court rulings. Datasets also write the kind together with the issuing body,
+  for example Постановление Правительства Российской Федерации.'
 parent: legislationtype
 categories:
 - government
+- legal
 country:
 - RU
 langs:
 - ru
 is_pii: false
 classification: categorical
+examples:
+- value: Федеральный закон
+  description: Federal law
+- value: Указ
+  description: Decree, for example of the President
+- value: Постановление
+  description: Resolution, for example of the Government
+- value: Распоряжение
+  description: Executive order
+- value: Приказ
+  description: Order of a ministry or agency
+- value: Постановление Правительства Российской Федерации
+  description: Kind written together with the issuing body
 translations:
   ru:
     name: Тип нормативного документа в России/на русском языке

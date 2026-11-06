@@ -1,0 +1,33 @@
+id: ru_okud
+name: Russian form code by OKUD (classifier of management documentation)
+status: draft
+doc: Seven-digit code of a standard form in the All-Russian classifier of management documentation (OKUD,
+  OK 011-93), such as a payment order or a budget report. The classifier tables give a check digit in
+  a separate column; legal acts and reports cite the code without it, for example форма по ОКУД 0503317.
+  Any seven-digit number has this form, so the type is recognized by the field name or by the words форма
+  по ОКУД next to the value.
+categories:
+- government
+- finances
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{7}$
+examples:
+- value: '0401060'
+  description: Payment order
+- value: '0503317'
+  description: Budget execution report form, cited in Ministry of Finance instructions on budget reporting
+- value: '0710001'
+  description: Form No. 1-insurer, cited in an act on insurers' accounting
+- value: '040106'
+  valid: false
+  description: Six digits
+translations:
+  ru:
+    name: Код формы по ОКУД
+    doc: Семизначный код унифицированной формы документа по Общероссийскому классификатору управленческой
+      документации (ОК 011-93), например 0401060 — платёжное поручение.
