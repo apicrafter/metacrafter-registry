@@ -15,6 +15,9 @@ regexp: ^(?:\d{4}\.\d{4,5}|[a-z-]+(?:\.[A-Z]{2})?/\d{7})(?:v\d+)?$
 examples:
 - value: '0806.2878'
 - value: '1109.1746'
+- value: '0806.287'
+  valid: false
+  description: Three digits after the point
 mappings:
   wikidata: P818
   bioregistry: arxiv
@@ -25,3 +28,7 @@ links:
   url: https://info.arxiv.org/help/arxiv_identifier.html
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P818
+translations:
+  ru:
+    name: Идентификатор arXiv
+    doc: 'Идентификатор препринта в arXiv: ГГММ.NNNNN или, для старых работ, архив/NNNNNNN.'

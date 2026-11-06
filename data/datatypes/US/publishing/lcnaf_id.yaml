@@ -21,6 +21,9 @@ examples:
   description: Royal Society for the Prevention of Cruelty to Animals
 - value: n84023326
   description: Baranagar
+- value: '81092084'
+  valid: false
+  description: The prefix n is missing
 mappings:
   wikidata: P244
 links:
@@ -30,3 +33,8 @@ links:
   url: https://id.loc.gov/authorities/names.html
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P244
+translations:
+  ru:
+    name: Идентификатор авторитетной записи Библиотеки Конгресса
+    doc: 'Номер авторитетной записи (имя, предметная рубрика, жанр) Библиотеки Конгресса США: префикс,
+      год и порядковый номер.'

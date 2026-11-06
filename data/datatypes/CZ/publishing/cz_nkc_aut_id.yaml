@@ -1,0 +1,41 @@
+id: cz_nkc_aut_id
+name: NL CR authority ID (National Library of the Czech Republic)
+status: draft
+doc: Identifier of a record in the national authority file of the National Library of the Czech Republic
+  (names, corporate bodies, subjects). It has two to four lowercase letters, such as jn, jk, ko or ola,
+  and 2 to 14 digits; in many IDs the digits begin with the year the record was created. The regexp is
+  the Wikidata format of property P691.
+categories:
+- publishing
+country:
+- CZ
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[a-z]{2,4}\d{2,14}$
+examples:
+- value: jn19990218037
+  description: Franz Kafka
+- value: jk01021023
+  description: Karel Čapek
+- value: ko2003203322
+  description: Czech Red Cross
+- value: ola2003162780
+  description: Alexander Fersman
+- value: KO2003203322
+  valid: false
+  description: Capital letters
+mappings:
+  wikidata: P691
+links:
+- type: doc
+  url: https://aleph.nkp.cz/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P691
+translations:
+  ru:
+    name: Идентификатор авторитетной записи Национальной библиотеки Чехии
+    doc: 'Идентификатор записи национального авторитетного файла Чехии: две-четыре строчные буквы и цифры.'
+  cs:
+    name: Identifikátor autority NK ČR

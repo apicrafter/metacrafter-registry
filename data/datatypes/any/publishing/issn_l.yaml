@@ -1,8 +1,10 @@
 id: issn_l
 name: Linking ISSN (ISSN-L)
 status: draft
-doc: 'ISSN chosen to group all media versions (print, online) of one continuing resource. It has the format
-  of an ISSN: two groups of four characters, the last of which is a check digit or X.'
+doc: 'ISSN chosen by the ISSN Network to group all media versions (print, online, CD-ROM) of one continuing
+  resource. It is one of the ISSNs of the resource, usually the first one assigned, and has the same form
+  and check digit: two groups of four characters, the last a check digit or X. It is written with a hyphen,
+  often after the prefix ISSN-L.'
 parent: issn
 categories:
 - publishing
@@ -12,11 +14,15 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[0-9]{4}\-[0-9]{3}[0-9X]$
+checksum: issn
 examples:
 - value: 0264-2875
   description: Dance Research
 - value: 1748-7188
   description: Algorithms for Molecular Biology
+- value: 0264-2876
+  valid: false
+  description: Dance Research with a wrong check digit
 mappings:
   wikidata: P7363
   stdnum: issn
@@ -27,3 +33,8 @@ links:
   url: https://www.issn.org/understanding-the-issn/assignment-rules/the-issn-l-for-publications-on-multiple-media/
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P7363
+translations:
+  ru:
+    name: Связующий ISSN (ISSN-L)
+    doc: ISSN, который объединяет все версии продолжающегося издания на разных носителях (печатную, электронную).
+      Формат и контрольная цифра те же, что у ISSN.

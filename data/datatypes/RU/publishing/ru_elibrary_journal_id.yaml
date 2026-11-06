@@ -1,0 +1,36 @@
+id: ru_elibrary_journal_id
+name: eLIBRARY.RU journal ID
+status: draft
+doc: 'Number of a journal in eLIBRARY.RU, the Russian scientific electronic library that hosts the Russian
+  Science Citation Index (РИНЦ): the id parameter of elibrary.ru/title_about.asp?id=<number>.'
+categories:
+- publishing
+- science
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d*$
+examples:
+- value: '3580'
+  description: The Lancet
+- value: '9070'
+  description: Russia in Global Affairs
+- value: '10533'
+  description: International Affairs (Mezhdunarodnaya Zhizn)
+- value: 03580
+  valid: false
+  description: Leading zero
+mappings:
+  wikidata: P10952
+links:
+- type: doc
+  url: https://elibrary.ru/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P10952
+translations:
+  ru:
+    name: Идентификатор журнала в eLIBRARY.RU
+    doc: Номер журнала в Научной электронной библиотеке eLIBRARY.RU (параметр id в title_about.asp).

@@ -27,3 +27,8 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Publisher_Item_Identifier
+translations:
+  ru:
+    name: Идентификатор издательской единицы (PII)
+    doc: Семнадцатисимвольный идентификатор статьи или главы, который используют Elsevier, ACS, APS, IEEE
+      и другие издатели; содержит ISSN или ISBN издания и контрольный символ.

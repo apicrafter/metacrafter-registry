@@ -1,0 +1,40 @@
+id: ddc
+name: Dewey Decimal Classification (DDC) number
+status: draft
+doc: Class number of the Dewey Decimal Classification, the library classification maintained by OCLC and
+  used by public and school libraries and by national bibliographies in many countries. A number has three
+  digits for the main class, division and section, such as 700 for the arts, and an optional decimal part
+  for narrower subjects, such as 791.4. Numbers from the auxiliary tables are written with the table number
+  and two hyphens, such as 2--4897 for Finland in Table 2 (geographic areas). The regexp is the Wikidata
+  format of property P1036; it does not accept the letters and Cutter numbers of a full call number.
+categories:
+- publishing
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:\d{3}(?:\.\d+)?|[12456]--\d+|3[ABC]?--\d+)$
+examples:
+- value: '700'
+  description: The arts
+- value: '791.4'
+  description: Radio (Wikidata example)
+- value: 2--4897
+  description: Finland, Table 2 notation
+- value: '79'
+  valid: false
+  description: Fewer than three digits
+mappings:
+  wikidata: P1036
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Dewey_Decimal_Classification
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1036
+- type: doc
+  url: https://www.oclc.org/en/dewey.html
+translations:
+  ru:
+    name: Индекс Десятичной классификации Дьюи (ДКД)
+    doc: 'Классификационный индекс библиотечной классификации Дьюи: три цифры класса и, при необходимости,
+      десятичная часть.'

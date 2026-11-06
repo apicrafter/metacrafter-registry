@@ -16,6 +16,9 @@ examples:
   description: The Journal of the American Medical Association
 - value: '0050556'
   description: Radiochimica Acta
+- value: '75011'
+  valid: false
+  description: Five digits
 mappings:
   wikidata: P1055
   bioregistry: nlm
@@ -24,3 +27,8 @@ links:
   url: https://www.ncbi.nlm.nih.gov/nlmcatalog/
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1055
+translations:
+  ru:
+    name: Уникальный идентификатор NLM
+    doc: Номер записи (журнал, книга, аудиовизуальный материал) в каталоге Национальной медицинской библиотеки
+      США.

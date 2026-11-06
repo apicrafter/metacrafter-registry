@@ -8,6 +8,7 @@ doc: Identifier of a record in the Gemeinsame Normdatei (GND), the authority fil
   X, and in some formats a hyphen precedes it.
 categories:
 - objectids
+- publishing
 langs:
 - common
 is_pii: false
@@ -41,3 +42,10 @@ links:
   url: https://en.wikipedia.org/wiki/Schlagwortnormdatei
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P227
+- type: doc
+  url: https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html
+translations:
+  ru:
+    name: Идентификатор GND (единый авторитетный файл Немецкой национальной библиотеки)
+    doc: Номер записи о персоне, организации, месте, предмете или произведении в авторитетном файле GND;
+      последний символ — контрольный.

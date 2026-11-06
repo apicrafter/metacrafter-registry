@@ -1,24 +1,33 @@
 id: isni
 name: International Standard Name Identifier
 status: stable
-doc: The International Standard Name Identifier (ISNI) is an identifier system for uniquely identifying
-  the public identities of contributors to media content such as books, television programmes, and newspaper
-  articles. Such an identifier consists of 16 digits. It can optionally be displayed as divided into four
-  blocks.
+doc: 'ISO 27729 identifier of the public identity of a party that takes part in creating, producing or
+  distributing content: an author, performer, publisher, research institution or a pseudonym. It has 16
+  characters, usually printed in four groups of four; the last is an ISO 7064 MOD 11-2 check character
+  (a digit or X). ORCID iDs are taken from a reserved block of the same number space.'
 categories:
 - science
 - objectids
 - identifiers
+- publishing
 langs:
 - common
 is_pii: false
 classification: identifier
 regexp: ^\d{4} ?\d{4} ?\d{4} ?\d{3}[\dX]$
+checksum: iso7064_mod11_2
 examples:
-- value: 0000 0001 2197 5163
-  description: Norway
+- value: 0000 0001 2297 4701
+  description: Switzerland
 - value: 0000 0001 2141 6409
   description: Nero
+- value: 0000000123317789
+  description: United Nations, compact form as Wikidata stores it
+- value: 000000006629310X
+  description: Charles Martel, check character X
+- value: 0000 0001 2297 4702
+  valid: false
+  description: Wrong check character
 mappings:
   wikidata: P213
   bioregistry: isni
@@ -28,3 +37,10 @@ links:
   url: https://en.wikipedia.org/wiki/International_Standard_Name_Identifier
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P213
+- type: doc
+  url: https://isni.org/
+translations:
+  ru:
+    name: Международный стандартный идентификатор имени (ISNI)
+    doc: 'Идентификатор публичной личности автора, исполнителя, издателя или организации по ISO 27729:
+      16 символов, последний — контрольный (цифра или X).'

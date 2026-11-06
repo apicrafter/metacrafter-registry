@@ -1,0 +1,35 @@
+id: jp_jpno
+name: Japanese National Bibliography Number (JPNO)
+status: draft
+doc: Number of a record in the Japanese National Bibliography, which the National Diet Library compiles
+  from legal deposit copies. It has eight digits; id.ndl.go.jp/jpno/<number> resolves it.
+categories:
+- publishing
+country:
+- JP
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{8}$
+examples:
+- value: '22015095'
+  description: The Master of Go
+- value: 00029379
+  description: Bessatsu Takarajima
+- value: 978-4-8053-0673-4
+  valid: false
+  description: An ISBN, not a JPNO
+mappings:
+  wikidata: P2687
+links:
+- type: doc
+  url: https://ndl.go.jp/en/data/data_service/jnb/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2687
+translations:
+  ru:
+    name: Номер национальной библиографии Японии (JPNO)
+    doc: Восьмизначный номер записи национальной библиографии Японии.
+  ja:
+    name: 全国書誌番号

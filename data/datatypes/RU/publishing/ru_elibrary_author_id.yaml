@@ -1,0 +1,36 @@
+id: ru_elibrary_author_id
+name: eLIBRARY.RU author ID (AuthorID)
+status: draft
+doc: 'Number of an author profile in eLIBRARY.RU, the Russian scientific electronic library that hosts
+  the Russian Science Citation Index (РИНЦ): the authorid parameter of elibrary.ru/author_profile.asp?authorid=<number>.
+  It is different from the SPIN code that authors get when they register in Science Index.'
+categories:
+- publishing
+- science
+- persons
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d*$
+examples:
+- value: '971385'
+  description: Alexander Fersman (1883-1945)
+- value: '1299968'
+  description: Alexander Karpinsky (1847-1936)
+- value: 0971385
+  valid: false
+  description: Leading zero
+mappings:
+  wikidata: P8079
+links:
+- type: doc
+  url: https://elibrary.ru/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8079
+translations:
+  ru:
+    name: Идентификатор автора в eLIBRARY.RU (AuthorID)
+    doc: Номер профиля автора в Научной электронной библиотеке eLIBRARY.RU (РИНЦ).

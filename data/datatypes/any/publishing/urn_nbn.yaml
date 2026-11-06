@@ -1,0 +1,40 @@
+id: urn_nbn
+name: National Bibliography Number URN (URN:NBN)
+status: draft
+doc: 'Uniform Resource Name in the NBN namespace (RFC 8458): a persistent identifier that national libraries
+  and their partners assign to digital publications, theses, conference proceedings and other documents.
+  It starts with urn:nbn:, a two-letter ISO 3166 country code and a colon or hyphen; the rest follows
+  the rules of the national library, often a sub-namespace and a serial number with a check digit. Resolvers
+  such as nbn-resolving.org (Germany, Austria, Switzerland) and urn.fi (Finland) turn it into a URL. The
+  urn:nbn: part is case-insensitive.'
+parent: urn
+categories:
+- publishing
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[Uu][Rr][Nn]:[Nn][Bb][Nn]:[A-Za-z]{2}[:-]\S+$
+examples:
+- value: urn:nbn:de:0074-3121-9
+  description: Proceedings of AAAI-MAKE 2022
+- value: urn:nbn:de:kobv:11-100238157
+  description: Example of the Wikidata property
+- value: ark:/13960/t3vt7027k
+  valid: false
+  description: An ARK, not a URN:NBN
+mappings:
+  wikidata: P4109
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc8458
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4109
+- type: doc
+  url: https://nbn-resolving.org/
+translations:
+  ru:
+    name: Национальный библиографический номер (URN:NBN)
+    doc: 'Постоянный идентификатор электронной публикации в пространстве имён urn:nbn: (RFC 8458), который
+      присваивают национальные библиотеки.'

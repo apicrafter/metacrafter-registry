@@ -1,0 +1,35 @@
+id: hathitrust_id
+name: HathiTrust record number
+status: draft
+doc: Number of a catalogue record of the HathiTrust Digital Library, the shared repository of books and
+  serials digitized by research libraries, as in catalog.hathitrust.org/Record/<number>. It has nine digits
+  with leading zeros. One record can describe several digitized volumes, which have their own item identifiers
+  that start with a code of the contributing library; those are not accepted here.
+categories:
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{9}$
+examples:
+- value: 000499494
+  description: National Geographic
+- value: 012508885
+  description: Proverbs of the Russian People, 1862 edition
+- value: '499494'
+  valid: false
+  description: Leading zeros dropped
+mappings:
+  wikidata: P1844
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/HathiTrust
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1844
+- type: doc
+  url: https://www.hathitrust.org/
+translations:
+  ru:
+    name: Номер записи HathiTrust
+    doc: Девятизначный номер записи каталога цифровой библиотеки HathiTrust.

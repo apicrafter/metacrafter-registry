@@ -16,6 +16,9 @@ examples:
 - value: '17246615'
 - value: '823'
 - value: '4388'
+- value: '172466150'
+  valid: false
+  description: Nine digits
 mappings:
   wikidata: P698
   bioregistry: pubmed
@@ -26,3 +29,7 @@ links:
   url: https://pubmed.ncbi.nlm.nih.gov/
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P698
+translations:
+  ru:
+    name: Идентификатор PubMed (PMID)
+    doc: Номер записи в библиографической базе PubMed Национальной медицинской библиотеки США.

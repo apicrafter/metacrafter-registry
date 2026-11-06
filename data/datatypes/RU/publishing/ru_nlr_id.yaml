@@ -1,0 +1,35 @@
+id: ru_nlr_id
+name: National Library of Russia authority ID
+status: draft
+doc: Number of an authority record (person, organisation) in the authority file of the National Library
+  of Russia in Saint Petersburg; the library's authority service names the record RU\NLR\AUTH\<number>.
+  It has four to nine digits and does not start with zero. The regexp is the Wikidata format of property
+  P7029.
+categories:
+- publishing
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{3,8}$
+examples:
+- value: '771614'
+  description: Alexander Pushkin
+- value: '770174510'
+  description: Abu Mansur al-Baghdadi
+- value: '0771614'
+  valid: false
+  description: Leading zero
+mappings:
+  wikidata: P7029
+links:
+- type: doc
+  url: https://nlr.ru/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P7029
+translations:
+  ru:
+    name: Идентификатор авторитетной записи РНБ
+    doc: Номер авторитетной записи (персона, организация) Российской национальной библиотеки.

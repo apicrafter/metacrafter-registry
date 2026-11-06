@@ -1,0 +1,36 @@
+id: jp_ndl_authority_id
+name: NDL Authority ID (National Diet Library of Japan)
+status: draft
+doc: Identifier of an authority record (name, subject heading) of the National Diet Library of Japan,
+  published in Web NDL Authorities at id.ndl.go.jp/auth/ndlna/<id>. Most IDs have eight or nine digits.
+  The regexp is the Wikidata format of property P349, which also accepts the prefixes s and a1.
+categories:
+- publishing
+country:
+- JP
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:a1|s)?\d{8,9}$
+examples:
+- value: '00564222'
+  description: iridium
+- value: 001360828
+  description: Nineteen Eighty-Four
+- value: '0056422'
+  valid: false
+  description: Seven digits
+mappings:
+  wikidata: P349
+links:
+- type: doc
+  url: https://id.ndl.go.jp/auth/ndla
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P349
+translations:
+  ru:
+    name: Идентификатор авторитетной записи Национальной парламентской библиотеки Японии
+    doc: Номер авторитетной записи (имя, предметная рубрика) NDL из восьми или девяти цифр.
+  ja:
+    name: 国立国会図書館典拠ID

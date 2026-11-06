@@ -1,10 +1,13 @@
 id: issn
 name: International Standard Serial Number (ISSN)
 status: stable
-doc: The International Standard Serial Number (ISSN) is an eight-digit serial number used to uniquely
-  identify a serial publication, such as a magazine. The ISSN is especially helpful in distinguishing
-  between serials with the same title. ISSNs are used in ordering, cataloging, interlibrary loans, and
-  other practices in connection with serial literature.
+doc: 'ISO 3297 identifier of a serial publication (a journal, magazine, newspaper or book series) and
+  of other continuing resources such as databases and websites. It has eight characters, usually printed
+  as two groups of four with a hyphen. The last character is a check digit: the first seven digits are
+  weighted 8 to 2, and the check digit brings the sum to a multiple of 11; X stands for 10. Each medium
+  of a serial, print or online, gets its own ISSN, and the linking ISSN (issn_l) groups them. The ISSN
+  International Centre and national ISSN centres assign the numbers; the number itself says nothing about
+  the country or the publisher.'
 categories:
 - objectids
 - publishing
@@ -12,14 +15,25 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^(?:\d{4}-\d{3}[\dX]|\d{8})$
+regexp: ^\d{4}-?\d{3}[\dX]$
+checksum: issn
 examples:
-- value: 0317-8471
-  description: Example ISSN
-- value: 2049-3630
-  description: Example ISSN
-- value: 03178471
-  description: ISSN without hyphen
+- value: 0028-0836
+  description: Nature, print edition
+- value: 1476-4687
+  description: Nature, online edition
+- value: 0261-3077
+  description: The Guardian
+- value: 0960-894X
+  description: Bioorganic & Medicinal Chemistry Letters, check character X
+- value: 00280836
+  description: Nature, without the hyphen
+- value: 0028-0837
+  valid: false
+  description: Nature with a wrong check digit
+- value: 0028-083
+  valid: false
+  description: Seven characters
 mappings:
   autotype: issn
   wikidata: P236
@@ -31,3 +45,10 @@ links:
   url: https://en.wikipedia.org/wiki/International_Standard_Serial_Number
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P236
+- type: doc
+  url: https://www.issn.org/understanding-the-issn/what-is-an-issn/
+translations:
+  ru:
+    name: Международный стандартный серийный номер (ISSN)
+    doc: 'Идентификатор продолжающегося издания (журнала, газеты, серии) по ISO 3297: восемь символов,
+      последний — контрольная цифра или X. Печатная и электронная версии получают разные ISSN.'

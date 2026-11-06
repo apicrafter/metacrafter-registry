@@ -7,6 +7,7 @@ doc: Identifier of a person, place, work, event or other entity in WorldCat Enti
   with E39P or E39Q. It succeeds the WorldCat Identities ID.
 categories:
 - objectids
+- publishing
 langs:
 - common
 is_pii: false
