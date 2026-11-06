@@ -40,6 +40,8 @@ SNAPSHOT_FILES = (
 SNAPSHOT_DIR = Path(__file__).with_name("snapshot")
 
 _TOKEN = re.compile(r"[a-z0-9]+")
+# Search queries may be in any script (translations are searched too).
+_QUERY_TOKEN = re.compile(r"[^\W_]+")
 _SEPARATORS = re.compile(r"[\s-]")
 _CAMEL = re.compile(r"(?<=[a-z0-9])(?=[A-Z])")
 
@@ -137,6 +139,10 @@ def _stdnum_module(value: str) -> str:
 def _cache_dir() -> Path:
     base = os.environ.get("XDG_CACHE_HOME") or Path.home() / ".cache"
     return Path(base) / "metacrafter-registry"
+
+
+def _sha256_file(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def _get(url: str, timeout: float) -> bytes:
@@ -248,7 +254,9 @@ class Registry:
     ) -> Registry:
         """Load the published data, downloading only when the manifest changed.
 
-        Downloaded files are verified against the SHA-256 in the manifest.
+        Every data file, downloaded or cached, must match the SHA-256 that the
+        manifest lists for it. The manifest comes from the same site, so the
+        check catches truncated, stale or mixed files, not a tampered site.
         """
         base = base_url.rstrip("/")
         cache = (
@@ -257,19 +265,31 @@ class Registry:
             else _cache_dir() / hashlib.sha1(base.encode()).hexdigest()[:12]
         )
         manifest = json.loads(_get(f"{base}/api/v1/index.json", timeout))
-        cached_manifest = cache / "index.json"
-        if cached_manifest.exists() and json.loads(cached_manifest.read_text("utf-8")) == manifest:
-            return cls.from_directory(cache, source=f"{base} (cached)")
-        cache.mkdir(parents=True, exist_ok=True)
         hashes = {
             Path(info["path"]).name: info["sha256"]
             for name, info in manifest.get("files", {}).items()
             if name.startswith("api/v1/")
         }
+        missing = [name for name in SNAPSHOT_FILES[1:] if name not in hashes]
+        if missing:
+            raise ValueError(f"the manifest lists no SHA-256 for {', '.join(missing)}")
+
+        def cached(name: str) -> bool:
+            path = cache / name
+            return path.is_file() and _sha256_file(path) == hashes[name]
+
+        cached_manifest = cache / "index.json"
+        if (
+            cached_manifest.exists()
+            and json.loads(cached_manifest.read_text("utf-8")) == manifest
+            and all(cached(name) for name in SNAPSHOT_FILES[1:])
+        ):
+            return cls.from_directory(cache, source=f"{base} (cached)")
+        cache.mkdir(parents=True, exist_ok=True)
+        cached_manifest.unlink(missing_ok=True)  # a failed run must not look complete
         for name in SNAPSHOT_FILES[1:]:
             body = _get(f"{base}/api/v1/{name}", timeout)
-            expected = hashes.get(name)
-            if expected and hashlib.sha256(body).hexdigest() != expected:
+            if hashlib.sha256(body).hexdigest() != hashes[name]:
                 raise ValueError(f"{name}: SHA-256 does not match the manifest")
             (cache / name).write_bytes(body)
         cached_manifest.write_text(json.dumps(manifest), "utf-8")
@@ -324,7 +344,9 @@ class Registry:
         limit: int = 20,
     ) -> list[dict[str, Any]]:
         """Rank records by query tokens (id, aliases, names, translations, doc)."""
-        tokens = [t for t in _TOKEN.findall(query.lower())] if query else []
+        tokens = _QUERY_TOKEN.findall(query.lower()) if query else []
+        if query and query.strip() and not tokens:
+            return []  # only punctuation: nothing to match, not "everything"
         country = country.upper() if country else None
         hits = []
         for record in self.datatypes.values():
@@ -483,6 +505,8 @@ class Registry:
         ``regexp_hit_rate`` in the result is the unweighted share of values that
         are hits in either form.
         """
+        if isinstance(values, str):
+            values = [values]  # one value, not its characters
         samples = [str(v).strip() for v in values if v is not None and str(v).strip()]
         country = country.upper() if country else None
         kinds = (
@@ -542,7 +566,9 @@ class Registry:
                     "kind": record["kind"],
                     "status": record["status"],
                     "is_pii": record["is_pii"],
-                    "score": max(0, min(100, round(score))),
+                    # floor(x + 0.5) is JavaScript's Math.round; round() would
+                    # round halves to even and break parity with identify-core.js.
+                    "score": max(0, min(100, math.floor(score + 0.5))),
                     "regexp_hit_rate": None if hit_rate is None else round(hit_rate, 3),
                     "regexp_specificity": None if hit_rate is None else round(specificity, 3),
                     "checksum": None

@@ -20,7 +20,7 @@ from xml.sax.saxutils import escape as xml_escape
 
 from jinja2 import Environment, PackageLoader, select_autoescape
 
-from . import DEFAULT_BASE_URL, __version__, agents, legacy
+from . import DEFAULT_BASE_URL, __version__, agents, datahub, legacy
 from .fibo import fibo_iris
 from .loader import RegistrySources, load_sources
 from .model import CSV_COLUMNS, RegistryModel, build_registry, csv_row
@@ -137,7 +137,7 @@ def _write_api_v1(out: Path, reg: RegistryModel, site_url: str, info: BuildInfo)
 
 
 def _write_agent_files(out: Path, reg: RegistryModel, site_url: str, info: BuildInfo) -> None:
-    """Markdown twins, llms.txt, llms-full.txt and the SKOS export."""
+    """Markdown twins, llms.txt, llms-full.txt, the SKOS and DataHub glossary exports."""
     refs = {"categories": reg.categories, "countries": reg.countries, "langs": reg.langs}
     for rid, record in reg.datatypes.items():
         _write(out / "datatype" / f"{rid}.md", agents.record_markdown(record, **refs))
@@ -167,6 +167,10 @@ def _write_agent_files(out: Path, reg: RegistryModel, site_url: str, info: Build
     _write(
         out / "registry.ttl",
         agents.skos_turtle(records, reg.categories.values(), site_url, info.version),
+    )
+    _write(
+        out / "datahub-glossary.yml",
+        datahub.dump_glossary(datahub.business_glossary(reg, site_url)),
     )
 
 
@@ -419,6 +423,7 @@ def _write_manifest(
         "api/v1/rag/corpus.jsonl",
         "llms-full.txt",
         "registry.ttl",
+        "datahub-glossary.yml",
     ]
     manifest = {
         "name": "metacrafter-registry",

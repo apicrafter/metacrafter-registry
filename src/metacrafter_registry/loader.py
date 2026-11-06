@@ -82,12 +82,21 @@ def load_yaml_dir(directory: Path, base: Path) -> tuple[list[SourceRecord], list
     return records, errors
 
 
-def load_reference(path: Path) -> dict[str, dict[str, Any]]:
-    """Load a reference list (countries, categories, langs) keyed by stripped id."""
+def load_reference(
+    path: Path, errors: list[tuple[str, str]] | None = None
+) -> dict[str, dict[str, Any]]:
+    """Load a reference list (countries, categories, langs) keyed by stripped id.
+
+    A repeated id keeps its first entry and is reported in ``errors``.
+    """
     entries = _load_yaml_file(path) or []
     out: dict[str, dict[str, Any]] = {}
     for entry in entries:
         key = str(entry["id"]).strip()
+        if key in out:
+            if errors is not None:
+                errors.append((path.name, f"duplicate id '{key}'"))
+            continue
         out[key] = {**entry, "id": key}
     return out
 
@@ -95,9 +104,9 @@ def load_reference(path: Path) -> dict[str, dict[str, Any]]:
 def load_sources(data_dir: Path) -> RegistrySources:
     data_dir = Path(data_dir)
     sources = RegistrySources(data_dir=data_dir)
-    sources.countries = load_reference(data_dir / "countries.yaml")
-    sources.categories = load_reference(data_dir / "categories.yaml")
-    sources.langs = load_reference(data_dir / "langs.yaml")
+    sources.countries = load_reference(data_dir / "countries.yaml", sources.load_errors)
+    sources.categories = load_reference(data_dir / "categories.yaml", sources.load_errors)
+    sources.langs = load_reference(data_dir / "langs.yaml", sources.load_errors)
     sources.datatypes, errors = load_yaml_dir(data_dir / "datatypes", data_dir)
     sources.load_errors.extend(errors)
     sources.tools, errors = load_yaml_dir(data_dir / "tools", data_dir)

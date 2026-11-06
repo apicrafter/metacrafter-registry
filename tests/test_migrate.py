@@ -189,3 +189,12 @@ def test_quality_score_rubric():
     stub = score_record({"name": "Hash", "doc": "Hash"})
     assert stub["score"] == 0
     assert "description" in stub["missing"] and "regexp" in stub["missing"]
+
+
+def test_is_pii_spellings():
+    from metacrafter_registry.migrate import _as_bool
+
+    assert [_as_bool(v) for v in ("True", "true", "YES", "1", True)] == [True] * 5
+    assert [_as_bool(v) for v in ("False", "false", "no", "0", False)] == [False] * 5
+    assert _as_bool("") is None and _as_bool(None) is None
+    assert _as_bool("maybe") == "maybe"  # left for validation to reject

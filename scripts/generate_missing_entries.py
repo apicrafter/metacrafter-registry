@@ -62,7 +62,7 @@ def determine_category(context, key):
     category_map = {
         'pii': ['pii', 'persons'],
         'persons': ['persons'],
-        'finances': ['finance'],
+        'finances': ['finances'],
         'geo': ['geo'],
         'transport': ['transport'],
         'realestate': ['realestate'],
@@ -77,7 +77,7 @@ def determine_category(context, key):
     if 'driver' in key or 'passport' in key or 'ssn' in key or 'idcard' in key or 'nationalid' in key:
         return ['pii', 'persons']
     if 'bank' in key or 'iban' in key or 'tax' in key or 'tin' in key:
-        return ['finance']
+        return ['finances']
     if 'city' in key or 'postcode' in key or 'postal' in key or 'province' in key or 'state' in key or 'district' in key:
         return ['geo']
     if 'vehicle' in key or 'plate' in key:
@@ -108,7 +108,7 @@ def determine_directory(key, country_code, category):
         cat_dir = {
             'persons': 'persons',
             'pii': 'persons',
-            'finance': 'finances',
+            'finances': 'finances',
             'geo': 'geo',
             'transport': 'transport',
             'realestate': 'realestate',
@@ -125,7 +125,7 @@ def determine_directory(key, country_code, category):
         cat_dir = {
             'persons': 'persons',
             'pii': 'pii',
-            'finance': 'finances',
+            'finances': 'finances',
             'geo': 'geo',
             'transport': 'transport',
             'realestate': 'realestate',
@@ -182,7 +182,8 @@ def create_datatype_entry(base_path, key, metadata, existing_ids):
         entry['country'] = country_list
     entry['langs'] = [lang] if lang != 'common' else ['common']
     entry['is_pii'] = bool(is_pii) and str(is_pii) != 'False'
-    entry['classification'] = 'identifier'
+    # classification is left out: the rules do not say whether a key is an
+    # identifier or a categorical value.
 
     sys.path.insert(0, str(base_path / 'src'))
     from metacrafter_registry.migrate import dump_yaml

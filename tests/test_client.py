@@ -397,3 +397,49 @@ def test_fetch_rejects_tampered_files(built_site, tmp_path):
     with running_server(site) as base:
         with pytest.raises(ValueError, match="SHA-256"):
             Registry.fetch(base, cache_dir=tmp_path / "cache")
+
+
+def test_checksums_reject_non_ascii_digits():
+    from metacrafter_registry.checksums import ALGORITHMS
+
+    # "²" is str.isdigit() but not int(): no algorithm may raise on it.
+    for value in ("7707083893²", "１２３４５６７８９０", "12345678901²", "BG17549²"):
+        for name, check in ALGORITHMS.items():
+            assert check(value) is False or check(value) is True, name
+    assert ru_inn("7707083893") and not ru_inn("770708389³")
+
+
+def test_iso7064_mod97_10_handles_long_values():
+    from metacrafter_registry.checksums import iso7064_mod97_10
+
+    assert iso7064_mod97_10("991-03730-19")  # python-stdnum's Leitweg-ID
+    assert not iso7064_mod97_10("991-03730-18")
+    assert iso7064_mod97_10("A" * 3000) in (True, False)  # no int() overflow
+
+
+def test_identify_does_not_fail_on_odd_values():
+    from conftest import DATA
+
+    reg = Registry.from_sources(DATA)
+    ids = [r["id"] for r in reg.identify(["7707083893", "123²"], field_name="inn")]
+    assert "inn" in ids
+    # A bare string is one value, not a list of characters.
+    assert reg.identify("7707083893", limit=3) == reg.identify(["7707083893"], limit=3)
+
+
+def test_search_in_any_script():
+    from conftest import DATA
+
+    reg = Registry.from_sources(DATA)
+    assert {"kg_inn", "tj_inn"} <= {r["id"] for r in reg.search("инн")}
+    assert reg.search("?!") == []  # punctuation matches nothing, not everything
+    assert len(reg.search("")) == 20  # an empty query still browses
+
+
+def test_fetch_downloads_again_when_the_cache_is_damaged(built_site, tmp_path):
+    with running_server(built_site) as base:
+        Registry.fetch(base, cache_dir=tmp_path)
+        (tmp_path / "aliases.json").write_text("{}", "utf-8")
+        again = Registry.fetch(base, cache_dir=tmp_path)
+        assert not again.source.endswith("(cached)")
+        assert again.aliases == Registry.load(built_site / "api" / "v1").aliases

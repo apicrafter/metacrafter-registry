@@ -16,6 +16,7 @@ WARNING = "warning"
 
 # Constructs Python accepts but ECMAScript (browser) regexps do not.
 _PYTHON_ONLY_RE = re.compile(r"\(\?P[<=]|\\[AZ]|\(\?[aiLmsux]+\)|\(\?#")
+_LEADING_FLAGS = re.compile(r"^\(\?[aiLmsux]+\)")
 
 # Opcodes that only Python 3.11+ understands (possessive quantifiers such as
 # ``\d{1,4}+`` and atomic groups ``(?>...)``). Consumers run older Pythons and
@@ -220,7 +221,8 @@ def _regexp_issues(sources: RegistrySources) -> list[Issue]:
                     "(Python 3.11+ only, not portable)",
                 )
             )
-        if not (pattern.startswith("^") and pattern.endswith("$")):
+        bare = _LEADING_FLAGS.sub("", pattern)
+        if not (bare.startswith("^") and bare.endswith("$")):
             issues.append(Issue(WARNING, rec.relpath, rec.id, "regexp is not anchored (^...$)"))
         if _PYTHON_ONLY_RE.search(pattern):
             issues.append(Issue(WARNING, rec.relpath, rec.id, "regexp uses Python-only syntax"))
@@ -235,7 +237,8 @@ def _regexp_issues(sources: RegistrySources) -> list[Issue]:
                     )
                 )
             valid = example.get("valid", True) is not False
-            matched = compiled.search(value) is not None
+            # The whole value, as Registry.identify and the /identify page match it.
+            matched = compiled.fullmatch(value) is not None
             if valid and not matched:
                 issues.append(
                     Issue(
@@ -275,7 +278,10 @@ def _checksum_issues(sources: RegistrySources) -> list[Issue]:
             )
             continue
         pattern = rec.data.get("regexp")
-        compiled = re.compile(str(pattern)) if pattern else None
+        try:
+            compiled = re.compile(str(pattern)) if pattern else None
+        except re.error:
+            compiled = None  # reported by the regexp checks
         for example in rec.data.get("examples") or []:
             if not isinstance(example, dict) or "value" not in example:
                 continue
@@ -291,7 +297,7 @@ def _checksum_issues(sources: RegistrySources) -> list[Issue]:
                             f"example '{value}' fails the {algorithm} check digit",
                         )
                     )
-            elif passes and (compiled is None or compiled.search(value)):
+            elif passes and (compiled is None or compiled.fullmatch(value)):
                 issues.append(
                     Issue(
                         ERROR,

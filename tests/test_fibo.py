@@ -136,9 +136,14 @@ def test_update_check_and_validate(mini_data, fibo_checkout, capsys):
     assert _messages(mini_data) == []
     assert main([*args, "check", "--fibo-dir", str(fibo_checkout), "--ref", "abc"]) == 0
 
+    # The checkout is not a git repository: update needs the commit.
+    assert main([*args, "update", "--fibo-dir", str(fibo_checkout)]) == 2
+    assert "pass --ref" in capsys.readouterr().out
+    assert load_vocabulary(mini_data)["source"]["ref"] == "abc"
+
     # A mapping FIBO does not define cannot be pinned.
     _map_email(mini_data, "FND/Places/VirtualPlaces/ElectronicMailAdress")
-    assert main([*args, "update", "--fibo-dir", str(fibo_checkout)]) == 1
+    assert main([*args, "update", "--fibo-dir", str(fibo_checkout), "--ref", "abc"]) == 1
     assert "Not a labelled FIBO class" in capsys.readouterr().out
     assert main([*args, "check", "--fibo-dir", str(fibo_checkout)]) == 1
 

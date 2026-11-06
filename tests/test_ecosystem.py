@@ -698,6 +698,10 @@ def test_javascript_compact_matches_match_python(reg_with_date, tmp_path):
         # Compact-form hits without a check digit count half.
         (["01001-000", "01310-100"], ""),
         (["432 5251 79"], ""),
+        # A score of exactly 12.5 rounds half up in both.
+        ([], "url foo"),
+        # An inherited JavaScript property is not a field-name token.
+        (["zzz-not-a-code"], "constructor"),
     ]
     js = _javascript_identify(tmp_path, index, cases, 5)
     for (values, field), js_top in zip(cases, js, strict=True):

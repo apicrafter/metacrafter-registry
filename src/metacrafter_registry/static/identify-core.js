@@ -518,7 +518,7 @@
 
   function tokens(text) {
     var spaced = String(text || "").replace(/([a-z0-9])([A-Z])/g, "$1 $2").toLowerCase();
-    var out = {};
+    var out = Object.create(null); // no inherited keys: "constructor" is a token too
     (spaced.match(/[a-z0-9]+/g) || []).forEach(function (t) { out[t] = true; });
     return out;
   }
@@ -638,12 +638,15 @@
       return y.score - x.score || (x.status !== "stable") - (y.status !== "stable") ||
         (x.id < y.id ? -1 : x.id > y.id ? 1 : 0);
     });
-    return results.slice(0, limit || 10);
+    return results.slice(0, limit == null ? 10 : limit);
   }
 
   // Synchronous version (tests, small inputs). The page uses the worker loop instead.
   function identify(index, values, field, country, limit) {
-    var samples = values.map(function (v) { return String(v).trim(); }).filter(Boolean);
+    var samples = values
+      .filter(function (v) { return v != null; })
+      .map(function (v) { return String(v).trim(); })
+      .filter(Boolean);
     var c = country ? String(country).toUpperCase() : null;
     var matches = index.map(function (record) {
       var re = compile(record);

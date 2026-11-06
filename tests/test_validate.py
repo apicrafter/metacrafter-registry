@@ -139,3 +139,42 @@ def test_replaced_by_must_resolve(mini_data):
         "replaced_by: nothing\n",
     )
     assert any("old: unknown replaced_by 'nothing'" in m for m in messages(mini_data))
+
+
+def test_broken_regexp_with_checksum_is_an_issue_not_a_crash(mini_data):
+    write_record(
+        mini_data / "datatypes/any/pii/cardno.yaml",
+        """
+        id: cardno
+        name: Card number
+        doc: Payment card number with a Luhn check digit
+        langs: [common]
+        categories: [pii]
+        is_pii: true
+        regexp: '^(\\d{16}$'
+        checksum: luhn
+        examples:
+        - value: '4111111111111111'
+        """,
+    )
+    messages = [i.message for i in validate(load_sources(mini_data)).errors]
+    assert any("regexp" in m for m in messages)
+
+
+def test_duplicate_reference_ids_are_errors(mini_data):
+    (mini_data / "langs.yaml").write_text(
+        "- id: en\n  name: English\n- id: common\n  name: Common\n- id: en\n  name: Again\n"
+    )
+    sources = load_sources(mini_data)
+    assert sources.langs["en"]["name"] == "English"
+    assert any("duplicate id 'en'" in i.message for i in validate(sources).errors)
+
+
+def test_example_must_match_the_whole_regexp(mini_data):
+    # identify() matches whole values, so a partial match does not count.
+    write_record(
+        mini_data / "datatypes/any/pii/code7.yaml",
+        "id: code7\nname: Code\ndoc: Seven digits\nlangs: [common]\nstatus: draft\n"
+        "is_pii: false\nregexp: '\\d{7}'\nexamples:\n- value: '12345678'\n",
+    )
+    assert any("does not match regexp" in m for m in messages(mini_data))

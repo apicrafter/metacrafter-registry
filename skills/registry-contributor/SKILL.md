@@ -62,7 +62,8 @@ pip install -e ".[dev]"
 - **Examples:**
   - Use documentation or test values. Never use real people's data, and never
     use placeholders like `1234567890`.
-  - Every positive example must match the regexp.
+  - Every positive example must match the whole regexp (a full match, as
+    `identify` uses), not just a part of it.
   - With `checksum`, every positive example must also pass the check digit.
     Known algorithms are `luhn`, `iban_mod97`, `gtin`, `gs1_mod10`,
     `gs1_checkpair`, `isbn10`, `isbn13`, `ru_inn`, `ru_snils`, `ru_ogrn`,

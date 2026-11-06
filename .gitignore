@@ -9,6 +9,13 @@ src/metacrafter_registry/snapshot/
 .ecosystem/
 .build-*/
 
+# Release and weekly workflow scratch output
+pkg-dist/
+release/
+prev/
+drift.md
+lychee/
+
 # Virtual environment
 venv/
 env/

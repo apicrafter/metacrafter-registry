@@ -412,7 +412,9 @@ def js_regexp(pattern: str) -> tuple[str, str] | None:
         return None  # inline flags inside the pattern, comments
     pattern = pattern.replace("(?P<", "(?<")
     pattern = _re.sub(r"\(\?P=(\w+)\)", r"\\k<\1>", pattern)
-    pattern = pattern.replace("\\A", "^").replace("\\Z", "$")
+    # \A and \Z, but not an escaped backslash followed by A or Z.
+    pattern = _re.sub(r"(?<!\\)((?:\\\\)*)\\A", r"\1^", pattern)
+    pattern = _re.sub(r"(?<!\\)((?:\\\\)*)\\Z", r"\1$", pattern)
     return pattern, flags
 
 

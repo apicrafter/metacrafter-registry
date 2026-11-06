@@ -66,3 +66,10 @@ def test_agents_page(built_site):
         .read_text("utf-8")
         .startswith("# Metacrafter Registry for AI agents")
     )
+
+
+def test_js_regexp_anchors():
+    from metacrafter_registry.agents import js_regexp
+
+    assert js_regexp(r"\A\d+\Z") == (r"^\d+$", "")
+    assert js_regexp(r"^\\A$") == (r"^\\A$", "")  # an escaped backslash, then A

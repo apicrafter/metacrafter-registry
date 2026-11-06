@@ -87,11 +87,12 @@ Detection rules that map real data to these datatypes live in the companion
   validation, build of the static site and JSON files, local preview server,
   public URL contract check
 * `tests/` - pytest suite (validation gates, legacy JSON shape, build, URL contract)
-* `scripts/` - helper scripts; `scripts/builder.py` keeps `stats` and `report` and
-  delegates `build` and `validate` to the package
+* `scripts/` - helper scripts; `scripts/builder.py` is a wrapper that passes
+  `build`, `validate`, `stats`, `report` and `migrate` to the package
 * `schema/` - JSON Schemas of the source records
 * `archive/` - historical material (original CSV, research notes, one-off scripts)
-* `.github/workflows/` - CI (`ci.yml`) and GitHub Pages deployment (`pages.yml`)
+* `.github/workflows/` - CI (`ci.yml`), GitHub Pages deployment (`pages.yml`),
+  releases (`release.yml`) and the weekly drift and link checks (`weekly.yml`)
 
 # Build registry
 
@@ -211,8 +212,27 @@ metacrafter-registry build
 ```
 
 Map only exact concept matches. The FIBO IRIs appear in `/registry.ttl`
-(`skos:exactMatch`), in the pages' JSON-LD (`sameAs`), and in
-`crosswalk("fibo", ...)`. See `devdocs/FIBO_ANALYSIS.md` for the analysis.
+(`skos:exactMatch`), in the pages' JSON-LD (`sameAs`), in
+`crosswalk("fibo", ...)` and in the DataHub glossary. See
+`devdocs/FIBO_ANALYSIS.md` for the analysis.
+
+# DataHub business glossary
+
+`/datahub-glossary.yml` is a business glossary for DataHub's
+`datahub-business-glossary` ingestion source. Every record is a term whose id
+is the registry id, so its URN, `urn:li:glossaryTerm:<id>`, is the one that
+`metacrafter export datahub` attaches to the columns it detects. Terms sit under
+a `Metacrafter Registry` node, one child node per category. A record mapped to
+FIBO cites the FIBO class as its source (`source_ref: FIBO`); other records cite
+their registry page. Patterns inherit (`IsA`) their datatype.
+
+```yaml
+# recipe.yml
+source:
+  type: datahub-business-glossary
+  config:
+    file: https://registry.apicrafter.io/datahub-glossary.yml
+```
 
 # Publishing
 
@@ -262,6 +282,7 @@ JSON API (static files, described in `/api/v1/openapi.json`):
 | `/llms.txt`, `/llms-full.txt` | Index and full text for LLMs ([llmstxt.org](https://llmstxt.org)) |
 | `/datatype/<id>.md`, `/tool/<id>.md`, `/category/<id>.md` | Markdown twins of the pages |
 | `/registry.ttl` | SKOS concept scheme (Turtle) |
+| `/datahub-glossary.yml` | DataHub business glossary: one term per record, URN `urn:li:glossaryTerm:<id>` |
 | `/api/v1/aliases.json` | Retired ids and the record each one resolves to |
 | `/api/v1/coverage.json` | metacrafter-rules coverage: orphan rule keys, records without rules |
 | `/api/v1/changes.json` | Changes per data release |

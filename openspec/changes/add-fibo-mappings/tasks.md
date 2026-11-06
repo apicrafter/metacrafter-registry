@@ -42,5 +42,11 @@
 
 ## 6. Follow-ups (separate changes)
 
-- [ ] 6.1 Add a DataHub business-glossary export as a build output, with `source_url` set to the FIBO IRI. It replaces `scripts/export.py`, which still reads the v1 format.
-- [ ] 6.2 Add draft records for the FIBO identifiers that the registry lacks: UTI, UPI, USI, DTI, MCC, ELF, BBAN, CINS, Common Code, RSSD ID, FDIC certificate number, IIN and ZIP+4. Verify each format against its standard first.
+- [x] 6.1 Add a DataHub business-glossary export as a build output, with `source_url` set to the FIBO IRI. It replaces `scripts/export.py`, which still reads the v1 format.
+  - `/datahub-glossary.yml` (`datahub.py`), listed in the manifest and published as a release asset. `scripts/export.py` is removed.
+  - Term ids are registry ids, so the URNs are the `urn:li:glossaryTerm:<id>` that `metacrafter export datahub` attaches. Patterns and subtypes inherit (`IsA`) their datatype and parent.
+  - Checked with the DataHub 1.7 ingestion source: 1,897 terms, every `IsA` resolves.
+- [x] 6.2 Add draft records for the FIBO identifiers that the registry lacks: UTI, UPI, USI, DTI, MCC, ELF, BBAN, CINS, Common Code, RSSD ID, FDIC certificate number, IIN and ZIP+4. Verify each format against its standard first.
+  - `dti` and `merchant_category_code` already existed; they now map to FIBO.
+  - 11 new draft records, each format checked against its standard or issuer: `unique_transaction_identifier`, `unique_product_identifier`, `us_unique_swap_identifier`, `elf_code`, `bban`, `cins`, `common_code`, `us_rssd_id`, `us_fdic_certificate`, `iin`, `us_zip_plus4`.
+  - `elf_code` is not mapped: FIBO's `EntityLegalForm` is the legal form, not its code. 44 records now map to 41 `Release` classes.

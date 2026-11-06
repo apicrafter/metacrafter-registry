@@ -95,8 +95,10 @@ def load_release_changes(directory: Path | str | None) -> list[dict[str, Any]]:
     if not directory or not Path(directory).is_dir():
         return []
     entries = []
-    for path in Path(directory).rglob("changes.json"):
-        entries.append(json.loads(path.read_text("utf-8")))
+    for path in sorted(Path(directory).rglob("changes.json")):
+        data = json.loads(path.read_text("utf-8"))
+        if isinstance(data, dict):  # a release's diff; skip anything else
+            entries.append(data)
 
     def version_key(entry: dict[str, Any]) -> tuple:
         parts = str(entry.get("to", "")).lstrip("v").split(".")

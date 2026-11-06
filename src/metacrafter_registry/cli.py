@@ -168,6 +168,9 @@ def cmd_coverage(args: argparse.Namespace) -> int:
             return 2
         rules_dir = Path(args.rules_dir)
         ref = args.ref or git_ref(rules_dir) or "unknown"
+        if args.action == "update" and ref == "unknown":
+            print(f"Cannot read the commit of {rules_dir}; pass --ref <full commit SHA>")
+            return 2
         fresh = build_coverage(rules_dir, ref)
         if args.action == "update":
             path = coverage_path(data_dir)
@@ -260,6 +263,9 @@ def cmd_fibo(args: argparse.Namespace) -> int:
     data_dir = _data_dir(args)
     used = mapped_paths(rec.data for rec in load_sources(data_dir).datatypes)
     ref = args.ref or git_ref(fibo_dir) or "unknown"
+    if args.action == "update" and ref == "unknown":
+        print(f"Cannot read the commit of {fibo_dir}; pass --ref <full commit SHA>")
+        return 2
     fresh, missing = build_vocabulary(classes, used, ref)
     for path in missing:
         print(f"Not a labelled FIBO class at {ref[:12]}: {path} (used by {', '.join(used[path])})")
@@ -328,10 +334,16 @@ def cmd_check_links(args: argparse.Namespace) -> int:
     from .linkcheck import check_links
 
     directory = Path(args.dir) if args.dir else find_data_dir().parent / "dist"
+    if not directory.is_dir():
+        print(f"{directory} is not a directory; run `metacrafter-registry build` first")
+        return 2
     checked, broken = check_links(directory, args.base_path)
     for link in broken:
         print(f"BROKEN {link}")
     print(f"{checked} internal links checked, {len(broken)} broken")
+    if not checked:
+        print(f"No internal links found in {directory}: is it a built site?")
+        return 1
     return 1 if broken else 0
 
 

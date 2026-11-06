@@ -133,10 +133,9 @@ def build_registry(sources: RegistrySources, site_url: str) -> RegistryModel:
             record["semantic_type"] = semantic_type
         if _present(parent_id):
             record["parent"] = str(parent_id)
-        for key in ("aliases",):
-            values = _ids(data.get(key))
-            if values:
-                record[key] = values
+        aliases = _ids(data.get("aliases"))
+        if aliases:
+            record["aliases"] = aliases
         if _present(data.get("replaced_by")):
             record["replaced_by"] = str(data["replaced_by"])
         if rid in children_of:
