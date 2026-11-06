@@ -9,7 +9,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: '[A-Z0-9.]{1,16}'
+regexp: ^[A-Z0-9.]{1,16}$
 examples:
 - value: MSFT
   description: Microsoft

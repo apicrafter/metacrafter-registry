@@ -11,7 +11,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: '[A-Z0-9]{12}'
+regexp: ^[A-Z0-9]{12}$
 examples:
 - value: BBG000BLNNV0
   description: IBM UA

@@ -9,7 +9,7 @@ country:
 - FR
 langs:
 - fr
-regexp: \d{5}
+regexp: ^\d{5}$
 examples:
 - value: '75008'
   description: Paris

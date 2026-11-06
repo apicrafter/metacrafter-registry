@@ -10,7 +10,7 @@ langs:
 - hy
 is_pii: false
 classification: identifier
-regexp: \d{10,20}
+regexp: ^\d{10,20}$
 examples:
 - value: '1234567890123456'
   description: Example Armenian bank account number

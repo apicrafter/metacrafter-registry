@@ -5,7 +5,7 @@ doc: ISO 4217 Currency code
 semantic_type: currency
 langs:
 - common
-regexp: '[A-Z]{3}'
+regexp: ^[A-Z]{3}$
 examples:
 - value: XPD
   description: palladium

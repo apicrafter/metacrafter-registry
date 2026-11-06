@@ -11,7 +11,7 @@ langs:
 - en
 is_pii: false
 classification: identifier
-regexp: '[0-9A-Z]{13,17}'
+regexp: ^[0-9A-Z]{13,17}$
 examples:
 - value: 19RS5022F0185
   description: PIID 19RS5022F0185

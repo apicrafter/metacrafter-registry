@@ -7,7 +7,7 @@ country:
 - CA
 langs:
 - en
-regexp: (NL|PE|NS|NB|QC|ON|MB|SK|AB|BC|YT|NT|NU)
+regexp: ^(NL|PE|NS|NB|QC|ON|MB|SK|AB|BC|YT|NT|NU)$
 mappings:
   fta: STATE_PROVINCE.PROVINCE_CA
 links:

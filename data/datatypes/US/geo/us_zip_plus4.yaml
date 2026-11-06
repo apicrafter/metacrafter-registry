@@ -1,0 +1,30 @@
+id: us_zip_plus4
+name: US ZIP+4 code
+status: draft
+doc: US postal code in the ZIP+4 format - a five-digit ZIP Code, a hyphen and four digits for the sector
+  and segment, which narrow the delivery area down to a few addresses, a building or a floor. USPS writes
+  it with the hyphen.
+semantic_type: postindex
+country:
+- US
+langs:
+- en
+regexp: ^[0-9]{5}-[0-9]{4}$
+examples:
+- value: 20408-0001
+  description: National Archives, Washington, DC (US Government Manual 2009)
+- value: 20260-2435
+  description: USPS Citizens' Stamp Advisory Committee (USPS Domestic Mail Manual archive)
+- value: 20408-001
+  valid: false
+  description: three digits after the hyphen
+mappings:
+  fibo: FND/Places/NorthAmerica/USPostalServiceAddresses/ZIPPlus4Code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ZIP_Code
+- type: doc
+  url: https://pe.usps.com/text/dmm300/602.htm
+translations:
+  ru:
+    name: Почтовый индекс США в формате ZIP+4

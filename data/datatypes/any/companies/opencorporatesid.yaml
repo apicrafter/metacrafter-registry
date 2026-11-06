@@ -9,7 +9,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: '[a-z]{2}(_[a-z]{2})?/[a-zA-ZÖÜÄ0-9\-_]*[0-9A-Za-f]'
+regexp: ^[a-z]{2}(_[a-z]{2})?/[a-zA-ZÖÜÄ0-9\-_]*[0-9A-Za-f]$
 examples:
 - value: gb/SC129785
   description: Devro

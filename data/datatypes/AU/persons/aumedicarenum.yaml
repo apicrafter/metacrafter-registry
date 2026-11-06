@@ -12,7 +12,7 @@ langs:
 - en
 is_pii: true
 classification: identifier
-regexp: '[2-6]\d{3}\s\d{5}\s\d'
+regexp: ^[2-6]\d{3}\s\d{5}\s\d$
 mappings:
   google_dlp: AUSTRALIA_MEDICARE_NUMBER
   presidio: AU_MEDICARE

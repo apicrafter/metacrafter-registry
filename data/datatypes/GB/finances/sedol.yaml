@@ -12,7 +12,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: '[0-9.]{7}'
+regexp: ^[0-9.]{7}$
 examples:
 - value: 0263494
   description: BAE Systems

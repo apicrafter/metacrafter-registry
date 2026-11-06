@@ -10,7 +10,7 @@ langs:
 - en
 is_pii: false
 classification: categorical
-regexp: '[A-Z]{2}[A-Z0-9]{0,3}'
+regexp: ^[A-Z]{2}[A-Z0-9]{0,3}$
 examples:
 - value: BE10
   description: Brussels-Capital Region

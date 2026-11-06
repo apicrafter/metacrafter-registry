@@ -1,0 +1,30 @@
+id: us_unique_swap_identifier
+name: US unique swap identifier (USI)
+status: draft
+doc: Identifier of a swap in US swap data reporting under CFTC rules (17 CFR Part 45). It joins a 10-character
+  namespace that the CFTC assigns to the entity creating the identifier (it does not start with 0 and
+  has no letters I or O) and a transaction code of up to 32 characters, which may contain underscores,
+  colons, dots and hyphens between letters and digits. Reports often carry the two parts in separate fields.
+  CFTC reporting has used the unique transaction identifier (UTI) instead since December 2022.
+categories:
+- finances
+- identifiers
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9A-HJ-NP-Z][0-9A-HJ-NP-Z]{9}(?=.{1,32}$)[A-Za-z0-9]+(?:[_:.-][A-Za-z0-9]+)*$
+examples:
+- value: 0010000001ABC
+  valid: false
+  description: the namespace does not start with 0
+mappings:
+  fibo: DER/DerivativesContracts/Swaps/UniqueSwapIdentifier
+links:
+- type: doc
+  url: https://www.cftc.gov/sites/default/files/idc/groups/public/@swaps/documents/dfsubmission/usidatastandards100112.pdf
+translations:
+  ru:
+    name: Уникальный идентификатор свопа США (USI)

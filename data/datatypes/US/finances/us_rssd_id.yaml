@@ -1,0 +1,35 @@
+id: us_rssd_id
+name: Federal Reserve RSSD ID
+status: draft
+doc: Number that the Federal Reserve assigns to a bank, holding company, branch or other financial institution
+  in its National Information Center (NIC) database. Regulatory reports and FDIC data (the FED_RSSD field)
+  use it to link records of the same institution. In FDIC data the values have up to seven digits, and
+  0 means that the number is missing.
+categories:
+- finances
+- identifiers
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9][0-9]{0,9}$
+examples:
+- value: '852218'
+  description: JPMorgan Chase Bank, National Association
+- value: '480228'
+  description: Bank of America, National Association
+- value: 852218A
+  valid: false
+  description: digits only
+mappings:
+  fibo: FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/ResearchStatisticsSupervisionDiscountIdentifier
+links:
+- type: doc
+  url: https://www.federalreserve.gov/releases/lbr/current/default.htm
+- type: doc
+  url: https://api.fdic.gov/banks/docs/institution_properties.yaml
+translations:
+  ru:
+    name: Идентификатор RSSD Федеральной резервной системы США

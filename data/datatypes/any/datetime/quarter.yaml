@@ -7,7 +7,7 @@ categories:
 langs:
 - common
 is_pii: false
-regexp: '[1234]'
+regexp: ^[1234]$
 examples:
 - value: '1'
   description: First quarter

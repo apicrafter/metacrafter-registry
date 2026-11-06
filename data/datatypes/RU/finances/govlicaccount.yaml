@@ -13,7 +13,7 @@ langs:
 - ru
 is_pii: false
 classification: identifier
-regexp: '[0-9А-Я]{9,11}'
+regexp: ^[0-9А-Я]{9,11}$
 examples:
 - value: '821090011'
   description: Лицевой счет получателя бюджетных средствАДМИНИСТРАЦИЯ СЕВЕРНОГО РАЙОНА НОВОСИБИРСКОЙ ОБЛАСТИ

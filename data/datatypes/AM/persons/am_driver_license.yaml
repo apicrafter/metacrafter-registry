@@ -12,7 +12,7 @@ langs:
 - hy
 is_pii: true
 classification: identifier
-regexp: '[A-Z0-9]{6,10}'
+regexp: ^[A-Z0-9]{6,10}$
 examples:
 - value: '12345678'
   description: Example Armenian driver license number

@@ -12,7 +12,7 @@ langs:
 - fr
 is_pii: false
 classification: identifier
-regexp: \d{9}
+regexp: ^\d{9}$
 examples:
 - value: '775672272'
   description: French Red Cross

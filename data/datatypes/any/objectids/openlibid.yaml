@@ -8,7 +8,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: OL[1-9]\d*[AMW]
+regexp: ^OL[1-9]\d*[AMW]$
 examples:
 - value: OL36858W
   description: Twenty Years After

@@ -1,0 +1,30 @@
+id: iin
+name: Payment card issuer identification number (IIN)
+status: draft
+doc: Leading digits of a payment card number that identify the institution that issued the card, under
+  ISO/IEC 7812-1. It is also called the bank identification number (BIN). The IIN had six digits; the
+  2017 revision of the standard extended it to eight. It has no check digit of its own - the Luhn check
+  digit belongs to the whole card number.
+categories:
+- finances
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{6}(?:[0-9]{2})?$
+examples:
+- value: '564182'
+  description: Switch (now Maestro UK) issuer range, listed on Wikipedia
+- value: '56418'
+  valid: false
+  description: five digits
+mappings:
+  fibo: FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/IssuerIdentificationNumber
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO/IEC_7812
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Payment_card_number
+translations:
+  ru:
+    name: Идентификатор эмитента платёжной карты (IIN, BIN)

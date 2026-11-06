@@ -7,7 +7,7 @@ categories:
 langs:
 - common
 is_pii: false
-regexp: \d{4}
+regexp: ^\d{4}$
 examples:
 - value: '2022'
   description: Year 2022

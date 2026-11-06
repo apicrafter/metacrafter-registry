@@ -7,7 +7,7 @@ country:
 - US
 langs:
 - en
-regexp: '[0-9]{9}'
+regexp: ^[0-9]{9}$
 mappings:
   google_dlp: US_PASSPORT
   presidio: US_PASSPORT

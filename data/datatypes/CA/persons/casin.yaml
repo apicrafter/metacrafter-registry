@@ -11,7 +11,7 @@ langs:
 - en
 is_pii: true
 classification: identifier
-regexp: (\d{3}-\d{3}-\d{3})|(\d{9})
+regexp: ^(?:(\d{3}-\d{3}-\d{3})|(\d{9}))$
 mappings:
   google_dlp: CANADA_SOCIAL_INSURANCE_NUMBER
   presidio: CA_SIN

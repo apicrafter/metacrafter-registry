@@ -10,6 +10,15 @@
   }
  },
  "terms": {
+  "BE/FunctionalEntities/FunctionalEntities/MerchantCategoryCode": {
+   "label": "merchant category code",
+   "definition": "code used internationally to classify a merchant",
+   "abbreviations": [
+    "MCC"
+   ],
+   "maturity": "Release",
+   "source_file": "BE/FunctionalEntities/FunctionalEntities.rdf"
+  },
   "BE/LegalEntities/FormalBusinessOrganizations/ValueAddedTaxIdentificationNumber": {
    "label": "value-added tax identification number",
    "definition": "tax identifier that identifies a taxable person (business) or non-taxable legal entity for a consumption tax that is assessed incrementally, levied on the price of a product or service at each stage of production, distribution, and sale to the end consumer",
@@ -24,6 +33,24 @@
    "definition": "an organization identifier that uniquely identifies a legal person as defined in ISO 17442",
    "maturity": "Release",
    "source_file": "BE/LegalEntities/LEIEntities.rdf"
+  },
+  "DER/DerivativesContracts/DerivativesBasics/UniqueProductIdentifier": {
+   "label": "unique product identifier",
+   "definition": "sequence of characters uniquely identifying an OTC derivative product that is reportable to a trade repository",
+   "abbreviations": [
+    "UPI"
+   ],
+   "maturity": "Release",
+   "source_file": "DER/DerivativesContracts/DerivativesBasics.rdf"
+  },
+  "DER/DerivativesContracts/Swaps/UniqueSwapIdentifier": {
+   "label": "unique swap identifier",
+   "definition": "identifier for a swap that is used in recordkeeping and swap data reporting",
+   "abbreviations": [
+    "USI"
+   ],
+   "maturity": "Release",
+   "source_file": "DER/DerivativesContracts/Swaps.rdf"
   },
   "FBC/FunctionalEntities/BusinessRegistries/NorthAmericanIndustryClassificationSystemCode": {
    "label": "North American Industry Classification System code",
@@ -86,6 +113,30 @@
    "maturity": "Release",
    "source_file": "FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf"
   },
+  "FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/FDICCertificateNumber": {
+   "label": "FDIC Certificate Number",
+   "definition": "identifier issued to a depository institution by the FDIC on approval of that institution's application for insurance",
+   "maturity": "Release",
+   "source_file": "FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf"
+  },
+  "FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/IssuerIdentificationNumber": {
+   "label": "issuer identification number",
+   "definition": "a numbering system that allows a credit, debit, or other card to be identified as having been issued by a particular financial institution",
+   "abbreviations": [
+    "IIN"
+   ],
+   "maturity": "Release",
+   "source_file": "FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf"
+  },
+  "FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/ResearchStatisticsSupervisionDiscountIdentifier": {
+   "label": "Research, Statistics, Supervision and Regulation, and Discount and Credit identifier",
+   "definition": "unique identifier assigned by the Federal Reserve to financial institutions for regulatory and oversight purposes",
+   "abbreviations": [
+    "RSSD ID"
+   ],
+   "maturity": "Release",
+   "source_file": "FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf"
+  },
   "FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/RoutingTransitNumber": {
    "label": "routing transit number",
    "definition": "unique nine digit identifier, used primarily in the United States, to identify a banking or other financial institution for clearing funds, and, as it appears on a check, denotes the banking institution that holds the account from which funds are to be drawn",
@@ -101,6 +152,15 @@
    "maturity": "Release",
    "source_file": "FBC/ProductsAndServices/ClientsAndAccounts.rdf"
   },
+  "FBC/ProductsAndServices/ClientsAndAccounts/BasicBankAccountIdentifier": {
+   "label": "basic bank account identifier",
+   "definition": "identifier that uniquely identifies an individual account at a specific financial institution in a particular country and which includes a bank identifier of the financial institution servicing that account",
+   "abbreviations": [
+    "BBAN"
+   ],
+   "maturity": "Release",
+   "source_file": "FBC/ProductsAndServices/ClientsAndAccounts.rdf"
+  },
   "FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier": {
    "label": "international bank account identifier",
    "definition": "identifier for a bank account that is an expanded version of the basic bank account number (BBAN), intended for use internationally",
@@ -109,6 +169,15 @@
    ],
    "maturity": "Release",
    "source_file": "FBC/ProductsAndServices/ClientsAndAccounts.rdf"
+  },
+  "FBC/ProductsAndServices/FinancialProductsAndServices/UniqueTransactionIdentifier": {
+   "label": "unique transaction identifier",
+   "definition": "sequence of characters identifying a financial transaction uniquely whenever useful and agreed by the parties or community involved in the transaction",
+   "abbreviations": [
+    "UTI"
+   ],
+   "maturity": "Release",
+   "source_file": "FBC/ProductsAndServices/FinancialProductsAndServices.rdf"
   },
   "FND/Accounting/CurrencyAmount/Currency": {
    "label": "currency",
@@ -140,6 +209,15 @@
    "maturity": "Release",
    "source_file": "FND/AgentsAndPeople/People.rdf"
   },
+  "FND/OwnershipAndControl/Ownership/DigitalTokenIdentifier": {
+   "label": "digital token identifier",
+   "definition": "globally unique identifier conformant with ISO 24165 for the registration of digital tokens",
+   "abbreviations": [
+    "DTI"
+   ],
+   "maturity": "Release",
+   "source_file": "FND/OwnershipAndControl/Ownership.rdf"
+  },
   "FND/Places/Addresses/PhysicalAddress": {
    "label": "physical address",
    "definition": "physical address where communications can be addressed, papers served or representatives located for any kind of organization or person",
@@ -151,6 +229,12 @@
    "definition": "sequence of characters used to assist in the sorting of mail",
    "maturity": "Release",
    "source_file": "FND/Places/Addresses.rdf"
+  },
+  "FND/Places/NorthAmerica/USPostalServiceAddresses/ZIPPlus4Code": {
+   "label": "ZIP+4 Code",
+   "definition": "nine-digit number consisting of five digits, a hyphen, and four digits, which the USPS describes by its trademark ZIP+4",
+   "maturity": "Release",
+   "source_file": "FND/Places/NorthAmerica/USPostalServiceAddresses.rdf"
   },
   "FND/Places/VirtualPlaces/ElectronicMailAddress": {
    "label": "electronic mail address",
@@ -204,12 +288,27 @@
    "maturity": "Release",
    "source_file": "SEC/Securities/SecuritiesIdentification.rdf"
   },
+  "SEC/Securities/SecuritiesIdentificationIndividuals/CUSIPInternationalNumberingSystemNumber": {
+   "label": "CUSIP International Numbering System (CINS) number",
+   "definition": "9-character alphanumeric identifier that employs the same 9 characters as CUSIP, but also contains a letter of the alphabet in the first position signifying the issuer's country or geographic region, issued by CUSIP Global Services",
+   "abbreviations": [
+    "CINS"
+   ],
+   "maturity": "Release",
+   "source_file": "SEC/Securities/SecuritiesIdentificationIndividuals.rdf"
+  },
   "SEC/Securities/SecuritiesIdentificationIndividuals/CommitteeOnUniformSecuritiesIdentificationProceduresNumber": {
    "label": "Committee on Uniform Securities Identification Procedures (CUSIP) number",
    "definition": "nine-character alphanumeric number that identifies all North American stocks and registered bonds for the purposes of facilitating clearing and settlement of trades, issued by CUSIP Global Services on behalf of the American Bankers' Association, which is a part of Standard and Poor's Capital IQ, that is the National Numbering Agency Identifier for securities issued in North America, which is also part of the ISIN for the security it identifies",
    "abbreviations": [
     "CUSIP"
    ],
+   "maturity": "Release",
+   "source_file": "SEC/Securities/SecuritiesIdentificationIndividuals.rdf"
+  },
+  "SEC/Securities/SecuritiesIdentificationIndividuals/EuroclearClearstreamCommonCode": {
+   "label": "Euroclear Clearstream common code",
+   "definition": "nine-character alphanumeric securities identifier, issued in Luxembourg, jointly by Euroclear and Clearstream",
    "maturity": "Release",
    "source_file": "SEC/Securities/SecuritiesIdentificationIndividuals.rdf"
   },

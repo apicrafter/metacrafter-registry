@@ -8,9 +8,9 @@ categories:
 - common
 langs:
 - common
-is_pii: true
+is_pii: false
 classification: identifier
-regexp: \d{1,3}(\.\d{1,3})*
+regexp: ^\d{1,3}(?:\.\d{1,3})*(?:[:+/]\d{1,3}(?:\.\d{1,3})*)*$
 examples:
 - value: '316.7'
   description: sociology of culture

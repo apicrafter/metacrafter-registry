@@ -11,7 +11,7 @@ langs:
 - common
 is_pii: true
 classification: identifier
-regexp: '[a-zA-Z][a-zA-Z0-9_\-\,\.]{5,31}'
+regexp: ^[a-zA-Z][a-zA-Z0-9_\-\,\.]{5,31}$
 mappings:
   wikidata: P2893
   dpv: pd:Username

@@ -9,7 +9,7 @@ langs:
 - common
 is_pii: false
 classification: categorical
-regexp: (I\/II)|(II\/III)|I{1,3}
+regexp: ^(?:(I\/II)|(II\/III)|I{1,3})$
 examples:
 - value: I
   description: sodium azide

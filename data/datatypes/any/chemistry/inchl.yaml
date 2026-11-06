@@ -9,7 +9,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: InChI=1S?/([0-9]*[A-Z][ub]?[a-z]?[0-9]*\.?)+(/[0-9A-Za-z+\-(),.*;?]+)*
+regexp: ^InChI=1S?/([0-9]*[A-Z][ub]?[a-z]?[0-9]*\.?)+(/[0-9A-Za-z+\-(),.*;?]+)*$
 examples:
 - value: InChI=1S/C6H6/c1-2-4-6-5-3-1/h1-6H
   description: benzene

@@ -12,7 +12,7 @@ langs:
 - en
 is_pii: false
 classification: identifier
-regexp: '[0-9A-Z]{10,13}'
+regexp: ^[0-9A-Z]{10,30}$
 examples:
 - value: SSI60022GR0005
   description: FAIN SSI60022GR0005
@@ -21,3 +21,5 @@ examples:
 links:
 - type: other
   url: https://orsp.umich.edu/glossary/fain-federal-award-identification-number
+- type: doc
+  url: https://grants.gov/help/grantors/generate-fain

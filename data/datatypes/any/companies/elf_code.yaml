@@ -1,0 +1,37 @@
+id: elf_code
+name: Entity legal form code (ELF, ISO 20275)
+status: draft
+doc: Four-character code of a legal form in one jurisdiction, for example a German GmbH or a UK private
+  limited company. ISO 20275 defines the codes and GLEIF maintains the list; LEI records use them to state
+  an entity's legal form. 8888 marks a legal form whose code has been requested from GLEIF, and 9999 an
+  entity that has no separate legal form.
+categories:
+- companies
+- legal
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z0-9]{4}$
+examples:
+- value: 2HBR
+  description: Germany, Gesellschaft mit beschränkter Haftung (GmbH)
+- value: H0PO
+  description: United Kingdom, private limited company
+- value: XTIQ
+  description: United States, Delaware corporation
+- value: 2HB
+  valid: false
+  description: three characters
+mappings:
+  wikidata: P10421
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_20275
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P10421
+- type: doc
+  url: https://www.gleif.org/en/about-lei/code-lists/iso-20275-entity-legal-forms-code-list
+translations:
+  ru:
+    name: Код организационно-правовой формы (ELF, ISO 20275)

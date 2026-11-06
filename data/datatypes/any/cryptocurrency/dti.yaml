@@ -28,6 +28,8 @@ examples:
 - value: 4H95J0R2A
   valid: false
   description: vowels are not used
+mappings:
+  fibo: FND/OwnershipAndControl/Ownership/DigitalTokenIdentifier
 links:
 - type: doc
   url: https://dtif.org/

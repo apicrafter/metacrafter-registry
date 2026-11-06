@@ -11,7 +11,7 @@ langs:
 - common
 is_pii: true
 classification: identifier
-regexp: '[0-9A-Za-z_]{1,20}'
+regexp: ^[0-9A-Za-z_]{1,20}$
 examples:
 - value: NASA
   description: National Aeronautics and Space Administration

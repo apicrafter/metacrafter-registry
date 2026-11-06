@@ -1,0 +1,35 @@
+id: us_fdic_certificate
+name: FDIC certificate number
+status: draft
+doc: Number that the US Federal Deposit Insurance Corporation (FDIC) gives an insured bank or savings
+  institution with its deposit insurance certificate. FDIC BankFind and the FDIC data API use it (the
+  CERT field) as the key of an institution. Current values have one to five digits.
+categories:
+- finances
+- identifiers
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9][0-9]{0,4}$
+examples:
+- value: '628'
+  description: JPMorgan Chase Bank, National Association
+- value: '3510'
+  description: Bank of America, National Association
+- value: 62A8
+  valid: false
+  description: digits only
+mappings:
+  wikidata: P11175
+  fibo: FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/FDICCertificateNumber
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P11175
+- type: doc
+  url: https://api.fdic.gov/banks/docs/institution_properties.yaml
+translations:
+  ru:
+    name: Номер сертификата FDIC

@@ -7,7 +7,7 @@ doc: ISO 3166-1 alpha-2 codes are two-letter country codes defined in ISO 3166-1
 semantic_type: country
 langs:
 - common
-regexp: '[A-Z]{2}'
+regexp: ^[A-Z]{2}$
 examples:
 - value: WF
   description: Wallis and Futuna

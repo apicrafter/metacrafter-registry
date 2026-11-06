@@ -12,7 +12,7 @@ langs:
 - en
 is_pii: false
 classification: categorical
-regexp: \d{5}
+regexp: ^\d{5}$
 examples:
 - value: '24003'
   description: Anne Arundel County

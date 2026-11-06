@@ -9,7 +9,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: '[A-Z]{6}[0-9A-Z]{2}([0-9A-Z]{3})?'
+regexp: ^[A-Z]{6}[0-9A-Z]{2}([0-9A-Z]{3})?$
 examples:
 - value: DEUTDEFF
   description: Deutsche Bank

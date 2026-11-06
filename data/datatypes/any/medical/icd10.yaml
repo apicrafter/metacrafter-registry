@@ -9,7 +9,7 @@ langs:
 - common
 is_pii: false
 classification: categorical
-regexp: '[A-Z]\d{2}(\.\d{1,2})?'
+regexp: ^[A-Z]\d{2}(\.\d{1,2})?$
 examples:
 - value: J11
   description: influenza

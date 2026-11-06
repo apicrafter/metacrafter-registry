@@ -11,7 +11,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: grid\.\d{4,6}\.[0-9a-f]{1,2}
+regexp: ^grid\.\d{4,6}\.[0-9a-f]{1,2}$
 examples:
 - value: grid.1012.2
   description: University of Western Australia

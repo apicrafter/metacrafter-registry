@@ -9,7 +9,7 @@ categories:
 - transport
 langs:
 - common
-regexp: '[A-Z0-9]{3}'
+regexp: ^[A-Z0-9]{3}$
 examples:
 - value: YXK
   description: Rimouski Airport

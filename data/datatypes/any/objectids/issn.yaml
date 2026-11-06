@@ -12,7 +12,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: \d{4}-\d{3}[\dX]|\d{8}
+regexp: ^(?:\d{4}-\d{3}[\dX]|\d{8})$
 examples:
 - value: 0317-8471
   description: Example ISSN

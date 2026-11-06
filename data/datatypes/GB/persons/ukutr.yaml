@@ -12,7 +12,7 @@ langs:
 - en
 is_pii: true
 classification: identifier
-regexp: '[0-9]{10}'
+regexp: ^[0-9]{10}$
 mappings:
   google_dlp: UK_TAXPAYER_REFERENCE
   purview:
