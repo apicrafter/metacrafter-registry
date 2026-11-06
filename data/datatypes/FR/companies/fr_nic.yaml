@@ -1,0 +1,34 @@
+id: fr_nic
+name: French establishment number (NIC)
+status: draft
+doc: Numéro interne de classement (NIC), the last 5 digits of a SIRET number. It tells apart the establishments
+  of one legal unit identified by its SIREN and carries no information about activity or location. Its
+  last digit is a check digit for the whole SIRET, so the NIC alone cannot be validated. Sirene files
+  keep it in its own column, for example nicSiegeUniteLegale for the head office.
+categories:
+- companies
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '00074'
+  description: NIC of SIRET 73282932000074
+- value: '69588'
+  description: NIC of SIRET 35600000069588
+- value: 6958A
+  valid: false
+  description: contains a letter
+links:
+- type: doc
+  url: https://www.insee.fr/fr/metadonnees/definition/c1981
+- type: doc
+  url: https://www.insee.fr/fr/metadonnees/definition/c1841
+translations:
+  fr:
+    name: Numéro interne de classement (NIC)
+  ru:
+    name: Номер заведения в SIRET (NIC)

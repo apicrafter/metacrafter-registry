@@ -1,0 +1,28 @@
+id: fr_aire_attraction_villes_code
+name: French functional urban area code (INSEE aire d'attraction des villes)
+status: draft
+doc: Three-character code of an aire d'attraction des villes (AAV), the INSEE 2020 zoning of a city and
+  the communes from which many people commute to it. Files name the column aav2020. Communes outside any
+  area can carry a special value instead of a code.
+categories:
+- geo
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+examples:
+- value: '001'
+  description: Paris
+links:
+- type: doc
+  url: https://www.insee.fr/fr/metadonnees/geographie/aire-attraction-des-villes-2020/001-paris
+- type: doc
+  url: https://www.insee.fr/fr/metadonnees/source/fichier/BPE_evol_2025_dictionnaire_variables.html
+translations:
+  fr:
+    name: Code aire d'attraction des villes
+  ru:
+    name: Код зоны притяжения города Франции (INSEE AAV)

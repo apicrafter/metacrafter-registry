@@ -1,0 +1,38 @@
+id: iso_week
+name: ISO 8601 year and week
+status: draft
+doc: A calendar week written as an ISO 8601 week date without the day, the week-numbering year, the letter
+  W and a two-digit week from 01 to 53, in extended (2021-W05) or basic (2021W05) form. ISO weeks start
+  on Monday, and week 01 is the week with the first Thursday of the year, so the week-numbering year can
+  differ from the calendar year near 1 January. The regexp does not check that week 53 exists in the given
+  year.
+categories:
+- datetime
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{4}-?W(?:0[1-9]|[1-4]\d|5[0-3])$
+examples:
+- value: 2021-W05
+  description: extended format
+- value: 2021W05
+  description: basic format
+- value: 2020-W53
+  description: 2020 has 53 ISO weeks
+- value: 2021-W54
+  valid: false
+  description: week out of range
+- value: 2021-5
+  valid: false
+  description: no W designator
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_week_date
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q2110154
+translations:
+  ru:
+    name: Неделя по ISO 8601
+  fr:
+    name: Semaine ISO 8601

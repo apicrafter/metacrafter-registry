@@ -1,0 +1,28 @@
+id: ocds_ocid
+name: Open Contracting ID (OCDS ocid)
+status: draft
+doc: Identifier of a contracting process in the Open Contracting Data Standard (OCDS). It joins a publisher
+  prefix and the publisher's own identifier of the process. The prefix is "ocds-" followed by six random
+  lowercase letters or digits assigned to the publisher; the local part has no fixed format. The ocid
+  is case-sensitive and links all releases about one procurement process.
+categories:
+- government
+- finances
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^ocds-[a-z0-9]{6}-.+$
+examples:
+- value: ocds-b5fd17-602bd466-c6e3-4b23-95de-e99b3e0feed6
+  description: UK Contracts Finder release
+- value: ocds-87sd3t-OM-DGRMSG-004-13
+  description: example from the OCDS documentation
+- value: ocds-b5fd1-123
+  valid: false
+  description: prefix has five characters
+links:
+- type: doc
+  url: https://standard.open-contracting.org/latest/en/schema/identifiers/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q24534540

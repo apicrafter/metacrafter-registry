@@ -1,0 +1,26 @@
+id: fr_zone_emploi_code
+name: French employment zone code (INSEE zone d'emploi)
+status: draft
+doc: Code of a zone d'emploi, an INSEE zoning that groups communes where most residents both live and
+  work. The 2020 zoning replaced the 2010 one; files name the columns ze2020 or ze2010. The format of
+  the code is not checked here.
+categories:
+- geo
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+examples:
+- value: '1109'
+  description: Paris (zonage 2020)
+links:
+- type: doc
+  url: https://www.insee.fr/fr/metadonnees/geographie/zone-emploi-2020/1109-paris
+translations:
+  fr:
+    name: Code zone d'emploi
+  ru:
+    name: Код зоны занятости Франции (INSEE)

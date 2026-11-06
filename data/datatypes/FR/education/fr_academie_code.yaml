@@ -1,0 +1,39 @@
+id: fr_academie_code
+name: French education region code (académie)
+status: draft
+doc: Two-digit code of an académie, the regional district of the French Ministry of Education, as used
+  in the national directory of schools (field code_academie), for example 01 for Paris. Some numbers are
+  no longer used after académies merged, such as Caen and Rouen into Normandie (70). Other ministry nomenclatures
+  use three digits.
+categories:
+- education
+- geo
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^\d{2}$
+examples:
+- value: '01'
+  description: Paris
+- value: '24'
+  description: Créteil
+- value: '70'
+  description: Normandie
+- value: '28'
+  description: La Réunion
+- value: '001'
+  valid: false
+  description: three-digit form of another nomenclature
+links:
+- type: other
+  url: https://data.education.gouv.fr/explore/dataset/fr-en-annuaire-education/
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Académie_(éducation_en_France)
+translations:
+  fr:
+    name: Code académie
+  ru:
+    name: Код учебного округа Франции (académie)

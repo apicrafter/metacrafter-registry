@@ -1,0 +1,39 @@
+id: fr_categorie_juridique
+name: French legal category code (INSEE catégorie juridique)
+status: draft
+doc: Code of the legal form of a legal unit in the INSEE nomenclature of legal categories, used in Sirene
+  as categorieJuridiqueUniteLegale. The nomenclature has three levels - 1 digit (9 positions), 2 digits
+  (37 positions) and 4 digits (260 positions); Sirene uses the 4-digit level, for example 5710 for a simplified
+  joint-stock company (SAS).
+categories:
+- companies
+- legal
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^\d{4}$
+examples:
+- value: '1000'
+  description: Entrepreneur individuel
+- value: '5499'
+  description: Société à responsabilité limitée (sans autre indication)
+- value: '5710'
+  description: SAS, société par actions simplifiée
+- value: '7210'
+  description: Commune et commune nouvelle
+- value: '9220'
+  description: Association déclarée
+- value: '571'
+  valid: false
+  description: three digits
+links:
+- type: doc
+  url: https://www.insee.fr/fr/information/2028129
+translations:
+  fr:
+    name: Catégorie juridique
+  ru:
+    name: Код организационно-правовой формы Франции (INSEE)

@@ -1,0 +1,35 @@
+id: epi_week
+name: Epidemiological week (CDC MMWR week)
+status: draft
+doc: Week number used by the US Centers for Disease Control and Prevention (CDC) to report notifiable
+  diseases in the Morbidity and Mortality Weekly Report (MMWR). MMWR weeks start on Sunday. Week 1 is
+  the first week of the year with at least four days in that calendar year, so the last days of December
+  can fall in week 1 of the next year. Values run from 1 to 53. Some data sets combine year and week as
+  YYYYWW (202101); that form looks like a year and month, so it is not covered by the regexp.
+parent: week_of_year
+categories:
+- datetime
+- medical
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:0?[1-9]|[1-4]\d|5[0-3])$
+examples:
+- value: '1'
+  description: first MMWR week
+- value: '52'
+  description: last week of a 52-week MMWR year
+- value: '54'
+  valid: false
+  description: out of range
+links:
+- type: doc
+  url: https://ndc.services.cdc.gov/wp-content/uploads/MMWR_Week_overview.pdf
+- type: other
+  url: https://cmu-delphi.github.io/delphi-epidata/api/date_formats.html
+translations:
+  es:
+    name: Semana epidemiológica
+  ru:
+    name: Эпидемиологическая неделя (MMWR)

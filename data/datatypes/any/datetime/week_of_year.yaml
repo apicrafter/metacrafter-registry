@@ -1,0 +1,31 @@
+id: week_of_year
+name: Week number in a year
+status: draft
+doc: Number of a week within a year, from 1 to 53, sometimes written with a leading zero. Most years have
+  52 weeks. The rule for week 1 depends on the system; ISO 8601 weeks start on Monday and week 1 contains
+  the first Thursday of the year. Data catalogs keep it in columns such as week, semaine or semana.
+categories:
+- datetime
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:0?[1-9]|[1-4]\d|5[0-3])$
+examples:
+- value: '1'
+  description: first week of the year
+- value: '05'
+  description: fifth week, with a leading zero
+- value: '53'
+  description: last week of a 53-week year
+- value: '54'
+  valid: false
+  description: no year has 54 weeks
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_week_date
+translations:
+  ru:
+    name: Номер недели в году
+  fr:
+    name: Numéro de semaine

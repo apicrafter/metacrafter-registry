@@ -1,0 +1,42 @@
+id: us_census_geoid
+name: US Census Bureau GEOID
+status: draft
+doc: Numeric identifier of a geographic area in US Census Bureau data. It joins the codes of the areas
+  it nests in, so its length shows the level - 2 digits for a state, 5 for a county, 7 for a place, 10
+  for a county subdivision, 11 for a census tract, 12 for a block group and 15 for a block. Some blocks
+  have a one-letter suffix. ZCTA and CBSA codes are also 5 digits. A fully qualified form with a summary
+  level prefix is a separate pattern (us_census_geoid_fq).
+categories:
+- geo
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:\d{2}|\d{5}|\d{7}|\d{10}|\d{11}|\d{12}|\d{15}[A-Z]?)$
+examples:
+- value: '48'
+  description: Texas (state)
+- value: '48201'
+  description: Harris County, TX (county)
+- value: '4835000'
+  description: place in Texas
+- value: '48201223100'
+  description: Census Tract 2231, Harris County, TX
+- value: '482012231001'
+  description: Block Group 1, Census Tract 2231, Harris County, TX
+- value: '482012231001050'
+  description: block in Census Tract 2231, Harris County, TX
+- value: '482012'
+  valid: false
+  description: six digits is not a GEOID length
+links:
+- type: doc
+  url: https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html
+- type: doc
+  url: https://www.census.gov/programs-surveys/geography/about/glossary.html
+translations:
+  ru:
+    name: GEOID Бюро переписи США

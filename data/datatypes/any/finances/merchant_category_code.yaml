@@ -1,0 +1,39 @@
+id: merchant_category_code
+name: Merchant category code (MCC, ISO 18245)
+status: draft
+doc: Four-digit code that a card network assigns to a merchant by the kind of goods or services it sells,
+  for example 5411 for grocery stores and supermarkets. The codes are specified by ISO 18245. Card statements
+  and public spending data with payment cards use it. Some codes start with zero, so keep values as strings.
+  Do not confuse it with the mobile country code (mobile_country_code), which is also called MCC.
+categories:
+- finances
+- ecommerce
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{4}$
+examples:
+- value: '5411'
+  description: Grocery Stores and Supermarkets
+- value: '5812'
+  description: Eating Places and Restaurants
+- value: '5541'
+  description: Service Stations
+- value: '0742'
+  description: Veterinary Services
+- value: '541'
+  valid: false
+  description: three digits
+mappings:
+  wikidata: P4573
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Merchant_category_code
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4573
+- type: doc
+  url: https://www.iso.org/standard/79450.html
+translations:
+  ru:
+    name: Код категории продавца (MCC)

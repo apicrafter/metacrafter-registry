@@ -1,0 +1,29 @@
+id: unit_of_measure
+name: Unit of measurement
+status: draft
+doc: Unit in which a quantity in the same row is expressed, written as a name or a symbol, for example
+  kilogram, kg, litre or thousand roubles. Data catalogs often keep it in a separate column next to the
+  value. Coded forms are covered by patterns such as the UN/ECE Recommendation 20 common code and UCUM.
+categories:
+- values
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: kg
+  description: kilogram, as a symbol
+- value: litre
+  description: unit name
+- value: '%'
+  description: percent
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Unit_of_measurement
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q47574
+translations:
+  ru:
+    name: Единица измерения
+  fr:
+    name: Unité de mesure

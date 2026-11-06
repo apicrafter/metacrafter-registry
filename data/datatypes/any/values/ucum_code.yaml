@@ -1,0 +1,27 @@
+id: ucum_code
+name: UCUM unit code
+status: draft
+doc: Case-sensitive code of a unit in the Unified Code for Units of Measure (UCUM), built from unit atoms,
+  prefixes and operators, for example kg, m/s, Cel or mm[Hg]. HL7 FHIR and LOINC use it for clinical and
+  laboratory results.
+semantic_type: unit_of_measure
+langs:
+- common
+examples:
+- value: kg
+  description: kilogram
+- value: m/s
+  description: metre per second
+- value: Cel
+  description: degree Celsius
+- value: mm[Hg]
+  description: millimetre of mercury
+mappings:
+  wikidata: P7825
+links:
+- type: doc
+  url: https://ucum.org/ucum
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Unified_Code_for_Units_of_Measure
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P7825

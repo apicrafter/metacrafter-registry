@@ -1,0 +1,28 @@
+id: us_census_geoid_fq
+name: US Census Bureau fully qualified GEOID
+status: draft
+doc: GEOID with nine leading characters, as used by data.census.gov and the Census Data API (ucgid) and
+  in the GEOIDFQ field of TIGER/Line files - a 3-character summary level, a 2-character geographic variant,
+  a 2-character geographic component, the letters US and then the GEOID. Older files call it GEO.ID or
+  AFFGEOID. The variant and component can contain letters.
+semantic_type: us_census_geoid
+country:
+- US
+langs:
+- en
+regexp: ^[0-9A-Z]{7}US[0-9A-Z]+$
+examples:
+- value: 1400000US13089020600
+  description: Census Tract 206, DeKalb County, GA
+- value: 0500000US48201
+  description: Harris County, TX
+- value: 860Z200US15007
+  description: ZIP Code Tabulation Area 15007
+- value: 1400000XX48201223100
+  valid: false
+  description: missing the US separator
+links:
+- type: doc
+  url: https://www.census.gov/data/what-is-data-census-gov/guidance-for-data-users/frequently-asked-questions/how-can-i-match-the-GEOID.html
+- type: doc
+  url: https://census.gov/data/developers/guidance/api-user-guide.Ucgid_Predicate.html

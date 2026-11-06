@@ -1,0 +1,41 @@
+id: fr_arrondissement_code
+name: French departmental arrondissement code (INSEE)
+status: draft
+doc: Code of an arrondissement, the subdivision of a French department, in the INSEE Official Geographic
+  Code (COG) - the department code followed by one digit, 3 characters in metropolitan France and 4 in
+  overseas departments. Municipal arrondissements of Paris, Lyon and Marseille have commune-like codes
+  (fr_arrondissement_municipal_code).
+categories:
+- geo
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^(?:\d{2}|2[AB]|97[1-6])\d$
+examples:
+- value: '011'
+  description: Belley
+- value: 2A1
+  description: Ajaccio
+- value: '751'
+  description: Paris
+- value: '9711'
+  description: Basse-Terre
+- value: '01'
+  valid: false
+  description: department code only
+mappings:
+  wikidata: P3423
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3423
+- type: doc
+  url: https://www.insee.fr/fr/information/8740222
+translations:
+  fr:
+    name: Code arrondissement
+  ru:
+    name: Код округа департамента Франции (INSEE)

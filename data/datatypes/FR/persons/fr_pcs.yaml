@@ -1,0 +1,39 @@
+id: fr_pcs
+name: French occupation and socio-professional category code (PCS)
+status: draft
+doc: Code in the INSEE nomenclature of professions and socio-professional categories (PCS). In PCS 2020
+  a group has 1 digit, a category 2 digits, a grouped profession 2 digits and a capital letter, and a
+  profession 2 digits, a capital letter and a digit (37B5). In PCS 2003 a profession has 3 digits and
+  a lowercase letter (372e). Public data often holds the 2-digit category.
+categories:
+- persons
+- industry
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^(?:\d{1,2}|\d{2}[A-Z]\d?|\d{3}[a-z])$
+examples:
+- value: '3'
+  description: Cadres et professions intellectuelles supérieures (groupe)
+- value: '37'
+  description: catégorie of group 3
+- value: 37B5
+  description: Juristes (PCS 2020 profession)
+- value: 372e
+  description: Juristes (PCS 2003 profession)
+- value: 37b5
+  valid: false
+  description: PCS 2020 uses a capital letter
+links:
+- type: doc
+  url: https://www.insee.fr/fr/metadonnees/pcs2020
+- type: doc
+  url: https://www.insee.fr/fr/metadonnees/pcs2003
+translations:
+  fr:
+    name: Professions et catégories socioprofessionnelles (PCS)
+  ru:
+    name: Код профессии и социально-профессиональной категории Франции (PCS)

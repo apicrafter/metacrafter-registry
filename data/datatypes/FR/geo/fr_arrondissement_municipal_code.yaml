@@ -1,0 +1,37 @@
+id: fr_arrondissement_municipal_code
+name: French municipal arrondissement code (INSEE)
+status: draft
+doc: INSEE code of a municipal arrondissement, which exist only in Paris (75101 to 75120), Marseille (13201
+  to 13216) and Lyon (69381 to 69389). The codes have the same form as commune codes and are used in place
+  of the commune code in many statistical files.
+parent: inseecode
+categories:
+- geo
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^(?:751(?:0[1-9]|1\d|20)|132(?:0[1-9]|1[0-6])|6938[1-9])$
+examples:
+- value: '75120'
+  description: Paris 20e arrondissement
+- value: '13216'
+  description: Marseille 16e arrondissement
+- value: '69381'
+  description: Lyon 1er arrondissement
+- value: '75121'
+  valid: false
+  description: Paris has 20 arrondissements
+links:
+- type: doc
+  url: https://www.insee.fr/fr/metadonnees/definition/c1282
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P374
+translations:
+  fr:
+    name: Code arrondissement municipal
+  ru:
+    name: Код муниципального округа (Париж, Лион, Марсель)

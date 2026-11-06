@@ -1,0 +1,35 @@
+id: fr_cedex
+name: French CEDEX address line
+status: draft
+doc: Last line of a French address for the CEDEX service (Courrier d'Entreprise à Distribution EXceptionnelle)
+  of La Poste for organisations with large mail volumes - a 5-digit CEDEX code, the name of the delivery
+  office in capitals and the word CEDEX, sometimes followed by a one- or two-digit number. Sirene splits
+  it into a code (codeCedexEtablissement), which looks like a postcode, and a label.
+categories:
+- geo
+- shipping
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: '^\d{5} [A-Z][A-Z'' -]* CEDEX(?: \d{1,2})?$'
+examples:
+- value: 33506 LIBOURNE CEDEX
+  description: CEDEX line without a number
+- value: 34092 MONTPELLIER CEDEX 5
+  description: CEDEX line with a number
+- value: 34092 MONTPELLIER CEDEX 123
+  valid: false
+  description: the number has at most two digits
+links:
+- type: doc
+  url: https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/FraFr.pdf
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_France
+translations:
+  fr:
+    name: Ligne CEDEX
+  ru:
+    name: Строка адреса CEDEX (Франция)
