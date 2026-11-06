@@ -10,7 +10,7 @@ langs:
 - en
 is_pii: false
 classification: categorical
-regexp: '[0-9]{3}'
+regexp: ^[0-9]{3}$
 examples:
 - value: '005'
   description: South America

@@ -9,7 +9,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ([1-9]\d{6})
+regexp: ^([1-9]\d{6})$
 examples:
 - value: '6725418'
   description: Queen Elizabeth 2

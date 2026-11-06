@@ -11,7 +11,7 @@ langs:
 - hy
 is_pii: true
 classification: identifier
-regexp: '[A-Z0-9]{6,9}'
+regexp: ^[A-Z0-9]{6,9}$
 examples:
 - value: AB123456
   description: Example Armenian passport number

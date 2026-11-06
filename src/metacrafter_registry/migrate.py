@@ -80,12 +80,26 @@ def _empty(value: Any) -> bool:
     )
 
 
-def _as_bool(value: Any) -> bool | None:
+_TRUE = {"true", "yes", "1"}
+_FALSE = {"false", "no", "0"}
+
+
+def _as_bool(value: Any) -> Any:
+    """A v1 string boolean ("True", "false", ...) as a bool; None when blank.
+
+    Any other value is returned unchanged, so that validation reports it
+    instead of the migration silently turning it into False.
+    """
     if isinstance(value, bool):
         return value
     if value is None or (isinstance(value, str) and not value.strip()):
         return None
-    return str(value).strip() == "True"
+    text = str(value).strip().lower()
+    if text in _TRUE:
+        return True
+    if text in _FALSE:
+        return False
+    return value
 
 
 def _ordered(data: dict[str, Any], order: list[str]) -> dict[str, Any]:
@@ -216,7 +230,7 @@ def _yaml_files(directory: Path) -> list[Path]:
     paths = []
     for root, dirs, files in os.walk(directory):
         dirs.sort()
-        paths += [Path(root) / f for f in files if f.endswith(".yaml")]
+        paths += [Path(root) / f for f in files if f.lower().endswith(".yaml")]
     return sorted(paths)
 
 

@@ -73,7 +73,7 @@ The build fails on any of these:
 - a file name that differs from the ID
 - unresolved `semantic_type`, `parent` or tool `supported_types`
 - a regexp that does not compile, or that uses non-portable syntax
-- an example that does not match its regexp
+- an example that does not match its whole regexp
 - a directory that does not match the record's country
 
 Warnings do not fail the build: a regexp that is not anchored, and an example
@@ -102,10 +102,13 @@ configure this once on pypi.org: add a trusted publisher for
 `pypi`. The same workflow also publishes a GitHub Release with these files:
 - `datatypes.json`, `datatypes.jsonl` and `datatypes.csv`
 - `tools.json`
-- the reference lists
+- the reference lists and `aliases.json`
 - `openapi.json`
-- the manifest
-- the legacy `registry.json`
+- the manifest (`manifest.json`)
+- the legacy `registry.json` (`registry-legacy.json`)
+- `rag-corpus.jsonl`, `llms-full.txt`, `registry.ttl` and `datahub-glossary.yml`
+- the changes since the previous release (`changes.json`, `CHANGES.md`)
+- the Python package (wheel and sdist)
 - a zip of the site
 - `SHA256SUMS`
 

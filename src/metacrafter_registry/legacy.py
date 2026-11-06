@@ -11,8 +11,9 @@ changes):
 * records are ordered by id, so output is deterministic;
 * patterns embedded in a datatype are always fully resolved (the old JSONL
   sometimes embedded raw, unresolved pattern objects);
-* a pattern's ``is_pii`` always reflects its parent datatype (the old builder
-  compared against an already-converted boolean, depending on file order).
+* a pattern's ``is_pii`` is its own value, or its datatype's when it declares
+  none (the old builder compared against an already-converted boolean,
+  depending on file order).
 """
 
 from __future__ import annotations

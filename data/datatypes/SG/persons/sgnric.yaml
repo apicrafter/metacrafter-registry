@@ -12,7 +12,7 @@ langs:
 - en
 is_pii: true
 classification: identifier
-regexp: (?i)([STFG][0-9]{7}[A-Z])
+regexp: ^([STFGstfg][0-9]{7}[A-Za-z])$
 mappings:
   google_dlp: SINGAPORE_NATIONAL_REGISTRATION_ID_NUMBER
   presidio: SG_NRIC_FIN

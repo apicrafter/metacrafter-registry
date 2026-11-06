@@ -11,7 +11,7 @@ langs:
 - en
 is_pii: false
 classification: identifier
-regexp: '[0123678]\d{3}-\d{4}-\d'
+regexp: ^[0123678]\d{3}-\d{4}-\d$
 mappings:
   autotype: routingnumber
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/RoutingTransitNumber

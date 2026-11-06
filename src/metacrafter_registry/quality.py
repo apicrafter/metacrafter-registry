@@ -32,7 +32,7 @@ AUTHORITATIVE_LINKS = {
 
 
 def score_record(record: dict[str, Any]) -> dict[str, Any]:
-    """Score a normalized (v1) record; return {'score': int, 'missing': [str]}."""
+    """Score a normalized (``/api/v1/``) record; return {'score': int, 'missing': [str]}."""
     score = 0
     missing: list[str] = []
 

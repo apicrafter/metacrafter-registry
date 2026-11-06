@@ -11,7 +11,7 @@ langs:
 - en
 is_pii: false
 classification: categorical
-regexp: \d{2}\.\d{3}
+regexp: ^\d{2}\.\d{3}$
 examples:
 - value: '93.791'
   description: Money Follows the Person Rebalancing Demonstration

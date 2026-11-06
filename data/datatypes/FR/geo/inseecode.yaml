@@ -11,7 +11,7 @@ langs:
 - fr
 is_pii: false
 classification: identifier
-regexp: \d[0-9AB][0-9P]\d\d
+regexp: ^\d[0-9AB][0-9P]\d\d$
 examples:
 - value: '75056'
   description: Paris

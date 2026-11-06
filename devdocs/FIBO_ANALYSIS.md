@@ -191,7 +191,9 @@ The change is described in `openspec/changes/add-fibo-mappings/`:
   - the IRI in the Markdown twin;
   - `crosswalk("fibo", <IRI or path>)`.
 
-32 records map to 29 FIBO classes. All 29 classes are `Release`.
+32 records map to 29 FIBO classes. All 29 classes are `Release`. (Since
+2026-11-06, after the records of section 4 were added: 44 records, 41
+classes.)
 
 | Registry id | FIBO class | FIBO label |
 |---|---|---|
@@ -266,3 +268,13 @@ The provisional `UniversalLoanIdentifier` (HMDA) is a candidate too.
 Each new record needs its format, examples and check digit verified against
 the defining standard; the FIBO definition is not enough. Add them as `draft`
 records with a `mappings.fibo` entry.
+
+**Done on 2026-11-06** (task 6.2 of `add-fibo-mappings`): `dti` and
+`merchant_category_code` existed and gained the mapping. New draft records:
+`unique_transaction_identifier`, `unique_product_identifier`,
+`us_unique_swap_identifier`, `elf_code`, `bban`, `cins`, `common_code`,
+`us_rssd_id`, `us_fdic_certificate`, `iin` and `us_zip_plus4`. `elf_code` has
+no FIBO mapping: FIBO's `EntityLegalForm` is the legal form (a classifier),
+not its code. No check digit is enforced: UTI and USI have none, the UPI
+check character (ISO 4914 Annex C) and the CINS check digit (the CUSIP
+algorithm) have no implementation in `checksums.py` yet.

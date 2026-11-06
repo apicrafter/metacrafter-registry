@@ -1,0 +1,33 @@
+id: cins
+name: CUSIP International Numbering System number (CINS)
+status: draft
+doc: Nine-character identifier in the CUSIP format for a security of an issuer outside the United States
+  and Canada, issued by CUSIP Global Services. The first character is a letter for the issuer's country
+  or region (G for the United Kingdom, D for Germany, ...; I and O are not used), followed by five issuer
+  characters, two issue characters and a check digit computed as for a CUSIP.
+categories:
+- finances
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-HJ-NP-Z][0-9A-Z]{7}[0-9]$
+examples:
+- value: G0052B105
+  description: Abingdon Capital PLC shares (CUSIP Global Services)
+- value: DUS0421C5
+  description: python-stdnum documentation example
+- value: G0052B10
+  valid: false
+  description: eight characters
+mappings:
+  fibo: SEC/Securities/SecuritiesIdentificationIndividuals/CUSIPInternationalNumberingSystemNumber
+links:
+- type: doc
+  url: https://www.cusip.com/identifiers.html
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/CUSIP
+translations:
+  ru:
+    name: Международный номер CUSIP (CINS)

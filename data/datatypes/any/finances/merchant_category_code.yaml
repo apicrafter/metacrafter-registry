@@ -26,6 +26,7 @@ examples:
   valid: false
   description: three digits
 mappings:
+  fibo: BE/FunctionalEntities/FunctionalEntities/MerchantCategoryCode
   wikidata: P4573
 links:
 - type: wikipedia

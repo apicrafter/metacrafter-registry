@@ -48,9 +48,10 @@ schema/                     JSON Schemas of datatype, pattern and tool records
 src/metacrafter_registry/   package and CLI `metacrafter-registry`
   templates/, static/       site templates, CSS and JS
 tests/                      pytest suite
-scripts/                    builder.py (wrapper), export.py (DataHub), generate_missing_entries.py,
+scripts/                    builder.py (wrapper), generate_missing_entries.py, check_qddate.py,
                             wikidata_properties.py (compare with Wikidata identifier properties)
-.github/workflows/          ci.yml, pages.yml (deploy), release.yml (tags)
+.github/workflows/          ci.yml, pages.yml (deploy), release.yml (tags),
+                            weekly.yml (rules drift and external links)
 .github/ISSUE_TEMPLATE/     issue forms: propose a datatype, fix a datatype
 openspec/                   OpenSpec config and change proposals
 devdocs/                    audit and analysis notes
@@ -72,7 +73,10 @@ metacrafter-registry check-links     # internal links of dist/ resolve
 metacrafter-registry check-contract <base-url>   # public URLs work
 metacrafter-registry coverage report # metacrafter-rules coverage and orphan rule keys
 metacrafter-registry coverage update --rules-dir <metacrafter-rules>/rules   # bump the pinned rules
+metacrafter-registry coverage check --rules-dir <metacrafter-rules>/rules    # summary matches the checkout
+metacrafter-registry fibo search <words> --fibo-dir <fibo checkout>   # find a FIBO class
 metacrafter-registry fibo update --fibo-dir <fibo checkout>   # pin the FIBO classes that records map to
+metacrafter-registry fibo check --fibo-dir <fibo checkout>    # pinned list matches the checkout
 metacrafter-registry changes --old <prev datatypes.jsonl>   # changelog between versions
 metacrafter-registry mcp             # MCP server over stdio (needs the [mcp] extra)
 metacrafter-registry snapshot        # bundle dist/ data into the package (release only)
@@ -160,7 +164,7 @@ The build fails, and writes nothing, on:
   `supported_types`
 - a file name that differs from the id
 - a regexp that does not compile or uses non-portable syntax
-- an example that does not match its regexp, or a negative example that
+- an example that does not match its whole regexp, or a negative example that
   matches it
 - a directory that does not match the record's country
 - a `mappings.fibo` class missing from `data/vocabularies/fibo.json`
@@ -195,6 +199,8 @@ examples.
   definition and maturity of each mapped FIBO class at one FIBO commit, so
   validation needs no network. Regenerate it with `fibo update`; do not edit it
   by hand.
+- `datahub.py`: the DataHub business glossary, `/datahub-glossary.yml`. Term ids
+  are registry ids, the URNs that metacrafter's DataHub export attaches.
 - `changes.py`: the changelog between two data versions, used for release
   notes and the `/changes` page.
 - `mcp_server.py`: the MCP server: tools `identify_values`,

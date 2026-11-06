@@ -7,6 +7,7 @@ directories.
 
 from __future__ import annotations
 
+import posixpath
 from dataclasses import dataclass
 from html.parser import HTMLParser
 from pathlib import Path
@@ -59,7 +60,13 @@ def check_links(root: Path, base_path: str = "") -> tuple[int, list[BrokenLink]]
                 continue
             path = unquote(parts.path)
             if not path.startswith("/"):
-                path = "/" + (page.parent.relative_to(root) / path).as_posix().lstrip("./")
+                relative = posixpath.normpath(
+                    posixpath.join(page.parent.relative_to(root).as_posix(), path)
+                )
+                if relative == ".." or relative.startswith("../"):  # leaves the site
+                    broken.append(BrokenLink(page.relative_to(root).as_posix(), link))
+                    continue
+                path = "/" + ("" if relative == "." else relative)
             if base_path:
                 if not path.startswith(base_path + "/") and path != base_path:
                     broken.append(BrokenLink(page.relative_to(root).as_posix(), link))

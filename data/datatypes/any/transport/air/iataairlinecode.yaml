@@ -6,7 +6,7 @@ doc: IATA airline designators, sometimes called IATA reservation codes, are two-
 semantic_type: airlinecode
 langs:
 - common
-regexp: '[A-Z0-9]{2}'
+regexp: ^[A-Z0-9]{2}$
 examples:
 - value: MH
   description: Malaysia Airlines

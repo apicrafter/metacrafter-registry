@@ -10,7 +10,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: '[a-z0-9]{9}'
+regexp: ^[a-z0-9]{9}$
 examples:
 - value: 00v4dac24
   description: Leeds Teaching Hospitals NHS Trust

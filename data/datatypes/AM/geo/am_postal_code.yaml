@@ -10,7 +10,7 @@ langs:
 - hy
 is_pii: true
 classification: identifier
-regexp: \d{4}
+regexp: ^\d{4}$
 examples:
 - value: '0001'
   description: Example Armenian postal code (Yerevan)

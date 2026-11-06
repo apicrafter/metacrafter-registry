@@ -10,7 +10,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: \d{9}
+regexp: ^\d{9}$
 examples:
 - value: '548160290'
   description: Langley Holdings

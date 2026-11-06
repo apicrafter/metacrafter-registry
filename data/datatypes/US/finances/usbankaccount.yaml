@@ -7,7 +7,7 @@ country:
 - US
 langs:
 - common
-regexp: '[0-9]{8,17}'
+regexp: ^[0-9]{8,17}$
 mappings:
   presidio: US_BANK_NUMBER
   purview: U.S. bank account number

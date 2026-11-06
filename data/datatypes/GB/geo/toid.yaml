@@ -10,7 +10,7 @@ langs:
 - en
 is_pii: false
 classification: identifier
-regexp: \d{16}
+regexp: ^\d{16}$
 examples:
 - value: '7000000000013965'
   description: Surrey

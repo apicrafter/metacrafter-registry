@@ -16,6 +16,11 @@ from .client import Registry
 
 logger = logging.getLogger(__name__)
 
+# The same limits as the /identify page: regexps run without a time limit here,
+# so long or many values from a client must not stall the server.
+MAX_VALUES = 200
+MAX_VALUE_LENGTH = 256
+
 INSTRUCTIONS = (
     "Metacrafter Registry: a catalog of semantic datatypes (identifiers, personal data, "
     "codes). Use identify_values to label a column from sample values and its field name, "
@@ -66,9 +71,11 @@ def create_server(registry: Registry):
         Uses regexp hit rate (weighted by how specific the regexp is), check-digit
         algorithms (Luhn, IBAN mod-97, INN, ...) and similarity to the field name.
         country is an ISO 3166-1 alpha-2 code that favours national datatypes.
+        Only the first 200 values are used, each cut to 256 characters.
         """
+        samples = [str(v).strip()[:MAX_VALUE_LENGTH] for v in values[:MAX_VALUES]]
         candidates = registry.identify(
-            values, field_name=field_name, country=country, limit=max(1, min(limit, 50))
+            samples, field_name=field_name, country=country, limit=max(1, min(limit, 50))
         )
         return {"registry_version": registry.version, "candidates": candidates}
 
@@ -178,10 +185,12 @@ def load_registry(
     if refresh:
         try:
             return Registry.fetch(base_url or DEFAULT_BASE_URL)
-        except OSError as exc:
+        except (OSError, ValueError) as exc:  # network errors, bad JSON, SHA-256 mismatch
             logger.warning("refresh failed (%s); using local data", exc)
+    if path is not None:
+        return Registry.load(path)  # an explicit path that is missing is an error
     try:
-        return Registry.load(path)
+        return Registry.load()
     except FileNotFoundError:
         return Registry.fetch(base_url or DEFAULT_BASE_URL)
 

@@ -11,7 +11,7 @@ langs:
 - common
 is_pii: true
 classification: identifier
-regexp: ([0-9a-z_](?:(?:[0-9a-z_]|(?:\.(?!\.))){0,28}(?:[0-9a-z_]))?)
+regexp: ^([0-9a-z_](?:(?:[0-9a-z_]|(?:\.(?!\.))){0,28}(?:[0-9a-z_]))?)$
 examples:
 - value: nasa
   description: National Aeronautics and Space Administration

@@ -1,8 +1,9 @@
 """Check-digit algorithms referenced by the ``checksum`` field of records.
 
 Each function takes the raw value and returns True when the check digit is
-valid. Separators (spaces, hyphens, dots) are ignored; any other unexpected
-character makes the value invalid.
+valid. Unless an algorithm says otherwise, separators (spaces, hyphens,
+dots) are ignored; any other unexpected character makes the value invalid.
+Digits are ASCII digits: other Unicode digits make the value invalid.
 """
 
 from __future__ import annotations
@@ -18,9 +19,14 @@ def _compact(value: str) -> str:
     return _SEPARATORS.sub("", str(value))
 
 
+def _is_digits(text: str) -> bool:
+    """ASCII digits only: str.isdigit() also accepts superscripts, which int() rejects."""
+    return text.isascii() and text.isdigit()
+
+
 def _digits(value: str) -> list[int] | None:
     compact = _compact(value)
-    return [int(c) for c in compact] if compact.isdigit() else None
+    return [int(c) for c in compact] if _is_digits(compact) else None
 
 
 def luhn(value: str) -> bool:
@@ -154,7 +160,7 @@ def ru_snils(value: str) -> bool:
 def ru_ogrn(value: str) -> bool:
     """Russian state registration number: OGRN (13 digits) or OGRNIP (15 digits)."""
     compact = _compact(value)
-    if not compact.isdigit():
+    if not _is_digits(compact):
         return False
     if len(compact) == 13:
         return int(compact[:12]) % 11 % 10 == int(compact[12])
@@ -203,7 +209,7 @@ def bg_vat(value: str) -> bool:
     compact = _compact(value).upper()
     if compact.startswith("BG"):
         compact = compact[2:]
-    digits = [int(c) for c in compact] if compact.isdigit() else None
+    digits = [int(c) for c in compact] if _is_digits(compact) else None
     if not digits:
         return False
 
@@ -463,7 +469,12 @@ def iso7064_mod97_10(value: str) -> bool:
     compact = _compact(value).upper()
     if not re.fullmatch(r"[0-9A-Z]{3,}", compact):
         return False
-    return int("".join(str(int(c, 36)) for c in compact)) % 97 == 1
+    # Fold digit by digit: one big int() fails above 4,300 digits on Python 3.11+.
+    remainder = 0
+    for c in compact:
+        number = int(c, 36)
+        remainder = (remainder * (100 if number > 9 else 10) + number) % 97
+    return remainder == 1
 
 
 def de_ustidnr(value: str) -> bool:

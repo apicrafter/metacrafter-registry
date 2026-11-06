@@ -11,7 +11,7 @@ langs:
 - es
 is_pii: true
 classification: identifier
-regexp: '[0-9]?[0-9]{7}[-]?[A-Z]'
+regexp: ^[0-9]?[0-9]{7}[-]?[A-Z]$
 mappings:
   google_dlp: SPAIN_NIF_NUMBER
   presidio: ES_NIF

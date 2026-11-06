@@ -10,7 +10,7 @@ country:
 - MX
 langs:
 - es
-regexp: \d{5}
+regexp: ^\d{5}$
 examples:
 - value: '07002'
   description: Palma, Majorca

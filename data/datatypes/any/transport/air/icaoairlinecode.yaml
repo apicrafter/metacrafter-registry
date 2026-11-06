@@ -7,7 +7,7 @@ doc: The ICAO airline designator is a code assigned by the International Civil A
 semantic_type: airlinecode
 langs:
 - common
-regexp: '[A-Z0-9]{3}'
+regexp: ^[A-Z0-9]{3}$
 examples:
 - value: THY
   description: Turkish Airlines

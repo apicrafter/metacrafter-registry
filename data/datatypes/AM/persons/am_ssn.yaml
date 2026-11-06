@@ -13,7 +13,7 @@ langs:
 - hy
 is_pii: true
 classification: identifier
-regexp: \d{10}
+regexp: ^\d{10}$
 examples:
 - value: '1234567890'
   description: Example Armenian SSN

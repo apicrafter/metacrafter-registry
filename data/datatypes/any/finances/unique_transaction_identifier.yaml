@@ -1,0 +1,30 @@
+id: unique_transaction_identifier
+name: Unique transaction identifier (UTI, ISO 23897)
+status: draft
+doc: Identifier of one OTC derivatives transaction in reports to trade repositories, defined by ISO 23897
+  and the CPMI-IOSCO technical guidance. It has up to 52 uppercase letters and digits without separators
+  - the 20-character LEI of the entity that generated it, then up to 32 characters that this entity keeps
+  unique. The UTI has no check digit of its own; only its LEI part has one. Identifiers made before the
+  guidance may have another structure.
+categories:
+- finances
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z0-9]{18}[0-9]{2}[A-Z0-9]{1,32}$
+examples:
+- value: E02-TRADE-77
+  valid: false
+  description: hyphens are not allowed, and there is no LEI prefix
+mappings:
+  fibo: FBC/ProductsAndServices/FinancialProductsAndServices/UniqueTransactionIdentifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Unique_Transaction_Identifier
+- type: doc
+  url: https://www.bis.org/cpmi/publ/d158.pdf
+translations:
+  ru:
+    name: Уникальный идентификатор сделки (UTI, ISO 23897)

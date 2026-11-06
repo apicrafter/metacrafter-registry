@@ -10,7 +10,7 @@ langs:
 - ru
 is_pii: false
 classification: identifier
-regexp: \d{8}
+regexp: ^\d{8}$
 examples:
 - value: 00040778
   description: Gazprom

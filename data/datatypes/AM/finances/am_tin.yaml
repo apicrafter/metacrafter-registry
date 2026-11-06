@@ -12,7 +12,7 @@ langs:
 - hy
 is_pii: false
 classification: identifier
-regexp: \d{8}
+regexp: ^\d{8}$
 examples:
 - value: '12345678'
   description: Example Armenian TIN

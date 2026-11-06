@@ -1,0 +1,33 @@
+id: unique_product_identifier
+name: Unique product identifier (UPI, ISO 4914)
+status: draft
+doc: Code of an OTC derivative product, such as an interest rate swap with given terms, used in regulatory
+  reporting. The Derivatives Service Bureau (DSB) assigns it. It identifies the product, not a single
+  trade (a trade has a unique transaction identifier). ISO 4914 defines 12 characters - the prefix QZ,
+  nine characters and a check character - made of digits and uppercase consonants; the vowels A, E, I,
+  O, U and the letter Y are not used. The check character is not verified here. Not to be confused with
+  the Indian Unified Payments Interface ID (in_upi_id).
+categories:
+- finances
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^QZ[0-9BCDFGHJKLMNPQRSTVWXZ]{10}$
+examples:
+- value: QZ0B7849XHTK
+  description: Fixed-to-floating EUR EURIBOR interest rate swap (European Commission consultation, 2023)
+- value: QZ0B7849XHTA
+  valid: false
+  description: vowels are not used
+mappings:
+  fibo: DER/DerivativesContracts/DerivativesBasics/UniqueProductIdentifier
+links:
+- type: doc
+  url: https://www.iso.org/standard/80506.html
+- type: other
+  url: https://finance.ec.europa.eu/system/files/2023-11/2023-otc-derivatives-identifier-consultation-document_en_0.pdf
+translations:
+  ru:
+    name: Уникальный идентификатор продукта (UPI, ISO 4914)

@@ -12,7 +12,7 @@ langs:
 - en
 is_pii: true
 classification: identifier
-regexp: \d{3}\s\d{3}\s\d{3}
+regexp: ^\d{3}\s\d{3}\s\d{3}$
 mappings:
   google_dlp: AUSTRALIA_TAX_FILE_NUMBER
   presidio: AU_TFN

@@ -1,0 +1,36 @@
+id: bban
+name: Basic bank account number (BBAN)
+status: draft
+doc: National bank account number that forms the domestic part of an IBAN - the characters after the country
+  code and the two IBAN check digits (ISO 13616). Its length and structure are set per country, from 11
+  to 29 letters and digits; it usually holds a bank or branch code and the account number, and some countries
+  add national check digits. A BBAN is only validated against its country's structure, so the regexp here
+  checks the length and characters only.
+parent: bankaccount
+categories:
+- finances
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z0-9]{11,29}$
+examples:
+- value: WEST12345698765432
+  description: BBAN of the British example IBAN GB82 WEST 1234 5698 7654 32
+- value: '435411161155'
+  description: BBAN of the Belgian IBAN BE31435411161155 (python-stdnum documentation)
+- value: 01101050000010547023795
+  description: BBAN of the Greek IBAN GR16 0110 1050 0000 1054 7023 795 (python-stdnum documentation)
+- value: '4354111611'
+  valid: false
+  description: ten characters, shorter than any BBAN
+mappings:
+  fibo: FBC/ProductsAndServices/ClientsAndAccounts/BasicBankAccountIdentifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Bank_Account_Number
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.iban
+translations:
+  ru:
+    name: Базовый номер банковского счёта (BBAN)

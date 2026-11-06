@@ -12,7 +12,7 @@ langs:
 - hy
 is_pii: false
 classification: identifier
-regexp: \d{2,3}[A-Z]{2}\d{2,3}
+regexp: ^\d{2,3}[A-Z]{2}\d{2,3}$
 examples:
 - value: 12AB345
   description: Example Armenian vehicle plate (2 digits, 2 letters, 3 digits)

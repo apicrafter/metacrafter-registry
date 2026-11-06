@@ -13,7 +13,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: \d{1,14}
+regexp: ^\d{1,14}$
 examples:
 - value: '787911721'
   description: Directory of Open Access Books

@@ -113,3 +113,26 @@ def test_stdio_server_end_to_end():
             return result.structured_content["id"]
 
     assert run(main) == "email"
+
+
+def test_explicit_missing_path_is_an_error(tmp_path, monkeypatch):
+    from metacrafter_registry import mcp_server
+
+    def no_network(*args, **kwargs):
+        raise AssertionError("must not download")
+
+    monkeypatch.setattr(Registry, "fetch", no_network)
+    with pytest.raises(FileNotFoundError):
+        mcp_server.load_registry(str(tmp_path / "missing"))
+
+
+def test_refresh_falls_back_on_a_bad_download(monkeypatch):
+    from conftest import DATA
+
+    from metacrafter_registry import mcp_server
+
+    def bad_download(*args, **kwargs):
+        raise ValueError("datatypes.jsonl: SHA-256 does not match the manifest")
+
+    monkeypatch.setattr(Registry, "fetch", bad_download)
+    assert len(mcp_server.load_registry(str(DATA), refresh=True)) > 0

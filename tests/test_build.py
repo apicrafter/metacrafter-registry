@@ -170,3 +170,24 @@ def test_url_contract_on_local_build(built_site):
         results = check_contract(base)
     failed = [str(r) for r in results if not r.ok]
     assert failed == []
+
+
+def test_check_links_needs_a_built_site(tmp_path):
+    from metacrafter_registry.cli import main
+
+    assert main(["check-links", "--dir", str(tmp_path / "missing")]) == 2
+    (tmp_path / "empty").mkdir()
+    assert main(["check-links", "--dir", str(tmp_path / "empty")]) == 1
+
+
+def test_relative_links_are_normalized(tmp_path):
+    (tmp_path / "datatype").mkdir()
+    (tmp_path / "category").mkdir()
+    (tmp_path / "category" / "pii.html").write_text("<p>pii</p>")
+    (tmp_path / "datatype" / "email.html").write_text(
+        '<a href="../category/pii">ok</a> <a href="../../outside">escapes</a>'
+    )
+    (tmp_path / "index.html").write_text('<a href="../x">escapes</a> <a href=".">self</a>')
+    checked, broken = check_links(tmp_path)
+    assert checked == 2
+    assert sorted(b.link for b in broken) == ["../../outside", "../x"]

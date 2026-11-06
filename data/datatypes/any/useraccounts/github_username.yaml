@@ -11,7 +11,7 @@ langs:
 - common
 is_pii: true
 classification: identifier
-regexp: '[0-9A-Za-z]([0-9A-Za-z\-]{0,37}[0-9A-Za-z])?'
+regexp: ^[0-9A-Za-z]([0-9A-Za-z\-]{0,37}[0-9A-Za-z])?$
 examples:
 - value: google
   description: Google

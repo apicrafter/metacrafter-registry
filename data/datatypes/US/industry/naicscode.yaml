@@ -10,7 +10,7 @@ langs:
 - en
 is_pii: false
 classification: categorical
-regexp: \d{2,6}
+regexp: ^\d{2,6}$
 examples:
 - value: '517919'
   description: CelerSMS

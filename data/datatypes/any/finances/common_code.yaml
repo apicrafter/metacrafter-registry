@@ -1,0 +1,31 @@
+id: common_code
+name: Euroclear and Clearstream common code
+status: draft
+doc: Nine-digit number that the international central securities depositories Euroclear Bank and Clearstream
+  Banking assign jointly to the securities they settle. ISINs with the prefix XS are built from it - XS,
+  the common code and the ISIN check digit. Leading zeros are often dropped, so a column may hold seven
+  or eight digits.
+categories:
+- finances
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{9}$
+examples:
+- value: '299753476'
+  description: common code inside the ISIN XS2997534768 (T-Mobile USA notes, SEC filing 2025)
+- value: '283106390'
+  description: European Investment Bank notes with the ISIN US298785KD79 (SEC filing 2024)
+- value: 29975347X
+  valid: false
+  description: digits only
+mappings:
+  fibo: SEC/Securities/SecuritiesIdentificationIndividuals/EuroclearClearstreamCommonCode
+links:
+- type: other
+  url: https://www.sec.gov/Archives/edgar/data/1578078/000119312525020073/d837432dfwp.htm
+translations:
+  ru:
+    name: Общий код Euroclear и Clearstream (Common Code)
