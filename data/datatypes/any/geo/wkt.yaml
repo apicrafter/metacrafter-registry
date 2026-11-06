@@ -1,6 +1,6 @@
 id: wkt
 name: Well-known text (WKT) geometry
-status: draft
+status: stable
 doc: Geometry written in the well-known text (WKT) markup of the OGC Simple Features standard (ISO 19125),
   such as POINT (30 10) or POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10)). PostGIS also writes extended
   WKT (EWKT), which starts with the spatial reference id, as in SRID=4326;POINT (30 10).

@@ -9,12 +9,15 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^(?:([A-Z]{2,3}|[A-Z][0-9]|[0-9][A-Z])\d{1,4}[A-Z]?|\d{1,4})$
+regexp: ^(?:[A-Z]{2,3}|[A-Z][0-9]|[0-9][A-Z])\d{1,4}[A-Z]?$
 examples:
 - value: EK521
   description: Emirates Flight 521
 - value: 4U9525
   description: Germanwings Flight 9525
+- value: '9525'
+  valid: false
+  description: the flight digits without the airline designator
 mappings:
   wikidata: P3090
   schema_org: flightNumber
