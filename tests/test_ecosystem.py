@@ -870,6 +870,10 @@ def test_javascript_checksums_match_python(tmp_path):
     values += [f"10{rng.randrange(10**7):07d}" for _ in range(500)]
     values += [f"{rng.randrange(10**8):08d}" for _ in range(500)]
     values += [f"NL{rng.randrange(10**9):09d}B{rng.randrange(100):02d}" for _ in range(1000)]
+    values += [f"{rng.randrange(10**7):07d}{rng.choice('0123456789X')}" for _ in range(500)]
+    values += [f"9790{rng.randrange(10**9):09d}" for _ in range(300)]
+    values += [f"M-{rng.randrange(10**9):09d}" for _ in range(300)]
+    values += [f"0000 000{rng.randrange(10**8):08d}{rng.choice('0123456789X')}" for _ in range(500)]
     isds = "abcdefghijkmnpqrstuvwxyz23456789"
     values += ["".join(rng.choice(isds) for _ in range(7)) for _ in range(500)]
     for _ in range(300):  # Belgian numbers, half of them with valid check digits

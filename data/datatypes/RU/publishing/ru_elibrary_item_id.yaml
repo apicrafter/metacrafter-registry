@@ -1,0 +1,36 @@
+id: ru_elibrary_item_id
+name: eLIBRARY.RU publication ID
+status: draft
+doc: 'Number of a publication (article, book, conference paper, thesis) in eLIBRARY.RU, the Russian scientific
+  electronic library that hosts the Russian Science Citation Index (РИНЦ): the id parameter of elibrary.ru/item.asp?id=<number>.
+  Numbers are assigned in sequence and have no check digit.'
+categories:
+- publishing
+- science
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d*$
+examples:
+- value: '21770477'
+  description: Etymological dictionary of the Iranian languages
+- value: '19787384'
+  description: Commentary on the Air Code of the Russian Federation
+- value: '021770477'
+  valid: false
+  description: Leading zero
+mappings:
+  wikidata: P11860
+links:
+- type: doc
+  url: https://elibrary.ru/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P11860
+translations:
+  ru:
+    name: Идентификатор публикации в eLIBRARY.RU
+    doc: Номер статьи, книги или другой публикации в Научной электронной библиотеке eLIBRARY.RU (параметр
+      id в item.asp).

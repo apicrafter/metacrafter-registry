@@ -29,3 +29,8 @@ links:
   url: https://en.wikipedia.org/wiki/Handle_System
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1184
+translations:
+  ru:
+    name: Идентификатор системы Handle
+    doc: Постоянный идентификатор вида <префикс>/<суффикс> в системе Handle; DOI — это handle с префиксом
+      10.

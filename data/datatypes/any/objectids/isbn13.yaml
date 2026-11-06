@@ -21,6 +21,9 @@ examples:
   description: Learning Scientific Programming with Python
 - value: 978-94-6298-380-9
   description: 'Dolle mythes: een frisse factcheck van feminisme toen en nu'
+- value: 978-0-521-29366-3
+  valid: false
+  description: Hamlet with a wrong check digit
 mappings:
   wikidata: P212
   fta: CHECKDIGIT.ISBN
@@ -32,3 +35,8 @@ links:
   url: https://en.wikipedia.org/wiki/International_Standard_Book_Number
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P212
+translations:
+  ru:
+    name: Международный стандартный книжный номер из 13 цифр (ISBN-13)
+    doc: 'ISBN, который присваивают с 2007 года: 13 цифр с префиксом 978 или 979, последняя — контрольная
+      цифра, как в штрихкоде EAN-13.'

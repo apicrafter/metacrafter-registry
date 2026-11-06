@@ -1,21 +1,41 @@
 id: udkindex
-name: Universal Decimal Classification (UDC)
+name: Universal Decimal Classification (UDC) number
 status: stable
-doc: The Universal Decimal Classification (UDC) is a bibliographic and library classification representing
-  the systematic arrangement of all branches of human knowledge organized as a coherent system in which
-  knowledge fields are related and inter-linked.
+doc: 'Class number of the Universal Decimal Classification, a library and bibliographic classification
+  derived from Dewey and maintained by the UDC Consortium. Scientific articles and books published in
+  Russia and other post-Soviet countries usually carry a UDC number (УДК). A number starts with a main
+  class number such as 316.7 and can be extended with connecting signs (: + / ::) and auxiliaries: place
+  in parentheses (470), language after = and ethnic group in (=161.1), time in quotes "1941/1945", and
+  special auxiliaries after -, .0 or an apostrophe. An asterisk introduces a number from another system.
+  The regexp accepts numbers that start with a main class and use these signs; Wikidata property P1190
+  accepts only the main number. Alphabetic extensions and numbers that start with an auxiliary are not
+  accepted.'
 categories:
-- common
+- publishing
+- science
 langs:
 - common
 is_pii: false
-classification: identifier
-regexp: ^\d{1,3}(?:\.\d{1,3})*(?:[:+/]\d{1,3}(?:\.\d{1,3})*)*$
+classification: categorical
+regexp: ^\d{1,3}(?:\.\d{1,3})*(?:(?:[-=':+/*]|::)\.?\d+(?:\.\d+)*|\.0\d*(?:\.\d+)*|\([=\d][\d.:+=/-]*\)|"[\d./-]+")*$
 examples:
 - value: '316.7'
   description: sociology of culture
+- value: 94(47)
+  description: 'history of Russia: place auxiliary'
+- value: 911(470)
+  description: geography of Russia
+- value: 821.163.42-13
+  description: 'Croatian epic poetry: special auxiliary'
+- value: 323.12(=161.1)
+  description: 'anti-Russian sentiment: ethnic group auxiliary'
+- value: 355.48(430:47)"1941/1945"
+  description: 'Eastern Front of World War II: places and time'
 - value: 316.774:32
-  description: The Party Journalist
+  description: Two class numbers joined by a colon
+- value: 316,7
+  valid: false
+  description: Decimal comma instead of a point
 mappings:
   wikidata: P1190
   bioregistry: udc
@@ -24,9 +44,11 @@ links:
   url: https://en.wikipedia.org/wiki/Universal_Decimal_Classification
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1190
+- type: doc
+  url: https://udcsummary.info/
 translations:
   ru:
     name: Индекс УДК (универсальная десятичная классификация)
-    doc: Универсальная десятичная классификация — система классификации информации, широко используется
-      во всём мире для систематизации произведений науки, литературы и искусства, периодической печати,
-      различных видов документов и организации картотек.
+    doc: 'Индекс Универсальной десятичной классификации: основной номер класса и, при необходимости, знаки
+      связи и определители места, языка, времени и специальные определители. Указывается на научных статьях
+      и книгах.'

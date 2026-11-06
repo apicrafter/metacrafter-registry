@@ -1,0 +1,36 @@
+id: ru_elibrary_org_id
+name: eLIBRARY.RU organisation ID
+status: draft
+doc: 'Number of an organisation (university, research institute, government body) in eLIBRARY.RU, the
+  Russian scientific electronic library that hosts the Russian Science Citation Index (РИНЦ): the orgsid
+  parameter of elibrary.ru/org_about.asp?orgsid=<number>.'
+categories:
+- publishing
+- science
+- companies
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d*$
+examples:
+- value: '306'
+  description: Volgograd State University
+- value: '915'
+  description: Siberian State Industrial University
+- value: '0306'
+  valid: false
+  description: Leading zero
+mappings:
+  wikidata: P2463
+links:
+- type: doc
+  url: https://elibrary.ru/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2463
+translations:
+  ru:
+    name: Идентификатор организации в eLIBRARY.RU
+    doc: Номер организации в Научной электронной библиотеке eLIBRARY.RU (параметр orgsid).

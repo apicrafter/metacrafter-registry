@@ -145,6 +145,26 @@
       for (var i = 0; i < 10; i += 1) total += (10 - i) * (s[i] === "X" ? 10 : Number(s[i]));
       return total % 11 === 0;
     },
+    issn: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      if (!/^\d{7}[\dX]$/.test(s)) return false;
+      var total = 0;
+      for (var i = 0; i < 8; i += 1) total += (8 - i) * (s[i] === "X" ? 10 : Number(s[i]));
+      return total % 11 === 0;
+    },
+    ismn: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      if (/^M\d{9}$/.test(s)) s = "9790" + s.slice(1);
+      return /^9790\d{9}$/.test(s) && CHECKSUMS.gtin(s);
+    },
+    iso7064_mod11_2: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      if (!/^\d+[\dX]$/.test(s)) return false;
+      var total = 0;
+      for (var i = 0; i < s.length - 1; i += 1) total = ((total + Number(s[i])) * 2) % 11;
+      var check = (12 - total) % 11;
+      return s[s.length - 1] === (check === 10 ? "X" : String(check));
+    },
     ru_inn: function (v) {
       var d = digitsOf(v);
       if (!d) return false;

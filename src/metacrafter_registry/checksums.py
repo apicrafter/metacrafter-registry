@@ -126,6 +126,39 @@ def isbn10(value: str) -> bool:
     return sum(w * d for w, d in zip(range(10, 0, -1), numbers, strict=True)) % 11 == 0
 
 
+def issn(value: str) -> bool:
+    """ISSN and ISSN-L (ISO 3297): 7 digits and a check digit or X, weights 8 to 1, mod 11."""
+    compact = _compact(value).upper()
+    if not re.fullmatch(r"[0-9]{7}[0-9X]", compact):
+        return False
+    numbers = [10 if c == "X" else int(c) for c in compact]
+    return sum(w * d for w, d in zip(range(8, 0, -1), numbers, strict=True)) % 11 == 0
+
+
+def ismn(value: str) -> bool:
+    """ISMN (ISO 10957): 13 digits starting with 9790, or the former M and 9 digits.
+
+    The check digit is the GS1 mod 10 check digit of the 13-digit form; the
+    letter M of the old form stands for the prefix 979-0.
+    """
+    compact = _compact(value).upper()
+    if re.fullmatch(r"M[0-9]{9}", compact):
+        compact = "9790" + compact[1:]
+    return bool(re.fullmatch(r"9790[0-9]{9}", compact)) and gtin(compact)
+
+
+def iso7064_mod11_2(value: str) -> bool:
+    """ISO 7064 MOD 11-2: digits and a check character 0-9 or X. Used by ISNI and ORCID."""
+    compact = _compact(value).upper()
+    if not re.fullmatch(r"[0-9]+[0-9X]", compact):
+        return False
+    total = 0
+    for c in compact[:-1]:
+        total = (total + int(c)) * 2 % 11
+    check = (12 - total) % 11
+    return compact[-1] == ("X" if check == 10 else str(check))
+
+
 def ru_inn(value: str) -> bool:
     """Russian taxpayer number: 10 digits (organizations) or 12 (individuals)."""
     digits = _digits(value)
@@ -812,6 +845,9 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "gs1_checkpair": gs1_checkpair,
     "isbn10": isbn10,
     "isbn13": isbn13,
+    "issn": issn,
+    "ismn": ismn,
+    "iso7064_mod11_2": iso7064_mod11_2,
     "ru_inn": ru_inn,
     "ru_snils": ru_snils,
     "ru_ogrn": ru_ogrn,

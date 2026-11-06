@@ -1,0 +1,42 @@
+id: ru_grnti
+name: GRNTI code (State Rubricator of Scientific and Technical Information)
+status: draft
+doc: 'Code of a rubric of ГРНТИ, the State Rubricator of Scientific and Technical Information: the subject
+  classification of scientific and technical information in Russia and other CIS countries, kept by a
+  methodological council whose lead organisation is the State Public Scientific Technological Library
+  of Russia (ГПНТБ России). Each section has three levels, each a two-digit number, written with dots:
+  27 is mathematics, 27.17 algebra and 27.17.15 semigroups. Research reports, theses, grant applications
+  and scientific articles give ГРНТИ codes. The regexp accepts codes of the second and third level; a
+  two-digit section alone is not accepted, because any two-digit number would match.'
+categories:
+- publishing
+- science
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: ^\d{2}\.\d{2}(?:\.\d{2})?$
+examples:
+- value: 27.17.15
+  description: Semigroups
+- value: 27.17.29
+  description: Linear algebra
+- value: '27.17'
+  description: Algebra
+- value: '27.15'
+  description: Number theory
+- value: 27.17.1
+  valid: false
+  description: Each level has two digits
+links:
+- type: doc
+  url: https://www.gpntb.ru/grnti
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D1%80%D1%83%D0%B1%D1%80%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80_%D0%BD%D0%B0%D1%83%D1%87%D0%BD%D0%BE-%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8
+translations:
+  ru:
+    name: Код ГРНТИ (Государственный рубрикатор научно-технической информации)
+    doc: 'Код рубрики ГРНТИ: три уровня по две цифры через точку, например 27.17.15 (полугруппы). Указывается
+      в отчётах о НИР, диссертациях и статьях.'

@@ -7,6 +7,7 @@ doc: Serial number of a catalog record of the US Library of Congress, used since
   a short alphabetic prefix such as n, sh or sn. The LCCN is not related to the Library of Congress Classification.
 categories:
 - objectids
+- publishing
 langs:
 - common
 is_pii: false
@@ -34,3 +35,10 @@ links:
   url: https://www.wikidata.org/wiki/Property:P1144
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P244
+- type: doc
+  url: https://www.loc.gov/marc/lccn_structure.html
+translations:
+  ru:
+    name: Контрольный номер Библиотеки Конгресса (LCCN)
+    doc: 'Номер записи каталога Библиотеки Конгресса США: год (две или четыре цифры) и шестизначный порядковый
+      номер, иногда с буквенным префиксом.'

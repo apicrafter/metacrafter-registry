@@ -1,0 +1,35 @@
+id: iso_paper_size
+name: ISO paper size (A, B and C series)
+status: draft
+doc: 'Name of a paper size of ISO 216: the letter of the series and a number from 0 to 10. A0 has an area
+  of one square metre and sides in the ratio of the square root of 2 to 1; each next number halves the
+  area, so A4 is 210 x 297 mm. B sizes lie between neighbouring A sizes, and C sizes, used for envelopes,
+  lie between the A and B sizes of the same number. Printing, office supply and procurement data name
+  paper, print and poster formats this way. North American sizes such as Letter are not covered, and the
+  Cyrillic letter А, often typed in Russian data, is not accepted.'
+categories:
+- publishing
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[ABC](?:10|\d)$
+examples:
+- value: A4
+  description: 210 x 297 mm
+- value: A3
+  description: 297 x 420 mm
+- value: B5
+  description: B series
+- value: C5
+  description: Envelope for an A5 sheet or a folded A4 sheet
+- value: Letter
+  valid: false
+  description: North American size, not an ISO size
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_216
+translations:
+  ru:
+    name: Формат бумаги ISO (серии A, B и C)
+    doc: 'Обозначение формата бумаги по ISO 216: буква серии и номер от 0 до 10, например A4.'

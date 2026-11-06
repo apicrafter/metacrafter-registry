@@ -1,0 +1,38 @@
+id: msc_code
+name: Mathematics Subject Classification (MSC) code
+status: draft
+doc: Class code of the Mathematics Subject Classification, produced by Mathematical Reviews (MathSciNet)
+  and zbMATH Open and used by mathematics journals to classify articles. A code has two digits for the
+  area, a letter for the second level and two digits for the third level, such as 81Q50 for quantum chaos.
+  Codes that end in xx name a whole second-level class, such as 68Txx, and codes of the form 05-XX a whole
+  area. The current edition is MSC2020. The regexp is the Wikidata format of property P3285; it does not
+  accept a bare two-digit area.
+categories:
+- science
+- publishing
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{2}(?:-(?:XX|\d{2})|[A-Z](?:xx|\d{2}))$
+examples:
+- value: 81Q50
+  description: Quantum chaos
+- value: 68Txx
+  description: Artificial intelligence
+- value: 81Q5
+  valid: false
+  description: The third level has two digits
+mappings:
+  wikidata: P3285
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Mathematics_Subject_Classification
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3285
+- type: doc
+  url: https://msc2020.org/
+translations:
+  ru:
+    name: Код Математической предметной классификации (MSC)
+    doc: Код рубрики классификации MSC, которую используют MathSciNet, zbMATH и математические журналы.

@@ -18,6 +18,9 @@ examples:
   description: ACC Current Journal Review
 - value: '22380'
   description: International Journal of Infectious Diseases
+- value: 025283
+  valid: false
+  description: Leading zero
 mappings:
   wikidata: P1156
   bioregistry: scopus.publication
@@ -26,3 +29,7 @@ links:
   url: https://www.scopus.com/sources
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1156
+translations:
+  ru:
+    name: Идентификатор источника Scopus
+    doc: Номер журнала, книжной серии или сборника трудов в базе Scopus.

@@ -2,10 +2,12 @@ id: coden
 name: CODEN bibliographic code
 status: draft
 doc: Six-character code for the title of a periodical or non-serial publication, defined by ASTM E250
-  and assigned by the International CODEN Service at Chemical Abstracts Service. For periodicals, four
-  letters come from the title, the fifth letter is A to F, and the sixth character is a check character.
-  For non-serial publications such as conference proceedings, the code starts with two digits. CODEN is
-  common in chemistry and other science citations.
+  and assigned by the International CODEN Service at Chemical Abstracts Service. For a periodical the
+  first four letters come from the title and the fifth is a letter (traditionally A to F, but newer journals
+  have others, such as NUTRHU for Nutrients); the sixth character is a check character. For non-serial
+  publications such as conference proceedings the code starts with two digits. CODEN is common in chemistry
+  and other science citations. Codes assigned before 1976 had five characters, without the check character;
+  this format accepts only the six-character form.
 categories:
 - publishing
 - science
@@ -13,7 +15,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^(?:[A-Z]{4}[A-F]|\d{2}[A-Z]{3})[A-Z0-9]$
+regexp: ^(?:[A-Z]{5}|\d{2}[A-Z]{3})[A-Z0-9]$
 examples:
 - value: NATUAS
   description: Nature
@@ -21,11 +23,15 @@ examples:
   description: Technology Review
 - value: NARHAD
   description: Nucleic Acids Research
+- value: JASCDU
+  description: Journal of the American Chemical Society (Wikidata example)
+- value: NUTRHU
+  description: Nutrients, a journal started in 2009
 - value: 66HYAL
   description: Conference proceedings (non-serial publication)
-- value: NATUGS
+- value: natuas
   valid: false
-  description: The fifth letter of a periodical CODEN is A to F
+  description: CODEN always uses capital letters
 mappings:
   wikidata: P1159
 links:
@@ -33,3 +39,10 @@ links:
   url: https://en.wikipedia.org/wiki/CODEN
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1159
+- type: doc
+  url: https://cassi.cas.org/
+translations:
+  ru:
+    name: Библиографический код CODEN
+    doc: Шестисимвольный код названия периодического или непериодического издания по ASTM E250; последний
+      символ — контрольный.

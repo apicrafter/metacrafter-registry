@@ -1,0 +1,35 @@
+id: google_books_id
+name: Google Books volume ID
+status: draft
+doc: 'Identifier of a volume, an edition of a book, in Google Books: the id parameter of a books.google.com
+  URL and the volume ID of the Google Books API. It has 12 characters: letters, digits, hyphens and underscores.
+  Google publishes no grammar; the regexp matches 2975 of 3000 values of Wikidata property P675, and the
+  rest are URLs and truncated IDs.'
+categories:
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Za-z0-9_-]{12}$
+examples:
+- value: 2Zc3AAAAYAAJ
+  description: Frankenstein; or, The Modern Prometheus
+- value: 7r14FzJdSuAC
+  description: Tirant lo Blanch
+- value: https://books.google.com/books?id=2Zc3AAAAYAAJ
+  valid: false
+  description: A URL, not the ID
+mappings:
+  wikidata: P675
+links:
+- type: doc
+  url: https://developers.google.com/books/docs/v1/using
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P675
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Google_Books
+translations:
+  ru:
+    name: Идентификатор тома Google Books
+    doc: Двенадцатисимвольный идентификатор издания книги в Google Books.

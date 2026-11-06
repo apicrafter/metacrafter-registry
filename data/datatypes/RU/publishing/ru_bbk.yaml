@@ -1,0 +1,39 @@
+id: ru_bbk
+name: BBK index (Library-Bibliographical Classification)
+status: draft
+doc: 'Index of ББК, the Library-Bibliographical Classification: the national library classification of
+  Russia, developed by the Russian State Library, the National Library of Russia and the Library of the
+  Russian Academy of Sciences. Books published in Russia print a BBK index next to the UDC number (udkindex),
+  often followed by the author mark, as in 72 Д63. Indexes combine digits, Cyrillic letters and signs:
+  territorial divisions in parentheses, form divisions after the letter я, as in 88я2 on a dictionary
+  of psychology, and special divisions after a hyphen. The notation is too varied for a reliable format,
+  so no regexp is given.'
+categories:
+- publishing
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+examples:
+- value: 88я2
+  description: Big psychological dictionary
+- value: 86.37-2
+  description: The Bible
+- value: Т3(2Г)0-6я43
+  description: The past through the prism of the present (Wikidata example)
+- value: 72 Д63
+  description: Index 72 and the author mark Д63 (The Magic of Reality)
+mappings:
+  wikidata: P8391
+links:
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D1%87%D0%BD%D0%BE-%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8391
+translations:
+  ru:
+    name: Индекс ББК (библиотечно-библиографическая классификация)
+    doc: 'Индекс национальной библиотечной классификации России: цифры, буквы кириллицы и знаки типовых
+      делений, например 88я2. Печатается в книгах рядом с УДК и авторским знаком.'

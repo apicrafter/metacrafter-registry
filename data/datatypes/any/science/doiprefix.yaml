@@ -1,10 +1,13 @@
 id: doiprefix
 name: Digital Object Identifier (DOI) prefix
 status: stable
-doc: Identifier specific to a DOI registrant
+doc: 'Prefix of a DOI: the part before the slash, 10. and a registrant code such as 10.1371 for the Public
+  Library of Science. A registration agency assigns the prefix to a publisher or other registrant, and
+  one registrant can hold several prefixes. Registrant codes may have dot-separated subdivisions.'
 categories:
 - science
 - identifiers
+- publishing
 langs:
 - common
 is_pii: false
@@ -15,6 +18,9 @@ examples:
   description: Public Library of Science
 - value: '10.1039'
   description: Royal Society of Chemistry
+- value: 10.1371/journal.pone.0029797
+  valid: false
+  description: A full DOI, not only its prefix
 mappings:
   wikidata: P1662
   bioregistry: doi.prefix

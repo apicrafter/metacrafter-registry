@@ -18,6 +18,11 @@ examples:
   description: dinosaur
 - value: 11865672n
   description: Ukraine
+- value: '123735831'
+  description: René Magritte
+- value: cb11865672n
+  valid: false
+  description: ARK name with the cb prefix, not the bare ID
 mappings:
   wikidata: P268
 links:
@@ -27,3 +32,8 @@ links:
   url: https://catalogue.bnf.fr/
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P268
+translations:
+  ru:
+    name: Идентификатор Национальной библиотеки Франции (BnF)
+    doc: 'Номер авторитетной или библиографической записи каталога BnF: восемь или девять цифр и контрольный
+      символ.'

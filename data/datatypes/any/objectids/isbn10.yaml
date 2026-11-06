@@ -18,6 +18,9 @@ examples:
   description: Hamlet, Prince of Denmark
 - value: 0-521-22151-X
   description: Hamlet, Prince of Denmark
+- value: 0-521-29366-8
+  valid: false
+  description: Hamlet with a wrong check digit
 mappings:
   autotype: isbn
   wikidata: P957
@@ -29,3 +32,7 @@ links:
   url: https://en.wikipedia.org/wiki/International_Standard_Book_Number
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P957
+translations:
+  ru:
+    name: Международный стандартный книжный номер из 10 символов (ISBN-10)
+    doc: 'ISBN, который присваивали до 2007 года: девять цифр и контрольный символ (цифра или X).'

@@ -1,22 +1,32 @@
 id: orcid
 name: Open Researcher and Contributor ID (ORCID)
 status: stable
-doc: The ORCID, Open Researcher and Contributor ID) is a nonproprietary alphanumeric code to uniquely
-  identify authors and contributors of scholarly communication as well as ORCIDs website and services
-  to look up authors and their bibliographic output (and other user-supplied pieces of information).
+doc: Persistent identifier of a researcher or other contributor in the ORCID registry, used in manuscript
+  submission, Crossref and DataCite metadata and funder systems. It has 16 characters in four groups of
+  four separated by hyphens, and is often written as the URL https://orcid.org/<iD>. The last character
+  is an ISO 7064 MOD 11-2 check character (a digit or X). ORCID assigns iDs at random from the blocks
+  0000-0001-5000-0007 to 0000-0003-5000-0001 and 0009-0000-0000-0000 to 0009-0010-0000-0000.
 categories:
 - science
 - persons
+- publishing
 langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^0000-000(1-[5-9]|2-[0-9]|3-[0-4])\d{3}-\d{3}[\dX]$
+regexp: ^(?:0000-000(?:1-[5-9]|2-\d|3-[0-4])\d{3}|0009-00(?:0\d|10)-\d{4})-\d{3}[\dX]$
+checksum: iso7064_mod11_2
 examples:
 - value: 0000-0002-1003-5675
   description: Mike Tailor
 - value: 0000-0002-1825-0097
   description: Josiah S. Carberry
+- value: 0000-0002-1825-0098
+  valid: false
+  description: Josiah Carberry with a wrong check character
+- value: 0000-0004-1825-0097
+  valid: false
+  description: Second group outside the blocks that ORCID assigns
 mappings:
   autotype: orcid
   wikidata: P496
@@ -26,3 +36,10 @@ links:
   url: https://en.wikipedia.org/wiki/ORCID
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P496
+- type: doc
+  url: https://support.orcid.org/hc/en-us/articles/360006897674
+translations:
+  ru:
+    name: Идентификатор исследователя ORCID
+    doc: 'Постоянный идентификатор исследователя в реестре ORCID: 16 символов в четырёх группах через
+      дефис, последний — контрольный (цифра или X).'

@@ -1,12 +1,17 @@
 id: doi
 name: Digital Object Identifier (DOI)
 status: stable
-doc: A digital object identifier (DOI) is a persistent identifier or handle used to identify objects uniquely,
-  standardized by the International Organization for Standardization (ISO).
-parent: url
+doc: 'ISO 26324 persistent identifier of a journal article, book, chapter, dataset, report or other object,
+  resolved through doi.org. It is a handle with the prefix 10: 10.<registrant code>/<suffix>. The registrant
+  code (doiprefix) names the organisation that registered the DOI, and the suffix is chosen by that organisation
+  and may contain almost any printable character. DOIs are case-insensitive and are often written as the
+  URL https://doi.org/<DOI> or after the prefix doi:. Crossref, DataCite and other registration agencies
+  assign them.'
+parent: handle_id
 categories:
 - science
 - identifiers
+- publishing
 langs:
 - common
 is_pii: false
@@ -17,6 +22,14 @@ examples:
   description: PLOS ONE article
 - value: 10.12987/YALE/9780300197051.003.0010
   description: Book chapter (Yale University Press)
+- value: 10.1016/S0960-894X(96)00515-X
+  description: 'Elsevier article: the suffix is its Publisher Item Identifier'
+- value: https://doi.org/10.1371/journal.pone.0029797
+  valid: false
+  description: DOI URL, not the bare DOI
+- value: '10.1371'
+  valid: false
+  description: DOI prefix without a suffix
 mappings:
   autotype: doi
   wikidata: P356
@@ -26,8 +39,10 @@ links:
   url: https://en.wikipedia.org/wiki/Digital_object_identifier
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P356
+- type: doc
+  url: https://www.doi.org/the-identifier/resources/handbook
 translations:
   ru:
     name: Цифровой идентификатор объекта (DOI)
-    doc: Цифровой идентификатор объекта (англ. digital object identifier (DOI), дискретный объекта идентификатор
-      (ДОИ)) — основной элемент системы ДОИ, предназначенной для обозначения объектов информационной деятельности.
+    doc: Постоянный идентификатор статьи, книги, набора данных или другого объекта по ISO 26324 вида 10.<код
+      регистранта>/<суффикс>. Разрешается через doi.org; регистрируют Crossref, DataCite и другие агентства.

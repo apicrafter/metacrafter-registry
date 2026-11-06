@@ -15,6 +15,9 @@ regexp: ^(?:PMC)?[1-9]\d{0,7}$
 examples:
 - value: '1201091'
 - value: '3682911'
+- value: PMC
+  valid: false
+  description: Prefix without a number
 mappings:
   wikidata: P932
   bioregistry: pmc
@@ -25,3 +28,7 @@ links:
   url: https://www.ncbi.nlm.nih.gov/pmc/
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P932
+translations:
+  ru:
+    name: Идентификатор PubMed Central (PMCID)
+    doc: Номер полнотекстовой статьи в архиве PubMed Central.

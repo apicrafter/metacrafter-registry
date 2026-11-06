@@ -39,7 +39,10 @@ from metacrafter_registry.checksums import (
     iban_mod97,
     isbn10,
     isbn13,
+    ismn,
+    iso7064_mod11_2,
     iso7064_mod97_10,
+    issn,
     it_codicefiscale,
     it_iva,
     kz_iin_bin,
@@ -173,6 +176,20 @@ def test_checksum_reference_values():
     assert nl_btw("NL004495445B01") and nl_btw("004495445B01") and not nl_btw("123456789B90")
     assert nl_btw("NL002455799B11")  # MOD 97-10, issued since 2020
     assert not nl_btw("NL004495445B00") and not nl_btw("NL004495445")
+
+
+def test_publishing_checksum_reference_values():
+    # ISSN of Nature and of Bioorganic & Medicinal Chemistry Letters (check character X)
+    assert issn("0028-0836") and issn("00280836") and issn("0960-894X")
+    assert not issn("0028-0837") and not issn("0028-083") and not issn("0960-8940")
+    # ISMN: python-stdnum examples and Wikidata P1208 examples, both forms
+    assert ismn("979-0-3452-4680-5") and ismn("M-2306-7118-7") and ismn("M-66134-209-0")
+    assert ismn("9790001119030") and not ismn("979-0-001-11903-1")
+    assert not ismn("978-0-521-29366-2")  # an ISBN-13 is not an ISMN
+    # ISNI of Switzerland and Charles Martel (Wikidata P213), ORCID of Josiah Carberry
+    assert iso7064_mod11_2("0000 0001 2297 4701") and iso7064_mod11_2("000000006629310X")
+    assert iso7064_mod11_2("0000-0002-1825-0097") and not iso7064_mod11_2("0000-0002-1825-0098")
+    assert not iso7064_mod11_2("X") and not iso7064_mod11_2("0000-0002-1825-009")
 
 
 def test_crypto_checksum_reference_values():
