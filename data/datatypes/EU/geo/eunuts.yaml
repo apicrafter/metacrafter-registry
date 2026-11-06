@@ -10,10 +10,13 @@ langs:
 - en
 is_pii: false
 classification: categorical
-regexp: '[A-Z]{2}[A-Z0-9]{0,3}'
+regexp: ^(?:AT|BE|BG|CY|CZ|DE|DK|EE|EL|ES|FI|FR|HR|HU|IE|IT|LT|LU|LV|MT|NL|PL|PT|RO|SE|SI|SK|UK|AL|CH|IS|LI|ME|MK|NO|RS|TR)[A-Z0-9]{0,3}$
 examples:
 - value: BE10
   description: Brussels-Capital Region
+- value: JPEG
+  valid: false
+  description: JP is not a country prefix used in NUTS
 mappings:
   wikidata: P605
   bioregistry: nuts
