@@ -1,22 +1,36 @@
 id: wikidataid
 name: Wikidata Id
 status: stable
-doc: Wikidata makes use of identifiers for both internal organization of the knowledge base and for its
-  connection to other databases.
+doc: Identifier of a Wikidata item (entity), the letter Q followed by a number without leading zeros.
+  Other datasets use it to link a record, such as an organization or a place, to Wikidata. Property ids
+  (P...) and lexeme ids (L...) are not item ids.
 categories:
 - objectids
 langs:
 - common
 is_pii: false
 classification: identifier
+regexp: ^Q[1-9][0-9]*$
 examples:
 - value: Q12345
   description: Count von Count
 - value: Q234511
   description: Gurk
+- value: Q1057890
+  description: RMIT University, as in its ROR record
+- value: P6782
+  valid: false
+  description: A property id (ROR ID), not an item id
+- value: Q01
+  valid: false
+  description: Item numbers have no leading zeros
 mappings:
   orgid: XI-WIKIDATA
   bioregistry: wikidata.entity
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Wikidata:Identifiers
+translations:
+  ru:
+    name: Идентификатор Wikidata
+    doc: Идентификатор элемента Wikidata - буква Q и номер без ведущих нулей.

@@ -1,0 +1,32 @@
+id: ror_organization_type
+name: ROR organization type
+status: draft
+doc: Type of an organization in the Research Organization Registry, from a fixed list of nine values -
+  education, funder, healthcare, company, archive, nonprofit, government, facility and other. A record
+  can have several types, for example education and funder for a university that funds research. Schema
+  v2 of the ROR data writes the values in lowercase; schema v1 capitalized them (Education, Funder).
+categories:
+- science
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:[Ee]ducation|[Ff]under|[Hh]ealthcare|[Cc]ompany|[Aa]rchive|[Nn]onprofit|[Gg]overnment|[Ff]acility|[Oo]ther)$
+examples:
+- value: education
+  description: RMIT University
+- value: facility
+  description: CERN
+- value: Healthcare
+  description: Schema v1 spelling
+- value: university
+  valid: false
+  description: Not a ROR type; universities are education
+links:
+- type: doc
+  url: https://ror.readme.io/docs/ror-data-structure
+translations:
+  ru:
+    name: Тип организации в ROR
+    doc: Тип организации в Research Organization Registry из списка девяти значений (education, funder,
+      healthcare, company, archive, nonprofit, government, facility, other).

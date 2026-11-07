@@ -510,6 +510,27 @@ def iso7064_mod97_10(value: str) -> bool:
     return remainder == 1
 
 
+_ROR_PREFIX = re.compile(r"^(?:https?://)?ror\.org/", re.IGNORECASE)
+_CROCKFORD32 = "0123456789abcdefghjkmnpqrstvwxyz"
+
+
+def ror(value: str) -> bool:
+    """ROR identifier: 0, six Crockford base-32 characters and 2 check digits.
+
+    The check digits are ISO 7064 MOD 97-10 of the number n that the six
+    characters encode: 98 - (n * 100 mod 97). A https://ror.org/ or ror.org/
+    prefix is allowed.
+    """
+    compact = _ROR_PREFIX.sub("", str(value)).lower()
+    match = re.fullmatch(r"0([0-9a-hjkmnp-tv-z]{6})([0-9]{2})", compact)
+    if not match:
+        return False
+    number = 0
+    for c in match.group(1):
+        number = number * 32 + _CROCKFORD32.index(c)
+    return int(match.group(2)) == 98 - number * 100 % 97
+
+
 def de_ustidnr(value: str) -> bool:
     """German VAT number (USt-IdNr.): 9 digits, optionally prefixed with DE.
 
@@ -868,6 +889,7 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "bech32": bech32,
     "bech32m": bech32m,
     "iso7064_mod97_10": iso7064_mod97_10,
+    "ror": ror,
     "de_ustidnr": de_ustidnr,
     "de_widnr": de_widnr,
     "de_idnr": de_idnr,

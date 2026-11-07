@@ -807,6 +807,11 @@ def test_javascript_checksums_match_python(tmp_path):
         "1012.22.331",
         "NL004495445B01",
         "NL002455799B11",
+        "04ttjf776",
+        "04ttjf777",
+        "https://ror.org/02mhbdp94",
+        "ROR.ORG/01GGX4157",
+        "100008690",
         "000000000",
         "00000000",
         "12345672",
@@ -825,6 +830,11 @@ def test_javascript_checksums_match_python(tmp_path):
     values += [f"SI{rng.randrange(10**8):08d}" for _ in range(300)]
     values += [f"SE{rng.randrange(10**10):010d}0{rng.choice('12')}" for _ in range(300)]
     values += [f"{rng.randrange(10**12):012d}" for _ in range(500)]
+    crockford = "0123456789abcdefghjkmnpqrstvwxyz"
+    values += [
+        "0" + "".join(rng.choice(crockford) for _ in range(6)) + f"{rng.randrange(100):02d}"
+        for _ in range(300)
+    ]
     base58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
     values += ["1" + "".join(rng.choice(base58) for _ in range(33)) for _ in range(200)]
     values += [

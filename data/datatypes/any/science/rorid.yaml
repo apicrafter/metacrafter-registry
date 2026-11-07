@@ -1,27 +1,46 @@
 id: rorid
 name: ROR Identifier (ROR ID)
 status: stable
-doc: Research Organization Registry (ROR) is a community-led database that aims to provide a persistent
-  identifier for every research institution in the world.[1] It complements other commonly used identifiers
-  such as ORCID for researchers and DOI for research output.
+doc: Persistent identifier of a research organization in the Research Organization Registry (ROR), used
+  next to ORCID for people and DOI for research outputs, for example in affiliations and funding references
+  of DataCite and Crossref metadata. The unique part has nine characters, a leading 0, six Crockford base-32
+  characters (digits and lowercase letters without i, l, o and u) and two check digits (ISO/IEC 7064 MOD
+  97-10). ROR prefers the full URL form https://ror.org/ followed by the nine characters; this record
+  is the bare form.
 categories:
 - science
 langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^[a-z0-9]{9}$
+regexp: ^0[0-9a-hjkmnp-tv-z]{6}[0-9]{2}$
+checksum: ror
 examples:
 - value: 00v4dac24
   description: Leeds Teaching Hospitals NHS Trust
 - value: 03rjyp183
   description: National Library of Wales
+- value: 04ttjf776
+  description: RMIT University
+- value: '100008690'
+  valid: false
+  description: A Crossref Funder ID of the same length, not a ROR ID
+- value: https://ror.org/04ttjf776
+  valid: false
+  description: The URL form, a separate pattern (rorid_url)
 mappings:
   wikidata: P6782
   orgid: XI-ROR
   bioregistry: ror
 links:
+- type: doc
+  url: https://ror.readme.io/docs/identifier
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Research_Organization_Registry
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P6782
+translations:
+  ru:
+    name: Идентификатор ROR (ROR ID)
+    doc: Постоянный идентификатор научной организации в Research Organization Registry. Состоит из девяти
+      символов, это 0, шесть символов Crockford base-32 и две контрольные цифры ISO/IEC 7064 MOD 97-10.

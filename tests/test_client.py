@@ -52,6 +52,7 @@ from metacrafter_registry.checksums import (
     nl_onderwijsnummer,
     no_fnr,
     pl_nip,
+    ror,
     ru_inn,
     ru_ogrn,
     ru_snils,
@@ -190,6 +191,10 @@ def test_publishing_checksum_reference_values():
     assert iso7064_mod11_2("0000 0001 2297 4701") and iso7064_mod11_2("000000006629310X")
     assert iso7064_mod11_2("0000-0002-1825-0097") and not iso7064_mod11_2("0000-0002-1825-0098")
     assert not iso7064_mod11_2("X") and not iso7064_mod11_2("0000-0002-1825-009")
+    # ROR IDs of RMIT University and of the ROR identifier documentation, bare and as URLs
+    assert ror("04ttjf776") and ror("https://ror.org/02mhbdp94") and ror("ror.org/01ggx4157")
+    assert not ror("04ttjf777") and not ror("14ttjf776") and not ror("04ttjfl76")
+    assert not ror("100008690")  # a Crossref Funder ID has the same length
 
 
 def test_crypto_checksum_reference_values():
