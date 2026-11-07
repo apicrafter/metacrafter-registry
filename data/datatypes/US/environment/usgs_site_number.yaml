@@ -1,0 +1,46 @@
+id: usgs_site_number
+name: USGS water monitoring site number (NWIS)
+status: draft
+doc: Number of a monitoring location (a stream gage, well, spring, lake or other site) in the National
+  Water Information System of the US Geological Survey. Stream stations get a number in downstream order,
+  usually 8 digits (a two-digit part number and a six-digit order number) and longer in dense networks;
+  wells, springs and other sites get 15 digits, the latitude (ddmmss) and longitude (dddmmss) first assigned
+  to the site and a two-digit sequence number. The number is unique only together with the agency code
+  (USGS for most sites) and loses its leading zero in spreadsheets.
+parent: waterstation
+categories:
+- environment
+- geo
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{8,15}$
+examples:
+- value: '01646500'
+  description: Potomac River near Washington, DC, Little Falls pump station; USGS NWIS
+- value: 09380000
+  description: Colorado River at Lees Ferry, Arizona; USGS NWIS
+- value: '01467200'
+  description: Delaware River at Penn's Landing, Philadelphia; Wikidata example
+- value: '321804090244200'
+  description: USGS NADP raingage (MS10) near Clinton, Mississippi; Wikidata example
+- value: '1646500'
+  valid: false
+  description: Site 01646500 with the leading zero lost
+mappings:
+  wikidata: P13020
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P13020
+- type: doc
+  url: https://pubs.usgs.gov/wdr/2005/wdr-ak-05-1/PDFonly/htdocs2005/explanrecord.html
+- type: doc
+  url: https://waterservices.usgs.gov/docs/site-service/
+translations:
+  ru:
+    name: Номер пункта наблюдений USGS (NWIS)
+    doc: Номер пункта гидрологических наблюдений (гидропоста, скважины, родника) в Национальной системе
+      водной информации Геологической службы США. От 8 до 15 цифр; 15-значные номера строятся из координат.

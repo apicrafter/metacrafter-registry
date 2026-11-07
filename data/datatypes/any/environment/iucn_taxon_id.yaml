@@ -1,0 +1,37 @@
+id: iucn_taxon_id
+name: IUCN Red List taxon ID
+status: draft
+doc: 'Number of a taxon in the IUCN Red List of Threatened Species; the Red List web pages and API address
+  taxa by it. A bare number of up to nine digits: recognize it only with column context.'
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,8}$
+examples:
+- value: '6736'
+  description: Discus macclintocki; Wikidata example
+- value: '40966'
+  description: Acharagma aguirreanum; Wikidata example
+- value: '15951'
+  description: Panthera leo (lion); Wikidata
+- value: '15951.0'
+  valid: false
+  description: Spreadsheet float formatting; the id is an integer
+mappings:
+  wikidata: P627
+links:
+- type: doc
+  url: https://www.iucnredlist.org/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/IUCN_Red_List
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P627
+translations:
+  ru:
+    name: Идентификатор таксона в Красном списке МСОП
+    doc: Номер таксона (вида, подвида или субпопуляции) в Красном списке угрожаемых видов МСОП. Используется
+      в адресах страниц и API Красного списка.

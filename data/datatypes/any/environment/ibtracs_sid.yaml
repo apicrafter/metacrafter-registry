@@ -1,0 +1,43 @@
+id: ibtracs_sid
+name: IBTrACS storm identifier (SID)
+status: draft
+doc: Serial identifier of a tropical cyclone in the International Best Track Archive for Climate Stewardship
+  (IBTrACS) of NOAA NCEI, 13 characters long. It is built from the storm's genesis, the year (4 digits),
+  day of the year (3), hemisphere (N or S), latitude (2 digits) and longitude in degrees east (3 digits),
+  for example 2005236N23285 for Hurricane Katrina. Some storms before 1970 have longitude digits above
+  359, and the identifier is not updated when the track is revised.
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:1[89]|20)\d{2}(?:00[1-9]|0[1-9]\d|[12]\d{2}|3[0-5]\d|36[0-6])[NS](?:[0-8]\d|90)\d{3}$
+examples:
+- value: 2005236N23285
+  description: Hurricane Katrina (2005); IBTrACS serial number list
+- value: 2013306N07162
+  description: Typhoon Haiyan (2013); IBTrACS serial number list
+- value: 2002242N14257
+  description: Hurricane Hernan (2002); Wikidata example
+- value: AL122005
+  valid: false
+  description: ATCF identifier of Hurricane Katrina, not an IBTrACS SID
+- value: 2005400N23285
+  valid: false
+  description: Day of the year 400 does not exist
+mappings:
+  wikidata: P4540
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4540
+- type: doc
+  url: https://www.ncei.noaa.gov/products/international-best-track-archive
+- type: doc
+  url: https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00753/html
+translations:
+  ru:
+    name: Идентификатор циклона в IBTrACS (SID)
+    doc: Серийный идентификатор тропического циклона в архиве IBTrACS (NOAA NCEI) из 13 символов — год,
+      день года, полушарие, широта и долгота зарождения циклона.

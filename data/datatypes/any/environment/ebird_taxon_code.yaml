@@ -1,0 +1,41 @@
+id: ebird_taxon_code
+name: eBird taxon code
+status: draft
+doc: Code of a taxon in the eBird/Clements taxonomy of the Cornell Lab of Ornithology, used in eBird data,
+  species page URLs and the eBird API. Most codes are lower-case letters, sometimes with one or two trailing
+  digits (osprey, ftspet, ostric2); most hybrids have x and most slash taxa y followed by five digits
+  (x00669). The taxonomy is updated every year, so record its version with the code.
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[a-z][a-z-]{1,5}\d{0,2}|[xy]\d{5})$
+examples:
+- value: osprey
+  description: Pandion haliaetus (osprey); Wikidata example, eBird taxonomy
+- value: ftspet
+  description: Fork-tailed storm petrel; Wikidata example, eBird taxonomy
+- value: ostric2
+  description: Struthio camelus (common ostrich); eBird taxonomy
+- value: x00669
+  description: Golden-winged x blue-winged warbler hybrid; Wikidata example, eBird taxonomy
+- value: OSPREY
+  valid: false
+  description: Upper case; eBird codes are lower case
+mappings:
+  wikidata: P3444
+links:
+- type: doc
+  url: https://support.ebird.org/en/support/solutions/articles/48000837816-the-ebird-taxonomy
+- type: doc
+  url: https://www.birds.cornell.edu/clementschecklist/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3444
+translations:
+  ru:
+    name: Код таксона eBird
+    doc: Код таксона в таксономии eBird/Clements Корнеллской орнитологической лаборатории, например osprey
+      для скопы. Таксономия обновляется ежегодно.

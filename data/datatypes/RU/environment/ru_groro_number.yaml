@@ -1,0 +1,43 @@
+id: ru_groro_number
+name: Russian State Register of Waste Disposal Facilities (GRORO) number
+status: draft
+doc: 'Number of a waste storage or burial facility in the State Register of Waste Disposal Facilities
+  (ГРОРО) of Russia, assigned by Rosprirodnadzor in the order that includes the facility in the register.
+  Under the waste cadastre procedure (Ministry of Natural Resources order No. 167 of 2 April 2025) it
+  has five hyphen-separated groups: a two-digit region code, the five-digit number of the facility within
+  the region, the Cyrillic letter Х (storage) or З (burial), the five-digit number of the inclusion order
+  and the date of that order as DDMMYY. Groups are padded with zeros on the left.'
+categories:
+- environment
+- geo
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{2}-\d{5}-[ХЗ]-\d{5}-(?:0[1-9]|[12]\d|3[01])(?:0[1-9]|1[0-2])\d{2}$
+examples:
+- value: 66-00231-Х-00915-201221
+  description: Loose overburden dump (waste disposal facility No. 2), a storage facility in Sverdlovsk
+    Oblast included by order No. 915 of 20.12.2021; Rosprirodnadzor order No. 455 of 08.07.2025
+- value: 10-00050-З-00592-250914
+  description: Municipal solid waste landfill, a burial facility in the Republic of Karelia included by
+    order No. 592 of 25.09.2014; Rosprirodnadzor order No. 527 of 02.10.2024
+- value: 66-231-Х-915-201221
+  valid: false
+  description: Groups not padded with zeros to five digits
+- value: 66-00231-Т-00915-201221
+  valid: false
+  description: Purpose letter is neither Х (storage) nor З (burial)
+links:
+- type: doc
+  url: https://rpn.gov.ru/upload/iblock/19b/e59oj4deoh3p9lgtj041bgbmttt54uvh/Prikaz-Minprirody-Rossii-_-167.pdf
+- type: doc
+  url: https://pravo.ppt.ru/prikaz/rosprirodnadzor/n-455-316399
+translations:
+  ru:
+    name: Номер объекта размещения отходов в ГРОРО
+    doc: Номер объекта хранения или захоронения отходов в государственном реестре объектов размещения
+      отходов. Состоит из кода субъекта РФ, порядкового номера объекта в субъекте, буквы Х (хранение)
+      или З (захоронение), номера и даты приказа Росприроднадзора о включении объекта в реестр.

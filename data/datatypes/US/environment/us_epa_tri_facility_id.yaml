@@ -1,0 +1,42 @@
+id: us_epa_tri_facility_id
+name: US EPA Toxics Release Inventory facility ID (TRIFID)
+status: draft
+doc: 15-character identifier that the Toxics Release Inventory program of the US EPA gives to a reporting
+  facility. EPA describes it as the ZIP code, the first five consonants of the facility name and the first
+  five letters or digits of the street address. About one id in six (11,083 of 64,990 in the TRI facility
+  table) has W in place of the fifth ZIP digit. The id stays the same when the owner, name or ZIP code
+  of the facility changes later.
+categories:
+- environment
+- chemistry
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4}[0-9W][0-9A-Z]{10}$
+examples:
+- value: 77522XXNBY2800D
+  description: ExxonMobil Refining & Supply Baytown Refinery, 2800 Decker Dr, Baytown, Texas; EPA TRI
+    facility table
+- value: 01104WSTVC31131
+  description: Westvaco Corp Envelope Division, 311 Industry Ave, Springfield, Massachusetts; EPA TRI
+    facility table
+- value: 0071WPNCCN619AV
+  description: Ponce Can, 619 Ave La Ceiba, Ponce, Puerto Rico (form with W); EPA TRI facility table
+- value: 1104WSTVC31131
+  valid: false
+  description: Leading zero of the ZIP code lost; 14 characters
+links:
+- type: doc
+  url: https://echo.epa.gov/help/loading-tool/reports/pollutant-loading-report-help-tri
+- type: doc
+  url: https://www.epa.gov/system/files/documents/2025-09/basic_data_files_documentation_august_2024.pdf
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Toxics_Release_Inventory
+translations:
+  ru:
+    name: Идентификатор объекта в Toxics Release Inventory EPA США (TRIFID)
+    doc: Пятнадцатизначный идентификатор объекта, отчитывающегося о выбросах токсичных веществ в EPA США;
+      составлен из почтового индекса, согласных названия и символов адреса.

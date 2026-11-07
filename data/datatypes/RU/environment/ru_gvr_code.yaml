@@ -1,8 +1,10 @@
 id: ru_gvr_code
 name: State Water Register code (Russia)
 status: draft
-doc: 'Code of a water body in the State Water Register of Russia: 23 digits that encode the hydrographic
-  units it belongs to and the water body.'
+doc: Code of a water body in the State Water Register of Russia (государственный водный реестр), maintained
+  by the Federal Agency for Water Resources. It has 23 digits. The leading digits appear to encode the
+  water management area (basin district, river basin, sub-basin and area), but no published act defines
+  the meaning of each position, so the regexp checks only the length.
 categories:
 - environment
 - geo
@@ -15,15 +17,23 @@ classification: identifier
 regexp: ^\d{23}$
 examples:
 - value: '17040200112117600008474'
-  description: Voyevolikhan
+  description: Voyevolikhan; Wikidata
 - value: '16010100111116200000013'
-  description: Lake Baikal
+  description: Lake Baikal; Wikidata example
+- value: '1601010011111620000001'
+  valid: false
+  description: Code of Lake Baikal with the last digit missing (22 digits)
 mappings:
   wikidata: P884
 links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/State_Water_Register
+- type: doc
+  url: https://legalacts.ru/doc/prikaz-mpr-rf-ot-29052007-n-138/
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P884
 translations:
   ru:
     name: Код водного объекта в ГВР
-    doc: Код водного объекта в Государственном водном реестре России.
+    doc: Код водного объекта в Государственном водном реестре России — 23 цифры. Первые цифры, по-видимому,
+      обозначают водохозяйственный участок, но значение каждой позиции не опубликовано в нормативных актах.

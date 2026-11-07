@@ -1,0 +1,43 @@
+id: iucn_protected_area_category
+name: IUCN protected area management category
+status: draft
+doc: 'Code of the IUCN management category of a protected area, which groups sites by their main management
+  objective: Ia strict nature reserve, Ib wilderness area, II national park, III natural monument or feature,
+  IV habitat/species management area, V protected landscape/seascape, VI protected area with sustainable
+  use of natural resources. National authorities assign it and the World Database on Protected Areas stores
+  it in the IUCN_CAT field, where sites without a category have Not Reported, Not Applicable or Not Assigned;
+  this pattern does not accept those values. The categories are not a ranking of importance.'
+categories:
+- environment
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:Ia|Ib|II|III|IV|V|VI)$
+examples:
+- value: Ia
+  description: Chatkal Biosphere State Reserve, Uzbekistan (WDPA 1761); Protected Planet
+- value: Ib
+  description: Richardson Lake Migratory Bird Sanctuary, Canada (WDPA 18696); Protected Planet
+- value: II
+  description: Harz National Park, Germany (WDPA 103142); Protected Planet
+- value: VI
+  description: Murray Lake Migratory Bird Sanctuary, Canada (WDPA 18691); Protected Planet
+- value: Not Reported
+  valid: false
+  description: WDPA value for a site without a reported category, such as the Ross Sea Region Marine Protected
+    Area
+links:
+- type: doc
+  url: https://portals.iucn.org/library/sites/library/files/documents/PAG-021.pdf
+- type: doc
+  url: https://www.protectedplanet.net/en/resources/wdpa-manual
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/IUCN_protected_area_categories
+translations:
+  ru:
+    name: Категория управления охраняемой территорией МСОП
+    doc: 'Код категории МСОП, которая группирует охраняемые территории по основной цели управления: Ia,
+      Ib, II, III, IV, V, VI. Категорию присваивают национальные органы; в базе WDPA она хранится в поле
+      IUCN_CAT.'

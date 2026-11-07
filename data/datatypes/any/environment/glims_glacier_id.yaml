@@ -1,0 +1,40 @@
+id: glims_glacier_id
+name: GLIMS glacier ID
+status: draft
+doc: 'Identifier of a glacier in the GLIMS (Global Land Ice Measurements from Space) database at NSIDC,
+  made from a point on the glacier: G, six digits of east longitude (000000 to 359999) and five digits
+  of latitude (00000 to 90000), both in thousandths of a degree, with a fixed E between them and N or
+  S for the hemisphere. One id can have several outlines, for example from different dates or after a
+  glacier breaks up.'
+categories:
+- environment
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^G(?:[0-2]\d{5}|3[0-5]\d{4})E(?:[0-8]\d{4}|90000)[NS]$
+examples:
+- value: G238490E46217N
+  description: Adams Glacier, Washington, USA; Wikidata example
+- value: G211403E60457N
+  description: Applegate Glacier, Alaska, USA; Wikidata example
+- value: G170307E43519S
+  description: Tasman Glacier, New Zealand; Wikidata
+- value: G121510W46217N
+  valid: false
+  description: West longitude; GLIMS ids use east longitude only
+mappings:
+  wikidata: P6799
+links:
+- type: doc
+  url: https://www.glims.org/MapsAndDocs/DB/data_dictionary.php
+- type: doc
+  url: https://nsidc.org/lists/archives/list/glims@nsidc.org/thread/CSBWHIEGQWGZ2MIL7563OS7WYF4TACC4
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6799
+translations:
+  ru:
+    name: Идентификатор ледника GLIMS
+    doc: 'Идентификатор ледника в базе GLIMS, построенный из координат точки на леднике: G, восточная
+      долгота и широта в тысячных долях градуса, буква N или S.'

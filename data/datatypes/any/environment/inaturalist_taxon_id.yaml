@@ -1,0 +1,40 @@
+id: inaturalist_taxon_id
+name: iNaturalist taxon ID
+status: draft
+doc: 'Number of a taxon of any rank, from kingdom to subspecies, in iNaturalist, the citizen-science platform
+  for biodiversity observations; 1 is the kingdom Animalia. In November 2026 the highest id is about 1.7
+  million. Curators edit the taxonomy, so check the name behind an id. A bare number: recognize it only
+  with column context.'
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,6}$
+examples:
+- value: '21723'
+  description: Atelopus zeteki (Panamanian golden frog); Wikidata and Bioregistry example
+- value: '1'
+  description: Animalia (animals); Wikidata example
+- value: https://www.inaturalist.org/taxa/21723
+  valid: false
+  description: Full URL; the id is the number alone
+mappings:
+  wikidata: P3151
+  bioregistry: inaturalist.taxon
+links:
+- type: doc
+  url: https://api.inaturalist.org/v1/docs/
+- type: doc
+  url: https://bioregistry.io/registry/inaturalist.taxon
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/INaturalist
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3151
+translations:
+  ru:
+    name: Идентификатор таксона iNaturalist
+    doc: Номер таксона любого ранга на платформе гражданской науки iNaturalist. Таксономию правят кураторы,
+      поэтому название за номером стоит проверять.

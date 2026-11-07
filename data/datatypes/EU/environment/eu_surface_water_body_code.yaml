@@ -1,0 +1,51 @@
+id: eu_surface_water_body_code
+name: EU surface water body code (WFD)
+status: draft
+doc: Code of a river, lake, transitional or coastal water body that a Member State reports to the European
+  Environment Agency (WISE) under the Water Framework Directive. It is the two-letter country code (EL
+  for Greece, UK for the former UK reports) followed by the national water body code, 3 to 42 upper-case
+  letters, digits, hyphens and underscores in all, starting and ending with a letter or digit. Codes change
+  between river basin management cycles (Sweden moved to UUID-based codes in 2022), and groundwater body
+  codes have the same form, so check the reporting cycle and column context.
+categories:
+- environment
+- geo
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}[0-9A-Z](?:[0-9A-Z_-]{0,38}[0-9A-Z])?$
+examples:
+- value: FRAC01
+  description: French coastal water from the Belgian border to the Malo jetty; Eionet WISE water body
+    vocabulary
+- value: DECW_DENI_N4-5900-01
+  description: Western Wadden Sea of the Elbe, Germany; Eionet WISE water body vocabulary
+- value: SE21E5483D-ADCA-4053-A3CC-D71A6010C80C
+  description: Lake Orlången, Sweden (code of the 2022 cycle); Eionet WISE water body vocabulary
+- value: NL18_KANDWCRN
+  description: Canal through Walcheren, Netherlands; Wikidata example
+- value: FRAC01_
+  valid: false
+  description: Ends with an underscore; the code must end with a letter or digit
+- value: frac01
+  valid: false
+  description: Lower case; EU codes use upper-case letters only
+mappings:
+  wikidata: P2856
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2856
+- type: doc
+  url: https://dd.eionet.europa.eu/schemas/WFD2022/WFDCommon_2022.xsd
+- type: doc
+  url: https://dd.eionet.europa.eu/vocabulary/wise/WaterBody/view
+- type: doc
+  url: https://eur-lex.europa.eu/eli/dir/2000/60/oj
+translations:
+  ru:
+    name: Код поверхностного водного объекта ЕС (ВРД)
+    doc: Код реки, озера, переходных или прибрежных вод, который страна ЕС сообщает в систему WISE по
+      Водной рамочной директиве. Состоит из двухбуквенного кода страны и национального кода водного объекта.

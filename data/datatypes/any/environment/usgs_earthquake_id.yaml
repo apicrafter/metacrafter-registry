@@ -1,0 +1,46 @@
+id: usgs_earthquake_id
+name: USGS earthquake event ID (ComCat)
+status: draft
+doc: Identifier of an earthquake or other seismic event in the ANSS Comprehensive Earthquake Catalog (ComCat)
+  of the US Geological Survey. It is the lower-case code of the contributing network or catalog (us, ci,
+  nc, ak, iscgem, official and others) followed by the code that the network assigned, for example us10006g7d
+  or ci38457511. One event collects the IDs of all its contributors, any of them resolves to the event,
+  and the preferred ID can change over time.
+categories:
+- environment
+- science
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[a-z]{2,10}[0-9][0-9a-z_]{2,24}$
+examples:
+- value: us10006g7d
+  description: August 2016 Central Italy earthquake; Wikidata example
+- value: nc72282711
+  description: 2014 South Napa earthquake; Wikidata example
+- value: ci38457511
+  description: 2019 Ridgecrest M7.1 earthquake; USGS ComCat
+- value: official20110311054624120_30
+  description: 2011 Tohoku earthquake, preferred ID; USGS ComCat
+- value: 10006g7d
+  valid: false
+  description: Event code without the network prefix
+- value: US10006G7D
+  valid: false
+  description: Upper case; ComCat IDs are lower case
+mappings:
+  wikidata: P3196
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3196
+- type: doc
+  url: https://earthquake.usgs.gov/data/comcat/
+- type: doc
+  url: https://earthquake.usgs.gov/fdsnws/event/1/
+translations:
+  ru:
+    name: Идентификатор землетрясения USGS (ComCat)
+    doc: Идентификатор сейсмического события в каталоге ComCat Геологической службы США — код сети или
+      каталога и код события, присвоенный этой сетью, например us10006g7d.

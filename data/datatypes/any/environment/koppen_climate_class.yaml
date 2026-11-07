@@ -1,0 +1,45 @@
+id: koppen_climate_class
+name: Köppen-Geiger climate class
+status: draft
+doc: Code of a climate type in the Köppen-Geiger classification. The first letter is the main group (A
+  tropical, B arid, C temperate, D cold, E polar), the second the precipitation pattern (f, m, s, w; W
+  desert and S steppe for B; T tundra and F frost for E) and the third the temperature (h, k for B; a,
+  b, c, d for C and D), for example Cfb or BWh. The map of Beck et al. (2018), after Peel et al. (2007),
+  has 30 classes and merges As into Aw, while the map of Kottek et al. (2006) keeps As. The codes are
+  case-sensitive.
+categories:
+- environment
+- geo
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:A[fmsw]|B[SW][hk]|C[fsw][abc]|D[fsw][abcd]|E[FT])$
+examples:
+- value: Af
+  description: Tropical rainforest; class 1 of Beck et al. 2018
+- value: BWh
+  description: Hot desert; class 4 of Beck et al. 2018
+- value: Dsd
+  description: Cold climate with a dry summer and a very cold winter; class 20 of Beck et al. 2018
+- value: As
+  description: Tropical savanna with a dry summer; class of the Kottek et al. 2006 map
+- value: Cfd
+  valid: false
+  description: The third letter d (very cold winter) is only used for D climates
+- value: AF
+  valid: false
+  description: Upper-case second letter; the codes are case-sensitive
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification
+- type: doc
+  url: https://doi.org/10.1038/sdata.2018.214
+- type: doc
+  url: https://koeppen-geiger.vu-wien.ac.at/present.htm
+translations:
+  ru:
+    name: Класс климата по Кёппену — Гейгеру
+    doc: Код типа климата в классификации Кёппена — Гейгера из двух или трёх букв, например Cfb или BWh.
+      Первая буква обозначает основную группу климатов (A, B, C, D, E).

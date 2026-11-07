@@ -1,0 +1,41 @@
+id: ru_nvos_object_code
+name: Russian code of an object with negative environmental impact (NVOS object code)
+status: draft
+doc: 'Code of an object that has a negative impact on the environment (объект НВОС), assigned when the
+  object is entered in the state register of such objects and kept until the object is liquidated. Under
+  Ministry of Natural Resources order No. 553 of 23 December 2015 it has four hyphen-separated parts:
+  the first two digits of the OKTMO code of the region (or М or Ш and a letter of the sea for objects
+  in internal or territorial waters or on the continental shelf), a four-digit code of the registering
+  body, a six-digit sequence number, and the Cyrillic letter Т (point), П (area) or Л (linear object).'
+categories:
+- environment
+- government
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{2}|[МШ][АБВГДЕЖЗИКЛМН])-\d{4}-\d{6}-[ТПЛ]$
+examples:
+- value: 36-0163-003238-П
+  description: Area object in Samara Oblast (OKTMO 36); code in the name of a Rosprirodnadzor permit document
+    on rpn.gov.ru
+- value: 73-0173-000118-П
+  description: Area object in Ulyanovsk Oblast (OKTMO 73); code in the name of a Rosprirodnadzor permit
+    document on rpn.gov.ru
+- value: 73-0173-000118-P
+  valid: false
+  description: Latin P instead of the Cyrillic letter П
+- value: 73-173-118-П
+  valid: false
+  description: Body code and sequence number not padded to four and six digits
+links:
+- type: doc
+  url: https://legalacts.ru/doc/prikaz-minprirody-rossii-ot-23122015-n-553/
+translations:
+  ru:
+    name: Код объекта, оказывающего негативное воздействие на окружающую среду (объекта НВОС)
+    doc: Код объекта НВОС в государственном реестре объектов НВОС по приказу Минприроды России от 23.12.2015
+      № 553. Состоит из кода субъекта РФ по ОКТМО (или обозначения моря), кода органа, поставившего объект
+      на учёт, порядкового номера и буквы Т, П или Л (точечный, площадной или линейный объект).

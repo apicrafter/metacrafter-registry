@@ -16,6 +16,9 @@ examples:
   description: oceanic whitetip shark
 - value: '162003'
   description: Brook trout
+- value: '160330.0'
+  valid: false
+  description: Number exported as a decimal by a spreadsheet
 mappings:
   wikidata: P815
   bioregistry: itis
@@ -26,3 +29,8 @@ links:
   url: https://www.itis.gov/
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P815
+translations:
+  ru:
+    name: Таксономический серийный номер ITIS (TSN)
+    doc: Номер научного названия в Интегрированной таксономической информационной системе (ITIS), которую
+      ведут государственные органы США, Канады и Мексики.

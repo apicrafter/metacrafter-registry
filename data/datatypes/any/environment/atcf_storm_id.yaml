@@ -1,0 +1,44 @@
+id: atcf_storm_id
+name: ATCF tropical cyclone identifier
+status: draft
+doc: Identifier of a tropical cyclone in the Automated Tropical Cyclone Forecasting system used by the
+  US National Hurricane Center and the Joint Typhoon Warning Center, and in HURDAT2 and IBTrACS. It has
+  eight characters, the basin (AL Atlantic, EP eastern Pacific, CP central Pacific, WP western Pacific,
+  IO north Indian Ocean, SH southern hemisphere, SL south Atlantic), the cyclone number of the season
+  and the year, for example AL122005 for Hurricane Katrina. Numbers 80 to 99 are training storms and invests,
+  southern hemisphere storms use the season year, and ATCF file names write the code in lower case.
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:AL|EP|CP|WP|IO|SH|SL)(?:0[1-9]|[1-9][0-9])(?:18[5-9][0-9]|19[0-9]{2}|20[0-9]{2})$
+examples:
+- value: AL122005
+  description: Hurricane Katrina (2005); HURDAT2 Atlantic
+- value: AL092005
+  description: Hurricane Irene (2005); HURDAT2 Atlantic
+- value: EP202015
+  description: Hurricane Patricia (2015); HURDAT2 northeast Pacific
+- value: WP312013
+  description: Typhoon Haiyan (2013); IBTrACS
+- value: AL011851
+  description: First storm of the 1851 Atlantic season; HURDAT2 Atlantic
+- value: 31W
+  valid: false
+  description: JTWC number of Typhoon Haiyan, without the basin prefix and the year
+- value: AL002005
+  valid: false
+  description: Cyclone number 00 is not used
+links:
+- type: doc
+  url: https://ftp.nhc.noaa.gov/atcf/README
+- type: doc
+  url: https://www.nhc.noaa.gov/data/hurdat/hurdat2-format-nov2019.pdf
+translations:
+  ru:
+    name: Идентификатор тропического циклона ATCF
+    doc: Идентификатор тропического циклона в системе ATCF Национального центра ураганов и JTWC (США)
+      — код бассейна, номер циклона в сезоне и год, например AL122005.

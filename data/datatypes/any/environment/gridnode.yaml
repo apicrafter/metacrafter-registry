@@ -1,10 +1,21 @@
 id: gridnode
 name: Grid node identifier
 status: draft
-doc: Datatype for 'Grid node identifier' (gridnode) from rules in context 'environment'.
+doc: Generic type of an identifier of a node of an electric power grid, such as a substation, a pricing
+  node of an electricity market or a balancing authority area. The metacrafter rules recognize it by column
+  names such as grid_node, interconnect_node or balancing_authority. Each grid operator and market has
+  its own codes, so this record has no regexp.
 categories:
-- environment
+- energy
 langs:
 - en
 is_pii: false
 classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Balancing_authority
+translations:
+  ru:
+    name: Идентификатор узла энергосистемы
+    doc: Обобщённый тип идентификатора узла электрической сети — подстанции, узла ценообразования рынка
+      электроэнергии или зоны балансирования. У каждого оператора и рынка свои коды.

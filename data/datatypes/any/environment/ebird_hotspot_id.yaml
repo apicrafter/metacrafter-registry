@@ -1,0 +1,33 @@
+id: ebird_hotspot_id
+name: eBird hotspot ID
+status: draft
+doc: 'Identifier of an eBird hotspot, a birding location with a public page in eBird: the letter L followed
+  by a number, so far of up to eight digits. It appears in hotspot page URLs (https://ebird.org/hotspot/L1231446)
+  and in the eBird API.'
+categories:
+- environment
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^L[1-9]\d*$
+examples:
+- value: L1231446
+  description: Sandwell Valley RSPB Reserve, England; Wikidata example, eBird
+- value: L11
+  description: High Park, Toronto, Canada; Wikidata, eBird
+- value: L10019528
+  description: The Doon School, Dehradun, India; Wikidata example, eBird
+- value: '1231446'
+  valid: false
+  description: Missing the L prefix
+mappings:
+  wikidata: P5200
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5200
+translations:
+  ru:
+    name: Идентификатор точки наблюдений (hotspot) eBird
+    doc: 'Код общедоступного места наблюдения птиц в eBird: буква L и номер.'

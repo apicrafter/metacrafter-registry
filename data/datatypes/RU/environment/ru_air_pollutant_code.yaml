@@ -1,0 +1,42 @@
+id: ru_air_pollutant_code
+name: Russian air pollutant code
+status: draft
+doc: 'Four-digit code of a substance that pollutes ambient air, from the handbook "Перечень и коды веществ,
+  загрязняющих атмосферный воздух" of the НИИ Атмосфера institute. The first two digits are the group
+  of substances and the last two the number within the group, so codes keep their leading zero (0301 nitrogen
+  dioxide, 0330 sulphur dioxide). The codes are used in emission inventories, emission standards and the
+  statistical form 2-ТП (воздух), which also has summary codes such as 0001 for all pollutants and 8888
+  for other substances. A bare four-digit number: recognize it only with column context.'
+categories:
+- environment
+- chemistry
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{4}$
+examples:
+- value: '0301'
+  description: Nitrogen dioxide; handbook of air pollutant codes, 6th edition (2005)
+- value: '0330'
+  description: Sulphur dioxide; form 2-ТП (воздух), Rosstat order No. 589 of 02.10.2026
+- value: '0337'
+  description: Carbon monoxide; form 2-ТП (воздух), Rosstat order No. 589 of 02.10.2026
+- value: '0703'
+  description: Benzo(a)pyrene; list of specific pollutants of form 2-ТП (воздух)
+- value: '301'
+  valid: false
+  description: Leading zero dropped; codes have four digits
+links:
+- type: doc
+  url: https://meganorm.ru/Data1/46/46199/index.htm
+- type: doc
+  url: https://legalacts.ru/doc/prikaz-rosstata-ot-02102026-n-589-ob-utverzhdenii-formy/
+translations:
+  ru:
+    name: Код загрязняющего вещества атмосферного воздуха
+    doc: Четырёхзначный код вещества по справочнику «Перечень и коды веществ, загрязняющих атмосферный
+      воздух» (НИИ Атмосфера). Первые две цифры — группа веществ, вторые — номер в группе. Используется
+      при инвентаризации выбросов, нормировании и в форме 2-ТП (воздух).

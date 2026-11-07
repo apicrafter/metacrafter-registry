@@ -1,0 +1,41 @@
+id: eu_waste_code
+name: European List of Waste code (EWC)
+status: draft
+doc: Six-digit code of a waste type in the European List of Waste (Commission Decision 2000/532/EC, as
+  amended by Decision 2014/955/EU and, for battery waste, Delegated Decision (EU) 2025/934). The first
+  pair is one of 20 chapters by the source or kind of waste, the second pair a subchapter and the third
+  the entry; entries ending in 99 are wastes not otherwise specified. An asterisk after the code marks
+  a hazardous waste. Codes are written in pairs separated by spaces (20 03 01) or as six digits (200301);
+  a bare six-digit number needs column context.
+categories:
+- environment
+- government
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: '^(?:0[1-9]|1\d|20)(?: (?:0[1-9]|1[0-4]) (?:0[1-9]|[1-9]\d)|(?:0[1-9]|1[0-4])(?:0[1-9]|[1-9]\d))\*?$'
+examples:
+- value: 20 03 01
+  description: Mixed municipal waste; List of Waste, Decision 2000/532/EC
+- value: 15 01 10*
+  description: Packaging containing residues of or contaminated by hazardous substances (hazardous); List
+    of Waste
+- value: '170504'
+  description: Soil and stones other than those mentioned in 17 05 03, written without spaces; List of
+    Waste
+- value: 21 01 01
+  valid: false
+  description: There is no chapter 21; the chapters run from 01 to 20
+links:
+- type: doc
+  url: https://eur-lex.europa.eu/eli/dec/2000/532/oj
+- type: doc
+  url: https://eur-lex.europa.eu/eli/dec/2014/955/oj
+translations:
+  ru:
+    name: Код Европейского перечня отходов (EWC)
+    doc: Шестизначный код вида отходов в Европейском перечне отходов (Решение Комиссии 2000/532/EC). Пары
+      цифр обозначают главу, подглаву и позицию; звёздочка после кода означает опасные отходы.

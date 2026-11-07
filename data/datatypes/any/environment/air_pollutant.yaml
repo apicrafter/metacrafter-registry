@@ -1,0 +1,36 @@
+id: air_pollutant
+name: Air pollutant notation
+status: draft
+doc: Short notation of an air pollutant measured at air quality stations, as in the pollutant vocabulary
+  of the European Environment Agency (EEA) for air quality reporting and in national air quality data,
+  for example PM10, PM2.5, NO2, O3 or SO2. The regexp covers only the notations of the main pollutants,
+  not full names or the hundreds of other substances of the vocabulary. CO and NO are also country and
+  state codes, so judge a column by the share of values that match.
+categories:
+- environment
+- chemistry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:PM10|PM2\.5|PM1|NO2|NO|NO[Xx]|O3|SO2|CO|H2S|NH3|C6H6|Pb|BaP|BS)$
+examples:
+- value: PM2.5
+  description: Particulate matter below 2.5 µm; EEA vocabulary code 6001
+- value: NO2
+  description: Nitrogen dioxide; EEA vocabulary code 8
+- value: O3
+  description: Ozone; EEA vocabulary code 7
+- value: Ozone
+  valid: false
+  description: Full name instead of the notation
+links:
+- type: doc
+  url: https://dd.eionet.europa.eu/vocabulary/aq/pollutant/
+- type: doc
+  url: https://www.epa.gov/criteria-air-pollutants
+translations:
+  ru:
+    name: Обозначение загрязняющего вещества воздуха
+    doc: Краткое обозначение загрязняющего вещества атмосферного воздуха в данных мониторинга качества
+      воздуха, например PM10, PM2.5, NO2, O3 или SO2.

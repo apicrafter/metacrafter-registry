@@ -1,0 +1,41 @@
+id: gvp_volcano_number
+name: Global Volcanism Program volcano number (VNum)
+status: draft
+doc: Six-digit number of a volcano in the Volcanoes of the World database of the Smithsonian Institution
+  Global Volcanism Program. The numbering comes from the Catalogue of Active Volcanoes of the World and
+  follows a geographic order, but the leading digits do not reliably give the region of the current database.
+  Since September 2013 the numbers have only digits and none starts with 0 or 1; numbers such as 1202-16-
+  belong to the former scheme. A bare six-digit number, recognize it with column context.
+categories:
+- environment
+- geo
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[2-9]\d{5}$
+examples:
+- value: '211020'
+  description: Vesuvius, Italy; Wikidata example
+- value: '262000'
+  description: Krakatau, Indonesia; Wikidata example
+- value: '372020'
+  description: Eyjafjallajökull, Iceland; GVP Holocene volcano list
+- value: '011020'
+  valid: false
+  description: Starts with 0; numbers issued since 2013 never start with 0 or 1
+mappings:
+  wikidata: P1886
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Volcano_Number
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1886
+- type: doc
+  url: https://volcano.si.edu/gvp_votw.cfm
+translations:
+  ru:
+    name: Номер вулкана в Global Volcanism Program (VNum)
+    doc: Шестизначный номер вулкана в базе данных Volcanoes of the World Глобальной программы вулканизма
+      Смитсоновского института. С 2013 года номера состоят только из цифр и не начинаются с 0 или 1.

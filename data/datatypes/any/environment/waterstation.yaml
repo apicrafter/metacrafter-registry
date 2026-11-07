@@ -1,10 +1,22 @@
 id: waterstation
-name: Water quality station id
+name: Water monitoring station identifier
 status: draft
-doc: Datatype for 'Water quality station id' (waterstation) from rules in context 'environment'.
+doc: Generic type of an identifier of a station or site where water quality, water level or discharge
+  is measured or sampled, in rivers, lakes, groundwater or coastal waters. Each monitoring network has
+  its own format; network-specific records such as usgs_site_number have this record as parent. No metacrafter
+  rule detects it yet.
 categories:
 - environment
+- geo
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+links:
+- type: doc
+  url: https://www.waterqualitydata.us/
+translations:
+  ru:
+    name: Идентификатор пункта мониторинга вод
+    doc: Обобщённый тип идентификатора пункта наблюдений за качеством, уровнем или расходом воды. У каждой
+      сети мониторинга свой формат; конкретные форматы описаны в дочерних записях.

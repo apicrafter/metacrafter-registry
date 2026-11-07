@@ -1,0 +1,40 @@
+id: us_ghgrp_facility_id
+name: US EPA Greenhouse Gas Reporting Program (GHGRP) facility ID
+status: draft
+doc: Seven-digit number that the EPA Greenhouse Gas Reporting Program (40 CFR part 98) gives to a reporting
+  facility or supplier; FLIGHT and the GHGRP data sets use it as the facility ID. The ids in the published
+  data for the reporting years 2010 to 2023 run from 1000001 to 1015132. It differs from the FRS registry
+  ID and from the ORIS or EIA plant code of the same facility; EPA publishes a crosswalk to ORIS codes.
+  A bare seven-digit number; recognize it only with column context.
+categories:
+- environment
+- energy
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^10\d{5}$
+examples:
+- value: '1000001'
+  description: PSE Ferndale Generating Station, Washington; EPA GHGRP data
+- value: '1000044'
+  description: Eco-Services Baytown Plant, Texas; EPA GHGRP data
+- value: '1003484'
+  description: ExxonMobil Chemical Co Baton Rouge Plastics Plant, Louisiana; EPA GHGRP data
+- value: '110000490166'
+  valid: false
+  description: FRS registry ID of PSE Ferndale Generating Station, not its GHGRP ID
+links:
+- type: doc
+  url: https://www.epa.gov/ghgreporting
+- type: doc
+  url: https://www.epa.gov/ghgreporting/data-sets
+- type: doc
+  url: https://ghgdata.epa.gov/ghgp/main.do
+translations:
+  ru:
+    name: Идентификатор объекта в программе отчётности о парниковых газах EPA США (GHGRP)
+    doc: Семизначный номер объекта или поставщика в программе Greenhouse Gas Reporting Program EPA США;
+      отличается от номера FRS и кода электростанции EIA.

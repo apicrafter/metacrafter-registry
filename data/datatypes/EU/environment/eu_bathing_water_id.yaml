@@ -1,0 +1,46 @@
+id: eu_bathing_water_id
+name: EU bathing water identifier
+status: draft
+doc: Identifier of a bathing water (a beach or bathing site on the sea, a lake or a river) that a country
+  reports to the European Environment Agency under the Bathing Water Directive 2006/7/EC. Bathing waters
+  are registered as WFD protected areas, so the identifier has the EU code form, the two-letter country
+  code (EL for Greece, UK for the former UK reports) followed by up to 40 upper-case letters, digits,
+  hyphens or underscores (3 to 42 characters in all); the national part follows each country's own scheme.
+categories:
+- environment
+- geo
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}[0-9A-Z](?:[0-9A-Z_-]{0,38}[0-9A-Z])?$
+examples:
+- value: NLBW59_5QMP01
+  description: Milligerplas, Netherlands; Wikidata example
+- value: SE0441278000000136
+  description: Torekovs strand, Sweden; Wikidata example
+- value: DEBW_PR_0048
+  description: Titisee beach, Germany; Eionet WFD protected area vocabulary
+- value: DKBW1299
+  description: Børsmose Strand, Denmark; Eionet WFD protected area vocabulary
+- value: debw_pr_0048
+  valid: false
+  description: Lower case; the register uses DEBW_PR_0048
+mappings:
+  wikidata: P9616
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9616
+- type: doc
+  url: https://dd.eionet.europa.eu/dataelements/latest/bathingWaterIdentifier
+- type: doc
+  url: https://dd.eionet.europa.eu/vocabulary/wise/WFDProtectedArea/view
+- type: doc
+  url: https://eur-lex.europa.eu/eli/dir/2006/7/oj
+translations:
+  ru:
+    name: Идентификатор места купания ЕС
+    doc: Идентификатор пляжа или места купания, о котором страна сообщает Европейскому агентству по окружающей
+      среде по Директиве о водах для купания 2006/7/EC. Начинается с двухбуквенного кода страны.

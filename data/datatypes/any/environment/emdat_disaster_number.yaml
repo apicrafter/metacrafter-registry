@@ -1,0 +1,42 @@
+id: emdat_disaster_number
+name: EM-DAT disaster number (DisNo.)
+status: draft
+doc: Number of a disaster event in EM-DAT, the international disaster database of the Centre for Research
+  on the Epidemiology of Disasters (CRED, UCLouvain). It is the year (4 digits), a hyphen and a four-digit
+  sequence number; the EM-DAT public table appends a hyphen and the ISO 3166-1 alpha-3 code of the affected
+  country, with one row per country for the same DisNo.
+categories:
+- environment
+- government
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:19|20)\d{2}-\d{4}(?:-[A-Z]{3})?$
+examples:
+- value: 2020-0218
+  description: Tropical Storm Amanda (2020); Wikidata
+- value: 2020-0312
+  description: Hurricane Isaias (2020); Wikidata
+- value: 2020-0022-BRA
+  description: 2020 floods and mudslides in Brazil, public table form; Wikidata
+- value: 2020-218
+  valid: false
+  description: Sequence number not padded to four digits
+- value: EQ-2010-000009-HTI
+  valid: false
+  description: GLIDE number, not an EM-DAT number
+mappings:
+  wikidata: P14355
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P14355
+- type: doc
+  url: https://doc.emdat.be/docs/data-structure-and-content/emdat-public-table/
+- type: doc
+  url: https://www.emdat.be/
+translations:
+  ru:
+    name: Номер бедствия в EM-DAT (DisNo.)
+    doc: Номер события в международной базе данных о бедствиях EM-DAT (CRED, Лувенский университет) —
+      год и четырёхзначный порядковый номер, в публичной таблице с трёхбуквенным кодом страны.

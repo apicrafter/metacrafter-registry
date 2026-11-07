@@ -1,0 +1,43 @@
+id: eu_habitat_type_code
+name: EU Habitats Directive habitat type code (Natura 2000)
+status: draft
+doc: Four-character code of a natural habitat type of Community interest listed in Annex I of the Habitats
+  Directive 92/43/EEC; the annex states that it is the Natura 2000 code. The first digit is the group,
+  from 1 (coastal and halophytic habitats) to 9 (forests), the second the subgroup; the consolidated annex
+  lists 233 types, such as 9110 (Luzulo-Fagetum beech forests) and 91E0 (alluvial forests with alder and
+  ash). The annex marks priority types with an asterisk next to the name, outside the code.
+categories:
+- environment
+- science
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d[1-9A-Z][0A]$
+examples:
+- value: '9110'
+  description: Luzulo-Fagetum beech forests; Habitats Directive Annex I
+- value: 91E0
+  description: Alluvial forests with Alnus glutinosa and Fraxinus excelsior, a priority type; Habitats
+    Directive Annex I
+- value: '1170'
+  description: Reefs; Wikidata example
+- value: ES7020008
+  valid: false
+  description: A Natura 2000 site code entered as a habitat code in Wikidata
+mappings:
+  wikidata: P6436
+links:
+- type: doc
+  url: https://eur-lex.europa.eu/eli/dir/1992/43/oj
+- type: doc
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:01992L0043-20130701
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6436
+translations:
+  ru:
+    name: Код типа местообитания по Директиве ЕС о местообитаниях (Natura 2000)
+    doc: Четырёхзначный код типа природного местообитания из приложения I Директивы 92/43/EEC, совпадающий
+      с кодом Natura 2000. Первая цифра обозначает группу местообитаний, например 9 — леса.

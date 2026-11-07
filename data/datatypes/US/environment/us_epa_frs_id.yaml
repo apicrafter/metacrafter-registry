@@ -1,0 +1,44 @@
+id: us_epa_frs_id
+name: US EPA Facility Registry Service (FRS) registry ID
+status: draft
+doc: Identifier that the Facility Registry Service of the US Environmental Protection Agency gives to
+  a facility, site or other place of environmental interest. FRS links the records of the same place in
+  EPA program systems (air, water, waste, toxics release and greenhouse gas reporting) under one registry
+  ID, and other EPA data sets carry it as FRS ID or REGISTRY_ID. It has 12 digits, and all values seen
+  in EPA data start with 110.
+categories:
+- environment
+- government
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^110\d{9}$
+examples:
+- value: '110000495777'
+  description: San Francisco Mint; Wikidata
+- value: '110009342265'
+  description: Dewey Loeffel Landfill Superfund site; Wikidata
+- value: '110000490166'
+  description: PSE Ferndale Generating Station, Washington; EPA greenhouse gas reporting data
+- value: '11000049577'
+  valid: false
+  description: Eleven digits; a registry ID has twelve
+mappings:
+  wikidata: P10145
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P10145
+- type: doc
+  url: https://www.epa.gov/frs
+- type: doc
+  url: https://echo.epa.gov/tools/data-downloads/frs-download-summary
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Facility_Registry_System
+translations:
+  ru:
+    name: Регистрационный номер объекта в FRS EPA США
+    doc: Двенадцатизначный идентификатор объекта в реестре Facility Registry Service Агентства по охране
+      окружающей среды США; связывает записи об одном объекте в разных системах EPA.

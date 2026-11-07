@@ -1,10 +1,24 @@
 id: powerplantid
 name: Power plant identifier
 status: draft
-doc: Datatype for 'Power plant identifier' (powerplantid) from rules in context 'environment'.
+doc: Generic type of an identifier of a power plant (generating station) in an energy or emissions register,
+  such as the EIA plant code in the United States or the id of the Global Power Plant Database. The metacrafter
+  rules recognize it by column names such as power_plant_id, plantid or eia_plant_id. Formats differ by
+  register, so this record has no regexp; the register-specific records have this record as parent.
 categories:
+- energy
 - environment
 langs:
 - en
 is_pii: false
 classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Power_station
+- type: doc
+  url: https://www.epa.gov/egrid
+translations:
+  ru:
+    name: Идентификатор электростанции
+    doc: Обобщённый тип идентификатора электростанции в реестре энергетики или выбросов, например кода
+      EIA в США. Форматы зависят от реестра и описаны в дочерних записях.

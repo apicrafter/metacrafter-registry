@@ -1,0 +1,37 @@
+id: inaturalist_observation_id
+name: iNaturalist observation ID
+status: draft
+doc: 'Number of an observation on iNaturalist: one record of an organism at a place and time, with its
+  photos and identifications. In November 2026 the highest id is above 413 million. A bare number: recognize
+  it only with column context.'
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d*$
+examples:
+- value: '36010371'
+  description: Salamandra salamandra in the Jura, 2019; Bioregistry example, iNaturalist API
+- value: '2932016'
+  description: Holotype observation of Asproinocybe daleyae, New Zealand; Wikidata, iNaturalist API
+- value: https://www.inaturalist.org/observations/36010371
+  valid: false
+  description: Full URL; the id is the number alone
+mappings:
+  wikidata: P5683
+  bioregistry: inaturalist.observation
+links:
+- type: doc
+  url: https://api.inaturalist.org/v1/docs/
+- type: doc
+  url: https://bioregistry.io/registry/inaturalist.observation
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5683
+translations:
+  ru:
+    name: Идентификатор наблюдения iNaturalist
+    doc: Номер наблюдения на платформе iNaturalist — записи об организме в определённом месте и времени
+      с фотографиями и определениями.

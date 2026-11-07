@@ -1,0 +1,40 @@
+id: us_aqs_site_id
+name: US EPA Air Quality System (AQS) site ID
+status: draft
+doc: 'Identifier of an ambient air monitoring site in the EPA Air Quality System: the two-digit state
+  FIPS code, the three-digit county FIPS code and a four-digit site number within the county, with leading
+  zeros kept. It is written with hyphens (36-081-0124) or as nine digits (360810124), as in the AQSID
+  of AirNow. AQS uses CC in place of the state code for sites in Canada and 80 for Mexico. Adding the
+  five-digit parameter code and the POC gives the id of a monitor.'
+categories:
+- environment
+- geo
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{2}|CC)(?:-\d{3}-\d{4}|\d{7})$
+examples:
+- value: 36-081-0124
+  description: Queens College 2, New York; EPA AQS site list
+- value: 06-029-0010
+  description: Bakersfield-Golden / M St, California; EPA AQS site list
+- value: '060410001'
+  description: San Rafael, California; AirNow monitoring site fact sheet sample
+- value: 36-81-124
+  valid: false
+  description: Leading zeros of the county code and site number dropped
+links:
+- type: doc
+  url: https://www.epa.gov/aqs/site-id-format
+- type: doc
+  url: https://aqs.epa.gov/aqsweb/airdata/FileFormats.html
+- type: doc
+  url: https://docs.airnowapi.org/docs/MonitoringSiteFactSheet.pdf
+translations:
+  ru:
+    name: Идентификатор станции мониторинга воздуха в AQS EPA США
+    doc: Идентификатор станции мониторинга качества воздуха в системе AQS — код штата FIPS, код округа
+      FIPS и четырёхзначный номер станции, через дефис или девятью цифрами.

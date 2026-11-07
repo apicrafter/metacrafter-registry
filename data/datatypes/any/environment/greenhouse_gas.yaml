@@ -1,0 +1,38 @@
+id: greenhouse_gas
+name: Kyoto Protocol greenhouse gas
+status: draft
+doc: Chemical notation of a greenhouse gas or gas group of the Kyoto Protocol basket, used to label emissions
+  in national inventories and emission statistics. Annex A of the Protocol lists CO2, CH4, N2O, HFCs,
+  PFCs and SF6; the Doha Amendment added NF3 for the second commitment period. The regexp accepts plain
+  digits or Unicode subscripts (CO₂) and the singular HFC and PFC. It does not cover single HFC or PFC
+  species or other gases.
+categories:
+- environment
+- chemistry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:CO[2₂]|CH[4₄]|N[2₂]O|HFCs?|PFCs?|SF[6₆]|NF[3₃])$
+examples:
+- value: CO2
+  description: Carbon dioxide; Kyoto Protocol, Annex A
+- value: CH₄
+  description: Methane, written with a subscript; Kyoto Protocol, Annex A
+- value: HFCs
+  description: Hydrofluorocarbons; Kyoto Protocol, Annex A
+- value: NF3
+  description: Nitrogen trifluoride; added to Annex A by the Doha Amendment
+- value: NOx
+  valid: false
+  description: Nitrogen oxides are an air pollutant, not a Kyoto Protocol gas
+links:
+- type: doc
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:22002A0515(01)
+- type: doc
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:22015A0804(01)
+translations:
+  ru:
+    name: Парниковый газ Киотского протокола
+    doc: Химическое обозначение парникового газа или группы газов Киотского протокола — CO2, CH4, N2O,
+      ГФУ, ПФУ, SF6 и NF3 (добавлен Дохинской поправкой).

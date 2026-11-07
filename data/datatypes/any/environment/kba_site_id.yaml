@@ -1,0 +1,36 @@
+id: kba_site_id
+name: Key Biodiversity Area (KBA) site ID
+status: draft
+doc: 'Number of a site in the World Database of Key Biodiversity Areas (WDKBA), where sites confirmed
+  against the global KBA standard are published. It appears in the site factsheet URL and in brackets
+  after the site name on keybiodiversityareas.org. A bare number: recognize it only with column context.'
+categories:
+- environment
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d*$
+examples:
+- value: '6579'
+  description: Lake Itasy, Madagascar; Wikidata example, KBA factsheet
+- value: '47'
+  description: Rdum Tal-Madonna, Malta; Wikidata example, KBA factsheet
+- value: '47048'
+  description: Dunas e Veredas do Baixo Médio São Francisco, Brazil; Wikidata example, KBA factsheet
+- value: Lake Itasy (6579)
+  valid: false
+  description: Site name with the number; the value is the number alone
+mappings:
+  wikidata: P10343
+links:
+- type: doc
+  url: https://www.keybiodiversityareas.org/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P10343
+translations:
+  ru:
+    name: Идентификатор ключевой территории биоразнообразия (KBA)
+    doc: Номер территории во Всемирной базе ключевых территорий биоразнообразия (WDKBA), который используется
+      в адресах карточек территорий на сайте keybiodiversityareas.org.

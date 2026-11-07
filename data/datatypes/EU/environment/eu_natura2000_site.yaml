@@ -1,8 +1,10 @@
 id: eu_natura2000_site
 name: Natura 2000 site code
 status: draft
-doc: 'Code of a protected area in the Natura 2000 network of the European Union: the two-letter country
-  code and seven characters.'
+doc: 'Code of a protected site in the Natura 2000 network of the European Union, used in the Natura 2000
+  database and the Standard Data Form (Implementing Decision 2011/484/EU). It has nine characters: the
+  two-letter country code (GR for Greece) and seven letters or digits that the national authority assigns.
+  Sites of the United Kingdom left the network in 2021, but their UK codes remain in older data.'
 categories:
 - environment
 - geo
@@ -15,9 +17,12 @@ classification: identifier
 regexp: ^(AT|BE|BG|CY|CZ|DE|DK|EE|ES|FI|FR|GR|HR|HU|IE|IT|LT|LU|LV|MT|NL|PL|PT|RO|SE|SI|SK|UK)[0-9A-Z]{7}$
 examples:
 - value: DK00FX005
-  description: Råbjerg Mile og Hulsig Hede
+  description: Råbjerg Mile og Hulsig Hede; Wikidata example
 - value: DE7820341
-  description: Schmeietal
+  description: Schmeietal; Wikidata example
+- value: Es7020050
+  valid: false
+  description: Country code in lower case; a data error found in Wikidata
 mappings:
   wikidata: P3425
 links:
@@ -25,5 +30,12 @@ links:
   url: https://en.wikipedia.org/wiki/Natura_2000
 - type: doc
   url: https://natura2000.eea.europa.eu/
+- type: doc
+  url: https://eur-lex.europa.eu/eli/dec_impl/2011/484/oj
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P3425
+translations:
+  ru:
+    name: Код территории Natura 2000
+    doc: Код охраняемой территории сети Natura 2000 Европейского союза — двухбуквенный код страны и семь
+      букв или цифр, которые назначает национальный орган.

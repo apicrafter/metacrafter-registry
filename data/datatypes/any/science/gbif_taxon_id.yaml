@@ -19,6 +19,9 @@ examples:
   description: Apidium
 - value: '1948418'
   description: Unkana (Hesperiidae)
+- value: 59R5F
+  valid: false
+  description: Common bottlenose dolphin in the 2026 GBIF taxonomy (Wikidata P14607), not a backbone key
 mappings:
   wikidata: P846
   bioregistry: gbif
@@ -29,3 +32,8 @@ links:
   url: https://www.gbif.org/species/search
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P846
+translations:
+  ru:
+    name: Ключ таксона GBIF
+    doc: Числовой ключ таксона в базовой таксономии GBIF (Global Biodiversity Information Facility), которым
+      размечены данные о находках организмов.
