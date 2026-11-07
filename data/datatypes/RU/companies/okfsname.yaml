@@ -1,0 +1,25 @@
+id: okfsname
+name: Russian form of ownership name (OKFS)
+status: draft
+doc: Name of a form of ownership in the Russian classifier of forms of ownership (OKFS, OK 027-99), such
+  as federal, municipal or private ownership. The two-digit code is okfs.
+categories:
+- companies
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+examples:
+- value: Федеральная собственность
+  description: OKFS code 12
+- value: Муниципальная собственность
+  description: OKFS code 14
+- value: Частная собственность
+  description: OKFS code 16
+translations:
+  ru:
+    name: Наименование формы собственности (ОКФС)
+    doc: Наименование формы собственности по Общероссийскому классификатору форм собственности (ОКФС,
+      ОК 027-99); код формы собственности — okfs
