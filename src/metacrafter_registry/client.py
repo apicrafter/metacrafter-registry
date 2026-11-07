@@ -107,6 +107,31 @@ def _tokens(text: str) -> set[str]:
     return {_stem(word) for word in words.split()}
 
 
+_PARENTHESES = re.compile(r"\(([^()]*)\)")
+_LIST_SEPARATORS = re.compile(r"[,;]")
+# Two capital letters in parentheses are as often a qualifier ("(EU)", "(UK)")
+# or a short common word as an abbreviation of the name.
+_ABBREVIATION_MIN_LEN = 3
+
+
+def _abbreviations(text: str) -> set[str]:
+    """The abbreviations that a name gives in parentheses, as tokens (see _tokens).
+
+    An abbreviation is one word of at least three characters with no lowercase
+    letter, alone or in a list separated by commas or semicolons: "Основной
+    государственный регистрационный номер (ОГРН, ОГРНИП)" gives огрн and огрнип.
+    identify-core.js abbreviations() is the same.
+    """
+    out: set[str] = set()
+    for group in _PARENTHESES.findall(text):
+        for item in _LIST_SEPARATORS.split(group):
+            item = item.strip()
+            words = _tokens(item)
+            if len(words) == 1 and len(item) >= _ABBREVIATION_MIN_LEN and item.isupper():
+                out |= words
+    return out
+
+
 def _match_kind(pattern: re.Pattern[str], value: str) -> int:
     """_RAW if ``pattern`` matches ``value`` as written, _COMPACT if it matches
     only once spaces and hyphens are removed, _NO_MATCH otherwise."""
@@ -506,6 +531,13 @@ class Registry:
         field_tokens = _tokens(field_name)
         if not field_tokens:
             return 0.0
+        # A field named by the abbreviations that a name gives in parentheses names
+        # the datatype itself: "ОГРН" or "ОГРН/ОГРНИП" for "Основной государственный
+        # регистрационный номер (ОГРН, ОГРНИП)".
+        names = [record["name"]]
+        names += [t.get("name", "") for t in record.get("translations", {}).values()]
+        if any(field_tokens <= _abbreviations(name) for name in names):
+            return 1.0
         best = 0.0
         # "card" in "bankcard", "phone" in "phonenumber": ids are often run together
         for candidate_id in (record["id"], *record.get("aliases", [])):
@@ -565,7 +597,9 @@ class Registry:
         Field-name similarity is the best word overlap with the record id,
         aliases, name and translated names. Words are in any script, camelCase
         is split and Russian case endings are ignored, so ``СерийныйНомер``
-        matches "Серийный номер сертификата X.509".
+        matches "Серийный номер сертификата X.509". A field name made of the
+        abbreviations that a name gives in parentheses is a full match: ``ОГРН``
+        for "Основной государственный регистрационный номер (ОГРН, ОГРНИП)".
         """
         if isinstance(values, str):
             values = [values]  # one value, not its characters

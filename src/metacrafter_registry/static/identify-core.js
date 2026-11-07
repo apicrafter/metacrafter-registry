@@ -599,6 +599,33 @@
     return out;
   }
 
+  // Two capital letters in parentheses are as often a qualifier ("(EU)", "(UK)")
+  // or a short common word as an abbreviation of the name.
+  var ABBREVIATION_MIN_LEN = 3;
+
+  // Like Python's str.isupper(): a cased letter and no lowercase one.
+  function isUpper(text) {
+    return text === text.toUpperCase() && text !== text.toLowerCase();
+  }
+
+  // The abbreviations that a name gives in parentheses, as tokens(): one word of
+  // at least three characters with no lowercase letter, alone or in a list
+  // separated by commas or semicolons ("Номер (ОГРН, ОГРНИП)" gives огрн and
+  // огрнип). _abbreviations in client.py is the same.
+  function abbreviations(text) {
+    var out = Object.create(null);
+    (String(text || "").match(/\([^()]*\)/g) || []).forEach(function (group) {
+      group.slice(1, -1).split(/[,;]/).forEach(function (item) {
+        item = item.trim();
+        var words = Object.keys(tokens(item));
+        if (words.length === 1 && item.length >= ABBREVIATION_MIN_LEN && isUpper(item)) {
+          out[words[0]] = true;
+        }
+      });
+    });
+    return out;
+  }
+
   function compile(record) {
     if (!record.re) return null;
     try {
@@ -651,6 +678,13 @@
     if (f === record.id || aliases.indexOf(f) !== -1) return 1;
     var ft = tokens(field), fkeys = Object.keys(ft);
     if (!fkeys.length) return 0;
+    // A field named by the abbreviations that a name gives in parentheses names
+    // the datatype itself: "ОГРН" or "ОГРН/ОГРНИП" (_name_similarity in client.py).
+    var names = [record.n].concat(record.t || []);
+    for (var i = 0; i < names.length; i += 1) {
+      var abbr = abbreviations(names[i]);
+      if (fkeys.every(function (t) { return abbr[t]; })) return 1;
+    }
     var best = 0;
     [record.id].concat(aliases).forEach(function (cid) {
       var compact = cid.replace(/_/g, "");
@@ -757,6 +791,7 @@
     scoreRecord: scoreRecord,
     rank: rank,
     tokens: tokens,
+    abbreviations: abbreviations,
     identify: identify
   };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
