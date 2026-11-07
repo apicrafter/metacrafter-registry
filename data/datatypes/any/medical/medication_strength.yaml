@@ -1,13 +1,16 @@
 id: medication_strength
 name: Medication strength (dosage)
 status: draft
-doc: Amount of active substance in one unit of a medicine (a tablet, a dose) or per volume or mass of
-  it, such as 500 mg, 10 mg/ml or 2.5 ml per dose. A combination product lists one amount per substance
-  joined with a plus sign, as in 50 мг+25 мг. Units are mass (mg, g, mcg), volume (ml), international
-  or other units (IU, ЕД, МЕ), radioactivity (МБк), colony-forming units (КОЕ) or a percentage. The Russian
-  ESKLP catalogue also writes the amount per volume with a vertical bar, as in 250 мг|5 мл, and writes
-  a missing value as ~ or НЕ УКАЗАНО. The regexp covers numbers with these units; in the std_dosage field
-  of an ESKLP export it matched 10698 of the 11059 values that were not placeholders (96.7%).
+doc: Amount of active substance in one unit of a medicine (a tablet, a dose) or per unit of its volume
+  or mass, such as 500 mg, 10 mg/ml or 2.5 ml per dose. A combination product gives one amount per substance,
+  joined with a plus sign, as in 50 мг+25 мг. Units are mass (mg, mcg, g), volume (ml), international
+  or other biological units (IU, U, ЕД, МЕ, ИР, АЕ, PNU), radioactivity (МБк, ГБк), colony-forming units
+  (КОЕ), amount of substance (mmol) or a percentage, sometimes with a thousand or million multiplier (1
+  млн.МЕ). The Russian ESKLP catalogue also writes an amount per volume or area with a vertical bar, as
+  in 250 мг|5 мл, and writes a missing value as ~ or НЕ УКАЗАНО. The regexp matches 97% of the values
+  of std_dosage and 92% of norm_dosage in an ESKLP export (placeholders left out). It does not match lists
+  of several strengths (10 мг, 20 мг, 30 мг) or units with a qualifier (мг йода/мл). A plain mass or percentage
+  also matches, so a column name is needed to tell a strength from other quantities.
 categories:
 - medical
 langs:
@@ -15,9 +18,10 @@ langs:
 - ru
 is_pii: false
 classification: categorical
-regexp: '^\d+(?:[.,]\d+)? ?(?:мг|мкг|г|мл|ЕД|Ед|МЕ|МБк|ммоль|КОЕ|доз[аы]?|%|mg|mcg|µg|g|ml|mL|IU|U|mmol)(?:(?:/|
-  ?\| ?)(?:\d+(?:[.,]\d+)? ?)?(?:мл|г|доза|л|ч|час|сут|ml|mL|g|dose|h|L))?(?: ?\+ ?\d+(?:[.,]\d+)? ?(?:мг|мкг|г|мл|ЕД|Ед|МЕ|МБк|ммоль|КОЕ|доз[аы]?|%|mg|mcg|µg|g|ml|mL|IU|U|mmol)(?:(?:/|
-  ?\| ?)(?:\d+(?:[.,]\d+)? ?)?(?:мл|г|доза|л|ч|час|сут|ml|mL|g|dose|h|L))?)*$'
+regexp: '^\d+(?:[.,]\d+)? ?(?:(?:тыс|млн)\. ?)?(?:мг|мкг|г|мл|ЕД|Ед|МЕ|ИР|АЕ|ТЕ|КИЕ|PNU|МБк|ГБк|ммоль|КОЕ|доз[аы]?|%|mg|mcg|[µμ]g|g|ml|mL|IU|U|mmol)(?:(?:/|
+  ?\| ?)(?:\d+(?:[.,]\d+)? ?)?(?:мл|г|доза|л|ч|час|сут|кв\.см|ml|mL|g|dose|h|L))?(?: ?\+ ?\d+(?:[.,]\d+)?
+  ?(?:(?:тыс|млн)\. ?)?(?:мг|мкг|г|мл|ЕД|Ед|МЕ|ИР|АЕ|ТЕ|КИЕ|PNU|МБк|ГБк|ммоль|КОЕ|доз[аы]?|%|mg|mcg|[µμ]g|g|ml|mL|IU|U|mmol)(?:(?:/|
+  ?\| ?)(?:\d+(?:[.,]\d+)? ?)?(?:мл|г|доза|л|ч|час|сут|кв\.см|ml|mL|g|dose|h|L))?)*$'
 examples:
 - value: 80 мг
   description: Capsules of febuxostat, from the ESKLP catalogue
@@ -25,15 +29,22 @@ examples:
   description: Tablets of dolutegravir + rilpivirine, from the ESKLP catalogue
 - value: 2.5 мл/доза
   description: Oral rotavirus vaccine, volume per dose, from the ESKLP catalogue
-- value: 1 %
-  description: Concentration as a percentage
-- value: 0.5 г
-  description: Mass of active substance in grams
+- value: 10 мг/мл
+  description: Concentration, from the ESKLP catalogue
 - value: 250 мг|5 мл
   description: Amount per volume as the ESKLP catalogue writes it
+- value: 1 млн.МЕ
+  description: Million international units, from the ESKLP catalogue
+- value: 1 %
+  description: Concentration as a percentage, from the ESKLP catalogue
+- value: 0.5 г
+  description: Mass in grams, from the ESKLP catalogue
 - value: 500 mg
 - value: 100 mg/5 mL
-  description: Oral suspension, amount per volume
+  description: Amount per volume of an oral suspension
+- value: '~'
+  valid: false
+  description: Placeholder that ESKLP writes when the dosage is missing
 - value: НЕ УКАЗАНО
   valid: false
   description: Placeholder that ESKLP writes when the dosage is not given
@@ -41,6 +52,8 @@ examples:
   valid: false
   description: A number without a unit
 links:
+- type: doc
+  url: https://www.consultant.ru/document/cons_doc_LAW_99350/
 - type: schema.org
   url: https://schema.org/DrugStrength
 - type: doc
@@ -48,6 +61,7 @@ links:
 translations:
   ru:
     name: Дозировка лекарственного препарата
-    doc: Количество действующего вещества в единице лекарственного препарата (таблетке, дозе) или в единице
-      его объёма или массы, например 500 мг, 10 мг/мл или 2.5 мл/доза. Для комбинированных препаратов
-      дозировки веществ перечисляются через знак плюс, например 50 мг+25 мг.
+    doc: Содержание одного или нескольких действующих веществ в количественном выражении на единицу дозы
+      (таблетку, дозу) или на единицу объема или массы препарата, например 500 мг, 10 мг/мл или 2.5 мл/доза.
+      У комбинированных препаратов дозировки веществ перечисляются через знак плюс, например 50 мг+25
+      мг. ЕСКЛП записывает отсутствующее значение как ~ или НЕ УКАЗАНО.
