@@ -1,0 +1,48 @@
+id: ru_es_tool_class
+name: Russian class of an electronic signature or certification authority tool
+status: draft
+doc: 'Class of a cryptographic tool for electronic signatures or of a certification authority tool, set
+  by the requirements of FSB of Russia order No. 796 of 27.12.2011: КС1, КС2, КС3, КВ1, КВ2 and КА1. The
+  register of accredited certification authorities states the class of each hardware and software complex
+  of a CA. FSB order No. 795 gives the classes object identifiers 1.2.643.100.113.1 to 1.2.643.100.113.6
+  in the certificatePolicies extension of a qualified certificate; a certificate of class КС2 lists both
+  the КС1 and the КС2 identifiers. The letters are Cyrillic.'
+categories:
+- cryptography
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: ^К(?:С[123]|В[12]|А1)$
+examples:
+- value: КС1
+  description: OID 1.2.643.100.113.1
+- value: КС2
+  description: OID 1.2.643.100.113.2
+- value: КС3
+  description: OID 1.2.643.100.113.3
+- value: КВ1
+  description: OID 1.2.643.100.113.4
+- value: КВ2
+  description: OID 1.2.643.100.113.5
+- value: КА1
+  description: OID 1.2.643.100.113.6
+- value: КС4
+  valid: false
+  description: No such class
+- value: KC2
+  valid: false
+  description: Latin letters K and C instead of Cyrillic
+links:
+- type: doc
+  url: https://legalacts.ru/doc/prikaz-fsb-rf-ot-27122011-n-796/
+- type: doc
+  url: https://legalacts.ru/doc/prikaz-fsb-rf-ot-27122011-n-795/
+translations:
+  ru:
+    name: Класс средства электронной подписи (средства УЦ)
+    doc: 'Класс средства ЭП или средства удостоверяющего центра по требованиям приказа ФСБ России от 27.12.2011
+      № 796: КС1, КС2, КС3, КВ1, КВ2, КА1. В квалифицированном сертификате классу соответствует OID 1.2.643.100.113.1–6
+      в расширении certificatePolicies (приказ ФСБ России № 795).'

@@ -53,6 +53,7 @@ from metacrafter_registry.checksums import (
     no_fnr,
     pl_nip,
     ru_inn,
+    ru_inn_padded,
     ru_ogrn,
     ru_snils,
     se_vat,
@@ -100,6 +101,8 @@ def test_checksum_reference_values():
     assert gtin("036000291452") and gtin("4006381333931") and not gtin("4006381333932")
     assert isbn13("978-0-521-29366-2") and isbn10("0-521-22151-X") and not isbn10("0521221519")
     assert ru_inn("7707083893") and ru_inn("500100732259") and not ru_inn("7707083894")
+    assert ru_inn_padded("007707083893") and not ru_inn_padded("7707083893")
+    assert not ru_inn_padded("007707083894") and not ru_inn_padded("500100732259")
     assert ru_snils("112-233-445 95") and not ru_snils("112-233-445 96")
     assert ru_ogrn("1027700132195") and not ru_ogrn("1027700132196")
     # Reference values from the python-stdnum documentation.

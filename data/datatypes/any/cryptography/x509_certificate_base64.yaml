@@ -1,0 +1,28 @@
+id: x509_certificate_base64
+name: X.509 certificate (Base64 DER without PEM lines)
+status: draft
+doc: 'X.509 v3 certificate as the Base64 of its DER encoding on one line, without the -----BEGIN CERTIFICATE-----
+  and -----END CERTIFICATE----- lines of PEM. Registries, databases and APIs often store certificates
+  this way. The regexp follows the DER structure: a SEQUENCE with a two-byte length (MII), the tbsCertificate
+  SEQUENCE (CC) and the version field v3 (gAwIBAgI). Certificates of version 1, which have no version
+  field, and certificates over 16 KB are not covered.'
+semantic_type: x509_certificate
+langs:
+- common
+regexp: ^MII[A-Za-z0-9+/]{2}[DTjz]CC[A-Za-z0-9+/]{3}gAwIBAgI[A-Za-z0-9+/]+={0,2}$
+examples:
+- value: MIICLDCCAdKgAwIBAgIBADAKBggqhkjOPQQDAjB9MQswCQYDVQQGEwJCRTEPMA0GA1UEChMGR251VExTMSUwIwYDVQQLExxHbnVUTFMgY2VydGlmaWNhdGUgYXV0aG9yaXR5MQ8wDQYDVQQIEwZMZXV2ZW4xJTAjBgNVBAMTHEdudVRMUyBjZXJ0aWZpY2F0ZSBhdXRob3JpdHkwHhcNMTEwNTIzMjAzODIxWhcNMTIxMjIyMDc0MTUxWjB9MQswCQYDVQQGEwJCRTEPMA0GA1UEChMGR251VExTMSUwIwYDVQQLExxHbnVUTFMgY2VydGlmaWNhdGUgYXV0aG9yaXR5MQ8wDQYDVQQIEwZMZXV2ZW4xJTAjBgNVBAMTHEdudVRMUyBjZXJ0aWZpY2F0ZSBhdXRob3JpdHkwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARS2I0jiuNn14Y2sSALCX3IybqiIJUvxUpj+oNfzngvj/Niyv2394BWnW4XuQ4RTEiywK87WRcWMGgJB5kX/t2no0MwQTAPBgNVHRMBAf8EBTADAQH/MA8GA1UdDwEB/wQFAwMHBgAwHQYDVR0OBBYEFPC0gf6YEr+1KLlkQAPLzB9mTigDMAoGCCqGSM49BAMCA0gAMEUCIDGuwD1KPyG+hRf88MeyMQcqOFZD0TbVleF+UsAGQ4enAiEAl4wOuDwKQa+upc8GftXE2C//4mKANBC6It01gUaTIpo=
+  description: Body of the example certificate of RFC 7468, section 5.1, on one line
+- value: MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEn1LlwLN/KBYQRVH6HfIMTzfEqJOVztLekLchp2hi78cCaMY81FBlYs8J9l7krc+M4aBeCGYFjba+hiXttJWPL7ydlE+5UG4UNkn3Eos8EiZByi9DVsyfy9eejh+8AXgp
+  valid: false
+  description: Base64 of a public key (SubjectPublicKeyInfo), not of a certificate
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc5280#section-4.1
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc7468#section-5
+translations:
+  ru:
+    name: Сертификат X.509 в Base64 без PEM-заголовков
+    doc: Сертификат X.509 v3 в кодировке DER, записанный в Base64 одной строкой, без строк -----BEGIN
+      CERTIFICATE----- и -----END CERTIFICATE-----. Так сертификаты хранят реестры, базы данных и API.

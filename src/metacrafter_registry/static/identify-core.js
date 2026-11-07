@@ -180,6 +180,10 @@
       }
       return false;
     },
+    ru_inn_padded: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "");
+      return s.length === 12 && s.slice(0, 2) === "00" && CHECKSUMS.ru_inn(s.slice(2));
+    },
     ru_snils: function (v) {
       var d = digitsOf(v);
       if (!d || d.length !== 11) return false;
