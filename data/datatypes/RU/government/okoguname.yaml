@@ -1,0 +1,23 @@
+id: okoguname
+name: Russian government body category name (OKOGU)
+status: draft
+doc: Name of an entry in the Russian classifier of government and governance bodies (OKOGU, OK 007-99),
+  from a federal service to the local administrations of rural settlements. The seven-digit code is okogu.
+categories:
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+examples:
+- value: Федеральная налоговая служба
+  description: OKOGU code 1327010
+- value: Местные администрации (исполнительно-распорядительные органы) сельских поселений
+  description: OKOGU code 3300500
+translations:
+  ru:
+    name: Наименование по ОКОГУ
+    doc: Наименование органа государственной власти или управления по Общероссийскому классификатору органов
+      государственной власти и управления (ОКОГУ, ОК 007-99); код по ОКОГУ — okogu
