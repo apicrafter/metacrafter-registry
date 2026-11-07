@@ -1,0 +1,39 @@
+id: marine_regions_mrgid
+name: Marine Regions Geographic Identifier (MRGID)
+status: draft
+doc: 'Number of a place in the Marine Regions gazetteer of the Flanders Marine Institute (VLIZ): seas,
+  exclusive economic zones, reefs, seamounts, bays and other marine and coastal features. It is also used
+  as the URI http://marineregions.org/mrgid/<number>, and VLIZ undertakes never to delete an MRGID or
+  change its concept. A bare number: recognize it only with column context.'
+categories:
+- environment
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d*$
+examples:
+- value: '4375'
+  description: Azores, autonomous region; Wikidata example, Marine Regions
+- value: '18945'
+  description: Block Island Sound, a bay; Wikidata example, Marine Regions
+- value: '35043'
+  description: Simo Banks, a reef; Wikidata example, Marine Regions
+- value: Niger Delta (Q13275)
+  valid: false
+  description: Text stored in Wikidata instead of an MRGID
+mappings:
+  wikidata: P3006
+links:
+- type: doc
+  url: https://www.marineregions.org/mrgid.php
+- type: doc
+  url: https://www.marineregions.org/gazetteer.php?p=webservices
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3006
+translations:
+  ru:
+    name: Географический идентификатор Marine Regions (MRGID)
+    doc: 'Номер объекта в газеттире Marine Regions Фламандского морского института (VLIZ): моря, исключительные
+      экономические зоны, рифы, подводные горы и другие морские объекты.'

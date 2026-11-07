@@ -1,0 +1,52 @@
+id: ru_fkko_code
+name: Russian Federal Waste Classification Catalogue (FKKO) code
+status: draft
+doc: 'Code of a waste type or of a classification heading in the Federal Waste Classification Catalogue
+  (ФККО) of Russia, kept by Rosprirodnadzor; the current catalogue was approved by its order No. 242 of
+  22 May 2017. The code has 11 digits: the first eight give the origin and composition (block, type, subtype,
+  group, subgroup), the ninth and tenth the aggregate state and physical form, and the last the hazard
+  class (1 to 5 for a waste type, 0 for a heading, which also has 00 in the ninth and tenth digits). The
+  catalogue prints the code in groups, as in 4 71 101 01 52 1; the online catalogue of Rosprirodnadzor
+  writes it without spaces in its URLs.'
+categories:
+- environment
+- industry
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[1-9]\d{9}[0-5]|[1-9] \d{2} \d{3} \d{2} \d{2} [0-5])$
+examples:
+- value: 4 71 101 01 52 1
+  description: Mercury, mercury-quartz and fluorescent lamps that lost their consumer properties (hazard
+    class I); FKKO, Rosprirodnadzor order No. 242
+- value: 7 33 100 01 72 4
+  description: Unsorted waste from office and household premises of organizations (hazard class IV); FKKO,
+    Rosprirodnadzor order No. 242
+- value: 4 71 000 00 00 0
+  description: Heading "waste of equipment and other products containing mercury"; FKKO, Rosprirodnadzor
+    order No. 242
+- value: '11101011495'
+  description: Untreated expired seeds of grain and other crops (1 11 010 11 49 5) written without spaces,
+    as in the URLs of the Rosprirodnadzor online catalogue
+- value: 4 71 101 01 52 6
+  valid: false
+  description: The last digit is the hazard class, which is 0 to 5
+- value: '4711010152'
+  valid: false
+  description: Ten digits; the hazard class digit is missing
+links:
+- type: doc
+  url: https://rpn.gov.ru/fkko/
+- type: doc
+  url: https://www.consultant.ru/document/cons_doc_LAW_218071/
+- type: doc
+  url: https://rpn.gov.ru/upload/iblock/19b/e59oj4deoh3p9lgtj041bgbmttt54uvh/Prikaz-Minprirody-Rossii-_-167.pdf
+translations:
+  ru:
+    name: Код по Федеральному классификационному каталогу отходов (ФККО)
+    doc: Одиннадцатизначный код вида отходов или раздела классификации в ФККО, который ведёт Росприроднадзор.
+      Первые восемь знаков описывают происхождение и состав отходов, девятый и десятый — агрегатное состояние
+      и физическую форму, последний — класс опасности (0 для разделов каталога).

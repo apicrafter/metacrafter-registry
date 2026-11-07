@@ -4,7 +4,8 @@ status: draft
 doc: 'Identifier of an observing station in the WMO Integrated Global Observing System. It has four blocks
   separated by hyphens: the identifier series (only 0 is defined), the issuer of identifier and the issue
   number (each 0 to 65534, without leading zeros) and a local identifier of up to 16 characters. Stations
-  that already had a WMO index number IIiii received the identifier 0-20000-0-IIiii.'
+  that already had a WMO index number IIiii received the identifier 0-20000-0-IIiii. OSCAR/Surface, the
+  WMO station catalogue, lists stations by this identifier.'
 categories:
 - environment
 - geo
@@ -17,7 +18,9 @@ examples:
 - value: 0-20000-0-74492
   description: Blue Hill Observatory, an example of Wikidata P4136
 - value: 0-20008-0-JFJ
-  description: Jungfraujoch station of the Global Atmosphere Watch
+  description: Jungfraujoch station of the Global Atmosphere Watch; OSCAR/Surface
+- value: 0-20000-0-06702
+  description: La Dole, Switzerland; OSCAR/Surface
 - value: 0-020000-0-74492
   valid: false
   description: The issuer of identifier has a leading zero
@@ -28,3 +31,11 @@ links:
   url: https://www.wikidata.org/wiki/Property:P4136
 - type: doc
   url: https://community.wmo.int/node/37477
+- type: doc
+  url: https://oscar.wmo.int/surface/
+translations:
+  ru:
+    name: Идентификатор станции WIGOS
+    doc: Идентификатор станции наблюдений Интегрированной глобальной системы наблюдений ВМО (WIGOS) из
+      четырёх блоков через дефис, например 0-20000-0-27612. Станции с индексом ВМО получили идентификатор
+      0-20000-0-<индекс>.

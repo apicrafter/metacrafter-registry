@@ -2,9 +2,10 @@ id: wmo_station_index
 name: WMO station index number
 status: draft
 doc: 'Five-digit index number of a land meteorological station in SYNOP and other WMO code forms: a 2-digit
-  block number for a country or region followed by a 3-digit station number. Leading zeros are significant.
-  WMO publishes the list in WMO-No. 9, Volume A. Numbers that repeat one figure five times or end in 000
-  or 999 are not assigned; the regexp does not exclude them, so it is weak without column context.'
+  block number for a country or region followed by a 3-digit station number. Leading zeros are significant,
+  but spreadsheets and some databases drop them (Wikidata has values such as 3402). WMO publishes the
+  list in WMO-No. 9, Volume A, now OSCAR/Surface. Numbers that repeat one figure five times or end in
+  000 or 999 are not assigned; the regexp does not exclude them, so it is weak without column context.'
 categories:
 - environment
 - geo
@@ -15,11 +16,13 @@ classification: identifier
 regexp: ^\d{5}$
 examples:
 - value: '10962'
-  description: Hohenpeissenberg, Germany
+  description: Hohenpeissenberg, Germany; OSCAR/Surface
 - value: '06702'
-  description: La Dole, Switzerland
+  description: La Dole, Switzerland; OSCAR/Surface
 - value: '74492'
   description: Blue Hill Observatory, United States
+- value: '27612'
+  description: Moskva VDNH, Russia; OSCAR/Surface
 - value: '6036'
   valid: false
   description: Four digits instead of five
@@ -29,4 +32,11 @@ links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P9737
 - type: doc
+  url: https://oscar.wmo.int/surface/
+- type: doc
   url: https://wiki.openstreetmap.org/wiki/Key:ref:wmo
+translations:
+  ru:
+    name: Индекс метеостанции ВМО
+    doc: Пятизначный синоптический индекс наземной метеостанции ВМО — двузначный номер блока страны или
+      региона и трёхзначный номер станции, например 27612 (Москва, ВДНХ). Ведущие нули значимы.

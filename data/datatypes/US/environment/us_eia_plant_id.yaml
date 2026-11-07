@@ -1,0 +1,44 @@
+id: us_eia_plant_id
+name: US EIA plant ID (ORIS code)
+status: draft
+doc: Number of a power plant in the electricity surveys of the US Energy Information Administration, such
+  as Form EIA-860 and EIA-923. It has one to five digits without leading zeros. EPA's Clean Air Markets
+  Division uses the same number as the ORIS code, but it also gives its own six-digit codes (such as 880004)
+  to some facilities, and those are not EIA plant ids. The Global Power Plant Database builds its US ids
+  from it (USA0006008 for plant 6008). A bare small number; recognize it only with column context.
+parent: powerplantid
+categories:
+- energy
+- environment
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,4}$
+examples:
+- value: '6008'
+  description: Palo Verde Nuclear Generating Station; Wikidata example
+- value: '6163'
+  description: Grand Coulee Dam; Wikidata example
+- value: '3'
+  description: James M. Barry Electric Generating Plant; Wikidata example
+- value: '880004'
+  valid: false
+  description: ORIS code assigned by EPA's Clean Air Markets Division (GSA Central Heating), not an EIA
+    plant id
+mappings:
+  wikidata: P10682
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P10682
+- type: doc
+  url: https://www.eia.gov/electricity/data/eia860/
+- type: doc
+  url: https://www.epa.gov/ghgreporting/data-sets
+translations:
+  ru:
+    name: Код электростанции EIA США (код ORIS)
+    doc: Номер электростанции в статистике Управления энергетической информации США (формы EIA-860 и EIA-923)
+      — от одной до пяти цифр.

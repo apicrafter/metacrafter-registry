@@ -1,0 +1,39 @@
+id: cites_species_plus_id
+name: CITES Species+ taxon concept ID
+status: draft
+doc: 'Number of a taxon concept in Species+, the UNEP-WCMC database of species listed under CITES that
+  also powers the CITES Checklist; its web pages and API address taxa by it. Ids exist for taxa of every
+  rank, from orders such as Passeriformes to species. A bare number of up to six digits: recognize it
+  only with column context.'
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,5}$
+examples:
+- value: '5541'
+  description: Uroplatus sikorae (southern flat-tailed gecko); Wikidata example, Species+
+- value: '111'
+  description: Passeriformes (passerines); Wikidata example, Species+
+- value: '6047'
+  description: Panthera tigris (tiger); Species+
+- value: Uroplatus sikorae
+  valid: false
+  description: Scientific name instead of the id
+mappings:
+  wikidata: P2040
+links:
+- type: doc
+  url: https://www.speciesplus.net/
+- type: doc
+  url: https://api.speciesplus.net/documentation
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2040
+translations:
+  ru:
+    name: Идентификатор таксона в Species+ (СИТЕС)
+    doc: Номер таксона в базе данных Species+ центра UNEP-WCMC, где собраны виды из приложений СИТЕС.
+      Используется в адресах страниц и API Species+.

@@ -1,0 +1,44 @@
+id: us_nid_dam_id
+name: US National Inventory of Dams ID (NID ID)
+status: draft
+doc: Identifier of a dam in the National Inventory of Dams of the US Army Corps of Engineers, assigned
+  by the state dam safety coordinator and never reused. It is the two-letter postal code of the state
+  or territory where the dam lies followed by five characters, usually digits; Virginia uses six digits
+  and South Carolina a letter D and five digits. Saddle dams and dikes share the NID ID of their dam and
+  add a separate other structure ID such as S001.
+categories:
+- environment
+- geo
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}[0-9A-Z]{5,6}$
+examples:
+- value: NV10122
+  description: Hoover Dam, Nevada; National Inventory of Dams
+- value: WI00803
+  description: Mississippi River Lock and Dam 8, Wisconsin; Wikidata example
+- value: VA155002
+  description: Claytor Dam, Virginia; National Inventory of Dams
+- value: SCD04576
+  description: Lee Nuclear Dam 2, South Carolina; National Inventory of Dams
+- value: CT00005S02
+  valid: false
+  description: NID ID with the other structure ID of a saddle dam appended
+mappings:
+  wikidata: P9439
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_Inventory_of_Dams
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9439
+- type: doc
+  url: https://nid.sec.usace.army.mil/
+translations:
+  ru:
+    name: Идентификатор плотины в Национальном реестре плотин США (NID ID)
+    doc: Идентификатор плотины в Национальном реестре плотин Инженерных войск армии США. Двухбуквенный
+      код штата и пять или шесть символов.

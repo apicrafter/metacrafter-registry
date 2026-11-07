@@ -1,0 +1,40 @@
+id: wgi_glacier_id
+name: World Glacier Inventory (WGI) glacier ID
+status: draft
+doc: 'Twelve-character id of a glacier in the World Glacier Inventory, compiled by the World Glacier Monitoring
+  Service and NSIDC: a 2-letter political unit code (country codes of the time, including SU and ZR),
+  a continent digit from 1 to 7, a 4-character drainage basin code, a 2-character free position code and
+  a 3-character local glacier code. The user guide calls the last two parts digits, but the data also
+  have letters there (FR4N01083B15).'
+categories:
+- environment
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}[1-7][A-Z][0-9A-Z]{8}$
+examples:
+- value: CH4N01336026
+  description: Great Aletsch Glacier, Switzerland; WGI user guide, Wikidata example
+- value: PK5Q115K0001
+  description: Ghuchhārsar Glacier, Pakistan; Wikidata example, WGI data
+- value: FR4N01083B15
+  description: Glacier Noir, France; WGI data
+- value: CH4N0133602
+  valid: false
+  description: Eleven characters; the id has twelve
+mappings:
+  wikidata: P1404
+links:
+- type: doc
+  url: https://nsidc.org/data/g01130/versions/1
+- type: doc
+  url: https://nsidc.org/sites/default/files/g01130-v001-userguide_1_0.pdf
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1404
+translations:
+  ru:
+    name: Идентификатор ледника во Всемирном каталоге ледников (WGI)
+    doc: 'Двенадцатизначный код ледника во Всемирном каталоге ледников WGMS: код страны, код континента,
+      код бассейна стока и местный номер ледника.'

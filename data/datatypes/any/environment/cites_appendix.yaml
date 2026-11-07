@@ -1,0 +1,39 @@
+id: cites_appendix
+name: CITES appendix
+status: draft
+doc: 'Appendix of the Convention on International Trade in Endangered Species of Wild Fauna and Flora
+  (CITES) in which a species or population is listed, written as a Roman numeral: I for species threatened
+  with extinction, where commercial trade in wild specimens is not allowed; II for species whose trade
+  must be controlled; III for species that a Party protects and asks other Parties to help control. Species+
+  summarizes split listings with slashes (I/II) and writes NC for taxa or parts that are not listed; this
+  pattern accepts a single appendix only.'
+categories:
+- environment
+- legal
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:I|II|III)$
+examples:
+- value: I
+  description: Panthera tigris (tiger); Species+
+- value: II
+  description: Hirudo medicinalis (medicinal leech); Species+
+- value: III
+  description: Odobenus rosmarus (walrus), listed by Canada; Species+
+- value: IV
+  valid: false
+  description: CITES has no fourth appendix
+links:
+- type: doc
+  url: https://cites.org/eng/app/index.php
+- type: doc
+  url: https://www.speciesplus.net/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/CITES
+translations:
+  ru:
+    name: Приложение СИТЕС
+    doc: 'Приложение Конвенции о международной торговле видами дикой фауны и флоры (СИТЕС), в которое
+      включён вид: I, II или III. Чем меньше номер, тем строже ограничения торговли.'

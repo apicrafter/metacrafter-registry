@@ -1,0 +1,34 @@
+id: us_aqi_category
+name: US Air Quality Index category
+status: draft
+doc: 'Category of the Air Quality Index of the US Environmental Protection Agency (EPA), reported by AirNow
+  and state agencies for ozone, particle pollution and other pollutants. There are six categories by index
+  value: Good (0-50), Moderate (51-100), Unhealthy for Sensitive Groups (101-150), Unhealthy (151-200),
+  Very Unhealthy (201-300) and Hazardous (301 and higher); each has a colour from green to maroon.'
+categories:
+- environment
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:Good|Moderate|Unhealthy for Sensitive Groups|Unhealthy|Very Unhealthy|Hazardous)$
+examples:
+- value: Moderate
+  description: Index value 51 to 100; AirNow AQI basics
+- value: Unhealthy for Sensitive Groups
+  description: Index value 101 to 150; AirNow AQI basics
+- value: Fair
+  valid: false
+  description: A band of the European Air Quality Index, not a US AQI category
+links:
+- type: doc
+  url: https://www.airnow.gov/aqi/aqi-basics/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Air_quality_index
+translations:
+  ru:
+    name: Категория индекса качества воздуха США (AQI)
+    doc: Категория индекса качества воздуха Агентства по охране окружающей среды США — от Good (0–50)
+      до Hazardous (301 и выше), всего шесть категорий.

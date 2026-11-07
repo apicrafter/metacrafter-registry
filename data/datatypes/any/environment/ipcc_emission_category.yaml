@@ -1,0 +1,42 @@
+id: ipcc_emission_category
+name: IPCC emission and removal category code
+status: draft
+doc: 'Code of a source or sink category of greenhouse gas emissions and removals in the 2006 IPCC Guidelines
+  for National Greenhouse Gas Inventories (Volume 1, Table 8.2). The levels are separated by dots: the
+  sector (1 energy, 2 industrial processes and product use, 3 agriculture, forestry and other land use,
+  4 waste, 5 other), a capital letter, a number, a lowercase letter, a lowercase Roman numeral and a digit,
+  as in 1.A.1.a.i or 3.B.1.a. UNFCCC reporting tables (CRF, CRT) use the same notation but number agriculture,
+  land use and waste differently, so a matching code can mean another category there. The 1996 Guidelines
+  wrote codes without dots (1A1a); that form is not matched.'
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:1\.[A-C]|2\.[A-H]|3\.[A-D]|4\.[A-E]|5\.[AB])(?:\.(?:[1-9]|10)(?:\.[a-m](?:\.(?:i|ii|iii|iv|v|vi)(?:\.[1-6])?)?)?)?$
+examples:
+- value: 1.A.1.a
+  description: Main activity electricity and heat production; 2006 IPCC Guidelines, Table 8.2
+- value: 2.C.1
+  description: Iron and steel production; 2006 IPCC Guidelines, Table 8.2
+- value: 3.B.1.a
+  description: Forest land remaining forest land; 2006 IPCC Guidelines, Table 8.2
+- value: 4.D
+  description: Wastewater treatment and discharge; 2006 IPCC Guidelines, Table 8.2
+- value: 1.B.2.b.iii.4
+  description: Natural gas transmission and storage; 2006 IPCC Guidelines, Table 8.2
+- value: 1A1a
+  valid: false
+  description: 1996 Guidelines style without dots
+links:
+- type: doc
+  url: https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/1_Volume1/V1_8_Ch8_Reporting_Guidance.pdf
+- type: doc
+  url: https://www.ipcc-nggip.iges.or.jp/public/2006gl/
+translations:
+  ru:
+    name: Код категории выбросов и абсорбции МГЭИК
+    doc: Код категории источников выбросов и поглотителей парниковых газов по Руководящим принципам МГЭИК
+      2006 года, например 1.A.1.a — производство электроэнергии и тепла.

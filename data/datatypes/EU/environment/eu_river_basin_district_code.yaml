@@ -1,0 +1,44 @@
+id: eu_river_basin_district_code
+name: EU river basin district code (WFD)
+status: draft
+doc: Code of a river basin district, the management unit of the Water Framework Directive, as a Member
+  State reports it to the European Environment Agency (WISE). It is the two-letter country code (EL for
+  Greece) followed by the national code of the district, in the same EU code format as water body codes,
+  for example DE5000 or BESEINE_RW. Codes are short and look like other WISE codes, so recognize them
+  with column context.
+categories:
+- environment
+- geo
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}[0-9A-Z](?:[0-9A-Z_-]{0,38}[0-9A-Z])?$
+examples:
+- value: DE9500
+  description: Eider river basin district, Germany; Wikidata example
+- value: BESEINE_RW
+  description: Seine river basin district, Belgian part; Wikidata example
+- value: ES030
+  description: Tagus river basin district, Spain; Eionet WISE spatial unit vocabulary
+- value: de9500
+  valid: false
+  description: Lower case; EU codes use upper-case letters only
+mappings:
+  wikidata: P2965
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2965
+- type: doc
+  url: https://dd.eionet.europa.eu/schemas/WFD2022/WFDCommon_2022.xsd
+- type: doc
+  url: https://dd.eionet.europa.eu/vocabulary/wise/SpatialUnit/view
+- type: doc
+  url: https://eur-lex.europa.eu/eli/dir/2000/60/oj
+translations:
+  ru:
+    name: Код речного бассейнового округа ЕС (ВРД)
+    doc: Код речного бассейнового округа по Водной рамочной директиве ЕС в отчётности WISE. Состоит из
+      двухбуквенного кода страны и национального кода округа.

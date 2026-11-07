@@ -1,0 +1,45 @@
+id: wdpa_id
+name: World Database on Protected Areas (WDPA) site ID
+status: draft
+doc: 'Number that UNEP-WCMC gives to a protected area or other effective area-based conservation measure
+  (OECM) when it first enters the World Database on Protected Areas, now called the World Database on
+  Protected and Conserved Areas (WDPCA). It identifies one designation, so a national park that is also
+  a World Heritage site has two ids, and an id is not reused after its site is removed. The field was
+  WDPAID until November 2025 and is now SITE_ID; zones of one site share it and are told apart by the
+  parcel id SITE_PID (the site id, an underscore and a number, formerly a letter). A bare number: recognize
+  it only with column context.'
+categories:
+- environment
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d*$
+examples:
+- value: '103142'
+  description: Harz National Park, Germany; Wikidata example, Protected Planet
+- value: '18608'
+  description: Dry Island Buffalo Jump Provincial Park, Canada; Wikidata example, Protected Planet
+- value: '555624810'
+  description: Ross Sea Region Marine Protected Area; WDPCA user manual 2.0
+- value: '555624810_1'
+  valid: false
+  description: Parcel id (SITE_PID) of one zone, not the site id
+mappings:
+  wikidata: P809
+links:
+- type: doc
+  url: https://www.protectedplanet.net/en/resources/wdpa-manual
+- type: doc
+  url: https://www.protectedplanet.net/en/data/wdpca
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/World_Database_on_Protected_Areas
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P809
+translations:
+  ru:
+    name: Идентификатор территории во Всемирной базе данных охраняемых территорий (WDPA)
+    doc: Номер, который UNEP-WCMC присваивает охраняемой территории или OECM при включении во Всемирную
+      базу данных охраняемых территорий (теперь WDPCA). Отдельный номер получает каждое обозначение территории;
+      с ноября 2025 года поле называется SITE_ID вместо WDPAID.

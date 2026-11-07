@@ -1,0 +1,38 @@
+id: us_aqs_parameter_code
+name: US EPA AQS parameter code
+status: draft
+doc: Five-digit code of a measured parameter in the EPA Air Quality System (a pollutant, a meteorological
+  or other quantity), used in AQS submissions and in the AirData files, for example 44201 ozone, 42401
+  sulfur dioxide, 42602 nitrogen dioxide, 42101 carbon monoxide, 88101 PM2.5 at local conditions and 81102
+  PM10. The AQS code table lists about 1,500 codes from 11101 to 99999. The regexp only checks five digits,
+  so recognize the code with column context.
+categories:
+- environment
+- chemistry
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-9]\d{4}$
+examples:
+- value: '44201'
+  description: Ozone; AQS parameter code table
+- value: '88101'
+  description: PM2.5 - Local Conditions; AQS parameter code table
+- value: '42401'
+  description: Sulfur dioxide; AQS parameter code table
+- value: '4420'
+  valid: false
+  description: Four digits; parameter codes have five
+links:
+- type: doc
+  url: https://aqs.epa.gov/aqsweb/documents/codetables/parameters.html
+- type: doc
+  url: https://www.epa.gov/aqs/aqs-code-list
+translations:
+  ru:
+    name: Код параметра AQS EPA США
+    doc: Пятизначный код измеряемого параметра (загрязняющего вещества или метеовеличины) в системе AQS,
+      например 44201 — озон, 88101 — PM2.5.

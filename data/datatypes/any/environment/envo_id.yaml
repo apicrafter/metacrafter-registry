@@ -1,0 +1,44 @@
+id: envo_id
+name: Environment Ontology (ENVO) term ID
+status: draft
+doc: Identifier of a term in the Environment Ontology (ENVO), an OBO Foundry ontology of biomes, environmental
+  features and materials. The local id has seven or eight digits; data usually write it as the CURIE ENVO:00000428,
+  the IRI ends in ENVO_00000428, and Wikidata and Bioregistry store the bare digits. This pattern accepts
+  all three forms.
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:ENVO[:_])?\d{7,8}$
+examples:
+- value: ENVO:00000428
+  description: biome; Ontology Lookup Service
+- value: '00000275'
+  description: ocean trench; Wikidata example
+- value: ENVO_01000803
+  description: asteroid; Wikidata example, written as the IRI local name
+- value: ENVO:2000020
+  description: electric energy, a seven-digit id; Ontology Lookup Service
+- value: ENVO:275
+  valid: false
+  description: Local id without its leading zeros
+mappings:
+  wikidata: P3859
+  bioregistry: envo
+links:
+- type: doc
+  url: https://obofoundry.org/ontology/envo.html
+- type: doc
+  url: https://www.ebi.ac.uk/ols4/ontologies/envo
+- type: doc
+  url: https://bioregistry.io/registry/envo
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3859
+translations:
+  ru:
+    name: Идентификатор термина онтологии окружающей среды (ENVO)
+    doc: 'Идентификатор термина онтологии ENVO (биомы, объекты и материалы окружающей среды): семь или
+      восемь цифр, часто с префиксом ENVO: или ENVO_.'

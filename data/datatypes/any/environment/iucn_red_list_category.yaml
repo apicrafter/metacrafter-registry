@@ -1,0 +1,41 @@
+id: iucn_red_list_category
+name: IUCN Red List category
+status: draft
+doc: Abbreviation of the extinction-risk category of a taxon in the IUCN Red List. The IUCN Red List Categories
+  and Criteria version 3.1 (2001) define EX (extinct), EW (extinct in the wild), CR, EN and VU (the threatened
+  categories), NT (near threatened), LC (least concern), DD (data deficient) and NE (not evaluated). Taxa
+  not reassessed since version 2.3 (1994) can still carry the Lower Risk subcategories LR/cd, LR/nt or
+  LR/lc.
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:EX|EW|CR|EN|VU|NT|LC|DD|NE|LR/cd|LR/nt|LR/lc)$
+examples:
+- value: VU
+  description: Panthera leo (lion), vulnerable; Wikidata P141
+- value: EN
+  description: Panthera tigris (tiger), endangered; Wikidata P141
+- value: EX
+  description: Raphus cucullatus (dodo), extinct; Wikidata P141
+- value: LR/cd
+  description: Podocnemis expansa, conservation dependent; Wikidata P141
+- value: Endangered
+  valid: false
+  description: Full category name, not the abbreviation
+links:
+- type: doc
+  url: https://portals.iucn.org/library/sites/library/files/documents/RL-2001-001-2nd.pdf
+- type: doc
+  url: https://www.iucnredlist.org/resources/categories-and-criteria
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/IUCN_Red_List
+translations:
+  ru:
+    name: Категория Красного списка МСОП
+    doc: 'Сокращённое обозначение категории угрозы исчезновения таксона в Красном списке МСОП (версия
+      3.1): EX, EW, CR, EN, VU, NT, LC, DD, NE; у старых оценок версии 2.3 встречаются LR/cd, LR/nt и
+      LR/lc.'

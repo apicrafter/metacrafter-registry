@@ -1,0 +1,42 @@
+id: glide_number
+name: GLIDE disaster number
+status: draft
+doc: GLobal IDEntifier number of a disaster event, issued at GLIDEnumber.net (run by the Asian Disaster
+  Reduction Center) and used by ReliefWeb, the Red Cross, UNDRR and other humanitarian sites. It has four
+  parts separated by hyphens, a two-letter hazard code (EQ earthquake, FL flood, TC tropical cyclone,
+  DR drought, EP epidemic and 23 more), the year, a six-digit sequence number and the ISO 3166-1 alpha-3
+  code of the affected country, or --- when no country code applies. One event that hits several countries
+  gets one number per country with the same hazard, year and sequence.
+categories:
+- environment
+- government
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:AC|AV|CE|CW|DR|EC|EP|EQ|ET|FA|FF|FL|FR|HT|IN|LS|MS|OT|SL|SS|ST|TC|TO|TS|VO|VW|WF|WV)-(?:19|20)\d{2}-\d{6}-(?:[A-Z]{3}|---)$
+examples:
+- value: EQ-2010-000009-HTI
+  description: 2010 Haiti earthquake; GLIDEnumber.net
+- value: EQ-2001-000033-IND
+  description: 2001 Gujarat (Bhuj) earthquake, India; GLIDEnumber.net
+- value: TC-2005-000144-USA
+  description: Hurricane Katrina in the United States; GLIDEnumber.net
+- value: FL-2016-000121----
+  description: 2016 flood in Kosovo, which has no ISO country code; GLIDEnumber.net
+- value: EQ-2010-9-HTI
+  valid: false
+  description: Sequence number not padded to six digits
+- value: XX-2010-000009-HTI
+  valid: false
+  description: XX is not a GLIDE hazard code
+links:
+- type: doc
+  url: https://glidenumber.net/glide/public/about.jsp
+- type: doc
+  url: https://glidenumber.net/glide/public/search/search.jsp
+translations:
+  ru:
+    name: Номер бедствия GLIDE
+    doc: Глобальный идентификатор стихийного бедствия GLIDE (GLIDEnumber.net) — код типа угрозы, год,
+      шестизначный порядковый номер и трёхбуквенный код страны ISO 3166-1, например EQ-2010-000009-HTI.

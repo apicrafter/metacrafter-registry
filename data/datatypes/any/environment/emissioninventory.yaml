@@ -1,10 +1,25 @@
 id: emissioninventory
-name: Emission inventory field by name
+name: Emission inventory field
 status: draft
-doc: Datatype for 'Emission inventory field by name' (emissioninventory) from rules in context 'environment'.
+doc: Generic type of a column of an air pollutant or greenhouse gas emission inventory, the dataset that
+  lists the amounts each source or sector emits in a year. The metacrafter rules recognize it by column
+  names such as emission_inventory, air_emissions or ghg_inventory. It has no single value format; the
+  codes inside such datasets have their own records, such as ipcc_emission_category and greenhouse_gas.
 categories:
 - environment
 langs:
 - en
 is_pii: false
 classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Emission_inventory
+- type: doc
+  url: https://www.ipcc-nggip.iges.or.jp/public/2006gl/
+- type: doc
+  url: https://www.eea.europa.eu/publications/emep-eea-guidebook-2023
+translations:
+  ru:
+    name: Поле кадастра выбросов
+    doc: Обобщённый тип столбца кадастра (инвентаризации) выбросов загрязняющих веществ или парниковых
+      газов. Единого формата значений нет; коды внутри таких данных описаны отдельными записями.

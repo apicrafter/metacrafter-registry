@@ -1,0 +1,39 @@
+id: ramsar_site_id
+name: Ramsar site number
+status: draft
+doc: 'Number of a Wetland of International Importance designated under the Ramsar Convention, used in
+  the Ramsar Sites Information Service (RSIS) and its site pages. It is a whole number of up to four digits;
+  the highest value in Wikidata in November 2026 is 2580. A bare number: recognize it only with column
+  context.'
+categories:
+- environment
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,3}$
+examples:
+- value: '476'
+  description: Lake Nakuru National Park, Kenya; Wikidata example
+- value: '714'
+  description: Lac de Grand-Lieu, France; Wikidata example
+- value: '949'
+  description: Lake Saint Pierre, Canada; Wikidata example
+- value: complexe Ramsar n° 1017
+  valid: false
+  description: Text around the number, found in Wikidata; the value is the number alone
+mappings:
+  wikidata: P2525
+links:
+- type: doc
+  url: https://rsis.ramsar.org/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Ramsar_site
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2525
+translations:
+  ru:
+    name: Номер Рамсарского угодья
+    doc: Номер водно-болотного угодья международного значения по Рамсарской конвенции в информационной
+      службе RSIS. Целое число до четырёх цифр.

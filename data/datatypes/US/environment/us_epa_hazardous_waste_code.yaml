@@ -1,0 +1,44 @@
+id: us_epa_hazardous_waste_code
+name: US EPA hazardous waste code (RCRA waste code)
+status: draft
+doc: 'EPA hazardous waste number of a waste regulated under the Resource Conservation and Recovery Act
+  (40 CFR part 261), written on hazardous waste manifests and in RCRA reports. It is a letter and three
+  digits: D001 to D003 for the characteristics of ignitability, corrosivity and reactivity and D004 to
+  D043 for toxicity characteristic contaminants; F001 to F039 for wastes from non-specific sources; K001
+  to K181 for wastes from specific industries; P001 to P205 for discarded commercial chemical products
+  that are acute hazardous wastes and U001 to U411 for other discarded chemical products. Not every number
+  in these ranges is used. State-only waste codes are not covered.'
+categories:
+- environment
+- chemistry
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:D0(?:0[1-9]|[1-3]\d|4[0-3])|F0(?:0[1-9]|[1-3]\d)|K(?:0(?:0[1-9]|[1-9]\d)|1(?:[0-7]\d|8[01]))|P(?:0(?:0[1-9]|[1-9]\d)|1\d\d|20[0-5])|U(?:0(?:0[1-9]|[1-9]\d)|[1-3]\d\d|40\d|41[01]))$
+examples:
+- value: D001
+  description: Ignitable waste; 40 CFR 261.21
+- value: F001
+  description: Spent halogenated solvents used in degreasing; 40 CFR 261.31
+- value: K001
+  description: Bottom sediment sludge from wood preserving wastewater treatment; 40 CFR 261.32
+- value: P001
+  description: Warfarin and salts above 0.3 percent; 40 CFR 261.33(e)
+- value: U001
+  description: Acetaldehyde; 40 CFR 261.33(f)
+- value: D044
+  valid: false
+  description: The toxicity characteristic codes end at D043
+links:
+- type: doc
+  url: https://www.ecfr.gov/current/title-40/chapter-I/subchapter-I/part-261
+- type: doc
+  url: https://www.epa.gov/hw/defining-hazardous-waste-listed-characteristic-and-mixed-radiological-wastes
+translations:
+  ru:
+    name: Код опасных отходов EPA США (код RCRA)
+    doc: Номер опасных отходов по закону RCRA (40 CFR 261) — буква D, F, K, P или U и три цифры, например
+      D001 для легковоспламеняющихся отходов.

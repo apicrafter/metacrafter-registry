@@ -1,0 +1,43 @@
+id: us_huc
+name: USGS hydrologic unit code (HUC)
+status: draft
+doc: Code of a hydrologic unit (a drainage area) in the Watershed Boundary Dataset of the US Geological
+  Survey. Each level adds two digits to the code of the unit it lies in, 2 digits for a region (01 to
+  22), then 4 for a subregion, 6 for a basin, 8 for a subbasin, 10 for a watershed and 12 for a subwatershed;
+  the optional 14- and 16-digit levels exist only in some areas. Always keep it as a string, because spreadsheets
+  drop the leading zero of regions 01 to 09.
+categories:
+- environment
+- geo
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:0[1-9]|1[0-9]|2[0-2])(?:[0-9]{2}){0,7}$
+examples:
+- value: '02070010'
+  description: Middle Potomac-Anacostia-Occoquan subbasin (HUC8); USGS Watershed Boundary Dataset
+- value: '1802'
+  description: Sacramento subregion (HUC4); USGS Watershed Boundary Dataset
+- value: 020700100802
+  description: Occoquan Reservoir-Occoquan River subwatershed (HUC12); USGS Watershed Boundary Dataset
+- value: '2070010'
+  valid: false
+  description: HUC8 02070010 with the leading zero lost; an odd number of digits
+- value: '23010001'
+  valid: false
+  description: Region 23 does not exist; regions are 01 to 22
+links:
+- type: doc
+  url: https://pubs.usgs.gov/tm/11/a3/
+- type: doc
+  url: https://www.usgs.gov/national-hydrography/watershed-boundary-dataset
+- type: doc
+  url: https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer
+translations:
+  ru:
+    name: Код гидрологической единицы USGS (HUC)
+    doc: Код водосборной единицы в наборе данных Watershed Boundary Dataset Геологической службы США.
+      Каждый уровень иерархии добавляет две цифры, от 2 цифр для региона до 12 цифр для малого водосбора.

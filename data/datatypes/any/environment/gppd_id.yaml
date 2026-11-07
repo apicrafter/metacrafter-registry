@@ -1,0 +1,40 @@
+id: gppd_id
+name: Global Power Plant Database ID (gppd_idnr)
+status: draft
+doc: Identifier of a power plant in the Global Power Plant Database of the World Resources Institute (WRI),
+  column gppd_idnr. It is a letter prefix and a seven-digit number. The prefix is the ISO 3166-1 alpha-3
+  code of the country for plants from a national data source (USA, GBR, BRA, IND and others), WRI or WKS
+  (Wiki-Solar) for plants from other sources, and the five-letter GEODB for plants from the Global Energy
+  Observatory. US ids embed the EIA plant code (USA0006008 for plant 6008). WRI no longer updates the
+  database; the last version is 1.3.0.
+parent: powerplantid
+categories:
+- energy
+- environment
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{3}(?:[A-Z]{2})?\d{7}$
+examples:
+- value: USA0006008
+  description: Palo Verde nuclear power plant, United States; Global Power Plant Database 1.3.0
+- value: WRI1000452
+  description: Three Gorges Dam, China; Global Power Plant Database 1.3.0
+- value: GBR0000174
+  description: Drax power station, United Kingdom; Global Power Plant Database 1.3.0
+- value: GEODB0040538
+  description: Kajaki Hydroelectric Power Plant, Afghanistan; Global Power Plant Database 1.3.0
+- value: USA6008
+  valid: false
+  description: Number not padded to seven digits
+links:
+- type: doc
+  url: https://github.com/wri/global-power-plant-database
+- type: doc
+  url: https://datasets.wri.org/datasets/global-power-plant-database
+translations:
+  ru:
+    name: Идентификатор Global Power Plant Database (gppd_idnr)
+    doc: Идентификатор электростанции в глобальной базе данных электростанций Института мировых ресурсов
+      (WRI) — буквенный префикс (код страны ISO alpha-3 или код источника) и семь цифр.

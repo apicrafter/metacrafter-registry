@@ -1,0 +1,43 @@
+id: ghcnd_station_id
+name: GHCN-Daily station identifier
+status: draft
+doc: Identifier of a weather station in the Global Historical Climatology Network daily dataset of NOAA
+  NCEI, 11 characters long. The first two characters are the FIPS 10-4 country code (not ISO 3166, so
+  GM is Germany and RS is Russia), the third is the code of the source numbering system (for example W
+  for WBAN, M for WMO, C for US Cooperative, 1 for CoCoRaHS, N for national networks) and the last eight
+  hold the station number of that system, padded with zeros. The same identifiers are used in GHCN-Monthly
+  version 4.
+categories:
+- environment
+- science
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}[01CEMNPRSW][0-9A-Za-z_-]{8}$
+examples:
+- value: USW00094728
+  description: New York Central Park (WBAN 94728); ghcnd-stations.txt
+- value: RSM00027612
+  description: Moscow (WMO 27612); ghcnd-stations.txt
+- value: ASN00086071
+  description: Melbourne Regional Office, Australia; ghcnd-stations.txt
+- value: US1AZMR0156
+  description: CoCoRaHS station AZ-MR-156 near Phoenix, Arizona; GHCN-Daily readme example
+- value: USW94728
+  valid: false
+  description: WBAN number not padded to eight characters
+- value: USX00094728
+  valid: false
+  description: X is not a GHCN-Daily network code
+links:
+- type: doc
+  url: https://www.ncei.noaa.gov/pub/data/ghcn/daily/readme.txt
+- type: doc
+  url: https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily
+translations:
+  ru:
+    name: Идентификатор станции GHCN-Daily
+    doc: Идентификатор метеостанции в наборе данных Global Historical Climatology Network Daily (NOAA
+      NCEI) из 11 символов — код страны FIPS, код сети и номер станции.

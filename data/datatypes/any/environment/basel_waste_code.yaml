@@ -1,0 +1,43 @@
+id: basel_waste_code
+name: Basel Convention waste code
+status: draft
+doc: Code of a waste category or waste entry in the annexes of the Basel Convention on the control of
+  transboundary movements of hazardous wastes, used in notification and movement documents and in export
+  and import statistics. Y1 to Y45 (Annex I) are waste streams and hazardous constituents; Y46 to Y49
+  (Annex II) are household waste, residues of its incineration, plastic waste (since 2021) and electrical
+  and electronic waste (since 2025). A-codes (Annex VIII, wastes presumed hazardous) and B-codes (Annex
+  IX, presumed not hazardous) are a letter and four digits, the first digit being the section (1 metal
+  wastes, 2 mainly inorganic, 3 mainly organic, 4 either). OECD control codes are not covered.
+categories:
+- environment
+- chemistry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:Y(?:[1-9]|[1-4]\d)|[AB][1-4]\d{3})$
+examples:
+- value: Y46
+  description: Wastes collected from households; Annex II of the Basel Convention
+- value: Y48
+  description: Plastic waste; Annex II, added by the plastic waste amendments in force since 1 January
+    2021
+- value: A4160
+  description: Spent activated carbon not included on list B; Annex VIII
+- value: B1010
+  description: Metal and metal-alloy wastes in metallic, non-dispersible form; Annex IX
+- value: A5010
+  valid: false
+  description: Annex VIII has only the sections A1 to A4
+links:
+- type: doc
+  url: https://www.basel.int/TheConvention/Overview/TextoftheConvention/tabid/1275/Default.aspx
+- type: doc
+  url: https://www.basel.int/Implementation/Plasticwaste/PlasticWasteAmendments/Overview/tabid/8426/Default.aspx
+- type: doc
+  url: https://www.basel.int/Implementation/Ewaste/EwasteAmendments/Overview/tabid/9266/Default.aspx
+translations:
+  ru:
+    name: Код отходов Базельской конвенции
+    doc: Код категории или позиции отходов из приложений Базельской конвенции о трансграничной перевозке
+      опасных отходов — Y1–Y49 (приложения I и II), A-коды (приложение VIII) и B-коды (приложение IX).

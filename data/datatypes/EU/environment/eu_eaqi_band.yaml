@@ -1,0 +1,33 @@
+id: eu_eaqi_band
+name: European Air Quality Index band
+status: draft
+doc: 'Band of the European Air Quality Index that the European Environment Agency computes for each station
+  from the concentrations of PM2.5, PM10, NO2, O3 and SO2. There are six bands: Good, Fair, Moderate,
+  Poor, Very poor and Extremely poor. The index takes the band of the worst pollutant.'
+categories:
+- environment
+country:
+- EU
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:Good|Fair|Moderate|Poor|Very poor|Extremely poor)$
+examples:
+- value: Fair
+  description: Second band; legend of the EEA European Air Quality Index viewer
+- value: Extremely poor
+  description: Worst band; legend of the EEA European Air Quality Index viewer
+- value: Unhealthy for Sensitive Groups
+  valid: false
+  description: A category of the US AQI, not a band of the European index
+links:
+- type: doc
+  url: https://airindex.eea.europa.eu/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Air_quality_index
+translations:
+  ru:
+    name: Уровень Европейского индекса качества воздуха
+    doc: Уровень Европейского индекса качества воздуха (EEA) — от Good до Extremely poor, всего шесть
+      уровней. Индекс принимает уровень худшего из загрязнителей.

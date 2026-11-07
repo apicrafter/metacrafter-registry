@@ -1,0 +1,40 @@
+id: corine_land_cover_code
+name: CORINE Land Cover class code
+status: draft
+doc: Three-digit code of a level-3 class of the CORINE Land Cover (CLC) nomenclature, used in the European
+  land cover inventory of the Copernicus Land Monitoring Service and the European Environment Agency.
+  The digits give the level-1 group (1 artificial surfaces, 2 agricultural areas, 3 forest and semi-natural
+  areas, 4 wetlands, 5 water bodies), the level-2 class and the level-3 class. There are 44 classes, from
+  111 (continuous urban fabric) to 523 (sea and ocean). The regexp lists exactly these codes; it excludes
+  999 (NODATA) and the raster grid values 1 to 44 that stand for the classes.
+categories:
+- environment
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:1(?:1[12]|2[1-4]|3[1-3]|4[12])|2(?:1[1-3]|2[1-3]|31|4[1-4])|3(?:1[1-3]|2[1-4]|3[1-5])|4(?:1[12]|2[1-3])|5(?:1[12]|2[1-3]))$
+examples:
+- value: '111'
+  description: Continuous urban fabric; CLC nomenclature
+- value: '312'
+  description: Coniferous forest; CLC nomenclature
+- value: '523'
+  description: Sea and ocean; CLC nomenclature
+- value: '999'
+  valid: false
+  description: NODATA value of the CLC products, not a land cover class
+- value: '214'
+  valid: false
+  description: Not a class; arable land has only 211 to 213
+links:
+- type: doc
+  url: https://land.copernicus.eu/content/corine-land-cover-nomenclature-guidelines/html/
+- type: doc
+  url: https://land.copernicus.eu/en/products/corine-land-cover
+translations:
+  ru:
+    name: Код класса CORINE Land Cover
+    doc: Трёхзначный код одного из 44 классов третьего уровня номенклатуры CORINE Land Cover — европейской
+      карты земного покрова (от 111 «сплошная городская застройка» до 523 «море и океан»).

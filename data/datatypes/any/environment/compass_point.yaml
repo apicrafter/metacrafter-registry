@@ -1,0 +1,30 @@
+id: compass_point
+name: Compass point (16-wind)
+status: draft
+doc: Abbreviation of one of the 16 principal points of the compass, from N through NNE, NE and ENE to
+  NNW, each 22.5 degrees apart. Weather observations and forecasts use it for wind direction, and geographic
+  data for orientation. Values in degrees and 32-point names such as NbE are not covered.
+categories:
+- environment
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:N|NNE|NE|ENE|E|ESE|SE|SSE|S|SSW|SW|WSW|W|WNW|NW|NNW)$
+examples:
+- value: NNE
+  description: North-northeast, 22.5 degrees
+- value: WSW
+  description: West-southwest, 247.5 degrees
+- value: NEN
+  valid: false
+  description: Letters in the wrong order
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Points_of_the_compass
+translations:
+  ru:
+    name: Румб (16 направлений)
+    doc: Сокращение одного из 16 основных румбов компаса (N, NNE, NE ... NNW) через 22,5 градуса. В метеоданных
+      так записывают направление ветра.

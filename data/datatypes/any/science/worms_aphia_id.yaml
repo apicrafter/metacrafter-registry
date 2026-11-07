@@ -5,6 +5,7 @@ doc: Number of a taxon name in the World Register of Marine Species (WoRMS), the
   names of marine organisms with their synonyms. WoRMS calls this number the AphiaID.
 categories:
 - science
+- environment
 langs:
 - common
 is_pii: false
@@ -28,3 +29,8 @@ links:
   url: https://bioregistry.io/registry/worms
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P850
+translations:
+  ru:
+    name: AphiaID в WoRMS
+    doc: Номер названия таксона во Всемирном реестре морских видов (WoRMS), экспертном списке названий
+      морских организмов с синонимами.

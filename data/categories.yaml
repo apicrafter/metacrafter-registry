@@ -57,7 +57,7 @@
 - id: education
   name: Education
 - id: environment
-  name: Environment
+  name: Environment (protected areas, biodiversity, water, weather, emissions, waste)
 - id: legal
   name: Legal and compliance
 - id: ecommerce

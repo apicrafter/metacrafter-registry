@@ -1,0 +1,39 @@
+id: ghg_protocol_scope
+name: GHG Protocol emission scope
+status: draft
+doc: Scope of a company's greenhouse gas emissions under the GHG Protocol Corporate Standard. Scope 1
+  is direct emissions from sources the company owns or controls, Scope 2 indirect emissions from purchased
+  electricity, steam, heat and cooling, and Scope 3 all other indirect emissions in the value chain, which
+  the Scope 3 Standard divides into 15 categories. Corporate sustainability reports and emission data
+  sets use these labels. The regexp accepts only Scope 1, Scope 2 and Scope 3, not bare numbers or Scope
+  3 category labels.
+categories:
+- environment
+- companies
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:Scope|scope|SCOPE) [123]$
+examples:
+- value: Scope 1
+  description: Direct emissions from owned or controlled sources; GHG Protocol Corporate Standard
+- value: Scope 2
+  description: Indirect emissions from purchased energy; GHG Protocol Corporate Standard
+- value: Scope 3
+  description: Other indirect value chain emissions; GHG Protocol Scope 3 Standard
+- value: Scope 4
+  valid: false
+  description: The GHG Protocol defines only three scopes
+links:
+- type: doc
+  url: https://ghgprotocol.org/corporate-standard
+- type: doc
+  url: https://ghgprotocol.org/corporate-value-chain-scope-3-standard
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/GHG_Protocol_Corporate_Standard
+translations:
+  ru:
+    name: Область охвата выбросов по GHG Protocol
+    doc: Область охвата выбросов парниковых газов компании по стандарту GHG Protocol — прямые (Scope 1),
+      косвенные от покупной энергии (Scope 2) и прочие косвенные в цепочке создания стоимости (Scope 3).
