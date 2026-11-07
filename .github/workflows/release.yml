@@ -41,11 +41,20 @@ jobs:
       - name: Build site and data
         run: metacrafter-registry build --no-data-files
 
+      # The package is installed non-editable, so the default target is the
+      # installed copy; write into the source tree that `python -m build` packs.
       - name: Bundle the data snapshot into the package
-        run: metacrafter-registry snapshot --dist dist
+        run: metacrafter-registry snapshot --dist dist --out src/metacrafter_registry/snapshot
 
       - name: Build the Python package
         run: python -m build --outdir pkg-dist
+
+      - name: The wheel bundles the data snapshot
+        run: |
+          if ! unzip -l pkg-dist/*.whl | grep -q "metacrafter_registry/snapshot/datatypes.jsonl"; then
+            echo "::error::the wheel has no metacrafter_registry/snapshot/datatypes.jsonl"
+            exit 1
+          fi
 
       - name: Changelog against the previous release
         env:

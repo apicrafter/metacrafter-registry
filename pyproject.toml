@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "metacrafter-registry"
-version = "1.3.0.dev0"
+version = "1.3.0"
 description = "Registry of semantic data types (identifiers, PII, codes) for the Metacrafter ecosystem: build, validation and static site."
 readme = "README.md"
 license = "Apache-2.0"
