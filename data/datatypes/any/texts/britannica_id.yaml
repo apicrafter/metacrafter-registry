@@ -1,0 +1,34 @@
+id: britannica_id
+name: Encyclopædia Britannica Online ID
+status: draft
+doc: 'Path of an article in Encyclopædia Britannica Online after https://www.britannica.com/: a type such
+  as topic, place, biography, event, science or art, a slash and a name with hyphens, as in place/Moscow.
+  The regexp is the format of Wikidata property P1417 and matches all 3000 sampled values. One subject
+  may have several paths, because Britannica renames articles and keeps the old paths as redirects.'
+categories:
+- texts
+- publishing
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^(?:topic|facts|place|event|science|technology|plant|animal|biography|sports|art|money)(?:/[^\s/]+)+$
+examples:
+- value: place/Moscow
+  description: Moscow
+- value: biography/Dmitri-Mendeleev
+  description: Dmitri Mendeleev
+- value: https://www.britannica.com/place/Moscow
+  valid: false
+  description: A URL, not the ID
+mappings:
+  wikidata: P1417
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1417
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Encyclop%C3%A6dia_Britannica
+translations:
+  ru:
+    name: Идентификатор статьи Британской энциклопедии
+    doc: Путь статьи в онлайн-версии Британской энциклопедии, например place/Moscow.

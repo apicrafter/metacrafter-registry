@@ -1,0 +1,32 @@
+id: gutenberg_ebook_id
+name: Project Gutenberg ebook ID
+status: draft
+doc: Number of an ebook in Project Gutenberg, the digital library of public domain books, as in https://www.gutenberg.org/ebooks/1342.
+  The number has no leading zeros. The regexp matches all 3000 sampled values of Wikidata property P2034.
+categories:
+- texts
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,5}$
+examples:
+- value: '1342'
+  description: Pride and Prejudice by Jane Austen
+- value: '614'
+  description: Across the Plains by Robert Louis Stevenson
+- value: https://www.gutenberg.org/ebooks/1342
+  valid: false
+  description: A URL, not the ID
+mappings:
+  wikidata: P2034
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2034
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Project_Gutenberg
+translations:
+  ru:
+    name: Идентификатор электронной книги Project Gutenberg
+    doc: Номер электронной книги в библиотеке Project Gutenberg.

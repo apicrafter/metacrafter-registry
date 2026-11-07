@@ -1,0 +1,35 @@
+id: researchgate_publication_id
+name: ResearchGate publication ID
+status: draft
+doc: Number of a publication page on ResearchGate, the social network for researchers. In URLs the number
+  is followed by an underscore and the title, as in https://www.researchgate.net/publication/242243427_The_Mesolithic;
+  the ID is the number alone. In a sample of 801 values of Wikidata property P5875, 724 are such numbers
+  of 6 to 10 digits; the rest are ISSNs, profile names and numbers with the title still attached.
+categories:
+- texts
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{5,9}$
+examples:
+- value: '242243427'
+  description: The Mesolithic (Wikidata Q104903367)
+- value: '325192762'
+  description: Integrated logistics support technologies in the life cycle of aviation equipment (Wikidata
+    Q96766580)
+- value: 242243427_The_Mesolithic
+  valid: false
+  description: URL path with the title attached
+mappings:
+  wikidata: P5875
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5875
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ResearchGate
+translations:
+  ru:
+    name: Идентификатор публикации в ResearchGate
+    doc: Номер страницы публикации в социальной сети исследователей ResearchGate.

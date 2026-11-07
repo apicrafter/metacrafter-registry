@@ -1,0 +1,27 @@
+id: article_section
+name: Article section (rubric)
+status: draft
+doc: Section or rubric of a newspaper, magazine or news site to which an article belongs, such as Sports,
+  Business or Lifestyle. Each publication has its own list of sections, and an article may belong to more
+  than one. Field names are section, article_section, rubric and category; in Russian data рубрика.
+categories:
+- texts
+- media
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Sports
+  description: Section named in the Schema.org definition
+- value: Lifestyle
+  description: Section named in the Schema.org definition
+mappings:
+  schema_org: articleSection
+links:
+- type: schema.org
+  url: https://schema.org/articleSection
+translations:
+  ru:
+    name: Рубрика (раздел издания)
+    doc: Рубрика или раздел газеты, журнала или новостного сайта, к которому относится статья.

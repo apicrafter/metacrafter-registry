@@ -1,0 +1,25 @@
+id: abstract
+name: Abstract (summary)
+status: draft
+doc: Short summary of an article, paper, thesis, report or book, placed before the text or stored with
+  its metadata, so that a reader can decide whether to read the whole work. Field names are abstract,
+  summary and annotation; in Russian data аннотация and реферат. The Dublin Core term is dcabstract.
+parent: description
+categories:
+- texts
+- publishing
+langs:
+- common
+is_pii: false
+mappings:
+  schema_org: abstract
+links:
+- type: schema.org
+  url: https://schema.org/abstract
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Abstract_(summary)
+translations:
+  ru:
+    name: Аннотация (реферат)
+    doc: Краткое изложение статьи, работы, отчёта или книги, которое помещают перед текстом или хранят
+      в его метаданных.

@@ -1,0 +1,24 @@
+id: review_text
+name: Review text
+status: draft
+doc: Text of a review of a product, service, place, book, film or app, written by a customer, user or
+  critic. It usually comes with a rating, an author and a date. Field names are review, review_text, review_body
+  and feedback. Schema.org calls it reviewBody.
+categories:
+- texts
+- ecommerce
+langs:
+- common
+is_pii: false
+mappings:
+  schema_org: reviewBody
+links:
+- type: schema.org
+  url: https://schema.org/reviewBody
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Customer_review
+translations:
+  ru:
+    name: Текст отзыва
+    doc: Текст отзыва покупателя, пользователя или критика о товаре, услуге, месте, книге, фильме или
+      приложении.

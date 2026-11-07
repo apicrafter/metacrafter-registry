@@ -1,0 +1,33 @@
+id: gutenberg_author_id
+name: Project Gutenberg author ID
+status: draft
+doc: Number of an author, editor, translator or other contributor in the catalogue of Project Gutenberg,
+  as in https://www.gutenberg.org/ebooks/author/68. The regexp is the format of Wikidata property P1938
+  and matches all 3000 sampled values.
+categories:
+- texts
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,4}$
+examples:
+- value: '68'
+  description: Jane Austen
+- value: '136'
+  description: Leo Tolstoy
+- value: https://www.gutenberg.org/ebooks/author/68
+  valid: false
+  description: A URL, not the ID
+mappings:
+  wikidata: P1938
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1938
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Project_Gutenberg
+translations:
+  ru:
+    name: Идентификатор автора Project Gutenberg
+    doc: Номер автора, редактора или переводчика в каталоге Project Gutenberg.

@@ -9,6 +9,7 @@ doc: 'Identifier of an article or chapter, used since 1996 by Elsevier, the Amer
 categories:
 - publishing
 - science
+- texts
 langs:
 - common
 is_pii: false

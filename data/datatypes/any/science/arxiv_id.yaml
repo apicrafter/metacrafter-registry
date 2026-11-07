@@ -7,6 +7,7 @@ doc: Identifier of a preprint in arXiv. Since 2007 it is YYMM.NNNNN (four digits
 categories:
 - science
 - publishing
+- texts
 langs:
 - common
 is_pii: false
