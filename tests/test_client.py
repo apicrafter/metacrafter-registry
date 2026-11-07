@@ -354,6 +354,109 @@ def test_a_match_as_written_outweighs_a_compact_form_match():
     assert [(c["id"], c["score"]) for c in invalid] == [("card16", 30)]
 
 
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("serialNumber", {"serial", "number"}),
+        ("sha256Hash", {"sha256", "hash"}),
+        ("HTTPServer", {"httpserver"}),
+        ("first_name-2", {"first", "name", "2"}),
+        ("СерийныйНомер", {"серийн", "номер"}),
+        ("КлассСредствЭП", {"класс", "средств", "эп"}),
+        ("Отпечаток сертификата", {"отпечаток", "сертификат"}),
+        ("ЭлектроннаяПочта", {"электронн", "почт"}),
+        ("Объём", {"объем"}),
+        # A stem shorter than four letters would merge "пол" and "поле".
+        ("Пол", {"пол"}),
+        ("Поле", {"поле"}),
+        ("naïveDate", {"naïve", "date"}),
+        ("नाम", {"नाम"}),  # vowel signs are combining marks, part of the word
+    ],
+)
+def test_field_name_tokens(text, expected):
+    from metacrafter_registry.client import _tokens
+
+    assert _tokens(text) == expected
+
+
+def test_field_name_tokens_are_normalized():
+    import unicodedata
+
+    from metacrafter_registry.client import _tokens
+
+    assert _tokens(unicodedata.normalize("NFD", "СерийныйНомер")) == {"серийн", "номер"}
+
+
+def test_ascii_field_name_tokens_are_unchanged(reg):
+    """ASCII text gives the tokens of the earlier ASCII-only tokenizer."""
+    import re
+
+    from metacrafter_registry.client import _tokens
+
+    token, camel = re.compile(r"[a-z0-9]+"), re.compile(r"(?<=[a-z0-9])(?=[A-Z])")
+    texts = ["serialNumber", "HTTPServer2Go", "sha256Hash", "ISO 8601 date", "e-mail_address"]
+    for record in reg.datatypes.values():
+        texts += [record["id"], record["name"], *record.get("aliases", [])]
+    for text in texts:
+        if text.isascii():
+            assert _tokens(text) == set(token.findall(camel.sub(" ", text).lower())), text
+
+
+def test_ascii_field_name_matches_a_latin_term_in_a_translation(reg):
+    # "Почтовый индекс Бразилии (CEP)": the Cyrillic words do not count against "CEP".
+    top = reg.identify(["01001-000"], field_name="CEP")[0]
+    assert top["id"] == "br_postcode" and top["field_name_similarity"] == 1.0
+
+
+@pytest.mark.parametrize(
+    ("field", "similarity"),
+    [
+        # "région" is a Latin word: "Code" is half of "Code région", not all of it.
+        ("Code", 0.5),
+        ("CodeRégion", 1.0),
+        ("Код", 0.333),
+        ("КодРегиона", 0.667),
+    ],
+)
+def test_field_name_similarity_across_scripts(field, similarity):
+    translations = {"fr": {"name": "Code région"}, "ru": {"name": "Код региона Франции"}}
+    record = _record("fr_region", None, "11", translations=translations)
+    record["name"] = "French region code"
+    reg = Registry([record])
+    assert round(reg._name_similarity(reg.datatypes["fr_region"], field), 3) == similarity
+
+
+@pytest.mark.parametrize(
+    ("field", "expected"),
+    [
+        ("ИдентификаторКлюча", "x509_key_identifier"),
+        ("Отпечаток", "x509_certificate_thumbprint"),
+        ("ОтпечатокСертификата", "x509_certificate_thumbprint"),
+        ("Хеш", "sha1hash"),
+        ("subjectKeyIdentifier", "x509_key_identifier"),
+        ("thumbprint", "x509_certificate_thumbprint"),
+    ],
+)
+def test_identify_tells_equal_regexps_apart_by_a_field_name_in_any_script(reg_pki, field, expected):
+    from conftest import HEX40
+
+    first, second = reg_pki.identify(HEX40, field_name=field)[:2]
+    assert first["id"] == expected and first["field_name_similarity"] > 0
+    assert first["score"] > second["score"]
+
+
+def test_identify_cyrillic_field_name_adds_to_the_score(reg_pki):
+    serials = ["00A94CF4CA0000000005A1"]
+    plain = reg_pki.identify(serials)[0]
+    named = reg_pki.identify(serials, field_name="СерийныйНомер")[0]
+    assert plain["id"] == named["id"] == "x509_serial_number"
+    # Two of the five words of "Серийный номер сертификата X.509": 25 x 0.4.
+    assert named["field_name_similarity"] == 0.4
+    assert named["score"] == plain["score"] + 10
+    # The nominative "Сертификат" matches "сертификата" in the record name.
+    assert reg_pki.identify(serials, field_name="Сертификат")[0]["field_name_similarity"] == 0.2
+
+
 def test_identify_iso_dates_rank_date_records_above_digit_codes(reg):
     # A draft date pattern with a broad regexp (date_ymd_dash, built here; the
     # registry maps YYYY-MM-DD to date itself). Stable eight-digit codes (okpo,

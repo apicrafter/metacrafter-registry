@@ -151,7 +151,8 @@ reg.url_for("email")  # https://registry.apicrafter.io/datatype/email
 `identify` ranks datatypes for sample values of one column. It combines:
 - the regexp hit rate, weighted by how specific the regexp is;
 - check digits: Luhn, IBAN mod-97, GTIN, ISBN, Russian INN, SNILS and OGRN;
-- similarity to the field name.
+- similarity of the field name to the record id, name and translated names, in
+  any script: `СерийныйНомер` matches «Серийный номер сертификата».
 
 The MCP server exposes the same functions to AI agents and runs locally:
 
