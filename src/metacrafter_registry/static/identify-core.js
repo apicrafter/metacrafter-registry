@@ -196,9 +196,13 @@
     ru_ogrn: function (v) {
       var s = String(v).replace(/[\s.\-]/g, "");
       if (!/^\d+$/.test(s)) return false;
-      if (s.length === 13) return (Number(s.slice(0, 12)) % 11) % 10 === Number(s[12]);
-      if (s.length === 15) return (Number(s.slice(0, 14)) % 13) % 10 === Number(s[14]);
-      return false;
+      // Sign digit, first year of issue and modulus: OGRN (13) or OGRNIP (15).
+      var spec = s.length === 13 ? ["15", 2, 11] : s.length === 15 ? ["3", 4, 13] : null;
+      if (!spec || spec[0].indexOf(s[0]) < 0) return false;
+      var year = Number(s.slice(1, 3));
+      if (year < spec[1] || year > new Date().getFullYear() % 100) return false;
+      if (s.slice(3, 5) === "00") return false;
+      return (Number(s.slice(0, -1)) % spec[2]) % 10 === Number(s[s.length - 1]);
     },
     fr_nir: function (v) {
       var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();

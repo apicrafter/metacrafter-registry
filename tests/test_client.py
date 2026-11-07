@@ -107,6 +107,11 @@ def test_checksum_reference_values():
     assert not ru_inn_padded("007707083894") and not ru_inn_padded("500100732259")
     assert ru_snils("112-233-445 95") and not ru_snils("112-233-445 96")
     assert ru_ogrn("1027700132195") and not ru_ogrn("1027700132196")
+    assert ru_ogrn("304500116000157") and not ru_ogrn("304500116000158")
+    # Valid check digits, impossible structure: year 85 (OGRNIP since 2004),
+    # year 01 (OGRN since 2002), region 00, sign digit 3 on a 13-digit OGRN.
+    for impossible in ("385768585948949", "1017700132196", "1020000132195", "3027700132193"):
+        assert not ru_ogrn(impossible), impossible
     # Reference values from the python-stdnum documentation.
     assert fr_nir("2 95 10 99 126 111 93") and not fr_nir("295109912611199")
     assert fr_nir("253072B07300470") and fr_nir("253072A07300443")
@@ -256,7 +261,7 @@ def test_identify_inn_by_values_and_field_name(reg):
     "values",
     [
         ["1027700043502", "1027700132195"],  # OGRN of legal entities, 13 digits
-        ["385768585948949"],  # OGRNIP of an individual entrepreneur, 15 digits
+        ["304500116000157"],  # OGRNIP of an individual entrepreneur, 15 digits
     ],
 )
 def test_identify_ogrn_and_ogrnip_by_values_and_field_name(reg, values, field):

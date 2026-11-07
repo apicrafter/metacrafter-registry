@@ -5,9 +5,9 @@ doc: 'Number that the Russian tax service assigns when it enters a business in a
   entity gets a 13-digit OGRN in the register of legal entities (EGRUL); an individual entrepreneur gets
   a 15-digit OGRNIP in the register of individual entrepreneurs (EGRIP), and that number identifies a
   natural person. The first digit is 1 or 5 for an OGRN and 3 for an OGRNIP; numbers of other register
-  entries (GRN) start with other digits. Then come the last two digits of the registration year, the region
-  code, the entry number and a check digit: the last digit of the remainder of the preceding digits divided
-  by 11 (OGRN) or by 13 (OGRNIP).'
+  entries (GRN) start with other digits. Then come the last two digits of the registration year (OGRN
+  numbers are issued since 2002, OGRNIP numbers since 2004), the region code, the entry number and a check
+  digit: the last digit of the remainder of the preceding digits divided by 11 (OGRN) or by 13 (OGRNIP).'
 aliases:
 - ogrn_ogrnip
 categories:
@@ -25,8 +25,12 @@ examples:
   description: Rosneft
 - value: '1027700132195'
   description: Sberbank of Russia
+- value: '304500116000157'
+  description: OGRNIP (15 digits), registration year 04, region 50
 - value: '385768585948949'
-  description: OGRNIP (15 digits), example from the python-stdnum documentation
+  valid: false
+  description: Check digit is valid, but the registration year 85 is impossible (OGRNIP numbers are issued
+    since 2004)
 - value: '2027700132195'
   valid: false
   description: First digit 2 marks another register entry (GRN), not an OGRN
@@ -46,4 +50,5 @@ translations:
     name: Основной государственный регистрационный номер (ОГРН, ОГРНИП)
     doc: Номер записи о государственной регистрации, который налоговая служба присваивает юридическому
       лицу (ОГРН, 13 цифр, ЕГРЮЛ) или индивидуальному предпринимателю (ОГРНИП, 15 цифр, ЕГРИП). Первая
-      цифра 1 или 5 у ОГРН и 3 у ОГРНИП, затем год записи, код региона, номер записи и контрольная цифра.
+      цифра 1 или 5 у ОГРН и 3 у ОГРНИП, затем две последние цифры года записи (ОГРН присваивают с 2002
+      года, ОГРНИП — с 2004 года), код региона, номер записи и контрольная цифра.
