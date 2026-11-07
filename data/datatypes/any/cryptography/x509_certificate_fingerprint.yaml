@@ -24,3 +24,8 @@ links:
   url: https://en.wikipedia.org/wiki/Public_key_fingerprint
 - type: doc
   url: https://docs.openssl.org/master/man1/openssl-x509/
+translations:
+  ru:
+    name: Отпечаток сертификата X.509
+    doc: Хэш DER-кодировки сертификата X.509 (SHA-1 или SHA-256) в шестнадцатеричном виде с двоеточиями
+      между октетами. Запись без разделителей описана паттерном x509_certificate_thumbprint.

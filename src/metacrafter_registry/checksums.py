@@ -178,6 +178,15 @@ def ru_inn(value: str) -> bool:
     return False
 
 
+def ru_inn_padded(value: str) -> bool:
+    """INN of a Russian organization written as 12 digits: 00 and the 10-digit INN.
+
+    Older qualified certificates put it so in the 12-digit INN attribute
+    (OID 1.2.643.3.131.1.1)."""
+    compact = _compact(value)
+    return len(compact) == 12 and compact.startswith("00") and ru_inn(compact[2:])
+
+
 def ru_snils(value: str) -> bool:
     """Russian insurance number (SNILS): 9 digits and a 2-digit control number."""
     digits = _digits(value)
@@ -870,6 +879,7 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "ismn": ismn,
     "iso7064_mod11_2": iso7064_mod11_2,
     "ru_inn": ru_inn,
+    "ru_inn_padded": ru_inn_padded,
     "ru_snils": ru_snils,
     "ru_ogrn": ru_ogrn,
     "fr_nir": fr_nir,
