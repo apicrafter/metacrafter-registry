@@ -178,6 +178,15 @@ def ru_inn(value: str) -> bool:
     return False
 
 
+def ru_inn_padded(value: str) -> bool:
+    """INN of a Russian organization written as 12 digits: 00 and the 10-digit INN.
+
+    Older qualified certificates put it so in the 12-digit INN attribute
+    (OID 1.2.643.3.131.1.1)."""
+    compact = _compact(value)
+    return len(compact) == 12 and compact.startswith("00") and ru_inn(compact[2:])
+
+
 def ru_snils(value: str) -> bool:
     """Russian insurance number (SNILS): 9 digits and a 2-digit control number."""
     digits = _digits(value)
@@ -508,6 +517,27 @@ def iso7064_mod97_10(value: str) -> bool:
         number = int(c, 36)
         remainder = (remainder * (100 if number > 9 else 10) + number) % 97
     return remainder == 1
+
+
+_ROR_PREFIX = re.compile(r"^(?:https?://)?ror\.org/", re.IGNORECASE)
+_CROCKFORD32 = "0123456789abcdefghjkmnpqrstvwxyz"
+
+
+def ror(value: str) -> bool:
+    """ROR identifier: 0, six Crockford base-32 characters and 2 check digits.
+
+    The check digits are ISO 7064 MOD 97-10 of the number n that the six
+    characters encode: 98 - (n * 100 mod 97). A https://ror.org/ or ror.org/
+    prefix is allowed.
+    """
+    compact = _ROR_PREFIX.sub("", str(value)).lower()
+    match = re.fullmatch(r"0([0-9a-hjkmnp-tv-z]{6})([0-9]{2})", compact)
+    if not match:
+        return False
+    number = 0
+    for c in match.group(1):
+        number = number * 32 + _CROCKFORD32.index(c)
+    return int(match.group(2)) == 98 - number * 100 % 97
 
 
 def de_ustidnr(value: str) -> bool:
@@ -849,6 +879,7 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "ismn": ismn,
     "iso7064_mod11_2": iso7064_mod11_2,
     "ru_inn": ru_inn,
+    "ru_inn_padded": ru_inn_padded,
     "ru_snils": ru_snils,
     "ru_ogrn": ru_ogrn,
     "fr_nir": fr_nir,
@@ -868,6 +899,7 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "bech32": bech32,
     "bech32m": bech32m,
     "iso7064_mod97_10": iso7064_mod97_10,
+    "ror": ror,
     "de_ustidnr": de_ustidnr,
     "de_widnr": de_widnr,
     "de_idnr": de_idnr,

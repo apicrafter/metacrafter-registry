@@ -1,0 +1,45 @@
+id: x500_distinguished_name
+name: X.500 distinguished name (string form)
+status: draft
+doc: Name of an entry in an X.500 or LDAP directory and of the subject or issuer of an X.509 certificate,
+  written as a string of attribute=value pairs, for example CN=..., O=..., C=... The string form is defined
+  by RFC 4514 (pairs separated by commas, multi-valued names joined with +); certificate tools such as
+  Windows CryptoAPI and OpenSSL print the same form with a space after each comma, use E for the email
+  address and S or ST for the region, and may write an attribute by its OID. Russian qualified certificates
+  add attributes such as ИНН, ОГРН and СНИЛС. The regexp needs at least two pairs and one common attribute
+  (CN, O, OU, DC, UID, C, L, ST, S, STREET, E, SN, G or T), and values without an = sign. The slash form
+  /C=RU/O=... of OpenSSL is not covered. The name of a person or the SNILS in it are personal data.
+categories:
+- cryptography
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^(?=(?:.*[,;+]\s*)?(?:CN|O|OU|DC|UID|C|L|ST|S|STREET|E|SN|G|T)=)(?:[A-Za-zА-ЯЁа-яё][A-Za-zА-ЯЁа-яё0-9-]*|(?:OID\.)?[0-2](?:\.\d+)+)=[^=]*(?:[,;+]\s*(?:[A-Za-zА-ЯЁа-яё][A-Za-zА-ЯЁа-яё0-9-]*|(?:OID\.)?[0-2](?:\.\d+)+)=[^=]*)+$
+examples:
+- value: UID=jsmith,DC=example,DC=net
+  description: Example of RFC 4514, section 4
+- value: OU=Sales+CN=J. Smith,DC=example,DC=net
+  description: Multi-valued relative name, RFC 4514, section 4
+- value: CN=GnuTLS certificate authority,ST=Leuven,OU=GnuTLS certificate authority,O=GnuTLS,C=BE
+  description: Issuer of the example certificate of RFC 7468, section 5.1
+- value: CN=Минкомсвязь России, ИНН=007710474375, ОГРН=1047702026701, O=Минкомсвязь России, STREET=улица
+    Тверская, дом 7, L=г. Москва, ST=77 Москва, C=RU, E=dit@minsvyaz.ru
+  description: Issuer of Russian qualified certificates, as printed by CryptoAPI (e-trust.gosuslugi.ru)
+- value: CN=example.org
+  valid: false
+  description: A single attribute; the regexp needs at least two
+- value: color=red, size=L
+  valid: false
+  description: Key-value pairs without a directory attribute
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc4514
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc5280#section-4.1.2.4
+translations:
+  ru:
+    name: Отличительное имя X.500 (DN)
+    doc: Имя записи каталога X.500 или LDAP, владельца или издателя сертификата X.509 в виде строки пар
+      атрибут=значение (CN=..., O=..., C=...). В российских квалифицированных сертификатах есть атрибуты
+      ИНН, ОГРН, СНИЛС.

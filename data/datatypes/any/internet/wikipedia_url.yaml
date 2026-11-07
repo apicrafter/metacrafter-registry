@@ -1,0 +1,31 @@
+id: wikipedia_url
+name: Wikipedia article URL
+status: draft
+doc: Address of an article in a language edition of Wikipedia, such as https://en.wikipedia.org/wiki/CERN.
+  The host is the language code followed by wikipedia.org, with m. for the mobile site. The path is usually
+  /wiki/ and the article title; some editions also use a script or language variant such as /zh-hans/
+  or /sr-el/, and old links use ?title=. Registries such as ROR link organizations to their articles this
+  way. Other Wikimedia sites (Commons, Wikivoyage, Wikidata) are not Wikipedia.
+semantic_type: url
+langs:
+- common
+regexp: ^https?://[a-z][a-z0-9-]{1,11}\.(?:m\.)?wikipedia\.org/(?:wiki/|w/index\.php\?title=|\?title=|[a-z]{2,3}(?:-[a-z]+)?/)\S+$
+examples:
+- value: https://en.wikipedia.org/wiki/CERN
+  description: Article of CERN, linked from its ROR record
+- value: http://en.wikipedia.org/wiki/RMIT_University
+  description: Article of RMIT University, linked from its ROR record
+- value: https://de.wikipedia.org/wiki/Leopoldina-Krankenhaus_Schweinfurt
+  description: Article in the German Wikipedia
+- value: https://en.wikipedia.org/?title=Museum_Boerhaave
+  description: Old link form with a title parameter
+- value: https://commons.wikimedia.org/wiki/Category%3AVideos_by_Science_Media_Center_Germany
+  valid: false
+  description: Wikimedia Commons, not Wikipedia
+- value: https://de.wikivoyage.org/wiki/Steiermark
+  valid: false
+  description: Wikivoyage, not Wikipedia
+translations:
+  ru:
+    name: URL статьи Википедии
+    doc: Адрес статьи в одном из языковых разделов Википедии, например https://en.wikipedia.org/wiki/CERN.

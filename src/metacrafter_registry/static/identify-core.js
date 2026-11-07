@@ -180,6 +180,10 @@
       }
       return false;
     },
+    ru_inn_padded: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "");
+      return s.length === 12 && s.slice(0, 2) === "00" && CHECKSUMS.ru_inn(s.slice(2));
+    },
     ru_snils: function (v) {
       var d = digitsOf(v);
       if (!d || d.length !== 11) return false;
@@ -350,6 +354,14 @@
         for (var j = 0; j < chunk.length; j += 1) rem = (rem * 10 + Number(chunk[j])) % 97;
       }
       return rem === 1;
+    },
+    ror: function (v) {
+      var s = String(v).replace(/^(?:https?:\/\/)?ror\.org\//i, "").toLowerCase();
+      var m = /^0([0-9a-hjkmnp-tv-z]{6})([0-9]{2})$/.exec(s);
+      if (!m) return false;
+      var n = 0;
+      for (var i = 0; i < 6; i += 1) n = n * 32 + "0123456789abcdefghjkmnpqrstvwxyz".indexOf(m[1][i]);
+      return Number(m[2]) === 98 - ((n * 100) % 97);
     },
     de_ustidnr: function (v) {
       var s = stripPrefix(v, "DE");

@@ -1,0 +1,33 @@
+id: iso3166code_dotted
+name: ISO 3166-2 subdivision code with a dot separator
+status: draft
+doc: Code of a country subdivision from ISO 3166-2 written with a dot instead of the hyphen between the
+  two-letter country code and the subdivision part, as in AU.VIC for Victoria. Schema v1 of the ROR data
+  dump stores the region of an organization in this form (geonames_admin1.code). The same shape is used
+  for GeoNames first-level administrative codes, whose subdivision part is not always the ISO one.
+semantic_type: iso3166code
+langs:
+- common
+regexp: ^[A-Z]{2}\.[A-Z0-9]{1,3}$
+examples:
+- value: AU.VIC
+  description: Victoria, Australia (ISO 3166-2 AU-VIC)
+- value: RU.MOW
+  description: Moscow, Russia (ISO 3166-2 RU-MOW)
+- value: FR.IDF
+  description: Île-de-France, France (ISO 3166-2 FR-IDF)
+- value: AL.11
+  description: Tirana County, Albania (ISO 3166-2 AL-11)
+- value: AU-VIC
+  valid: false
+  description: The hyphenated form, covered by iso3166code
+- value: VIC
+  valid: false
+  description: The subdivision part alone, without the country code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_3166-2
+translations:
+  ru:
+    name: Код субъекта ISO 3166-2 с точкой
+    doc: Код административной единицы по ISO 3166-2, в котором код страны отделён точкой, например AU.VIC.

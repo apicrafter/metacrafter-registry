@@ -1,0 +1,26 @@
+id: org_acronym
+name: Organization acronym
+status: draft
+doc: Short form of an organization name built from its initial letters or syllables, such as CERN or RMIT.
+  Registries of organizations keep it next to the full name; ROR stores it as a name of type acronym (schema
+  v2) or in the acronyms list (schema v1). Acronyms are usually two to eight capital letters, but they
+  can contain digits, lowercase letters and spaces and are often in the local script, so the record has
+  no regexp and is recognized by the field name (acronym, abbreviation).
+parent: orgname
+categories:
+- companies
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: CERN
+  description: European Organization for Nuclear Research
+- value: RMIT
+  description: RMIT University
+- value: NLW
+  description: National Library of Wales
+translations:
+  ru:
+    name: Аббревиатура организации
+    doc: Сокращённое название организации из начальных букв или слогов, например CERN или RMIT.

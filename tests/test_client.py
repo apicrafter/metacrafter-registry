@@ -52,7 +52,9 @@ from metacrafter_registry.checksums import (
     nl_onderwijsnummer,
     no_fnr,
     pl_nip,
+    ror,
     ru_inn,
+    ru_inn_padded,
     ru_ogrn,
     ru_snils,
     se_vat,
@@ -100,6 +102,8 @@ def test_checksum_reference_values():
     assert gtin("036000291452") and gtin("4006381333931") and not gtin("4006381333932")
     assert isbn13("978-0-521-29366-2") and isbn10("0-521-22151-X") and not isbn10("0521221519")
     assert ru_inn("7707083893") and ru_inn("500100732259") and not ru_inn("7707083894")
+    assert ru_inn_padded("007707083893") and not ru_inn_padded("7707083893")
+    assert not ru_inn_padded("007707083894") and not ru_inn_padded("500100732259")
     assert ru_snils("112-233-445 95") and not ru_snils("112-233-445 96")
     assert ru_ogrn("1027700132195") and not ru_ogrn("1027700132196")
     # Reference values from the python-stdnum documentation.
@@ -190,6 +194,10 @@ def test_publishing_checksum_reference_values():
     assert iso7064_mod11_2("0000 0001 2297 4701") and iso7064_mod11_2("000000006629310X")
     assert iso7064_mod11_2("0000-0002-1825-0097") and not iso7064_mod11_2("0000-0002-1825-0098")
     assert not iso7064_mod11_2("X") and not iso7064_mod11_2("0000-0002-1825-009")
+    # ROR IDs of RMIT University and of the ROR identifier documentation, bare and as URLs
+    assert ror("04ttjf776") and ror("https://ror.org/02mhbdp94") and ror("ror.org/01ggx4157")
+    assert not ror("04ttjf777") and not ror("14ttjf776") and not ror("04ttjfl76")
+    assert not ror("100008690")  # a Crossref Funder ID has the same length
 
 
 def test_crypto_checksum_reference_values():
