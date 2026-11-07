@@ -2,6 +2,7 @@ id: continent
 name: Continent name or identifier
 status: stable
 doc: A continent is any of several large landmasses. Related to UN unm49 dataclass
+parent: location
 categories:
 - geo
 langs:
@@ -31,6 +32,7 @@ mappings:
   - CONTINENT.TEXT_RO
   - CONTINENT.TEXT_RU
   - CONTINENT.TEXT_SV
+  presidio: LOCATION
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Continent

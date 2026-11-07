@@ -15,6 +15,7 @@ mappings:
   sherlock:
   - company
   - organisation
+  presidio: ORGANIZATION
 links:
 - type: schema.org
   url: https://schema.org/legalName

@@ -4,6 +4,7 @@ status: draft
 doc: Name or code of the largest administrative subdivision of a country, such as a US state, a Canadian
   province, a German Land or a Russian federal subject. The registry keeps a record per country as a child
   of this one.
+parent: location
 categories:
 - geo
 langs:
@@ -14,6 +15,7 @@ mappings:
   wikidata: Q10864048
   cdm: means.location.stateOrProvince
   schema_org: addressRegion
+  presidio: LOCATION
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Administrative_division

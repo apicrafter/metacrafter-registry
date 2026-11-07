@@ -94,6 +94,38 @@ def test_crosswalk_mappings(repo_sources):
     ]
 
 
+def test_presidio_ner_entities_resolve_to_one_broad_record(repo_sources):
+    # Presidio's spaCy recognizer reports PERSON, LOCATION, ORGANIZATION, NRP and
+    # DATE_TIME. Narrower records carry the entity for column labels; a reverse
+    # lookup takes the mapped records that have no mapped ancestor.
+    from metacrafter_registry import Registry
+
+    reg = Registry.from_sources(DATA)
+
+    def ancestors(rid: str) -> set[str]:
+        out: set[str] = set()
+        record = reg.datatypes[rid]
+        while broader := record.get("semantic_type") or record.get("parent"):
+            out.add(broader)
+            record = reg.datatypes[broader]
+        return out
+
+    def broadest(entity: str) -> list[str]:
+        mapped = {r["id"] for r in reg.crosswalk("presidio", entity)}
+        return sorted(rid for rid in mapped if not ancestors(rid) & mapped)
+
+    assert broadest("PERSON") == ["person_fullname"]
+    assert broadest("DATE_TIME") == ["date"]
+    assert broadest("LOCATION") == ["location"]
+    assert broadest("ORGANIZATION") == ["orgname"]
+    # NRP is nationality, religious or political group: no single broad record.
+    assert broadest("NRP") == ["nationality", "religion"]
+    places = {r["id"] for r in reg.crosswalk("presidio", "LOCATION")}
+    assert {"city", "country", "birthplace"} <= places
+    # Full addresses are not place names; spaCy tags only their parts.
+    assert not {"address", "street_address"} & places
+
+
 def test_purview_crosswalk(repo_sources):
     from metacrafter_registry import Registry
 

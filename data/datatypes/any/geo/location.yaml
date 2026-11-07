@@ -1,0 +1,37 @@
+id: location
+name: Location (place name)
+status: draft
+doc: Name of a place of any kind, such as a settlement, an administrative area, a country, a region, a
+  body of water, a mountain or a building. It is the broad type for place names found in free text, where
+  the kind of place is often unknown; narrower records cover cities, countries, administrative divisions
+  and places of birth. A place linked to a person, such as where they live or travel, is personal data.
+categories:
+- geo
+- pii
+langs:
+- common
+is_pii: true
+examples:
+- value: Lake Baikal
+  description: body of water
+- value: Bavaria
+  description: administrative area
+- value: Mont Blanc
+  description: mountain
+mappings:
+  wikidata: P276
+  dpv: pd:Location
+  schema_org: location
+  presidio: LOCATION
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Location_(geography)
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P276
+- type: schema.org
+  url: https://schema.org/Place
+translations:
+  ru:
+    name: Местоположение (название места)
+    doc: Название места любого вида — населённого пункта, административной единицы, страны, региона, водоёма,
+      горы или здания. Общий тип для географических названий в свободном тексте, когда вид места неизвестен.
