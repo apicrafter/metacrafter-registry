@@ -1,0 +1,41 @@
+id: it_sbn_bid
+name: SBN bibliographic record identifier (BID)
+status: draft
+doc: Identifier (BID) of a bibliographic record, such as an edition of a book, in the union catalogue
+  of the Servizio bibliotecario nazionale (SBN) of Italian libraries. It has ten characters, as in TO01157442
+  or MOD0578992, and id.sbn.it/bid/ followed by it opens the record. Wikidata stores the identifiers of
+  editions as P5485; the regexp follows its format constraint.
+categories:
+- publishing
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}[A-Z0-3][E\d]\d{6}$
+examples:
+- value: TO01157442
+  description: Edition of Laws of mechanical notation by Charles Babbage (Wikidata example)
+- value: MOD0578992
+  description: Wikidata example
+- value: TO0E065588
+  description: Wikidata example
+- value: TO0115744
+  valid: false
+  description: Nine characters
+mappings:
+  wikidata: P5485
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5485
+- type: doc
+  url: https://opac.sbn.it/
+translations:
+  it:
+    name: Identificativo bibliografico SBN (BID)
+    doc: Identificativo di dieci caratteri di una notizia bibliografica nel catalogo SBN, come TO01157442.
+  ru:
+    name: Идентификатор библиографической записи SBN (BID)
+    doc: Десятисимвольный идентификатор библиографической записи в сводном каталоге итальянских библиотек
+      SBN.

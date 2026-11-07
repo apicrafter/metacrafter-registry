@@ -3,7 +3,8 @@ name: Italian identity card number
 status: draft
 doc: 'Number of an Italian identity card (carta d''identità). The electronic card (CIE) issued since 2016
   has nine characters: two letters, five digits and two letters, the first letter being C. Older cards
-  in circulation use two letters and seven digits (paper card) or seven digits and two letters (CIE 2.0).'
+  in circulation use two letters and seven digits (paper card) or seven digits and two letters (CIE 2.0).
+  Presidio looks for the same three forms.'
 categories:
 - pii
 - persons
@@ -17,6 +18,10 @@ regexp: ^(?:[A-Z]{2}\d{5}[A-Z]{2}|[A-Z]{2}\d{7}|\d{7}[A-Z]{2})$
 examples:
 - value: CA00000AA
   description: Format example of the CIE from Italian Wikipedia
+- value: CB52813KD
+  description: Synthetic number in the CIE form
+- value: AX4820613
+  description: Synthetic number in the form of the paper card
 - value: CA0000AA
   valid: false
   description: Only four digits
@@ -28,3 +33,12 @@ links:
   url: https://it.wikipedia.org/wiki/Carta_d%27identit%C3%A0_elettronica_italiana
 - type: other
   url: https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/italy/it_identity_card_recognizer.py
+translations:
+  it:
+    name: Numero della carta d'identità
+    doc: Numero della carta d'identità - due lettere, cinque cifre e due lettere nella carta elettronica
+      (CIE); due lettere e sette cifre nella carta cartacea.
+  ru:
+    name: Номер удостоверения личности Италии
+    doc: Номер итальянского удостоверения личности - две буквы, пять цифр и две буквы у электронной карты
+      (CIE); две буквы и семь цифр у бумажной.

@@ -1,0 +1,42 @@
+id: it_school_code
+name: Italian school code (codice meccanografico)
+status: draft
+doc: Codice meccanografico, the 10-character code by which the Italian Ministry of Education and Merit
+  identifies a school or a school institution, as in its Cerca la tua scuola search. The first two letters
+  are the abbreviation of the province, as BL (Belluno) in BLMM816023. Wikidata stores it as P5114, and
+  the regexp is its format constraint.
+categories:
+- education
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}[A-Z1][A-Z][A-Z0-9]{6}$
+examples:
+- value: BLMM816023
+  description: School in Limana, province of Belluno (Wikidata example)
+- value: MIPL20500L
+  description: Collegio Bianconi in Monza (Wikidata example)
+- value: UDMM00800Q
+  description: Educandato Uccellis in Udine (Wikidata example)
+- value: BLMM81602
+  valid: false
+  description: Nine characters
+mappings:
+  wikidata: P5114
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5114
+- type: doc
+  url: https://unica.istruzione.gov.it/cercalatuascuola/
+translations:
+  it:
+    name: Codice meccanografico della scuola
+    doc: Codice di 10 caratteri con cui il Ministero dell'istruzione e del merito identifica una scuola;
+      inizia con la sigla della provincia.
+  ru:
+    name: Код школы Италии (codice meccanografico)
+    doc: Десятисимвольный код, которым министерство образования Италии обозначает школу; начинается с
+      сокращения провинции.

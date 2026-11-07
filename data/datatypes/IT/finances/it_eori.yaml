@@ -1,0 +1,34 @@
+id: it_eori
+name: Italian EORI number
+status: draft
+doc: EORI number issued in Italy by the customs agency (Agenzia delle Dogane e dei Monopoli) for customs
+  procedures in the European Union. For a VAT-registered operator it is IT followed by the partita IVA
+  (it_iva). The Italian Trade Agency says that private persons get IT followed by the fiscal code; other
+  guides add that only its first 15 characters are used, so that the number keeps to the 17 characters
+  of an EORI. The regexp accepts both forms.
+semantic_type: eori
+country:
+- IT
+langs:
+- common
+regexp: ^IT(?:\d{11}|[A-Z]{6}[0-9LMNP-V]{2}[ABCDEHLMPRST][0-9LMNP-V]{2}[A-Z][0-9LMNP-V]{3})$
+examples:
+- value: IT00743110157
+  description: Built from the python-stdnum test value of it_iva
+- value: IT61248020200
+  description: Built from a synthetic it_iva number
+- value: IT0074311015
+  valid: false
+  description: Ten digits
+links:
+- type: doc
+  url: https://www.ice.it/it/sites/default/files/inline-files/Codice%20EORI_istruzioni%20pratiche_DEF.pdf
+- type: doc
+  url: http://ec.europa.eu/taxation_customs/dds2/eos/eori_validation.jsp
+translations:
+  it:
+    name: Codice EORI
+    doc: IT seguito dalla partita IVA per i soggetti IVA, o dal codice fiscale per i privati.
+  ru:
+    name: Номер EORI Италии
+    doc: IT и номер плательщика НДС (partita IVA); у частных лиц - IT и налоговый код.

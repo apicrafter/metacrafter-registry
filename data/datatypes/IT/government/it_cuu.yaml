@@ -2,8 +2,10 @@ id: it_cuu
 name: Italian unique office code (codice univoco ufficio)
 status: draft
 doc: Codice univoco ufficio, the 6-character code of an office (organisational unit) of the Italian public
-  administration in the IPA index. It is used, for example, to address electronic invoices to public bodies.
-  ORG-ID.guide lists the register as IT-CUUO; with that prefix an identifier reads IT-CUUO-7GEM3B.
+  administration in the IPA index. Electronic invoices to public bodies (FatturaPA format FPA12) carry
+  it in the CodiceDestinatario field, which the FatturaPA schema limits to capital letters and digits;
+  invoices between private parties use the 7-character code it_sdi_code there. ORG-ID.guide lists the
+  register as IT-CUUO; with that prefix an identifier reads IT-CUUO-7GEM3B.
 categories:
 - government
 country:
@@ -12,6 +14,7 @@ langs:
 - it
 is_pii: false
 classification: identifier
+regexp: ^[A-Z0-9]{6}$
 examples:
 - value: 7GEM3B
   description: example from ORG-ID.guide
@@ -23,6 +26,9 @@ examples:
   description: example from ORG-ID.guide
 - value: UFFTT8
   description: example from ORG-ID.guide
+- value: M5UXCR1
+  valid: false
+  description: Seven characters, a recipient code for private invoices (it_sdi_code)
 mappings:
   orgid: IT-CUUO
 links:
@@ -30,3 +36,14 @@ links:
   url: https://www.indicepa.gov.it/ipa-portale/
 - type: other
   url: https://org-id.guide/list/IT-CUUO
+- type: doc
+  url: https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.2/Schema_del_file_xml_FatturaPA_v1.2.2.xsd
+translations:
+  it:
+    name: Codice univoco ufficio
+    doc: Codice di 6 caratteri di un ufficio della pubblica amministrazione nell'Indice dei domicili digitali
+      (IPA), usato come codice destinatario delle fatture elettroniche alla PA.
+  ru:
+    name: Уникальный код учреждения Италии (codice univoco ufficio)
+    doc: Шестисимвольный код подразделения органа публичной администрации Италии в реестре IPA; используется
+      как адрес получателя электронных счетов.

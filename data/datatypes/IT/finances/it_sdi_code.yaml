@@ -1,0 +1,42 @@
+id: it_sdi_code
+name: Italian e-invoicing recipient code (codice destinatario SdI)
+status: draft
+doc: Codice destinatario, the 7-character code of the channel on which the Sistema di Interscambio (SdI)
+  of the Agenzia delle Entrate delivers electronic invoices between private parties (FatturaPA format
+  FPR12). SdI assigns it to businesses and intermediaries, such as accounting software, that have an accredited
+  reception channel. The value 0000000 is used when the invoice goes to a PEC address or the channel is
+  unknown, and XXXXXXX for invoices to customers not established in Italy. Invoices to public administrations
+  carry the 6-character office code it_cuu in the same field.
+categories:
+- finances
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z0-9]{7}$
+examples:
+- value: M5UXCR1
+  description: Code that the Reviso accounting software gives its users, from its help centre
+- value: 7GEM3B
+  valid: false
+  description: Six characters, an office code of the public administration (it_cuu)
+links:
+- type: doc
+  url: https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/
+- type: doc
+  url: https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.2/Schema_del_file_xml_FatturaPA_v1.2.2.xsd
+- type: other
+  url: https://intercom.help/reviso/it/articles/5583666-il-codice-destinatario-da-comunicare-ai-fornitori-e-m5uxcr1
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Fattura_elettronica
+translations:
+  it:
+    name: Codice destinatario (SdI)
+    doc: Codice di 7 caratteri del canale su cui il Sistema di Interscambio recapita le fatture elettroniche
+      tra privati; 0000000 per la PEC, XXXXXXX per i clienti esteri.
+  ru:
+    name: Код получателя электронных счетов Италии (codice destinatario SdI)
+    doc: Семисимвольный код канала, по которому система SdI доставляет электронные счета между частными
+      лицами и компаниями.

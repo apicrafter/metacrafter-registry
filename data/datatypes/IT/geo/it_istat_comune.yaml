@@ -1,8 +1,13 @@
 id: it_istat_comune
 name: Italian ISTAT municipality code
-status: draft
-doc: Code of an Italian municipality (six digits), province (three digits) or region (two digits) assigned
-  by the Italian National Institute of Statistics (ISTAT).
+status: stable
+doc: Statistical code of an Italian municipality (six digits), province or metropolitan city (three digits)
+  or region (two digits) assigned by the Italian National Institute of Statistics (ISTAT), the three forms
+  that Wikidata P635 stores. The code of a comune is the code of its province followed by a 3-digit number,
+  as 015146 for Milan in province 015. A metropolitan city has the code of the province it replaced plus
+  200, so Milan is 215. On 1 January 2026 the reform of Sardinia gave its provinces the codes 112 to 119
+  and its metropolitan cities 312 (Sassari) and 318 (Cagliari, formerly 292), and the Sardinian comuni
+  got new codes.
 categories:
 - geo
 country:
@@ -17,6 +22,13 @@ examples:
   description: Milan
 - value: 058091
   description: Rome
+- value: '312'
+  description: Metropolitan city of Sassari, since 1 January 2026
+- value: '12'
+  description: Lazio region
+- value: '15146'
+  valid: false
+  description: The leading zero of the province code is missing
 mappings:
   wikidata: P635
 links:
@@ -26,3 +38,12 @@ links:
   url: https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P635
+translations:
+  it:
+    name: Codice ISTAT del comune
+    doc: Codice statistico ISTAT di un comune (sei cifre), di una provincia o città metropolitana (tre
+      cifre) o di una regione (due cifre).
+  ru:
+    name: Код ISTAT коммуны Италии
+    doc: Статистический код ISTAT коммуны (шесть цифр), провинции или метрополитенского города (три цифры)
+      или области (две цифры).
