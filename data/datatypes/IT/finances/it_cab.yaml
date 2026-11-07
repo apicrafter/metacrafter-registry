@@ -1,0 +1,34 @@
+id: it_cab
+name: Italian bank branch code (codice CAB)
+status: draft
+doc: Codice CAB (codice di avviamento bancario), the five-digit code of a branch (sportello) of a bank
+  in Italy. Together with the ABI code of the bank (it_abi) it identifies the branch, and it forms characters
+  11 to 15 of an Italian IBAN. Italian electronic invoices (FatturaPA) carry it in the CAB field, which
+  the schema limits to five digits.
+categories:
+- finances
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '11101'
+  description: Branch code in the example IBAN of iban.com
+- value: '111010'
+  valid: false
+  description: Six digits
+links:
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Coordinate_bancarie
+- type: doc
+  url: https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.2/Schema_del_file_xml_FatturaPA_v1.2.2.xsd
+translations:
+  it:
+    name: Codice CAB
+    doc: Codice di avviamento bancario di cinque cifre che identifica lo sportello della banca.
+  ru:
+    name: Код отделения банка Италии (CAB)
+    doc: Пятизначный код отделения банка в Италии; вместе с кодом ABI определяет отделение.

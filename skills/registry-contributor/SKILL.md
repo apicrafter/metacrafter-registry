@@ -67,7 +67,7 @@ pip install -e ".[dev]"
   - With `checksum`, every positive example must also pass the check digit.
     Known algorithms are `luhn`, `iban_mod97`, `gtin`, `gs1_mod10`,
     `gs1_checkpair`, `isbn10`, `isbn13`, `issn`, `ismn`, `ru_inn`, `ru_inn_padded`, `ru_snils`, `ru_ogrn`,
-    `fr_nir`, `at_uid`, `bg_vat`, `no_fnr`, `it_codicefiscale`, `it_iva`,
+    `fr_nir`, `at_uid`, `bg_vat`, `no_fnr`, `it_codicefiscale`, `it_iva`, `it_aic`,
     `fi_hetu`, `es_dni`, `pl_nip`, `sk_dph`, `si_ddv`, `se_vat`, `kz_iin_bin`,
     `iso7064_mod97_10`, `iso7064_mod11_2`, `ror`, `de_ustidnr`, `de_widnr`, `de_idnr`, `de_rvnr`,
     `de_kvnr`, `de_ik`, `de_lanr`, `de_pzn`, `de_fsnr`, `base58check`, `bech32`,

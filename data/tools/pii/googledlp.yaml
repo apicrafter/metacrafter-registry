@@ -40,6 +40,7 @@ supported_types:
 - imei
 - ipaddr
 - it_codicefiscale
+- it_passport
 - jp_driver_license
 - jp_passport
 - mac_address

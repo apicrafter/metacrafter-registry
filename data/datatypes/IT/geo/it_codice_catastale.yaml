@@ -1,8 +1,11 @@
 id: it_codice_catastale
 name: Italian cadastral municipality code (codice catastale)
-status: draft
-doc: 'Code of an Italian municipality in the land registry: a letter and three digits, such as H501 for
-  Rome. Characters 12 to 15 of the Italian tax code (codice fiscale) are this code of the place of birth.'
+status: stable
+doc: 'Code of an Italian municipality in the land registry, also called the Belfiore code: a letter and
+  three digits, such as H501 for Rome. Characters 12 to 15 of the Italian tax code (codice fiscale) are
+  this code of the place of birth; for people born abroad they are Z and three digits for the foreign
+  country, such as Z404 for the United States or Z114 for the United Kingdom, from the same table of the
+  Agenzia delle Entrate. Wikidata stores the municipality codes as P806.'
 categories:
 - geo
 country:
@@ -17,6 +20,13 @@ examples:
   description: Naples
 - value: A004
   description: Abbadia Cerreto
+- value: H501
+  description: Rome
+- value: Z404
+  description: United States, the code of a foreign country in the codice fiscale
+- value: H50
+  valid: false
+  description: Only two digits
 mappings:
   wikidata: P806
 links:
@@ -24,3 +34,14 @@ links:
   url: https://it.wikipedia.org/wiki/Codice_catastale
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P806
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Italian_fiscal_code
+translations:
+  it:
+    name: Codice catastale (codice Belfiore)
+    doc: Codice di una lettera e tre cifre che identifica un comune italiano, come H501 per Roma; gli
+      stati esteri hanno codici che iniziano con Z.
+  ru:
+    name: Кадастровый код коммуны Италии (codice catastale)
+    doc: Код из буквы и трёх цифр, обозначающий коммуну Италии, например H501 для Рима; иностранные государства
+      имеют коды, начинающиеся с Z.

@@ -1,11 +1,12 @@
 id: it_codicefiscale
 name: Italian tax code (codice fiscale)
-status: draft
+status: stable
 doc: 'Codice fiscale, the tax code of people in Italy, issued by the Agenzia delle Entrate: 16 characters
   derived from the surname, the first name, the date of birth and sex (40 is added to the day for women),
-  and the Belfiore code of the place of birth, with a check letter at the end. When two people would get
-  the same code, digits are replaced by letters (omocodia). Legal entities have an 11-digit code that
-  equals their VAT number (it_iva).'
+  and the Belfiore code of the place of birth (it_codice_catastale), with a check letter at the end. For
+  people born abroad the place is Z and three digits for the country, such as Z404 for the United States.
+  When two people would get the same code, digits are replaced by letters (omocodia). Legal entities have
+  an 11-digit code that equals their VAT number (it_iva).'
 categories:
 - pii
 - persons
@@ -37,6 +38,7 @@ mappings:
   - EU national identification number
   - EU Tax Identification Number (TIN)
   - EU Tax identification number
+  presidio: IT_FISCAL_CODE
   dpv: pd:OfficialID
   schema_org: taxID
   stdnum: it.codicefiscale
@@ -49,6 +51,14 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.it.codicefiscale.html
 - type: other
   url: https://docs.dataprep.ai/user_guide/clean/clean_it_codicefiscale.html
+- type: other
+  url: https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/italy/it_fiscal_code_recognizer.py
 translations:
   it:
     name: Codice fiscale
+    doc: Codice di 16 caratteri delle persone fisiche, ricavato da cognome, nome, data e comune di nascita
+      e sesso, con un carattere di controllo finale.
+  ru:
+    name: Налоговый код Италии (codice fiscale)
+    doc: Налоговый код физического лица в Италии - 16 символов, составленных из фамилии, имени, даты и
+      места рождения и пола, с контрольной буквой в конце.

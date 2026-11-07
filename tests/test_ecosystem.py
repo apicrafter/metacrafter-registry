@@ -960,6 +960,11 @@ def test_javascript_checksums_match_python(tmp_path):
         for _ in range(300)
     ]
     values += [f"6{rng.randrange(10**8):08d}" for _ in range(300)]
+    values += [f"0{rng.randrange(10**8):08d}" for _ in range(300)]  # AIC
+    values += [
+        "".join(rng.choice("0123456789BCDFGHJKLMNPQRSTUVWXYZ") for _ in range(6))
+        for _ in range(300)
+    ]
     values += [f"CZ{rng.randrange(10**8):08d}" for _ in range(300)]
     values += [f"{rng.randrange(10**6):06d}/{rng.randrange(10**4):04d}" for _ in range(300)]
     values += [

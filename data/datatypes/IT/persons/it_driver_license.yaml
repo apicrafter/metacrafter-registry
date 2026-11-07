@@ -1,9 +1,13 @@
 id: it_driver_license
 name: Italian driver's license number
 status: draft
-doc: 'Number of a driving licence issued in Italy. Microsoft Purview looks for ten letters and digits:
-  a letter, a letter or digit, seven letters or digits and a final letter, optionally separated by spaces
-  or hyphens.'
+doc: 'Number of a driving licence issued in Italy (field 5 of the card). Licences issued by the central
+  office of the Motorizzazione, such as duplicates after loss or theft, start with U1, followed by seven
+  characters and a check letter; since November 2011 the seven characters are a letter (from B, without
+  A, I, O and Q) and six digits. Licences of the provincial offices have two letters, seven digits and
+  a letter, the other form that Presidio looks for. The regexp is the Microsoft Purview pattern, which
+  covers both: a letter, a letter or digit, seven letters or digits and a final letter, optionally separated
+  by spaces or hyphens.'
 parent: driver_license
 categories:
 - pii
@@ -15,11 +19,35 @@ langs:
 is_pii: true
 classification: identifier
 regexp: '^[A-Z][A-Z0-9](?: - | |-)?[A-Z0-9]{7}(?: - | |-)?[A-Z]$'
+examples:
+- value: U1B482613K
+  description: Synthetic number in the form of the central office since November 2011
+- value: AB4826137C
+  description: Synthetic number in the provincial form that Presidio looks for
+- value: U1B48261K
+  valid: false
+  description: Nine characters
 mappings:
   purview:
   - Italy drivers license number
   - EU drivers license number
+  presidio: IT_DRIVER_LICENSE
   dpv: pd:OfficialID
 links:
 - type: doc
+  url: https://www.mit.gov.it/node/1259
+- type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-italy-drivers-license-number
+- type: other
+  url: https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/italy/it_driver_license_recognizer.py
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Patente_di_guida_italiana
+translations:
+  it:
+    name: Numero della patente di guida
+    doc: Numero della patente (campo 5) - U1, sette caratteri e una lettera di controllo per le patenti
+      dell'Ufficio Centrale Operativo, oppure due lettere, sette cifre e una lettera.
+  ru:
+    name: Номер водительского удостоверения Италии
+    doc: Номер итальянского водительского удостоверения (поле 5) - U1, семь символов и контрольная буква
+      или две буквы, семь цифр и буква.
