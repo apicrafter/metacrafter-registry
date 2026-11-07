@@ -24,11 +24,11 @@ regexp: '^\d+(?:[.,]\d+)? ?(?:(?:тыс|млн)\. ?)?(?:мг|мкг|г|мл|ЕД
   ?\| ?)(?:\d+(?:[.,]\d+)? ?)?(?:мл|г|доза|л|ч|час|сут|кв\.см|ml|mL|g|dose|h|L))?)*$'
 examples:
 - value: 80 мг
-  description: Mass of active substance per dosage unit, from the ESKLP catalogue
+  description: Capsules of febuxostat, from the ESKLP catalogue
 - value: 50 мг+25 мг
-  description: Combination of two substances, from the ESKLP catalogue
+  description: Tablets of dolutegravir + rilpivirine, from the ESKLP catalogue
 - value: 2.5 мл/доза
-  description: Volume per dose of a vaccine, from the ESKLP catalogue
+  description: Oral rotavirus vaccine, volume per dose, from the ESKLP catalogue
 - value: 10 мг/мл
   description: Concentration, from the ESKLP catalogue
 - value: 250 мг|5 мл
@@ -56,6 +56,8 @@ links:
   url: https://www.consultant.ru/document/cons_doc_LAW_99350/
 - type: schema.org
   url: https://schema.org/DrugStrength
+- type: doc
+  url: https://base.garant.ru/71920072/172a6d689833ce3e42dc0a8a7b3cddf9/
 translations:
   ru:
     name: Дозировка лекарственного препарата

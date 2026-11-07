@@ -5,8 +5,8 @@ doc: Pharmaceutical form of a medicine that fits the way it is given or used, su
   tablets, capsules, syrup or a solution for injection. Drug registers and catalogues take the form from
   a closed list of terms. The EDQM Standard Terms are the international list of dose forms. In the Eurasian
   Economic Union the list is the Nomenclature of dosage forms (Decision No. 172 of the EEC Board, 22 December
-  2015), and the Russian ESKLP catalogue writes the form in Russian. The value is a term, not a code,
-  so a dictionary of terms detects it better than a regular expression.
+  2015); in Russia the state register of medicines (ГРЛС) and the ESKLP catalogue record the form in Russian.
+  The value is a term, not a code, so a dictionary of terms detects it better than a regular expression.
 categories:
 - medical
 langs:
@@ -49,4 +49,5 @@ translations:
     doc: Состояние лекарственного препарата, которое соответствует способу его введения и применения,
       например таблетки, таблетки, покрытые пленочной оболочкой, капсулы, сироп или раствор для инъекций.
       Значение берется из закрытого перечня терминов. В ЕАЭС это Номенклатура лекарственных форм (Решение
-      Коллегии ЕЭК от 22.12.2015 № 172); в России лекарственную форму по-русски записывает каталог ЕСКЛП.
+      Коллегии ЕЭК от 22.12.2015 № 172); в России лекарственную форму указывают государственный реестр
+      лекарственных средств (ГРЛС) и ЕСКЛП.

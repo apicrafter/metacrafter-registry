@@ -1,0 +1,45 @@
+id: atc_code_name
+name: ATC code followed by its name
+status: draft
+doc: Code of the Anatomical Therapeutic Chemical (ATC) classification followed by the name of the group
+  or substance, such as M04AA03 - Фебуксостат or N02BE01 paracetamol. Drug catalogues store the ATC classification
+  of a medicine in this form; the Russian ESKLP catalogue separates code and name with " - ". The code
+  may be of any ATC level, from the anatomical main group (one letter) to the chemical substance (seven
+  characters). A one-letter code needs the " - " separator, so that a sentence that begins with a capital
+  letter is not taken for a code.
+semantic_type: atccode
+langs:
+- en
+- ru
+regexp: '^[A-V](?:\d{2}(?:[A-Z](?:[A-Z](?:\d{2})?)?)?(?: - | )| - )\S.*$'
+examples:
+- value: M04AA03 - Фебуксостат
+  description: Chemical substance level, from an ESKLP export
+- value: J05AR21 - Долутегравир+Рилпивирин
+  description: Combination of substances, from an ESKLP export
+- value: L03AX - Другие иммуностимуляторы
+  description: Chemical subgroup level, from an ESKLP export
+- value: A13A - ОБЩЕТОНИЗИРУЮЩИЕ ПРЕПАРАТЫ
+  description: Pharmacological subgroup level, from an ESKLP export
+- value: V - ПРОЧИЕ ПРЕПАРАТЫ
+  description: Anatomical main group (one letter), from an ESKLP export
+- value: N02BE01 paracetamol
+  description: Code and English name from the WHO ATC/DDD Index, separated by a space
+- value: M04AA03
+  valid: false
+  description: A code without a name is the datatype atccode
+- value: ~ - ~
+  valid: false
+  description: Placeholder that ESKLP writes when the ATC code is missing
+- value: C Programming
+  valid: false
+  description: A one-letter code must be followed by " - "
+links:
+- type: doc
+  url: https://atcddd.fhi.no/atc_ddd_index/
+translations:
+  ru:
+    name: Код АТХ с наименованием
+    doc: Код анатомо-терапевтическо-химической классификации (АТХ) с наименованием группы или вещества,
+      например M04AA03 - Фебуксостат. Так справочники лекарственных препаратов, в том числе ЕСКЛП, хранят
+      код АТХ препарата.
