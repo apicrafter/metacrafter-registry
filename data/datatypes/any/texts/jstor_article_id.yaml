@@ -1,0 +1,39 @@
+id: jstor_article_id
+name: JSTOR stable ID
+status: draft
+doc: Identifier of an article, chapter, book or other item in JSTOR, the digital library of journals and
+  books, as in https://www.jstor.org/stable/25088813. Most IDs are numbers of up to nine digits. Books
+  and newer items use DOIs, often with the JSTOR prefix 10.2307, and some collections use a short prefix
+  and numbers, such as jj.168341 or wilsonq.37.1.11. The regexp combines these forms; all 3000 sampled
+  values of Wikidata property P888 match.
+categories:
+- texts
+- science
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[1-9]\d{0,8}|10\.\d{4,5}/[a-z\d.\-_]+|[a-z]+\.?\d+(?:\.\d+)*)$
+examples:
+- value: '25088813'
+  description: An Image of Africa by Chinua Achebe (Wikidata Q4750037)
+- value: 10.1525/j.ctt2204r5c
+  description: 'Morals Not Knowledge: Recasting the Contemporary U.S. Conflict between Religion and Science
+    (Wikidata Q60189608)'
+- value: wilsonq.37.1.11
+  description: David and Goliath, The Wilson Quarterly (Wikidata Q103733314)
+- value: https://www.jstor.org/stable/25088813
+  valid: false
+  description: A URL, not the ID
+mappings:
+  wikidata: P888
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P888
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/JSTOR
+translations:
+  ru:
+    name: Идентификатор JSTOR
+    doc: Постоянный идентификатор статьи, главы или книги в электронной библиотеке JSTOR.

@@ -1,0 +1,31 @@
+id: title
+name: Title of a work
+status: draft
+doc: Title under which a creative work is published, such as a book, an article, a report, a film or a
+  song. A long title is often split into a main title and a subtitle. Field names are title, book_title,
+  article_title and document_title; a headline is the title of a news article. Wikidata stores titles
+  in property P1476 as text in a given language. A title of a person (Dr, Sir) is a different type, see
+  honorificprefix and academictitle.
+parent: name
+categories:
+- texts
+- common
+langs:
+- common
+is_pii: false
+examples:
+- value: Pride and Prejudice
+  description: Novel by Jane Austen (1813)
+- value: On the Origin of Species
+  description: Book by Charles Darwin (1859)
+mappings:
+  wikidata: P1476
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1476
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Title_(publishing)
+translations:
+  ru:
+    name: Название произведения
+    doc: Название, под которым опубликовано произведение, например книга, статья, отчёт, фильм или песня.

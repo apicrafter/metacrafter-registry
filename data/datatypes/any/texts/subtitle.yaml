@@ -1,0 +1,31 @@
+id: subtitle
+name: Subtitle
+status: draft
+doc: Secondary title of a work, printed after or under the main title, often after a colon or the word
+  "or". It narrows the topic of the work or gives an alternative title. Field names are subtitle and sub_title;
+  Wikidata stores it in property P1680 and Schema.org in alternativeHeadline.
+parent: title
+categories:
+- texts
+langs:
+- common
+is_pii: false
+examples:
+- value: The Modern Prometheus
+  description: Subtitle of Frankenstein by Mary Shelley
+- value: The Whale
+  description: Subtitle of Moby-Dick by Herman Melville
+mappings:
+  wikidata: P1680
+  schema_org: alternativeHeadline
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1680
+- type: schema.org
+  url: https://schema.org/alternativeHeadline
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Subtitle_(titling)
+translations:
+  ru:
+    name: Подзаголовок
+    doc: Второе название произведения, которое печатается после основного или под ним.

@@ -1,0 +1,27 @@
+id: word_count
+name: Word count
+status: draft
+doc: Number of words in a text, such as an article, a chapter, a book or a post, as a non-negative integer.
+  Tools count words differently (hyphenated words, numbers, words in scripts without spaces), so two counts
+  of one text may differ. Any integer looks the same, so there is no regexp; detect the type by field
+  names such as word_count, wordcount and words.
+parent: quantity
+categories:
+- texts
+langs:
+- common
+is_pii: false
+mappings:
+  wikidata: P6570
+  schema_org: wordCount
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6570
+- type: schema.org
+  url: https://schema.org/wordCount
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Word_count
+translations:
+  ru:
+    name: Количество слов
+    doc: Число слов в тексте статьи, главы, книги или публикации.
