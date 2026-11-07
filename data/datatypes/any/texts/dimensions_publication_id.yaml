@@ -1,0 +1,35 @@
+id: dimensions_publication_id
+name: Dimensions publication ID
+status: draft
+doc: 'Identifier of a publication in Dimensions, the research database of Digital Science: pub. and ten
+  digits, as in https://app.dimensions.ai/details/publication/pub.1099398931. Wikidata property P6179
+  stores only the ten digits, so the regexp accepts both forms. In a sample of 600 Wikidata values, 532
+  match; the rest are physical book dimensions (6 x 0.59 x 9 inches) entered into the property by mistake.'
+categories:
+- texts
+- science
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:pub\.)?\d{10}$
+examples:
+- value: pub.1099398931
+  description: Hortus Woburnensis (Wikidata Q51490822)
+- value: '1042788669'
+  description: 'Dollo on Dollo''s law: irreversibility and the status of evolutionary laws, Wikidata form'
+- value: 6 x 0.59 x 9
+  valid: false
+  description: Book dimensions, a common error in Wikidata
+mappings:
+  wikidata: P6179
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6179
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Dimensions_(database)
+translations:
+  ru:
+    name: Идентификатор публикации в Dimensions
+    doc: Идентификатор публикации в базе данных Dimensions — pub. и десять цифр.

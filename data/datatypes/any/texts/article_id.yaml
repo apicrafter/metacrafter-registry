@@ -1,10 +1,23 @@
 id: article_id
-name: Article ID by field name
+name: Article ID
 status: draft
-doc: Article ID by field name identifier
+doc: 'Identifier of an article, post, story or news item in a content management system, a news site,
+  a blog platform or a publication database. Each system numbers articles its own way: WordPress and Drupal
+  use integers, other systems use slugs, UUIDs or alphanumeric keys. There is no common format and no
+  regexp; metacrafter detects the type by field names such as article_id, post_id, story_id, news_id and
+  entry_id. Article identifiers with a published format have their own records, such as doi, pmid, arxiv_id
+  and publisher_item_identifier.'
 categories:
 - texts
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Content_management_system
+translations:
+  ru:
+    name: Идентификатор статьи
+    doc: Идентификатор статьи, публикации, новости или записи блога во внутренней системе сайта или базы
+      публикаций. Общего формата нет, тип определяется по имени поля.

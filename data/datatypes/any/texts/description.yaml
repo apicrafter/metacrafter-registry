@@ -1,9 +1,12 @@
 id: description
 name: Description
 status: stable
-doc: Item, Object or entity description, common for any object
+doc: Free-text description of an item, object or entity, such as a product, a dataset, an organization
+  or an event, usually one or several sentences. Field names are description, desc and details. A summary
+  placed before a text is an abstract; the Dublin Core element is dc_description.
 categories:
 - common
+- texts
 langs:
 - common
 is_pii: false
@@ -17,4 +20,4 @@ links:
 translations:
   ru:
     name: Описание
-    doc: Описание объекта или сущности
+    doc: Описание объекта или сущности в свободной форме.

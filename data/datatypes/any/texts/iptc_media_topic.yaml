@@ -1,0 +1,39 @@
+id: iptc_media_topic
+name: IPTC Media Topic code
+status: draft
+doc: Code of a subject in IPTC Media Topics, the taxonomy of about 1400 news subjects that the International
+  Press Telecommunications Council maintains and that news agencies use to tag articles, photos and video.
+  Each code has eight digits. It is written as a QCode with the scheme alias medtop (medtop:15000000 is
+  sport) or as a URI under http://cv.iptc.org/newscodes/mediatopic/. Top-level codes coincide with the
+  older IPTC Subject Codes (alias subj). A bare eight-digit code is not accepted by the regexp, because
+  it looks like a date or a Subject Code. Wikidata property P5429 holds all NewsCodes in the form mediatopic/15000000.
+categories:
+- texts
+- media
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:(?:medtop|mediatopic):|https?://cv\.iptc\.org/newscodes/mediatopic/)\d{8}$
+examples:
+- value: medtop:15000000
+  description: sport
+- value: medtop:20000022
+  description: classical music
+- value: http://cv.iptc.org/newscodes/mediatopic/04000000
+  description: economy, business and finance
+- value: subj:15000000
+  valid: false
+  description: IPTC Subject Code, the older vocabulary
+links:
+- type: doc
+  url: https://iptc.org/standards/media-topics/
+- type: doc
+  url: https://cv.iptc.org/newscodes/mediatopic/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5429
+translations:
+  ru:
+    name: Код темы IPTC Media Topics
+    doc: Восьмизначный код темы из таксономии IPTC Media Topics, которой информационные агентства размечают
+      новости, например medtop:15000000 — спорт.

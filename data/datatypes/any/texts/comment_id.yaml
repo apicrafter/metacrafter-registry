@@ -1,10 +1,21 @@
 id: comment_id
-name: Comment ID by field name
+name: Comment ID
 status: draft
-doc: Comment ID by field name identifier
+doc: Identifier of a comment or a reply under an article, a post, a product or a ticket, assigned by a
+  blog engine, forum, social network, review service or issue tracker. Formats differ from system to system
+  (integers, UUIDs, Snowflake IDs, alphanumeric keys), so there is no regexp; metacrafter detects the
+  type by field names such as comment_id, commentid and reply_id.
 categories:
 - texts
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+links:
+- type: schema.org
+  url: https://schema.org/Comment
+translations:
+  ru:
+    name: Идентификатор комментария
+    doc: Идентификатор комментария или ответа в блоге, форуме, социальной сети или системе отзывов. Общего
+      формата нет, тип определяется по имени поля.

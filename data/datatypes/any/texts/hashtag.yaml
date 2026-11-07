@@ -1,0 +1,42 @@
+id: hashtag
+name: Hashtag
+status: draft
+doc: 'Keyword marked with the # sign in social media posts and messages, used to group posts on one topic.
+  It may contain letters of any script, digits and underscores, but no spaces or punctuation. X (Twitter)
+  and Mastodon do not link a tag made only of digits, so the regexp requires at least one letter. Wikidata
+  property P2572 stores hashtags without the # sign; the regexp requires it, because without it a hashtag
+  is an ordinary word. Python matches letters of all scripts; the browser regexp engine matches only Latin
+  letters, and neither matches combining vowel signs of Indic scripts.'
+categories:
+- texts
+- internet
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^#\w*[^\W\d_]\w*$
+examples:
+- value: '#ww2'
+  description: World War II (Wikidata P2572)
+- value: '#спорт'
+  description: Sport, in Russian (Wikidata P2572)
+- value: '#16'
+  valid: false
+  description: Digits only, not linked as a hashtag
+- value: '#open data'
+  valid: false
+  description: A space ends the hashtag
+mappings:
+  wikidata: P2572
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Hashtag
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2572
+- type: doc
+  url: https://github.com/twitter/twitter-text/blob/master/conformance/extract.yml
+translations:
+  ru:
+    name: Хештег
+    doc: 'Ключевое слово со знаком # в публикациях социальных сетей. Состоит из букв, цифр и знаков подчёркивания,
+      без пробелов; тег только из цифр не считается хештегом.'

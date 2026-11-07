@@ -1,0 +1,38 @@
+id: ru_bigenc_id
+name: Great Russian Encyclopedia portal ID (bigenc.ru)
+status: draft
+doc: 'Identifier of an article on bigenc.ru, the portal of the Great Russian Encyclopedia (Большая российская
+  энциклопедия), as in https://bigenc.ru/c/moskva-a34bd2: the transliterated title in lowercase with hyphens,
+  then a hyphen and six hexadecimal characters. The regexp matches 2999 of 3000 sampled values of Wikidata
+  property P11514. The 2014-2017 version of the site, old.bigenc.ru, used numbers of six or seven digits
+  (Wikidata property P2924); they are not this type.'
+categories:
+- texts
+- publishing
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^[a-z0-9]+(?:-[a-z0-9]+)*-[0-9a-f]{6}$
+examples:
+- value: moskva-a34bd2
+  description: Moscow
+- value: mendeleev-dmitrii-ivanovich-d3d5df
+  description: Dmitri Mendeleev
+- value: '1800051'
+  valid: false
+  description: ID of the old site old.bigenc.ru (adaptive radiation)
+mappings:
+  wikidata: P11514
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P11514
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Great_Russian_Encyclopedia
+translations:
+  ru:
+    name: Идентификатор статьи на портале «Большой российской энциклопедии»
+    doc: Идентификатор статьи на портале bigenc.ru — транслитерированное название через дефис и шесть
+      шестнадцатеричных символов, например moskva-a34bd2.
