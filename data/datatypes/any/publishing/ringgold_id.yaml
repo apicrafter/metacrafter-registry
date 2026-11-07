@@ -18,6 +18,9 @@ examples:
   description: Grand Accélérateur National d'Ions Lourds
 - value: '428759'
   description: Mexican Red Cross
+- value: '5072000'
+  valid: false
+  description: Seven digits
 mappings:
   wikidata: P3500
 links:
@@ -25,3 +28,7 @@ links:
   url: https://en.wikipedia.org/wiki/Ringgold_identifier
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P3500
+translations:
+  ru:
+    name: Идентификатор Ringgold
+    doc: Номер организации в базе Ringgold Identify, используемой издателями и в ORCID.

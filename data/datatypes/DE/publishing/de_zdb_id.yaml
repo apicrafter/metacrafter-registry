@@ -1,0 +1,40 @@
+id: de_zdb_id
+name: ZDB ID (German Union Catalogue of Serials)
+status: draft
+doc: Identifier of a serial title (journal, newspaper, series, database) in the Zeitschriftendatenbank
+  (ZDB), the union catalogue of serials and their holdings in German and Austrian libraries. It has up
+  to seven digits, a hyphen and a check character, a digit or X. The regexp is the Wikidata format of
+  property P1042.
+categories:
+- publishing
+country:
+- DE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,7}-[\dxX]$
+examples:
+- value: 125917-9
+  description: Der Tagesspiegel
+- value: 972196-4
+  description: The Washington Post
+- value: '1259179'
+  valid: false
+  description: The hyphen before the check character is missing
+mappings:
+  wikidata: P1042
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Zeitschriftendatenbank
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1042
+- type: doc
+  url: https://zdb-katalog.de/
+translations:
+  ru:
+    name: Идентификатор ZDB (сводный каталог периодики Германии)
+    doc: 'Номер записи о периодическом издании в сводном каталоге ZDB: до семи цифр, дефис и контрольный
+      символ.'
+  de:
+    name: ZDB-ID

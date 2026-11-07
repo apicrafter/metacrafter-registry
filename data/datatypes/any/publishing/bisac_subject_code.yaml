@@ -1,0 +1,40 @@
+id: bisac_subject_code
+name: BISAC Subject Heading code
+status: draft
+doc: Code of a BISAC Subject Heading, the subject scheme of the Book Industry Study Group (BISG) that
+  publishers, distributors and online booksellers in North America use to classify books. It is three
+  letters for the main subject, such as FIC for fiction or SCI for science, and six digits for the heading
+  within it. Headings are sorted alphabetically, and BISG recommends at most three headings for one book.
+  The regexp is the Wikidata format of property P12164.
+categories:
+- publishing
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{3}\d{6}$
+examples:
+- value: FIC009020
+  description: Fiction / Fantasy / Epic
+- value: SCI098020
+  description: Space exploration
+- value: ANT044000
+  description: Stamp collecting
+- value: OCC038000
+  description: I Ching
+- value: FIC00902
+  valid: false
+  description: Five digits
+mappings:
+  wikidata: P12164
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/BISAC_Subject_Headings
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P12164
+- type: doc
+  url: https://www.bisg.org/complete-bisac-subject-headings-list
+translations:
+  ru:
+    name: Код тематической рубрики BISAC
+    doc: 'Код рубрики книжной тематической классификации BISG: три буквы раздела и шесть цифр.'

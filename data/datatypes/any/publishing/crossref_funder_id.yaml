@@ -1,0 +1,37 @@
+id: crossref_funder_id
+name: Open Funder Registry ID (Crossref Funder ID)
+status: draft
+doc: Identifier of a research funder in the Open Funder Registry of Crossref, which publishers use to
+  record who funded the work they publish. The full identifier is a DOI with the prefix 10.13039, such
+  as 10.13039/501100000780 for the European Commission; the ID is its suffix, nine digits starting with
+  100 or twelve digits starting with 501. Wikidata property P3153 stores the suffix.
+categories:
+- publishing
+- science
+- companies
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:100\d{6}|501\d{9})$
+examples:
+- value: '501100000780'
+  description: European Commission
+- value: '100000879'
+  description: Alfred P. Sloan Foundation
+- value: '501100000831'
+  description: Natural History Museum
+- value: 10.13039/501100000780
+  valid: false
+  description: The funder DOI, not its suffix
+mappings:
+  wikidata: P3153
+links:
+- type: doc
+  url: https://www.crossref.org/services/funder-registry/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3153
+translations:
+  ru:
+    name: Идентификатор фонда в Open Funder Registry (Crossref)
+    doc: Номер организации, финансирующей исследования, в реестре Crossref; суффикс DOI с префиксом 10.13039.

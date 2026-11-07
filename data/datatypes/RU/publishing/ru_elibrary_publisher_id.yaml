@@ -1,0 +1,36 @@
+id: ru_elibrary_publisher_id
+name: eLIBRARY.RU publisher ID
+status: draft
+doc: 'Number of a publisher in eLIBRARY.RU, the Russian scientific electronic library that hosts the Russian
+  Science Citation Index (РИНЦ): the pubsid parameter of elibrary.ru/publisher_about.asp?pubsid=<number>.'
+categories:
+- publishing
+- companies
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d*$
+examples:
+- value: '1'
+  description: Elsevier
+- value: '652'
+  description: Cambridge University Press
+- value: '7984'
+  description: Moscow State Institute of International Relations (MGIMO)
+- value: '0652'
+  valid: false
+  description: Leading zero
+mappings:
+  wikidata: P10953
+links:
+- type: doc
+  url: https://elibrary.ru/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P10953
+translations:
+  ru:
+    name: Идентификатор издательства в eLIBRARY.RU
+    doc: Номер издательства в Научной электронной библиотеке eLIBRARY.RU (параметр pubsid).

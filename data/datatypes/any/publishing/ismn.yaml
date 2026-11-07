@@ -1,8 +1,10 @@
 id: ismn
 name: International Standard Music Number (ISMN)
 status: draft
-doc: ISO 10957 identifier of notated (printed) music. The current form has 13 digits starting with 979-0;
-  the older 10-character form starts with M. The last digit is a check digit.
+doc: 'ISO 10957 identifier of an edition of notated (printed or digital) music: scores, parts and songbooks,
+  but not recordings (isrc) or the musical work itself (iswc). Since 2008 it has 13 digits starting with
+  979-0; the older 10-character form starts with the letter M, which stands for 979-0. The check digit
+  is the GS1 check digit of the 13-digit form, so both forms of one ISMN end with the same digit.'
 categories:
 - publishing
 - media
@@ -11,16 +13,22 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^(?:979[- ]?0|M)(?:[- ]?\d){9}$
+checksum: ismn
 examples:
-- value: '9790032282208'
-  description: Synthetic number with a valid check digit
-- value: '9790051283651'
-  description: Synthetic number with a valid check digit
-- value: 979-0-032-28220-8
-  description: The first example in its printed form
+- value: 979-0-001-11903-0
+  description: Three Bagatelles (Wikidata example)
+- value: 979-0-700-38054-0
+  description: Ipnagogico (Wikidata example)
+- value: M-66134-209-0
+  description: Carl Nielsen Edition, former 10-character form
+- value: '9790001119030'
+  description: Three Bagatelles without hyphens
 - value: '97900322822087'
   valid: false
   description: One character too many
+- value: 979-0-001-11903-1
+  valid: false
+  description: Wrong check digit
 mappings:
   autotype: ismn
   wikidata: P1208
@@ -32,3 +40,10 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ismn.html
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1208
+- type: doc
+  url: https://www.ismn-international.org/
+translations:
+  ru:
+    name: Международный стандартный нотный номер (ISMN)
+    doc: 'Идентификатор нотного издания по ISO 10957: 13 цифр с префиксом 979-0 (прежняя форма — буква
+      M и девять цифр), последняя — контрольная.'

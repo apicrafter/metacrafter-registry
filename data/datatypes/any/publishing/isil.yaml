@@ -1,21 +1,32 @@
 id: isil
 name: International Standard Identifier for Libraries (ISIL)
 status: draft
-doc: 'ISO 15511 identifier of libraries, archives, museums and related organisations. It has up to 15
-  characters: a prefix (a 2-letter country code or a non-national agency prefix), a hyphen and an identifier
-  given by that agency. Letters, digits, hyphens, colons and slashes are used.'
+doc: 'ISO 15511 identifier of a library, archive, museum or related organisation. It has at most 16 characters:
+  a prefix of up to four characters, a hyphen and an identifier of up to 11 characters assigned by the
+  agency that the prefix names. Two-letter prefixes are ISO 3166-1 country codes; longer prefixes such
+  as OCLC name non-national agencies. Latin letters, digits, hyphens, colons and slashes are allowed.
+  Many national identifiers are former MARC organization codes, such as US-DLC.'
 categories:
 - publishing
 langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^(?=.{3,15}$)[A-Za-z0-9]{1,4}-[A-Za-z0-9:/-]+$
+regexp: ^(?=.{3,16}$)[A-Za-z0-9]{1,4}-[A-Za-z0-9:/-]+$
 examples:
-- value: NL-HlGH
-  description: Real-world value published online
-- value: AT-NMW-Z
-  description: Real-world value published online
+- value: US-DLC
+  description: Library of Congress
+- value: CH-000001-5
+  description: Swiss National Library
+- value: DE-MUS-047910
+  description: Senckenberg Museum
+- value: IT-MI0133
+  description: Biblioteca Ambrosiana
+- value: OCLC-DLC
+  description: Non-national prefix (python-stdnum example)
+- value: DLC
+  valid: false
+  description: MARC organization code without the country prefix
 mappings:
   wikidata: P791
   stdnum: isil
@@ -28,3 +39,8 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.isil.html
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P791
+translations:
+  ru:
+    name: Международный стандартный идентификатор библиотек (ISIL)
+    doc: 'Идентификатор библиотеки, архива или музея по ISO 15511: префикс страны или агентства, дефис
+      и код, всего не более 16 символов.'

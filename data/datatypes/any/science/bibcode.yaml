@@ -1,13 +1,14 @@
 id: bibcode
 name: Bibcode (ADS bibliographic code)
 status: draft
-doc: 'Nineteen-character identifier of a publication in the NASA Astrophysics Data System (ADS) and other
-  astronomy databases. Its fixed fields are the year (4 digits), the publication code (5 characters),
+doc: 'Nineteen-character identifier of a publication in the NASA Astrophysics Data System (ADS), SIMBAD,
+  NED and other astronomy databases. Its fixed fields are the year (4 digits), the publication code (5),
   the volume (4), a qualifier (1), the first page (4) and the initial of the first author''s surname (1).
   Periods fill unused positions: 1970ApJ...161L..77K is a 1970 letter (L) in The Astrophysical Journal,
   volume 161, page 77, by Kemp and others. The qualifier can also hold a Physical Review issue as a lowercase
-  letter, or the letter of an article number. The regexp is adapted from the Wikidata format of property
-  P819, with any letter allowed as the qualifier.'
+  letter or the fifth digit of a long page or article number, as in arXiv bibcodes; page fields may contain
+  letters and hyphens, and the last position is a period when there is no author. The regexp is adapted
+  from the Wikidata format of property P819 and accepts these variants.'
 categories:
 - science
 - publishing
@@ -15,7 +16,7 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^\d{4}[A-Za-z.&]{5}[A-Za-z0-9_.]{4}[A-Za-z.][\d.]{4}[A-Z]$
+regexp: ^\d{4}[A-Za-z0-9.&]{5}[A-Za-z0-9_.]{4}[A-Za-z0-9.][A-Za-z0-9.-]{4}[A-Z.]$
 examples:
 - value: 1970ApJ...161L..77K
   description: The Astrophysical Journal letter
@@ -23,6 +24,10 @@ examples:
   description: Eddington, Monthly Notices of the Royal Astronomical Society
 - value: 1974AJ.....79..819H
   description: Heintz, The Astronomical Journal
+- value: 2004PhRvL..93o0801M
+  description: 'Physical Review Letters article 150801: issue 15 as the letter o'
+- value: 2008AgrJ..100.-166S
+  description: 'Agronomy Journal, page S166: hyphen in the page field'
 - value: 1970ApJ..161L..77K
   valid: false
   description: Eighteen characters
@@ -41,4 +46,5 @@ links:
 translations:
   ru:
     name: Библиографический код ADS (bibcode)
-    doc: Девятнадцатисимвольный идентификатор публикации в астрофизической системе данных NASA (ADS).
+    doc: 'Девятнадцатисимвольный идентификатор публикации в астрофизической системе данных NASA (ADS):
+      год, код издания, том, квалификатор, страница и инициал первого автора.'

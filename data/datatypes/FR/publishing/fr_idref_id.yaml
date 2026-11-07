@@ -1,0 +1,41 @@
+id: fr_idref_id
+name: IdRef ID (SUDOC authority record)
+status: draft
+doc: 'Identifier of an authority record (person, organisation, subject, work) in IdRef, the authority
+  file of SUDOC, the union catalogue of French university libraries. It is the PPN of the record: eight
+  digits and a check character, a digit or X. SUDOC bibliographic records have PPNs of the same form,
+  so a column of PPNs can hold either.'
+categories:
+- publishing
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{8}[\dX]$
+examples:
+- value: 02640267X
+  description: Ukraine
+- value: 026927608
+  description: Victor Hugo
+- value: 073412929
+  description: The Thinker
+- value: 2640267X
+  valid: false
+  description: Leading zero dropped
+mappings:
+  wikidata: P269
+links:
+- type: doc
+  url: https://www.idref.fr/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P269
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Syst%C3%A8me_universitaire_de_documentation
+translations:
+  ru:
+    name: Идентификатор IdRef (авторитетный файл SUDOC)
+    doc: 'Номер авторитетной записи французского сводного каталога SUDOC: восемь цифр и контрольный символ.'
+  fr:
+    name: Identifiant IdRef

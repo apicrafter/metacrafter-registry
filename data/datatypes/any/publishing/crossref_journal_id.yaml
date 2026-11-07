@@ -1,0 +1,31 @@
+id: crossref_journal_id
+name: Crossref journal ID
+status: draft
+doc: Number of a journal title in Crossref, shown in its depositor reports (data.crossref.org/depositorreport?pubid=J<number>)
+  and title lists. Numbers are assigned in sequence, have up to seven digits and no check digit.
+categories:
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,6}$
+examples:
+- value: '298972'
+  description: Bioengineering & Translational Medicine
+- value: '184091'
+  description: Reviews in Vascular Medicine
+- value: J298972
+  valid: false
+  description: With the J of the report URL
+mappings:
+  wikidata: P8375
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8375
+- type: doc
+  url: https://www.crossref.org/
+translations:
+  ru:
+    name: Идентификатор журнала в Crossref
+    doc: Порядковый номер журнала в Crossref.
