@@ -1,0 +1,38 @@
+id: x_post_id
+name: X (Twitter) post ID
+status: draft
+doc: Number of a post (tweet) on X, formerly Twitter, as in https://x.com/i/status/20. Posts since November
+  2010 have Snowflake IDs of 18 or 19 digits that encode the creation time; earlier posts have shorter
+  sequential numbers, the first public post being 20. APIs send the ID as a string because it does not
+  fit a JavaScript number. The regexp is the format of Wikidata property P5933; any large integer matches
+  it, so detect the type by field names such as tweet_id, status_id and post_id.
+categories:
+- texts
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[2-9]\d|[1-9]\d{2,18})$
+examples:
+- value: '20'
+  description: First post on Twitter, 21 March 2006
+- value: '440322224407314432'
+  description: The Oscar selfie post, 2 March 2014 (Wikidata Q56682408)
+- value: '1888944671579078978'
+  description: Post cited in the Wikipedia article on Snowflake IDs
+- value: https://x.com/i/status/20
+  valid: false
+  description: A URL, not the ID
+mappings:
+  wikidata: P5933
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5933
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Twitter
+translations:
+  ru:
+    name: Идентификатор публикации в X (Twitter)
+    doc: Номер публикации (твита) в X, ранее Twitter. С ноября 2010 года это идентификатор Snowflake из
+      18–19 цифр.

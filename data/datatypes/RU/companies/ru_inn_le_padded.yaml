@@ -1,0 +1,39 @@
+id: ru_inn_le_padded
+name: INN of a Russian organization padded to 12 digits
+status: draft
+doc: 'The 10-digit INN of an organization written as 12 digits with two leading zeros, for example 007707083893.
+  Qualified electronic signature certificates used this form in the 12-digit INN attribute (OID 1.2.643.3.131.1.1)
+  before the requirements added a separate 10-digit attribute for organizations, INNLE (OID 1.2.643.100.4).
+  Such certificates, and the portals and exports built from them, keep the form. A real 12-digit INN of
+  a person never starts with 00, and the padded value fails its check digits: the check runs on the last
+  10 digits.'
+semantic_type: inn
+country:
+- RU
+langs:
+- ru
+regexp: ^00\d{10}$
+checksum: ru_inn_padded
+examples:
+- value: 007707083893
+  description: INN 7707083893 (Sberbank) in the 12-digit form
+- value: '007710474375'
+  description: INN of the Ministry of Digital Development of Russia, as the issuer of qualified certificates
+    writes it
+- value: '7707083893'
+  valid: false
+  description: The 10-digit form itself
+- value: 007707083894
+  valid: false
+  description: Wrong check digit
+links:
+- type: doc
+  url: https://legalacts.ru/doc/prikaz-fsb-rf-ot-27122011-n-795/
+- type: other
+  url: https://habr.com/ru/post/588681
+translations:
+  ru:
+    name: ИНН организации в 12-значной записи
+    doc: Десятизначный ИНН организации, дополненный слева двумя нулями до 12 цифр, например 007707083893.
+      Так ИНН юрлица записывали в атрибут ИНН (OID 1.2.643.3.131.1.1) квалифицированного сертификата до
+      появления отдельного атрибута ИННЮЛ (OID 1.2.643.100.4).

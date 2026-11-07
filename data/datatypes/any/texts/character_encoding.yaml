@@ -1,0 +1,34 @@
+id: character_encoding
+name: Character encoding (charset)
+status: draft
+doc: 'Name of the character encoding of a text, as in the charset parameter of a MIME type, an HTML meta
+  tag, an XML declaration or a file''s metadata. The IANA Character Sets registry lists the names and
+  aliases for use on the Internet: up to 40 printable US-ASCII characters, compared without regard to
+  case, such as UTF-8, ISO-8859-1, windows-1251 and KOI8-R. Software also writes unregistered spellings
+  (utf8, cp1251). Field names are charset, encoding and character_set.'
+categories:
+- texts
+- software
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: UTF-8
+  description: Unicode, preferred MIME name in the IANA registry
+- value: windows-1251
+  description: Windows Cyrillic code page
+- value: KOI8-R
+  description: Russian KOI8 encoding
+- value: Shift_JIS
+  description: Japanese encoding
+links:
+- type: doc
+  url: https://www.iana.org/assignments/character-sets/character-sets.xhtml
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Character_encoding
+translations:
+  ru:
+    name: Кодировка символов
+    doc: Название кодировки текста, например UTF-8, windows-1251 или KOI8-R, по реестру Character Sets
+      IANA.

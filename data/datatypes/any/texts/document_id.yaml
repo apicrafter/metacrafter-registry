@@ -1,10 +1,22 @@
 id: document_id
-name: Document ID by field name
+name: Document ID
 status: draft
-doc: Document ID by field name identifier
+doc: Identifier or reference number of a document in a document management system, an archive, a registry
+  or a workflow. Formats differ from system to system, so there is no regexp; metacrafter detects the
+  type by field names such as document_id, doc_id, document_number and reference_number. Documents with
+  a standard numbering have their own records, such as gdti (GS1 Global Document Type Identifier) and
+  the legal act numbers in the legal category.
 categories:
 - texts
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Document_management_system
+translations:
+  ru:
+    name: Идентификатор документа
+    doc: Идентификатор или регистрационный номер документа в системе документооборота, архиве или реестре.
+      Общего формата нет, тип определяется по имени поля.

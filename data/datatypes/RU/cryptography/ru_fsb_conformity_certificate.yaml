@@ -1,0 +1,35 @@
+id: ru_fsb_conformity_certificate
+name: FSB of Russia certificate of conformity number
+status: draft
+doc: 'Number of a certificate of conformity that the FSB of Russia issues for a cryptographic tool (СКЗИ),
+  an electronic signature tool or a certification authority tool: СФ/, three digits, a hyphen and four
+  digits, for example СФ/124-2239. Product documentation and the issuerSignTool extension of qualified
+  certificates (OID 1.2.643.100.112) cite it with words and a date, as in Сертификат соответствия № СФ/124-2239
+  от 04.10.2013; the regexp covers the number alone. The meaning of the three-digit group is not described
+  here.'
+categories:
+- cryptography
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^СФ/\d{3}-\d{4}$
+examples:
+- value: СФ/124-2239
+  description: Cited in qualified certificates of the head certification authority
+- value: СФ/128-2768
+- value: СФ/121-1860
+- value: СФ/124-2239 от 04.10.2013
+  valid: false
+  description: Number with the date; the regexp covers the number alone
+links:
+- type: doc
+  url: https://legalacts.ru/doc/prikaz-fsb-rf-ot-27122011-n-795/
+translations:
+  ru:
+    name: Номер сертификата соответствия ФСБ России
+    doc: Номер сертификата соответствия ФСБ России на СКЗИ, средство электронной подписи или средство
+      удостоверяющего центра, например СФ/124-2239. Указывается в формулярах и в расширении issuerSignTool
+      квалифицированного сертификата.

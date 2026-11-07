@@ -1,0 +1,33 @@
+id: x509_serial_number
+name: X.509 certificate serial number
+status: draft
+doc: 'Serial number that a certification authority assigns to a certificate, unique among the certificates
+  it issues. RFC 5280 limits it to 20 octets. Certificate stores and registries print it in hexadecimal,
+  with or without colons between octets; a leading 00 octet is the sign byte of the DER integer, so a
+  20-octet number may take 21 octets. The format alone looks like any hexadecimal string: the type is
+  told by the field name (serial, serialNumber, СерийныйНомер).'
+categories:
+- cryptography
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:(?:[0-9A-Fa-f]{2}){1,21}|[0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){1,20})$
+examples:
+- value: 00A94CF4CA0000000005A1
+  description: CA certificate of an accredited Russian certification authority (e-trust.gosuslugi.ru)
+- value: 3382BD430000000004B0
+  description: Serial number in the style of Microsoft and CryptoPro CA
+- value: 00:a9:4c:f4:ca:00:00:00:00:05:a1
+  description: The first number with colons, as openssl x509 -text prints it
+- value: 00A94CF4CA0000000005A100A94CF4CA0000000005A1
+  valid: false
+  description: 22 octets, longer than RFC 5280 allows
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc5280#section-4.1.2.2
+translations:
+  ru:
+    name: Серийный номер сертификата X.509
+    doc: Номер, который удостоверяющий центр присваивает сертификату; уникален среди выданных им сертификатов.
+      Записывается в шестнадцатеричном виде, до 20 октетов (RFC 5280).

@@ -1,0 +1,29 @@
+id: iso3166code_part
+name: ISO 3166-2 subdivision code without the country code
+status: draft
+doc: Subdivision part of an ISO 3166-2 code stored without the country code and the hyphen, one to three
+  letters or digits such as VIC for Victoria or MOW for Moscow. The country is in another field of the
+  same record. ROR records (schema v2, field locations.geonames_details.country_subdivision_code) and
+  many address tables store regions this way. Short codes like these cannot be told apart by their value,
+  so the record has no regexp and is recognized by the field name.
+semantic_type: iso3166code
+langs:
+- common
+examples:
+- value: VIC
+  description: Victoria, with country code AU in another field
+- value: MOW
+  description: Moscow, with country code RU in another field
+- value: IDF
+  description: Île-de-France, with country code FR in another field
+- value: '11'
+  description: Tirana County, with country code AL in another field
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_3166-2
+- type: doc
+  url: https://ror.readme.io/docs/ror-data-structure
+translations:
+  ru:
+    name: Код субъекта ISO 3166-2 без кода страны
+    doc: Часть кода ISO 3166-2 после дефиса, например VIC или MOW; код страны хранится в другом поле.

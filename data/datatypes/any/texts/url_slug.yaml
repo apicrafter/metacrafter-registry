@@ -1,0 +1,35 @@
+id: url_slug
+name: URL slug
+status: draft
+doc: 'Readable part of a page URL that names an article, post or product, made from its title: lowercase
+  letters and digits joined by hyphens, such as hello-world in example.com/2024/hello-world. WordPress
+  and most CMS build slugs this way; Django also allows underscores and capital letters, and some sites
+  keep non-Latin letters percent-encoded. The regexp accepts the usual form with at least one hyphen:
+  a one-word slug such as about cannot be told apart from an ordinary word. Field names are slug, url_slug,
+  post_name and permalink.'
+categories:
+- texts
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[a-z0-9]+(?:-[a-z0-9]+)+$
+examples:
+- value: hello-world
+  description: Slug of the default first post of a WordPress site
+- value: sample-page
+  description: Slug of the default page of a WordPress site
+- value: Hello world!
+  valid: false
+  description: A title, not a slug
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Clean_URL
+- type: doc
+  url: https://docs.djangoproject.com/en/stable/ref/models/fields/#slugfield
+translations:
+  ru:
+    name: Слаг (ЧПУ) страницы
+    doc: Человекочитаемая часть адреса страницы, образованная из заголовка статьи или товара, — строчные
+      латинские буквы и цифры через дефис.

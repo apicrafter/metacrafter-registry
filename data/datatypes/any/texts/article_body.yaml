@@ -1,0 +1,22 @@
+id: article_body
+name: Article body (full text)
+status: draft
+doc: Full text of an article, post, news item or document, as opposed to its title, abstract and metadata.
+  Values are long and may hold HTML or Markdown markup. Field names are body, article_body, text, content,
+  full_text and fulltext. Schema.org calls it articleBody for articles and text for any creative work.
+categories:
+- texts
+langs:
+- common
+is_pii: false
+mappings:
+  schema_org: articleBody
+links:
+- type: schema.org
+  url: https://schema.org/articleBody
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Article_(publishing)
+translations:
+  ru:
+    name: Текст статьи
+    doc: Полный текст статьи, публикации, новости или документа без заголовка, аннотации и метаданных.

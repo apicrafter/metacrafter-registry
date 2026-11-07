@@ -1,6 +1,6 @@
 id: crossref_funder_id
 name: Open Funder Registry ID (Crossref Funder ID)
-status: draft
+status: stable
 doc: Identifier of a research funder in the Open Funder Registry of Crossref, which publishers use to
   record who funded the work they publish. The full identifier is a DOI with the prefix 10.13039, such
   as 10.13039/501100000780 for the European Commission; the ID is its suffix, nine digits starting with

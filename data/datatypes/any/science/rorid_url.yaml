@@ -1,0 +1,31 @@
+id: rorid_url
+name: ROR ID as a URL
+status: draft
+doc: ROR identifier written as a URL, https://ror.org/ followed by the nine-character ID. ROR uses this
+  form in the id and relationships fields of its records and recommends it for display. DataCite search
+  facets also show it without the scheme, as ror.org/ and the ID.
+semantic_type: rorid
+langs:
+- common
+regexp: ^(?:https?://)?ror\.org/0[0-9a-hjkmnp-tv-z]{6}[0-9]{2}$
+checksum: ror
+examples:
+- value: https://ror.org/04ttjf776
+  description: RMIT University
+- value: https://ror.org/02mhbdp94
+  description: Universidad de Los Andes, the example of the ROR documentation
+- value: ror.org/01t3wyv61
+  description: National Institute for Fusion Science, as in a DataCite affiliation facet
+- value: https://ror.org/about
+  valid: false
+  description: A ROR web page, not an organization
+- value: 04ttjf776
+  valid: false
+  description: The bare ID (rorid)
+links:
+- type: doc
+  url: https://ror.readme.io/docs/identifier
+translations:
+  ru:
+    name: ROR ID в форме URL
+    doc: Идентификатор организации в ROR в виде адреса https://ror.org/ и девяти символов идентификатора.

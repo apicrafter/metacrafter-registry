@@ -1,19 +1,31 @@
 id: headline
 name: Headline
 status: draft
-doc: Headline of the article.
+doc: Title of a news article, blog post or press release as the publication shows it above the text, usually
+  one short phrase or sentence. A publisher may change it after publication or test several versions;
+  a secondary line under it is a subtitle. Field names are headline, title and article_title; in news
+  datasets a title field usually holds the headline.
+parent: title
 categories:
-- common
 - texts
+- common
 langs:
 - common
 is_pii: false
+examples:
+- value: DEWEY DEFEATS TRUMAN
+  description: Front page of the Chicago Daily Tribune, 3 November 1948
+- value: MEN WALK ON MOON
+  description: Front page of The New York Times, 21 July 1969
 mappings:
   schema_org: headline
 links:
 - type: schema.org
   url: https://schema.org/headline
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Headline
 translations:
   ru:
     name: Заголовок
-    doc: Заголовок статьи
+    doc: Заголовок новости, статьи, записи блога или пресс-релиза в том виде, в каком он опубликован над
+      текстом.

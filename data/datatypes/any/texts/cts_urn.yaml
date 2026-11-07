@@ -1,0 +1,32 @@
+id: cts_urn
+name: CTS URN (Canonical Text Services)
+status: draft
+doc: 'URN that cites a passage of a text by its canonical reference, used for classical Greek and Latin
+  texts in the Perseus Digital Library, the Homer Multitext and other CITE/CTS projects. It has the form
+  urn:cts:<namespace>:<work>:<passage>. The work part has up to four dot-separated levels: text group,
+  work, version (edition or translation) and exemplar. The passage is a citation such as book.line, a
+  range joined by a hyphen, or a node with a subreference such as @Atreus[1]. The specification requires
+  the colon before an empty passage, but catalogues often omit it, so the regexp accepts both.'
+parent: urn
+categories:
+- texts
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^urn:cts:[A-Za-z0-9_-]+:[A-Za-z0-9_-]+(?:\.[A-Za-z0-9_-]+){0,3}(?::[^\s:%/?#]*)?$
+examples:
+- value: urn:cts:greekLit:tlg0012.tlg001.hmt01:10.1-10.10
+  description: Iliad, book 10, lines 1 to 10 (example of the specification)
+- value: urn:cts:greekLit:tlg0012.tlg001.hmt01:10.4@Atreus[1]
+  description: First occurrence of a word in a line (example of the specification)
+- value: urn:cts:greekLit
+  valid: false
+  description: Namespace without a work
+links:
+- type: doc
+  url: https://cite-architecture.github.io/ctsurn_spec/
+translations:
+  ru:
+    name: CTS URN (Canonical Text Services)
+    doc: URN для ссылки на место канонического текста, прежде всего античного, по схеме urn:cts:<пространство>:<произведение>:<место>.

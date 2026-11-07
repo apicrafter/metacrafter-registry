@@ -1,0 +1,39 @@
+id: upos_tag
+name: Universal POS tag (Universal Dependencies)
+status: draft
+doc: 'Part-of-speech tag from the Universal Dependencies (UD) tag set, used to annotate words in text
+  corpora and by NLP tools such as spaCy and Stanza for all languages. The set has 17 tags: ADJ, ADP,
+  ADV, AUX, CCONJ, DET, INTJ, NOUN, NUM, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB and X. Language-specific
+  tag sets, such as the Penn Treebank tags NN and VBZ, are different types. Field names are upos, pos
+  and pos_tag.'
+categories:
+- texts
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:ADJ|ADP|ADV|AUX|CCONJ|DET|INTJ|NOUN|NUM|PART|PRON|PROPN|PUNCT|SCONJ|SYM|VERB|X)$
+examples:
+- value: NOUN
+  description: Noun
+- value: PROPN
+  description: Proper noun
+- value: CCONJ
+  description: Coordinating conjunction
+- value: NN
+  valid: false
+  description: Penn Treebank tag, not a UD tag
+- value: CONJ
+  valid: false
+  description: Tag of UD version 1, replaced by CCONJ in version 2
+links:
+- type: doc
+  url: https://universaldependencies.org/u/pos/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Universal_Dependencies
+translations:
+  ru:
+    name: Универсальный тег части речи (Universal Dependencies)
+    doc: Тег части речи из набора Universal Dependencies (17 тегов), которым размечают слова в корпусах
+      текстов.

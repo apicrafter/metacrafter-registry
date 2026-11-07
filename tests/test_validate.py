@@ -178,3 +178,37 @@ def test_example_must_match_the_whole_regexp(mini_data):
         "is_pii: false\nregexp: '\\d{7}'\nexamples:\n- value: '12345678'\n",
     )
     assert any("does not match regexp" in m for m in messages(mini_data))
+
+
+# Inputs that make a regexp with ambiguous nested quantifiers backtrack
+# exponentially. They are short, so a regression fails the test in seconds
+# instead of hanging it. The Base64 body of a certificate is the kind of long
+# value that identify() sees in real columns.
+_BACKTRACKING_PROBES = [
+    "CH" * 12 + "!",
+    "A" * 24 + "!",
+    "a1" * 15 + "!",
+    "a-" * 15 + "!",
+    "Аб" * 15 + "!",
+    "MIICLDCCAdKgAwIBAgIBADAKBggqhkjOPQQDAjB9MQswCQYDVQQGEwJCRTEPMA0G"
+    "A1UEChMGR251VExTMSUwIwYDVQQLExxHbnVUTFMgY2VydGlmaWNhdGUgYXV0aG9y",
+]
+
+
+def test_repository_regexps_do_not_backtrack_catastrophically(repo_sources):
+    import re
+    import time
+
+    slow = []
+    for record in repo_sources.datatypes:
+        pattern = record.data.get("regexp")
+        if not pattern:
+            continue
+        compiled = re.compile(pattern)
+        for probe in _BACKTRACKING_PROBES:
+            start = time.perf_counter()
+            compiled.search(probe)
+            elapsed = time.perf_counter() - start
+            if elapsed > 0.2:
+                slow.append(f"{record.data['id']}: {elapsed:.2f}s on {probe[:12]!r}")
+    assert slow == [], "\n".join(slow)

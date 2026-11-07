@@ -1,0 +1,26 @@
+id: number_of_pages
+name: Number of pages
+status: draft
+doc: Number of pages of a book, journal issue, report or document, as a non-negative integer. Library
+  catalogues also write the extent as text, such as xii, 345 p., which is not this type. Any integer looks
+  the same, so there is no regexp; detect the type by field names such as pages, page_count, num_pages
+  and number_of_pages.
+parent: quantity
+categories:
+- texts
+- publishing
+langs:
+- common
+is_pii: false
+mappings:
+  wikidata: P1104
+  schema_org: numberOfPages
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1104
+- type: schema.org
+  url: https://schema.org/numberOfPages
+translations:
+  ru:
+    name: Количество страниц
+    doc: Число страниц книги, выпуска журнала, отчёта или документа.

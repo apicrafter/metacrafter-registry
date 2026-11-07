@@ -1,0 +1,35 @@
+id: author_name
+name: Author name (byline)
+status: draft
+doc: Name of the author or authors of a text as written in a byline, a citation or a catalogue record.
+  One value often lists several names separated by commas, semicolons or "and", and names may be inverted
+  (Austen, Jane) or abbreviated (J. Austen). The author can be an organization. Field names are author,
+  authors, byline, creator and author_name. Wikidata keeps such names in property P2093 when the author
+  has no item; for a single person's name see person_fullname.
+categories:
+- texts
+- persons
+- pii
+langs:
+- common
+is_pii: true
+examples:
+- value: Jane Austen
+  description: Author of Pride and Prejudice
+- value: Tolstoy, Leo
+  description: Inverted form used in library catalogues
+mappings:
+  wikidata: P2093
+  schema_org: author
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2093
+- type: schema.org
+  url: https://schema.org/author
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Byline
+translations:
+  ru:
+    name: Автор (подпись к тексту)
+    doc: Имя автора или авторов текста в том виде, в каком оно указано в подписи, ссылке или каталожной
+      записи. В одном поле часто перечислено несколько авторов.

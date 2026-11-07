@@ -1,10 +1,21 @@
 id: content_id
-name: Content ID by field name
+name: Content item ID
 status: draft
-doc: Content ID by field name identifier
+doc: Identifier of a content item, such as a page, node or entry, in a content management system. Drupal
+  calls it a node ID; other systems call it a page, entry or content ID. Formats differ from system to
+  system, so there is no regexp; metacrafter detects the type by field names such as content_id, cms_id,
+  page_id and node_id. Not to be confused with YouTube Content ID, the copyright matching system.
 categories:
 - texts
 langs:
-- en
+- common
 is_pii: false
 classification: identifier
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Content_management_system
+translations:
+  ru:
+    name: Идентификатор материала
+    doc: Идентификатор материала (страницы, узла, записи) в системе управления содержимым сайта. Общего
+      формата нет, тип определяется по имени поля.

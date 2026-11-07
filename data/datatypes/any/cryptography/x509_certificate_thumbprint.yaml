@@ -1,0 +1,30 @@
+id: x509_certificate_thumbprint
+name: X.509 certificate thumbprint (compact hex)
+status: draft
+doc: 'Fingerprint of an X.509 certificate written as hexadecimal digits without separators, as Windows
+  calls it a thumbprint and as certificate stores, CryptoAPI and Russian e-signature portals store it:
+  40 digits for SHA-1 and 64 for SHA-256 of the DER certificate. The value looks like a plain SHA-1 or
+  SHA-256 hash: the type is told by the field name (thumbprint, fingerprint, Отпечаток).'
+semantic_type: x509_certificate_fingerprint
+langs:
+- common
+regexp: ^(?:[0-9A-Fa-f]{40}|[0-9A-Fa-f]{64})$
+examples:
+- value: AEC46061F458FCB56E204A1179DEBBCF237F1C53
+  description: SHA-1 thumbprint of the example certificate of RFC 7468, section 5.1
+- value: FF2D1B4EE9CD625A52CA49AFA1974EA33F09ED35DB8E554DF0EC7D4C73A772F2
+  description: SHA-256 thumbprint of the same certificate
+- value: 7EB42A5F048DE8D4C9AA77B8B86C39CA3B4847A7
+  description: Thumbprint of a CA certificate in the register of accredited certification authorities
+    (e-trust.gosuslugi.ru)
+- value: AE:C4:60:61:F4:58:FC:B5:6E:20:4A:11:79:DE:BB:CF:23:7F:1C:53
+  valid: false
+  description: With colons; that form is the x509_certificate_fingerprint regexp
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Public_key_fingerprint
+translations:
+  ru:
+    name: Отпечаток сертификата X.509
+    doc: Отпечаток (хэш SHA-1 или SHA-256) сертификата X.509 в шестнадцатеричном виде без разделителей,
+      как его хранят CryptoAPI и порталы электронной подписи.
