@@ -355,6 +355,14 @@
       }
       return rem === 1;
     },
+    ror: function (v) {
+      var s = String(v).replace(/^(?:https?:\/\/)?ror\.org\//i, "").toLowerCase();
+      var m = /^0([0-9a-hjkmnp-tv-z]{6})([0-9]{2})$/.exec(s);
+      if (!m) return false;
+      var n = 0;
+      for (var i = 0; i < 6; i += 1) n = n * 32 + "0123456789abcdefghjkmnpqrstvwxyz".indexOf(m[1][i]);
+      return Number(m[2]) === 98 - ((n * 100) % 97);
+    },
     de_ustidnr: function (v) {
       var s = stripPrefix(v, "DE");
       return /^[1-9]\d{8}$/.test(s) && mod11_10(s);
