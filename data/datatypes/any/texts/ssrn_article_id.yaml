@@ -1,0 +1,35 @@
+id: ssrn_article_id
+name: SSRN article ID
+status: draft
+doc: Number of a paper or preprint in SSRN (Social Science Research Network), the repository owned by
+  Elsevier, as in https://ssrn.com/abstract=1121926. SSRN calls it the abstract ID. DOIs of SSRN papers
+  end with the same number (10.2139/ssrn.1121926). The regexp matches all sampled values of Wikidata property
+  P893.
+categories:
+- texts
+- science
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,7}$
+examples:
+- value: '1121926'
+  description: 'Vile Crime or Inalienable Right: Defining Incitement to Genocide (Wikidata Q116786576)'
+- value: '3365519'
+  description: Governance of Blockchain and Distributed Ledger Technology Projects (Wikidata Q111688685)
+- value: https://ssrn.com/abstract=1121926
+  valid: false
+  description: A URL, not the ID
+mappings:
+  wikidata: P893
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P893
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Social_Science_Research_Network
+translations:
+  ru:
+    name: Идентификатор статьи SSRN
+    doc: Номер статьи или препринта в репозитории SSRN (Social Science Research Network).

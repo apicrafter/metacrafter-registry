@@ -1,0 +1,38 @@
+id: semantic_scholar_paper_id
+name: Semantic Scholar paper ID
+status: draft
+doc: 'Identifier of a paper in Semantic Scholar, the academic search engine of the Allen Institute for
+  AI: 40 lowercase hexadecimal characters, as in https://www.semanticscholar.org/paper/<id>. The Semantic
+  Scholar API also gives each paper a numeric CorpusId, which is a different value. Any SHA-1 hash has
+  the same form, so a match alone does not prove the type. The regexp matches all sampled values of Wikidata
+  property P4011.'
+categories:
+- texts
+- science
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-f]{40}$
+examples:
+- value: 6d98a5901f53999eef5f74c931abfd6bd6656cf6
+  description: Software Inspection (Wikidata Q76967507)
+- value: e1532a289eaa046731e52547a0e8c7011b967a37
+  description: Functional Requirements for Bibliographic Records (Wikidata Q103316367)
+- value: 6D98A5901F53999EEF5F74C931ABFD6BD6656CF6
+  valid: false
+  description: Uppercase, not the form Semantic Scholar uses
+mappings:
+  wikidata: P4011
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4011
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Semantic_Scholar
+- type: doc
+  url: https://api.semanticscholar.org/api-docs/graph
+translations:
+  ru:
+    name: Идентификатор статьи в Semantic Scholar
+    doc: Идентификатор публикации в поисковой системе Semantic Scholar — 40 шестнадцатеричных символов.

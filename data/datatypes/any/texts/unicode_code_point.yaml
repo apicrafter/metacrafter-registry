@@ -1,0 +1,43 @@
+id: unicode_code_point
+name: Unicode code point
+status: draft
+doc: 'Number of a character in Unicode, written in the notation of the Unicode Standard: U+ and four to
+  six uppercase hexadecimal digits, with leading zeros only up to four digits, in the range U+0000 to
+  U+10FFFF. Wikidata property P4213 and Unicode tables write the digits without the U+ prefix; the regexp
+  requires it, because four bare hexadecimal digits look like any number. Lowercase forms such as u+00e9
+  occur in data but are not the standard notation.'
+categories:
+- texts
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^U\+(?:[0-9A-F]{4}|[1-9A-F][0-9A-F]{4}|10[0-9A-F]{4})$
+examples:
+- value: U+0041
+  description: LATIN CAPITAL LETTER A
+- value: U+20AC
+  description: EURO SIGN
+- value: U+1F600
+  description: GRINNING FACE
+- value: U+41
+  valid: false
+  description: Fewer than four digits
+- value: U+110000
+  valid: false
+  description: Beyond the last code point U+10FFFF
+mappings:
+  wikidata: P4213
+links:
+- type: doc
+  url: https://www.unicode.org/versions/Unicode16.0.0/core-spec/appendix-a/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Code_point
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4213
+translations:
+  ru:
+    name: Кодовая точка Unicode
+    doc: Номер символа в Unicode в записи стандарта — U+ и от четырёх до шести шестнадцатеричных цифр,
+      от U+0000 до U+10FFFF.

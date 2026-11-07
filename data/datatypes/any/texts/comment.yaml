@@ -1,7 +1,10 @@
 id: comment
 name: Comment / Note
 status: stable
-doc: Comment/note for the object or entity.
+doc: Free-text comment, note or remark attached to a record or an object, such as a note on a payment,
+  a remark in a register or a user's comment under a post. Field names are comment, comments, note, notes,
+  remarks and, in Russian data, примечание and комментарий. Short structured remarks look like categories,
+  long ones like article text.
 categories:
 - common
 - texts
@@ -10,10 +13,13 @@ langs:
 is_pii: false
 mappings:
   sherlock: notes
+  schema_org: comment
 links:
 - type: schema.org
   url: https://schema.org/Comment
+- type: schema.org
+  url: https://schema.org/comment
 translations:
   ru:
     name: Комментарий / примечание
-    doc: Комментарий или примечание к объекту
+    doc: Комментарий, примечание или замечание к записи или объекту в свободной форме.
