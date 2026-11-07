@@ -1,0 +1,30 @@
+id: apple_cdhash
+name: Apple code directory hash (cdhash)
+status: draft
+doc: 'Hash of the code directory in an Apple code signature, which in turn holds the hashes of the signed
+  code and resources, so the cdhash identifies one signed build of a Mach-O binary or bundle. It is 20
+  bytes, written as 40 lowercase hexadecimal digits: a SHA-1 hash, or a SHA-256 hash truncated to 20 bytes.
+  codesign --display -vvv shows it as CDHash, and a notarization ticket is a set of cdhashes. Each architecture
+  of a universal binary has its own cdhash. VirusTotal reports it in signature_info. The value alone looks
+  like a SHA-1 hash.'
+categories:
+- software
+- cryptography
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-f]{40}$
+examples:
+- value: ff19a91b272a49d1a0f16ee54c672da60f0e116f
+  description: SHA-256 cdhash truncated to 20 bytes, from Apple TN3126
+- value: 4dbc916a07fb02653ceecef8bef09f43e55cf436
+  description: SHA-1 cdhash of the same code, from Apple TN3126
+- value: ff19a91b272a49d1a0f16ee54c672da60f0e116fae890512a3609913a01b488c
+  valid: false
+  description: Full SHA-256 value (CandidateCDHashFull), not the 20-byte cdhash
+links:
+- type: doc
+  url: https://developer.apple.com/documentation/technotes/tn3126-inside-code-signing-hashes
+- type: other
+  url: https://virustotal.readme.io/reference/file-object-signature-info

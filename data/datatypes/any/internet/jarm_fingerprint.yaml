@@ -1,0 +1,34 @@
+id: jarm_fingerprint
+name: JARM TLS server fingerprint
+status: draft
+doc: 'Fingerprint of a TLS server, created at Salesforce in 2020 and computed by actively sending it ten
+  crafted ClientHello messages. It is 62 lowercase hexadecimal digits: the first 30 encode the cipher
+  (two digits) and TLS version (one digit, 0 or a-f) that the server chose for each of the ten handshakes,
+  with 000 for a refused handshake, and the last 32 are a truncated SHA-256 hash of the extensions and
+  ALPN values it returned. A server that answers none of them gets 62 zeros. Shodan, Censys and VirusTotal
+  (jarm attribute of domains and IP addresses) report it, and it is used to find malware command-and-control
+  servers. Servers with the same software and configuration share a JARM.'
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[0-9a-f]{2}[0a-f]){10}[0-9a-f]{32}$
+examples:
+- value: 27d40d40d29d40d1dc42d43d00041d4689ee210389f4f6b4b5b1b93f92252d
+  description: google.com (JARM README; also the example in the VirusTotal domain object)
+- value: 2ad2ad0002ad2ad00042d42d00000069d641f34fe76acdc05c40262f8815e5
+  description: salesforce.com, with refused handshakes (JARM README)
+- value: 07d14d16d21d21d07c42d41d00041d24a458a375eef0c576d23a7bab9a9fb1
+  description: Cobalt Strike command-and-control server (JARM README)
+- value: 27d40d40d29d40d1dc42d43d00041d4689ee210389f4f6b4b5b1b93f92252d00
+  valid: false
+  description: 64 digits, the length of a full SHA-256 hash
+links:
+- type: doc
+  url: https://github.com/salesforce/jarm
+- type: other
+  url: https://engineering.salesforce.com/easily-identify-malicious-servers-on-the-internet-with-jarm-e095edac525a
+- type: other
+  url: https://virustotal.readme.io/reference/domains-object

@@ -1,0 +1,38 @@
+id: android_package_name
+name: Android application ID (package name)
+status: draft
+doc: Identifier of an Android app on the device and in Google Play, set by applicationId in the Gradle
+  build and stored as the package attribute of the merged AndroidManifest.xml; Android APIs such as Context.getPackageName()
+  call it the package name. It looks like a Java package name in reverse-domain order. Android requires
+  at least two segments separated by dots, each segment starting with a letter, and only the characters
+  a-z, A-Z, 0-9 and underscore. Google Play treats an upload with a different application ID as a different
+  app. VirusTotal reports it as the androguard Package of an APK. The format also matches many domain
+  names and Java class names, so use the field name or context.
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Za-z][A-Za-z0-9_]*(?:\.[A-Za-z][A-Za-z0-9_]*)+$
+examples:
+- value: com.example.myapp
+  description: Example application ID in the Android developer documentation
+- value: ru.oneme.app
+  description: Package name of an APK in its VirusTotal report
+- value: myapp
+  valid: false
+  description: Only one segment
+- value: com.example.2app
+  valid: false
+  description: Segment starts with a digit
+- value: com.example.my-app
+  valid: false
+  description: Hyphen is not allowed
+mappings:
+  wikidata: P3418
+links:
+- type: doc
+  url: https://developer.android.com/build/configure-app-module#set-application-id
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3418

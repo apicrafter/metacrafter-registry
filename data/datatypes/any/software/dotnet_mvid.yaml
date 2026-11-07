@@ -1,0 +1,28 @@
+id: dotnet_mvid
+name: .NET module version ID (MVID)
+status: draft
+doc: GUID that the compiler writes into the metadata of every .NET module (the Module table, stored in
+  the GUID heap) so that two versions of the same module can be told apart. The compiler generates a new
+  MVID for each build, and System.Reflection.Module.ModuleVersionId returns it. Malware analysts use it,
+  with the TypeLib ID, to link samples that come from the same build; VirusTotal reports it as dot_net_guids.mvid.
+  The text form is a standard UUID.
+parent: uuid
+categories:
+- software
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$
+examples:
+- value: c7c0f129-4c73-461f-a638-94f3901fae90
+  description: MVID of a .NET trojan sample (liuyue.exe) in its VirusTotal report
+- value: c7c0f1294c73461fa63894f3901fae90
+  valid: false
+  description: GUID digits without hyphens
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/dotnet/api/system.reflection.module.moduleversionid
+- type: other
+  url: https://virustotal.readme.io/reference/file-object-dot-net-guids

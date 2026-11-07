@@ -1,0 +1,40 @@
+id: mbc_behavior_id
+name: MBC behavior ID
+status: draft
+doc: 'Identifier of a behavior, micro-behavior or method in the Malware Behavior Catalog (MBC), the MITRE
+  catalog of malware objectives and behaviors that complements ATT&CK and that malware analysis tools
+  such as capa and CAPE map their results to. The letter shows the kind: B for an MBC behavior, C for
+  a micro-behavior, E for an ATT&CK technique enhanced for malware (E1027 enhances T1027) and F for an
+  enhanced ATT&CK sub-technique, followed by four digits. A method adds a dot and three digits to B, C
+  and F identifiers (C0029.003), or .m and two digits to E identifiers (E1027.m02). VirusTotal behavior
+  reports list them with links to the MBC project. Objectives have their own identifiers (mbc_objective_id).'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[BCF][0-9]{4}(?:\.[0-9]{3})?|E[0-9]{4}(?:\.m[0-9]{2})?)$
+examples:
+- value: B0001
+  description: Debugger Detection
+- value: C0029.003
+  description: Cryptographic Hash, method SHA256 (micro-behavior)
+- value: E1027
+  description: Obfuscated Files or Information
+- value: E1027.m02
+  description: Obfuscated Files or Information, method Encoding - Standard Algorithm
+- value: F0001.013
+  description: Software Packing, method ASPack
+- value: T1027
+  valid: false
+  description: ATT&CK technique ID (mitre_attack_technique_id)
+- value: E1027.002
+  valid: false
+  description: Method of an E behavior needs the m prefix
+- value: OB0001
+  valid: false
+  description: Objective ID (mbc_objective_id)
+links:
+- type: doc
+  url: https://github.com/MBCProject/mbc-markdown#identifiers
