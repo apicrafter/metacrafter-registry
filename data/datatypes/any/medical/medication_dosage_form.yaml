@@ -1,0 +1,53 @@
+id: medication_dosage_form
+name: Medication dosage form
+status: draft
+doc: Pharmaceutical form of a medicine that fits the way it is given or used, such as tablets, film-coated
+  tablets, capsules, syrup or a solution for injection. Drug registers and catalogues take the form from
+  a closed list of terms. The EDQM Standard Terms are the international list of dose forms. In the Eurasian
+  Economic Union the list is the Nomenclature of dosage forms (Decision No. 172 of the EEC Board, 22 December
+  2015); in Russia the state register of medicines (ГРЛС) and the ESKLP catalogue record the form in Russian.
+  The value is a term, not a code, so a dictionary of terms detects it better than a regular expression.
+categories:
+- medical
+langs:
+- en
+- ru
+is_pii: false
+classification: categorical
+examples:
+- value: Капсулы
+  description: Capsules, from the ESKLP catalogue
+- value: Таблетки, покрытые оболочкой
+  description: Coated tablets, from the ESKLP catalogue
+- value: Раствор для внутривенного введения
+  description: Solution for intravenous administration, from the ESKLP catalogue
+- value: Капли гомеопатические
+  description: Homeopathic drops, from the ESKLP catalogue
+- value: Film-coated tablet
+  description: EDQM Standard Term
+- value: Capsule, hard
+  description: EDQM Standard Term
+- value: Solution for injection
+  description: EDQM Standard Term
+mappings:
+  wikidata: Q718608
+  schema_org: dosageForm
+links:
+- type: doc
+  url: https://standardterms.edqm.eu/
+- type: doc
+  url: https://legalacts.ru/doc/reshenie-kollegii-evraziiskoi-ekonomicheskoi-komissii-ot-22122015-n-172/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Dosage_form
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q718608
+- type: schema.org
+  url: https://schema.org/dosageForm
+translations:
+  ru:
+    name: Лекарственная форма
+    doc: Состояние лекарственного препарата, которое соответствует способу его введения и применения,
+      например таблетки, таблетки, покрытые пленочной оболочкой, капсулы, сироп или раствор для инъекций.
+      Значение берется из закрытого перечня терминов. В ЕАЭС это Номенклатура лекарственных форм (Решение
+      Коллегии ЕЭК от 22.12.2015 № 172); в России лекарственную форму указывают государственный реестр
+      лекарственных средств (ГРЛС) и ЕСКЛП.
