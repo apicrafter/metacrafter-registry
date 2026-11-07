@@ -341,8 +341,9 @@ translations:
     `.version`.
 - **CLI subcommands:** `build`, `validate`, `stats`, `report`, `migrate`,
   `serve` (which serves `dist/` locally), `mcp` and `lookup`.
-- **Release:** PyPI trusted publishing on tag. The `metacrafter-registry`
-  name was free when checked on 2026-11-04.
+- **Release:** a GitHub Release on tag, with the wheel and its data snapshot.
+  The package is not published on PyPI (owner decision, 2026-11-07): the
+  registry is used through its site and API.
 - **Rationale:** this mirrors how metacrafter-rules bundles its rules.
   metacrafter can enrich scan output offline, which is the open item "Wire
   RegistryClient into scan output" in its ROADMAP.
@@ -453,7 +454,7 @@ openspec/, devdocs/
      scoring, real stats, file renames.
 4. **Phase 3, agents.**
    - `llms.txt` and `llms-full.txt`, Markdown twins, JSON-LD and SKOS, the
-     PyPI package with the MCP server, skills, and the RAG corpus.
+     Python package with the MCP server, skills, and the RAG corpus.
 5. **Phase 4, ecosystem.**
    - Rules coverage and the generated tool record, the weekly drift job, the
      `/identify` playground, and starter crosswalks (Presidio, Google DLP,

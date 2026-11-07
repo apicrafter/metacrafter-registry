@@ -1,8 +1,8 @@
 name: Release
 
-# Push a tag like v1.3.0 to publish:
-#   - a GitHub Release with the bulk data files and the Python package;
-#   - the Python package on PyPI (trusted publishing, environment "pypi").
+# Push a tag like v1.3.0 to publish a GitHub Release with the bulk data files
+# and the Python package. The package is not published on PyPI: the registry is
+# used through its site and API.
 # The tag must equal `version` in pyproject.toml.
 # Versioning policy: see CONTRIBUTING.md ("Releases and versioning").
 
@@ -41,11 +41,20 @@ jobs:
       - name: Build site and data
         run: metacrafter-registry build --no-data-files
 
+      # The package is installed non-editable, so the default target is the
+      # installed copy; write into the source tree that `python -m build` packs.
       - name: Bundle the data snapshot into the package
-        run: metacrafter-registry snapshot --dist dist
+        run: metacrafter-registry snapshot --dist dist --out src/metacrafter_registry/snapshot
 
       - name: Build the Python package
         run: python -m build --outdir pkg-dist
+
+      - name: The wheel bundles the data snapshot
+        run: |
+          if ! unzip -l pkg-dist/*.whl | grep -q "metacrafter_registry/snapshot/datatypes.jsonl"; then
+            echo "::error::the wheel has no metacrafter_registry/snapshot/datatypes.jsonl"
+            exit 1
+          fi
 
       - name: Changelog against the previous release
         env:
@@ -81,11 +90,6 @@ jobs:
           name: release
           path: release
 
-      - uses: actions/upload-artifact@v4
-        with:
-          name: python-package
-          path: pkg-dist
-
   github-release:
     needs: build
     runs-on: ubuntu-latest
@@ -102,22 +106,3 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.ref_name }}
         run: gh release create "$TAG" release/* --repo "$GITHUB_REPOSITORY" --title "$TAG" --notes-file release/CHANGES.md --verify-tag
-
-  pypi:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/p/metacrafter-registry
-    permissions:
-      id-token: write
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: python-package
-          path: pkg-dist
-
-      - name: Publish to PyPI (trusted publishing)
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          packages-dir: pkg-dist

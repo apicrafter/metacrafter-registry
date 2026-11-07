@@ -19,16 +19,16 @@ Tools: `identify_values(values, field_name?, country?)`, `search_datatypes(query
 Claude Code:
 
 ```
-claude mcp add metacrafter-registry -- uvx --from "metacrafter-registry[mcp]" metacrafter-registry mcp
+claude mcp add metacrafter-registry -- uvx --from "metacrafter-registry[mcp] @ git+https://github.com/apicrafter/metacrafter-registry" metacrafter-registry mcp
 ```
 
 Other clients:
 
 ```json
-{"mcpServers": {"metacrafter-registry": {"command": "uvx", "args": ["--from", "metacrafter-registry[mcp]", "metacrafter-registry", "mcp"]}}}
+{"mcpServers": {"metacrafter-registry": {"command": "uvx", "args": ["--from", "metacrafter-registry[mcp] @ git+https://github.com/apicrafter/metacrafter-registry", "metacrafter-registry", "mcp"]}}}
 ```
 
-Until the package is on PyPI: `uvx --from "metacrafter-registry[mcp] @ git+https://github.com/apicrafter/metacrafter-registry" metacrafter-registry mcp`.
+The package is installed from GitHub and is not published on PyPI. Add `@v1.3.0` to the URL to pin a release. Installed from the source, the package has no bundled snapshot: the server downloads the published data once and caches it. For offline use, install the wheel attached to a GitHub Release (https://github.com/apicrafter/metacrafter-registry/releases), which bundles the data.
 
 ## Python
 

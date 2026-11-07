@@ -137,6 +137,11 @@ builds everything that gets published.
 
 # Python package and MCP server
 
+The package is not published on PyPI: the registry is meant to be used through
+its site and API. Install the package from GitHub, or install the wheel
+attached to a [GitHub Release](https://github.com/apicrafter/metacrafter-registry/releases),
+which bundles the data snapshot.
+
 ```python
 from metacrafter_registry import Registry
 
@@ -157,7 +162,7 @@ reg.url_for("email")  # https://registry.apicrafter.io/datatype/email
 The MCP server exposes the same functions to AI agents and runs locally:
 
 ```bash
-pip install "metacrafter-registry[mcp]"
+pip install "metacrafter-registry[mcp] @ git+https://github.com/apicrafter/metacrafter-registry"
 metacrafter-registry mcp            # stdio; add --refresh to download newer data
 ```
 

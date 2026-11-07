@@ -32,17 +32,17 @@
 </div>
 <p>Each record is also an MCP resource, <code>registry://datatype/{id}</code>, in Markdown.</p>
 <p>Claude Code:</p>
-<pre><code>claude mcp add metacrafter-registry -- uvx --from "metacrafter-registry[mcp]" metacrafter-registry mcp</code></pre>
+<pre><code>claude mcp add metacrafter-registry -- uvx --from "metacrafter-registry[mcp] @ git+https://github.com/apicrafter/metacrafter-registry" metacrafter-registry mcp</code></pre>
 <p>Other clients (Claude Desktop, Cursor, …):</p>
 <pre><code>{
   "mcpServers": {
     "metacrafter-registry": {
       "command": "uvx",
-      "args": ["--from", "metacrafter-registry[mcp]", "metacrafter-registry", "mcp"]
+      "args": ["--from", "metacrafter-registry[mcp] @ git+https://github.com/apicrafter/metacrafter-registry", "metacrafter-registry", "mcp"]
     }
   }
 }</code></pre>
-<p class="small muted">Until the package is on PyPI, install from GitHub: <code>uvx --from "metacrafter-registry[mcp] @ git+https://github.com/apicrafter/metacrafter-registry" metacrafter-registry mcp</code>. Without a bundled snapshot the server downloads the published data once and caches it. Add <code>--refresh</code> to check for newer data on start.</p>
+<p class="small muted">The package is installed from GitHub and is not published on PyPI. Add <code>@v1.3.0</code> to the URL to pin a release. Installed from the source, the package has no bundled snapshot: the server downloads the published data once and caches it. For offline use, install the wheel attached to a <a href="https://github.com/apicrafter/metacrafter-registry/releases">GitHub Release</a>, which bundles the data. Add <code>--refresh</code> to check for newer data on start.</p>
 
 <h2>Python package</h2>
 <pre><code>from metacrafter_registry import Registry

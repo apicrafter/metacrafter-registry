@@ -1,6 +1,8 @@
 """MCP server for the registry (``metacrafter-registry mcp``).
 
-Requires the optional dependency: ``pip install "metacrafter-registry[mcp]"``.
+Requires the optional dependency: ``pip install -e ".[mcp]"`` in a checkout, or
+``pip install "metacrafter-registry[mcp] @ git+https://github.com/apicrafter/metacrafter-registry"``
+(the package is not published on PyPI).
 The server works offline from local data; sample values given to
 ``identify_values`` never leave the machine.
 """
