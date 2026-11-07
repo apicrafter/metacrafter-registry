@@ -1,7 +1,9 @@
 id: aeemiratesid
 name: UAE Emirates ID Number
 status: stable
-doc: UAE Emirates ID number used for identification of UAE citizens and residents
+doc: UAE Emirates ID number used for identification of UAE citizens and residents. 15 digits, often written
+  as 784-YYYY-NNNNNNN-C - 784 (the ISO 3166 numeric code of the UAE), a four-digit year (usually the year
+  of birth), a seven-digit number and a check digit.
 categories:
 - pii
 - persons
@@ -11,10 +13,18 @@ langs:
 - ar
 is_pii: true
 classification: identifier
-regexp: ^[0-9]{15}$
+regexp: ^784(19|20)[0-9]{10}$
 examples:
+- value: '784199012345676'
+  description: Example UAE Emirates ID number (year 1990)
+- value: '784198545678900'
+  description: Example UAE Emirates ID number (year 1985)
 - value: '784123456789012'
-  description: Example UAE Emirates ID number
+  valid: false
+  description: Year 1234 is not a plausible year
+- value: '310150123456789'
+  valid: false
+  description: Does not start with 784 (this is an IMSI)
 mappings:
   purview: U.A.E. identity card number
   dpv: pd:OfficialID
