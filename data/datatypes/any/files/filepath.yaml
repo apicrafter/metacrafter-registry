@@ -1,0 +1,32 @@
+id: filepath
+name: File path
+status: draft
+doc: Location of a file in a file system, written as directory names joined by a separator and ending
+  with the file name. Unix-like systems and URLs use the forward slash, Windows uses the backslash. A
+  path is absolute when it starts from the root or a drive letter such as C:, and relative when it starts
+  from a working directory. Datasets often keep paths to images, attachments and documents. The file name
+  alone is the datatype filename, and its suffix is file_extension.
+aliases:
+- path_file
+categories:
+- common
+langs:
+- common
+is_pii: false
+examples:
+- value: /var/log/syslog
+  description: absolute path on a Unix-like system
+- value: images/2024/photo_001.jpg
+  description: relative path to an image
+- value: C:\Users\Public\Documents\report.docx
+  description: absolute path on Windows, with a drive letter
+mappings:
+  wikidata: Q817765
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Path_(computing)
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q817765
+translations:
+  ru:
+    name: Путь к файлу

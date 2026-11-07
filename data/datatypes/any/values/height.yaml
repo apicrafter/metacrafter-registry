@@ -1,0 +1,37 @@
+id: height
+name: Height
+status: draft
+doc: Vertical size of a person or an object, such as the height of a person, a building, a product package
+  or an image. Datasets usually keep it as a number in a column named height, with the unit in the value,
+  the column name or the metadata, for example centimetres or inches for people, metres for buildings
+  and pixels for images. The value alone does not tell height from width or another length, so detection
+  relies on the column name. Height of a place above sea level is the datatype elevation.
+parent: length
+aliases:
+- height_measurement
+categories:
+- values
+- common
+langs:
+- common
+is_pii: false
+examples:
+- value: 175 cm
+  description: height of a person
+- value: '1080'
+  description: image height in pixels, unit in the metadata
+- value: 3.2 m
+  description: ceiling height
+mappings:
+  wikidata: P2048
+  schema_org: height
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Height
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2048
+- type: schema.org
+  url: https://schema.org/height
+translations:
+  ru:
+    name: Высота
