@@ -669,6 +669,9 @@ def test_javascript_identify_matches_python(built_site, tmp_path):
         (["user@example.com", "first.last+tag@mail.example.org"], ""),
         (["e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"], "sha256"),
         (["2025-05-15", "1990-01-31"], "birthday"),
+        (["user@example.com"], "ЭлектроннаяПочта"),
+        (["7707083893", "7728168971"], "ИНН"),
+        (["01001-000"], "CEP"),
     ]
     js = _javascript_identify(tmp_path, built_site / "identify-index.json", cases, 3)
     for (values, field), js_top in zip(cases, js, strict=True):
@@ -710,6 +713,92 @@ def test_javascript_compact_matches_match_python(reg_with_date, tmp_path):
         ]
         assert js_top == py_top, (values, js_top, py_top)
     assert js[0][0][0] == js[1][0][0] == "date"
+
+
+@pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
+def test_javascript_cyrillic_field_names_match_python(reg_pki, tmp_path):
+    """Both scorers rank records by Russian field names the same way."""
+    from conftest import HEX40
+
+    from metacrafter_registry.agents import identify_index
+
+    index = tmp_path / "identify-index.json"
+    index.write_text(json.dumps(identify_index(reg_pki.datatypes.values(), reg_pki._broadness)))
+    cases = [
+        (HEX40, "ИдентификаторКлюча"),
+        (HEX40, "ОтпечатокСертификата"),
+        (HEX40, "Хеш"),
+        (["00A94CF4CA0000000005A1"], "СерийныйНомер"),
+        (["00A94CF4CA0000000005A1"], "Сертификат"),
+        ([], "серийный номер"),
+    ]
+    js = _javascript_identify(tmp_path, index, cases, 5)
+    for (values, field), js_top in zip(cases, js, strict=True):
+        py_top = [
+            [r["id"], r["score"]] for r in reg_pki.identify(values, field_name=field, limit=5)
+        ]
+        assert js_top == py_top, (field, js_top, py_top)
+    assert [top[0][0] for top in js[:4]] == [
+        "x509_key_identifier",
+        "x509_certificate_thumbprint",
+        "sha1hash",
+        "x509_serial_number",
+    ]
+
+
+@pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
+def test_javascript_tokens_match_python(reg_with_date, tmp_path):
+    """identify-core.js tokens() splits, lowercases and stems names like _tokens."""
+    import unicodedata
+
+    from metacrafter_registry.client import _RU_ENDINGS, _tokens
+
+    texts = [
+        "serialNumber",
+        "HTTPServer2Go",
+        "sha256Hash",
+        "first_name-2",
+        "СерийныйНомер",
+        "КлассСредствЭП",
+        "ИННЮЛ",
+        "Объём",
+        unicodedata.normalize("NFD", "Серийный номер"),
+        "naïveDate",
+        "ΟΔΟΣ Αριθμός",
+        "İstanbul",
+        "नाम पता",
+        "郵便番号",
+        "x²",
+        "Пол Поле",
+        "constructor",
+    ]
+    # Every ending, on a stem that keeps it and on one too short to lose it.
+    texts += ["работ" + ending for ending in _RU_ENDINGS]
+    texts += ["дом" + ending for ending in _RU_ENDINGS]
+    for record in reg_with_date.datatypes.values():
+        texts.append(record["name"])
+        texts += [t["name"] for t in record.get("translations", {}).values() if t.get("name")]
+    texts_file = tmp_path / "texts.json"
+    texts_file.write_text(json.dumps(texts), encoding="utf-8")
+    script = tmp_path / "tokens.js"
+    script.write_text(
+        "const core = require(process.argv[2]);\n"
+        "const texts = JSON.parse(require('fs').readFileSync(process.argv[3], 'utf8'));\n"
+        "console.log(JSON.stringify(texts.map(t => Object.keys(core.tokens(t)).sort())));\n"
+    )
+    out = subprocess.run(
+        [
+            "node",
+            str(script),
+            str(REPO / "src/metacrafter_registry/static/identify-core.js"),
+            str(texts_file),
+        ],
+        capture_output=True,
+        text=True,
+        check=True,
+    ).stdout
+    for text, js in zip(texts, json.loads(out), strict=True):
+        assert set(js) == _tokens(text), text
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")

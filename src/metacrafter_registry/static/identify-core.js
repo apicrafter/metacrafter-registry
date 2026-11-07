@@ -536,10 +536,37 @@
     return s.indexOf(prefix) === 0 ? s.slice(prefix.length) : s;
   }
 
+  // Russian noun and adjective endings, longest first: _RU_ENDINGS in client.py,
+  // the same list in the same order.
+  var RU_ENDINGS = (
+    "иями ями ами ими ыми ией иям ием иях его ого ему ому " +
+    "ев ов ие ье еи ии ей ой ий ый ям ем ам ом ах ях ию ью ия ья ее ые ое им ым их ых ую юю " +
+    "ая яя ою ею а я о е и ы у ю ь й"
+  ).split(" ");
+  var RU_MIN_STEM = 4; // a shorter stem would merge unrelated words ("пол" and "поле")
+
+  // A word without its Russian case ending, with ё read as е; other words as is.
+  function stem(word) {
+    if (!/^[а-яё]+$/.test(word)) return word;
+    word = word.replace(/ё/g, "е");
+    for (var i = 0; i < RU_ENDINGS.length; i += 1) {
+      var ending = RU_ENDINGS[i];
+      if (word.length - ending.length >= RU_MIN_STEM &&
+          word.slice(-ending.length) === ending) return word.slice(0, -ending.length);
+    }
+    return word;
+  }
+
+  // The lowercased words of a field name or a record name, in any script: runs of
+  // letters, combining marks and digits, camelCase split ("СерийныйНомер"), Russian
+  // case endings removed. _tokens in client.py is the same.
   function tokens(text) {
-    var spaced = String(text || "").replace(/([a-z0-9])([A-Z])/g, "$1 $2").toLowerCase();
+    var spaced = String(text || "")
+      .normalize("NFC")
+      .replace(/([\p{Lowercase}\p{Nd}])(?=\p{Uppercase})/gu, "$1 ")
+      .toLowerCase();
     var out = Object.create(null); // no inherited keys: "constructor" is a token too
-    (spaced.match(/[a-z0-9]+/g) || []).forEach(function (t) { out[t] = true; });
+    (spaced.match(/[\p{L}\p{M}\p{N}]+/gu) || []).forEach(function (t) { out[stem(t)] = true; });
     return out;
   }
 
@@ -584,6 +611,10 @@
     return out;
   }
 
+  function hasAscii(word) {
+    return /[\x00-\x7f]/.test(word);
+  }
+
   function nameSimilarity(record, field) {
     var f = String(field || "").trim().toLowerCase();
     if (!f) return 0;
@@ -596,8 +627,16 @@
       var compact = cid.replace(/_/g, "");
       fkeys.forEach(function (t) { if (t.length >= 4 && compact.indexOf(t) !== -1) best = 0.6; });
     });
+    // A field name in Latin letters is compared with the Latin words of each
+    // name only; a Latin word has an ASCII letter or digit (_name_similarity in
+    // client.py).
+    var latinField = fkeys.every(hasAscii);
     [record.id, record.n].concat(aliases, record.t || []).forEach(function (cand) {
-      var ct = tokens(cand), ckeys = Object.keys(ct);
+      var ct = tokens(cand);
+      if (latinField) {
+        Object.keys(ct).forEach(function (t) { if (!hasAscii(t)) delete ct[t]; });
+      }
+      var ckeys = Object.keys(ct);
       if (!ckeys.length) return;
       var inter = fkeys.filter(function (t) { return ct[t]; }).length;
       var union = Object.keys(Object.assign({}, ft, ct)).length;
@@ -688,6 +727,7 @@
     claims: claims,
     scoreRecord: scoreRecord,
     rank: rank,
+    tokens: tokens,
     identify: identify
   };
   if (typeof module !== "undefined" && module.exports) module.exports = api;

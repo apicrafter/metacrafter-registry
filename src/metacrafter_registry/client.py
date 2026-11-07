@@ -18,6 +18,7 @@ import json
 import math
 import os
 import re
+import unicodedata
 import urllib.request
 from collections.abc import Iterable, Iterator
 from functools import cached_property
@@ -39,11 +40,9 @@ SNAPSHOT_FILES = (
 )
 SNAPSHOT_DIR = Path(__file__).with_name("snapshot")
 
-_TOKEN = re.compile(r"[a-z0-9]+")
 # Search queries may be in any script (translations are searched too).
 _QUERY_TOKEN = re.compile(r"[^\W_]+")
 _SEPARATORS = re.compile(r"[\s-]")
-_CAMEL = re.compile(r"(?<=[a-z0-9])(?=[A-Z])")
 
 # How a regexp matches one value (see _match_kind).
 _NO_MATCH, _RAW, _COMPACT = 0, 1, 2
@@ -54,8 +53,58 @@ _NO_MATCH, _RAW, _COMPACT = 0, 1, 2
 _COMPACT_WEIGHT = 0.5
 
 
+def _split_camel(text: str) -> str:
+    """Put a space where a lowercase letter or a digit meets an uppercase letter,
+    in any script: "serialNumber", "СерийныйНомер"."""
+    out = []
+    prev = ""
+    for ch in text:
+        if ch.isupper() and (prev.islower() or prev.isdecimal()):
+            out.append(" ")
+        out.append(ch)
+        prev = ch
+    return "".join(out)
+
+
+# Russian noun and adjective endings (after the Snowball Russian stemmer), longest
+# first. A field is often named in the nominative ("Сертификат") while a record
+# name uses another case ("Отпечаток сертификата"). identify-core.js RU_ENDINGS
+# is the same list in the same order.
+_RU_ENDINGS = (
+    "иями ями ами ими ыми ией иям ием иях его ого ему ому "
+    "ев ов ие ье еи ии ей ой ий ый ям ем ам ом ах ях ию ью ия ья ее ые ое им ым их ых ую юю "
+    "ая яя ою ею а я о е и ы у ю ь й"
+).split()
+_RU_WORD = re.compile(r"[а-яё]+")
+# A shorter stem would merge unrelated words ("пол" and "поле").
+_RU_MIN_STEM = 4
+
+
+def _stem(word: str) -> str:
+    """``word`` without its Russian case ending, with ё read as е; other words as is."""
+    if not _RU_WORD.fullmatch(word):
+        return word
+    word = word.replace("ё", "е")
+    for ending in _RU_ENDINGS:
+        if word.endswith(ending) and len(word) - len(ending) >= _RU_MIN_STEM:
+            return word[: -len(ending)]
+    return word
+
+
+def _has_ascii(word: str) -> bool:
+    return any(ch.isascii() for ch in word)
+
+
 def _tokens(text: str) -> set[str]:
-    return set(_TOKEN.findall(_CAMEL.sub(" ", str(text)).lower()))
+    """The lowercased words of a field name or a record name, in any script.
+
+    A word is a run of letters, combining marks and digits (Unicode categories
+    L, M and N). camelCase is split, and Russian words lose their case ending
+    (see _stem). identify-core.js tokens() is the same.
+    """
+    spaced = _split_camel(unicodedata.normalize("NFC", str(text))).lower()
+    words = "".join(ch if unicodedata.category(ch)[0] in "LMN" else " " for ch in spaced)
+    return {_stem(word) for word in words.split()}
 
 
 def _match_kind(pattern: re.Pattern[str], value: str) -> int:
@@ -463,10 +512,18 @@ class Registry:
             compact = candidate_id.replace("_", "")
             if any(len(tok) >= 4 and tok in compact for tok in field_tokens):
                 best = 0.6
+        # A field name in Latin letters is compared with the Latin words of each
+        # name only: words in Cyrillic, Greek, CJK... cannot match it, and
+        # translations often keep the local term in Latin script ("Почтовый
+        # индекс Бразилии (CEP)"). A Latin word has an ASCII letter or digit,
+        # with or without diacritics ("académie").
+        latin_field = all(_has_ascii(tok) for tok in field_tokens)
         candidates = [record["id"], *record.get("aliases", []), record["name"]]
         candidates += [t.get("name", "") for t in record.get("translations", {}).values()]
         for candidate in candidates:
             tokens = _tokens(candidate)
+            if latin_field:
+                tokens = {tok for tok in tokens if _has_ascii(tok)}
             if not tokens:
                 continue
             overlap = len(field_tokens & tokens) / len(field_tokens | tokens)
@@ -504,6 +561,11 @@ class Registry:
         counts 1: its spaces are presentation, as in grouped card numbers.
         ``regexp_hit_rate`` in the result is the unweighted share of values that
         are hits in either form.
+
+        Field-name similarity is the best word overlap with the record id,
+        aliases, name and translated names. Words are in any script, camelCase
+        is split and Russian case endings are ignored, so ``СерийныйНомер``
+        matches "Серийный номер сертификата X.509".
         """
         if isinstance(values, str):
             values = [values]  # one value, not its characters

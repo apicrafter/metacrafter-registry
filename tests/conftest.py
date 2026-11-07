@@ -37,6 +37,60 @@ def reg_with_date(repo_sources):
     return Registry(records, aliases=base.aliases, manifest=base.manifest)
 
 
+# Hexadecimal values that several records accept: only the field name tells
+# them apart. The key identifier and the serial number are from the public
+# e-trust register of Russian certification authorities.
+HEX40 = ["E0986CEDDC7945B1D58115A79A1C75D86601A609", "DA39A3EE5E6B4B0D3255BFEF95601890AFD80709"]
+
+
+@pytest.fixture(scope="session")
+def reg_pki():
+    """Records whose regexps accept the same hexadecimal values, with Russian names."""
+    from metacrafter_registry import Registry
+
+    def record(rid, name, regexp, example, ru=None):
+        out = {
+            "id": rid,
+            "name": name,
+            "kind": "datatype",
+            "status": "stable",
+            "is_pii": False,
+            "regexp": regexp,
+            "examples": [{"value": example}],
+        }
+        if ru:
+            out["translations"] = {"ru": {"name": ru}}
+        return out
+
+    hex40 = r"^[0-9A-Fa-f]{40}$"
+    return Registry(
+        [
+            record("sha1hash", "SHA-1 hash", hex40, HEX40[1], "Хеш SHA-1"),
+            record(
+                "x509_key_identifier",
+                "X.509 key identifier (SKI, AKI)",
+                hex40,
+                HEX40[0],
+                "Идентификатор ключа X.509 (SKI, AKI)",
+            ),
+            record(
+                "x509_certificate_thumbprint",
+                "X.509 certificate thumbprint (compact hex)",
+                hex40,
+                HEX40[1],
+                "Отпечаток сертификата X.509",
+            ),
+            record(
+                "x509_serial_number",
+                "X.509 certificate serial number",
+                r"^(?:[0-9A-Fa-f]{2}){1,20}$",
+                "00A94CF4CA0000000005A1",
+                "Серийный номер сертификата X.509",
+            ),
+        ]
+    )
+
+
 @pytest.fixture(scope="session")
 def built_site(tmp_path_factory, repo_sources):
     out = tmp_path_factory.mktemp("site") / "dist"
