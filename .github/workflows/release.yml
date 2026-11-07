@@ -71,7 +71,7 @@ jobs:
           cp dist/api/v1/rag/corpus.jsonl release/rag-corpus.jsonl
           cp dist/api/v1/index.json release/manifest.json
           cp dist/registry.json release/registry-legacy.json
-          cp dist/registry.ttl dist/llms-full.txt dist/datahub-glossary.yml release/
+          cp dist/registry.ttl dist/vocab.ttl dist/llms-full.txt dist/datahub-glossary.yml release/
           (cd dist && zip -qr ../release/site.zip .)
           cp pkg-dist/* release/
           (cd release && sha256sum * > SHA256SUMS)

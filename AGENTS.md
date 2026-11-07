@@ -189,8 +189,10 @@ examples.
 - `client.py`: the public `Registry` API: `load`, `fetch`, `get`, `search`,
   `identify`, `match`, `crosswalk`, `url_for`.
 - `checksums.py`: the check-digit algorithms named by the `checksum` field.
-- `agents.py`: Markdown twins, `llms.txt`, `llms-full.txt`, the RAG corpus and
-  the SKOS export.
+- `agents.py`: Markdown twins, `llms.txt`, `llms-full.txt`, the RAG corpus,
+  the SKOS export (`/registry.ttl`, `/datatype/<id>.ttl`) and the `mcr:`
+  vocabulary (`/vocab.ttl`). Add `mcr:` terms to `VOCAB_TERMS`; never remove
+  or rename one.
 - `coverage.py`: metacrafter-rules coverage. `ecosystem.lock` pins the
   rules commit, and `data/coverage/metacrafter-rules.json` is its committed
   summary, so builds need no network. The list of the `metacrafter` tool's

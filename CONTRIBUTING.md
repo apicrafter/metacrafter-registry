@@ -106,7 +106,8 @@ configure this once on pypi.org: add a trusted publisher for
 - `openapi.json`
 - the manifest (`manifest.json`)
 - the legacy `registry.json` (`registry-legacy.json`)
-- `rag-corpus.jsonl`, `llms-full.txt`, `registry.ttl` and `datahub-glossary.yml`
+- `rag-corpus.jsonl`, `llms-full.txt`, `registry.ttl`, `vocab.ttl` and
+  `datahub-glossary.yml`
 - the changes since the previous release (`changes.json`, `CHANGES.md`)
 - the Python package (wheel and sdist)
 - a zip of the site

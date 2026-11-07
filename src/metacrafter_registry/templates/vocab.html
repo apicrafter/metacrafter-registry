@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Registry vocabulary{% endblock %}
+{% block description %}The RDF terms that the Metacrafter Registry uses to describe how to recognize values of its datatypes.{% endblock %}
+{% block head %}
+  <link rel="alternate" type="text/turtle" href="{{ base }}/vocab.ttl" title="OWL (Turtle)">
+{% endblock %}
+{% block content %}
+<h1>Registry vocabulary</h1>
+<p class="lead">The terms that the RDF exports use for facts that SKOS, Dublin Core and RDFS have no term for: regular expressions, check digits, the PII flag, status and tools.</p>
+<p>Namespace <code>{{ namespace }}</code>, prefix <code>mcr:</code>. The OWL declaration is <a href="{{ base }}/vocab.ttl">/vocab.ttl</a>. The terms are used in the concept scheme <a href="{{ base }}/registry.ttl">/registry.ttl</a> and in the Turtle file of each record, <code>/datatype/&lt;id&gt;.ttl</code>. Terms are added, never removed or renamed.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th scope="col">Term</th><th scope="col">Kind</th><th scope="col">Domain → range</th><th scope="col">Meaning</th></tr></thead>
+  <tbody>
+  {% for term in terms %}
+    <tr id="{{ term.name }}"><td class="id"><a href="#{{ term.name }}">mcr:{{ term.name }}</a></td><td>{{ term.kind }}</td><td>{% if term.domain %}{{ term.domain }} → {{ term.range }}{% endif %}</td><td>{{ term.comment }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<h2>Standard terms</h2>
+<p>Other facts use standard terms:</p>
+<ul class="plain">
+  <li><code>skos:example</code>: a value that matches the datatype (negative examples are not exported)</li>
+  <li><code>skos:exactMatch</code>: the same concept in Wikidata, Schema.org, FIBO, Bioregistry, FHIR or D3M</li>
+  <li><code>skos:broadMatch</code>: the DPV personal-data category</li>
+  <li><code>dcterms:spatial</code>: a country page of this registry</li>
+  <li><code>dcterms:language</code>: an ISO 639-1 language</li>
+  <li><code>rdfs:seeAlso</code>: Wikipedia articles, standards and other documentation</li>
+  <li><code>owl:deprecated</code> and <code>dcterms:isReplacedBy</code>: deprecated records</li>
+</ul>
+{% endblock %}

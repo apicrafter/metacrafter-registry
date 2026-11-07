@@ -83,6 +83,8 @@ CHECKS: list[tuple[str, str, Callable[[bytes], str | None]]] = [
         _json_check(lambda d: "orphan_rule_keys" in d, "coverage report"),
     ),
     ("/datatype/email.md", "text/markdown", _html_mentions('id: "email"')),
+    ("/datatype/email.ttl", "text/turtle", _html_mentions("dt:email a skos:Concept")),
+    ("/vocab.ttl", "text/turtle", _html_mentions("a owl:Ontology")),
     (
         "/datatype/email.json",
         "application/json",

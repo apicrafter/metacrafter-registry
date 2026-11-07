@@ -6,6 +6,7 @@
   <link rel="alternate" type="application/json" href="{{ base }}/api/v1/datatypes/{{ object.id }}.json" title="API v1 record">
   <link rel="alternate" type="text/markdown" href="{{ base }}/datatype/{{ object.id }}.md" title="Markdown">
   <link rel="alternate" type="application/json" href="{{ base }}/datatype/{{ object.id }}.json" title="Legacy record">
+  <link rel="alternate" type="text/turtle" href="{{ base }}/datatype/{{ object.id }}.ttl" title="RDF (Turtle)">
   <script type="application/ld+json">{{ jsonld|tojson }}</script>
 {% endblock %}
 {% block content %}
