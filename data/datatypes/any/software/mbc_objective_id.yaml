@@ -1,0 +1,30 @@
+id: mbc_objective_id
+name: MBC objective ID
+status: draft
+doc: 'Identifier of an objective in the Malware Behavior Catalog (MBC), the MITRE catalog of malware behaviors:
+  OB and four digits for an objective, based on an ATT&CK tactic or specific to malware analysis (ANTI-BEHAVIORAL
+  ANALYSIS, ANTI-STATIC ANALYSIS), or OC and four digits for a micro-objective that groups micro-behaviors.
+  Behaviors and methods have their own identifiers (mbc_behavior_id).'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^O[BC][0-9]{4}$
+examples:
+- value: OB0001
+  description: Anti-Behavioral Analysis
+- value: OB0006
+  description: Defense Evasion
+- value: OC0005
+  description: Cryptography (micro-objective)
+- value: TA0005
+  valid: false
+  description: ATT&CK tactic ID (mitre_attack_tactic_id)
+- value: B0001
+  valid: false
+  description: Behavior ID (mbc_behavior_id)
+links:
+- type: doc
+  url: https://github.com/MBCProject/mbc-markdown#identifiers

@@ -1,0 +1,30 @@
+id: image_dhash
+name: Image difference hash (dHash)
+status: draft
+doc: 'Perceptual hash of an image, described by Neal Krawetz: the image is reduced to 9x8 pixels in grayscale,
+  and each of the 64 bits compares the brightness of a pixel with its right neighbour. Similar images
+  give hashes that differ in few bits, so the Hamming distance between two hashes measures visual similarity.
+  It is written as 16 hexadecimal digits. VirusTotal stores the dHash of the icon of files (main_icon.dhash)
+  and of the favicon of domains (favicon.dhash), and its search finds files with similar icons by it.
+  The value alone looks like any other 64-bit hexadecimal number.'
+categories:
+- media
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-f]{16}$
+examples:
+- value: 3a6c6565498da525
+  description: Example hash in Neal Krawetz's article
+- value: 71f0cc989386ba80
+  description: Favicon dHash in the example domain object of the VirusTotal API documentation
+- value: 3a6c6565498da5
+  valid: false
+  description: 14 digits (56 bits)
+links:
+- type: doc
+  url: https://www.hackerfactor.com/blog/index.php?/archives/529-Kind-of-Like-That.html
+- type: other
+  url: https://virustotal.readme.io/reference/files

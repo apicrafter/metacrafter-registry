@@ -1,0 +1,33 @@
+id: malpedia_family_id
+name: Malpedia malware family ID
+status: draft
+doc: 'Identifier of a malware family in Malpedia, the malware corpus and reference library run by Fraunhofer
+  FKIE: a platform prefix, a period and the family name in lowercase, with underscores (and rarely hyphens)
+  between words, for example win.agent_tesla. The prefixes in use are aix, apk, asp, elf, fas, ios, jar,
+  js, jsp, osx, php, pl, ps1, py, sh, symbian, vbs and win. The family page is https://malpedia.caad.fkie.fraunhofer.de/details/<id>,
+  and Wikidata property P9096 stores that path (details/<id>).'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:aix|apk|asp|elf|fas|ios|jar|js|jsp|osx|php|pl|ps1|py|sh|symbian|vbs|win)\.[a-z0-9][a-z0-9_-]*$
+examples:
+- value: win.agent_tesla
+  description: Agent Tesla (Windows)
+- value: elf.mirai
+  description: Mirai (ELF)
+- value: apk.anatsa
+  description: Anatsa (Android APK)
+- value: Win.Agent_Tesla
+  valid: false
+  description: Uppercase letters
+- value: agent_tesla
+  valid: false
+  description: Platform prefix is missing
+links:
+- type: other
+  url: https://malpedia.caad.fkie.fraunhofer.de/details/win.agent_tesla
+- type: doc
+  url: https://malpedia.caad.fkie.fraunhofer.de/api/list/families

@@ -1,0 +1,30 @@
+id: permhash
+name: Permhash (permissions hash)
+status: draft
+doc: 'Hash of the permissions that an Android app (APK or its AndroidManifest.xml) or a Chromium browser
+  extension (CRX or its manifest.json) declares, published by Mandiant in 2022. The declared permissions
+  are joined into one string and hashed with SHA-256, so the value is written as 64 lowercase hexadecimal
+  digits. Like imphash for Windows executables, it groups samples built from the same code base: apps
+  or extensions with identical permission lists share a permhash. VirusTotal reports it as the permhash
+  attribute of a file and can search by it. The value alone looks like any other SHA-256 hash.'
+parent: sha256hash
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9a-f]{64}$
+examples:
+- value: a2172d455b6bfb4fa9ef4593e5477226ed73a7f2354902b62f1e8f796009888a
+  description: Permhash of an Android APK (package ru.oneme.app) in its VirusTotal report
+- value: a2172d455b6bfb4fa9ef4593e5477226ed73a7f2354902b62f1e8f796009888
+  valid: false
+  description: 63 hexadecimal digits, one short
+links:
+- type: doc
+  url: https://github.com/google/permhash
+- type: other
+  url: https://cloud.google.com/blog/topics/threat-intelligence/permhash-no-curls-necessary/
+- type: other
+  url: https://virustotal.readme.io/reference/files
