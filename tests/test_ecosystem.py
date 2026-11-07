@@ -672,6 +672,9 @@ def test_javascript_identify_matches_python(built_site, tmp_path):
         (["user@example.com"], "ЭлектроннаяПочта"),
         (["7707083893", "7728168971"], "ИНН"),
         (["01001-000"], "CEP"),
+        (["1027700043502", "1027700132195"], "ОГРН"),
+        (["385768585948949"], "ОГРН/ОГРНИП"),
+        ([], "ОГРНИП"),
     ]
     js = _javascript_identify(tmp_path, built_site / "identify-index.json", cases, 3)
     for (values, field), js_top in zip(cases, js, strict=True):
@@ -799,6 +802,49 @@ def test_javascript_tokens_match_python(reg_with_date, tmp_path):
     ).stdout
     for text, js in zip(texts, json.loads(out), strict=True):
         assert set(js) == _tokens(text), text
+
+
+@pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
+def test_javascript_abbreviations_match_python(reg_with_date, tmp_path):
+    """identify-core.js abbreviations() finds the same abbreviations as _abbreviations."""
+    from metacrafter_registry.client import _abbreviations
+
+    texts = [
+        "Номер (ОГРН, ОГРНИП)",
+        "Code (EU)",
+        "Number (ARC/TARC)",
+        "Number ( INN ; KPP )",
+        "Code (ÉCO)",
+        "Outer (inner (ABC) text)",
+        "(ОКАТО)",
+    ]
+    for record in reg_with_date.datatypes.values():
+        texts.append(record["name"])
+        texts += [t["name"] for t in record.get("translations", {}).values() if t.get("name")]
+    texts_file = tmp_path / "texts.json"
+    texts_file.write_text(json.dumps(texts), encoding="utf-8")
+    script = tmp_path / "abbreviations.js"
+    script.write_text(
+        "const core = require(process.argv[2]);\n"
+        "const texts = JSON.parse(require('fs').readFileSync(process.argv[3], 'utf8'));\n"
+        "console.log(JSON.stringify(texts.map(t => Object.keys(core.abbreviations(t)))));\n"
+    )
+    out = subprocess.run(
+        [
+            "node",
+            str(script),
+            str(REPO / "src/metacrafter_registry/static/identify-core.js"),
+            str(texts_file),
+        ],
+        capture_output=True,
+        text=True,
+        check=True,
+    ).stdout
+    results = json.loads(out)
+    for text, js in zip(texts, results, strict=True):
+        assert set(js) == _abbreviations(text), text
+    assert set(results[0]) == {"огрн", "огрнип"}
+    assert sum(1 for js in results if js) > 100
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")

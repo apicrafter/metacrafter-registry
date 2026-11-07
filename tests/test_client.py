@@ -245,6 +245,29 @@ def test_identify_inn_by_values_and_field_name(reg):
     assert top["checksum"] == {"algorithm": "ru_inn", "pass_rate": 1.0}
 
 
+@pytest.mark.parametrize(
+    "field", ["ogrn", "ОГРН", "ogrnip", "ОГРНИП", "ОГРН/ОГРНИП", "ogrn_ogrnip"]
+)
+@pytest.mark.parametrize(
+    "values",
+    [
+        ["1027700043502", "1027700132195"],  # OGRN of legal entities, 13 digits
+        ["385768585948949"],  # OGRNIP of an individual entrepreneur, 15 digits
+    ],
+)
+def test_identify_ogrn_and_ogrnip_by_values_and_field_name(reg, values, field):
+    top = reg.identify(values, field_name=field)[0]
+    assert top["id"] == "ogrn" and top["score"] == 100
+    assert top["field_name_similarity"] == 1.0
+    assert top["checksum"] == {"algorithm": "ru_ogrn", "pass_rate": 1.0}
+
+
+def test_ogrn_ogrnip_is_an_alias_of_ogrn(reg):
+    assert reg.get("ogrn_ogrnip")["id"] == "ogrn"
+    # The first digit 2 marks another register entry (GRN), not an OGRN.
+    assert all(r["id"] != "ogrn" for r in reg.identify(["2027700132195"]))
+
+
 def test_identify_iban_without_field_name(reg):
     values = [
         "GB82 WEST 1234 5698 7654 32",
@@ -424,6 +447,50 @@ def test_field_name_similarity_across_scripts(field, similarity):
     record["name"] = "French region code"
     reg = Registry([record])
     assert round(reg._name_similarity(reg.datatypes["fr_region"], field), 3) == similarity
+
+
+@pytest.mark.parametrize(
+    ("name", "expected"),
+    [
+        ("Основной государственный регистрационный номер (ОГРН, ОГРНИП)", {"огрн", "огрнип"}),
+        ("Brazilian postal code (CEP)", {"cep"}),
+        ("Universally unique identifier (UUID)", {"uuid"}),
+        ("Chilean tax number (RUT; RUN)", {"rut", "run"}),
+        # Two letters are often a qualifier or a common word.
+        ("NUTS code (EU)", set()),
+        ("Cell Ontology (CL) term ID", set()),
+        # Not one word in capitals.
+        ("Taiwan resident certificate number (ARC/TARC)", set()),
+        ("Certificate serial number (X.509)", set()),
+        ("Serial number (hex)", set()),
+        ("Unit code (UN/CEFACT common code)", set()),
+        ("No parentheses", set()),
+    ],
+)
+def test_abbreviations_in_parentheses(name, expected):
+    from metacrafter_registry.client import _abbreviations
+
+    assert _abbreviations(name) == expected
+
+
+@pytest.mark.parametrize(
+    ("field", "similarity"),
+    [
+        ("ОГРН", 1.0),
+        ("ОГРНИП", 1.0),
+        ("ОГРН/ОГРНИП", 1.0),
+        ("OGRNIP", 1.0),
+        # Not an abbreviation alone: the overlap with the words of the name.
+        ("ОГРН организации", 0.143),
+        ("ОГРН ИНН", 0.143),
+    ],
+)
+def test_field_name_similarity_of_an_abbreviation_in_parentheses(field, similarity):
+    translations = {"ru": {"name": "Основной государственный регистрационный номер (ОГРН, ОГРНИП)"}}
+    record = _record("ogrn", None, "1027700043502", translations=translations)
+    record["name"] = "Russian primary state registration number (OGRN, OGRNIP)"
+    reg = Registry([record])
+    assert round(reg._name_similarity(reg.datatypes["ogrn"], field), 3) == similarity
 
 
 @pytest.mark.parametrize(

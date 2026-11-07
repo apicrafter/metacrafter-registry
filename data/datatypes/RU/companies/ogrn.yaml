@@ -1,7 +1,15 @@
 id: ogrn
-name: Russian primary state registration number (OGRN)
+name: Russian primary state registration number (OGRN, OGRNIP)
 status: stable
-doc: Primary State Registration Number number assigned by Tax Service to any business entity in Russia
+doc: 'Number that the Russian tax service assigns when it enters a business in a state register. A legal
+  entity gets a 13-digit OGRN in the register of legal entities (EGRUL); an individual entrepreneur gets
+  a 15-digit OGRNIP in the register of individual entrepreneurs (EGRIP), and that number identifies a
+  natural person. The first digit is 1 or 5 for an OGRN and 3 for an OGRNIP; numbers of other register
+  entries (GRN) start with other digits. Then come the last two digits of the registration year, the region
+  code, the entry number and a check digit: the last digit of the remainder of the preceding digits divided
+  by 11 (OGRN) or by 13 (OGRNIP).'
+aliases:
+- ogrn_ogrnip
 categories:
 - companies
 country:
@@ -10,13 +18,18 @@ langs:
 - ru
 is_pii: false
 classification: identifier
-regexp: ^\d{13}$
+regexp: ^(?:[15]\d{12}|3\d{14})$
 checksum: ru_ogrn
 examples:
 - value: '1027700043502'
   description: Rosneft
 - value: '1027700132195'
   description: Sberbank of Russia
+- value: '385768585948949'
+  description: OGRNIP (15 digits), example from the python-stdnum documentation
+- value: '2027700132195'
+  valid: false
+  description: First digit 2 marks another register entry (GRN), not an OGRN
 mappings:
   wikidata: P7011
   orgid: RU-OGRN
@@ -24,11 +37,13 @@ mappings:
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P7011
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80_%D0%B8%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BF%D1%80%D0%B5%D0%B4%D0%BF%D1%80%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D1%82%D0%B5%D0%BB%D1%8F
 translations:
   ru:
-    name: Основной государственный регистрационный номер (ОГРН)
-    doc: ОГРН (основной государственный регистрационный номер) — государственный регистрационный номер
-      записи о создании юридического лица либо записи о первом представлении в соответствии с федеральным
-      законом Российской Федерации «О государственной регистрации юридических лиц» сведений о юридическом
-      лице, зарегистрированном до введения в действие указанного Закона (пункт 8 Правил ведения Единого
-      государственного реестра юридических лиц).
+    name: Основной государственный регистрационный номер (ОГРН, ОГРНИП)
+    doc: Номер записи о государственной регистрации, который налоговая служба присваивает юридическому
+      лицу (ОГРН, 13 цифр, ЕГРЮЛ) или индивидуальному предпринимателю (ОГРНИП, 15 цифр, ЕГРИП). Первая
+      цифра 1 или 5 у ОГРН и 3 у ОГРНИП, затем год записи, код региона, номер записи и контрольная цифра.

@@ -178,7 +178,6 @@ supported_types:
 - nz_bankaccount
 - nz_ird
 - ogrn
-- ogrn_ogrnip
 - p2pkhaddr
 - p2shaddr
 - p2wpkhaddr
