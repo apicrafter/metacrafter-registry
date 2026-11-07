@@ -1,0 +1,36 @@
+id: ru_esklp_code
+name: Russian ESKLP medicine code
+status: stable
+doc: Code of a position in ESKLP, the unified structured reference catalogue of medicines of the Russian
+  Ministry of Health, used in public procurement of medicines. The code starts with the OKPD2 product
+  code of the medicine, followed by groups of 6, 1, 5 and 13 digits separated by hyphens, for example
+  21.20.10.193-000012-1-00002-2000000301228. A code of a standardised INN position (SMNN) ends with 13
+  zeros; a code of a catalogue position of a medicine (KLP) shares the first parts with its SMNN and ends
+  with non-zero digits. Use this type when a column mixes both kinds of codes.
+categories:
+- medical
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{2}\.\d{2}\.\d{2}\.\d{3}-\d{6}-\d-\d{5}-\d{13}$
+examples:
+- value: 21.20.10.193-000012-1-00002-0000000000000
+  description: SMNN code of ethambutol (ATC J04AK02)
+- value: 21.20.10.193-000012-1-00002-2000000301228
+  description: KLP code of a medicine under this SMNN code
+- value: 21.20.10.226
+  valid: false
+  description: OKPD2 code alone
+links:
+- type: doc
+  url: https://ppt.ru/art/zakupki/gde-nayti-i-kak-rabotat-so-spravochnikom-yesklp-poshagovaya-instruktsiya
+translations:
+  ru:
+    name: Код ЕСКЛП
+    doc: Код позиции Единого структурированного справочника-каталога лекарственных препаратов (ЕСКЛП)
+      Минздрава России, который применяется при закупках лекарств. Код начинается с кода ОКПД2 препарата,
+      за ним через дефисы идут группы из 6, 1, 5 и 13 цифр. Код СМНН заканчивается 13 нулями, код КЛП
+      совпадает с кодом своего СМНН в первых частях и заканчивается ненулевыми цифрами.
