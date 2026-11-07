@@ -27,6 +27,8 @@ examples:
 links:
 - type: doc
   url: https://ppt.ru/art/zakupki/gde-nayti-i-kak-rabotat-so-spravochnikom-yesklp-poshagovaya-instruktsiya
+- type: doc
+  url: https://base.garant.ru/71920072/c9c989f1e999992b41b30686f0032f7d/
 translations:
   ru:
     name: Код ЕСКЛП

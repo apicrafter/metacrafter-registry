@@ -1,0 +1,53 @@
+id: medication_strength
+name: Medication strength (dosage)
+status: draft
+doc: Amount of active substance in one unit of a medicine (a tablet, a dose) or per volume or mass of
+  it, such as 500 mg, 10 mg/ml or 2.5 ml per dose. A combination product lists one amount per substance
+  joined with a plus sign, as in 50 мг+25 мг. Units are mass (mg, g, mcg), volume (ml), international
+  or other units (IU, ЕД, МЕ), radioactivity (МБк), colony-forming units (КОЕ) or a percentage. The Russian
+  ESKLP catalogue also writes the amount per volume with a vertical bar, as in 250 мг|5 мл, and writes
+  a missing value as ~ or НЕ УКАЗАНО. The regexp covers numbers with these units; in the std_dosage field
+  of an ESKLP export it matched 10698 of the 11059 values that were not placeholders (96.7%).
+categories:
+- medical
+langs:
+- en
+- ru
+is_pii: false
+classification: categorical
+regexp: '^\d+(?:[.,]\d+)? ?(?:мг|мкг|г|мл|ЕД|Ед|МЕ|МБк|ммоль|КОЕ|доз[аы]?|%|mg|mcg|µg|g|ml|mL|IU|U|mmol)(?:(?:/|
+  ?\| ?)(?:\d+(?:[.,]\d+)? ?)?(?:мл|г|доза|л|ч|час|сут|ml|mL|g|dose|h|L))?(?: ?\+ ?\d+(?:[.,]\d+)? ?(?:мг|мкг|г|мл|ЕД|Ед|МЕ|МБк|ммоль|КОЕ|доз[аы]?|%|mg|mcg|µg|g|ml|mL|IU|U|mmol)(?:(?:/|
+  ?\| ?)(?:\d+(?:[.,]\d+)? ?)?(?:мл|г|доза|л|ч|час|сут|ml|mL|g|dose|h|L))?)*$'
+examples:
+- value: 80 мг
+  description: Capsules of febuxostat, from the ESKLP catalogue
+- value: 50 мг+25 мг
+  description: Tablets of dolutegravir + rilpivirine, from the ESKLP catalogue
+- value: 2.5 мл/доза
+  description: Oral rotavirus vaccine, volume per dose, from the ESKLP catalogue
+- value: 1 %
+  description: Concentration as a percentage
+- value: 0.5 г
+  description: Mass of active substance in grams
+- value: 250 мг|5 мл
+  description: Amount per volume as the ESKLP catalogue writes it
+- value: 500 mg
+- value: 100 mg/5 mL
+  description: Oral suspension, amount per volume
+- value: НЕ УКАЗАНО
+  valid: false
+  description: Placeholder that ESKLP writes when the dosage is not given
+- value: '80'
+  valid: false
+  description: A number without a unit
+links:
+- type: schema.org
+  url: https://schema.org/DrugStrength
+- type: doc
+  url: https://base.garant.ru/71920072/172a6d689833ce3e42dc0a8a7b3cddf9/
+translations:
+  ru:
+    name: Дозировка лекарственного препарата
+    doc: Количество действующего вещества в единице лекарственного препарата (таблетке, дозе) или в единице
+      его объёма или массы, например 500 мг, 10 мг/мл или 2.5 мл/доза. Для комбинированных препаратов
+      дозировки веществ перечисляются через знак плюс, например 50 мг+25 мг.
