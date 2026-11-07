@@ -1,0 +1,31 @@
+id: object_dimensions
+name: Object dimensions as text
+status: draft
+doc: Size of a physical object written as one text value, two or three measurements joined by a multiplication
+  sign and followed by a unit, such as 30х40 см or 68 x 82 cm. Museum catalogues, auction houses and shops
+  use this form for paintings, prints and goods. The sign is a Latin x, a Cyrillic х or ×, and the order
+  of the measurements is not fixed. Single measurements in their own columns are the datatypes height,
+  width and length.
+categories:
+- values
+- common
+langs:
+- common
+is_pii: false
+regexp: ^\d+(?:[.,]\d+)?\s*[xXхХ×]\s*\d+(?:[.,]\d+)?(?:\s*[xXхХ×]\s*\d+(?:[.,]\d+)?)?\s*(?:мм|см|м|mm|cm|m|in)\.?$
+examples:
+- value: 30х40 см
+  description: Cyrillic х as the multiplication sign
+- value: 25х20.5 см
+- value: 68 x 82 cm
+- value: 10 x 15 x 2 cm
+  description: three measurements
+- value: 1920x1080
+  valid: false
+  description: screen resolution, no unit
+- value: 30 см
+  valid: false
+  description: one measurement is a length
+translations:
+  ru:
+    name: Размеры предмета

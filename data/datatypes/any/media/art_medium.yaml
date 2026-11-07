@@ -1,0 +1,29 @@
+id: art_medium
+name: Art medium (technique and material of an artwork)
+status: draft
+doc: Technique and materials with which a work of art or a museum object is made, written as free text,
+  such as oil on canvas, watercolour on paper, photograph or bronze. Museum catalogues keep it in a field
+  named technique, medium or material. The values form a small vocabulary that is repeated in many spellings
+  and word orders (oil on canvas, canvas, oil), so it has no regular expression.
+categories:
+- media
+- common
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: oil on canvas
+- value: Холст, масло
+  description: Russian catalogues often name the support first
+- value: watercolour on paper
+- value: taxidermy
+  description: natural history collections
+mappings:
+  schema_org: artMedium
+links:
+- type: schema.org
+  url: https://schema.org/artMedium
+translations:
+  ru:
+    name: Техника и материал

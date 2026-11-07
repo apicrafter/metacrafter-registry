@@ -4,6 +4,7 @@ status: draft
 doc: Approximate date of creation of a historical or museum object written in Russian, with a century
   in Roman numerals, a millennium, a decade or a year and qualifiers such as начало, конец or вторая половина.
   Registers of cultural heritage and museum objects use this free form, so it has no regular expression.
+parent: historical_dating
 categories:
 - datetime
 country:
