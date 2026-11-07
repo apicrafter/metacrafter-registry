@@ -1,0 +1,46 @@
+id: it_vehicle_plate
+name: Italian vehicle registration number (targa)
+status: draft
+doc: 'Registration number (targa) of a car in Italy in the national format used since 28 February 1994:
+  two letters, three digits and two letters, as in AB 012 AB, with no reference to the province. The letters
+  I, O, Q and U are not used. The digits change first, then the letters from right to left; the H series
+  began in May 2025, and the EE series was skipped. Since February 2013 trailers have plates of the same
+  form starting with X; Y is reserved for local police vehicles and Z for square rear plates. Motorcycle
+  plates (two letters and five digits), moped plates and the provincial plates issued before 1994 follow
+  other rules and are not covered.'
+categories:
+- transport
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-HJ-NPR-TV-Z]{2} ?\d{3} ?[A-HJ-NPR-TV-Z]{2}$
+examples:
+- value: AB 012 AB
+  description: Format example of Italian Wikipedia
+- value: GX482KT
+  description: Synthetic number written without spaces
+- value: XB 301 FM
+  description: Synthetic trailer number of the XB series
+- value: AI 123 BC
+  valid: false
+  description: The letter I is not used
+- value: AB 1234 CD
+  valid: false
+  description: Four digits
+links:
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Targhe_d%27immatricolazione_italiane
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Italy
+translations:
+  it:
+    name: Targa automobilistica
+    doc: Targa di un'autovettura nel formato in uso dal 1994 - due lettere, tre cifre e due lettere, senza
+      I, O, Q e U.
+  ru:
+    name: Номерной знак транспортного средства Италии (targa)
+    doc: Регистрационный номер автомобиля в формате, действующем с 1994 года - две буквы, три цифры и
+      две буквы, без I, O, Q и U.

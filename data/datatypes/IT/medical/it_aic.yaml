@@ -1,9 +1,12 @@
 id: it_aic
 name: Italian medicine authorisation code (AIC)
-status: draft
+status: stable
 doc: Codice AIC (autorizzazione all'immissione in commercio), the code that the Italian Medicines Agency
-  (AIFA) gives to each medicine pack authorised for sale in Italy. It has nine digits including a check
-  digit, or six characters in its base-32 form.
+  (AIFA) gives to each medicine pack authorised for sale in Italy. It has nine digits starting with 0,
+  the last one a check digit, or six characters in its base-32 form, which uses digits and consonants
+  (no A, E, I or O). For the check digit the digits in even positions are doubled, the digits of all products
+  are added, and the sum modulo 10 is the last digit. GS1 barcodes carry it in application identifier
+  716.
 categories:
 - medical
 country:
@@ -12,15 +15,28 @@ langs:
 - it
 is_pii: false
 classification: identifier
-regexp: ^(?:\d{9}|[0-9B-DF-HJ-NP-Z]{6})$
+regexp: ^(?:0\d{8}|[0-9B-DF-HJ-NP-Z]{6})$
+checksum: it_aic
 examples:
 - value: 079878625
   description: Synthetic number with a valid check digit
 - value: 091810440
   description: Synthetic number with a valid check digit
+- value: '000307052'
+  description: python-stdnum documentation value
+- value: 009CVD
+  description: The same code in its base-32 form (python-stdnum documentation)
+- value: 2D5QH1
+  description: Base-32 form of 079878625
 - value: 0798786257
   valid: false
   description: One character too many
+- value: 079878626
+  valid: false
+  description: Check digit does not match
+- value: 009AVD
+  valid: false
+  description: A is not used in the base-32 form
 mappings:
   gs1_ai: '716'
   stdnum: it.aic
@@ -34,3 +50,9 @@ links:
 translations:
   it:
     name: Codice AIC
+    doc: Codice di autorizzazione all'immissione in commercio che l'AIFA attribuisce a ogni confezione
+      di medicinale - nove cifre con cifra di controllo, o sei caratteri in base 32.
+  ru:
+    name: Код регистрации лекарственного средства Италии (AIC)
+    doc: Код, который агентство AIFA присваивает каждой упаковке лекарства, разрешённой к продаже в Италии
+      - девять цифр с контрольной цифрой или шесть символов в системе счисления по основанию 32.

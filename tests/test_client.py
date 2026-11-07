@@ -43,6 +43,7 @@ from metacrafter_registry.checksums import (
     iso7064_mod11_2,
     iso7064_mod97_10,
     issn,
+    it_aic,
     it_codicefiscale,
     it_iva,
     kz_iin_bin,
@@ -117,6 +118,9 @@ def test_checksum_reference_values():
     assert not it_codicefiscale("RCCMNL83S18D969A") and not it_codicefiscale("RCCMNL83Z18D969H")
     assert it_iva("IT 00743110157") and it_iva("00743110157") and not it_iva("00743110158")
     assert not it_iva("00743115007")  # 500 is not a tax office code
+    # python-stdnum reference value in both forms; base32 has no A, E, I or O.
+    assert it_aic("000307052") and it_aic("009CVD") and it_aic("079878625")
+    assert not it_aic("000307053") and not it_aic("100307052") and not it_aic("009AVD")
     assert fi_hetu("131052-308T") and not fi_hetu("131052-308U") and not fi_hetu("131052308T")
     assert es_dni("54362315-K") and not es_dni("54362315Z")
     assert pl_nip("PL 8567346215") and pl_nip("856-734-62-15") and not pl_nip("PL 8567346216")

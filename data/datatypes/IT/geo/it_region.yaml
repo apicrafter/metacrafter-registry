@@ -2,7 +2,8 @@ id: it_region
 name: Italian region
 status: draft
 doc: Name of one of the 20 regions of Italy, such as Lombardia, Lazio or Sicilia, in Italian or English
-  (Lombardy, Sicily). Five of them have special autonomy.
+  (Lombardy, Sicily). Five of them have special autonomy. Their ISO 3166-2 codes are in it_subdivision_code
+  and their ISTAT codes in it_istat_comune.
 parent: admin_area_1
 categories:
 - geo
@@ -25,8 +26,14 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Regions_of_Italy
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Regioni_d%27Italia
 - type: other
   url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
 translations:
+  it:
+    name: Regione
   ru:
     name: Область Италии
+    doc: Название одной из 20 областей Италии, например Lombardia или Lazio; пять из них имеют особый
+      статус автономии.

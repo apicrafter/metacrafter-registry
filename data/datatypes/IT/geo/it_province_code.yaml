@@ -1,12 +1,17 @@
 id: it_province_code
 name: Italian province abbreviation (sigla)
 status: draft
-doc: Two-letter abbreviation (sigla) of an Italian province or metropolitan city, such as MI (Milano),
-  RM (Roma) or NA (Napoli). It is written in addresses after the name of the comune.
+doc: 'Two-letter abbreviation (sigla) of an Italian province or metropolitan city, such as MI (Milano),
+  RM (Roma) or NA (Napoli). It is written in addresses after the name of the comune, and ISO 3166-2:IT
+  uses the same letters after IT- (it_subdivision_code). The list also has AO for Valle d''Aosta, which
+  has no province, and the abbreviations of the Sardinian reform of 1 January 2026, fixed by DPR 4 August
+  2026, n. 183: OT (Gallura Nord-Est Sardegna), OG (Ogliastra), VS (Medio Campidano) and SU, which passed
+  from Sud Sardegna to Sulcis Iglesiente. CI (Carbonia-Iglesias, a province from 2005 to 2016) is kept
+  for older data.'
 semantic_type: it_province
 country:
 - IT
-regexp: ^[A-Z]{2}$
+regexp: ^(?:A[GLNOPQRTV]|B[AGILNORSTZ]|C[ABEHILNORSTZ]|EN|F[CEGIMR]|G[EOR]|I[MS]|KR|L[CEIOTU]|M[BCEINOST]|N[AOU]|O[GRT]|P[ACDEGINORTUVZ]|R[ACEGIMNO]|S[AIOPRSUV]|T[AENOPRSV]|UD|V[ABCEIRSTV])$
 examples:
 - value: MI
   description: Milano
@@ -14,16 +19,29 @@ examples:
   description: Roma
 - value: NA
   description: Napoli
+- value: OG
+  description: Ogliastra, again a province since 1 January 2026
 - value: Roma
   valid: false
   description: the name, not the abbreviation
+- value: SD
+  valid: false
+  description: Code that ISO 3166-2 gave Sud Sardegna in 2019 and corrected to SU in 2020; never an abbreviation
 mappings:
   fta: STATE_PROVINCE.PROVINCE_IT
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Provinces_of_Italy
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_3166-2:IT
+- type: doc
+  url: https://www.conferenzastatocitta.gov.it/home/notizie-e-comunicati/2026/sardegna-nuove-sigle-automobilistiche-per-quattro-province/
 - type: other
   url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
 translations:
+  it:
+    name: Sigla della provincia
   ru:
     name: Сокращение провинции Италии
+    doc: Двухбуквенное сокращение провинции или метрополитенского города Италии, например MI (Милан) или
+      RM (Рим).

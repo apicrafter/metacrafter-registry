@@ -334,6 +334,29 @@ def it_iva(value: str) -> bool:
     return luhn(compact)
 
 
+_AIC_BASE32 = "0123456789BCDFGHJKLMNPQRSTUVWXYZ"
+
+
+def it_aic(value: str) -> bool:
+    """Italian medicine authorisation code (AIC): 9 digits, or 6 base-32 characters.
+
+    The base-32 form (digits and consonants, no A, E, I or O) is converted to
+    the 9-digit form, which starts with 0. Digits in even positions (2nd,
+    4th, ...) are doubled, the digits of all products are added, and the sum
+    modulo 10 is the last digit.
+    """
+    compact = _compact(value).upper()
+    if len(compact) == 6 and all(c in _AIC_BASE32 for c in compact):
+        number = sum(_AIC_BASE32.index(c) * 32**i for i, c in enumerate(reversed(compact)))
+        compact = str(number).zfill(9)
+    if not re.fullmatch(r"0\d{8}", compact):
+        return False
+    total = sum(
+        sum(divmod(int(c) * (1 if i % 2 == 0 else 2), 10)) for i, c in enumerate(compact[:8])
+    )
+    return total % 10 == int(compact[8])
+
+
 def fi_hetu(value: str) -> bool:
     """Finnish personal identity code (henkilötunnus): 11 characters, DDMMYYCZZZQ.
 
@@ -888,6 +911,7 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "no_fnr": no_fnr,
     "it_codicefiscale": it_codicefiscale,
     "it_iva": it_iva,
+    "it_aic": it_aic,
     "fi_hetu": fi_hetu,
     "es_dni": es_dni,
     "pl_nip": pl_nip,

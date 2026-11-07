@@ -1,0 +1,47 @@
+id: it_rea
+name: Italian REA number (Repertorio economico amministrativo)
+status: draft
+doc: Number under which a company or other business is entered in the Repertorio economico amministrativo
+  (REA), the register of economic and administrative information that each Italian chamber of commerce
+  keeps with the business register. It is written as the abbreviation of the province of the chamber (it_province_code)
+  and a progressive number, with a hyphen or a space; in Milan the numbers have reached seven digits.
+  Each chamber numbers its own entries, so the same number can exist in two provinces, and a business
+  that moves its registered office to another province gets a new number. Italian electronic invoices
+  (FatturaPA) carry the two parts in the fields Ufficio and NumeroREA.
+categories:
+- companies
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:A[GLNOPQRTV]|B[AGILNORSTZ]|C[ABEHILNORSTZ]|EN|F[CEGIMR]|G[EOR]|I[MS]|KR|L[CEIOTU]|M[BCEINOST]|N[AOU]|O[GRT]|P[ACDEGINORTUVZ]|R[ACEGIMNO]|S[AIOPRSUV]|T[AENOPRSV]|UD|V[ABCEIRSTV])[-
+  ]?\d{1,7}$
+examples:
+- value: MI-2048315
+  description: Synthetic number of the Milan chamber
+- value: RM 1187420
+  description: Synthetic number of the Rome chamber, written with a space
+- value: TO1102345
+  description: Synthetic number of the Turin chamber without a separator
+- value: XX-204831
+  valid: false
+  description: XX is not a province abbreviation
+- value: MI-20483157
+  valid: false
+  description: Eight digits
+links:
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Repertorio_economico_amministrativo
+- type: doc
+  url: https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.2/Schema_del_file_xml_FatturaPA_v1.2.2.xsd
+translations:
+  it:
+    name: Numero REA
+    doc: Numero di iscrizione nel Repertorio economico amministrativo della camera di commercio, preceduto
+      dalla sigla della provincia, come MI-2048315.
+  ru:
+    name: Номер REA Италии (Repertorio economico amministrativo)
+    doc: Номер записи компании в реестре REA торговой палаты провинции - сокращение провинции и порядковый
+      номер.

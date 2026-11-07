@@ -1,6 +1,6 @@
 id: it_postcode
 name: Italian postal code (CAP)
-status: draft
+status: stable
 doc: 'Italian postal code (CAP, codice di avviamento postale): five digits. San Marino and Vatican City
   also use codes from this system.'
 semantic_type: postindex
@@ -23,8 +23,13 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Postal_codes_in_Italy
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Codice_di_avviamento_postale
 - type: other
   url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
 translations:
+  it:
+    name: Codice di avviamento postale (CAP)
   ru:
     name: Почтовый индекс Италии (CAP)
+    doc: Почтовый индекс Италии из пяти цифр; его используют также Сан-Марино и Ватикан.

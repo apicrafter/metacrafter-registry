@@ -1,0 +1,43 @@
+id: it_sbn_author_id
+name: SBN author identifier
+status: draft
+doc: Identifier of an author record (name authority) in the catalogue of the Servizio bibliotecario nazionale
+  (SBN), the national network of Italian libraries coordinated by the Central Institute for the Union
+  Catalogue (ICCU). It has ten characters, the fourth of them V, as in CFIV004372 for Galileo Galilei.
+  Wikidata stores it as P396; the regexp follows its format constraint.
+categories:
+- publishing
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}[A-Z0-3]V\d{6}$
+examples:
+- value: CFIV004372
+  description: Galileo Galilei (Wikidata example)
+- value: CFIV017574
+  description: Petrarch (Wikidata example)
+- value: BVEV016960
+  description: Aldus Manutius (Wikidata example)
+- value: CFIV00437
+  valid: false
+  description: Nine characters
+mappings:
+  wikidata: P396
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P396
+- type: doc
+  url: https://opac.sbn.it/
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Servizio_bibliotecario_nazionale
+translations:
+  it:
+    name: Identificativo SBN dell'autore
+    doc: Identificativo di dieci caratteri di un autore nell'authority file del catalogo SBN, come CFIV004372.
+  ru:
+    name: Идентификатор автора в каталоге SBN
+    doc: Десятисимвольный идентификатор авторитетной записи об авторе в каталоге итальянских библиотек
+      SBN.

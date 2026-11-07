@@ -1,0 +1,42 @@
+id: it_cup
+name: Italian public investment project code (CUP)
+status: draft
+doc: Codice unico di progetto (CUP), the 15-character code of a public investment project in Italy. The
+  CUP system of the Department for planning and coordination of economic policy (DIPE) of the Presidency
+  of the Council of Ministers generates it when the funding of a project is decided. It stays with the
+  project until it ends and is quoted on its administrative and accounting documents, payments and electronic
+  invoices. The published examples, such as C11G06000000001 on Italian Wikipedia, have a letter, two digits,
+  a letter and eleven digits, and the regexp follows that form.
+categories:
+- government
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]\d{2}[A-Z]\d{11}$
+examples:
+- value: C11G06000000001
+  description: Example from Italian Wikipedia
+- value: G17H03000130001
+  description: Example quoted in guides to the CUP
+- value: C11G0600000000
+  valid: false
+  description: 14 characters
+links:
+- type: doc
+  url: https://www.opencup.gov.it/
+- type: doc
+  url: https://dati.anticorruzione.it/opendata/dataset/cup
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Codice_unico_di_progetto
+translations:
+  it:
+    name: Codice unico di progetto (CUP)
+    doc: Codice alfanumerico di 15 caratteri che identifica un progetto di investimento pubblico, generato
+      dal Sistema CUP del DIPE.
+  ru:
+    name: Код проекта государственных инвестиций Италии (CUP)
+    doc: Пятнадцатисимвольный код проекта государственных инвестиций, который выдаёт система CUP департамента
+      DIPE.

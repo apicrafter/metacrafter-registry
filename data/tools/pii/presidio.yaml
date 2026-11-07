@@ -31,7 +31,11 @@ supported_types:
 - handelsregisternr
 - iban
 - ipaddr
+- it_codicefiscale
+- it_driver_license
 - it_id_card
+- it_iva
+- it_passport
 - krrrn
 - mac_address
 - medicare
