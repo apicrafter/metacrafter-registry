@@ -11,7 +11,17 @@ langs:
 - ru
 is_pii: true
 classification: identifier
+regexp: ^(?:\d{11}|\d{3}-\d{3}-\d{3} \d{2})$
 checksum: ru_snils
+examples:
+- value: 112-233-445 95
+  description: Documentation example in the printed form XXX-XXX-XXX YY
+- value: '11223344595'
+  description: The same number without separators, as the SNILS attribute of a qualified certificate holds
+    it (OID 1.2.643.100.3)
+- value: 112-233-445 96
+  valid: false
+  description: Wrong control number
 mappings:
   dpv: pd:OfficialID
 links:

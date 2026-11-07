@@ -1,0 +1,36 @@
+id: ru_fsb_conclusion_number
+name: FSB of Russia conformity conclusion number
+status: draft
+doc: Number of a conclusion of the FSB of Russia that confirms the conformity of an electronic signature
+  tool or a certification authority tool to the requirements. FSB order No. 795 requires the issuerSignTool
+  extension of a qualified certificate (OID 1.2.643.100.112) to give the details of such conclusions.
+  The numbers are groups of digits separated by slashes, the last one sometimes after a hyphen, for example
+  149/3/2/2/23 and 149/7/1/4/2-603; certificates cite them as Заключение № 149/3/2/2/23 от 02.03.2018.
+  All the numbers seen start with 149; the regexp follows them and covers the number alone.
+categories:
+- cryptography
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^149(?:/\d+)+(?:-\d+)?$
+examples:
+- value: 149/3/2/2/23
+  description: Conclusion on the signature tool of the head certification authority, 02.03.2018
+- value: 149/7/6/105
+- value: 149/7/1/4/2-603
+- value: 149/7/6-449
+- value: Заключение № 149/3/2/2/23 от 02.03.2018
+  valid: false
+  description: Number with words and the date; the regexp covers the number alone
+links:
+- type: doc
+  url: https://legalacts.ru/doc/prikaz-fsb-rf-ot-27122011-n-795/
+translations:
+  ru:
+    name: Номер заключения ФСБ России о подтверждении соответствия
+    doc: Номер заключения ФСБ России о подтверждении соответствия средства электронной подписи или средства
+      удостоверяющего центра, например 149/3/2/2/23. Указывается в расширении issuerSignTool квалифицированного
+      сертификата (приказ ФСБ России № 795).

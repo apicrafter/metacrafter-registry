@@ -1,0 +1,36 @@
+id: x509_key_identifier
+name: X.509 key identifier (SKI, AKI)
+status: draft
+doc: 'Identifier of a public key in the subjectKeyIdentifier and authorityKeyIdentifier extensions of
+  an X.509 certificate. It links a certificate to the certificate of its issuer and to revocation lists.
+  RFC 5280 suggests the 160-bit SHA-1 of the public key (20 octets) or a 64-bit form of it (8 octets),
+  and allows other methods. The regexp covers the 20- and 8-octet forms in hexadecimal, compact or with
+  colons. The compact 20-octet form looks like a SHA-1 hash: the type is told by the field name.'
+categories:
+- cryptography
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[0-9A-Fa-f]{40}|[0-9A-Fa-f]{16}|[0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){19}|[0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){7})$
+examples:
+- value: F0B481FE9812BFB528B9644003CBCC1F664E2803
+  description: subjectKeyIdentifier of the example certificate of RFC 7468, section 5.1
+- value: F0:B4:81:FE:98:12:BF:B5:28:B9:64:40:03:CB:CC:1F:66:4E:28:03
+  description: The same identifier with colons
+- value: E0986CEDDC7945B1D58115A79A1C75D86601A609
+  description: subjectKeyIdentifier of a CA certificate in the register of accredited certification authorities
+    (e-trust.gosuslugi.ru)
+- value: F0B481FE9812BFB528B9644003CBCC1F664E28
+  valid: false
+  description: 19 octets
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.2
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.1
+translations:
+  ru:
+    name: Идентификатор ключа X.509 (SKI, AKI)
+    doc: Идентификатор открытого ключа в расширениях subjectKeyIdentifier и authorityKeyIdentifier сертификата
+      X.509, обычно SHA-1 открытого ключа (20 октетов в шестнадцатеричном виде).

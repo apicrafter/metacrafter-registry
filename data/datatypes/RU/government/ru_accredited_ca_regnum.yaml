@@ -1,0 +1,31 @@
+id: ru_accredited_ca_regnum
+name: Register number of an accredited Russian certification authority
+status: draft
+doc: 'Number of a certification authority in the register of accredited certification authorities on e-trust.gosuslugi.ru,
+  the key of its record. In the 2022-2023 version of the portal the numbers ran from 0 (the Ministry of
+  Digital Development, the head certification authority) to about 700, with a few larger ones such as
+  1000 and 1023. The value is a plain integer: the type is told by the field name (РеестровыйНомер).'
+categories:
+- government
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,4}$
+examples:
+- value: '495'
+  description: JSC Analytical Center
+- value: '1023'
+  description: Roskadastr
+- value: '12345'
+  valid: false
+  description: Five digits
+links:
+- type: other
+  url: https://e-trust.gosuslugi.ru/
+translations:
+  ru:
+    name: Реестровый номер аккредитованного удостоверяющего центра
+    doc: Номер удостоверяющего центра в реестре аккредитованных УЦ на e-trust.gosuslugi.ru (поле РеестровыйНомер).

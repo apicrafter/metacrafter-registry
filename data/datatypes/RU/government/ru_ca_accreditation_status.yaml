@@ -1,0 +1,36 @@
+id: ru_ca_accreditation_status
+name: Accreditation status of a Russian certification authority
+status: draft
+doc: 'Status of the accreditation of a certification authority in the register of accredited certification
+  authorities on e-trust.gosuslugi.ru: Действует (in force), Приостановлена (suspended), Прекращена (terminated)
+  or Аннулирована (annulled). Accreditation is governed by article 16 of Federal Law No. 63-FZ on electronic
+  signatures. The list is the one the portal showed in its 2022-2023 version, for the current status and
+  for the history of statuses of each authority.'
+categories:
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: ^(?:Действует|Приостановлена|Прекращена|Аннулирована)$
+examples:
+- value: Действует
+- value: Приостановлена
+- value: Прекращена
+- value: Аннулирована
+- value: Активна
+  valid: false
+  description: Not a status of the register
+links:
+- type: doc
+  url: https://www.consultant.ru/document/cons_doc_LAW_112701/
+- type: other
+  url: https://e-trust.gosuslugi.ru/
+translations:
+  ru:
+    name: Статус аккредитации удостоверяющего центра
+    doc: 'Статус аккредитации удостоверяющего центра в реестре аккредитованных УЦ на e-trust.gosuslugi.ru:
+      Действует, Приостановлена, Прекращена, Аннулирована (ст. 16 Федерального закона № 63-ФЗ «Об электронной
+      подписи»).'
