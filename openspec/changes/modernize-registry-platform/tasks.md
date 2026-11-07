@@ -157,8 +157,8 @@
 - [x] 7.6 Add the MCP server (`metacrafter-registry mcp`): the tools and resources from the `agent-integration` spec, an offline snapshot and `--refresh`. Add tests with an MCP client.
   - Uses `mcp>=2,<3` (`MCPServer`).
   - Tests run in memory, plus an end-to-end test over stdio through the real CLI.
-- [x] 7.7 Add PyPI trusted publishing to `release.yml`. The data snapshot is bundled from the build output.
-  - [ ] **Owner action:** register the trusted publisher on pypi.org (repository `apicrafter/metacrafter-registry`, workflow `release.yml`, environment `pypi`).
+- [x] 7.7 Bundle the data snapshot from the build output into the wheel that `release.yml` attaches to the GitHub Release.
+  - The package is not published on PyPI (owner decision, 2026-11-07): the registry is used through its site and API. The PyPI job was removed from `release.yml`.
 - [x] 7.8 Write the skills `skills/registry-lookup/SKILL.md` and `skills/registry-contributor/SKILL.md`, and point to them from `AGENTS.md`.
 - [x] 7.9 Add the site pages `/developers` and `/agents`: API, package, MCP configuration snippets, `llms.txt` and the safety note about drafts.
   - `/agents` has a Markdown twin, `/agents.md`.
@@ -244,4 +244,4 @@
 
 - [ ] 9.1 Declare the data license chosen by the owner in `index.json`, on `/about` and in `LICENSE-DATA`. Add attribution for text copied from Wikipedia.
 - [ ] 9.2 Run the full contract test, check reproducibility, and check that `openspec validate --strict` passes.
-- [ ] 9.3 Tag `v2.0.0`. Verify the GitHub Release assets, the PyPI package and the production site.
+- [ ] 9.3 Tag `v2.0.0`. Verify the GitHub Release assets, the snapshot bundled in the wheel and the production site.

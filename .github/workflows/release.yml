@@ -1,8 +1,8 @@
 name: Release
 
-# Push a tag like v1.3.0 to publish:
-#   - a GitHub Release with the bulk data files and the Python package;
-#   - the Python package on PyPI (trusted publishing, environment "pypi").
+# Push a tag like v1.3.0 to publish a GitHub Release with the bulk data files
+# and the Python package. The package is not published on PyPI: the registry is
+# used through its site and API.
 # The tag must equal `version` in pyproject.toml.
 # Versioning policy: see CONTRIBUTING.md ("Releases and versioning").
 
@@ -90,11 +90,6 @@ jobs:
           name: release
           path: release
 
-      - uses: actions/upload-artifact@v4
-        with:
-          name: python-package
-          path: pkg-dist
-
   github-release:
     needs: build
     runs-on: ubuntu-latest
@@ -111,22 +106,3 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.ref_name }}
         run: gh release create "$TAG" release/* --repo "$GITHUB_REPOSITORY" --title "$TAG" --notes-file release/CHANGES.md --verify-tag
-
-  pypi:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/p/metacrafter-registry
-    permissions:
-      id-token: write
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: python-package
-          path: pkg-dist
-
-      - name: Publish to PyPI (trusted publishing)
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          packages-dir: pkg-dist

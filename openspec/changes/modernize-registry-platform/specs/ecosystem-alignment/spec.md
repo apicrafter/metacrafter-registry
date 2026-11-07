@@ -42,7 +42,7 @@ The registry SHALL document the canonical datatype URL template, `https://regist
 - **THEN** it finds `datatype_url_template` with the value `https://registry.apicrafter.io/datatype/{id}`
 
 ### Requirement: Python package for offline use
-The registry SHALL be published to PyPI as `metacrafter-registry`, with a data snapshot for each release. The package SHALL provide:
+The registry SHALL provide a Python package `metacrafter-registry` that installs from the GitHub repository. Each GitHub Release SHALL attach the package's wheel with a data snapshot. The package SHALL NOT be published to PyPI, because the registry is used through its site and API. The package SHALL provide:
 
 - loading of the bundled snapshot;
 - optional fetching of the latest published data, with caching;
@@ -56,5 +56,5 @@ The registry SHALL be published to PyPI as `metacrafter-registry`, with a data s
 - **THEN** it can obtain the name, categories, `is_pii` and URL of `email` without any network access
 
 #### Scenario: Version pinning
-- **WHEN** a consumer pins `metacrafter-registry==2.1.0`
-- **THEN** the bundled snapshot equals the data in GitHub Release `v2.1.0`
+- **WHEN** a consumer installs the wheel attached to GitHub Release `v2.1.0`
+- **THEN** its bundled snapshot equals the data in that release

@@ -37,7 +37,8 @@ metacrafter, and AI agents from the same YAML sources.
   - Agent skills for using the registry and for contributing to it.
 - **Python package `metacrafter-registry`.** It bundles a data snapshot and
   provides lookup, URL-building and value-matching helpers, so metacrafter and
-  metacrafter-llm can work offline. It is published to PyPI on each release.
+  metacrafter-llm can work offline. Each GitHub Release attaches its wheel. It
+  is not published to PyPI, because the registry is used through its site and API.
 - **Data model v2.**
   - JSON Schema (2020-12) replaces the Cerberus rule files, and the schema is
     published for editors and agents.
@@ -75,8 +76,8 @@ metacrafter, and AI agents from the same YAML sources.
   - CI reports orphans in both directions.
 - **Releases.**
   - Data is versioned with SemVer.
-  - Each release gets a git tag, a GitHub Release with bulk assets, and a
-    PyPI upload.
+  - Each release gets a git tag and a GitHub Release with the bulk assets and
+    the Python package.
   - Release notes list the added, changed and deprecated IDs.
 - **Repository hygiene.**
   - Add `pyproject.toml`, tests and a single CLI (`build`, `validate`,

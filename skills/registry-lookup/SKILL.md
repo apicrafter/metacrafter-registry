@@ -15,7 +15,8 @@ examples and links. Every record has a stable URL,
 
 1. **MCP tools** (best): if the `metacrafter-registry` MCP server is connected,
    use its tools. They run locally, so sample values are not sent anywhere.
-2. **Python**: `pip install metacrafter-registry`, then
+2. **Python**: `pip install "metacrafter-registry @ git+https://github.com/apicrafter/metacrafter-registry"`
+   (not on PyPI), then
    `from metacrafter_registry import Registry; reg = Registry.fetch()`.
 3. **HTTP** (no install): read `https://registry.apicrafter.io/llms.txt`, a
    record as Markdown at `/datatype/<id>.md`, or JSON at

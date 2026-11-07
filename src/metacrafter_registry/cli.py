@@ -313,7 +313,9 @@ def cmd_mcp(args: argparse.Namespace) -> int:
         from .mcp_server import serve
     except ImportError:  # pragma: no cover - depends on the optional extra
         print(
-            'The MCP server needs the extra: pip install "metacrafter-registry[mcp]"',
+            "The MCP server needs the extra: pip install -e '.[mcp]' in a checkout, or\n"
+            "pip install 'metacrafter-registry[mcp] @ "
+            "git+https://github.com/apicrafter/metacrafter-registry'",
             file=sys.stderr,
         )
         return 1
