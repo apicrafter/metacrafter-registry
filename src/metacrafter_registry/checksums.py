@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import re
 from collections.abc import Callable
+from datetime import date
 
 _SEPARATORS = re.compile(r"[\s\-.]")
 
@@ -200,15 +201,30 @@ def ru_snils(value: str) -> bool:
 
 
 def ru_ogrn(value: str) -> bool:
-    """Russian state registration number: OGRN (13 digits) or OGRNIP (15 digits)."""
+    """Russian state registration number: OGRN (13 digits) or OGRNIP (15 digits).
+
+    Besides the check digit (mod 11 for OGRN, mod 13 for OGRNIP), the number
+    must start with its sign digit (1 or 5 for OGRN, 3 for OGRNIP), carry a
+    registration year (digits 2-3) from the first year the number was issued
+    (2002 for OGRN, 2004 for OGRNIP) to the current year, and a region code
+    (digits 4-5) other than 00. metacrafter-rules' ``ruogrn`` checks the same.
+    """
     compact = _compact(value)
     if not _is_digits(compact):
         return False
     if len(compact) == 13:
-        return int(compact[:12]) % 11 % 10 == int(compact[12])
-    if len(compact) == 15:
-        return int(compact[:14]) % 13 % 10 == int(compact[14])
-    return False
+        signs, first_year, modulus = "15", 2, 11
+    elif len(compact) == 15:
+        signs, first_year, modulus = "3", 4, 13
+    else:
+        return False
+    if compact[0] not in signs:
+        return False
+    if not first_year <= int(compact[1:3]) <= date.today().year % 100:
+        return False
+    if compact[3:5] == "00":
+        return False
+    return int(compact[:-1]) % modulus % 10 == int(compact[-1])
 
 
 def fr_nir(value: str) -> bool:
