@@ -16,3 +16,4 @@ mappings:
   sherlock: nationality
   dpv: pd:Nationality
   schema_org: nationality
+  presidio: NRP

@@ -22,6 +22,7 @@ mappings:
   sherlock: religion
   wikidata: P140
   dpv: pd:Religion
+  presidio: NRP
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Religion

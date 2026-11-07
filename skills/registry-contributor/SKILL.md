@@ -108,6 +108,15 @@ pip install -e ".[dev]"
   - `mappings.fhir`: the `Identifier.system` URI from terminology.hl7.org
     (`http://hl7.org/fhir/sid/us-ssn`).
 
+- **Presidio mappings** (`mappings.presidio`): map a record when the Presidio
+  entity covers the same values, and add the record to `supported_types` in
+  `data/tools/pii/presidio.yaml`.
+  - For an NER entity (`PERSON`, `LOCATION`, `ORGANIZATION`, `NRP`,
+    `DATE_TIME`), map the generic record. Map a narrower record only when its
+    `parent` chain reaches the generic one, so that a reverse lookup can take
+    the broadest record.
+  - Do not map patterns: they resolve through `semantic_type`.
+
 ## Improve existing records
 
 Find the records that need work most:

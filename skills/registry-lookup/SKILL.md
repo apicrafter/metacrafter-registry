@@ -93,6 +93,12 @@ Example:
   Sherlock's 78 types are mapped. Generic labels such as `code`, `type` or
   `rank` return nothing. Sato predicts the same 78 types, written in camelCase:
   `crosswalk("sato", "birthDate")` also returns `birthday`.
+  For an entity that Presidio found in free text, pass its name:
+  `crosswalk("presidio", "LOCATION")` returns `location` and the narrower place
+  records (`city`, `country`, `birthplace`, ...), whose `parent` is `location`.
+  Take the returned records that have no returned ancestor: `location` for
+  `LOCATION`, `orgname` for `ORGANIZATION`, `person_fullname` for `PERSON` and
+  `date` for `DATE_TIME`. `NRP` returns both `nationality` and `religion`.
   For a field of a GS1 barcode, pass its Application
   Identifier: `crosswalk("gs1_ai", "(8003)")` returns `gs1_ai_8003`, the GRAI
   element string, whose `semantic_type` is `grai`; `crosswalk("gs1_ai",

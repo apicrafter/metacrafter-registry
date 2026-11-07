@@ -4,6 +4,7 @@ status: draft
 doc: The place where a person was born, usually a city or town, often followed by the region or country,
   such as "Montreal, QC, CAN". Together with a name and a birth date it helps to identify a person, so
   it is personal data.
+parent: location
 categories:
 - persons
 - pii
@@ -21,6 +22,7 @@ mappings:
   wikidata: P19
   dpv: pd:BirthPlace
   schema_org: birthPlace
+  presidio: LOCATION
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Place_of_birth

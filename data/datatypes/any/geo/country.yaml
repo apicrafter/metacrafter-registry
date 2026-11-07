@@ -5,6 +5,7 @@ doc: A country is a distinct territorial body or political entity. It may be an 
   state or part of a larger state,[2] as a non-sovereign or formerly sovereign political division, a physical
   territory with a government, or a geographic region associated with sets of previously independent or
   differently associated peoples with distinct political characteristics.
+parent: location
 categories:
 - geo
 langs:
@@ -31,6 +32,7 @@ mappings:
   - COUNTRY.TEXT_SV
   sherlock: country
   schema_org: addressCountry
+  presidio: LOCATION
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Country

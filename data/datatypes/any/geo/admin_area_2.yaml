@@ -3,6 +3,7 @@ name: Second-level administrative division
 status: draft
 doc: Name or code of a subdivision of a first-level administrative division, such as a US county, an Italian
   province or a French department. The registry keeps a record per country as a child of this one.
+parent: location
 categories:
 - geo
 langs:
@@ -12,6 +13,7 @@ classification: categorical
 mappings:
   wikidata: Q13220204
   cdm: means.location.county
+  presidio: LOCATION
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Administrative_division
