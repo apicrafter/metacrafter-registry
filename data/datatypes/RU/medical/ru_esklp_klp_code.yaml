@@ -1,0 +1,37 @@
+id: ru_esklp_klp_code
+name: ESKLP KLP code
+status: stable
+doc: Code of a catalogue position of a medicine (KLP) in ESKLP, the reference catalogue of medicines of
+  the Russian Ministry of Health. A KLP describes a medicine of one manufacturer in one package and belongs
+  to one standardised INN position (SMNN). The code repeats the SMNN code except for the last group of
+  13 digits, which is not all zeros; in the codes seen so far it starts with 200000.
+parent: ru_esklp_code
+categories:
+- medical
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{2}\.\d{2}\.\d{2}\.\d{3}-\d{6}-\d-\d{5}-(?!0{13})\d{13}$
+examples:
+- value: 21.20.10.193-000012-1-00002-2000000301228
+  description: EMB-Fatol 400, ethambutol (ATC J04AK02); SMNN 21.20.10.193-000012-1-00002-0000000000000
+- value: 21.20.10.193-000012-1-00097-2000001716047
+  description: Ethambutol (ATC J04AK02)
+- value: 21.20.10.193-000012-1-00002-0000000000000
+  valid: false
+  description: SMNN code; the last group is zeros
+- value: 21.20.10.226
+  valid: false
+  description: OKPD2 code alone
+links:
+- type: doc
+  url: https://ppt.ru/art/zakupki/gde-nayti-i-kak-rabotat-so-spravochnikom-yesklp-poshagovaya-instruktsiya
+translations:
+  ru:
+    name: Код КЛП (ЕСКЛП)
+    doc: Код позиции каталога лекарственных препаратов (КЛП) в ЕСКЛП. КЛП описывает препарат одного производителя
+      в одной упаковке и относится к одному СМНН. Код совпадает с кодом СМНН, кроме последней группы из
+      13 цифр, которая не состоит из одних нулей; в известных кодах она начинается с 200000.

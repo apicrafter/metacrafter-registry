@@ -1,0 +1,35 @@
+id: width
+name: Width
+status: draft
+doc: Horizontal size of an object measured from side to side, such as the width of an image, a screen,
+  a piece of furniture or a road. Datasets usually keep it as a number in a column named width, with the
+  unit in the value, the column name or the metadata, for example pixels for images and centimetres or
+  metres for physical objects. The value alone does not tell width from height or another length, so detection
+  relies on the column name.
+parent: length
+aliases:
+- width_measurement
+categories:
+- values
+- common
+langs:
+- common
+is_pii: false
+examples:
+- value: '1920'
+  description: image width in pixels, unit in the metadata
+- value: 80 cm
+  description: width of a desk
+- value: 7.5 m
+  description: width of a road
+mappings:
+  wikidata: P2049
+  schema_org: width
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2049
+- type: schema.org
+  url: https://schema.org/width
+translations:
+  ru:
+    name: Ширина
