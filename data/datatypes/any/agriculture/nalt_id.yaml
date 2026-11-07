@@ -1,0 +1,36 @@
+id: nalt_id
+name: NAL Agricultural Thesaurus (NALT) concept ID
+status: draft
+doc: Numeric identifier of a concept in the NAL Agricultural Thesaurus of the US National Agricultural
+  Library, an English and Spanish vocabulary of agriculture, food, nutrition and related sciences. Appended
+  to https://lod.nal.usda.gov/nalt/ it gives the concept URI.
+categories:
+- agriculture
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,7}$
+examples:
+- value: '8381'
+  description: oxygen; Wikidata example
+- value: '36163'
+  description: electric motor; Wikidata example
+- value: c_8381
+  valid: false
+  description: AGROVOC-style prefix; see agrovoc_id
+mappings:
+  wikidata: P2004
+links:
+- type: doc
+  url: https://lod.nal.usda.gov/
+- type: doc
+  url: https://agclass.nal.usda.gov/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2004
+translations:
+  ru:
+    name: Идентификатор понятия тезауруса NALT
+    doc: Числовой идентификатор понятия в сельскохозяйственном тезаурусе Национальной сельскохозяйственной
+      библиотеки США (NALT).

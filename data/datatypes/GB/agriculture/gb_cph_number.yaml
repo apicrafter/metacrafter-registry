@@ -1,0 +1,38 @@
+id: gb_cph_number
+name: UK County Parish Holding (CPH) number
+status: draft
+doc: Number of the land or premises where livestock is kept in Great Britain, issued by the Rural Payments
+  Agency in England, the Welsh Government and the Scottish Government (where it is also called the Main
+  Location Code). It has nine digits written as county (2), parish (3) and holding (4) separated by slashes.
+  Livestock movement, disease control and farm payment data use it.
+categories:
+- agriculture
+- geo
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{2}/\d{3}/\d{4}$
+examples:
+- value: 12/345/0001
+  description: Illustration from the Welsh Government
+- value: 12-345-0001
+  valid: false
+  description: Hyphens instead of slashes
+- value: 12/345/001
+  valid: false
+  description: The holding part has three digits instead of four
+links:
+- type: doc
+  url: https://www.gov.uk/guidance/apply-for-a-county-parish-holding-cph-number
+- type: doc
+  url: https://www.gov.wales/county-parish-holdings-and-livestock-movements-new-rules-faqs-html
+- type: doc
+  url: https://www.fas.scot/downloads/getting-registered-to-keep-livestock-and-claim-for-support
+translations:
+  ru:
+    name: Номер CPH (County Parish Holding) в Великобритании
+    doc: Номер земли или помещения, где содержится скот в Великобритании, — графство (2 цифры), приход
+      (3) и хозяйство (4) через косую черту.

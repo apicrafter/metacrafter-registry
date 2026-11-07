@@ -1,0 +1,39 @@
+id: us_epa_pesticide_registration_number
+name: US EPA pesticide registration number (EPA Reg. No.)
+status: draft
+doc: Number under which the US Environmental Protection Agency registers a pesticide product, printed
+  on the label after "EPA Reg. No.". It is the registrant's company number, a hyphen and the product number;
+  a product sold by a distributor adds a hyphen and the distributor's company number (40 CFR 152.132).
+  The numbers have no leading zeros.
+categories:
+- agriculture
+- chemistry
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,5}-[1-9]\d{0,4}(?:-[1-9]\d{0,5})?$
+examples:
+- value: 100-1093
+  description: Heritage Fungicide (Syngenta)
+- value: 4-62
+  description: Bonide Sulfur Plant Fungicide
+- value: 4-62-12911
+  description: Distributor product of registration 4-62
+- value: CA060004
+  valid: false
+  description: State Special Local Need registration (FIFRA 24(c)), not an EPA registration number
+links:
+- type: doc
+  url: https://www.epa.gov/pesticide-labels/label-review-training-module-2-parts-label-page-14
+- type: doc
+  url: https://www.ecfr.gov/current/title-40/chapter-I/subchapter-E/part-152/subpart-J/section-152.132
+- type: doc
+  url: https://ordspub.epa.gov/ords/pesticides/f?p=PPLS:1
+translations:
+  ru:
+    name: Регистрационный номер пестицида Агентства по охране окружающей среды США (EPA Reg. No.)
+    doc: Номер регистрации пестицида в EPA — номер компании, дефис и номер продукта; для продуктов дистрибьютора
+      добавляется номер дистрибьютора.

@@ -1,0 +1,40 @@
+id: ru_sdiz_number
+name: Russian grain batch shipping document number (SDIZ)
+status: draft
+doc: Number of an SDIZ, the shipping document for a batch of grain or grain products issued in the federal
+  grain traceability system FGIS Zerno under Government Decree No. 1722 of 09.10.2021. The decree does
+  not define its structure. In the Ministry of Agriculture's open data on issued SDIZ (2022-2026) it is
+  the taxpayer number (INN) of the issuer, the two-digit year of issue and a sequence number of four to
+  seven digits, separated by slashes. The INN of an individual entrepreneur has 12 digits and identifies
+  a person.
+categories:
+- agriculture
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: true
+classification: identifier
+regexp: ^(?:\d{10}|\d{12})/\d{2}/\d{4,7}$
+examples:
+- value: 7816720172/22/0001
+  description: SDIZ of an organization issued on 21.09.2022
+- value: 6164127215/23/0176
+  description: SDIZ of an organization issued on 10.03.2023
+- value: 9107002335/25/0001
+  description: SDIZ of an organization issued on 01.01.2025
+- value: 7816720172-22-0001
+  valid: false
+  description: Hyphens instead of slashes
+links:
+- type: doc
+  url: http://opendata.mcx.ru/opendata/7708075454-sdiz
+- type: doc
+  url: https://legalacts.ru/doc/postanovlenie-pravitelstva-rf-ot-09102021-n-1722-o-federalnoi/
+translations:
+  ru:
+    name: Номер СДИЗ (сопроводительного документа на партию зерна)
+    doc: Номер сопроводительного документа на партию зерна или продуктов переработки зерна в ФГИС «Зерно».
+      В открытых данных Минсельхоза номер состоит из ИНН оформившего лица, двух цифр года и порядкового
+      номера через косую черту.

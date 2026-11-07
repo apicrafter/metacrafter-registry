@@ -1,0 +1,32 @@
+id: au_pic
+name: Australian Property Identification Code (PIC)
+status: draft
+doc: Eight-character code that a State or Territory agriculture authority allocates to a property where
+  livestock is kept, used in the National Livestock Identification System (NLIS) and on movement documents.
+  Western Australia also uses three-character brands. The PIC is the first eight characters of an NLIS
+  device number (au_nlis_id).
+categories:
+- agriculture
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Z]{8}$
+examples:
+- value: 3ABCD123
+  description: Illustration from the ISC NLIS standard for RFID devices
+- value: TEST1234
+  description: Test PIC printed on sample tags in the ISC NLIS standard
+- value: 3ABCD12
+  valid: false
+  description: Seven characters
+links:
+- type: doc
+  url: https://www.integritysystems.com.au/globalassets/isc/pdf-files/rfid-standards.pdf
+translations:
+  ru:
+    name: Идентификационный код хозяйства в Австралии (PIC)
+    doc: Восьмисимвольный код хозяйства, где содержится скот, в Национальной системе идентификации скота
+      Австралии (NLIS).

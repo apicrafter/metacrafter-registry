@@ -1,0 +1,39 @@
+id: gb_food_hygiene_rating
+name: UK food hygiene rating value
+status: draft
+doc: Rating value of a food business in the open data of the UK Food Standards Agency. The Food Hygiene
+  Rating Scheme (England, Wales, Northern Ireland) uses 0 to 5; the Food Hygiene Information Scheme (Scotland)
+  uses Pass, Pass and Eat Safe and Improvement Required. Both also use Exempt, Awaiting Inspection and
+  Awaiting Publication, which establishment data of the FHRS writes without spaces (AwaitingInspection).
+categories:
+- agriculture
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:[0-5]|Exempt|AwaitingInspection|AwaitingPublication|Pass|Pass and Eat Safe|Improvement Required|Awaiting
+  Inspection|Awaiting Publication)$
+examples:
+- value: '5'
+  description: Hygiene standards are very good (FHRS)
+- value: Pass and Eat Safe
+  description: Scottish FHIS rating
+- value: AwaitingInspection
+  description: FHRS establishment not yet inspected
+- value: Improvement Required
+  description: Scottish FHIS rating
+- value: '6'
+  valid: false
+  description: The FHRS scale ends at 5
+links:
+- type: doc
+  url: https://api.ratings.food.gov.uk/help
+- type: doc
+  url: https://www.food.gov.uk/safety-hygiene/food-hygiene-rating-scheme
+translations:
+  ru:
+    name: Рейтинг гигиены питания Великобритании
+    doc: Значение рейтинга гигиены питания предприятия в открытых данных Агентства по пищевым стандартам
+      Великобритании — от 0 до 5 в FHRS или Pass и Improvement Required в шотландской схеме FHIS.

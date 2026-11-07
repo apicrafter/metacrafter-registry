@@ -1,0 +1,40 @@
+id: upov_code
+name: UPOV code of a plant taxon
+status: draft
+doc: Code of a plant taxon in the UPOV Code System of the International Union for the Protection of New
+  Varieties of Plants, used in plant variety protection and variety lists (GENIE, PLUTO). It is five letters
+  for the genus, optionally an underscore and three letters for the species and an underscore and up to
+  three letters for a sub-specific element or group, as in ZEAAA_MAY for maize. Short names repeat their
+  last letter (POAAA for Poa). An appended element of up to six characters starting with a digit may follow.
+categories:
+- agriculture
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{5}(?:_[A-Z]{3}(?:_[A-Z]{1,3})?)?(?:_[1-9][A-Z0-9]{0,5})?$
+examples:
+- value: ZEAAA_MAY
+  description: Zea mays L. (maize)
+- value: PRUNU_ARM
+  description: Prunus armeniaca L. (apricot)
+- value: BETAA_VUL_GVS
+  description: Beta vulgaris, Sugar Beet Group
+- value: CICHO_INT_1WIT
+  description: Cichorium intybus, Witloof Chicory Group, with an appended element
+- value: TRITL
+  description: ×Triticosecale (triticale), genus code
+- value: ZEA_MAY
+  valid: false
+  description: The genus element must have five letters
+links:
+- type: doc
+  url: https://www.upov.int/edocs/infdocs/en/upov_inf_23.pdf
+- type: doc
+  url: https://www.upov.int/genie/en/updates/upov_code.xhtml
+translations:
+  ru:
+    name: Код UPOV таксона растения
+    doc: Код таксона растения в системе кодов Международного союза по охране новых сортов растений (UPOV),
+      например ZEAAA_MAY для кукурузы.

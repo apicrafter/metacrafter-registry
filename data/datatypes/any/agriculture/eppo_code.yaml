@@ -1,0 +1,39 @@
+id: eppo_code
+name: EPPO code
+status: draft
+doc: Code of an organism or group in the EPPO Global Database of the European and Mediterranean Plant
+  Protection Organization, used in plant protection, pesticide and crop data. A plant species has five
+  letters (three from the genus, two from the species), a pest or pathogen six letters (four and two),
+  a virus a six-character acronym. Codes of genera and families start with 1 and end with G or F.
+categories:
+- agriculture
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Z]{5,6}$
+examples:
+- value: ZEAMX
+  description: Zea mays (maize); Wikidata example
+- value: CARPPO
+  description: Cydia pomonella (codling moth); Wikidata example
+- value: 1TUTAG
+  description: Genus Tuta
+- value: zeamx
+  valid: false
+  description: Lower case; EPPO codes are upper case
+mappings:
+  wikidata: P3031
+links:
+- type: doc
+  url: https://www.eppo.int/RESOURCES/eppo_databases/eppo_codes
+- type: doc
+  url: https://gd.eppo.int/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3031
+translations:
+  ru:
+    name: Код EPPO
+    doc: Код организма или группы в глобальной базе данных Европейской и средиземноморской организации
+      по карантину и защите растений (EPPO). Используется в данных о защите растений, пестицидах и культурах.

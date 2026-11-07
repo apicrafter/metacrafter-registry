@@ -1,0 +1,39 @@
+id: eu_organic_control_body_code
+name: EU organic control body code number
+status: draft
+doc: 'Code number of a control authority or control body that certifies organic products, printed on labels
+  next to the EU organic logo under Regulation (EU) 2018/848 (Annex V). Its general format is AB-CDE-999:
+  the ISO code of the country where the controls take place, a three-letter term linked to organic production
+  (BIO, ÖKO, ØKO, EKO, ECO, ORG and others; GR is used for Greece and XI for Northern Ireland) and a reference
+  number of at most three digits. Spain adds a regional suffix (ES-ECO-001-AN); Swiss codes write Bio.'
+categories:
+- agriculture
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}-(?:[A-ZÖØ]{3}|Bio)-\d{1,3}(?:-[A-Z]{2,3})?$
+examples:
+- value: DE-ÖKO-006
+  description: ABCERT AG, Germany; Commission list of control bodies
+- value: DK-ØKO-100
+  description: Danish Veterinary and Food Administration; Commission list
+- value: FR-BIO-01
+  description: ECOCERT France; Commission list
+- value: ES-ECO-001-AN
+  description: CAAE, Andalusia; Commission list
+- value: DE-ÖKO-0006
+  valid: false
+  description: The reference number has four digits
+links:
+- type: doc
+  url: https://eur-lex.europa.eu/eli/reg/2018/848/oj
+- type: doc
+  url: https://ec.europa.eu/agriculture/ofis_public/
+translations:
+  ru:
+    name: Кодовый номер органа контроля органической продукции в ЕС
+    doc: Кодовый номер органа контроля, сертифицирующего органическую продукцию в ЕС (Регламент 2018/848,
+      приложение V), в формате AB-CDE-999 — код страны, термин вроде BIO или ÖKO и номер.

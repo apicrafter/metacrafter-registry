@@ -1,0 +1,40 @@
+id: atcvet_code
+name: ATCvet code (veterinary medicines)
+status: draft
+doc: Code of the Anatomical Therapeutic Chemical classification for veterinary medicinal products (ATCvet),
+  maintained by the WHO Collaborating Centre for Drug Statistics Methodology. It is the letter Q followed
+  by a code built like a human ATC code; ATCvet adds groups of its own, such as QI for immunologicals
+  and QP for antiparasitic products.
+categories:
+- agriculture
+- medical
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^Q[ABCDGHIJLMNPRSV](?:\d{2}(?:[A-Z](?:[A-Z](?:\d{2})?)?)?)?$
+examples:
+- value: QJ51FA01
+  description: Erythromycin for intramammary use; Wikidata example
+- value: QD11AH91
+  description: Lokivetmab; Wikidata example
+- value: QI02
+  description: Immunologicals for Bovidae
+- value: J01FA01
+  valid: false
+  description: Human ATC code without Q; see atccode
+mappings:
+  wikidata: P1668
+  bioregistry: atcvet
+links:
+- type: doc
+  url: https://atcddd.fhi.no/atcvet/atcvet_index/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ATCvet
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1668
+translations:
+  ru:
+    name: Код ATCvet (ветеринарные лекарственные средства)
+    doc: Код анатомо-терапевтическо-химической классификации ветеринарных лекарственных препаратов (ATCvet)
+      Сотрудничающего центра ВОЗ.

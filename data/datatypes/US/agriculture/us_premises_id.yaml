@@ -1,0 +1,35 @@
+id: us_premises_id
+name: US premises identification number (PIN)
+status: draft
+doc: Nationally unique number of a premises (farm, ranch, market or other location where animals are kept
+  or handled) in the USDA APHIS animal disease traceability system. It has seven letters or digits, and
+  the last one is a check character based on ISO/IEC 7064; States may use their postal abbreviation as
+  the first two characters. Apart from such a State code, the letters O and I are not used. Non-producer
+  participant numbers (NPN) have the same format.
+categories:
+- agriculture
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Z]{7}$
+examples:
+- value: OH341T4
+  description: Illustration from the APHIS ADT General Standards, with the Ohio postal code
+- value: A123R69
+  description: Illustration from the APHIS ADT General Standards
+- value: MN4321
+  valid: false
+  description: Six characters, a location identifier (us_location_id)
+links:
+- type: doc
+  url: https://www.aphis.usda.gov/sites/default/files/adt-general-standards.pdf
+- type: doc
+  url: https://www.law.cornell.edu/cfr/text/9/80.1
+translations:
+  ru:
+    name: Идентификационный номер помещения для содержания животных в США (PIN)
+    doc: Уникальный номер места содержания или обращения животных в системе прослеживаемости USDA APHIS
+      — семь букв или цифр, последний символ контрольный.

@@ -2,9 +2,9 @@ id: agrovoc_id
 name: AGROVOC concept identifier
 status: draft
 doc: Local identifier of a concept in AGROVOC, the multilingual agriculture thesaurus of the Food and
-  Agriculture Organization of the United Nations. Older concepts use c_ and a decimal number, newer ones
-  c_ and eight lowercase hexadecimal characters. Appended to http://aims.fao.org/aos/agrovoc/ it gives
-  the concept URI.
+  Agriculture Organization of the United Nations. Most concepts use c_ and a decimal number (13 digits
+  for some concepts added in 2011-2014); newer ones use c_ and eight lowercase hexadecimal characters.
+  Appended to http://aims.fao.org/aos/agrovoc/ it gives the concept URI.
 categories:
 - agriculture
 - science
@@ -18,6 +18,8 @@ examples:
   description: Maize
 - value: c_4ad07701
   description: COVID-19
+- value: c_1374844914634
+  description: growth models
 - value: c12332
   valid: false
   description: The underscore is missing
@@ -31,3 +33,8 @@ links:
   url: https://www.wikidata.org/wiki/Property:P8061
 - type: other
   url: https://bioregistry.io/agrovoc
+translations:
+  ru:
+    name: Идентификатор понятия AGROVOC
+    doc: Локальный идентификатор понятия в AGROVOC — многоязычном сельскохозяйственном тезаурусе FAO.
+      Вместе с префиксом http://aims.fao.org/aos/agrovoc/ образует URI понятия.

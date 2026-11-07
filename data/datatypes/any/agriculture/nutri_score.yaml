@@ -1,0 +1,34 @@
+id: nutri_score
+name: Nutri-Score grade
+status: draft
+doc: Grade of the Nutri-Score front-of-pack nutrition label, developed by Santé publique France and used
+  voluntarily in France since 2017 and in several other European countries. The five grades run from A
+  (dark green, best nutritional quality) to E (dark orange). Open Food Facts stores it in lower case in
+  the nutriscore_grade field; without such context a single letter is ambiguous.
+categories:
+- agriculture
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Ea-e]$
+examples:
+- value: A
+  description: Best nutritional quality
+- value: E
+  description: Lowest nutritional quality
+- value: e
+  description: Coca-Cola Original in Open Food Facts (nutriscore_grade)
+- value: F
+  valid: false
+  description: The scale ends at E
+links:
+- type: doc
+  url: https://www.santepubliquefrance.fr/en/nutri-score
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Nutri-Score
+translations:
+  ru:
+    name: Оценка Nutri-Score
+    doc: Оценка пищевой ценности продукта по шкале Nutri-Score от A (лучшая) до E, разработанной Santé
+      publique France.

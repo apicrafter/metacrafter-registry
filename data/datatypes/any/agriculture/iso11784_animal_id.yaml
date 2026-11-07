@@ -27,4 +27,14 @@ links:
 - type: doc
   url: https://www.icar.org/Guidelines/10-Procedure-2-Granting-Manufacturer-Code.pdf
 - type: doc
+  url: https://wiki.icar.org/index.php/Identification_Device_Certification
+- type: doc
+  url: https://www.icar.org/wp-content/uploads/documents/ICAR-Misuse-999-code.pdf
+- type: doc
   url: https://www.aphis.usda.gov/sites/default/files/adt-general-standards.pdf
+translations:
+  ru:
+    name: Код транспондера животного (ISO 11784/11785)
+    doc: Код в пассивном низкочастотном транспондере животного (бирке, болюсе или микрочипе) по ISO 11784
+      и ISO 11785, обычно 15 цифр. Первые три цифры — числовой код страны ISO 3166 или код производителя
+      ICAR (900–998, 999 — тестовые транспондеры).

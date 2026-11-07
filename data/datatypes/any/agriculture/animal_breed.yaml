@@ -1,0 +1,31 @@
+id: animal_breed
+name: Animal breed
+status: draft
+doc: Name or code of a breed of domestic animal, such as Holstein Friesian cattle, Merino sheep or Labrador
+  Retriever dogs. Typical columns are in livestock registers, herd books, animal movement and slaughter
+  data, dog and cat licences and veterinary records. Breed codes are national or studbook-specific; FAO
+  DAD-IS keeps a global list of livestock breeds.
+categories:
+- agriculture
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Holstein Friesian
+  description: dairy cattle breed
+- value: Merino
+  description: sheep breed
+- value: Labrador Retriever
+  description: dog breed
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Breed
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q38829
+- type: doc
+  url: https://www.fao.org/dad-is/en/
+translations:
+  ru:
+    name: Порода животного
+    doc: Название или код породы домашнего животного, например голштинская корова или меринос.

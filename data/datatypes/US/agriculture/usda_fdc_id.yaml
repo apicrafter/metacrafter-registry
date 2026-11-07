@@ -1,0 +1,37 @@
+id: usda_fdc_id
+name: USDA FoodData Central ID (FDC ID)
+status: draft
+doc: Numeric identifier of a food record in FoodData Central, the food composition database of the US
+  Department of Agriculture. It covers Foundation Foods, SR Legacy, FNDDS and branded foods, and is used
+  in the API path /v1/food/<fdcId>. Current IDs have six or seven digits.
+categories:
+- agriculture
+country:
+- US
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{5,7}$
+examples:
+- value: '171688'
+  description: Apples, raw, with skin (SR Legacy, NDB number 09003)
+- value: '747997'
+  description: Eggs, Grade A, Large, egg white (Foundation Foods)
+- value: 09003
+  valid: false
+  description: NDB number of the same apple record, not an FDC ID
+mappings:
+  wikidata: P12917
+links:
+- type: doc
+  url: https://fdc.nal.usda.gov/api-guide/
+- type: doc
+  url: https://fdc.nal.usda.gov/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P12917
+translations:
+  ru:
+    name: Идентификатор продукта в FoodData Central (FDC ID)
+    doc: Числовой идентификатор записи о продукте в базе данных о составе пищевых продуктов FoodData Central
+      Минсельхоза США.

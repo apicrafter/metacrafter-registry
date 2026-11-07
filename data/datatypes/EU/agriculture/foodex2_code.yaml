@@ -1,0 +1,41 @@
+id: foodex2_code
+name: FoodEx2 food classification code
+status: draft
+doc: 'Code of the FoodEx2 food classification and description system of the European Food Safety Authority
+  (EFSA), used in EU food consumption, contaminant and residue data. A base term is A and four letters
+  or digits. An extended code adds facets after the sign #, separated by the sign $, each a facet number
+  such as F09, a dot and another FoodEx2 term.'
+categories:
+- agriculture
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^A[0-9A-Z]{4}(?:#F\d{2}\.A[0-9A-Z]{4}(?:\$F\d{2}\.A[0-9A-Z]{4})*)?$
+examples:
+- value: A02XN
+  description: Tête de Moine cheese; Wikidata example
+- value: A008C
+  description: Couscous; Wikidata example
+- value: A03BG#F09.A0EXH$F10.A077L$F21.A07SE
+  description: Extended code with three facets; example of the UK Food Types Register
+- value: A03BG#F09=A0EXH
+  valid: false
+  description: Facet written with = as in the URL query form, not the FoodEx2 syntax
+mappings:
+  wikidata: P4637
+  bioregistry: foodex2
+links:
+- type: doc
+  url: https://www.efsa.europa.eu/en/data/data-standardisation
+- type: doc
+  url: https://data.food.gov.uk/codes/ui/about-foodtypes
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4637
+translations:
+  ru:
+    name: Код классификации пищевых продуктов FoodEx2
+    doc: Код системы классификации и описания пищевых продуктов FoodEx2 Европейского агентства по безопасности
+      пищевых продуктов (EFSA).

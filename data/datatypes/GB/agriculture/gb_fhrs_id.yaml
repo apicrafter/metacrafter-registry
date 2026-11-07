@@ -1,0 +1,40 @@
+id: gb_fhrs_id
+name: UK Food Hygiene Rating Scheme establishment ID (FHRSID)
+status: draft
+doc: Numeric identifier of a food business establishment in the food hygiene ratings open data and API
+  of the UK Food Standards Agency, covering the Food Hygiene Rating Scheme (England, Wales, Northern Ireland)
+  and the Food Hygiene Information Scheme (Scotland). It is used in the address ratings.food.gov.uk/business/<id>.
+categories:
+- agriculture
+- companies
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,7}$
+examples:
+- value: '544099'
+  description: The Fat Duck; Wikidata example
+- value: '1610312'
+  description: Jamaica Inn; Wikidata example
+- value: '1916465'
+  description: Establishment in Westminster rated 5
+- value: 0544099
+  valid: false
+  description: Leading zero
+mappings:
+  wikidata: P12523
+links:
+- type: doc
+  url: https://api.ratings.food.gov.uk/help
+- type: doc
+  url: https://ratings.food.gov.uk/open-data
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P12523
+translations:
+  ru:
+    name: Идентификатор предприятия в рейтинге гигиены питания Великобритании (FHRSID)
+    doc: Числовой идентификатор предприятия общественного питания или торговли продуктами в открытых данных
+      рейтинга гигиены питания Агентства по пищевым стандартам Великобритании (FSA).
