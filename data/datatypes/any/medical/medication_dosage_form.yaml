@@ -1,0 +1,45 @@
+id: medication_dosage_form
+name: Medication dosage form
+status: draft
+doc: Pharmaceutical form in which a medicine is made and given, such as tablets, film-coated tablets,
+  capsules, syrup or solution for injection. Drug registers and catalogues take it from a closed vocabulary.
+  The EDQM Standard Terms are the international vocabulary of dose forms; in Russia the state register
+  of medicines (ГРЛС) and the ESKLP catalogue record the dosage form of each medicine in Russian. The
+  value is a term, not a code, so a list of terms detects it better than a regular expression.
+categories:
+- medical
+langs:
+- en
+- ru
+is_pii: false
+classification: categorical
+examples:
+- value: Капсулы
+  description: Capsules, from the ESKLP catalogue
+- value: Таблетки, покрытые оболочкой
+  description: Coated tablets, from the ESKLP catalogue
+- value: Раствор для внутривенного введения
+  description: Solution for intravenous administration, from the ESKLP catalogue
+- value: Film-coated tablet
+  description: EDQM Standard Term
+- value: Capsule, hard
+  description: EDQM Standard Term
+- value: Solution for injection
+  description: EDQM Standard Term
+mappings:
+  schema_org: dosageForm
+links:
+- type: doc
+  url: https://standardterms.edqm.eu/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Dosage_form
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q718608
+- type: schema.org
+  url: https://schema.org/dosageForm
+translations:
+  ru:
+    name: Лекарственная форма
+    doc: Лекарственная форма препарата, например таблетки, капсулы, сироп или раствор для инъекций. Значения
+      берутся из закрытого справочника; в России лекарственную форму указывают государственный реестр
+      лекарственных средств (ГРЛС) и ЕСКЛП.
