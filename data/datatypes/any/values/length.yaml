@@ -1,0 +1,41 @@
+id: length
+name: Length (linear dimension)
+status: draft
+doc: Size of an object measured along one dimension, such as the length of a cable, the depth of a shelf
+  or the height of a person. Datasets store it as a number in millimetres, centimetres, metres, inches
+  or feet, or in pixels for images and screen elements, with the unit either in the value or in the column
+  name or metadata. The regular expression recognizes only values that carry one of these unit symbols.
+  Height and width are narrower datatypes for the vertical and the horizontal dimension.
+parent: numeric
+categories:
+- values
+- common
+langs:
+- common
+is_pii: false
+regexp: ^\d+(?:[.,]\d+)?\s?(?:mm|cm|m|in|ft|px)\.?$
+examples:
+- value: 2.5 m
+  description: metres
+- value: 180 cm
+  description: centimetres
+- value: 1920px
+  description: pixels without a space
+- value: 6 ft.
+  description: feet, abbreviation with a dot
+- value: cm
+  valid: false
+  description: unit without a number
+- value: 72.5 kg
+  valid: false
+  description: unit of mass
+mappings:
+  wikidata: P2043
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Length
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2043
+translations:
+  ru:
+    name: Длина
