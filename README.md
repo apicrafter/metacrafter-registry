@@ -282,7 +282,9 @@ JSON API (static files, described in `/api/v1/openapi.json`):
 | `/api/v1/rag/corpus.jsonl` | One embedding text per record (template version in the manifest) |
 | `/llms.txt`, `/llms-full.txt` | Index and full text for LLMs ([llmstxt.org](https://llmstxt.org)) |
 | `/datatype/<id>.md`, `/tool/<id>.md`, `/category/<id>.md` | Markdown twins of the pages |
-| `/registry.ttl` | SKOS concept scheme (Turtle) |
+| `/registry.ttl` | SKOS concept scheme (Turtle): mappings, regexps, examples, countries, links and tools |
+| `/datatype/<id>.ttl` | One record in Turtle, the same triples as in `/registry.ttl` |
+| `/vocab`, `/vocab.ttl` | The registry's RDF vocabulary (`mcr:`): page and OWL declaration |
 | `/datahub-glossary.yml` | DataHub business glossary: one term per record, URN `urn:li:glossaryTerm:<id>` |
 | `/api/v1/aliases.json` | Retired ids and the record each one resolves to |
 | `/api/v1/coverage.json` | metacrafter-rules coverage: orphan rule keys, records without rules |

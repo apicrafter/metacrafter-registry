@@ -137,10 +137,16 @@ def _write_api_v1(out: Path, reg: RegistryModel, site_url: str, info: BuildInfo)
 
 
 def _write_agent_files(out: Path, reg: RegistryModel, site_url: str, info: BuildInfo) -> None:
-    """Markdown twins, llms.txt, llms-full.txt, the SKOS and DataHub glossary exports."""
+    """Markdown twins, llms.txt, llms-full.txt, the RDF and DataHub glossary exports."""
     refs = {"categories": reg.categories, "countries": reg.countries, "langs": reg.langs}
     for rid, record in reg.datatypes.items():
         _write(out / "datatype" / f"{rid}.md", agents.record_markdown(record, **refs))
+        _write(out / "datatype" / f"{rid}.ttl", agents.record_turtle(record, site_url))
+    for alias, canonical in reg.aliases.items():
+        _write(
+            out / "datatype" / f"{alias}.ttl",
+            agents.record_turtle(reg.datatypes[canonical], site_url),
+        )
     for rid, tool in reg.tools.items():
         _write(out / "tool" / f"{rid}.md", agents.tool_markdown(tool))
     records = list(reg.datatypes.values())
@@ -166,8 +172,11 @@ def _write_agent_files(out: Path, reg: RegistryModel, site_url: str, info: Build
     _write(out / "llms-full.txt", agents.llms_full_txt(records, site_url))
     _write(
         out / "registry.ttl",
-        agents.skos_turtle(records, reg.categories.values(), site_url, info.version),
+        agents.skos_turtle(
+            records, reg.categories.values(), site_url, info.version, reg.tools.values()
+        ),
     )
+    _write(out / "vocab.ttl", agents.vocab_turtle(site_url))
     _write(
         out / "datahub-glossary.yml",
         datahub.dump_glossary(datahub.business_glossary(reg, site_url)),
@@ -351,6 +360,14 @@ def _render_site(
 
     render("about.html", "about.html", "/about", section="about")
     render("agents.html", "agents.html", "/agents", section="agents")
+    render(
+        "vocab.html",
+        "vocab.html",
+        "/vocab",
+        section="",
+        terms=agents.VOCAB_TERMS,
+        namespace=f"{site_url}/vocab#",
+    )
     render("identify.html", "identify.html", "/identify", section="identify")
     render("changes.html", "changes.html", "/changes", section="", releases=releases)
     from .stats import report_rows
@@ -423,6 +440,7 @@ def _write_manifest(
         "api/v1/rag/corpus.jsonl",
         "llms-full.txt",
         "registry.ttl",
+        "vocab.ttl",
         "datahub-glossary.yml",
     ]
     manifest = {

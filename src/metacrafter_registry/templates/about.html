@@ -36,6 +36,9 @@
     <tr><td class="id">/api/v1/tools/&lt;id&gt;.json</td><td>One tool; all tools in <a href="{{ base }}/api/v1/tools.json">/api/v1/tools.json</a></td></tr>
     <tr><td class="id"><a href="{{ base }}/api/v1/categories.json">/api/v1/categories.json</a></td><td>Categories with counts; also <a href="{{ base }}/api/v1/countries.json">countries.json</a>, <a href="{{ base }}/api/v1/languages.json">languages.json</a></td></tr>
     <tr><td class="id"><a href="{{ base }}/api/v1/aliases.json">/api/v1/aliases.json</a></td><td>Retired IDs and the record each one now resolves to</td></tr>
+    <tr><td class="id"><a href="{{ base }}/registry.ttl">/registry.ttl</a></td><td>RDF: SKOS concept scheme of all datatypes and patterns, with mappings, regexps, examples and tools (Turtle)</td></tr>
+    <tr><td class="id">/datatype/&lt;id&gt;.ttl</td><td>RDF: one datatype or pattern, the same triples as in <code>registry.ttl</code></td></tr>
+    <tr><td class="id"><a href="{{ base }}/vocab">/vocab</a></td><td>RDF vocabulary of the registry (<code>mcr:</code>); OWL declaration in <a href="{{ base }}/vocab.ttl">/vocab.ttl</a></td></tr>
     <tr><td class="id"><a href="{{ base }}/schema/datatype.schema.json">/schema/*.schema.json</a></td><td>JSON Schemas of the source YAML records (datatype, pattern, tool)</td></tr>
     <tr><td class="id"><a href="{{ base }}/registry.json">/registry.json</a></td><td>Legacy: all records keyed by ID, in the shape used by metacrafter's <code>RegistryClient</code></td></tr>
     <tr><td class="id">/datatype/&lt;id&gt;.json</td><td>Legacy: one record, same shape as in <code>registry.json</code></td></tr>

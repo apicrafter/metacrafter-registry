@@ -1,4 +1,4 @@
-"""Agent-oriented representations: Markdown twins, llms.txt, RAG corpus, SKOS.
+"""Agent-oriented representations: Markdown twins, llms.txt, RAG corpus, RDF.
 
 All functions take normalized (``/api/v1/``) records, so they work the same on
 a fresh build and on a downloaded snapshot.
@@ -243,7 +243,9 @@ def llms_txt(
         f"- [All records, JSONL]({s}/api/v1/datatypes.jsonl): normalized records",
         f"- [RAG corpus]({s}/api/v1/rag/corpus.jsonl): one embedding text per record",
         f"- [Aliases]({s}/api/v1/aliases.json): retired ids and the record each resolves to",
-        f"- [SKOS concept scheme]({s}/registry.ttl): linked-data export (Turtle)",
+        f"- [SKOS concept scheme]({s}/registry.ttl): linked-data export (Turtle); "
+        "one record: `/datatype/<id>.ttl`",
+        f"- [RDF vocabulary]({s}/vocab.ttl): OWL declaration of the `mcr:` terms",
         "",
         "## Categories",
         "",
@@ -302,7 +304,75 @@ def category_markdown(
     return "\n".join(lines) + "\n"
 
 
-# --- SKOS (Turtle) ---------------------------------------------------------
+# --- RDF (Turtle) ----------------------------------------------------------
+
+#: The registry vocabulary (prefix ``mcr:``, namespace ``<site>/vocab#``).
+#: Terms are added, never removed or renamed.
+VOCAB_TERMS: tuple[dict[str, str], ...] = (
+    {
+        "name": "Tool",
+        "kind": "owl:Class",
+        "label": "tool",
+        "comment": "Software that detects, masks or catalogs values of registry datatypes. "
+        "Each tool is described at /tool/<id>.",
+    },
+    {
+        "name": "supportedType",
+        "kind": "owl:ObjectProperty",
+        "domain": "mcr:Tool",
+        "range": "skos:Concept",
+        "label": "supported type",
+        "comment": "A registry datatype or pattern that the tool supports.",
+    },
+    {
+        "name": "status",
+        "kind": "owl:DatatypeProperty",
+        "domain": "skos:Concept",
+        "range": "xsd:string",
+        "label": "status",
+        "comment": "Review status of the record: draft (not reviewed yet), stable (reviewed) "
+        "or deprecated.",
+    },
+    {
+        "name": "isPII",
+        "kind": "owl:DatatypeProperty",
+        "domain": "skos:Concept",
+        "range": "xsd:boolean",
+        "label": "is personal data",
+        "comment": "True when values of this type are personal data (PII).",
+    },
+    {
+        "name": "classification",
+        "kind": "owl:DatatypeProperty",
+        "domain": "skos:Concept",
+        "range": "xsd:string",
+        "label": "classification",
+        "comment": "identifier when a value identifies an entity, categorical when values "
+        "come from a closed list of codes or categories.",
+    },
+    {
+        "name": "regexp",
+        "kind": "owl:DatatypeProperty",
+        "domain": "skos:Concept",
+        "range": "xsd:string",
+        "label": "regular expression",
+        "comment": "Regular expression in Python re syntax that a whole value matches, "
+        "usually anchored with ^ and $. It is not an XML Schema or XPath pattern.",
+    },
+    {
+        "name": "checksum",
+        "kind": "owl:DatatypeProperty",
+        "domain": "skos:Concept",
+        "range": "xsd:string",
+        "label": "check-digit algorithm",
+        "comment": "Name of the check-digit algorithm that validates a value, for example "
+        "luhn or iban_mod97.",
+    },
+)
+
+_DPV_PREFIXES = {"pd": "https://w3id.org/dpv/pd#", "dpv": "https://w3id.org/dpv#"}
+_ISO639_1 = "http://id.loc.gov/vocabulary/iso639-1/"
+_IRI_UNSAFE = set('<>"{}|^`\\ ')
 
 
 def _ttl_literal(text: str, lang: str | None = None) -> str:
@@ -318,22 +388,138 @@ def _ttl_literal(text: str, lang: str | None = None) -> str:
 
 
 def _ttl_iri(iri: str) -> str:
-    bad = set('<>"{}|^`\\ ')
-    if any(c in bad for c in iri):
+    if any(c in _IRI_UNSAFE or ord(c) < 0x20 for c in iri):
         raise ValueError(f"cannot use {iri!r} as an IRI")
     return f"<{iri}>"
 
 
-def _match_iris(mappings: Mapping[str, Any]) -> list[str]:
-    iris = []
-    wikidata = mappings.get("wikidata")
-    if wikidata:
-        iris.append(f"http://www.wikidata.org/entity/{wikidata}")
-    schema_org = mappings.get("schema_org")
-    for value in schema_org if isinstance(schema_org, list) else [schema_org] if schema_org else []:
-        iris.append(value if value.startswith("http") else f"https://schema.org/{value}")
-    iris += fibo_iris(mappings)
-    return iris
+def _ttl_url(url: str) -> str:
+    """A web address as an IRI, percent-encoding the characters Turtle forbids."""
+    return _ttl_iri(
+        "".join(f"%{ord(c):02X}" if c in _IRI_UNSAFE or ord(c) < 0x20 else c for c in url)
+    )
+
+
+def _as_list(value: Any) -> list:
+    return value if isinstance(value, list) else [value] if value else []
+
+
+def _schema_org_iri(value: str) -> str:
+    if value.startswith("http://schema.org/"):
+        return "https://schema.org/" + value[len("http://schema.org/") :]
+    return value if value.startswith("http") else f"https://schema.org/{value}"
+
+
+def _dpv_iri(value: str) -> str | None:
+    if value.startswith("http"):
+        return value
+    prefix, _, local = value.partition(":")
+    return _DPV_PREFIXES[prefix] + local if prefix in _DPV_PREFIXES and local else None
+
+
+def _match_links(mappings: Mapping[str, Any]) -> list[tuple[str, str]]:
+    """(SKOS mapping predicate, IRI) for every mapping that names a concept by IRI."""
+    links: list[tuple[str, str]] = []
+
+    def add(predicate: str, iri: str | None) -> None:
+        if iri and all(iri != seen for _, seen in links):
+            links.append((predicate, iri))
+
+    if mappings.get("wikidata"):
+        add("skos:exactMatch", f"http://www.wikidata.org/entity/{mappings['wikidata']}")
+    for value in _as_list(mappings.get("schema_org")) + _as_list(mappings.get("d3m")):
+        add("skos:exactMatch", _schema_org_iri(value))
+    for iri in fibo_iris(mappings):
+        add("skos:exactMatch", iri)
+    for prefix in _as_list(mappings.get("bioregistry")):
+        add("skos:exactMatch", f"https://bioregistry.io/registry/{prefix}")
+    for value in _as_list(mappings.get("fhir")):
+        add("skos:exactMatch", value)
+    for value in _as_list(mappings.get("dpv")):
+        add("skos:broadMatch", _dpv_iri(value))
+    return links
+
+
+def _turtle_prefixes(site_url: str) -> list[str]:
+    prefixes = {
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "mcr": f"{site_url}/vocab#",
+        "dt": f"{site_url}/datatype/",
+        "cat": f"{site_url}/category/",
+        "country": f"{site_url}/country/",
+        "tool": f"{site_url}/tool/",
+    }
+    return [f"@prefix {p}: <{iri}> ." for p, iri in prefixes.items()] + [""]
+
+
+def _is_top_concept(r: Mapping[str, Any]) -> bool:
+    return not r.get("semantic_type") and not r.get("parent")
+
+
+def _concept_turtle(r: Mapping[str, Any], site_url: str) -> str:
+    """The description of one datatype or pattern as a ``skos:Concept``."""
+    scheme = _ttl_iri(f"{site_url}/")
+    props = ["a skos:Concept", f"skos:inScheme {scheme}"]
+    if _is_top_concept(r):
+        props.append(f"skos:topConceptOf {scheme}")
+    props += [
+        f"skos:notation {_ttl_literal(r['id'])}",
+        f"skos:prefLabel {_ttl_literal(r['name'], 'en')}",
+        f"skos:definition {_ttl_literal(r['doc'], 'en')}",
+    ]
+    for lang, t in r.get("translations", {}).items():
+        if lang == "en":
+            continue
+        if t.get("name"):
+            props.append(f"skos:prefLabel {_ttl_literal(t['name'], lang)}")
+        if t.get("doc"):
+            props.append(f"skos:definition {_ttl_literal(t['doc'], lang)}")
+    for alias in r.get("aliases", []):
+        props.append(f"skos:altLabel {_ttl_literal(alias)}")
+    for broader in filter(None, (r.get("semantic_type"), r.get("parent"))):
+        props.append(f"skos:broader dt:{broader}")
+    for narrower in r.get("patterns", []) + r.get("children", []):
+        props.append(f"skos:narrower dt:{narrower}")
+    for predicate, iri in _match_links(r.get("mappings", {})):
+        props.append(f"{predicate} {_ttl_iri(iri)}")
+    for example in r.get("examples", []):
+        if example.get("valid", True):
+            props.append(f"skos:example {_ttl_literal(example['value'])}")
+    props.append(f"mcr:status {_ttl_literal(r['status'])}")
+    props.append(f"mcr:isPII {'true' if r['is_pii'] else 'false'}")
+    for field in ("classification", "regexp", "checksum"):
+        if r.get(field):
+            props.append(f"mcr:{field} {_ttl_literal(r[field])}")
+    for code in r.get("country", []):
+        props.append(f"dcterms:spatial country:{code}")
+    for lang in r.get("langs", []):
+        if lang != "common":
+            props.append(f"dcterms:language {_ttl_iri(_ISO639_1 + lang)}")
+    for link in r.get("links", []):
+        props.append(f"rdfs:seeAlso {_ttl_url(link['url'])}")
+    if r["status"] == "deprecated":
+        props.append("owl:deprecated true")
+    if r.get("replaced_by"):
+        props.append(f"dcterms:isReplacedBy dt:{r['replaced_by']}")
+    return f"dt:{r['id']} " + " ;\n    ".join(props) + " .\n"
+
+
+def _tool_turtle(tool: Mapping[str, Any], canonical: Mapping[str, str]) -> str:
+    props = ["a mcr:Tool", f"rdfs:label {_ttl_literal(tool['name'], 'en')}"]
+    if tool.get("doc"):
+        props.append(f"dcterms:description {_ttl_literal(tool['doc'], 'en')}")
+    if tool.get("website"):
+        props.append(f"foaf:homepage {_ttl_url(tool['website'])}")
+    supported = dict.fromkeys(
+        canonical[t] for t in tool.get("supported_types", []) if t in canonical
+    )
+    props += [f"mcr:supportedType dt:{t}" for t in supported]
+    return f"tool:{tool['id']} " + " ;\n    ".join(props) + " .\n"
 
 
 def skos_turtle(
@@ -341,45 +527,21 @@ def skos_turtle(
     categories: Iterable[Mapping[str, Any]],
     site_url: str,
     version: str,
+    tools: Iterable[Mapping[str, Any]] = (),
 ) -> str:
-    scheme = f"{site_url}/"
+    """``/registry.ttl``: the concept scheme, its collections and the tools."""
     records = list(records)
-    lines = [
-        "@prefix skos: <http://www.w3.org/2004/02/skos/core#> .",
-        "@prefix dcterms: <http://purl.org/dc/terms/> .",
-        f"@prefix dt: <{site_url}/datatype/> .",
-        f"@prefix cat: <{site_url}/category/> .",
-        "",
-        f"{_ttl_iri(scheme)} a skos:ConceptScheme ;",
-        f"    dcterms:title {_ttl_literal('Metacrafter Registry', 'en')} ;",
-        f"    dcterms:hasVersion {_ttl_literal(version)} .",
-        "",
+    tops = [r["id"] for r in records if _is_top_concept(r)]
+    scheme = [
+        "a skos:ConceptScheme",
+        f"dcterms:title {_ttl_literal('Metacrafter Registry', 'en')}",
+        f"dcterms:hasVersion {_ttl_literal(version)}",
     ]
-    for r in records:
-        props = [
-            "a skos:Concept",
-            f"skos:inScheme {_ttl_iri(scheme)}",
-            f"skos:notation {_ttl_literal(r['id'])}",
-            f"skos:prefLabel {_ttl_literal(r['name'], 'en')}",
-            f"skos:definition {_ttl_literal(r['doc'], 'en')}",
-        ]
-        for lang, t in r.get("translations", {}).items():
-            if lang == "en":
-                continue
-            if t.get("name"):
-                props.append(f"skos:prefLabel {_ttl_literal(t['name'], lang)}")
-            if t.get("doc"):
-                props.append(f"skos:definition {_ttl_literal(t['doc'], lang)}")
-        for alias in r.get("aliases", []):
-            props.append(f"skos:altLabel {_ttl_literal(alias)}")
-        for broader in filter(None, (r.get("semantic_type"), r.get("parent"))):
-            props.append(f"skos:broader dt:{broader}")
-        for narrower in r.get("patterns", []) + r.get("children", []):
-            props.append(f"skos:narrower dt:{narrower}")
-        for iri in _match_iris(r.get("mappings", {})):
-            props.append(f"skos:exactMatch {_ttl_iri(iri)}")
-        lines.append(f"dt:{r['id']} " + " ;\n    ".join(props) + " .")
-        lines.append("")
+    if tops:
+        scheme.append("skos:hasTopConcept " + ",\n        ".join(f"dt:{t}" for t in tops))
+    lines = _turtle_prefixes(site_url)
+    lines += [f"{_ttl_iri(site_url + '/')} " + " ;\n    ".join(scheme) + " .", ""]
+    lines += [_concept_turtle(r, site_url) for r in records]
     for c in categories:
         members = [r["id"] for r in records if c["id"] in r.get("categories", [])]
         if not members:
@@ -388,6 +550,45 @@ def skos_turtle(
         props += [f"skos:member dt:{m}" for m in members]
         lines.append(f"cat:{c['id']} " + " ;\n    ".join(props) + " .")
         lines.append("")
+    canonical = {r["id"]: r["id"] for r in records}
+    canonical.update({a: r["id"] for r in records for a in r.get("aliases", [])})
+    lines += [_tool_turtle(t, canonical) for t in tools]
+    return "\n".join(lines)
+
+
+def record_turtle(record: Mapping[str, Any], site_url: str) -> str:
+    """``/datatype/<id>.ttl``: one record, with the same triples as in ``/registry.ttl``."""
+    return "\n".join(_turtle_prefixes(site_url) + [_concept_turtle(record, site_url)])
+
+
+def vocab_turtle(site_url: str) -> str:
+    """``/vocab.ttl``: the OWL declaration of the ``mcr:`` terms."""
+    ontology = _ttl_iri(f"{site_url}/vocab")
+    lines = _turtle_prefixes(site_url)
+    header = [
+        "a owl:Ontology",
+        f"dcterms:title {_ttl_literal('Metacrafter Registry vocabulary', 'en')}",
+        "dcterms:description "
+        + _ttl_literal(
+            "Terms that describe how to recognize values of the registry's datatypes, "
+            "and the tools that support them. Used in /registry.ttl and /datatype/<id>.ttl.",
+            "en",
+        ),
+        f"rdfs:seeAlso {_ttl_iri(site_url + '/registry.ttl')}",
+    ]
+    lines += [f"{ontology} " + " ;\n    ".join(header) + " .", ""]
+    for term in VOCAB_TERMS:
+        props = [
+            f"a {term['kind']}",
+            f"rdfs:label {_ttl_literal(term['label'], 'en')}",
+            f"rdfs:comment {_ttl_literal(term['comment'], 'en')}",
+            f"rdfs:isDefinedBy {ontology}",
+        ]
+        if term.get("domain"):
+            props.append(f"rdfs:domain {term['domain']}")
+        if term.get("range"):
+            props.append(f"rdfs:range {term['range']}")
+        lines += [f"mcr:{term['name']} " + " ;\n    ".join(props) + " .", ""]
     return "\n".join(lines)
 
 
