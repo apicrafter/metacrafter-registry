@@ -1,0 +1,20 @@
+id: historical_dating
+name: Historical dating
+status: draft
+doc: Approximate date of creation of a historical or museum object written as text, with a century, a
+  part of a century, a decade or a range of them, such as 19th century, early 20th century or 1950s. Museum
+  and archive catalogues use this free form when the exact date is not known, so it has no regular expression.
+  This record covers the English notation; the Russian one is ru_historical_dating.
+categories:
+- datetime
+langs:
+- en
+is_pii: false
+examples:
+- value: 19th century
+- value: early 20th century
+- value: second half of the 18th century
+- value: 1950s
+translations:
+  ru:
+    name: Датировка

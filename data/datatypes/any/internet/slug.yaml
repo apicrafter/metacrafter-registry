@@ -1,0 +1,40 @@
+id: slug
+name: URL slug
+status: draft
+doc: Readable part of a URL that names a page or a record, written in lowercase Latin letters and digits
+  joined by hyphens, such as model-gruzovogo-parohoda-donec. Content management systems and web frameworks
+  make it from the title, transliterated when the title is not in Latin script, and add a number when
+  the slug is already taken (kochedyk-10). APIs and exports keep it in a field named slug. Some frameworks
+  also allow underscores and uppercase letters; the regular expression covers only the common lowercase
+  form. A lowercase word without hyphens is also a valid slug, so the value alone is weak evidence.
+categories:
+- internet
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[a-z0-9]+(?:-[a-z0-9]+)*$
+examples:
+- value: model-gruzovogo-parohoda-donec
+  description: transliterated Russian title of a museum object
+- value: kochedyk-10
+  description: number added to keep the slug unique
+- value: oil-on-canvas
+- value: Model Donec
+  valid: false
+  description: uppercase letters and a space
+- value: model--donec
+  valid: false
+  description: two hyphens in a row
+- value: -donec
+  valid: false
+  description: starts with a hyphen
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Clean_URL#Slug
+- type: doc
+  url: https://docs.djangoproject.com/en/stable/ref/models/fields/#slugfield
+translations:
+  ru:
+    name: Слаг (человекопонятная часть URL)
