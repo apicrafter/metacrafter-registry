@@ -273,6 +273,23 @@
       if (!((office >= "001" && office <= "100") || ["120", "121", "888", "999"].indexOf(office) !== -1)) return false;
       return CHECKSUMS.luhn(s);
     },
+    it_aic: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      var b32 = "0123456789BCDFGHJKLMNPQRSTUVWXYZ";
+      if (/^[0-9B-DF-HJ-NP-Z]{6}$/.test(s)) {
+        var n = 0;
+        for (var j = 0; j < 6; j += 1) n = n * 32 + b32.indexOf(s[j]);
+        s = String(n);
+        while (s.length < 9) s = "0" + s;
+      }
+      if (!/^0\d{8}$/.test(s)) return false;
+      var t = 0;
+      for (var i = 0; i < 8; i += 1) {
+        var p = Number(s[i]) * (i % 2 === 0 ? 1 : 2);
+        t += Math.floor(p / 10) + (p % 10);
+      }
+      return t % 10 === Number(s[8]);
+    },
     fi_hetu: function (v) {
       var s = String(v).replace(/\s/g, "").toUpperCase();
       var m = /^(\d{6})[-+A-FU-Y](\d{3})([0-9A-FHJ-NPR-Y])$/.exec(s);

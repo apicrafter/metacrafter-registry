@@ -1,0 +1,42 @@
+id: it_subdivision_code
+name: Italian region and province code (ISO 3166-2:IT)
+status: draft
+doc: Code of an Italian region, province or metropolitan city from ISO 3166-2:IT, alone or with the country
+  code. The 20 regions have two digits, such as IT-25 (Lombardia), IT-62 (Lazio) or IT-82 (Sicilia). The
+  106 provinces, metropolitan cities, free municipal consortia of Sicily and decentralised regional entities
+  of Friuli Venezia Giulia have the two letters of their abbreviation (it_province_code), such as IT-MI
+  or IT-RM; Valle d'Aosta has only its region code IT-23. ISO had not yet added the Sardinian provinces
+  of 1 January 2026 (OT, OG, VS) in the version read for this record, and IT-SU still names Sud Sardegna;
+  the regexp follows that list.
+semantic_type: iso3166code
+country:
+- IT
+langs:
+- common
+regexp: ^(?:IT-)?(?:2[135]|3[246]|4[25]|5[257]|6[257]|7[2578]|8[28]|A[GLNPQRTV]|B[AGILNORSTZ]|C[ABEHLNORSTZ]|EN|F[CEGIMR]|G[EOR]|I[MS]|KR|L[CEIOTU]|M[BCEINOST]|N[AOU]|OR|P[ACDEGINORTUVZ]|R[ACEGIMNO]|S[AIOPRSUV]|T[AENOPRSV]|UD|V[ABCEIRTV])$
+examples:
+- value: IT-25
+  description: Lombardia
+- value: IT-RM
+  description: Roma
+- value: IT-88
+  description: Sardegna
+- value: MI
+  description: Milano, without the country code
+- value: IT-AO
+  valid: false
+  description: Deleted in 2019; Valle d'Aosta is IT-23
+- value: IT-SD
+  valid: false
+  description: Code of Sud Sardegna from 2019, corrected to IT-SU in 2020
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_3166-2:IT
+- type: doc
+  url: https://www.iso.org/obp/ui/#iso:code:3166:IT
+translations:
+  it:
+    name: Codice di regione o provincia (ISO 3166-2:IT)
+  ru:
+    name: Код области или провинции Италии (ISO 3166-2:IT)
+    doc: Код области (две цифры, например IT-25) или провинции (две буквы, например IT-MI) по ISO 3166-2:IT.

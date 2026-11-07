@@ -1,0 +1,34 @@
+id: it_abi
+name: Italian bank code (codice ABI)
+status: draft
+doc: Codice ABI, the five-digit code of a bank in Italy, named after the Associazione Bancaria Italiana.
+  It forms characters 6 to 10 of an Italian IBAN, after the CIN check letter, and is followed by the CAB
+  code of the branch (it_cab). Italian electronic invoices (FatturaPA) carry it in the ABI field, which
+  the schema limits to five digits.
+categories:
+- finances
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: 05428
+  description: Bank code in the example IBAN of iban.com
+- value: '5428'
+  valid: false
+  description: Four digits; the leading zero is part of the code
+links:
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Coordinate_bancarie
+- type: doc
+  url: https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.2/Schema_del_file_xml_FatturaPA_v1.2.2.xsd
+translations:
+  it:
+    name: Codice ABI
+    doc: Codice di cinque cifre che identifica la banca; nell'IBAN italiano segue il CIN.
+  ru:
+    name: Код банка Италии (ABI)
+    doc: Пятизначный код банка в Италии; в итальянском IBAN следует за контрольной буквой CIN.

@@ -1,19 +1,40 @@
 id: it_passport
 name: Italian passport number
 status: draft
-doc: Number of a passport issued by Italy. Microsoft Purview looks for two letters or digits and seven
-  digits.
+doc: Number of a passport issued by Italy. Google Sensitive Data Protection and Presidio look for two
+  letters and seven digits; Microsoft Purview also accepts digits in the first two positions, and the
+  regexp follows it.
 semantic_type: passport
 country:
 - IT
 langs:
 - it
 regexp: ^[A-Z0-9]{2}\d{7}$
+examples:
+- value: AB4820613
+  description: Synthetic number of two letters and seven digits
+- value: CD7305128
+  description: Synthetic number of two letters and seven digits
+- value: AB482061
+  valid: false
+  description: Six digits
 mappings:
+  google_dlp: ITALY_PASSPORT
   purview:
   - Italy passport number
   - EU passport number
+  presidio: IT_PASSPORT
   fhir: http://hl7.org/fhir/sid/passport-ITA
 links:
 - type: doc
   url: https://learn.microsoft.com/en-us/purview/sit-defn-italy-passport-number
+- type: other
+  url: https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/italy/it_passport_recognizer.py
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Passaporto_italiano
+translations:
+  it:
+    name: Numero del passaporto
+  ru:
+    name: Номер паспорта Италии
+    doc: Номер итальянского паспорта - две буквы и семь цифр.

@@ -1,0 +1,47 @@
+id: it_iban
+name: Italian IBAN
+status: draft
+doc: 'International Bank Account Number of a bank account in Italy: 27 characters, IT, two IBAN check
+  digits and the 23-character national account number (BBAN). The BBAN is the CIN check letter, the 5-digit
+  ABI code of the bank (it_abi), the 5-digit CAB code of the branch (it_cab) and a 12-character account
+  number padded with leading zeros. It is printed in groups of four, as in IT60 X054 2811 1010 0000 0123
+  456. San Marino uses the same structure with SM.'
+parent: iban
+categories:
+- finances
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^IT\d{2} ?[A-Z]\d{3} ?\d{4} ?\d{3}[A-Z0-9] ?[A-Z0-9]{4} ?[A-Z0-9]{4} ?[A-Z0-9]{3}$
+checksum: iban_mod97
+examples:
+- value: IT60X0542811101000000123456
+  description: Example IBAN of iban.com
+- value: IT60 X054 2811 1010 0000 0123 456
+  description: The same IBAN in its printed form
+- value: IT60X0542811101000000123457
+  valid: false
+  description: Check digits do not match
+- value: IT60X054281110100000012345
+  valid: false
+  description: 26 characters
+mappings:
+  dpv: pd:BankAccount
+  stdnum: iban
+links:
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Coordinate_bancarie
+- type: other
+  url: https://www.iban.com/structure
+translations:
+  it:
+    name: IBAN italiano
+    doc: Codice IBAN di un conto in Italia - 27 caratteri, IT, due cifre di controllo, il CIN, il codice
+      ABI, il codice CAB e il numero di conto di 12 caratteri.
+  ru:
+    name: IBAN Италии
+    doc: Международный номер банковского счёта в Италии - 27 символов - IT, две контрольные цифры, контрольная
+      буква CIN, код банка ABI, код отделения CAB и номер счёта из 12 символов.

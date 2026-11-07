@@ -1,0 +1,40 @@
+id: ru_esklp_smnn_code
+name: ESKLP SMNN code
+status: stable
+doc: Code of a standardised INN position (SMNN) in ESKLP, the reference catalogue of medicines of the
+  Russian Ministry of Health. An SMNN groups medicines with the same international nonproprietary name,
+  dosage form and dose. The code is the OKPD2 product code followed by groups of 6, 1, 5 and 13 digits,
+  and the last group is always 13 zeros. The medicine positions of the procurement catalogue (KTRU) seen
+  so far carry the same code as their SMNN.
+parent: ru_esklp_code
+categories:
+- medical
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{2}\.\d{2}\.\d{2}\.\d{3}-\d{6}-\d-\d{5}-0{13}$
+examples:
+- value: 21.20.10.193-000012-1-00002-0000000000000
+  description: Ethambutol (ATC J04AK02)
+- value: 21.20.10.226-000001-1-00008-0000000000000
+- value: 21.20.10.194-000111-1-00001-0000000000000
+- value: 21.20.21.120-000097-1-00072-0000000000000
+- value: 21.20.10.193-000012-1-00002-2000000301228
+  valid: false
+  description: KLP code; the last group is not zeros
+- value: 21.20.10.226
+  valid: false
+  description: OKPD2 code alone
+links:
+- type: doc
+  url: https://ppt.ru/art/zakupki/gde-nayti-i-kak-rabotat-so-spravochnikom-yesklp-poshagovaya-instruktsiya
+translations:
+  ru:
+    name: Код СМНН (ЕСКЛП)
+    doc: Код стандартизованного международного непатентованного наименования (СМНН) в ЕСКЛП. СМНН объединяет
+      препараты с одним МНН, лекарственной формой и дозировкой. Код состоит из кода ОКПД2 и групп из 6,
+      1, 5 и 13 цифр через дефисы; последняя группа всегда из 13 нулей. В известных позициях КТРУ лекарственный
+      препарат имеет тот же код, что и его СМНН.
