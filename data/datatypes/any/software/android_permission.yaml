@@ -1,0 +1,34 @@
+id: android_permission
+name: Android platform permission name
+status: draft
+doc: Name of a permission defined by the Android platform, as an app requests it in a uses-permission
+  element of AndroidManifest.xml and as the constants of android.Manifest.permission hold it. Almost all
+  start with android.permission. followed by an uppercase name (android.permission.CAMERA); a few older
+  ones use a com.android.<component>.permission. prefix (com.android.voicemail.permission.ADD_VOICEMAIL).
+  APK analysis tools and VirusTotal list them to show what an app can access. Apps can also define their
+  own permissions with any package-style name; the regexp covers only the platform form.
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:android|com\.android\.[a-z]+)\.permission\.[A-Z][A-Z0-9_]*$
+examples:
+- value: android.permission.ACCESS_COARSE_LOCATION
+  description: Approximate location
+- value: android.permission.POST_NOTIFICATIONS
+  description: Show notifications (Android 13 and later)
+- value: com.android.voicemail.permission.ADD_VOICEMAIL
+  description: Platform permission with a component prefix
+- value: ACCESS_COARSE_LOCATION
+  valid: false
+  description: Constant name without the prefix
+- value: android.permission.access_coarse_location
+  valid: false
+  description: Lowercase permission name
+links:
+- type: doc
+  url: https://developer.android.com/reference/android/Manifest.permission
+- type: other
+  url: https://virustotal.readme.io/reference/file-object-androguard

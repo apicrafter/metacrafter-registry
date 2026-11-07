@@ -1,0 +1,32 @@
+id: apple_bundle_id
+name: Apple bundle ID
+status: draft
+doc: Identifier of an app or other bundle on Apple platforms (iOS, iPadOS, macOS, tvOS, visionOS and watchOS),
+  stored as CFBundleIdentifier in Info.plist. Apple allows only the letters A-Z and a-z, the digits 0-9,
+  hyphens and periods, and compares bundle IDs without regard to case. Developers usually write it in
+  reverse-DNS form (com.example.app). The system uses it to find apps and their preferences, it is part
+  of the code signature and of the App ID (Team ID, a period and the bundle ID), and it cannot change
+  after an upload to App Store Connect. The regexp also requires at least one period, as in reverse-DNS
+  names.
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+$
+examples:
+- value: com.example.apple-samplecode.ProfileExplainer
+  description: Bundle ID of the sample app in Apple TN3125
+- value: com.example.apple-samplecode.AppWithTool
+  description: Bundle ID of the sample app in Apple TN3127
+- value: com.example.my_app
+  valid: false
+  description: Underscore is not allowed
+mappings:
+  wikidata: P7429
+links:
+- type: doc
+  url: https://developer.apple.com/documentation/bundleresources/information-property-list/cfbundleidentifier
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P7429

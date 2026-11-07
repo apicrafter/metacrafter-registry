@@ -1,0 +1,26 @@
+id: apple_team_id
+name: Apple Developer Team ID
+status: draft
+doc: Ten-character string that Apple generates for each membership in the Apple Developer Program or the
+  Apple Developer Enterprise Program. It is the organizational unit (OU) of the team's signing certificates,
+  so code signing requirements refer to it as certificate leaf[subject.OU], and it prefixes App IDs (the
+  application-identifier entitlement). Values in Apple documentation use uppercase letters and digits.
+  The format alone matches many other 10-character codes, so use the field name or context.
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z0-9]{10}$
+examples:
+- value: SKMME9E2Y8
+  description: Team ID of Apple's sample code in TN3125 and TN3127
+- value: SKMME9E2Y
+  valid: false
+  description: Nine characters
+links:
+- type: doc
+  url: https://developer.apple.com/help/glossary/team-id
+- type: other
+  url: https://developer.apple.com/documentation/technotes/tn3125-inside-code-signing-provisioning-profiles

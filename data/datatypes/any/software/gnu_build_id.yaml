@@ -1,0 +1,29 @@
+id: gnu_build_id
+name: GNU build ID of an ELF file
+status: draft
+doc: 'Bit string that the linker writes into the .note.gnu.build-id note of an ELF executable or shared
+  library to identify that build. GNU ld computes it with the --build-id option: a SHA-1 hash (160 bits,
+  the default) or an MD5 or XXHASH hash (128 bits) of the output, 128 random bits (uuid style), or a fixed
+  hexadecimal string given by the user. Tools such as file, readelf -n, debuginfod and crash reporters
+  print it as lowercase hexadecimal digits, and debug symbol stores are keyed by it. VirusTotal shows
+  it as the Build id of ELF files. The regexp accepts the 128-bit and 160-bit forms; user-chosen build
+  IDs can have other lengths.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[0-9a-f]{32}|[0-9a-f]{40})$
+examples:
+- value: 064cb6d5088be6864ecce961a798300f3b202802
+  description: SHA-1 build ID of an ARM64 Android shared library (libtracernative.so) in its VirusTotal
+    report
+- value: 064cb6d5088be6864ecce961a798300f3b20280
+  valid: false
+  description: 39 hexadecimal digits
+links:
+- type: doc
+  url: https://sourceware.org/binutils/docs/ld/Options.html
+- type: other
+  url: https://virustotal.readme.io/reference/file-object-elf-info

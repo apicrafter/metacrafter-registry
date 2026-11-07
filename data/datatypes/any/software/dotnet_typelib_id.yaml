@@ -1,0 +1,32 @@
+id: dotnet_typelib_id
+name: .NET TypeLib ID (assembly GUID)
+status: draft
+doc: 'GUID in the GuidAttribute of a .NET assembly, written by Visual Studio into Properties/AssemblyInfo.cs
+  when a project is created ([assembly: Guid("...")]). It becomes the ID of the type library if the assembly
+  is exposed to COM. Because it stays the same across all builds of a project, threat hunters use it to
+  link malware and offensive tools to their source project; VirusTotal reports it as dot_net_guids.typelib_id.
+  The text form is a standard UUID, usually in lowercase.'
+parent: uuid
+categories:
+- software
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$
+examples:
+- value: aec32155-d589-4150-8fe7-2900df4554c8
+  description: TypeLib ID of GhostPack Seatbelt (Seatbelt/Properties/AssemblyInfo.cs)
+- value: 658c8b7f-3664-4a95-9572-a3e5871dfc06
+  description: TypeLib ID of GhostPack Rubeus (Rubeus/Properties/AssemblyInfo.cs)
+- value: '{aec32155-d589-4150-8fe7-2900df4554c8}'
+  valid: false
+  description: Braced GUID form, which the GuidAttribute does not use
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.guidattribute
+- type: other
+  url: https://virustotal.readme.io/reference/file-object-dot-net-guids
+- type: other
+  url: https://github.com/GhostPack/Seatbelt/blob/master/Seatbelt/Properties/AssemblyInfo.cs
