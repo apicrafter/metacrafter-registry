@@ -1,10 +1,12 @@
 id: it_iva
 name: Italian VAT number (partita IVA)
-status: draft
-doc: 'Partita IVA, the 11-digit VAT number in Italy: seven digits that identify the taxpayer, a 3-digit
-  tax office code (mostly the province code; 888 and 999 are used for special regimes and for non-residents)
-  and a Luhn check digit. In the EU form it has the IT prefix. For companies the 11 digits are also the
-  fiscal code.'
+status: stable
+doc: 'Partita IVA, the 11-digit VAT number that the Agenzia delle Entrate gives in Italy: seven digits
+  that number the taxpayer, the 3-digit code of the office that issued it and a Luhn check digit. The
+  office code is 001 to 100, 120 or 121 for a tax office, mostly the ISTAT code of its province; 888 marks
+  taxpayers under the franchise regime and 999 non-residents that identify themselves directly in Italy.
+  In the EU form it has the IT prefix. For companies and other legal entities the 11 digits are also the
+  fiscal code (codice fiscale).'
 parent: vatin
 categories:
 - finances
@@ -26,6 +28,9 @@ examples:
 - value: '61248020201'
   valid: false
   description: Check digit does not match
+- value: '00743115007'
+  valid: false
+  description: 500 is not an office code (python-stdnum test value with a valid Luhn digit)
 mappings:
   purview: Italy value added tax number
   fta: IDENTITY.VAT_IT
@@ -33,6 +38,7 @@ mappings:
   - IT-CF
   - IT-RI
   schema_org: vatID
+  presidio: IT_VAT_CODE
   stdnum: it.iva
 links:
 - type: wikipedia
@@ -43,6 +49,15 @@ links:
   url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.it.iva.html
 - type: other
   url: https://docs.dataprep.ai/user_guide/clean/clean_it_iva.html
+- type: other
+  url: https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/predefined_recognizers/country_specific/italy/it_vat_code.py
 translations:
   it:
     name: Partita IVA
+    doc: Numero di 11 cifre attribuito dall'Agenzia delle Entrate - sette cifre di matricola, il codice
+      dell'ufficio e una cifra di controllo; per le società coincide con il codice fiscale.
+  ru:
+    name: Номер плательщика НДС Италии (partita IVA)
+    doc: Номер из 11 цифр, который присваивает Agenzia delle Entrate - семь цифр номера налогоплательщика,
+      трёхзначный код налоговой инспекции и контрольная цифра по алгоритму Луна; у юридических лиц совпадает
+      с налоговым кодом.

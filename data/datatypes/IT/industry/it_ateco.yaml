@@ -1,0 +1,47 @@
+id: it_ateco
+name: Italian classification of economic activities code (ATECO)
+status: draft
+doc: Code of ATECO, the Italian classification of economic activities kept by ISTAT and used by the business
+  register and the tax agency. Sections are capital letters; divisions, groups, classes, categories and
+  subcategories have two to six digits, written with dots, as in 46.11.01. The first four digits follow
+  NACE (eu_nace); the fifth and sixth are Italian, and a code that ends in 0 has the same content as the
+  level above it. ATECO 2025, the Italian version of NACE Rev. 2.1 with 22 sections from A to V, came
+  into force on 1 January 2025 and has been operational since 1 April 2025; codes of ATECO 2007 stay in
+  older data.
+categories:
+- industry
+country:
+- IT
+langs:
+- it
+is_pii: false
+classification: categorical
+regexp: ^(?:[A-V]|\d{2}(?:\.\d(?:\d(?:\.\d{1,2})?)?)?)$
+examples:
+- value: 46.11.01
+  description: ATECO 2025 subcategory quoted in the ISTAT reading guide
+- value: 47.61.00
+  description: ATECO 2025 subcategory with the same content as class 47.61 (ISTAT reading guide)
+- value: 66.19.21
+  description: ATECO 2025 subcategory quoted in the ISTAT reading guide
+- value: '47.6'
+  description: ATECO 2025 group (ISTAT reading guide)
+- value: 46.11.012
+  valid: false
+  description: Seven digits
+links:
+- type: doc
+  url: https://www.istat.it/classificazione/Ateco-2025/
+- type: doc
+  url: https://www.istat.it/wp-content/uploads/2025/03/Guida-alla-lettura-ATECO-2025.pdf
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/ATECO
+translations:
+  it:
+    name: Codice ATECO
+    doc: Codice della classificazione delle attività economiche dell'ISTAT, fino a sei cifre come 46.11.01;
+      ATECO 2025 deriva dalla NACE Rev. 2.1.
+  ru:
+    name: Код классификатора видов экономической деятельности Италии (ATECO)
+    doc: Код классификатора видов экономической деятельности ISTAT, до шести цифр, например 46.11.01;
+      первые четыре цифры соответствуют NACE.

@@ -1,0 +1,47 @@
+id: it_cig
+name: Italian tender identification code (CIG)
+status: draft
+doc: 'Codice identificativo di gara (CIG), the 10-character code that the national anti-corruption authority
+  (ANAC) gives to a public contract awarded after a tender or by another procedure of the public contracts
+  code. It is quoted on payments and electronic invoices and in the open data of ANAC. The SIOPE+ rules
+  of the Banca d''Italia accept three forms, all made of digits and the letters A to F after the first
+  character: the ordinary CIG of seven digits and three characters, the smart CIG for small contracts,
+  which starts with a letter from V to Z, and the single format that replaces both, which starts with
+  a letter from A to U.'
+categories:
+- government
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{7}[0-9A-F]{3}|[A-Z][0-9A-F]{9})$
+examples:
+- value: 9204715C3E
+  description: Synthetic number in the ordinary form
+- value: Z3A2F4B1C0
+  description: Synthetic number in the smart CIG form
+- value: B4C21E07A9
+  description: Synthetic number in the single form
+- value: 9204715G3E
+  valid: false
+  description: G is not used after the first character
+- value: Z3A2F4B1C
+  valid: false
+  description: Nine characters
+links:
+- type: doc
+  url: https://www.agid.gov.it/sites/default/files/repository_files/scheda_33.pdf
+- type: doc
+  url: https://dati.anticorruzione.it/opendata/dataset/cig-2025
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Codice_identificativo_di_gara
+translations:
+  it:
+    name: Codice identificativo di gara (CIG)
+    doc: Codice di 10 caratteri attribuito dall'ANAC a un contratto pubblico; CIG ordinario, smart CIG
+      (iniziale da V a Z) o CIG nel formato unico (iniziale da A a U).
+  ru:
+    name: Идентификационный код закупки Италии (CIG)
+    doc: Десятисимвольный код, который антикоррупционное агентство ANAC присваивает государственному контракту.

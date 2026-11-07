@@ -2,7 +2,11 @@ id: it_province
 name: Italian province
 status: draft
 doc: Name of a province or metropolitan city of Italy, the level between the region and the comune, such
-  as Milano, Napoli or Bolzano. Each has a two-letter abbreviation, the pattern it_province_code.
+  as Milano, Napoli or Bolzano. In Sicily this level is formed by free municipal consortia and metropolitan
+  cities, and in Friuli Venezia Giulia by decentralised regional entities. On 1 January 2026 Sardinia
+  replaced the provinces of Sassari and Sud Sardegna with the metropolitan city of Sassari and the provinces
+  of Gallura Nord-Est Sardegna, Ogliastra, Medio Campidano and Sulcis Iglesiente. Each has a two-letter
+  abbreviation, the pattern it_province_code.
 parent: admin_area_2
 categories:
 - geo
@@ -17,13 +21,23 @@ examples:
 - value: Milano
 - value: Napoli
 - value: Bolzano
+- value: Gallura Nord-Est Sardegna
+  description: Province created in Sardinia on 1 January 2026
 mappings:
   fta: STATE_PROVINCE.PROVINCE_NAME_IT
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Provinces_of_Italy
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Province_d%27Italia
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Istituzione_di_nuove_province_in_Sardegna
 - type: other
   url: https://github.com/tsegall/fta/blob/main/SemanticTypes.md
 translations:
+  it:
+    name: Provincia
   ru:
     name: Провинция Италии
+    doc: Название провинции или метрополитенского города Италии - уровня между областью и коммуной, например
+      Milano или Napoli.
