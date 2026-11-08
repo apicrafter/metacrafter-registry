@@ -2,6 +2,7 @@ id: trpostcode
 name: Turkish postal code by field name
 status: stable
 doc: Turkish postal code by field name identifier
+semantic_type: postindex
 categories:
 - geo
 country:

@@ -2,6 +2,7 @@ id: aepostcode
 name: UAE Postal Code
 status: draft
 doc: UAE postal code
+semantic_type: postindex
 categories:
 - geo
 country:

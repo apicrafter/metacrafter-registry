@@ -4,6 +4,7 @@ status: draft
 doc: Name of a comune, the basic municipality of Italy, such as Roma, Bergamo or Abano Terme. ISTAT counted
   7,894 comuni on 21 February 2026; mergers lower the number almost every year. Each comune has an ISTAT
   code (it_istat_comune) and a cadastral code (it_codice_catastale).
+parent: city
 categories:
 - geo
 - government

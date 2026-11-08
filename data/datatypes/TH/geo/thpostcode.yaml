@@ -2,6 +2,7 @@ id: thpostcode
 name: Thai postal code by field name
 status: stable
 doc: Thai postal code by field name identifier
+semantic_type: postindex
 categories:
 - geo
 country:
