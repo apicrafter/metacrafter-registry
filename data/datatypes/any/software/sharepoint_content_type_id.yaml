@@ -1,0 +1,32 @@
+id: sharepoint_content_type_id
+name: SharePoint content type id
+status: draft
+doc: 'Identifier of a content type in Microsoft SharePoint, a hexadecimal string that starts with 0x and
+  grows with each level of inheritance: 0x is the System type, 0x01 Item, 0x0101 Document and 0x0120 Folder.
+  A custom type appends 00 and a GUID without hyphens, or two hexadecimal digits, to the id of its parent.'
+parent: id
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^0x(?:[0-9A-Fa-f]{2})*$
+examples:
+- value: '0x01'
+  description: Item
+- value: '0x0101'
+  description: Document
+- value: '0x0120'
+  description: Folder
+- value: '0x01000F389E14C9CE4CE486270B9D4713A5D6'
+  description: Custom type inherited from Item
+- value: '0x012'
+  valid: false
+  description: Odd number of hexadecimal digits
+- value: '01'
+  valid: false
+  description: No 0x prefix
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/previous-versions/office/developer/sharepoint-2010/aa543822(v=office.14)

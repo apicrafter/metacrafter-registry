@@ -2,6 +2,7 @@ id: egpostcode
 name: Egyptian Postal Code
 status: draft
 doc: Egyptian postal code
+semantic_type: postindex
 categories:
 - geo
 country:

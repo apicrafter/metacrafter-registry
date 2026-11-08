@@ -1,0 +1,29 @@
+id: nl_brin_vestiging
+name: Dutch school location code (BRIN with location number)
+status: draft
+doc: BRIN number of a Dutch education institution with the two-digit number of one of its locations (vestiging),
+  six characters as in 32JK00; 00 is usually the main location.
+parent: nl_brin
+categories:
+- education
+country:
+- NL
+langs:
+- nl
+is_pii: false
+classification: identifier
+regexp: ^\d{2}[A-Z]{2}\d{2}$
+examples:
+- value: 32JK00
+  description: Primary school location
+- value: 16PK00
+  description: Location of the Zuider Gymnasium
+- value: 32JK
+  valid: false
+  description: BRIN without a location number
+links:
+- type: doc
+  url: https://www.duo.nl/open_onderwijsdata/
+translations:
+  nl:
+    name: Vestigingscode

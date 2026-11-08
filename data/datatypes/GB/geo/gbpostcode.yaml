@@ -2,6 +2,7 @@ id: gbpostcode
 name: UK postal code by field name (for property identification)
 status: stable
 doc: UK postal code by field name (for property identification) identifier
+semantic_type: postindex
 categories:
 - geo
 country:

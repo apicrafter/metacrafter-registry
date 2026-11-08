@@ -1,0 +1,29 @@
+id: gb_dfe_la_code
+name: English local authority code (DfE)
+status: draft
+doc: Three-digit code of a local authority in England in Department for Education data such as Get Information
+  about Schools (GIAS), as in 202 for Camden and 208 for Lambeth. It differs from the GSS codes of the
+  ONS.
+categories:
+- education
+- government
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{3}$
+examples:
+- value: '202'
+  description: Camden
+- value: '203'
+  description: Greenwich
+- value: '208'
+  description: Lambeth
+- value: E09000007
+  valid: false
+  description: GSS code of Camden
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Local_government_in_England

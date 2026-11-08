@@ -2,6 +2,7 @@ id: plpostcode
 name: Polish postal code by field name
 status: stable
 doc: Polish postal code by field name identifier
+semantic_type: postindex
 categories:
 - geo
 country:

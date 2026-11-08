@@ -1,0 +1,32 @@
+id: us_nyc_bin
+name: New York City building identification number (BIN)
+status: draft
+doc: Seven-digit number of a building in New York City from the Department of City Planning; the first
+  digit is the borough (1-5). Numbers like 1000000 or 3000000, a borough digit followed by zeros, are
+  placeholders for buildings without a BIN.
+parent: id
+categories:
+- realestate
+- geo
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[1-5]\d{6}(?:\.0+)?$
+examples:
+- value: '1086341'
+  description: Building in Manhattan
+- value: '3388736'
+  description: Building in Brooklyn
+- value: '4268835.00000000000'
+  description: Stored as a decimal number
+- value: '6086341'
+  valid: false
+  description: No borough 6
+mappings:
+  wikidata: P6082
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6082

@@ -1,0 +1,30 @@
+id: lv_bis_register_number
+name: Latvian construction merchant register number
+status: draft
+doc: 'Number of a company in the register of construction merchants (būvkomersantu reģistrs) of the Latvian
+  construction information system (BIS): digits followed by -R, as in 11239-R.'
+parent: id
+categories:
+- companies
+- government
+country:
+- LV
+langs:
+- lv
+is_pii: false
+classification: identifier
+regexp: ^\d{1,6}-R$
+examples:
+- value: 11239-R
+  description: Construction merchant
+- value: 10593-R
+  description: Construction merchant
+- value: '11239'
+  valid: false
+  description: No -R
+links:
+- type: doc
+  url: https://bis.gov.lv/
+translations:
+  lv:
+    name: Būvkomersanta reģistrācijas numurs

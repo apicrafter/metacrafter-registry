@@ -1,0 +1,29 @@
+id: dwc_basis_of_record
+name: Darwin Core basis of record
+status: draft
+doc: 'Value of the Darwin Core term basisOfRecord, the kind of evidence behind a biodiversity occurrence
+  record: the name of a Darwin Core class such as PreservedSpecimen, FossilSpecimen, LivingSpecimen, MaterialSample,
+  HumanObservation, MachineObservation or Occurrence. GBIF downloads write the same values in upper case
+  with underscores (PRESERVED_SPECIMEN).'
+parent: category
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:PreservedSpecimen|FossilSpecimen|LivingSpecimen|MaterialSample|MaterialEntity|MaterialCitation|HumanObservation|MachineObservation|Occurrence|Event|Taxon|PRESERVED_SPECIMEN|FOSSIL_SPECIMEN|LIVING_SPECIMEN|MATERIAL_SAMPLE|MATERIAL_CITATION|HUMAN_OBSERVATION|MACHINE_OBSERVATION|OBSERVATION|OCCURRENCE|LITERATURE|UNKNOWN)$
+examples:
+- value: PreservedSpecimen
+  description: Herbarium specimen
+- value: HumanObservation
+  description: Observation by a person
+- value: PRESERVED_SPECIMEN
+  description: GBIF form
+- value: Specimen
+  valid: false
+links:
+- type: doc
+  url: https://dwc.tdwg.org/terms/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Darwin_Core

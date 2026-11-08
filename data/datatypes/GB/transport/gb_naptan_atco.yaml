@@ -1,0 +1,31 @@
+id: gb_naptan_atco
+name: NaPTAN ATCO code (GB stop point)
+status: draft
+doc: Identifier of a public transport access point (bus stop, platform, station entrance) in the National
+  Public Transport Access Nodes (NaPTAN) database of Great Britain. It starts with the three-digit ATCO
+  area code of the administrative area that registered the stop, followed by up to nine letters and digits,
+  twelve characters at most. GTFS feeds of British operators often use it as stop_code.
+parent: id
+categories:
+- transport
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{3}[0-9A-Z]{1,9}$
+examples:
+- value: 2580AUD0009
+  description: Stop point in the TfGM GTFS feed
+- value: 069000010180
+  description: Stop point in the TfGM GTFS feed
+- value: AUD0009
+  valid: false
+  description: No ATCO area code
+- value: 2580AUD00091234
+  valid: false
+  description: Longer than twelve characters
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/NaPTAN

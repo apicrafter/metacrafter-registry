@@ -1,0 +1,29 @@
+id: us_nyc_nta
+name: New York City neighborhood tabulation area code (NTA)
+status: draft
+doc: 'Code of a neighborhood tabulation area, the statistical neighborhoods of the New York City Department
+  of City Planning: the borough abbreviation (BK, BX, MN, QN, SI) and two digits in the 2010 areas (QN02)
+  or four in the 2020 areas.'
+categories:
+- geo
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^(?:BK|BX|MN|QN|SI)\d{2}(?:\d{2})?$
+examples:
+- value: MN17
+  description: Neighborhood in Manhattan, 2010 areas
+- value: QN31
+  description: Neighborhood in Queens
+- value: NY17
+  valid: false
+  description: Not a borough abbreviation
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Neighborhood_Tabulation_Area
+- type: doc
+  url: https://www.nyc.gov/content/planning/pages/resources/datasets/neighborhood-tabulation

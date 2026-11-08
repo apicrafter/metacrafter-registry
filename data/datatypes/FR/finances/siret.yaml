@@ -20,10 +20,10 @@ regexp: ^[0-9]{14}$
 examples:
 - value: '73282932000074'
   description: 'French SIRET number with 14 digits (SIREN: 732829320, NIC: 00074)'
-- value: '12345678901234'
-  description: Another valid French SIRET number format
-- value: '55203253400015'
-  description: French SIRET number example
+- value: '19974968000013'
+  description: Establishment of a public school in La Réunion, in the national school directory
+- value: '49185036800011'
+  description: Health establishment in Val-d'Oise, in the FINESS register
 mappings:
   wikidata: P3215
   stdnum: fr.siret

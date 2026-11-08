@@ -1,0 +1,26 @@
+id: us_census_region
+name: US Census region code
+status: draft
+doc: 'Code of one of the four census regions of the United States: 1 Northeast, 2 Midwest, 3 South, 4
+  West.'
+parent: category
+categories:
+- geo
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^[1-4]$
+examples:
+- value: '1'
+  description: Northeast
+- value: '3'
+  description: South
+- value: '5'
+  valid: false
+links:
+- type: doc
+  url: https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf

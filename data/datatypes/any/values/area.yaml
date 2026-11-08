@@ -1,0 +1,42 @@
+id: area
+name: Area (surface measure)
+status: draft
+doc: Size of a surface, such as the area of a parcel, a building, a district or a lake, stored as a number
+  in square metres, hectares or square kilometres, with the unit in the value, the column name (Fläche
+  km², ALAND, oppervlakte_ha) or the metadata. The regular expression recognizes only values that carry
+  one of these unit symbols.
+parent: numeric
+categories:
+- values
+- common
+langs:
+- common
+is_pii: false
+regexp: ^\d+(?:[.,]\d+)?\s?(?:mm²|cm²|m²|km²|mm2|cm2|m2|km2|ha|sq\.? ?(?:m|ft|mi|km))$
+examples:
+- value: 120 m²
+  description: Square metres
+- value: 2,5 ha
+  description: Hectares with a decimal comma
+- value: 35 km2
+  description: Square kilometres written with a 2
+- value: 120 m
+  valid: false
+  description: Unit of length
+- value: m²
+  valid: false
+  description: Unit without a number
+mappings:
+  wikidata: P2046
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Area
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2046
+translations:
+  de:
+    name: Fläche
+  fr:
+    name: Superficie
+  ru:
+    name: Площадь

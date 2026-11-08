@@ -1,0 +1,30 @@
+id: us_nyc_bbl
+name: New York City borough, block and lot (BBL)
+status: draft
+doc: 'Ten-digit number of a tax lot in New York City: one digit for the borough (1 Manhattan, 2 Bronx,
+  3 Brooklyn, 4 Queens, 5 Staten Island), five for the tax block and four for the lot. City open data
+  often stores it as a decimal number, as in 3002777501.0.'
+parent: usparcelnumber
+categories:
+- realestate
+- geo
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[1-5]\d{9}(?:\.0+)?$
+examples:
+- value: '1000010010'
+  description: Tax lot in Manhattan
+- value: '3002777501'
+  description: Tax lot in Brooklyn
+- value: '3001280001.00000000000'
+  description: Stored as a decimal number
+- value: '6000010010'
+  valid: false
+  description: No borough 6
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Borough,_Block_and_Lot

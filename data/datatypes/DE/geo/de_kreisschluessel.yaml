@@ -3,7 +3,9 @@ name: German district key (Kreisschlüssel)
 status: stable
 doc: 'Five-digit official code of a German district (Landkreis) or independent city: two digits for the
   state, one for the government region and two for the district. It is the first five digits of the municipality
-  key (AGS).'
+  key (AGS). It is also the district level of the regional key (de_ars): the first five digits of a twelve-digit
+  Regionalschlüssel.'
+parent: de_ars
 categories:
 - geo
 country:

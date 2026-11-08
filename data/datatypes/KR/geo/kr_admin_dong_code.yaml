@@ -1,0 +1,33 @@
+id: kr_admin_dong_code
+name: Korean administrative dong code (행정기관코드)
+status: draft
+doc: Ten-digit code of an administrative unit of South Korea as kept by the Ministry of the Interior and
+  Safety (행정기관코드, administrative agency code). The first two digits are the province or metropolitan city,
+  the next three the city, county or district, and the next three the eup, myeon or administrative dong;
+  statistics by dong use it as the key.
+categories:
+- geo
+- government
+country:
+- KR
+langs:
+- ko
+is_pii: false
+classification: identifier
+regexp: ^\d{10}$
+examples:
+- value: '1111051500'
+  description: Administrative dong in Jongno-gu, Seoul
+- value: '1111053000'
+  description: Administrative dong in Jongno-gu, Seoul
+- value: '11110515'
+  valid: false
+  description: Eight digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea
+- type: wikipedia
+  url: https://ko.wikipedia.org/wiki/%ED%96%89%EC%A0%95%EB%8F%99
+translations:
+  ko:
+    name: 행정기관코드

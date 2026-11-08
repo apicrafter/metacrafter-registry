@@ -4,6 +4,7 @@ status: draft
 doc: Name of a commune, the smallest administrative unit of France, for example Paris or Mende. Many names
   occur in more than one department, so a name alone does not identify a commune; its INSEE code (inseecode)
   does.
+parent: city
 categories:
 - geo
 - government

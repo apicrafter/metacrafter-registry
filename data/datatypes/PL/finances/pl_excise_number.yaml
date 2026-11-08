@@ -1,0 +1,28 @@
+id: pl_excise_number
+name: Polish excise number
+status: draft
+doc: 'Excise number of an economic operator registered in Poland: the country code PL and eleven digits,
+  thirteen characters as all excise numbers in the EU SEED register.'
+parent: id
+categories:
+- finances
+- industry
+country:
+- PL
+langs:
+- pl
+is_pii: false
+classification: identifier
+regexp: ^PL\d{11}$
+examples:
+- value: PL34100039204
+  description: Operator in the fuel stock register
+- value: PL341000392
+  valid: false
+  description: Nine digits
+links:
+- type: doc
+  url: https://ec.europa.eu/taxation_customs/dds2/seed/seed_home.jsp
+translations:
+  pl:
+    name: Numer akcyzowy

@@ -1,0 +1,29 @@
+id: gtfs_wheelchair_boarding
+name: GTFS wheelchair boarding
+status: draft
+doc: 'Value of the wheelchair_boarding field of a GTFS stops.txt file: 0 or empty when there is no accessibility
+  information, 1 when some vehicles at the stop can be boarded by a rider in a wheelchair (or, for a station
+  entrance, when there is an accessible path), 2 when they cannot. The field name is the evidence; the
+  values alone are any small numbers.'
+parent: category
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[0-2]$
+examples:
+- value: '0'
+  description: No accessibility information
+- value: '1'
+  description: Wheelchair boarding possible
+- value: '2'
+  description: Wheelchair boarding not possible
+- value: '3'
+  valid: false
+links:
+- type: doc
+  url: https://gtfs.org/documentation/schedule/reference/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/GTFS

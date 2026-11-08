@@ -1,0 +1,29 @@
+id: cl_region_code
+name: Chilean region number
+status: draft
+doc: Number of one of the 16 regions of Chile, 1 to 16, traditionally written as a Roman numeral; 13 is
+  the Santiago Metropolitan Region, 5 Valparaíso.
+categories:
+- geo
+- government
+country:
+- CL
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:[1-9]|1[0-6])$
+examples:
+- value: '13'
+  description: Santiago Metropolitan Region
+- value: '5'
+  description: Valparaíso
+- value: '17'
+  valid: false
+  description: There are 16 regions
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Regions_of_Chile
+translations:
+  es:
+    name: Número de región

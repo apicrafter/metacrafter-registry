@@ -1,0 +1,30 @@
+id: ua_kpkvk
+name: Ukrainian programme classification code of expenditure (КПКВК)
+status: draft
+doc: Code of the programme classification of budget expenditure and lending of Ukraine. Local budget data
+  uses the four-digit typical programme classification of local budgets (ТПКВКМБ), as in 1021 or 6014;
+  the full code of a spending unit adds the codes of the budget's main spending unit in front.
+categories:
+- government
+- finances
+country:
+- UA
+langs:
+- uk
+is_pii: false
+classification: categorical
+regexp: ^\d{4}(?:\d{3})?$
+examples:
+- value: '1021'
+  description: Programme in the Kyiv city budget expenses
+- value: '6014'
+  description: Programme in the Kyiv city budget expenses
+- value: '102'
+  valid: false
+  description: Three digits
+links:
+- type: wikipedia
+  url: https://uk.wikipedia.org/wiki/%D0%91%D1%8E%D0%B4%D0%B6%D0%B5%D1%82%D0%BD%D0%B0_%D0%BA%D0%BB%D0%B0%D1%81%D0%B8%D1%84%D1%96%D0%BA%D0%B0%D1%86%D1%96%D1%8F
+translations:
+  uk:
+    name: Код програмної класифікації видатків та кредитування

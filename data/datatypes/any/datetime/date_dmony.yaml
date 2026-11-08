@@ -1,0 +1,24 @@
+id: date_dmony
+name: Date as DDMONYY
+status: draft
+doc: Calendar date written as a two-digit day, the three-letter English month abbreviation in upper case
+  and a two-digit year, without separators, as in 06NOV26. It is the DATE7. format of SAS and appears
+  in exports of systems that use it. The century has to be inferred.
+semantic_type: date
+langs:
+- en
+regexp: ^(?:0[1-9]|[12]\d|3[01])(?:JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\d{2}$
+examples:
+- value: 06NOV26
+  description: 6 November 2026
+- value: 31DEC99
+  description: 31 December 1999
+- value: 06NOV2026
+  valid: false
+  description: Four-digit year (DATE9.)
+- value: 6NOV26
+  valid: false
+  description: Day without a leading zero
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_date_formats_by_country

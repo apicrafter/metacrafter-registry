@@ -1,0 +1,33 @@
+id: co_divipola
+name: Colombian municipality code (DIVIPOLA)
+status: draft
+doc: 'Five-digit code of a Colombian municipality in DIVIPOLA, the coding of the political and administrative
+  division of the national statistics office DANE: two digits for the department and three for the municipality,
+  as in 05001 for Medellín and 91001 for Leticia. Leading zeros are part of the code.'
+semantic_type: co_municipality
+country:
+- CO
+langs:
+- es
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '05001'
+  description: Medellín, Antioquia
+- value: '91001'
+  description: Leticia, Amazonas
+- value: '11001'
+  description: Bogotá
+- value: '5001'
+  valid: false
+  description: Leading zero dropped
+mappings:
+  wikidata: P7325
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P7325
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Municipalities_of_Colombia
+translations:
+  es:
+    name: Código DIVIPOLA de municipio

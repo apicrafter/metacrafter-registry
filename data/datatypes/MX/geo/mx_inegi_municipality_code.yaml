@@ -1,0 +1,27 @@
+id: mx_inegi_municipality_code
+name: Mexican municipality code (INEGI)
+status: draft
+doc: 'Code of a Mexican municipality in the INEGI catalogue of states, municipalities and localities (AGEEML):
+  the two-digit state key (cve_ent) and the three-digit municipality key (cve_mun), written together as
+  five digits or the municipality key alone as three, as in 09015 for Cuauhtémoc in Mexico City.'
+semantic_type: mx_municipality
+country:
+- MX
+langs:
+- es
+classification: identifier
+regexp: ^(?:\d{2})?\d{3}$
+examples:
+- value: 09015
+  description: Cuauhtémoc, Mexico City
+- value: '015'
+  description: The municipality key alone
+- value: '9015'
+  valid: false
+  description: Leading zero of the state dropped
+links:
+- type: doc
+  url: https://www.inegi.org.mx/app/ageeml/
+translations:
+  es:
+    name: Clave de municipio (INEGI)

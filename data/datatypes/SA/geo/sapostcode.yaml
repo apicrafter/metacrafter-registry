@@ -2,6 +2,7 @@ id: sapostcode
 name: Saudi postal code by field name
 status: stable
 doc: Saudi postal code by field name identifier
+semantic_type: postindex
 categories:
 - geo
 country:

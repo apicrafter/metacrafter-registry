@@ -1,0 +1,28 @@
+id: us_census_division
+name: US Census division code
+status: draft
+doc: Code of one of the nine census divisions of the United States, 1 New England to 9 Pacific; each region
+  holds two or three divisions.
+parent: category
+categories:
+- geo
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^[1-9]$
+examples:
+- value: '1'
+  description: New England
+- value: '6'
+  description: East South Central
+- value: '9'
+  description: Pacific
+- value: '10'
+  valid: false
+links:
+- type: doc
+  url: https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf

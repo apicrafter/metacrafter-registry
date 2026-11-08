@@ -1,0 +1,29 @@
+id: date_jp_era
+name: Date in a Japanese era (wareki)
+status: draft
+doc: Calendar date written with a Japanese era name (gengō) and the year of that era, for example 令和7年7月20日
+  or the abbreviated form 平成 9. 4.27. 元 stands for the first year of an era. The eras of modern dates
+  are 明治 (from 1868), 大正 (1912), 昭和 (1926), 平成 (1989) and 令和 (2019); the Gregorian year is the start year
+  of the era plus the era year minus one.
+semantic_type: date
+country:
+- JP
+langs:
+- ja
+regexp: ^(?:明治|大正|昭和|平成|令和)\s*(?:元|[0-9０-９]{1,2})[年.．]\s*[0-9０-９]{1,2}[月.．]\s*[0-9０-９]{1,2}日?$
+examples:
+- value: 平成 9. 4.27
+  description: 27 April 1997, as in a municipal election table
+- value: 令和7.7.20
+  description: 20 July 2025
+- value: 令和元年5月1日
+  description: 1 May 2019, the first day of Reiwa
+- value: 2019年5月1日
+  valid: false
+  description: Gregorian year
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Japanese_era_name
+translations:
+  ja:
+    name: 和暦の日付

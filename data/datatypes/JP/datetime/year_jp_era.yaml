@@ -1,0 +1,30 @@
+id: year_jp_era
+name: Year in a Japanese era (wareki)
+status: draft
+doc: Year written with a Japanese era name and the year of that era, in full (平成4年) or with the one-character
+  abbreviation of the era (昭58, 平5, 令元). 元 stands for the first year of an era. Municipal data often uses
+  it for fiscal years (年度). Digits may be full-width (平９).
+semantic_type: year
+country:
+- JP
+langs:
+- ja
+regexp: ^(?:明治|大正|昭和|平成|令和|明|大|昭|平|令)\s*(?:元|[0-9０-９]{1,2})(?:年度?)?$
+examples:
+- value: 平成4年
+  description: '1992'
+- value: 昭58
+  description: '1983'
+- value: 平５
+  description: 1993, with a full-width digit
+- value: 令元
+  description: '2019'
+- value: 1992年
+  valid: false
+  description: Gregorian year
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Japanese_era_name
+translations:
+  ja:
+    name: 和暦の年

@@ -1,0 +1,30 @@
+id: jp_estat_time_code
+name: e-Stat time axis code
+status: draft
+doc: Ten-digit code of the time axis (時間軸) in statistics tables of e-Stat, the portal of official statistics
+  of Japan, and in data downloaded from its API. The first four digits are the Gregorian year, the remaining
+  digits the period within it.
+categories:
+- datetime
+- government
+country:
+- JP
+langs:
+- ja
+is_pii: false
+classification: categorical
+regexp: ^\d{10}$
+examples:
+- value: '1992001010'
+  description: 1992, from a foreign residents table of Kyoto
+- value: '1996001010'
+  description: '1996'
+- value: '1992'
+  valid: false
+  description: Year only
+links:
+- type: doc
+  url: https://www.e-stat.go.jp/api/api-info/e-stat-manual3-0
+translations:
+  ja:
+    name: 時間軸コード

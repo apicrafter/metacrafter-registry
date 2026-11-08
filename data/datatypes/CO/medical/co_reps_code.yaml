@@ -1,0 +1,27 @@
+id: co_reps_code
+name: Colombian health provider code (REPS)
+status: draft
+doc: 'Code of a health service provider in the special register of providers (REPS, Registro Especial
+  de Prestadores de Servicios de Salud) of the Colombian Ministry of Health: ten digits for a provider,
+  starting with the DIVIPOLA code of its municipality, and twelve for one of its sites (sedes).'
+parent: id
+categories:
+- medical
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{10}(?:\d{2})?$
+examples:
+- value: '9100100019'
+  description: Provider in Leticia (91001)
+- value: '910010001901'
+  description: Site of a provider
+- value: '91001000'
+  valid: false
+  description: Eight digits
+translations:
+  es:
+    name: Código de prestador (REPS)

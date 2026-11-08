@@ -1,0 +1,28 @@
+id: us_census_sumlev
+name: US Census summary level code
+status: draft
+doc: 'Three-digit code of the summary level (SUMLEV) of a row in US Census Bureau data, the kind of geographic
+  area it describes: 010 nation, 020 region, 030 division, 040 state, 050 county, and others for places,
+  tracts and blocks.'
+parent: category
+categories:
+- geo
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^\d{3}$
+examples:
+- value: '040'
+  description: State
+- value: '050'
+  description: County
+- value: '40'
+  valid: false
+  description: Leading zero dropped
+links:
+- type: doc
+  url: https://www.census.gov/programs-surveys/geography/technical-documentation/naming-convention/cartographic-boundary-file/carto-boundary-summary-level.html

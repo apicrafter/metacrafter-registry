@@ -1,0 +1,31 @@
+id: es_adif_station_code
+name: Spanish railway station code (ADIF)
+status: draft
+doc: Five-digit code of a railway station on the Spanish network managed by ADIF. Renfe uses it as stop_id
+  in its GTFS feeds, for example 60000 for Madrid-Puerta de Atocha and 71801 for Barcelona-Sants. Leading
+  zeros are part of the code (01003).
+parent: id
+categories:
+- transport
+country:
+- ES
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '60000'
+  description: Madrid-Puerta de Atocha-Almudena Grandes
+- value: '17000'
+  description: Madrid-Chamartín-Clara Campoamor
+- value: '71801'
+  description: Barcelona-Sants
+- value: '37606'
+  description: Badajoz
+- value: '1003'
+  valid: false
+  description: Leading zero dropped
+translations:
+  es:
+    name: Código de estación de ADIF

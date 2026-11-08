@@ -1,0 +1,24 @@
+id: ua_budget_code
+name: Ukrainian budget code
+status: draft
+doc: Eleven-digit code of a budget (код бюджету) in Ukrainian treasury and budget data, which tells the
+  state budget from the local budgets, as in 26000000000 for the budget of the city of Kyiv.
+categories:
+- government
+- finances
+country:
+- UA
+langs:
+- uk
+is_pii: false
+classification: identifier
+regexp: ^\d{11}$
+examples:
+- value: '26000000000'
+  description: Budget of the city of Kyiv
+- value: '2600000000'
+  valid: false
+  description: Ten digits
+translations:
+  uk:
+    name: Код бюджету

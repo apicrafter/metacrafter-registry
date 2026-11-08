@@ -2,6 +2,7 @@ id: idpostcode
 name: Indonesian Postal Code
 status: stable
 doc: Indonesian postal code (kode pos)
+semantic_type: postindex
 categories:
 - geo
 country:

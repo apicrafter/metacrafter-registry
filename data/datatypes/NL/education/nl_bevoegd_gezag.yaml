@@ -1,0 +1,29 @@
+id: nl_bevoegd_gezag
+name: Dutch school board number (bevoegd gezag)
+status: draft
+doc: Five-digit number of the competent authority (bevoegd gezag), the board that runs one or more schools
+  in the Netherlands, in the open education data of DUO.
+parent: id
+categories:
+- education
+country:
+- NL
+langs:
+- nl
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '41676'
+  description: School board
+- value: '20091'
+  description: School board
+- value: '4167'
+  valid: false
+  description: Four digits
+links:
+- type: doc
+  url: https://www.duo.nl/open_onderwijsdata/
+translations:
+  nl:
+    name: Bevoegd gezag nummer
