@@ -1,0 +1,18 @@
+id: taxid
+name: Tax identification number
+status: draft
+doc: Number that a tax authority assigns to a person or an organization, in any country. Country formats
+  are separate records, such as inn (Russia), cn_uscc (China) or co_nit (Colombia).
+categories:
+- finances
+langs:
+- common
+is_pii: false
+classification: identifier
+mappings:
+  schema_org: taxID
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Taxpayer_Identification_Number
+- type: schema.org
+  url: https://schema.org/taxID

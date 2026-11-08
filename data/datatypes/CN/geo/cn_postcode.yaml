@@ -1,0 +1,23 @@
+id: cn_postcode
+name: Chinese postal code (邮政编码)
+status: draft
+doc: 'Postal code in mainland China: six digits; the first two identify the province-level division.'
+semantic_type: postindex
+country:
+- CN
+langs:
+- zh
+regexp: ^\d{6}$
+examples:
+- value: '100000'
+  description: Beijing
+- value: '200000'
+  description: Shanghai
+- value: '12345'
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_China
+translations:
+  zh:
+    name: 邮政编码

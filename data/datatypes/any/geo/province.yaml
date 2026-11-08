@@ -1,0 +1,13 @@
+id: province
+name: Province (name)
+status: draft
+doc: Name of a province or a similar first-level administrative division of a country.
+parent: admin_area_1
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+mappings:
+  schema_org: addressRegion

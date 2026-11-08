@@ -1,12 +1,16 @@
 id: tnved
-name: Russian TN VED code (product code)
+name: TN VED code (EAEU commodity nomenclature)
 status: stable
-doc: TN VED is a Russian classifier used to identify product groups for customs purposes and international
-  trade statistics.
+doc: TN VED is the commodity nomenclature of the Eurasian Economic Union (Armenia, Belarus, Kazakhstan,
+  Kyrgyzstan, Russia), based on the Harmonized System, used for customs and foreign trade statistics.
 categories:
 - common
 country:
 - RU
+- AM
+- BY
+- KG
+- KZ
 langs:
 - ru
 is_pii: false

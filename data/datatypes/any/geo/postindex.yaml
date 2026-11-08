@@ -2,6 +2,8 @@ id: postindex
 name: Postal code/index
 status: stable
 doc: Postal index/code, unique post identifier used in address
+aliases:
+- postcode
 categories:
 - geo
 - pii
