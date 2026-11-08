@@ -1,0 +1,25 @@
+id: eea_eoi_station_code
+name: EEA air quality station code (EoI)
+status: draft
+doc: 'Code of an air quality monitoring station in the European exchange of information (EoI) on air quality
+  and the AirBase database of the European Environment Agency: the ISO 3166 alpha-2 code of the country
+  and five letters or digits, as in DEBB003 or BETR891. National station lists keep it next to their own
+  codes.'
+parent: id
+categories:
+- environment
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}[A-Z0-9]{5}$
+examples:
+- value: DEBB003
+  description: Station in Brandenburg, Germany
+- value: BETR891
+  description: Station in Belgium
+- value: BELHB23
+  description: Station in Belgium
+- value: DEBB03
+  valid: false
+  description: Four characters after the country

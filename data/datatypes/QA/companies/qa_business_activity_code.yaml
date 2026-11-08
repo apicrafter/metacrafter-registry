@@ -1,0 +1,26 @@
+id: qa_business_activity_code
+name: Qatar commercial activity code
+status: draft
+doc: Seven-digit code of a commercial activity in the commercial licence data of the Qatar Ministry of
+  Commerce and Industry (رمز النشاط التجاري).
+categories:
+- companies
+- government
+country:
+- QA
+langs:
+- ar
+is_pii: false
+classification: categorical
+regexp: ^\d{7}$
+examples:
+- value: 0910001
+  description: Commercial activity
+- value: '1071001'
+  description: Commercial activity
+- value: '910001'
+  valid: false
+  description: Leading zero dropped
+translations:
+  ar:
+    name: رمز النشاط التجاري

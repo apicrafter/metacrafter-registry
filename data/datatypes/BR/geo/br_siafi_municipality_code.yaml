@@ -1,0 +1,27 @@
+id: br_siafi_municipality_code
+name: Brazilian municipality code (SIAFI)
+status: draft
+doc: Four-digit code of a Brazilian municipality in SIAFI, the financial administration system of the
+  federal government, which federal transfer data uses (for example FUNDEB transfers). It differs from
+  the seven-digit IBGE code (br_municipality_code). Leading zeros are part of the code.
+semantic_type: br_municipality
+country:
+- BR
+langs:
+- pt
+classification: identifier
+regexp: ^\d{4}$
+examples:
+- value: '0643'
+  description: Municipality in FUNDEB transfer data
+- value: '0157'
+  description: Municipality in FUNDEB transfer data
+- value: '643'
+  valid: false
+  description: Leading zero dropped
+- value: '3550308'
+  valid: false
+  description: IBGE code
+translations:
+  pt:
+    name: Código SIAFI do município

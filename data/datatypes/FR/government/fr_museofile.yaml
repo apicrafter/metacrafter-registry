@@ -1,0 +1,33 @@
+id: fr_museofile
+name: Muséofile museum identifier
+status: draft
+doc: 'Identifier of a museum in Muséofile, the directory of the museums of France of the Ministry of Culture:
+  M and four digits, as in M1128, optionally followed by a hyphen and a number.'
+parent: id
+categories:
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^M\d{4}(?:-\d{1,2})?$
+examples:
+- value: M1128
+  description: Museum in the Muséofile directory
+- value: M0003
+  description: Museum in the Muséofile directory
+- value: '1128'
+  valid: false
+  description: No M
+mappings:
+  wikidata: P539
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P539
+- type: doc
+  url: https://www.pop.culture.gouv.fr/
+translations:
+  fr:
+    name: Identifiant Muséofile

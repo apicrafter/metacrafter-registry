@@ -1,0 +1,29 @@
+id: pl_ade
+name: Polish e-delivery address (ADE)
+status: draft
+doc: 'Address for electronic delivery (adres do doręczeń elektronicznych, ADE) in the Polish e-Doręczenia
+  service, the legal equivalent of a registered letter: AE:PL- followed by two groups of five digits,
+  five letters and two digits. Public bodies, companies and individuals have one; for an individual it
+  is personal data.'
+categories:
+- government
+- pii
+country:
+- PL
+langs:
+- pl
+is_pii: true
+classification: identifier
+regexp: ^AE:PL-\d{5}-\d{5}-[A-Z]{5}-\d{2}$
+examples:
+- value: AE:PL-55546-38867-UJDEW-16
+  description: Public body in the catalogue of public entities
+- value: PL-55546-38867-UJDEW-16
+  valid: false
+  description: 'No AE: prefix'
+links:
+- type: doc
+  url: https://www.gov.pl/web/e-doreczenia
+translations:
+  pl:
+    name: Adres do doręczeń elektronicznych (ADE)

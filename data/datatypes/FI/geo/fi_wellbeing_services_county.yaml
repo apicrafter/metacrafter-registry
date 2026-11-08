@@ -1,0 +1,34 @@
+id: fi_wellbeing_services_county
+name: Finnish wellbeing services county code
+status: draft
+doc: 'Two-digit code of a wellbeing services county (hyvinvointialue / välfärdsområde), the regional units
+  that run health, social and rescue services in Finland since 2023, in the classification of Statistics
+  Finland: 01 to 21 for the counties, 90 for the City of Helsinki, which organizes these services itself,
+  and 91 for Åland.'
+categories:
+- geo
+- government
+country:
+- FI
+langs:
+- fi
+- sv
+is_pii: false
+classification: identifier
+regexp: ^\d{2}$
+examples:
+- value: '01'
+  description: East Uusimaa (Itä-Uusimaa)
+- value: '02'
+  description: Central Uusimaa (Keski-Uusimaa)
+- value: '90'
+  description: City of Helsinki
+- value: '1'
+  valid: false
+  description: Leading zero dropped
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Wellbeing_services_counties_of_Finland
+translations:
+  fi:
+    name: Hyvinvointialueen koodi

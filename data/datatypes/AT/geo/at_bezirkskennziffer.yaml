@@ -1,0 +1,32 @@
+id: at_bezirkskennziffer
+name: Austrian political district code (Bezirkskennziffer)
+status: draft
+doc: 'Three-digit code of a political district (politischer Bezirk) of Austria from Statistik Austria:
+  the first digit is the federal state and the next two the district, as in 901 for the 1st district of
+  Vienna (Innere Stadt). It is the first three digits of the municipality code (at_gkz).'
+categories:
+- geo
+- government
+country:
+- AT
+langs:
+- de
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{2}$
+examples:
+- value: '901'
+  description: Wien, Innere Stadt
+- value: '911'
+  description: Wien, Simmering
+- value: '90101'
+  valid: false
+  description: A municipality code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Districts_of_Austria
+- type: doc
+  url: https://www.statistik.at/
+translations:
+  de:
+    name: Bezirkskennziffer

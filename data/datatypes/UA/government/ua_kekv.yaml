@@ -1,0 +1,29 @@
+id: ua_kekv
+name: Ukrainian economic classification code of expenditure (КЕКВ)
+status: draft
+doc: Four-digit code of the economic classification of budget expenditure of Ukraine, which groups spending
+  by its economic content, as in 2111 for wages, 2210 for supplies and equipment and 2240 for services.
+categories:
+- government
+- finances
+country:
+- UA
+langs:
+- uk
+is_pii: false
+classification: categorical
+regexp: ^\d{4}$
+examples:
+- value: '2111'
+  description: Wages
+- value: '2240'
+  description: Payment for services
+- value: '211'
+  valid: false
+  description: Three digits
+links:
+- type: wikipedia
+  url: https://uk.wikipedia.org/wiki/%D0%91%D1%8E%D0%B4%D0%B6%D0%B5%D1%82%D0%BD%D0%B0_%D0%BA%D0%BB%D0%B0%D1%81%D0%B8%D1%84%D1%96%D0%BA%D0%B0%D1%86%D1%96%D1%8F
+translations:
+  uk:
+    name: Код економічної класифікації видатків бюджету

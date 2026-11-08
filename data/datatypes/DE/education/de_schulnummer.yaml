@@ -1,0 +1,26 @@
+id: de_schulnummer
+name: German school number (Schulnummer)
+status: draft
+doc: Number of a school assigned by the education ministry of a German state. The format differs between
+  states; in North Rhine-Westphalia it has six digits, as in 100010. The regexp covers the NRW form.
+parent: id
+categories:
+- education
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: identifier
+regexp: ^\d{6}$
+examples:
+- value: '100010'
+  description: School in North Rhine-Westphalia
+- value: '100011'
+  description: School in North Rhine-Westphalia
+- value: '10001'
+  valid: false
+  description: Five digits
+translations:
+  de:
+    name: Schulnummer

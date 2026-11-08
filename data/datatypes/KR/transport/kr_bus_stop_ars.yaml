@@ -1,0 +1,27 @@
+id: kr_bus_stop_ars
+name: Korean bus stop ARS number
+status: draft
+doc: Five-digit number of a bus stop in Korean cities such as Seoul and Busan, shown on the stop sign
+  and used to ask the automatic response system (ARS) or an app for arrival times. Leading zeros are part
+  of the number.
+parent: id
+categories:
+- transport
+country:
+- KR
+langs:
+- ko
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '01001'
+  description: Bus stop in Busan
+- value: '01002'
+  description: Bus stop in Busan
+- value: '1001'
+  valid: false
+  description: Leading zero dropped
+translations:
+  ko:
+    name: 정류소 ARS 번호

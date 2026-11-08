@@ -1,0 +1,32 @@
+id: gtfs_location_type
+name: GTFS stop location type
+status: draft
+doc: 'Value of the location_type field of a GTFS stops.txt file, which tells what kind of place a row
+  describes: 0 or empty for a stop or platform, 1 for a station, 2 for a station entrance or exit, 3 for
+  a generic node inside a station and 4 for a boarding area. The values only mean this in a GTFS feed,
+  so the field name is the evidence.'
+parent: category
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[0-4]$
+examples:
+- value: '0'
+  description: Stop or platform
+- value: '1'
+  description: Station
+- value: '2'
+  description: Entrance or exit
+- value: '4'
+  description: Boarding area
+- value: '5'
+  valid: false
+  description: Not defined by GTFS
+links:
+- type: doc
+  url: https://gtfs.org/documentation/schedule/reference/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/GTFS

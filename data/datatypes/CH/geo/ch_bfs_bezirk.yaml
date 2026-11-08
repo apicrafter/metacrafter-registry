@@ -1,0 +1,34 @@
+id: ch_bfs_bezirk
+name: Swiss district number (BFS)
+status: draft
+doc: Number of a district (Bezirk, district, distretto) in the official register of Swiss municipalities
+  of the Federal Statistical Office (BFS/OFS), three or four digits, as in 101 and 110 for districts of
+  the canton of Zürich.
+categories:
+- geo
+- government
+country:
+- CH
+langs:
+- de
+- fr
+- it
+is_pii: false
+classification: identifier
+regexp: ^\d{3,4}$
+examples:
+- value: '101'
+  description: District in the canton of Zürich
+- value: '110'
+  description: District in the canton of Zürich
+- value: '12'
+  valid: false
+  description: Two digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Districts_of_Switzerland
+- type: doc
+  url: https://www.agvchapp.bfs.admin.ch/
+translations:
+  de:
+    name: BFS-Bezirksnummer

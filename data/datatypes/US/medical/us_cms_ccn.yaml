@@ -1,0 +1,27 @@
+id: us_cms_ccn
+name: CMS Certification Number (CCN)
+status: draft
+doc: Six-character number of a provider certified for Medicare and Medicaid by the US Centers for Medicare
+  & Medicaid Services (CMS), formerly the Medicare provider number. The first two digits are the state
+  code (01 Alabama) and the rest the facility; the third character is a letter for some kinds of provider.
+parent: id
+categories:
+- medical
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{2}[0-9A-Z]\d{3}$
+examples:
+- value: '010001'
+  description: Hospital in Alabama
+- value: '010005'
+  description: Hospital in Alabama
+- value: '10001'
+  valid: false
+  description: Leading zero dropped
+links:
+- type: doc
+  url: https://resdac.org/cms-data/variables/provider-number

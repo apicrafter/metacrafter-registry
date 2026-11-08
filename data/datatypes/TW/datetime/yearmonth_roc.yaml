@@ -1,0 +1,25 @@
+id: yearmonth_roc
+name: Year and month in the ROC (Minguo) calendar
+status: draft
+doc: Month of the Republic of China (Minguo) calendar written as the ROC year and the month without separators
+  (YYYMM), as in 10506 for June 2016. The ROC year is the Gregorian year minus 1911.
+semantic_type: yearmonth
+country:
+- TW
+langs:
+- zh
+regexp: ^[01]?\d{2}(?:0[1-9]|1[0-2])$
+examples:
+- value: '10506'
+  description: June 2016
+- value: '11412'
+  description: December 2025
+- value: '10513'
+  valid: false
+  description: Month 13
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Minguo_calendar
+translations:
+  zh:
+    name: 民國年月

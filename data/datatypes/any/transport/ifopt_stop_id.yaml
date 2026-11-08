@@ -1,0 +1,33 @@
+id: ifopt_stop_id
+name: IFOPT stop id (DHID)
+status: draft
+doc: 'Identifier of a stop place, an area of it or a single quay under IFOPT (Identification of Fixed
+  Objects in Public Transport), the European reference data model for stops. Parts are separated by colons:
+  a lower-case country code, a regional key, the stop number, then optionally an area and a quay. Germany
+  publishes these ids as DHID (deutschlandweite Haltestellen-ID) with the five-digit district key (Kreisschlüssel)
+  as the regional part, as in de:05966:60521 for a stop and de:05966:60521:1:1 for one of its quays.'
+parent: id
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[a-z]{2}:\d+:\d+(?::[0-9A-Za-z_]+){0,2}$
+examples:
+- value: de:05966:24128
+  description: Stop place in the district of Olpe
+- value: de:05966:24128:1:1
+  description: Quay 1 of area 1 of that stop place
+- value: 05966:24128
+  valid: false
+  description: No country code
+- value: DE:05966:24128
+  valid: false
+  description: Country code in upper case
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Identification_of_Fixed_Objects_in_Public_Transport
+translations:
+  de:
+    name: Deutschlandweite Haltestellen-ID (DHID)

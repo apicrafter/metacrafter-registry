@@ -1,0 +1,38 @@
+id: fr_merimee
+name: Mérimée heritage identifier
+status: draft
+doc: 'Identifier of a record of the Mérimée database of the French Ministry of Culture on architectural
+  heritage: PA for protected monuments (monuments historiques), IA for the general inventory and EA, with
+  two digits or 2A/2B for the department, then six digits, as in PA00084643. Related bases of the ministry
+  use other prefixes, such as SPR for remarkable heritage sites (sites patrimoniaux remarquables). Data
+  often lists several ids separated by semicolons.'
+parent: id
+categories:
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^(?:[PEI]A\d[0-9AB]\d{6}|ACR\d{7}|MDI\d{3}B?|JAR\d{7}|SPR\d{7}|PJR\d{8})$
+examples:
+- value: PA00084643
+  description: Protected monument
+- value: IA67009579
+  description: Inventory record in Bas-Rhin
+- value: SPR4400043
+  description: Remarkable heritage site
+- value: PA0008464
+  valid: false
+  description: Too short
+mappings:
+  wikidata: P380
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P380
+- type: doc
+  url: https://www.pop.culture.gouv.fr/
+translations:
+  fr:
+    name: Référence Mérimée

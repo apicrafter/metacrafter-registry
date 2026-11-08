@@ -1,0 +1,28 @@
+id: date_roc
+name: Date in the ROC (Minguo) calendar
+status: draft
+doc: Calendar date of the Republic of China (Minguo) calendar used in Taiwan, written as the ROC year,
+  month and day without separators (YYYMMDD), as in 1081223 for 23 December 2019. The ROC year is the
+  Gregorian year minus 1911; years before 100 (2011) are written with a leading zero, as in 0991231.
+semantic_type: date
+country:
+- TW
+langs:
+- zh
+regexp: ^[01]\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])$
+examples:
+- value: '1081223'
+  description: 23 December 2019
+- value: '1140101'
+  description: 1 January 2025
+- value: 0991231
+  description: 31 December 2010
+- value: '1081323'
+  valid: false
+  description: Month 13
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Minguo_calendar
+translations:
+  zh:
+    name: 民國日期

@@ -1,0 +1,29 @@
+id: lv_medicine_number
+name: Latvian medicinal product register number
+status: draft
+doc: Number of a medicinal product in the medicines register of the Latvian State Agency of Medicines
+  (ZVA), in the form NN-NNNN-NN, as in 00-0003-01.
+parent: id
+categories:
+- medical
+country:
+- LV
+langs:
+- lv
+is_pii: false
+classification: identifier
+regexp: ^\d{2}-\d{4}-\d{2}$
+examples:
+- value: 00-0003-01
+  description: Medicine in the register
+- value: 00-0005-02
+  description: Medicine in the register
+- value: '00000301'
+  valid: false
+  description: No hyphens
+links:
+- type: doc
+  url: https://www.zva.gov.lv/
+translations:
+  lv:
+    name: Zāļu reģistrācijas numurs

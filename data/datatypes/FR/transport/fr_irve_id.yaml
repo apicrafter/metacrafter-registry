@@ -1,0 +1,36 @@
+id: fr_irve_id
+name: French EV charging station or point id (AFIREV)
+status: draft
+doc: 'Identifier of an electric vehicle charging station or charging point in France, built on the operator
+  id assigned by AFIREV: FR, a three-character operator code, P for a station (id_station_itinerance)
+  or E for a charging point (id_pdc_itinerance), and up to 30 letters and digits. The parts may be separated
+  by asterisks (FR*S56*E...). The consolidated IRVE dataset on data.gouv.fr uses it.'
+parent: id
+categories:
+- transport
+- energy
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^FR\*?[A-Z0-9]{3}\*?[PE][A-Z0-9]{1,30}$
+examples:
+- value: FRS56PLMBT3H1YW1BIVW
+  description: Charging station in Morbihan
+- value: FRS56EPWRK1
+  description: Charging point in Morbihan
+- value: FR*S56*EPWRK1
+  description: With asterisks
+- value: FRS56XPWRK1
+  valid: false
+  description: Neither P nor E
+links:
+- type: doc
+  url: https://afirev.fr/
+- type: doc
+  url: https://schema.data.gouv.fr/etalab/schema-irve-statique/
+translations:
+  fr:
+    name: Identifiant de station ou de point de recharge (AFIREV)

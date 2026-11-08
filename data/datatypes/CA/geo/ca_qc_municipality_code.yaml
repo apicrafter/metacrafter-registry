@@ -1,0 +1,29 @@
+id: ca_qc_municipality_code
+name: Québec municipal geographic code
+status: draft
+doc: Five-digit geographic code (code géographique) of a municipality or territory in the directory of
+  municipalities of the Québec ministry of municipal affairs (MAMH).
+categories:
+- geo
+- government
+country:
+- CA
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '46005'
+  description: Municipality in the MAMH directory
+- value: '48028'
+  description: Municipality in the MAMH directory
+- value: '4600'
+  valid: false
+  description: Four digits
+links:
+- type: doc
+  url: https://www.mamh.gouv.qc.ca/repertoire-des-municipalites/
+translations:
+  fr:
+    name: Code géographique de la municipalité

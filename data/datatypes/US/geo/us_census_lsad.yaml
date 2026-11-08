@@ -1,0 +1,26 @@
+id: us_census_lsad
+name: US Census legal/statistical area description code (LSAD)
+status: draft
+doc: Two-character code that tells the legal or statistical kind of a geographic area in US Census Bureau
+  files, such as 06 for a county; the full name in NAMELSAD joins the name and the description (Autauga
+  County).
+parent: category
+categories:
+- geo
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^[0-9A-Z]{2}$
+examples:
+- value: '06'
+  description: County
+- value: '6'
+  valid: false
+  description: Leading zero dropped
+links:
+- type: doc
+  url: https://www.census.gov/library/reference/code-lists/legal-status-codes.html

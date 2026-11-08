@@ -1,0 +1,28 @@
+id: nl_cbs_region_code_year
+name: Dutch CBS region code with a year
+status: draft
+doc: Code of a Dutch municipality, district or neighbourhood of Statistics Netherlands (CBS) preceded
+  by the year of the regional division it belongs to, as in 2024GM0034 for the municipality of Almere
+  in the 2024 division. Wijk- en buurtkaart files of CBS use it (jrstatcode) because codes change between
+  years.
+categories:
+- geo
+- government
+country:
+- NL
+langs:
+- nl
+is_pii: false
+classification: identifier
+regexp: ^\d{4}(?:GM\d{4}|WK\d{6}|BU\d{8})$
+examples:
+- value: 2024GM0034
+  description: Almere, 2024 division
+- value: 2024WK003401
+  description: District of Almere, 2024
+- value: GM0034
+  valid: false
+  description: No year
+translations:
+  nl:
+    name: Jaarstatcode (CBS)

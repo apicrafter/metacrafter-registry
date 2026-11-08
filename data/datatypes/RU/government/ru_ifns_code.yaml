@@ -1,0 +1,28 @@
+id: ru_ifns_code
+name: Russian tax office code (код ИФНС)
+status: draft
+doc: 'Four-digit code of a Russian tax office (инспекция ФНС): two digits for the region and two for the
+  office within it, as in 7707 for inspection No. 7 of Moscow. The first four digits of an organization''s
+  INN are the code of the office that assigned it, and the first four digits of a KPP the code of the
+  office where it is registered.'
+categories:
+- government
+- finances
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^\d{4}$
+examples:
+- value: '7707'
+  description: Inspection No. 7 of Moscow
+- value: '0107'
+  description: Tax office in the Republic of Adygea
+- value: '107'
+  valid: false
+  description: Leading zero dropped
+translations:
+  ru:
+    name: Код налогового органа (ИФНС)

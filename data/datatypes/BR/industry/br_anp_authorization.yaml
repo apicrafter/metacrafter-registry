@@ -1,0 +1,31 @@
+id: br_anp_authorization
+name: Brazilian ANP authorisation number
+status: draft
+doc: 'Number of an authorisation issued by the Brazilian petroleum, natural gas and biofuels agency (ANP),
+  as in the register of fuel retailers: a two-letter type prefix (PR for a retail station), a slash, the
+  state abbreviation and seven digits.'
+parent: id
+categories:
+- industry
+- energy
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}/[A-Z]{2}\d{7}$
+examples:
+- value: PR/AC0167611
+  description: Fuel retailer in Acre
+- value: PR/AL0015680
+  description: Fuel retailer in Alagoas
+- value: AC0167611
+  valid: false
+  description: No prefix
+links:
+- type: doc
+  url: https://www.gov.br/anp/
+translations:
+  pt:
+    name: Número de autorização da ANP

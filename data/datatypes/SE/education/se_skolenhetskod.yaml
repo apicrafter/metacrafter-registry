@@ -1,0 +1,27 @@
+id: se_skolenhetskod
+name: Swedish school unit code (skolenhetskod)
+status: draft
+doc: Eight-digit code of a school unit (skolenhet) in the school unit register of the Swedish National
+  Agency for Education (Skolverket).
+parent: id
+categories:
+- education
+country:
+- SE
+langs:
+- sv
+is_pii: false
+classification: identifier
+regexp: ^\d{8}$
+examples:
+- value: '73048821'
+  description: School unit
+- value: '7304882'
+  valid: false
+  description: Seven digits
+links:
+- type: doc
+  url: https://www.skolverket.se/
+translations:
+  sv:
+    name: Skolenhetskod

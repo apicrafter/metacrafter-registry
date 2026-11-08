@@ -1,0 +1,26 @@
+id: fr_pdl
+name: French electricity delivery point number (PDL / PRM)
+status: draft
+doc: Fourteen-digit number of an electricity delivery point in France, called PDL (point de livraison)
+  or PRM (point de référence mesure) on the Enedis network. It identifies a meter connection; for a household
+  it is personal data. EV charging point data lists the PDL of each station.
+categories:
+- energy
+- industry
+- pii
+country:
+- FR
+langs:
+- fr
+is_pii: true
+classification: identifier
+regexp: ^\d{14}$
+examples:
+- value: '50076628911092'
+  description: Delivery point of an EV charging station in Morbihan
+- value: '5007662891109'
+  valid: false
+  description: Thirteen digits
+translations:
+  fr:
+    name: Point de livraison (PDL)
