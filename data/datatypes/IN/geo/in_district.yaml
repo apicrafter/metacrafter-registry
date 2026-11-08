@@ -1,0 +1,16 @@
+id: in_district
+name: Indian district (name)
+status: draft
+doc: Name of a district of an Indian state or union territory.
+parent: district
+categories:
+- geo
+country:
+- IN
+langs:
+- en
+- hi
+is_pii: false
+classification: categorical
+mappings:
+  fta: STATE_PROVINCE.DISTRICT_NAME_IN

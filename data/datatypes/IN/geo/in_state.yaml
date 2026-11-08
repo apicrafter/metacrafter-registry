@@ -1,0 +1,18 @@
+id: in_state
+name: Indian state or union territory (name)
+status: draft
+doc: Name of one of the states or union territories of India.
+parent: state
+categories:
+- geo
+country:
+- IN
+langs:
+- en
+- hi
+is_pii: false
+classification: categorical
+mappings:
+  fta:
+  - STATE_PROVINCE.STATE_UNION_IN
+  - STATE_PROVINCE.STATE_UNION_NAME_IN

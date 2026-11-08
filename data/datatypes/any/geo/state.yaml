@@ -1,0 +1,13 @@
+id: state
+name: State (name or code)
+status: draft
+doc: Name or code of a state or a similar first-level administrative division of a country.
+parent: admin_area_1
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+mappings:
+  schema_org: addressRegion

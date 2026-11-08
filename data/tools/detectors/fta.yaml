@@ -57,7 +57,6 @@ supported_types:
 - de_postcode
 - de_state
 - decountryname
-- district
 - dk_postcode
 - duns
 - ean
@@ -96,7 +95,9 @@ supported_types:
 - ie_county
 - ie_province
 - imei
+- in_district
 - in_postcode
+- in_state
 - industry
 - inseecode
 - ipv4
@@ -163,7 +164,6 @@ supported_types:
 - sepersonnummer
 - sha1hash
 - sha256hash
-- state
 - street
 - street_address
 - street_suffix

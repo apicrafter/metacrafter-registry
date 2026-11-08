@@ -1,0 +1,11 @@
+id: district
+name: District (name)
+status: draft
+doc: Name of a district, a subdivision of a country below the first-level divisions.
+parent: admin_area_2
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
