@@ -1,0 +1,23 @@
+id: gml_poslist
+name: GML coordinate list
+status: draft
+doc: 'Coordinates of a GML geometry as the gml:pos and gml:posList elements write them: numbers separated
+  by spaces, two (or three, with a height) per position, in the axis order of the reference system, as
+  in 1680488.064 4846572.711.'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+regexp: '^-?\d+(?:\.\d+)?(?: -?\d+(?:\.\d+)?)+$'
+examples:
+- value: 1680488.064 4846572.711
+  description: gml:pos, Monte Mario / Italy zone 1
+- value: 123629.78 379674.57 123700.0 379674.57 123700.0 379700.0 123629.78 379674.57
+  description: gml:posList
+- value: 1680488.064,4846572.711
+  valid: false
+  description: Comma between the numbers
+links:
+- type: doc
+  url: https://www.ogc.org/standard/gml/

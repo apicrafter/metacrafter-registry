@@ -1,0 +1,27 @@
+id: wkb
+name: Well-known binary (WKB) geometry
+status: draft
+doc: 'Geometry in the well-known binary (WKB) encoding of the OGC Simple Features standard: a byte order
+  flag (0 big-endian, 1 little-endian), a geometry type and the coordinates. GeoParquet and GeoPackage
+  files keep it as bytes; databases and text exports write it as hexadecimal, PostGIS in its extended
+  form (EWKB) with the spatial reference id. The text form is wkt.'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+regexp: ^(?:00|01)[0-9A-Fa-f]{8}(?:[0-9A-Fa-f]{2})+$
+examples:
+- value: 0101000000000000000000F03F000000000000F03F
+  description: POINT (1 1)
+- value: 0101000020E6100000000000000000F03F000000000000F03F
+  description: EWKB POINT (1 1) with SRID 4326
+- value: POINT (1 1)
+  valid: false
+  description: 'WKT: wkt'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry#Well-known_binary
+translations:
+  ru:
+    name: Геометрия WKB

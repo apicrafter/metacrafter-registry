@@ -1,0 +1,20 @@
+id: dwc_catalog_number
+name: Darwin Core catalog number
+status: draft
+doc: Number of a specimen or record in the catalog of the collection that holds it (Darwin Core catalogNumber),
+  as in APQA-20260552.
+parent: id
+categories:
+- science
+- environment
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: APQA-20260552
+- value: '2008.1334'
+  description: Darwin Core example
+links:
+- type: doc
+  url: https://dwc.tdwg.org/terms/#dwc:catalogNumber

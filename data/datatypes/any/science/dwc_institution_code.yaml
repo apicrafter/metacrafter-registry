@@ -1,0 +1,24 @@
+id: dwc_institution_code
+name: Darwin Core institution code
+status: draft
+doc: Acronym of the institution that holds a specimen or publishes a record (Darwin Core institutionCode),
+  as in APQA or MVZ; GBIF's GRSciColl registry lists the codes of natural history collections.
+parent: category
+categories:
+- science
+- environment
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: APQA
+- value: MVZ
+  description: Museum of Vertebrate Zoology
+- value: NHMUK
+  description: Natural History Museum, London
+links:
+- type: doc
+  url: https://dwc.tdwg.org/terms/#dwc:institutionCode
+- type: doc
+  url: https://scientific-collections.gbif.org/

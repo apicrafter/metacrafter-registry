@@ -1,0 +1,33 @@
+id: phone_area_code
+name: Telephone area code
+status: draft
+doc: Area code (trunk prefix and dialling code) of a telephone number written without the subscriber number,
+  as in 0221 for Cologne or 06 for Rome in national formats; North American area codes have three digits
+  without a leading zero (212). Directories often keep it in a column of its own.
+categories:
+- telecom
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:0[1-9]\d{0,4}|[2-9]\d{2})$
+examples:
+- value: '0221'
+  description: Cologne
+- value: '0211'
+  description: Düsseldorf
+- value: '02151'
+  description: Krefeld
+- value: '212'
+  description: Manhattan (NANP)
+- value: 0221 123456
+  valid: false
+  description: 'With the subscriber number: phone'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Telephone_numbering_plan
+translations:
+  de:
+    name: Telefonvorwahl
+  ru:
+    name: Телефонный код

@@ -1,0 +1,35 @@
+id: ro_county_code
+name: Romanian county code (SIRUTA)
+status: draft
+doc: 'Number of a Romanian county (județ) in the SIRUTA classification of the National Institute of Statistics:
+  1 to 39 in alphabetical order from Alba, 40 for the Municipality of Bucharest, and 51 and 52 for Călărași
+  and Giurgiu. The code of a locality is ro_siruta.'
+parent: category
+categories:
+- geo
+- government
+country:
+- RO
+langs:
+- ro
+is_pii: false
+classification: categorical
+regexp: ^(?:[1-9]|[1-3]\d|40|5[12])$
+examples:
+- value: '1'
+  description: Alba
+- value: '2'
+  description: Arad
+- value: '40'
+  description: Municipiul București
+- value: '52'
+  description: Giurgiu
+- value: '45'
+  valid: false
+  description: Not a county code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Counties_of_Romania
+translations:
+  ro:
+    name: Cod județ

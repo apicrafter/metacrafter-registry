@@ -1,0 +1,28 @@
+id: us_irs_activity_code
+name: IRS activity codes of an exempt organization
+status: draft
+doc: 'Activity codes of a US tax-exempt organization in the IRS Exempt Organizations Business Master File:
+  up to three three-digit codes of its activities written as one nine-digit number, as in 031150120 (codes
+  031, 150 and 120); unused places are 000. The NTEE code (us_ntee_code) replaced them for newer records.'
+parent: category
+categories:
+- companies
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^\d{9}$
+examples:
+- value: '031150120'
+  description: Codes 031, 150 and 120
+- value: '602000000'
+  description: Code 602
+- value: 031 150 120
+  valid: false
+  description: Codes with spaces
+links:
+- type: doc
+  url: https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf

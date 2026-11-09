@@ -1,0 +1,19 @@
+id: xml_text
+name: XML document in a text field
+status: draft
+doc: 'XML element or document stored as text in one field, such as the schema of a SharePoint content
+  type (SchemaXml): <ContentType ID="0x" Name="Item">...</ContentType>.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+examples:
+- value: <ContentType ID="0x" Name="Item"><Fields /></ContentType>
+- value: <item id="1"/>
+- value: <ContentType ID="0x">
+  valid: false
+  description: Element not closed
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/XML

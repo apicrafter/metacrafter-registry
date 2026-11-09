@@ -1,0 +1,28 @@
+id: file_format
+name: File format name
+status: draft
+doc: 'Name or abbreviation of a file format, as data catalogs list the formats of a dataset: CSV, XLS,
+  XML, JSON, PDF, often several in one value separated by commas (HTML,CSV,XLS,XML). A media type (text/csv)
+  is mimetype.'
+parent: category
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: XML
+- value: CSV
+- value: HTML,CSV,XLS,XML
+  description: Several formats
+- value: GeoJSON
+- value: text/csv
+  valid: false
+  description: 'Media type: mimetype'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/File_format
+translations:
+  ru:
+    name: Формат файла

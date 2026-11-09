@@ -1,0 +1,31 @@
+id: oa_status
+name: Open access status
+status: draft
+doc: 'Open access status of a scholarly work in the vocabulary of Unpaywall and OpenAlex: gold (published
+  open in an open access journal), diamond (gold without author fees), green (a free copy in a repository),
+  hybrid (open under a license in a subscription journal), bronze (free to read on the publisher site
+  without a license) or closed.'
+parent: category
+categories:
+- science
+- publishing
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:gold|diamond|green|hybrid|bronze|closed)$
+examples:
+- value: gold
+- value: green
+- value: hybrid
+- value: bronze
+- value: closed
+- value: diamond
+- value: open
+  valid: false
+  description: Not a status of the vocabulary
+links:
+- type: doc
+  url: https://docs.openalex.org/api-entities/works/work-object
+- type: doc
+  url: https://unpaywall.org/data-format

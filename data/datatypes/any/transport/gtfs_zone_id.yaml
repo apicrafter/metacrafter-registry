@@ -1,0 +1,19 @@
+id: gtfs_zone_id
+name: GTFS fare zone id
+status: draft
+doc: Identifier of the fare zone of a stop in a GTFS feed (zone_id of stops.txt), which the fare rules
+  refer to.
+parent: id
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: '10110'
+- value: '10101'
+- value: A
+links:
+- type: doc
+  url: https://gtfs.org/documentation/schedule/reference/

@@ -1,0 +1,34 @@
+id: eu_organisation_activity_type
+name: EU research programme participant type
+status: draft
+doc: 'Type of a participant in the EU framework programmes for research (Horizon 2020, Horizon Europe)
+  in the CORDIS data: HES for higher or secondary education establishments, REC for research organisations,
+  PRC for private for-profit entities, PUB for public bodies and OTH for other participants.'
+parent: category
+categories:
+- government
+- science
+country:
+- EU
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:HES|REC|PRC|PUB|OTH)$
+examples:
+- value: HES
+  description: Higher or secondary education
+- value: REC
+  description: Research organisation
+- value: PRC
+  description: Private for-profit entity
+- value: PUB
+  description: Public body
+- value: OTH
+  description: Other
+- value: SME
+  valid: false
+  description: Not a participant type
+links:
+- type: doc
+  url: https://cordis.europa.eu/

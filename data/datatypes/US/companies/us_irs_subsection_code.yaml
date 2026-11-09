@@ -1,0 +1,31 @@
+id: us_irs_subsection_code
+name: IRS subsection code of an exempt organization
+status: draft
+doc: 'Two-digit subsection code of a US tax-exempt organization in the IRS Exempt Organizations Business
+  Master File (EO BMF): the paragraph of section 501(c) of the Internal Revenue Code under which it is
+  exempt, as in 03 for 501(c)(3) charities, 05 for labor and agricultural organizations and 07 for social
+  clubs; other codes stand for other sections, such as 92 for 4947(a)(1) trusts.'
+parent: category
+categories:
+- companies
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^\d{2}$
+examples:
+- value: '03'
+  description: 501(c)(3)
+- value: '05'
+  description: 501(c)(5)
+- value: '07'
+  description: 501(c)(7)
+- value: '3'
+  valid: false
+  description: Written without the leading zero
+links:
+- type: doc
+  url: https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf

@@ -1,0 +1,30 @@
+id: cz_ruian_cast_obce_code
+name: Czech RÚIAN code of a part of a municipality
+status: draft
+doc: 'Code of a part of a municipality (část obce) in RÚIAN, the Czech register of territorial identification,
+  addresses and real estate: five or six digits, as in 22969 for Horní Brána in Český Krumlov.'
+parent: id
+categories:
+- geo
+- government
+country:
+- CZ
+langs:
+- cs
+is_pii: false
+classification: identifier
+regexp: ^\d{5,6}$
+examples:
+- value: '22969'
+  description: Horní Brána, Český Krumlov
+- value: '22942'
+  description: Latrán, Český Krumlov
+- value: '2296'
+  valid: false
+  description: Too short
+links:
+- type: doc
+  url: https://cuzk.gov.cz/ruian/RUIAN.aspx
+translations:
+  cs:
+    name: Kód části obce

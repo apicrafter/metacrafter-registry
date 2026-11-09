@@ -1,0 +1,35 @@
+id: it_istat_province_code
+name: Italian ISTAT province code
+status: draft
+doc: Three-digit code of an Italian province, metropolitan city or free municipal consortium in the ISTAT
+  statistical codes, as in 001 for Torino, 015 for Milano and 058 for Roma; the historical code (codice
+  storico) keeps the code of the former province. The two-letter abbreviation (sigla, TO) is it_province_code.
+parent: category
+categories:
+- geo
+- government
+country:
+- IT
+langs:
+- it
+is_pii: false
+classification: categorical
+regexp: ^\d{3}$
+examples:
+- value: '001'
+  description: Torino
+- value: '004'
+  description: Cuneo
+- value: '015'
+  description: Milano
+- value: 058
+  description: Roma
+- value: TO
+  valid: false
+  description: 'Sigla: it_province_code'
+links:
+- type: doc
+  url: https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/
+translations:
+  it:
+    name: Codice ISTAT della provincia

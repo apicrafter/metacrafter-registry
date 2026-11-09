@@ -1,0 +1,24 @@
+id: dwc_occurrence_id
+name: Darwin Core occurrence id
+status: draft
+doc: 'Identifier of an occurrence record (Darwin Core occurrenceID): a value that the publisher keeps
+  unique and persistent for an observation or a specimen, often the catalog number or a URN or URL built
+  from it.'
+parent: id
+categories:
+- science
+- environment
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: CABCN25KZ00001
+  description: Central Asian flora occurrence
+- value: APQA-20260552
+  description: Specimen
+- value: urn:catalog:UWBM:Bird:89776
+  description: Darwin Core example
+links:
+- type: doc
+  url: https://dwc.tdwg.org/terms/#dwc:occurrenceID

@@ -1,0 +1,29 @@
+id: hu_neak_specialty_code
+name: Hungarian NEAK specialty code
+status: draft
+doc: 'Four-character specialty code (szakmakód) of a department of a Hungarian health care provider in
+  the lists of NEAK, the national health insurance fund: three digits and a digit or letter, as in 0100,
+  2200 or 010C. The name of the specialty is medical_specialty.'
+parent: category
+categories:
+- medical
+country:
+- HU
+langs:
+- hu
+is_pii: false
+classification: categorical
+regexp: ^\d{3}[0-9A-Z]$
+examples:
+- value: '2200'
+- value: '0200'
+- value: 010C
+- value: '100'
+  valid: false
+  description: Three digits
+links:
+- type: doc
+  url: https://neak.gov.hu/
+translations:
+  hu:
+    name: Szakmakód
