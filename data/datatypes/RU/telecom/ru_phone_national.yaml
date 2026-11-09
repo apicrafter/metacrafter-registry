@@ -1,0 +1,35 @@
+id: ru_phone_national
+name: Russian phone number in national notation
+status: draft
+doc: 'Phone number of the Russian Federation written in national notation: the trunk prefix 8, then the
+  area or operator code of 3 to 5 digits, often in parentheses, and the subscriber number split by spaces
+  or hyphens, 11 digits in total. This is how most regional open data portals publish contact phones of
+  organizations, for example "8 (XXXXX) X-XX-XX". The regexp requires at least one space, hyphen or parenthesis,
+  so that a plain 11-digit number is not taken for a phone. The international form +7 is covered by ru_phone.'
+semantic_type: phone
+country:
+- RU
+langs:
+- common
+regexp: ^(?=(?:\D*\d){11}$)(?=.*[ ()-])8[ -]?(?:\(\d{3,5}\)|\d{3,5})[ -]?\d{1,3}(?:[ -]?\d{1,3}){1,3}$
+examples:
+- value: 8 (301) 123-45-67
+  description: Google libphonenumber example fixed-line number in national notation
+- value: 8 (912) 345-67-89
+  description: Google libphonenumber example mobile number in national notation
+- value: 8(301)1234567
+  description: The same fixed-line number without spaces and hyphens
+- value: '83011234567'
+  valid: false
+  description: Plain 11 digits without separators are not taken for a phone number
+- value: '+73011234567'
+  valid: false
+  description: International E.164 form, covered by ru_phone
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml
+translations:
+  ru:
+    name: Номер телефона в России в национальном формате
+    doc: Номер телефона в национальной записи с префиксом 8, кодом города или оператора и номером абонента,
+      разделённым пробелами или дефисами, например «8 (XXXXX) X-XX-XX».

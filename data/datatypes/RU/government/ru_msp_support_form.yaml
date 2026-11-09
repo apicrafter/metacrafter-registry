@@ -1,0 +1,35 @@
+id: ru_msp_support_form
+name: Form of support of small and medium-sized enterprises (Russia)
+status: draft
+doc: 'Form of state or municipal support given to a small or medium-sized enterprise, as written in the
+  registers of support recipients published on regional open data portals. Part 1 of Article 16 of Federal
+  Law No. 209-FZ names financial (including guarantee), property, information and consulting support,
+  as well as support of staff training, innovation, crafts, foreign trade and agriculture. The regexp
+  matches the short names of the main forms: финансовая, гарантийная, имущественная, информационная, консультационная
+  and the combined информационно-консультационная, with or without the word поддержка.'
+categories:
+- government
+- companies
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: '^(?:[Фф]инансовая|[Гг]арантийная|[Ии]мущественная|[Ии]нформационная|[Кк]онсультационная|[Ии]нформационно-консультационная)(?:
+  поддержка)?$'
+examples:
+- value: финансовая
+- value: Имущественная
+- value: Информационно-консультационная
+- value: финансовая поддержка
+- value: Субсидия на реализацию проекта
+  valid: false
+  description: A support measure, not a form of support
+links:
+- type: doc
+  url: https://www.consultant.ru/document/cons_doc_LAW_52144/e93fe481e80cb596356513aa1a4dd78a18ea27fe/
+translations:
+  ru:
+    name: Форма поддержки субъектов малого и среднего предпринимательства
+    doc: Форма поддержки субъекта МСП по части 1 статьи 16 Федерального закона от 24.07.2007 № 209-ФЗ.

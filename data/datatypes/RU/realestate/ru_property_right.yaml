@@ -1,0 +1,38 @@
+id: ru_property_right
+name: Type of right to property in Russia
+status: draft
+doc: 'Type of right under which an organization holds property or a land plot, as written in registers
+  of state and municipal property and of land plots: the real rights of non-owners named in Article 216
+  of the Civil Code (economic management, operational management, permanent (perpetual) use of a land
+  plot, lifelong inheritable possession of a land plot) and the contractual rights of lease and gratuitous
+  use that appear in the same columns. Ownership itself and its form (municipal treasury, private property)
+  are not matched; see okfsname for forms of ownership.'
+categories:
+- realestate
+- legal
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: ^(?:[Пп]раво )?(?:[Оо]перативно(?:е|го) управлени[ея]|[Хх]озяйственно(?:е|го) ведени[ея]|[Пп]остоянно(?:е|го)
+  \(бессрочно(?:е|го)\) пользовани[ея]|[Пп]ожизненно(?:е|го) наследуемо(?:е|го) владени[ея]|[Бб]езвозмездно(?:е|го)
+  пользовани[ея]|[Аа]ренда)$
+examples:
+- value: оперативное управление
+- value: Хозяйственное ведение
+- value: Постоянное (бессрочное) пользование
+- value: безвозмездное пользование
+- value: аренда
+- value: Муниципальная казна
+  valid: false
+  description: Property of the municipal treasury, not a right of a holder
+links:
+- type: doc
+  url: https://legalacts.ru/kodeks/GK-RF-chast-1/razdel-ii/glava-13/statja-216/
+translations:
+  ru:
+    name: Вид права на имущество
+    doc: Вид права, на котором организация владеет имуществом или земельным участком (оперативное управление,
+      хозяйственное ведение, постоянное (бессрочное) пользование, аренда и другие).

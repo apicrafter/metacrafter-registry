@@ -1,0 +1,42 @@
+id: ru_education_accreditation_certificate_form
+name: Series and number of a Russian state accreditation certificate form for educational activity
+status: draft
+doc: Series and number of the printed form of a certificate of state accreditation of educational activity
+  in Russia. Under the technical requirements approved by Order No. 1 of the Ministry of Education and
+  Science of 10 January 2012, the series has 5 characters (a two-digit code of the accreditation authority,
+  the letter А and a two-digit series number starting from 01) and the form number has 7 digits starting
+  from 0000001. Registers of accredited organizations on regional open data portals publish the series
+  and number together ("86А01 № 0000560") or the series alone; there the authority code matches the region
+  code (11, 76, 86). Since 1 March 2022 state accreditation is indefinite; the registers keep the numbers
+  of forms issued earlier.
+categories:
+- education
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^\d{2}А\d{2}(?:\s*(?:№\s*)?\d{7})?$
+examples:
+- value: 86А01 № 0000560
+  description: Certificate form in the register of Khanty-Mansi Autonomous Okrug (data.admhmao.ru)
+- value: 76А01 № 0000053
+  description: Certificate form in the register of Yaroslavl region (opendata.yarcloud.ru)
+- value: 86А02 №0000588
+  description: Second series of the same authority, written without a space after №
+- value: 11А01
+  description: Series alone, as in the register of Komi Republic (opendata.rkomi.ru)
+- value: 86Л01 № 0000808
+  valid: false
+  description: Form of an education license
+links:
+- type: doc
+  url: https://zakonbase.ru/content/part/1144613?print=1
+translations:
+  ru:
+    name: Серия и номер бланка свидетельства о государственной аккредитации образовательной деятельности
+    doc: Серия бланка состоит из 5 знаков (код аккредитационного органа, буква А и номер серии), номер
+      бланка из 7 цифр. Технические требования утверждены приказом Минобрнауки России от 10.01.2012 №
+      1.

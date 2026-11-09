@@ -1,0 +1,45 @@
+id: ru_education_level
+name: Russian level or subtype of education
+status: draft
+doc: Level or subtype of education under Article 10 of Federal Law No. 273-FZ "On Education in the Russian
+  Federation". The levels of general education are preschool, primary general, basic general and secondary
+  general education; the levels of professional education are secondary vocational education and higher
+  education (bachelor's degree; specialist and master's degree; training of highly qualified personnel).
+  Additional education has the subtypes additional education of children and adults and additional professional
+  education; vocational training is a separate kind of education. Registers of education licenses and
+  accreditations on regional open data portals list what an organization teaches in one cell, separated
+  by semicolons or commas; the regexp accepts one item or such a list.
+categories:
+- education
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: '^(?:(?:[Дд]ошкольное|[Нн]ачальное общее|[Оо]сновное общее|[Сс]реднее общее|[Сс]реднее профессиональное)
+  образование|[Вв]ысшее образование(?: ?[-–—] ?(?:бакалавриат|специалитет, магистратура|специалитет|магистратура|подготовка
+  кадров высшей квалификации))?|[Дд]ополнительное образование детей и взрослых|[Дд]ополнительное профессиональное
+  образование|[Пп]рофессиональное обучение)(?:[;,] ?(?:(?:[Дд]ошкольное|[Нн]ачальное общее|[Оо]сновное
+  общее|[Сс]реднее общее|[Сс]реднее профессиональное) образование|[Вв]ысшее образование(?: ?[-–—] ?(?:бакалавриат|специалитет,
+  магистратура|специалитет|магистратура|подготовка кадров высшей квалификации))?|[Дд]ополнительное образование
+  детей и взрослых|[Дд]ополнительное профессиональное образование|[Пп]рофессиональное обучение))*$'
+examples:
+- value: дошкольное образование
+- value: начальное общее образование; основное общее образование; среднее общее образование
+  description: Levels of a school, as listed in a register of accredited programs
+- value: среднее профессиональное образование
+- value: высшее образование - бакалавриат
+- value: дошкольное образование; дополнительное образование детей и взрослых
+  description: A level and a subtype of additional education, as listed in a register of education licenses
+- value: начальное профессиональное образование
+  valid: false
+  description: Level of the 1992 Law on Education, not a level of Law No. 273-FZ
+links:
+- type: doc
+  url: https://legalacts.ru/doc/273_FZ-ob-obrazovanii/glava-2/statja-10/
+translations:
+  ru:
+    name: Уровень или подвид образования
+    doc: Уровень общего или профессионального образования, подвид дополнительного образования или профессиональное
+      обучение по статье 10 Федерального закона от 29.12.2012 № 273-ФЗ «Об образовании в Российской Федерации».
