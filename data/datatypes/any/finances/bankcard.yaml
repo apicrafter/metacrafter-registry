@@ -21,6 +21,7 @@ mappings:
   - Credit card number
   - EU debit card number
   dpv: pd:PaymentCardNumber
+  misp: cc-number
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Bank_card

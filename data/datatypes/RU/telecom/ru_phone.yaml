@@ -1,0 +1,21 @@
+id: ru_phone
+name: Russian Federation phone number (E.164)
+status: draft
+doc: 'Phone number of Russian Federation in international E.164 form: a plus sign, the country calling
+  code +7 and the national number, with no spaces. The regexp follows the national number pattern of Google
+  libphonenumber. National formats with a trunk prefix and numbers written with spaces or hyphens are
+  not covered.'
+semantic_type: phone
+country:
+- RU
+langs:
+- common
+regexp: ^\+7(?:8\d{13}|[347-9]\d{9})$
+examples:
+- value: '+73011234567'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+79123456789'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

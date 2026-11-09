@@ -1,8 +1,9 @@
 id: me_pib
 name: Montenegrin tax identification number (PIB)
 status: draft
-doc: Poreski identifikacioni broj (PIB), the tax identification number of companies and other organisations
-  in Montenegro. ORG-ID.guide lists the register as ME-PIB; with that prefix an identifier reads ME-PIB-04252361.
+doc: 'Poreski identifikacioni broj (PIB), the tax identification number of companies and other organisations
+  in Montenegro: eight digits, the last of which is a check digit. ORG-ID.guide lists the register as
+  ME-PIB; with that prefix an identifier reads ME-PIB-02655284.'
 categories:
 - finances
 - companies
@@ -12,9 +13,13 @@ langs:
 - sr
 is_pii: true
 classification: identifier
+regexp: ^\d{8}$
 examples:
-- value: '04252361'
-  description: example from ORG-ID.guide
+- value: 02655284
+  description: python-stdnum example
+- value: 0265528
+  valid: false
+  description: seven digits
 mappings:
   orgid: ME-PIB
   schema_org: taxID
@@ -22,3 +27,5 @@ mappings:
 links:
 - type: other
   url: https://org-id.guide/list/ME-PIB
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.me.pib.html

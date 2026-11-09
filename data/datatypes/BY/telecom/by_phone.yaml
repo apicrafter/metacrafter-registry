@@ -1,0 +1,20 @@
+id: by_phone
+name: Belarus phone number (E.164)
+status: draft
+doc: 'Phone number of Belarus in international E.164 form: a plus sign, the country calling code +375
+  and the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- BY
+langs:
+- common
+regexp: ^\+375(?:(?:[12]\d|33|44|902)\d{7}|8(?:0[0-79]\d{5,7}|[1-7]\d{9})|8(?:1[0-489]|[5-79]\d)\d{7}|8[1-79]\d{6,7}|8[0-79]\d{5}|8\d{5})$
+examples:
+- value: '+375152450911'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+375294911911'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

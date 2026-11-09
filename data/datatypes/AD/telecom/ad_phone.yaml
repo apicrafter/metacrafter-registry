@@ -1,0 +1,20 @@
+id: ad_phone
+name: Andorra phone number (E.164)
+status: draft
+doc: 'Phone number of Andorra in international E.164 form: a plus sign, the country calling code +376
+  and the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- AD
+langs:
+- common
+regexp: ^\+376(?:(?:1|6\d)\d{7}|[135-9]\d{5})$
+examples:
+- value: '+376712345'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+376312345'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

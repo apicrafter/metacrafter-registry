@@ -1,0 +1,27 @@
+id: sm_coe
+name: San Marino economic operator code (COE)
+status: draft
+doc: Codice operatore economico (COE), the tax identification number of businesses in San Marino. It has
+  up to five digits, and leading zeros are usually dropped. The regexp accepts any number of one to five
+  digits, so it is useful only together with a column name or other context.
+categories:
+- finances
+- companies
+country:
+- SM
+langs:
+- it
+is_pii: false
+classification: identifier
+regexp: ^[0-9]{1,5}$
+examples:
+- value: '24165'
+  description: Example from the python-stdnum documentation
+- value: 2416A
+  valid: false
+  description: Letter instead of a digit
+mappings:
+  stdnum: sm.coe
+links:
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.sm.coe.html

@@ -23,6 +23,7 @@ mappings:
   dpv: pd:BirthPlace
   schema_org: birthPlace
   presidio: LOCATION
+  misp: place-of-birth
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Place_of_birth

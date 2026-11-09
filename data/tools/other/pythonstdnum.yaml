@@ -79,6 +79,7 @@ supported_types:
 - ee_kmkr
 - ee_registrikood
 - egtaxnumber
+- es_cae
 - es_ccc
 - es_cups
 - es_dni
@@ -92,7 +93,9 @@ supported_types:
 - eu_banknote
 - eu_ec_number
 - eu_eic
+- eu_excise_number
 - eu_nace
+- eu_oss_number
 - euvat
 - fi_alv
 - fi_associationid
@@ -100,6 +103,7 @@ supported_types:
 - fi_veronumero
 - fi_ytunnus
 - figi
+- fr_excise_number
 - fr_nif
 - frnir
 - frvat
@@ -213,6 +217,7 @@ supported_types:
 - siretcode
 - sk_dph
 - sk_rc
+- sm_coe
 - sn_ninea
 - steuerid
 - sv_nit
@@ -227,6 +232,7 @@ supported_types:
 - uknhsnum
 - ukutr
 - upc
+- us_tin
 - usatin
 - usein
 - usitin

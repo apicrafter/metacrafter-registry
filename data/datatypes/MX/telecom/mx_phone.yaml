@@ -1,0 +1,20 @@
+id: mx_phone
+name: Mexico phone number (E.164)
+status: draft
+doc: 'Phone number of Mexico in international E.164 form: a plus sign, the country calling code +52 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- MX
+langs:
+- common
+regexp: ^\+52(?:[2-9]\d{9})$
+examples:
+- value: '+522001234567'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+522221234567'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

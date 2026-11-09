@@ -20,6 +20,7 @@ examples:
   description: five digits
 mappings:
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/IssuerIdentificationNumber
+  misp: bin
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ISO/IEC_7812

@@ -1,0 +1,46 @@
+id: pydantic
+name: Pydantic and pydantic-extra-types
+category: other
+doc: Pydantic is a Python data validation library; its built-in types include email addresses, URLs, IP
+  addresses, UUIDs and payment card numbers. The companion package pydantic-extra-types adds validated
+  types for country, currency and language codes, phone numbers, MAC addresses, coordinates, colors, ISBN,
+  IBAN, ISIN, ULID, semantic versions, ABA routing numbers, MIME types, time zone names and similar values.
+  A model field of such a type validates a value that you supply, it does not scan data. The supported
+  types cover only registry datatypes that match a documented type.
+website: https://github.com/pydantic/pydantic-extra-types
+supported_types:
+- aba
+- aws_s3_uri
+- bankcard
+- color
+- countrycode_alpha2
+- countrycode_alpha3
+- countrycode_num
+- cron_expression
+- email
+- iban
+- ipaddr
+- ipsubnet
+- ipv4
+- ipv6
+- isbn
+- isin
+- iso15924
+- iso4217curcode
+- iso639_1
+- iso639_3
+- latitude
+- longitude
+- mac_address
+- mimetype
+- mongodbid
+- phone
+- semver
+- sha256hash
+- timezone
+- ulid
+- url
+- uuid
+- uuid_v1
+- uuid_v4
+- uuid_v7

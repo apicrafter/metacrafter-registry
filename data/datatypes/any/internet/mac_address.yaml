@@ -43,6 +43,7 @@ mappings:
   dpv: pd:MACAddress
   fhir: http://hl7.org/fhir/sid/eui-48/ethernet
   stdnum: mac
+  misp: mac-address
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/MAC_address

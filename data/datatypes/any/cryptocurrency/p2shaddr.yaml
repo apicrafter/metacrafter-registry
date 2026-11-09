@@ -27,6 +27,7 @@ examples:
 mappings:
   presidio: CRYPTO
   stdnum: bitcoin
+  misp: btc
 links:
 - type: doc
   url: https://github.com/bitcoin/bips/blob/master/bip-0013.mediawiki

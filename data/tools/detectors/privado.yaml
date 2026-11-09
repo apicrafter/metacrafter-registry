@@ -1,0 +1,30 @@
+id: privado
+name: Privado
+category: detector
+doc: Open-source code scanner that finds personal data elements in source code and traces how they flow
+  to databases, APIs, third-party services and logs. Its rules in the repository define the data elements
+  in groups such as contact data, personal identification, financial data, online identifiers, national
+  identification numbers, health data and personal characteristics, and the scanner matches them by the
+  names of variables, fields and classes. The supported types cover only registry datatypes that match
+  a documented type.
+website: https://github.com/Privado-Inc/privado
+supported_types:
+- address
+- age
+- bankaccount
+- bankcard
+- birthday
+- driver_license
+- email
+- gender
+- ipaddr
+- mac_address
+- marital_status
+- nationality
+- passport
+- password
+- person_firstname
+- person_surname
+- phone
+- religion
+- weight

@@ -1,7 +1,7 @@
 id: sapostcode
-name: Saudi postal code by field name
+name: Saudi postal code
 status: stable
-doc: Saudi postal code by field name identifier
+doc: 'Postal code in Saudi Arabia: five digits.'
 semantic_type: postindex
 categories:
 - geo
@@ -11,7 +11,17 @@ langs:
 - ar
 is_pii: false
 classification: identifier
-regexp: ^[0-9]{4,10}$
+regexp: ^\d{5}$
+examples:
+- value: '11564'
+- value: '11187'
+- value: '11142'
+- value: '1156'
+  valid: false
+  description: too short
 mappings:
   dpv: pd:PostalCode
   schema_org: postalCode
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/SA

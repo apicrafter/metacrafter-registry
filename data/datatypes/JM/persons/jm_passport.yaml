@@ -1,0 +1,18 @@
+id: jm_passport
+name: Jamaican passport number
+status: draft
+doc: 'Number of a Jamaican passport: one letter and seven digits. Wikipedia gives the counts without the
+  order; the regexp expects the letter first, as validator.js does.'
+semantic_type: passport
+country:
+- JM
+langs:
+- en
+regexp: ^[A-Z][0-9]{7}$
+examples:
+- value: A123456
+  valid: false
+  description: Six digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Jamaican_passport

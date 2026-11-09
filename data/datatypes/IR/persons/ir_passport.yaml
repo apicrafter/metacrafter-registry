@@ -1,0 +1,18 @@
+id: ir_passport
+name: Iranian passport number
+status: draft
+doc: 'Number of an Iranian passport: a letter followed by eight digits. The Persian rendering of the number
+  on the passport omits the letter.'
+semantic_type: passport
+country:
+- IR
+langs:
+- fa
+regexp: ^[A-Z][0-9]{8}$
+examples:
+- value: K3829174
+  valid: false
+  description: Seven digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Iranian_passport

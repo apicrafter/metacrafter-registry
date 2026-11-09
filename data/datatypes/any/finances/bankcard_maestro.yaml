@@ -1,0 +1,22 @@
+id: bankcard_maestro
+name: Maestro card number
+status: draft
+doc: 'Primary account number of a Maestro debit card: 12 to 19 digits that start with 5018, 5020, 5038,
+  5893, 6304, 6759, 6761, 6762 or 6763, or with 676770 or 676774 (Maestro UK). The last digit is a Luhn
+  check digit. The pattern accepts the number without spaces or hyphens.'
+semantic_type: bankcard
+langs:
+- common
+regexp: ^(?:(?:5018|5020|5038|5893|6304|6759|6761|6762|6763)[0-9]{8,15}|67677[04][0-9]{6,13})$
+checksum: luhn
+examples:
+- value: '6304000000000000'
+  description: Braintree test card number
+- value: '6011111111111117'
+  valid: false
+  description: Discover test number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Payment_card_number
+- type: doc
+  url: https://developer.paypal.com/braintree/docs/reference/general/testing/node

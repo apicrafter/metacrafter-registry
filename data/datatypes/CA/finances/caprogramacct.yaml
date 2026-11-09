@@ -1,7 +1,9 @@
 id: caprogramacct
 name: CRA program account number
 status: stable
-doc: CA datatype for 'CRA program account number' (caprogramacct) from rules in context 'finances'.
+doc: 'Program account number of the Canada Revenue Agency (BN15): the nine-digit Business Number, a two-letter
+  program identifier, such as RC for corporate income tax, RP for payroll deductions or RT for GST/HST,
+  and a four-digit reference number.'
 categories:
 - finances
 country:
@@ -12,17 +14,19 @@ is_pii: false
 classification: identifier
 regexp: ^[0-9]{9}R[A-Z][0-9]{4}$
 examples:
-- value: 123456789RP0001
-  description: CRA payroll deductions program account with 9-digit Business Number, 'RP' program identifier
-    and 4-digit reference
-- value: 987654321RT0002
-  description: CRA GST/HST program account with 9-digit Business Number, 'RT' program identifier and 4-digit
-    reference
-- value: 123456789RC0001
-  description: CRA corporate income tax program account with 9-digit Business Number, 'RC' program identifier
-    and 4-digit reference
+- value: 123026635RC0001
+  description: python-stdnum example (corporate income tax account)
+- value: 123026635RP0001
+  description: 'Synthetic: the same BN with the RP program identifier (payroll deductions)'
+- value: 123026635RT0001
+  description: 'Synthetic: the same BN with the RT program identifier (GST/HST)'
+- value: 123026635RC001
+  valid: false
+  description: three-digit reference number
 mappings:
   stdnum: ca.bn
 links:
 - type: doc
   url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/changes-your-business/understand-your-business-number.html
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ca.bn.html

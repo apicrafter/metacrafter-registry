@@ -28,6 +28,8 @@ examples:
 - value: 00-00-5E-EF-10-00-00
   valid: false
   description: Seven octets
+mappings:
+  misp: mac-eui-64
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/MAC_address

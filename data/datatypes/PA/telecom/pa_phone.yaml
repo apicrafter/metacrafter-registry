@@ -1,0 +1,20 @@
+id: pa_phone
+name: Panama phone number (E.164)
+status: draft
+doc: 'Phone number of Panama in international E.164 form: a plus sign, the country calling code +507 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- PA
+langs:
+- common
+regexp: ^\+507(?:(?:00800|8\d{3})\d{6}|[68]\d{7}|[1-57-9]\d{6})$
+examples:
+- value: '+5072001234'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+50761234567'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

@@ -24,6 +24,7 @@ examples:
   description: one hex digit short (31 instead of 32)
 mappings:
   autotype: md5
+  misp: md5
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/MD5

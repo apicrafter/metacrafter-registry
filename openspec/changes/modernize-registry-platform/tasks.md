@@ -239,6 +239,10 @@
   - Crosswalks: `bioregistry` on 130 records, `stdnum` on 259, `fhir` on 78; the existing `dpv` and `schema_org` keys now cover 264 and 241 records.
   - 220 new draft records: 101 postal code patterns (Google address metadata), 40 Bioregistry identifiers, 25 secret token types (Gitleaks, TruffleHog), 15 security identifiers (CVE, CWE, CAPEC, CPE 2.3, ATT&CK, GHSA, OSV, JA3/JA4), 21 classifications, geo grids and SDMX formats, 16 python-stdnum and French csv-detective identifiers, DICOM UID and HL7 v2 identifier types.
   - New tools: `csvdetective`, `awsglue`, `oracledatasafe`; `gitleaks` and `trufflehog` list the new secret types.
+- [x] 8.18 Act on `devdocs/TOOLS_TYPES_GAP_2026-11.md` and the open items of `devdocs/SOURCES_GAP_2026-11.md`. Add the `misp` crosswalk key.
+  - 21 new tools: `githubsecretscanning`, `gitguardian`, `datadogsds`, `cloudflaredlp`, `pywhat`, `validatorjs`, `sasinformationcatalog`, `bearer`, `privado`, `duckling`, `libpostal`, `recognizerstext`, `libphonenumber`, `privateai`, `frictionless`, `pydantic`, `grok`, `visions`, `fides`, `sapcds`, `sdv`.
+  - New draft records: 190 E.164 phone patterns (libphonenumber), 49 secret types, 24 CLDR date patterns, 11 other formats (ARN, S3 URI, cron, otpauth, ...), 10 vehicle plates, 8 payment card network patterns, 5 national identifiers, 5 python-stdnum identifiers, 4 passports.
+  - `misp` on 69 records; fixes to `euid`, `icd10cm`, 11 postcode patterns, stdnum examples and regexps; `bech32` keeps hyphens in the human-readable part (Python and JavaScript).
 
 ## 9. Release 2.0.0
 

@@ -1,7 +1,10 @@
 id: gbpostcode
-name: UK postal code by field name (for property identification)
+name: UK postcode
 status: stable
-doc: UK postal code by field name (for property identification) identifier
+doc: 'Postcode in the United Kingdom: an outward code (a postcode area of one or two letters and a district
+  of one or two characters) and an inward code (a digit and two letters), usually separated by a space,
+  as in EC1A 1HQ. GIR 0AA and British Forces BFPO numbers are special cases. The regular expression is
+  the one of Google''s address metadata.'
 semantic_type: postindex
 categories:
 - geo
@@ -11,7 +14,27 @@ langs:
 - en
 is_pii: false
 classification: identifier
-regexp: ^[0-9]{4,10}$
+regexp: ^(?:GIR ?0AA|(?:AB|AL|B|BA|BB|BD|BF|BH|BL|BN|BR|BS|BT|BX|CA|CB|CF|CH|CM|CO|CR|CT|CV|CW|DA|DD|DE|DG|DH|DL|DN|DT|DY|E|EC|EH|EN|EX|FK|FY|G|GL|GY|GU|HA|HD|HG|HP|HR|HS|HU|HX|IG|IM|IP|IV|JE|KA|KT|KW|KY|L|LA|LD|LE|LL|LN|LS|LU|M|ME|MK|ML|N|NE|NG|NN|NP|NR|NW|OL|OX|PA|PE|PH|PL|PO|PR|RG|RH|RM|S|SA|SE|SG|SK|SL|SM|SN|SO|SP|SR|SS|ST|SW|SY|TA|TD|TF|TN|TQ|TR|TS|TW|UB|W|WA|WC|WD|WF|WN|WR|WS|WV|YO|ZE)\d[\dA-Z]?
+  ?\d[ABD-HJLN-UW-Z]{2}|BFPO ?\d{1,4})$
+examples:
+- value: EC1Y 8SY
+- value: M2 5BQ
+- value: CR0 2YR
+- value: DN16 9AA
+- value: W1A 4ZZ
+- value: GIR 0AA
+- value: BFPO 61
+- value: '12345'
+  valid: false
+  description: digits only
+- value: EC1Y 8SI
+  valid: false
+  description: the letter I is not used in the inward code
 mappings:
   dpv: pd:PostalCode
   schema_org: postalCode
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/GB

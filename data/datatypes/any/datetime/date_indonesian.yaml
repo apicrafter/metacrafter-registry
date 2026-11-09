@@ -1,0 +1,22 @@
+id: date_indonesian
+name: Date with a Indonesian month name
+status: draft
+doc: Calendar date written in Indonesian with the month name, day, month and year in the order of the
+  CLDR long (d MMMM y) and medium (d MMM y) date formats of the id locale. The month is the CLDR wide
+  or abbreviated name in the format context, written exactly as CLDR gives it, including any dot or apostrophe;
+  no extra capitalisation variants are accepted.
+semantic_type: date
+langs:
+- id
+regexp: ^(?:(?:0?[1-9]|[12]\d|3[01]) (?:September|Desember|November|Februari|Januari|Oktober|Agustus|April|Maret|Juni|Juli|Mei)
+  \d{4}|(?:0?[1-9]|[12]\d|3[01]) (?:Mar|Jun|Agu|Nov|Mei|Jan|Feb|Sep|Apr|Jul|Des|Okt) \d{4})$
+examples:
+- value: 3 Oktober 2024
+  description: 3 October 2024, CLDR long format d MMMM y
+- value: 25 Des 2024
+  description: 25 December 2024, CLDR medium format d MMM y
+- value: Oktober 2024
+  valid: false
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/id/ca-gregorian.json

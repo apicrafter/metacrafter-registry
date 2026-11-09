@@ -1,0 +1,34 @@
+id: bearer
+name: Bearer CLI
+category: detector
+doc: Open-source static application security testing tool that scans source code for data flows and classifies
+  the data it finds into about 120 documented data types, grouped as personal data, sensitive personal
+  data, PII and PHI. The types include contact details, device and network identifiers, names, financial
+  accounts, health and family information, and location. It reports where such data is stored, sent to
+  third parties or leaked in logs. The supported types cover only registry datatypes that match a documented
+  type.
+website: https://docs.bearer.com/reference/datatypes/
+supported_types:
+- address
+- age
+- bankaccount
+- bankcard
+- birthday
+- country
+- email
+- gender
+- geopoint
+- height
+- ipaddr
+- jobtitle
+- mac_address
+- marital_status
+- passport
+- password
+- person_firstname
+- person_fullname
+- person_surname
+- phone
+- religion
+- username
+- weight

@@ -1,0 +1,20 @@
+id: rs_phone
+name: Serbia phone number (E.164)
+status: draft
+doc: 'Phone number of Serbia in international E.164 form: a plus sign, the country calling code +381 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- RS
+langs:
+- common
+regexp: ^\+381(?:38[02-9]\d{6,9}|6\d{7,9}|90\d{4,8}|38\d{5,6}|(?:7\d\d|800)\d{3,9}|(?:[12]\d|3[0-79])\d{5,10})$
+examples:
+- value: '+38110234567'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+381601234567'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

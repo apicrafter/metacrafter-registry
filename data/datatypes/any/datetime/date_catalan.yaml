@@ -1,0 +1,24 @@
+id: date_catalan
+name: Date with a Catalan month name
+status: draft
+doc: Calendar date written in Catalan with the month name, day, month and year in the order of the CLDR
+  long (d MMMM 'del' y) and medium (d MMM y) date formats of the ca locale. The month is the CLDR wide
+  or abbreviated name in the format context, written exactly as CLDR gives it, including any dot or apostrophe;
+  no extra capitalisation variants are accepted.
+semantic_type: date
+langs:
+- ca
+regexp: ^(?:(?:0?[1-9]|[12]\d|3[01]) (?:de\ setembre|de\ desembre|de\ novembre|de\ febrer|d’octubre|de\
+  juliol|de\ gener|d’agost|d’abril|de\ maig|de\ juny|de\ març) del \d{4}|(?:0?[1-9]|[12]\d|3[01]) (?:de\
+  febr\.|de\ gen\.|de\ des\.|de\ jul\.|de\ set\.|de\ maig|de\ juny|de\ març|de\ nov\.|d’oct\.|d’abr\.|d’ag\.)
+  \d{4})$
+examples:
+- value: 3 d’octubre del 2024
+  description: 3 October 2024, CLDR long format d MMMM 'del' y
+- value: 25 de des. 2024
+  description: 25 December 2024, CLDR medium format d MMM y
+- value: d’octubre 2024
+  valid: false
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/ca/ca-gregorian.json

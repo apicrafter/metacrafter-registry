@@ -1,0 +1,20 @@
+id: nr_phone
+name: Nauru phone number (E.164)
+status: draft
+doc: 'Phone number of Nauru in international E.164 form: a plus sign, the country calling code +674 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- NR
+langs:
+- common
+regexp: ^\+674(?:(?:222|444|(?:55|8\d)\d|666|777|999)\d{4})$
+examples:
+- value: '+6744441234'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+6745551234'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

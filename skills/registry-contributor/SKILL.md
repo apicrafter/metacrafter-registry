@@ -107,6 +107,9 @@ pip install -e ".[dev]"
   - `mappings.stdnum`: the module path without `stdnum.` (`br.cpf`).
   - `mappings.fhir`: the `Identifier.system` URI from terminology.hl7.org
     (`http://hl7.org/fhir/sid/us-ssn`).
+  - `mappings.misp`: the MISP attribute type (`vulnerability`, `md5`). Do
+    not map the directional types (`ip-src`, `email-dst`) unless the record
+    itself is directional.
 
 - **Presidio mappings** (`mappings.presidio`): map a record when the Presidio
   entity covers the same values, and add the record to `supported_types` in

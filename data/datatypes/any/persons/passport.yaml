@@ -13,3 +13,4 @@ classification: identifier
 mappings:
   fibo: FND/AgentsAndPeople/People/PassportNumber
   dpv: pd:Passport
+  misp: passport-number

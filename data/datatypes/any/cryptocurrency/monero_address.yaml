@@ -20,6 +20,8 @@ examples:
 - value: 4AdUndXHHZ6cfufTMvppY6JwXNouMBzSkbLYfpAV5Usx3skxNgYeYTRj5UzqtReoS44qo9mtmXCqY45DJ852K5Jv2684Rg
   valid: false
   description: 94 characters
+mappings:
+  misp: xmr
 links:
 - type: doc
   url: https://docs.getmonero.org/public-address/standard-address/

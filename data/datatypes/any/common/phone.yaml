@@ -27,6 +27,7 @@ mappings:
   fta: TELEPHONE
   dpv: pd:TelephoneNumber
   schema_org: telephone
+  misp: phone-number
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P1329

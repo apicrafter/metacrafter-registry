@@ -1,0 +1,23 @@
+id: grok
+name: Logstash and Elastic grok patterns
+category: etl
+doc: Grok is the pattern language of Logstash and the Elastic ingest pipelines for parsing unstructured
+  log lines into fields. Patterns are named regular expressions that can be combined, and the logstash-patterns-core
+  library ships a set of ready ones for email addresses, IP and MAC addresses, URIs, UUIDs, host names,
+  file paths and timestamps. The pattern name in an expression types the extracted field. The supported
+  types cover only registry datatypes that match a documented type.
+website: https://github.com/logstash-plugins/logstash-patterns-core
+supported_types:
+- date
+- datetime
+- email
+- filepath
+- ipaddr
+- ipv4
+- ipv6
+- mac_address
+- time
+- uri
+- urn
+- uuid
+- year

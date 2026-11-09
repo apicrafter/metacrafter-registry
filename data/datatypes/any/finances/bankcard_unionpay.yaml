@@ -1,0 +1,24 @@
+id: bankcard_unionpay
+name: UnionPay card number
+status: draft
+doc: 'Primary account number of a China UnionPay card: 16 to 19 digits that start with 62. Numbers from
+  622126 to 622925 are co-branded with Discover and also match bankcard_discover. The pattern sets no
+  check digit because not all UnionPay numbers are documented to pass the Luhn check. It accepts the number
+  without spaces or hyphens.'
+semantic_type: bankcard
+langs:
+- common
+regexp: ^62[0-9]{14,17}$
+examples:
+- value: '6200000000000005'
+  description: Stripe test card number
+- value: '6205500000000000004'
+  description: Stripe test card number (19 digits)
+- value: '6011111111111117'
+  valid: false
+  description: Discover test number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Payment_card_number
+- type: doc
+  url: https://docs.stripe.com/testing

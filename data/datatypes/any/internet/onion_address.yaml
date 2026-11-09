@@ -26,6 +26,8 @@ examples:
 - value: pg6mmjiyjmcrsslvykfwnntlaru7p5svn6y2ymmju6nubxndf4pscryd.com
   valid: false
   description: Not under .onion
+mappings:
+  misp: onion-address
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/.onion

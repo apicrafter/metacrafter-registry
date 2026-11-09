@@ -1,0 +1,20 @@
+id: it_phone
+name: Italy phone number (E.164)
+status: draft
+doc: 'Phone number of Italy in international E.164 form: a plus sign, the country calling code +39 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- IT
+langs:
+- common
+regexp: ^\+39(?:0\d{5,11}|1\d{8,10}|3(?:[0-8]\d{7,10}|9\d{7,8})|(?:43|55|70)\d{8}|8\d{5}(?:\d{2,4})?)$
+examples:
+- value: '+390212345678'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+393123456789'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

@@ -1,0 +1,20 @@
+id: iq_phone
+name: Iraq phone number (E.164)
+status: draft
+doc: 'Phone number of Iraq in international E.164 form: a plus sign, the country calling code +964 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- IQ
+langs:
+- common
+regexp: ^\+964(?:(?:1|7\d\d)\d{7}|[2-6]\d{7,8})$
+examples:
+- value: '+96412345678'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+9647912345678'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

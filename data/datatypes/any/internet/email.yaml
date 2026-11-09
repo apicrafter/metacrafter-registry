@@ -39,6 +39,7 @@ mappings:
   wikidata: P968
   dpv: pd:EmailAddress
   schema_org: email
+  misp: email
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Email_address

@@ -40,6 +40,7 @@ mappings:
   - date8
   - date9
   d3m: http://schema.org/DateTime
+  misp: datetime
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Date_and_time_notation

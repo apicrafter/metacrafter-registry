@@ -1,0 +1,21 @@
+id: date_lithuanian
+name: Date with a Lithuanian month name
+status: draft
+doc: Calendar date written in Lithuanian with the month name, day, month and year in the order of the
+  CLDR long (y 'm'. MMMM d 'd'.) date formats of the lt locale. The month is the CLDR wide or abbreviated
+  name in the format context, written exactly as CLDR gives it, including any dot or apostrophe; no extra
+  capitalisation variants are accepted. The CLDR medium format (y-MM-dd) is numeric, so it is not covered
+  here.
+semantic_type: date
+langs:
+- lt
+regexp: ^\d{4} m\. (?:balandžio|lapkričio|rugpjūčio|birželio|gruodžio|rugsėjo|vasario|gegužės|liepos|spalio|sausio|kovo)
+  (?:0?[1-9]|[12]\d|3[01]) d\.$
+examples:
+- value: 2024 m. spalio 3 d.
+  description: 3 October 2024, CLDR long format y 'm'. MMMM d 'd'.
+- value: spalio 2024
+  valid: false
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/lt/ca-gregorian.json

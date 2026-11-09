@@ -1,7 +1,8 @@
 id: egpostcode
 name: Egyptian Postal Code
 status: draft
-doc: Egyptian postal code
+doc: Postal code in Egypt. Google's address metadata accepts seven digits, as in 4460232, or five digits;
+  GeoNames lists the five-digit format only.
 semantic_type: postindex
 categories:
 - geo
@@ -11,10 +12,16 @@ langs:
 - ar
 is_pii: false
 classification: identifier
-regexp: ^[0-9]{5}$
+regexp: ^(?:\d{7}|\d{5})$
 examples:
-- value: '11511'
-  description: Example Egyptian postal code
+- value: '4460232'
+- value: '5734356'
+- value: '446023'
+  valid: false
+  description: six digits
 mappings:
   dpv: pd:PostalCode
   schema_org: postalCode
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/EG

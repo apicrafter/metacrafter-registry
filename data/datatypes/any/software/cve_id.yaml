@@ -28,6 +28,7 @@ examples:
   description: Two-digit year
 mappings:
   wikidata: P3587
+  misp: vulnerability
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures

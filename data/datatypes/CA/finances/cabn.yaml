@@ -1,7 +1,9 @@
 id: cabn
 name: Canada Business Number
 status: stable
-doc: CA datatype for 'Canada Business Number' (cabn) from rules in context 'finances'.
+doc: 'Business Number (BN) that the Canada Revenue Agency assigns to a business for its dealings with
+  federal and provincial governments: nine digits, the last of which is a Luhn check digit. With a two-letter
+  program identifier and a four-digit reference number it forms a program account number (caprogramacct).'
 categories:
 - finances
 country:
@@ -11,11 +13,17 @@ langs:
 is_pii: false
 classification: identifier
 regexp: ^[0-9]{9}$
+checksum: luhn
 examples:
-- value: '123456789'
-  description: Canada Business Number with 9 digits
-- value: '987654321'
-  description: Another valid Canada Business Number with 9 digits
+- value: '854594637'
+  description: Wikidata P8860 example
+- value: '119200103'
+  description: Wikidata P8860 example
+- value: '123026635'
+  description: python-stdnum example
+- value: 12345678Z
+  valid: false
+  description: letter instead of the check digit
 mappings:
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/BusinessNumber
   orgid: CA-CRA_ACR
@@ -26,3 +34,5 @@ links:
   url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/business-number.html
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P8860
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ca.bn.html

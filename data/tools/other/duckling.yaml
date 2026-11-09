@@ -1,0 +1,17 @@
+id: duckling
+name: Duckling
+category: other
+doc: Open-source (BSD) Haskell library from Meta that parses text in many languages into structured values
+  called dimensions. The dimensions are amount of money, credit card number, distance, duration, email,
+  numeral, ordinal, phone number, quantity, temperature, time, URL and volume. It extracts and normalizes
+  values found in free text, such as turning a spoken amount or date into a number or a timestamp. The
+  supported types cover only registry datatypes that match a documented type.
+website: https://github.com/facebook/duckling
+supported_types:
+- bankcard
+- duration
+- email
+- money
+- phone
+- temperature
+- url

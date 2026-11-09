@@ -27,6 +27,12 @@ supported_types:
 - aupassport
 - autfn
 - aws_secret_access_key
+- azure_ai_services_key
+- azure_cache_redis_key
+- azure_cosmosdb_key
+- azure_devops_pat
+- azure_entra_client_secret
+- azure_function_key
 - azure_storage_account_key
 - bankcard
 - be_driver_license

@@ -23,6 +23,8 @@ examples:
 - value: ff19a91b272a49d1a0f16ee54c672da60f0e116fae890512a3609913a01b488c
   valid: false
   description: Full SHA-256 value (CandidateCDHashFull), not the 20-byte cdhash
+mappings:
+  misp: cdhash
 links:
 - type: doc
   url: https://developer.apple.com/documentation/technotes/tn3126-inside-code-signing-hashes

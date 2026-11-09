@@ -1,0 +1,20 @@
+id: ge_phone
+name: Georgia phone number (E.164)
+status: draft
+doc: 'Phone number of Georgia in international E.164 form: a plus sign, the country calling code +995
+  and the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- GE
+langs:
+- common
+regexp: ^\+995(?:(?:[3-57]\d\d|800)\d{6})$
+examples:
+- value: '+995322123456'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+995555123456'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

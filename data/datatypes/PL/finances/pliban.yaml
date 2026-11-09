@@ -1,7 +1,10 @@
 id: pliban
-name: Polish IBAN by field name
+name: Polish IBAN
 status: stable
-doc: Polish IBAN by field name identifier
+doc: 'International Bank Account Number of a bank account in Poland. It has 28 characters: the country
+  code, two IBAN check digits and an eight-digit bank and branch code and a 16-digit account number, as
+  defined in the SWIFT IBAN registry.'
+parent: iban
 categories:
 - finances
 country:
@@ -10,10 +13,19 @@ langs:
 - pl
 is_pii: false
 classification: identifier
-regexp: ^PL[0-9]{2}[A-Z0-9]{4}[0-9]{16,24}$
+regexp: ^PL\d{26}$
+checksum: iban_mod97
+examples:
+- value: PL61109010140000071219812874
+  description: Example of the SWIFT IBAN registry
+- value: PL6110901014000007121981287
+  valid: false
+  description: One character short
 mappings:
   dpv: pd:BankAccount
   stdnum: iban
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Bank_Account_Number
+- type: doc
+  url: https://www.swift.com/standards/data-standards/iban-international-bank-account-number

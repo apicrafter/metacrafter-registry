@@ -138,7 +138,11 @@ def test_purview_crosswalk(repo_sources):
     assert ids("U.S. driver's license number") == ["usdriverlic"]
     assert ids("u.s. drivers license number") == ["usdriverlic"]
     # former names keep resolving after Microsoft renamed a type
-    assert ids("Azure AD client secret") == ids("Microsoft Entra client secret") == ["api_key"]
+    assert (
+        ids("Azure AD client secret")
+        == ids("Microsoft Entra client secret")
+        == ["azure_entra_client_secret"]
+    )
     # a bundle resolves to the records of its member types
     eu_passports = ids("EU passport number")
     assert {"at_passport", "frpassport", "plpassport", "uspassport"} <= set(eu_passports)
@@ -935,6 +939,8 @@ def test_javascript_checksums_match_python(tmp_path):
         "xpub661MyMwAqRbcFtXgS5sYJABqqG9YLmC4Q1Rdap9gSE8NqtwybGhePY2gZ29ESFjqJoCu1Rupje8YtGqsefD265TMg7usUDFdp6W1EGMcet8",
         "TNPeeaaFB7K9cmo4uQpcU32zGK8G1NYqeL",
         "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4",
+        "AGE-SECRET-KEY-1GFPYYSJZGFPYYSJZGFPYYSJZGFPYYSJZGFPYYSJZGFPYYSJZGFPQ4EGAEX",
+        "AGE-SECRET-KEY-1GFPYYSJZGFPYYSJZGFPYYSJZGFPYYSJZGFPYYSJZGFPYYSJZGFPQ4EGAEQ",
         "BC1QW508D6QEJXTDG4Y5R3ZARVARY0C5XW7KV8F3T4",
         "bc1qW508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4",
         "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t5",

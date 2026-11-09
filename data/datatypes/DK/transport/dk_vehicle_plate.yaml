@@ -1,0 +1,23 @@
+id: dk_vehicle_plate
+name: Danish vehicle registration plate
+status: draft
+doc: 'Registration number on standard Danish vehicle plates: two letters and five digits, written AB 12
+  345. Since 2012 letters and digits are assigned at random.'
+categories:
+- transport
+country:
+- DK
+langs:
+- da
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2} ?[0-9]{2} ?[0-9]{3}$
+examples:
+- value: AB 12 345
+  description: Format example from Wikipedia
+- value: AB 1234
+  valid: false
+  description: Four digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Denmark

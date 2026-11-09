@@ -14,3 +14,4 @@ mappings:
   - NAME.MIDDLE
   - NAME.MIDDLE_INITIAL
   schema_org: additionalName
+  misp: middle-name

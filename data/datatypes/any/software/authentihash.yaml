@@ -13,6 +13,8 @@ classification: identifier
 examples:
 - value: b9be0c1b4a48e7acd1bd186d31f86212794a824f0a9602242b054f9d98bd7c70
   description: Virus total file Twain_32.dll
+mappings:
+  misp: authentihash
 links:
 - type: other
   url: https://developers.virustotal.com/reference/authentihash

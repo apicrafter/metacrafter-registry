@@ -27,6 +27,7 @@ examples:
 mappings:
   autotype: SHA1_correct
   fta: HASH.SHA1_HEX
+  misp: sha1
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SHA-1

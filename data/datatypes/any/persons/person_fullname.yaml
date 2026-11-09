@@ -19,3 +19,4 @@ mappings:
   - NAME.LAST_FIRST
   sherlock: person
   dpv: pd:Name
+  misp: full-name

@@ -22,6 +22,7 @@ mappings:
   stdnum:
   - bic
   - iso9362
+  misp: bic
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/ISO_9362

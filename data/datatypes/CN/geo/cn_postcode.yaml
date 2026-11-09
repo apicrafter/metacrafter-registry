@@ -13,11 +13,15 @@ examples:
   description: Beijing
 - value: '200000'
   description: Shanghai
+- value: '266033'
+- value: '100808'
 - value: '12345'
   valid: false
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Postal_codes_in_China
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/CN
 translations:
   zh:
     name: 邮政编码

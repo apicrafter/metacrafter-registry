@@ -1,0 +1,20 @@
+id: tg_phone
+name: Togo phone number (E.164)
+status: draft
+doc: 'Phone number of Togo in international E.164 form: a plus sign, the country calling code +228 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- TG
+langs:
+- common
+regexp: ^\+228(?:[279]\d{7})$
+examples:
+- value: '+22822212345'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+22890112345'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

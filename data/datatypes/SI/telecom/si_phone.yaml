@@ -1,0 +1,20 @@
+id: si_phone
+name: Slovenia phone number (E.164)
+status: draft
+doc: 'Phone number of Slovenia in international E.164 form: a plus sign, the country calling code +386
+  and the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- SI
+langs:
+- common
+regexp: ^\+386(?:[1-7]\d{7}|8\d{4,7}|90\d{4,6})$
+examples:
+- value: '+38612345678'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+38631234567'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

@@ -1,0 +1,25 @@
+id: http_cookie
+name: HTTP Cookie header value
+status: draft
+doc: 'Value of the HTTP Cookie request header: one or more cookie-name=cookie-value pairs separated by
+  a semicolon and a space, as RFC 6265 defines it. Cookies often carry session identifiers, so the value
+  can grant access to an account.'
+categories:
+- internet
+- secrets
+langs:
+- common
+is_pii: false
+regexp: ^[!#$%&'*+.^_`|~0-9A-Za-z-]+=(?:"[\x21\x23-\x2B\x2D-\x3A\x3C-\x5B\x5D-\x7E]*"|[\x21\x23-\x2B\x2D-\x3A\x3C-\x5B\x5D-\x7E]*)(?:;
+  [!#$%&'*+.^_`|~0-9A-Za-z-]+=(?:"[\x21\x23-\x2B\x2D-\x3A\x3C-\x5B\x5D-\x7E]*"|[\x21\x23-\x2B\x2D-\x3A\x3C-\x5B\x5D-\x7E]*))*$
+examples:
+- value: SID=31d4d96e407aad42; lang=en-US
+  description: Example from RFC 6265
+- value: SID=31d4d96e407aad42;lang=en-US
+  valid: false
+  description: No space after the semicolon
+mappings:
+  misp: cookie
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc6265#section-4.2.1

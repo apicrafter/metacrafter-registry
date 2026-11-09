@@ -242,6 +242,19 @@ def test_crypto_checksum_reference_values():
     )
 
 
+def test_bech32_human_readable_part_with_hyphens():
+    # age secret keys: the HRP AGE-SECRET-KEY- (and AGE-SECRET-KEY-PQ-) keeps its hyphens
+    x25519 = "AGE-SECRET-KEY-1GFPYYSJZGFPYYSJZGFPYYSJZGFPYYSJZGFPYYSJZGFPYYSJZGFPQ4EGAEX"
+    assert bech32(x25519) and bech32(x25519.lower())
+    assert bech32("AGE-SECRET-KEY-PQ-1XX76JRALNLXDMEW0CRK45QMCCH4X06SE84UN3VPM33W6HWDX0H3SK3ZQFR")
+    assert not bech32(x25519[:-1] + "Q")  # wrong checksum
+    assert not bech32(x25519.replace("-", ""))  # the hyphens are part of the checksummed HRP
+    assert not bech32m(x25519)
+    # separators in the data part are still ignored
+    assert bech32("bc1qw508d6-qejxtdg4y5r3zarvary0c5xw7kv8f3t4")
+    assert bech32(" bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4\n")
+
+
 def test_lookup_and_aliases(reg):
     assert reg.get("ssn")["id"] == "usssn"
     assert "guid" in reg and "nothing_like_this" not in reg

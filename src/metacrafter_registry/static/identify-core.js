@@ -63,7 +63,10 @@
   var BECH32_GENERATOR = [0x3b6a57b2, 0x26508e6d, 0x1ea119fa, 0x3d4233dd, 0x2a1462b3];
 
   function bech32Verify(v, constant) {
-    var s = String(v).replace(/[\s.\-]/g, "");
+    // The human-readable part keeps its hyphens and dots (age secret keys start
+    // with AGE-SECRET-KEY-1); separators are ignored in the data part only.
+    var t = String(v).replace(/\s/g, ""), p = t.lastIndexOf("1");
+    var s = p >= 0 ? t.slice(0, p + 1) + t.slice(p + 1).replace(/[.\-]/g, "") : t;
     if (!/^[\x21-\x7e]+$/.test(s)) return false;
     if (s !== s.toLowerCase() && s !== s.toUpperCase()) return false;
     s = s.toLowerCase();

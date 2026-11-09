@@ -1,0 +1,35 @@
+id: eu_oss_number
+name: EU VAT One Stop Shop number (OSS, IOSS)
+status: draft
+doc: VAT identification number issued under the EU VAT e-commerce One Stop Shop. Under the non-Union scheme,
+  for businesses outside the EU that supply services to EU consumers, it is EU followed by nine digits.
+  Under the import scheme (IOSS) it is IM followed by ten digits. In both forms the first three digits
+  are the ISO 3166-1 numeric code of the member state of identification, such as 372 for Ireland, and
+  the last digit appears to be a check digit. Intermediaries get IN numbers, which are not VAT identification
+  numbers.
+categories:
+- finances
+- companies
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:EU(?:040|056|100|191|196|203|208|233|246|250|276|300|348|372|380|428|440|442|470|528|616|620|642|703|705|724|752|900)\d{6}|IM(?:040|056|100|191|196|203|208|233|246|250|276|300|348|372|380|428|440|442|470|528|616|620|642|703|705|724|752|900)\d{7})$
+examples:
+- value: EU372022452
+  description: Example from the python-stdnum documentation
+- value: EU999022452
+  valid: false
+  description: 999 is not the code of a member state
+- value: EU37202245
+  valid: false
+  description: Eight digits
+mappings:
+  stdnum: eu.oss
+links:
+- type: doc
+  url: https://vat-one-stop-shop.ec.europa.eu/one-stop-shop/register-oss_en
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.eu.oss.html

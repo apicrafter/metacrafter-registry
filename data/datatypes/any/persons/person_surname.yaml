@@ -12,6 +12,7 @@ mappings:
   cdm: means.identity.person.lastName
   fta: NAME.LAST
   schema_org: familyName
+  misp: last-name
 links:
 - type: schema.org
   url: https://schema.org/familyName

@@ -1,0 +1,20 @@
+id: ir_phone
+name: Iran phone number (E.164)
+status: draft
+doc: 'Phone number of Iran in international E.164 form: a plus sign, the country calling code +98 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- IR
+langs:
+- common
+regexp: ^\+98(?:[1-9]\d{9}|(?:[1-8]\d\d|9)\d{3,4})$
+examples:
+- value: '+982123456789'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+989123456789'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

@@ -37,6 +37,9 @@ examples:
 mappings:
   wikidata: P13337
   google_dlp: DOMAIN_NAME
+  misp:
+  - domain
+  - hostname
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Fully_qualified_domain_name

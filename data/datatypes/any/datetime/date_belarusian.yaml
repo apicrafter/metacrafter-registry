@@ -1,0 +1,22 @@
+id: date_belarusian
+name: Date with a Belarusian month name
+status: draft
+doc: Calendar date written in Belarusian with the month name, day, month and year in the order of the
+  CLDR long (d MMMM y 'г'.) and medium (d MMM y 'г'.) date formats of the be locale. The month is the
+  CLDR wide or abbreviated name in the format context, written exactly as CLDR gives it, including any
+  dot or apostrophe; no extra capitalisation variants are accepted.
+semantic_type: date
+langs:
+- be
+regexp: ^(?:(?:0?[1-9]|[12]\d|3[01]) (?:кастрычніка|красавіка|лістапада|сакавіка|студзеня|чэрвеня|верасня|снежня|лютага|жніўня|ліпеня|мая)
+  \d{4} г\.|(?:0?[1-9]|[12]\d|3[01]) (?:сне|ліс|мая|сак|кра|кас|чэр|жні|лют|сту|вер|ліп) \d{4} г\.)$
+examples:
+- value: 3 кастрычніка 2024 г.
+  description: 3 October 2024, CLDR long format d MMMM y 'г'.
+- value: 25 сне 2024 г.
+  description: 25 December 2024, CLDR medium format d MMM y 'г'.
+- value: кастрычніка 2024
+  valid: false
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/be/ca-gregorian.json

@@ -1,0 +1,33 @@
+id: fr_excise_number
+name: French excise number (numéro d'accise)
+status: draft
+doc: 'Number that French customs give to operators of goods subject to excise duty. It has 13 characters:
+  FR0, the last two digits of the year, a three-digit customs office number, a letter for the type of
+  operator (B, C, E or N) and a four-digit sequence number.'
+categories:
+- finances
+- companies
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^FR0\d{5}[BCEN]\d{4}$
+examples:
+- value: FR023004N9448
+  description: Example from the python-stdnum documentation
+- value: FR012907A0820
+  valid: false
+  description: A is not an operator type (python-stdnum example)
+- value: FR0XX907E0820
+  valid: false
+  description: Letters instead of the year (python-stdnum example)
+mappings:
+  stdnum: fr.accise
+links:
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.fr.accise.html
+translations:
+  fr:
+    name: Numéro d'accise

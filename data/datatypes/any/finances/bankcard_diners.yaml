@@ -1,0 +1,25 @@
+id: bankcard_diners
+name: Diners Club card number
+status: draft
+doc: 'Primary account number of a Diners Club International card: 14 to 19 digits that start with 30,
+  36, 38 or 39, the last of them a Luhn check digit. Diners Club cards issued in the United States and
+  Canada carry Mastercard numbers (prefix 55) and match bankcard_mastercard instead. The pattern accepts
+  the number without spaces or hyphens.'
+semantic_type: bankcard
+langs:
+- common
+regexp: ^3[0689][0-9]{12,17}$
+checksum: luhn
+examples:
+- value: '36227206271667'
+  description: Stripe test card number (14 digits)
+- value: '3056930009020004'
+  description: Stripe test card number (16 digits)
+- value: '378282246310005'
+  valid: false
+  description: American Express test number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Payment_card_number
+- type: doc
+  url: https://docs.stripe.com/testing

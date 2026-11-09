@@ -1,0 +1,20 @@
+id: pe_phone
+name: Peru phone number (E.164)
+status: draft
+doc: 'Phone number of Peru in international E.164 form: a plus sign, the country calling code +51 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- PE
+langs:
+- common
+regexp: ^\+51(?:(?:[14-8]|9\d)\d{7})$
+examples:
+- value: '+5111234567'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+51912345678'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

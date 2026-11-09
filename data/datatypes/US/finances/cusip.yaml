@@ -1,9 +1,10 @@
 id: cusip
 name: CUSIP (Committee on Uniform Securities Identification Procedures)
 status: stable
-doc: A CUSIP is a nine-digit numeric (e.g. 037833100 for Apple) or nine-character alphanumeric (e.g. 38259P508
-  for Google) code that identifies a North American financial security for the purposes of facilitating
-  clearing and settlement of trades
+doc: 'A CUSIP is a nine-character code that identifies a North American financial security for the clearing
+  and settlement of trades: six characters for the issuer, two for the issue and a check digit, for example
+  037833100 for Apple or 38259P508 for Google. CUSIP International Numbering System (CINS) numbers for
+  securities from other countries start with a letter, as in DUS0421C5.'
 categories:
 - finances
 - identifiers
@@ -14,7 +15,7 @@ langs:
 - en
 is_pii: false
 classification: identifier
-regexp: ^[0-9]{3}[a-zA-Z0-9]{2}[a-zA-Z0-9*@#]{3}[0-9]$
+regexp: ^[0-9A-Za-z]{5}[0-9A-Za-z*@#]{3}[0-9]$
 examples:
 - value: 037833100
   description: Apple Inc. common stock
@@ -22,6 +23,13 @@ examples:
   description: Google Inc. Class C capital stock
 - value: 30303M102
   description: Facebook Inc. Class A common stock
+- value: DUS0421C5
+  description: CINS number, python-stdnum example
+- value: 91324PAE2
+  description: python-stdnum example
+- value: DUS0421CN
+  valid: false
+  description: letter instead of the check digit
 mappings:
   autotype: cusip
   fibo: SEC/Securities/SecuritiesIdentificationIndividuals/CommitteeOnUniformSecuritiesIdentificationProceduresNumber
@@ -30,3 +38,5 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/CUSIP
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.cusip.html

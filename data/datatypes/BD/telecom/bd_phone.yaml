@@ -1,0 +1,20 @@
+id: bd_phone
+name: Bangladesh phone number (E.164)
+status: draft
+doc: 'Phone number of Bangladesh in international E.164 form: a plus sign, the country calling code +880
+  and the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- BD
+langs:
+- common
+regexp: ^\+880(?:[1-469]\d{9}|8[0-79]\d{7,8}|[2-79]\d{8}|[2-9]\d{7}|[3-9]\d{6}|[57-9]\d{5})$
+examples:
+- value: '+88027111234'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+8801812345678'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

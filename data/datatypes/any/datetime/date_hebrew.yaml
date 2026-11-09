@@ -1,0 +1,22 @@
+id: date_hebrew
+name: Date with a Hebrew month name
+status: draft
+doc: Calendar date written in Hebrew with the month name, day, month and year in the order of the CLDR
+  long (d בMMMM y) and medium (d בMMM y) date formats of the he locale. The month is the CLDR wide or
+  abbreviated name in the format context, written exactly as CLDR gives it, including any dot or apostrophe;
+  no extra capitalisation variants are accepted.
+semantic_type: date
+langs:
+- he
+regexp: ^(?:(?:0?[1-9]|[12]\d|3[01]) ב(?:אוקטובר|אוגוסט|פברואר|נובמבר|ספטמבר|ינואר|אפריל|דצמבר|יולי|יוני|מרץ|מאי)
+  \d{4}|(?:0?[1-9]|[12]\d|3[01]) ב(?:דצמ׳|יולי|ינו׳|יוני|אפר׳|נוב׳|אוק׳|אוג׳|ספט׳|פבר׳|מרץ|מאי) \d{4})$
+examples:
+- value: 3 באוקטובר 2024
+  description: 3 October 2024, CLDR long format d בMMMM y
+- value: 25 בדצמ׳ 2024
+  description: 25 December 2024, CLDR medium format d בMMM y
+- value: אוקטובר 2024
+  valid: false
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/he/ca-gregorian.json

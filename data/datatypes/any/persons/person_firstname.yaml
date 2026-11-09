@@ -13,6 +13,7 @@ mappings:
   fta: NAME.FIRST
   dpv: pd:Name
   schema_org: givenName
+  misp: first-name
 links:
 - type: schema.org
   url: https://schema.org/givenName

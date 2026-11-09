@@ -18,6 +18,7 @@ examples:
 mappings:
   wikidata: P2037
   dpv: pd:Username
+  misp: github-username
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P2037

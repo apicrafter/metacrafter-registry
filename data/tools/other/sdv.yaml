@@ -1,0 +1,35 @@
+id: sdv
+name: SDV sdtypes (Synthetic Data Vault)
+category: other
+doc: The Synthetic Data Vault (SDV) is an open source library from DataCebo that learns from tabular data
+  and generates synthetic data. Its metadata gives each column a semantic type, the sdtype, such as email,
+  phone_number, ssn, credit_card_number or ipv4_address. Columns with a personal sdtype are replaced with
+  fake values by default, controlled by the pii property. Some sdtypes are available in the enterprise
+  edition only. Any Faker function name may also be used as an sdtype; those are not listed here. The
+  supported types cover only registry datatypes that match a documented type of the tool.
+website: https://docs.sdv.dev/sdv/concepts/metadata/sdtypes
+supported_types:
+- address_line2
+- bankcard
+- boolean
+- city
+- countrycode_alpha2
+- datetime
+- email
+- iban
+- ipv4
+- ipv6
+- latitude
+- longitude
+- mac_address
+- person_firstname
+- person_surname
+- phone
+- postindex
+- state
+- street_address
+- swiftcode
+- user_agent
+- usssn
+- vehiclenumber
+- vin

@@ -89,6 +89,11 @@
       "pattern": "^(https?://[^\\s]+|urn:oid:[0-2](\\.[0-9]+)+|urn:(?!oid:)[a-z0-9][a-z0-9-]{0,31}:[^\\s]+)$",
       "description": "An HL7 FHIR identifier system: an http(s) URI, urn:oid: or another URN, for example http://hl7.org/fhir/sid/us-ssn or urn:dicom:uid"
     },
+    "mispType": {
+      "type": "string",
+      "pattern": "^(?:AS|named pipe|(?!as$)[a-z0-9]+(?:[-/][a-z0-9]+)*(?:\\|[a-z0-9]+(?:[-/][a-z0-9]+)*)?)$",
+      "description": "A MISP attribute type as the MISP core format and describeTypes.json write it, for example ip-src, email, vulnerability, sha512/256 or AS"
+    },
     "record": {
       "type": "object",
       "additionalProperties": false,
@@ -236,6 +241,13 @@
               "oneOf": [
                 {"$ref": "#/$defs/fhirSystem"},
                 {"type": "array", "items": {"$ref": "#/$defs/fhirSystem"}, "minItems": 1, "uniqueItems": true}
+              ]
+            },
+            "misp": {
+              "description": "MISP attribute types (https://www.misp-project.org/datamodels/) whose values are this datatype, for example vulnerability for a CVE id or mac-address. Directional types such as ip-src or email-dst are mapped only by records that are directional themselves.",
+              "oneOf": [
+                {"$ref": "#/$defs/mispType"},
+                {"type": "array", "items": {"$ref": "#/$defs/mispType"}, "minItems": 1, "uniqueItems": true}
               ]
             }
           }

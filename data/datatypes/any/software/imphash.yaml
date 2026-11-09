@@ -12,6 +12,8 @@ classification: identifier
 examples:
 - value: 316cd668ed705c998eae8d3bd7bd168f
   description: Virus total file Twain_32.dll
+mappings:
+  misp: imphash
 links:
 - type: other
   url: https://developers.virustotal.com/reference/pe_info

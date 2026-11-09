@@ -25,6 +25,8 @@ examples:
 - value: 27d40d40d29d40d1dc42d43d00041d4689ee210389f4f6b4b5b1b93f92252d00
   valid: false
   description: 64 digits, the length of a full SHA-256 hash
+mappings:
+  misp: jarm-fingerprint
 links:
 - type: doc
   url: https://github.com/salesforce/jarm

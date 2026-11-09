@@ -1,7 +1,7 @@
 id: krpostcode
-name: Korean postal code by field name
+name: South Korean postal code
 status: stable
-doc: Korean postal code by field name identifier
+doc: 'Postal code in South Korea: five digits.'
 semantic_type: postindex
 categories:
 - geo
@@ -11,7 +11,17 @@ langs:
 - ko
 is_pii: false
 classification: identifier
-regexp: ^[0-9]{4,10}$
+regexp: ^\d{5}$
+examples:
+- value: '03051'
+- value: '0305'
+  valid: false
+  description: too short
 mappings:
   dpv: pd:PostalCode
   schema_org: postalCode
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_South_Korea
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/KR

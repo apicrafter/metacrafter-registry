@@ -1,0 +1,19 @@
+id: my_passport
+name: Malaysian passport number
+status: draft
+doc: 'Number of a Malaysian passport: a letter followed by eight digits. The letter shows the bearer''s
+  residency: A for Peninsular Malaysia and Labuan, H for Sabah and K for Sarawak. Passports with the prefix
+  E, issued to Singapore citizens in 1964 and 1965, are not covered.'
+semantic_type: passport
+country:
+- MY
+langs:
+- ms
+regexp: ^[AHK][0-9]{8}$
+examples:
+- value: B12345678
+  valid: false
+  description: Letter other than A, H or K
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Malaysian_passport

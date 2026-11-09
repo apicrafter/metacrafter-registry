@@ -1,0 +1,25 @@
+id: no_vehicle_plate
+name: Norwegian vehicle registration plate
+status: draft
+doc: 'Registration number on Norwegian vehicle plates since 1971: two letters followed by five digits
+  for most cars, or four digits for motorcycles, mopeds, trailers and some cars. The letters G, I, O and
+  Q (except in GA for gas-powered vehicles) and Æ, Ø and Å are not used, and NS and SS are omitted on
+  car plates; the regexp does not check the omitted pairs.'
+categories:
+- transport
+country:
+- 'NO'
+langs:
+- 'no'
+is_pii: false
+classification: identifier
+regexp: ^(?:[A-FHJ-NPR-Z]{2}|GA) ?[0-9]{4,5}$
+examples:
+- value: AB 12345
+  description: Format example of a standard plate from Wikipedia
+- value: AO 12345
+  valid: false
+  description: O is not used
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Norway

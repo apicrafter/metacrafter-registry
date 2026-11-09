@@ -1,0 +1,20 @@
+id: date_arabic
+name: Date with a Arabic month name
+status: draft
+doc: Calendar date written in Arabic with the month name, day, month and year in the order of the CLDR
+  long (d MMMM y) date formats of the ar locale. The month is the CLDR wide or abbreviated name in the
+  format context, written exactly as CLDR gives it, including any dot or apostrophe; no extra capitalisation
+  variants are accepted. The CLDR medium format (dd‏/MM‏/y) is numeric, so it is not covered here.
+semantic_type: date
+langs:
+- ar
+regexp: ^(?:0?[1-9]|[12]\d|3[01]) (?:أكتوبر|ديسمبر|نوفمبر|فبراير|سبتمبر|يوليو|يناير|أبريل|أغسطس|يونيو|مايو|مارس)
+  \d{4}$
+examples:
+- value: 3 أكتوبر 2024
+  description: 3 October 2024, CLDR long format d MMMM y
+- value: أكتوبر 2024
+  valid: false
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/ar/ca-gregorian.json

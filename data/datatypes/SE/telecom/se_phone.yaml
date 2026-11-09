@@ -1,0 +1,20 @@
+id: se_phone
+name: Sweden phone number (E.164)
+status: draft
+doc: 'Phone number of Sweden in international E.164 form: a plus sign, the country calling code +46 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- SE
+langs:
+- common
+regexp: ^\+46(?:(?:[26]\d\d|9)\d{9}|[1-9]\d{8}|[1-689]\d{7}|[1-4689]\d{6}|2\d{5})$
+examples:
+- value: '+468123456'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+46701234567'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml
