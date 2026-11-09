@@ -1,0 +1,41 @@
+id: ru_land_category
+name: Russian land category
+status: draft
+doc: 'Category of land by its intended purpose under Article 7 of the Land Code of the Russian Federation.
+  There are seven categories: agricultural land, land of settlements, land of industry, energy, transport,
+  communications and other special purpose, land of specially protected territories and objects, forest
+  fund land, water fund land and reserve land. Registers of land plots and property on regional open data
+  portals write the category in Russian, often in lower case and with the long name of the third category
+  shortened.'
+categories:
+- realestate
+- geo
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: '^[Зз]емли (?:сельскохозяйственного назначения|насел[её]нн(?:ых пунктов|ого пункта)|промышленности(?:[
+  ,(].*)?|особо охраняемых (?:природных )?территорий(?: и объектов)?|лесного фонда|водного фонда|запаса)$'
+examples:
+- value: Земли населенных пунктов
+- value: земли сельскохозяйственного назначения
+- value: Земли промышленности, энергетики, транспорта, связи, радиовещания, телевидения, информатики,
+    земли для обеспечения космической деятельности, земли обороны, безопасности и земли иного специального
+    назначения
+  description: Full name of the third category
+- value: земли особо охраняемых территорий и объектов
+- value: Земли лесного фонда
+- value: Земли населенных пунктов, на которых расположены леса
+  valid: false
+  description: A free-text description, not a category name
+- value: Земельный участок
+  valid: false
+links:
+- type: doc
+  url: https://legalacts.ru/kodeks/ZK-RF/glava-i/statja-7/
+translations:
+  ru:
+    name: Категория земель
+    doc: Категория земель по целевому назначению по статье 7 Земельного кодекса Российской Федерации.

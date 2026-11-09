@@ -1,0 +1,44 @@
+id: ru_education_license_form
+name: Series and number of a Russian education license form
+status: draft
+doc: Series and number of the printed form of a license for educational activity in Russia. Under the
+  technical requirements approved by Order No. 1320 of the Ministry of Education and Science of 10 December
+  2013, the series has 5 characters (a two-digit code of the licensing authority, the letter Л and a two-digit
+  series number starting from 01) and the form number has 7 digits starting from 0000001. Registers of
+  education licenses on regional open data portals publish the series and number together ("86Л01 № 0000808")
+  or the series alone in a separate column; there the authority code matches the region code (11, 73,
+  76, 86). The forms of license appendices use the letter П instead of Л. The order no longer applies
+  since 2021, when licenses became records in the register, but registers keep the numbers of forms issued
+  earlier.
+categories:
+- education
+- government
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^\d{2}Л\d{2}(?:\s*(?:№\s*)?\d{7})?$
+examples:
+- value: 86Л01 № 0000808
+  description: License form in the license register of Khanty-Mansi Autonomous Okrug (data.admhmao.ru)
+- value: 76Л02 № 0000326
+  description: License form in the license register of Yaroslavl region (opendata.yarcloud.ru)
+- value: 73Л01
+  description: Series alone, as in the "Серия бланка" column of opendata.ulgov.ru
+- value: 86П01 № 0000808
+  valid: false
+  description: Series of a license appendix form (letter П)
+- value: 86А01 № 0000560
+  valid: false
+  description: Form of a state accreditation certificate
+links:
+- type: doc
+  url: https://www.consultant.ru/document/cons_doc_LAW_157648/30fe99ce7d49971ed2dab608a1f1dedba5355138/
+translations:
+  ru:
+    name: Серия и номер бланка лицензии на осуществление образовательной деятельности
+    doc: Серия бланка лицензии состоит из 5 знаков (код лицензирующего органа, буква Л и номер серии),
+      номер бланка из 7 цифр. Технические требования утверждены приказом Минобрнауки России от 10.12.2013
+      № 1320.
