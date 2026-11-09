@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "470a3c5cc740da12e68740386de7c09a9e786a31"
+  "ref": "b86d0b9d61062305b0a6bdc10ccca7e1eae7cec4"
  },
  "rules": [
   {
@@ -1129,6 +1129,16 @@
    "key": "cacorp",
    "type": "data",
    "match": "ppr",
+   "file": "ca/ca_orgs.yaml",
+   "context": "companies",
+   "lang": "ca",
+   "country_code": "ca"
+  },
+  {
+   "rule": "cacracharitycategoryvalue",
+   "key": "ca_cra_charity_category",
+   "type": "data",
+   "match": "regex",
    "file": "ca/ca_orgs.yaml",
    "context": "companies",
    "lang": "ca",
@@ -2425,6 +2435,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "schoolyearbyfield",
+   "key": "school_year",
+   "type": "field",
+   "match": "regex",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "timedatebyknown",
    "key": "time",
    "type": "field",
@@ -2965,6 +2985,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "gmlposlistbyfield",
+   "key": "gml_poslist",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "hdxpcodevalue",
    "key": "hdx_pcode",
    "type": "data",
@@ -3149,6 +3179,16 @@
    "key": "wbregion",
    "type": "data",
    "match": "text",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "wkbbyvalue",
+   "key": "wkb",
+   "type": "data",
+   "match": "func",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -3617,6 +3657,16 @@
   {
    "rule": "websiteknown",
    "key": "url",
+   "type": "field",
+   "match": "text",
+   "file": "common/internet.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "wifissidbyfield",
+   "key": "wifi_ssid",
    "type": "field",
    "match": "text",
    "file": "common/internet.yaml",
@@ -4145,9 +4195,29 @@
    "country_code": "xx"
   },
   {
+   "rule": "gleifentitycategoryvalue",
+   "key": "gleif_entity_category",
+   "type": "data",
+   "match": "text",
+   "file": "common/orgs.yaml",
+   "context": "companies",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "gleifracodevalue",
    "key": "gleif_ra_code",
    "type": "data",
+   "match": "regex",
+   "file": "common/orgs.yaml",
+   "context": "companies",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "legalformbyfield",
+   "key": "legal_form",
+   "type": "field",
    "match": "regex",
    "file": "common/orgs.yaml",
    "context": "companies",
@@ -4365,6 +4435,36 @@
    "country_code": "xx"
   },
   {
+   "rule": "dwccatalognumberbyfield",
+   "key": "dwc_catalog_number",
+   "type": "field",
+   "match": "text",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "dwcinstitutioncodebyfield",
+   "key": "dwc_institution_code",
+   "type": "field",
+   "match": "text",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "dwcoccurrenceidbyfield",
+   "key": "dwc_occurrence_id",
+   "type": "field",
+   "match": "text",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "dwctaxonomicstatusknown",
    "key": "dwc_taxonomic_status",
    "type": "field",
@@ -4429,6 +4529,16 @@
    "key": "isni",
    "type": "data",
    "match": "ppr",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "oastatusbyfield",
+   "key": "oa_status",
+   "type": "field",
+   "match": "regex",
    "file": "common/science.yaml",
    "context": "science",
    "lang": "common",
@@ -4537,6 +4647,26 @@
   {
    "rule": "scopusauthoiridbyfieldname",
    "key": "scopusauthoirid",
+   "type": "field",
+   "match": "text",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "taxonclassorderbyfield",
+   "key": "taxon_name",
+   "type": "field",
+   "match": "text",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "taxonnamebyfield",
+   "key": "taxon_name",
    "type": "field",
    "match": "text",
    "file": "common/science.yaml",
@@ -4785,6 +4915,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "fileformatbyfield",
+   "key": "file_format",
+   "type": "field",
+   "match": "regex",
+   "file": "common/software.yaml",
+   "context": "software",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "filesizebyknown",
    "key": "filesize",
    "type": "field",
@@ -4819,6 +4959,16 @@
    "key": "imphash",
    "type": "data",
    "match": "ppr",
+   "file": "common/software.yaml",
+   "context": "software",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "jsontextbyvalue",
+   "key": "json_text",
+   "type": "data",
+   "match": "func",
    "file": "common/software.yaml",
    "context": "software",
    "lang": "common",
@@ -5105,6 +5255,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "xmltextbyvalue",
+   "key": "xml_text",
+   "type": "data",
+   "match": "func",
+   "file": "common/software.yaml",
+   "context": "software",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "iccidfield",
    "key": "iccid",
    "type": "field",
@@ -5189,6 +5349,16 @@
    "key": "msisdn",
    "type": "data",
    "match": "ppr",
+   "file": "common/telecom.yaml",
+   "context": "telecom",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "phoneareacodebyfield",
+   "key": "phone_area_code",
+   "type": "field",
+   "match": "regex",
    "file": "common/telecom.yaml",
    "context": "telecom",
    "lang": "common",
@@ -5505,10 +5675,30 @@
    "country_code": "xx"
   },
   {
+   "rule": "gtfsstopidbyfield",
+   "key": "gtfs_stop_id",
+   "type": "field",
+   "match": "text",
+   "file": "common/transport.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "gtfswheelchairboardingvalue",
    "key": "gtfs_wheelchair_boarding",
    "type": "data",
    "match": "regex",
+   "file": "common/transport.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "gtfszoneidbyfield",
+   "key": "gtfs_zone_id",
+   "type": "field",
+   "match": "text",
    "file": "common/transport.yaml",
    "context": "transport",
    "lang": "common",
@@ -5865,6 +6055,16 @@
    "country_code": "cz"
   },
   {
+   "rule": "czruiancastobcebyfield",
+   "key": "cz_ruian_cast_obce_code",
+   "type": "field",
+   "match": "regex",
+   "file": "cz/cz_geo.yaml",
+   "context": "geo",
+   "lang": "cs",
+   "country_code": "cz"
+  },
+  {
    "rule": "czstreetknown",
    "key": "street",
    "type": "field",
@@ -5939,6 +6139,16 @@
    "key": "atcity",
    "type": "data",
    "match": "text",
+   "file": "de/de_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "debundestagwahlkreisbyfield",
+   "key": "de_bundestag_wahlkreis",
+   "type": "field",
+   "match": "regex",
    "file": "de/de_geo.yaml",
    "context": "geo",
    "lang": "de",
@@ -6058,7 +6268,7 @@
    "rule": "dehrbvalue",
    "key": "handelsregisternr",
    "type": "data",
-   "match": "ppr",
+   "match": "regex",
    "file": "de/de_tax.yaml",
    "context": "finances",
    "lang": "de",
@@ -6565,6 +6775,16 @@
    "country_code": "eu"
   },
   {
+   "rule": "esaplicacionpresupuestariabyfield",
+   "key": "es_aplicacion_presupuestaria",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_common.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esphoneknown",
    "key": "phone",
    "type": "field",
@@ -6865,6 +7085,16 @@
    "country_code": "eu"
   },
   {
+   "rule": "euorganisationactivitytypevalue",
+   "key": "eu_organisation_activity_type",
+   "type": "data",
+   "match": "text",
+   "file": "eu/eu_funding.yaml",
+   "context": "government",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
    "rule": "eupicvalue",
    "key": "eu_pic",
    "type": "data",
@@ -7008,7 +7238,7 @@
    "rule": "euidvalue",
    "key": "euid",
    "type": "data",
-   "match": "ppr",
+   "match": "regex",
    "file": "eu/eu_tax.yaml",
    "context": "finances",
    "lang": "en",
@@ -8165,6 +8395,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "hucountycodebyfield",
+   "key": "hu_county_code",
+   "type": "field",
+   "match": "regex",
+   "file": "hu/hu_common.yaml",
+   "context": "common",
+   "lang": "hu",
+   "country_code": "hu"
+  },
+  {
    "rule": "hugirocodevalue",
    "key": "hu_giro_code",
    "type": "data",
@@ -8188,6 +8428,16 @@
    "rule": "huneakcodevalue",
    "key": "hu_neak_code",
    "type": "data",
+   "match": "regex",
+   "file": "hu/hu_common.yaml",
+   "context": "common",
+   "lang": "hu",
+   "country_code": "hu"
+  },
+  {
+   "rule": "huneakspecialtybyfield",
+   "key": "hu_neak_specialty_code",
+   "type": "field",
    "match": "regex",
    "file": "hu/hu_common.yaml",
    "context": "common",
@@ -8589,6 +8839,16 @@
    "key": "city",
    "type": "field",
    "match": "text",
+   "file": "it/it_geo.yaml",
+   "context": "geo",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itistatprovincebyfield",
+   "key": "it_istat_province_code",
+   "type": "field",
+   "match": "regex",
    "file": "it/it_geo.yaml",
    "context": "geo",
    "lang": "it",
@@ -9257,6 +9517,16 @@
   {
    "rule": "ltkvrcodevalue",
    "key": "lt_kvr_code",
+   "type": "data",
+   "match": "regex",
+   "file": "lt/lt_common.yaml",
+   "context": "common",
+   "lang": "lt",
+   "country_code": "lt"
+  },
+  {
+   "rule": "ltlegalformcodevalue",
+   "key": "lt_legal_form_code",
    "type": "data",
    "match": "regex",
    "file": "lt/lt_common.yaml",
@@ -11795,6 +12065,16 @@
    "country_code": "qa"
   },
   {
+   "rule": "rocountycodebyfield",
+   "key": "ro_county_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ro/ro_common.yaml",
+   "context": "common",
+   "lang": "ro",
+   "country_code": "ro"
+  },
+  {
    "rule": "rolmicodevalue",
    "key": "ro_lmi_code",
    "type": "data",
@@ -14219,6 +14499,46 @@
    "key": "encompanyname",
    "type": "data",
    "match": "func",
+   "file": "us/us_orgs.yaml",
+   "context": "companies",
+   "lang": "en",
+   "country_code": "us"
+  },
+  {
+   "rule": "usirsactivityvalue",
+   "key": "us_irs_activity_code",
+   "type": "data",
+   "match": "regex",
+   "file": "us/us_orgs.yaml",
+   "context": "companies",
+   "lang": "en",
+   "country_code": "us"
+  },
+  {
+   "rule": "usirsfoundationvalue",
+   "key": "us_irs_foundation_code",
+   "type": "data",
+   "match": "regex",
+   "file": "us/us_orgs.yaml",
+   "context": "companies",
+   "lang": "en",
+   "country_code": "us"
+  },
+  {
+   "rule": "usirsgroupexemptionvalue",
+   "key": "us_irs_group_exemption_number",
+   "type": "data",
+   "match": "regex",
+   "file": "us/us_orgs.yaml",
+   "context": "companies",
+   "lang": "en",
+   "country_code": "us"
+  },
+  {
+   "rule": "usirssubsectionvalue",
+   "key": "us_irs_subsection_code",
+   "type": "data",
+   "match": "regex",
    "file": "us/us_orgs.yaml",
    "context": "companies",
    "lang": "en",
