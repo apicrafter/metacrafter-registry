@@ -1,0 +1,30 @@
+id: de_bundestag_wahlkreis
+name: German Bundestag constituency
+status: draft
+doc: Number of one of the 299 constituencies (Wahlkreise) of elections to the German Bundestag, often
+  followed by its name, as in 5 - Kiel or 1 - Flensburg - Schleswig in the results of the Federal Returning
+  Officer and the state statistical offices. Constituencies of state elections have numbers of their own.
+parent: category
+categories:
+- government
+- geo
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: categorical
+regexp: '^(?:[1-9]|[1-9]\d|[12]\d\d)(?: ?- ?\S.*)?$'
+examples:
+- value: 5 - Kiel
+- value: 1 - Flensburg - Schleswig
+- value: '75'
+- value: '300'
+  valid: false
+  description: Not a constituency
+links:
+- type: doc
+  url: https://www.bundeswahlleiterin.de/
+translations:
+  de:
+    name: Bundestagswahlkreis

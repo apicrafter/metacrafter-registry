@@ -1,0 +1,30 @@
+id: es_aplicacion_presupuestaria
+name: Spanish public budget line (aplicación presupuestaria)
+status: draft
+doc: 'Budget line (aplicación presupuestaria) of a Spanish public budget, as the City of Madrid writes
+  it in its contract registers: the budget year, the organic code, the programme code and the economic
+  code, as in 2026 001130 - 33210 - 62999. A contract that spans several years lists one line per year,
+  often with the amount.'
+parent: id
+categories:
+- government
+- finances
+country:
+- ES
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{4} \d{3,6} - \d{5} - \d{5}$
+examples:
+- value: 2026 001130 - 33210 - 62999
+- value: 2026 001120 - 13610 - 22104
+- value: '33210'
+  valid: false
+  description: Programme code alone
+links:
+- type: other
+  url: https://datos.madrid.es/
+translations:
+  es:
+    name: Aplicación presupuestaria

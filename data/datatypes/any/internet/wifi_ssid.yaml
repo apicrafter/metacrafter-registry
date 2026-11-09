@@ -1,0 +1,19 @@
+id: wifi_ssid
+name: Wi-Fi network name (SSID)
+status: draft
+doc: 'Service set identifier (SSID): the name of a Wi-Fi network as access points broadcast it, up to
+  32 bytes, as in the hotspot lists of cities.'
+categories:
+- internet
+- telecom
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: LinkNYC Free Wi-Fi
+- value: GuestWiFi
+- value: eduroam
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Service_set_(802.11_network)

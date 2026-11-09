@@ -1,0 +1,33 @@
+id: us_irs_foundation_code
+name: IRS foundation code of an exempt organization
+status: draft
+doc: 'Two-digit foundation code of a US tax-exempt organization in the IRS Exempt Organizations Business
+  Master File: whether a 501(c)(3) organization is a private foundation and under which section it is
+  a public charity, as in 04 for a private non-operating foundation, 10 for a church, 15 for an organization
+  that receives substantial support from the public, and 00 for organizations other than 501(c)(3).'
+parent: category
+categories:
+- companies
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:0[02349]|1[0-8]|2[1-4])$
+examples:
+- value: '00'
+  description: Not a 501(c)(3) organization
+- value: '04'
+  description: Private non-operating foundation
+- value: '10'
+  description: Church
+- value: '15'
+  description: Publicly supported organization
+- value: '30'
+  valid: false
+  description: Not a foundation code
+links:
+- type: doc
+  url: https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf

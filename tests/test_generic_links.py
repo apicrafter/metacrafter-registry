@@ -209,3 +209,50 @@ def test_testdata_types_161_168(records, dt, broader):
     assert dt in records
     assert records[dt]["status"] == "draft"
     assert broader in generic(records, dt)
+
+
+@pytest.mark.parametrize(
+    "dt,broader",
+    [
+        # #171 organisations and registers
+        ("legal_form", "category"),
+        ("lt_legal_form_code", "category"),
+        ("gleif_entity_category", "category"),
+        ("us_irs_subsection_code", "category"),
+        ("us_irs_foundation_code", "category"),
+        ("us_irs_group_exemption_number", "id"),
+        ("us_irs_activity_code", "category"),
+        ("ca_cra_charity_category", "category"),
+        ("eu_organisation_activity_type", "category"),
+        ("es_aplicacion_presupuestaria", "id"),
+        # #172 administrative, electoral and phone codes
+        ("it_istat_province_code", "category"),
+        ("hu_county_code", "category"),
+        ("ro_county_code", "category"),
+        ("cz_ruian_cast_obce_code", "id"),
+        ("de_bundestag_wahlkreis", "category"),
+        ("phone_area_code", "phone_area_code"),
+        # #173 health, science and transport
+        ("hu_neak_specialty_code", "category"),
+        ("oa_status", "category"),
+        ("taxon_name", "taxon_name"),
+        ("dwc_occurrence_id", "id"),
+        ("dwc_catalog_number", "id"),
+        ("dwc_institution_code", "category"),
+        ("gtfs_stop_id", "id"),
+        ("gtfs_zone_id", "id"),
+        # #174 formats and values (unit_of_measure was already a record)
+        ("school_year", "year_range"),
+        ("wifi_ssid", "wifi_ssid"),
+        ("unit_of_measure", "unit_of_measure"),
+        ("file_format", "category"),
+        ("json_text", "json_text"),
+        ("xml_text", "xml_text"),
+        ("wkb", "wkb"),
+        ("gml_poslist", "gml_poslist"),
+    ],
+)
+def test_testdata_types_171_174(records, dt, broader):
+    """Datatypes proposed from the third metacrafter-testdata pass (#171-#174) exist with their generic link."""
+    assert dt in records
+    assert broader in generic(records, dt)

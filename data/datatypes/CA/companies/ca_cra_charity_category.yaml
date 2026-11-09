@@ -1,0 +1,29 @@
+id: ca_cra_charity_category
+name: Canadian charity category code
+status: draft
+doc: 'Four-digit category code of a registered charity in the lists of the Canada Revenue Agency (CRA):
+  the charitable purpose of the charity, as in 0001 for organizations relieving poverty; a separate sub-category
+  code refines it.'
+parent: category
+categories:
+- companies
+- government
+country:
+- CA
+langs:
+- en
+- fr
+is_pii: false
+classification: categorical
+regexp: ^0[0-2]\d{2}$
+examples:
+- value: '0001'
+  description: Organizations relieving poverty
+- value: '0140'
+- value: '0210'
+- value: '140'
+  valid: false
+  description: Written without the leading zero
+links:
+- type: doc
+  url: https://www.canada.ca/en/revenue-agency/services/charities-giving/charities-listings.html

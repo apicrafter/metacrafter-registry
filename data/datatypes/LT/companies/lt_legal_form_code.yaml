@@ -1,0 +1,37 @@
+id: lt_legal_form_code
+name: Lithuanian legal form code
+status: draft
+doc: 'Three-digit code of the legal form (teisinė forma) of a legal entity in the Lithuanian Register
+  of Legal Entities (JAR) of the State Enterprise Centre of Registers, as in its open data: 310 for a
+  private limited company (UAB), 320 for a public limited company (AB), 570 for a public institution (VšĮ)
+  and 960 for a small partnership (MB). The digits alone are other numbers too, so the field name is the
+  evidence.'
+parent: category
+categories:
+- companies
+- legal
+country:
+- LT
+langs:
+- lt
+is_pii: false
+classification: categorical
+regexp: ^[1-9]\d{2}$
+examples:
+- value: '310'
+  description: Uždaroji akcinė bendrovė
+- value: '320'
+  description: Akcinė bendrovė
+- value: '570'
+  description: Viešoji įstaiga
+- value: '960'
+  description: Mažoji bendrija
+- value: UAB
+  valid: false
+  description: 'Abbreviation of the form: legal_form'
+links:
+- type: doc
+  url: https://www.registrucentras.lt/
+translations:
+  lt:
+    name: Teisinės formos kodas

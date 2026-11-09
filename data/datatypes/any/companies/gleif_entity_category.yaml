@@ -1,0 +1,25 @@
+id: gleif_entity_category
+name: GLEIF legal entity category
+status: draft
+doc: 'Category of a legal entity in the LEI records of the Global Legal Entity Identifier Foundation (LEI-CDF
+  EntityCategory): GENERAL, FUND, BRANCH, SOLE_PROPRIETOR, RESIDENT_GOVERNMENT_ENTITY or INTERNATIONAL_ORGANIZATION.'
+parent: category
+categories:
+- companies
+- finances
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:GENERAL|FUND|BRANCH|SOLE_PROPRIETOR|RESIDENT_GOVERNMENT_ENTITY|INTERNATIONAL_ORGANIZATION)$
+examples:
+- value: GENERAL
+- value: FUND
+- value: BRANCH
+- value: SOLE_PROPRIETOR
+- value: COMPANY
+  valid: false
+  description: Not a GLEIF category
+links:
+- type: doc
+  url: https://www.gleif.org/en/about-lei/common-data-file-format

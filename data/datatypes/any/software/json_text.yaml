@@ -1,0 +1,19 @@
+id: json_text
+name: JSON document in a text field
+status: draft
+doc: 'JSON object or array stored as text in one field of a table or a record, as exports of APIs and
+  databases write nested values: [{"id": "BEL-469", "displayName": "S Mini"}]. A GeoJSON geometry is geojson.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+examples:
+- value: '[{"id": "BEL-469", "displayName": "S Mini"}]'
+- value: '{"a": 1, "b": [2, 3]}'
+- value: '{''a'': 1}'
+  valid: false
+  description: Python notation, not JSON
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/JSON

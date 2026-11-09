@@ -1,0 +1,40 @@
+id: legal_form
+name: Legal form of an organization
+status: draft
+doc: 'Legal form of a company or other organization written as a name or an abbreviation, in the language
+  of the country of registration: SpA or EIRL in Chile, GmbH in Germany, Uždaroji akcinė bendrovė (UAB)
+  in Lithuania, ΝΠΔΔ (public law entity) in Greece. Registers often keep it in a column next to the name.
+  The ISO 20275 code of a legal form is elf_code.'
+parent: category
+categories:
+- companies
+- legal
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: SpA
+  description: Chilean sociedad por acciones
+- value: EIRL
+  description: Chilean sole proprietorship with limited liability
+- value: Uždaroji akcinė bendrovė
+  description: Lithuanian private limited company
+- value: ΝΠΔΔ
+  description: Greek legal entity under public law
+- value: GmbH
+- value: Mutual Fund
+  description: GLEIF, other legal form
+- value: K09K
+  valid: false
+  description: 'ISO 20275 code: elf_code'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_legal_entity_types_by_country
+translations:
+  ru:
+    name: Организационно-правовая форма
+  de:
+    name: Rechtsform
+  es:
+    name: Forma jurídica

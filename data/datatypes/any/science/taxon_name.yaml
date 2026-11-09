@@ -1,0 +1,33 @@
+id: taxon_name
+name: Scientific name of a higher taxon
+status: draft
+doc: 'Scientific name of a taxon above the species rank, a single capitalized Latin word: a kingdom (Animalia),
+  phylum, class (Insecta), order (Hymenoptera), family (Formicidae) or genus (Tetramorium), as in the
+  Darwin Core terms kingdom to genus of GBIF occurrence data. The name of a species (a binomial) is species.'
+categories:
+- science
+- environment
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z][a-z]+$
+examples:
+- value: Animalia
+  description: Kingdom
+- value: Arthropoda
+  description: Phylum
+- value: Hymenoptera
+  description: Order
+- value: Formicidae
+  description: Family
+- value: Tetramorium
+  description: Genus
+- value: Solenopsis geminata
+  valid: false
+  description: 'Species: species'
+links:
+- type: doc
+  url: https://dwc.tdwg.org/terms/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Taxonomic_rank

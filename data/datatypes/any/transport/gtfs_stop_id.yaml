@@ -1,0 +1,21 @@
+id: gtfs_stop_id
+name: GTFS stop id
+status: draft
+doc: 'Identifier of a stop, station, entrance or boarding area in a GTFS feed (stop_id of stops.txt),
+  which stop_times.txt and the parent_station field refer to. Feeds choose the form: numbers (1, 2), codes
+  or text such as 1001 2.'
+parent: id
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: '1'
+- value: 1001 2
+links:
+- type: doc
+  url: https://gtfs.org/documentation/schedule/reference/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/GTFS

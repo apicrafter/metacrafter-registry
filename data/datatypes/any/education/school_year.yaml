@@ -1,0 +1,32 @@
+id: school_year
+name: School or academic year
+status: draft
+doc: 'School or academic year that starts in one calendar year and ends in the next, written as the two
+  years: 2025/26, 2025-2026 or 202526 (the Italian anno scolastico).'
+parent: year_range
+categories:
+- education
+- datetime
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{4}(?:\d{2}|[/-]\d{2}|[/-]\d{4})$
+examples:
+- value: 2025/26
+- value: 2025-2026
+- value: '202526'
+  description: Anno scolastico 2025/26
+- value: '2025'
+  valid: false
+  description: 'One year: year'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Academic_year
+translations:
+  it:
+    name: Anno scolastico
+  de:
+    name: Schuljahr
+  ru:
+    name: Учебный год

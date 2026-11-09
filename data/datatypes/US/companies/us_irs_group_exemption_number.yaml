@@ -1,0 +1,26 @@
+id: us_irs_group_exemption_number
+name: IRS group exemption number
+status: draft
+doc: 'Four-digit group exemption number (GEN) of the IRS Exempt Organizations Business Master File: the
+  central organization whose group ruling covers a subordinate organization, such as the chapters of a
+  national association. 0000 means that the organization is not part of a group ruling.'
+parent: id
+categories:
+- companies
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{4}$
+examples:
+- value: 0928
+- value: '3741'
+- value: '928'
+  valid: false
+  description: Written without the leading zero
+links:
+- type: doc
+  url: https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf

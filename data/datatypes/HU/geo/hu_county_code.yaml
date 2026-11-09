@@ -1,0 +1,33 @@
+id: hu_county_code
+name: Hungarian county code
+status: draft
+doc: 'Two-digit number of a Hungarian county (megye) or the capital. The numbering depends on the publisher:
+  the NEAK health insurance lists number the counties alphabetically (01 Baranya, 05 Csongrád-Csanád,
+  08 Hajdú-Bihar), while the KSH area codes put Budapest first. The county name is hu_county.'
+parent: category
+categories:
+- geo
+- government
+country:
+- HU
+langs:
+- hu
+is_pii: false
+classification: categorical
+regexp: ^(?:0[1-9]|1\d|20)$
+examples:
+- value: '01'
+  description: Baranya (NEAK)
+- value: '05'
+  description: Csongrád-Csanád (NEAK)
+- value: 08
+  description: Hajdú-Bihar (NEAK)
+- value: '21'
+  valid: false
+  description: No such county
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Counties_of_Hungary
+translations:
+  hu:
+    name: Megye kód
