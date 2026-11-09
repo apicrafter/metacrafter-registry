@@ -1,0 +1,33 @@
+id: eu_excise_number
+name: EU excise number (SEED)
+status: draft
+doc: 'Excise number of a business authorised to operate with goods subject to excise duty, such as alcohol,
+  tobacco and energy products, in the European Union. The national customs or tax authority of the member
+  state issues it, and the EU SEED register lists it. It has 13 characters: the two-letter code of the
+  member state and eleven letters or digits; python-stdnum pads shorter national numbers with zeros after
+  the country code.'
+categories:
+- finances
+- industry
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}[0-9A-Z]{11}$
+examples:
+- value: LU00000987ABC
+  description: Example from the python-stdnum documentation (written LU 987ABC)
+- value: PL34100039204
+  description: Polish operator in the fuel stock register
+- value: PL341000392
+  valid: false
+  description: Eleven characters
+mappings:
+  stdnum: eu.excise
+links:
+- type: doc
+  url: https://ec.europa.eu/taxation_customs/dds2/seed/seed_home.jsp
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.eu.excise.html

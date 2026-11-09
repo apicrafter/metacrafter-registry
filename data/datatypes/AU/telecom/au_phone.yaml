@@ -1,0 +1,20 @@
+id: au_phone
+name: Australia phone number (E.164)
+status: draft
+doc: 'Phone number of Australia in international E.164 form: a plus sign, the country calling code +61
+  and the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- AU
+langs:
+- common
+regexp: ^\+61(?:1(?:[0-79]\d{7}(?:\d(?:\d{2})?)?|8[0-24-9]\d{7})|[2-478]\d{8}|1\d{4,7})$
+examples:
+- value: '+61212345678'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+61412345678'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

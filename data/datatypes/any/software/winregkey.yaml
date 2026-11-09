@@ -14,6 +14,8 @@ classification: identifier
 examples:
 - value: HKEY_LOCAL_MACHINE\System\CurrentControlSet\Hardware Profiles\Current
   description: Current Windows hardware profile
+mappings:
+  misp: regkey
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Windows_Registry

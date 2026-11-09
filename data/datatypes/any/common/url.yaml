@@ -36,6 +36,7 @@ mappings:
   wikidata: P2699
   fta: URI.URL
   schema_org: url
+  misp: url
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/URL

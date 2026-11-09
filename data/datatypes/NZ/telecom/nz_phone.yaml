@@ -1,0 +1,20 @@
+id: nz_phone
+name: New Zealand phone number (E.164)
+status: draft
+doc: 'Phone number of New Zealand in international E.164 form: a plus sign, the country calling code +64
+  and the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- NZ
+langs:
+- common
+regexp: ^\+64(?:[1289]\d{9}|50\d{5}(?:\d{2,3})?|[27-9]\d{7,8}|(?:[34]\d|6[0-35-9])\d{6}|8\d{4,6})$
+examples:
+- value: '+6432345678'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+64211234567'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

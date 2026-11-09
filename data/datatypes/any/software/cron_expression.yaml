@@ -1,0 +1,26 @@
+id: cron_expression
+name: Cron schedule expression
+status: draft
+doc: 'Schedule of a cron job: five fields separated by spaces, giving the minute, the hour, the day of
+  the month, the month and the day of the week (0 is Sunday). POSIX allows an asterisk for all values,
+  a number, a range a-b or a comma-separated list in each field; the regexp also accepts the step suffix
+  /n that most cron implementations support. It does not check the value ranges, month and weekday names
+  or @ shortcuts.'
+categories:
+- software
+- datetime
+langs:
+- common
+is_pii: false
+regexp: ^(?:\*|[0-9]+(?:-[0-9]+)?(?:,[0-9]+(?:-[0-9]+)?)*)(?:/[0-9]+)?(?:\s+(?:\*|[0-9]+(?:-[0-9]+)?(?:,[0-9]+(?:-[0-9]+)?)*)(?:/[0-9]+)?){4}$
+examples:
+- value: 15 3 * * 1-5
+  description: Example from the POSIX crontab specification
+- value: 0 0 1,15 * 1
+  description: Example from the POSIX crontab specification
+- value: 15 3 * *
+  valid: false
+  description: Four fields
+links:
+- type: doc
+  url: https://pubs.opengroup.org/onlinepubs/9799919799/utilities/crontab.html

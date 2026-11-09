@@ -37,6 +37,7 @@ examples:
 mappings:
   wikidata: P1163
   schema_org: encodingFormat
+  misp: mime-type
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Media_type

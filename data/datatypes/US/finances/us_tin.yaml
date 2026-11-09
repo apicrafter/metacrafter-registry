@@ -1,0 +1,35 @@
+id: us_tin
+name: US taxpayer identification number (TIN)
+status: draft
+doc: 'Any number that the US tax system uses to identify a taxpayer: a Social Security Number (usssn),
+  an Individual Taxpayer Identification Number (usitin), an Employer Identification Number (usein), a
+  Preparer Tax Identification Number (usptin) or an Adoption Taxpayer Identification Number (usatin).
+  Use it for columns that mix these kinds.'
+parent: taxid
+categories:
+- finances
+- pii
+country:
+- US
+langs:
+- en
+is_pii: true
+classification: identifier
+regexp: ^(?:\d{3}-?\d{2}-?\d{4}|\d{2}-?\d{7}|P-?\d{8})$
+examples:
+- value: 536-90-4399
+  description: SSN or ATIN, example from the python-stdnum documentation
+- value: 04-2103594
+  description: EIN, example from the python-stdnum documentation
+- value: P01594846
+  description: PTIN, example from the python-stdnum documentation
+- value: '00634642'
+  valid: false
+  description: 'Eight digits: a PTIN without the P (python-stdnum example)'
+mappings:
+  stdnum: us.tin
+links:
+- type: doc
+  url: https://www.irs.gov/individuals/international-taxpayers/taxpayer-identification-numbers-tin
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.us.tin.html

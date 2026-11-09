@@ -1,0 +1,25 @@
+id: bankcard_visa
+name: Visa card number
+status: draft
+doc: Primary account number of a Visa card. Visa numbers start with 4 and have 13, 16 or 19 digits; the
+  last digit is a Luhn check digit. The pattern accepts the number without spaces or hyphens.
+semantic_type: bankcard
+langs:
+- common
+regexp: ^4(?:[0-9]{12}|[0-9]{15}|[0-9]{18})$
+checksum: luhn
+examples:
+- value: '4242424242424242'
+  description: Stripe test card number
+- value: '4111111111111111'
+  description: Braintree test card number
+- value: '5555555555554444'
+  valid: false
+  description: Mastercard test number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Payment_card_number
+- type: doc
+  url: https://docs.stripe.com/testing
+- type: doc
+  url: https://developer.paypal.com/braintree/docs/reference/general/testing/node

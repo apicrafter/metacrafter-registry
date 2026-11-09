@@ -1,0 +1,24 @@
+id: ar_vehicle_plate
+name: Argentine vehicle registration plate
+status: draft
+doc: Registration number on Argentine vehicle plates. The Mercosur plates issued since April 2016 have
+  two letters, three digits and two letters (AB 123 CD); the plates of 1995 to 2016 have three letters
+  and three digits. The regexp accepts both, with or without spaces.
+categories:
+- transport
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:[A-Z]{2} ?[0-9]{3} ?[A-Z]{2}|[A-Z]{3} ?[0-9]{3})$
+examples:
+- value: AB 123 CD
+  description: Format example of the Mercosur plate from Wikipedia
+- value: AB 1234 CD
+  valid: false
+  description: Four digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Argentina

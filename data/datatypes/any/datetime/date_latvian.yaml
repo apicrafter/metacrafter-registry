@@ -1,0 +1,22 @@
+id: date_latvian
+name: Date with a Latvian month name
+status: draft
+doc: Calendar date written in Latvian with the month name, day, month and year in the order of the CLDR
+  long (y. 'gada' d. MMMM) and medium (y. 'gada' d. MMM) date formats of the lv locale. The month is the
+  CLDR wide or abbreviated name in the format context, written exactly as CLDR gives it, including any
+  dot or apostrophe; no extra capitalisation variants are accepted.
+semantic_type: date
+langs:
+- lv
+regexp: ^(?:\d{4}\. gada (?:0?[1-9]|[12]\d|3[01])\. (?:septembris|novembris|decembris|februāris|oktobris|janvāris|augusts|aprīlis|jūlijs|jūnijs|maijs|marts)|\d{4}\.
+  gada (?:0?[1-9]|[12]\d|3[01])\. (?:febr\.|maijs|marts|janv\.|sept\.|jūl\.|apr\.|jūn\.|dec\.|nov\.|okt\.|aug\.))$
+examples:
+- value: 2024. gada 3. oktobris
+  description: 3 October 2024, CLDR long format y. 'gada' d. MMMM
+- value: 2024. gada 25. dec.
+  description: 25 December 2024, CLDR medium format y. 'gada' d. MMM
+- value: oktobris 2024
+  valid: false
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/lv/ca-gregorian.json

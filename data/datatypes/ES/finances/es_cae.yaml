@@ -1,0 +1,33 @@
+id: es_cae
+name: Spanish excise establishment code (CAE)
+status: draft
+doc: 'Código de Actividad y Establecimiento (CAE), which the Spanish Tax Agency assigns to an establishment
+  where an activity involving goods subject to excise duty takes place. It has 13 characters: ES, three
+  zeros, two digits for the managing office, two characters for the activity (for example V1 for wine
+  producers), three digits and a letter.'
+categories:
+- finances
+- companies
+country:
+- ES
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^ES000(?:0[1-9]|[1-4]\d|5[0-6])[0-9A-Z]{2}\d{3}[A-Z]$
+examples:
+- value: ES00008V1488Q
+  description: Example from the python-stdnum documentation
+- value: 00008V1488
+  valid: false
+  description: Country code and last letter missing (python-stdnum example)
+mappings:
+  stdnum: es.cae
+links:
+- type: doc
+  url: https://www.boe.es/boe/dias/2006/12/28/pdfs/A46098-46100.pdf
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.es.cae.html
+translations:
+  es:
+    name: Código de Actividad y Establecimiento (CAE)

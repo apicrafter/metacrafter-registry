@@ -17,6 +17,7 @@ mappings:
   sherlock: birth Date
   dpv: pd:BirthDate
   schema_org: birthDate
+  misp: date-of-birth
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Birthday

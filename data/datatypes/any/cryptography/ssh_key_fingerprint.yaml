@@ -21,6 +21,8 @@ examples:
 - value: AE:C4:60:61:F4:58:FC:B5:6E:20:4A:11:79:DE:BB:CF:23:7F:1C:53
   valid: false
   description: SHA-1 fingerprint of an X.509 certificate (20 octets)
+mappings:
+  misp: ssh-fingerprint
 links:
 - type: doc
   url: https://man.openbsd.org/ssh-keygen

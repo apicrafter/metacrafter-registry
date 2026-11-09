@@ -1,7 +1,8 @@
 id: am_postal_code
 name: Armenian Postal Code
 status: stable
-doc: Armenian postal code used for mail delivery and addressing
+doc: 'Postal code in Armenia used for mail delivery and addressing: four digits, as in 0010. Google''s
+  address metadata also accepts the four digits preceded by 37, as in 375010.'
 categories:
 - geo
 country:
@@ -10,18 +11,27 @@ langs:
 - hy
 is_pii: true
 classification: identifier
-regexp: ^\d{4}$
+regexp: ^(?:37)?\d{4}$
 examples:
 - value: '0001'
   description: Example Armenian postal code (Yerevan)
 - value: '3101'
   description: Example Armenian postal code
+- value: '0010'
+  description: Google address metadata example
+- value: '375010'
+  description: With the prefix 37 (Google address metadata example)
+- value: '00010'
+  valid: false
+  description: five digits
 mappings:
   dpv: pd:PostalCode
   schema_org: postalCode
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Postal_codes_in_Armenia
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/AM
 translations:
   hy:
     name: Փոստային ինդեքս

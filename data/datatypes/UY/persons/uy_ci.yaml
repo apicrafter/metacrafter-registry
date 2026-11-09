@@ -1,0 +1,29 @@
+id: uy_ci
+name: Uruguayan identity card number (cédula de identidad)
+status: draft
+doc: Number of the Uruguayan identity document (cédula de identidad). It has up to eight digits, the last
+  of which is a check digit, and is often written with dots and a hyphen before the check digit, as in
+  1.234.500-8. The regexp accepts seven or eight digits with or without the separators.
+categories:
+- pii
+- persons
+country:
+- UY
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^(?:[1-9]\.?)?[0-9]{3}\.?[0-9]{3}-?[0-9]$
+examples:
+- value: 1.234.500-8
+  description: Example from the Cloudflare DLP documentation
+- value: 1.234.500
+  valid: false
+  description: Check digit missing
+mappings:
+  dpv: pd:OfficialID
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Identity_Document_(Uruguay)
+- type: doc
+  url: https://developers.cloudflare.com/cloudflare-one/data-loss-prevention/detection-entries/predefined-detection-entries/

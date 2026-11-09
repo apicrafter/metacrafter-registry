@@ -13,8 +13,15 @@ is_pii: false
 classification: identifier
 regexp: ^(?:\d{2}\.\d{3}\.\d{3}\.\d-\d{3}\.\d{3}|\d{15}|\d{16})$
 examples:
-- value: 12.345.678.9-012.345
-  description: Example Indonesian NPWP
+- value: 01.312.166.0-091.000
+  description: python-stdnum example, older 15-digit form
+- value: 016090524017000
+  description: python-stdnum example
+- value: 0013025846092000
+  description: Wikidata P8346 example, 16-digit form
+- value: 01.312.166.0-091
+  valid: false
+  description: branch code missing
 mappings:
   orgid: ID-DJP
   wikidata: P8346
@@ -22,3 +29,5 @@ mappings:
 links:
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P8346
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.id.npwp.html

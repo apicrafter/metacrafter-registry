@@ -1,0 +1,20 @@
+id: ee_phone
+name: Estonia phone number (E.164)
+status: draft
+doc: 'Phone number of Estonia in international E.164 form: a plus sign, the country calling code +372
+  and the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- EE
+langs:
+- common
+regexp: ^\+372(?:8\d{9}|[4578]\d{7}|(?:[3-8]\d|90)\d{5})$
+examples:
+- value: '+3723212345'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+37251234567'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

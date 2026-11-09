@@ -31,6 +31,7 @@ examples:
   description: Negative number
 mappings:
   wikidata: P1641
+  misp: port
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Port_(computer_networking)

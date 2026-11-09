@@ -1,8 +1,9 @@
 id: icd10cm
 name: ICD-10-CM code
 status: draft
-doc: 'Diagnosis code in ICD-10-CM, the US clinical modification of ICD-10: a letter, two digits and up
-  to four more characters after a dot. The CDC National Center for Health Statistics maintains it.'
+doc: 'Diagnosis code in ICD-10-CM, the US clinical modification of ICD-10: a letter, a digit, a digit
+  or the letter A or B (as in C4A, Merkel cell carcinoma), and up to four more letters or digits after
+  a dot. The CDC National Center for Health Statistics maintains it.'
 parent: icd10
 categories:
 - medical
@@ -12,12 +13,17 @@ langs:
 - en
 is_pii: false
 classification: categorical
-regexp: ^[A-Z]\d{2}(?:\.[A-Z\d]{1,4})?$
+regexp: ^[A-Z]\d[\dAB](?:\.[A-Z\d]{1,4})?$
 examples:
 - value: G47.52
   description: REM sleep behavior disorder
 - value: G71.2
   description: congenital merosin-deficient muscular dystrophy 1A
+- value: C4A.8
+  description: Merkel cell carcinoma of overlapping sites
+- value: G47-52
+  valid: false
+  description: Hyphen instead of the dot
 mappings:
   wikidata: P4229
   bioregistry: icd10cm

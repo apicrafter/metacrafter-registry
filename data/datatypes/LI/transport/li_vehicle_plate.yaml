@@ -1,0 +1,22 @@
+id: li_vehicle_plate
+name: Liechtenstein vehicle registration plate
+status: draft
+doc: 'Registration number on Liechtenstein vehicle plates: FL, the small coat of arms and up to five digits.'
+categories:
+- transport
+country:
+- LI
+langs:
+- de
+is_pii: false
+classification: identifier
+regexp: ^FL ?[0-9]{1,5}$
+examples:
+- value: FL 12345
+  description: Format example from Wikipedia
+- value: FL 123456
+  valid: false
+  description: Six digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Liechtenstein

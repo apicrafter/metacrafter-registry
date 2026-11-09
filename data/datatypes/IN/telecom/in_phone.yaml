@@ -1,0 +1,20 @@
+id: in_phone
+name: India phone number (E.164)
+status: draft
+doc: 'Phone number of India in international E.164 form: a plus sign, the country calling code +91 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- IN
+langs:
+- common
+regexp: ^\+91(?:(?:000800|[2-9]\d\d)\d{7}|1\d{7,12})$
+examples:
+- value: '+917410410123'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+918123456789'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

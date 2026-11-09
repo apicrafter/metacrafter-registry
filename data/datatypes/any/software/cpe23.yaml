@@ -29,6 +29,8 @@ examples:
 - value: cpe:2.3:a:apache:log4j:2.14.1
   valid: false
   description: Attributes after version are missing
+mappings:
+  misp: cpe
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Common_Platform_Enumeration

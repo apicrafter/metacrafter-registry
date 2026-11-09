@@ -17,3 +17,4 @@ mappings:
   dpv: pd:Nationality
   schema_org: nationality
   presidio: NRP
+  misp: nationality

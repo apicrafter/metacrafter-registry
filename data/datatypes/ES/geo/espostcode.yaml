@@ -1,24 +1,33 @@
 id: espostcode
-name: Spanish postal code (by language)
+name: Spanish postal code
 status: draft
-doc: Spanish postal code (by language)
+doc: 'Postal code (código postal) in Spain: five digits. The first two digits, 01 to 52, identify one
+  of the 50 provinces or the autonomous cities of Ceuta and Melilla. Mexican postal codes are a separate
+  type, mx_postcode.'
 semantic_type: postindex
 categories:
 - geo
 country:
 - ES
-- MX
 langs:
 - es
-regexp: ^\d{5}$
+regexp: ^(?:0[1-9]|[1-4]\d|5[0-2])\d{3}$
 examples:
 - value: '07002'
   description: Palma, Majorca
 - value: '27722'
   description: Veigas, Asturias
+- value: '28039'
+- value: '53000'
+  valid: false
+  description: no province 53 (python-stdnum example)
 mappings:
   fta: POSTAL_CODE.POSTAL_CODE_ES
   stdnum: es.postal_code
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Postal_codes_in_Spain
+- type: doc
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.es.postal_code.html
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/ES

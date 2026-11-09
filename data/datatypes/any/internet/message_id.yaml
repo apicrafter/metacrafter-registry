@@ -25,6 +25,8 @@ examples:
 - value: <1234@local.machine.example> <3456@example.net>
   valid: false
   description: Two identifiers, as in a References header
+mappings:
+  misp: email-message-id
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Message-ID

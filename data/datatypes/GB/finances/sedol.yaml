@@ -1,8 +1,10 @@
 id: sedol
 name: SEDOL identifier
 status: stable
-doc: SEDOL stands for Stock Exchange Daily Official List, a list of security identifiers used in the United
-  Kingdom and Ireland for clearing purposes.
+doc: 'SEDOL (Stock Exchange Daily Official List) number, a security identifier assigned by the London
+  Stock Exchange and used in the United Kingdom and Ireland for clearing. It has seven characters: six
+  digits or letters other than vowels, then a check digit. Older numbers are all digits; newer ones start
+  with a letter.'
 categories:
 - finances
 country:
@@ -12,10 +14,18 @@ langs:
 - common
 is_pii: false
 classification: identifier
-regexp: ^[0-9.]{7}$
+regexp: ^(?:\d{7}|[B-DF-HJ-NP-TV-Z][0-9B-DF-HJ-NP-TV-Z]{5}\d)$
 examples:
 - value: 0263494
   description: BAE Systems
+- value: B15KXQ8
+  description: python-stdnum example
+- value: A15KXQ8
+  valid: false
+  description: vowels are not used
+- value: B15KXQ
+  valid: false
+  description: six characters
 mappings:
   autotype: SEDOL
   fibo: SEC/Securities/SecuritiesIdentificationIndividuals/StockExchangeDailyOfficialListCode
@@ -24,3 +34,5 @@ mappings:
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SEDOL
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.gb.sedol.html

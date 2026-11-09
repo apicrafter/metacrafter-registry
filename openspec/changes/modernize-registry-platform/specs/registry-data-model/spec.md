@@ -85,7 +85,7 @@ When a record has a `regexp`, these rules apply:
 - **THEN** validation fails
 
 ### Requirement: Typed mappings to external vocabularies
-A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm`, `fta`, `autotype`, `gs1_ai`, `orgid`, `qddate`, `bioregistry`, `stdnum` and `fhir`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
+A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`, `presidio`, `google_dlp`, `purview`, `d3m`, `sherlock`, `cdm`, `fta`, `autotype`, `gs1_ai`, `orgid`, `qddate`, `bioregistry`, `stdnum`, `fhir` and `misp`. Each key SHALL hold a single identifier or a list of identifiers in that system's native format.
 
 `mappings.wikidata` SHALL match `^[PQ]\d+$`.
 
@@ -178,6 +178,16 @@ A record MAY declare `mappings` with these keys: `wikidata`, `schema_org`, `dpv`
 #### Scenario: FHIR system without a scheme
 - **WHEN** a record has `mappings: {fhir: "hl7.org/fhir/sid/us-ssn"}`
 - **THEN** validation fails with a schema error on `mappings.fhir`
+
+`mappings.misp` SHALL hold MISP attribute type names as the MISP core format and `describeTypes.json` write them (`vulnerability`, `mac-address`, `sha512/256`, `AS`) of the attribute types whose values are the record's datatype. A record SHALL NOT map a directional type (`ip-src`, `ip-dst`, `email-src`, `email-dst`) unless the record itself is directional. `crosswalk("misp", ...)` SHALL accept a type name in any case and the `misp:type="..."` label that misp-stix writes on exported STIX objects.
+
+#### Scenario: MISP type with an underscore
+- **WHEN** a record has `mappings: {misp: "mac_address"}`
+- **THEN** validation fails with a schema error on `mappings.misp`; the record must write `mac-address`
+
+#### Scenario: Crosswalk from a misp-stix label
+- **WHEN** a client calls `crosswalk("misp", 'misp:type="vulnerability"')`
+- **THEN** it gets the records that map `vulnerability`, among them `cve_id`
 
 ### Requirement: Pattern inheritance
 A pattern SHALL reference an existing datatype through `semantic_type`.

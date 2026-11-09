@@ -12,6 +12,8 @@ classification: identifier
 examples:
 - value: 1640566d1555156az3b26kz1fez5
   description: Virus total file Twain_32.dll
+mappings:
+  misp: vhash
 links:
 - type: other
   url: https://developers.virustotal.com/reference/files

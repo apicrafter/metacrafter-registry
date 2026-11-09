@@ -1,0 +1,25 @@
+id: bankcard_amex
+name: American Express card number
+status: draft
+doc: 'Primary account number of an American Express card: 15 digits that start with 34 or 37, the last
+  of them a Luhn check digit. The pattern accepts the number without spaces or hyphens.'
+semantic_type: bankcard
+langs:
+- common
+regexp: ^3[47][0-9]{13}$
+checksum: luhn
+examples:
+- value: '378282246310005'
+  description: Stripe and Braintree test card number
+- value: '371449635398431'
+  description: Stripe and Braintree test card number
+- value: '36227206271667'
+  valid: false
+  description: Diners Club test number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Payment_card_number
+- type: doc
+  url: https://docs.stripe.com/testing
+- type: doc
+  url: https://developer.paypal.com/braintree/docs/reference/general/testing/node

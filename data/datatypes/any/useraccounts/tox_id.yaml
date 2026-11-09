@@ -1,0 +1,19 @@
+id: tox_id
+name: Tox ID
+status: draft
+doc: 'Address of a user of the Tox peer-to-peer messenger: the 32-byte long-term public key, a 4-byte
+  nospam value and a 2-byte XOR checksum, 38 bytes in all, written in hexadecimal as 76 characters.'
+categories:
+- useraccounts
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[0-9A-Fa-f]{76}$
+examples:
+- value: A4C123B1612DD272D1371C17149D439536B3216FDAEEB975729FAE923D5A4FD12AABFE228F2
+  valid: false
+  description: 75 hexadecimal characters
+links:
+- type: doc
+  url: https://toktok.ltd/spec.html

@@ -36,6 +36,7 @@ examples:
   description: Unencoded space
 mappings:
   fhir: urn:ietf:rfc:3986
+  misp: uri
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier

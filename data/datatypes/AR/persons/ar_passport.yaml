@@ -1,0 +1,20 @@
+id: ar_passport
+name: Argentine passport number
+status: draft
+doc: 'Number of an Argentine passport, printed in the booklet: three letters and six digits. A new passport
+  gets a new number.'
+semantic_type: passport
+country:
+- AR
+langs:
+- es
+regexp: ^[A-Z]{3}[0-9]{6}$
+examples:
+- value: AB123456
+  valid: false
+  description: Two letters
+links:
+- type: doc
+  url: https://www.argentina.gob.ar/pasaporte
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Argentine_passport

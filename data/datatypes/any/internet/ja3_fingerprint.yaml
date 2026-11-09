@@ -25,6 +25,8 @@ examples:
 - value: 769,47-53-5-10-49161-49162-49171-49172-50-56-19-4,0-10-11,23-24-25,0
   valid: false
   description: The JA3 string before hashing
+mappings:
+  misp: ja3-fingerprint-md5
 links:
 - type: doc
   url: https://github.com/salesforce/ja3

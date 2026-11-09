@@ -1,0 +1,32 @@
+id: lk_nic
+name: Sri Lankan national identity card number (NIC)
+status: draft
+doc: 'Number of the Sri Lankan national identity card. Cards issued before 1 January 2016 have nine digits
+  and a letter: the two-digit birth year, the day of the year of birth (500 is added for women), a three-digit
+  serial number, a check digit and V or X, which tells whether the holder may vote. Newer cards have twelve
+  digits: the four-digit birth year, the day of the year (plus 500 for women), a four-digit serial number
+  and a check digit. The check digit algorithm is not published.'
+categories:
+- pii
+- persons
+country:
+- LK
+langs:
+- si
+- ta
+is_pii: true
+classification: identifier
+regexp: ^(?:[0-9]{2}(?:[0-3][0-9]{2}|[5-8][0-9]{2})[0-9]{4}[VvXx]|(?:19|20)[0-9]{2}(?:[0-3][0-9]{2}|[5-8][0-9]{2})[0-9]{5})$
+examples:
+- value: 911042754V
+  description: Old format, from the format description in Wikipedia
+- value: '197419202757'
+  description: New format, example from Wikipedia
+- value: 91104275V
+  valid: false
+  description: Old format with eight digits
+mappings:
+  dpv: pd:OfficialID
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_identity_card_(Sri_Lanka)

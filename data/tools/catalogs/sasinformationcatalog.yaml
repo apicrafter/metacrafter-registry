@@ -1,0 +1,62 @@
+id: sasinformationcatalog
+name: SAS Information Catalog (Quality Knowledge Base)
+category: catalogs
+doc: 'SAS Information Catalog, part of SAS Viya, assigns semantic types to columns of the tables and files
+  it discovers, using the SAS Quality Knowledge Base (QKB). The QKB Field Content identification analysis
+  looks at the values of a column and returns an identity: global identities such as email, URL, IBAN,
+  payment card number, network address and geographical point, language identities for person names and
+  organizations, and locale identities such as phone, postal code, address, city and the government identifiers
+  of each locale. Column name analysis is a lighter alternative. The supported types list the identities
+  that the QKB documentation describes for all locales, plus the government identifiers, bank account,
+  organization and vehicle registration identities that the Field Content pages of QKB 33 list for the
+  Danish, German, Canadian English, British, US, Belgian Dutch, Norwegian and Swedish locales.'
+website: https://support.sas.com/documentation/onlinedoc/qkb/32/QKBCI32/Help/Content/qkb-generaldoc/qkb-iddef.html
+supported_types:
+- address
+- bankcard
+- be_eid
+- be_vehicle_plate
+- benatcardid
+- cadriverlic
+- capassport
+- casin
+- city
+- country
+- countrycode_alpha3
+- currency
+- date
+- datetime
+- depersonalausweis
+- dk_vehicle_plate
+- dkcprnum
+- email
+- gb_county
+- gb_vehicle_plate
+- geopoint
+- iban
+- ipaddr
+- ipv4
+- ipv6
+- latitude
+- longitude
+- mac_address
+- month
+- no_fodselsnummer
+- no_kontonr
+- no_orgnr
+- no_vehicle_plate
+- orgname
+- person_firstname
+- person_fullname
+- person_surname
+- phone
+- postindex
+- province
+- se_vehicle_plate
+- sepersonnummer
+- state
+- street_address
+- ukdriverlic
+- uknino
+- url
+- usssn

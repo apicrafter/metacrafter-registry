@@ -1,0 +1,16 @@
+id: libpostal
+name: libpostal
+category: other
+doc: Open-source C library for parsing and normalizing street addresses, trained on OpenStreetMap and
+  OpenAddresses data and usable in many countries and languages. The parser splits an address string into
+  labeled components such as house, house number, road, unit, level, po box, suburb, city, state district,
+  state, postcode, country region and country. Bindings exist for most higher-level languages. The supported
+  types cover only registry datatypes that match a documented type.
+website: https://github.com/openvenues/libpostal
+supported_types:
+- address
+- city
+- country
+- postindex
+- state
+- street

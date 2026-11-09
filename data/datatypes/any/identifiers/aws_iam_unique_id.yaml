@@ -1,0 +1,26 @@
+id: aws_iam_unique_id
+name: AWS IAM unique identifier
+status: draft
+doc: 'Unique ID that IAM assigns to a user, user group, role, policy, instance profile, certificate or
+  public key. A four-letter prefix gives the resource type: AIDA (user), AGPA (user group), AROA (role),
+  ANPA (managed policy), ANVA (policy version), AIPA (instance profile), ASCA (certificate), APKA (public
+  key), ABIA (STS bearer token) and ACCA (context-specific credential). The documented examples have 17
+  more uppercase letters and digits. Access key IDs (AKIA, ASIA) are the datatype aws_access_key_id.'
+categories:
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:ABIA|ACCA|AGPA|AIDA|AIPA|ANPA|ANVA|APKA|AROA|ASCA)[A-Z0-9]{17}$
+examples:
+- value: AIDAJQABLZS4A3QDU576Q
+  description: Unique ID of a user from the AWS documentation
+- value: AROADBQP57FF2AEXAMPLE
+  description: Unique ID of a role from the AWS documentation
+- value: AKIAIOSFODNN7EXAMPLE
+  valid: false
+  description: Access key ID, a different datatype
+links:
+- type: doc
+  url: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html

@@ -1,0 +1,20 @@
+id: to_phone
+name: Tonga phone number (E.164)
+status: draft
+doc: 'Phone number of Tonga in international E.164 form: a plus sign, the country calling code +676 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- TO
+langs:
+- common
+regexp: ^\+676(?:(?:0800|(?:[5-8]\d\d|999)\d)\d{3}|[2-8]\d{4})$
+examples:
+- value: '+67620123'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+6767715123'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

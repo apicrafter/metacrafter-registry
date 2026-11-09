@@ -1,7 +1,10 @@
 id: idnik
 name: Indonesian NIK
 status: stable
-doc: Indonesian NIK (Nomor Induk Kependudukan) - national identification number
+doc: 'Nomor Induk Kependudukan (NIK), the population identification number of Indonesia: 16 digits. The
+  first six identify the province, city or regency and district of residence when the number was issued,
+  the next six the date of birth as DDMMYY (40 is added to the day for women), and the last four make
+  the number unique.'
 categories:
 - pii
 - persons
@@ -13,9 +16,15 @@ is_pii: true
 classification: identifier
 regexp: ^[0-9]{16}$
 examples:
-- value: '1234567890123456'
-  description: Example Indonesian NIK
+- value: '3171011708450001'
+  description: python-stdnum example
+- value: '31710117084500'
+  valid: false
+  description: 14 digits (python-stdnum example)
 mappings:
   purview: Indonesia identity card (KTP) number
   dpv: pd:OfficialID
   stdnum: id.nik
+links:
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.id.nik.html

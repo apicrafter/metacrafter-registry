@@ -1,0 +1,20 @@
+id: mw_phone
+name: Malawi phone number (E.164)
+status: draft
+doc: 'Phone number of Malawi in international E.164 form: a plus sign, the country calling code +265 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- MW
+langs:
+- common
+regexp: ^\+265(?:(?:[1289]\d|31|77)\d{7}|1\d{6})$
+examples:
+- value: '+2651234567'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+265991234567'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

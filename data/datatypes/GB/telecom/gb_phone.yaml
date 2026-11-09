@@ -1,0 +1,21 @@
+id: gb_phone
+name: United Kingdom phone number (E.164)
+status: draft
+doc: 'Phone number of United Kingdom in international E.164 form: a plus sign, the country calling code
+  +44 and the national number, with no spaces. The regexp follows the national number pattern of Google
+  libphonenumber. National formats with a trunk prefix and numbers written with spaces or hyphens are
+  not covered.'
+semantic_type: phone
+country:
+- GB
+langs:
+- common
+regexp: ^\+44(?:[1-357-9]\d{9}|[18]\d{8}|8\d{6})$
+examples:
+- value: '+441212345678'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+447400123456'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

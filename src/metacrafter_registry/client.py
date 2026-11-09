@@ -210,6 +210,20 @@ def _stdnum_module(value: str) -> str:
     return value.removeprefix("stdnum.").casefold()
 
 
+def _misp_type(value: str) -> str:
+    """The MISP attribute type of a type name in any case or a MISP STIX label.
+
+    ``IP-SRC`` gives ``ip-src``; ``misp:type="vulnerability"``, the label that
+    misp-stix writes on exported objects, gives ``vulnerability``. ``as`` gives
+    ``AS``, the only MISP type written in upper case.
+    """
+    value = str(value).strip()
+    if value.casefold().startswith("misp:type="):
+        value = value.split("=", 1)[1].strip().strip("\"'")
+    value = value.casefold()
+    return "AS" if value == "as" else value
+
+
 def _cache_dir() -> Path:
     base = os.environ.get("XDG_CACHE_HOME") or Path.home() / ".cache"
     return Path(base) / "metacrafter-registry"
@@ -700,7 +714,9 @@ class Registry:
         CURIE (CHEBI:15377);
         for stdnum, a python-stdnum module (br.cpf, stdnum.br.cpf, br/cpf) or its
         documentation URL;
-        for fhir, an HL7 FHIR identifier system URI (http://hl7.org/fhir/sid/us-ssn).
+        for fhir, an HL7 FHIR identifier system URI (http://hl7.org/fhir/sid/us-ssn);
+        for misp, a MISP attribute type (vulnerability, mac-address) in any case or the
+        misp:type="..." label of a misp-stix export.
         """
         if system == "fta":
             return self._crosswalk_fta(str(external_id).strip())
@@ -739,6 +755,8 @@ class Registry:
             wanted = _bioregistry_prefix(wanted)
         if system == "stdnum":
             wanted = _stdnum_module(wanted)
+        if system == "misp":
+            wanted = _misp_type(wanted)
         out = []
         for record in self.datatypes.values():
             value = record.get("mappings", {}).get(system)

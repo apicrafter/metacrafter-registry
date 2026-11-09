@@ -1,0 +1,22 @@
+id: frictionless
+name: Frictionless Table Schema
+category: other
+doc: Open specification from the Frictionless Data project for describing tabular data in JSON. A schema
+  lists fields, each with a type and an optional format; the specification defines string formats for
+  email addresses, URIs, UUIDs and base64 binary data, plus date and time types, years, year-months, durations,
+  geographic points and GeoJSON. Implementations such as frictionless-py use the declared type to validate
+  and cast values. It describes columns, it does not detect types. The supported types cover only registry
+  datatypes that match a documented type.
+website: https://specs.frictionlessdata.io/table-schema/
+supported_types:
+- date
+- datetime
+- duration
+- email
+- geojson
+- geopoint
+- time
+- uri
+- uuid
+- year
+- yearmonth

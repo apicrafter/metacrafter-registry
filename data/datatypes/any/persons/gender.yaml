@@ -20,3 +20,4 @@ mappings:
   - sex
   dpv: pd:Gender
   schema_org: gender
+  misp: gender

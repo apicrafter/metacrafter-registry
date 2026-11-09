@@ -30,6 +30,8 @@ examples:
     -----END PGP SIGNATURE-----'
   valid: false
   description: OpenPGP signature of RFC 9580, appendix A.2
+mappings:
+  misp: pgp-public-key
 links:
 - type: doc
   url: https://www.rfc-editor.org/rfc/rfc9580#section-6.2

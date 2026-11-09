@@ -1,0 +1,16 @@
+id: sapcds
+name: SAP CDS semantic annotations (@Semantics)
+category: other
+doc: 'SAP CDS models carry @Semantics annotations that tag an element as holding a particular kind of
+  value. The CSN Interop specification, which exchanges SAP data models between systems, defines the set
+  that is portable: currency code, unit of measure, language code, time of day, UUID and MIME type, plus
+  calendar and fiscal period markers and amounts or quantities that point to a currency or unit element.
+  The supported types cover only registry datatypes that match a documented type of the tool.'
+website: https://sap.github.io/csn-interop-specification/annotations/semantics
+supported_types:
+- currency
+- language
+- mimetype
+- time
+- unit_of_measure
+- uuid

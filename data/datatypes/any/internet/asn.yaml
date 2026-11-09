@@ -32,6 +32,7 @@ examples:
   description: Larger than a 32-bit number
 mappings:
   wikidata: P3797
+  misp: AS
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Autonomous_system_(Internet)

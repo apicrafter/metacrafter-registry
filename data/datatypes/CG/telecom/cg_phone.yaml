@@ -1,0 +1,21 @@
+id: cg_phone
+name: Republic of the Congo phone number (E.164)
+status: draft
+doc: 'Phone number of Republic of the Congo in international E.164 form: a plus sign, the country calling
+  code +242 and the national number, with no spaces. The regexp follows the national number pattern of
+  Google libphonenumber. National formats with a trunk prefix and numbers written with spaces or hyphens
+  are not covered.'
+semantic_type: phone
+country:
+- CG
+langs:
+- common
+regexp: ^\+242(?:222\d{6}|(?:0\d|80)\d{7})$
+examples:
+- value: '+242222123456'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+242061234567'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

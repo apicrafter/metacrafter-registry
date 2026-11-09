@@ -8,3 +8,5 @@ langs:
 - en
 is_pii: false
 classification: identifier
+mappings:
+  misp: git-commit-id

@@ -28,6 +28,8 @@ examples:
 - value: FETCH
   valid: false
   description: Not a registered method
+mappings:
+  misp: http-method
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/HTTP#Request_methods

@@ -41,6 +41,7 @@ mappings:
   cdm: is.dataFormat.guid
   presidio: UUID
   fta: GUID
+  misp: uuid
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Universally_unique_identifier

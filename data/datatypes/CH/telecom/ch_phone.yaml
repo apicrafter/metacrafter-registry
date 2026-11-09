@@ -1,0 +1,20 @@
+id: ch_phone
+name: Switzerland phone number (E.164)
+status: draft
+doc: 'Phone number of Switzerland in international E.164 form: a plus sign, the country calling code +41
+  and the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- CH
+langs:
+- common
+regexp: ^\+41(?:8\d{11}|[2-9]\d{8})$
+examples:
+- value: '+41212345678'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+41781234567'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

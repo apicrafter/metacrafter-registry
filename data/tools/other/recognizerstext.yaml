@@ -1,0 +1,22 @@
+id: recognizerstext
+name: Microsoft Recognizers-Text
+category: other
+doc: Open-source (MIT) library from Microsoft that recognizes and resolves entities in text across many
+  languages, with packages for .NET, JavaScript, Python and Java. It powers the prebuilt entities of LUIS
+  and the Bot Framework. Entities are numbers, ordinals, percentages, number ranges, units (age, currency,
+  dimension, temperature), date and time, boolean choices, and sequences such as email, phone number,
+  IP address, URL, GUID, hashtag and mention. The supported types cover only registry datatypes that match
+  a documented type.
+website: https://github.com/microsoft/Recognizers-Text
+supported_types:
+- email
+- hashtag
+- ipaddr
+- ipv4
+- ipv6
+- money
+- percentage
+- phone
+- temperature
+- url
+- uuid

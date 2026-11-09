@@ -22,6 +22,7 @@ examples:
   description: Leading zero
 mappings:
   wikidata: P3624
+  misp: weakness
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Common_Weakness_Enumeration

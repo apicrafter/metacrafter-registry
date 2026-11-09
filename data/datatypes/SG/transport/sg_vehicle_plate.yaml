@@ -1,0 +1,23 @@
+id: sg_vehicle_plate
+name: Singapore private vehicle registration plate
+status: draft
+doc: 'Registration number of a private vehicle in Singapore: S, two series letters, a number from 1 to
+  9999 without leading zeros and a checksum letter. I and O are not used in the series, the middle letter
+  of the three-letter prefix is never A, E or U, and F, I, N, O, Q, V and W are never checksum letters.
+  The regexp does not verify the checksum. Other vehicle classes and government plates are not covered.'
+categories:
+- transport
+country:
+- SG
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^S[B-DF-HJ-NP-TV-Z][A-HJ-NP-Z] ?[1-9][0-9]{0,3} ?[A-EGHJ-MPRSTUX-Z]$
+examples:
+- value: SAB 1234 A
+  valid: false
+  description: Middle letter A is not used
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Singapore

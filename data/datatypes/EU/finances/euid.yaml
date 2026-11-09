@@ -1,11 +1,11 @@
 id: euid
 name: European Unique Identifier (EUID)
 status: stable
-doc: EU datatype for 'European Unique Identifier (EUID)' (euid) from rules in context 'finances'. The
-  European Unique Identifier (EUID) is a unique identifier format used within the European Union. It consists
-  of a 2-letter uppercase country code (ISO 3166-1 alpha-2) followed by 4 to 18 alphanumeric characters
-  (letters and/or digits), resulting in a total length of 6 to 20 characters. This identifier format is
-  commonly used for financial and business identification purposes across EU member states.
+doc: Identifier of a company or branch in the Business Registers Interconnection System (BRIS) of the
+  EU and EEA. It joins a code of the Member State and of its domestic business register, a dot, and the
+  company number in that register, for example CYDRCOR.HE139104 for a company in the Cyprus register of
+  companies. The format of the registration number after the dot depends on the register. Implementing
+  Regulation (EU) 2021/1042 defines its elements.
 categories:
 - finances
 country:
@@ -14,18 +14,36 @@ langs:
 - en
 is_pii: false
 classification: identifier
-regexp: ^[A-Z]{2}[0-9A-Z]{4,18}$
+regexp: ^(?:ATBRA\.\d{6}-[01]{3}|BEKBOBCE\.[01]\d{3}\.\d{3}\.\d{3}|BGCOMREG\.\d{9}|CYDRCOR\.(?:AE|HE)\d{1,10}|CZVROR\.\d{8}|DE[A-Z][1-9]\d{3}[RV]?(?:_[A-Z][1-9]\d{3}[RV]?)?\.(?:G[ns]R|HR[AB]|[PV]R)\d+[A-Z]*|DKCVR\.\d{8}|EEARIREG\.\d{8}|ELGEMI\.\d{12}|ES[0-5]\d{4}\.\d{9}|FIFPRO\.\d{7}-\d|FR\d{4}\.\d{9}|HRSR\.\d{9}|HUOCCSZ\.\d{2}-\d{2}-\d{6}|IECRO\.\d{6,7}|ISREI\.[4-7]\d[01]\d{3}-\d{3}[09]|ITRI\.\d{11}|LIFL\.FL-\d{4}\.\d{3}\.\d{3}-\d|LTJAR\.\d{9}|LURCSL\.B\d{1,6}|LVUR\.(?:\d{9}|\d{11})|MTROC\.C\d{1,6}|NLNHR\.\d{8}|NOFOR\.\d{9}|PLKRS\.\d{10}|PTIRNMJ\.\d{9}|ROONRC\.[CFJ](?:\d{1,2}/\d{1,6}/\d{4}|\d{13})|SEBOLREG\.\d{10}|SIPRS\.\d{7}0{3}|SKORSR\.\d{1,18})$
 examples:
+- value: CYDRCOR.HE139104
+  description: Company in the Cyprus register of companies (Wikidata P13790 example)
+- value: DKCVR.11845118
+  description: Company in the Danish CVR register (Wikidata P13790 example)
+- value: DEX1517R.HRB395KI
+  description: Company in the commercial register (HRB) of a German local court (Wikidata P13790 example)
+- value: MTROC.C22796
+  description: Company in the Malta Business Registry (Wikidata P13790 example)
+- value: ELGEMI.077700527000
+  description: Company in the Greek GEMI register (Wikidata P13790 example)
+- value: BEKBOBCE.1014.559.919
+  description: Enterprise in the Belgian Crossroads Bank for Enterprises (Wikidata P13790 example)
+- value: CYDRCORHE139104
+  valid: false
+  description: Dot between the register code and the company number missing
 - value: FR1234567890
-  description: EUID with French country code (FR) and 10 alphanumeric characters
-- value: DEABCD1234
-  description: EUID with German country code (DE) and 10 alphanumeric characters
-- value: IT1234
-  description: EUID with Italian country code (IT) and 4 alphanumeric characters (minimum length)
-- value: ES123456789012345678
-  description: EUID with Spanish country code (ES) and 18 alphanumeric characters (maximum length)
+  valid: false
+  description: Country code and digits only, without a register code and a dot
 mappings:
+  wikidata: P13790
   bioregistry: euid
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P13790
+- type: doc
+  url: https://eur-lex.europa.eu/eli/reg_impl/2021/1042/oj
+- type: doc
+  url: https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-registers-search-company-eu_en
 translations:
   en:
     name: European Unique Identifier

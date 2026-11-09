@@ -1,0 +1,20 @@
+id: tr_phone
+name: Turkey phone number (E.164)
+status: draft
+doc: 'Phone number of Turkey in international E.164 form: a plus sign, the country calling code +90 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- TR
+langs:
+- common
+regexp: ^\+90(?:4\d{6}|8\d{11,12}|(?:[2-58]\d\d|900)\d{7})$
+examples:
+- value: '+902123456789'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+905012345678'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

@@ -293,3 +293,49 @@ Base, DE Basisprofil, Nictiz, NZ Base).
   расходятся с stdnum.
 - `checksums._compact` удаляет дефисы, поэтому `bech32` не проверяет
   секретный ключ age (`AGE-SECRET-KEY-...`).
+
+## Что сделано (2026-11-09)
+
+Пункты из разделов «Не сделано» и «Найденные ошибки»:
+
+- Телефоны: 190 паттернов `<cc>_phone` в форме E.164 по метаданным
+  libphonenumber и инструмент `libphonenumber`
+  (см. `devdocs/TOOLS_TYPES_GAP_2026-11.md`, раздел 2.5).
+- Даты CLDR: 24 паттерна `date_<язык>` с названиями месяцев из CLDR.
+- Ключ `misp`:
+  - схема, crosswalk (без учёта регистра, понимает метку misp-stix
+    `misp:type="..."`), страница записи, справка MCP, требование в
+    OpenSpec, README, навыки, тесты `tests/test_misp.py`;
+  - 69 записей с маппингом: хеши, сетевые типы, CVE, CWE, CPE, GHSA, OSV,
+    JA3, IBAN, BIC, адреса BTC и XMR, атрибуты человека, HTTP cookie;
+  - направленные типы MISP (`ip-src`, `ip-dst`) не используются.
+- Модули stdnum: `dz.nif`, `gn.nifp`, `mz.nuit`, `tn.mf`, `in_.vid` к этому
+  времени уже были в реестре, `sm.coe` добавлен как `sm_coe`. Новые записи:
+  `eu_excise_number`, `eu_oss_number`, `fr_excise_number`, `es_cae`,
+  `us_tin`. Модули-алгоритмы (`luhn`, `damm`, `verhoeff`, `iso7064`) и
+  `gs1_128` записей не получили.
+- Исправленные записи:
+  - `euid`: регулярка Wikidata P13790, пример `CYDRCOR.HE139104` проходит;
+  - `icd10cm`: третий символ может быть A или B (`C4A.8`);
+  - почтовые индексы `gbpostcode`, `plpostcode`, `krpostcode`, `sapostcode`,
+    `thpostcode`, `trpostcode`, `vnpostcode`, `egpostcode`,
+    `am_postal_code`, `frpostcode`, `espostcode`: регулярки по адресным
+    метаданным Google. У `espostcode` страна сужена до ES, для MX есть
+    `mx_postcode`. У `aepostcode` убраны пример `00000` и регулярка: Google
+    не задаёт индексов для ОАЭ;
+  - примеры, которые отвергал stdnum: `cabn` (и `checksum: luhn`), `cagst`,
+    `caprogramacct`, `idnik`, `idnpwp`, `ke_kra_pin`, `me_pib`,
+    `handelsregisternr`. У `cacharity` убран маппинг `stdnum: ca.bn`, потому
+    что stdnum не знает программного кода RR;
+  - регулярки по stdnum: `abaroutingnum`, `cusip` (номера CINS), `sedol`,
+    `sepersonnummer`, IBAN Египта, ОАЭ, Саудовской Аравии, Турции и Польши;
+  - `bech32` теперь сохраняет дефисы в human-readable part, и в Python, и в
+    `identify-core.js`. `age_secret_key` получил `checksum: bech32`.
+
+Осталось:
+- `supported_types` для BigID, Informatica и Ataccama: вендоры не публикуют
+  списки встроенных типов.
+- Пять примеров, формат которых stdnum не поддерживает: `be_ogm_vcs` со
+  звёздочками, `mac_address` в точечной записи Cisco, `handelsregisternr`
+  без названия суда.
+- `vniban`: Вьетнама нет в реестре IBAN, запись стоит пересмотреть.

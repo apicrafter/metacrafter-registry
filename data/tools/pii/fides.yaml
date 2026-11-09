@@ -1,0 +1,34 @@
+id: fides
+name: Fides (Fideslang)
+category: pii
+doc: Fides is an open source privacy engineering platform from Ethyca. Its Fideslang language describes
+  personal data with a hierarchical taxonomy of data categories, such as user.contact.email or user.government_id.passport_number,
+  which teams attach to dataset fields to build data maps and to answer privacy requests. Fideslang is
+  now maintained by IAB Tech Lab. Only leaf categories that denote one kind of value are mapped; broad
+  branches such as user.contact or user.financial are not. The supported types cover only registry datatypes
+  that match a documented type of the tool.
+website: https://ethyca.github.io/fideslang/
+supported_types:
+- bankaccount
+- bankcard
+- birthday
+- city
+- country
+- driver_license
+- email
+- gender
+- ipaddr
+- jobtitle
+- language
+- marital_status
+- passport
+- password
+- person_firstname
+- person_surname
+- phone
+- postindex
+- religion
+- state
+- street
+- url
+- username

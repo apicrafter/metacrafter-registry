@@ -1,0 +1,22 @@
+id: nano_address
+name: Nano address
+status: draft
+doc: 'Account address of the Nano cryptocurrency: nano_ (previously xrb_), 52 characters that encode the
+  account public key and 8 characters of a Blake2b checksum, in a Base32 alphabet without ambiguous characters.
+  The regexp is the one in the Nano integration guide.'
+categories:
+- cryptocurrency
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:nano|xrb)_[13][13456789abcdefghijkmnopqrstuwxyz]{59}$
+examples:
+- value: nano_1anrzcuwe64rwxzcco8dkhpyxpi8kd7zsjc1oeimpc3ppca4mrjtwnqposrs
+  description: Example address from the Nano integration guide
+- value: nano_2anrzcuwe64rwxzcco8dkhpyxpi8kd7zsjc1oeimpc3ppca4mrjtwnqposrs
+  valid: false
+  description: First character after the prefix is not 1 or 3
+links:
+- type: doc
+  url: https://docs.nano.org/integration-guides/the-basics/

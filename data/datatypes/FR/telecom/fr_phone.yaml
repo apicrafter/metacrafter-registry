@@ -1,0 +1,20 @@
+id: fr_phone
+name: France phone number (E.164)
+status: draft
+doc: 'Phone number of France in international E.164 form: a plus sign, the country calling code +33 and
+  the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- FR
+langs:
+- common
+regexp: ^\+33(?:[1-9]\d{8})$
+examples:
+- value: '+33123456789'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+33612345678'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

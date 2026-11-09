@@ -1,9 +1,10 @@
 id: ke_kra_pin
 name: Kenyan KRA PIN
 status: draft
-doc: Personal Identification Number (PIN) that the Kenya Revenue Authority gives to taxpayers, including
-  companies and other organisations. ORG-ID.guide lists the register as KE-KRA; with that prefix an identifier
-  reads KE-KRA-P00000000150Q.
+doc: 'Personal Identification Number (PIN) that the Kenya Revenue Authority gives to taxpayers, including
+  companies and other organisations. It has 11 characters: A for individuals or P for non-individuals,
+  nine digits and a letter. ORG-ID.guide lists the register as KE-KRA; with that prefix an identifier
+  reads KE-KRA-P051365947M.'
 categories:
 - finances
 - companies
@@ -14,11 +15,15 @@ langs:
 - sw
 is_pii: true
 classification: identifier
+regexp: ^[AP]\d{9}[A-Z]$
 examples:
-- value: P00000000150Q
-  description: example from ORG-ID.guide
 - value: P051365947M
-  description: example from ORG-ID.guide
+  description: example from ORG-ID.guide and python-stdnum
+- value: A004416331M
+  description: python-stdnum example (individual)
+- value: V1234567890
+  valid: false
+  description: first letter is neither A nor P (python-stdnum example)
 mappings:
   orgid: KE-KRA
   schema_org: taxID
@@ -28,3 +33,5 @@ links:
   url: https://www.kra.go.ke/individual/individual-pin-registration/learn-about-pin/about-pin
 - type: other
   url: https://org-id.guide/list/KE-KRA
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.ke.pin.html

@@ -23,6 +23,8 @@ examples:
 - value: GHSA-jfh8-c2jp-5v3a
   valid: false
   description: The letter a is not in the alphabet
+mappings:
+  misp: vulnerability
 links:
 - type: doc
   url: https://docs.github.com/en/code-security/security-advisories/working-with-global-security-advisories-from-the-github-advisory-database/about-the-github-advisory-database

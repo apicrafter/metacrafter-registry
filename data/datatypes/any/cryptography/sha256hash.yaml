@@ -28,6 +28,7 @@ mappings:
   autotype: sha256
   fta: HASH.SHA256_HEX
   schema_org: sha256
+  misp: sha256
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SHA-2

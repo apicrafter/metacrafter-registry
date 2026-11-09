@@ -1,0 +1,20 @@
+id: visions
+name: visions and ydata-profiling
+category: detector
+doc: visions is a Python library for semantic type detection and inference on tabular data. It organizes
+  types, such as URL, Path, File, Image, UUID, IPAddress, email address, Geometry, Date and DateTime,
+  in typesets and tests which type fits a series. ydata-profiling (formerly pandas-profiling) uses it
+  to infer column types for its data profile reports. The types are Python-level kinds of values, many
+  are broader than registry datatypes. The supported types cover only registry datatypes that match a
+  documented type.
+website: https://github.com/dylan-profiler/visions
+supported_types:
+- date
+- datetime
+- duration
+- email
+- filepath
+- ipaddr
+- time
+- url
+- uuid

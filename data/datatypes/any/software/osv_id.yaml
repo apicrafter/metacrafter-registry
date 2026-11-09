@@ -28,6 +28,8 @@ examples:
 - value: FOO-2021-0001
   valid: false
   description: FOO is not a defined database prefix
+mappings:
+  misp: vulnerability
 links:
 - type: doc
   url: https://ossf.github.io/osv-schema/

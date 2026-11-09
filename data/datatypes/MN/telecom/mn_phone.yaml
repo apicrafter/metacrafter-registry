@@ -1,0 +1,20 @@
+id: mn_phone
+name: Mongolia phone number (E.164)
+status: draft
+doc: 'Phone number of Mongolia in international E.164 form: a plus sign, the country calling code +976
+  and the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- MN
+langs:
+- common
+regexp: ^\+976(?:[12]\d{7,9}|[5-9]\d{7})$
+examples:
+- value: '+97653123456'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+97688123456'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

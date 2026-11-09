@@ -1,7 +1,8 @@
 id: aepostcode
 name: UAE Postal Code
 status: draft
-doc: UAE postal code
+doc: Postal code field of addresses in the United Arab Emirates. The UAE have no national postal code
+  system, and Google's address metadata defines no postal code for AE.
 semantic_type: postindex
 categories:
 - geo
@@ -12,10 +13,9 @@ langs:
 - en
 is_pii: false
 classification: identifier
-regexp: ^[0-9]{5,6}$
-examples:
-- value: '00000'
-  description: Example UAE postal code
 mappings:
   dpv: pd:PostalCode
   schema_org: postalCode
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/AE

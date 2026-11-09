@@ -1,0 +1,25 @@
+id: bankcard_jcb
+name: JCB card number
+status: draft
+doc: 'Primary account number of a JCB card: 16 to 19 digits that start with 3528 to 3589, the last of
+  them a Luhn check digit. The pattern accepts the number without spaces or hyphens.'
+semantic_type: bankcard
+langs:
+- common
+regexp: ^35(?:2[89]|[3-8][0-9])[0-9]{12,15}$
+checksum: luhn
+examples:
+- value: '3566002020360505'
+  description: Stripe test card number
+- value: '3530111333300000'
+  description: Braintree test card number
+- value: '3056930009020004'
+  valid: false
+  description: Diners Club test number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Payment_card_number
+- type: doc
+  url: https://docs.stripe.com/testing
+- type: doc
+  url: https://developer.paypal.com/braintree/docs/reference/general/testing/node

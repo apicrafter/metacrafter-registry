@@ -120,7 +120,8 @@ def create_server(registry: Registry):
         """Registry records mapped to an id in another vocabulary.
 
         system: wikidata, fibo, schema_org, dpv, presidio, google_dlp, purview, d3m,
-        sherlock, sato, cdm, fta, autotype, gs1_ai, orgid, qddate, bioregistry, stdnum or fhir.
+        sherlock, sato, cdm, fta, autotype, gs1_ai, orgid, qddate, bioregistry, stdnum, fhir
+        or misp.
         For wikidata, a property
         id (P968) or its URL. For fibo, a FIBO class IRI, e.g. https://spec.edmcouncil.org/fibo/ontology/FBC/
         ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier,
@@ -145,6 +146,8 @@ def create_server(registry: Registry):
         CURIE (CHEBI:15377). For stdnum, a python-stdnum module (br.cpf or
         stdnum.br.cpf). For fhir, an HL7 FHIR identifier system URI
         (http://hl7.org/fhir/sid/us-ssn).
+        For misp, a MISP attribute type (vulnerability, mac-address) or the
+        misp:type="..." label of a misp-stix export.
         """
         return [_summary(registry, r) for r in registry.crosswalk(system, external_id)]
 

@@ -1,7 +1,8 @@
 id: cacharity
 name: Charity registration number
 status: stable
-doc: CA datatype for 'Charity registration number' (cacharity) from rules in context 'finances'.
+doc: 'Registration number of a registered charity in Canada: the nine-digit Business Number, the program
+  identifier RR and a four-digit reference number.'
 categories:
 - finances
 country:
@@ -12,10 +13,10 @@ is_pii: false
 classification: identifier
 regexp: ^[0-9]{9}RR[0-9]{4}$
 examples:
-- value: 123456789RR0001
-  description: Charity registration number with 9-digit BN, 'RR' program identifier and 4-digit reference
-- value: 987654321RR0002
-  description: Another valid charity registration number format
+- value: 123026635RR0001
+  description: 'Synthetic: the python-stdnum example BN with the RR program identifier (registered charity)'
+- value: 123026635RR000
+  valid: false
+  description: three-digit reference number
 mappings:
   fibo: FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/RegisteredCharityProgramNumber
-  stdnum: ca.bn

@@ -72,8 +72,9 @@ Example:
   `gs1_ai`, `orgid` (ORG-ID.guide list codes, such as `GB-COH`), `qddate`
   (qddate date pattern keys, such as `dt:date:date_2`), `bioregistry`
   (Bioregistry prefixes or CURIEs, such as `chebi` or `CHEBI:15377`), `stdnum`
-  (python-stdnum modules, such as `br.cpf`) and `fhir` (HL7 FHIR identifier
-  system URIs, such as `http://hl7.org/fhir/sid/us-ssn`).
+  (python-stdnum modules, such as `br.cpf`), `fhir` (HL7 FHIR identifier
+  system URIs, such as `http://hl7.org/fhir/sid/us-ssn`) and `misp` (MISP
+  attribute types, such as `vulnerability` or `ip-src`).
   Coverage outside Wikidata is still small. For `fibo`, pass a FIBO class IRI,
   for example
   `https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/InternationalBankAccountIdentifier`;

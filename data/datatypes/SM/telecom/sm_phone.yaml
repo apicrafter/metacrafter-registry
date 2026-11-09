@@ -1,0 +1,20 @@
+id: sm_phone
+name: San Marino phone number (E.164)
+status: draft
+doc: 'Phone number of San Marino in international E.164 form: a plus sign, the country calling code +378
+  and the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- SM
+langs:
+- common
+regexp: ^\+378(?:(?:0549|[5-7]\d)\d{6})$
+examples:
+- value: '+3780549886377'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+37866661212'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

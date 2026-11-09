@@ -1,0 +1,48 @@
+id: privateai
+name: Private AI (Limina)
+category: pii
+doc: Commercial PII, PHI and PCI detection and redaction service from Private AI (now Limina), offered
+  as an API and a container. It finds entities in free text, documents and images with machine learning
+  models, in many languages, and groups them by regulation such as GDPR, CPRA and HIPAA. Entity labels
+  include contact data, names, locations, dates, identifiers, health information and payment card data;
+  some labels, like SSN, also cover national equivalents of the named identifier. The supported types
+  cover only registry datatypes that match a documented type.
+website: https://docs.private-ai.com/entities/supported-entity-types
+supported_types:
+- aadhaar
+- address
+- age
+- bankaccount
+- bankcard
+- bankcard_cvv
+- bankcard_expiry
+- birthday
+- city
+- country
+- date
+- driver_license
+- duration
+- email
+- filename
+- gender
+- geopoint
+- ipaddr
+- jobtitle
+- language
+- marital_status
+- medical_condition
+- nationality
+- passport
+- password
+- person_firstname
+- person_fullname
+- person_surname
+- phone
+- postindex
+- race_ethnicity
+- religion
+- state
+- time
+- url
+- username
+- usssn

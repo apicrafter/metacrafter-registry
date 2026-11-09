@@ -1,0 +1,20 @@
+id: py_phone
+name: Paraguay phone number (E.164)
+status: draft
+doc: 'Phone number of Paraguay in international E.164 form: a plus sign, the country calling code +595
+  and the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- PY
+langs:
+- common
+regexp: ^\+595(?:[36-8]\d{5,8}|4\d{6,8}|59\d{6}|9\d{5,10}|(?:2\d|5[0-8])\d{6,7})$
+examples:
+- value: '+595212345678'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+595961456789'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

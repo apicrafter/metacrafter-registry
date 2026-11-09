@@ -24,6 +24,7 @@ examples:
   description: witness version 0 address (p2wshaddr)
 mappings:
   presidio: CRYPTO
+  misp: btc
 links:
 - type: doc
   url: https://github.com/bitcoin/bips/blob/master/bip-0350.mediawiki

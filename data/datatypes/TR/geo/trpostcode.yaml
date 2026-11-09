@@ -1,7 +1,7 @@
 id: trpostcode
-name: Turkish postal code by field name
+name: Turkish postal code
 status: stable
-doc: Turkish postal code by field name identifier
+doc: 'Postal code (posta kodu) in Turkey: five digits.'
 semantic_type: postindex
 categories:
 - geo
@@ -11,7 +11,16 @@ langs:
 - tr
 is_pii: false
 classification: identifier
-regexp: ^[0-9]{4,10}$
+regexp: ^\d{5}$
+examples:
+- value: 01960
+- value: '06101'
+- value: 0196
+  valid: false
+  description: too short
 mappings:
   dpv: pd:PostalCode
   schema_org: postalCode
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/TR

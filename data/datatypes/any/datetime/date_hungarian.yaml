@@ -1,0 +1,23 @@
+id: date_hungarian
+name: Date with a Hungarian month name
+status: draft
+doc: Calendar date written in Hungarian with the month name, day, month and year in the order of the CLDR
+  long (y. MMMM d.) and medium (y. MMM d.) date formats of the hu locale. The month is the CLDR wide or
+  abbreviated name in the format context, written exactly as CLDR gives it, including any dot or apostrophe;
+  no extra capitalisation variants are accepted.
+semantic_type: date
+langs:
+- hu
+regexp: ^(?:\d{4}\. (?:szeptember|augusztus|december|november|február|március|április|október|január|július|június|május)
+  (?:0?[1-9]|[12]\d|3[01])\.|\d{4}\. (?:szept\.|febr\.|márc\.|máj\.|jan\.|dec\.|nov\.|jún\.|okt\.|ápr\.|aug\.|júl\.)
+  (?:0?[1-9]|[12]\d|3[01])\.)$
+examples:
+- value: 2024. október 3.
+  description: 3 October 2024, CLDR long format y. MMMM d.
+- value: 2024. dec. 25.
+  description: 25 December 2024, CLDR medium format y. MMM d.
+- value: október 2024
+  valid: false
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/hu/ca-gregorian.json

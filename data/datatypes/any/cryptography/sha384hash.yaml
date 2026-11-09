@@ -20,6 +20,8 @@ examples:
 - value: 38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95
   valid: false
   description: one hex digit short (95 instead of 96)
+mappings:
+  misp: sha384
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/SHA-2

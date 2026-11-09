@@ -1,7 +1,7 @@
 id: plpostcode
-name: Polish postal code by field name
+name: Polish postal code
 status: stable
-doc: Polish postal code by field name identifier
+doc: 'Postal code (kod pocztowy) in Poland: two digits, a hyphen and three digits, as in 00-950.'
 semantic_type: postindex
 categories:
 - geo
@@ -11,8 +11,21 @@ langs:
 - pl
 is_pii: false
 classification: identifier
-regexp: ^[0-9]{4,10}$
+regexp: ^\d{2}-\d{3}$
+examples:
+- value: 00-950
+- value: 05-470
+- value: 48-300
+- value: 32-015
+- value: 00950
+  valid: false
+  description: without the hyphen
 mappings:
   fta: POSTAL_CODE.POSTAL_CODE_PL
   dpv: pd:PostalCode
   schema_org: postalCode
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postal_codes_in_Poland
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/PL

@@ -1,7 +1,8 @@
 id: vnpostcode
-name: Vietnamese postal code by field name
+name: Vietnamese postal code
 status: stable
-doc: Vietnamese postal code by field name identifier
+doc: 'Postal code in Vietnam: five digits in the current system. Google''s address metadata also accepts
+  six digits, and GeoNames lists the older six-digit format.'
 semantic_type: postindex
 categories:
 - geo
@@ -11,7 +12,16 @@ langs:
 - vi
 is_pii: false
 classification: identifier
-regexp: ^[0-9]{4,10}$
+regexp: ^\d{5,6}$
+examples:
+- value: '70010'
+- value: '55999'
+- value: '7001'
+  valid: false
+  description: too short
 mappings:
   dpv: pd:PostalCode
   schema_org: postalCode
+links:
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/VN

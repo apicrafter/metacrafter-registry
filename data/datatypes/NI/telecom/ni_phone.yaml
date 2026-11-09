@@ -1,0 +1,20 @@
+id: ni_phone
+name: Nicaragua phone number (E.164)
+status: draft
+doc: 'Phone number of Nicaragua in international E.164 form: a plus sign, the country calling code +505
+  and the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- NI
+langs:
+- common
+regexp: ^\+505(?:(?:1800|[25-8]\d{3})\d{4})$
+examples:
+- value: '+50521234567'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+50581234567'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

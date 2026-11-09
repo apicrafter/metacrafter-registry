@@ -2,7 +2,9 @@ id: sepersonnummer
 name: Sweden personal identity number (personnummer)
 status: stable
 doc: 'The personal identity number (Swedish: personnummer) is the Swedish national identification number.
-  It is a ten digit number that is widely used in Sweden to identify individuals.'
+  It has ten digits, the date of birth as YYMMDD, a three-digit serial number and a check digit, usually
+  written with a hyphen (a plus sign for people aged 100 or more) before the last four digits. The 12-digit
+  form adds the century.'
 categories:
 - pii
 - persons
@@ -12,7 +14,18 @@ langs:
 - sv
 is_pii: true
 classification: identifier
-regexp: ^[0-9]{2,4}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])[-+][0-9]{4}$
+regexp: ^(?:\d{2})?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[-+]?\d{4}$
+examples:
+- value: 880320-0016
+  description: python-stdnum example
+- value: '8803200016'
+  description: python-stdnum example without the hyphen
+- value: 880332-0016
+  valid: false
+  description: day 32
+- value: 88032-0016
+  valid: false
+  description: five-digit date
 mappings:
   google_dlp: SWEDEN_NATIONAL_ID_NUMBER
   presidio: SE_PERSONNUMMER
@@ -29,3 +42,5 @@ mappings:
 links:
 - type: other
   url: https://en.wikipedia.org/wiki/Personal_identity_number_(Sweden)
+- type: other
+  url: https://arthurdejong.org/python-stdnum/doc/2.2/stdnum.se.personnummer.html

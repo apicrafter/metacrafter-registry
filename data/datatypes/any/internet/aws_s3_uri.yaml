@@ -1,0 +1,27 @@
+id: aws_s3_uri
+name: Amazon S3 URI
+status: draft
+doc: Location of an Amazon S3 bucket, prefix or object written as s3://bucket/key, as the AWS CLI and
+  many tools accept it. The regexp checks the general purpose bucket naming rules for the length (3 to
+  63 characters) and the characters (lowercase letters, digits, periods and hyphens, starting and ending
+  with a letter or digit); it does not check the reserved prefixes and suffixes.
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^s3://[a-z0-9][a-z0-9.-]{1,61}[a-z0-9](?:/\S*)?$
+examples:
+- value: s3://amzn-s3-demo-bucket
+  description: Bucket name from the AWS documentation
+- value: s3://amzn-s3-demo-bucket/Development/
+  description: Prefix in the example bucket
+- value: s3://AmznS3DemoBucket
+  valid: false
+  description: Uppercase letters, not allowed in bucket names
+links:
+- type: doc
+  url: https://docs.aws.amazon.com/cli/latest/reference/s3/
+- type: doc
+  url: https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html

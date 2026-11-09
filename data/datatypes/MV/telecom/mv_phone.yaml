@@ -1,0 +1,20 @@
+id: mv_phone
+name: Maldives phone number (E.164)
+status: draft
+doc: 'Phone number of Maldives in international E.164 form: a plus sign, the country calling code +960
+  and the national number, with no spaces. The regexp follows the national number pattern of Google libphonenumber.
+  National formats with a trunk prefix and numbers written with spaces or hyphens are not covered.'
+semantic_type: phone
+country:
+- MV
+langs:
+- common
+regexp: ^\+960(?:(?:800|9[0-57-9]\d)\d{7}|[34679]\d{6})$
+examples:
+- value: '+9606701234'
+  description: Example number from Google libphonenumber (fixed line)
+- value: '+9607712345'
+  description: Example number from Google libphonenumber (mobile)
+links:
+- type: other
+  url: https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml

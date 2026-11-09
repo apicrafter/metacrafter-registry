@@ -1,0 +1,20 @@
+id: date_finnish
+name: Date with a Finnish month name
+status: draft
+doc: Calendar date written in Finnish with the month name, day, month and year in the order of the CLDR
+  long (d. MMMM y) date formats of the fi locale. The month is the CLDR wide or abbreviated name in the
+  format context, written exactly as CLDR gives it, including any dot or apostrophe; no extra capitalisation
+  variants are accepted. The CLDR medium format (d.M.y) is numeric, so it is not covered here.
+semantic_type: date
+langs:
+- fi
+regexp: ^(?:0?[1-9]|[12]\d|3[01])\. (?:maaliskuuta|marraskuuta|joulukuuta|helmikuuta|huhtikuuta|heinäkuuta|toukokuuta|tammikuuta|kesäkuuta|syyskuuta|lokakuuta|elokuuta)
+  \d{4}$
+examples:
+- value: 3. lokakuuta 2024
+  description: 3 October 2024, CLDR long format d. MMMM y
+- value: lokakuuta 2024
+  valid: false
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/fi/ca-gregorian.json

@@ -1,0 +1,23 @@
+id: tr_vehicle_plate
+name: Turkish vehicle registration plate
+status: draft
+doc: 'Registration number on Turkish vehicle plates: the code of the province of the holder''s residence
+  (01 to 81), one to three letters and two to five digits, with at most six letters and digits after the
+  code. The Turkish letters Ç, Ş, İ, Ö, Ü and Ğ and the Latin letters Q, W and X are not used.'
+categories:
+- transport
+country:
+- TR
+langs:
+- tr
+is_pii: false
+classification: identifier
+regexp: ^(?:0[1-9]|[1-7][0-9]|8[01]) ?(?:[A-PR-VYZ] ?[0-9]{4,5}|[A-PR-VYZ]{2} ?[0-9]{3,4}|[A-PR-VYZ]{3}
+  ?[0-9]{2,3})$
+examples:
+- value: 82 AB 123
+  valid: false
+  description: No province 82
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Turkey

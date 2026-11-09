@@ -1,7 +1,10 @@
 id: aeiban
 name: UAE IBAN
 status: stable
-doc: UAE IBAN (International Bank Account Number)
+doc: 'International Bank Account Number of a bank account in the United Arab Emirates. It has 23 characters:
+  the country code, two IBAN check digits and a three-digit bank code and a 16-digit account number, as
+  defined in the SWIFT IBAN registry.'
+parent: iban
 categories:
 - finances
 country:
@@ -11,13 +14,19 @@ langs:
 - en
 is_pii: false
 classification: identifier
-regexp: ^AE[0-9]{2}[A-Z0-9]{4}[0-9]{16,24}$
+regexp: ^AE\d{21}$
+checksum: iban_mod97
 examples:
-- value: AE123456789012345678901234
-  description: Example UAE IBAN
+- value: AE070331234567890123456
+  description: Example of the SWIFT IBAN registry
+- value: AE07033123456789012345
+  valid: false
+  description: One character short
 mappings:
   dpv: pd:BankAccount
   stdnum: iban
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/International_Bank_Account_Number
+- type: doc
+  url: https://www.swift.com/standards/data-standards/iban-international-bank-account-number
