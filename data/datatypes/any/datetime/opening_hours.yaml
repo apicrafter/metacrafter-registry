@@ -3,6 +3,8 @@ name: Opening hours
 status: draft
 doc: Days and hours when an organization, office or facility is open or receives visitors, for example
   weekdays from 8:00 to 17:00 with a lunch break. Usually free text; OpenStreetMap defines a formal syntax.
+  The hours of a single day are a time range (09:00-17:30).
+parent: timerange
 categories:
 - datetime
 langs:

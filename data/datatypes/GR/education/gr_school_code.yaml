@@ -1,0 +1,26 @@
+id: gr_school_code
+name: Greek school code
+status: draft
+doc: Code of a school unit of the Greek Ministry of Education (κωδικός σχολικής μονάδας), six or seven
+  digits.
+parent: id
+categories:
+- education
+country:
+- GR
+langs:
+- el
+is_pii: false
+classification: identifier
+regexp: ^\d{6,7}$
+examples:
+- value: '9000714'
+  description: School
+- value: '903010'
+  description: School
+- value: '90007140'
+  valid: false
+  description: Eight digits
+translations:
+  el:
+    name: Κωδικός σχολικής μονάδας

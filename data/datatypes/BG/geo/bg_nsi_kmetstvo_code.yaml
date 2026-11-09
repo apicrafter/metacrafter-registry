@@ -1,0 +1,26 @@
+id: bg_nsi_kmetstvo_code
+name: Bulgarian mayoralty code (NSI)
+status: draft
+doc: 'Code of a Bulgarian mayoralty (кметство) in the EKATTE classification: the municipality code, a
+  hyphen and two digits, as in VTR13-00.'
+parent: id
+categories:
+- geo
+country:
+- BG
+langs:
+- bg
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{3}\d{2}-\d{2}$
+examples:
+- value: GAB05-00
+  description: Mayoralty
+- value: PER51-00
+  description: Mayoralty
+- value: GAB05
+  valid: false
+  description: Municipality code
+translations:
+  bg:
+    name: Код на кметство

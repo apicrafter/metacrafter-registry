@@ -1,0 +1,29 @@
+id: tr_ikn
+name: Turkish public procurement registration number (İKN)
+status: draft
+doc: 'Registration number of a tender in the Turkish electronic public procurement platform EKAP (İhale
+  Kayıt Numarası): the year, a slash and a serial number, as in 2026/1947326.'
+parent: id
+categories:
+- government
+country:
+- TR
+langs:
+- tr
+is_pii: false
+classification: identifier
+regexp: ^\d{4}/\d{1,7}$
+examples:
+- value: 2026/1947326
+  description: Bursa tender
+- value: 2026/25
+  description: Bursa tender
+- value: '1947326'
+  valid: false
+  description: No year
+links:
+- type: doc
+  url: https://ekap.kik.gov.tr/
+translations:
+  tr:
+    name: İhale Kayıt Numarası

@@ -1,0 +1,26 @@
+id: lt_municipality_code
+name: Lithuanian municipality code
+status: draft
+doc: Two-digit code of one of the 60 Lithuanian municipalities (savivaldybės kodas) used by the State
+  Data Agency and the registers of the Centre of Registers.
+parent: category
+categories:
+- geo
+country:
+- LT
+langs:
+- lt
+is_pii: false
+classification: categorical
+regexp: ^\d{2}$
+examples:
+- value: '13'
+  description: Vilnius city
+- value: '19'
+  description: Kaunas city
+- value: '130'
+  valid: false
+  description: Three digits
+translations:
+  lt:
+    name: Savivaldybės kodas

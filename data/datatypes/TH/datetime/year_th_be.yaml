@@ -1,0 +1,25 @@
+id: year_th_be
+name: Year in the Thai Buddhist era
+status: draft
+doc: 'Year of the Thai solar calendar, counted in the Buddhist era (พ.ศ.): the Gregorian year plus 543,
+  as in 2561 for 2018. Thai licence and document numbers end with it.'
+semantic_type: year
+country:
+- TH
+langs:
+- th
+regexp: ^25\d{2}$
+examples:
+- value: '2561'
+  description: '2018'
+- value: '2563'
+  description: '2020'
+- value: '2018'
+  valid: false
+  description: Gregorian year
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Thai_solar_calendar
+translations:
+  th:
+    name: ปีพุทธศักราช

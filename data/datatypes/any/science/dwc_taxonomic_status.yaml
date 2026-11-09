@@ -1,0 +1,28 @@
+id: dwc_taxonomic_status
+name: Darwin Core taxonomic status
+status: draft
+doc: 'Status of a scientific name in a taxonomy (Darwin Core term taxonomicStatus): accepted, synonym
+  (with its homotypic, heterotypic and pro parte kinds), doubtful or misapplied. GBIF writes the values
+  of its vocabulary in upper case with underscores (ACCEPTED, HETEROTYPIC_SYNONYM).'
+parent: category
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:ACCEPTED|SYNONYM|DOUBTFUL|HETEROTYPIC_SYNONYM|HOMOTYPIC_SYNONYM|PROPARTE_SYNONYM|MISAPPLIED|accepted|synonym|doubtful|heterotypicSynonym|homotypicSynonym|proparteSynonym|misapplied|Accepted|Synonym|Doubtful)$
+examples:
+- value: ACCEPTED
+  description: GBIF occurrence
+- value: SYNONYM
+  description: GBIF occurrence
+- value: heterotypicSynonym
+  description: Darwin Core vocabulary
+- value: VALID
+  valid: false
+links:
+- type: doc
+  url: https://dwc.tdwg.org/terms/#dwc:taxonomicStatus
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Darwin_Core

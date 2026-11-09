@@ -1,0 +1,26 @@
+id: bg_nsi_obshtina_code
+name: Bulgarian municipality code (NSI)
+status: draft
+doc: 'Code of a Bulgarian municipality (община) in the EKATTE classification: the oblast code and two
+  digits, as in VTR13.'
+parent: category
+categories:
+- geo
+country:
+- BG
+langs:
+- bg
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{3}\d{2}$
+examples:
+- value: GAB05
+  description: Gabrovo
+- value: VTR13
+  description: Elena
+- value: VTR
+  valid: false
+  description: Oblast code
+translations:
+  bg:
+    name: Код на община

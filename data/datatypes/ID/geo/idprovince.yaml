@@ -2,7 +2,7 @@ id: idprovince
 name: Indonesian Province Name
 status: draft
 doc: Indonesian province name
-parent: admin_area_1
+parent: province
 categories:
 - geo
 country:

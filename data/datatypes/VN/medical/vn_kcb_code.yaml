@@ -1,0 +1,27 @@
+id: vn_kcb_code
+name: Vietnamese health insurance facility code
+status: draft
+doc: 'Five-digit code of a medical examination and treatment facility in the Vietnamese health insurance
+  system (mã cơ sở khám chữa bệnh, KCB): the two-digit province code and three digits, as in 31107 for
+  Hai Phong.'
+parent: id
+categories:
+- medical
+country:
+- VN
+langs:
+- vi
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '31107'
+  description: Hai Phong facility
+- value: '31030'
+  description: Hai Phong facility
+- value: '3110'
+  valid: false
+  description: Four digits
+translations:
+  vi:
+    name: Mã cơ sở khám chữa bệnh

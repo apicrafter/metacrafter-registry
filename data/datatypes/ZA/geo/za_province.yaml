@@ -3,7 +3,7 @@ name: South African province
 status: draft
 doc: Name of one of the nine provinces of South Africa, such as Gauteng, Western Cape or KwaZulu-Natal.
   The code is the pattern za_province_code.
-parent: admin_area_1
+parent: province
 categories:
 - geo
 - government

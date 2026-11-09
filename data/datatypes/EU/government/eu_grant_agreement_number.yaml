@@ -1,0 +1,27 @@
+id: eu_grant_agreement_number
+name: EU framework programme project number
+status: draft
+doc: Number of the grant agreement of a project funded by an EU framework programme, which CORDIS uses
+  as the project id (projectID). Horizon Europe numbers have nine digits and start with 101; earlier programmes
+  used six digits.
+parent: id
+categories:
+- government
+country:
+- EU
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{6,9}$
+examples:
+- value: '101069506'
+  description: Horizon Europe project
+- value: '101045989'
+  description: Horizon Europe project
+- value: '12345'
+  valid: false
+  description: Five digits
+links:
+- type: doc
+  url: https://cordis.europa.eu/

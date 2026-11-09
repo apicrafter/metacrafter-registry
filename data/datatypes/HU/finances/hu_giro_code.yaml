@@ -1,0 +1,27 @@
+id: hu_giro_code
+name: Hungarian bank branch routing code
+status: draft
+doc: 'Eight-digit routing code of a payment service provider''s branch in Hungary (pénzforgalmi jelzőszám):
+  three digits for the bank, four for the branch and a check digit. It is the first eight digits of a
+  Hungarian account number. The MNB publishes the routing table.'
+parent: id
+categories:
+- finances
+country:
+- HU
+langs:
+- hu
+is_pii: false
+classification: identifier
+regexp: ^\d{8}$
+examples:
+- value: '10002003'
+  description: MNB routing table
+- value: '10023002'
+  description: MNB routing table
+- value: '1000200'
+  valid: false
+  description: Seven digits
+translations:
+  hu:
+    name: Pénzforgalmi jelzőszám

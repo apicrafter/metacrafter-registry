@@ -2,7 +2,7 @@ id: thprovince
 name: Thai province by field name
 status: draft
 doc: Thai province by field name identifier
-parent: admin_area_1
+parent: province
 categories:
 - geo
 country:

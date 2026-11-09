@@ -1,0 +1,30 @@
+id: ro_lmi_code
+name: Romanian historic monument code (cod LMI)
+status: draft
+doc: 'Code of a monument in the Romanian List of Historic Monuments (Lista monumentelor istorice, LMI):
+  the county code, the group (I archaeology, II architecture, III public monuments, IV memorial sites),
+  the kind (m monument, a ensemble, s site), the value class (A national, B local) and a five-digit number,
+  with a two-digit suffix for a part of an ensemble, as in IS-II-m-A-03957.01.'
+parent: id
+categories:
+- government
+country:
+- RO
+langs:
+- ro
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{1,2}-(?:I|II|III|IV)-[ams]-[AB]-\d{5}(?:\.\d{2})?$
+examples:
+- value: IS-II-m-A-03957.01
+  description: Part of an ensemble in Iași
+- value: B-II-m-B-18332
+  description: Monument in Bucharest
+- value: AG-IV-m-B-13976
+  description: Memorial site in Argeș
+- value: IS-V-m-A-03957
+  valid: false
+  description: No group V
+translations:
+  ro:
+    name: Cod LMI

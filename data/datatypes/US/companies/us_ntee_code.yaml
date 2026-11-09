@@ -1,0 +1,30 @@
+id: us_ntee_code
+name: NTEE code of a US nonprofit
+status: draft
+doc: 'Code of the National Taxonomy of Exempt Entities (NTEE) that classifies a US tax-exempt organization
+  by its purpose: a major group letter (A arts, B education, E health, X religion ...), two digits for
+  the category and an optional letter or digit for a subcategory, as in B71Z or D200. The IRS Exempt Organizations
+  Business Master File gives it in NTEE_CD.'
+parent: category
+categories:
+- companies
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]\d{2}[A-Z0-9]?$
+examples:
+- value: B71Z
+  description: IRS EO BMF
+- value: J40
+  description: IRS EO BMF
+- value: D200
+  description: IRS EO BMF
+- value: 71Z
+  valid: false
+  description: No major group letter
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_Taxonomy_of_Exempt_Entities

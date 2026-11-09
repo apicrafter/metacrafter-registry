@@ -1,0 +1,26 @@
+id: cz_library_registration_number
+name: Czech library registration number
+status: draft
+doc: 'Registration number of a library in the register of the Czech Ministry of Culture (evidenční číslo
+  knihovny): up to four digits.'
+parent: id
+categories:
+- government
+country:
+- CZ
+langs:
+- cs
+is_pii: false
+classification: identifier
+regexp: ^\d{1,4}$
+examples:
+- value: '5539'
+  description: Library in the Liberec Region
+- value: '2187'
+  description: Library in the Liberec Region
+- value: '55390'
+  valid: false
+  description: Five digits
+translations:
+  cs:
+    name: Evidenční číslo knihovny

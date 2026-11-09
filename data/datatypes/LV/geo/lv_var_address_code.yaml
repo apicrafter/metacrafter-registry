@@ -1,0 +1,26 @@
+id: lv_var_address_code
+name: Latvian State Address Register code
+status: draft
+doc: Nine-digit code of an address object in the Latvian State Address Register (Valsts adrešu reģistrs,
+  VAR), starting with 1.
+parent: id
+categories:
+- geo
+country:
+- LV
+langs:
+- lv
+is_pii: false
+classification: identifier
+regexp: ^1\d{8}$
+examples:
+- value: '105617436'
+  description: Address of an institution
+- value: '101456850'
+  description: Address of an institution
+- value: '205617436'
+  valid: false
+  description: Does not start with 1
+translations:
+  lv:
+    name: Adrešu reģistra kods

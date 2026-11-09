@@ -85,7 +85,7 @@ supported_types:
 - okved
 - okogu
 - okeiname
-- okvalpha
+- iso4217curcode
 - okvname
 - okpd
 - bankaccount

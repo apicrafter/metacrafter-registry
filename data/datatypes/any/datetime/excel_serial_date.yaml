@@ -1,0 +1,19 @@
+id: excel_serial_date
+name: Date as an Excel serial number
+status: draft
+doc: Date written as the serial day number of spreadsheets, days since 30 December 1899, as in 36872 for
+  12 December 2000. Data exported from sheets without the date format keeps it.
+semantic_type: date
+langs:
+- common
+regexp: ^\d{5}$
+examples:
+- value: '36872'
+  description: 12 December 2000
+- value: '42367'
+  description: 29 December 2015
+- value: '2015-12-29'
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Spreadsheet

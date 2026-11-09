@@ -101,3 +101,111 @@ def test_testdata_types(records, dt, broader):
 @pytest.mark.parametrize("dt", ["fr_pdl", "pl_ade"])
 def test_personal_identifiers_are_pii(records, dt):
     assert records[dt]["is_pii"] is True
+
+
+@pytest.mark.parametrize(
+    "dt,broader",
+    [
+        ("opening_hours", "timerange"),
+        ("unixtime", "datetime"),
+        # A height label is right for an elevation (SMHI station height), and a province label
+        # for the first-level provinces of a country (metacrafter-rules #60).
+        ("elevation", "height"),
+        ("thprovince", "province"),
+        ("caprovince", "province"),
+        ("caprovincecode", "province"),
+        ("nl_province", "province"),
+        ("idprovince", "province"),
+        ("vnprovince", "province"),
+        ("krprovince", "province"),
+        ("za_province", "province"),
+        ("ec_province", "province"),
+        ("thprovince", "admin_area_1"),
+    ],
+)
+def test_links_162(records, dt, broader):
+    """Links found while scoring metacrafter-testdata (#162)."""
+    assert broader in generic(records, dt)
+
+
+def test_okvalpha_is_an_alias_of_iso4217curcode(records):
+    """The alphabetic OKV codes are the ISO 4217 codes (#162): okvalpha is an alias, so a
+    label okvalpha is right where ISO 4217 codes are expected."""
+    assert "okvalpha" not in records
+    assert "okvalpha" in records["iso4217curcode"]["aliases"]
+
+
+def test_eunuts_is_an_alias_of_nutsregion(records):
+    """eunuts and nutsregion were two records for the NUTS code (#162): eunuts is now an alias."""
+    assert "eunuts" not in records
+    assert "eunuts" in records["nutsregion"]["aliases"]
+
+
+@pytest.mark.parametrize(
+    "dt,broader",
+    [
+        # #161 open register and science files
+        ("us_ntee_code", "category"),
+        ("gleif_ra_code", "id"),
+        ("ru_cbr_regnum", "id"),
+        ("content_license", "category"),
+        ("gadm_gid", "id"),
+        ("dwc_taxonomic_status", "category"),
+        ("dwc_taxon_rank", "category"),
+        # #163 identifiers
+        ("gr_gemi", "id"),
+        ("nz_company_number", "id"),
+        ("eu_pic", "id"),
+        ("eu_grant_agreement_number", "id"),
+        ("tr_ikn", "id"),
+        ("ro_lmi_code", "id"),
+        ("lt_kvr_code", "id"),
+        ("cz_library_registration_number", "id"),
+        # #164 bank codes
+        ("hu_giro_code", "id"),
+        ("ua_mfo", "id"),
+        ("in_micr", "id"),
+        # #165 school and health facility codes
+        ("gr_school_code", "id"),
+        ("ro_siiir_code", "id"),
+        ("ro_sirues_code", "id"),
+        ("rs_jisp_id", "id"),
+        ("fi_oppilaitosnumero", "id"),
+        ("za_emis_number", "id"),
+        ("id_npsn", "id"),
+        ("ke_mfl_code", "id"),
+        ("hu_neak_code", "id"),
+        ("vn_kcb_code", "id"),
+        ("id_puskesmas_code", "id"),
+        # #166 administrative and address codes
+        ("bg_nsi_oblast_code", "category"),
+        ("bg_nsi_obshtina_code", "category"),
+        ("bg_nsi_kmetstvo_code", "id"),
+        ("hu_jaras_code", "id"),
+        ("ee_ehak", "category"),
+        ("se_lanskod", "category"),
+        ("lt_municipality_code", "category"),
+        ("eu_lau_code", "id"),
+        ("hdx_pcode", "id"),
+        ("admin_area_3", "location"),
+        ("cz_ruian_address_point", "id"),
+        ("lv_var_address_code", "id"),
+        ("ee_ads_adr_id", "id"),
+        # #167 classifications
+        ("kz_kpved", "category"),
+        ("lt_evrk", "eu_nace"),
+        ("se_ssyk", "isco08"),
+        ("ev_connector_type", "category"),
+        # #168
+        ("era_rinf_op_id", "id"),
+        ("excel_serial_date", "date"),
+        ("year_th_be", "year"),
+        ("ar_month", "month"),
+        ("libris_id", "url"),
+    ],
+)
+def test_testdata_types_161_168(records, dt, broader):
+    """Datatypes proposed from metacrafter-testdata (#161, #163-#168) exist with their generic link."""
+    assert dt in records
+    assert records[dt]["status"] == "draft"
+    assert broader in generic(records, dt)

@@ -1,0 +1,23 @@
+id: za_emis_number
+name: South African EMIS school number
+status: draft
+doc: Nine-digit number of a school in the Education Management Information System (EMIS) of South Africa's
+  provincial education departments.
+parent: id
+categories:
+- education
+country:
+- ZA
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{9}$
+examples:
+- value: '700400412'
+  description: Gauteng school
+- value: '700310045'
+  description: Gauteng school
+- value: '70040041'
+  valid: false
+  description: Eight digits

@@ -1,0 +1,26 @@
+id: ro_siiir_code
+name: Romanian SIIIR school code
+status: draft
+doc: Ten-digit code of a school or of its legal person in SIIIR, the Romanian education information system
+  (Sistemul Informatic Integrat al Învățământului din România); it starts with a zero for most counties.
+parent: id
+categories:
+- education
+country:
+- RO
+langs:
+- ro
+is_pii: false
+classification: identifier
+regexp: ^\d{10}$
+examples:
+- value: 0161102892
+  description: School unit
+- value: 0361106988
+  description: Legal person school
+- value: '161102892'
+  valid: false
+  description: Leading zero lost
+translations:
+  ro:
+    name: Cod SIIIR

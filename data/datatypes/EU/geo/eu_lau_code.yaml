@@ -1,0 +1,23 @@
+id: eu_lau_code
+name: Eurostat LAU code
+status: draft
+doc: 'Code of a local administrative unit (LAU) in the Eurostat correspondence tables and GISCO, with
+  the country code in front: the alpha-2 code, an underscore and the national code, as in RO_1017.'
+parent: id
+categories:
+- geo
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}_[0-9A-Z]{1,12}$
+examples:
+- value: RO_1017
+  description: Romanian commune (SIRUTA 1017)
+- value: RO_1213
+  description: Romanian commune
+- value: RO1017
+  valid: false
+  description: No underscore

@@ -1,0 +1,23 @@
+id: ee_ads_adr_id
+name: Estonian ADS address id
+status: draft
+doc: Identifier of an address (ADR_ID) in the Estonian Address Data System (aadressiandmete süsteem, ADS)
+  of the Land Board.
+parent: id
+categories:
+- geo
+country:
+- EE
+langs:
+- et
+is_pii: false
+classification: identifier
+regexp: ^\d{1,9}$
+examples:
+- value: '121731'
+  description: Address
+- value: '120275'
+  description: Address
+- value: ADR121731
+  valid: false
+  description: Prefix

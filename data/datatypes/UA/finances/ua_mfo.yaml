@@ -1,0 +1,26 @@
+id: ua_mfo
+name: Ukrainian bank MFO code
+status: draft
+doc: Six-digit bank code of the National Bank of Ukraine (код МФО), starting with 3. It is also digits
+  5 to 10 of a Ukrainian IBAN.
+parent: id
+categories:
+- finances
+country:
+- UA
+langs:
+- uk
+is_pii: false
+classification: identifier
+regexp: ^3\d{5}$
+examples:
+- value: '300119'
+  description: Licensed bank
+- value: '300335'
+  description: Licensed bank
+- value: '400119'
+  valid: false
+  description: Does not start with 3
+translations:
+  uk:
+    name: Код банку (МФО)

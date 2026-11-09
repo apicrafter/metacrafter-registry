@@ -3,7 +3,7 @@ name: Dutch province
 status: draft
 doc: Name of one of the 12 provinces (provincies) of the Netherlands, such as Noord-Holland, Utrecht or
   Fryslân, which is also written Friesland. Their codes are the pattern nl_province_code.
-parent: admin_area_1
+parent: province
 categories:
 - geo
 - government

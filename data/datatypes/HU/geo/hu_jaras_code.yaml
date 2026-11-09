@@ -1,0 +1,26 @@
+id: hu_jaras_code
+name: Hungarian district (járás) code
+status: draft
+doc: 'Code of a Hungarian district (járás) in the KSH gazetteer: three digits, a space and a check digit,
+  as in 085 0.'
+parent: id
+categories:
+- geo
+country:
+- HU
+langs:
+- hu
+is_pii: false
+classification: identifier
+regexp: ^\d{3} \d$
+examples:
+- value: 085 0
+  description: Székesfehérvár district
+- value: 164 0
+  description: Kunhegyes district
+- value: 0850
+  valid: false
+  description: No space
+translations:
+  hu:
+    name: Járás kódja

@@ -1,0 +1,29 @@
+id: nz_company_number
+name: New Zealand Companies Office number
+status: draft
+doc: Number that the New Zealand Companies Office gives a company, an incorporated society or a charitable
+  trust board in its registers. The Charities Register gives it as CompaniesOfficeNumber, with N/A or
+  - for charities that are not on a Companies Office register.
+parent: id
+categories:
+- companies
+country:
+- NZ
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{1,8}$
+examples:
+- value: '50166612'
+  description: Charities Register
+- value: '213565'
+  description: Charities Register
+- value: '8260780'
+  description: Charities Register
+- value: N/A
+  valid: false
+  description: Placeholder
+links:
+- type: doc
+  url: https://www.companiesoffice.govt.nz/
