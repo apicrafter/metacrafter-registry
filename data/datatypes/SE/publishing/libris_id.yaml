@@ -1,0 +1,26 @@
+id: libris_id
+name: LIBRIS record URI
+status: draft
+doc: 'URI of a record in LIBRIS, the Swedish union catalogue of the National Library of Sweden: http://libris.kb.se/bib/
+  or /resource/ and the record id.'
+parent: url
+categories:
+- publishing
+country:
+- SE
+langs:
+- sv
+is_pii: false
+classification: identifier
+regexp: ^https?://libris\.kb\.se/(?:bib|resource)/[0-9a-z]+$
+examples:
+- value: http://libris.kb.se/bib/tcltrxl5r1tz1ltx
+  description: Norstedts book
+- value: http://libris.kb.se/bib/3n56xv4b1822z6vr
+  description: Norstedts book
+- value: https://libris.kb.se/
+  valid: false
+  description: Catalogue home page
+links:
+- type: doc
+  url: https://libris.kb.se/

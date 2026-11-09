@@ -1,0 +1,23 @@
+id: rs_jisp_id
+name: Serbian JISP institution id
+status: draft
+doc: 'Identifier of an educational institution in the Serbian unified education information system (Jedinstveni
+  informacioni sistem prosvete, JISP): up to five digits.'
+parent: id
+categories:
+- education
+country:
+- RS
+langs:
+- sr
+is_pii: false
+classification: identifier
+regexp: ^\d{1,5}$
+examples:
+- value: '3950'
+  description: School
+- value: '795'
+  description: School
+- value: '395000'
+  valid: false
+  description: Six digits

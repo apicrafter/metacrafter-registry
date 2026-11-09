@@ -19,7 +19,6 @@ supported_types:
 - de_postcode
 - email
 - encountryname
-- eunuts
 - fips10_4
 - fr_department
 - iataairportcode

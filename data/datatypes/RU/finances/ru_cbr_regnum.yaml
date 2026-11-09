@@ -1,0 +1,29 @@
+id: ru_cbr_regnum
+name: Bank of Russia registration number of a credit institution
+status: draft
+doc: 'Registration number that the Bank of Russia gives a credit institution (регистрационный номер кредитной
+  организации): up to four digits, -К for a non-bank credit institution, and after a slash the number
+  of a branch, as in 3553-К or 3349/76. The BIK directory (ED807) gives it as RegN.'
+parent: id
+categories:
+- finances
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^\d{1,4}(?:-К)?(?:/\d{1,4})?$
+examples:
+- value: '3116'
+  description: Bank
+- value: 3553-К
+  description: Non-bank credit institution
+- value: 3349/76
+  description: Branch of a bank
+- value: '12345'
+  valid: false
+  description: Five digits
+translations:
+  ru:
+    name: Регистрационный номер кредитной организации

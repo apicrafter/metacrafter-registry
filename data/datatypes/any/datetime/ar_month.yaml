@@ -1,0 +1,26 @@
+id: ar_month
+name: Arabic month name
+status: draft
+doc: 'Name of a Gregorian month in Arabic: the series of the Maghreb (يناير, فبراير, مارس ... in Morocco
+  يوليوز, غشت, شتنبر, دجنبر) and the Syriac series of the Levant and Iraq (كانون الثاني, شباط, آذار ...
+  كانون الأول).'
+semantic_type: month
+langs:
+- ar
+regexp: ^(?:يناير|فبراير|مارس|أبريل|ابريل|إبريل|ماي|مايو|يونيو|يونيه|يوليو|يوليوز|يوليه|أغسطس|اغسطس|غشت|سبتمبر|شتنبر|أكتوبر|اكتوبر|نوفمبر|نونبر|ديسمبر|دجنبر|جانفي|فيفري|أفريل|جوان|جويلية|أوت|كانون
+  الثاني|شباط|آذار|نيسان|أيار|حزيران|تموز|آب|أيلول|تشرين الأول|تشرين الثاني|كانون الأول)$
+examples:
+- value: مارس
+  description: March
+- value: يوليوز
+  description: July (Morocco)
+- value: دجنبر
+  description: December (Morocco)
+- value: كانون الثاني
+  description: January (Levant)
+- value: رمضان
+  valid: false
+  description: Month of the Hijri calendar
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Arabic_names_of_calendar_months

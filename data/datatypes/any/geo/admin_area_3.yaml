@@ -1,0 +1,21 @@
+id: admin_area_3
+name: Third-level administrative division
+status: draft
+doc: Name or code of a subdivision of a second-level administrative division, such as a Thai tambon, an
+  Indonesian kecamatan or a Vietnamese commune or ward. The registry keeps a record per country as a child
+  of this one.
+parent: location
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Gamping
+  description: Kecamatan in Sleman
+- value: ในเมือง
+  description: Tambon in Thailand
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Administrative_division

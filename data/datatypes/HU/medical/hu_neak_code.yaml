@@ -1,0 +1,28 @@
+id: hu_neak_code
+name: Hungarian NEAK health care institution code
+status: draft
+doc: 'Four-character code of a health care institution at NEAK, the Hungarian National Health Insurance
+  Fund: a letter or a digit and three digits, as in U912 or 1122.'
+parent: id
+categories:
+- medical
+country:
+- HU
+langs:
+- hu
+is_pii: false
+classification: identifier
+regexp: ^[A-Z0-9]\d{3}$
+examples:
+- value: U912
+  description: Inpatient care institution
+- value: R730
+  description: Inpatient care institution
+- value: '1122'
+  description: Inpatient care institution
+- value: U91
+  valid: false
+  description: Three characters
+translations:
+  hu:
+    name: NEAK kód

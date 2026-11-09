@@ -1,0 +1,26 @@
+id: ro_sirues_code
+name: Romanian SIRUES school code
+status: draft
+doc: 'Statistical code of a Romanian school unit in SIRUES, the register of the National Institute of
+  Statistics: six or seven digits.'
+parent: id
+categories:
+- education
+country:
+- RO
+langs:
+- ro
+is_pii: false
+classification: identifier
+regexp: ^\d{6,7}$
+examples:
+- value: '306167'
+  description: School unit
+- value: '1180302'
+  description: School unit
+- value: '30616'
+  valid: false
+  description: Five digits
+translations:
+  ro:
+    name: Cod SIRUES

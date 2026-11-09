@@ -2,7 +2,7 @@ id: krprovince
 name: Korean province by field name
 status: draft
 doc: Korean province by field name identifier
-parent: admin_area_1
+parent: province
 categories:
 - geo
 country:

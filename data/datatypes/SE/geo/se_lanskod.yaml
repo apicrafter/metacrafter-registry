@@ -1,0 +1,28 @@
+id: se_lanskod
+name: Swedish county code (länskod)
+status: draft
+doc: Two-digit code of one of the 21 Swedish counties (län) of Statistics Sweden, as in 01 for Stockholm.
+  It is the first two digits of a municipality code (se_kommunkod).
+parent: category
+categories:
+- geo
+country:
+- SE
+langs:
+- sv
+is_pii: false
+classification: categorical
+regexp: ^(?:0[13-9]|1[02-47-9]|2[0-5])$
+examples:
+- value: '01'
+  description: Stockholms län
+- value: '06'
+  description: Jönköpings län
+- value: '14'
+  description: Västra Götalands län
+- value: '02'
+  valid: false
+  description: Not in use
+translations:
+  sv:
+    name: Länskod

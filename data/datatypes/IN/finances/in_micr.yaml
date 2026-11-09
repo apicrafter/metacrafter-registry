@@ -1,0 +1,23 @@
+id: in_micr
+name: Indian MICR code
+status: draft
+doc: 'Nine-digit Magnetic Ink Character Recognition code of an Indian bank branch, printed on cheques:
+  three digits for the city, three for the bank and three for the branch.'
+parent: id
+categories:
+- finances
+country:
+- IN
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{9}$
+examples:
+- value: '395437002'
+  description: Bank branch
+- value: '384437002'
+  description: Bank branch
+- value: '39543700'
+  valid: false
+  description: Eight digits

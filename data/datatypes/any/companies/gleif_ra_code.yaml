@@ -1,0 +1,29 @@
+id: gleif_ra_code
+name: GLEIF registration authority code
+status: draft
+doc: 'Code of a business register or other registration authority in the GLEIF Registration Authorities
+  List: RA and six digits. LEI records name the register of the entity (registeredAt) and the source against
+  which the LEI issuer validated it (validatedAt); RA999999 stands for an authority that is not on the
+  list.'
+parent: id
+categories:
+- companies
+- finances
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^RA\d{6}$
+examples:
+- value: RA000554
+  description: GLEIF LEI record of a Thai entity
+- value: RA001014
+  description: GLEIF LEI record of a Thai entity
+- value: RA999999
+  description: Authority not on the list
+- value: RA00554
+  valid: false
+  description: Five digits
+links:
+- type: doc
+  url: https://www.gleif.org/en/about-lei/code-lists/gleif-registration-authorities-list

@@ -6,7 +6,10 @@ doc: EU datatype for 'NUTS region code' (nutsregion) from rules in context 'gove
   European Union to divide its territory for statistical purposes. The code format consists of 2 uppercase
   letters representing the country code, followed by 1 to 3 alphanumeric characters representing the region
   level (NUTS 1, 2, or 3).
+aliases:
+- eunuts
 categories:
+- geo
 - government
 country:
 - EU

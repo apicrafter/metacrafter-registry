@@ -1,0 +1,26 @@
+id: se_ssyk
+name: Swedish occupation code (SSYK 2012)
+status: draft
+doc: 'Code of the Swedish standard classification of occupations SSYK 2012 (Standard för svensk yrkesklassificering),
+  the Swedish version of ISCO-08: one to four digits, as in 2221 for nurses.'
+parent: isco08
+categories:
+- industry
+country:
+- SE
+langs:
+- sv
+is_pii: false
+classification: categorical
+regexp: ^\d{1,4}$
+examples:
+- value: '2221'
+  description: Grundutbildade sjuksköterskor
+- value: '2227'
+  description: Specialist nurses
+- value: '22210'
+  valid: false
+  description: Five digits
+translations:
+  sv:
+    name: SSYK-kod

@@ -1,8 +1,11 @@
 id: iso4217curcode
 name: ISO 4217 Currency code
 status: draft
-doc: ISO 4217 Currency code
+doc: Three-letter alphabetic code of a currency in ISO 4217, as in EUR or USD. The Russian classifier
+  of currencies (OKV, okvalpha) uses the same codes.
 semantic_type: currency
+aliases:
+- okvalpha
 langs:
 - common
 regexp: ^[A-Z]{3}$
@@ -25,3 +28,6 @@ links:
   url: https://www.iso.org/iso-4217-currency-codes.html
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P498
+translations:
+  ru:
+    name: Буквенный код валюты (ISO 4217, ОКВ)

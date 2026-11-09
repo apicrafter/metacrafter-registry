@@ -1,0 +1,29 @@
+id: ev_connector_type
+name: EV charging connector type
+status: draft
+doc: 'Standard of the connector of an electric vehicle charging point: Type 1, Type 2 (Typ 2), CCS (Combo
+  1, Combo 2), CHAdeMO, Tesla and household plugs. Station lists give one per connector, often joined
+  with semicolons.'
+parent: category
+categories:
+- transport
+- energy
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:(?:Type|Typ|TYP|TYPE|type) ?[123]|CCS ?[12]?|CCS Combo ?[12]|Combo ?[12]|CHAdeMO|ChadeMO|CHADEMO|Tesla|NACS|GB/T|Schuko|SCHUKO)(?:;+(?:(?:Type|Typ|TYP|TYPE|type)
+  ?[123]|CCS ?[12]?|CCS Combo ?[12]|Combo ?[12]|CHAdeMO|ChadeMO|CHADEMO|Tesla|NACS|GB/T|Schuko|SCHUKO))*;*$
+examples:
+- value: Typ 2;CCS2;CHAdeMO
+  description: Czech charging station list
+- value: CCS2;;
+  description: Czech charging station list
+- value: Type 2
+  description: One connector
+- value: 230 V
+  valid: false
+  description: Voltage
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Charging_station

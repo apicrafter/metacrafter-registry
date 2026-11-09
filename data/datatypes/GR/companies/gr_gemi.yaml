@@ -1,0 +1,32 @@
+id: gr_gemi
+name: Greek General Commercial Registry number (ΓΕΜΗ)
+status: draft
+doc: 'Number of a business in the Greek General Commercial Registry (Γενικό Εμπορικό Μητρώο, ΓΕΜΗ): twelve
+  digits, the last three 000 for most businesses. Sheets often store it as a number and lose the leading
+  zero, as in 51772519000.'
+parent: id
+categories:
+- companies
+country:
+- GR
+langs:
+- el
+is_pii: false
+classification: identifier
+regexp: ^\d{9,12}$
+examples:
+- value: '124956721000'
+  description: Urban cooperative
+- value: 028223912000
+  description: Urban cooperative
+- value: '51772519000'
+  description: Leading zero lost in a sheet
+- value: '12495672'
+  valid: false
+  description: Eight digits
+links:
+- type: doc
+  url: https://www.businessportal.gr/
+translations:
+  el:
+    name: Αριθμός Γ.Ε.ΜΗ.

@@ -1,0 +1,27 @@
+id: cz_ruian_address_point
+name: Czech RÚIAN address point code
+status: draft
+doc: 'Code of an address point (kód adresního místa) in the Czech register of territorial identification,
+  addresses and real estate (RÚIAN): up to nine digits. The codes carry a check digit, so most eight-digit
+  ones also pass the IČO check.'
+parent: id
+categories:
+- geo
+country:
+- CZ
+langs:
+- cs
+is_pii: false
+classification: identifier
+regexp: ^\d{1,9}$
+examples:
+- value: '17242606'
+  description: Address of a public authority
+- value: '3333833'
+  description: Address of a public authority
+- value: '1724260611'
+  valid: false
+  description: Ten digits
+translations:
+  cs:
+    name: Kód adresního místa

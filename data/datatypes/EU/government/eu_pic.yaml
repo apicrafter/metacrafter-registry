@@ -1,0 +1,29 @@
+id: eu_pic
+name: EU Participant Identification Code (PIC)
+status: draft
+doc: Nine-digit Participant Identification Code of an organization registered to take part in EU funding
+  programmes (Horizon Europe, Erasmus+). CORDIS gives it as organisationID next to the project number.
+parent: id
+categories:
+- government
+- companies
+country:
+- EU
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{9}$
+examples:
+- value: '999997930'
+  description: CORDIS Horizon Europe participant
+- value: '990797674'
+  description: CORDIS Horizon Europe participant
+- value: '101069506'
+  description: A grant agreement number has the same length
+- value: '99999793'
+  valid: false
+  description: Eight digits
+links:
+- type: doc
+  url: https://cordis.europa.eu/

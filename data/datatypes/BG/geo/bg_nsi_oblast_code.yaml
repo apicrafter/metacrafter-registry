@@ -1,0 +1,28 @@
+id: bg_nsi_oblast_code
+name: Bulgarian oblast code (NSI)
+status: draft
+doc: Three-letter code of one of the 28 Bulgarian oblasts in the EKATTE classification of the National
+  Statistical Institute, as in SFO or VTR.
+parent: category
+categories:
+- geo
+country:
+- BG
+langs:
+- bg
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{3}$
+examples:
+- value: VTR
+  description: Veliko Tarnovo
+- value: SFO
+  description: Sofia oblast
+- value: BLG
+  description: Blagoevgrad
+- value: VTR13
+  valid: false
+  description: Municipality code
+translations:
+  bg:
+    name: Код на област

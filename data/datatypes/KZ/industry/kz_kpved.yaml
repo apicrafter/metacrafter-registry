@@ -1,0 +1,29 @@
+id: kz_kpved
+name: Kazakh product classification code (KPVED)
+status: draft
+doc: 'Code of the Kazakh classification of products by economic activity (КПВЭД, ҚЭТӨЖ), based on the
+  European CPA: a section letter or two to eight digits written without dots, as in 0111 or 011112.'
+parent: category
+categories:
+- industry
+country:
+- KZ
+langs:
+- kk
+- ru
+is_pii: false
+classification: categorical
+regexp: ^(?:[A-U]|\d{2,8})$
+examples:
+- value: A
+  description: Section
+- value: '01'
+  description: Division
+- value: '011112'
+  description: Subcategory
+- value: '01.11'
+  valid: false
+  description: With a dot
+translations:
+  ru:
+    name: КПВЭД

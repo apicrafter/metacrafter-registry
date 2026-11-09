@@ -1,0 +1,26 @@
+id: id_puskesmas_code
+name: Indonesian puskesmas code
+status: draft
+doc: 'Code of a community health centre (puskesmas) of the Indonesian Ministry of Health: P, the seven-digit
+  code of the kecamatan (id_kode_wilayah without dots) and three digits.'
+parent: id
+categories:
+- medical
+country:
+- ID
+langs:
+- id
+is_pii: false
+classification: identifier
+regexp: ^P\d{10}$
+examples:
+- value: P5201010101
+  description: Puskesmas in West Lombok
+- value: P5201020202
+  description: Puskesmas in West Lombok
+- value: '5201010101'
+  valid: false
+  description: No P
+translations:
+  id:
+    name: Kode puskesmas

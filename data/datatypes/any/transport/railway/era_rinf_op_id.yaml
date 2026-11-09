@@ -1,0 +1,25 @@
+id: era_rinf_op_id
+name: RINF operational point id
+status: draft
+doc: 'Identifier of an operational point (station, stop, junction, border point) in the Register of Infrastructure
+  (RINF) of the European Union Agency for Railways: the alpha-2 country code and a national code of up
+  to ten characters. Croatia uses the UIC station number without its country prefix, as in HR71402.'
+parent: id
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}[0-9A-Z]{1,10}$
+examples:
+- value: HR71402
+  description: Croatian operational point
+- value: HR72802
+  description: Croatian operational point
+- value: '71402'
+  valid: false
+  description: National code alone
+links:
+- type: doc
+  url: https://www.era.europa.eu/domains/registers/rinf_en

@@ -1,0 +1,35 @@
+id: content_license
+name: Content license
+status: draft
+doc: 'License of a work, a dataset or a record, by a short identifier or the URL of the license deed:
+  Creative Commons licenses (cc-by, cc-by-nc-nd, CC0) and the public domain mark. Publication and biodiversity
+  data use them for each record (OpenAlex works, GBIF occurrences). Software licenses are software_license.'
+parent: category
+categories:
+- legal
+- publishing
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:(?:cc|CC)[-_ ]?(?:(?:by|BY)(?:[-_ ](?:sa|SA|nc|NC|nd|ND|nc[-_ ]sa|NC[-_ ]SA|nc[-_ ]nd|NC[-_
+  ]ND))?|0|zero|ZERO)(?:[-_ ]?\d[._]\d(?:[-_ ][A-Za-z]{2,5})?)?|https?://(?:www\.)?creativecommons\.org/(?:licenses|publicdomain)/[a-z0-9./-]+)$
+examples:
+- value: cc-by
+  description: OpenAlex
+- value: cc-by-nc-nd
+  description: OpenAlex
+- value: CC_BY_4_0
+  description: GBIF API
+- value: CC0-1.0
+  description: SPDX form
+- value: http://creativecommons.org/publicdomain/zero/1.0/legalcode
+  description: GBIF occurrence
+- value: MIT
+  valid: false
+  description: Software license
+links:
+- type: doc
+  url: https://creativecommons.org/licenses/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Creative_Commons_license

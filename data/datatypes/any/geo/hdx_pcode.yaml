@@ -1,0 +1,22 @@
+id: hdx_pcode
+name: OCHA place code (p-code)
+status: draft
+doc: 'Place code of an administrative area in the Common Operational Datasets of OCHA, published on HDX:
+  the ISO 3166-1 alpha-2 code of the country and digits for each level below it, as in GE11. Level 0 uses
+  the alpha-2 or alpha-3 code alone.'
+parent: id
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}\d{1,12}$
+examples:
+- value: GE11
+  description: Region of Georgia
+- value: GE44
+  description: Region of Georgia
+- value: GE-11
+  valid: false
+  description: With a hyphen

@@ -3,6 +3,7 @@ name: Digital timestamp (Unix time, Epoch time, Posix time)
 status: stable
 doc: Digital timestamp defined as Unix Time. It is a system for describing a point in time. It is the
   number of seconds that have elapsed since the Unix epoch, excluding leap seconds.
+parent: datetime
 categories:
 - datetime
 langs:

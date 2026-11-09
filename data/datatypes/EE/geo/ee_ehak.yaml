@@ -1,0 +1,26 @@
+id: ee_ehak
+name: Estonian EHAK code
+status: draft
+doc: Four-digit code of an Estonian county, municipality or settlement in the classification of administrative
+  units and settlements (Eesti haldus- ja asustusjaotuse klassifikaator, EHAK), with leading zeros.
+parent: category
+categories:
+- geo
+country:
+- EE
+langs:
+- et
+is_pii: false
+classification: categorical
+regexp: ^\d{4}$
+examples:
+- value: '0353'
+  description: Municipality
+- value: '0037'
+  description: County
+- value: '353'
+  valid: false
+  description: Leading zero lost
+translations:
+  et:
+    name: EHAK kood

@@ -1,0 +1,29 @@
+id: lt_kvr_code
+name: Lithuanian Register of Cultural Property code
+status: draft
+doc: 'Unique code (unikalus kodas) of an object in the Lithuanian Register of Cultural Property (Kultūros
+  vertybių registras, KVR): up to six digits.'
+parent: id
+categories:
+- government
+country:
+- LT
+langs:
+- lt
+is_pii: false
+classification: identifier
+regexp: ^\d{1,6}$
+examples:
+- value: '29912'
+  description: Cultural heritage object
+- value: '9583'
+  description: Cultural heritage object
+- value: '2991200'
+  valid: false
+  description: Seven digits
+links:
+- type: doc
+  url: https://kvr.kpd.lt/
+translations:
+  lt:
+    name: Kultūros vertybės unikalus kodas

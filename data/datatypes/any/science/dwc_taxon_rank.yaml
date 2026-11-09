@@ -1,0 +1,32 @@
+id: dwc_taxon_rank
+name: Darwin Core taxon rank
+status: draft
+doc: 'Taxonomic rank of a scientific name (Darwin Core term taxonRank): kingdom, phylum, class, order,
+  family, genus, species and the ranks between and below them (subfamily, tribe, subspecies, variety,
+  form). GBIF writes them in upper case (SPECIES, GENUS); checklists also use lower case or abbreviations
+  (sp., var.).'
+parent: category
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:DOMAIN|SUPERKINGDOM|KINGDOM|SUBKINGDOM|SUPERPHYLUM|PHYLUM|SUBPHYLUM|SUPERCLASS|CLASS|SUBCLASS|INFRACLASS|SUPERORDER|ORDER|SUBORDER|INFRAORDER|SUPERFAMILY|FAMILY|SUBFAMILY|TRIBE|SUBTRIBE|GENUS|SUBGENUS|SECTION|SERIES|SPECIES|SUBSPECIES|VARIETY|SUBVARIETY|FORM|SUBFORM|CULTIVAR|STRAIN|UNRANKED|domain|superkingdom|kingdom|subkingdom|superphylum|phylum|subphylum|superclass|class|subclass|infraclass|superorder|order|suborder|infraorder|superfamily|family|subfamily|tribe|subtribe|genus|subgenus|section|series|species|subspecies|variety|subvariety|form|subform|cultivar|strain|unranked|Domain|Superkingdom|Kingdom|Subkingdom|Superphylum|Phylum|Subphylum|Superclass|Class|Subclass|Infraclass|Superorder|Order|Suborder|Infraorder|Superfamily|Family|Subfamily|Tribe|Subtribe|Genus|Subgenus|Section|Series|Species|Subspecies|Variety|Subvariety|Form|Subform|Cultivar|Strain|Unranked)$
+examples:
+- value: SPECIES
+  description: GBIF occurrence
+- value: GENUS
+  description: GBIF occurrence
+- value: subspecies
+  description: Checklist
+- value: Family
+  description: Checklist
+- value: ACCEPTED
+  valid: false
+  description: Taxonomic status
+links:
+- type: doc
+  url: https://dwc.tdwg.org/terms/#dwc:taxonRank
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Taxonomic_rank

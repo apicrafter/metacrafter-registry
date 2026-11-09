@@ -1,0 +1,23 @@
+id: id_npsn
+name: Indonesian national school number (NPSN)
+status: draft
+doc: Eight-digit national school number (Nomor Pokok Sekolah Nasional) of the Indonesian Ministry of Education.
+parent: id
+categories:
+- education
+country:
+- ID
+langs:
+- id
+is_pii: false
+classification: identifier
+regexp: ^\d{8}$
+examples:
+- value: '20502415'
+  description: Primary school in Sidoarjo
+- value: '2050241'
+  valid: false
+  description: Seven digits
+translations:
+  id:
+    name: Nomor Pokok Sekolah Nasional

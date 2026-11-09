@@ -1,0 +1,26 @@
+id: fi_oppilaitosnumero
+name: Finnish educational institution number
+status: draft
+doc: Five-digit number of a Finnish educational institution (oppilaitosnumero) in the registers of the
+  Finnish National Agency for Education and Statistics Finland, with leading zeros.
+parent: id
+categories:
+- education
+country:
+- FI
+langs:
+- fi
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: 08888
+  description: Educational institution
+- value: '03117'
+  description: Educational institution
+- value: '3117'
+  valid: false
+  description: Leading zero lost
+translations:
+  fi:
+    name: Oppilaitosnumero

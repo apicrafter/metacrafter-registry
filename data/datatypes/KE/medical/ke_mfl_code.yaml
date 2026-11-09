@@ -1,0 +1,26 @@
+id: ke_mfl_code
+name: Kenya Master Facility List code
+status: draft
+doc: Five-digit code of a health facility in the Kenya Master Health Facility List of the Ministry of
+  Health.
+parent: id
+categories:
+- medical
+country:
+- KE
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '25720'
+  description: Health facility
+- value: '25699'
+  description: Health facility
+- value: '2572'
+  valid: false
+  description: Four digits
+links:
+- type: doc
+  url: https://kmhfl.health.go.ke/

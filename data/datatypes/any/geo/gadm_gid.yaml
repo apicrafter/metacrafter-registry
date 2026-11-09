@@ -1,0 +1,28 @@
+id: gadm_gid
+name: GADM area id
+status: draft
+doc: 'Identifier of an administrative area in the GADM database of global administrative areas: the ISO
+  3166-1 alpha-3 code of the country, the number of the area at each level, separated by dots, and the
+  GADM version suffix, as in VNM.25.13_1. GBIF occurrences give it in gadm.level1.gid to level3.gid; level
+  0 is the alpha-3 code alone.'
+parent: id
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{3}(?:\.\d+)+_\d+$
+examples:
+- value: VNM.25_1
+  description: 'Level 1: Ho Chi Minh City'
+- value: VNM.25.13_1
+  description: Level 2
+- value: VNM.25.13.2_1
+  description: Level 3
+- value: VNM
+  valid: false
+  description: Level 0 is the country code
+links:
+- type: doc
+  url: https://gadm.org/

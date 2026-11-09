@@ -1,0 +1,27 @@
+id: lt_evrk
+name: Lithuanian EVRK 2 activity code
+status: draft
+doc: 'Six-digit code of the Lithuanian classification of economic activities EVRK 2 (Ekonominės veiklos
+  rūšių klasifikatorius): the four digits of a NACE Rev. 2 class without the dot and two digits for a
+  national subclass, as in 949900.'
+parent: eu_nace
+categories:
+- industry
+country:
+- LT
+langs:
+- lt
+is_pii: false
+classification: categorical
+regexp: ^\d{6}$
+examples:
+- value: '949900'
+  description: Activities of other membership organisations
+- value: '410010'
+  description: Construction of new buildings
+- value: '94.99'
+  valid: false
+  description: NACE class
+translations:
+  lt:
+    name: EVRK 2 kodas
