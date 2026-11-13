@@ -1,0 +1,28 @@
+id: oeis_id
+name: OEIS sequence number (A-number)
+status: draft
+doc: Identifier of an integer sequence in the On-Line Encyclopedia of Integer Sequences, the letter A
+  and six digits with leading zeros, as in A000045. The older M-numbers and N-numbers of the printed editions
+  are not covered.
+categories:
+- science
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^A\d{6}$
+examples:
+- value: A000040
+  description: The prime numbers
+- value: A000045
+  description: The Fibonacci sequence
+- value: A315
+  valid: false
+  description: Without leading zeros
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/On-Line_Encyclopedia_of_Integer_Sequences
+translations:
+  ru:
+    name: Номер последовательности OEIS

@@ -1,0 +1,30 @@
+id: smtp_enhanced_status_code
+name: Enhanced mail system status code
+status: draft
+doc: Three-part code of the result of a mail delivery from RFC 3463, as in 5.1.1. The class is 2 for success,
+  4 for a temporary failure and 5 for a permanent failure. The subject and the detail have one to three
+  digits each without leading zeros. SMTP replies and delivery status notifications carry it next to the
+  three-digit reply code (smtp_reply_code).
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[245]\.(?:0|[1-9]\d{0,2})\.(?:0|[1-9]\d{0,2})$
+examples:
+- value: 5.1.1
+  description: The destination mailbox does not exist
+- value: 4.2.2
+  description: The mailbox is full
+- value: 2.1.5
+  description: The destination address is valid
+- value: 3.1.1
+  valid: false
+  description: Class 3 does not exist
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc3463
+translations:
+  ru:
+    name: Расширенный код статуса почтовой системы

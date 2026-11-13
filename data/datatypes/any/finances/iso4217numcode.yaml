@@ -1,0 +1,26 @@
+id: iso4217numcode
+name: ISO 4217 numeric currency code
+status: draft
+doc: Three-digit numeric code of a currency in ISO 4217, as in 978 for the euro. The Russian classifier
+  of currencies (OKV) uses the same numeric codes. The alphabetic code is a separate record (iso4217curcode).
+  Any three digits match, so use the field name or context.
+semantic_type: currency
+langs:
+- common
+regexp: ^\d{3}$
+examples:
+- value: '978'
+  description: euro
+- value: '840'
+  description: US dollar
+- value: '643'
+  description: Russian rouble
+- value: EUR
+  valid: false
+  description: Alphabetic code
+links:
+- type: other
+  url: https://www.iso.org/iso-4217-currency-codes.html
+translations:
+  ru:
+    name: Цифровой код валюты (ISO 4217, ОКВ)

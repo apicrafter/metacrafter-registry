@@ -1,0 +1,31 @@
+id: gng_code
+name: GNG cargo code (Harmonized Nomenclature of Goods)
+status: draft
+doc: Eight-digit code of a cargo in the Harmonized Nomenclature of Goods (ГНГ) used for international
+  rail freight. Digits 1-6 follow the Harmonized System (hs_code), and digits 7-8 follow the Combined
+  Nomenclature of the European Union. Russian Railways map every GNG code to codes of the national nomenclature
+  ETSNG (ru_etsng_code). Any eight digits match, so use the field name or context.
+categories:
+- transport
+- shipping
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{8}$
+examples:
+- value: '87089997'
+  description: Code from the GNG reference of Alta-Soft
+- value: '68091100'
+  description: Code from the GNG reference of Alta-Soft
+- value: '8708999'
+  valid: false
+  description: Seven digits
+links:
+- type: other
+  url: https://www.alta.ru/information/gng/87089997/
+translations:
+  ru:
+    name: Код груза ГНГ
+    doc: Восьмизначный код груза по Гармонизированной номенклатуре грузов (ГНГ) для международных железнодорожных
+      перевозок. Первые шесть знаков соответствуют Гармонизированной системе.

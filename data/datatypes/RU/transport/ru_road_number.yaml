@@ -1,0 +1,32 @@
+id: ru_road_number
+name: Russian federal road number
+status: draft
+doc: Registration number of a federal road of Russia, a Cyrillic capital letter and digits, as in М-4
+  «Дон». Official documents put a hyphen after the letter, and maps often leave it out. The pattern accepts
+  the letters М, Р and А.
+categories:
+- transport
+- geo
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^[МРА]-?\d{1,3}$
+examples:
+- value: М-4
+  description: Road Don
+- value: М7
+  description: Road Volga, without the hyphen
+- value: M-4
+  valid: false
+  description: Latin letter M
+links:
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/Автомобильные_дороги_федерального_значения_России
+translations:
+  ru:
+    name: Номер федеральной автомобильной дороги
+    doc: Учётный номер автомобильной дороги федерального значения — заглавная буква русского алфавита
+      и цифры, например М-4 «Дон».

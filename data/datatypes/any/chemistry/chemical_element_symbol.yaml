@@ -1,0 +1,30 @@
+id: chemical_element_symbol
+name: Chemical element symbol
+status: draft
+doc: Symbol of a chemical element in the periodic table, one capital letter or a capital and a lowercase
+  letter, as in H or Fe. There are 118 named elements. Many other two-letter strings match the pattern,
+  so use the field name or context.
+categories:
+- chemistry
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z][a-z]?$
+examples:
+- value: H
+  description: Hydrogen
+- value: Fe
+  description: Iron
+- value: Og
+  description: Oganesson, element 118
+- value: FE
+  valid: false
+  description: Second letter in upper case
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Chemical_symbol
+translations:
+  ru:
+    name: Символ химического элемента

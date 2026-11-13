@@ -1,0 +1,33 @@
+id: smtp_reply_code
+name: SMTP reply code
+status: draft
+doc: Three-digit code with which a mail server answers an SMTP command (RFC 5321), as in 250 for an accepted
+  command and 550 for a rejected mailbox. The first digit gives the kind of reply, from 2 for success
+  to 5 for a permanent failure. Mail server logs and bounce messages store it, often together with the
+  enhanced status code (smtp_enhanced_status_code). HTTP and FTP codes have the same form, so use the
+  field name or context.
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[2-5]\d{2}$
+examples:
+- value: '250'
+  description: Requested mail action completed
+- value: '354'
+  description: Intermediate reply to the DATA command
+- value: '421'
+  description: Service shutting down
+- value: '550'
+  description: Mailbox unavailable
+- value: '150'
+  valid: false
+  description: SMTP has no 1xx replies
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc5321
+translations:
+  ru:
+    name: Код ответа сервера SMTP

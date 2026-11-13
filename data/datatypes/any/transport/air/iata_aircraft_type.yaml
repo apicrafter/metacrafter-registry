@@ -1,0 +1,27 @@
+id: iata_aircraft_type
+name: IATA aircraft type code
+status: draft
+doc: Three-character code of an aircraft type from Appendix A of the IATA Standard Schedules Information
+  Manual (SSIM), used in airline timetables and booking systems. Flight plans use the ICAO designator
+  instead (icao_aircraft_type). Any three capital letters or digits match, so use the field name or context.
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z0-9]{3}$
+examples:
+- value: '738'
+  description: Boeing 737-800
+- value: A4F
+  description: Code with letters
+- value: B738
+  valid: false
+  description: ICAO designator
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ICAO_aircraft_type_designator
+translations:
+  ru:
+    name: Код типа воздушного судна ИАТА

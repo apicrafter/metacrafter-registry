@@ -1,0 +1,33 @@
+id: usb_vendor_id
+name: USB vendor ID (VID)
+status: draft
+doc: Identifier of a device manufacturer that the USB Implementers Forum assigns. It is written as four
+  hexadecimal digits, sometimes with the prefix 0x, and together with the product ID tells an operating
+  system which driver to load. PCI vendor IDs (pci_vendor_id) have the same form but come from another
+  registry, so use the field name or context.
+categories:
+- software
+- identifiers
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:0x)?[0-9A-Fa-f]{4}$
+examples:
+- value: 05ac
+  description: Apple
+- value: 046d
+  description: Logitech
+- value: '0x04e8'
+  description: Samsung Electronics, with the prefix
+- value: 5ac
+  valid: false
+  description: Leading zero lost
+links:
+- type: other
+  url: http://www.linux-usb.org/usb.ids
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/USB_Implementers_Forum
+translations:
+  ru:
+    name: Идентификатор производителя USB (VID)

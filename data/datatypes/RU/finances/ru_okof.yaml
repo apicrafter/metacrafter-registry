@@ -1,0 +1,38 @@
+id: ru_okof
+name: Russian fixed asset code (OKOF)
+status: draft
+doc: 'Code of a group of fixed assets in the Russian Classification of Fixed Assets (ОКОФ, ОК 013-2014
+  (СНС 2008)), used in accounting and for depreciation groups. The full form is XXX.XX.XX.XX.XXX: the
+  first three digits are the kind of fixed assets, and the following two to nine digits repeat the code
+  of the product in OKPD2 (okpd). Digits 4-5 are 00 when OKPD2 has no matching grouping. The earlier classifier
+  ОК 013-94 used nine digits without this layout and is not covered.'
+categories:
+- finances
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: ^\d{3}\.\d{2}(?:\.\d{2}(?:\.\d{2}(?:\.\d{3})?)?)?$
+examples:
+- value: 210.00.11.10.110
+  description: Buildings of power plants
+- value: 220.42.11.10.110
+  description: Motorways, except elevated roads
+- value: 100.00.10.10
+  description: Houses and premises intended for living
+- value: 230.00.11.10
+  description: Costs of land reclamation works
+- value: 21.00.11.10.110
+  valid: false
+  description: Two digits in the first group
+links:
+- type: doc
+  url: https://www.consultant.ru/document/cons_doc_LAW_184368/
+translations:
+  ru:
+    name: Код ОКОФ
+    doc: Код группировки основных фондов по Общероссийскому классификатору основных фондов (ОКОФ, ОК 013-2014
+      (СНС 2008)). Структура кода XXX.XX.XX.XX.XXX; первые три знака — вид основных фондов, остальные
+      соответствуют коду ОКПД2.

@@ -1,0 +1,21 @@
+id: binary_number
+name: Binary number
+status: draft
+doc: Non-negative integer written in base 2 with the digits 0 and 1, with or without the prefix 0b that
+  programming languages use. A decimal number made of zeros and ones also matches when the prefix is missing,
+  so use the field name or context.
+semantic_type: numeric
+langs:
+- common
+regexp: ^(?:0[bB])?[01]+$
+examples:
+- value: '0b1011'
+  description: 11 with the prefix
+- value: '101010'
+  description: 42 without the prefix
+- value: '1021'
+  valid: false
+  description: The digit 2
+translations:
+  ru:
+    name: Число в двоичной записи

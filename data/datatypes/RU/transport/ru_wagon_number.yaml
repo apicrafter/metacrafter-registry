@@ -1,0 +1,24 @@
+id: ru_wagon_number
+name: Russian railway wagon number
+status: draft
+doc: Eight-digit number of a railway wagon in the unified numbering system of the 1520 mm gauge railways,
+  used by Russian Railways. The eighth digit is a check digit computed with the Luhn algorithm. European
+  railways use the twelve-digit UIC number instead (uic_wagon_number).
+categories:
+- transport
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{8}$
+checksum: luhn
+links:
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/Алгоритм_Луна
+translations:
+  ru:
+    name: Номер железнодорожного вагона
+    doc: Единый восьмизначный номер вагона на железных дорогах колеи 1520 мм. Восьмая цифра — контрольная,
+      рассчитывается по алгоритму Луна.

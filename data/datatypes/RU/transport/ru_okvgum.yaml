@@ -1,0 +1,25 @@
+id: ru_okvgum
+name: Russian code of cargo, package and packaging material types (OKVGUM)
+status: draft
+doc: Code in the Russian Classification of Types of Cargo, Packaging and Packaging Materials (ОКВГУМ,
+  ОК 031-2002), which is based on Recommendation 21 of UNECE. The classifier has three facets. The type
+  of cargo is one digit, the type of packaging is two digits (the external form and the size class), and
+  the packaging material is one digit. The codes are too short to detect by format, so the record has
+  no regular expression.
+categories:
+- transport
+- shipping
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: categorical
+links:
+- type: doc
+  url: https://legalacts.ru/doc/obshcherossiiskii-klassifikator-vidov-gruzov-upakovki-i-upakovochnykh-materialov-ok/
+translations:
+  ru:
+    name: Код ОКВГУМ
+    doc: Код по Общероссийскому классификатору видов грузов, упаковки и упаковочных материалов (ОКВГУМ,
+      ОК 031-2002). Вид груза — один знак, вид упаковки — два знака, упаковочный материал — один знак.

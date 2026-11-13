@@ -1,0 +1,31 @@
+id: niin
+name: National Item Identification Number (NIIN)
+status: draft
+doc: Nine-digit number of an item of supply in the NATO Codification System, the last nine digits of a
+  NATO Stock Number (nato_stock_number). The first two digits are the National Codification Bureau of
+  the country that first codified the item, and the other seven have no meaning. It is written as NN-NNN-NNNN
+  or without hyphens.
+categories:
+- industry
+- government
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{2}(?:-\d{3}-|\d{3})\d{4}$
+examples:
+- value: 00-121-6210
+  description: Item codified by the United States
+- value: 01-498-1913
+  description: Item codified by the United States
+- value: '001216210'
+  description: Without hyphens
+- value: 0-121-6210
+  valid: false
+  description: The country code must have two digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_Item_Identification_Number
+translations:
+  ru:
+    name: Национальный идентификационный номер предмета снабжения (NIIN)

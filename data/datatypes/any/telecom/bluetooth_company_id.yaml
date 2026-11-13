@@ -1,0 +1,30 @@
+id: bluetooth_company_id
+name: Bluetooth company identifier
+status: draft
+doc: Number that the Bluetooth SIG assigns to a member company. Devices send it in manufacturer-specific
+  advertising data and in version information. The Assigned Numbers document writes it as 0x and four
+  hexadecimal digits.
+categories:
+- telecom
+- identifiers
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^0x[0-9A-Fa-f]{4}$
+examples:
+- value: '0x004C'
+  description: Apple, Inc.
+- value: '0x0006'
+  description: Microsoft
+- value: '0x000F'
+  description: Broadcom Corporation
+- value: '0x4C'
+  valid: false
+  description: Two hexadecimal digits
+links:
+- type: doc
+  url: https://www.bluetooth.com/specifications/assigned-numbers
+translations:
+  ru:
+    name: Идентификатор компании Bluetooth

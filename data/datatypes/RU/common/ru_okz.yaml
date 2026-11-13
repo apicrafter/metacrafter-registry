@@ -1,0 +1,35 @@
+id: ru_okz
+name: Russian occupation code (OKZ)
+status: draft
+doc: Four-digit code of an occupation group in the Russian Classification of Occupations (ОКЗ, ОК 010-2014
+  (МСКЗ-08)), which follows the international classification ISCO-08 (isco08). The first digit is the
+  major group, from 0 (armed forces) to 9 (elementary occupations). Statistical reports may write the
+  code with the control number of the classifier after a dot, as in 1120.9. Any four digits match, so
+  use the field name or context.
+categories:
+- common
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: ^\d{4}(?:\.\d)?$
+examples:
+- value: '5223'
+  description: Shop salespersons and their assistants
+- value: '8322'
+  description: Drivers of cars, taxis and vans
+- value: '1120.9'
+  description: Heads of institutions, organisations and enterprises, with the control number
+- value: '112'
+  valid: false
+  description: Three digits
+links:
+- type: other
+  url: https://classifikators.ru/okz
+translations:
+  ru:
+    name: Код ОКЗ
+    doc: Четырёхзначный код группы занятий по Общероссийскому классификатору занятий (ОКЗ, ОК 010-2014
+      (МСКЗ-08)). В отчётности может записываться с контрольным числом через точку, например 1120.9.

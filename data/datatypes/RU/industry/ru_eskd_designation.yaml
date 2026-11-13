@@ -1,0 +1,32 @@
+id: ru_eskd_designation
+name: ESKD product designation (decimal number)
+status: draft
+doc: Designation of a product and of its main design document in the Unified System for Design Documentation
+  (ЕСКД, ГОСТ 2.201-80), known as the decimal number. It has three parts separated by dots. The first
+  is the four-letter code of the developer organisation, the second is the six-digit classification code
+  from the ESKD classifier, and the third is a three-digit registration number. Codes of other design
+  documents, which follow the designation, are not covered.
+categories:
+- industry
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^[А-Я]{4}\.\d{6}\.\d{3}$
+examples:
+- value: АБВГ.123456.001
+  description: Illustration of the structure used in explanations of ГОСТ 2.201-80
+- value: АБВГ.12345.001
+  valid: false
+  description: Five digits in the classification code
+links:
+- type: doc
+  url: https://meganorm.ru/Index2/1/4294852/4294852127.htm
+translations:
+  ru:
+    name: Обозначение изделия по ЕСКД (децимальный номер)
+    doc: Обозначение изделия и его основного конструкторского документа по ГОСТ 2.201-80. Состоит из четырёхбуквенного
+      кода организации-разработчика, шестизначного кода классификационной характеристики и трёхзначного
+      порядкового регистрационного номера.

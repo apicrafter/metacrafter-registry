@@ -1,0 +1,31 @@
+id: pci_vendor_id
+name: PCI vendor ID
+status: draft
+doc: Identifier of a hardware manufacturer in the PCI and PCI Express buses, written as four hexadecimal
+  digits. With the device ID of the same form it identifies a card or chip, as in 10de:2684. The public
+  PCI ID Repository lists the known values. USB vendor IDs (usb_vendor_id) have the same form but come
+  from another registry, so use the field name or context.
+categories:
+- software
+- identifiers
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:0x)?[0-9A-Fa-f]{4}$
+examples:
+- value: '8086'
+  description: Intel Corporation
+- value: 10de
+  description: NVIDIA Corporation
+- value: 1af4
+  description: Red Hat, Inc.
+- value: 10de:2684
+  valid: false
+  description: Vendor and device IDs together
+links:
+- type: other
+  url: https://pci-ids.ucw.cz/
+translations:
+  ru:
+    name: Идентификатор производителя PCI

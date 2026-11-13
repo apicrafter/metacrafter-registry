@@ -1,0 +1,31 @@
+id: ftp_command
+name: FTP command
+status: draft
+doc: Command code that an FTP client sends on the control connection (RFC 959), such as USER, RETR or
+  STOR. FTP server logs store it. The standard commands have three or four letters, and the pattern accepts
+  that form in capital letters, so other short capital words also match.
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{3,4}$
+examples:
+- value: USER
+  description: Identify the user
+- value: RETR
+  description: Retrieve a copy of a file
+- value: STOR
+  description: Store a file on the server
+- value: CWD
+  description: Change the working directory
+- value: DOWNLOAD
+  valid: false
+  description: Not a command code
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc959
+translations:
+  ru:
+    name: Команда FTP

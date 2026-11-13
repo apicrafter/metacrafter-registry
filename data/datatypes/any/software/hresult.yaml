@@ -1,0 +1,32 @@
+id: hresult
+name: Windows HRESULT value
+status: draft
+doc: 32-bit result code with which Windows APIs and COM report the success or failure of an operation.
+  Documentation, logs and error dialogs write it as 0x and eight hexadecimal digits. Failure codes have
+  the highest bit set, so they start with 0x8 or a higher digit. The header file Winerror.h defines the
+  values.
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^0x[0-9A-Fa-f]{8}$
+examples:
+- value: '0x80070005'
+  description: E_ACCESSDENIED, general access denied error
+- value: '0x80004005'
+  description: E_FAIL, unspecified failure
+- value: '0x8007000E'
+  description: E_OUTOFMEMORY
+- value: '0x00000000'
+  description: S_OK, operation successful
+- value: '0x5'
+  valid: false
+  description: Short form of a system error code
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/windows/win32/seccrypto/common-hresult-values
+translations:
+  ru:
+    name: Код результата HRESULT (Windows)

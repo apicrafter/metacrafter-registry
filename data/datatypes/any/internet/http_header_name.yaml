@@ -1,0 +1,28 @@
+id: http_header_name
+name: HTTP header field name
+status: draft
+doc: Name of a field in the header of an HTTP request or response, such as Host or Content-Type. RFC 9110
+  defines it as a token of letters, digits and the characters !
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Za-z0-9!#$%&'*+.^_`|~-]+$
+examples:
+- value: Host
+  description: Target host of the request
+- value: Content-Type
+  description: Media type of the content
+- value: user-agent
+  description: Lowercase form
+- value: 'Content-Type: text/html'
+  valid: false
+  description: A whole header line with the value
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc9110
+translations:
+  ru:
+    name: Имя заголовка HTTP

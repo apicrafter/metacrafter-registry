@@ -1,0 +1,27 @@
+id: icao_aircraft_type
+name: ICAO aircraft type designator
+status: draft
+doc: Code of an aircraft type in ICAO Document 8643, used in flight plans and air traffic control. It
+  has two to four capital letters and digits. Airline schedules use the three-character IATA code instead
+  (iata_aircraft_type).
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z][A-Z0-9]{1,3}$
+examples:
+- value: B738
+  description: Boeing 737-800
+- value: C17
+  description: Three-character designator
+- value: b738
+  valid: false
+  description: Lowercase
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ICAO_aircraft_type_designator
+translations:
+  ru:
+    name: Код типа воздушного судна ИКАО

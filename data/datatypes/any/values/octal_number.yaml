@@ -1,0 +1,21 @@
+id: octal_number
+name: Octal number
+status: draft
+doc: Non-negative integer written in base 8 with the prefix 0o, or with a leading zero as in C and in
+  Unix file modes. Without a prefix an octal number cannot be told from a decimal one, so the pattern
+  requires it.
+semantic_type: numeric
+langs:
+- common
+regexp: ^0[oO]?[0-7]+$
+examples:
+- value: 0o755
+  description: 493 with the prefix 0o
+- value: '0644'
+  description: 420 with a leading zero, a common file mode
+- value: 0o789
+  valid: false
+  description: The digits 8 and 9
+translations:
+  ru:
+    name: Число в восьмеричной записи

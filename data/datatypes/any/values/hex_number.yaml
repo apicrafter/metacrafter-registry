@@ -1,0 +1,21 @@
+id: hex_number
+name: Hexadecimal number
+status: draft
+doc: Non-negative integer written in base 16 with the prefix 0x, as in programming languages, memory addresses
+  and error codes. The pattern requires the prefix, because without it a value cannot be told from a hash,
+  a colour or an identifier.
+semantic_type: numeric
+langs:
+- common
+regexp: ^0[xX][0-9A-Fa-f]+$
+examples:
+- value: '0xFF'
+  description: '255'
+- value: '0x1f4'
+  description: '500'
+- value: FF
+  valid: false
+  description: The prefix is missing
+translations:
+  ru:
+    name: Число в шестнадцатеричной записи

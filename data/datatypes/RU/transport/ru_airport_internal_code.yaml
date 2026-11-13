@@ -1,0 +1,34 @@
+id: ru_airport_internal_code
+name: Russian internal airport code
+status: draft
+doc: Three-letter Cyrillic code of an airport in the internal coding system inherited from the Soviet
+  Union. Russian booking systems and timetables use it next to the IATA code (iataairportcode), and airports
+  without an IATA code have only this one. Any three Cyrillic capital letters match, so use the field
+  name or context.
+categories:
+- transport
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: ^[А-ЯЁ]{3}$
+examples:
+- value: АБН
+  description: Abakan
+- value: АХГ
+  description: Arkhangelsk (Talagi)
+- value: БГЩ
+  description: Blagoveshchensk (Ignatyevo)
+- value: ABA
+  valid: false
+  description: IATA code in Latin letters
+links:
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/Список_аэропортов_России
+translations:
+  ru:
+    name: Внутренний код аэропорта
+    doc: Трёхбуквенный кириллический код аэропорта во внутренней системе кодирования, унаследованной от
+      СССР.

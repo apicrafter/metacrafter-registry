@@ -1,0 +1,35 @@
+id: ru_etsng_code
+name: ETSNG cargo code
+status: draft
+doc: Six-digit code of a cargo in the Unified Tariff and Statistical Nomenclature of Goods (ЕТСНГ), which
+  Russian Railways and other railways of the 1520 mm gauge use in consignment notes, tariffs and statistics.
+  The nomenclature has sections, groups and positions. International consignments also carry the eight-digit
+  GNG code (gng_code). Any six digits match, so use the field name or context.
+categories:
+- transport
+- shipping
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{6}$
+examples:
+- value: '011005'
+  description: Wheat
+- value: '161005'
+  description: Hard coal
+- value: '211007'
+  description: Petrol
+- value: '11005'
+  valid: false
+  description: Leading zero lost
+links:
+- type: other
+  url: https://www.alta.ru/information/etsng/
+translations:
+  ru:
+    name: Код груза ЕТСНГ
+    doc: Шестизначный код груза по Единой тарифно-статистической номенклатуре грузов (ЕТСНГ), применяемой
+      на железных дорогах колеи 1520 мм.
