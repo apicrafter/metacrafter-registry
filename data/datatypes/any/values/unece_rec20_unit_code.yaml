@@ -1,6 +1,6 @@
 id: unece_rec20_unit_code
 name: UN/ECE Recommendation 20 unit code (UN/CEFACT common code)
-status: draft
+status: stable
 doc: Two- or three-character code of a unit of measure from UN/ECE Recommendation 20, used in trade documents
   such as UN/EDIFACT and UBL invoices, for example KGM for kilogram or H87 for piece. Codes use uppercase
   letters and digits. Some lists, such as Peppol, add package codes from Recommendation 21 with an X prefix;

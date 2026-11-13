@@ -1,0 +1,30 @@
+id: exchange_rate
+name: Currency exchange rate
+status: draft
+doc: Price of one currency expressed in another, as a decimal number, for example 97.8637 units of the
+  local currency for one unit of the foreign currency. Customs declarations and invoices keep it next
+  to the currency code and the amount in the foreign currency, to convert the amount to the local currency.
+  The number alone does not say which currencies it relates or in which direction, so the field name is
+  the evidence.
+parent: numeric
+categories:
+- finances
+- values
+langs:
+- common
+is_pii: false
+examples:
+- value: '97.8637'
+  description: Rate with four decimal places, as in a customs declaration
+- value: '84.95'
+  description: Rate with two decimal places
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Exchange_rate
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q66100
+translations:
+  ru:
+    name: Курс валюты
+  fr:
+    name: Taux de change

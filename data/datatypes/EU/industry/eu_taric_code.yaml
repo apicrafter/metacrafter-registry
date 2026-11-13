@@ -6,6 +6,7 @@ doc: Ten-digit goods nomenclature code of TARIC, the integrated tariff of the Eu
   digits are the Combined Nomenclature code (eu_cn_code) and the last two are TARIC subdivisions, 00 where
   there is none. TARIC additional codes are separate values and are not covered. The regexp only checks
   for ten digits, so it also matches other ten-digit numbers.
+parent: national_tariff_code
 categories:
 - industry
 - shipping

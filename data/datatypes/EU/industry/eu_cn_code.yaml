@@ -6,6 +6,7 @@ doc: Eight-digit goods code of the Combined Nomenclature, the goods classificati
   (EEC) No 2658/87 and is updated every year. The first six digits are the HS subheading (hs_code) and
   the last two are EU subdivisions. The official text groups the digits as 1806 10 15; databases often
   write them without spaces. TARIC codes (eu_taric_code) add two more digits.
+parent: national_tariff_code
 categories:
 - industry
 - shipping
