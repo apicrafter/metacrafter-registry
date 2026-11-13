@@ -1,0 +1,30 @@
+id: tire_code
+name: Tyre size code (ISO metric)
+status: draft
+doc: Size marking on the sidewall of a tyre in the ISO metric system. It has an optional class prefix
+  (P for passenger cars, LT for light trucks), the section width in millimetres, a slash, the aspect ratio
+  in percent, the construction letter (R radial, B bias belt, D diagonal) and the rim diameter in inches.
+  The load index and the speed symbol may follow after a space. Inch-based light truck sizes such as 37X12.5R17LT
+  are not covered.
+categories:
+- transport
+- industry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: '^(?:P|LT)?\d{3}/\d{2,3}[RBD]\d{1,2}(?: \d{2,3}[A-Z]\d?)?$'
+examples:
+- value: P195/55R16 85H
+  description: Passenger tyre, 195 mm wide, radial, 16 inch rim, load index 85, speed symbol H
+- value: 195/55R16
+  description: Size without the prefix and the service description
+- value: 37X12.5R17LT
+  valid: false
+  description: Light truck size in inches
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Tire_code
+translations:
+  ru:
+    name: Маркировка размера шины

@@ -1,12 +1,27 @@
 id: containernumber
-name: Shipping container number by field name
+name: Shipping container number (ISO 6346)
 status: draft
-doc: Shipping container number by field name identifier
+doc: Identification of an intermodal freight container under ISO 6346. It has the three-letter owner code
+  registered with the Bureau International des Containers, the equipment category letter (U for freight
+  containers, J for detachable equipment, Z for trailers and chassis), a six-digit serial number and a
+  check digit.
 categories:
 - shipping
 langs:
 - en
 is_pii: false
 classification: identifier
+regexp: ^[A-Z]{3}[UJZ] ?\d{6}[ -]?\d$
+examples:
+- value: CSQU3054383
+  description: Worked example of the check digit from the Wikipedia article
+- value: CSQU 305438 3
+  description: The same number with spaces
+- value: CSQX3054383
+  valid: false
+  description: X is not an equipment category
 mappings:
   stdnum: iso6346
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_6346

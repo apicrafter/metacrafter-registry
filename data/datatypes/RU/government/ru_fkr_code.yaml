@@ -1,0 +1,32 @@
+id: ru_fkr_code
+name: Russian budget expenditure section and subsection code
+status: draft
+doc: Four-digit code of the section and subsection of the classification of budget expenditures of Russia,
+  formerly the functional classification of expenditures (ФКР). The first two digits are the section and
+  the last two are the subsection; a section as a whole ends in 00. In the 20-digit expenditure code it
+  follows the code of the chief administrator of budget funds (fedgrbs) and precedes the target item (csrcode)
+  and the expense type (kvrcode). Any four digits match, so use the field name or context.
+categories:
+- government
+- finances
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: ^\d{4}$
+examples:
+- value: '0100'
+  description: Section General state matters
+- value: '100'
+  valid: false
+  description: Leading zero lost
+links:
+- type: doc
+  url: https://www.consultant.ru/document/cons_doc_LAW_91957/5c66ffd841f692e780a84931ca16c8dd97f94c9e/
+translations:
+  ru:
+    name: Код раздела и подраздела расходов бюджета (ФКР)
+    doc: Четырёхзначный код раздела (два знака) и подраздела (два знака) классификации расходов бюджетов
+      Российской Федерации.

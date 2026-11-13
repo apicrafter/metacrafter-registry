@@ -1,0 +1,37 @@
+id: ru_okgr
+name: Russian hydropower resource code (OKGR)
+status: draft
+doc: Fourteen-digit code of a hydropower site in the Russian Classification of Hydropower Resources (ОКГР,
+  ОК 030-2002). The first five digits identify the object, three for the series of the first-order river
+  and two for the serial number in the river basin. The sixth digit is the control number of this block.
+  The other eight digits are classification features, among them the economic region, the constituent
+  entity, the stage of development and the kind of water use.
+categories:
+- energy
+- environment
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{14}$
+examples:
+- value: '13282005603111'
+  description: Belorechensky site on the Belaya river
+- value: '45616005322111'
+  description: Gorkovsky site on the Volga
+- value: '16002105141111'
+  description: Narvsky site on the Narva
+- value: '1328200560311'
+  valid: false
+  description: Thirteen digits
+links:
+- type: doc
+  url: https://meganorm.ru/Data2/1/4293853/4293853568.htm
+translations:
+  ru:
+    name: Код ОКГР
+    doc: Четырнадцатизначный код объекта по Общероссийскому классификатору гидроэнергетических ресурсов
+      (ОКГР, ОК 030-2002). Первые пять знаков идентифицируют объект, шестой — контрольное число, остальные
+      — классификационные признаки.

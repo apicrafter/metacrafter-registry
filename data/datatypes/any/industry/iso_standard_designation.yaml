@@ -1,0 +1,32 @@
+id: iso_standard_designation
+name: ISO standard designation
+status: draft
+doc: Reference to a standard or other deliverable of the International Organization for Standardization,
+  as in ISO 9001:2015. After ISO may stand a partner organisation (ISO/IEC), then the number, the part
+  after a hyphen, and the year of the edition after a colon. The year is often left out.
+categories:
+- industry
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^ISO(?:/[A-Z]+)* \d+(?:-\d+)*(?::\d{4})?$
+examples:
+- value: ISO 9001:2015
+  description: Quality management systems
+- value: ISO 6346
+  description: Container coding, without the year
+- value: ISO/IEC 27001:2022
+  description: Joint standard of ISO and IEC
+- value: ISO 8601-1:2019
+  description: Standard with a part number
+- value: ГОСТ Р ИСО 9001-2015
+  valid: false
+  description: Russian adoption (ru_gost_designation)
+links:
+- type: other
+  url: https://www.iso.org/standards.html
+translations:
+  ru:
+    name: Обозначение стандарта ISO

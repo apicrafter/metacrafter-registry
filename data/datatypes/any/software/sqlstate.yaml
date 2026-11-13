@@ -1,0 +1,32 @@
+id: sqlstate
+name: SQLSTATE code
+status: draft
+doc: Five-character code with which a SQL database reports the result of a statement, defined by the SQL
+  standard. The first two characters are the class of the condition and the last three are the condition
+  in that class. A code that ends in 000 is the generic code of its class. Codes use digits and capital
+  letters. PostgreSQL, Db2, Oracle and ODBC and JDBC drivers return them, and database logs store them.
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[0-9A-Z]{5}$
+examples:
+- value: '42601'
+  description: syntax_error in PostgreSQL
+- value: '23505'
+  description: unique_violation in PostgreSQL
+- value: 42P01
+  description: undefined_table in PostgreSQL
+- value: 40P01
+  description: deadlock_detected in PostgreSQL
+- value: 42p01
+  valid: false
+  description: Lowercase letter
+links:
+- type: doc
+  url: https://www.postgresql.org/docs/current/errcodes-appendix.html
+translations:
+  ru:
+    name: Код SQLSTATE

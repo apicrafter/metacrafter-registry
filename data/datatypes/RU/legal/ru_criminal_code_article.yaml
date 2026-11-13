@@ -1,0 +1,33 @@
+id: ru_criminal_code_article
+name: Reference to an article of the Russian Criminal Code
+status: draft
+doc: Reference to an article of the Criminal Code of the Russian Federation in the usual short form, such
+  as ст. 158 УК РФ. Articles added after 1996 have a number with a dot, as in 159.1. The part (ч.) and
+  the point (п.) of the article may stand before it. The pattern covers one article per value.
+categories:
+- legal
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: categorical
+regexp: ^(?:п\. ?[«"]?[а-я][»"]? )?(?:ч\. ?\d{1,2} )?ст\. ?\d{1,3}(?:\.\d{1,2})? УК РФ$
+examples:
+- value: ст. 158 УК РФ
+  description: Article
+- value: ч. 2 ст. 159.1 УК РФ
+  description: Part of an article with a dotted number
+- value: п. «а» ч. 2 ст. 105 УК РФ
+  description: Point and part of an article
+- value: ст. 158 ГК РФ
+  valid: false
+  description: Article of the Civil Code
+links:
+- type: doc
+  url: https://www.consultant.ru/document/cons_doc_LAW_10699/
+translations:
+  ru:
+    name: Ссылка на статью УК РФ
+    doc: Ссылка на статью Уголовного кодекса Российской Федерации в краткой форме, например ст. 158 УК
+      РФ, с необязательными частью и пунктом.

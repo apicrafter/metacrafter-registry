@@ -1,0 +1,31 @@
+id: e_road_number
+name: European route number (E-road)
+status: draft
+doc: Number of a road in the international E-road network of the UNECE. It has the letter E and one to
+  three digits, written with or without a space. Class A roads have numbers from 1 to 129. Class B roads
+  always have three digits, and those east of E101 start with 0. Do not confuse it with the E number of
+  a food additive (e_number).
+categories:
+- transport
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^E ?\d{1,3}$
+examples:
+- value: E20
+  description: Shannon to Saint Petersburg
+- value: E 85
+  description: Klaipėda to Alexandroupoli, with a space
+- value: E018
+  description: Class B road with a leading zero
+- value: E1234
+  valid: false
+  description: Four digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_E-road_network
+translations:
+  ru:
+    name: Номер европейского маршрута (E-дорога)

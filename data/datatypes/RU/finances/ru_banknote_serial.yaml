@@ -1,0 +1,25 @@
+id: ru_banknote_serial
+name: Russian rouble banknote serial number
+status: draft
+doc: Series and number printed on a Bank of Russia banknote. Notes of the 1997 design and its modifications
+  have a two-letter series and a seven-digit number. The 200 and 2000 rouble notes of 2017 have a nine-digit
+  number. The pattern accepts Cyrillic letters in either case and an optional space after the series.
+categories:
+- finances
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^[А-Яа-я]{2} ?(?:\d{7}|\d{9})$
+links:
+- type: doc
+  url: https://cbr.ru/cash_circulation/banknotes/500rub/?tab.current=y1997
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/Билет_Банка_России
+translations:
+  ru:
+    name: Серия и номер банкноты Банка России
+    doc: Двухбуквенная серия и семизначный номер банкноты Банка России; у банкнот 200 и 2000 рублей 2017
+      года номер девятизначный.

@@ -1,0 +1,28 @@
+id: ngc_number
+name: NGC object designation (New General Catalogue)
+status: draft
+doc: Designation of a galaxy, star cluster or nebula in the New General Catalogue of 1888, the letters
+  NGC and a number from 1 to 7840. Some entries have a letter after the number, as in NGC 1427A.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^NGC ?\d{1,4}[A-Z]?$
+examples:
+- value: NGC 224
+  description: Andromeda Galaxy
+- value: NGC 598
+  description: Triangulum Galaxy
+- value: NGC 1427A
+  description: Entry with a letter
+- value: IC 342
+  valid: false
+  description: Object of the Index Catalogue
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/New_General_Catalogue
+translations:
+  ru:
+    name: Обозначение объекта по Новому общему каталогу (NGC)

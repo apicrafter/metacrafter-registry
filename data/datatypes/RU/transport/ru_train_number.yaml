@@ -1,0 +1,30 @@
+id: ru_train_number
+name: Russian passenger train number
+status: draft
+doc: Number of a long-distance passenger train of Russian Railways as tickets and booking systems write
+  it, three digits and a Cyrillic letter. The digits give the category of the train, for example 1-150
+  for year-round fast trains and 701-750 for high-speed trains. Trains to the north and east have even
+  numbers, trains to the south and west have odd ones, and a train takes the paired number on the way
+  back. The letter makes the number unique and relates to the railway of departure or arrival.
+categories:
+- transport
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: ^\d{3}[А-ЯЁ]$
+examples:
+- value: 109Ж
+  description: Train of the Privolzhskaya railway
+- value: '109'
+  valid: false
+  description: The letter is missing
+links:
+- type: other
+  url: https://t-j.ru/bukvi-v-nomere-poezda/
+translations:
+  ru:
+    name: Номер пассажирского поезда
+    doc: Номер поезда дальнего следования РЖД в билетах и системах бронирования — три цифры и буква кириллицы.

@@ -1,0 +1,29 @@
+id: uic_country_code
+name: UIC country code
+status: draft
+doc: Two-digit code of a country in the numbering of the International Union of Railways (UIC leaflet
+  920-14). It appears in wagon numbers (uic_wagon_number) and station numbers. It began as a code of the
+  railway company and now belongs to the country. Any two digits match, so use the field name or context.
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{2}$
+examples:
+- value: '20'
+  description: Russia
+- value: '80'
+  description: Germany
+- value: '87'
+  description: France
+- value: RU
+  valid: false
+  description: ISO 3166-1 alpha-2 code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_UIC_country_codes
+translations:
+  ru:
+    name: Код страны МСЖД (UIC)

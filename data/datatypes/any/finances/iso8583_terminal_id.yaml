@@ -1,0 +1,18 @@
+id: iso8583_terminal_id
+name: Card acceptor terminal identification (ISO 8583)
+status: draft
+doc: Identifier of a payment terminal at a merchant, data element 41 of an ISO 8583 message. It has eight
+  characters, which may be letters, digits or special characters. The acquirer assigns it.
+categories:
+- finances
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[\x20-\x7E]{8}$
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_8583
+translations:
+  ru:
+    name: Идентификатор терминала эквайринга (ISO 8583)

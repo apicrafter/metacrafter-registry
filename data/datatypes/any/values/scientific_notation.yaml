@@ -1,0 +1,23 @@
+id: scientific_notation
+name: Number in scientific (E) notation
+status: draft
+doc: Number written as a mantissa and a power of ten after the letter E, as in 6.022e23. Programming languages,
+  spreadsheets and CSV exports write very large and very small numbers this way. A spreadsheet often turns
+  a long identifier into this form, which loses digits.
+semantic_type: numeric
+langs:
+- common
+regexp: ^[+-]?\d+(?:\.\d+)?[eE][+-]?\d+$
+examples:
+- value: 6.022e23
+  description: Mantissa 6.022 and exponent 23
+- value: 1E-9
+  description: One billionth
+- value: '7.729E+9'
+  description: Form that spreadsheets give to a long number
+- value: 6.022x10^23
+  valid: false
+  description: Written with a multiplication sign
+translations:
+  ru:
+    name: Число в научной (экспоненциальной) записи

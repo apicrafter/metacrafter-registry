@@ -1,0 +1,30 @@
+id: maritime_identification_digits
+name: Maritime Identification Digits (MID)
+status: draft
+doc: Three-digit code that the International Telecommunication Union assigns to a country or area for
+  maritime radio. It starts the MMSI of a ship station (mmsi). The first digit gives the region, from
+  2 for Europe to 7 for South America. A country can have several codes.
+categories:
+- transport
+- telecom
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[2-7]\d{2}$
+examples:
+- value: '273'
+  description: Russia
+- value: '211'
+  description: Germany
+- value: '431'
+  description: Japan
+- value: '111'
+  valid: false
+  description: Prefix of search and rescue aircraft, not a country code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Maritime_identification_digits
+translations:
+  ru:
+    name: Морской идентификационный код страны (MID)

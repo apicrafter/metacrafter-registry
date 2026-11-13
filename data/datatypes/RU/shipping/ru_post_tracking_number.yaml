@@ -1,0 +1,36 @@
+id: ru_post_tracking_number
+name: Russian Post tracking number (ShPI)
+status: draft
+doc: Fourteen-digit bar-code postal identifier (ШПИ) that Russian Post assigns to a registered domestic
+  item. Digits 1-6 are the postal code of the accepting post office, digits 7-8 count the month in which
+  the bar code was printed, digits 9-13 are the serial number of the item in that office and month, and
+  digit 14 is a check digit. The check digit uses the same weights as GS1 keys (3 for odd positions, 1
+  for even positions, modulo 10). International items use the UPU S10 number instead (s10upu).
+categories:
+- shipping
+country:
+- RU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{14}$
+checksum: gs1_mod10
+examples:
+- value: '14211716007389'
+  description: Worked example of the check digit from the Russian Wikipedia article
+- value: '14211716007380'
+  valid: false
+  description: Wrong check digit
+- value: '1421171600738'
+  valid: false
+  description: Thirteen digits, the check digit is missing
+links:
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/Почтовый_идентификатор
+translations:
+  ru:
+    name: Штриховой почтовый идентификатор (ШПИ)
+    doc: Четырнадцатизначный идентификатор регистрируемого внутреннего почтового отправления Почты России.
+      Состоит из индекса отделения приёма, номера месяца, порядкового номера отправления и контрольного
+      разряда.

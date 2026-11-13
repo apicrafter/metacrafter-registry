@@ -1,0 +1,32 @@
+id: ftp_reply_code
+name: FTP reply code
+status: draft
+doc: Three-digit code with which an FTP server answers a command (RFC 959). The first digit, 1 to 5, says
+  whether the reply is preliminary, a completion, intermediate, a transient failure or a permanent failure.
+  The second digit, 0 to 5, gives the group, such as syntax, connections or the file system. HTTP and
+  SMTP codes have the same form, so use the field name or context.
+categories:
+- internet
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-5][0-5]\d$
+examples:
+- value: '220'
+  description: Service ready for new user
+- value: '226'
+  description: Closing data connection
+- value: '331'
+  description: User name okay, need password
+- value: '550'
+  description: Requested action not taken, file unavailable
+- value: '650'
+  valid: false
+  description: The first digit is at most 5
+links:
+- type: doc
+  url: https://www.rfc-editor.org/rfc/rfc959
+translations:
+  ru:
+    name: Код ответа сервера FTP

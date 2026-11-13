@@ -1,0 +1,32 @@
+id: ca_ised_certification_number
+name: ISED Canada certification number (IC ID)
+status: draft
+doc: Certification number of radio equipment in Canada, issued under Innovation, Science and Economic
+  Development Canada (ISED, formerly Industry Canada) and printed on the device label after the prefix
+  IC:. It joins the company number that ISED assigns and, after a hyphen, the unique product number of
+  up to 11 capital letters and digits that the applicant chooses. Sources give different lengths for the
+  company number, so the pattern accepts one to seven characters. The United States counterpart is the
+  FCC ID (fccid).
+categories:
+- telecom
+country:
+- CA
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '^(?:IC: ?)?[A-Z0-9]{1,7}-[A-Z0-9]{1,11}$'
+examples:
+- value: 'IC: 21-A3'
+  description: Example from an archived edition of RSP-100
+- value: 21-A3
+  description: The same number without the prefix
+- value: 21/A3
+  valid: false
+  description: Slash instead of the hyphen
+links:
+- type: doc
+  url: https://ised-isde.canada.ca/site/certification-engineering-bureau/en/node/24
+translations:
+  ru:
+    name: Номер сертификации ISED Канады (IC ID)

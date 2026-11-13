@@ -1,0 +1,37 @@
+id: ru_gost_designation
+name: GOST standard designation
+status: draft
+doc: Designation of an interstate standard (ГОСТ) or a Russian national standard (ГОСТ Р). It has the
+  index, the registration number, which may contain dots, and after a hyphen or dash the year of adoption,
+  two digits for older standards and four for newer ones. A standard identical to an international one
+  adds the abbreviation of that organisation to the index, as in ГОСТ Р ИСО 9001-2015.
+categories:
+- industry
+- legal
+country:
+- RU
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: '^ГОСТ(?: Р)?(?: [А-Я]+(?:/[А-Я]+)*)? \d+(?:\.\d+)*(?:[-–—]\d+)*[-–—](?:\d{2}|\d{4})$'
+examples:
+- value: ГОСТ 2.201-80
+  description: Interstate standard of the ESKD series
+- value: ГОСТ Р 1.5-2012
+  description: Russian national standard
+- value: ГОСТ Р ИСО 9001-2015
+  description: National standard identical to an ISO standard
+- value: ГОСТ 2.601—2013
+  description: Designation written with an em dash
+- value: ISO 9001:2015
+  valid: false
+  description: ISO designation
+links:
+- type: doc
+  url: https://meganorm.ru/Data2/1/4293782/4293782248.htm
+translations:
+  ru:
+    name: Обозначение стандарта ГОСТ
+    doc: Обозначение межгосударственного (ГОСТ) или национального (ГОСТ Р) стандарта — индекс, регистрационный
+      номер и год принятия через тире.

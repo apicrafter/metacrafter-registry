@@ -1,0 +1,34 @@
+id: glottocode
+name: Glottocode (Glottolog language identifier)
+status: draft
+doc: Identifier of a language, dialect or language family in the Glottolog catalogue. It has four lowercase
+  letters or digits, usually taken from the name, and four digits. Unlike ISO 639-3 (iso639_3) it also
+  covers families and dialects.
+categories:
+- common
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[a-z0-9]{4}\d{4}$
+examples:
+- value: stan1293
+  description: English
+- value: russ1263
+  description: Russian
+- value: sign1238
+  description: Pseudo-family of sign languages
+- value: stan129
+  valid: false
+  description: Three digits
+mappings:
+  wikidata: P1394
+links:
+- type: doc
+  url: https://glottolog.org/glottolog/glottologinformation
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1394
+translations:
+  ru:
+    name: Код языка Glottolog (глоттокод)

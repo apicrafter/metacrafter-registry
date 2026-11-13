@@ -1,0 +1,31 @@
+id: errno_name
+name: POSIX errno name
+status: draft
+doc: Symbolic name of a system error number from the C header errno.h, such as ENOENT. System calls and
+  library functions on Unix-like systems set errno to one of these values. Programs and logs record the
+  name because the number behind a name differs between systems. All names start with the letter E.
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^E[A-Z0-9]{2,}$
+examples:
+- value: ENOENT
+  description: No such file or directory
+- value: EACCES
+  description: Permission denied
+- value: ETIMEDOUT
+  description: Connection timed out
+- value: E2BIG
+  description: Argument list too long
+- value: enoent
+  valid: false
+  description: Lowercase
+links:
+- type: doc
+  url: https://man7.org/linux/man-pages/man3/errno.3.html
+translations:
+  ru:
+    name: Имя кода ошибки errno (POSIX)

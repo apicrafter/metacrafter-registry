@@ -1,0 +1,33 @@
+id: windows_code_page
+name: Windows code page identifier
+status: draft
+doc: Number of a character encoding in Windows, as in 1251 for Windows Cyrillic and 65001 for UTF-8. Identifiers
+  run from 037 to 65001. File metadata, database collations and the chcp command use them. The name of
+  the encoding is a separate record (character_encoding). Any number of three to five digits matches,
+  so use the field name or context.
+categories:
+- software
+- texts
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{3,5}$
+examples:
+- value: '1251'
+  description: windows-1251, ANSI Cyrillic
+- value: '866'
+  description: cp866, OEM Russian
+- value: '65001'
+  description: utf-8
+- value: '037'
+  description: IBM037, IBM EBCDIC US-Canada
+- value: cp1251
+  valid: false
+  description: Encoding name
+links:
+- type: doc
+  url: https://learn.microsoft.com/en-us/windows/win32/intl/code-page-identifiers
+translations:
+  ru:
+    name: Номер кодовой страницы Windows

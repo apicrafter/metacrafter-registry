@@ -1,0 +1,40 @@
+id: ru_military_unit_number
+name: Russian military unit number
+status: draft
+doc: Conventional number of a military unit (войсковая часть, в/ч), used in open documents instead of
+  the real name of the unit. Units of the Ministry of Defence have five digits, and units of the internal
+  troops and the border troops have four. A subunit without its own number takes the number of its parent
+  unit and a Cyrillic letter. The Soviet Union introduced the system, and Belarus and Kazakhstan use the
+  same form. The pattern accepts the number with or without the words в/ч or войсковая часть; a bare number
+  needs the field name or context.
+categories:
+- government
+country:
+- RU
+- BY
+- KZ
+langs:
+- ru
+is_pii: false
+classification: identifier
+regexp: '^(?:(?:в/ч|войсковая часть) ?(?:№ ?)?)?\d{4,5}(?: ?[-–—] ?[А-Я])?$'
+examples:
+- value: '06017'
+  description: Five-digit number with a leading zero
+- value: в/ч 32363
+  description: Number with the abbreviation
+- value: войсковая часть 3111
+  description: Four-digit number of an internal troops unit
+- value: в/ч 71184-А
+  description: Subunit with a letter
+- value: А0998
+  valid: false
+  description: Ukrainian form with a letter prefix
+links:
+- type: wikipedia
+  url: https://ru.wikipedia.org/wiki/Войсковая_часть
+translations:
+  ru:
+    name: Номер войсковой части
+    doc: Условное наименование войсковой части (в/ч), пять цифр для частей Министерства обороны и четыре
+      для внутренних и пограничных войск; у подразделений без собственного номера добавляется буква.
