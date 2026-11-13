@@ -1,0 +1,23 @@
+id: unixtime_ms
+name: Unix time in milliseconds
+status: draft
+doc: A point in time written as the number of milliseconds since the Unix epoch (1970-01-01T00:00:00Z),
+  negative before it. JavaScript Date values, ArcGIS REST and GeoJSON exports and many web APIs write
+  dates this way, usually as 13-digit integers.
+parent: datetime
+categories:
+- datetime
+langs:
+- common
+is_pii: false
+regexp: ^-?\d{11,13}$
+examples:
+- value: '1689019752000'
+  description: '2023-07-10T20:09:12+00:00'
+- value: '1219788000000'
+  description: '2008-08-26T22:00:00+00:00'
+- value: '-1019869200000'
+  description: '1937-09-06T23:00:00+00:00'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Unix_time
