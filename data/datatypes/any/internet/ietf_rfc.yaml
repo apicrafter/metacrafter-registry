@@ -1,0 +1,22 @@
+id: ietf_rfc
+name: IETF RFC reference
+status: draft
+doc: Reference to a Request for Comments document of the IETF and the RFC Editor, by its number, sometimes
+  with a section. Protocol registries and standards documents cite their sources this way.
+categories:
+- internet
+- identifiers
+langs:
+- common
+is_pii: false
+regexp: ^\[?RFC ?\d{1,5}(, Section [\d.]+)?\]?$
+examples:
+- value: '[RFC 1918]'
+  description: Address Allocation for Private Internets, cited in the IANA IPv4 special-purpose registry
+- value: '[RFC 791, Section 3.2]'
+  description: RFC number with a section
+links:
+- type: doc
+  url: https://www.rfc-editor.org/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Request_for_Comments
