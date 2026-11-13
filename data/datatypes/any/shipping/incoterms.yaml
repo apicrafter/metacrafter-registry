@@ -1,6 +1,6 @@
 id: incoterms
 name: Incoterms 2020 rule
-status: draft
+status: stable
 doc: Three-letter code of one of the eleven Incoterms 2020 trade terms published by the International
   Chamber of Commerce. EXW, FCA, CPT, CIP, DAP, DPU and DDP apply to any mode of transport; FAS, FOB,
   CFR and CIF only to sea and inland waterway transport. DPU replaced DAT of Incoterms 2010. Values with

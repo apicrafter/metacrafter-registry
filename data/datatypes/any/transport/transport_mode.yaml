@@ -1,0 +1,30 @@
+id: transport_mode
+name: Mode of transport
+status: draft
+doc: Kind of transport that carries goods or passengers, written as a word, for example Air, Sea, Road
+  or Rail. Customs declarations and trade statistics record the mode of transport at the border. The coded
+  form in trade documents is the one-digit code of UN/ECE Recommendation 19 (unece_rec19_transport_mode_code).
+categories:
+- transport
+- shipping
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Air
+  description: Air transport
+- value: Sea
+  description: Maritime transport
+- value: Road
+  description: Road transport
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Mode_of_transport
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q334166
+translations:
+  ru:
+    name: Вид транспорта
+  fr:
+    name: Mode de transport

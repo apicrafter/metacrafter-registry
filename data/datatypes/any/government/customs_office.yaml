@@ -1,0 +1,25 @@
+id: customs_office
+name: Customs office
+status: draft
+doc: Name of the customs office, customs house or customs post that handles a declaration, for example
+  the office of entry, exit or clearance. Customs declarations and trade statistics keep it next to the
+  port of loading or unloading (port). Customs administrations also give their offices codes; these codes
+  are national and are not covered by this record.
+categories:
+- government
+- shipping
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Dhaka Customs House
+  description: Customs house in Bangladesh
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Custom_house
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q218653
+translations:
+  ru:
+    name: Таможенный орган (таможня, таможенный пост)

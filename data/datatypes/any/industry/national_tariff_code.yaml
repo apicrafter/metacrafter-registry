@@ -1,0 +1,38 @@
+id: national_tariff_code
+name: National tariff line code (HS-based, 8 or 10 digits)
+status: draft
+doc: Goods code of a national or regional customs tariff that extends the six-digit subheading of the
+  Harmonized System (hs_code) with national digits. Countries usually set duties at the eight-digit level
+  and often add a statistical suffix for ten digits in total. Examples are the EU Combined Nomenclature
+  (eu_cn_code) and TARIC (eu_taric_code), the US HTS (us_hts_number), the EAEU TN VED (tnved) and the
+  Indian ITC (HS). The same digits mean different goods in different tariffs, so use the record of the
+  tariff when the country is known. The regexp accepts digits without separators, as trade databases write
+  them.
+parent: hs_code
+categories:
+- industry
+- shipping
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{8}(?:\d{2})?$
+examples:
+- value: '01012100'
+  description: 'Eight digits: pure-bred breeding horses in the EU Combined Nomenclature'
+- value: '0101210010'
+  description: 'Ten digits: US HTS statistical reporting number 0101.21.00.10 without dots'
+- value: '010121'
+  valid: false
+  description: 'Six digits: the HS subheading'
+- value: '010121001'
+  valid: false
+  description: Nine digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Harmonized_System
+- type: doc
+  url: https://www.wcoomd.org/en/topics/nomenclature/overview/what-is-the-harmonized-system.aspx
+translations:
+  ru:
+    name: Код национальной товарной номенклатуры (на основе ГС, 8 или 10 знаков)
