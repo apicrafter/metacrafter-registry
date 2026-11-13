@@ -1,0 +1,30 @@
+id: port
+name: Port (place of loading or unloading)
+status: draft
+doc: Name of the port where goods or passengers are loaded or unloaded, as written in customs declarations,
+  bills of lading and trade statistics, for example the port of loading or the port of unloading. In trade
+  data the column often also holds airports, land border points and inland depots. The coded form of such
+  places is the UN/LOCODE (unlocode). Not a network port number (port_number).
+categories:
+- shipping
+- transport
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Chittagong
+  description: Seaport in Bangladesh
+- value: Dhaka
+  description: City used as the place of unloading for air and inland cargo
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Port
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q44782
+translations:
+  ru:
+    name: Порт (место погрузки или выгрузки)
+  fr:
+    name: Port (lieu de chargement ou de déchargement)

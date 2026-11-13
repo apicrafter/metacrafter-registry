@@ -6,6 +6,7 @@ doc: Number of the Harmonized Tariff Schedule of the United States (HTSUS), publ
   the eight-digit subheading, written 0101.21.00, and a two-digit statistical suffix makes the ten-digit
   statistical reporting number, written 0101.21.00.10. US Customs rulings often drop the last dot (6110.20.2079).
   The regexp requires the dots, because ten digits without them cannot be told from other codes.
+parent: national_tariff_code
 categories:
 - industry
 - shipping

@@ -1,0 +1,26 @@
+id: package_type
+name: Package type
+status: draft
+doc: Kind of package in which goods are shipped, written as a word, for example Box, Carton, Bag, Drum
+  or Pallet. Customs declarations, packing lists and bills of lading keep it next to the number of packages.
+  The coded form in trade documents is the two-character code of UN/ECE Recommendation 21 (unece_rec21_package_code).
+categories:
+- shipping
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Box
+- value: Carton
+- value: Bag
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Packaging
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q207822
+translations:
+  ru:
+    name: Вид упаковки
+  fr:
+    name: Type d'emballage

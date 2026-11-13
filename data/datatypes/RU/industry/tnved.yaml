@@ -3,6 +3,7 @@ name: TN VED code (EAEU commodity nomenclature)
 status: stable
 doc: TN VED is the commodity nomenclature of the Eurasian Economic Union (Armenia, Belarus, Kazakhstan,
   Kyrgyzstan, Russia), based on the Harmonized System, used for customs and foreign trade statistics.
+parent: national_tariff_code
 categories:
 - common
 country:

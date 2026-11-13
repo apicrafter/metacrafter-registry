@@ -1,6 +1,6 @@
 id: iso4217curcode
 name: ISO 4217 Currency code
-status: draft
+status: stable
 doc: Three-letter alphabetic code of a currency in ISO 4217, as in EUR or USD. The Russian classifier
   of currencies (OKV, okvalpha) uses the same codes.
 semantic_type: currency
@@ -14,6 +14,14 @@ examples:
   description: palladium
 - value: EUR
   description: euro
+- value: USD
+  description: US dollar
+- value: EURO
+  valid: false
+  description: four letters
+- value: eur
+  valid: false
+  description: lowercase
 mappings:
   autotype: currency
   cdm:
@@ -26,6 +34,8 @@ mappings:
 links:
 - type: other
   url: https://www.iso.org/iso-4217-currency-codes.html
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_4217
 - type: wikidata
   url: https://www.wikidata.org/wiki/Property:P498
 translations:

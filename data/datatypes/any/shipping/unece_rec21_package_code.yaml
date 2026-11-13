@@ -1,0 +1,28 @@
+id: unece_rec21_package_code
+name: UN/ECE Recommendation 21 package type code
+status: draft
+doc: Two-character code of a type of package from UN/ECE Recommendation 21, used in customs declarations,
+  UN/EDIFACT and UBL documents, for example BX for box or CT for carton. Codes use uppercase letters and
+  digits in any combination (BX, 1A, 43). Many other two-character codes have the same shape, such as
+  country codes, so the field name is the evidence.
+semantic_type: package_type
+langs:
+- common
+regexp: ^[A-Z0-9]{2}$
+examples:
+- value: BX
+  description: Box
+- value: CT
+  description: Carton
+- value: BG
+  description: Bag
+- value: 1A
+  description: Drum, steel
+- value: '43'
+  description: Bag, super bulk
+- value: BOX
+  valid: false
+  description: Three characters
+links:
+- type: doc
+  url: https://docs.oasis-open.org/ubl/os-UBL-2.1/cl/gc/default/PackagingTypeCode-2.1.gc

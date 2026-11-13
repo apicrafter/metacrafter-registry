@@ -1,0 +1,24 @@
+id: unece_rec19_transport_mode_code
+name: UN/ECE Recommendation 19 mode of transport code
+status: draft
+doc: 'One-digit code of a mode of transport from UN/ECE Recommendation 19, used in customs declarations,
+  UN/EDIFACT and UBL documents: 0 not specified, 1 maritime, 2 rail, 3 road, 4 air, 5 mail, 6 multimodal,
+  7 fixed transport installations such as pipelines, 8 inland water, 9 not applicable. A single digit
+  only means this in a transport mode column, so the field name is the evidence.'
+semantic_type: transport_mode
+langs:
+- common
+regexp: ^[0-9]$
+examples:
+- value: '1'
+  description: Maritime transport
+- value: '3'
+  description: Road transport
+- value: '4'
+  description: Air transport
+- value: '10'
+  valid: false
+  description: Two digits
+links:
+- type: doc
+  url: https://docs.oasis-open.org/ubl/os-UBL-2.1/cl/gc/default/TransportModeCode-2.1.gc
