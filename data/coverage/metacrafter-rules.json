@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "3b9866358bca879b4b1a21d90135ca6ce6dbdf18"
+  "ref": "99a90f18c809d1ab6ea91a01eef124464ba5a961"
  },
  "rules": [
   {
@@ -3165,6 +3165,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "daterangevalue",
+   "key": "date_range",
+   "type": "data",
+   "match": "func",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "datetimeknown",
    "key": "datetime",
    "type": "field",
@@ -3199,6 +3209,16 @@
    "key": "duration",
    "type": "data",
    "match": "func",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "excelserialdatetimebyname",
+   "key": "excel_serial_datetime",
+   "type": "field",
+   "match": "regex",
    "file": "common/dateandtime.yaml",
    "context": "datetime",
    "lang": "common",
@@ -5605,6 +5625,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "academicdisciplinebyname",
+   "key": "academic_discipline",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "doibydata",
    "key": "doi",
    "type": "data",
@@ -5765,6 +5795,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "lipidnumberbyname",
+   "key": "lipid_number",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "lipidnumbervalue",
+   "key": "lipid_number",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "oastatusbyfield",
    "key": "oa_status",
    "type": "field",
@@ -5809,6 +5859,16 @@
    "key": "orcid",
    "type": "data",
    "match": "ppr",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "postagbyname",
+   "key": "pos_tag",
+   "type": "field",
+   "match": "regex",
    "file": "common/science.yaml",
    "context": "science",
    "lang": "common",
@@ -6519,6 +6579,16 @@
    "key": "cow_country_code",
    "type": "field",
    "match": "regex",
+   "file": "common/survey.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "likertresponsevalue",
+   "key": "likert_response",
+   "type": "data",
+   "match": "func",
    "file": "common/survey.yaml",
    "context": "science",
    "lang": "common",
@@ -13197,6 +13267,16 @@
   {
    "rule": "agebyname",
    "key": "age",
+   "type": "field",
+   "match": "regex",
+   "file": "pii/pii.yaml",
+   "context": "pii",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "agerangebyagename",
+   "key": "age_range",
    "type": "field",
    "match": "regex",
    "file": "pii/pii.yaml",

@@ -1,0 +1,38 @@
+id: likert_response
+name: Answer on a rating scale (Likert item)
+status: draft
+doc: 'Answer of a questionnaire item on an ordered scale, written in words: agreement (Strongly agree
+  to Strongly disagree, Totalmente de acuerdo to Totalmente en desacuerdo, Stimme voll zu), likelihood
+  (Extremadamente probable, Very unlikely), frequency (Never, Sometimes, Always; Nunca, A veces, Siempre),
+  importance, satisfaction or interest, often with a neutral answer and a don''t know answer (Neutral,
+  No sé). Survey tools export one column per item; coded answers (1 to 5) need the codebook and are not
+  this type.'
+parent: category
+categories:
+- science
+- persons
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Totalmente de acuerdo
+  description: Strongly agree, survey of researchers of the Universidad Nacional de Rosario
+- value: Moderadamente en desacuerdo
+  description: Moderately disagree, same survey
+- value: Extremadamente probable
+  description: Extremely likely, same survey
+- value: A veces
+  description: Sometimes, frequency item of the same survey
+- value: Strongly disagree
+- value: '4'
+  valid: false
+  description: a coded answer needs the codebook
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Likert_scale
+translations:
+  es:
+    name: Respuesta en escala de valoración (ítem Likert)
+  ru:
+    name: Ответ по шкале Лайкерта

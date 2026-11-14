@@ -1,0 +1,30 @@
+id: excel_serial_datetime
+name: Date and time as an Excel serial number
+status: draft
+doc: 'Point in time written as the serial number of spreadsheets: the whole part counts the days since
+  30 December 1899 and the fraction is the part of the day that has passed, as in 45175.42585648148 for
+  6 September 2023, 10:13:14, or 31911.416666666668 for 14 May 1987, 10:00. Sheets exported without a
+  date format keep it: the Dataverse .tab export of an Excel file writes the timestamps of a survey or
+  the readings of a gauge this way. A whole number is a date only (excel_serial_date).'
+semantic_type: datetime
+langs:
+- common
+regexp: ^[1-5]\d{4}\.\d{1,17}$
+examples:
+- value: '45175.42585648148'
+  description: 6 September 2023, 10:13:14, a survey response (datecreated, RDA-UNR)
+- value: '31911.416666666668'
+  description: 14 May 1987, 10:00, a gauging at the Pavón stream (Fecha y Hora)
+- value: '44927.5'
+  description: 1 January 2023, noon
+- value: '45175'
+  valid: false
+  description: 'a whole day: excel_serial_date'
+links:
+- type: doc
+  url: https://support.microsoft.com/en-us/office/datevalue-function-df8b07d4-7761-4a93-bc33-b7471bbff252
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Spreadsheet
+translations:
+  es:
+    name: Fecha y hora como número de serie de Excel

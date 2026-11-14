@@ -1,0 +1,38 @@
+id: lipid_number
+name: Lipid number (fatty acid shorthand)
+status: draft
+doc: 'Shorthand of a fatty acid as the number of carbon atoms and of double bonds, C:D, with optional
+  positions of the double bonds and prefixes for branched chains: C16:0 (palmitic acid), C18:1n-9 (oleic
+  acid), 18:2 n-6, C20:5n3 (EPA), iC15:0 and aC15:0 (iso and anteiso branched acids of bacterial membranes),
+  cis-9 C18:1. Gas chromatography (FAME) reports of microbiology, food and feed analyses list the fatty
+  acids of a sample this way.'
+categories:
+- chemistry
+- science
+langs:
+- common
+is_pii: false
+regexp: ^(?:(?:[ian]|iso|anteiso|cis|trans|[ct]\d{1,2})[- ]?)?C?\d{1,2}:\d(?:\s?(?:n|ω|w)-?\d{1,2}|\s?\(\d{1,2}[ZE]?(?:,\d{1,2}[ZE]?)*\)|\s?(?:cis|trans)(?:-\d{1,2})?)*$
+examples:
+- value: iC15:0
+  description: 13-methyltetradecanoic acid, iso-branched, Bacillus subtilis membranes (DesK pH sensor
+    data, UNR)
+- value: aC15:0
+  description: 12-methyltetradecanoic acid, anteiso-branched, same data
+- value: C16:0
+  description: palmitic acid
+- value: C18:1n-9
+  description: oleic acid
+- value: 18:2 n-6
+  description: linoleic acid
+- value: '16:00'
+  valid: false
+  description: a time of day
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Fatty_acid#Nomenclature
+- type: doc
+  url: https://www.lipidmaps.org/resources/tools/shorthand
+translations:
+  es:
+    name: Notación abreviada de ácido graso (C:D)
