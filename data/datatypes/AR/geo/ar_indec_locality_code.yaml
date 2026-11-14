@@ -6,7 +6,8 @@ doc: 'Eight-digit code of an Argentine census locality (localidad censal of INDE
   of BAHRA, the Base de Asentamientos Humanos de la República Argentina behind the georef localities and
   settlements, use the same eight digits for a simple locality or a rural place (paraje) and add two digits
   for an entity of a composite locality (1401401002 La Floresta, Córdoba). Many files drop the leading
-  zero (6441030).'
+  zero (6441030). Census radius lists give the three-digit locality part alone next to the department
+  (CODLOC 050 for Berrotarán in Río Cuarto, Córdoba), with 000 for a radius outside any locality.'
 parent: id
 categories:
 - geo
@@ -17,7 +18,7 @@ langs:
 - es
 is_pii: false
 classification: identifier
-regexp: ^(?:0[26]|1[048]|2[26]|3[048]|4[26]|5[048]|6[26]|7[048]|8[26]|9[04])\d{6}(?:\d{2})?$
+regexp: ^(?:(?:0[26]|1[048]|2[26]|3[048]|4[26]|5[048]|6[26]|7[048]|8[26]|9[04])\d{6}(?:\d{2})?|\d{3})$
 examples:
 - value: '06007010'
   description: Carhué, Buenos Aires
@@ -27,6 +28,8 @@ examples:
   description: Córdoba
 - value: '1401401002'
   description: La Floresta, an entity of the locality of Córdoba (BAHRA)
+- value: '050'
+  description: Berrotarán, the locality part alone in a Córdoba radius list (CODLOC)
 - value: '6441030'
   valid: false
   description: leading zero dropped
