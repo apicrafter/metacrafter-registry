@@ -1,0 +1,45 @@
+id: pango_lineage
+name: Pango lineage of SARS-CoV-2
+status: draft
+doc: 'Name of a lineage of SARS-CoV-2 in the Pango nomenclature (Rambaut et al. 2020, cov-lineages.org):
+  the root lineages A and B, then a letter prefix and up to three numbers separated by dots, a new alias
+  prefix replacing every three levels (B.1.1.529 is Omicron, its child B.1.1.529.2 is called BA.2), and
+  X with letters for recombinants (XBB, XBB.1.5). GISAID, Nextstrain and the national genomic surveillance
+  tables give it in a pango_lineage or lineage column. WHO labels (Alpha, Delta) are sars_cov_2_variant_label;
+  Nextstrain clades (20I, 21K) are another scheme.'
+categories:
+- medical
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[AB]|[A-Z]{1,3}(?:\.\d+){1,4})$
+examples:
+- value: B.1.1.7
+  description: Alpha
+- value: B.1.617.2
+  description: Delta
+- value: P.1
+  description: Gamma (alias of B.1.1.28.1)
+- value: B.1.1.529
+  description: Omicron (Africa Data Hub variants table)
+- value: XBB.1.5
+  description: a recombinant lineage
+- value: P1
+  valid: false
+  description: Gamma written without the dot (Africa Data Hub variants table)
+- value: 501Y.V2
+  valid: false
+  description: an early name of Beta (B.1.351), not Pango
+links:
+- type: doc
+  url: https://cov-lineages.org/
+- type: doc
+  url: https://github.com/cov-lineages/pango-designation
+- type: doc
+  url: https://doi.org/10.1038/s41564-020-0770-5
+translations:
+  ru:
+    name: Линия Pango вируса SARS-CoV-2
+    doc: Название линии SARS-CoV-2 по номенклатуре Pango, например B.1.1.7 (Альфа) или B.1.617.2 (Дельта).

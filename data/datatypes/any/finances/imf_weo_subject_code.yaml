@@ -1,0 +1,46 @@
+id: imf_weo_subject_code
+name: IMF World Economic Outlook subject code
+status: draft
+doc: 'Code of a series (subject) of the World Economic Outlook database of the International Monetary
+  Fund, in the WEO Subject Code column of its country and country group downloads: a concept code of capitals,
+  often with a suffix for the unit or the ratio after an underscore, as in NGDP_R (gross domestic product,
+  constant prices), NGDP_RPCH (its percent change), NGDPD (GDP in U.S. dollars), PCPIPCH (inflation, average
+  consumer prices), LUR (unemployment rate), LP (population) or GGXWDG_NGDP (general government gross
+  debt in percent of GDP). Each edition of the WEO (April and October) publishes about 45 subjects; the
+  Subject Descriptor and Units columns name them. The codes come from the IMF concept list behind the
+  International Financial Statistics (imf_indicator_code) but are a list of their own.'
+categories:
+- finances
+- government
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:BCA|BCA_NGDPD|FLIBOR6|GGR|GGR_NGDP|GGSB|GGSB_NPGDP|GGX|GGXCNL|GGXCNL_NGDP|GGXONLB|GGXONLB_NGDP|GGXWDG|GGXWDG_NGDP|GGXWDN|GGXWDN_NGDP|GGX_NGDP|LE|LP|LUR|NGAP_NPGDP|NGDP|NGDPD|NGDPDPC|NGDPPC|NGDPRPC|NGDPRPPPPC|NGDP_D|NGDP_FY|NGDP_R|NGDP_RPCH|NGSD_NGDP|NID_NGDP|PCPI|PCPIE|PCPIEPCH|PCPIPCH|PPPEX|PPPGDP|PPPPC|PPPSH|TMG_RPCH|TM_RPCH|TXG_RPCH|TX_RPCH)$
+examples:
+- value: NGDP_R
+  description: Gross domestic product, constant prices (WEO April 2021)
+- value: NGDPD
+  description: Gross domestic product, current prices, U.S. dollars
+- value: PCPIPCH
+  description: Inflation, average consumer prices, percent change
+- value: GGXWDG_NGDP
+  description: General government gross debt, percent of GDP
+- value: LUR
+  description: Unemployment rate
+- value: NY.GDP.MKTP.CD
+  valid: false
+  description: World Bank WDI indicator code
+- value: PCPI_PC_CP_A_PT
+  valid: false
+  description: 'IMF CPI / IFS series code: imf_indicator_code'
+links:
+- type: doc
+  url: https://www.imf.org/en/Publications/WEO/weo-database/2021/April
+- type: doc
+  url: https://www.imf.org/en/Publications/SPROLLs/world-economic-outlook-databases
+translations:
+  ru:
+    name: Код показателя базы IMF World Economic Outlook
+    doc: Код ряда (subject) базы «Перспективы развития мировой экономики» МВФ, например NGDP_R (ВВП в
+      постоянных ценах), PCPIPCH (инфляция) или LUR (уровень безработицы).

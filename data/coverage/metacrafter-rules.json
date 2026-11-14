@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "bcc7e7a08f76b5b8557a791a4dff5e0d045b01f2"
+  "ref": "8ddd9876bd7b9c18e100d02d96a49e78dcca2d37"
  },
  "rules": [
   {
@@ -3305,6 +3305,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "dateymdcompactbyname",
+   "key": "date_ymd_compact",
+   "type": "field",
+   "match": "regex",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "decimalyearbyfield",
    "key": "decimal_year",
    "type": "field",
@@ -3785,6 +3795,36 @@
    "country_code": "xx"
   },
   {
+   "rule": "emdatdisasternumberbyname",
+   "key": "emdat_disaster_number",
+   "type": "field",
+   "match": "text",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "emdatdisasternumbervalue",
+   "key": "emdat_disaster_number",
+   "type": "data",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "glidenumbervalue",
+   "key": "glide_number",
+   "type": "data",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "polymertypebyfield",
    "key": "polymer_type",
    "type": "field",
@@ -4155,6 +4195,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "googleplaceidvalue",
+   "key": "google_place_id",
+   "type": "data",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "hdxpcodevalue",
    "key": "hdx_pcode",
    "type": "data",
@@ -4249,6 +4299,16 @@
    "key": "longitude",
    "type": "field",
    "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "longitudebylongname",
+   "key": "longitude",
+   "type": "field",
+   "match": "text",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -4635,6 +4695,36 @@
    "country_code": "xx"
   },
   {
+   "rule": "imfcountrycodebyname",
+   "key": "imf_country_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "imfindicatorcodebyname",
+   "key": "imf_indicator_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "imfweosubjectcodevalue",
+   "key": "imf_weo_subject_code",
+   "type": "data",
+   "match": "text",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "iso3166-alpha2",
    "key": "countrycode_alpha2",
    "type": "data",
@@ -4675,8 +4765,28 @@
    "country_code": "xx"
   },
   {
+   "rule": "iso3166alpha2byisofield",
+   "key": "countrycode_alpha2",
+   "type": "data",
+   "match": "text",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "iso3166alpha2bylocalname",
    "key": "countrycode_alpha2",
+   "type": "data",
+   "match": "text",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "iso3166alpha3byisofield",
+   "key": "countrycode_alpha3",
    "type": "data",
    "match": "text",
    "file": "common/intcodes.yaml",
@@ -4709,6 +4819,36 @@
    "key": "oecd_crs_purpose_code",
    "type": "field",
    "match": "regex",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "owidentitycodevalue",
+   "key": "owid_entity_code",
+   "type": "data",
+   "match": "regex",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "whoghoindicatorcodebyname",
+   "key": "who_gho_indicator_code",
+   "type": "field",
+   "match": "text",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "whoregioncodevalue",
+   "key": "who_region_code",
+   "type": "data",
+   "match": "text",
    "file": "common/intcodes.yaml",
    "context": "geo",
    "lang": "common",
@@ -5219,6 +5359,36 @@
    "key": "atccode",
    "type": "data",
    "match": "ppr",
+   "file": "common/medical.yaml",
+   "context": "medical",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "covid19vaccinevalue",
+   "key": "covid19_vaccine",
+   "type": "data",
+   "match": "text",
+   "file": "common/medical.yaml",
+   "context": "medical",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "pangolineagevalue",
+   "key": "pango_lineage",
+   "type": "data",
+   "match": "regex",
+   "file": "common/medical.yaml",
+   "context": "medical",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "sarscov2variantlabelvalue",
+   "key": "sars_cov_2_variant_label",
+   "type": "data",
+   "match": "text",
    "file": "common/medical.yaml",
    "context": "medical",
    "lang": "common",
@@ -7009,6 +7179,16 @@
    "key": "headline",
    "type": "field",
    "match": "text",
+   "file": "common/texts.yaml",
+   "context": "texts",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "hxlhashtagvalue",
+   "key": "hxl_hashtag",
+   "type": "data",
+   "match": "regex",
    "file": "common/texts.yaml",
    "context": "texts",
    "lang": "common",
@@ -17741,6 +17921,16 @@
    "match": "regex",
    "file": "za/za_education.yaml",
    "context": "education",
+   "lang": "en",
+   "country_code": "za"
+  },
+  {
+   "rule": "zaprovincecodevalue",
+   "key": "za_province_code",
+   "type": "data",
+   "match": "text",
+   "file": "za/za_geo.yaml",
+   "context": "geo",
    "lang": "en",
    "country_code": "za"
   },

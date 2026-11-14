@@ -1,0 +1,38 @@
+id: owid_entity_code
+name: Our World in Data entity code
+status: draft
+doc: 'Code that Our World in Data gives to an entity without an ISO 3166-1 alpha-3 code, OWID_ and two
+  to four capitals: continents and income groups (OWID_AFR Africa, OWID_EUR Europe, OWID_WRL World, OWID_HIC
+  High-income countries, OWID_EUN European Union) and countries or parts of countries outside ISO 3166
+  (OWID_KOS Kosovo, OWID_CYN Northern Cyprus, OWID_ENG England, OWID_SCT Scotland). The iso_code column
+  of the OWID datasets (COVID-19, energy, CO2) mixes these codes with alpha-3 codes (countrycode_alpha3);
+  a column of aggregates holds only OWID codes.'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^OWID_[A-Z]{2,4}$
+examples:
+- value: OWID_WRL
+  description: World
+- value: OWID_AFR
+  description: Africa (OWID COVID-19 data on the Africa Data Hub portal)
+- value: OWID_KOS
+  description: Kosovo
+- value: OWID_HIC
+  description: High-income countries
+- value: AFG
+  valid: false
+  description: 'ISO 3166-1 alpha-3: countrycode_alpha3'
+links:
+- type: doc
+  url: https://github.com/owid/covid-19-data/tree/master/public/data
+- type: doc
+  url: https://ourworldindata.org/
+translations:
+  ru:
+    name: Код объекта Our World in Data
+    doc: Код OWID_ для объектов без кода ISO 3166-1 alpha-3 в данных Our World in Data, например OWID_WRL
+      (мир) или OWID_KOS (Косово).

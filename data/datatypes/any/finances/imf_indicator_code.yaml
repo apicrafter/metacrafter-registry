@@ -1,0 +1,47 @@
+id: imf_indicator_code
+name: IMF indicator (series) code
+status: draft
+doc: 'Code of an indicator in the datasets of the International Monetary Fund: International Financial
+  Statistics (IFS), the Consumer Price Index dataset (CPI), Direction of Trade Statistics and the other
+  SDMX datasets of data.imf.org. It is a concept code of capitals with parts for the unit and the transformation
+  joined by underscores: PCPI_IX (consumer price index), PCPI_PC_CP_A_PT (its percent change over the
+  corresponding period of the previous year), PCPIF_PC_PP_PT (food prices, percent change over the previous
+  period), NGDP_XDC (nominal GDP in domestic currency), ENDA_XDC_USD_RATE (domestic currency per U.S.
+  dollar, period average). The CPI codes put the COICOP division into the concept code (PCPIF food, PCPIA
+  alcoholic beverages and tobacco, PCPIH housing, PCPIT transport). Tables built from these datasets keep
+  the code in an Indicator Code column or use the codes as column names.'
+categories:
+- finances
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+$
+examples:
+- value: PCPI_IX
+  description: Consumer price index, all items
+- value: PCPI_PC_CP_A_PT
+  description: Consumer prices, all items, percent change, corresponding period previous year (ADH inflation
+    database)
+- value: PCPIF_PC_PP_PT
+  description: Food and non-alcoholic beverages, percent change, previous period (ADH inflation database)
+- value: NGDP_XDC
+  description: Gross domestic product, nominal, domestic currency (IFS)
+- value: ENDA_XDC_USD_RATE
+  description: Exchange rate, domestic currency per U.S. dollar, period average (IFS)
+- value: NY.GDP.MKTP.CD
+  valid: false
+  description: World Bank WDI indicator code, with dots
+- value: PCPIPCH
+  valid: false
+  description: 'a WEO subject code without a unit part: imf_weo_subject_code'
+links:
+- type: doc
+  url: https://data.imf.org/?sk=4FFB52B2-3653-409A-B471-D47B46D904B5
+- type: doc
+  url: https://data.imf.org/
+translations:
+  ru:
+    name: Код показателя МВФ
+    doc: Код показателя в наборах данных МВФ (IFS, CPI и др.), например PCPI_IX — индекс потребительских
+      цен, PCPI_PC_CP_A_PT — его изменение к соответствующему периоду прошлого года.
