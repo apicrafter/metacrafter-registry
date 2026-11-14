@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "b0287ecb1b1f28977785176433167fa6f9c9d3a6"
+  "ref": "a2ca3ce4c6593b039e48d9d1cab8315e69fd8ba4"
  },
  "rules": [
   {
@@ -373,6 +373,166 @@
    "context": "persons",
    "lang": "ar",
    "country_code": "xx"
+  },
+  {
+   "rule": "arcababarriobyname",
+   "key": "ar_caba_barrio",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcabacadastralblockbyname",
+   "key": "ar_caba_cadastral_block",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcabacomunabyname",
+   "key": "ar_caba_comuna",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcabacomunavalue",
+   "key": "ar_caba_comuna",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcabapartidabyname",
+   "key": "ar_caba_partida",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcabaschooldistrictbydistrito",
+   "key": "ar_caba_school_district",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcabaschooldistrictbyname",
+   "key": "ar_caba_school_district",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcabasmpbyname",
+   "key": "ar_caba_smp",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcabasubtelinebyname",
+   "key": "ar_caba_subte_line",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcabasubtestationbyname",
+   "key": "ar_caba_subte_station",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcabazoningdistrictbyname",
+   "key": "ar_caba_zoning_district",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcueanexobyname",
+   "key": "ar_cue_anexo",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcuebyname",
+   "key": "ar_cue",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcuilbyname",
+   "key": "ar_cuil",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "aridentitydocumenttypebyname",
+   "key": "ar_identity_document_type",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arvehicleplatebyname",
+   "key": "ar_vehicle_plate",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_caba.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
   },
   {
    "rule": "ardepartmentnamebyname",
@@ -3685,6 +3845,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "sasdatetimevalue",
+   "key": "datetime",
+   "type": "data",
+   "match": "func",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "schoolyearbyfield",
    "key": "school_year",
    "type": "field",
@@ -4665,6 +4835,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "longitudebylongname",
+   "key": "longitude",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "longitudebyshortname",
    "key": "longitude",
    "type": "field",
@@ -4715,6 +4895,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "pluscodevalue",
+   "key": "plus_code",
+   "type": "data",
+   "match": "func",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "postindexbyfield",
    "key": "postindex",
    "type": "field",
@@ -4759,6 +4949,16 @@
    "key": "street_address",
    "type": "field",
    "match": "text",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "streetintersectionbyname",
+   "key": "street_intersection",
+   "type": "field",
+   "match": "regex",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -5675,6 +5875,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "youtubevideoidbyname",
+   "key": "youtubevideoid",
+   "type": "field",
+   "match": "regex",
+   "file": "common/media.yaml",
+   "context": "media",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "youtubevideoidfield",
    "key": "youtubevideoid",
    "type": "field",
@@ -6085,6 +6295,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "yearbyperiodoname",
+   "key": "year",
+   "type": "field",
+   "match": "regex",
+   "file": "common/periods.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "yearmonthbyname",
+   "key": "yearmonth",
+   "type": "field",
+   "match": "regex",
+   "file": "common/periods.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "yearmonthenglishvalue",
    "key": "yearmonth_english",
    "type": "data",
@@ -6201,6 +6431,16 @@
    "match": "ppr",
    "file": "common/persons.yaml",
    "context": "persons",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "ocdsocidvalue",
+   "key": "ocds_ocid",
+   "type": "data",
+   "match": "regex",
+   "file": "common/procurement.yaml",
+   "context": "government",
    "lang": "common",
    "country_code": "xx"
   },
@@ -8925,6 +9165,26 @@
    "country_code": "es"
   },
   {
+   "rule": "esdayofweekvalue",
+   "key": "es_dayofweek",
+   "type": "data",
+   "match": "func",
+   "file": "es/es_datetime.yaml",
+   "context": "datetime",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "eshorariotimebyname",
+   "key": "time",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_datetime.yaml",
+   "context": "datetime",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esmonthbydatafiltered",
    "key": "month",
    "type": "data",
@@ -8945,12 +9205,72 @@
    "country_code": "es"
   },
   {
+   "rule": "esopeninghoursbyname",
+   "key": "opening_hours",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_datetime.yaml",
+   "context": "datetime",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esquarterbyname",
+   "key": "quarter",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_datetime.yaml",
+   "context": "datetime",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "estimeampmvalue",
+   "key": "time",
+   "type": "data",
+   "match": "func",
+   "file": "es/es_datetime.yaml",
+   "context": "datetime",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esyearbydatafiltered",
    "key": "year",
    "type": "data",
    "match": "ppr",
    "file": "es/es_datetime.yaml",
    "context": "datetime",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esyearquartervalue",
+   "key": "year_quarter",
+   "type": "data",
+   "match": "func",
+   "file": "es/es_datetime.yaml",
+   "context": "datetime",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esalturabuildingnumber",
+   "key": "buildingnumber",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esbuildingnumberbyname",
+   "key": "buildingnumber",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_geo.yaml",
+   "context": "geo",
    "lang": "es",
    "country_code": "es"
   },
@@ -9055,6 +9375,16 @@
    "country_code": "es"
   },
   {
+   "rule": "esstreetnamebyname",
+   "key": "street",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esatcfield",
    "key": "atccode",
    "type": "field",
@@ -9101,6 +9431,16 @@
    "match": "ppr",
    "file": "es/es_med.yaml",
    "context": "medical",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esfullnamebyname",
+   "key": "person_fullname",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_persons.yaml",
+   "context": "persons",
    "lang": "es",
    "country_code": "es"
   },
@@ -9159,6 +9499,16 @@
    "key": "espassport",
    "type": "data",
    "match": "ppr",
+   "file": "es/es_persons.yaml",
+   "context": "persons",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "essurnamebyname",
+   "key": "person_surname",
+   "type": "field",
+   "match": "regex",
    "file": "es/es_persons.yaml",
    "context": "persons",
    "lang": "es",
@@ -14165,10 +14515,30 @@
    "country_code": "xx"
   },
   {
+   "rule": "maritalstatusbyname",
+   "key": "marital_status",
+   "type": "field",
+   "match": "regex",
+   "file": "pii/pii.yaml",
+   "context": "pii",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "nationalitybyknown",
    "key": "nationality",
    "type": "field",
    "match": "text",
+   "file": "pii/pii.yaml",
+   "context": "pii",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "nationalitybyspanishname",
+   "key": "nationality",
+   "type": "field",
+   "match": "regex",
    "file": "pii/pii.yaml",
    "context": "pii",
    "lang": "common",

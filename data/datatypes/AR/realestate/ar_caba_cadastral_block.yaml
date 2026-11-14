@@ -1,0 +1,30 @@
+id: ar_caba_cadastral_block
+name: Buenos Aires cadastral block designation (sección-manzana)
+status: draft
+doc: 'Cadastral designation of a city block (manzana) of the City of Buenos Aires: the three-digit section
+  and the three-digit block number, which may end in a letter, joined with a hyphen (041-005, 064-094B).
+  It is the first two parts of a parcel designation (ar_caba_smp); the planning code and block-level datasets
+  of the city name it SM.'
+categories:
+- realestate
+- geo
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{3}-\d{3}[A-ZÑ]?$
+examples:
+- value: 041-005
+- value: 064-094B
+- value: 001-046
+- value: 041-005-012
+  valid: false
+  description: 'a parcel: ar_caba_smp'
+links:
+- type: doc
+  url: https://data.buenosaires.gob.ar/dataset/codigo-planeamiento-urbano
+translations:
+  es:
+    name: Nomenclatura catastral de manzana de Buenos Aires (SM)

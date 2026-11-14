@@ -1,0 +1,37 @@
+id: ar_caba_smp
+name: Buenos Aires cadastral parcel designation (sección-manzana-parcela, SMP)
+status: draft
+doc: 'Cadastral designation of a parcel of the City of Buenos Aires: the section, the block (manzana)
+  and the parcel joined with hyphens, as in 067-041-003. The section has two or three digits; the block
+  and the parcel have three characters, mostly digits, and may end in a letter (067-031A-017, 067-098-029a,
+  068-116B-000F). The city''s parcel map, the planning code, building permits and business licences identify
+  a property by it; the same files often keep the three parts in columns of their own and the block as
+  section-block (ar_caba_cadastral_block).'
+parent: cadastralnumber
+categories:
+- realestate
+- geo
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{2,3}-[0-9A-ZÑ]{2,3}[A-ZÑ]?-[0-9A-ZÑ]{2,4}[A-Za-zÑñ]{0,2}$
+examples:
+- value: 067-041-003
+- value: 067-098-029a
+  description: a parcel number with a letter
+- value: 067-031A-017
+  description: a block number with a letter
+- value: 13-060-0000
+  description: a two-digit section and a four-digit parcel, as some permit files write it
+- value: 067-041
+  valid: false
+  description: 'a block without a parcel: ar_caba_cadastral_block'
+links:
+- type: doc
+  url: https://data.buenosaires.gob.ar/dataset/parcelas
+translations:
+  es:
+    name: Nomenclatura catastral de parcela de Buenos Aires (SMP)

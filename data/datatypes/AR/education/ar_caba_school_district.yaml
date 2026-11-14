@@ -1,0 +1,31 @@
+id: ar_caba_school_district
+name: Buenos Aires school district (distrito escolar)
+status: draft
+doc: 'One of the 21 school districts into which the City of Buenos Aires groups its state schools, known
+  by number: Distrito Escolar 6, DE 14, D.E. 9, also in Roman numerals (XIV). School registers, enrolment
+  data and the school path maps of the city give the district of a school as the number alone (1 to 21)
+  or after the word (DISTRITO 6). The districts do not follow the borders of the comunas.'
+categories:
+- education
+- geo
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^(?:Distrito Escolar|DISTRITO ESCOLAR|Distrito|DISTRITO|D\.E\.|DE) ?(?:0?[1-9]|1\d|2[01])$
+examples:
+- value: Distrito Escolar 6
+- value: DISTRITO 21
+  description: as the school enrolment data of the city write it
+- value: DE 14
+- value: Distrito Escolar 22
+  valid: false
+  description: there are 21 districts
+links:
+- type: doc
+  url: https://data.buenosaires.gob.ar/dataset/distritos-escolares
+translations:
+  es:
+    name: Distrito escolar de la Ciudad de Buenos Aires

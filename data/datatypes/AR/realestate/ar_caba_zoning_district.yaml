@@ -1,0 +1,41 @@
+id: ar_caba_zoning_district
+name: Buenos Aires planning code zoning district (Código de Planeamiento Urbano)
+status: draft
+doc: 'Zoning district of the Código de Planeamiento Urbano of the City of Buenos Aires (Law 449), in force
+  until the Código Urbanístico replaced it in 2018. A letter group says the use: R residential (R1a, R1b
+  I, R2a II, R2b III), C central (C1, C2, C3 I), E equipment (E1 to E4), I industrial (I1, I2), P port,
+  U special urbanisations (U3, U32), AE special architecture, APH historic protection areas (APH 1, APH
+  51), UP park, UF future urbanisation, RU and RUA urban renewal, NE urban business, ARE ecological reserve.
+  A number after a space is the numbered district or its sub-zone (E4 67, R2b I 1, U3 b). The planning
+  code parcel and polygon files of the city give up to four districts per parcel.'
+categories:
+- realestate
+- government
+- geo
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: '^(?:R1a|R1b ?I{1,2}|R2a ?I{1,2}|R2b ?I{1,3}|C1|C2|C3 ?I{1,2}|E[1-4]|I[12]?|P|U\d{1,2}|AE|APH|ARE|UP|UF|RUA?|NE)(?:
+  ?\d{1,3})?(?: ?[a-z])?(?:/(?:APH|AE) ?\d{1,3})?$'
+examples:
+- value: R2a II
+- value: C3 I
+- value: E4 67
+  description: equipment district E4 number 67
+- value: APH 51
+  description: historic protection area 51
+- value: U3 b
+  description: sub-zone b of the special urbanisation U3
+- value: UP/APH 2
+  description: a park inside a historic protection area
+- value: R5
+  valid: false
+links:
+- type: doc
+  url: https://data.buenosaires.gob.ar/dataset/codigo-planeamiento-urbano
+translations:
+  es:
+    name: Distrito de zonificación del Código de Planeamiento Urbano de Buenos Aires

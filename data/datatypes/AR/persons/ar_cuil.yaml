@@ -1,0 +1,36 @@
+id: ar_cuil
+name: Argentine CUIL (Código Único de Identificación Laboral)
+status: draft
+doc: 'Labour identification code that ANSES, the Argentine social security agency, gives every worker
+  and benefit recipient: a two-digit prefix (20 or 27 by the sex on the identity document, 23 or 24 when
+  the check digit would not fit), the eight digits of the DNI and a check digit, written 20-25218726-0
+  or without the hyphens. It has the format and the modulo 11 check digit of the CUIT tax number (cuit),
+  and a person''s CUIT is the same number; companies have a CUIT (30, 33, 34) and no CUIL. Payrolls, registers
+  of officials and contractor lists carry it.'
+parent: cuit
+categories:
+- pii
+- persons
+- finances
+country:
+- AR
+langs:
+- es
+is_pii: true
+classification: identifier
+regexp: ^(?:20|23|24|27)-?\d{8}-?\d$
+examples:
+- value: 20-00000019-2
+  description: a made-up number with a valid check digit
+- value: '27000000278'
+  description: without hyphens
+- value: 23-00000033-7
+- value: 30-70783660-8
+  valid: false
+  description: 'a company prefix: cuit'
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/C%C3%B3digo_%C3%9Anico_de_Identificaci%C3%B3n_Laboral
+translations:
+  es:
+    name: Código Único de Identificación Laboral (CUIL)

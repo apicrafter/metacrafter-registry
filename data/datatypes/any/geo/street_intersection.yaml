@@ -1,0 +1,32 @@
+id: street_intersection
+name: Street intersection
+status: draft
+doc: 'A place given as the crossing of two streets instead of a house number: two street names joined
+  by a sign or a word, as in DEHEZA@PINTO, CORDOBA AV. & JUNIN, Av. San Juan y Chacabuco, Main St & 2nd
+  Ave or Broadway / W 42nd St. Geocoders return it for corners, and data about traffic lights, cameras,
+  accidents, bus stops and street works locate their rows this way. A row of three names is a block between
+  two cross streets (Av. Brasil entre Lima y Salta).'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: DEHEZA@PINTO
+  description: a corner in the flood site list of Buenos Aires
+- value: CORDOBA AV. & JUNIN
+  description: the form of the city's address normaliser
+- value: Av. San Juan y Chacabuco
+- value: Main St & 2nd Ave
+- value: Av. Córdoba 374
+  valid: false
+  description: 'a street and a house number: street_address'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Intersection_(road)
+translations:
+  es:
+    name: Intersección de calles
+  ru:
+    name: Пересечение улиц

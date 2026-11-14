@@ -1,0 +1,36 @@
+id: ar_cue_anexo
+name: Argentine school site code (CUE-Anexo)
+status: draft
+doc: 'Code of a site of an Argentine educational establishment: the seven-digit CUE (ar_cue) and a two-digit
+  number of the site, 00 for the main one and 01, 02 ... for annexes. The national register of establishments
+  and the school data of the provinces use these nine digits as the key of a school; stored as a number,
+  the code of a jurisdiction below 10 has eight digits (20012301 for 020012301, the City of Buenos Aires).'
+parent: ar_cue
+categories:
+- education
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{8,9}$
+examples:
+- value: '020012301'
+  description: annex 01 of establishment 0200123, City of Buenos Aires
+- value: '20012301'
+  description: the same code stored as a number
+- value: '060123400'
+  description: main site of an establishment of Buenos Aires Province
+- value: '0200123'
+  valid: false
+  description: 'the establishment without the site number: ar_cue'
+links:
+- type: doc
+  url: https://www.argentina.gob.ar/educacion/evaluacion-e-informacion-educativa/padron-oficial-de-establecimientos-educativos
+- type: doc
+  url: https://data.buenosaires.gob.ar/dataset/establecimientos-educativos
+translations:
+  es:
+    name: CUE-Anexo de un establecimiento educativo

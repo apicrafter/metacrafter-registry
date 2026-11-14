@@ -1,0 +1,25 @@
+id: es_dayofweek
+name: Day of week (in Spanish)
+status: draft
+doc: 'Name of a day of the week in Spanish: lunes, martes, miércoles, jueves, viernes, sábado, domingo,
+  capitalised or not; files in capitals drop the accents (MIERCOLES, SABADO). Traffic counts, accident
+  and incident data give the day of an event this way.'
+semantic_type: dayofweek
+langs:
+- es
+regexp: ^(?:[Ll]unes|LUNES|[Mm]artes|MARTES|[Mm]i[eé]rcoles|MI[EÉ]RCOLES|[Jj]ueves|JUEVES|[Vv]iernes|VIERNES|[Ss][aá]bado|S[AÁ]BADO|[Dd]omingo|DOMINGO)$
+examples:
+- value: lunes
+- value: Miércoles
+- value: SABADO
+  description: in capitals without the accent, as the motorway traffic data of Buenos Aires write it
+- value: domingo
+- value: enero
+  valid: false
+  description: a month
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/D%C3%ADas_de_la_semana
+translations:
+  es:
+    name: Día de la semana
