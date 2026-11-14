@@ -1,0 +1,36 @@
+id: kml_coordinates
+name: KML coordinate list
+status: draft
+doc: 'Coordinates of a KML geometry as the coordinates element of KML 2.2 (OGC 07-147r2) writes them:
+  tuples of longitude, latitude and an optional altitude separated by commas, one tuple after another
+  separated by whitespace, in WGS 84, as in -58.38,-34.60,0 -58.40,-34.61,0. KML-to-table exports keep
+  the text of a ring or a line in one cell: the Ku and C band footprints of the ARSAT satellites on the
+  ARSAT open data portal are CSV files with one polygon ring per row. The GML form, numbers separated
+  by spaces only, is gml_poslist; a geometry in JSON is geojson.'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+regexp: ^\s*-?\d+(?:\.\d+)?,-?\d+(?:\.\d+)?(?:,-?\d+(?:\.\d+)?)?(?:\s+-?\d+(?:\.\d+)?,-?\d+(?:\.\d+)?(?:,-?\d+(?:\.\d+)?)?)+\s*$
+examples:
+- value: -68.96836853027344,-81.1478500366211,0.0 -72.55793762207031,-79.67288208007812,0.0 -73.5025863647461,-77.90192413330078,0.0
+  description: start of a ring of the Ku band footprint of ARSAT-1 (ARSAT open data portal)
+- value: -3.7038,40.4168 -3.7040,40.4170
+  description: a line of two positions without altitude
+- value: 123629.78 379674.57 123700.0 379674.57
+  valid: false
+  description: 'numbers separated by spaces only: gml_poslist'
+- value: 220,220,220
+  valid: false
+  description: 'one tuple of integers: an RGB colour (rgbcolor)'
+links:
+- type: doc
+  url: https://developers.google.com/kml/documentation/kmlreference#coordinates
+- type: doc
+  url: https://www.ogc.org/standard/kml/
+- type: doc
+  url: https://datos.arsat.com.ar/dataset/cobertura-satelite-arsat-1
+translations:
+  es:
+    name: Lista de coordenadas KML
