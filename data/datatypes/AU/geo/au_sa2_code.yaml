@@ -1,0 +1,39 @@
+id: au_sa2_code
+name: ABS Statistical Area Level 2 (SA2) code
+status: draft
+doc: 'Code of a Statistical Area Level 2 of the Australian Statistical Geography Standard (ASGS) of the
+  ABS, the areas of 3,000 to 25,000 people (suburbs, rural towns and their surrounds) for which the census
+  and many statistics are published. The full code has nine digits: the state or territory digit (1 NSW,
+  2 Vic., 3 Qld, 4 SA, 5 WA, 6 Tas., 7 NT, 8 ACT, 9 Other Territories), the SA4 (two digits), the SA3
+  (two) and the SA2 (four): 107031142 is Shellharbour - Oak Flats. The 2011 and 2016 editions also had
+  a five-digit code, the state digit and four digits (11001 Goulburn). Codes change between editions (2011,
+  2016, 2021).'
+parent: admin_area_3
+categories:
+- geo
+- government
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-9](?:\d{4}|\d{8})$
+examples:
+- value: '107031142'
+  description: Shellharbour - Oak Flats (ASGS 2011, IPGOD applicant geocoding)
+- value: '120021388'
+  description: Leichhardt - Annandale
+- value: '11001'
+  description: Goulburn, the 2011 five-digit code
+- value: '007031142'
+  valid: false
+  description: no state digit 0
+links:
+- type: doc
+  url: https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/main-structure-and-greater-capital-city-statistical-areas/statistical-area-level-2
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Australian_Statistical_Geography_Standard
+translations:
+  ru:
+    name: Код статистического района SA2 (Австралия)

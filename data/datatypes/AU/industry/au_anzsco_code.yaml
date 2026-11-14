@@ -1,0 +1,41 @@
+id: au_anzsco_code
+name: ANZSCO occupation code (Australia and New Zealand)
+status: draft
+doc: 'Code of the Australian and New Zealand Standard Classification of Occupations (ANZSCO) of the ABS
+  and Stats NZ: a one-digit major group (1 Managers), a two-digit sub-major group (11), a three-digit
+  minor group (111), a four-digit unit group (1111 Chief Executives and Managing Directors) and a six-digit
+  occupation (111111 Chief Executive or Managing Director). ATO and visa statistics write it with its
+  title (1111 Chief Executives and Managing Directors) and code an occupation not further specified with
+  zeros (1100, 110000). The ABS replaced ANZSCO with OSCA in 2024. ANZSCO is based on ISCO, but its codes
+  differ.'
+categories:
+- industry
+- persons
+country:
+- AU
+- NZ
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:[1-8]|[1-8]\d{1,3}|[1-8]\d{5})$
+examples:
+- value: '1111'
+  description: Chief Executives and Managing Directors (unit group)
+- value: '111111'
+  description: Chief Executive or Managing Director (occupation)
+- value: '1100'
+  description: Chief Executives, General Managers and Legislators, type not specified (ATO)
+- value: '2613'
+  description: Software and Applications Programmers
+- value: '9100'
+  valid: false
+  description: ANZSCO has eight major groups
+links:
+- type: doc
+  url: https://www.abs.gov.au/statistics/classifications/anzsco-australian-and-new-zealand-standard-classification-occupations
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Australian_and_New_Zealand_Standard_Classification_of_Occupations
+translations:
+  ru:
+    name: Код классификатора профессий ANZSCO

@@ -1,0 +1,34 @@
+id: yearmonth_english
+name: Month and year with an English month name
+status: draft
+doc: 'A month of a year written with an English month name or its three-letter abbreviation and a two-
+  or four-digit year: Sep-17 (the mmm-yy display format of spreadsheets), Aug-2011, June 2014, Jan 1841.
+  Monthly and quarterly statistics give the period of a row this way (a quarter by its last month, Sep-17).
+  The numeric form is yearmonth (2017-09); a day and month without a year is monthday_english.'
+parent: yearmonth
+categories:
+- datetime
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\.?[-
+  ](?:\d{2}|\d{4})$
+examples:
+- value: Sep-17
+  description: Quarter ending September 2017 (AFSA personal insolvency statistics)
+- value: Aug-2011
+- value: June 2014
+- value: Jan 1841
+- value: 17-Sep
+  valid: false
+  description: 'a day and a month: monthday_english'
+- value: 2017-09
+  valid: false
+  description: 'numeric: yearmonth'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Calendar_date
+translations:
+  ru:
+    name: Месяц и год с английским названием месяца
