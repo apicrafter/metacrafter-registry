@@ -1,0 +1,36 @@
+id: fr_actes_matiere_code
+name: French ACTES subject code (nomenclature ACTES)
+status: draft
+doc: 'Subject code of an act of a local authority in the ACTES nomenclature used to send acts to the prefecture
+  for the legality check. The SCDL deliberations schema of data.gouv.fr (DELIB_MATIERE_CODE) gives its
+  second level: a matter 1 to 9 and a sub-matter separated by a dot, 1.1 to 1.7, 2.1 to 2.3, 3.1 to 3.6,
+  4.1 to 4.5, 5.1 to 5.8, 6.1 to 6.5, 7.1 to 7.10, 8.1 to 8.9 and 9.1 to 9.4 (7.1 is Finances locales
+  / Décisions budgétaires).'
+categories:
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^[1-9]\.(?:[1-9]|10)$
+examples:
+- value: '7.1'
+  description: Finances locales, décisions budgétaires
+- value: '8.2'
+  description: Second sub-matter of matter 8
+- value: '7.10'
+  description: Last sub-matter of matter 7
+- value: '10.1'
+  valid: false
+  description: no matter 10
+- value: 7.1.2
+  valid: false
+  description: a third level
+links:
+- type: doc
+  url: https://schema.data.gouv.fr/schemas/scdl/deliberations/latest/schema.json
+translations:
+  fr:
+    name: Code matière ACTES

@@ -1,0 +1,31 @@
+id: fr_categorie_entreprise
+name: French company size category (Sirene catégorie d'entreprise)
+status: draft
+doc: 'Size category of a company that INSEE computes for the Sirene register (categorieEntreprise) under
+  décret 2008-1354: PME (small and medium-sized enterprise, microenterprises included), ETI (intermediate-sized
+  enterprise) or GE (large enterprise). The year of the computation is in anneeCategorieEntreprise.'
+categories:
+- companies
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^(?:PME|ETI|GE)$
+examples:
+- value: PME
+  description: Petite ou moyenne entreprise
+- value: ETI
+  description: Entreprise de taille intermédiaire
+- value: GE
+  description: Grande entreprise
+- value: TPE
+  valid: false
+  description: not a Sirene category
+links:
+- type: doc
+  url: https://insee.fr/fr/information/1730869
+translations:
+  fr:
+    name: Catégorie d'entreprise

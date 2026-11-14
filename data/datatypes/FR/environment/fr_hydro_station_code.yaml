@@ -1,0 +1,37 @@
+id: fr_hydro_station_code
+name: French hydrometric site or station code (Sandre)
+status: draft
+doc: Code of a hydrometric site or station in the Sandre dictionary of hydrometry (HYD 2.4), used by HydroPortail
+  and Vigicrues. A site code has eight characters, the hydrographic zone (four) and an incremental number
+  (four, J4310010); a station code adds a two-digit station number (H612901101). The 8-character codes
+  of the former HYDRO stations were kept as site codes and are the CdStationHydroAncienRef of Vigicrues.
+  Overseas zones start with a digit.
+categories:
+- environment
+- geo
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^[A-Z0-9]\d{7}(?:\d{2})?$
+examples:
+- value: Y3454010
+  description: Former station code (Vigicrues CdStationHydroAncienRef)
+- value: H612901101
+  description: Station on the Charentonne at Bernay
+- value: J4310010
+  description: Site code of the Sandre dictionary
+- value: Y345401
+  valid: false
+  description: seven characters
+- value: Y34540100
+  valid: false
+  description: nine characters
+links:
+- type: doc
+  url: https://www.sandre.eaufrance.fr/ftp/documents/fr/ddd/hyd/2.4/sandre_dictionnaire_HYD_2.4.pdf
+translations:
+  fr:
+    name: Code station hydrométrique

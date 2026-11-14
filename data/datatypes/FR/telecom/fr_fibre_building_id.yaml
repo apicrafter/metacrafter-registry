@@ -1,0 +1,38 @@
+id: fr_fibre_building_id
+name: French fibre building identifier (identifiant immeuble, IMB)
+status: draft
+doc: 'Identifier of a building that a fibre-to-the-home infrastructure operator gives in its IPE files
+  (informations préalables enrichies) of the Interop''fibre exchange format: up to 30 alphanumeric characters
+  of the operator''s choice. ARCEP and local fibre deployment open data repeat it. The most common form
+  is IMB, the INSEE code of the commune, a letter and a suffix of four characters, separated by slashes
+  (IMB/91228/C/00KV); the regexp covers this form only. In the ARCEP files of Ma connexion internet, imb_id
+  is a number of ARCEP and this identifier is imb_code.'
+categories:
+- telecom
+- realestate
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^IMB/(?:\d{2}|2[AB])\d{3}/[A-Z]/[0-9A-Z]{4,}$
+examples:
+- value: IMB/94016/C/0127
+  description: Building in Cachan (94016)
+- value: IMB/91228/X/0333
+  description: Building in Évry-Courcouronnes (91228)
+- value: IMB/02722/X/03H4
+  description: Building in Soissons (02722)
+- value: IMB/9122/C/00KV
+  valid: false
+  description: commune code of four digits
+- value: FI-94016-002M
+  valid: false
+  description: a pooling point reference, not a building
+links:
+- type: doc
+  url: https://www.arcep.fr/fileadmin/cru-1605170235/user_upload/Ma_connexion_internet/webinars_sortie/Presentation_webinar_2_open_data.pdf
+translations:
+  fr:
+    name: Identifiant immeuble (IMB)

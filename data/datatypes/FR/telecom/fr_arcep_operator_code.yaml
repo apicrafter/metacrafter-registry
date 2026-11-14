@@ -1,0 +1,41 @@
+id: fr_arcep_operator_code
+name: French electronic communications operator identifier (ARCEP code L33-1)
+status: draft
+doc: Identifier that ARCEP gives to an operator declared under article L33-1 of the Code des postes et
+  des communications électroniques, in its list of electronic communications identifiers (identifiants
+  de communications électroniques). Nearly all identifiers have four letters or digits (FRTE for Orange,
+  SFR0 for SFR, SFTT for XpFibre); the list also holds a few of three or five characters, in lower case
+  or with @. Fibre deployment files give the operator of a building as code_l331.
+categories:
+- telecom
+- companies
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^[A-Za-z0-9@]{3,5}$
+examples:
+- value: FRTE
+  description: Orange
+- value: SFR0
+  description: SFR
+- value: SFTT
+  description: XpFibre
+- value: AISN
+  description: Aisne THD
+- value: FR
+  valid: false
+  description: two characters
+- value: FR-TE
+  valid: false
+  description: hyphen
+links:
+- type: doc
+  url: https://www.data.gouv.fr/datasets/identifiants-de-communications-electroniques
+- type: doc
+  url: https://extranet.arcep.fr/uploads/spec_fichier_identifiants_CE.pdf
+translations:
+  fr:
+    name: Code opérateur L33-1

@@ -1,0 +1,42 @@
+id: fr_sandre_cours_eau_code
+name: French hydrographic entity code (Sandre, cours d'eau)
+status: draft
+doc: 'Sandre code of a hydrographic entity (river, canal) of the Sandre hydrographic reference: eight
+  characters. The first four are the zone code kept only as far as the entity stays inside one hydrographic
+  region, sector or sub-sector, padded with hyphens (---- for an entity across regions), then come a 3-digit
+  order number and a milieu character (0 for a natural watercourse).'
+categories:
+- environment
+- geo
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^(?:[A-Z](?:\d{3}|\d{2}-|\d--|---)|----)\d{3}[0-9A-Z]$
+examples:
+- value: K---0090
+  description: Vigicrues station reference, entity of region K
+- value: Y34-0400
+  description: Entity of sub-sector Y34
+- value: H6123301
+  description: Entity inside zone H612
+- value: '----0010'
+  description: The Seine
+- value: K---009
+  valid: false
+  description: seven characters
+- value: K-1-0090
+  valid: false
+  description: hyphen before a digit
+mappings:
+  wikidata: P1717
+links:
+- type: doc
+  url: https://www.sandre.eaufrance.fr/sites/default/files/IMG/pdf/Point_CodeHydrographique.pdf
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1717
+translations:
+  fr:
+    name: Code de l'entité hydrographique

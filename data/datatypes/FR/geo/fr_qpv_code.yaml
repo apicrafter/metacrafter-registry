@@ -1,0 +1,42 @@
+id: fr_qpv_code
+name: French priority neighbourhood code (QPV, politique de la ville)
+status: draft
+doc: 'Code of a priority neighbourhood of the French urban policy (quartier prioritaire de la politique
+  de la ville, QPV) in the lists of the Agence nationale de la cohésion des territoires (ANCT). Codes
+  of the 2015 list are QP, the department on three characters and a three-digit number (QP049001). Codes
+  of the 2024 list (décret 2023-1314) are QN, the department, two digits and a letter: N for a new neighbourhood,
+  M for a neighbourhood of 2015 whose perimeter changed, I for one whose contour stayed nearly the same
+  and C in Mayotte.'
+categories:
+- geo
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^(?:QP(?:0\d{2}|02[AB]|97\d)\d{3}|QN(?:0\d{2}|02[AB]|97\d)\d{2}[NMIC])$
+examples:
+- value: QP049001
+  description: Belle Beille, Angers (2015 list)
+- value: QP068009
+  description: Saint-Louis, Haut-Rhin (2015 list)
+- value: QP02A001
+  description: Corse-du-Sud (2015 list)
+- value: QN97663C
+  description: Mayotte (2024 list)
+- value: QP49001
+  valid: false
+  description: department on two characters
+- value: QN049001
+  valid: false
+  description: a 2024 code needs the final letter
+links:
+- type: doc
+  url: https://www.data.gouv.fr/datasets/quartiers-prioritaires-de-la-politique-de-la-ville-qpv
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Quartier_prioritaire_de_la_politique_de_la_ville
+translations:
+  fr:
+    name: Code QPV

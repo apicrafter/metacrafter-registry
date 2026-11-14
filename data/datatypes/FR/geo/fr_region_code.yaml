@@ -3,13 +3,15 @@ name: French region code (INSEE)
 status: draft
 doc: Two-digit code of a French region in the INSEE Official Geographic Code (COG). The 18 current codes
   are 01 to 04 and 06 for the overseas regions and 11, 24, 27, 28, 32, 44, 52, 53, 75, 76, 84, 93 and
-  94 for the regions of metropolitan France.
+  94 for the regions of metropolitan France. Data of the years before the 2016 merger use the COG codes
+  of the 22 former metropolitan regions, of which 21, 22, 23, 25, 26, 31, 41, 42, 43, 54, 72, 73, 74,
+  82, 83 and 91 are no longer used (21 Champagne-Ardenne, 31 Nord-Pas-de-Calais, 91 Languedoc-Roussillon).
 semantic_type: fr_region
 country:
 - FR
 langs:
 - fr
-regexp: ^(?:0[1-46]|11|2[478]|32|44|5[23]|7[56]|84|9[34])$
+regexp: ^(?:0[1-46]|11|2[1-8]|3[12]|4[1-4]|5[2-4]|7[2-6]|8[2-4]|9[134])$
 examples:
 - value: '11'
   description: Île-de-France
@@ -22,9 +24,11 @@ examples:
 - value: '05'
   valid: false
   description: not a region code
-- value: '21'
+- value: '73'
+  description: Midi-Pyrénées, a region before 2016
+- value: '12'
   valid: false
-  description: not a current region code
+  description: no region has this code
 mappings:
   wikidata: P2585
 links:
