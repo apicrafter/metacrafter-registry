@@ -1,0 +1,35 @@
+id: gb_voa_description_code
+name: VOA primary description code (business rates)
+status: draft
+doc: 'Code of the primary description of a non-domestic property in the rating list of the Valuation Office
+  Agency of England and Wales, as council business rates data give it: two letters and up to two digits
+  (CO offices and premises, CS shop and premises, CP1 car parking space, IF3 workshop and premises, CS10
+  retail warehouse).'
+categories:
+- realestate
+- finances
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{2}\d{0,2}$
+examples:
+- value: CO
+  description: Offices and premises
+- value: CS
+  description: Shop and premises
+- value: CP1
+  description: Car parking space and premises
+- value: IF3
+  description: Workshop and premises
+- value: C
+  valid: false
+  description: One letter
+- value: CS100
+  valid: false
+  description: Three digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Valuation_Office_Agency

@@ -1,0 +1,38 @@
+id: gb_os_grid_reference
+name: Ordnance Survey National Grid reference
+status: draft
+doc: 'Location on the Ordnance Survey National Grid of Great Britain written with the two letters of a
+  100 km square (SD, TQ) and an even number of digits, half eastings and half northings: 4 digits give
+  a 1 km square, 10 digits a 1 m point. The digits are often split by spaces (SD 97624 17311). The Irish
+  Grid of Northern Ireland uses one letter instead.'
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[HJNOST][A-HJ-Z] ?(?:\d{2}|\d{4}|\d{6}|\d{8}|\d{10}|\d \d|\d{2} \d{2}|\d{3} \d{3}|\d{4} \d{4}|\d{5}
+  \d{5})$
+examples:
+- value: SD 97624 17311
+  description: Scheduled monument in Calderdale, 10 digits
+- value: TQ 873 846
+  description: Shellfish sampling point, 6 digits
+- value: SE1735221689
+  description: Without spaces
+- value: TL97441340
+  description: 8 digits
+- value: SD 9762 173
+  valid: false
+  description: Odd number of digits
+- value: XY 123 456
+  valid: false
+  description: No such 100 km square
+- value: TQ
+  valid: false
+  description: No digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Ordnance_Survey_National_Grid

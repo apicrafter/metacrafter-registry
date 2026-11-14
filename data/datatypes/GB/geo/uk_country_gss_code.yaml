@@ -1,0 +1,36 @@
+id: uk_country_gss_code
+name: UK country GSS code
+status: draft
+doc: GSS code of a country of the United Kingdom (entity codes E92 England, W92 Wales, S92 Scotland, N92
+  Northern Ireland) or of a group of them (K02 United Kingdom, K03 Great Britain, K04 England and Wales).
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:[EWSN]92|K0[2-4])\d{6}$
+examples:
+- value: E92000001
+  description: England
+- value: W92000004
+  description: Wales
+- value: S92000003
+  description: Scotland
+- value: N92000002
+  description: Northern Ireland
+- value: K02000001
+  description: United Kingdom
+- value: E12000001
+  valid: false
+  description: A region code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Countries_of_the_United_Kingdom
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

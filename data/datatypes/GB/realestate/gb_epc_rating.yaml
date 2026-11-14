@@ -1,0 +1,29 @@
+id: gb_epc_rating
+name: Energy performance certificate rating band
+status: draft
+doc: Energy efficiency band of a building on a UK energy performance certificate or display energy certificate,
+  A (most efficient, A+ for net zero on a DEC) to G. EPC open data has the current and potential band
+  (CURRENT_ENERGY_RATING).
+categories:
+- realestate
+- energy
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:A\+?|[B-G])$
+examples:
+- value: D
+  description: Typical existing dwelling
+- value: A
+  description: Most efficient band
+- value: G
+  description: Least efficient band
+- value: H
+  valid: false
+  description: No such band
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Energy_Performance_Certificate

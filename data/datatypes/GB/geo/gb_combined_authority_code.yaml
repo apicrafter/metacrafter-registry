@@ -1,0 +1,31 @@
+id: gb_combined_authority_code
+name: Combined authority code (England, GSS)
+status: draft
+doc: GSS code of a combined authority, a body that groups local authorities of an area in England (Greater
+  Manchester, West Midlands), entity code E47. ONS publishes combined authority boundaries and lookups
+  (CAUTHyyCD).
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^E47\d{6}$
+examples:
+- value: E47000001
+  description: Greater Manchester
+- value: E47000002
+  description: Combined authority, March 2017 boundaries
+- value: E07000026
+  valid: false
+  description: A district code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Combined_authority
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

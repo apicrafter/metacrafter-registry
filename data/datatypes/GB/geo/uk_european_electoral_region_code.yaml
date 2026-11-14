@@ -1,0 +1,37 @@
+id: uk_european_electoral_region_code
+name: European electoral region code (United Kingdom, GSS)
+status: draft
+doc: 'GSS code of a European Parliament electoral region of the United Kingdom (EERyyCD): E15 for the
+  nine English regions, W08 Wales, S15 Scotland and N07 Northern Ireland. The regions were used until
+  2020.'
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:E15|W08|S15|N07)\d{6}$
+examples:
+- value: E15000001
+  description: North East
+- value: E15000007
+  description: London
+- value: W08000001
+  description: Wales
+- value: S15000001
+  description: Scotland
+- value: N07000001
+  description: Northern Ireland
+- value: E12000001
+  valid: false
+  description: The region code of North East England
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/European_Parliament_constituencies_in_the_United_Kingdom
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

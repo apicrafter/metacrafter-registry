@@ -1,0 +1,33 @@
+id: gb_postcode_district
+name: UK postcode district (outward code)
+status: draft
+doc: 'Outward code of a UK postcode, the part before the space: the postcode area letters and the district
+  number (LS13, NW1, WC1H). Data published at postcode district level gives it instead of full postcodes.'
+parent: postindex
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{1,2}\d[A-Z\d]?$
+examples:
+- value: LS13
+  description: Leeds
+- value: NW1
+  description: London NW1
+- value: WC1H
+  description: London WC1H
+- value: N6
+  description: London N6
+- value: LS13 5
+  valid: false
+  description: A postcode sector
+- value: LS13 5LP
+  valid: false
+  description: A full postcode
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom

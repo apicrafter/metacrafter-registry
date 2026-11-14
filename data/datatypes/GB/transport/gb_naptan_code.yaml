@@ -1,0 +1,27 @@
+id: gb_naptan_code
+name: NaPTAN code (SMS code of a GB stop)
+status: draft
+doc: Short public code of a NaPTAN stop point (NaptanCode), seven or eight characters shown on bus stop
+  flags for SMS and web timetable queries. Its letters are chosen so that they are typed with few phone
+  keys. It differs from the ATCO code of the stop (gb_naptan_atco).
+parent: id
+categories:
+- transport
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[A-Za-z0-9]{7,8}$
+examples:
+- value: MANJMGMW
+  description: Greater Manchester bus stop
+- value: MANAJWMG
+  description: Greater Manchester bus stop
+- value: 1800WKH4032
+  valid: false
+  description: An ATCO code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/NaPTAN

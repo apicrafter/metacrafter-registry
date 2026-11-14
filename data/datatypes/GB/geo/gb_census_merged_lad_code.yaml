@@ -1,0 +1,29 @@
+id: gb_census_merged_lad_code
+name: Census merged local authority district code (England and Wales, GSS)
+status: draft
+doc: 'GSS code of a census merged local authority district (CMLAD11CD), a 2011 census output geography
+  that merges the City of London with Westminster and the Isles of Scilly with Cornwall: E41 in England,
+  W40 in Wales.'
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:E41|W40)\d{6}$
+examples:
+- value: E41000001
+  description: Census merged local authority district, 2011
+- value: W40000001
+  description: Census merged local authority district in Wales, 2011
+- value: E06000001
+  valid: false
+  description: A local authority district code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

@@ -1,0 +1,30 @@
+id: gb_county_electoral_division_code
+name: County electoral division code (England, GSS)
+status: draft
+doc: GSS code of a county electoral division, the area that elects members of an English county council
+  (CEDyyCD), entity code E58.
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^E58\d{6}$
+examples:
+- value: E58000051
+  description: County electoral division, May 2019
+- value: E58000201
+  description: County electoral division, May 2019
+- value: E05001371
+  valid: false
+  description: An electoral ward code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Electoral_division
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

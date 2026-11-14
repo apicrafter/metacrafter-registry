@@ -1,0 +1,29 @@
+id: gb_nptg_locality_code
+name: NPTG locality code (Great Britain)
+status: draft
+doc: 'Code of a locality (a town, village or district) in the National Public Transport Gazetteer of Great
+  Britain. NaPTAN stop records name the locality of the stop by it (NptgLocalityCode). It is eight characters:
+  E or N, 0 or S, six digits.'
+categories:
+- transport
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[EN][0S]\d{6}$
+examples:
+- value: E0029368
+  description: Locality of a Greater Manchester bus stop
+- value: N0075002
+  description: Locality of a Greater Manchester bus stop
+- value: 1800WKH4032
+  valid: false
+  description: A NaPTAN ATCO code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/NaPTAN
+- type: doc
+  url: https://www.gov.uk/government/publications/national-public-transport-gazetteer

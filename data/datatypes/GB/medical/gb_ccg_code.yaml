@@ -1,0 +1,32 @@
+id: gb_ccg_code
+name: Clinical commissioning group code (England, GSS)
+status: draft
+doc: GSS code of an NHS clinical commissioning group (CCG), the body that planned and bought health services
+  for an area of England from 2013 to 2022, entity code E38 (CCGyyCD). The same group has a three-character
+  ODS code (gb_ccg_ods_code). Since July 2022 E38 codes name the sub-ICB locations that replaced the groups.
+parent: ukgsscode
+categories:
+- geo
+- medical
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^E38\d{6}$
+examples:
+- value: E38000001
+  description: CCG, April 2017 list
+- value: E38000002
+  description: CCG, April 2017 list
+- value: E54000007
+  valid: false
+  description: An STP code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Clinical_commissioning_group
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

@@ -1,0 +1,34 @@
+id: gb_civil_service_grade
+name: UK civil service grade
+status: draft
+doc: 'Grade of a post in the UK Civil Service as government organograms and workforce data give it: AA
+  and AO (administrative), EO (executive officer), HEO and SEO (higher and senior executive officer),
+  G7 and G6 (Grade 7 and 6) and the Senior Civil Service pay bands SCS1 (with SCS1A) to SCS4. Departments
+  add their own names (UKHO B2, G7 National).'
+categories:
+- government
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:AA|AO|EO|HEO|SEO|G[67]|SCS[1-4]A?)$
+examples:
+- value: SCS2
+  description: Senior Civil Service pay band 2
+- value: G7
+  description: Grade 7
+- value: HEO
+  description: Higher executive officer
+- value: SCS1A
+  description: Senior Civil Service pay band 1A
+- value: SCS5
+  valid: false
+  description: No such pay band
+- value: G8
+  valid: false
+  description: No such grade
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Civil_Service_(United_Kingdom)

@@ -1,0 +1,31 @@
+id: gb_postcode_sector
+name: UK postcode sector
+status: draft
+doc: 'Postcode sector of a UK postcode: the outward code, a space and the first digit of the inward code
+  (LS27 0). Data published for small areas without full postcodes gives it.'
+parent: postindex
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{1,2}\d[A-Z\d]? \d$
+examples:
+- value: LS27 0
+  description: Leeds
+- value: LS9 7
+  description: Leeds
+- value: LS15 8
+  description: Leeds
+- value: LS27
+  valid: false
+  description: A postcode district
+- value: LS27 0AB
+  valid: false
+  description: A full postcode
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom

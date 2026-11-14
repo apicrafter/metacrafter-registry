@@ -1,0 +1,31 @@
+id: gb_region_code
+name: Region of England code (GSS)
+status: draft
+doc: GSS code of one of the nine regions of England (the former Government Office Regions), entity code
+  E12. Tables with a column for regions often give Wales, Scotland and Northern Ireland their country
+  codes (W92000004) in the same column.
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^E12\d{6}$
+examples:
+- value: E12000001
+  description: North East
+- value: E12000007
+  description: London
+- value: E92000001
+  valid: false
+  description: England, a country code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Regions_of_England
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd
