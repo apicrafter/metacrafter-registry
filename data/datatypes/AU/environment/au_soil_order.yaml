@@ -6,7 +6,7 @@ doc: 'Order of the Australian Soil Classification (ASC), the national soil taxon
   Chromosols, Calcarosols, Ferrosols, Dermosols, Kandosols, Rudosols and Tenosols, in the order of the
   key. Data write the order in the plural or the singular, alone or after the lower levels of the classification
   (suborder, great group: Brown Kurosol, Acidic-mottled, Dystrophic, Yellow Dermosol).'
-parent: category
+parent: soil_type
 categories:
 - environment
 - science

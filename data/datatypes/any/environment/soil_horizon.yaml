@@ -5,7 +5,8 @@ doc: 'Designation of a soil horizon in a soil profile description: a master hori
   B, C, D, R; FAO and WRB also L, H, M, W), optionally a transitional combination (AB, BC), a number of
   a subdivision (A1, A2, B21; A11 and A12 in the Australian Soil and Land Survey Field Handbook), lower
   case suffixes of subordinate properties (Ap, Bt, Bw, Bk2) and a leading number of a lithological discontinuity
-  (2C). Single letters are horizons only in a horizon field.'
+  (2C). Soviet and Russian profile descriptions run the designations of a transitional horizon together
+  (B2C1, A2B, B1C, CD) and call the forest litter A0. Single letters are horizons only in a horizon field.'
 parent: category
 categories:
 - environment
@@ -14,7 +15,7 @@ langs:
 - common
 is_pii: false
 classification: categorical
-regexp: ^\d?(?:[OPAEBCDRLHMW]|AB|AE|AC|BA|BC|BE|CB|EB|[AB]/[BC])\d{0,2}[a-z]{0,3}\d?$
+regexp: ^\d?(?:[OPAEBCDRLHMW]|AB|AE|AC|BA|BC|BE|CB|EB|[AB]/[BC])\d{0,2}(?:[BCD]\d?)?[a-z]{0,3}\d?$
 examples:
 - value: A1
   description: Surface mineral horizon, Australian notation
@@ -26,6 +27,11 @@ examples:
   description: B horizon with illuvial clay (FAO)
 - value: 2C
   description: C horizon below a lithological discontinuity
+- value: B2C1
+  description: Transitional horizon in Soviet notation, soil profile database of the Armenian Soil Information
+    System (Horizon_in)
+- value: A0
+  description: Forest litter in Soviet notation
 - value: A11 sandy loam
   valid: false
   description: Horizon with a texture
