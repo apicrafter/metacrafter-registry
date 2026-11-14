@@ -1,0 +1,27 @@
+id: geocentric_coordinate
+name: Geocentric Cartesian coordinate (ECEF X, Y or Z)
+status: draft
+doc: 'One axis of an Earth-centred, Earth-fixed (ECEF) Cartesian position in metres: X towards the Greenwich
+  meridian on the equator, Y towards 90° east, Z towards the north pole. Coordinates of GNSS reference
+  stations and geodetic control points are given so, in ITRF, WGS 84 or ETRS89 (EPSG 4936). Each axis
+  is a number up to about 6 400 km; in Austria X is about 4 100 000, Y about 1 000 000 and Z about 4 700
+  000. Files call the fields X, Y, Z or ECEF_X; the value alone does not tell an axis from a projected
+  easting or northing.'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+examples:
+- value: '4085432.877'
+  description: X of a triangulation point in Vienna (ETRS89, BEV)
+- value: '4736370.020'
+  description: Z of the same point
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Earth-centered,_Earth-fixed_coordinate_system
+- type: doc
+  url: https://epsg.io/4936
+translations:
+  de:
+    name: Geozentrische kartesische Koordinate

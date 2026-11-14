@@ -1,0 +1,45 @@
+id: at_kg_number
+name: Austrian cadastral municipality number (KG-Nummer)
+status: draft
+doc: 'Five-digit number of an Austrian cadastral municipality (Katastralgemeinde), the unit in which the
+  Federal Office of Metrology and Surveying (BEV) keeps the cadastre and the courts keep the land register.
+  Numbers run from 01002 to 92129 and are written with the leading zero; the 01 numbers are in Vienna.
+  A cadastral municipality is not a municipality: a municipality (at_gkz) usually holds several of them,
+  and the number is a different code. BEV files call the field KG_NUMMER, KG-NR or KG, and KG-EZ for the
+  cadastral municipality of a land register entry. Read as integers, numbers of Vienna lose the zero (1204).'
+parent: id
+categories:
+- geo
+- realestate
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:0[1-9]|[1-8]\d|9[0-2])\d{3}$
+examples:
+- value: '01002'
+  description: lowest number of the range
+- value: '01204'
+  description: cadastral municipality of a triangulation point in the 14th district of Vienna (BEV)
+- value: '73518'
+  description: cadastral municipality in Carinthia (BEV control points)
+- value: '1204'
+  valid: false
+  description: leading zero lost
+- value: '93001'
+  valid: false
+  description: beyond the range
+mappings:
+  wikidata: P8322
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Katastralgemeinde
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P8322
+- type: doc
+  url: https://www.bev.gv.at/Services/Produkte/Kataster-und-Verzeichnisse/Kataster-Stichtagsdaten.html
+translations:
+  de:
+    name: Katastralgemeindenummer
