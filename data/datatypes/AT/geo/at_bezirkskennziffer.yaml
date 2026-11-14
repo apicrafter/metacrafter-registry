@@ -4,6 +4,7 @@ status: draft
 doc: 'Three-digit code of a political district (politischer Bezirk) of Austria from Statistik Austria:
   the first digit is the federal state and the next two the district, as in 901 for the 1st district of
   Vienna (Innere Stadt). It is the first three digits of the municipality code (at_gkz).'
+parent: id
 categories:
 - geo
 - government

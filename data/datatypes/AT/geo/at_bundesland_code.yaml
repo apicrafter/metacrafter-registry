@@ -1,0 +1,36 @@
+id: at_bundesland_code
+name: Austrian state code (1-9)
+status: draft
+doc: One-digit code of an Austrian state used by Statistics Austria and in the Austrian open data files
+  (BundeslandID, BL, BDL), the states in alphabetical order of their German names, 1 Burgenland, 2 Kärnten,
+  3 Niederösterreich, 4 Oberösterreich, 5 Salzburg, 6 Steiermark, 7 Tirol, 8 Vorarlberg, 9 Wien. It is
+  the first digit of the municipality code (at_gkz), of the political district code (at_bezirkskennziffer)
+  and of the school code (at_schulkennzahl), and the subdivision part of the ISO 3166-2 codes AT-1 to
+  AT-9. Some files add 10 for Austria as a whole.
+parent: at_bundesland
+categories:
+- geo
+- government
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-9]$
+examples:
+- value: '3'
+  description: Niederösterreich
+- value: '9'
+  description: Wien
+- value: '10'
+  valid: false
+  description: Austria as a whole in the COVID-19 case files, not a state
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/ISO_3166-2:AT
+translations:
+  de:
+    name: Bundeslandkennziffer
+  ru:
+    name: Код федеральной земли Австрии

@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "3b64e1578ef71eb5021b5379935fb35486c1fab7"
+  "ref": "c21e3f2b3cba82f780622f94d5524be0076c728b"
  },
  "rules": [
   {
@@ -415,9 +415,119 @@
    "country_code": "ar"
   },
   {
+   "rule": "atblzbyname",
+   "key": "at_blz",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_finance.yaml",
+   "context": "finances",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atfirmenbuchbyname",
+   "key": "at_firmenbuchnummer",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_finance.yaml",
+   "context": "finances",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atfirmenbuchvalue",
+   "key": "at_firmenbuchnummer",
+   "type": "data",
+   "match": "func",
+   "file": "at/at_finance.yaml",
+   "context": "finances",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atvrvansatzbyname",
+   "key": "at_vrv_ansatz",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_finance.yaml",
+   "context": "finances",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atvrvkontobyname",
+   "key": "at_vrv_konto",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_finance.yaml",
+   "context": "finances",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atvrvmvagbyname",
+   "key": "at_vrv_mvag",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_finance.yaml",
+   "context": "finances",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atadresscodebyname",
+   "key": "at_adresscode",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atbezirkbyname",
+   "key": "at_bezirkskennziffer",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atbezirknamevalue",
+   "key": "district",
+   "type": "data",
+   "match": "func",
+   "file": "at/at_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
    "rule": "atbezirkvalue",
    "key": "at_bezirkskennziffer",
    "type": "data",
+   "match": "regex",
+   "file": "at/at_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atbundeslandbyname",
+   "key": "at_bundesland",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atbundeslandcodebyname",
+   "key": "at_bundesland_code",
+   "type": "field",
    "match": "regex",
    "file": "at/at_geo.yaml",
    "context": "geo",
@@ -437,6 +547,16 @@
   {
    "rule": "atgkmeridianbyname",
    "key": "at_gk_meridian",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atgkzbyname",
+   "key": "at_gkz",
    "type": "field",
    "match": "regex",
    "file": "at/at_geo.yaml",
@@ -485,6 +605,86 @@
    "country_code": "at"
   },
   {
+   "rule": "atortschaftskennzifferbyname",
+   "key": "at_ortschaftskennziffer",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atstrassenkennzifferbyname",
+   "key": "at_strassenkennziffer",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atamsrgsbyname",
+   "key": "at_ams_rgs",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_gov.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atersbbyname",
+   "key": "at_ersb",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_gov.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atersbvalue",
+   "key": "at_ersb",
+   "type": "data",
+   "match": "func",
+   "file": "at/at_gov.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atokzbyname",
+   "key": "at_okz",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_gov.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atokzvalue",
+   "key": "at_okz",
+   "type": "data",
+   "match": "func",
+   "file": "at/at_gov.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atschulkennzahlbyname",
+   "key": "at_schulkennzahl",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_gov.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
    "rule": "ateinlagezahlbyname",
    "key": "at_einlagezahl",
    "type": "field",
@@ -501,6 +701,26 @@
    "match": "regex",
    "file": "at/at_realestate.yaml",
    "context": "realestate",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atroadnumberbyname",
+   "key": "at_road_number",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_transport.yaml",
+   "context": "transport",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atwienerliniendivabyname",
+   "key": "at_wienerlinien_diva",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_transport.yaml",
+   "context": "transport",
    "lang": "de",
    "country_code": "at"
   },
@@ -7971,6 +8191,16 @@
    "match": "regex",
    "file": "eu/eu_geo.yaml",
    "context": "geo",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
+   "rule": "eunacebyname",
+   "key": "eu_nace",
+   "type": "field",
+   "match": "regex",
+   "file": "eu/eu_industry.yaml",
+   "context": "industry",
    "lang": "en",
    "country_code": "eu"
   },

@@ -1,0 +1,41 @@
+id: at_vrv_ansatz
+name: Austrian budget function code (VRV Ansatz)
+status: draft
+doc: Code of the functional classification (Ansatz, Voranschlagsstelle) of the budgets and accounts of
+  the Austrian states and municipalities under the Voranschlags- und Rechnungsabschlussverordnung (VRV
+  1997, VRV 2015). The first digit is the group (Gruppe, 0 Vertretungskörper und allgemeine Verwaltung
+  to 9 Finanzwirtschaft), the first two the section (Abschnitt), the first three the subsection (Unterabschnitt);
+  states and cities add digits for their own units (Teilabschnitt, up to six digits, as in 000, 0110,
+  020100). Upper Austria writes the budget (Haushaltshinweis, 1 for the ordinary budget) in front (1/020100).
+  The economic classification of the same budget line is the account (at_vrv_konto).
+parent: id
+categories:
+- finances
+- government
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[1-9]/)?\d{1,6}$
+examples:
+- value: '000'
+  description: Gewählte Gemeindeorgane (Vienna, VRV 1997)
+- value: '0110'
+  description: A subsection of the budget of Linz
+- value: 1/020100
+  description: A subsection of the budget of Upper Austria, with the budget digit
+- value: 1/000008/6800/000
+  valid: false
+  description: A whole budget position (Finanzposition) of Upper Austria
+links:
+- type: doc
+  url: https://www.bmf.gv.at/budget/finanzbeziehungen-zu-laendern-und-gemeinden/voranschlags-und-rechnungsabschlussverordnung.html
+- type: doc
+  url: https://www.ris.bka.gv.at/Dokumente/BgblAuth/BGBLA_2015_II_313/COO_2026_100_2_1143352.pdf
+translations:
+  de:
+    name: Ansatz (VRV)
+  ru:
+    name: Код функциональной классификации бюджета Австрии (Ansatz VRV)

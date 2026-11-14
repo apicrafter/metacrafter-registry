@@ -1,0 +1,34 @@
+id: at_blz
+name: Austrian bank code (Bankleitzahl, BLZ)
+status: draft
+doc: Five-digit code of a bank or bank branch in Austria, published by the Oesterreichische Nationalbank
+  (OeNB) in its directory of banks (Bankstellenverzeichnis, SEPA-Verzeichnis). It is digits 5 to 9 of
+  every Austrian IBAN (AT61 1904 3002 3457 3201 holds 19043). The German code is de_blz.
+parent: id
+categories:
+- finances
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{4}$
+examples:
+- value: '19043'
+  description: The bank code of the IBAN AT61 1904 3002 3457 3201
+- value: '76330'
+  description: A bank of the OeNB directory
+- value: '37040044'
+  valid: false
+  description: A German bank code (de_blz)
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Bankleitzahl
+- type: doc
+  url: https://www.oenb.at/Statistik/Klassifikationen/SEPA-Zahlungsverkehrs-Verzeichnis.html
+translations:
+  de:
+    name: Bankleitzahl (Österreich)
+  ru:
+    name: Банковский код Австрии (Bankleitzahl)

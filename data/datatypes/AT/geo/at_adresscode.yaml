@@ -1,0 +1,35 @@
+id: at_adresscode
+name: Austrian address code (Adresscode) of the BEV address register
+status: draft
+doc: Seven-digit key of an address in the Austrian address register (Adressregister) kept by the BEV under
+  the Vermessungsgesetz and the AdrRegV 2016. The number carries no meaning. With the three-digit subcode
+  of a building on the address it forms the ten-digit address number (Adressnummer). Directories of administrations
+  and municipal street lists give it for each address (Adresscode, Postadresse-Adresscode).
+parent: id
+categories:
+- geo
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{7}$
+examples:
+- value: '5533540'
+  description: An address in Engerwitzdorf (Upper Austria)
+- value: '5006194'
+  description: Post address of an office of the state of Lower Austria
+- value: '2347652001'
+  valid: false
+  description: An address number (address code and subcode)
+links:
+- type: doc
+  url: https://www.bev.gv.at/Services/Produkte/Adressregister.html
+- type: doc
+  url: https://gesetzefinden.at/bundesrecht/verordnungen/adrregv-2016
+translations:
+  de:
+    name: Adresscode
+  ru:
+    name: Код адреса в адресном реестре Австрии
