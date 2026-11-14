@@ -1,0 +1,36 @@
+id: ar_indec_census_fraction_code
+name: Argentine census fraction code (INDEC fracción censal)
+status: draft
+doc: Code of a census fraction (fracción censal) of the INDEC census geography of Argentina, a division
+  of a department that one census supervisor covers and that is split into radii. The seven-digit code
+  joins the two-digit province code, the three digits of the department and two of the fraction, as in
+  1400701 for fraction 01 of Calamuchita, Córdoba; radius lists and census tables give the fraction number
+  alone in a column of its own (FRAC, FRACCION), 01 to 99, unique within the department, sometimes padded
+  to three digits (001).
+parent: id
+categories:
+- geo
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:(?:0[26]|1[048]|2[26]|3[048]|4[26]|5[048]|6[26]|7[048]|8[26]|9[04])\d{5}|\d{2,3})$
+examples:
+- value: '1400701'
+  description: fraction 01 of Calamuchita, Córdoba
+- value: '27'
+  description: the fraction number alone, in a FRAC column next to the department
+- value: '001'
+  description: the fraction number padded to three digits
+- value: '0400701'
+  valid: false
+  description: no province has the code 04
+links:
+- type: doc
+  url: https://www.indec.gob.ar/indec/web/Institucional-Indec-Codgeo
+translations:
+  es:
+    name: Código de fracción censal (INDEC)

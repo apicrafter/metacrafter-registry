@@ -1,0 +1,37 @@
+id: ar_department
+name: Argentine department
+status: draft
+doc: Name of one of the 529 departments of Argentina, the second-level divisions of the provinces (partidos
+  in Buenos Aires Province, comunas in the City of Buenos Aires), such as Calamuchita, Río Cuarto or Pehuajó.
+  Many names repeat across provinces (Capital, San Martín, Colón, General Roca), and provincial tables
+  write them in capitals without accents (RIO CUARTO) or abbreviated (Pte. Roque S. Peña, Gral. San Martín);
+  the INDEC code is ar_indec_department_code.
+parent: admin_area_2
+categories:
+- geo
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Calamuchita
+  description: Córdoba
+- value: RIO CUARTO
+  description: Río Cuarto, Córdoba, in capitals without the accent
+- value: Pte. Roque S. Peña
+  description: Presidente Roque Sáenz Peña, Córdoba, abbreviated
+- value: Adolfo Gonzales Chaves
+  description: a partido of Buenos Aires Province
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Departments_of_Argentina
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q952274
+- type: doc
+  url: https://datos.gob.ar/dataset/servicio-de-normalizacion-de-direcciones-y-unidades-territoriales-de-argentina
+translations:
+  es:
+    name: Departamento de Argentina

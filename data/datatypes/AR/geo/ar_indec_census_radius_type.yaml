@@ -1,0 +1,35 @@
+id: ar_indec_census_radius_type
+name: Argentine census radius type (urban, rural, mixed)
+status: draft
+doc: 'Type of a census radius of the INDEC census geography of Argentina, by the settlement it covers:
+  U (urbano) for a radius inside a locality of 2,000 or more people, R (rural) for one with dispersed
+  population or smaller localities, M (mixto) for one that is partly both. Radius lists write the letter
+  (TIPO_RAD, TIPO_RAD08), tables the words Urbano, Rural, Mixto.'
+parent: category
+categories:
+- geo
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^(?:[URM]|Urbano|Rural|Mixto)$
+examples:
+- value: U
+  description: urbano
+- value: R
+  description: rural
+- value: M
+  description: mixto
+- value: Mixto
+- value: X
+  valid: false
+  description: not a radius type
+links:
+- type: doc
+  url: https://www.indec.gob.ar/indec/web/Institucional-Indec-Codgeo
+translations:
+  es:
+    name: Tipo de radio censal (INDEC)
