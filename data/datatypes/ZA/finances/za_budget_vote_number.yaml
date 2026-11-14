@@ -1,0 +1,32 @@
+id: za_budget_vote_number
+name: South African budget vote number
+status: draft
+doc: Number of a vote of the South African national budget or of a provincial budget, the appropriation
+  of one department in the Appropriation Act, such as vote 1 The Presidency (about 40 national votes;
+  provinces number their own votes from 1, vote 1 Office of the Premier). Votes are renumbered when departments
+  change (vote 14 is Basic Education in the Estimates of National Expenditure 2019-20 and Statistics South
+  Africa from 2020-21).
+parent: id
+categories:
+- finances
+- government
+country:
+- ZA
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[1-9]|[1-5]\d)$
+examples:
+- value: '1'
+  description: The Presidency, national budget
+- value: '14'
+  description: Basic Education in the 2019-20 national budget, Statistics South Africa in 2022-23
+- value: '152061'
+  valid: false
+  description: a count of votes of an election
+links:
+- type: doc
+  url: https://www.treasury.gov.za/documents/national%20budget/
+- type: doc
+  url: https://vulekamali.gov.za/

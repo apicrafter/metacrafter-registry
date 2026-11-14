@@ -1,0 +1,33 @@
+id: sensor_community_value_type
+name: Sensor.Community value type
+status: draft
+doc: Type of a reading in the archives of the Sensor.Community (luftdaten) and sensors.AFRICA networks,
+  one row per reading in the value_type column, such as P1 for PM10 and P2 for PM2.5 in µg/m³, P0 for
+  PM1, temperature, humidity, pressure, noise_LAeq or noise_Leq, and the sensor diagnostics durP1, ratioP2,
+  samples, min_micro, max_micro and the hdop of a GPS. The pollutant notation of official stations is
+  air_pollutant; the sensor model is air_sensor_model.
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:P0|P1|P2|P4|N05|N1|N25|N4|N10|TS|temperature|humidity|pressure|pressure_at_sealevel|noise_LAeq|noise_LA_min|noise_LA_max|noise_Leq|durP1|durP2|ratioP1|ratioP2|samples|min_micro|max_micro|interval|hdop|lat|lon|height|timestamp)$
+examples:
+- value: P2
+  description: PM2.5 in µg/m³
+- value: P1
+  description: PM10 in µg/m³
+- value: humidity
+  description: relative humidity in percent
+- value: PM2.5
+  valid: false
+  description: the notation of official stations (air_pollutant)
+links:
+- type: doc
+  url: https://github.com/opendata-stuttgart/meta/wiki/APIs
+- type: doc
+  url: https://archive.sensor.community/
+- type: doc
+  url: https://open.africa/dataset/sensorsafrica-airquality-archive-nairobi

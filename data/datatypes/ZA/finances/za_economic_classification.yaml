@@ -1,0 +1,34 @@
+id: za_economic_classification
+name: South African budget economic classification item
+status: draft
+doc: Item of the economic classification of the South African national and provincial budgets of National
+  Treasury, as the Estimates of National Expenditure, the in-year monitoring data and vulekamali publish
+  them in five levels, from Current, Capital and Payments for financial assets down to Current payments,
+  Transfers and subsidies, Compensation of employees, Goods and services, Salaries and wages, Travel and
+  subsistence or Inventory Medical supplies, following the Standard Chart of Accounts (SCOA). Item names
+  come in sentence or title case (Goods And Services).
+categories:
+- finances
+- government
+country:
+- ZA
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Compensation of employees
+  description: level 3 under Current payments
+- value: Goods and services
+- value: 'Consumables: Stationery, printing and office supplies'
+  description: level 4 under Goods and services
+- value: Transfers And Subsidies
+  description: level 2 in title case
+- value: Administration
+  valid: false
+  description: a budget programme
+links:
+- type: doc
+  url: https://www.treasury.gov.za/documents/national%20budget/
+- type: doc
+  url: https://vulekamali.gov.za/

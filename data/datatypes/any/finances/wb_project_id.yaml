@@ -1,0 +1,29 @@
+id: wb_project_id
+name: World Bank project ID
+status: draft
+doc: Identifier of a project of the World Bank (IBRD and IDA) in its Projects and Operations database
+  and the World Bank Group finances data, the letter P and six digits, such as P099939 for the support
+  to the EITI implementation in Sierra Leone. Trust funds have trust fund numbers (wb_trust_fund_number).
+parent: id
+categories:
+- finances
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^P\d{6}$
+examples:
+- value: P099939
+  description: 'SIERRA LEONE: SUPPORT TO EITI IMPLEMENTATION'
+- value: P104422
+- value: TF053509
+  valid: false
+  description: a trust fund number (wb_trust_fund_number)
+links:
+- type: doc
+  url: https://projects.worldbank.org/
+- type: doc
+  url: https://financesone.worldbank.org/
+- type: doc
+  url: https://open.africa/dataset/trust-fund-grants-committed-disbursed-sierra-leone

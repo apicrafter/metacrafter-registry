@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "e6f96a99c0302cb3b39b69b0b3e4f501cc0ac210"
+  "ref": "d0137ef22022d7041c1d09dde05f88203b1a7b86"
  },
  "rules": [
   {
@@ -19,6 +19,26 @@
    "key": "aebankaccount",
    "type": "data",
    "match": "ppr",
+   "file": "ae/ae_finances.yaml",
+   "context": "finances",
+   "lang": "ar",
+   "country_code": "ae"
+  },
+  {
+   "rule": "aedewacontractaccountbyname",
+   "key": "ae_dewa_contract_account",
+   "type": "field",
+   "match": "regex",
+   "file": "ae/ae_finances.yaml",
+   "context": "finances",
+   "lang": "ar",
+   "country_code": "ae"
+  },
+  {
+   "rule": "aedewacontractaccountvalue",
+   "key": "ae_dewa_contract_account",
+   "type": "data",
+   "match": "func",
    "file": "ae/ae_finances.yaml",
    "context": "finances",
    "lang": "ar",
@@ -65,6 +85,26 @@
    "country_code": "ae"
   },
   {
+   "rule": "aeabudhabiregionbyname",
+   "key": "ae_abu_dhabi_region",
+   "type": "field",
+   "match": "regex",
+   "file": "ae/ae_geo.yaml",
+   "context": "geo",
+   "lang": "ar",
+   "country_code": "ae"
+  },
+  {
+   "rule": "aeabudhabiregionvalue",
+   "key": "ae_abu_dhabi_region",
+   "type": "data",
+   "match": "func",
+   "file": "ae/ae_geo.yaml",
+   "context": "geo",
+   "lang": "ar",
+   "country_code": "ae"
+  },
+  {
    "rule": "aecityfield",
    "key": "aecity",
    "type": "field",
@@ -78,7 +118,67 @@
    "rule": "aecityvalue",
    "key": "aecity",
    "type": "data",
-   "match": "text",
+   "match": "func",
+   "file": "ae/ae_geo.yaml",
+   "context": "geo",
+   "lang": "ar",
+   "country_code": "ae"
+  },
+  {
+   "rule": "aedubaicommunitybyname",
+   "key": "ae_dubai_community",
+   "type": "field",
+   "match": "regex",
+   "file": "ae/ae_geo.yaml",
+   "context": "geo",
+   "lang": "ar",
+   "country_code": "ae"
+  },
+  {
+   "rule": "aedubaicommunitycodebyname",
+   "key": "ae_dubai_community_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ae/ae_geo.yaml",
+   "context": "geo",
+   "lang": "ar",
+   "country_code": "ae"
+  },
+  {
+   "rule": "aedubaicommunityvalue",
+   "key": "ae_dubai_community",
+   "type": "data",
+   "match": "func",
+   "file": "ae/ae_geo.yaml",
+   "context": "geo",
+   "lang": "ar",
+   "country_code": "ae"
+  },
+  {
+   "rule": "aeemiratebyname",
+   "key": "ae_emirate",
+   "type": "field",
+   "match": "regex",
+   "file": "ae/ae_geo.yaml",
+   "context": "geo",
+   "lang": "ar",
+   "country_code": "ae"
+  },
+  {
+   "rule": "aeemiratevalue",
+   "key": "ae_emirate",
+   "type": "data",
+   "match": "func",
+   "file": "ae/ae_geo.yaml",
+   "context": "geo",
+   "lang": "ar",
+   "country_code": "ae"
+  },
+  {
+   "rule": "aepoboxbyname",
+   "key": "aepostcode",
+   "type": "field",
+   "match": "regex",
    "file": "ae/ae_geo.yaml",
    "context": "geo",
    "lang": "ar",
@@ -349,6 +449,26 @@
    "key": "country",
    "type": "field",
    "match": "text",
+   "file": "ar/ar_geo.yaml",
+   "context": "geo",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
+   "rule": "arcountrynamebyname",
+   "key": "arcountryname",
+   "type": "field",
+   "match": "regex",
+   "file": "ar/ar_geo.yaml",
+   "context": "geo",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
+   "rule": "arcountrynamevalue",
+   "key": "arcountryname",
+   "type": "data",
+   "match": "func",
    "file": "ar/ar_geo.yaml",
    "context": "geo",
    "lang": "ar",
@@ -2895,6 +3015,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "casrnvalue",
+   "key": "casrn",
+   "type": "data",
+   "match": "func",
+   "file": "common/chemistry.yaml",
+   "context": "chemistry",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "inchibyfieldname",
    "key": "inchl",
    "type": "field",
@@ -3645,6 +3775,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "compactdatebyname",
+   "key": "date",
+   "type": "field",
+   "match": "regex",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "compactdatevalue",
+   "key": "date",
+   "type": "data",
+   "match": "func",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "createddatebyknown",
    "key": "datetime",
    "type": "field",
@@ -3699,6 +3849,16 @@
    "key": "datetime",
    "type": "field",
    "match": "text",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "dateymdcompactbyname",
+   "key": "date_ymd_compact",
+   "type": "field",
+   "match": "regex",
    "file": "common/dateandtime.yaml",
    "context": "datetime",
    "lang": "common",
@@ -3789,6 +3949,26 @@
    "key": "month",
    "type": "field",
    "match": "ppr",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "quarterbyname",
+   "key": "quarter",
+   "type": "field",
+   "match": "regex",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "quartervalue",
+   "key": "quarter",
+   "type": "data",
+   "match": "func",
    "file": "common/dateandtime.yaml",
    "context": "datetime",
    "lang": "common",
@@ -4345,6 +4525,36 @@
    "country_code": "xx"
   },
   {
+   "rule": "emdatdisasternumberbyname",
+   "key": "emdat_disaster_number",
+   "type": "field",
+   "match": "text",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "emdatdisasternumbervalue",
+   "key": "emdat_disaster_number",
+   "type": "data",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "glidenumbervalue",
+   "key": "glide_number",
+   "type": "data",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "iucnprotectedareacategorybyname",
    "key": "iucn_protected_area_category",
    "type": "field",
@@ -4725,6 +4935,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "geopointtextbyname",
+   "key": "geopoint",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "glnfield",
    "key": "gln",
    "type": "field",
@@ -4758,6 +4978,16 @@
    "rule": "gmlposlistbyfield",
    "key": "gml_poslist",
    "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "googleplaceidvalue",
+   "key": "google_place_id",
+   "type": "data",
    "match": "regex",
    "file": "common/geo.yaml",
    "context": "geo",
@@ -4859,6 +5089,16 @@
    "key": "longitude",
    "type": "field",
    "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "longitudebylongname",
+   "key": "longitude",
+   "type": "field",
+   "match": "text",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -5265,6 +5505,36 @@
    "country_code": "xx"
   },
   {
+   "rule": "imfcountrycodebyname",
+   "key": "imf_country_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "imfindicatorcodebyname",
+   "key": "imf_indicator_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "imfweosubjectcodevalue",
+   "key": "imf_weo_subject_code",
+   "type": "data",
+   "match": "text",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "iso3166-alpha2",
    "key": "countrycode_alpha2",
    "type": "data",
@@ -5305,8 +5575,28 @@
    "country_code": "xx"
   },
   {
+   "rule": "iso3166alpha2byisofield",
+   "key": "countrycode_alpha2",
+   "type": "data",
+   "match": "text",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "iso3166alpha2bylocalname",
    "key": "countrycode_alpha2",
+   "type": "data",
+   "match": "text",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "iso3166alpha3byisofield",
+   "key": "countrycode_alpha3",
    "type": "data",
    "match": "text",
    "file": "common/intcodes.yaml",
@@ -5339,6 +5629,36 @@
    "key": "oecd_crs_purpose_code",
    "type": "field",
    "match": "regex",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "owidentitycodevalue",
+   "key": "owid_entity_code",
+   "type": "data",
+   "match": "regex",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "whoghoindicatorcodebyname",
+   "key": "who_gho_indicator_code",
+   "type": "field",
+   "match": "text",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "whoregioncodevalue",
+   "key": "who_region_code",
+   "type": "data",
+   "match": "text",
    "file": "common/intcodes.yaml",
    "context": "geo",
    "lang": "common",
@@ -5889,6 +6209,36 @@
    "key": "atccode",
    "type": "data",
    "match": "ppr",
+   "file": "common/medical.yaml",
+   "context": "medical",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "covid19vaccinevalue",
+   "key": "covid19_vaccine",
+   "type": "data",
+   "match": "text",
+   "file": "common/medical.yaml",
+   "context": "medical",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "pangolineagevalue",
+   "key": "pango_lineage",
+   "type": "data",
+   "match": "regex",
+   "file": "common/medical.yaml",
+   "context": "medical",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "sarscov2variantlabelvalue",
+   "key": "sars_cov_2_variant_label",
+   "type": "data",
+   "match": "text",
    "file": "common/medical.yaml",
    "context": "medical",
    "lang": "common",
@@ -7805,6 +8155,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "hxlhashtagvalue",
+   "key": "hxl_hashtag",
+   "type": "data",
+   "match": "regex",
+   "file": "common/texts.yaml",
+   "context": "texts",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "currencybyfield",
    "key": "currency",
    "type": "field",
@@ -9149,6 +9509,16 @@
    "key": "icd10code",
    "type": "field",
    "match": "text",
+   "file": "en/en_med.yaml",
+   "context": "medical",
+   "lang": "en",
+   "country_code": "xx"
+  },
+  {
+   "rule": "enicd10labelvalue",
+   "key": "icd10code",
+   "type": "data",
+   "match": "func",
    "file": "en/en_med.yaml",
    "context": "medical",
    "lang": "en",
@@ -18809,6 +19179,16 @@
    "key": "za_province",
    "type": "field",
    "match": "regex",
+   "file": "za/za_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "za"
+  },
+  {
+   "rule": "zaprovincecodevalue",
+   "key": "za_province_code",
+   "type": "data",
+   "match": "text",
    "file": "za/za_geo.yaml",
    "context": "geo",
    "lang": "en",

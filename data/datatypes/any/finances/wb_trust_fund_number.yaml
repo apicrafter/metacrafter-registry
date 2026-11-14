@@ -1,0 +1,28 @@
+id: wb_trust_fund_number
+name: World Bank trust fund number
+status: draft
+doc: Number of a trust fund administered by the World Bank, the letters TF and six digits, such as TF053509
+  (a trustee fund that receives donor contributions) or TF093541 (a grant fund that disburses them), as
+  in the trust fund commitments and disbursements of World Bank Group Finances.
+parent: id
+categories:
+- finances
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^TF[0-9A-Z]\d{5}$
+examples:
+- value: TF053509
+  description: Extractive Industries Transparency Initiative trustee fund
+- value: TF093541
+  description: 'grant fund SIERRA LEONE: SUPPORT TO EITI IMPLEMENTATION'
+- value: P099939
+  valid: false
+  description: a project ID (wb_project_id)
+links:
+- type: doc
+  url: https://financesone.worldbank.org/
+- type: doc
+  url: https://open.africa/dataset/trust-fund-grants-committed-disbursed-sierra-leone
