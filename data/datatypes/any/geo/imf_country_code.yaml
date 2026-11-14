@@ -1,0 +1,40 @@
+id: imf_country_code
+name: IMF country code
+status: draft
+doc: 'Three-digit code of a country or territory of the International Monetary Fund, the WEO Country Code
+  of the World Economic Outlook downloads and the IFS country code of the International Financial Statistics:
+  111 United States, 112 United Kingdom, 134 Germany, 199 South Africa, 512 Afghanistan, 612 Algeria,
+  694 Nigeria, 914 Albania. The codes do not follow ISO 3166-1 numeric or UN M49 (unm49), where the United
+  States is 840: only the field name and the source tell them apart from other three-digit numbers.'
+categories:
+- geo
+- finances
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{3}$
+examples:
+- value: '111'
+  description: United States (WEO, IFS)
+- value: '512'
+  description: Afghanistan
+- value: '612'
+  description: Algeria
+- value: '199'
+  description: South Africa
+- value: '914'
+  description: Albania
+- value: USA
+  valid: false
+  description: 'ISO 3166-1 alpha-3: countrycode_alpha3'
+links:
+- type: doc
+  url: https://www.imf.org/en/Publications/WEO/weo-database/2021/April
+- type: doc
+  url: https://data.imf.org/
+translations:
+  ru:
+    name: Код страны МВФ
+    doc: Трёхзначный код страны Международного валютного фонда (WEO Country Code, код IFS), например 111
+      — США, 199 — ЮАР, 512 — Афганистан; не совпадает с цифровым кодом ISO 3166-1.
