@@ -6,14 +6,16 @@ doc: 'Identifier of a coordinate reference system (CRS) in the EPSG Geodetic Par
   and the OGC URI http://www.opengis.net/def/crs/EPSG/0/4326. The code itself is a number of four or five
   digits, and Wikidata stores only that number; a bare number is not covered because it looks like any
   other number. In a field named after EPSG (EPSG, EPSG_XYZ, epsg_origine, srid) the bare number is the
-  code too, as in the Austrian BEV control point files: 4936, 4937, 25833.'
+  code too, as in the Austrian BEV control point files: 4936, 4937, 25833. A label may put the name of
+  the system before the code and a space after the colon (WGS 84 EPSG: 4326 in the CRS field of the soil
+  profile database of the Armenian Soil Information System).'
 categories:
 - geo
 langs:
 - common
 is_pii: false
 classification: categorical
-regexp: ^(?:EPSG:|urn:ogc:def:crs:EPSG::|https?://www\.opengis\.net/def/crs/EPSG/0/)[1-9]\d{3,4}$
+regexp: '^(?:(?:[A-Z][A-Za-z0-9 ./()-]{0,60} )?EPSG: ?|urn:ogc:def:crs:EPSG::|https?://www\.opengis\.net/def/crs/EPSG/0/)[1-9]\d{3,4}$'
 examples:
 - value: EPSG:4326
   description: WGS 84, geographic 2D
@@ -21,6 +23,8 @@ examples:
   description: WGS 84 / Pseudo-Mercator, projected
 - value: EPSG:25832
   description: ETRS89 / UTM zone 32N, projected
+- value: 'WGS 84 EPSG: 4326'
+  description: Name of the system before the code, Armenian Soil Information System
 - value: urn:ogc:def:crs:EPSG::4326
   description: OGC URN form
 - value: http://www.opengis.net/def/crs/EPSG/0/4326

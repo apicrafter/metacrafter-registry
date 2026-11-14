@@ -1,0 +1,46 @@
+id: soil_type
+name: Soil type name
+status: draft
+doc: 'Name of a soil type, subtype or soil mapping unit in a national genetic soil classification, as
+  soil maps and soil profile descriptions give it. The Soviet classification of 1977 and the national
+  classifications derived from it (Russia, Armenia, Ukraine, Kazakhstan, Central Asia) name types after
+  the zone, the relief and the colour, with subtypes after them: горные черноземы выщелоченные, каштановые,
+  бурые полупустынные, дерново-подзолистые, серые лесные, солонцы, солончаки. English versions of these
+  maps translate them (Mountain chernozem, Mountain chestnut soil, Mountain cinnamonic forest soil, Gray-fulvous
+  semidesert, Meadow-steppe soil), and the Armenian soil profile database of ArmSIS gives the Armenian
+  names (Լեռնային սևահողեր, mountain chernozems). Reference soil groups of the World Reference Base are
+  wrb_reference_soil_group, orders of the Australian Soil Classification au_soil_order.'
+parent: category
+categories:
+- environment
+- science
+langs:
+- ru
+- en
+- hy
+is_pii: false
+classification: categorical
+examples:
+- value: Горные черноземы выщелоченные
+  description: Soil map of Armenia, 1:100 000 (Name_RU), ArmSIS
+- value: Горно-каштановые
+  description: Soil type of the same map (Type_RU)
+- value: Mountain cinnamonic forest soil
+  description: English soil type of the same map (Type_EN)
+- value: Gray-fulvous semidesert
+  description: Soil profile database of ArmSIS (Soil_Name1)
+- value: Լեռնային շագանակագույն
+  description: Mountain chestnut soil in Armenian, soil profile database of ArmSIS (Soil_Name_)
+- value: Alpine meadowes, carpet of flowers
+  valid: false
+  description: Vegetation type of the flora map of the Water Resources Atlas of Armenia
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Soil_classification
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Chernozem
+translations:
+  ru:
+    name: Тип почвы
+  hy:
+    name: Հողի տիպ

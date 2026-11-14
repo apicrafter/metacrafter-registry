@@ -1,0 +1,40 @@
+id: ph_value
+name: pH value
+status: draft
+doc: 'pH of a water sample, a soil or a solution: a number on the scale from 0 to 14, usually with one
+  or two decimals, written with a decimal point or comma. Soil tables give the pH in water and in a salt
+  solution in separate columns (pH H2O, pH KCl, pH CaCl2; pHwater, phLevel_calciumChloride), water quality
+  tables next to temperature and conductivity. A number alone does not tell a pH from any other measure,
+  so a value is a pH only in a field named after it (pH of the horizons of the soil profile database of
+  the Armenian Soil Information System).'
+parent: numeric
+categories:
+- chemistry
+- environment
+- values
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:(?:\d|1[0-3])(?:[.,]\d{1,3})?|14(?:[.,]0{1,3})?)$
+examples:
+- value: '8.1'
+  description: Soil horizon, Armenian Soil Information System
+- value: '7'
+  description: Whole number
+- value: '4.25'
+  description: Two decimals
+- value: 6,8
+  description: Decimal comma
+- value: '15.2'
+  valid: false
+  description: Above the scale
+- value: '-1'
+  valid: false
+  description: Below the scale
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/PH
+translations:
+  ru:
+    name: Водородный показатель (pH)
