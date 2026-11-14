@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "cdc2bed5ec19fbc8482fc309ddc19bac24c2ac50"
+  "ref": "6712da0fa3a3459a9d17d39cc41c360af8da8b09"
  },
  "rules": [
   {
@@ -375,6 +375,106 @@
    "country_code": "xx"
   },
   {
+   "rule": "ardepartmentnamebyname",
+   "key": "ar_department",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindeccensusfractioncodebyname",
+   "key": "ar_indec_census_fraction_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindeccensusradiuscodebyname",
+   "key": "ar_indec_census_radius_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindeccensusradiuslinkbyname",
+   "key": "ar_indec_census_radius_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindeccensusradiustypebyname",
+   "key": "ar_indec_census_radius_type",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindecdepartmentpartbyname",
+   "key": "ar_indec_department_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindeclocalgovernmentpartbyname",
+   "key": "ar_indec_local_government_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindeclocalitypartbyname",
+   "key": "ar_indec_locality_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindecprovincecodebarename",
+   "key": "ar_indec_province_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arlocalitynamebyname",
+   "key": "city",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
    "rule": "ar_common_arpersonnameknown",
    "key": "person_fullname",
    "type": "field",
@@ -655,10 +755,30 @@
    "country_code": "ar"
   },
   {
+   "rule": "arprovincebyname",
+   "key": "ar_province",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
    "rule": "arprovinceletterbyname",
    "key": "iso3166code_part",
    "type": "field",
    "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arprovincevalue",
+   "key": "ar_province",
+   "type": "data",
+   "match": "func",
    "file": "ar_country/ar_geo.yaml",
    "context": "geo",
    "lang": "es",
@@ -4495,6 +4615,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "suburbbyname",
+   "key": "location",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "towncitybyname",
+   "key": "city",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "unlocodefield",
    "key": "unlocode",
    "type": "field",
@@ -4579,6 +4719,16 @@
    "key": "iso3166code",
    "type": "field",
    "match": "regex",
+   "file": "common/geo_text.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "kmlcoordinatestext",
+   "key": "kml_coordinates",
+   "type": "data",
+   "match": "func",
    "file": "common/geo_text.yaml",
    "context": "geo",
    "lang": "common",
@@ -5735,6 +5885,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "orgunitbyname",
+   "key": "orgunit",
+   "type": "field",
+   "match": "regex",
+   "file": "common/orgs.yaml",
+   "context": "companies",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "orgunitesvalue",
+   "key": "orgunit",
+   "type": "data",
+   "match": "func",
+   "file": "common/orgs.yaml",
+   "context": "companies",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "fiscalyearbyname",
    "key": "fiscal_year",
    "type": "field",
@@ -5871,6 +6041,26 @@
    "match": "ppr",
    "file": "common/persons.yaml",
    "context": "persons",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "procurementmethodbyname",
+   "key": "procurement_method",
+   "type": "field",
+   "match": "regex",
+   "file": "common/procurement.yaml",
+   "context": "government",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "procurementmethodvalue",
+   "key": "procurement_method",
+   "type": "data",
+   "match": "func",
+   "file": "common/procurement.yaml",
+   "context": "government",
    "lang": "common",
    "country_code": "xx"
   },
@@ -8556,7 +8746,7 @@
   },
   {
    "rule": "esdatetimename",
-   "key": "datetime",
+   "key": "date",
    "type": "field",
    "match": "text",
    "file": "es/es_datetime.yaml",
@@ -13135,10 +13325,30 @@
    "country_code": "es"
   },
   {
-   "rule": "esgenderknown",
+   "rule": "esbirthdayknown",
    "key": "birthday",
    "type": "data",
    "match": "text",
+   "file": "pii/es/es_pii.yaml",
+   "context": "pii",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esgenderbyname",
+   "key": "gender",
+   "type": "field",
+   "match": "regex",
+   "file": "pii/es/es_pii.yaml",
+   "context": "pii",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esgenderknown",
+   "key": "gender",
+   "type": "data",
+   "match": "func",
    "file": "pii/es/es_pii.yaml",
    "context": "pii",
    "lang": "es",

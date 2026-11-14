@@ -1,0 +1,41 @@
+id: ar_province
+name: Argentine province
+status: draft
+doc: 'Name of one of the 23 provinces of Argentina or of the Ciudad Autónoma de Buenos Aires, the 24 first-level
+  jurisdictions: Buenos Aires, Catamarca, Chaco, Chubut, Córdoba, Corrientes, Entre Ríos, Formosa, Jujuy,
+  La Pampa, La Rioja, Mendoza, Misiones, Neuquén, Río Negro, Salta, San Juan, San Luis, Santa Cruz, Santa
+  Fe, Santiago del Estero, Tierra del Fuego (Antártida e Islas del Atlántico Sur) and Tucumán. Tables
+  write them with or without accents, in capitals (BUENOS AIRES in the connection points of the Red Federal
+  de Fibra Óptica of ARSAT), with the word Provincia, or abbreviated (Sgo Del Estero, CABA, Capital Federal).
+  The INDEC code of a province is ar_indec_province_code, its ISO 3166-2 letter iso3166code_part.'
+parent: province
+categories:
+- geo
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Buenos Aires
+- value: Córdoba
+- value: Tierra del Fuego
+- value: SANTIAGO DEL ESTERO
+  description: in capitals
+- value: Sgo Del Estero
+  description: abbreviated in the staff tables of ARSAT
+- value: Ciudad Autónoma de Buenos Aires
+  description: the federal capital, a jurisdiction of the same level
+- value: '06'
+  valid: false
+  description: 'INDEC code: ar_indec_province_code'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Provinces_of_Argentina
+- type: doc
+  url: https://datos.gob.ar/dataset/jgm-servicio-normalizacion-datos-geograficos
+translations:
+  es:
+    name: Provincia argentina
