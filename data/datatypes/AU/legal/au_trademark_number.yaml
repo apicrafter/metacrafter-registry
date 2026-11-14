@@ -1,0 +1,35 @@
+id: au_trademark_number
+name: Australian trade mark number (IP Australia)
+status: draft
+doc: 'Number that IP Australia gives to an application to register a trade mark when it is filed, and
+  that the registered mark keeps: a serial number of one to seven digits, from 1 (marks of the first register
+  of 1906) to more than two million for current filings (Australian Trade Mark Search, the IPGOD tables
+  tm_number). It is a number with no check digit, so only a field name tells it from other numbers.'
+parent: id
+categories:
+- legal
+- identifiers
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,7}$
+examples:
+- value: '1153388'
+  description: Trade mark filed in 2006 (IPGOD trade mark endorsements)
+- value: '268967'
+- value: '1'
+  description: A mark of the 1906 register
+- value: '31234567'
+  valid: false
+  description: eight digits
+links:
+- type: doc
+  url: https://search.ipaustralia.gov.au/trademarks/search/quick
+- type: doc
+  url: https://data.gov.au/data/dataset/intellectual-property-government-open-data
+translations:
+  ru:
+    name: Номер товарного знака Австралии

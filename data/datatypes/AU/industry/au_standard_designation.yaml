@@ -1,0 +1,39 @@
+id: au_standard_designation
+name: Australian or New Zealand standard designation (AS, AS/NZS, NZS)
+status: draft
+doc: 'Designation of a standard of Standards Australia (AS), Standards New Zealand (NZS) or both (AS/NZS):
+  the prefix, the number with its parts and the year after a colon (since about 2000) or a hyphen (AS
+  1056.1, AS/NZS 4847.1:2010, AS 2890.1-2004, NZS 4606.1-1989), and the amendments (AS/NZS 2040.1:2005/Amdt
+  3:2010, AS/NZS 4692.1:2005 + A1). Adopted international standards keep their number (AS/NZS ISO 9001:2016,
+  AS/NZS IEC 60335.1). Regulations and product registers such as GEMS energy rating name the test standard
+  of a product this way. ISO standards themselves are iso_standard_designation.'
+categories:
+- industry
+- identifiers
+country:
+- AU
+- NZ
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '^(?:AS/NZS|AS|NZS)(?: (?:ISO/IEC|ISO|IEC|CISPR|EN))? \d+(?:\.\d+)*(?:[:-](?:19|20)\d{2})?(?:
+  ?(?:/ ?Amdt ?\d+(?::(?:19|20)\d{2})?|\+ ?A\d+))*$'
+examples:
+- value: AS/NZS 4847.1:2010
+  description: Self-ballasted lamps for general lighting services, performance (GEMS lamp registrations)
+- value: AS/NZS 2040.1:2005/Amdt 3:2010
+- value: AS 1056.1
+- value: NZS 4606.1-1989
+- value: AS/NZS ISO 9001:2016
+- value: ISO 9001:2015
+  valid: false
+  description: 'an ISO standard: iso_standard_designation'
+links:
+- type: doc
+  url: https://www.standards.org.au/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Standards_Australia
+translations:
+  ru:
+    name: Обозначение стандарта Австралии и Новой Зеландии

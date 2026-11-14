@@ -1,0 +1,36 @@
+id: au_icn
+name: Indigenous Corporation Number (ICN, ORIC)
+status: draft
+doc: 'Number that the Registrar of Indigenous Corporations (Office of the Registrar of Indigenous Corporations,
+  ORIC) gives to an Aboriginal and Torres Strait Islander corporation registered under the Corporations
+  (Aboriginal and Torres Strait Islander) Act 2006 (CATSI Act) or the earlier Aboriginal Councils and
+  Associations Act 1976: a serial number of one to five digits (2, 7, 1700) that the Register of Indigenous
+  Corporations and the corporation''s documents give as ICN 1700. Such a corporation has no ACN; most
+  have an ABN.'
+parent: id
+categories:
+- companies
+- identifiers
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,5}$
+examples:
+- value: '2'
+  description: an early corporation of the 1976 Act
+- value: '1700'
+  description: Bogong Community Aboriginal and Torres Strait Islanders Corporation
+- value: '170200'
+  valid: false
+  description: six digits
+links:
+- type: doc
+  url: https://www.oric.gov.au/
+- type: doc
+  url: https://data.gov.au/data/dataset/aboriginal-and-torres-strait-islander-corporations
+translations:
+  ru:
+    name: Номер корпорации коренных народов Австралии (ICN)

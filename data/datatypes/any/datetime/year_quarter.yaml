@@ -1,0 +1,31 @@
+id: year_quarter
+name: Quarter with its year
+status: draft
+doc: 'A quarter of a calendar or fiscal year written with the year: 2021Q4, 2021Q04 (the report identifiers
+  of the Australian Independent Parliamentary Expenses Authority), 2021-Q4, 2021 Q4 or Q4 2021. A quarter
+  number alone is quarter; the SDMX time period 2021-Q4 is sdmx_reporting_period; a quarter given by its
+  last month (Sep-17) is yearmonth_english.'
+categories:
+- datetime
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:(?:1[89]|20)\d{2}[- ]?Q0?[1-4]|Q[1-4][- ](?:1[89]|20)\d{2})$
+examples:
+- value: 2021Q04
+  description: IPEA report identifier of October to December 2021
+- value: 2022Q03
+- value: 2021 Q4
+- value: Q4 2021
+- value: 2021Q5
+  valid: false
+- value: '4'
+  valid: false
+  description: 'a quarter without its year: quarter'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Calendar_year#Quarters
+translations:
+  ru:
+    name: Квартал года

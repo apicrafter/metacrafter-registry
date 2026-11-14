@@ -1,0 +1,38 @@
+id: au_lga_code
+name: ABS local government area (LGA) code
+status: draft
+doc: 'Five-digit code that the ABS gives to a local government area (a council area: city, shire, municipality,
+  regional council) in the Australian Statistical Geography Standard: the state or territory digit (1
+  NSW, 2 Vic., 3 Qld, 4 SA, 5 WA, 6 Tas., 7 NT, 8 ACT, 9 Other Territories) and four digits, for example
+  10050 Albury (C) and 24600 Melbourne (C). The ABS updates the LGAs every year, so a table gives the
+  edition (LGA_Code_2020). States and councils have numbering of their own (Victorian council numbers
+  301 to 381), which are not these codes.'
+parent: admin_area_2
+categories:
+- geo
+- government
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-9]\d{4}$
+examples:
+- value: '10050'
+  description: Albury (C), NSW (DSS payment demographic data)
+- value: '16900'
+  description: Shellharbour (C), NSW
+- value: '24600'
+  description: Melbourne (C), Vic.
+- value: '357'
+  valid: false
+  description: a council number of Victoria
+links:
+- type: doc
+  url: https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/non-abs-structures/local-government-areas
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Local_government_areas_of_Australia
+translations:
+  ru:
+    name: Код района местного самоуправления (LGA) Австралии
