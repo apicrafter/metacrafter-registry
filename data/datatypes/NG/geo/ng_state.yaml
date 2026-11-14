@@ -1,0 +1,30 @@
+id: ng_state
+name: Nigerian state
+status: draft
+doc: Name of one of the 36 states of Nigeria or of the Federal Capital Territory (FCT, Abuja), such as
+  Kaduna, Akwa Ibom, Cross River or Lagos. The two-letter state codes (KD, AK, FC) are the ISO 3166-2:NG
+  codes without the country (iso3166code_part). Niger, Delta, Plateau and Rivers are also common words.
+parent: state
+categories:
+- geo
+- government
+country:
+- NG
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Kaduna
+- value: Akwa Ibom
+- value: Federal Capital Territory
+  description: FCT, Abuja
+- value: Kano State
+  description: with the word State
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/States_of_Nigeria
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q50440
+- type: doc
+  url: https://www.iso.org/obp/ui/#iso:code:3166:NG

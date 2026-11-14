@@ -1,0 +1,36 @@
+id: air_sensor_model
+name: Air quality sensor model
+status: draft
+doc: Model of a sensor of an air quality or weather station, as the citizen science networks Sensor.Community
+  (luftdaten) and sensors.AFRICA name it in the sensor_type column of their archives, such as SDS011 and
+  PMS5003 (particulate matter), DHT22, BME280 and BMP180 (temperature, humidity, pressure), SPS30, HPM,
+  SPH0645 (noise) or MQ-7 (carbon monoxide); reference monitors such as the Met One BAM 1020 appear too.
+  The value type of a reading is sensor_community_value_type.
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?i:SDS0(?:11|18|21)|PMS[1-9]003|PMSA003|SPS30|HPM|PPD42NS|DHT(?:11|22)|BME(?:280|680)|BMP(?:180|280)|HTU21D|SHT(?:3[015]|85)|DS18B20|SPH0645(?:_MIC)?|DNMS|MQ-?\d{1,3}|BAM[
+  -]?10[12]0|SEN5X|NextPM|IPS-7100)$
+examples:
+- value: SDS011
+  description: Nova Fitness particulate matter sensor
+- value: pms5003
+  description: Plantower particulate matter sensor, in lower case as sensors.AFRICA writes it
+- value: DHT22
+  description: temperature and humidity sensor
+- value: BAM 1020
+  description: Met One beta attenuation monitor
+- value: P2
+  valid: false
+  description: a value type (sensor_community_value_type)
+links:
+- type: doc
+  url: https://sensor.community/en/sensors/
+- type: doc
+  url: https://archive.sensor.community/
+- type: doc
+  url: https://open.africa/dataset/sensorsafrica-airquality-archive-nairobi

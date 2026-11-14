@@ -1,0 +1,27 @@
+id: admin_area_type
+name: Administrative division type
+status: draft
+doc: The kind of an administrative division, such as State, Province, Region, District, County, Local
+  Authority, Municipality or Water body, as GADM gives it for every level in the local language (TYPE_1,
+  TYPE_2; Wilaya) and in English (ENGTYPE_1, ENGTYPE_2), and as gazetteers and boundary sets give it next
+  to the name of a division.
+parent: category
+categories:
+- geo
+- government
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Local Authority
+  description: a local government area of Nigeria in GADM 2
+- value: Wilaya
+  description: a district of Tanzania in Swahili (ENGTYPE_2 District)
+- value: Water body
+  description: a lake area of GADM
+links:
+- type: doc
+  url: https://gadm.org/metadata.html
+- type: doc
+  url: https://energydata.info/dataset/tanzania-aggregated-poverty-map-2013
