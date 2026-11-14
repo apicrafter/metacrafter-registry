@@ -1,0 +1,38 @@
+id: au_lga_name
+name: ABS local government area (LGA) name
+status: draft
+doc: 'Name of an Australian local government area as the ABS writes it, with the status of the council
+  in brackets: (C) city, (S) shire, (A) area, (M) municipality, (RC) rural city or regional council, (DC)
+  district council, (B) borough, (T) town, (R) region, (AC) Aboriginal council, (RegC) regional council,
+  (IS) island shire; a name that occurs in two states also has the state (Kingston (C) (Vic.)). Albury
+  (C), Towong (S), Kangaroo Island (DC). Council names without the bracket (Golden Plains Shire, City
+  of Greater Geelong) are names of a council; the code of the area is au_lga_code.'
+parent: admin_area_2
+categories:
+- geo
+- government
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: '^[A-Z][A-Za-z''’.\- ]+ \((?:A|AC|B|C|CGC|DC|IS|M|R|RC|RegC|RDC|S|SC|T|TC)\)(?: \((?:NSW|Vic\.|Qld|SA|WA|Tas\.|NT|ACT|OT)\))?$'
+examples:
+- value: Albury (C)
+  description: LGA code 10050 (ASGS 2020)
+- value: Armidale Regional (A)
+- value: Kangaroo Island (DC)
+- value: Kingston (C) (Vic.)
+  description: Kingston is also an LGA of Tasmania
+- value: Golden Plains Shire
+  valid: false
+  description: the council name, not the ABS form
+links:
+- type: doc
+  url: https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/non-abs-structures/local-government-areas
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Local_government_areas_of_Australia
+translations:
+  ru:
+    name: Название района местного самоуправления (LGA) Австралии

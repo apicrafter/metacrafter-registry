@@ -1,0 +1,34 @@
+id: au_pbr_application_number
+name: Australian plant breeder's rights application number
+status: draft
+doc: 'Number of an application for plant breeder''s rights (PBR) in a new plant variety under the Plant
+  Breeder''s Rights Act 1994, given by IP Australia: the year of the application, a slash and a three-digit
+  serial number (1998/163, 2019/226). The PBR database and the IPGOD PBR tables (application_number, appl_number)
+  key a variety by it.'
+parent: id
+categories:
+- legal
+- agriculture
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:19|20)\d{2}/\d{3}$
+examples:
+- value: 1998/163
+  description: Application of Grasslanz Technology (IPGOD PBR parties)
+- value: 2019/226
+- value: 2002/091
+- value: 98/163
+  valid: false
+  description: two-digit year
+links:
+- type: doc
+  url: https://www.ipaustralia.gov.au/plant-breeders-rights
+- type: doc
+  url: https://data.gov.au/data/dataset/intellectual-property-government-open-data
+translations:
+  ru:
+    name: Номер заявки на селекционное достижение (Австралия)

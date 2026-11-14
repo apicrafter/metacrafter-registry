@@ -1,0 +1,34 @@
+id: au_remoteness_area
+name: ABS Remoteness Area
+status: draft
+doc: 'Class of the ABS Remoteness Structure (ASGS), which places every area of Australia by its road distance
+  to services: Major Cities of Australia, Inner Regional Australia, Outer Regional Australia, Remote Australia
+  and Very Remote Australia. Health, education and transport data group by it and often shorten the names
+  (Major Cities, Inner Regional, Very remote, Major_cities). The Modified Monash Model (MM 1 to 7) is
+  a different classification.'
+categories:
+- geo
+- government
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:[Mm]ajor[ _][Cc]ities|[Ii]nner[ _][Rr]egional|[Oo]uter[ _][Rr]egional|[Rr]emote|[Vv]ery[ _][Rr]emote)(?:[
+  _]of)?(?:[ _]Australia)?$
+examples:
+- value: Major Cities of Australia
+- value: Inner Regional Australia
+  description: National Remoteness Areas of the Australian Road Deaths Database
+- value: Very Remote
+  description: Remoteness area of a public hospital (AIHW)
+- value: Major_cities
+- value: Regional
+  valid: false
+links:
+- type: doc
+  url: https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/remoteness-structure
+translations:
+  ru:
+    name: Класс удалённости ABS (Австралия)

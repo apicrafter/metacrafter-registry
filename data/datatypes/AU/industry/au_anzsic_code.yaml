@@ -1,0 +1,40 @@
+id: au_anzsic_code
+name: ANZSIC industry code (Australia and New Zealand)
+status: draft
+doc: 'Code of the Australian and New Zealand Standard Industrial Classification (ANZSIC 2006) of the ABS
+  and Stats NZ, which groups businesses by their main activity: a division letter A to S (A Agriculture,
+  Forestry and Fishing), a two-digit subdivision (01 Agriculture), a three-digit group (011 Nursery and
+  Floriculture Production) and a four-digit class (0111 Nursery Production (Under Cover)). The ATO codes
+  businesses with five-digit industry codes, a class and one more digit (01110). Statistical tables often
+  write the code with its title (011 Nursery and Floriculture Production, A.Agriculture, Forestry and
+  Fishing). ANZSIC 2006 is aligned with ISIC Rev. 4 at the division level, but its codes are its own.'
+categories:
+- industry
+country:
+- AU
+- NZ
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:[A-S]|\d{2,5})$
+examples:
+- value: '011'
+  description: Nursery and Floriculture Production (group)
+- value: '0111'
+  description: Nursery Production (Under Cover) (class)
+- value: '01110'
+  description: The same class as an ATO industry code
+- value: A
+  description: Agriculture, Forestry and Fishing (division)
+- value: T
+  valid: false
+  description: ANZSIC has 19 divisions, A to S
+links:
+- type: doc
+  url: https://www.abs.gov.au/statistics/classifications/australian-and-new-zealand-standard-industrial-classification-anzsic
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Australian_and_New_Zealand_Standard_Industrial_Classification
+translations:
+  ru:
+    name: Код отраслевого классификатора ANZSIC

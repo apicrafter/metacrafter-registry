@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "4fd422e5cabf8281b3dd29a0fed70cec27240766"
+  "ref": "b0287ecb1b1f28977785176433167fa6f9c9d3a6"
  },
  "rules": [
   {
@@ -1275,10 +1275,40 @@
    "country_code": "au"
   },
   {
+   "rule": "auabnacnbyname",
+   "key": "abn",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_finances.yaml",
+   "context": "finances",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
    "rule": "auabnknown",
    "key": "abn",
    "type": "field",
    "match": "text",
+   "file": "au/au_finances.yaml",
+   "context": "finances",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auacnbyname",
+   "key": "auacn",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_finances.yaml",
+   "context": "finances",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auasiclicencebyname",
+   "key": "au_asic_licence_number",
+   "type": "field",
+   "match": "regex",
    "file": "au/au_finances.yaml",
    "context": "finances",
    "lang": "en",
@@ -1299,6 +1329,16 @@
    "key": "bsb",
    "type": "field",
    "match": "text",
+   "file": "au/au_finances.yaml",
+   "context": "finances",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auicnbyname",
+   "key": "au_icn",
+   "type": "field",
+   "match": "regex",
    "file": "au/au_finances.yaml",
    "context": "finances",
    "lang": "en",
@@ -1335,6 +1375,16 @@
    "country_code": "au"
   },
   {
+   "rule": "aufederalelectoraldivisionbyname",
+   "key": "au_federal_electoral_division",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
    "rule": "augbrreefidbyname",
    "key": "au_gbr_reef_id",
    "type": "field",
@@ -1355,10 +1405,110 @@
    "country_code": "au"
   },
   {
+   "rule": "augccsacodebyname",
+   "key": "au_gccsa_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "augccsacodevalue",
+   "key": "au_gccsa_code",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aulgacodebyname",
+   "key": "au_lga_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aulganamebyname",
+   "key": "au_lga_name",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aulganamevalue",
+   "key": "au_lga_name",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aupostcodebyname",
+   "key": "au_postcode",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
    "rule": "aupostcodeknown",
    "key": "postcode",
    "type": "field",
    "match": "text",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auremotenessbyname",
+   "key": "au_remoteness_area",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auremotenessvalue",
+   "key": "au_remoteness_area",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "ausa2codebyname",
+   "key": "au_sa2_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "austatecodebyname",
+   "key": "au_state_code",
+   "type": "field",
+   "match": "regex",
    "file": "au/au_geo.yaml",
    "context": "geo",
    "lang": "en",
@@ -1371,6 +1521,96 @@
    "match": "text",
    "file": "au/au_geo.yaml",
    "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "ausuburbbyname",
+   "key": "au_suburb",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auanzscobyname",
+   "key": "au_anzsco_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_industry.yaml",
+   "context": "industry",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auanzsicbyname",
+   "key": "au_anzsic_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_industry.yaml",
+   "context": "industry",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "austandarddesignationbyname",
+   "key": "au_standard_designation",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_industry.yaml",
+   "context": "industry",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "austandarddesignationvalue",
+   "key": "au_standard_designation",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_industry.yaml",
+   "context": "industry",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aupatentapplicationbyname",
+   "key": "au_patent_application_number",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_legal.yaml",
+   "context": "legal",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aupbrapplicationbyname",
+   "key": "au_pbr_application_number",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_legal.yaml",
+   "context": "legal",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "autrademarknumberbyname",
+   "key": "au_trademark_number",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_legal.yaml",
+   "context": "legal",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aupbsitemcodebyname",
+   "key": "au_pbs_item_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_medical.yaml",
+   "context": "medical",
    "lang": "en",
    "country_code": "au"
   },
@@ -2531,6 +2771,16 @@
    "match": "text",
    "file": "common/boolean.yaml",
    "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "casrnbyfieldname",
+   "key": "casrn",
+   "type": "field",
+   "match": "regex",
+   "file": "common/chemistry.yaml",
+   "context": "chemistry",
    "lang": "common",
    "country_code": "xx"
   },
@@ -4525,6 +4775,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "suburbbyname",
+   "key": "location",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "towncitybyname",
+   "key": "city",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "unlocodefield",
    "key": "unlocode",
    "type": "field",
@@ -5225,6 +5495,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "ipccodebyname",
+   "key": "ipc_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/legal.yaml",
+   "context": "legal",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "ipccodevalue",
+   "key": "ipc_code",
+   "type": "data",
+   "match": "func",
+   "file": "common/legal.yaml",
+   "context": "legal",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "legaldocumentknown",
    "key": "legal_document",
    "type": "field",
@@ -5239,6 +5529,26 @@
    "key": "license_number",
    "type": "field",
    "match": "text",
+   "file": "common/legal.yaml",
+   "context": "legal",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "pctapplicationnumbervalue",
+   "key": "pct_application_number",
+   "type": "data",
+   "match": "func",
+   "file": "common/legal.yaml",
+   "context": "legal",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "wopublicationnumbervalue",
+   "key": "wo_publication_number",
+   "type": "data",
+   "match": "func",
    "file": "common/legal.yaml",
    "context": "legal",
    "lang": "common",
@@ -5751,6 +6061,46 @@
    "match": "func",
    "file": "common/orgs.yaml",
    "context": "companies",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "fiscalyearbyname",
+   "key": "fiscal_year",
+   "type": "field",
+   "match": "regex",
+   "file": "common/periods.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "fiscalyearvalue",
+   "key": "fiscal_year",
+   "type": "data",
+   "match": "func",
+   "file": "common/periods.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "yearmonthenglishvalue",
+   "key": "yearmonth_english",
+   "type": "data",
+   "match": "func",
+   "file": "common/periods.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "yearquartervalue",
+   "key": "year_quarter",
+   "type": "data",
+   "match": "func",
+   "file": "common/periods.yaml",
+   "context": "datetime",
    "lang": "common",
    "country_code": "xx"
   },
@@ -6309,6 +6659,16 @@
    "key": "taxon_name",
    "type": "field",
    "match": "text",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "upovcodebyname",
+   "key": "upov_code",
+   "type": "field",
+   "match": "regex",
    "file": "common/science.yaml",
    "context": "science",
    "lang": "common",
@@ -7637,6 +7997,16 @@
   {
    "rule": "moneyamountbyfield",
    "key": "money",
+   "type": "field",
+   "match": "regex",
+   "file": "common/values.yaml",
+   "context": "values",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "moneyrangebyname",
+   "key": "money_range",
    "type": "field",
    "match": "regex",
    "file": "common/values.yaml",

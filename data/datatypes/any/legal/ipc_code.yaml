@@ -1,0 +1,41 @@
+id: ipc_code
+name: International Patent Classification (IPC) symbol
+status: draft
+doc: 'Symbol of the International Patent Classification of WIPO (Strasbourg Agreement, 1971), which patent
+  offices give to every patent document by its technical field: a section letter A to H, a two-digit class
+  and a subclass letter (A47G, tableware), then the main group of one to four digits, a slash and the
+  subgroup of two or more digits (A47G 23/02; /00 is the main group itself). Office databases pad the
+  main group with spaces to a fixed width (A47G  23/02, F21M    3/04) or drop the spaces (A47G23/02).
+  The Cooperative Patent Classification (CPC) of the EPO and the USPTO uses the same form with more subgroups
+  and a section Y. A bare subclass (H04L) is a symbol too.'
+categories:
+- legal
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: '^[A-HY]\d{2}[A-Z](?: *\d{1,4} */ *\d{2,6})?$'
+examples:
+- value: A47G  23/02
+  description: As IP Australia's IPGOD tables write it (ipc_mark_value)
+- value: A47G23/02
+  description: The same symbol without spaces (edited_ipc_mark_value)
+- value: G06Q 90/00
+  description: A main group
+- value: H04L
+  description: A subclass
+- value: I01B 1/00
+  valid: false
+  description: There is no section I
+- value: A47G 23
+  valid: false
+  description: A main group needs its subgroup
+links:
+- type: doc
+  url: https://www.wipo.int/classifications/ipc/en/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Patent_Classification
+translations:
+  ru:
+    name: Индекс Международной патентной классификации (МПК)

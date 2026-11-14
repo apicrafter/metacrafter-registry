@@ -1,0 +1,42 @@
+id: au_patent_application_number
+name: Australian patent application number (IP Australia)
+status: draft
+doc: 'Number that IP Australia gives to an Australian patent application, which the granted patent keeps:
+  the four-digit year in which the application was filed and a six-digit serial number (2005249605, AU
+  2005249605 in publications). IP Australia renumbered older applications in this form; they were a serial
+  number and a two-digit year (59801/80 is 1980059801, 40963/97 is 1997040963), and provisional applications
+  of the 1980s and 1990s a series letter pair and four digits (PP7450, renumbered 1997PP7450). Innovation
+  and standard patents share the numbering. The Intellectual Property Government Open Data (IPGOD) tables
+  key every patent record by it (australian_appl_no).'
+parent: id
+categories:
+- legal
+- identifiers
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:AU ?)?(?:(?:19|20)\d{2}(?:\d{6}|[A-Z]{2}\d{4})|\d{1,6}/\d{2})$
+examples:
+- value: '2005249605'
+  description: Standard patent application filed in 2005 (IPGOD)
+- value: '1980059801'
+  description: Application 59801/80 in the renumbered form
+- value: 59801/80
+  description: The same application in the old form
+- value: 1997PP7450
+  description: Provisional application PP7450 of 1997
+- value: AU 2005249605
+- value: '200524960'
+  valid: false
+  description: nine digits
+links:
+- type: doc
+  url: https://data.gov.au/data/dataset/intellectual-property-government-open-data
+- type: doc
+  url: https://www.wipo.int/standards/en/pdf/03-13-01.pdf
+translations:
+  ru:
+    name: Номер заявки на патент Австралии

@@ -1,0 +1,38 @@
+id: au_asic_licence_number
+name: ASIC financial services or credit licence number
+status: draft
+doc: 'Six-digit number of an Australian financial services (AFS) licence under the Corporations Act 2001
+  or an Australian credit licence under the National Consumer Credit Protection Act 2009, which the Australian
+  Securities and Investments Commission (ASIC) grants and lists in its professional registers (AFS_LIC_NUM,
+  CRED_LIC_NUM): 218600, written AFSL 218600 or ACL 389328 in documents. Numbers of authorised and credit
+  representatives (CRED_REP_NUM) are numbers of persons, not licences.'
+parent: id
+categories:
+- companies
+- finances
+- identifiers
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:(?:AFSL|ACL|AFS Licence|Australian Credit Licence) ?)?\d{6}$
+examples:
+- value: '218600'
+  description: AFS licence of 2002 (ASIC Financial Services Licensees dataset)
+- value: AFSL 218600
+- value: '389328'
+  description: An Australian credit licence
+- value: ACL 389328
+- value: '21860'
+  valid: false
+  description: five digits
+links:
+- type: doc
+  url: https://asic.gov.au/online-services/search-asic-s-registers/professional-registers/
+- type: doc
+  url: https://data.gov.au/data/dataset/asic-financial-services-licensee
+translations:
+  ru:
+    name: Номер лицензии ASIC (финансовые услуги, кредит)

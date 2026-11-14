@@ -1,0 +1,35 @@
+id: au_pbs_item_code
+name: Pharmaceutical Benefits Scheme (PBS) item code
+status: draft
+doc: 'Code of an item of the Schedule of Pharmaceutical Benefits of the Australian Department of Health:
+  a medicine in one form, strength and pack size that the PBS or the Repatriation PBS subsidises. It is
+  one to five digits and a letter (48M, 1001Q, 11124L); the PBS expenditure and prescriptions tables pad
+  it to five digits (01002R, 00048M). Medicare Benefits Schedule (MBS) items are numbers without a letter.'
+categories:
+- medical
+- identifiers
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,5}[A-Z]$
+examples:
+- value: 01002R
+  description: PBS expenditure and prescriptions data
+- value: 1001Q
+  description: Medicare statistics of PBS items
+- value: 11124L
+- value: 48M
+- value: '23'
+  valid: false
+  description: an MBS item number
+links:
+- type: doc
+  url: https://www.pbs.gov.au/
+- type: doc
+  url: https://www.pbs.gov.au/info/statistics/expenditure-prescriptions/pbs-expenditure-and-prescriptions
+translations:
+  ru:
+    name: Код позиции PBS (лекарственные льготы Австралии)
