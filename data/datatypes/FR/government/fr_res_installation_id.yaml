@@ -1,0 +1,33 @@
+id: fr_res_installation_id
+name: French sports facility installation number (RES, Data ES)
+status: draft
+doc: 'Number of an installation in the census of sports equipment, spaces and sites of the Ministry of
+  Sports (Recensement des équipements sportifs, Data ES): I, the INSEE code of the commune where the installation
+  was created and a four-digit number within the commune (I050960036). Some exports of the census drop
+  the I (290190167).'
+categories:
+- government
+- geo
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^I?(?:\d{2}|2[AB])\d{3}\d{4}$
+examples:
+- value: I050960036
+  description: Installation created in commune 05096
+- value: I2A0040029
+  description: Installation in Corse-du-Sud
+- value: '290190167'
+  description: Export without the I, Brest
+- value: I05096003
+  valid: false
+  description: eight characters after I
+links:
+- type: doc
+  url: https://equipements.sports.gouv.fr/api/explore/v2.1/catalog/datasets/data-es-equipement
+translations:
+  fr:
+    name: Numéro d'installation sportive

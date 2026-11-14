@@ -1,0 +1,32 @@
+id: fr_sandre_zone_hydro_code
+name: French hydrographic zone code (Sandre)
+status: draft
+doc: 'Code of a hydrographic zone of the Sandre partition of France into hydrographic regions, sectors,
+  sub-sectors and zones (circulaire 91-50 of 12 February 1991): the region letter and one digit for each
+  lower level, so a zone code has four characters (K664). The regexp covers metropolitan France.'
+categories:
+- environment
+- geo
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]\d{3}$
+examples:
+- value: K664
+  description: Vigicrues station reference
+- value: S520
+  description: Vigicrues station reference
+- value: Y345
+  description: Vigicrues station reference
+- value: K66
+  valid: false
+  description: a sub-sector, not a zone
+links:
+- type: doc
+  url: https://www.sandre.eaufrance.fr/sites/default/files/IMG/pdf/Point_Decoupage_AiresHydrographiques.pdf
+translations:
+  fr:
+    name: Code de la zone hydrographique

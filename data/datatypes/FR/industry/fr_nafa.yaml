@@ -1,0 +1,36 @@
+id: fr_nafa
+name: French crafts activity code (NAFA)
+status: draft
+doc: 'Code of the Nomenclature d''activités française du secteur des métiers de l''artisanat (NAFA), which
+  refines NAF rév. 2 for establishments registered in the Répertoire des métiers. Sirene gives it as activitePrincipaleRegistreMetiersEtablissement
+  for crafts establishments only: six characters, the NAF subclass without its dot (four digits and a
+  letter) and a letter of the NAFA.'
+categories:
+- industry
+- companies
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^\d{4}[A-Z]{2}$
+examples:
+- value: 8121ZZ
+  description: NAF 81.21Z, general cleaning of buildings
+- value: 4321AB
+  description: NAF 43.21A, electrical installation
+- value: 5610CQ
+  description: NAF 56.10C, fast food
+- value: 81.21Z
+  valid: false
+  description: a NAF subclass, not a NAFA code
+- value: 8121Z
+  valid: false
+  description: one letter
+links:
+- type: doc
+  url: https://www.insee.fr/fr/metadonnees/definition/c1580
+translations:
+  fr:
+    name: Code NAFA

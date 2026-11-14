@@ -1,0 +1,38 @@
+id: fr_election_nuance
+name: French political nuance code (nuance politique)
+status: draft
+doc: 'Code of the political nuance that the Ministry of the Interior gives to candidates and lists in
+  French election results (décret 2014-1479). A circular sets the grid of each election: individual candidates
+  have codes such as SOC, DVD or RN, lists of municipal and regional elections the codes of the list grid,
+  which start with L (LDVD, LREM, LRN), and pairs of candidates of departmental elections codes that start
+  with BC- (BC-SOC, BC-DVD). The grid changes from one election to the next.'
+categories:
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^(?:L|BC-)?[A-Z]{2,5}$
+examples:
+- value: LDVG
+  description: List of the miscellaneous left (municipal elections 2020)
+- value: LRN
+  description: List of the Rassemblement national (regional elections 2021)
+- value: BC-SOC
+  description: Socialist pair of candidates (departmental elections 2021)
+- value: DVD
+  description: Miscellaneous right candidate
+- value: Divers gauche
+  valid: false
+  description: the label, not the code
+- value: BC_SOC
+  valid: false
+  description: underscore instead of hyphen
+links:
+- type: doc
+  url: https://www.legifrance.gouv.fr/circulaire/id/45157
+translations:
+  fr:
+    name: Code nuance politique

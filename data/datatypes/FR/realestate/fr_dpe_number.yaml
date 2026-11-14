@@ -1,0 +1,43 @@
+id: fr_dpe_number
+name: French energy performance diagnostic number (numéro DPE)
+status: draft
+doc: 'Number of 13 characters that ADEME gives to an energy performance diagnostic (diagnostic de performance
+  énergétique, DPE) registered in its observatory. ADEME does not publish its structure: in the open data
+  the first two digits are the year of the diagnostic, then come two characters (a department in the numbering
+  used before July 2021, 2A and 2B for Corsica), a letter, seven digits and a last character, which before
+  July 2021 could be @.'
+categories:
+- realestate
+- energy
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^\d{2}[0-9][0-9AB][A-Z]\d{7}[0-9A-Z@]$
+examples:
+- value: 1682V1000961S
+  description: Diagnostic of 2016 in Tarn-et-Garonne
+- value: 1382V8000002I
+  description: Tertiary building, 2013
+- value: 1392P4000003A
+  description: Public building of Issy-les-Moulineaux
+- value: 1492P2000003@
+  description: Final @ of the numbering before July 2021
+- value: 1682V100096S
+  valid: false
+  description: twelve characters
+- value: 16821000961S
+  valid: false
+  description: no letter after the first four characters
+links:
+- type: doc
+  url: https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_pour_les_diagnostiqueurs_DPE.pdf
+- type: doc
+  url: https://data.ademe.fr/datasets/dpe03existant
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Diagnostic_de_performance_%C3%A9nerg%C3%A9tique
+translations:
+  fr:
+    name: Numéro DPE

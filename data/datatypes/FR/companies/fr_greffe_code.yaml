@@ -1,0 +1,36 @@
+id: fr_greffe_code
+name: French commercial court registry code (code greffe)
+status: draft
+doc: Four-digit code of the registry (greffe) of a commercial court or of another court that keeps the
+  Registre du commerce et des sociétés, in the list of registries of the BODACC (DILA) and in Infogreffe
+  data. The first two digits are a department as it was numbered when the court was coded, so not always
+  its current department (7801 is Evry, 2001 Ajaccio); the last two are an order number. Overseas courts
+  have codes starting with 97.
+categories:
+- companies
+- legal
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^\d{4}$
+examples:
+- value: '8501'
+  description: La Roche-sur-Yon
+- value: '7702'
+  description: Melun
+- value: '2702'
+  description: Evreux
+- value: '7801'
+  description: Evry
+- value: '785'
+  valid: false
+  description: three digits
+links:
+- type: doc
+  url: https://www.data.gouv.fr/datasets/liste-des-greffes-bodacc
+translations:
+  fr:
+    name: Code greffe

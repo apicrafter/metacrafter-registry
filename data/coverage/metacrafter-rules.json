@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "33d6f12db011b7e89f5a6370a302da0e9ccfcaad"
+  "ref": "f04a7bce68084015731e0ec76e2dc561713fc5e9"
  },
  "rules": [
   {
@@ -1072,6 +1072,16 @@
    "file": "ca/ca_finances.yaml",
    "context": "finances",
    "lang": "common",
+   "country_code": "ca"
+  },
+  {
+   "rule": "cafsabyname",
+   "key": "ca_fsa",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
    "country_code": "ca"
   },
   {
@@ -3015,6 +3025,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "geojsongeometrytypebyname",
+   "key": "geojson_geometry_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "geopoint2dbyname",
+   "key": "geo_point_2d",
+   "type": "field",
+   "match": "text",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "geopointbyname",
    "key": "geopoint",
    "type": "field",
@@ -3085,6 +3115,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "latitudebyshortname",
+   "key": "latitude",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "latitudepat",
    "key": "latitude",
    "type": "field",
@@ -3119,6 +3159,16 @@
    "key": "longitude",
    "type": "field",
    "match": "text",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "longitudebyshortname",
+   "key": "longitude",
+   "type": "field",
+   "match": "regex",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -5995,6 +6045,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "uicstationbyname",
+   "key": "uiccode",
+   "type": "field",
+   "match": "regex",
+   "file": "common/transport.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "userhandlefield",
    "key": "userhandle",
    "type": "field",
@@ -7075,6 +7135,16 @@
    "country_code": "es"
   },
   {
+   "rule": "esreferenciacatastralvalue",
+   "key": "es_referenciacatastral",
+   "type": "data",
+   "match": "regex",
+   "file": "es/es_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esstreetknown",
    "key": "street",
    "type": "field",
@@ -7291,6 +7361,26 @@
    "match": "regex",
    "file": "eu/eu_funding.yaml",
    "context": "government",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
+   "rule": "eueicbyname",
+   "key": "eu_eic",
+   "type": "field",
+   "match": "regex",
+   "file": "eu/eu_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
+   "rule": "eueicvalue",
+   "key": "eu_eic",
+   "type": "data",
+   "match": "regex",
+   "file": "eu/eu_geo.yaml",
+   "context": "geo",
    "lang": "en",
    "country_code": "eu"
   },
@@ -7685,12 +7775,172 @@
    "country_code": "fr"
   },
   {
+   "rule": "frresequipementbyname",
+   "key": "fr_res_equipement_id",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_common.yaml",
+   "context": "common",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frresequipementvalue",
+   "key": "fr_res_equipement_id",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_common.yaml",
+   "context": "common",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frresinstallationbyname",
+   "key": "fr_res_installation_id",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_common.yaml",
+   "context": "common",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frresinstallationvalue",
+   "key": "fr_res_installation_id",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_common.yaml",
+   "context": "common",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frtitleknown",
    "key": "name",
    "type": "field",
    "match": "text",
    "file": "fr/fr_common.yaml",
    "context": "common",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frcategorieentreprisebyname",
+   "key": "fr_categorie_entreprise",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_companies.yaml",
+   "context": "companies",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frcategoriejuridiquebyname",
+   "key": "fr_categorie_juridique",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_companies.yaml",
+   "context": "companies",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frgreffebyname",
+   "key": "fr_greffe_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_companies.yaml",
+   "context": "companies",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frnafabyname",
+   "key": "fr_nafa",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_companies.yaml",
+   "context": "companies",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frnafbyname",
+   "key": "fr_naf",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_companies.yaml",
+   "context": "companies",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frnafdottedvalue",
+   "key": "fr_naf",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_companies.yaml",
+   "context": "companies",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frnicbyname",
+   "key": "fr_nic",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_companies.yaml",
+   "context": "companies",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frpostcodebysirenename",
+   "key": "postindex",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_companies.yaml",
+   "context": "companies",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frrnabyname",
+   "key": "fr_rna",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_companies.yaml",
+   "context": "companies",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frrnavalue",
+   "key": "fr_rna",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_companies.yaml",
+   "context": "companies",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frsirenebysirenename",
+   "key": "siren",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_companies.yaml",
+   "context": "companies",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frsiretbysirenename",
+   "key": "siret",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_companies.yaml",
+   "context": "companies",
    "lang": "fr",
    "country_code": "fr"
   },
@@ -7735,6 +7985,136 @@
    "country_code": "fr"
   },
   {
+   "rule": "fracademiecodebyname",
+   "key": "fr_academie_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_education.yaml",
+   "context": "education",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "fruaibyname",
+   "key": "fr_uai",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_education.yaml",
+   "context": "education",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "fruaivalue",
+   "key": "fr_uai",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_education.yaml",
+   "context": "education",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frgasparbyname",
+   "key": "fr_gaspar_id",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_environment.yaml",
+   "context": "environment",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frgasparvalue",
+   "key": "fr_gaspar_id",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_environment.yaml",
+   "context": "environment",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frhydrostationbyname",
+   "key": "fr_hydro_station_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_environment.yaml",
+   "context": "environment",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frsandrecourseaubyname",
+   "key": "fr_sandre_cours_eau_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_environment.yaml",
+   "context": "environment",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frsandrecourseauvalue",
+   "key": "fr_sandre_cours_eau_code",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_environment.yaml",
+   "context": "environment",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frsandrezonehydrobyname",
+   "key": "fr_sandre_zone_hydro_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_environment.yaml",
+   "context": "environment",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "fraavbyname",
+   "key": "fr_aire_attraction_villes_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frarrondissementcodebyname",
+   "key": "fr_arrondissement_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frbassinviebyname",
+   "key": "fr_bassin_vie_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frcantoncodebyname",
+   "key": "fr_canton_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frcodgeoknown",
    "key": "inseecode",
    "type": "field",
@@ -7745,10 +8125,60 @@
    "country_code": "fr"
   },
   {
+   "rule": "frcommunecodebyname",
+   "key": "inseecode",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frcommunenamebyname",
+   "key": "fr_commune",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frdepartmentcodebyname",
+   "key": "fr_department_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frdepartmentnamebyname",
+   "key": "fr_department",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frepcicodebyknown",
    "key": "epcicode",
    "type": "field",
    "match": "text",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frepcicodebysiren",
+   "key": "epcicode",
+   "type": "field",
+   "match": "regex",
    "file": "fr/fr_geo.yaml",
    "context": "geo",
    "lang": "fr",
@@ -7775,6 +8205,16 @@
    "country_code": "fr"
   },
   {
+   "rule": "fririsbyname",
+   "key": "fr_iris_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frpostcodeknown",
    "key": "postindex",
    "type": "field",
@@ -7795,12 +8235,92 @@
    "country_code": "fr"
   },
   {
+   "rule": "frqpvbyname",
+   "key": "fr_qpv_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frqpvvalue",
+   "key": "fr_qpv_code",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frregioncodebyname",
+   "key": "fr_region_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frregionnamebyname",
+   "key": "fr_region",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frsiretcodeknown",
    "key": "siretcode",
    "type": "field",
    "match": "text",
    "file": "fr/fr_geo.yaml",
    "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frunitebyname",
+   "key": "fr_unite_urbaine_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frzoneemploibyname",
+   "key": "fr_zone_emploi_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "fractesmatierebyname",
+   "key": "fr_actes_matiere_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_government.yaml",
+   "context": "government",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frelectionnuancebyname",
+   "key": "fr_election_nuance",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_government.yaml",
+   "context": "government",
    "lang": "fr",
    "country_code": "fr"
   },
@@ -7829,6 +8349,16 @@
    "key": "ccamcode",
    "type": "data",
    "match": "ppr",
+   "file": "fr/fr_med.yaml",
+   "context": "medical",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frfinessbyname",
+   "key": "fr_finess",
+   "type": "field",
+   "match": "regex",
    "file": "fr/fr_med.yaml",
    "context": "medical",
    "lang": "fr",
@@ -7935,6 +8465,26 @@
    "country_code": "fr"
   },
   {
+   "rule": "frdpenumberbyname",
+   "key": "fr_dpe_number",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_realestate.yaml",
+   "context": "realestate",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frdpenumbervalue",
+   "key": "fr_dpe_number",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_realestate.yaml",
+   "context": "realestate",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frpropertynumberfield",
    "key": "frpropertynumber",
    "type": "field",
@@ -8011,6 +8561,36 @@
    "match": "ppr",
    "file": "fr/fr_tax.yaml",
    "context": "finances",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frarcepoperatorbyname",
+   "key": "fr_arcep_operator_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_telecom.yaml",
+   "context": "telecom",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frfibrebuildingbyname",
+   "key": "fr_fibre_building_id",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_telecom.yaml",
+   "context": "telecom",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frfibrebuildingvalue",
+   "key": "fr_fibre_building_id",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_telecom.yaml",
+   "context": "telecom",
    "lang": "fr",
    "country_code": "fr"
   },
@@ -9409,6 +9989,16 @@
    "key": "bankaccount",
    "type": "field",
    "match": "text",
+   "file": "it/it_finances.yaml",
+   "context": "finances",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itcigbyname",
+   "key": "it_cig",
+   "type": "field",
+   "match": "regex",
    "file": "it/it_finances.yaml",
    "context": "finances",
    "lang": "it",

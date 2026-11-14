@@ -1,0 +1,29 @@
+id: fr_res_equipement_id
+name: French sports equipment number (RES, Data ES)
+status: draft
+doc: 'Number of an equipment of an installation in the census of sports equipment, spaces and sites of
+  the Ministry of Sports (Data ES): E, a three-digit number within the installation and the installation
+  number (E001I050960036).'
+categories:
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^E\d{3}I(?:\d{2}|2[AB])\d{3}\d{4}$
+examples:
+- value: E001I050960036
+  description: First equipment of installation I050960036
+- value: E005I300030006
+  description: Fifth equipment of installation I300030006
+- value: E01I050960036
+  valid: false
+  description: two digits after E
+links:
+- type: doc
+  url: https://equipements.sports.gouv.fr/api/explore/v2.1/catalog/datasets/data-es-equipement
+translations:
+  fr:
+    name: Numéro d'équipement sportif
