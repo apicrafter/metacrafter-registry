@@ -1,0 +1,32 @@
+id: gb_bua_code
+name: Built-up area code (England and Wales, GSS)
+status: draft
+doc: 'GSS code of a 2011 built-up area, an area of built-up land of at least 20 hectares defined by ONS
+  from Ordnance Survey data: E34 in England, W37 in Wales, K05 for one that crosses the border (BUA11CD).'
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:E34|W37|K05)\d{6}$
+examples:
+- value: E34000001
+  description: Built-up area, 2011
+- value: W37000001
+  description: Built-up area in Wales, 2011
+- value: K05000001
+  description: Cross-border built-up area
+- value: E35001527
+  valid: false
+  description: A built-up area sub-division code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Built-up_area
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

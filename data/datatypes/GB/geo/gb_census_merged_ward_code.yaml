@@ -1,0 +1,28 @@
+id: gb_census_merged_ward_code
+name: Census merged ward code (England and Wales, GSS)
+status: draft
+doc: 'GSS code of a census merged ward, a 2011 census output geography that merges electoral wards too
+  small for the release of census tables (CMWD11CD): E36 in England, W39 in Wales.'
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:E36|W39)\d{6}$
+examples:
+- value: E36000001
+  description: Census merged ward, 2011
+- value: W39000001
+  description: Census merged ward in Wales, 2011
+- value: E05008942
+  valid: false
+  description: An electoral ward code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

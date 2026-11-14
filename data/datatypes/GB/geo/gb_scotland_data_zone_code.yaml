@@ -1,0 +1,28 @@
+id: gb_scotland_data_zone_code
+name: Scottish data zone code (GSS)
+status: draft
+doc: GSS code of a data zone, the small-area statistical geography of Scotland, of 500 to 1000 household
+  residents, entity code S01. The 2011 data zones run from S01006506 to S01013481.
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^S01\d{6}$
+examples:
+- value: S01006556
+  description: Data zone, 2011
+- value: S01006557
+  description: Data zone, 2011
+- value: S02001236
+  valid: false
+  description: An intermediate zone code (S02)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

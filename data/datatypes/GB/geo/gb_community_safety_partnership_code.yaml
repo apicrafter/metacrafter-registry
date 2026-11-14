@@ -1,0 +1,28 @@
+id: gb_community_safety_partnership_code
+name: Community safety partnership code (England and Wales, GSS)
+status: draft
+doc: 'GSS code of a community safety partnership, the statutory partnership of councils, police and other
+  bodies that reduces crime in an area (CSPyyCD): E22 in England, W14 in Wales.'
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:E22|W14)\d{6}$
+examples:
+- value: E22000221
+  description: Community safety partnership
+- value: W14000001
+  description: Community safety partnership in Wales
+- value: E23000001
+  valid: false
+  description: A police force area code (E23)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

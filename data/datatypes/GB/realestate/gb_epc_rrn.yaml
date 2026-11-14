@@ -1,0 +1,26 @@
+id: gb_epc_rrn
+name: Energy performance certificate report reference number (RRN)
+status: draft
+doc: 'Report reference number of an energy performance certificate (EPC) or display energy certificate
+  (DEC) in the register of England, Wales and Northern Ireland: 20 digits in five groups of four (0991-0918-6260-8900-9092).'
+categories:
+- realestate
+- energy
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{4}-\d{4}-\d{4}-\d{4}-\d{4}$
+examples:
+- value: 0991-0918-6260-8900-9092
+  description: Display energy certificate
+- value: 0660-1070-0184-0891-9805
+  description: Display energy certificate
+- value: 09910918626089009092
+  valid: false
+  description: Without hyphens
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Energy_Performance_Certificate

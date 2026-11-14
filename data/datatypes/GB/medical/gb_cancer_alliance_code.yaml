@@ -1,0 +1,31 @@
+id: gb_cancer_alliance_code
+name: Cancer alliance code (England, GSS)
+status: draft
+doc: GSS code of an NHS cancer alliance of England, a partnership that plans cancer services across an
+  area (CALyyCD), entity code E56; the national cancer vanguards of the 2017 lookups have E57.
+parent: ukgsscode
+categories:
+- geo
+- medical
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^E5[67]\d{6}$
+examples:
+- value: E56000003
+  description: Cancer alliance, February 2017
+- value: E56000005
+  description: Cancer alliance
+- value: E57000001
+  description: National cancer vanguard
+- value: E54000007
+  valid: false
+  description: An STP code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

@@ -1,0 +1,28 @@
+id: gb_ni_dea_code
+name: District electoral area code (Northern Ireland, GSS)
+status: draft
+doc: GSS code of a district electoral area of Northern Ireland, a group of wards that elects councillors
+  of a local government district, entity code N10.
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^N10\d{6}$
+examples:
+- value: N10000101
+  description: District electoral area, 2014 boundaries
+- value: N10000102
+  description: District electoral area, 2014 boundaries
+- value: N09000004
+  valid: false
+  description: A local government district code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

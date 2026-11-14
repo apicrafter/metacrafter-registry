@@ -1,0 +1,30 @@
+id: gb_buasd_code
+name: Built-up area sub-division code (England and Wales, GSS)
+status: draft
+doc: 'GSS code of a 2011 built-up area sub-division, a part of a large built-up area such as a town within
+  a conurbation: E35 in England, W38 in Wales, K06 across the border (BUASD11CD).'
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:E35|W38|K06)\d{6}$
+examples:
+- value: E35001527
+  description: Built-up area sub-division, 2011
+- value: W38000154
+  description: Built-up area sub-division in Wales, 2011
+- value: K06000002
+  description: Cross-border sub-division
+- value: E34000001
+  valid: false
+  description: A built-up area code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

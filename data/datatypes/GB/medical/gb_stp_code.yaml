@@ -1,0 +1,31 @@
+id: gb_stp_code
+name: Sustainability and transformation partnership code (England, GSS)
+status: draft
+doc: GSS code of an NHS sustainability and transformation partnership (STP) of England, later integrated
+  care system, entity code E54 (STPyyCD). Integrated care boards keep E54 codes.
+parent: ukgsscode
+categories:
+- geo
+- medical
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^E54\d{6}$
+examples:
+- value: E54000007
+  description: STP, April 2020 lookup
+- value: E54000054
+  description: STP, April 2020 lookup
+- value: E38000001
+  valid: false
+  description: A CCG code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Sustainability_and_transformation_plan
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

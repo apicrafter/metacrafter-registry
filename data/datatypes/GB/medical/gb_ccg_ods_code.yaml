@@ -1,0 +1,33 @@
+id: gb_ccg_ods_code
+name: Clinical commissioning group ODS code (England)
+status: draft
+doc: 'Three-character Organisation Data Service (ODS) code of an NHS clinical commissioning group: two
+  digits and a letter (02N, 99A). ONS lookups give it as CCGyyCDH next to the GSS code (gb_ccg_code),
+  and NHS spending data names the group by it (02P Expenditure Over 25k).'
+parent: gb_nhs_ods_code
+categories:
+- medical
+- government
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{2}[A-Z]$
+examples:
+- value: 02N
+  description: CCG ODS code, April 2017 list
+- value: 99A
+  description: CCG ODS code
+- value: 02P
+  description: Barnsley CCG in its spending files
+- value: E38000001
+  valid: false
+  description: The GSS code of a CCG
+- value: RXF
+  valid: false
+  description: A trust ODS code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Clinical_commissioning_group

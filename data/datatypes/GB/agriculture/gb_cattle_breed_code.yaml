@@ -1,0 +1,33 @@
+id: gb_cattle_breed_code
+name: GB cattle breed code (BCMS)
+status: draft
+doc: 'Breed code of a bovine animal in the Cattle Tracing System of the British Cattle Movement Service
+  (Rural Payments Agency): two to four letters for a breed (AA Aberdeen Angus, AY Ayrshire, BAZ Bazadaise),
+  an X added for its cross (AAX).'
+categories:
+- agriculture
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: '^[A-Z]{2,4}(?: ?X)?$'
+examples:
+- value: AA
+  description: Aberdeen Angus
+- value: AAX
+  description: Aberdeen Angus cross
+- value: AY
+  description: Ayrshire
+- value: BAZX
+  description: Bazadaise cross
+- value: A
+  valid: false
+  description: One letter
+- value: AA1
+  valid: false
+  description: A digit
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/British_Cattle_Movement_Service

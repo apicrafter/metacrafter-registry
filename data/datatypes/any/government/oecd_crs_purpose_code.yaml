@@ -1,0 +1,28 @@
+id: oecd_crs_purpose_code
+name: OECD DAC CRS purpose code
+status: draft
+doc: 'Five-digit purpose code of the Creditor Reporting System of the OECD Development Assistance Committee:
+  the sector an aid activity supports. The first three digits are the DAC sector (311 agriculture, 410
+  general environment protection). IATI uses the codes as its Sector vocabulary, and UK departments publish
+  official development assistance spending with them.'
+categories:
+- government
+- finances
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{5}$
+examples:
+- value: '41030'
+  description: Biodiversity
+- value: '31210'
+  description: Forestry policy and administrative management
+- value: '31110'
+  description: Agricultural policy and administrative management
+- value: '410'
+  valid: false
+  description: A three-digit DAC sector
+links:
+- type: doc
+  url: https://iatistandard.org/en/iati-standard/203/codelists/sector/

@@ -1,0 +1,29 @@
+id: gb_ofsted_urn
+name: Ofsted unique reference number (URN)
+status: draft
+doc: 'Unique reference number of a provider inspected by Ofsted: six digits for schools and many childcare
+  providers, EY and six digits for early years providers registered since 2008, SC and six digits for
+  children''s social care settings.'
+categories:
+- education
+- government
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^(?:EY|SC)?\d{6}$
+examples:
+- value: EY498378
+  description: Early years provider
+- value: '317217'
+  description: Childcare provider
+- value: SC068179
+  description: Children's social care setting
+- value: EY49837
+  valid: false
+  description: Five digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Ofsted

@@ -1,0 +1,29 @@
+id: uk_output_area_code
+name: Census output area code (United Kingdom)
+status: draft
+doc: GSS code of a census output area, the smallest geography of the UK census, of about 125 households.
+  England uses the entity code E00, Wales W00, Scotland S00 and Northern Ireland N00 (its small areas).
+  LSOAs and MSOAs (uksloa, ukmsoa) are built from output areas.
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^[EWSN]00\d{6}$
+examples:
+- value: E00054810
+  description: Output area in Calderdale, 2011 census
+- value: E00054811
+  description: Output area in Calderdale, 2011 census
+- value: E01010876
+  valid: false
+  description: An LSOA code (E01)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd

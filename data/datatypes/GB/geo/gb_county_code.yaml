@@ -1,0 +1,32 @@
+id: gb_county_code
+name: County of England code (GSS)
+status: draft
+doc: 'GSS code of a county of England: a non-metropolitan (shire) county, entity code E10, or a metropolitan
+  county, E11. Unitary authorities have district codes (E06) instead.'
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^E1[01]\d{6}$
+examples:
+- value: E10000002
+  description: Buckinghamshire (county until 2020)
+- value: E10000003
+  description: Cambridgeshire
+- value: E11000001
+  description: Greater Manchester (metropolitan county)
+- value: E06000001
+  valid: false
+  description: A unitary authority code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Metropolitan_and_non-metropolitan_counties_of_England
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd
