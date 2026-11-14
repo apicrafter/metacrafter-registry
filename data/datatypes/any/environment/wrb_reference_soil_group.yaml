@@ -1,0 +1,51 @@
+id: wrb_reference_soil_group
+name: WRB reference soil group
+status: draft
+doc: 'Name of a reference soil group (RSG) of the World Reference Base for Soil Resources (WRB), the international
+  soil classification of the IUSS and FAO. The 2022 edition has 32 groups in the order of its key: Histosols,
+  Anthrosols, Technosols, Cryosols, Leptosols, Solonetz, Vertisols, Solonchaks, Gleysols, Andosols, Podzols,
+  Plinthosols, Planosols, Stagnosols, Nitisols, Ferralsols, Chernozems, Kastanozems, Phaeozems, Umbrisols,
+  Durisols, Gypsisols, Calcisols, Retisols, Acrisols, Lixisols, Alisols, Luvisols, Cambisols, Fluvisols,
+  Arenosols and Regosols. Older data use Albeluvisols (WRB 2006, now Retisols) and the major soil groupings
+  of the FAO-UNESCO Soil Map of the World (Lithosols, Rendzinas, Rankers, Xerosols, Yermosols, Greyzems,
+  Podzoluvisols, Nitosols), and some write Castanozems for Kastanozems. A name may follow principal qualifiers
+  (Haplic Calcisols, Rendzic Leptosol), in the singular or the plural; a map unit of two groups joins
+  them (Solonetzes-Solonchaks in the soil profile database of the Armenian Soil Information System). The
+  two-letter codes of WRB (CH, KS, LV) are not covered. Australian Soil Classification orders are au_soil_order,
+  names of national soil types soil_type.'
+parent: soil_type
+categories:
+- environment
+- science
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?i:(?:[a-z]+ic )*(?:Histosol|Anthrosol|Technosol|Cryosol|Leptosol|Solonetz|Vertisol|Solonchak|Gleysol|Andosol|Podzol|Plinthosol|Planosol|Stagnosol|Nitisol|Ferralsol|Chernozem|Kastanozem|Castanozem|Phaeozem|Umbrisol|Durisol|Gypsisol|Calcisol|Retisol|Acrisol|Lixisol|Alisol|Luvisol|Cambisol|Fluvisol|Arenosol|Regosol|Albeluvisol|Lithosol|Rendzina|Ranker|Xerosol|Yermosol|Greyzem|Podzoluvisol|Nitosol)(?:s|es)?)$
+examples:
+- value: Chernozems
+  description: Soil profile database of the Armenian Soil Information System (WRB_refere)
+- value: Castanozems
+  description: Older spelling of Kastanozems, Armenian Soil Information System
+- value: Haplic Calcisols
+  description: Principal qualifier and group
+- value: Rendzic Leptosol
+  description: Singular form
+- value: Albeluvisols
+  description: WRB 2006 group, replaced by Retisols in 2014
+- value: Xerosols
+  description: Major soil grouping of the FAO-UNESCO Soil Map of the World
+- value: Mountain chernozem
+  valid: false
+  description: Soil type of a national classification (soil_type)
+- value: Tenosols
+  valid: false
+  description: An Australian Soil Classification order (au_soil_order)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/World_Reference_Base_for_Soil_Resources
+- type: doc
+  url: https://www.isric.org/sites/default/files/WRB_fourth_edition_2022-12-18.pdf
+translations:
+  ru:
+    name: Реферативная почвенная группа WRB

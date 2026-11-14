@@ -1,0 +1,54 @@
+id: land_cover_class
+name: Land cover class
+status: draft
+doc: 'Name of a land cover or land use class of a site or an area: the six land-use categories of the
+  IPCC guidelines for greenhouse gas inventories (forest land, cropland, grassland, wetlands, settlements,
+  other land), the eleven classes of the ESA WorldCover map (tree cover, shrubland, grassland, cropland,
+  built-up, bare / sparse vegetation, snow and ice, permanent water bodies, herbaceous wetland, mangroves,
+  moss and lichen) and the plain words of soil and vegetation surveys (forest, shrubland, pasture, orchard,
+  urban, barren; Land_cover of the soil profile database of the Armenian Soil Information System: cropland,
+  grassland, shrubland, forest). Codes of CORINE Land Cover are corine_land_cover_code. The words are
+  common nouns, so only a land cover field tells them apart.'
+parent: category
+categories:
+- environment
+- geo
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: '^(?i:forests?(?: land)?|woodland|tree cover|trees|shrubland|shrubs?|scrub(?:land)?|grassland|grass|herbaceous(?:
+  vegetation)?|pastures?|pastureland|meadows?|cropland|crops?|cultivated(?: land)?|arable(?: land)?|agricultural
+  land|orchards?|vineyards?|wetlands?|herbaceous wetland|mangroves?|settlements?|built[- ]?up(?: area)?|urban(?:
+  area)?|artificial surfaces?|bare(?: land| soil| ground| areas?)?|bare ?/ ?sparse vegetation|sparse vegetation|barren(?:
+  land)?|water|water bodies|permanent water bodies|open water|snow and ice|snow ?/ ?ice|permanent snow
+  and ice|moss and lichen|lichens and mosses|other land)$'
+examples:
+- value: cropland
+  description: Soil profile database of ArmSIS (Land_cover)
+- value: shrubland
+  description: Soil profile database of ArmSIS
+- value: Forest land
+  description: IPCC land-use category
+- value: Tree cover
+  description: ESA WorldCover class
+- value: Bare / sparse vegetation
+  description: ESA WorldCover class
+- value: Permanent water bodies
+  description: ESA WorldCover class
+- value: '311'
+  valid: false
+  description: CORINE Land Cover code (corine_land_cover_code)
+- value: hill_top
+  valid: false
+  description: Landscape position of the same database
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Land_cover
+- type: doc
+  url: https://esa-worldcover.org/en
+- type: doc
+  url: https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_03_Ch3_Representation.pdf
+translations:
+  ru:
+    name: Класс растительного покрова

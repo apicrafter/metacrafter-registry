@@ -1,0 +1,53 @@
+id: am_marz
+name: Armenian province (marz)
+status: draft
+doc: 'Name of one of the ten provinces (marzer) of Armenia or of its capital Yerevan, which has the status
+  of a province: Aragatsotn, Ararat, Armavir, Gegharkunik, Kotayk, Lori, Shirak, Syunik, Tavush and Vayots
+  Dzor. Tables write them in Armenian (Արագածոտն, Գեղարքունիք, Վայոց ձոր), in Russian (Арагацотн, Гегаркуник,
+  Вайоц Дзор) or in one of several Latin transliterations (Syunik, Siunik; Kotayk, Kotayq; Vayots Dzor,
+  Vayots-Dzor), alone or with the word marz, province or region (Aragatsotn Province, Շիրակի մարզ). The
+  administrative boundaries of the Armenian Soil Information System (marz.csv) give the Armenian and English
+  names of all eleven. ISO 3166-2:AM codes (AM-AG, AM-ER) are iso3166code_part.'
+parent: province
+categories:
+- geo
+- government
+country:
+- AM
+langs:
+- hy
+- ru
+- en
+is_pii: false
+classification: categorical
+regexp: '^(?i:(?:Yerevan|Erevan|Aragatsotn|Aragacotn|Ararat|Armavir|Gegharkunik|Geghark''unik''?|Kotayk''?|Kotayq|Lori|Shirak|Syunik|Siunik|Syunik''|Tavush|Tavoush|Vayots[''
+  -]{1,2}Dzor)(?: (?:Province|Marz|Region))?|(?:Երևան|Երեւան|Արագածոտն|Արարատ|Արմավիր|Գեղարքունիք|Կոտայք|Լոռի|Շիրակ|Սյունիք|Տավուշ|Վայոց
+  ձոր)(?:ի? մարզ)?|Լոռու մարզ|(?:Ереван|Арагацотн|Арарат|Армавир|Гегаркуник|Котайк|Лори|Ширак|Сюник|Тавуш|Вайоц[
+  -]Дзор)(?: (?:марз|область))?)$'
+examples:
+- value: Gegharkunik
+  description: Administrative boundaries of the Armenian Soil Information System (Name_eng)
+- value: Վայոց Ձոր
+  description: Same file (Name_arm)
+- value: Aragatsotn Province
+  description: With the word Province
+- value: Շիրակի մարզ
+  description: Armenian name with the word marz
+- value: Сюник
+  description: Russian name
+- value: AM-GR
+  valid: false
+  description: ISO 3166-2 code (iso3166code_part)
+- value: Gyumri
+  valid: false
+  description: A city (the centre of Shirak)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Provinces_of_Armenia
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_3166-2:AM
+translations:
+  hy:
+    name: ՀՀ մարզ
+  ru:
+    name: Область (марз) Армении
