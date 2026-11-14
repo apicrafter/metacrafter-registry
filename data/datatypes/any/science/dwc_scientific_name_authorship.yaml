@@ -1,0 +1,39 @@
+id: dwc_scientific_name_authorship
+name: Darwin Core scientific name authorship
+status: draft
+doc: 'Authorship of a scientific name (Darwin Core term scientificNameAuthorship): the author or authors
+  who published the name and, in zoology, the year, in parentheses when the species was later moved to
+  another genus: Latreille, 1809; (Forel, 1901); F. Müller, 1866; Giachino & Peck 2003. Botanical authorships
+  are abbreviated after the standard of the International Plant Names Index (L., R.Br., Benth. ex F.Muell.).
+  The full scientific name with its authorship is species.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\(?[A-Z][\w'’.\- ]*(?:(?:,| &| et| ex| and) [A-Z][\w'’.\- ]*)*(?:,? ?\(?\d{4}\)?)?\)?$
+examples:
+- value: Latreille, 1809
+  description: Author and year of the family Formicidae
+- value: (Forel, 1901)
+  description: Species moved to another genus since
+- value: F. Müller, 1866
+  description: Casuarius casuarius johnsonii
+- value: Giachino & Peck 2003
+  description: Two authors, no comma before the year
+- value: L.
+  description: Linnaeus, a botanical abbreviation
+- value: '1809'
+  valid: false
+  description: A year alone
+links:
+- type: doc
+  url: https://dwc.tdwg.org/terms/#dwc:scientificNameAuthorship
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Author_citation_(zoology)
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Author_citation_(botany)
+translations:
+  ru:
+    name: Авторство научного названия (Darwin Core)

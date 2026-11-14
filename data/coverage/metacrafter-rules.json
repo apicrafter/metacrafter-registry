@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "f04a7bce68084015731e0ec76e2dc561713fc5e9"
+  "ref": "70253ec29cb02d7446e1c3045e0b7d7627caa936"
  },
  "rules": [
   {
@@ -433,6 +433,116 @@
    "context": "geo",
    "lang": "de",
    "country_code": "at"
+  },
+  {
+   "rule": "auafdtaxonvalue",
+   "key": "au_afd_taxon_id",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_environment.yaml",
+   "context": "environment",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auausplotssiteidbyname",
+   "key": "au_ausplots_site_id",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_environment.yaml",
+   "context": "environment",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auausplotssiteidvalue",
+   "key": "au_ausplots_site_id",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_environment.yaml",
+   "context": "environment",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auibraregionbyname",
+   "key": "au_ibra_region",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_environment.yaml",
+   "context": "environment",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auibraregioncodebyname",
+   "key": "au_ibra_region_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_environment.yaml",
+   "context": "environment",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aunviscoverclassbyname",
+   "key": "au_nvis_cover_class",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_environment.yaml",
+   "context": "environment",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aunvisgrowthformbyname",
+   "key": "au_nvis_growth_form",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_environment.yaml",
+   "context": "environment",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aunvisstratumbyname",
+   "key": "au_nvis_stratum",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_environment.yaml",
+   "context": "environment",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "ausoilorderbyname",
+   "key": "au_soil_order",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_environment.yaml",
+   "context": "environment",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "ausoilordervalue",
+   "key": "au_soil_order",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_environment.yaml",
+   "context": "environment",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auterncvconceptvalue",
+   "key": "au_tern_cv_concept",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_environment.yaml",
+   "context": "environment",
+   "lang": "en",
+   "country_code": "au"
   },
   {
    "rule": "auabnknown",
@@ -2365,6 +2475,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "clocktimebyname",
+   "key": "time",
+   "type": "field",
+   "match": "regex",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "clocktimewithsecondsvalue",
+   "key": "time",
+   "type": "data",
+   "match": "func",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "createddatebyknown",
    "key": "datetime",
    "type": "field",
@@ -2409,6 +2539,26 @@
    "key": "datetime",
    "type": "field",
    "match": "text",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "durationtextbyname",
+   "key": "duration",
+   "type": "field",
+   "match": "regex",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "durationtextvalue",
+   "key": "duration",
+   "type": "data",
+   "match": "func",
    "file": "common/dateandtime.yaml",
    "context": "datetime",
    "lang": "common",
@@ -2569,6 +2719,16 @@
    "key": "datetime",
    "type": "field",
    "match": "text",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "weekofyearbyname",
+   "key": "week_of_year",
+   "type": "field",
+   "match": "regex",
    "file": "common/dateandtime.yaml",
    "context": "datetime",
    "lang": "common",
@@ -2845,6 +3005,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "soilhorizonbyname",
+   "key": "soil_horizon",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "categorybyfield",
    "key": "category",
    "type": "field",
@@ -2955,6 +3125,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "compasspointbyname",
+   "key": "compass_point",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "continentgeobyknown",
    "key": "continent",
    "type": "field",
@@ -3015,10 +3195,40 @@
    "country_code": "xx"
   },
   {
+   "rule": "elevationbyname",
+   "key": "elevation",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "gadmgidvalue",
    "key": "gadm_gid",
    "type": "data",
    "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "geodeticdatumbyname",
+   "key": "geodetic_datum",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "geodeticdatumvalue",
+   "key": "geodetic_datum",
+   "type": "data",
+   "match": "func",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -3279,6 +3489,26 @@
    "key": "unlocode",
    "type": "data",
    "match": "ppr",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "utmzonebyname",
+   "key": "utm_zone",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "utmzonewithbandbyname",
+   "key": "utm_zone",
+   "type": "field",
+   "match": "text",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -4655,6 +4885,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "dwcscientificnameauthorshipbyfield",
+   "key": "dwc_scientific_name_authorship",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "dwctaxonomicstatusknown",
    "key": "dwc_taxonomic_status",
    "type": "field",
@@ -4849,6 +5089,16 @@
    "key": "scopusauthoirid",
    "type": "field",
    "match": "text",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "speciesbyfieldname",
+   "key": "species",
+   "type": "field",
+   "match": "regex",
    "file": "common/science.yaml",
    "context": "science",
    "lang": "common",
