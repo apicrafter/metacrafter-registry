@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "b0287ecb1b1f28977785176433167fa6f9c9d3a6"
+  "ref": "db05420c23e10a42394511ed63dd8fd15b30e54d"
  },
  "rules": [
   {
@@ -181,6 +181,26 @@
    "match": "ppr",
    "file": "am/am_finances.yaml",
    "context": "finances",
+   "lang": "hy",
+   "country_code": "am"
+  },
+  {
+   "rule": "ammarzbyname",
+   "key": "am_marz",
+   "type": "field",
+   "match": "regex",
+   "file": "am/am_geo.yaml",
+   "context": "geo",
+   "lang": "hy",
+   "country_code": "am"
+  },
+  {
+   "rule": "ammarzvalue",
+   "key": "am_marz",
+   "type": "data",
+   "match": "func",
+   "file": "am/am_geo.yaml",
+   "context": "geo",
    "lang": "hy",
    "country_code": "am"
   },
@@ -4195,6 +4215,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "iucnprotectedareacategorybyname",
+   "key": "iucn_protected_area_category",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "phbyname",
+   "key": "ph_value",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "polymertypebyfield",
    "key": "polymer_type",
    "type": "field",
@@ -4445,6 +4485,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "epsgcodebycrs",
+   "key": "epsg_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "epsgcodebyname",
    "key": "epsg_code",
    "type": "field",
@@ -4549,6 +4599,16 @@
    "key": "gln",
    "type": "data",
    "match": "ppr",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "gmlidvalue",
+   "key": "gml_id",
+   "type": "data",
+   "match": "regex",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -7265,6 +7325,76 @@
    "country_code": "xx"
   },
   {
+   "rule": "landcoverbyname",
+   "key": "land_cover_class",
+   "type": "field",
+   "match": "regex",
+   "file": "common/soils.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "soilerosionbyname",
+   "key": "soil_erosion_degree",
+   "type": "field",
+   "match": "regex",
+   "file": "common/soils.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "soiltexturebyname",
+   "key": "soil_texture_class",
+   "type": "field",
+   "match": "regex",
+   "file": "common/soils.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "soiltypebyname",
+   "key": "soil_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/soils.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "soiltypevalue",
+   "key": "soil_type",
+   "type": "data",
+   "match": "func",
+   "file": "common/soils.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "wrbsoilgroupbyname",
+   "key": "wrb_reference_soil_group",
+   "type": "field",
+   "match": "regex",
+   "file": "common/soils.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "wrbsoilgroupvalue",
+   "key": "wrb_reference_soil_group",
+   "type": "data",
+   "match": "func",
+   "file": "common/soils.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "cowcountrycodebyname",
    "key": "cow_country_code",
    "type": "field",
@@ -8019,6 +8149,16 @@
    "key": "percentage",
    "type": "field",
    "match": "ppr",
+   "file": "common/values.yaml",
+   "context": "values",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "temperaturebyname",
+   "key": "temperature",
+   "type": "field",
+   "match": "regex",
    "file": "common/values.yaml",
    "context": "values",
    "lang": "common",
