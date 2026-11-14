@@ -1,0 +1,34 @@
+id: ae_dewa_contract_account
+name: DEWA contract account number
+status: draft
+doc: Ten-digit contract account number of a customer of the Dubai Electricity and Water Authority (DEWA),
+  printed on the bill and given in the DEWA files of Dubai Pulse (contract_account of the Shams Dubai
+  solar net metering, smart meter and move-in data). In those files accounts start with 20 or 30; the
+  accounts of the 20 series end with a weighted check digit, weights 10 to 2 modulo 11 with a remainder
+  of 10 written as 0 (all 17 017 such accounts of the 2017 and 2019 files pass it). It is the weighting
+  of the NHS number and ISBN-10, so most of these accounts also pass those checks. An account of a household
+  identifies the premises of a person.
+categories:
+- energy
+- finances
+country:
+- AE
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^[23]0\d{8}$
+examples:
+- value: '2002323313'
+  description: a commercial account of the Shams Dubai file
+- value: '3001330751'
+  description: an account of the 30 series
+- value: '1002323313'
+  valid: false
+  description: not of the 20 or 30 series
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Dubai_Electricity_and_Water_Authority
+translations:
+  ar:
+    name: رقم الحساب التعاقدي لهيئة كهرباء ومياه دبي

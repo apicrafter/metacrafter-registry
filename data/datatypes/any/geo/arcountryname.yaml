@@ -1,0 +1,34 @@
+id: arcountryname
+name: Country name in Arabic
+status: draft
+doc: Name of a country written in Arabic, short or official (السعودية, المملكة العربية السعودية, جمهورية
+  إيران الإسلامية), as Arab statistics write the partner countries of trade tables and the nationalities
+  of people. Spellings differ in hamza forms (أسبانيا, إسبانيا), in ة and ه, in vowel marks, and between
+  ج and غ in foreign names (بنجلاديش, بنغلاديش; أنجولا, أنغولا). Unicode CLDR and ISO 3166 have Arabic
+  names of all countries.
+semantic_type: country
+langs:
+- ar
+classification: identifier
+examples:
+- value: المملكة العربية السعودية
+  description: Saudi Arabia
+- value: جمهورية إيران الإسلامية
+  description: Iran, official name
+- value: الهند
+  description: India
+- value: بنجلاديش
+  description: Bangladesh, Gulf spelling
+- value: الولايات المتحدة
+  description: United States
+- value: India
+  valid: false
+  description: written in English (encountryname)
+links:
+- type: doc
+  url: https://cldr.unicode.org/
+- type: wikipedia
+  url: https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%A7%D9%84%D8%AF%D9%88%D9%84
+translations:
+  ar:
+    name: اسم الدولة بالعربية
