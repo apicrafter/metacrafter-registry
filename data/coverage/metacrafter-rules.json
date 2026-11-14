@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "afbc9bdd51e5f1a69b0cbba54fa5556aabef2fd6"
+  "ref": "721776ae4781106e656a41eced4eb172190c9138"
  },
  "rules": [
   {
@@ -373,6 +373,106 @@
    "context": "persons",
    "lang": "ar",
    "country_code": "xx"
+  },
+  {
+   "rule": "ardepartmentnamebyname",
+   "key": "ar_department",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindeccensusfractioncodebyname",
+   "key": "ar_indec_census_fraction_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindeccensusradiuscodebyname",
+   "key": "ar_indec_census_radius_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindeccensusradiuslinkbyname",
+   "key": "ar_indec_census_radius_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindeccensusradiustypebyname",
+   "key": "ar_indec_census_radius_type",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindecdepartmentpartbyname",
+   "key": "ar_indec_department_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindeclocalgovernmentpartbyname",
+   "key": "ar_indec_local_government_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindeclocalitypartbyname",
+   "key": "ar_indec_locality_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindecprovincecodebarename",
+   "key": "ar_indec_province_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arlocalitynamebyname",
+   "key": "city",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_census.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
   },
   {
    "rule": "ar_common_arpersonnameknown",

@@ -1,0 +1,40 @@
+id: ar_indec_census_radius_code
+name: Argentine census radius code (INDEC radio censal)
+status: draft
+doc: Code of a census radius (radio censal), the smallest area of the INDEC census geography of Argentina,
+  a few hundred dwellings that one enumerator covers. The nine-digit code (LINK in the INDEC census cartography)
+  joins the two-digit province code, the three digits of the department, two of the fraction and two of
+  the radius, as in 140070101 for radius 01 of fraction 01 of Calamuchita (007), Córdoba (14). Radius
+  lists and census tables also give the parts in columns of their own (PROV, DEPTO, FRAC, RADIO), where
+  the radius column holds the two-digit radius number alone (01 to 99), unique within its fraction. Provincial
+  statistics offices use the same codes for their own censuses (the 2008 provincial census of Córdoba).
+parent: id
+categories:
+- geo
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:(?:0[26]|1[048]|2[26]|3[048]|4[26]|5[048]|6[26]|7[048]|8[26]|9[04])\d{5})?\d{2}$
+examples:
+- value: '140070101'
+  description: radius 01 of fraction 01, department Calamuchita, Córdoba
+- value: '140980807'
+  description: radius 07 of fraction 08, department Río Cuarto, Córdoba (Achiras)
+- value: '05'
+  description: the radius number alone, in a RADIO column next to the fraction
+- value: '040070101'
+  valid: false
+  description: no province has the code 04
+- value: '14007010'
+  valid: false
+  description: eight digits
+links:
+- type: doc
+  url: https://www.indec.gob.ar/indec/web/Institucional-Indec-Codgeo
+translations:
+  es:
+    name: Código de radio censal (INDEC)
