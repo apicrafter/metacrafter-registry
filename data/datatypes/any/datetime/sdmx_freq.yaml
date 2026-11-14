@@ -7,6 +7,7 @@ doc: 'Code from the SDMX code list CL_FREQ (agency SDMX, version 2.1) for the fr
   (A5 every five years, W2 every two weeks), an underscore and a digit mean n times per period (M_2 twice
   a month), OA and OM are occasional annual and monthly, and _O, _U and _Z mean other, unspecified and
   not applicable.'
+parent: periodicity
 categories:
 - datetime
 langs:

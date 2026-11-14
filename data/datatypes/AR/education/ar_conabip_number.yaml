@@ -1,0 +1,33 @@
+id: ar_conabip_number
+name: Argentine popular library number (CONABIP)
+status: draft
+doc: Number of a popular library (biblioteca popular, a library run by a civil association) in the register
+  of the Comisión Nacional de Bibliotecas Populares (CONABIP) of Argentina, created by Ley 419 of 1870.
+  The numbers are given in the order of recognition and run to a few thousand (938, 4398); the directory
+  of popular libraries of the culture ministry lists about 1,900 of them.
+parent: id
+categories:
+- education
+- publishing
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: '938'
+  description: nro_conabip of a popular library of 25 de Mayo, Buenos Aires (SInCA directory, 2023)
+- value: '4398'
+  description: same directory
+- value: '0'
+  valid: false
+  description: numbers start at 1
+links:
+- type: doc
+  url: https://www.conabip.gob.ar/
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Comisi%C3%B3n_Nacional_de_Bibliotecas_Populares
+translations:
+  es:
+    name: Número de biblioteca popular (CONABIP)

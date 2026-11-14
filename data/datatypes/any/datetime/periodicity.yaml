@@ -1,0 +1,36 @@
+id: periodicity
+name: Periodicity (how often, in words)
+status: draft
+doc: 'How often something happens, is published or is updated, in words: Anual, Bianual, Semestral, Trimestral,
+  Mensual, Semanal, Diaria, Irregular in Spanish, annual, quarterly, monthly, weekly, daily in English,
+  or the names of the EU Frequency vocabulary that DCAT catalogues use for dct:accrualPeriodicity (ANNUAL,
+  MONTHLY, IRREG). Festivals and fairs, periodicals, statistics and datasets have one. SDMX frequency
+  codes (A, Q, M) are sdmx_freq, a child of this type; ISO 8601 repeating intervals (R/P1Y) are durations.'
+parent: category
+categories:
+- datetime
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Anual
+  description: Periodicidad of the festivals of the Argentine culture ministry (SInCA, 2022)
+- value: Bianual
+  description: same list
+- value: Mensual
+  description: same list
+- value: monthly
+- value: ANNUAL
+  description: EU Frequency vocabulary
+- value: '12'
+  valid: false
+  description: a number of times is a count
+links:
+- type: doc
+  url: https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/frequency
+- type: doc
+  url: https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_frequency
+translations:
+  es:
+    name: Periodicidad

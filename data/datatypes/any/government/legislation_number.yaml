@@ -1,0 +1,36 @@
+id: legislation_number
+name: Number of a law, decree or other legal act
+status: draft
+doc: 'Number that the issuer gives to a law, a decree, a resolution, an ordinance or another legal act,
+  often with the year or a prefix of the type: Argentine laws run to five digits written with a dot (Ley
+  24.262, 12.665), decrees restart every year (Decreto 325/1989); with the type of the act (legislationtype)
+  and the issuer it identifies the act. Official identifiers of a publication system, such as the CELEX
+  number or the ELI, and the Russian federal law numbers (ru_federal_law_number) have their own types.'
+parent: id
+categories:
+- government
+- legal
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: '325'
+  description: numero_de_decreto_o_ley of a historic place declared by decree 325 of 1989 (SInCA list
+    of national monuments)
+- value: '24.262'
+  description: a law number, the same list
+- value: 1172/2003
+  description: decree number with the year
+- value: Ley 27.103
+- value: Decreto
+  valid: false
+  description: the type of the act is legislationtype
+links:
+- type: schema.org
+  url: https://schema.org/legislationIdentifier
+- type: doc
+  url: https://www.argentina.gob.ar/normativa
+translations:
+  es:
+    name: Número de norma (ley, decreto, resolución)

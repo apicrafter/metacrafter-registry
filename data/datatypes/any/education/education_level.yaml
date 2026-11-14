@@ -1,0 +1,33 @@
+id: education_level
+name: Level of education (in words)
+status: draft
+doc: 'Level or stage of education in words: of a school, a programme or a degree (inicial, primario, secundario,
+  superior; grado, pregrado, posgrado; primary, secondary, tertiary, undergraduate, postgraduate) or the
+  highest level a person attained (Secundario completo, Universitario incompleto). Each country names
+  its own levels; the codes of a classification have their own types, such as isced2011_level of UNESCO
+  and ru_education_level, both children of this type.'
+parent: category
+categories:
+- education
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Grado
+  description: Nivel of the university degrees in the arts of the Argentine culture ministry (SInCA, 2020)
+- value: Pregrado
+  description: same list
+- value: Posgrado
+  description: same list
+- value: Secundario completo
+- value: upper secondary
+- value: '3'
+  valid: false
+  description: a code needs its classification (ISCED 3 is isced2011_level)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Educational_stage
+translations:
+  es:
+    name: Nivel educativo

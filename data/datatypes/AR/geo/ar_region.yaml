@@ -1,0 +1,41 @@
+id: ar_region
+name: Argentine region (group of provinces)
+status: draft
+doc: 'Region of Argentina, a group of provinces, by name or abbreviation. National statistics and planning
+  use several regionalisations: the regions of the statistics office INDEC (Gran Buenos Aires, Noroeste,
+  Noreste, Cuyo, Pampeana, Patagonia; NOA and NEA for the north-west and north-east), the regions of cultural
+  statistics and surveys (NOA, NEA, Cuyo, Centro, Patagonia, with the Ciudad Autónoma de Buenos Aires,
+  the Gran Buenos Aires or the province of Buenos Aires on their own) and the regions of the wholesale
+  electricity market (Gran Buenos Aires, Litoral, Buenos Aires, Centro, Cuyo, Comahue, Noroeste, Noreste,
+  Patagonia). Sources number them in their own ways (the household survey EPH: 01 Gran Buenos Aires, 40
+  Noroeste, 41 Noreste, 42 Cuyo, 43 Pampeana, 44 Patagonia), so a code needs its source.'
+parent: location
+categories:
+- geo
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: NOA
+  description: region of the national survey of cultural consumption (ENCC 2017)
+- value: PATAGONIA
+  description: same survey
+- value: Cuyo
+- value: GBA
+  description: region of the ENCC 2022-2023
+- value: Pampeana
+  description: INDEC region
+- value: Neuquén
+  valid: false
+  description: a province, not a region
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Regiones_de_Argentina
+- type: doc
+  url: https://www.indec.gob.ar/indec/web/Institucional-Indec-BasesDeDatos
+translations:
+  es:
+    name: Región de Argentina

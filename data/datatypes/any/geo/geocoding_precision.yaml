@@ -1,0 +1,38 @@
+id: geocoding_precision
+name: Geocoding precision (location type)
+status: draft
+doc: 'How precise the coordinates of a record are, or how they were found: at the address or the building
+  (Localización precisa, Exacta, ROOFTOP), interpolated along a street (RANGE_INTERPOLATED), at the centre
+  of a street, a locality or another area (Centroide de la localidad, GEOMETRIC_CENTER) or approximate
+  (Localización aproximada, APPROXIMATE). Geocoders return it with the coordinates (the location_type
+  of the Google Geocoding API) and directories keep it beside the latitude and longitude, as the cultural
+  directories of the Argentine culture ministry do (tipo_latitud_longitud). A distance error in metres
+  is a measure, not this type.'
+parent: category
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Localización precisa
+  description: tipo_latitud_longitud of the museum directory of the Argentine culture ministry (SInCA)
+- value: Centroide de la localidad
+  description: TipoLatitudLongitud of the cultural centre directory, the same source
+- value: Localización aproximada
+- value: ROOFTOP
+  description: location_type of the Google Geocoding API
+- value: GEOMETRIC_CENTER
+  description: the same API
+- value: '15'
+  valid: false
+  description: an error distance is a measure
+links:
+- type: doc
+  url: https://developers.google.com/maps/documentation/geocoding/requests-geocoding
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Address_geocoding
+translations:
+  es:
+    name: Precisión de la georreferenciación
