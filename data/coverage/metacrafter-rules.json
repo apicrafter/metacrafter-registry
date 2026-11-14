@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "b0287ecb1b1f28977785176433167fa6f9c9d3a6"
+  "ref": "83fe6cdf02ae4f7459f2dd4ad8fcaa8c0517b539"
  },
  "rules": [
   {
@@ -2685,6 +2685,96 @@
    "country_code": "co"
   },
   {
+   "rule": "adminarea1gadmbyname",
+   "key": "admin_area_1",
+   "type": "field",
+   "match": "regex",
+   "file": "common/admin_areas.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "adminarea2gadmbyname",
+   "key": "admin_area_2",
+   "type": "field",
+   "match": "regex",
+   "file": "common/admin_areas.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "adminarea3gadmbyname",
+   "key": "admin_area_3",
+   "type": "field",
+   "match": "regex",
+   "file": "common/admin_areas.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "adminareatypebyname",
+   "key": "admin_area_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/admin_areas.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "continentcodebyname",
+   "key": "continentcode",
+   "type": "field",
+   "match": "regex",
+   "file": "common/admin_areas.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "hascbyname",
+   "key": "hasc",
+   "type": "field",
+   "match": "regex",
+   "file": "common/admin_areas.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "hascvalue",
+   "key": "hasc",
+   "type": "data",
+   "match": "func",
+   "file": "common/admin_areas.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "ocddivisionidvalue",
+   "key": "ocd_division_id",
+   "type": "data",
+   "match": "func",
+   "file": "common/admin_areas.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "odkgeopointvalue",
+   "key": "odk_geopoint",
+   "type": "data",
+   "match": "func",
+   "file": "common/admin_areas.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "booleancommon",
    "key": "boolean",
    "type": "data",
@@ -3855,6 +3945,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "wbprojectidvalue",
+   "key": "wb_project_id",
+   "type": "data",
+   "match": "regex",
+   "file": "common/development_finance.yaml",
+   "context": "finances",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "wbtrustfundnumbervalue",
+   "key": "wb_trust_fund_number",
+   "type": "data",
+   "match": "regex",
+   "file": "common/development_finance.yaml",
+   "context": "finances",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "attendancemodebyname",
    "key": "attendance_mode",
    "type": "field",
@@ -4185,6 +4295,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "airsensormodelbyname",
+   "key": "air_sensor_model",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "airsensormodelvalue",
+   "key": "air_sensor_model",
+   "type": "data",
+   "match": "func",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "eeaeoistationcodevalue",
    "key": "eea_eoi_station_code",
    "type": "data",
@@ -4209,6 +4339,16 @@
    "key": "polymer_type",
    "type": "data",
    "match": "func",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "sensorcommunityvaluetypebyname",
+   "key": "sensor_community_value_type",
+   "type": "field",
+   "match": "regex",
    "file": "common/environment.yaml",
    "context": "environment",
    "lang": "common",
@@ -7695,6 +7835,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "airporttypevalue",
+   "key": "airport_type",
+   "type": "data",
+   "match": "regex",
+   "file": "common/transport.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "erarinfopidvalue",
    "key": "era_rinf_op_id",
    "type": "data",
@@ -7775,6 +7925,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "iataairportcodebycode",
+   "key": "iataairportcode",
+   "type": "field",
+   "match": "text",
+   "file": "common/transport.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "iataairportcodefield",
    "key": "iataairportcode",
    "type": "field",
@@ -7797,6 +7957,16 @@
   {
    "rule": "icaoairlinecodefield",
    "key": "icaoairlinecode",
+   "type": "field",
+   "match": "text",
+   "file": "common/transport.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "icaoairportcodebycode",
+   "key": "icaoairportcode",
    "type": "field",
    "match": "text",
    "file": "common/transport.yaml",
@@ -12335,6 +12505,36 @@
    "country_code": "jp"
   },
   {
+   "rule": "kecountybyname",
+   "key": "ke_county",
+   "type": "field",
+   "match": "regex",
+   "file": "ke/ke_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ke"
+  },
+  {
+   "rule": "kecountyvalue",
+   "key": "ke_county",
+   "type": "data",
+   "match": "func",
+   "file": "ke/ke_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ke"
+  },
+  {
+   "rule": "kesubcountybyname",
+   "key": "ke_subcounty",
+   "type": "field",
+   "match": "regex",
+   "file": "ke/ke_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ke"
+  },
+  {
    "rule": "kemflcodevalue",
    "key": "ke_mfl_code",
    "type": "data",
@@ -12793,6 +12993,76 @@
    "context": "persons",
    "lang": "es",
    "country_code": "mx"
+  },
+  {
+   "rule": "nglgabyname",
+   "key": "ng_lga",
+   "type": "field",
+   "match": "regex",
+   "file": "ng/ng_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ng"
+  },
+  {
+   "rule": "nglgacodebyname",
+   "key": "ng_lga_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ng/ng_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ng"
+  },
+  {
+   "rule": "nglgavalue",
+   "key": "ng_lga",
+   "type": "data",
+   "match": "func",
+   "file": "ng/ng_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ng"
+  },
+  {
+   "rule": "ngstatebyname",
+   "key": "ng_state",
+   "type": "field",
+   "match": "regex",
+   "file": "ng/ng_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ng"
+  },
+  {
+   "rule": "ngstatecodebyname",
+   "key": "iso3166code_part",
+   "type": "field",
+   "match": "regex",
+   "file": "ng/ng_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ng"
+  },
+  {
+   "rule": "ngstatevalue",
+   "key": "ng_state",
+   "type": "data",
+   "match": "func",
+   "file": "ng/ng_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ng"
+  },
+  {
+   "rule": "ngwardcodebyname",
+   "key": "ng_ward_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ng/ng_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ng"
   },
   {
    "rule": "nldatefield",
@@ -17145,6 +17415,16 @@
    "country_code": "sg"
   },
   {
+   "rule": "slchiefdombyname",
+   "key": "sl_chiefdom",
+   "type": "field",
+   "match": "regex",
+   "file": "sl/sl_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "sl"
+  },
+  {
    "rule": "thyearbevalue",
    "key": "year_th_be",
    "type": "data",
@@ -17453,6 +17733,26 @@
    "context": "datetime",
    "lang": "zh",
    "country_code": "tw"
+  },
+  {
+   "rule": "tzregionbyname",
+   "key": "tz_region",
+   "type": "field",
+   "match": "regex",
+   "file": "tz/tz_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "tz"
+  },
+  {
+   "rule": "tzregionvalue",
+   "key": "tz_region",
+   "type": "data",
+   "match": "func",
+   "file": "tz/tz_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "tz"
   },
   {
    "rule": "uamfovalue",
@@ -18331,6 +18631,56 @@
    "match": "regex",
    "file": "za/za_education.yaml",
    "context": "education",
+   "lang": "en",
+   "country_code": "za"
+  },
+  {
+   "rule": "zabudgetvotenumberbyname",
+   "key": "za_budget_vote_number",
+   "type": "field",
+   "match": "regex",
+   "file": "za/za_finances.yaml",
+   "context": "finances",
+   "lang": "en",
+   "country_code": "za"
+  },
+  {
+   "rule": "zaeconomicclassificationbyname",
+   "key": "za_economic_classification",
+   "type": "field",
+   "match": "regex",
+   "file": "za/za_finances.yaml",
+   "context": "finances",
+   "lang": "en",
+   "country_code": "za"
+  },
+  {
+   "rule": "zaeconomicclassificationvalue",
+   "key": "za_economic_classification",
+   "type": "data",
+   "match": "func",
+   "file": "za/za_finances.yaml",
+   "context": "finances",
+   "lang": "en",
+   "country_code": "za"
+  },
+  {
+   "rule": "zaprovincebyname",
+   "key": "za_province",
+   "type": "field",
+   "match": "regex",
+   "file": "za/za_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "za"
+  },
+  {
+   "rule": "zaprovincevalue",
+   "key": "za_province",
+   "type": "data",
+   "match": "func",
+   "file": "za/za_geo.yaml",
+   "context": "geo",
    "lang": "en",
    "country_code": "za"
   },

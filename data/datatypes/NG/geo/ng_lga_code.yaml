@@ -1,0 +1,31 @@
+id: ng_lga_code
+name: Nigerian LGA code
+status: draft
+doc: Five-digit code of a Nigerian local government area in the settlement and boundary data of GRID3
+  and eHealth Africa, the number of the state in alphabetical order (01 Abia to 37 Zamfara, 15 for the
+  Federal Capital Territory) followed by the number of the LGA within the state, such as 19001 for Birnin
+  Gwari in Kaduna State. Australian LGA codes (10050) are au_lga_code.
+parent: id
+categories:
+- geo
+- government
+country:
+- NG
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:0[1-9]|[12]\d|3[0-7])\d{3}$
+examples:
+- value: '19001'
+  description: Birnin Gwari, Kaduna State
+- value: '19003'
+  description: Giwa, Kaduna State
+- value: '38001'
+  valid: false
+  description: there are 37 states with the FCT
+links:
+- type: doc
+  url: https://grid3.org/
+- type: doc
+  url: https://energydata.info/dataset/nigeria-kaduna-electricity-distribution-company-service-area-settlements-dataset-2016

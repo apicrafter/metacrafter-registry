@@ -1,0 +1,34 @@
+id: ng_lga
+name: Nigerian local government area
+status: draft
+doc: Name of one of the 774 local government areas (LGAs) of Nigeria or of the six area councils of the
+  Federal Capital Territory, the second-level divisions under the states, such as Birnin Gwari, Aba North,
+  Isiala-Ngwa South or Yenagoa. Spellings vary between sources (Isiala Ngwa North, Isiala-Ngwa North;
+  Arochukwu, Arochukw in GADM 2), and NMIS facility lists join state and LGA in one key (bayelsa_yenagoa).
+  Australian local government areas are au_lga_name.
+parent: admin_area_2
+categories:
+- geo
+- government
+country:
+- NG
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Birnin Gwari
+  description: Kaduna State
+- value: Aba North
+  description: Abia State
+- value: Isiala-Ngwa South
+  description: Abia State, hyphenated
+- value: Abuja Municipal Area Council
+  description: an area council of the FCT (AMAC)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Local_government_areas_of_Nigeria
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q1229776
+- type: doc
+  url: https://open.africa/dataset/nigeria-ward-population

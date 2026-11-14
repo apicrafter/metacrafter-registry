@@ -1,0 +1,33 @@
+id: odk_geopoint
+name: ODK geopoint
+status: draft
+doc: A location as Open Data Kit (ODK) and the tools built on its XForms (KoboToolbox, Ona, formhub, SurveyCTO)
+  record a geopoint question, latitude and longitude in decimal degrees, altitude in metres and accuracy
+  in metres separated by single spaces, such as 9.140918 7.496761 697.0 4.5. Exports keep it in one column
+  (gps, _geolocation) next to split latitude and longitude columns; geoshape and geotrace answers are
+  lists of such points separated by semicolons.
+parent: geopoint
+categories:
+- geo
+langs:
+- common
+is_pii: false
+regexp: ^-?\d{1,2}\.\d+ -?\d{1,3}\.\d+ -?\d+(?:\.\d+)? \d+(?:\.\d+)?$
+examples:
+- value: 11.48131371 5.19336324 461.20001220703125 5.0
+  description: a water point of the Nigeria MDG Information System (NMIS, 2012)
+- value: 9.140918333333333 7.496761666666667 697.0 4.5
+  description: a school of NMIS, accuracy 4.5 m
+- value: 9.14, 7.49
+  valid: false
+  description: latitude and longitude separated by a comma
+- value: 53 004 085 616
+  valid: false
+  description: an Australian Business Number written in groups
+links:
+- type: doc
+  url: https://docs.getodk.org/form-question-types/#location-widgets
+- type: doc
+  url: https://getodk.github.io/xforms-spec/#data-type:geopoint
+- type: doc
+  url: https://open.africa/dataset/health-facilities-in-nigeria

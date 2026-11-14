@@ -1,0 +1,29 @@
+id: ke_subcounty
+name: Kenyan sub-county
+status: draft
+doc: Name of a sub-county of Kenya, the division of a county that the national government administers
+  and that the Kenya National Bureau of Statistics reports on, such as Changamwe, Kisauni, Lungalunga
+  or Westlands; most match a constituency. Sub-county names repeat county names (Lamu West, Kitui Central)
+  and common words (Central, East), so a column is told by its field name and the share of known names.
+parent: admin_area_2
+categories:
+- geo
+- government
+country:
+- KE
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Changamwe
+  description: Mombasa County
+- value: Lungalunga
+  description: Kwale County
+- value: Westlands
+  description: Nairobi City County
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Subcounties_of_Kenya
+- type: doc
+  url: https://open.africa/dataset/kenya-subcounties
