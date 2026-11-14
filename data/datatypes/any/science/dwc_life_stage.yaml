@@ -1,0 +1,28 @@
+id: dwc_life_stage
+name: Darwin Core life stage
+status: draft
+doc: 'Age class or life stage of the organisms of an occurrence (Darwin Core term lifeStage): adult, juvenile,
+  larva, egg, pupa, nymph, seedling and the like. GBIF recommends the terms of its LifeStage vocabulary;
+  fish and coral surveys often write abbreviations such as AD and JUV.'
+parent: category
+categories:
+- science
+- environment
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: adult
+  description: GBIF LifeStage vocabulary
+- value: juvenile
+  description: GBIF LifeStage vocabulary
+- value: AD
+  description: AIMS baited remote underwater video survey (stage)
+- value: JUV
+  description: AIMS baited remote underwater video survey (stage)
+links:
+- type: doc
+  url: https://dwc.tdwg.org/terms/#dwc:lifeStage
+- type: doc
+  url: https://rs.gbif.org/vocabulary/gbif/life_stage.xml

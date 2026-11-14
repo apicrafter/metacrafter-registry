@@ -1,0 +1,32 @@
+id: au_aims_ltmp_sector
+name: AIMS Long-Term Monitoring Program sector of the Great Barrier Reef
+status: draft
+doc: 'Two-letter code of a latitudinal sector of the Great Barrier Reef in the Long-Term Monitoring Program
+  (LTMP) of the Australian Institute of Marine Science and in data built on its surveys: CG Cape Grenville,
+  PC Princess Charlotte Bay, CL Cooktown-Lizard Island, CA Cairns, IN Innisfail, TO Townsville, CU Cape
+  Upstart, WH Whitsundays, PO Pompeys, SW Swains, CB Capricorn-Bunker. Six of the codes are also ISO country
+  codes (CA, CG, CL, CU, IN, TO).'
+parent: category
+categories:
+- environment
+- geo
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:CG|PC|CL|CA|IN|TO|CU|WH|PO|SW|CB)$
+examples:
+- value: CA
+  description: Cairns sector
+- value: SW
+  description: Swains sector
+- value: CB
+  description: Capricorn-Bunker sector
+- value: 'NO'
+  valid: false
+  description: not a sector
+links:
+- type: doc
+  url: https://apps.aims.gov.au/metadata/view/b2033dc8-e620-45a7-bcea-e651aa30fa51

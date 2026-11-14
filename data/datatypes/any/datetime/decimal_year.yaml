@@ -1,0 +1,29 @@
+id: decimal_year
+name: Decimal year (year with a fraction)
+status: draft
+doc: 'A point in time written as a number: the year and, as a decimal fraction, the part of the year that
+  has passed (1994.83 is late October 1994). Long time series of climate, ocean, geodesy and ecological
+  monitoring use it because it plots and regresses as a plain number; R lubridate writes it with decimal_date().
+  A whole year without a fraction is year.'
+parent: datetime
+categories:
+- datetime
+- science
+langs:
+- common
+is_pii: false
+regexp: ^[12]\d{3}\.\d{1,6}$
+examples:
+- value: '1994.83'
+  description: AIMS Scott Reef coral monitoring (Deci_Year)
+- value: '2019.0417'
+  description: mid-January 2019
+- value: '1994'
+  valid: false
+  description: 'a whole year: year'
+- value: '19.94'
+  valid: false
+  description: not a year
+links:
+- type: doc
+  url: https://lubridate.tidyverse.org/reference/decimal_date.html
