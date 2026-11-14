@@ -1,0 +1,23 @@
+id: es_month
+name: Month name (Spanish)
+status: draft
+doc: 'Name of a month in Spanish: enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre
+  (also setiembre), octubre, noviembre, diciembre, capitalised or not (Octubre, octubre); files also write
+  them in capitals (FEBRERO). Directories of fairs and festivals give the month of an event this way.'
+semantic_type: month
+langs:
+- es
+regexp: ^(?:[Ee]nero|[Ff]ebrero|[Mm]arzo|[Aa]bril|[Mm]ayo|[Jj]unio|[Jj]ulio|[Aa]gosto|[Ss]ep?tiembre|[Oo]ctubre|[Nn]oviembre|[Dd]iciembre)$
+examples:
+- value: Octubre
+  description: Mes of the book fairs of the Argentine culture ministry (SInCA, 2022)
+- value: Febrero
+  description: Mes de realización of the festivals, the same source
+- value: setiembre
+  description: September, the spelling of Uruguay and Peru
+- value: lunes
+  valid: false
+  description: a day of the week
+translations:
+  es:
+    name: Nombre del mes

@@ -1,0 +1,38 @@
+id: au_federal_electoral_division
+name: Australian federal electoral division (Commonwealth Electoral Division)
+status: draft
+doc: 'Name of an electoral division of the Australian House of Representatives (a Commonwealth Electoral
+  Division, CED, of the ABS), each electing one member: Banks, Bennelong, Kingsford Smith, Eden-Monaro,
+  O''Connor. The Australian Electoral Commission redraws and sometimes renames them (150 divisions in
+  2013, 151 since 2019: Batman became Cooper, Denison Clark and Melbourne Ports Macnamara in 2018). The
+  ABS codes them with three digits, the state digit and a serial (101 Banks), which are not names of divisions.
+  Queensland local councils with divisions (Division 1) are council wards.'
+parent: admin_area_2
+categories:
+- government
+- geo
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Banks
+  description: NSW, ABS CED code 101 (2013)
+- value: Kingsford Smith
+- value: Eden-Monaro
+- value: O'Connor
+- value: Macnamara
+  description: Melbourne Ports until 2018
+- value: Division 1
+  valid: false
+  description: a council division
+links:
+- type: doc
+  url: https://www.aec.gov.au/electorates/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Divisions_of_the_Australian_House_of_Representatives
+translations:
+  ru:
+    name: Избирательный округ Палаты представителей Австралии

@@ -1,0 +1,39 @@
+id: fiscal_year
+name: Fiscal (financial) year
+status: draft
+doc: 'Financial or fiscal year that does not start on 1 January, written as the two calendar years it
+  spans: the first year and the last two digits of the second (2014-15, 2014–15 with an en dash, 2014/15,
+  1999-00), both years in full (2014-2015, 2010/2011) or with an FY prefix (FY2014-15, FY201415). Australian,
+  New Zealand, British and Indian statistics, budgets and tax tables are kept by such years (the Australian
+  financial year runs from 1 July to 30 June). The second year follows the first. A US-style FY2024 names
+  a fiscal year by one year and is a year.'
+parent: year
+categories:
+- datetime
+- finances
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:FY ?)?(?:1[89]|20)\d{2}(?:[-–/](?:\d{2}|(?:1[89]|20)\d{2})|\d{2})$
+examples:
+- value: 2014-15
+  description: Australian financial year 1 July 2014 to 30 June 2015
+- value: 2010–11
+  description: With an en dash, as the ATO taxation statistics write it
+- value: 2014/15
+- value: 1999-00
+- value: 2010/2011
+- value: FY201213
+  description: Compact form of the Department of Education child care data
+- value: '2014'
+  valid: false
+  description: One calendar year
+- value: 2014-Q1
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Fiscal_year
+translations:
+  ru:
+    name: Финансовый год

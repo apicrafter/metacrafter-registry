@@ -1,0 +1,41 @@
+id: attendance_mode
+name: Attendance mode (in person, online, mixed)
+status: draft
+doc: 'How people take part in an event, a course or a service: in person (Presencial, onsite), online
+  (Virtual, A distancia, en línea) or both (Mixta, Bimodal, Semipresencial, hybrid, blended). schema.org
+  has it as eventAttendanceMode of an event (OfflineEventAttendanceMode, OnlineEventAttendanceMode, MixedEventAttendanceMode)
+  and courseMode of a course; directories of fairs, festivals and degree programmes call it modalidad.'
+parent: category
+categories:
+- education
+- media
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Presencial
+  description: Modalidad of the book fairs of the Argentine culture ministry (SInCA, 2022)
+- value: Virtual
+  description: same list
+- value: Bimodal
+  description: same list
+- value: A Distancia
+  description: Modalidad of the university degrees in the arts, the same source
+- value: OnlineEventAttendanceMode
+  description: schema.org
+- value: Licitación pública
+  valid: false
+  description: modalidad of a procurement procedure is a procurement method
+mappings:
+  schema_org:
+  - eventAttendanceMode
+  - courseMode
+links:
+- type: schema.org
+  url: https://schema.org/eventAttendanceMode
+- type: schema.org
+  url: https://schema.org/courseMode
+translations:
+  es:
+    name: Modalidad (presencial, virtual, mixta)

@@ -1,0 +1,36 @@
+id: au_gccsa_code
+name: ABS Greater Capital City Statistical Area (GCCSA) code
+status: draft
+doc: 'Five-character code of a Greater Capital City Statistical Area of the ABS Australian Statistical
+  Geography Standard, which splits each state into its capital city and the rest of the state: the state
+  digit, G for a greater capital city or R for the rest of the state, and three letters (1GSYD Greater
+  Sydney, 1RNSW Rest of NSW, 2GMEL, 2RVIC, 3GBRI, 3RQLD, 4GADE, 4RSAU, 5GPER, 5RWAU, 6GHOB, 6RTAS, 7GDAR,
+  7RNTE); the ACT is 8ACTE and the Other Territories 9OTER.'
+parent: admin_area_2
+categories:
+- geo
+- government
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[1-7][GR][A-Z]{3}|8ACTE|9OTER)$
+examples:
+- value: 1GSYD
+  description: Greater Sydney
+- value: 1RNSW
+  description: Rest of NSW
+- value: 8ACTE
+  description: Australian Capital Territory
+- value: 7GDAR
+  description: Greater Darwin
+- value: 9GSYD
+  valid: false
+links:
+- type: doc
+  url: https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/main-structure-and-greater-capital-city-statistical-areas/greater-capital-city-statistical-areas
+translations:
+  ru:
+    name: Код статистической зоны столичного региона (GCCSA) Австралии
