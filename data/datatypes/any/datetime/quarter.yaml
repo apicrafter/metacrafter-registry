@@ -1,18 +1,24 @@
 id: quarter
 name: Quarter of the year
 status: stable
-doc: A calendar quater of the year
+doc: A calendar quarter of the year, as a number (1 to 4) or with the letter Q (Q1 to Q4); statistics
+  also write it with the year (Q1-2015, 2015 Q1).
 categories:
 - datetime
 langs:
 - common
 is_pii: false
-regexp: ^[1234]$
+regexp: ^[Qq]?[1-4]$
 examples:
 - value: '1'
   description: First quarter
 - value: '2'
-  description: Secord quarter
+  description: Second quarter
+- value: Q3
+  description: Third quarter
+- value: '5'
+  valid: false
+  description: not a quarter
 mappings:
   cdm: means.calendar.quarterOfYear
   fta: PERIOD.QUARTER

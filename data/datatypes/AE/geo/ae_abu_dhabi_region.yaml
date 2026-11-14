@@ -1,0 +1,37 @@
+id: ae_abu_dhabi_region
+name: Region of the emirate of Abu Dhabi
+status: draft
+doc: Name of one of the three regions of the emirate of Abu Dhabi, in English or Arabic, as the statistics
+  of Abu Dhabi label their tables by region (Region, Region_AR) - Abu Dhabi (the capital region), Al Ain
+  (the eastern region, العين) and Al Dhafra (الظفرة), called the Western Region (المنطقة الغربية, Al Gharbia)
+  until 2017. Abu Dhabi is also the name of the emirate (ae_emirate) and of its capital city, and federal
+  tables list Al Ain and Western Region beside the seven emirates.
+parent: admin_area_2
+categories:
+- geo
+- government
+country:
+- AE
+langs:
+- ar
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Al Ain
+- value: Al Dhafra
+- value: Western Region
+  description: Al Dhafra before 2017
+- value: الظفرة
+  description: Al Dhafra in Arabic
+- value: Dubai
+  valid: false
+  description: an emirate (ae_emirate)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Emirate_of_Abu_Dhabi
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Al_Dhafra_Region
+translations:
+  ar:
+    name: منطقة في إمارة أبوظبي
