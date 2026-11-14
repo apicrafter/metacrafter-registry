@@ -1,0 +1,33 @@
+id: survey_weight
+name: Survey weight
+status: draft
+doc: 'Weight of a record of a sample survey or of another sample: the number of units of the population
+  that the respondent, household or sampled article stands for, or a factor that corrects for unequal
+  selection probabilities, nonresponse and the composition of the population (design, post-stratification,
+  calibration and analysis weights). A positive number, usually with decimals and close to 1 on average.
+  The European Social Survey names its weights dweight, pspwght, pweight and anweight, Austrian surveys
+  Gewicht or gew. Not the weight of a thing (weight).'
+categories:
+- science
+langs:
+- common
+is_pii: false
+regexp: ^\d{1,7}(?:[.,]\d+)?(?:[eE]-?\d+)?$
+examples:
+- value: '0.5977'
+  description: Design weight of the Social Survey Austria 2016 (Gewicht_DES)
+- value: '2.555830211799104'
+  description: Weight of the AUTNES post-election survey 2017 (gew)
+- value: '0.922626912593842'
+  description: Design weight of the European Social Survey in Ireland (dweight)
+- value: '1'
+  description: Weight of a respondent in a self-weighting sample
+- value: '-0.4'
+  valid: false
+  description: Weights are not negative
+links:
+- type: doc
+  url: https://www.europeansocialsurvey.org/methodology/ess-methodology/data-processing-and-archiving/weighting
+translations:
+  de:
+    name: Gewichtungsfaktor

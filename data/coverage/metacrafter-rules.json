@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "fe30a7cc39487fbb6022fdcafcdb4e0cb3f31691"
+  "ref": "f0c25adfb96bc60672093a51a27493bcacabe368"
  },
  "rules": [
   {
@@ -5725,6 +5725,46 @@
    "country_code": "xx"
   },
   {
+   "rule": "cowcountrycodebyname",
+   "key": "cow_country_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/survey.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "surveyweightbyname",
+   "key": "survey_weight",
+   "type": "field",
+   "match": "regex",
+   "file": "common/survey.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "variablenamebyname",
+   "key": "variable_name",
+   "type": "field",
+   "match": "regex",
+   "file": "common/survey.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "variablenamevalue",
+   "key": "variable_name",
+   "type": "data",
+   "match": "regex",
+   "file": "common/survey.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "iccidfield",
    "key": "iccid",
    "type": "field",
@@ -7611,6 +7651,16 @@
    "match": "regex",
    "file": "eu/eu_funding.yaml",
    "context": "government",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
+   "rule": "eudegurbabyname",
+   "key": "eu_degurba",
+   "type": "field",
+   "match": "regex",
+   "file": "eu/eu_geo.yaml",
+   "context": "geo",
    "lang": "en",
    "country_code": "eu"
   },
@@ -12323,6 +12373,26 @@
    "context": "pii",
    "lang": "nl",
    "country_code": "nl"
+  },
+  {
+   "rule": "agebyname",
+   "key": "age",
+   "type": "field",
+   "match": "regex",
+   "file": "pii/pii.yaml",
+   "context": "pii",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "agerangebyname",
+   "key": "age_range",
+   "type": "field",
+   "match": "regex",
+   "file": "pii/pii.yaml",
+   "context": "pii",
+   "lang": "common",
+   "country_code": "xx"
   },
   {
    "rule": "birthdayknown",

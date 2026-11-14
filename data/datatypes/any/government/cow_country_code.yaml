@@ -1,0 +1,37 @@
+id: cow_country_code
+name: Correlates of War country code (COW state number)
+status: draft
+doc: 'Numeric code of a state in the State System Membership List of the Correlates of War (COW) project,
+  from 2 (United States of America) to 990 (Samoa): 200 United Kingdom, 255 Germany, 305 Austria, 365
+  Russia, 710 China, 900 Australia. Political science datasets (COW, V-Dem, Polity, UCDP) use it to join
+  country-years and often name it ccode or COWcode. The list keeps the codes of states that no longer
+  exist (260 German Federal Republic, 300 Austria-Hungary). The codes are not ISO 3166-1 numeric codes
+  (countrycode_num), and the three-letter COW state abbreviations (UKG, GMY) are not ISO alpha-3 codes.'
+parent: country
+categories:
+- government
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,3}$
+examples:
+- value: '2'
+  description: United States of America
+- value: '305'
+  description: Austria
+- value: '900'
+  description: Australia
+- value: '260'
+  description: German Federal Republic (1955-1990)
+- value: '1000'
+  valid: false
+  description: Codes have at most three digits
+links:
+- type: doc
+  url: https://correlatesofwar.org/cow-country-codes/
+- type: doc
+  url: https://correlatesofwar.org/data-sets/state-system-membership/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Correlates_of_War
