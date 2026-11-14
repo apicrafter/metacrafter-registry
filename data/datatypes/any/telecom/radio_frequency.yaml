@@ -1,0 +1,41 @@
+id: radio_frequency
+name: Broadcast frequency of a radio station
+status: draft
+doc: 'Carrier frequency on which a radio or television station broadcasts, usually with the band or the
+  unit: FM stations in megahertz between 87.5 and 108.0 (88.3, FM 104.1, 97.9 FM; ITU Region 2, the Americas,
+  uses 88 to 108 MHz with a step of 0.2), AM (medium wave) stations in kilohertz between about 520 and
+  1710 (800 KHz, AM 870). Station lists of broadcasting regulators and media directories hold it beside
+  the call sign; the band alone (FM, AM) and the channel number of a television station are not this type.'
+categories:
+- telecom
+- media
+langs:
+- common
+is_pii: false
+examples:
+- value: '88.3'
+  description: frecuencia of a community radio in the radio station list of the Argentine culture ministry
+    (SInCA, 2015)
+- value: FM 104.1
+  description: same list
+- value: 1410KHZ
+  description: an AM station of the same list
+- value: 97.9 FM
+- value: FM
+  valid: false
+  description: the band without the frequency
+- value: '150'
+  valid: false
+  description: outside the FM and AM broadcast bands
+mappings:
+  schema_org: broadcastFrequencyValue
+links:
+- type: schema.org
+  url: https://schema.org/broadcastFrequencyValue
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/FM_broadcast_band
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/AM_broadcasting
+translations:
+  es:
+    name: Frecuencia de emisión de una radio

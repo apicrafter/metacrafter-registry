@@ -1,0 +1,41 @@
+id: socioeconomic_level
+name: Socioeconomic level (NSE, social grade)
+status: draft
+doc: 'Socioeconomic class of a household or a person in market research and surveys, as letters of a national
+  scheme or in words: in Latin America the nivel socioeconómico (NSE), in Argentina ABC1, C2, C3, D1,
+  D2, E (also AB and C1, grouped C2+C3, D2E), in Mexico the AMAI levels A/B, C+, C, C-, D+, D, E, in Chile
+  AB, C1a, C1b, C2, C3, D, E, in Brazil the classes A, B1, B2, C1, C2, DE of the Critério Brasil; in the
+  United Kingdom the NRS social grades A, B, C1, C2, D, E; or Alto, Medio, Bajo. The point scores the
+  classes are computed from are numbers, not this type.'
+parent: category
+categories:
+- persons
+- science
+langs:
+- es
+- pt
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: ABC1
+  description: niv_socioe of the 2022-2023 national survey of cultural consumption of Argentina (ENCC)
+- value: D2E
+  description: same survey
+- value: C2+C3
+  description: nse_3, the three-class grouping of the same survey
+- value: C+
+  description: AMAI level, Mexico
+- value: C1
+  description: NRS social grade, United Kingdom
+- value: '44'
+  valid: false
+  description: NSE point score (NSEpuntaje of the ENCC 2017)
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Nivel_socioecon%C3%B3mico
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/NRS_social_grade
+translations:
+  es:
+    name: Nivel socioeconómico (NSE)

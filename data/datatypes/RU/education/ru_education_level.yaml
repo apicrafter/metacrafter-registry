@@ -9,6 +9,7 @@ doc: Level or subtype of education under Article 10 of Federal Law No. 273-FZ "O
   education; vocational training is a separate kind of education. Registers of education licenses and
   accreditations on regional open data portals list what an organization teaches in one cell, separated
   by semicolons or commas; the regexp accepts one item or such a list.
+parent: education_level
 categories:
 - education
 country:

@@ -1,0 +1,41 @@
+id: ar_heritage_category
+name: Argentine national heritage category
+status: draft
+doc: 'Category under which a building, place, grave, object, tree or town is declared national historic
+  heritage of Argentina by law or decree, on the proposal of the Comisión Nacional de Monumentos, de Lugares
+  y de Bienes Históricos (Ley 12.665, as amended by Ley 27.103 of 2015): Monumento Histórico Nacional,
+  Lugar Histórico Nacional, Sepulcro Histórico Nacional, Bien de Interés Histórico Nacional, Bien de Interés
+  Histórico Artístico, Bien de Interés Arquitectónico, Bien de Interés Industrial, Poblado Histórico,
+  Área Urbana Histórica, Árbol Histórico and others; files often drop the word Nacional (Monumento Histórico)
+  and vary in case and accents.'
+parent: category
+categories:
+- government
+- geo
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Monumento Histórico
+  description: denominacion_especifica of the national monuments and historic places of the Argentine
+    culture ministry (SInCA)
+- value: Lugar Histórico Nacional
+  description: same list
+- value: Bien de Interés Histórico y Artístico
+  description: same list
+- value: Sepulcro
+  description: same list
+- value: Museo
+  valid: false
+  description: a kind of institution, not a heritage category
+links:
+- type: doc
+  url: https://www.argentina.gob.ar/cultura/monumentos
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Monumento_Hist%C3%B3rico_Nacional_(Argentina)
+translations:
+  es:
+    name: Categoría de patrimonio histórico nacional (Argentina)

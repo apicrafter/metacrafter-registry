@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "bcc7e7a08f76b5b8557a791a4dff5e0d045b01f2"
+  "ref": "4fd422e5cabf8281b3dd29a0fed70cec27240766"
  },
  "rules": [
   {
@@ -485,6 +485,26 @@
    "country_code": "ar"
   },
   {
+   "rule": "arconabipnumberbyname",
+   "key": "ar_conabip_number",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_common.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arheritagecategoryvalue",
+   "key": "ar_heritage_category",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_common.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
    "rule": "arphoneknown",
    "key": "phone",
    "type": "field",
@@ -779,6 +799,16 @@
    "key": "ar_province",
    "type": "data",
    "match": "func",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arregionbyname",
+   "key": "ar_region",
+   "type": "field",
+   "match": "regex",
    "file": "ar_country/ar_geo.yaml",
    "context": "geo",
    "lang": "es",
@@ -2435,6 +2465,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "booleansino",
+   "key": "boolean",
+   "type": "data",
+   "match": "text",
+   "file": "common/boolean.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "booleanyesno",
    "key": "boolean",
    "type": "data",
@@ -3561,6 +3601,126 @@
    "match": "ppr",
    "file": "common/dateandtime.yaml",
    "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "attendancemodebyname",
+   "key": "attendance_mode",
+   "type": "field",
+   "match": "regex",
+   "file": "common/directories.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "degreetitlebyname",
+   "key": "academicdegree",
+   "type": "field",
+   "match": "regex",
+   "file": "common/directories.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "educationlevelbyname",
+   "key": "education_level",
+   "type": "field",
+   "match": "regex",
+   "file": "common/directories.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "geocodingprecisionbyname",
+   "key": "geocoding_precision",
+   "type": "field",
+   "match": "regex",
+   "file": "common/directories.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "geocodingprecisionvalue",
+   "key": "geocoding_precision",
+   "type": "data",
+   "match": "func",
+   "file": "common/directories.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "legislationnumberbyname",
+   "key": "legislation_number",
+   "type": "field",
+   "match": "regex",
+   "file": "common/directories.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "legislationtypebyname",
+   "key": "legislationtype",
+   "type": "field",
+   "match": "regex",
+   "file": "common/directories.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "ownershiptypebyname",
+   "key": "ownership_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/directories.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "periodicitybyname",
+   "key": "periodicity",
+   "type": "field",
+   "match": "regex",
+   "file": "common/directories.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "radiofrequencybyname",
+   "key": "radio_frequency",
+   "type": "field",
+   "match": "regex",
+   "file": "common/directories.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "radiofrequencyvalue",
+   "key": "radio_frequency",
+   "type": "data",
+   "match": "func",
+   "file": "common/directories.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "socioeconomiclevelbyname",
+   "key": "socioeconomic_level",
+   "type": "field",
+   "match": "regex",
+   "file": "common/directories.yaml",
+   "context": "common",
    "lang": "common",
    "country_code": "xx"
   },
@@ -8365,6 +8525,16 @@
    "country_code": "es"
   },
   {
+   "rule": "esphonebyname",
+   "key": "phone",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_common.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esphoneknown",
    "key": "phone",
    "type": "field",
@@ -8395,12 +8565,32 @@
    "country_code": "es"
   },
   {
+   "rule": "esmonthnamevalue",
+   "key": "es_month",
+   "type": "data",
+   "match": "func",
+   "file": "es/es_datetime.yaml",
+   "context": "datetime",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esyearbydatafiltered",
    "key": "year",
    "type": "data",
    "match": "ppr",
    "file": "es/es_datetime.yaml",
    "context": "datetime",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esfloorbyname",
+   "key": "address_line2",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_geo.yaml",
+   "context": "geo",
    "lang": "es",
    "country_code": "es"
   },
@@ -8468,6 +8658,16 @@
    "rule": "esreferenciacatastralvalue",
    "key": "es_referenciacatastral",
    "type": "data",
+   "match": "regex",
+   "file": "es/es_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esstreetaddressbyname",
+   "key": "street_address",
+   "type": "field",
    "match": "regex",
    "file": "es/es_geo.yaml",
    "context": "geo",
@@ -12965,6 +13165,16 @@
    "country_code": "es"
   },
   {
+   "rule": "esbirthyearknown",
+   "key": "birth_year",
+   "type": "field",
+   "match": "text",
+   "file": "pii/es/es_pii.yaml",
+   "context": "pii",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esgenderbyname",
    "key": "gender",
    "type": "field",
@@ -13556,6 +13766,16 @@
   },
   {
    "rule": "genderbyname",
+   "key": "gender",
+   "type": "field",
+   "match": "regex",
+   "file": "pii/pii.yaml",
+   "context": "pii",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "genderbyspanishname",
    "key": "gender",
    "type": "field",
    "match": "regex",
