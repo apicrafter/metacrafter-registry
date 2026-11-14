@@ -1,0 +1,40 @@
+id: au_nvis_stratum
+name: NVIS vegetation stratum code (Australia)
+status: draft
+doc: 'Vegetation stratum or substratum of the National Vegetation Information System (NVIS) of Australia:
+  the upper (U), mid (M) and ground (G) strata and the emergent layer (E), and their substrata from the
+  tallest down, U1 to U3, M1 to M3 and G1 to G3 (G3 is the substrate surface). TERN vegetation structure
+  data also write the strata as words (Upper-storey, Mid-storey, Emergent).'
+parent: category
+categories:
+- environment
+- science
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[UMG][123]?|E)$
+examples:
+- value: U
+  description: Upper stratum
+- value: M1
+  description: Tallest shrub layer
+- value: G2
+  description: Ground layer
+- value: U3
+  description: Third tree layer
+- value: G4
+  valid: false
+  description: NVIS has three ground substrata
+links:
+- type: doc
+  url: http://linked.data.gov.au/def/tern-cv/294bc99b-23df-4fea-b8e0-20aa5e6401f6
+- type: doc
+  url: http://linked.data.gov.au/def/tern-cv/43ed01cc-0089-4a6b-8754-0990dd0f697b
+- type: doc
+  url: https://www.dcceew.gov.au/environment/land/native-vegetation/national-vegetation-information-system
+translations:
+  ru:
+    name: Код яруса растительности NVIS (Австралия)

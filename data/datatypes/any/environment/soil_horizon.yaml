@@ -1,0 +1,41 @@
+id: soil_horizon
+name: Soil horizon designation
+status: draft
+doc: 'Designation of a soil horizon in a soil profile description: a master horizon letter (O, P, A, E,
+  B, C, D, R; FAO and WRB also L, H, M, W), optionally a transitional combination (AB, BC), a number of
+  a subdivision (A1, A2, B21; A11 and A12 in the Australian Soil and Land Survey Field Handbook), lower
+  case suffixes of subordinate properties (Ap, Bt, Bw, Bk2) and a leading number of a lithological discontinuity
+  (2C). Single letters are horizons only in a horizon field.'
+parent: category
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d?(?:[OPAEBCDRLHMW]|AB|AE|AC|BA|BC|BE|CB|EB|[AB]/[BC])\d{0,2}[a-z]{0,3}\d?$
+examples:
+- value: A1
+  description: Surface mineral horizon, Australian notation
+- value: A12
+  description: Second subdivision of the A1 horizon
+- value: B21
+  description: Upper part of the B2 horizon
+- value: Bt
+  description: B horizon with illuvial clay (FAO)
+- value: 2C
+  description: C horizon below a lithological discontinuity
+- value: A11 sandy loam
+  valid: false
+  description: Horizon with a texture
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Soil_horizon
+- type: doc
+  url: https://www.fao.org/3/a0541e/a0541e.pdf
+- type: doc
+  url: https://www.publish.csiro.au/book/8129
+translations:
+  ru:
+    name: Обозначение почвенного горизонта

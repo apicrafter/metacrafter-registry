@@ -1,0 +1,41 @@
+id: au_ibra_region_code
+name: IBRA bioregion code (Australia)
+status: draft
+doc: Three-letter code of one of the 89 bioregions of the Interim Biogeographic Regionalisation for Australia,
+  version 7 (IBRA 7, 2012), the framework of the National Reserve System and of TERN AusPlots plot names
+  (au_ausplots_site_id). NNC is the NSW North Coast, STP the Stony Plains, WET the Wet Tropics. A subregion
+  adds two digits (AVW01 Merredin). The name of a bioregion is au_ibra_region.
+parent: category
+categories:
+- environment
+- geo
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:ARC|ARP|AUA|AVW|BBN|BBS|BEL|BHC|BRT|CAR|CEA|CEK|CER|CHC|CMC|COO|COP|COS|CYP|DAB|DAC|DAL|DEU|DMR|DRP|EIU|ESP|EYB|FIN|FLB|FUR|GAS|GAW|GES|GFU|GID|GSD|GUC|GUP|GVD|HAM|ITI|JAF|KAN|KIN|LSD|MAC|MAL|MDD|MGD|MII|MUL|MUR|NAN|NCP|NET|NNC|NOK|NSS|NUL|OVP|PCK|PIL|PSI|RIV|SAI|SCP|SEC|SEH|SEQ|SSD|STP|STU|SVP|SWA|SYB|TAN|TCH|TIW|TNM|TNS|TSE|TSR|TWE|VIB|VIM|WAR|WET|YAL)$
+examples:
+- value: NNC
+  description: NSW North Coast
+- value: SEH
+  description: South Eastern Highlands
+- value: WET
+  description: Wet Tropics
+- value: KIN
+  description: King (Tasmania)
+- value: NSW
+  valid: false
+  description: A state abbreviation
+- value: AVW01
+  valid: false
+  description: A subregion (Merredin)
+links:
+- type: doc
+  url: https://www.dcceew.gov.au/environment/land/nrs/science/ibra
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Interim_Biogeographic_Regionalisation_for_Australia
+translations:
+  ru:
+    name: Код биорегиона IBRA (Австралия)

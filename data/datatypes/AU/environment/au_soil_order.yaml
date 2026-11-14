@@ -1,0 +1,41 @@
+id: au_soil_order
+name: Australian Soil Classification order
+status: draft
+doc: 'Order of the Australian Soil Classification (ASC), the national soil taxonomy of the National Committee
+  on Soil and Terrain (Isbell): Anthroposols, Organosols, Podosols, Vertosols, Hydrosols, Kurosols, Sodosols,
+  Chromosols, Calcarosols, Ferrosols, Dermosols, Kandosols, Rudosols and Tenosols, in the order of the
+  key. Data write the order in the plural or the singular, alone or after the lower levels of the classification
+  (suborder, great group: Brown Kurosol, Acidic-mottled, Dystrophic, Yellow Dermosol).'
+parent: category
+categories:
+- environment
+- science
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:.*[ ,])?(?:Anthropo|Organo|Podo|Verto|Hydro|Kuro|Sodo|Chromo|Calcaro|Ferro|Dermo|Kando|Rudo|Teno)sols?$
+examples:
+- value: Tenosols
+  description: Calperum Mallee SuperSite
+- value: Chromosol
+  description: Singular form
+- value: Brown Kurosol
+  description: Suborder and order
+- value: Acidic-mottled, Dystrophic, Yellow Dermosol
+  description: Great group, subgroup, suborder and order
+- value: Podzol
+  valid: false
+  description: A World Reference Base reference soil group (Podzols), not an ASC order
+links:
+- type: doc
+  url: https://www.clw.csiro.au/aclep/asc_re_on_line_V2/soilkey.htm
+- type: doc
+  url: https://www.publish.csiro.au/book/8016/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Australian_Soil_Classification
+translations:
+  ru:
+    name: Порядок почв по Австралийской классификации почв
