@@ -3,6 +3,7 @@ name: Austrian municipality code (Gemeindekennziffer)
 status: draft
 doc: 'Five-digit code of an Austrian municipality assigned by Statistics Austria: the state digit, two
   digits for the district and two for the municipality.'
+parent: id
 categories:
 - geo
 country:

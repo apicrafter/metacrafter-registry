@@ -1,0 +1,39 @@
+id: at_vrv_mvag
+name: Austrian budget MVAG code (Mittelverwendungs- und -aufbringungsgruppe)
+status: draft
+doc: Code of a group of the uses and sources of funds (Mittelverwendungs- und -aufbringungsgruppe, MVAG)
+  of the three-part budgets and accounts of the Austrian states and municipalities under VRV 2015 (BGBl.
+  II Nr. 313/2015, Anlagen 1a to 1c). The first digit is the part, 1 the balance sheet (Vermögenshaushalt,
+  101 Immaterielle Vermögenswerte), 2 the operating statement (Ergebnishaushalt, 211, 2111 Erträge aus
+  eigenen Abgaben), 3 the cash flow statement (Finanzierungshaushalt, 311 Einzahlungen aus der operativen
+  Verwaltungstätigkeit, 3111 Einzahlungen aus eigenen Abgaben); levels 1 to 3 have two to four digits.
+categories:
+- finances
+- government
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-3]\d{1,3}$
+examples:
+- value: '3111'
+  description: Einzahlungen aus eigenen Abgaben
+- value: '2211'
+  description: Ergebnishaushalt, a group of expenses
+- value: '101'
+  description: Immaterielle Vermögenswerte
+- value: '4111'
+  valid: false
+  description: No part 4
+links:
+- type: doc
+  url: https://www.bmf.gv.at/budget/finanzbeziehungen-zu-laendern-und-gemeinden/voranschlags-und-rechnungsabschlussverordnung.html
+- type: doc
+  url: https://www.ris.bka.gv.at/Dokumente/BgblAuth/BGBLA_2015_II_313/COO_2026_100_2_1143352.pdf
+translations:
+  de:
+    name: Mittelverwendungs- und -aufbringungsgruppe (MVAG)
+  ru:
+    name: Код группы использования и источников средств бюджета Австрии (MVAG)
