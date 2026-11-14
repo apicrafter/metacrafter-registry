@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "daf9744e90e600d5087f395908647572afed2cc6"
+  "ref": "15b2a6319dc683e09af35b79760bd9a1d848909e"
  },
  "rules": [
   {
@@ -775,10 +775,30 @@
    "country_code": "ar"
   },
   {
+   "rule": "arprovincebyname",
+   "key": "ar_province",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
    "rule": "arprovinceletterbyname",
    "key": "iso3166code_part",
    "type": "field",
    "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arprovincevalue",
+   "key": "ar_province",
+   "type": "data",
+   "match": "func",
    "file": "ar_country/ar_geo.yaml",
    "context": "geo",
    "lang": "es",
@@ -4595,6 +4615,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "kmlcoordinatestext",
+   "key": "kml_coordinates",
+   "type": "data",
+   "match": "func",
+   "file": "common/geo_text.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "ean13value",
    "key": "ean",
    "type": "data",
@@ -5705,6 +5735,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "orgunitbyname",
+   "key": "orgunit",
+   "type": "field",
+   "match": "regex",
+   "file": "common/orgs.yaml",
+   "context": "companies",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "orgunitesvalue",
+   "key": "orgunit",
+   "type": "data",
+   "match": "func",
+   "file": "common/orgs.yaml",
+   "context": "companies",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "avatarpersonbyknown",
    "key": "url",
    "type": "field",
@@ -5801,6 +5851,26 @@
    "match": "ppr",
    "file": "common/persons.yaml",
    "context": "persons",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "procurementmethodbyname",
+   "key": "procurement_method",
+   "type": "field",
+   "match": "regex",
+   "file": "common/procurement.yaml",
+   "context": "government",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "procurementmethodvalue",
+   "key": "procurement_method",
+   "type": "data",
+   "match": "func",
+   "file": "common/procurement.yaml",
+   "context": "government",
    "lang": "common",
    "country_code": "xx"
   },
@@ -8476,7 +8546,7 @@
   },
   {
    "rule": "esdatetimename",
-   "key": "datetime",
+   "key": "date",
    "type": "field",
    "match": "text",
    "file": "es/es_datetime.yaml",
@@ -13085,6 +13155,16 @@
    "country_code": "es"
   },
   {
+   "rule": "esbirthdayknown",
+   "key": "birthday",
+   "type": "data",
+   "match": "text",
+   "file": "pii/es/es_pii.yaml",
+   "context": "pii",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esbirthyearknown",
    "key": "birth_year",
    "type": "field",
@@ -13095,10 +13175,20 @@
    "country_code": "es"
   },
   {
+   "rule": "esgenderbyname",
+   "key": "gender",
+   "type": "field",
+   "match": "regex",
+   "file": "pii/es/es_pii.yaml",
+   "context": "pii",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esgenderknown",
    "key": "gender",
    "type": "data",
-   "match": "text",
+   "match": "func",
    "file": "pii/es/es_pii.yaml",
    "context": "pii",
    "lang": "es",

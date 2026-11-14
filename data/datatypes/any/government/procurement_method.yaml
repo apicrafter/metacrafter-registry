@@ -1,0 +1,66 @@
+id: procurement_method
+name: Procurement method (procedure type)
+status: draft
+doc: 'Type of the procedure by which a public buyer awards a contract, written out in the language of
+  the procurement law or as a code: open tender (Licitación Pública, Appel d''offres ouvert, Offenes Verfahren,
+  Avatud hankemenetlus, 一般競争入札), restricted or selective tender (Licitación Privada, Procedura ristretta,
+  指名競争入札), negotiated procedure, competitive dialogue, small purchases (Compras Menores, Procédure adaptée,
+  Contrato menor, Lihthange) and direct award (Contratación Directa, Adjudicación directa, Ajuste direto,
+  Affidamento diretto, 随意契約), often with the article of the law that allows it (Contratacion directa -
+  Inciso F in the purchase orders of ARSAT). The Open Contracting Data Standard maps them to its method
+  code list (open, selective, limited, direct) and keeps the local name in procurementMethodDetails; eForms
+  and TED use the procedure type code list (open, restricted, neg-w-call, neg-wo-call, comp-dial, innovation,
+  oth-single, oth-mult).'
+parent: category
+categories:
+- government
+- finances
+langs:
+- common
+- es
+- pt
+- fr
+- it
+- de
+- en
+- et
+- ru
+- ja
+is_pii: false
+classification: categorical
+examples:
+- value: Licitacion Publica Nacional
+  description: open national tender (ARSAT purchase orders, Argentina)
+- value: Contratacion directa - Inciso F
+  description: direct award under an article of the procurement rules of ARSAT
+- value: Compras Menores
+  description: small purchases (ARSAT)
+- value: Negociado sin publicidad
+  description: negotiated procedure without publication (Madrid, Spain)
+- value: Procédure adaptée
+  description: French adapted procedure below the EU thresholds (DECP)
+- value: Avatud hankemenetlus
+  description: Estonian open procedure
+- value: 指名競争入札
+  description: Japanese designated competitive bidding
+- value: open
+  description: OCDS method code
+- value: neg-wo-call
+  description: eForms procedure type code, negotiated without prior call for competition
+- value: 452-0001-LPU17
+  valid: false
+  description: 'a process number: ar_compras_procedure_number'
+links:
+- type: doc
+  url: https://standard.open-contracting.org/latest/en/schema/codelists/#method
+- type: doc
+  url: https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/procurement-procedure-type
+- type: doc
+  url: https://datos.arsat.com.ar/dataset/finanzas
+translations:
+  es:
+    name: Tipo de procedimiento de contratación
+  fr:
+    name: Type de procédure de passation
+  ru:
+    name: Способ определения поставщика
