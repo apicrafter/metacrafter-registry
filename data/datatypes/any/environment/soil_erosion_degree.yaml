@@ -1,0 +1,49 @@
+id: soil_erosion_degree
+name: Soil erosion degree
+status: draft
+doc: 'Degree of erosion of a soil or of the soils of a map unit in a soil survey: none, slight, moderate,
+  severe (strong) and extreme in the classes of the FAO Guidelines for soil description, as plain words
+  (slight, mild, strong in the soil profile database of the Armenian Soil Information System) or as adjectives
+  (non-eroded, slightly eroded, moderately eroded, severely eroded); map units of the soil map of Armenia
+  join two classes (slightly and moderately eroded). Russian soil maps write неэродированные, слабоэродированные,
+  среднеэродированные and сильноэродированные, or слабосмытые, среднесмытые and сильносмытые. The single-letter
+  codes of the FAO guidelines (S, M, V, E) and the kind of erosion (sheet, rill, gully, wind) are not
+  covered.'
+parent: category
+categories:
+- environment
+- science
+langs:
+- en
+- ru
+is_pii: false
+classification: categorical
+regexp: '^(?i:none|nil|slight|mild|weak|moderate|medium|strong|severe|very severe|extreme|(?:non|not|un)[-
+  ]?eroded|(?:slightly|weakly|moderately|strongly|severely|very severely|extremely)(?: and (?:moderately|strongly|severely|very
+  severely|extremely))? eroded|(?:не|слабо|средне|сильно)(?:эродированн|смыт)(?:ые|ый|ая|ое)|(?:слабо|средне)
+  и (?:средне|сильно) ?(?:эродированн|смыт)(?:ые|ый|ая|ое))$'
+examples:
+- value: slight
+  description: Soil profile database of ArmSIS (Erosion)
+- value: none
+  description: Soil profile database of ArmSIS
+- value: slightly eroded
+  description: Soil map of Armenia, ArmSIS (Erosion_EN)
+- value: moderately and severely eroded
+  description: Map unit of two classes, soil map of Armenia
+- value: слабоэродированные
+  description: Soil map of Armenia (Erosion_RU)
+- value: средне и сильноэродированные
+  description: Map unit of two classes in Russian
+- value: gully erosion
+  valid: false
+  description: Kind of erosion, not its degree
+- value: eroded
+  valid: false
+  description: No degree
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Soil_erosion
+translations:
+  ru:
+    name: Степень эродированности почвы

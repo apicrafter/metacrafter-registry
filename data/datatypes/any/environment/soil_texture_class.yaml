@@ -1,0 +1,48 @@
+id: soil_texture_class
+name: Soil texture class
+status: draft
+doc: 'Texture class of a soil or a soil horizon, named after the shares of sand, silt and clay. The USDA
+  texture triangle, which FAO uses too, has twelve classes: sand, loamy sand, sandy loam, loam, silt loam,
+  silt, sandy clay loam, clay loam, silty clay loam, sandy clay, silty clay and clay; sand classes take
+  a grain size (coarse sand, loamy fine sand, very fine sandy loam) and FAO adds heavy clay. Soviet and
+  Russian soil surveys use the classes of Kachinsky: песок, супесь, суглинок (лёгкий, средний, тяжёлый)
+  and глина, and their maps name units with the adjectives песчаные, супесчаные, легкосуглинистые, суглинистые,
+  тяжелосуглинистые and глинистые (the soil map of Armenia in the Armenian Soil Information System gives
+  them in Russian and English: суглинистые, loam). Numeric texture codes of survey forms are not covered.'
+parent: category
+categories:
+- environment
+- science
+langs:
+- en
+- ru
+is_pii: false
+classification: categorical
+regexp: '^(?i:(?:very )?(?:coarse |fine )?(?:sand|loamy (?:very )?(?:coarse |fine )?sand|sandy loam)|loam|silt
+  loam|silt|sandy clay loam|clay loam|silty clay loam|sandy clay|silty clay|(?:heavy )?clay|песок|супесь|суглинок(?:
+  (?:лёгкий|легкий|средний|тяжёлый|тяжелый))?|глина(?: (?:лёгкая|легкая|средняя|тяжёлая|тяжелая))?|(?:песчан|супесчан|(?:легко|средне|тяжело)?суглинист|глинист)(?:ые|ый|ая|ое))$'
+examples:
+- value: loam
+  description: Soil map of Armenia, ArmSIS (Texture_EN)
+- value: sandy loam
+  description: Soil map of Armenia, ArmSIS
+- value: silty clay loam
+  description: USDA texture class
+- value: loamy fine sand
+  description: Sand class with a grain size
+- value: суглинистые
+  description: Soil map of Armenia, ArmSIS (Texture_RU)
+- value: суглинок тяжёлый
+  description: Kachinsky class
+- value: '2'
+  valid: false
+  description: Numeric texture code of a survey form
+- value: sandy-pebble
+  valid: false
+  description: Parent material, not a texture class
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Soil_texture
+translations:
+  ru:
+    name: Гранулометрический класс почвы
