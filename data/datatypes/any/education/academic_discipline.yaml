@@ -1,0 +1,35 @@
+id: academic_discipline
+name: Academic discipline (field of research)
+status: draft
+doc: 'Branch of knowledge that a researcher, a project, a publication, a course or a degree belongs to,
+  by name: Biología, Medicina, Economics, Ciencias de la Tierra, Computer science. Surveys of researchers,
+  research information systems and university statistics name it after their own lists or a classification
+  such as the OECD Fields of Research and Development (FORD) or ANZSRC Fields of Research; the broad areas
+  above the disciplines (Ciencias Sociales, Natural Sciences) are the same type. Codes of a classification
+  without names, such as ISCED-F fields of education, have their own types (isced_f_2013).'
+parent: category
+categories:
+- education
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Biología
+  description: disciplina, survey of researchers of the Universidad Nacional de Rosario (RDA-UNR, 2023)
+- value: Ciencias Biomédicas y de la Salud
+  description: area, the same survey
+- value: Computer and information sciences
+  description: OECD Frascati field 1.2
+- value: '0101'
+  valid: false
+  description: 'a code: classification codes have their own types'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Outline_of_academic_disciplines
+- type: doc
+  url: https://www.oecd.org/en/publications/frascati-manual-2015_9789264239012-en.html
+translations:
+  es:
+    name: Disciplina académica (área de investigación)

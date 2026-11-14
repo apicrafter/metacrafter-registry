@@ -1,0 +1,36 @@
+id: date_range
+name: Date range
+status: draft
+doc: 'Period between two calendar dates written as one value: the dates joined by a dash, a slash or a
+  word (al, a, au, bis, to, until), as in 5-4-02 al 27-5-02, 22-1-02/27-2-02, 01.03.2020 - 31.03.2020
+  or the ISO 8601 interval 2020-01-01/2020-03-31. Field data, schedules and registers give the period
+  that a measurement, a harvest cut, a contract or an exhibition covers this way. Two years only are year_range,
+  two times of a day timerange.'
+parent: timespan
+categories:
+- datetime
+langs:
+- common
+is_pii: false
+examples:
+- value: 5-4-02 al 27-5-02
+  description: growth period between two alfalfa cuts, INTA Rafaela cultivar network (AquaCrop data, UNR)
+- value: 22-1-02/27-2-02
+  description: the same, slash form
+- value: 2020-01-01/2020-03-31
+  description: ISO 8601 time interval
+- value: 01.03.2020 - 31.03.2020
+- value: 2019-2020
+  valid: false
+  description: 'two years: year_range'
+- value: 08:00-22:00
+  valid: false
+  description: 'two times of day: timerange'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_8601#Time_intervals
+translations:
+  es:
+    name: Rango de fechas
+  ru:
+    name: Диапазон дат
