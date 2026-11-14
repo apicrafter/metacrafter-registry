@@ -1,0 +1,34 @@
+id: utm_zone
+name: UTM zone
+status: draft
+doc: 'Zone of the Universal Transverse Mercator projection that projected coordinates (easting, northing)
+  are given in: the zone number, 1 to 60, each six degrees of longitude wide, optionally with the latitude
+  band letter, C to X without I and O (50 J, 33U), or the hemisphere (55S, 18N). The Map Grid of Australia
+  (MGA) uses the UTM zones 49 to 56.'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[1-9]|[1-5]\d|60) ?[C-HJ-NP-X]?$
+examples:
+- value: 50 J
+  description: Great Western Woodlands, Western Australia
+- value: 33U
+  description: Central Europe
+- value: '56'
+  description: MGA zone 56, eastern New South Wales
+- value: '61'
+  valid: false
+- value: 50 O
+  valid: false
+  description: O is not a latitude band
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system
+- type: doc
+  url: https://www.icsm.gov.au/education/fundamentals-mapping/projections/universal-transverse-mercator-utm
+translations:
+  ru:
+    name: Зона UTM

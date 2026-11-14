@@ -1,0 +1,37 @@
+id: geodetic_datum
+name: Geodetic datum
+status: draft
+doc: 'Name of the geodetic datum (horizontal reference frame) that coordinates refer to: WGS 84, GDA94
+  and GDA2020 (Australia), AGD66, NAD27 and NAD83 (North America), ETRS89 and ED50 (Europe), OSGB36, JGD2011,
+  CGCS2000, SIRGAS 2000, Pulkovo 1942. Darwin Core calls the field geodeticDatum; the EPSG code of a coordinate
+  reference system is epsg_code.'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?i:WGS ?-?(?:84|1984|72)|GDA ?(?:94|2020)|AGD ?(?:66|84)|NAD ?(?:27|83)|ETRS ?89|ED ?50|OSGB
+  ?36|JGD ?20(?:00|11)|CGCS ?2000|SIRGAS ?2000|NZGD ?(?:49|2000)|Pulkovo 1942)$
+examples:
+- value: WGS 84
+  description: World Geodetic System 1984
+- value: GDA94
+  description: Geocentric Datum of Australia 1994
+- value: GDA2020
+  description: Geocentric Datum of Australia 2020
+- value: NAD83
+  description: North American Datum of 1983
+- value: EPSG:4326
+  valid: false
+  description: An EPSG code (epsg_code)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Geodetic_datum
+- type: doc
+  url: https://dwc.tdwg.org/terms/#dwc:geodeticDatum
+- type: doc
+  url: https://www.icsm.gov.au/datum
+translations:
+  ru:
+    name: Геодезическая система отсчёта (датум)

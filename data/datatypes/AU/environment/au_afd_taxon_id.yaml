@@ -1,0 +1,36 @@
+id: au_afd_taxon_id
+name: Australian Faunal Directory taxon UUID
+status: draft
+doc: 'UUID of a taxon of the Australian Faunal Directory (AFD), the catalogue of the animal species of
+  Australia, usually written as the URL of the taxon page: https://biodiversity.org.au/afd/taxa/ and the
+  UUID. TERN and Atlas of Living Australia data give it as the accepted name usage of an identification
+  (acceptedNameUsageID). The same pages are also addressed by the taxon name (Formicidae), the form of
+  Wikidata P6039.'
+categories:
+- science
+- environment
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:https?://(?:www\.)?biodiversity\.org\.au/afd/taxa/)?[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+examples:
+- value: https://biodiversity.org.au/afd/taxa/a14348d8-1a5d-47d1-9f66-dc82b7714a81
+  description: Genus Calomyrmex (Formicidae)
+- value: https://biodiversity.org.au/afd/taxa/45862761-9b24-4d48-af4d-616134d71964
+  description: Iridomyrmex anceps
+- value: https://biodiversity.org.au/afd/taxa/Formicidae
+  valid: false
+  description: Taxon page by name (Wikidata P6039 form)
+links:
+- type: doc
+  url: https://biodiversity.org.au/afd/home
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Australian_Faunal_Directory
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6039
+translations:
+  ru:
+    name: UUID таксона Australian Faunal Directory

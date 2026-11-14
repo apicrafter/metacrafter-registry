@@ -1,0 +1,37 @@
+id: au_ibra_region
+name: IBRA bioregion name (Australia)
+status: draft
+doc: Name of one of the 89 bioregions of the Interim Biogeographic Regionalisation for Australia, version
+  7 (IBRA 7, 2012), for example NSW North Coast, Brigalow Belt South or Wet Tropics. Bioregions are areas
+  of similar climate, geology, landform and vegetation; they cross state borders. The three-letter code
+  of a bioregion is au_ibra_region_code.
+parent: name
+categories:
+- environment
+- geo
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: NSW North Coast
+  description: NNC
+- value: South Eastern Highlands
+  description: SEH
+- value: Wet Tropics
+  description: WET
+- value: Murray Darling Depression
+  description: MDD
+- value: Riverland
+  valid: false
+  description: A region of South Australia, not a bioregion
+links:
+- type: doc
+  url: https://www.dcceew.gov.au/environment/land/nrs/science/ibra
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Interim_Biogeographic_Regionalisation_for_Australia
+translations:
+  ru:
+    name: Название биорегиона IBRA (Австралия)

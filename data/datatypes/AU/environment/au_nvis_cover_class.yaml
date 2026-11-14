@@ -1,0 +1,35 @@
+id: au_nvis_cover_class
+name: NVIS cover class code (Australia)
+status: draft
+doc: 'Cover class of a vegetation stratum in the National Vegetation Information System (NVIS) of Australia:
+  d (dense, crown cover over 80%), c (mid-dense, 50-80%), i (sparse, 20-50%), r (very sparse, 0.25-20%),
+  bi (isolated plants, under 0.25%) and bc (isolated clumps). TERN vegetation structure data record it
+  with the cover type (crown cover cc, foliage projective cover fpc).'
+parent: category
+categories:
+- environment
+- science
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:d|c|i|r|bi|bc)$
+examples:
+- value: d
+  description: Dense
+- value: i
+  description: Sparse
+- value: bc
+  description: Isolated clumps
+- value: x
+  valid: false
+links:
+- type: doc
+  url: http://linked.data.gov.au/def/tern-cv/7431d40e-0bf8-403f-bda5-8f9cd0e76a4f
+- type: doc
+  url: https://www.dcceew.gov.au/environment/land/native-vegetation/national-vegetation-information-system
+translations:
+  ru:
+    name: Класс проективного покрытия NVIS (Австралия)

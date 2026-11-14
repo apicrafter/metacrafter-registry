@@ -1,0 +1,40 @@
+id: au_nvis_growth_form
+name: NVIS plant growth form (Australia)
+status: draft
+doc: 'Growth form of a plant in the National Vegetation Information System (NVIS) of Australia, as the
+  Australian Vegetation Attribute Manual and the TERN vocabularies define it: tree (T), tree mallee (M),
+  shrub (S), mallee shrub (Y), heath shrub (Z), chenopod shrub (C), samphire shrub (U), grass-tree (X),
+  tussock grass (G), hummock grass (H), other grass (W), sedge (V), rush (R), forb (F), tree-fern (D),
+  fern (E), bryophyte (B), lichen (N), epiphyte (K), vine (L), palm (P), cycad (A), aquatic (Q), seagrass
+  (J), lower plant (O). Data write the name (tree, Tussock grass, Chenopod); the one-letter codes are
+  growth forms only in a growth form field.'
+parent: category
+categories:
+- environment
+- science
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: tree
+  description: T
+- value: hummock grass
+  description: H, Triodia
+- value: Chenopod
+  description: Chenopod shrub, as AusPlots point intercept data write it
+- value: mallee shrub
+  description: Y
+- value: sapling
+  valid: false
+  description: A growth stage, not a growth form
+links:
+- type: doc
+  url: https://www.dcceew.gov.au/environment/land/native-vegetation/national-vegetation-information-system
+- type: doc
+  url: http://linked.data.gov.au/def/tern-cv/b5fc9860-a819-491c-a44a-686c00a84ec0
+translations:
+  ru:
+    name: Жизненная форма растения NVIS (Австралия)

@@ -1,0 +1,48 @@
+id: au_ausplots_site_id
+name: TERN AusPlots site location name
+status: draft
+doc: 'Identifier of a plot of the TERN AusPlots ecosystem surveillance network (site location name): two
+  letters of the state (NS, NT, QD, SA, TC, VC, WA), one letter of the plot type (A for AusPlots Rangelands,
+  F for AusPlots Forests; other letters mark other networks, such as SuperSite plots), the three-letter
+  IBRA 7 bioregion code (au_ibra_region_code) and a four-digit plot number within the bioregion: SAASTP0001
+  is AusPlots plot 1 in the Stony Plains of South Australia. Some datasets write it with hyphens (SAA-STP-0001),
+  with three digits (NSFNNC001) or without the plot type letter (QDWET0001); joined with the site visit
+  number it identifies a visit (NSABHC0001-53596).'
+categories:
+- environment
+- science
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:NS|NT|QD|SA|TC|VC|WA)[A-Z]?-?(?:ARC|ARP|AUA|AVW|BBN|BBS|BEL|BHC|BRT|CAR|CEA|CEK|CER|CHC|CMC|COO|COP|COS|CYP|DAB|DAC|DAL|DEU|DMR|DRP|EIU|ESP|EYB|FIN|FLB|FUR|GAS|GAW|GES|GFU|GID|GSD|GUC|GUP|GVD|HAM|ITI|JAF|KAN|KIN|LSD|MAC|MAL|MDD|MGD|MII|MUL|MUR|NAN|NCP|NET|NNC|NOK|NSS|NUL|OVP|PCK|PIL|PSI|RIV|SAI|SCP|SEC|SEH|SEQ|SSD|STP|STU|SVP|SWA|SYB|TAN|TCH|TIW|TNM|TNS|TSE|TSR|TWE|VIB|VIM|WAR|WET|YAL)-?\d{3,4}$
+examples:
+- value: SAASTP0001
+  description: AusPlots Rangelands plot 1 in the Stony Plains bioregion (South Australia), the example
+    of the survey manual
+- value: NSFNNC0001
+  description: AusPlots Forests plot 1 in the NSW North Coast bioregion
+- value: QDAEIU0008
+  description: AusPlots plot in the Einasleigh Uplands (Queensland), Fletcherview ant survey
+- value: WAACOO0021
+  description: AusPlots plot in the Coolgardie bioregion (Western Australia)
+- value: NSFNNC001
+  description: Three-digit plot number, as in the AusPlots Forests large tree survey
+- value: SAAXYZ0001
+  valid: false
+  description: XYZ is not an IBRA bioregion code
+- value: NSABHC0001-53596
+  valid: false
+  description: Site and visit (site_unique), not the site
+links:
+- type: doc
+  url: https://www.tern.org.au/wp-content/uploads/TERN-Rangelands-Survey-Protocols-Manual_web.pdf
+- type: doc
+  url: https://www.tern.org.au/wp-content/uploads/TERN-Forests-Field-Manual_web.pdf
+- type: doc
+  url: https://cran.r-project.org/package=ausplotsR
+translations:
+  ru:
+    name: Идентификатор площадки TERN AusPlots

@@ -1,0 +1,34 @@
+id: au_tern_cv_concept
+name: TERN controlled vocabulary concept IRI
+status: draft
+doc: IRI of a concept of the TERN controlled vocabularies (TERN CV), the SKOS vocabularies of observable
+  properties, methods, feature types and categorical values of the Terrestrial Ecosystem Research Network,
+  http://linked.data.gov.au/def/tern-cv/ and a UUID. TERN data dictionaries link every field of a dataset
+  to one (the URI or URL column); the TERN linked data viewer resolves them.
+parent: url
+categories:
+- science
+- environment
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^https?://linked\.data\.gov\.au/def/tern-cv/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+examples:
+- value: http://linked.data.gov.au/def/tern-cv/889dfc31-5b1c-48c0-8bc7-e12f13d63891
+  description: site ID
+- value: http://linked.data.gov.au/def/tern-cv/7431d40e-0bf8-403f-bda5-8f9cd0e76a4f
+  description: NVIS cover class
+- value: https://w3id.org/tern/ontologies/tern/SamplingPoint
+  valid: false
+  description: A class of the TERN ontology, not a vocabulary concept
+links:
+- type: doc
+  url: https://linkeddata.tern.org.au/
+- type: doc
+  url: https://linkeddata.tern.org.au/viewers/tern-vocabs
+translations:
+  ru:
+    name: IRI понятия контролируемых словарей TERN
