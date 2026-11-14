@@ -5,7 +5,8 @@ doc: 'Identifier of a coordinate reference system (CRS) in the EPSG Geodetic Par
   covers the forms that name the authority: EPSG:4326, used by PROJ and many GIS tools, the OGC URN urn:ogc:def:crs:EPSG::4326
   and the OGC URI http://www.opengis.net/def/crs/EPSG/0/4326. The code itself is a number of four or five
   digits, and Wikidata stores only that number; a bare number is not covered because it looks like any
-  other number.'
+  other number. In a field named after EPSG (EPSG, EPSG_XYZ, epsg_origine, srid) the bare number is the
+  code too, as in the Austrian BEV control point files: 4936, 4937, 25833.'
 categories:
 - geo
 langs:

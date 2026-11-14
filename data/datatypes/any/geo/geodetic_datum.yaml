@@ -3,7 +3,9 @@ name: Geodetic datum
 status: draft
 doc: 'Name of the geodetic datum (horizontal reference frame) that coordinates refer to: WGS 84, GDA94
   and GDA2020 (Australia), AGD66, NAD27 and NAD83 (North America), ETRS89 and ED50 (Europe), OSGB36, JGD2011,
-  CGCS2000, SIRGAS 2000, Pulkovo 1942. Darwin Core calls the field geodeticDatum; the EPSG code of a coordinate
+  CGCS2000, SIRGAS 2000, Pulkovo 1942, and the national datums MGI (Austria), DHDN (Germany) and CH1903
+  (Switzerland). A national realization of ETRS89 follows a slash, as in ETRS89/AUSTRIA 2002 of the Austrian
+  BEV, which also writes ETRF89. Darwin Core calls the field geodeticDatum; the EPSG code of a coordinate
   reference system is epsg_code.'
 categories:
 - geo
@@ -11,8 +13,8 @@ langs:
 - common
 is_pii: false
 classification: categorical
-regexp: ^(?i:WGS ?-?(?:84|1984|72)|GDA ?(?:94|2020)|AGD ?(?:66|84)|NAD ?(?:27|83)|ETRS ?89|ED ?50|OSGB
-  ?36|JGD ?20(?:00|11)|CGCS ?2000|SIRGAS ?2000|NZGD ?(?:49|2000)|Pulkovo 1942)$
+regexp: ^(?i:WGS ?-?(?:84|1984|72)|GDA ?(?:94|2020)|AGD ?(?:66|84)|NAD ?(?:27|83)|ETR[SF] ?89(?:/[A-Z][A-Z
+  ]*\d{4})?|ED ?50|OSGB ?36|JGD ?20(?:00|11)|CGCS ?2000|SIRGAS ?2000|NZGD ?(?:49|2000)|Pulkovo 1942|MGI|DHDN|CH1903\+?)$
 examples:
 - value: WGS 84
   description: World Geodetic System 1984
@@ -22,6 +24,10 @@ examples:
   description: Geocentric Datum of Australia 2020
 - value: NAD83
   description: North American Datum of 1983
+- value: ETRS89/AUSTRIA 2002
+  description: Austrian realization of ETRS89 (BEV control points)
+- value: MGI
+  description: Militärgeographisches Institut datum of the Austrian national survey
 - value: EPSG:4326
   valid: false
   description: An EPSG code (epsg_code)
@@ -32,6 +38,8 @@ links:
   url: https://dwc.tdwg.org/terms/#dwc:geodeticDatum
 - type: doc
   url: https://www.icsm.gov.au/datum
+- type: doc
+  url: https://www.bev.gv.at/dam/jcr:9337832e-b531-49b6-8498-c44332cf3459/BEV_S_GV_TP-EP-ETRS89_CSV_V1.1.pdf
 translations:
   ru:
     name: Геодезическая система отсчёта (датум)

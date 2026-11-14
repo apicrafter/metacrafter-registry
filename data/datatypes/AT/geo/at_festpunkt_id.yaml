@@ -1,0 +1,39 @@
+id: at_festpunkt_id
+name: Austrian geodetic control point designation (BEV Festpunkt)
+status: draft
+doc: 'Designation of a horizontal control point of the Austrian national survey (BEV). A triangulation
+  point (Triangulierungspunkt) is TP, its number, a hyphen and the number of its ÖK 50 map sheet (at_oek50_sheet):
+  TP47-38. A densification point (Einschaltpunkt) is EP, the number of its cadastral municipality (at_kg_number),
+  a hyphen and its number: EP01404-3545. The letter and digit at the end mark the monumentation (A stone,
+  B bolt, M mast, T tower ...), so TP47-38T1 is the tower of point 47-38. BEV files write connected points
+  as the designation, a semicolon and the point name (TP4-84T1; GRÄN, KIRCHE).'
+parent: id
+categories:
+- geo
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:TP\d{1,4}-\d{1,3}|EP\d{5}-\d{1,4})[A-Z]\d$
+examples:
+- value: TP47-38T1
+  description: GÖTTWEIG, STIFTSKIRCHE (BEV interface description)
+- value: TP35-41M3
+  description: mast on the Kahlenberg, Vienna
+- value: EP01404-3545E1
+  description: densification point in Neuwaldegg, Vienna
+- value: TP 47-38
+  valid: false
+  description: written with a space and without the monumentation mark
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Festpunkt
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Trigonometrischer_Punkt
+- type: doc
+  url: https://www.bev.gv.at/dam/jcr:b2c6d2af-9888-47e9-8a37-15bcaf4d0685/BEV_S_GV_TP-EP-PP-MP-HP-CSV_V1.8.1.pdf
+translations:
+  de:
+    name: Festpunktbezeichnung

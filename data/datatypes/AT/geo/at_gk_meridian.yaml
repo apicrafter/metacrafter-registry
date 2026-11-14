@@ -1,0 +1,36 @@
+id: at_gk_meridian
+name: Meridian zone of the Austrian Gauss-Krüger grid (M28, M31, M34)
+status: draft
+doc: 'Zone of the Gauss-Krüger projection of the Austrian MGI datum that projected coordinates (easting,
+  northing) are given in, named after its central meridian east of Ferro: M28, M31 and M34 are 10°20′,
+  13°20′ and 16°20′ east of Greenwich (EPSG 31254 to 31256, or 31251 to 31253 counted from Ferro). Vorarlberg
+  and western Tyrol are in M28, Vienna and Burgenland in M34. BEV control point files give it in MERIDIAN;
+  the easting of a zone is counted from its central meridian, so it can be negative.'
+categories:
+- geo
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^M(?:28|31|34)$
+examples:
+- value: M28
+  description: western zone (Vorarlberg, western Tyrol)
+- value: M31
+  description: central zone
+- value: M34
+  description: eastern zone (Vienna)
+- value: M32
+  valid: false
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Gau%C3%9F-Kr%C3%BCger-Koordinatensystem
+- type: doc
+  url: https://www.bev.gv.at/dam/jcr:b2c6d2af-9888-47e9-8a37-15bcaf4d0685/BEV_S_GV_TP-EP-PP-MP-HP-CSV_V1.8.1.pdf
+- type: doc
+  url: https://epsg.io/31255
+translations:
+  de:
+    name: Bezugsmeridian (Gauß-Krüger, MGI)

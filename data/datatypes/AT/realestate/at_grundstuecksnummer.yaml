@@ -1,0 +1,36 @@
+id: at_grundstuecksnummer
+name: Austrian parcel number (Grundstücksnummer)
+status: draft
+doc: 'Number of a parcel (Grundstück) in the Austrian cadastre, unique within its cadastral municipality
+  (at_kg_number): a main number (Stammnummer) and, after a slash, a subdivision number, as in 551/1. A
+  leading dot marks the old building plots (Bauflächen), as in .129/3. BEV files call the field GST-NR
+  or GST; a parcel is identified by the pair of the cadastral municipality number and this number.'
+parent: parcelnumber
+categories:
+- realestate
+- geo
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\.?[1-9]\d{0,4}(?:/[1-9]\d{0,3})?$
+examples:
+- value: '2799'
+  description: parcel without subdivision
+- value: 551/1
+  description: subdivided parcel
+- value: .129/3
+  description: building plot (Baufläche)
+- value: 129-3
+  valid: false
+  description: hyphen instead of the slash
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Grundst%C3%BCcksnummer
+- type: doc
+  url: https://www.bev.gv.at/dam/jcr:a0e89772-7b55-4889-a029-69d93311811c/BEV_S_KA_Grundstuecksdaten-csv_V1.2.pdf
+translations:
+  de:
+    name: Grundstücksnummer

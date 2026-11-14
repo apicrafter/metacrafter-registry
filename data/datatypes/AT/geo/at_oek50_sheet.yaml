@@ -1,0 +1,36 @@
+id: at_oek50_sheet
+name: Austrian map sheet number of the ÖK 50 in the BMN layout
+status: draft
+doc: 'Number, 1 to 213, of a sheet of the Austrian map at 1:50,000 (Österreichische Karte, ÖK 50) in the
+  sheet layout of the Bundesmeldenetz (BMN), the grid of the MGI Gauss-Krüger zones. BEV numbers its geodetic
+  control points within these sheets (a triangulation point is TP 47-38: point 47 on sheet 38), and the
+  control point files give the sheet in OeK50_BMN_NR.'
+categories:
+- geo
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[1-9]|[1-9]\d|1\d{2}|20\d|21[0-3])$
+examples:
+- value: '38'
+  description: sheet with Krems an der Donau (TP73-38, KREMS, PIARISTENKIRCHE in the BEV interface description)
+- value: '213'
+  description: highest sheet number
+- value: '214'
+  valid: false
+- value: 038
+  valid: false
+  description: no leading zeros
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/%C3%96sterreichische_Karte
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Bundesmeldenetz
+- type: doc
+  url: https://www.bev.gv.at/dam/jcr:b2c6d2af-9888-47e9-8a37-15bcaf4d0685/BEV_S_GV_TP-EP-PP-MP-HP-CSV_V1.8.1.pdf
+translations:
+  de:
+    name: ÖK50-BMN-Blattnummer

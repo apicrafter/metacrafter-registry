@@ -1,0 +1,31 @@
+id: at_einlagezahl
+name: Austrian land register entry number (Einlagezahl)
+status: draft
+doc: Number of an entry (Grundbuchseinlage) in the Austrian land register, 1 to 99999, unique within its
+  cadastral municipality (at_kg_number). An entry holds one or more parcels (at_grundstuecksnummer) with
+  the same owners and charges. BEV cadastre files call the field EZ and give the cadastral municipality
+  of the entry in KG-EZ; a parcel that is not yet entered has none.
+parent: id
+categories:
+- realestate
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,4}$
+examples:
+- value: '3487'
+  description: entry of a parcel in Vienna (BEV cadastre quality list)
+- value: '99'
+- value: '0'
+  valid: false
+links:
+- type: doc
+  url: https://www.bev.gv.at/dam/jcr:a0e89772-7b55-4889-a029-69d93311811c/BEV_S_KA_Grundstuecksdaten-csv_V1.2.pdf
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Grundbuch
+translations:
+  de:
+    name: Einlagezahl

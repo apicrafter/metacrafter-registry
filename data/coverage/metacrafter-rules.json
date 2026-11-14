@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "5438380c297a0994323dc013f1aceedc075e25b3"
+  "ref": "611b8a22de7acaa86f06008bd1a975d9327298eb"
  },
  "rules": [
   {
@@ -425,12 +425,82 @@
    "country_code": "at"
   },
   {
+   "rule": "atfestpunktidvalue",
+   "key": "at_festpunkt_id",
+   "type": "data",
+   "match": "func",
+   "file": "at/at_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atgkmeridianbyname",
+   "key": "at_gk_meridian",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
    "rule": "atgkzknown",
    "key": "at_gkz",
    "type": "field",
    "match": "text",
    "file": "at/at_geo.yaml",
    "context": "geo",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atkgnumberbyname",
+   "key": "at_kg_number",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atkgnumberbyshortname",
+   "key": "at_kg_number",
+   "type": "field",
+   "match": "text",
+   "file": "at/at_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atoek50sheetbyname",
+   "key": "at_oek50_sheet",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "ateinlagezahlbyname",
+   "key": "at_einlagezahl",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_realestate.yaml",
+   "context": "realestate",
+   "lang": "de",
+   "country_code": "at"
+  },
+  {
+   "rule": "atgrundstuecksnummerbyname",
+   "key": "at_grundstuecksnummer",
+   "type": "field",
+   "match": "regex",
+   "file": "at/at_realestate.yaml",
+   "context": "realestate",
    "lang": "de",
    "country_code": "at"
   },
@@ -1508,7 +1578,7 @@
    "rule": "chahvvalue",
    "key": "chahv",
    "type": "data",
-   "match": "ppr",
+   "match": "regex",
    "file": "ch/ch_persons.yaml",
    "context": "persons",
    "lang": "de",
@@ -1716,6 +1786,16 @@
   },
   {
    "rule": "booleancommon",
+   "key": "boolean",
+   "type": "data",
+   "match": "text",
+   "file": "common/boolean.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "booleanjanein",
    "key": "boolean",
    "type": "data",
    "match": "text",
@@ -3285,6 +3365,36 @@
    "country_code": "xx"
   },
   {
+   "rule": "eastingbyshortname",
+   "key": "easting",
+   "type": "field",
+   "match": "text",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "elevationbygermanname",
+   "key": "elevation",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "elevationbyhoehe",
+   "key": "elevation",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "elevationbyname",
    "key": "elevation",
    "type": "field",
@@ -3295,9 +3405,39 @@
    "country_code": "xx"
   },
   {
+   "rule": "epsgcodebyname",
+   "key": "epsg_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "epsgcodevalue",
+   "key": "epsg_code",
+   "type": "data",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "gadmgidvalue",
    "key": "gadm_gid",
    "type": "data",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "geocentriccoordinatebyname",
+   "key": "geocentric_coordinate",
+   "type": "field",
    "match": "regex",
    "file": "common/geo.yaml",
    "context": "geo",
@@ -3415,6 +3555,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "latitudebygermanname",
+   "key": "latitude",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "latitudebyshortname",
    "key": "latitude",
    "type": "field",
@@ -3465,6 +3615,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "longitudebygermanname",
+   "key": "longitude",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "longitudebyshortname",
    "key": "longitude",
    "type": "field",
@@ -3499,6 +3659,16 @@
    "key": "northing",
    "type": "field",
    "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "northingbyshortname",
+   "key": "northing",
+   "type": "field",
+   "match": "text",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -3617,6 +3787,16 @@
   {
    "rule": "wkbbyvalue",
    "key": "wkb",
+   "type": "data",
+   "match": "func",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "wktvalue",
+   "key": "wkt",
    "type": "data",
    "match": "func",
    "file": "common/geo.yaml",
@@ -7855,6 +8035,16 @@
    "country_code": "eu"
   },
   {
+   "rule": "inspireidvalue",
+   "key": "inspire_id",
+   "type": "data",
+   "match": "regex",
+   "file": "eu/eu_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
    "rule": "contractawardfield",
    "key": "awardnotice",
    "type": "field",
@@ -11828,7 +12018,7 @@
    "rule": "ch_pii_chahvvalue",
    "key": "chahv",
    "type": "data",
-   "match": "ppr",
+   "match": "regex",
    "file": "pii/ch/ch_pii.yaml",
    "context": "pii",
    "lang": "de",
