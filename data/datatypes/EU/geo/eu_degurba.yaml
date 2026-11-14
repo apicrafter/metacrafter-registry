@@ -1,0 +1,37 @@
+id: eu_degurba
+name: Degree of urbanisation (DEGURBA) code
+status: draft
+doc: 'Class of the degree of urbanisation of Eurostat (DEGURBA), which sorts local administrative units
+  by the population density and contiguity of 1 km² grid cells: 1 cities (densely populated areas), 2
+  towns and suburbs (intermediate density areas), 3 rural areas (thinly populated areas). Eurostat publishes
+  it for every LAU; the EU Labour Force Survey, EU-SILC and national surveys such as the Austrian Mikrozensus
+  give it for the place of residence of a respondent.'
+categories:
+- geo
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[123]$
+examples:
+- value: '1'
+  description: Cities (densely populated areas)
+- value: '2'
+  description: Towns and suburbs (intermediate density areas)
+- value: '3'
+  description: Rural areas (thinly populated areas)
+- value: '4'
+  valid: false
+  description: There are three classes
+links:
+- type: doc
+  url: https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Degree_of_urbanisation
+- type: doc
+  url: https://ec.europa.eu/eurostat/web/degree-of-urbanisation
+translations:
+  de:
+    name: Urbanisierungsgrad (DEGURBA)
+  fr:
+    name: Degré d'urbanisation (DEGURBA)
