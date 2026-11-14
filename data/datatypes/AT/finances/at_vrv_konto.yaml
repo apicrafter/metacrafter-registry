@@ -1,0 +1,39 @@
+id: at_vrv_konto
+name: Austrian budget account (VRV Post, Konto)
+status: draft
+doc: Code of the economic classification of the budgets and accounts of the Austrian states and municipalities
+  under the VRV, the post (Post) of VRV 1997, three digits with optional subdivisions (452 Treibstoffe,
+  728 Entgelte für sonstige Leistungen), and the account (Konto) of the chart of accounts of VRV 2015,
+  up to seven digits. The function of the same budget line is the Ansatz (at_vrv_ansatz), the group of
+  accounts the MVAG (at_vrv_mvag).
+parent: id
+categories:
+- finances
+- government
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{3,7}$
+examples:
+- value: '452'
+  description: Treibstoffe (VRV 1997)
+- value: '7280'
+  description: A post of Upper Austria
+- value: '510000'
+  description: A post with its subdivision (Linz)
+- value: '45'
+  valid: false
+  description: Two digits
+links:
+- type: doc
+  url: https://www.bmf.gv.at/budget/finanzbeziehungen-zu-laendern-und-gemeinden/voranschlags-und-rechnungsabschlussverordnung.html
+- type: doc
+  url: https://www.ris.bka.gv.at/Dokumente/BgblAuth/BGBLA_2015_II_313/COO_2026_100_2_1143352.pdf
+translations:
+  de:
+    name: Post, Konto (VRV)
+  ru:
+    name: Код экономической классификации бюджета Австрии (Post, Konto VRV)

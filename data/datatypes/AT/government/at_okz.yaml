@@ -1,0 +1,42 @@
+id: at_okz
+name: Austrian e-government organisation code (Organisationskennzeichen, OKZ)
+status: draft
+doc: Code of an Austrian public body or one of its units under the convention of the Austrian e-government
+  (Verwaltungskennzeichen, extended to Organisationskennzeichen), used in the Portalverbund, the administration
+  directories (Verwaltungsadressen) of the states and the Transparenzdatenbank. The first part names the
+  authority, BMF or BKA for federal ministries, L1 to L9 for the states in the order of at_bundesland_code
+  (L5AL the office of the government of Salzburg, L7BH a district authority of Tyrol), GGA with the municipality
+  code (at_gkz) for a municipal office (GGA-10101 Eisenstadt); each lower unit adds a part after a hyphen
+  (L5AL-20001, BMVIT-III-I2). The data.gv.at catalogues are named after it in lower case (l7, gga-41605).
+parent: id
+categories:
+- government
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:L[1-9][A-Z]{0,4}|GGA-[1-9]\d{4}|BKA|BM[A-Z]{1,8})(?:-[0-9A-Za-zÄÖÜäöüß]+)*$
+examples:
+- value: L5AL-20001
+  description: A department of the office of the Salzburg state government
+- value: GGA-10101
+  description: Municipal office of Eisenstadt
+- value: L7BH-IL-BH
+  description: District authority Innsbruck-Land
+- value: L9-B01
+  description: A district office of Vienna
+- value: BMVIT-III-I2
+  description: A unit of a federal ministry (Transparenzdatenbank guide)
+- value: '12120'
+  valid: false
+  description: A locality code (at_ortschaftskennziffer), also abbreviated OKZ
+links:
+- type: doc
+  url: https://transparenzportal.gv.at/tdb/resources/cms/130228_Leitfaden_TDB_OKZ_v1.93.pdf
+translations:
+  de:
+    name: Organisationskennzeichen (OKZ)
+  ru:
+    name: Код организации электронного правительства Австрии (OKZ)

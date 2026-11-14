@@ -1,0 +1,37 @@
+id: at_schulkennzahl
+name: Austrian school code (Schulkennzahl, SKZ)
+status: draft
+doc: Six-digit code of an Austrian school used by the education ministry and Statistics Austria in the
+  school statistics. The first three digits are mostly the political district code (at_bezirkskennziffer)
+  of the school's location, the first of them its state, and the last digit follows the school type (1
+  for primary schools, Volksschulen). A branch school (Expositur) has a code of its own; some files end
+  the code with a letter (30101F in Lower Austria, 917033e in Vienna). SKZ also abbreviates the street
+  code (at_strassenkennziffer).
+parent: id
+categories:
+- education
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{4}[0-9A-Z][a-z]?$
+examples:
+- value: '201011'
+  description: Volksschule 1 Klagenfurt
+- value: '204381'
+  description: A branch school in Carinthia
+- value: 917033e
+  description: A school in Vienna, with a letter
+- value: '20101'
+  valid: false
+  description: A municipality code (at_gkz)
+links:
+- type: doc
+  url: https://www.statistik.at/fileadmin/pages/1772/1_Erlaeuterungen_Schuelerinnendatenmeldung_LFS.pdf
+translations:
+  de:
+    name: Schulkennzahl
+  ru:
+    name: Код школы Австрии (Schulkennzahl)

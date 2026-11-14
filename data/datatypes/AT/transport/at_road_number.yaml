@@ -1,0 +1,36 @@
+id: at_road_number
+name: Austrian road number
+status: draft
+doc: Number of an Austrian road, a letter for its class and digits. A for motorways (Autobahnen, A 1 West
+  Autobahn) and S for expressways (Schnellstraßen), the federal roads under the ASFINAG; B for the former
+  federal roads, state roads since 2002 that kept their B numbers (B190), L for state roads (Landesstraßen,
+  L202). Files write it with or without a space (A 14, A14) and some pad the digits (L097).
+categories:
+- transport
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[ABLS] ?\d{1,4}[a-z]?$
+examples:
+- value: A14
+  description: Rheintal/Walgau Autobahn
+- value: L202
+  description: A state road of Vorarlberg
+- value: B 190
+  description: Vorarlberger Straße
+- value: E60
+  valid: false
+  description: A European route number (e_road_number)
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Liste_der_Autobahnen_und_Schnellstra%C3%9Fen_in_%C3%96sterreich
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Stra%C3%9Fensystem_in_%C3%96sterreich
+translations:
+  de:
+    name: Straßennummer (Österreich)
+  ru:
+    name: Номер автодороги Австрии
