@@ -1,0 +1,36 @@
+id: ae_dubai_community
+name: Dubai community
+status: draft
+doc: Name of a community of the emirate of Dubai, the planning and statistical subdivisions of its sectors
+  (226 in the Dubai Statistics Center bulletin of 2021), in English or Arabic, such as Al Muteena, Al
+  Barsha First or Hor Al Anz East. Dubai Municipality, RTA and DEWA files write them in capitals and in
+  other transliterations (AL DAGHAYA for Al Dhagaya, MUHAISANAH FOURTH), with digits for the ordinals
+  (Al Barsha 2) or without the ordinal (Al Qusais); the community number is ae_dubai_community_code.
+parent: admin_area_3
+categories:
+- geo
+- government
+country:
+- AE
+langs:
+- ar
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: AL MUTEENA
+  description: community 123
+- value: Hor Al Anz East
+  description: community 133
+- value: Al Barsha 2
+  description: Al Barsha Second, community 373
+- value: المطينة
+  description: Al Muteena in Arabic
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_communities_in_Dubai
+- type: doc
+  url: https://www.dsc.gov.ae/Publication/Population%20Bulletin%20Emirate%20of%20Dubai%20%20-%202021.pdf
+translations:
+  ar:
+    name: مجتمع في دبي
