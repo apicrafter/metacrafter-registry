@@ -1,0 +1,38 @@
+id: ownership_type
+name: Ownership or management type (public, private)
+status: draft
+doc: 'Who owns or runs an organisation, a facility or a service: public (state), private or mixed, often
+  with the level of government for public ones (national, provincial, municipal) or the kind of private
+  owner. Directories of schools, hospitals, libraries, museums and cinemas hold it as tipo de gestión,
+  dependencia, sector or jurisdicción in Spanish (Público, Privado, Mixto, Estatal, Municipal), statut
+  public / privé in French, ownership in English. Legal forms of companies have their own types.'
+parent: category
+categories:
+- companies
+- government
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Público
+  description: tipo_gestion of the theatre directory of the Argentine culture ministry (SInCA)
+- value: Privado
+  description: same directory
+- value: Mixto
+  description: Tipo de gestion of the festival directory, the same source
+- value: Municipal
+  description: jurisdiccion of the museum directory, the same source
+- value: Estatal
+  description: tipo_gestion of the university degrees, the same source
+- value: Sociedad Anónima
+  valid: false
+  description: a legal form
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Public_sector
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Private_sector
+translations:
+  es:
+    name: Tipo de gestión (público, privado)
