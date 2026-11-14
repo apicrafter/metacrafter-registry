@@ -6,6 +6,7 @@ doc: 'Part-of-speech tag from the Universal Dependencies (UD) tag set, used to a
   ADV, AUX, CCONJ, DET, INTJ, NOUN, NUM, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB and X. Language-specific
   tag sets, such as the Penn Treebank tags NN and VBZ, are different types. Field names are upos, pos
   and pos_tag.'
+parent: pos_tag
 categories:
 - texts
 - science

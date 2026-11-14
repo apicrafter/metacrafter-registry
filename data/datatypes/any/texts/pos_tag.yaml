@@ -1,0 +1,40 @@
+id: pos_tag
+name: Part-of-speech tag
+status: draft
+doc: 'Word class of a token in an annotated text corpus or in the output of a tagger: noun, verb, determiner,
+  preposition, conjunction, punctuation and so on, written in the tag set of the corpus or the tool. Tag
+  sets differ: Universal Dependencies (NOUN, DET; upos_tag), the Penn Treebank (NN, VBZ, IN), the EAGLES
+  tags of Spanish and Catalan corpora and FreeLing (NCMS000, VMIP3S0, SPS00), and the short lowercase
+  names of rule-based taggers (nom, det, prep, v, cl, pun). Field names are pos, pos_tag, postag, tag,
+  xpos, upos and, in Spanish, etiqueta.'
+parent: category
+categories:
+- texts
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: nom
+  description: Noun, tag set of the Smorph tagger of Spanish (Universidad Nacional de Rosario corpus)
+- value: cl
+  description: Clitic pronoun (lo, la, se), Smorph tag set
+- value: NN
+  description: Singular noun, Penn Treebank
+- value: NCMS000
+  description: Common noun, masculine singular, EAGLES tag of Spanish (FreeLing)
+- value: DET
+  description: Determiner, Universal Dependencies
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Part-of-speech_tagging
+- type: doc
+  url: https://freeling-user-manual.readthedocs.io/en/latest/tagsets/tagset-es/
+- type: doc
+  url: https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
+translations:
+  es:
+    name: Etiqueta de categoría gramatical
+  ru:
+    name: Тег части речи
