@@ -1,0 +1,35 @@
+id: inspire_id
+name: INSPIRE identifier
+status: draft
+doc: 'External object identifier of a spatial object under the INSPIRE directive: the namespace of the
+  data provider, which starts with the country code, and the local id, joined with dots, as in AT.BEV.DOP.MD.20220128.49921.
+  The INSPIRE generic conceptual model defines it as namespace, localId and an optional versionId; datasets
+  and Wikidata write it as one dotted string. Exports call the field inspireId or inspire_id, and localId
+  for the last part alone.'
+parent: id
+categories:
+- geo
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}\.[A-Za-z0-9_-]+(?:\.[A-Za-z0-9_-]+)+$
+examples:
+- value: AT.BEV.DOP.MD.20220128.49921
+  description: orthophoto flight date polygon of the Austrian BEV
+- value: PL.ZIPOP.1393.N2K.PLH120061
+  description: Natura 2000 site in Poland (Wikidata example)
+- value: '49921'
+  valid: false
+  description: local id alone
+mappings:
+  wikidata: P4115
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Infrastructure_for_Spatial_Information_in_the_European_Community
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4115
+- type: doc
+  url: https://inspire.ec.europa.eu/documents/inspire-generic-conceptual-model
