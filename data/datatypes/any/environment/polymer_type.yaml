@@ -1,0 +1,27 @@
+id: polymer_type
+name: Plastic polymer type
+status: draft
+doc: 'Polymer of a plastic item or particle, as a name or its common abbreviation: polyethylene (PE),
+  polypropylene (PP), polyethylene terephthalate (PET), polystyrene (PS), polyvinyl chloride (PVC), polyamide
+  (PA, nylon), polytetrafluoroethylene (PTFE). Microplastics studies report the polymer that FTIR or Raman
+  spectroscopy identified for each particle, natural and semi-synthetic polymers such as cellulose and
+  rayon included; waste and recycling statistics use the same names.'
+categories:
+- environment
+- chemistry
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: polypropylene
+  description: microplastic particle (AIMS seafood microplastics study)
+- value: polyethylene terephthalate
+  description: microplastic particle (AIMS seafood microplastics study)
+- value: PET
+  description: abbreviation
+- value: nylon
+  description: polyamide fibre
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_synthetic_polymers

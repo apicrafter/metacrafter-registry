@@ -1,0 +1,22 @@
+id: vessel_name
+name: Ship or vessel name
+status: draft
+doc: 'Name of a ship or boat as registered and painted on its hull, found in ship registers, AIS messages,
+  port calls, fishing fleet registers and research cruise data (Solander, Cape Ferguson). A prefix may
+  stand before it (RV, MV, HMAS). Names are not unique: the IMO number (imonumber) or the MMSI (mmsi)
+  identifies the vessel.'
+categories:
+- transport
+langs:
+- common
+is_pii: false
+examples:
+- value: Solander
+  description: AIMS research vessel RV Solander (GBR genomics database)
+- value: Cape Ferguson
+  description: AIMS research vessel RV Cape Ferguson
+- value: Queen Mary 2
+  description: passenger ship
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Ship_prefix

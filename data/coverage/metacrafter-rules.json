@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "f0c25adfb96bc60672093a51a27493bcacabe368"
+  "ref": "bd11652ce7175bb8bc0b90098c36ca2f5ab8ea89"
  },
  "rules": [
   {
@@ -585,10 +585,40 @@
    "country_code": "au"
   },
   {
+   "rule": "auaimsltmpsectorbyname",
+   "key": "au_aims_ltmp_sector",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
    "rule": "aucityknown",
    "key": "city",
    "type": "field",
    "match": "text",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "augbrreefidbyname",
+   "key": "au_gbr_reef_id",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "augbrreefidvalue",
+   "key": "au_gbr_reef_id",
+   "type": "data",
+   "match": "regex",
    "file": "au/au_geo.yaml",
    "context": "geo",
    "lang": "en",
@@ -1835,6 +1865,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "colourbyfield",
+   "key": "color",
+   "type": "field",
+   "match": "regex",
+   "file": "common/common.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "confirmedbooleanbyknown",
    "key": "boolean",
    "type": "field",
@@ -2545,6 +2585,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "decimalyearbyfield",
+   "key": "decimal_year",
+   "type": "field",
+   "match": "regex",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "durationtextbyname",
    "key": "duration",
    "type": "field",
@@ -2999,6 +3049,26 @@
    "key": "eea_eoi_station_code",
    "type": "data",
    "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "polymertypebyfield",
+   "key": "polymer_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "polymertypevalue",
+   "key": "polymer_type",
+   "type": "data",
+   "match": "func",
    "file": "common/environment.yaml",
    "context": "environment",
    "lang": "common",
@@ -4875,6 +4945,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "dwclifestagebyfield",
+   "key": "dwc_life_stage",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "dwcoccurrenceidbyfield",
    "key": "dwc_occurrence_id",
    "type": "field",
@@ -6337,6 +6417,16 @@
   {
    "rule": "uicstationbyname",
    "key": "uiccode",
+   "type": "field",
+   "match": "regex",
+   "file": "common/transport.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "vesselnamebyfield",
+   "key": "vessel_name",
    "type": "field",
    "match": "regex",
    "file": "common/transport.yaml",
