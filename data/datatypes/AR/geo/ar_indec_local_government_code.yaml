@@ -4,7 +4,8 @@ status: draft
 doc: 'Six-digit code of an Argentine local government (municipio, comuna, junta or comisión municipal)
   in the INDEC geographic coding used by the georef service: the two-digit province code and four digits,
   as in 060441 La Plata and 140399 Carnerillo (Córdoba). Local governments do not nest in departments,
-  so the code does not contain the department code.'
+  so the code does not contain the department code. Provincial tables of Córdoba give the four-digit part
+  alone (COD_MUNI 0196 for Serrezuela, Cod-M 7 for Embalse without the zeros).'
 parent: id
 categories:
 - geo
@@ -15,7 +16,7 @@ langs:
 - es
 is_pii: false
 classification: identifier
-regexp: ^(?:0[26]|1[048]|2[26]|3[048]|4[26]|5[048]|6[26]|7[048]|8[26]|9[04])\d{4}$
+regexp: ^(?:(?:0[26]|1[048]|2[26]|3[048]|4[26]|5[048]|6[26]|7[048]|8[26]|9[04]))?\d{4}$
 examples:
 - value: '060441'
   description: La Plata, Buenos Aires
@@ -25,6 +26,8 @@ examples:
   description: San Rafael, Mendoza
 - value: '908063'
   description: Benjamín Aráoz y El Tajamar (comuna), Tucumán
+- value: 0196
+  description: Serrezuela, Córdoba (140196), the four-digit part alone (COD_MUNI)
 - value: '60441'
   valid: false
   description: leading zero dropped
