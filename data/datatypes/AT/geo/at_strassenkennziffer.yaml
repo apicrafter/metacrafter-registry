@@ -1,0 +1,35 @@
+id: at_strassenkennziffer
+name: Austrian street code (Straßenkennziffer, SKZ)
+status: draft
+doc: Code of a street of an Austrian municipality, assigned by Statistics Austria and kept in the address
+  register of the BEV and in the street graph of the Graphenintegrations-Plattform (GIP). It has up to
+  six digits; files that store it as an integer drop leading zeros (29211, 090145). In school statistics
+  SKZ also abbreviates the school code (at_schulkennzahl).
+parent: id
+categories:
+- geo
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{5,6}$
+examples:
+- value: '29211'
+  description: A street of Engerwitzdorf (Upper Austria)
+- value: 090145
+  description: A street in the Vorarlberg road graph
+- value: L202
+  valid: false
+  description: A road number (at_road_number)
+links:
+- type: doc
+  url: https://www.bev.gv.at/Services/Produkte/Adressregister.html
+- type: doc
+  url: https://www.gip.gv.at/
+translations:
+  de:
+    name: Straßenkennziffer
+  ru:
+    name: Код улицы Австрии (SKZ)

@@ -1,0 +1,40 @@
+id: at_ersb
+name: Austrian ERsB number (Ergänzungsregister für sonstige Betroffene)
+status: draft
+doc: Number of an entry in the Austrian supplementary register for other affected parties (Ergänzungsregister
+  für sonstige Betroffene, ERsB) under § 6b E-GovG, the register of public bodies, churches, foundations
+  and other organisations that are neither in the company register (at_firmenbuchnummer) nor in the register
+  of associations (at_zvr). Statistics Austria runs it for the Stammzahlenregisterbehörde. The number
+  is a 13-digit Global Location Number (gln) with its GS1 check digit; all ERsB numbers of the administration
+  directories on data.gv.at start with 9110.
+parent: gln
+categories:
+- companies
+- government
+- gs1
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^9110\d{9}$
+checksum: gs1_mod10
+examples:
+- value: '9110006916210'
+  description: A municipality of Styria
+- value: '9110001123637'
+  description: Oesterreichische Nationalbank (its data.gv.at catalogue ersb-9110001123637)
+- value: 9,11E+12
+  valid: false
+  description: The number lost to spreadsheet number format (Lower Austrian file)
+links:
+- type: doc
+  url: https://www.bmf.gv.at/ministerium/aufgaben-und-organisation/Stammzahlenregisterbehoerde/Ergaenzungsregister/Ergaenzungsregister-f%C3%BCr-sonstige-Betroffene-(ERsB).html
+- type: doc
+  url: https://gesetzefinden.at/bundesrecht/bundesgesetze/e-govg/para-6b
+translations:
+  de:
+    name: ERsB-Nummer
+  ru:
+    name: Номер в дополнительном регистре ERsB (Австрия)

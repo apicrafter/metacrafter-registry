@@ -1,0 +1,35 @@
+id: at_ams_rgs
+name: Austrian Public Employment Service regional office code (AMS RGS)
+status: draft
+doc: Three-digit code of a regional office (Regionale Geschäftsstelle, RGS) of the Austrian Public Employment
+  Service (Arbeitsmarktservice, AMS), the unit of the labour market statistics of the AMS labour market
+  database. The first digit is the state (at_bundesland_code), as in 101 Eisenstadt or 900 to 9xx for
+  the Vienna offices.
+parent: id
+categories:
+- government
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{2}$
+examples:
+- value: '101'
+  description: Eisenstadt (Burgenland)
+- value: '958'
+  description: Wien Johnstraße
+- value: '1010'
+  valid: false
+  description: Four digits
+links:
+- type: doc
+  url: https://www.arbeitsmarktdatenbank.at/
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Arbeitsmarktservice
+translations:
+  de:
+    name: AMS-Regionalgeschäftsstellencode
+  ru:
+    name: Код регионального отделения службы занятости Австрии (AMS)

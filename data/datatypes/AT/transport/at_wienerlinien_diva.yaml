@@ -1,0 +1,34 @@
+id: at_wienerlinien_diva
+name: Wiener Linien stop number (DIVA)
+status: draft
+doc: Eight-digit number of a stop (Haltestelle) of the Vienna public transport operator Wiener Linien
+  in its DIVA timetable system, published in the open data stop lists (wienerlinien-ogd-haltestellen,
+  wienerlinien-ogd-haltepunkte) and used by the real-time API. The numbers of Vienna start with 602. A
+  stop has one or more stop points (platforms) with numbers of their own (StopID, RBL numbers). Wiener
+  Linien changes the numbers from time to time.
+parent: id
+categories:
+- transport
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^602\d{5}$
+examples:
+- value: '60200120'
+  description: Belvederegasse
+- value: '60201193'
+  description: A stop of Vienna
+- value: '49000001'
+  valid: false
+  description: The municipality id of Vienna in the same files
+links:
+- type: doc
+  url: https://www.wienerlinien.at/open-data
+translations:
+  de:
+    name: DIVA-Haltestellennummer der Wiener Linien
+  ru:
+    name: Номер остановки Wiener Linien (DIVA)

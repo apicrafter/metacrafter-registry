@@ -1,0 +1,36 @@
+id: at_bundesland
+name: Austrian state (Bundesland)
+status: draft
+doc: Name of one of the nine states (Bundesländer) of Austria, in German as the Austrian open data portals
+  write them (Burgenland, Kärnten, Niederösterreich, Oberösterreich, Salzburg, Steiermark, Tirol, Vorarlberg,
+  Wien), sometimes in capitals, with oe for ö (Niederoesterreich) or in English (Carinthia, Lower Austria,
+  Upper Austria, Styria, Tyrol, Vienna). Statistics Austria numbers the states 1 to 9 in this alphabetical
+  order (at_bundesland_code).
+parent: admin_area_1
+categories:
+- geo
+- government
+country:
+- AT
+langs:
+- de
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Niederösterreich
+  description: Lower Austria
+- value: Steiermark
+  description: Styria
+- value: Wien
+  description: Vienna
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Land_(%C3%96sterreich)
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/States_of_Austria
+translations:
+  de:
+    name: Bundesland (Österreich)
+  ru:
+    name: Федеральная земля Австрии

@@ -1,0 +1,33 @@
+id: at_ortschaftskennziffer
+name: Austrian locality code (Ortschaftskennziffer, OKZ)
+status: draft
+doc: Five-digit code of a locality (Ortschaft) of an Austrian municipality, assigned by Statistics Austria
+  and kept in the address register of the BEV with the street code (at_strassenkennziffer). A municipality
+  (at_gkz) has one or more localities. Not to be confused with the e-government organisation code (at_okz),
+  which is also abbreviated OKZ.
+parent: id
+categories:
+- geo
+country:
+- AT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '12120'
+  description: A locality of Engerwitzdorf (Upper Austria)
+- value: L5AL-200
+  valid: false
+  description: An organisation code (at_okz)
+links:
+- type: doc
+  url: https://www.bev.gv.at/Services/Produkte/Adressregister.html
+- type: doc
+  url: https://gesetzefinden.at/bundesrecht/verordnungen/adrregv-2016/para-2
+translations:
+  de:
+    name: Ortschaftskennziffer
+  ru:
+    name: Код населённого пункта Австрии (OKZ)
