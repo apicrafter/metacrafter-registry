@@ -1,0 +1,41 @@
+id: ae_emirate
+name: UAE emirate
+status: draft
+doc: Name of one of the seven emirates of the United Arab Emirates (Abu Dhabi, Dubai, Sharjah, Ajman,
+  Umm Al Quwain, Ras Al Khaimah, Fujairah), in English or Arabic, as federal and emirate statistics label
+  their tables by emirate (Emirate_EN, Emirate_AR). Spellings vary (Umm Al - Quwain, Umm Al Qaiwain, Ras
+  Al-Khaimah) and abbreviations are common (R.A.K., U.A.Q., UMQ); Arabic labels have hamza variants and
+  the stretching tatweel (أبوظبي, أبو ظــبي). Tables often add the regions of Abu Dhabi (Al Ain, Western
+  Region) as rows of their own, which are ae_abu_dhabi_region. Each emirate shares its name with its capital
+  city (aecity). The ISO 3166-2 codes are AE-AZ, AE-DU, AE-SH, AE-AJ, AE-UQ, AE-RK and AE-FU.
+parent: admin_area_1
+categories:
+- geo
+- government
+country:
+- AE
+langs:
+- ar
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Abu Dhabi
+- value: Ras Al Khaimah
+- value: U.A.Q.
+  description: Umm Al Quwain, abbreviated
+- value: أبوظبي
+  description: Abu Dhabi in Arabic
+- value: رأس الخيمة
+  description: Ras Al Khaimah in Arabic
+- value: Al Ain
+  valid: false
+  description: a region of the emirate of Abu Dhabi (ae_abu_dhabi_region)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Emirates_of_the_United_Arab_Emirates
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_3166-2:AE
+translations:
+  ar:
+    name: إمارة
