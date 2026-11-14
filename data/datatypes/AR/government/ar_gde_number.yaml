@@ -1,0 +1,43 @@
+id: ar_gde_number
+name: Argentine GDE document number
+status: draft
+doc: 'Number of a document or file (expediente) in GDE, the electronic document management system of the
+  Argentine national administration: the document type acronym, the year, a sequence number, the GDE ecosystem
+  (APN for the national administration) and the acronym of the signing unit, often with # and the ministry,
+  as in EX-2019-68464597-APN-DNCOPRCYFC#JGM (an expediente), IF-2018-58899950-APN-GAYF#CNEA (an informe)
+  or PLIEG-2017-1484136-APN-DCC#MEM (tender specifications); CONTRAT.AR calls it the GEDO number of a
+  document. Procurement and declaration data hold them as references; some exports keep an empty part
+  of the number between two hyphens.'
+categories:
+- government
+- legal
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: '^[A-Z]{2,8}-(?:19|20)\d{2}-\d{1,9}-(?: *-)?[A-Z]{2,8}(?:-[A-Z0-9]{1,15})?(?:#[A-Z0-9]{1,15})?$'
+examples:
+- value: IF-2019-68464597-APN-DNCOPRCYFC#JGM
+  description: an informe of the Jefatura de Gabinete
+- value: PLIEG-2017-1484136-APN-DCC#MEM
+  description: tender specifications, Ministry of Energy and Mining
+- value: PLIEG-2022-111953875-APN-DCYS#MOP
+  description: tender specifications, Ministry of Public Works
+- value: EX-2021-23967059-   -APN-GASNYA#CNEA
+  description: an expediente written with an empty part
+- value: EE-10947
+  valid: false
+  description: a CONTRAT.AR file number
+- value: 450-9020-LPU16
+  valid: false
+  description: a COMPR.AR procedure number
+links:
+- type: doc
+  url: https://www.argentina.gob.ar/jefatura/innovacion-ciencia-y-tecnologia/innovacion/preguntas-frecuentes
+- type: doc
+  url: https://infra.datos.gob.ar/catalog/jgm/dataset/30/distribution/30.0/download/metodologico-contratar.pdf
+translations:
+  es:
+    name: Número de documento GDE

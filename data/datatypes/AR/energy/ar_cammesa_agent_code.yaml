@@ -1,0 +1,39 @@
+id: ar_cammesa_agent_code
+name: Argentine wholesale electricity market agent code (CAMMESA nemotécnico)
+status: draft
+doc: 'Eight-character code (nemotécnico) of an agent of the Argentine wholesale electricity market (MEM)
+  in the data of CAMMESA, the market administrator, and of the Secretaría de Energía: a generator, distributor,
+  transmission company or large user, as in EPECORDG (EPEC generación), CCOSTANG (Endesa Costanera), EDELAPID
+  (EDELAP, a distributor) and 14DEMP3N (a large user). Capital letters and digits, a few with a hyphen
+  or an ampersand (CAPEX-QA); any such word matches, so use the field name (agente_nemo, nemo, agente).'
+parent: id
+categories:
+- energy
+- companies
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^[A-Z0-9][A-Z0-9&-]{7}$
+examples:
+- value: EPECORDG
+  description: EPEC Generación (generator)
+- value: CCOSTANG
+  description: Endesa Costanera SA (generator)
+- value: EDELAPID
+  description: EDELAP SA (distributor)
+- value: CAPEX-QA
+  description: a code with a hyphen
+- value: COST
+  valid: false
+  description: a power plant code
+links:
+- type: doc
+  url: https://cammesaweb.cammesa.com/
+- type: doc
+  url: https://datos.gob.ar/dataset/publicaciones-cammesa
+translations:
+  es:
+    name: Nemotécnico de agente del MEM (CAMMESA)

@@ -1,0 +1,31 @@
+id: ar_indec_street_code
+name: Argentine street code (INDEC)
+status: draft
+doc: 'Thirteen-digit code of a street in the INDEC street base published by the georef service: the five-digit
+  department code, three digits for the locality within it and five digits for the street, as in 0200701000000
+  (a street of Comuna 1, City of Buenos Aires). Block codes (cuadras) add seven digits to the street code,
+  and an intersection joins two street codes.'
+parent: id
+categories:
+- geo
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:0[26]|1[048]|2[26]|3[048]|4[26]|5[048]|6[26]|7[048]|8[26]|9[04])\d{11}$
+examples:
+- value: '0200701000000'
+  description: Flor de Otoño, Comuna 1, Ciudad Autónoma de Buenos Aires
+- value: 0665801099996
+  description: a street of the department 06658, Buenos Aires
+- value: 02028010999360800726
+  valid: false
+  description: a block code
+links:
+- type: doc
+  url: https://datos.gob.ar/dataset/servicio-de-normalizacion-de-direcciones-y-unidades-territoriales-de-argentina
+translations:
+  es:
+    name: Código de calle (INDEC)

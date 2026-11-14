@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "3b64e1578ef71eb5021b5379935fb35486c1fab7"
+  "ref": "825d9d6e41dee84eef93f0507076775580260b17"
  },
  "rules": [
   {
@@ -395,6 +395,76 @@
    "country_code": "ar"
   },
   {
+   "rule": "arcammesaagentbyname",
+   "key": "ar_cammesa_agent_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_energy.yaml",
+   "context": "energy",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcammesagenerationunitbyname",
+   "key": "ar_cammesa_generating_unit_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_energy.yaml",
+   "context": "energy",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcammesagenerationunitvalue",
+   "key": "ar_cammesa_generating_unit_code",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_energy.yaml",
+   "context": "energy",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcammesapowerplantbyname",
+   "key": "ar_cammesa_power_plant_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_energy.yaml",
+   "context": "energy",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arsedimentarybasinbyname",
+   "key": "ar_sedimentary_basin",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_energy.yaml",
+   "context": "energy",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arwellcodebyname",
+   "key": "ar_hydrocarbon_well_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_energy.yaml",
+   "context": "energy",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arwellcodevalue",
+   "key": "ar_hydrocarbon_well_code",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_energy.yaml",
+   "context": "energy",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
    "rule": "ar_finances_arbankaccountknown",
    "key": "bankaccount",
    "type": "field",
@@ -411,6 +481,226 @@
    "match": "text",
    "file": "ar_country/ar_finances.yaml",
    "context": "finances",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arbapinbyname",
+   "key": "ar_bapin_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_finances.yaml",
+   "context": "finances",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arclaebyname",
+   "key": "ar_clae",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_finances.yaml",
+   "context": "finances",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcuitbyfieldname",
+   "key": "cuit",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_finances.yaml",
+   "context": "finances",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcuitdashedvalue",
+   "key": "cuit",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_finances.yaml",
+   "context": "finances",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arncmbyname",
+   "key": "hs_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_finances.yaml",
+   "context": "finances",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arsafbyname",
+   "key": "ar_saf_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_finances.yaml",
+   "context": "finances",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "aranacairportbyname",
+   "key": "ar_anac_airport_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcentroidlatitudebyname",
+   "key": "latitude",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcentroidlongitudebyname",
+   "key": "longitude",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcpavalue",
+   "key": "ar_postcode",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindecdepartmentcodebyname",
+   "key": "ar_indec_department_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindeclocalgovernmentcodebyname",
+   "key": "ar_indec_local_government_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindeclocalitycodebyname",
+   "key": "ar_indec_locality_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindecprovincecodebyname",
+   "key": "ar_indec_province_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arindecstreetcodebyname",
+   "key": "ar_indec_street_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arphoneareacodebyname",
+   "key": "phone_area_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arpostcodebyname",
+   "key": "ar_postcode",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arprovinceletterbyname",
+   "key": "iso3166code_part",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcomprasnumberbyname",
+   "key": "ar_compras_procedure_number",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_government.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcomprasnumbervalue",
+   "key": "ar_compras_procedure_number",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_government.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "argdenumberbyname",
+   "key": "ar_gde_number",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_government.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "argdenumbervalue",
+   "key": "ar_gde_number",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_government.yaml",
+   "context": "government",
    "lang": "es",
    "country_code": "ar"
   },
@@ -3780,6 +4070,26 @@
    "type": "data",
    "match": "func",
    "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "geojsongeometrytext",
+   "key": "geojson",
+   "type": "data",
+   "match": "func",
+   "file": "common/geo_text.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "iso3166subdivisionbyname",
+   "key": "iso3166code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo_text.yaml",
    "context": "geo",
    "lang": "common",
    "country_code": "xx"

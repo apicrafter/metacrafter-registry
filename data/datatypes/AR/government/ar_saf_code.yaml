@@ -1,0 +1,37 @@
+id: ar_saf_code
+name: Argentine budget financial administration service code (SAF)
+status: draft
+doc: Three-digit code of a Servicio Administrativo Financiero (SAF), a unit of the national administration
+  that runs its own budget, accounts and payments, as in 105 Comisión Nacional de Energía Atómica, 107
+  Administración de Parques Nacionales and 604 Dirección Nacional de Vialidad. Budget data (servicio_id
+  of Presupuesto Abierto) and procurement data (organismo_codigo_saf) use it; any three digits match,
+  so use the field name.
+parent: id
+categories:
+- government
+- finances
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{2}$
+examples:
+- value: '105'
+  description: Comisión Nacional de Energía Atómica
+- value: '107'
+  description: Administración de Parques Nacionales
+- value: '604'
+  description: Dirección Nacional de Vialidad
+- value: '0105'
+  valid: false
+  description: four digits
+links:
+- type: doc
+  url: https://www.presupuestoabierto.gob.ar/sici/datos-abiertos
+- type: doc
+  url: https://infra.datos.gob.ar/catalog/jgm/dataset/30/distribution/30.0/download/metodologico-contratar.pdf
+translations:
+  es:
+    name: Código de Servicio Administrativo Financiero (SAF)

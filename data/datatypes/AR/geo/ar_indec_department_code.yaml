@@ -1,0 +1,43 @@
+id: ar_indec_department_code
+name: Argentine department code (INDEC)
+status: draft
+doc: 'Five-digit code of an Argentine department (a partido in Buenos Aires Province, a comuna in the
+  City of Buenos Aires) in the INDEC geographic coding: the two-digit province code and three digits for
+  the department, as in 06014 Adolfo Gonzales Chaves (Buenos Aires) and 30015 Concordia (Entre Ríos).
+  Data of the Ministries of Production and Health and of the crime statistics drop the leading zero (6014,
+  2007), and older sources number the comunas of the City of Buenos Aires 02001 to 02015 where georef
+  uses 02007 to 02105.'
+parent: id
+categories:
+- geo
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:0[26]|1[048]|2[26]|3[048]|4[26]|5[048]|6[26]|7[048]|8[26]|9[04])\d{3}$
+examples:
+- value: '06014'
+  description: Adolfo Gonzales Chaves, Buenos Aires
+- value: '30015'
+  description: Concordia, Entre Ríos
+- value: '02007'
+  description: Comuna 1, Ciudad Autónoma de Buenos Aires
+- value: '58035'
+  description: Confluencia, Neuquén
+- value: '6014'
+  valid: false
+  description: leading zero dropped
+- value: '03014'
+  valid: false
+  description: no province has the code 03
+links:
+- type: doc
+  url: https://datosgobar.github.io/paquete-apertura-datos/guia-interoperables/
+- type: doc
+  url: https://datos.gob.ar/dataset/servicio-de-normalizacion-de-direcciones-y-unidades-territoriales-de-argentina
+translations:
+  es:
+    name: Código de departamento (INDEC)

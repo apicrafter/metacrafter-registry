@@ -1,0 +1,36 @@
+id: ar_cammesa_power_plant_code
+name: Argentine power plant code (CAMMESA)
+status: draft
+doc: 'Code of a power plant (central) of the Argentine wholesale electricity market in the generation
+  data of CAMMESA and the Secretaría de Energía, mostly four capital letters or digits: COST (Costanera),
+  NPUE (Nuevo Puerto, Central Puerto), SNIC (Térmica San Nicolás), ANAT (Añatuya). A few have five or
+  six characters, hydroelectric plants among them. The agent that operates the plant has a code of its
+  own (ar_cammesa_agent_code).'
+parent: powerplantid
+categories:
+- energy
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^[A-Z0-9]{4,6}$
+examples:
+- value: COST
+  description: Central Costanera, Buenos Aires
+- value: NPUE
+  description: Nuevo Puerto (Central Puerto), Buenos Aires
+- value: SNIC
+  description: Central Térmica San Nicolás
+- value: CCOSTANG
+  valid: false
+  description: an agent code
+links:
+- type: doc
+  url: https://cammesaweb.cammesa.com/
+- type: doc
+  url: https://datos.gob.ar/dataset/publicaciones-cammesa
+translations:
+  es:
+    name: Código de central eléctrica (CAMMESA)

@@ -1,0 +1,38 @@
+id: ar_indec_local_government_code
+name: Argentine local government code (INDEC)
+status: draft
+doc: 'Six-digit code of an Argentine local government (municipio, comuna, junta or comisión municipal)
+  in the INDEC geographic coding used by the georef service: the two-digit province code and four digits,
+  as in 060441 La Plata and 140399 Carnerillo (Córdoba). Local governments do not nest in departments,
+  so the code does not contain the department code.'
+parent: id
+categories:
+- geo
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:0[26]|1[048]|2[26]|3[048]|4[26]|5[048]|6[26]|7[048]|8[26]|9[04])\d{4}$
+examples:
+- value: '060441'
+  description: La Plata, Buenos Aires
+- value: '140399'
+  description: Carnerillo, Córdoba
+- value: '500105'
+  description: San Rafael, Mendoza
+- value: '908063'
+  description: Benjamín Aráoz y El Tajamar (comuna), Tucumán
+- value: '60441'
+  valid: false
+  description: leading zero dropped
+links:
+- type: doc
+  url: https://datosgobar.github.io/paquete-apertura-datos/guia-interoperables/
+- type: doc
+  url: https://datos.gob.ar/dataset/servicio-de-normalizacion-de-direcciones-y-unidades-territoriales-de-argentina
+translations:
+  es:
+    name: Código de gobierno local (INDEC)

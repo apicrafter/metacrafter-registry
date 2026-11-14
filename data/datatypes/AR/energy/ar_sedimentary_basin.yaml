@@ -1,0 +1,34 @@
+id: ar_sedimentary_basin
+name: Argentine hydrocarbon sedimentary basin
+status: draft
+doc: 'Name of a sedimentary basin in the oil and gas data of the Argentine Secretaría de Energía: the
+  producing basins Neuquina, Golfo San Jorge, Austral, Cuyana and Noroeste, and others named in well,
+  permit and seismic data such as Noreste, Del Colorado, Cañadón Asfalto, Los Bolsones, Ñirihuau, General
+  Levalle, Las Salinas, Mercedes, Malvinas, Malvinas Oeste and Argentina Norte. Files write them in capitals
+  (NEUQUINA, GOLFO SAN JORGE); the idcuenca columns next to them hold three-letter codes (NEU Neuquina,
+  GSJ Golfo San Jorge, CAU Austral, CCB Cuyana, NOR Noroeste).'
+parent: category
+categories:
+- energy
+- geo
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: NEUQUINA
+  description: Neuquén basin
+- value: GOLFO SAN JORGE
+  description: Golfo San Jorge basin
+- value: AUSTRAL
+  description: Austral (Magallanes) basin
+- value: CUYANA
+  description: Cuyo basin
+links:
+- type: doc
+  url: https://datos.gob.ar/dataset/produccion-de-petroleo-y-gas-por-pozo
+translations:
+  es:
+    name: Cuenca sedimentaria

@@ -1,0 +1,41 @@
+id: ar_compras_procedure_number
+name: Argentine public procurement process number (COMPR.AR, CONTRAT.AR, BAC)
+status: draft
+doc: 'Number of a process in COMPR.AR and CONTRAT.AR, the procurement systems of the Oficina Nacional
+  de Contrataciones: the code of the procuring unit, a sequence number and the acronym of the procedure
+  type with the two-digit year, as in 452-0001-LPU17 (a licitación pública of 2017). The works (81-0009-OBR18),
+  contracts (14-1002-CON21) and procurement requests (14-549-SCO18) of CONTRAT.AR are numbered the same
+  way, and so are the processes of BAC, the procurement system of the City of Buenos Aires (558-0117-LPU21,
+  10179-0125-LPU22).'
+categories:
+- government
+- finances
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{1,5}-\d{1,4}-[A-Z]{3}\d{2}$
+examples:
+- value: 452-0001-LPU17
+  description: a public tender of 2017
+- value: 14-0007-LPU20
+  description: a public tender of the Comisión Nacional de Energía Atómica
+- value: 81-0009-OBR18
+  description: a work of CONTRAT.AR
+- value: 14-1002-CON21
+  description: a contract of CONTRAT.AR
+- value: 558-0117-LPU21
+  description: a public tender of the City of Buenos Aires (BAC)
+- value: PLIEG-2017-1484136-APN-DCC#MEM
+  valid: false
+  description: a GDE document number
+links:
+- type: doc
+  url: https://infra.datos.gob.ar/catalog/jgm/dataset/30/distribution/30.0/download/metodologico-contratar.pdf
+- type: doc
+  url: https://datos.gob.ar/dataset/procesos-de-contratacion-de-la-obra-publica-gestionados-en-la-plataforma-contratar
+translations:
+  es:
+    name: Número de proceso de compra (COMPR.AR, CONTRAT.AR, BAC)
