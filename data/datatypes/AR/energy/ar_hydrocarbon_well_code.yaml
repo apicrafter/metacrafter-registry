@@ -1,0 +1,41 @@
+id: ar_hydrocarbon_well_code
+name: Argentine oil and gas well designation (sigla)
+status: draft
+doc: 'Designation (sigla) of an oil or gas well in the data of the Argentine Secretaría de Energía (Capítulo
+  IV production and well lists): the code of the operator, the code of the province or offshore area,
+  the abbreviated name of the field and of the well, separated by dots, then a hyphen and the well number,
+  with a letter for the well type and (h) or (d) for horizontal and directional wells, as in YPF.Nq.LLL-1218(d),
+  PAE.Ch.Z.IA-1072 and YPF.Md.NSN.e-2. Province codes include Nq (Neuquén), Ch (Chubut), SC (Santa Cruz),
+  Md (Mendoza), RN (Río Negro) and TF (Tierra del Fuego). Wells drilled before the current rules (Resolución
+  SE 1040/2009) keep older names such as T-49.'
+parent: id
+categories:
+- energy
+- industry
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^[A-Za-z0-9]{1,6}\.[A-Za-z]{1,3}(?:\.[A-Za-z0-9ñÑ]{1,12}){1,3}-\d{1,5}[A-Za-z]?(?:\([a-z]\))?$
+examples:
+- value: YPF.Nq.LLL-1218(d)
+  description: a directional well of YPF in Loma La Lata, Neuquén
+- value: PAE.Ch.Z.IA-1072
+  description: a well of Pan American Energy in Chubut
+- value: YPF.Md.NSN.e-2
+  description: a well of YPF in Mendoza
+- value: CGC.SCA.CI-1021(d)
+  description: a well of Compañía General de Combustibles, Santa Cruz
+- value: T-49
+  valid: false
+  description: an old well name without operator and province
+links:
+- type: doc
+  url: https://datos.gob.ar/dataset/produccion-de-petroleo-y-gas-por-pozo
+- type: doc
+  url: https://datos.gob.ar/dataset/perforacion-de-pozos-de-petroleo-y-gas
+translations:
+  es:
+    name: Sigla de pozo de hidrocarburos

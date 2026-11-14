@@ -1,0 +1,44 @@
+id: ar_indec_province_code
+name: Argentine province code (INDEC)
+status: draft
+doc: 'Two-digit code of an Argentine province or of the Autonomous City of Buenos Aires in the geographic
+  coding of the national statistics office INDEC, used by the georef service and national open data: 02
+  Ciudad Autónoma de Buenos Aires, 06 Buenos Aires, then every fourth number up to 94 Tierra del Fuego
+  (10 Catamarca, 14 Córdoba, 50 Mendoza, 58 Neuquén, 82 Santa Fe, 90 Tucumán). The 24 codes are the first
+  two digits of the department, local government and locality codes, and they code the first-level divisions
+  (admin_area_1). Files often lose the leading zero (2, 6), and some sources use their own province numbering,
+  so use the field name (provincia_id, id_provincia_indec) or context.'
+parent: id
+categories:
+- geo
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^(?:0[26]|1[048]|2[26]|3[048]|4[26]|5[048]|6[26]|7[048]|8[26]|9[04])$
+examples:
+- value: '02'
+  description: Ciudad Autónoma de Buenos Aires
+- value: '06'
+  description: Buenos Aires
+- value: '58'
+  description: Neuquén
+- value: '94'
+  description: Tierra del Fuego, Antártida e Islas del Atlántico Sur
+- value: '04'
+  valid: false
+  description: no province has this code
+- value: '6'
+  valid: false
+  description: leading zero dropped
+links:
+- type: doc
+  url: https://datosgobar.github.io/paquete-apertura-datos/guia-interoperables/
+- type: doc
+  url: https://datos.gob.ar/dataset/servicio-de-normalizacion-de-direcciones-y-unidades-territoriales-de-argentina
+translations:
+  es:
+    name: Código de provincia (INDEC)

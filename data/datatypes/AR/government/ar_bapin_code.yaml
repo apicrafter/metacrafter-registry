@@ -1,0 +1,33 @@
+id: ar_bapin_code
+name: Argentine public investment project code (BAPIN)
+status: draft
+doc: 'Number of a project in BAPIN, the Banco de Proyectos de Inversión Pública of the national public
+  investment system (SNIP, Law 24.354): a project must be registered there to enter the national investment
+  plan and the budget, and budget execution data carry the code; 0 stands for spending without a BAPIN
+  project. Any short number matches, so use the field name (codigo_bapin_id, bapin).'
+parent: id
+categories:
+- government
+- finances
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{1,6}$
+examples:
+- value: '30025'
+  description: Obras de Emergencias en Puentes. Nacional
+- value: '143014'
+  description: a project of the 2023 budget
+- value: '0'
+  description: no BAPIN project
+links:
+- type: doc
+  url: https://www.argentina.gob.ar/sites/default/files/dnip.pdf
+- type: doc
+  url: https://www.presupuestoabierto.gob.ar/sici/datos-abiertos
+translations:
+  es:
+    name: Código BAPIN de proyecto de inversión

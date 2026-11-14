@@ -1,0 +1,40 @@
+id: ar_indec_locality_code
+name: Argentine locality code (INDEC census locality, BAHRA)
+status: draft
+doc: 'Eight-digit code of an Argentine census locality (localidad censal of INDEC): the five-digit department
+  code and three digits for the locality, as in 06007010 Carhué and 14014010 Córdoba. The settlement codes
+  of BAHRA, the Base de Asentamientos Humanos de la República Argentina behind the georef localities and
+  settlements, use the same eight digits for a simple locality or a rural place (paraje) and add two digits
+  for an entity of a composite locality (1401401002 La Floresta, Córdoba). Many files drop the leading
+  zero (6441030).'
+parent: id
+categories:
+- geo
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:0[26]|1[048]|2[26]|3[048]|4[26]|5[048]|6[26]|7[048]|8[26]|9[04])\d{6}(?:\d{2})?$
+examples:
+- value: '06007010'
+  description: Carhué, Buenos Aires
+- value: '02000010'
+  description: Ciudad Autónoma de Buenos Aires
+- value: '14014010'
+  description: Córdoba
+- value: '1401401002'
+  description: La Floresta, an entity of the locality of Córdoba (BAHRA)
+- value: '6441030'
+  valid: false
+  description: leading zero dropped
+links:
+- type: doc
+  url: https://datosgobar.github.io/paquete-apertura-datos/guia-interoperables/
+- type: doc
+  url: https://datosgobar.github.io/georef-ar-api/localities/
+translations:
+  es:
+    name: Código de localidad (INDEC, BAHRA)

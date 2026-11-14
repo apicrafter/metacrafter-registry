@@ -1,0 +1,40 @@
+id: ar_clae
+name: Argentine economic activity code (CLAE, AFIP)
+status: draft
+doc: Six-digit code of the Clasificador de Actividades Económicas (CLAE, form 883) of the federal tax
+  agency AFIP (ARCA since 2024), which replaced the Nomenclador de Actividades (form 150) in 2013. Taxpayers
+  register their activities under it, and employment and business statistics of the Ministry of Production
+  group by it. The first two digits are the division (01 Agricultura, ganadería, caza y servicios relacionados;
+  47 Comercio al por menor), and the divisions and section letters (A, G, J) are those of ISIC Rev. 4.
+  Numeric columns drop the leading zero (11111 for 011111, cultivo de arroz).
+parent: isicrev4
+categories:
+- industry
+- finances
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^(?:0[1-9]|[1-9]\d)\d{4}$
+examples:
+- value: '011111'
+  description: Cultivo de arroz
+- value: '011211'
+  description: Cultivo de soja
+- value: '475230'
+  description: Venta al por menor de artículos de ferretería y materiales eléctricos
+- value: '620100'
+  description: Servicios de consultores en informática y suministros de programas de informática
+- value: '14211'
+  valid: false
+  description: 014211 with the leading zero dropped
+links:
+- type: doc
+  url: https://www.boletinoficial.gob.ar/detalleAviso/primera/317523/20241129
+- type: doc
+  url: https://datos.gob.ar/dataset/distribucion-geografica-de-los-establecimientos-productivos
+translations:
+  es:
+    name: Código de actividad CLAE (AFIP)

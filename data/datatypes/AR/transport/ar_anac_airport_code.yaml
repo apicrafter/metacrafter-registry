@@ -1,0 +1,38 @@
+id: ar_anac_airport_code
+name: Argentine aerodrome local designator (ANAC)
+status: draft
+doc: 'Three-letter local designator of an Argentine aerodrome or heliport in the lists and flight data
+  of the civil aviation authority ANAC, given to every aerodrome, also those without an ICAO or IATA code.
+  Most differ from the IATA code of the same airport: AER Aeroparque (IATA AEP), CBA Córdoba (COR), DOZ
+  Mendoza (MDZ), BAR San Carlos de Bariloche (BRC); a few are the same (EZE Ezeiza). ANAC movement data
+  name the airport by this code and a foreign airport by its ICAO code. The 2024 list has 693 designators.'
+parent: airport
+categories:
+- transport
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{3}$
+examples:
+- value: AER
+  description: Buenos Aires/Aeroparque Jorge Newbery (IATA AEP, ICAO SABE)
+- value: CBA
+  description: Córdoba (IATA COR, ICAO SACO)
+- value: DOZ
+  description: Mendoza/El Plumerillo (IATA MDZ, ICAO SAME)
+- value: MOR
+  description: Morón, no IATA code
+- value: SABE
+  valid: false
+  description: an ICAO code
+links:
+- type: doc
+  url: https://datos.gob.ar/dataset/lista-aeropuertos
+- type: doc
+  url: https://datos.gob.ar/dataset/aterrizajes-y-despegues-procesados-por-la-administracion-nacional-de-aviacion-civil-anac
+translations:
+  es:
+    name: Designador local de aeródromo (ANAC)
