@@ -1,0 +1,31 @@
+id: chemical_oxygen_demand
+name: Chemical oxygen demand (COD)
+status: draft
+doc: 'Chemical oxygen demand of water: the oxygen needed to oxidize the organic and oxidizable inorganic
+  matter of a sample with a strong oxidant (dichromate), in milligrams of oxygen per litre (DQO in Spanish
+  and French). It is higher than the biochemical oxygen demand of the same sample.'
+parent: numeric
+categories:
+- environment
+- chemistry
+- values
+langs:
+- common
+is_pii: false
+regexp: ^<?\s?\d+(?:[.,]\d+)?\s?(?:mg/L|mg/l|mgO2/L|mg O2/L|ppm)?$
+examples:
+- value: '36'
+  description: mg O2/L
+- value: <5
+  description: below the detection limit
+- value: abc
+  valid: false
+  description: not a number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Chemical_oxygen_demand
+translations:
+  es:
+    name: Demanda química de oxígeno (DQO)
+  ru:
+    name: Химическое потребление кислорода (ХПК)

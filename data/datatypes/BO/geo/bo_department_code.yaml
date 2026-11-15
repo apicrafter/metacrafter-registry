@@ -1,0 +1,37 @@
+id: bo_department_code
+name: Bolivian department code (INE)
+status: draft
+doc: 'Code of a Bolivian department in the geographic coding of the national statistics institute INE:
+  01 Chuquisaca, 02 La Paz, 03 Cochabamba, 04 Oruro, 05 Potosí, 06 Tarija, 07 Santa Cruz, 08 Beni and
+  09 Pando. It is the first two digits of the province, municipality and community codes (bo_province_code,
+  bo_municipality_code, bo_community_code). Spreadsheets drop the zero (1 to 9), and a digit alone fits
+  many other codings, so use the field name (COD_DEPTO, cod_depto, CODDEPTO).'
+parent: id
+categories:
+- geo
+- government
+country:
+- BO
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^0?[1-9]$
+examples:
+- value: '02'
+  description: La Paz
+- value: '07'
+  description: Santa Cruz
+- value: '9'
+  description: Pando, the zero dropped
+- value: '10'
+  valid: false
+  description: Bolivia has nine departments
+links:
+- type: doc
+  url: https://www.ine.gob.bo/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Departments_of_Bolivia
+translations:
+  es:
+    name: Código de departamento (INE)
