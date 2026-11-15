@@ -1,0 +1,34 @@
+id: biochemical_oxygen_demand
+name: Biochemical oxygen demand (BOD)
+status: draft
+doc: 'Biochemical oxygen demand of water: the dissolved oxygen that microorganisms take to break down
+  the organic matter of a sample, usually in five days at 20 °C (BOD5, DBO5 in Spanish and French), in
+  milligrams of oxygen per litre. Clean rivers stay below a few mg/L and untreated sewage reaches hundreds;
+  a laboratory writes a value below its detection limit as <2.'
+parent: numeric
+categories:
+- environment
+- chemistry
+- values
+langs:
+- common
+is_pii: false
+regexp: ^<?\s?\d+(?:[.,]\d+)?\s?(?:mg/L|mg/l|mgO2/L|mg O2/L|ppm)?$
+examples:
+- value: '18.5'
+  description: mg O2/L
+- value: <2
+  description: below the detection limit
+- value: 250 mg/L
+  description: with the unit
+- value: alto
+  valid: false
+  description: not a number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Biochemical_oxygen_demand
+translations:
+  es:
+    name: Demanda bioquímica de oxígeno (DBO)
+  ru:
+    name: Биохимическое потребление кислорода (БПК)

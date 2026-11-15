@@ -1,0 +1,36 @@
+id: bo_province_code
+name: Bolivian province code (INE)
+status: draft
+doc: 'Four-digit code of a Bolivian province in the geographic coding of the INE: the department code
+  and two digits for the province within it, as in 0201 Murillo (La Paz), 0701 Andrés Ibáñez (Santa Cruz)
+  and 0905 Federico Román (Pando). La Paz has the most provinces, 20. Spreadsheets drop the leading zero
+  (201), and some layers give the province number alone next to a department code (C_PROV 02).'
+parent: id
+categories:
+- geo
+- government
+country:
+- BO
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^0?[1-9](?:0[1-9]|1[0-9]|20)$
+examples:
+- value: '0201'
+  description: Murillo, La Paz
+- value: '0711'
+  description: Ñuflo de Chávez, Santa Cruz
+- value: 0905
+  description: Federico Román, Pando
+- value: '0221'
+  valid: false
+  description: La Paz has 20 provinces
+links:
+- type: doc
+  url: https://www.ine.gob.bo/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Provinces_of_Bolivia
+translations:
+  es:
+    name: Código de provincia (INE)

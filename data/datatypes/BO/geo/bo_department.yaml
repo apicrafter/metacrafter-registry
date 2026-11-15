@@ -1,0 +1,37 @@
+id: bo_department
+name: Bolivian department
+status: draft
+doc: 'Name of one of the nine departments of Bolivia, the first-level divisions: Chuquisaca, La Paz, Cochabamba,
+  Oruro, Potosí, Tarija, Santa Cruz, Beni and Pando. Tables write them in capitals without accents (POTOSI),
+  after their INE code (09.PANDO), as El Beni, or abbreviated (LPZ, SCZ, CBBA); GIS layers often carry
+  broken encodings (PotosÃ­, Potos?). La Paz is also a department of Honduras and El Salvador and Santa
+  Cruz a province of Argentina, so a column needs most of the nine names. The INE code is bo_department_code.'
+parent: admin_area_1
+categories:
+- geo
+- government
+country:
+- BO
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: La Paz
+- value: Santa Cruz
+- value: POTOSI
+  description: in capitals without the accent
+- value: Beni
+- value: Murillo
+  valid: false
+  description: 'a province of La Paz: bo_province'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Departments_of_Bolivia
+- type: doc
+  url: https://www.ine.gob.bo/
+translations:
+  es:
+    name: Departamento de Bolivia
+  ru:
+    name: Департамент Боливии

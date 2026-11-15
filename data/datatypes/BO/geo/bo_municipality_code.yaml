@@ -1,0 +1,37 @@
+id: bo_municipality_code
+name: Bolivian municipality code (INE)
+status: draft
+doc: 'Six-digit code of a Bolivian municipality in the geographic coding of the INE: the province code
+  and two digits for the municipal section, as in 020101 La Paz, 020105 El Alto and 070101 Santa Cruz
+  de la Sierra. Tables of the Ministry of Health, the census layers and datos.gob.bo drop the leading
+  zero (20105, 70101). A Peruvian ubigeo has the same form (010101), so use the field name (COD_MUN, MUNICOD,
+  codigo_ine) or check the codes against the list of municipalities.'
+parent: id
+categories:
+- geo
+- government
+country:
+- BO
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^0?[1-9](?:0[1-9]|1[0-9]|20)0[1-9]$
+examples:
+- value: '020105'
+  description: El Alto, Murillo, La Paz
+- value: '070101'
+  description: Santa Cruz de la Sierra
+- value: '30901'
+  description: Quillacollo, Cochabamba, the zero dropped
+- value: '0201'
+  valid: false
+  description: 'a province code: bo_province_code'
+links:
+- type: doc
+  url: https://www.ine.gob.bo/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Municipalities_of_Bolivia
+translations:
+  es:
+    name: Código de municipio (INE)

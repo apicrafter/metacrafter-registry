@@ -1,0 +1,38 @@
+id: bo_province
+name: Bolivian province
+status: draft
+doc: Name of one of the 112 provinces of Bolivia, the second-level divisions of the departments, such
+  as Murillo (La Paz), Andrés Ibáñez (Santa Cruz), Sud Yungas or Ñuflo de Chávez. Five departments have
+  a province named Cercado. Tables use the short or the full name (Murillo or Pedro Domingo Murillo),
+  Sud and Sur alike (Sud Cinti, Sur Cinti), capitals without accents, and shapefiles cut the names at
+  20 characters (General Jose Balliv); the INE code is bo_province_code.
+parent: admin_area_2
+categories:
+- geo
+- government
+country:
+- BO
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Murillo
+  description: La Paz
+- value: Andrés Ibáñez
+  description: Santa Cruz
+- value: SUD YUNGAS
+  description: in capitals
+- value: Cercado
+  description: a province of Cochabamba, Oruro, Tarija or Beni
+- value: El Alto
+  valid: false
+  description: 'a municipality: bo_municipality'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Provinces_of_Bolivia
+translations:
+  es:
+    name: Provincia de Bolivia
+  ru:
+    name: Провинция Боливии

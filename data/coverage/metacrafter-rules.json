@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "6c1db93160cbcbfe16bcc0b0905374e4162f37c9"
+  "ref": "8193c34528a32a78c66f01a01e31cdeba3cf9c00"
  },
  "rules": [
   {
@@ -3125,6 +3125,116 @@
    "country_code": "bg"
   },
   {
+   "rule": "bocommunitycodebyname",
+   "key": "bo_community_code",
+   "type": "field",
+   "match": "regex",
+   "file": "bo/bo_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "bo"
+  },
+  {
+   "rule": "bodepartmentbyname",
+   "key": "bo_department",
+   "type": "field",
+   "match": "regex",
+   "file": "bo/bo_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "bo"
+  },
+  {
+   "rule": "bodepartmentcodebyname",
+   "key": "bo_department_code",
+   "type": "field",
+   "match": "regex",
+   "file": "bo/bo_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "bo"
+  },
+  {
+   "rule": "bomunicipalitybyname",
+   "key": "bo_municipality",
+   "type": "field",
+   "match": "regex",
+   "file": "bo/bo_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "bo"
+  },
+  {
+   "rule": "bomunicipalitycodebycodename",
+   "key": "bo_municipality_code",
+   "type": "field",
+   "match": "regex",
+   "file": "bo/bo_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "bo"
+  },
+  {
+   "rule": "bomunicipalitycodebyname",
+   "key": "bo_municipality_code",
+   "type": "field",
+   "match": "regex",
+   "file": "bo/bo_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "bo"
+  },
+  {
+   "rule": "boprovincebyname",
+   "key": "bo_province",
+   "type": "field",
+   "match": "regex",
+   "file": "bo/bo_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "bo"
+  },
+  {
+   "rule": "boprovincecodebyname",
+   "key": "bo_province_code",
+   "type": "field",
+   "match": "regex",
+   "file": "bo/bo_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "bo"
+  },
+  {
+   "rule": "bosiecodebyname",
+   "key": "bo_sie_code",
+   "type": "field",
+   "match": "regex",
+   "file": "bo/bo_government.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "bo"
+  },
+  {
+   "rule": "bosisincodebyname",
+   "key": "bo_sisin_code",
+   "type": "field",
+   "match": "regex",
+   "file": "bo/bo_government.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "bo"
+  },
+  {
+   "rule": "bosisincodevalue",
+   "key": "bo_sisin_code",
+   "type": "data",
+   "match": "regex",
+   "file": "bo/bo_government.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "bo"
+  },
+  {
    "rule": "brbankaccountknown",
    "key": "bankaccount",
    "type": "field",
@@ -5185,6 +5295,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "yearbygestionname",
+   "key": "year",
+   "type": "field",
+   "match": "regex",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "yearbylocalname",
    "key": "year",
    "type": "field",
@@ -5645,6 +5765,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "dissolvedoxygenspanishbyname",
+   "key": "dissolved_oxygen",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "eeaeoistationcodevalue",
    "key": "eea_eoi_station_code",
    "type": "data",
@@ -6005,6 +6135,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "eastingspanishbyname",
+   "key": "easting",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "elevationbygermanname",
    "key": "elevation",
    "type": "field",
@@ -6026,6 +6166,16 @@
   },
   {
    "rule": "elevationbyname",
+   "key": "elevation",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "elevationspanishbyname",
    "key": "elevation",
    "type": "field",
    "match": "regex",
@@ -6365,6 +6515,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "longitudedmsbyname",
+   "key": "longitude",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "longitudepat",
    "key": "longitude",
    "type": "field",
@@ -6407,6 +6567,36 @@
   {
    "rule": "northingbyycoordname",
    "key": "northing",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "northingspanishbyname",
+   "key": "northing",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "pfafstettercodebyname",
+   "key": "pfafstetter_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "pfafstetterlevelbyname",
+   "key": "pfafstetter_code",
    "type": "field",
    "match": "regex",
    "file": "common/geo.yaml",
@@ -6566,6 +6756,16 @@
   },
   {
    "rule": "utmzonebyname",
+   "key": "utm_zone",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "utmzonespanishbyname",
    "key": "utm_zone",
    "type": "field",
    "match": "regex",
@@ -7855,8 +8055,48 @@
    "country_code": "xx"
   },
   {
+   "rule": "biochemicaloxygendemandbyname",
+   "key": "biochemical_oxygen_demand",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "chemicaloxygendemandbyname",
+   "key": "chemical_oxygen_demand",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "coconcentrationbyname",
    "key": "co_concentration",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "conductivityspanishbyname",
+   "key": "electrical_conductivity",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "dissolvedsolidsspanishbyname",
+   "key": "total_dissolved_solids",
    "type": "field",
    "match": "regex",
    "file": "common/observations.yaml",
@@ -7995,6 +8235,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "suspendedsolidsbyname",
+   "key": "total_suspended_solids",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "totaldissolvedsolidsreadingbyname",
    "key": "total_dissolved_solids",
    "type": "field",
@@ -8016,6 +8266,16 @@
   },
   {
    "rule": "turbidityreadingbyname",
+   "key": "turbidity",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "turbidityspanishbyname",
    "key": "turbidity",
    "type": "field",
    "match": "regex",
@@ -10666,6 +10926,16 @@
   },
   {
    "rule": "areabyfield",
+   "key": "area",
+   "type": "field",
+   "match": "regex",
+   "file": "common/values.yaml",
+   "context": "values",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "areaspanishbyname",
    "key": "area",
    "type": "field",
    "match": "regex",

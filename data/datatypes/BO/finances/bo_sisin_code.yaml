@@ -1,0 +1,33 @@
+id: bo_sisin_code
+name: Bolivian public investment project code (SISIN)
+status: draft
+doc: Code of a public investment project in SISIN (Sistema de Información sobre Inversiones), the project
+  register of the Viceministry of Public Investment and External Financing (VIPFE) in which every project
+  of the Bolivian national public investment system is entered. It is written as three groups of four,
+  five and five digits (0287-30477-00000); spreadsheets drop the leading zero of the first group (287-38935-00000)
+  or the hyphens (2873912800000). Found in the irrigation and drinking water investment layers of the
+  Ministry of Environment and Water.
+parent: id
+categories:
+- finances
+- government
+country:
+- BO
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{3,4}-?\d{5}-?\d{4,5}$
+examples:
+- value: 0287-30477-00000
+  description: an irrigation project of the Ministry of Environment and Water
+- value: 086-60061-00000
+  description: the leading zero of the first group dropped
+- value: '2873912800000'
+  description: without the hyphens and the leading zero
+- value: s/s
+  valid: false
+  description: sin SISIN, a project without a code
+translations:
+  es:
+    name: Código SISIN de proyecto de inversión pública
