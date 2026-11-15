@@ -1,0 +1,35 @@
+id: ar_mendoza_expediente_number
+name: Number of an administrative file of Mendoza (before GDE)
+status: draft
+doc: 'Number of an expediente, an administrative file of the government of the province of Mendoza, Argentina,
+  from before the electronic files of GDE (GDEMZA, ar_gde_number) that replaced them in 2018: the number,
+  the initial of the first word of the subject or of the applicant, the year and the five-digit code of
+  the office that opened it, with hyphens or slashes: 4259-D-2015-03834, 1310/G/07/03834, 203-D-2014-18007.
+  The environmental impact assessments and the registers of hazardous waste give it; mining files of the
+  mining register leave out the office (3451-N-1943).'
+parent: id
+categories:
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{1,6}[-/][A-Za-z][-/](?:\d{2}|\d{4})(?:[-/]\d{5})?$
+examples:
+- value: 4259-D-2015-03834
+  description: a request of an environmental impact assessment
+- value: 1310/G/07/03834
+  description: registration of a generator of hazardous waste, with slashes and a two-digit year
+- value: 3451-N-1943
+  description: a mine of the mining register, without the office
+- value: EX-2018-01621874-GDEMZA-DPA#SAYOT
+  valid: false
+  description: 'an electronic file of GDE: ar_gde_number'
+links:
+- type: doc
+  url: https://datosabiertos.mendoza.gov.ar/dataset/pedidos-de-evaluaciones-de-impacto-ambiental
+translations:
+  es:
+    name: Número de expediente de Mendoza (anterior a GDE)

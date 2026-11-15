@@ -1,0 +1,39 @@
+id: ar_hazardous_waste_category
+name: Argentine category of hazardous waste under control (Ley 24.051)
+status: draft
+doc: 'Category of waste under control (categoría sometida a control) of Annex I of the Argentine hazardous
+  waste law, Ley 24.051 of 1991: Y1 to Y45 are the waste streams and constituents of Annex I of the Basel
+  Convention, which the law took over, and Y48 is the category that the national rules added for materials
+  and objects contaminated with any of them (in the Basel Convention Y48 is plastic waste). The registers
+  of generators, transporters and operators of hazardous waste give the categories a certificate allows,
+  several in a cell (Y8-Y9-Y48, Y8, Y9, Y11, Y8 / Y9 / Y48), operators together with the recovery or disposal
+  operations of the Basel Convention (R9, D10).'
+parent: basel_waste_code
+categories:
+- environment
+- chemistry
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^Y(?:[1-9]|[1-3]\d|4[0-5]|48)$
+examples:
+- value: Y48
+  description: materials contaminated with hazardous waste, the national category of Ley 24.051
+- value: Y8
+  description: waste mineral oils unfit for their intended use
+- value: Y12
+  description: wastes from the production of inks, dyes, pigments, paints, lacquers and varnish
+- value: Y46
+  valid: false
+  description: household waste of Annex II of the Basel Convention is not a category of the law
+links:
+- type: doc
+  url: https://servicios.infoleg.gob.ar/infolegInternet/anexos/0-4999/450/texact.htm
+- type: doc
+  url: https://datosabiertos.mendoza.gov.ar/dataset/generadores-residuos-peligrosos
+translations:
+  es:
+    name: Categoría sometida a control de residuos peligrosos (Ley 24.051)

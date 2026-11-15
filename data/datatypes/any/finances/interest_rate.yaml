@@ -1,0 +1,34 @@
+id: interest_rate
+name: Interest rate
+status: draft
+doc: Rate of interest of a loan, a bond, a deposit or a credit line, written as a percentage (6,00%, 11.41
+  %), as a reference rate and a spread over it (Badlar + 2%, LIBOR 12M + 3,70%, CER + 0,1%, EURIBOR 6M
+  + 0.5%, SOFR + 150 bps), as a reference rate alone (BADLAR Bancos Privados) or in words (tasa fija anual
+  del 21%, 30 % de la TNA del BNA). Public debt profiles, credit lines of development funds and bond lists
+  have one per row. A percentage of another kind (a share, an inflation rate) is not one.
+categories:
+- finances
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Badlar + 2%
+  description: tasa of the public debt of the province of Mendoza
+- value: Libor + 3,70%
+  description: same table
+- value: 6,00%
+  description: a fixed rate
+- value: tasa fija anual del 21%
+  description: tasa final of the interest rate subsidies of the Fondo para la Transformación y el Crecimiento
+- value: Semestral
+  valid: false
+  description: 'a frequency of payments: periodicity'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Interest_rate
+- type: doc
+  url: https://datosabiertos.mendoza.gov.ar/dataset/deuda-publica-2018
+translations:
+  es:
+    name: Tasa de interés

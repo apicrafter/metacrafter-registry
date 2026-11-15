@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "578fd18c7331f713d6758a626d2c4fcd45660a0c"
+  "ref": "3ab2edfff266f82ca620cb0f054a28e995716f00"
  },
  "rules": [
   {
@@ -855,6 +855,26 @@
    "country_code": "ar"
   },
   {
+   "rule": "arelectricitydistributorbyname",
+   "key": "ar_electricity_distributor",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_energy.yaml",
+   "context": "energy",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arelectricitydistributorvalue",
+   "key": "ar_electricity_distributor",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_energy.yaml",
+   "context": "energy",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
    "rule": "arsedimentarybasinbyname",
    "key": "ar_sedimentary_basin",
    "type": "field",
@@ -1170,6 +1190,126 @@
    "type": "data",
    "match": "func",
    "file": "ar_country/ar_government.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arhazardouswastebyname",
+   "key": "ar_hazardous_waste_category",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_mendoza.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arhazardouswastevalue",
+   "key": "ar_hazardous_waste_category",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_mendoza.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "armendozacucbyname",
+   "key": "ar_mendoza_cuc",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_mendoza.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "armendozadistrictbyname",
+   "key": "ar_mendoza_district",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_mendoza.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "armendozaeconomicbyname",
+   "key": "ar_mendoza_economic_classification",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_mendoza.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "armendozaeconomicvalue",
+   "key": "ar_mendoza_economic_classification",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_mendoza.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "armendozaexpedientebyname",
+   "key": "ar_mendoza_expediente_number",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_mendoza.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "armendozaexpedientevalue",
+   "key": "ar_mendoza_expediente_number",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_mendoza.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "armendozafinancingbyname",
+   "key": "ar_mendoza_financing_source",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_mendoza.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "armendozaresourcebyname",
+   "key": "ar_mendoza_resource_account",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_mendoza.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "armendozaresourcevalue",
+   "key": "ar_mendoza_resource_account",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_mendoza.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "armendozaschoolnumberbyname",
+   "key": "ar_mendoza_school_number",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_mendoza.yaml",
    "context": "government",
    "lang": "es",
    "country_code": "ar"
@@ -5545,6 +5685,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "urbanruralbyname",
+   "key": "urban_rural_class",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "urbanruralvalue",
+   "key": "urban_rural_class",
+   "type": "data",
+   "match": "func",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "utmzonebyname",
    "key": "utm_zone",
    "type": "field",
@@ -7105,6 +7265,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "interestratebyname",
+   "key": "interest_rate",
+   "type": "field",
+   "match": "regex",
+   "file": "common/rates.yaml",
+   "context": "finances",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "interestratereferencevalue",
+   "key": "interest_rate",
+   "type": "data",
+   "match": "func",
+   "file": "common/rates.yaml",
+   "context": "finances",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "buildingnumberfield",
    "key": "buildingnumber",
    "type": "field",
@@ -8605,6 +8785,46 @@
    "country_code": "xx"
   },
   {
+   "rule": "accommodationstarsbyname",
+   "key": "accommodation_star_rating",
+   "type": "field",
+   "match": "regex",
+   "file": "common/tourism.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "accommodationstarsvalue",
+   "key": "accommodation_star_rating",
+   "type": "data",
+   "match": "func",
+   "file": "common/tourism.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "accommodationtypebyname",
+   "key": "accommodation_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/tourism.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "accommodationtypevalue",
+   "key": "accommodation_type",
+   "type": "data",
+   "match": "func",
+   "file": "common/tourism.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "currencybyfield",
    "key": "currency",
    "type": "field",
@@ -10005,6 +10225,36 @@
    "country_code": "eu"
   },
   {
+   "rule": "esbudgetstageamountbyname",
+   "key": "money",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_budget.yaml",
+   "context": "finances",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esejercicioyearbyname",
+   "key": "year",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_budget.yaml",
+   "context": "finances",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esmarkedamountvalue",
+   "key": "money",
+   "type": "data",
+   "match": "func",
+   "file": "es/es_budget.yaml",
+   "context": "finances",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esaplicacionpresupuestariabyfield",
    "key": "es_aplicacion_presupuestaria",
    "type": "field",
@@ -10047,6 +10297,26 @@
   {
    "rule": "esdayofweekvalue",
    "key": "es_dayofweek",
+   "type": "data",
+   "match": "func",
+   "file": "es/es_datetime.yaml",
+   "context": "datetime",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esdurationwordsbyname",
+   "key": "duration",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_datetime.yaml",
+   "context": "datetime",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esdurationwordsvalue",
+   "key": "duration",
    "type": "data",
    "match": "func",
    "file": "es/es_datetime.yaml",
@@ -10145,8 +10415,28 @@
    "country_code": "es"
   },
   {
+   "rule": "esbuildingnumberbycompoundname",
+   "key": "buildingnumber",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esbuildingnumberbyname",
    "key": "buildingnumber",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esfloorbycompoundname",
+   "key": "address_line2",
    "type": "field",
    "match": "regex",
    "file": "es/es_geo.yaml",
@@ -10237,6 +10527,16 @@
   {
    "rule": "esstreetaddressbyname",
    "key": "street_address",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esstreetbycompoundname",
+   "key": "street",
    "type": "field",
    "match": "regex",
    "file": "es/es_geo.yaml",
