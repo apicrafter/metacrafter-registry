@@ -29,7 +29,7 @@
         return "<tr><td>" + r.score + "</td>" +
           '<td><a href="' + base + "/datatype/" + encodeURIComponent(r.id) + '">' + escapeHtml(r.name) + "</a> <code>" +
           escapeHtml(r.id) + "</code>" + (r.is_pii ? ' <span class="badge pii">PII</span>' : "") +
-          (r.status === "draft" ? ' <span class="badge draft">draft</span>' : "") + "</td>" +
+          (r.status === "stable" ? ' <span class="badge ok">stable</span>' : "") + "</td>" +
           "<td>" + pct(r.regexp_hit_rate) + "</td>" +
           "<td>" + (r.checksum ? escapeHtml(r.checksum.algorithm) + " " + pct(r.checksum.pass_rate) : "–") + "</td>" +
           "<td>" + (r.field_name_similarity ? pct(r.field_name_similarity) : "–") + "</td></tr>";
@@ -98,8 +98,20 @@
   });
 
   status.textContent = "Loading the datatype index…";
-  fetch(base + "/identify-index.json")
-    .then(function (response) { return response.json(); })
+  // site.js (deferred, after this file) defines registryFetchJson; it exists
+  // by DOMContentLoaded.
+  var load = function () {
+    return window.registryFetchJson
+      ? window.registryFetchJson(base + "/identify-index.json", function (bytes) {
+          status.textContent = "Loading the datatype index… " + (bytes / 1048576).toFixed(1) + " MB";
+        })
+      : fetch(base + "/identify-index.json").then(function (response) { return response.json(); });
+  };
+  new Promise(function (resolve) {
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", resolve);
+    else resolve();
+  })
+    .then(load)
     .then(function (data) {
       index = data;
       status.textContent = "Ready: " + index.length + " datatypes with a regexp or a check digit.";

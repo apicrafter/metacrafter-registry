@@ -1,0 +1,45 @@
+id: cl_comuna
+name: Chilean commune (comuna)
+status: draft
+doc: Name of one of the 346 comunas of Chile, the third-level division below the 16 regions and 56 provinces
+  and the unit of local government, each run by a municipalidad (Santiago, Maipú, Lo Barnechea, Til Til,
+  Chillán, Temuco, Punta Arenas). Tables of projects, schools, health facilities and survey respondents
+  give the comuna by name, in capitals or without accents (CONCEPCION), and some names have more than
+  one spelling (Aysén and Aisén, Coyhaique and Coihaique, Til Til and Tiltil, Llay-Llay and Llaillay,
+  Marchigüe and Marchihue, Treguaco and Trehuaco) or are replaced by the name of the seat (Puerto Natales
+  for Natales, Puerto Saavedra for Saavedra). Many names repeat towns of other Spanish-speaking countries
+  (Santiago, Concepción, San Pedro, Santa Cruz), so the field or the other values tell that a value is
+  a comuna. The Código Único Territorial (CUT) of SUBDERE numbers the comunas with five digits, region,
+  province and comuna (13101 Santiago).
+parent: city
+categories:
+- geo
+- government
+country:
+- CL
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Lo Barnechea
+  description: Santiago Metropolitan Region
+- value: Til Til
+- value: Chillán
+- value: VIÑA DEL MAR
+  description: in capitals
+- value: Puerto Saavedra
+  description: the seat of the comuna of Saavedra
+- value: Cachapoal
+  valid: false
+  description: a province, not a comuna
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Communes_of_Chile
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Anexo:Comunas_de_Chile
+translations:
+  es:
+    name: Comuna de Chile
+  ru:
+    name: Коммуна Чили

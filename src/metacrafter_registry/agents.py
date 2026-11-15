@@ -48,7 +48,15 @@ def record_markdown(
         ("kind", record["kind"]),
         ("status", record["status"]),
         ("is_pii", record["is_pii"]),
+        ("name", record["name"]),
     ]
+    front += [(key, record[key]) for key in ("regexp", "checksum") if record.get(key)]
+    # Links to other records are Markdown twins, so an agent can follow them.
+    site = record["urls"]["html"].rsplit("/datatype/", 1)[0]
+
+    def ref(rid: str) -> str:
+        return f"[`{rid}`]({site}/datatype/{rid}.md)"
+
     lines = ["---"]
     lines += [f"{key}: {_yaml_scalar(value)}" for key, value in front]
     for key in ("categories", "country", "langs", "aliases"):
@@ -61,14 +69,14 @@ def record_markdown(
         lines += [f"> **Draft.** {DRAFT_NOTE}", ""]
     elif record["status"] == "deprecated":
         replaced = record.get("replaced_by")
-        lines += [f"> **Deprecated.**{f' Use `{replaced}` instead.' if replaced else ''}", ""]
+        lines += [f"> **Deprecated.**{f' Use {ref(replaced)} instead.' if replaced else ''}", ""]
     lines += [record["doc"], ""]
 
     facts = []
     if record.get("semantic_type"):
-        facts.append(f"- Pattern of: `{record['semantic_type']}`")
+        facts.append(f"- Pattern of: {ref(record['semantic_type'])}")
     if record.get("parent"):
-        facts.append(f"- Parent datatype: `{record['parent']}`")
+        facts.append(f"- Parent datatype: {ref(record['parent'])}")
     facts.append(f"- Personal data (PII): {'yes' if record['is_pii'] else 'no'}")
     if record.get("categories"):
         facts.append(f"- Categories: {_names(record['categories'], categories)}")
@@ -83,7 +91,7 @@ def record_markdown(
     if record.get("aliases"):
         facts.append(f"- Former IDs: {', '.join(f'`{a}`' for a in record['aliases'])}")
     if record.get("patterns"):
-        facts.append(f"- Patterns: {', '.join(f'`{p}`' for p in record['patterns'])}")
+        facts.append(f"- Patterns: {', '.join(ref(p) for p in record['patterns'])}")
     lines += facts + [""]
 
     if record.get("regexp") or record.get("checksum"):
@@ -107,6 +115,14 @@ def record_markdown(
                 iris = fibo_iris(record["mappings"])
                 lines.append(f"- fibo: {', '.join(f'<{iri}>' for iri in iris)}")
                 continue
+            if system == "wikidata":
+                prefix = "https://www.wikidata.org/wiki/"
+                values = [
+                    f"[`{v}`]({prefix}{'Property:' if v.startswith('P') else ''}{v})"
+                    for v in values
+                ]
+                lines.append(f"- wikidata: {', '.join(values)}")
+                continue
             lines.append(f"- {system}: {', '.join(f'`{v}`' for v in values)}")
         lines.append("")
     rules = record.get("detected_by", {}).get("metacrafter_rules", [])
@@ -122,7 +138,8 @@ def record_markdown(
         lines += [f"- `{r['rule']}` ({r['type']}, `{r['file']}`)" for r in rules[:20]] + [""]
     if record.get("detected_by", {}).get("tools"):
         lines += ["## Supported by tools", ""]
-        lines += [f"- `{t}`" for t in record["detected_by"]["tools"]] + [""]
+        lines += [f"- [`{t}`]({site}/tool/{t}.md)" for t in record["detected_by"]["tools"]]
+        lines.append("")
     if record.get("translations"):
         lines += ["## Translations", ""]
         for lang, t in record["translations"].items():
@@ -215,9 +232,19 @@ def llms_txt(
     counts: Mapping[str, int],
     categories: Iterable[Mapping[str, Any]],
     countries: Iterable[Mapping[str, Any]],
+    sizes: Mapping[str, int] | None = None,
 ) -> str:
-    """/llms.txt following https://llmstxt.org."""
+    """/llms.txt following https://llmstxt.org.
+
+    ``sizes`` maps a published path to its size in bytes; known sizes are shown
+    so that an agent can decide before it downloads a bulk file.
+    """
     s = site_url
+
+    def size(path: str) -> str:
+        n = (sizes or {}).get(path)
+        return f" ({n / 1048576:.1f} MB)" if n else ""
+
     lines = [
         "# Metacrafter Registry",
         "",
@@ -230,6 +257,23 @@ def llms_txt(
         "Every record has a `status`. " + DRAFT_NOTE + " Each record also has a quality score "
         "(0-100). Record pages have Markdown twins: append `.md` to any `/datatype/<id>` URL.",
         "",
+        "## How to find a datatype",
+        "",
+        f"1. You know the id: read `{s}/datatype/<id>.md` (about 1 KB) or "
+        f"`{s}/api/v1/datatypes/<id>.json`. Former ids resolve.",
+        "2. You know the topic: read one category list below (`/category/<id>.md`), "
+        "then the records you need.",
+        f"3. You know the country: read `{s}/country/<CC>.md` for the list, or "
+        f"`{s}/api/v1/countries/<CC>.json` for the full records of that country. "
+        f"Categories have the same JSON: `{s}/api/v1/categories/<id>.json`.",
+        f"4. You have keywords: download [the compact index]({s}/api/v1/datatypes-index.json)"
+        f"{size('api/v1/datatypes-index.json')} and match `id`, `name` and `names` (aliases "
+        "and translated names) yourself. The site has no server-side search.",
+        "5. You have sample values: use the MCP tool `identify_values` or "
+        "`Registry.identify()` from the Python package (see For AI agents).",
+        "",
+        "Do not load the bulk files below into a context window: use them for indexing.",
+        "",
         "## Docs",
         "",
         f"- [For AI agents]({s}/agents.md): MCP server, Python package, skills, labeling columns",
@@ -239,12 +283,17 @@ def llms_txt(
         "## Data",
         "",
         f"- [Manifest]({s}/api/v1/index.json): version, counts, SHA-256 of every bulk file",
-        f"- [All records, Markdown]({s}/llms-full.txt): every datatype and pattern in one file",
-        f"- [All records, JSONL]({s}/api/v1/datatypes.jsonl): normalized records",
-        f"- [RAG corpus]({s}/api/v1/rag/corpus.jsonl): one embedding text per record",
+        f"- [All records, Markdown]({s}/llms-full.txt): every datatype and pattern in one file"
+        + size("llms-full.txt"),
+        f"- [All records, JSONL]({s}/api/v1/datatypes.jsonl): normalized records"
+        + size("api/v1/datatypes.jsonl"),
+        f"- [RAG corpus]({s}/api/v1/rag/corpus.jsonl): one embedding text per record"
+        + size("api/v1/rag/corpus.jsonl"),
         f"- [Aliases]({s}/api/v1/aliases.json): retired ids and the record each resolves to",
-        f"- [SKOS concept scheme]({s}/registry.ttl): linked-data export (Turtle); "
-        "one record: `/datatype/<id>.ttl`",
+        f"- [Changes]({s}/api/v1/changes.json): records added, changed and retired per release",
+        f"- [SKOS concept scheme]({s}/registry.ttl): linked-data export (Turtle)"
+        + size("registry.ttl")
+        + "; one record: `/datatype/<id>.ttl`",
         f"- [RDF vocabulary]({s}/vocab.ttl): OWL declaration of the `mcr:` terms",
         "",
         "## Categories",
@@ -254,7 +303,7 @@ def llms_txt(
         f"- [{c['name']}]({s}/category/{c['id']}.md): {c['count']} records" for c in categories
     ]
     lines += ["", "## Optional", ""]
-    lines += [f"- [{c['name']}]({s}/country/{c['id']}): {c['count']} records" for c in countries]
+    lines += [f"- [{c['name']}]({s}/country/{c['id']}.md): {c['count']} records" for c in countries]
     return "\n".join(lines) + "\n"
 
 

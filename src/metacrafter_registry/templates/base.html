@@ -11,6 +11,7 @@
   <meta property="og:site_name" content="Metacrafter Registry">
   <meta property="og:title" content="{{ self.title() }}">
   <meta property="og:description" content="{{ self.description() }}">
+  <link rel="icon" type="image/svg+xml" href="{{ base }}/assets/favicon.svg">
   <link rel="alternate" type="text/markdown" href="{{ base }}/llms.txt" title="llms.txt">
   {% block head %}{% endblock %}
   <link rel="stylesheet" href="{{ base }}/assets/site.css">
@@ -21,7 +22,8 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="{{ base }}/">Metacrafter <span>Registry</span></a>
-    <nav class="site-nav" aria-label="Main">
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
       <a href="{{ base }}/datatype/"{% if section == 'datatypes' %} aria-current="page"{% endif %}>Datatypes</a>
       <a href="{{ base }}/category/"{% if section == 'categories' %} aria-current="page"{% endif %}>Categories</a>
       <a href="{{ base }}/country/"{% if section == 'countries' %} aria-current="page"{% endif %}>Countries</a>

@@ -1,0 +1,36 @@
+id: self_rated_health
+name: Self-rated health
+status: draft
+doc: 'Answer to the single survey question on how a person rates their own health in general (In general,
+  how is your health? En general, ¿cómo es su estado de salud?). The scale has four or five steps: Excellent,
+  Very good, Good, Fair, Poor in the wording of the US health surveys; Very good, Good, Fair, Bad, Very
+  bad in the wording that the WHO and the European surveys use; in Spanish excelente, muy bueno, bueno,
+  regular, malo. Data files hold the words, lower case or with underscores (muy_bueno), or the codes 1
+  to 5 with the labels in a codebook. Health surveys, censuses and cohort studies ask it because it predicts
+  illness and mortality. It is health data of a person.'
+parent: category
+categories:
+- medical
+- persons
+langs:
+- en
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Excellent
+- value: Very good
+- value: Fair
+- value: Poor
+- value: muy_bueno
+  description: Spanish option of a survey form, with an underscore
+- value: regular
+  description: Spanish for fair
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Self-rated_health
+translations:
+  es:
+    name: Salud autopercibida
+  ru:
+    name: Самооценка здоровья

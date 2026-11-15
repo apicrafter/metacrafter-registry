@@ -3,7 +3,7 @@
 {%- endmacro %}
 
 {% macro status_badge(record) -%}
-{% if record.status == 'draft' %}<span class="badge draft" title="Not reviewed yet">draft</span>{% elif record.status == 'deprecated' %}<span class="badge neutral">deprecated</span>{% endif %}
+{% if record.status == 'stable' %}<span class="badge ok" title="Reviewed">stable</span>{% elif record.status == 'deprecated' %}<span class="badge neutral">deprecated</span>{% endif %}
 {%- endmacro %}
 
 {% macro kind_badge(record) -%}
@@ -20,7 +20,7 @@
 
 {% macro datatype_table(records, table_id=None) -%}
 <div class="table-wrap">
-<table{% if table_id %} id="{{ table_id }}"{% endif %}>
+<table{% if table_id %} id="{{ table_id }}"{% else %} data-sortable{% endif %}>
   <thead>
     <tr><th scope="col">ID</th><th scope="col">Name</th><th scope="col">Categories</th><th scope="col">Countries</th><th scope="col">Description</th></tr>
   </thead>

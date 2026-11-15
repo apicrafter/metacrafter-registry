@@ -13,6 +13,7 @@
   <li><a href="{{ base }}/llms.txt">/llms.txt</a>: an index in the <a href="https://llmstxt.org/">llms.txt</a> format; <a href="{{ base }}/llms-full.txt">/llms-full.txt</a> has every record in one Markdown file.</li>
   <li>Every record page has a Markdown twin: append <code>.md</code>, for example <a href="{{ base }}/datatype/email.md">/datatype/email.md</a>.</li>
   <li>JSON API described in <a href="{{ base }}/api/v1/openapi.json">OpenAPI 3.1</a>; frameworks that import OpenAPI tools can use it directly.</li>
+  <li>To narrow the registry first: the <a href="{{ base }}/api/v1/datatypes-index.json">compact index</a> of all records, or the full records of one country or category, for example <code>/api/v1/countries/RU.json</code> and <code>/api/v1/categories/pii.json</code>.</li>
   <li><a href="{{ base }}/api/v1/rag/corpus.jsonl">RAG corpus</a>: one embedding text per record, with a versioned template (see the manifest).</li>
 </ul>
 

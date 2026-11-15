@@ -1,0 +1,37 @@
+id: amino_acid
+name: Amino acid (three-letter code)
+status: draft
+doc: 'One of the amino acids that the genetic code builds proteins from, written with the three-letter
+  code of the IUPAC-IUB nomenclature: Ala, Arg, Asn, Asp, Cys, Gln, Glu, Gly, His, Ile, Leu, Lys, Met,
+  Phe, Pro, Ser, Thr, Trp, Tyr and Val, with Sec (selenocysteine), Pyl (pyrrolysine), the ambiguity codes
+  Asx and Glx and Xaa for an unknown residue. Codon usage tables, mutation lists and tables of residues
+  of a protein have such a column (AmAcid, amino_acid, residue, aa); codon tables add Ter, Stop or End
+  for the stop codons. The one-letter codes (A, R, N) and the full names (Alanine) are other ways to write
+  the same thing; a sequence of residues is protein_sequence.'
+parent: category
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:Ala|Arg|Asn|Asp|Cys|Gln|Glu|Gly|His|Ile|Leu|Lys|Met|Phe|Pro|Ser|Thr|Trp|Tyr|Val|Sec|Pyl|Asx|Glx|Xaa)$
+examples:
+- value: Arg
+  description: Arginine
+- value: Leu
+  description: Leucine
+- value: Gly
+- value: Sec
+  description: Selenocysteine
+- value: Abc
+  valid: false
+  description: Not an amino acid code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Proteinogenic_amino_acid
+translations:
+  es:
+    name: Aminoácido (código de tres letras)
+  ru:
+    name: Аминокислота (трёхбуквенный код)

@@ -1,0 +1,31 @@
+id: sports_team
+name: Sports team or club
+status: draft
+doc: 'Name of a team or club that takes part in a sports competition: a football club (Bayern München,
+  River Plate, Colo-Colo), a national team named by its country, a franchise of a league. Tables of matches
+  give two of them, the home and the away side (homeTeam and awayTeam, home and away, local and visitante,
+  team1 and team2), next to the competition, the date and the score; tables of standings, players and
+  transfers have one team column. The names have short and long forms and translations (Bayern Munich,
+  FC Bayern München), and sources write them in their own way, so the field name tells that a name is
+  a team.'
+parent: name
+categories:
+- common
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Bayern München
+- value: River Plate
+- value: Colo-Colo
+- value: 1. FC Magdeburg
+- value: São Paulo FC
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Sports_team
+translations:
+  es:
+    name: Equipo o club deportivo
+  ru:
+    name: Спортивная команда или клуб

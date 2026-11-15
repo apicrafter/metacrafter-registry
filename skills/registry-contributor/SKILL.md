@@ -73,7 +73,7 @@ pip install -e ".[dev]"
     `de_kvnr`, `de_ik`, `de_lanr`, `de_pzn`, `de_fsnr`, `base58check`, `bech32`,
     `bech32m`, `cz_ico`, `cz_rc`, `cz_dic`, `cz_bank_account`, `cz_isds`,
     `be_kbo`, `be_nn`, `be_bis`, `be_insz`, `be_mod97`, `nl_bsn`,
-    `nl_onderwijsnummer` and `nl_btw`
+    `nl_onderwijsnummer`, `nl_btw` and `ch_egrid`
     (`src/metacrafter_registry/checksums.py`).
   - GS1 records: use the GS1 Prefix 952 (reserved for demonstrations) or
     GS1's example GTIN `09506000134352` for examples.

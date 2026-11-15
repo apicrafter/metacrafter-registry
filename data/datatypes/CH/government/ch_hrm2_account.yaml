@@ -1,0 +1,42 @@
+id: ch_hrm2_account
+name: Swiss HRM2 account group (Sachgruppe)
+status: draft
+doc: 'Code of the chart of accounts of HRM2 (Harmonisiertes Rechnungslegungsmodell 2), the accounting
+  model of the Swiss cantons and municipalities. The first digit is the account class: 1 assets, 2 liabilities
+  and equity, 3 expenses, 4 revenue, 5 investment expenditure, 6 investment receipts, 9 closing accounts.
+  Each further digit narrows the group (30 personnel expenses, 300 authorities and commissions, 3000 wages
+  of authorities and judges); groups of one to four digits are the same for all public bodies, and a body
+  may add two digits after a dot or its own longer account numbers below them. Budgets and accounts published
+  as open data give the code alone or followed by its label.'
+categories:
+- finances
+- government
+country:
+- CH
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-69]\d{0,3}(?:\.\d{2})?$
+examples:
+- value: '3'
+  description: 'Account class: expenses (Aufwand)'
+- value: '30'
+  description: Personnel expenses (Personalaufwand)
+- value: '3010'
+  description: Wages of administrative and operating staff
+- value: '3000.00'
+  description: A detail account of group 3000
+- value: '7000'
+  valid: false
+  description: there is no account class 7
+- value: '30100'
+  valid: false
+links:
+- type: doc
+  url: https://www.sz.ch/public/upload/assets/61679/Kontenrahmen_Erfolgsrechnung.pdf?fp=12
+translations:
+  de:
+    name: HRM2-Sachgruppe (Kontenrahmen der Kantone und Gemeinden)
+  ru:
+    name: Группа счетов HRM2 (план счетов кантонов и коммун Швейцарии)

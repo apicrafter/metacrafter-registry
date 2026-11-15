@@ -221,6 +221,51 @@ SCHEMAS: dict[str, Any] = {
             "files": {"type": "object", "additionalProperties": _ref("FileInfo")},
         },
     },
+    "IndexEntry": {
+        "type": "object",
+        "required": [
+            "id",
+            "name",
+            "kind",
+            "status",
+            "is_pii",
+            "categories",
+            "country",
+            "quality",
+            "has_regexp",
+            "has_rules",
+            "doc",
+        ],
+        "properties": {
+            "id": {"type": "string"},
+            "name": {"type": "string"},
+            "kind": {"type": "string", "enum": ["datatype", "pattern"]},
+            "status": {"type": "string", "enum": ["draft", "stable", "deprecated"]},
+            "is_pii": {"type": "boolean"},
+            "categories": ID_LIST,
+            "country": {**ID_LIST, "description": "Empty for a global datatype"},
+            "quality": {"type": "integer", "minimum": 0, "maximum": 100},
+            "has_regexp": {"type": "boolean"},
+            "has_rules": {"type": "boolean", "description": "A metacrafter rule detects it"},
+            "doc": {"type": "string", "description": "Description, cut to 160 characters"},
+            "names": {**ID_LIST, "description": "Former ids and translated names"},
+        },
+    },
+    "SearchEntry": {
+        "type": "object",
+        "description": "Short keys keep the index small.",
+        "required": ["id", "n", "d", "k", "p", "s", "c", "t"],
+        "properties": {
+            "id": {"type": "string"},
+            "n": {"type": "string", "description": "Name"},
+            "d": {"type": "string", "description": "Description, cut to 160 characters"},
+            "k": {"type": "string", "enum": ["datatype", "pattern"], "description": "Kind"},
+            "p": {"type": "boolean", "description": "Personal data (PII)"},
+            "s": {"type": "string", "enum": ["draft", "stable", "deprecated"]},
+            "c": {"type": "string", "description": "Category ids and country codes, by spaces"},
+            "t": {"type": "string", "description": "Former ids and translated names, by spaces"},
+        },
+    },
     "LegacyRecord": {
         "type": "object",
         "description": "Release 1.02 shape: categories, country and langs are {id, name} "
@@ -313,6 +358,47 @@ def build_openapi(site_url: str, version: str) -> dict[str, Any]:
             "responses": _json_response("Coverage report", {"type": "object"}),
         }
     }
+    paths["/api/v1/datatypes-index.json"] = {
+        "get": {
+            "operationId": "getDatatypesIndex",
+            "summary": "Compact index of all datatypes and patterns: filter it, then read "
+            "the records you need",
+            "responses": _json_response(
+                "Array of index entries", {"type": "array", "items": _ref("IndexEntry")}
+            ),
+        }
+    }
+    for folder, operation, summary, example in (
+        ("categories", "listDatatypesOfCategory", "Full records of one category", "pii"),
+        ("countries", "listDatatypesOfCountry", "Full records of one country or region", "RU"),
+    ):
+        paths[f"/api/v1/{folder}/{{id}}.json"] = {
+            "get": {
+                "operationId": operation,
+                "summary": summary,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": True,
+                        "description": f"Id from /api/v1/{folder}.json, e.g. {example}",
+                        "schema": {"type": "string"},
+                    }
+                ],
+                "responses": _json_response(
+                    "Array of records", {"type": "array", "items": _ref("Datatype")}
+                ),
+            }
+        }
+    paths["/api/v1/changes.json"] = {
+        "get": {
+            "operationId": "listChanges",
+            "summary": "Changelog: records added, changed and retired in each release",
+            "responses": _json_response(
+                "Array of releases, newest first", {"type": "array", "items": {"type": "object"}}
+            ),
+        }
+    }
     paths["/registry.json"] = {
         "get": {
             "operationId": "getLegacyRegistry",
@@ -331,6 +417,83 @@ def build_openapi(site_url: str, version: str) -> dict[str, Any]:
             "responses": _json_response("Legacy record", _ref("LegacyRecord")),
         }
     }
+    paths["/search-index.json"] = {
+        "get": {
+            "operationId": "getSearchIndex",
+            "deprecated": True,
+            "summary": "Older index with one-letter keys; use /api/v1/datatypes-index.json",
+            "responses": _json_response(
+                "Array of index entries", {"type": "array", "items": _ref("SearchEntry")}
+            ),
+        }
+    }
+    for path, operation, media, summary, by_id in (
+        (
+            "/datatype/{id}.md",
+            "getDatatypeMarkdown",
+            "text/markdown",
+            "One record as Markdown with YAML front matter (for LLMs)",
+            True,
+        ),
+        (
+            "/datatype/{id}.ttl",
+            "getDatatypeTurtle",
+            "text/turtle",
+            "One record as a SKOS concept (Turtle)",
+            True,
+        ),
+        (
+            "/api/v1/datatypes.jsonl",
+            "listDatatypesJsonl",
+            "application/x-ndjson",
+            "All datatypes and patterns, one JSON record per line",
+            False,
+        ),
+        (
+            "/api/v1/datatypes.csv",
+            "listDatatypesCsv",
+            "text/csv",
+            "All datatypes and patterns as a flat table",
+            False,
+        ),
+        (
+            "/api/v1/rag/corpus.jsonl",
+            "getRagCorpus",
+            "application/x-ndjson",
+            "One embedding text with metadata per record, one JSON object per line",
+            False,
+        ),
+        (
+            "/llms.txt",
+            "getLlmsTxt",
+            "text/plain",
+            "Index for LLMs in the llms.txt format: how to find a datatype, links to the data",
+            False,
+        ),
+        (
+            "/llms-full.txt",
+            "getLlmsFullTxt",
+            "text/plain",
+            "Every record in one Markdown file (large)",
+            False,
+        ),
+        (
+            "/registry.ttl",
+            "getSkosScheme",
+            "text/turtle",
+            "The whole registry as a SKOS concept scheme (large)",
+            False,
+        ),
+    ):
+        responses: dict[str, Any] = {
+            "200": {"description": summary, "content": {media: {"schema": {"type": "string"}}}}
+        }
+        get: dict[str, Any] = {"operationId": operation, "summary": summary}
+        if by_id:
+            get["parameters"] = [_id_param("Datatype or pattern id, e.g. email")]
+            responses["404"] = {"description": "No such record"}
+        get["responses"] = responses
+        paths[path] = {"get": get}
     return {
         "openapi": "3.1.0",
         "info": {

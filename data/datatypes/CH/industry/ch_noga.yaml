@@ -1,0 +1,42 @@
+id: ch_noga
+name: Swiss NOGA code (classification of economic activities)
+status: draft
+doc: 'Code of NOGA (Nomenclature générale des activités économiques), the classification of economic activities
+  of the Swiss Federal Statistical Office. NOGA 2008 follows NACE Rev. 2 down to the four-digit class
+  and adds a Swiss level below it, the type (Art), written as six digits without dots: 794 types in NOGA
+  2008. A section is one letter from A to U, a division has two digits, a group three and a class four.
+  Business registers and structural statistics carry the six-digit code of the main activity of an enterprise.'
+categories:
+- industry
+country:
+- CH
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[A-U]|\d{2,4}|\d{6})$
+examples:
+- value: '702200'
+  description: 'Type: business and other management consultancy (Unternehmensberatung)'
+- value: '561001'
+  description: 'Type: restaurants, snack bars, tea rooms and ice cream parlours'
+- value: '46'
+  description: 'Division: wholesale trade'
+- value: G
+  description: 'Section: trade; repair of motor vehicles'
+- value: '70220'
+  valid: false
+  description: five digits are not a level of NOGA
+- value: '70.22'
+  valid: false
+  description: the dotted NACE form (eu_nace)
+links:
+- type: doc
+  url: https://www.kubb-tool.bfs.admin.ch/de/noga/2008/702200
+translations:
+  de:
+    name: NOGA-Code (Allgemeine Systematik der Wirtschaftszweige)
+  fr:
+    name: Code NOGA (Nomenclature générale des activités économiques)
+  ru:
+    name: Код NOGA (швейцарская классификация видов экономической деятельности)

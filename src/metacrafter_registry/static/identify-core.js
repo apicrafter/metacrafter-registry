@@ -541,6 +541,11 @@
       var s = stripPrefix(v, "NL");
       if (!/^\d{9}B\d{2}$/.test(s) || s.slice(10) === "00") return false;
       return CHECKSUMS.nl_bsn(s.slice(0, 9)) || CHECKSUMS.iso7064_mod97_10("NL" + s);
+    },
+    ch_egrid: function (v) {
+      var s = String(v).replace(/[\s.\-]/g, "").toUpperCase();
+      if (!/^CH\d{12}$/.test(s)) return false;
+      return 97 - (Number(s.slice(2, 12)) % 97) === Number(s.slice(12));
     }
   };
 

@@ -1,0 +1,39 @@
+id: earthquake_magnitude
+name: Earthquake magnitude
+status: draft
+doc: 'Size of an earthquake on a magnitude scale: a number with one to three decimals, from below zero
+  for the smallest events a dense network records to about 9.5 for the largest earthquake measured (Valdivia,
+  1960). Seismic catalogues give it next to the origin time, latitude, longitude and depth of the event
+  and name the scale in the column or beside it: local magnitude (ML), moment magnitude (Mw), body-wave
+  (mb), surface-wave (Ms), duration (Md) and others (magnitude(Mw), ML, mag, magType). The scales are
+  logarithmic and agree only roughly, so a catalogue may hold several magnitudes of one event with their
+  standard errors. A number alone does not tell a magnitude from another measure: the field name does.'
+parent: numeric
+categories:
+- science
+- environment
+- values
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:-[0-3]|\d|10)(?:[.,]\d{1,3})?$
+examples:
+- value: '4.46'
+  description: Moment magnitude of an aftershock catalogue
+- value: '1.864'
+  description: Local magnitude with three decimals, IPOC catalogue of northern Chile
+- value: '8.8'
+- value: '-0.3'
+  description: A micro-earthquake
+- value: '25'
+  valid: false
+  description: Above every magnitude scale
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Seismic_magnitude_scales
+translations:
+  es:
+    name: Magnitud de un sismo
+  ru:
+    name: Магнитуда землетрясения

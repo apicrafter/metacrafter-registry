@@ -1,0 +1,37 @@
+id: employment_status
+name: Employment status
+status: draft
+doc: 'Situation of a person on the labour market as surveys, censuses and registers record it in one question:
+  employed, full-time or part-time, as an employee or self-employed; unemployed and looking for work;
+  or outside the labour force as a student, a retired person, a person doing unpaid household work or
+  a person unable to work. Labour statistics call the three main groups the labour force status (employed,
+  unemployed, outside the labour force). Data files hold the words of the questionnaire (Employed full-time,
+  Unemployed, Retired; trabajo tiempo completo, desempleado buscando trabajo, jubilado, dueña de casa)
+  or codes with a codebook. The occupation, the job title and the kind of contract are other things.'
+parent: category
+categories:
+- persons
+- common
+langs:
+- en
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Employed
+- value: Unemployed
+- value: Retired
+- value: Self-employed
+- value: Employed full-time
+- value: Desempleado
+  description: Spanish for unemployed
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Employment
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Workforce
+translations:
+  es:
+    name: Situación laboral
+  ru:
+    name: Статус занятости

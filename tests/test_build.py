@@ -191,3 +191,37 @@ def test_relative_links_are_normalized(tmp_path):
     checked, broken = check_links(tmp_path)
     assert checked == 2
     assert sorted(b.link for b in broken) == ["../../outside", "../x"]
+
+
+def test_link_label():
+    from metacrafter_registry.build import _link_label
+
+    assert (
+        _link_label("https://en.wikipedia.org/wiki/VAT_identification_number")
+        == "VAT identification number (en.wikipedia.org)"
+    )
+    assert (
+        _link_label("https://ru.wikipedia.org/wiki/%D0%98%D0%9D%D0%9D") == "ИНН (ru.wikipedia.org)"
+    )
+    assert _link_label("https://www.iso.org/standard/1234.html") == "iso.org/standard/1234.html"
+    assert _link_label("https://schema.org") == "schema.org"
+
+
+def test_list_page_is_bounded(built_site):
+    html = (built_site / "datatype/index.html").read_text("utf-8")
+    assert len(html.encode("utf-8")) < 150_000
+    assert html.count("<tr data-kind=") == 100
+    assert "<noscript>" in html and 'href="/category/"' in html and 'href="/country/"' in html
+
+
+def test_record_page_value_test_and_native_name(built_site):
+    inn = (built_site / "datatype/inn.html").read_text("utf-8")
+    assert 'id="value-test"' in inn and 'data-checksum="ru_inn"' in inn
+    assert "/assets/value-test.js" in inn
+    records = json.loads((built_site / "api/v1/datatypes.json").read_text("utf-8"))
+    plain = next(r for r in records if not r.get("regexp") and not r.get("checksum"))
+    page = (built_site / f"datatype/{plain['id']}.html").read_text("utf-8")
+    assert 'id="value-test"' not in page and "value-test.js" not in page
+    bik = (built_site / "datatype/bik.html").read_text("utf-8")
+    assert '<p class="native-name" lang="ru">Банковский идентификационный код</p>' in bik
+    assert 'class="native-name"' not in inn  # no Russian translation yet
