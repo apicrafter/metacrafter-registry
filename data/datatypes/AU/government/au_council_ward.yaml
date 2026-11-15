@@ -1,0 +1,36 @@
+id: au_council_ward
+name: Australian local council ward
+status: draft
+doc: 'Ward of an Australian local government area: an electoral subdivision of a council area that elects
+  its own councillors, named after its position (North Ward, Central Ward, South Ward of Camden Council,
+  New South Wales), after a place or a person (Bass Hill Ward, Macquarie Ward) or numbered (Ward 1, A
+  Ward; Division 3 in Queensland). Councils without wards are undivided (unsubdivided). Council and electoral
+  commission files hold it in fields named ward, ward_name or tag; a ward of another country (a UK electoral
+  ward, a Kenyan county assembly ward) is not one.'
+parent: admin_area_3
+categories:
+- government
+- geo
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: North Ward
+  description: Camden Council, New South Wales
+- value: Central Ward
+- value: Ward 2
+- value: A Ward
+- value: Division 3
+  description: a Queensland council division
+- value: Camden
+  valid: false
+  description: the council area itself
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Ward_(electoral_subdivision)
+translations:
+  ru:
+    name: Избирательный округ (ward) муниципалитета Австралии

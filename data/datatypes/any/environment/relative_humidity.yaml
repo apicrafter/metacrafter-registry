@@ -1,0 +1,34 @@
+id: relative_humidity
+name: Relative humidity
+status: draft
+doc: 'Relative humidity of the air: the ratio of the partial pressure of water vapour to its saturation
+  pressure at the same temperature, in percent from 0 to 100. Weather stations, environmental sensors
+  and building monitors report it next to the temperature, as a bare number (94, 56.5) or with a percent
+  sign; the 9 am and 3 pm readings of the Australian Bureau of Meteorology have columns of their own.
+  A number from 0 to 100 can be any percentage, so a value is a humidity only in a field named after it
+  (humidity observations of the City of Ballarat, Victoria).'
+parent: numeric
+categories:
+- environment
+- science
+- values
+langs:
+- common
+is_pii: false
+regexp: ^(?:100(?:[.,]0+)?|\d{1,2}(?:[.,]\d+)?)\s?%?$
+examples:
+- value: '94'
+  description: percent
+- value: '56.5'
+  description: one decimal
+- value: 63 %
+  description: with the percent sign
+- value: '101'
+  valid: false
+  description: above 100 percent
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Humidity
+translations:
+  ru:
+    name: Относительная влажность воздуха

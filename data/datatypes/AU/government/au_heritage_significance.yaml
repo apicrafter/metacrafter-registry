@@ -1,0 +1,32 @@
+id: au_heritage_significance
+name: Australian heritage significance level
+status: draft
+doc: 'Level of significance of a listed heritage item in Australia: Local (listed by a council in its
+  local environmental plan), State (on a state heritage register, such as the NSW State Heritage Register),
+  National or World (on the National and World Heritage lists of the EPBC Act). The SIG field (Significance)
+  of the Heritage layer of the NSW Planning Portal and the itemsig field of the Camden heritage items
+  hold it. The words alone are common, so a value is a significance level only in a field named after
+  it.'
+parent: category
+categories:
+- government
+- realestate
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Local
+- value: State
+- value: National
+- value: Regional
+  valid: false
+  description: not a level of the NSW Planning Portal
+links:
+- type: doc
+  url: https://mapprod3.environment.nsw.gov.au/arcgis/rest/services/Planning/Principal_Planning_Layers/MapServer/8
+translations:
+  ru:
+    name: Уровень значимости объекта наследия (Австралия)

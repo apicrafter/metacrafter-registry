@@ -1,0 +1,37 @@
+id: vehicle_type
+name: Vehicle type
+status: draft
+doc: 'Kind of road vehicle or self-propelled machine by its body or use: car, pickup, van, truck, bus,
+  motorcycle, tractor, grader, ambulance; in Spanish automóvil, camioneta, pick up, furgón, camión, colectivo,
+  motocicleta, tractor, motoniveladora, retroexcavadora. Fleet lists, vehicle registers and road crash
+  data give it beside the plate, the make and the model. The way of transport of a trip or a route (bus,
+  rail, ferry) is transport_mode; the type approval categories of the UNECE (M1, N2) are codes, not names.'
+categories:
+- transport
+langs:
+- common
+- en
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Camioneta
+  description: a van or pickup in the municipal fleet of Mercedes (Buenos Aires)
+- value: Motoniveladora
+  description: a road grader of the same fleet
+- value: Pick Up
+- value: Truck
+- value: Motorcycle
+- value: Toyota Hilux
+  valid: false
+  description: a make and model
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q42889
+translations:
+  es:
+    name: Tipo de vehículo
+  ru:
+    name: Тип транспортного средства

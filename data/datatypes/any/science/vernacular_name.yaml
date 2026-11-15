@@ -1,0 +1,39 @@
+id: vernacular_name
+name: Vernacular (common) name of a taxon
+status: draft
+doc: 'Common name of a species or another taxon in a living language, as opposed to its scientific name:
+  Australian Bass, European Carp, masked lapwing, London plane. It is the Darwin Core term vernacularName.
+  Wildlife sightings, fishing and bird surveys and street tree inventories write it alone or with the
+  scientific name in brackets (australian magpie (cracticus tibicen) of the swooping bird reports of Camden
+  Council, New South Wales). The same species has different common names in different regions and languages,
+  and one common name can cover several species, so it does not identify a taxon the way the scientific
+  name (species, taxon_name) does.'
+categories:
+- science
+- environment
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Australian Bass
+  description: fish species of a fishing survey
+- value: masked lapwing - plover (vanellus miles)
+  description: with the scientific name in brackets
+- value: London plane
+  description: street tree
+- value: Vanellus miles
+  valid: false
+  description: a scientific name
+mappings:
+  wikidata: P1843
+links:
+- type: other
+  url: https://dwc.tdwg.org/terms/#dwc:vernacularName
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Common_name
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q502895
+translations:
+  ru:
+    name: Народное (общеупотребительное) название таксона
