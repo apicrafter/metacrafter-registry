@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "0c0bb07f1ca4dd1d9a78d19486683439cf07dae2"
+  "ref": "4f674589d880ed3f246603515d3ee9171930b935"
  },
  "rules": [
   {
@@ -1745,6 +1745,96 @@
    "country_code": "at"
   },
   {
+   "rule": "auactassociationnumberbyname",
+   "key": "au_act_association_number",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_act.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auactblockbyname",
+   "key": "au_act_block",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_act.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auactdistrictbyname",
+   "key": "au_act_district",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_act.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auactrfxnumberbyname",
+   "key": "au_act_rfx_number",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_act.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auactrfxnumbervalue",
+   "key": "au_act_rfx_number",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_act.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auactsectionbyname",
+   "key": "au_act_section",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_act.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aurtocodebyname",
+   "key": "au_rto_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_education.yaml",
+   "context": "education",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auvetqualificationcodebyname",
+   "key": "au_vet_qualification_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_education.yaml",
+   "context": "education",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auvetqualificationcodevalue",
+   "key": "au_vet_qualification_code",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_education.yaml",
+   "context": "education",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
    "rule": "auafdtaxonvalue",
    "key": "au_afd_taxon_id",
    "type": "data",
@@ -1975,6 +2065,16 @@
    "country_code": "au"
   },
   {
+   "rule": "aucensuscdcodebyname",
+   "key": "au_census_cd_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
    "rule": "aucityknown",
    "key": "city",
    "type": "field",
@@ -2115,8 +2215,38 @@
    "country_code": "au"
   },
   {
+   "rule": "ausa1codebyname",
+   "key": "au_sa1_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
    "rule": "ausa2codebyname",
    "key": "au_sa2_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "ausa3codebyname",
+   "key": "au_sa3_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "ausscccodebyname",
+   "key": "au_ssc_code",
    "type": "field",
    "match": "regex",
    "file": "au/au_geo.yaml",
@@ -2321,6 +2451,16 @@
    "match": "text",
    "file": "au/au_persons.yaml",
    "context": "persons",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auroadsigncodebyname",
+   "key": "au_road_sign_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_transport.yaml",
+   "context": "transport",
    "lang": "en",
    "country_code": "au"
   },
@@ -5595,6 +5735,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "geopointsocratalocationbyname",
+   "key": "geopoint",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "geopointtextbyname",
    "key": "geopoint",
    "type": "field",
@@ -7735,6 +7885,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "politicalpartybyname",
+   "key": "political_party",
+   "type": "field",
+   "match": "regex",
+   "file": "common/politics.yaml",
+   "context": "government",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "ocdsocidvalue",
    "key": "ocds_ocid",
    "type": "data",
@@ -7987,6 +8147,16 @@
   {
    "rule": "academicdisciplinebyname",
    "key": "academic_discipline",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "conservationstatusbyname",
+   "key": "conservation_status",
    "type": "field",
    "match": "regex",
    "file": "common/science.yaml",
@@ -9525,6 +9695,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "bearingbyname",
+   "key": "bearing",
+   "type": "field",
+   "match": "regex",
+   "file": "common/transport.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "erarinfopidvalue",
    "key": "era_rinf_op_id",
    "type": "data",
@@ -9555,8 +9735,68 @@
    "country_code": "xx"
   },
   {
+   "rule": "gtfsrtcongestionlevelbyfield",
+   "key": "gtfs_rt_congestion_level",
+   "type": "field",
+   "match": "text",
+   "file": "common/transport.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "gtfsrtcongestionlevelvalue",
+   "key": "gtfs_rt_congestion_level",
+   "type": "data",
+   "match": "text",
+   "file": "common/transport.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "gtfsrtschedulerelationshipbyfield",
+   "key": "gtfs_rt_schedule_relationship",
+   "type": "field",
+   "match": "regex",
+   "file": "common/transport.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "gtfsrtvehiclestopstatusbyfield",
+   "key": "gtfs_rt_vehicle_stop_status",
+   "type": "field",
+   "match": "text",
+   "file": "common/transport.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "gtfsrtvehiclestopstatusvalue",
+   "key": "gtfs_rt_vehicle_stop_status",
+   "type": "data",
+   "match": "text",
+   "file": "common/transport.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "gtfsstopidbyfield",
    "key": "gtfs_stop_id",
+   "type": "field",
+   "match": "text",
+   "file": "common/transport.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "gtfstripidbyfield",
+   "key": "gtfs_trip_id",
    "type": "field",
    "match": "text",
    "file": "common/transport.yaml",
