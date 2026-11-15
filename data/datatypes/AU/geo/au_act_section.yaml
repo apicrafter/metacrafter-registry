@@ -1,0 +1,32 @@
+id: au_act_section
+name: Section number of ACT land (division section)
+status: draft
+doc: Number of a section, the part of a division (suburb) of the Australian Capital Territory that holds
+  a group of blocks, usually the land between streets. ACT land is identified by division, section and
+  block (Block 2 Section 21 Ainslie); registers keep the three in their own fields (Section, Section_Notified,
+  Section No.). A number alone can be any count or code, so a value is an ACT section in a field named
+  after it.
+parent: id
+categories:
+- geo
+- realestate
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,4}$
+examples:
+- value: '21'
+  description: Section 21 Ainslie
+- value: '124'
+  description: Section of a site of the ACT register of contaminated sites
+- value: 21A
+  valid: false
+links:
+- type: doc
+  url: https://www.legislation.act.gov.au/a/2002-39/
+translations:
+  ru:
+    name: Номер квартала земли ACT (section)

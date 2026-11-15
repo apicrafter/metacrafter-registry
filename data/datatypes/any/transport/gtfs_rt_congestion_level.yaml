@@ -1,0 +1,26 @@
+id: gtfs_rt_congestion_level
+name: GTFS Realtime congestion level
+status: draft
+doc: 'Value of the congestion_level field of a vehicle position in a GTFS Realtime feed (the CongestionLevel
+  enumeration), the traffic the vehicle is in: UNKNOWN_CONGESTION_LEVEL, RUNNING_SMOOTHLY, STOP_AND_GO,
+  CONGESTION or SEVERE_CONGESTION.'
+parent: category
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:UNKNOWN_CONGESTION_LEVEL|RUNNING_SMOOTHLY|STOP_AND_GO|CONGESTION|SEVERE_CONGESTION)$
+examples:
+- value: RUNNING_SMOOTHLY
+  description: Canberra Metro light rail vehicle updates
+- value: STOP_AND_GO
+- value: HEAVY
+  valid: false
+links:
+- type: doc
+  url: https://gtfs.org/documentation/realtime/reference/
+translations:
+  ru:
+    name: Уровень заторов (GTFS Realtime)

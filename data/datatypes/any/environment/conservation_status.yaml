@@ -1,0 +1,36 @@
+id: conservation_status
+name: Conservation status of a taxon (in words)
+status: draft
+doc: 'Threat category of a species or other taxon written in words, as threatened species lists give it:
+  the IUCN Red List categories (Extinct, Extinct in the Wild, Critically Endangered, Endangered, Vulnerable,
+  Near Threatened, Least Concern, Data Deficient) and the categories of national and state lists that
+  follow them, such as the Australian EPBC Act 1999 (Conservation Dependent) and the ACT Nature Conservation
+  Act 2014 (Regionally Conservation Dependent). The IUCN abbreviations (CR, EN, VU) are iucn_red_list_category.'
+parent: category
+categories:
+- environment
+- science
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: '^(?:(?:Regionally )?Conservation Dependent|Critically Endangered(?: \(Possibly Extinct\))?|Endangered|Vulnerable|Near
+  Threatened|Least Concern|Data Deficient|Not Evaluated|Extinct(?: in the Wild)?|Rare|Special Least Concern)$'
+examples:
+- value: Critically Endangered
+  description: Regent Honeyeater, ACT threatened native species list
+- value: Vulnerable
+- value: Regionally Conservation Dependent
+  description: ACT Nature Conservation Act 2014 category
+- value: Least Concern
+- value: VU
+  valid: false
+  description: the IUCN abbreviation (iucn_red_list_category)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Conservation_status
+- type: doc
+  url: https://www.iucnredlist.org/resources/categories-and-criteria
+translations:
+  ru:
+    name: Природоохранный статус таксона (словами)

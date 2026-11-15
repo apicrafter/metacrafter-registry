@@ -1,0 +1,32 @@
+id: au_act_block
+name: Block number of ACT land
+status: draft
+doc: Number of a block, the parcel of land in a section (au_act_section) of a division of the Australian
+  Capital Territory that a lease is granted on (Block 2 Section 21 Ainslie). Registers keep it in a field
+  of its own (Block, Block_Current, Block No.) and list several blocks of one site joined with plus signs
+  (14+15+16). A number alone can be any count or code, so a value is an ACT block in a field named after
+  it.
+parent: id
+categories:
+- geo
+- realestate
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,4}(?:\+\d{1,4})*$
+examples:
+- value: '2'
+  description: Block 2 Section 21 Ainslie
+- value: 14+15+16+17+18
+  description: Blocks of one site of the ACT register of contaminated sites
+- value: B12
+  valid: false
+links:
+- type: doc
+  url: https://www.legislation.act.gov.au/a/2002-39/
+translations:
+  ru:
+    name: Номер участка земли ACT (block)

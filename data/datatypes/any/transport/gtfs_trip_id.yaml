@@ -1,0 +1,24 @@
+id: gtfs_trip_id
+name: GTFS trip id
+status: draft
+doc: Value of the trip_id field of a GTFS feed, the identifier of a trip in trips.txt that stop_times.txt
+  and the trip descriptors of GTFS Realtime refer to. It is any text the agency chooses (759, 1492, AM_WD_1023-1),
+  unique in the feed and not across feeds, so the field name is the evidence.
+parent: id
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: '759'
+  description: tripID of the Canberra Metro light rail vehicle updates
+- value: '1492'
+  description: tripID of the trip updates
+links:
+- type: doc
+  url: https://gtfs.org/documentation/schedule/reference/
+translations:
+  ru:
+    name: Идентификатор рейса GTFS

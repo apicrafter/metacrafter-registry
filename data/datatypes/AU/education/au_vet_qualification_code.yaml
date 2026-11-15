@@ -1,0 +1,36 @@
+id: au_vet_qualification_code
+name: Australian VET qualification or accredited course code
+status: draft
+doc: 'National code of a vocational education and training (VET) qualification of a training package,
+  as training.gov.au lists it: the three-letter code of the training package and five digits, the first
+  of which is the AQF level of the certificate or diploma (BSB50120 Diploma of Business of the BSB Business
+  Services Training Package, SIT20207 Certificate II in Hospitality). Accredited courses have a number
+  and the letters NAT (10964NAT). The ACT AVETARS lists add a three-character ACT suffix (BSB50120-BBI).'
+parent: id
+categories:
+- education
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[A-Z]{3}[1-8]\d{4}|\d{5}NAT)(?:-[A-Z0-9@]{3})?$
+examples:
+- value: BSB50120
+  description: Diploma of Business (training.gov.au)
+- value: AUR30212
+  description: Certificate III in Bicycle Workshop Operations, ACT Skilled Capital list
+- value: 10964NAT
+  description: accredited course
+- value: BSB50120-BBI
+  description: ACT AVETARS qualification
+- value: BSB5012
+  valid: false
+  description: four digits
+links:
+- type: doc
+  url: https://training.gov.au/Training/Details/BSB50120
+translations:
+  ru:
+    name: Код квалификации профессионального обучения (VET, Австралия)

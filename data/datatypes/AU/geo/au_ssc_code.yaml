@@ -1,0 +1,34 @@
+id: au_ssc_code
+name: ABS State Suburb (SSC) or Suburb and Locality (SAL) code
+status: draft
+doc: 'Five-digit code of an ABS State Suburb (SSC), the census approximation of a gazetted suburb or locality
+  in the 2006, 2011 and 2016 censuses, or of a Suburb and Locality (SAL) that replaced it in the ASGS
+  2021: the state or territory digit (8 for the ACT) and four digits, so 81051 is Braddon in the 2006
+  census tables of the ACT. Census DataPacks write the codes with the prefix SAL or SSC. Codes change
+  between censuses. Five digits alone are also other codes, so a value is a suburb code in a field named
+  after it.'
+parent: admin_area_3
+categories:
+- geo
+- government
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:SAL|SSC)?[1-9]\d{4}$
+examples:
+- value: '81051'
+  description: Braddon, ACT (State Suburb Code of the 2006 SEIFI table)
+- value: '81421'
+  description: Red Hill, ACT
+- value: '2601'
+  valid: false
+  description: a postcode
+links:
+- type: doc
+  url: https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/non-abs-structures/suburbs-and-localities
+translations:
+  ru:
+    name: Код пригорода ABS (SSC, SAL, Австралия)

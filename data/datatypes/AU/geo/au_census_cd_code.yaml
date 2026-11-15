@@ -1,0 +1,32 @@
+id: au_census_cd_code
+name: ABS Census Collection District (CD) code
+status: draft
+doc: Seven-digit code of a Census Collection District (CD), the smallest area of the Australian Standard
+  Geographical Classification (ASGC) and the area one census collector covered, up to the 2006 census;
+  the first digit is the state or territory (8 for the ACT). CDs were replaced by the SA1 (au_sa1_code)
+  and mesh blocks of the ASGS in 2011, but the 2006 tables (SEIFA, census counts) still use them. Seven
+  digits alone are also other numbers, so a value is a CD code in a field named after it (CD, CD_CODE).
+categories:
+- geo
+- government
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-9]\d{6}$
+examples:
+- value: '8013604'
+  description: CD in Braddon of the ACT Socio-economic Index for Individuals 2006
+- value: '8014903'
+  description: CD in Red Hill
+- value: '801360'
+  valid: false
+  description: six digits
+links:
+- type: doc
+  url: https://www.abs.gov.au/AUSSTATS/abs@.nsf/Lookup/2923.0.30.001Main+Features12006
+translations:
+  ru:
+    name: Код переписного участка CD (Австралия)

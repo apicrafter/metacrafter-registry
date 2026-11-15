@@ -1,0 +1,39 @@
+id: au_sa3_code
+name: ABS Statistical Area Level 3 (SA3) code
+status: draft
+doc: 'Code of a Statistical Area Level 3 of the Australian Statistical Geography Standard (ASGS) of the
+  ABS, the regions of 30,000 to 130,000 people (Belconnen, Gungahlin, Tuggeranong in the ACT) by which
+  regional statistics are published. The code has five digits: the state or territory digit (1 NSW, 2
+  Vic., 3 Qld, 4 SA, 5 WA, 6 Tas., 7 NT, 8 ACT, 9 Other Territories), the SA4 (two digits) and the SA3
+  (two): 80101 is Belconnen. Five digits are also postcodes elsewhere, LGA codes (au_lga_code) and the
+  old five-digit SA2 codes, so a value is an SA3 code in a field named after it.'
+parent: admin_area_3
+categories:
+- geo
+- government
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-9]\d{4}$
+examples:
+- value: '80101'
+  description: Belconnen (ACT population estimates by SA3)
+- value: '80103'
+  description: Canberra East
+- value: '801'
+  valid: false
+  description: an SA4 code (three digits)
+- value: '801051051'
+  valid: false
+  description: an SA2 code
+links:
+- type: doc
+  url: https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/main-structure-and-greater-capital-city-statistical-areas/statistical-area-level-3
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Australian_Statistical_Geography_Standard
+translations:
+  ru:
+    name: Код статистического района SA3 (Австралия)

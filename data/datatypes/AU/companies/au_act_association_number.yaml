@@ -1,0 +1,30 @@
+id: au_act_association_number
+name: ACT incorporated association number
+status: draft
+doc: 'Number of an association incorporated in the Australian Capital Territory under the Associations
+  Incorporation Act 1991, as Access Canberra lists it in the register of incorporated associations: the
+  letter A and five digits (A00336). Associations incorporated in other states have their own registers
+  and numbers.'
+parent: id
+categories:
+- companies
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^A\d{5}$
+examples:
+- value: A00336
+  description: Canberra Bushwalking Club, ACT register of incorporated associations
+- value: A01685
+- value: A0336
+  valid: false
+  description: four digits
+links:
+- type: doc
+  url: https://www.data.act.gov.au/d/6af2-xjd9
+translations:
+  ru:
+    name: Номер зарегистрированной ассоциации ACT

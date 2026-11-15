@@ -1,0 +1,37 @@
+id: bearing
+name: Bearing (heading in degrees)
+status: draft
+doc: 'Direction a vehicle, a vessel or a person travels or faces, in degrees clockwise from true north:
+  0 is north and 90 is east. GPS receivers and the vehicle positions of GTFS Realtime feeds report it
+  as a decimal number (126.87); fleet tracking exports call it bearing, heading or course. A number from
+  0 to 360 alone can be any angle, so a value is a bearing only in a field named after it; a compass point
+  in letters (NE) is compass_point, the direction a wind blows from wind_direction.'
+parent: numeric
+categories:
+- geo
+- transport
+- values
+langs:
+- common
+is_pii: false
+regexp: ^(?:360(?:[.,]0+)?|3[0-5]\d(?:[.,]\d+)?|[12]?\d{1,2}(?:[.,]\d+)?)$
+examples:
+- value: '126.8724594116211'
+  description: bearing of a Canberra Metro light rail vehicle (GTFS Realtime archive)
+- value: '0'
+  description: north
+- value: '270'
+  description: west
+- value: NE
+  valid: false
+  description: a compass point
+- value: '361'
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Bearing_(angle)
+- type: doc
+  url: https://gtfs.org/documentation/realtime/reference/
+translations:
+  ru:
+    name: Курс (азимут движения, градусы)

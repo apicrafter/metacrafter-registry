@@ -1,0 +1,39 @@
+id: au_road_sign_code
+name: Australian traffic sign code (AS 1742)
+status: draft
+doc: 'Designation of a traffic sign in the Australian Standard AS 1742 (Manual of uniform traffic control
+  devices) and the state sign catalogues built on it: a series letter, R regulatory, W warning, G guide,
+  D hazard marker, T temporary (with GE, DS, MR for other series), a group number, a hyphen and the sign
+  number (R1-1 STOP, W3-1 STOP sign ahead, G9-21). Variants follow after a slash, a hyphen or in brackets
+  (R5-41/4, R7-1-4, R2-3(L), R4-1(60) a 60 km/h speed limit), and modified signs carry MOD.'
+parent: category
+categories:
+- transport
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:R|W|G|GE|D|DS|T|TC|MR|H)\d{1,2}(?:-\d{1,3}(?:-\d{1,2})?)?(?:/\d{1,3}(?:-\d{1,2})?)?(?:\((?:L|R|DS|SS|\d{1,3})\))?(?:-[LR])?(?:\s?MOD\d?)?$
+examples:
+- value: R1-1
+  description: STOP sign (Transport for NSW)
+- value: W3-1
+  description: STOP sign ahead (symbolic)
+- value: R4-1(60)
+  description: speed limit 60, ACT sign assets
+- value: R2-3(L)
+  description: left variant
+- value: R5-41/4
+- value: A1-1
+  valid: false
+  description: not a series of AS 1742
+links:
+- type: doc
+  url: https://www.transport.nsw.gov.au/operations/roads-and-waterways/traffic-signs/r1-1-stop-sign
+- type: doc
+  url: https://store.standards.org.au/product/as-1742-2-2022
+translations:
+  ru:
+    name: Код дорожного знака (AS 1742, Австралия)

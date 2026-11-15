@@ -1,0 +1,38 @@
+id: au_sa1_code
+name: ABS Statistical Area Level 1 (SA1) code
+status: draft
+doc: 'Code of a Statistical Area Level 1 of the Australian Statistical Geography Standard (ASGS) of the
+  ABS, the smallest area for which most census data are released (200 to 800 people). The full code has
+  eleven digits: the nine-digit code of the SA2 the SA1 lies in (au_sa2_code) and two more digits, so
+  80105105102 is an SA1 of the SA2 801051051 in the ACT. The 2011 and 2016 editions also had a seven-digit
+  code, the state or territory digit and six digits. Codes change between editions (2011, 2016, 2021).
+  Eleven digits alone are also phone numbers, account numbers or other codes, so a value is an SA1 code
+  in a field named after it.'
+parent: admin_area_3
+categories:
+- geo
+- government
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-9](?:\d{6}|\d{10})$
+examples:
+- value: '80105105102'
+  description: SA1 in the ACT of the students' distance from school table of the ACT Education Directorate
+- value: '801051051'
+  valid: false
+  description: an SA2 code (nine digits)
+- value: '00105105102'
+  valid: false
+  description: no state digit 0
+links:
+- type: doc
+  url: https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/main-structure-and-greater-capital-city-statistical-areas/statistical-area-level-1
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Australian_Statistical_Geography_Standard
+translations:
+  ru:
+    name: Код статистического района SA1 (Австралия)
