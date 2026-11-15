@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "59a212310b558818ae09871341558d6f5a6afdcd"
+  "ref": "605c9043570c30807d720bcc5d78ba7e862abb7a"
  },
  "rules": [
   {
@@ -499,6 +499,16 @@
    "key": "arcountryname",
    "type": "data",
    "match": "func",
+   "file": "ar/ar_geo.yaml",
+   "context": "geo",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
+   "rule": "arnamebytransliteratedname",
+   "key": "name",
+   "type": "field",
+   "match": "regex",
    "file": "ar/ar_geo.yaml",
    "context": "geo",
    "lang": "ar",
