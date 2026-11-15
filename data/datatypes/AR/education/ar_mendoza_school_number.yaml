@@ -1,0 +1,40 @@
+id: ar_mendoza_school_number
+name: School number of the Dirección General de Escuelas of Mendoza
+status: draft
+doc: 'Number of a school of the province of Mendoza, Argentina, in the register of its Dirección General
+  de Escuelas (DGE): a digit for the level or kind of school and three digits, 1-123 for a primary school,
+  4-013 for a secondary school, 0- for kindergartens, 2- special, 3- adult, 8- vocational and 9- higher
+  education; private schools are P-131 (primary) and PS-046 or S-046 (secondary). Electoral polling place
+  lists and school directories write it with a hyphen (4-013) or without (4013, P113); the national school
+  code is the CUE (ar_cue).'
+parent: id
+categories:
+- education
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:[0-9]|P|PS|PT|S|T|C|J|Z)-?\d{3}$
+examples:
+- value: 4-013
+  description: a secondary school, as the polling place list of the 2017 elections writes it
+- value: 1-123
+  description: a primary school
+- value: P-131
+  description: a private primary school
+- value: P113
+  description: without the hyphen, as the school map of 2017 writes it
+- value: '5000035'
+  valid: false
+  description: 'a CUE: ar_cue'
+links:
+- type: doc
+  url: https://www.mendoza.edu.ar/
+- type: doc
+  url: https://datosabiertos.mendoza.gov.ar/dataset/establecimientos-educativos
+translations:
+  es:
+    name: Número de escuela de la Dirección General de Escuelas de Mendoza

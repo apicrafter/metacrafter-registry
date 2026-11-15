@@ -1,0 +1,34 @@
+id: urban_rural_class
+name: Urban or rural class of a place
+status: draft
+doc: 'Whether a place, a school, a dwelling or a station is urban, suburban or rural, in words: Urbano,
+  Rural, Urbano marginal, Rural disperso in Argentine and other Spanish school and census data; urban,
+  rural, suburban, peri-urban in English, with the classes of the ONS rural-urban classification (Urban
+  major conurbation, Rural town and fringe); städtisch, vorstädtisch, ländlich in German; urbain, périurbain,
+  rural in French. Numeric or letter codes of a classification have types of their own (eu_degurba, ar_indec_census_radius_type).'
+parent: category
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Urbano marginal
+  description: ambito of the schools of Mendoza
+- value: Rural
+- value: (England/Wales) Rural town and fringe
+  description: ONS rural-urban classification, in the register of schools of England
+- value: städtisches Gebiet
+  description: station setting of the German air quality stations
+- value: '1'
+  valid: false
+  description: 'a code of the Eurostat degree of urbanisation: eu_degurba'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Urban_area
+- type: doc
+  url: https://www.gov.uk/government/collections/rural-urban-classification
+translations:
+  es:
+    name: Ámbito urbano o rural

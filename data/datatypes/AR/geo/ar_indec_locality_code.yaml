@@ -5,9 +5,10 @@ doc: 'Eight-digit code of an Argentine census locality (localidad censal of INDE
   code and three digits for the locality, as in 06007010 Carhué and 14014010 Córdoba. The settlement codes
   of BAHRA, the Base de Asentamientos Humanos de la República Argentina behind the georef localities and
   settlements, use the same eight digits for a simple locality or a rural place (paraje) and add two digits
-  for an entity of a composite locality (1401401002 La Floresta, Córdoba). Many files drop the leading
-  zero (6441030). Census radius lists give the three-digit locality part alone next to the department
-  (CODLOC 050 for Berrotarán in Río Cuarto, Córdoba), with 000 for a radius outside any locality.'
+  for an entity of a composite locality (1401401002 La Floresta, Córdoba); the eleven-digit BAHRA code
+  with three digits for the entity (14014010000) is ar_bahra_code. Many files drop the leading zero (6441030).
+  Census radius lists give the three-digit locality part alone next to the department (CODLOC 050 for
+  Berrotarán in Río Cuarto, Córdoba), with 000 for a radius outside any locality.'
 parent: id
 categories:
 - geo

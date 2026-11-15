@@ -1,0 +1,42 @@
+id: ar_bahra_code
+name: Argentine settlement code of BAHRA (eleven digits)
+status: draft
+doc: 'Code of a human settlement in BAHRA, the Base de Asentamientos Humanos de la República Argentina
+  of INDEC and the national geographic institute, in its eleven-digit form: the two-digit province, the
+  three-digit department and the three-digit census locality of INDEC (ar_indec_locality_code), then three
+  digits for the settlement within the locality, 000 for the locality as a whole and 001 and up for the
+  entities of a composite locality and for rural places. The Sistema de Información de Ciencia y Tecnología
+  Argentino (SICYTAR) gives it as cod_bahra beside the INDEC codes of an institution''s address (02000010000
+  for the City of Buenos Aires, 06441030015 for a part of the La Plata agglomeration). The georef API
+  of datos.gob.ar writes the entity with two digits (1401401002).'
+parent: ar_indec_locality_code
+categories:
+- geo
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:0[26]|1[048]|2[26]|3[048]|4[26]|5[048]|6[26]|7[048]|8[26]|9[04])\d{9}$
+examples:
+- value: '02000010000'
+  description: Ciudad Autónoma de Buenos Aires
+- value: '14014010000'
+  description: Córdoba
+- value: '06441030015'
+  description: an entity of the La Plata census locality
+- value: '50007010001'
+  description: an entity of the Mendoza census locality
+- value: '14014010'
+  valid: false
+  description: 'the eight-digit census locality code: ar_indec_locality_code'
+links:
+- type: doc
+  url: http://www.bahra.gob.ar/
+- type: doc
+  url: https://datasets.datos.mincyt.gob.ar/dataset/instituciones-del-sistema-nacional-de-ciencia-y-tecnologia-argentino
+translations:
+  es:
+    name: Código de asentamiento BAHRA (once dígitos)

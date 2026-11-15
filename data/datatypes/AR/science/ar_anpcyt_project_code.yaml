@@ -1,0 +1,41 @@
+id: ar_anpcyt_project_code
+name: Argentine ANPCyT project code (PICT, ANR, CF)
+status: draft
+doc: 'Code of a project funded by the Agencia Nacional de Promoción Científica y Tecnológica (ANPCyT,
+  now Agencia I+D+i) of Argentina: the acronym of the instrument, then the year of the call and a number.
+  FONCYT research projects are PICT-2015-1234 (Proyectos de Investigación Científica y Tecnológica), PICTO-2009-0012
+  (orientados) and PID-2011-0002; FONTAR and FONSOFT technology and innovation projects write the instrument,
+  the call and the province of the company with a slash and the year, as ANR 600 NA093/08 (Aportes No
+  Reembolsables), CF BA 001/07 (Crédito Fiscal), CRE+CO 0062/12 and EMP FONSOFT NA038/07. The SICYTAR
+  projects list gives it as codigo_identificacion.'
+parent: grant_number
+categories:
+- science
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:PICTO?|PID|PICT-O)-\s?\d{3,4}-\d{4}$|^(?:ANR|CF|CAE|CRE\+CO|EMP|FITAP|FITR|FITS|PDP|LEY|ARSET-I)\s.+$
+examples:
+- value: PICT-2015-1234
+  description: a FONCYT research project of the 2015 call
+- value: PICTO-2009-0012
+  description: an oriented research project
+- value: ANR 600 NA093/08
+  description: a FONTAR non-refundable contribution
+- value: CF BA 001/07
+  description: a fiscal credit of a company of Buenos Aires
+- value: 11220150100433CO
+  valid: false
+  description: 'a CONICET project: ar_conicet_project_code'
+links:
+- type: doc
+  url: https://www.argentina.gob.ar/ciencia/agencia
+- type: doc
+  url: https://datasets.datos.mincyt.gob.ar/dataset/proyectos-de-ciencia-tecnologia-e-innovacion
+translations:
+  es:
+    name: Código de proyecto de la ANPCyT (PICT, ANR, CF)

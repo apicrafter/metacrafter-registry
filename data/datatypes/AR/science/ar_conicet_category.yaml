@@ -1,0 +1,39 @@
+id: ar_conicet_category
+name: Argentine CONICET staff category
+status: draft
+doc: 'Category of a person in CONICET, the Argentine national research council: the classes of the Carrera
+  del Investigador Científico y Tecnológico from the lowest, Investigador asistente, adjunto, independiente,
+  principal and superior (and superior emérito, and correspondiente for a researcher abroad), the doctoral
+  and postdoctoral fellowships (Becario doctoral, Becario postdoctoral), the support staff career (Personal
+  de apoyo) and other staff. Statistics of science personnel (the categoria_conicet of SICYTAR, with No
+  pertenece a Conicet for people outside it) and university staff lists give it with or without the word
+  Investigador.'
+parent: category
+categories:
+- science
+- education
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Investigador asistente
+- value: Investigador adjunto
+- value: Investigador independiente
+- value: Investigador principal
+- value: Investigador superior
+- value: Becario doctoral
+- value: Personal de apoyo
+- value: Profesor titular
+  valid: false
+  description: a university teaching position
+links:
+- type: doc
+  url: https://www.conicet.gov.ar/carrera-del-investigador-cientifico-y-tecnologico/
+- type: doc
+  url: https://datasets.datos.mincyt.gob.ar/dataset/personal-de-ciencia-y-tecnologia
+translations:
+  es:
+    name: Categoría del CONICET (carrera, becas, personal de apoyo)
