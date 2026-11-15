@@ -1,13 +1,21 @@
 id: medical_specialty
 name: Medical specialty
 status: draft
-doc: Branch of medical practice, for example cardiology or pediatrics.
+doc: Branch of medical practice, for example cardiology or pediatrics; in Spanish cardiología, clínica
+  médica, pediatría, ginecología, traumatología. Health service statistics count consultations and appointments
+  by specialty, often in capitals without accents (CLINICA MEDICA).
 categories:
 - medical
 langs:
 - en
+- es
 is_pii: false
 classification: categorical
+examples:
+- value: Cardiology
+- value: CLÍNICA MÉDICA
+  description: consultations by specialty of the health centres of Mercedes (Buenos Aires)
+- value: Pediatría
 mappings:
   purview:
   - Medical Specialities
@@ -19,3 +27,6 @@ links:
   url: https://en.wikipedia.org/wiki/Medical_specialty
 - type: schema.org
   url: https://schema.org/MedicalSpecialty
+translations:
+  es:
+    name: Especialidad médica

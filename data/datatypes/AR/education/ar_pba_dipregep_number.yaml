@@ -1,0 +1,34 @@
+id: ar_pba_dipregep_number
+name: Buenos Aires Province private school number (DIPREGEP)
+status: draft
+doc: 'Number under which the Dirección Provincial de Educación de Gestión Privada (DIPREGEP, earlier DIEGEP)
+  of Buenos Aires Province registers a private school: one to four digits, written after the name of the
+  school (Instituto San José, DIPREGEP 4321). Each level of a school (kindergarten, primary, secondary)
+  has a number of its own. Lists of private schools of the municipalities of the province give it in a
+  column N° DIPREGEP or DIEGEP; it is not the national establishment code (ar_cue).'
+categories:
+- education
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{1,4}$
+examples:
+- value: '1750'
+  description: a private kindergarten of Mercedes
+- value: '374'
+  description: a private school of Mercedes
+- value: '604988'
+  valid: false
+  description: 'the CUE of the same school without its leading zero: ar_cue'
+links:
+- type: doc
+  url: https://abc.gob.ar/
+- type: doc
+  url: https://datosabiertos.mercedes.gob.ar/dataset/instituciones-educativas
+translations:
+  es:
+    name: Número DIPREGEP (escuela de gestión privada)

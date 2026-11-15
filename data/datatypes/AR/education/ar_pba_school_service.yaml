@@ -1,0 +1,44 @@
+id: ar_pba_school_service
+name: Buenos Aires Province school designation (servicio educativo)
+status: draft
+doc: 'Designation of a school or other educational service of the Dirección General de Cultura y Educación
+  (DGCyE) of Buenos Aires Province: the abbreviation of its level or modality and its number in the school
+  district, as in EP N° 1 (escuela primaria), ES N° 3 or EES N° 8 (secundaria), EEST N° 1 or EET N° 1
+  (técnica), EESA N° 1 (agraria), EEE N° 503 (especial), JI N° 901 or Jardín 901 (jardín de infantes),
+  JIRIMM N° 2 (rural kindergarten), CEC N° 801, CEF N° 40, CEA N° 9, CEPT N° 4, CFP N° 401, CENS N° 451,
+  EEPA N° 701, ISFD N° 137. Municipal and provincial lists of schools, enrolment and school transport
+  name the schools this way, with or without dots in the abbreviation (E.S. N° 7) and with Nº, N°, Nro
+  or no sign before the number.'
+categories:
+- education
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:E\.?E\.?S\.?T|E\.?E\.?S\.?A|E\.?E\.?P\.?A|E\.?E\.?S|E\.?E\.?T|E\.?E\.?E|E\.?S\.?B|E\.?P|E\.?S|J\.?I\.?R\.?I\.?M\.?M|J\.?I\.?R\.?M\.?M|J\.?I|C\.?E\.?P\.?T|C\.?E\.?N\.?S|C\.?E\.?C|C\.?E\.?F|C\.?E\.?A|C\.?F\.?P|C\.?F\.?L|I\.?S\.?F\.?D\.?Y\.?T|I\.?S\.?F\.?D|I\.?S\.?F\.?T|JARD[IÍ]N)\.?
+  ?(?:N[°º]|NRO\.?)? ?\d{1,4}$
+examples:
+- value: EP Nº 1
+  description: a primary school of Mercedes
+- value: E.S Nº3
+  description: a secondary school, with a dot in the abbreviation
+- value: EET Nº1
+  description: a technical school
+- value: JARDÍN 901
+  description: a kindergarten; kindergartens are numbered from 901
+- value: CFP Nº 401
+  description: a vocational training centre
+- value: Escuela N° 12 D.E. 5
+  valid: false
+  description: 'a school of the City of Buenos Aires: its number and school district (ar_caba_school_district)'
+links:
+- type: doc
+  url: https://abc.gob.ar/
+- type: doc
+  url: https://datosabiertos.mercedes.gob.ar/dataset/instituciones-educativas
+translations:
+  es:
+    name: Servicio educativo de la Provincia de Buenos Aires
