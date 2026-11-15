@@ -127,7 +127,8 @@
         is_pii: row.getAttribute("data-pii") === "yes"
       };
     });
-    var entries = null, loadFailed = false, page = 0, sortColumn = -1, sortDescending = false;
+    var entries = null, loadFailed = false, loadedBytes = 0;
+    var page = 0, sortColumn = -1, sortDescending = false;
     var SORT_KEYS = [
       function (e) { return e.id; },
       function (e) { return norm(e.name); },
@@ -183,8 +184,12 @@
           htmlRows[i].hidden = !ok;
           if (ok) shown += 1;
         });
-        counter.textContent = "Showing " + shown + " of the first " + htmlRows.length + " records. " +
-          (loadFailed ? "Could not load the full list." : "Loading all records…");
+        // The rows on the page are only the first ones: say so, or an empty
+        // table would read as "no such records".
+        counter.textContent = loadFailed
+          ? "Could not load the full list. " + shown + " of the first " + htmlRows.length + " records match."
+          : "Loading all records… " + (loadedBytes / 1048576).toFixed(1) + " MB. " +
+            shown + " of the first " + htmlRows.length + " match so far.";
       } else {
         var hits = entries.filter(function (e) { return matches(e, f); });
         if (sortColumn >= 0) {
@@ -228,7 +233,10 @@
     filterForm.hidden = false;
     apply();
 
-    window.registryFetchJson(base + "/api/v1/datatypes-index.json", function () {})
+    window.registryFetchJson(base + "/api/v1/datatypes-index.json", function (bytes) {
+      loadedBytes = bytes;
+      if (!entries) apply();
+    })
       .then(function (data) {
         data.forEach(function (e) {
           e.text = norm([e.id, e.name].concat(e.names || [], [e.doc]).join(" "));
