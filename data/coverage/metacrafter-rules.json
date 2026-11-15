@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "230c37d6474e3194d3d313991be336ac7a0690e6"
+  "ref": "53e4d7e5f3c407fc5d1da62259485920347ed0b6"
  },
  "rules": [
   {
@@ -4605,12 +4605,52 @@
    "country_code": "cl"
   },
   {
+   "rule": "clcomunabyname",
+   "key": "cl_comuna",
+   "type": "field",
+   "match": "regex",
+   "file": "cl/cl_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "cl"
+  },
+  {
+   "rule": "clcomunavalue",
+   "key": "cl_comuna",
+   "type": "data",
+   "match": "func",
+   "file": "cl/cl_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "cl"
+  },
+  {
    "rule": "clregionvalue",
    "key": "cl_region_code",
    "type": "data",
    "match": "regex",
    "file": "cl/cl_geo.yaml",
    "context": "geo",
+   "lang": "es",
+   "country_code": "cl"
+  },
+  {
+   "rule": "clindigenouspeoplebyname",
+   "key": "cl_indigenous_people",
+   "type": "field",
+   "match": "regex",
+   "file": "cl/cl_persons.yaml",
+   "context": "persons",
+   "lang": "es",
+   "country_code": "cl"
+  },
+  {
+   "rule": "clindigenouspeoplevalue",
+   "key": "cl_indigenous_people",
+   "type": "data",
+   "match": "func",
+   "file": "cl/cl_persons.yaml",
+   "context": "persons",
    "lang": "es",
    "country_code": "cl"
   },
@@ -6875,6 +6915,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "sportsteambyname",
+   "key": "sports_team",
+   "type": "field",
+   "match": "regex",
+   "file": "common/generic.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "addressaddressbyknown",
    "key": "address",
    "type": "field",
@@ -7108,6 +7158,16 @@
    "rule": "epsgcodevalue",
    "key": "epsg_code",
    "type": "data",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "escountrynamebyname",
+   "key": "escountryname",
+   "type": "field",
    "match": "regex",
    "file": "common/geo.yaml",
    "context": "geo",
@@ -9015,6 +9075,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "earthquakemagnitudebyname",
+   "key": "earthquake_magnitude",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "electricalconductivitybyname",
    "key": "electrical_conductivity",
    "type": "field",
@@ -9812,9 +9882,49 @@
    "country_code": "xx"
   },
   {
+   "rule": "aminoacidbyname",
+   "key": "amino_acid",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "aminoacidvalue",
+   "key": "amino_acid",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "chromosomebyname",
    "key": "chromosome",
    "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "codonbyname",
+   "key": "codon",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "codonvalue",
+   "key": "codon",
+   "type": "data",
    "match": "regex",
    "file": "common/science.yaml",
    "context": "science",
@@ -10042,6 +10152,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "keggorthologyidbyname",
+   "key": "kegg_orthology_id",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "keggorthologyidvalue",
+   "key": "kegg_orthology_id",
+   "type": "data",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "lipidnumberbyname",
    "key": "lipid_number",
    "type": "field",
@@ -10056,6 +10186,16 @@
    "key": "lipid_number",
    "type": "data",
    "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "log2foldchangebyname",
+   "key": "log2_fold_change",
+   "type": "field",
+   "match": "regex",
    "file": "common/science.yaml",
    "context": "science",
    "lang": "common",
@@ -10136,6 +10276,16 @@
    "key": "protein_sequence",
    "type": "data",
    "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "pvaluebyname",
+   "key": "p_value",
+   "type": "field",
+   "match": "regex",
    "file": "common/science.yaml",
    "context": "science",
    "lang": "common",
@@ -11002,6 +11152,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "employmentstatusbyname",
+   "key": "employment_status",
+   "type": "field",
+   "match": "regex",
+   "file": "common/survey.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "housingtenurebyname",
    "key": "housing_tenure",
    "type": "field",
@@ -11024,6 +11184,26 @@
   {
    "rule": "operatingsystembyname",
    "key": "operating_system",
+   "type": "field",
+   "match": "regex",
+   "file": "common/survey.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "selfratedhealthbyname",
+   "key": "self_rated_health",
+   "type": "field",
+   "match": "regex",
+   "file": "common/survey.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "smokingstatusbyname",
+   "key": "smoking_status",
    "type": "field",
    "match": "regex",
    "file": "common/survey.yaml",

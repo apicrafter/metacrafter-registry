@@ -1,0 +1,32 @@
+id: log2_fold_change
+name: Log2 fold change
+status: draft
+doc: 'Binary logarithm of the ratio of a quantity in two conditions, the usual measure of differential
+  expression of a gene or protein: 1 is twice as much, -1 half as much, 0 no change. Results of RNA-seq,
+  microarray and proteomics analyses give it for every gene next to the expression in each condition (RPKM,
+  TPM, counts) and a p-value; the fields are named log2FoldChange (DESeq2), logFC (edgeR, limma), log2FC
+  or Log2 Ratio. A gene with no expression in one condition has no finite ratio, and programs write Inf,
+  -Inf or a sentinel such as 15 or -1000000 for it.'
+parent: numeric
+categories:
+- science
+- values
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: '-2.32'
+  description: Expressed about five times less
+- value: '1.35'
+- value: '0.24'
+- value: '-15'
+  description: A sentinel of a gene with no expression in one condition
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Fold_change
+translations:
+  es:
+    name: Logaritmo en base 2 del cambio relativo (log2 fold change)
+  ru:
+    name: Двоичный логарифм кратности изменения (log2 fold change)

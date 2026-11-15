@@ -1,0 +1,36 @@
+id: escountryname
+name: Country name in Spanish
+status: draft
+doc: Name of a country written in Spanish (Alemania, Estados Unidos, Países Bajos, Corea del Sur), as
+  statistics, registers and surveys of Spain and Latin America write the country of birth of a person,
+  the partner country of a trade table or the country of an institution. Tables write the names in capitals
+  or without accents (PERU, Mexico, Haiti), keep both spellings of some names (México and Méjico, Irak
+  and Iraq, Catar and Qatar) and short forms (EE.UU., Reino Unido, Rep. Dominicana). Unicode CLDR has
+  Spanish names of all countries.
+semantic_type: country
+langs:
+- es
+classification: identifier
+examples:
+- value: Alemania
+  description: Germany
+- value: Estados Unidos
+  description: United States
+- value: Perú
+- value: BRASIL
+  description: in capitals
+- value: Países Bajos
+  description: Netherlands
+- value: Germany
+  valid: false
+  description: written in English
+links:
+- type: doc
+  url: https://cldr.unicode.org/
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/ISO_3166-1
+translations:
+  es:
+    name: Nombre de país en español
+  ru:
+    name: Название страны на испанском

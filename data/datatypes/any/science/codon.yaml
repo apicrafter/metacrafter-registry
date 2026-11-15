@@ -1,0 +1,37 @@
+id: codon
+name: Codon (nucleotide triplet)
+status: draft
+doc: 'Three nucleotides that code for one amino acid or stop the translation of a gene: three of the letters
+  A, C, G and T in DNA notation (GCG, ATG, TAA) or A, C, G and U in RNA notation (AUG, UAA). There are
+  64 codons; ATG starts a protein, and TAA, TAG and TGA are the stop codons of the standard code. Codon
+  usage tables give, for each gene or genome, every codon with its amino acid and its count or fraction;
+  mutation tables give the reference and the changed codon.'
+parent: category
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[ACGT]{3}|[ACGU]{3})$
+examples:
+- value: GCG
+  description: Alanine
+- value: ATG
+  description: Methionine, the start codon
+- value: UAA
+  description: A stop codon in RNA notation
+- value: GCX
+  valid: false
+  description: X is not a nucleotide
+- value: ATGC
+  valid: false
+  description: Four nucleotides
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/DNA_and_RNA_codon_tables
+translations:
+  es:
+    name: Codón (triplete de nucleótidos)
+  ru:
+    name: Кодон (триплет нуклеотидов)
