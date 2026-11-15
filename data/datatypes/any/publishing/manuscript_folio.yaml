@@ -1,0 +1,33 @@
+id: manuscript_folio
+name: Folio of a manuscript or register (recto/verso)
+status: draft
+doc: 'Reference to a leaf of a manuscript, register or archival volume: the folio number and r for the
+  recto (front) or v for the verso (back) side (1r, 16v, 77r), as editions and databases of medieval and
+  early modern sources cite them; a range joins two of them (12r-13v), and a register of only rectos may
+  give the bare number. Databases built from the registers of Bruges and Leuven give the folio of each
+  entry (Folio, Folio(mss), Folio/pagina).'
+categories:
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '^(?:f(?:ol)?\.? ?)?\d{1,4}(?:bis)?[rv](?: ?- ?\d{1,4}[rv])?$'
+examples:
+- value: 1r
+  description: first leaf, recto, of a fourteenth-century census register of Bruges (SODHA)
+- value: 16v
+- value: 12r-13v
+- value: '16'
+  valid: false
+  description: a page or folio number without the side; a folio only in a field named after it
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Recto_and_verso
+translations:
+  nl:
+    name: Folio van een handschrift of register
+  fr:
+    name: Folio d'un manuscrit ou d'un registre (recto/verso)
+  ru:
+    name: Лист рукописи или реестра (лицевая/оборотная сторона)

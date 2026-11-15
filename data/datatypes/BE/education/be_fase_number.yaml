@@ -1,0 +1,39 @@
+id: be_fase_number
+name: FASE number (Fédération Wallonie-Bruxelles education register)
+status: draft
+doc: 'Number of a school, higher education institution, site (implantation) or organising authority (pouvoir
+  organisateur) in FASE, the Fichier administratif des structures d''enseignement of the Fédération Wallonie-Bruxelles,
+  the French-speaking Community of Belgium. The administration, ARES and the open data of the Community
+  identify each structure by it: the University of Liège is 5224, the Université catholique de Louvain
+  5225, a school or a site has a number of one to five digits (39, 2066, 52012). Spreadsheets often write
+  it as a decimal (5224.0). Numbers of the three kinds overlap, and any small integer looks the same,
+  so a value is a FASE number in a field named after it (N° FASE, ndegfase_etablissement, numero_fase).'
+parent: id
+categories:
+- education
+- government
+country:
+- BE
+langs:
+- fr
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,4}$
+examples:
+- value: '5224'
+  description: Université de Liège (ARES list of establishments)
+- value: '95080'
+  description: a higher education institution, the ARES list of libraries
+- value: '1035'
+  description: a school of the FWB register of schools
+- value: '5224.0'
+  valid: false
+  description: decimal form of the spreadsheets; the number is 5224
+- value: BE0041
+  valid: false
+  description: an ETER identifier (eter_id)
+translations:
+  fr:
+    name: Numéro FASE (Fédération Wallonie-Bruxelles)
+  ru:
+    name: Номер FASE (реестр учебных заведений Федерации Валлония-Брюссель)

@@ -1,0 +1,37 @@
+id: eter_id
+name: ETER identifier of a higher education institution
+status: draft
+doc: 'Identifier of a higher education institution in ETER, the European Tertiary Education Register of
+  the European Commission: the two-letter country code and four digits (BE0041, FR0149). ETER uses EL
+  for Greece and UK for the United Kingdom, as Eurostat does. National registers publish tables of correspondence
+  between their own numbers and the ETER identifiers (the FASE numbers of the Fédération Wallonie-Bruxelles,
+  be_fase_number), and lists of institutions give it beside their names (identifiant_eter of the Strasbourg
+  higher education sites).'
+parent: id
+categories:
+- education
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}\d{4}$
+examples:
+- value: BE0041
+  description: a Belgian institution of the ARES table of correspondence FASE - ETER
+- value: FR0149
+  description: a French institution, higher education sites of Strasbourg
+- value: BE41
+  valid: false
+  description: two digits
+- value: be0041
+  valid: false
+  description: lowercase country code
+links:
+- type: other
+  url: https://www.eter-project.com/
+translations:
+  fr:
+    name: Identifiant ETER d'un établissement d'enseignement supérieur
+  ru:
+    name: Идентификатор ETER высшего учебного заведения

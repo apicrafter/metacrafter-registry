@@ -1,0 +1,50 @@
+id: be_arrondissement
+name: Belgian administrative arrondissement (name)
+status: draft
+doc: Name of one of the 43 administrative arrondissements of Belgium, the level between the province and
+  the municipality (Charleroi, Halle-Vilvoorde, Tournai-Mouscron, Bruxelles-Capitale). Since 1 January
+  2019 the arrondissements of Mouscron and Tournai form Tournai-Mouscron and the arrondissement of La
+  Louvière exists. Names are given in French, Dutch or German (Liège, Luik, Lüttich; Courtrai, Kortrijk),
+  sometimes with the NIS prefix (62 - LIEGE), and most of them are also the names of their main towns,
+  so a value is an arrondissement in a field named after it. Its NIS code ends in 000 (62000 is the arrondissement
+  of Liège, be_nis_code). The judicial arrondissements are another division (be_judicial_arrondissement).
+parent: district
+categories:
+- geo
+- government
+country:
+- BE
+langs:
+- fr
+- nl
+- de
+is_pii: false
+classification: categorical
+examples:
+- value: Charleroi
+  description: an arrondissement of Hainaut (NIS 52000)
+- value: Bruxelles-Capitale
+  description: the arrondissement of the Brussels-Capital Region (NIS 21000)
+- value: Halle-Vilvoorde
+  description: an arrondissement of Flemish Brabant (NIS 23000)
+- value: Tournai-Mouscron
+  description: arrondissement formed in 2019 (NIS 57000)
+- value: 62 - LIEGE
+  description: with the NIS prefix, as the ARES lists of campuses write it
+- value: Hainaut
+  valid: false
+  description: a province
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Arrondissements_of_Belgium
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q91028
+translations:
+  fr:
+    name: Arrondissement administratif belge
+  nl:
+    name: Bestuurlijk arrondissement (België)
+  de:
+    name: Verwaltungsbezirk (Belgien)
+  ru:
+    name: Административный округ Бельгии (название)

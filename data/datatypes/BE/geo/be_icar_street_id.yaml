@@ -1,0 +1,33 @@
+id: be_icar_street_id
+name: ICAR street identifier (Wallonia)
+status: draft
+doc: Identifier of a street in ICAR, the Inventaire centralisé des adresses et des rues of the Service
+  public de Wallonie, the reference address register of the Walloon Region; it is the Walloon source of
+  the street identifiers of BeST Address, the federal address data. Municipal open data of Wallonia link
+  their points to a street by it (icar_street_id 7730062 of the City of Liège). The identifiers are integers
+  of up to eight digits that tell nothing about the street, so a value is an ICAR street identifier in
+  a field named after it. The addresses of ICAR have identifiers of their own (be_icar_address_id).
+parent: id
+categories:
+- geo
+- government
+country:
+- BE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,7}$
+examples:
+- value: '7730062'
+  description: a street of Liège (drinking water points, dog toilets)
+- value: '7763812'
+  description: a street of Liège
+- value: '0'
+  valid: false
+  description: placeholder of a point without a street
+translations:
+  fr:
+    name: Identifiant de rue ICAR (Wallonie)
+  ru:
+    name: Идентификатор улицы ICAR (Валлония)
