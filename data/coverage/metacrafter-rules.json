@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "578fd18c7331f713d6758a626d2c4fcd45660a0c"
+  "ref": "e08c1c834a5c17e8d987fc6221ea160d4144c634"
  },
  "rules": [
   {
@@ -1170,6 +1170,56 @@
    "type": "data",
    "match": "func",
    "file": "ar_country/ar_government.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arlicitacionnumberbyname",
+   "key": "ar_licitacion_number",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_pba.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arlicitacionnumbervalue",
+   "key": "ar_licitacion_number",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_pba.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arpbadipregepbyname",
+   "key": "ar_pba_dipregep_number",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_pba.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arpbaschoolservicebyname",
+   "key": "ar_pba_school_service",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_pba.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arpbaschoolservicevalue",
+   "key": "ar_pba_school_service",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_pba.yaml",
    "context": "government",
    "lang": "es",
    "country_code": "ar"
@@ -9175,6 +9225,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "eschassisnumberbyname",
+   "key": "chassis_number",
+   "type": "field",
+   "match": "regex",
+   "file": "common/vehicles.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "esenginenumberbyname",
+   "key": "engine_number",
+   "type": "field",
+   "match": "regex",
+   "file": "common/vehicles.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "vehiclenumberbyfieldname",
    "key": "vehiclenumber",
    "type": "field",
@@ -9189,6 +9259,16 @@
    "key": "vehiclenumber",
    "type": "data",
    "match": "ppr",
+   "file": "common/vehicles.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "vehicletypebyname",
+   "key": "vehicle_type",
+   "type": "field",
+   "match": "regex",
    "file": "common/vehicles.yaml",
    "context": "transport",
    "lang": "common",
@@ -10015,6 +10095,26 @@
    "country_code": "es"
   },
   {
+   "rule": "esbrandbyname",
+   "key": "brand",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_common.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esmodelyearbyname",
+   "key": "year",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_common.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esphonebyname",
    "key": "phone",
    "type": "field",
@@ -10029,6 +10129,26 @@
    "key": "phone",
    "type": "field",
    "match": "text",
+   "file": "es/es_common.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "estreespeciesbyname",
+   "key": "species",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_common.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "estreespeciesvalue",
+   "key": "species",
+   "type": "data",
+   "match": "func",
    "file": "es/es_common.yaml",
    "context": "common",
    "lang": "es",
@@ -10315,8 +10435,38 @@
    "country_code": "es"
   },
   {
+   "rule": "esmedicalspecialtybyname",
+   "key": "medical_specialty",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_med.yaml",
+   "context": "medical",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esmedicalspecialtyvalue",
+   "key": "medical_specialty",
+   "type": "data",
+   "match": "func",
+   "file": "es/es_med.yaml",
+   "context": "medical",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esfullnamebyname",
    "key": "person_fullname",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_persons.yaml",
+   "context": "persons",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esjobtitlebyname",
+   "key": "jobtitle",
    "type": "field",
    "match": "regex",
    "file": "es/es_persons.yaml",
@@ -10359,6 +10509,16 @@
    "key": "esnif",
    "type": "data",
    "match": "ppr",
+   "file": "es/es_persons.yaml",
+   "context": "persons",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esofficialfullnamebyname",
+   "key": "person_fullname",
+   "type": "field",
+   "match": "regex",
    "file": "es/es_persons.yaml",
    "context": "persons",
    "lang": "es",
