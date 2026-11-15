@@ -1,0 +1,34 @@
+id: ar_caba_barrio
+name: Barrio of the City of Buenos Aires
+status: draft
+doc: Name of one of the 48 official barrios (neighbourhoods) of the Autonomous City of Buenos Aires, such
+  as Palermo, Villa Crespo or Parque Patricios. City datasets write them in capitals without accents (CONSTITUCION,
+  NUÑEZ, SAN CRISTOBAL) or in title case, shorten Villa General Mitre to VILLA GRAL. MITRE, and write
+  La Boca as BOCA, La Paternal as PATERNAL and Monserrat also as Montserrat. Every barrio belongs to one
+  comuna (ar_caba_comuna).
+categories:
+- geo
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: PALERMO
+- value: Villa Crespo
+- value: NUÑEZ
+- value: VILLA GRAL. MITRE
+  description: Villa General Mitre
+- value: BOCA
+  description: La Boca
+- value: Monserrat
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Neighbourhoods_of_Buenos_Aires
+- type: doc
+  url: https://data.buenosaires.gob.ar/dataset/barrios
+translations:
+  es:
+    name: Barrio de la Ciudad de Buenos Aires

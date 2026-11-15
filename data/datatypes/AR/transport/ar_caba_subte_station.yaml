@@ -1,0 +1,36 @@
+id: ar_caba_subte_station
+name: Buenos Aires Underground (Subte) station
+status: draft
+doc: 'Name of a station of the Buenos Aires Underground or of the Premetro: about 90 Subte stations on
+  six lines and 18 Premetro stops, such as Plaza de Mayo, Congreso de Tucumán or Facultad de Medicina.
+  The operator''s data write them in capitals, mostly without accents (CASTRO BARROS, SAENZ PEÑA), and
+  many carry a second name (CALLAO - MAESTRO ALFREDO BRAVO, PASTEUR - AMIA). Stations of different lines
+  share names (Callao, Pueyrredón, Independencia, Retiro), so tables give the line beside the station
+  (ar_caba_subte_line).'
+categories:
+- transport
+- geo
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: PLAZA DE MAYO
+  description: line A
+- value: CONGRESO DE TUCUMAN
+  description: line D
+- value: Facultad de Medicina
+- value: PASTEUR - AMIA
+  description: line B
+- value: INTENDENTE SAGUIER
+  description: Premetro
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_Buenos_Aires_Underground_stations
+- type: doc
+  url: https://data.buenosaires.gob.ar/dataset/subte-estaciones
+translations:
+  es:
+    name: Estación del Subte de Buenos Aires

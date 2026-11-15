@@ -1,0 +1,37 @@
+id: ar_caba_comuna
+name: Comuna of the City of Buenos Aires
+status: draft
+doc: 'One of the 15 comunas of the Autonomous City of Buenos Aires, the units of its decentralised government
+  (Law 1777 of 2005), each made of one to six barrios. City datasets give the comuna of an address, a
+  school or a complaint as a number from 1 to 15, often after the word (Comuna 14, COMUNA 04) and in spreadsheets
+  as 14.0; rows of totals say Total or Total Ciudad. INDEC counts the comunas as the departments of the
+  city, so a departamento column of city data holds the same values. Chilean and Colombian comunas are
+  other things: municipalities and urban districts.'
+parent: ar_department
+categories:
+- geo
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^(?:[Cc]omuna|COMUNA) ?(?:0?[1-9]|1[0-5])$
+examples:
+- value: Comuna 14
+  description: Palermo
+- value: COMUNA 04
+  description: with a leading zero, as the city government's complaint data write it
+- value: Comuna 1
+- value: Comuna 16
+  valid: false
+  description: there are 15 comunas
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Communes_of_Buenos_Aires
+- type: doc
+  url: https://data.buenosaires.gob.ar/dataset/comunas
+translations:
+  es:
+    name: Comuna de la Ciudad de Buenos Aires

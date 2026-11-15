@@ -1,0 +1,32 @@
+id: ar_caba_subte_line
+name: Buenos Aires Underground (Subte) line
+status: draft
+doc: 'Line of the Buenos Aires Underground: the six lines A, B, C, D, E and H and the Premetro tramway,
+  which the operator counts with them (P). Ridership, turnstile, timetable and station datasets of the
+  city give the line as the letter alone, as LINEA A or Línea B, or as PREMETRO.'
+categories:
+- transport
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^(?:(?:L[ií]nea|L[IÍ]NEA|Linea)[ _]?)?[A-EHP]$|^(?:Premetro|PREMETRO|PM)$
+examples:
+- value: A
+- value: H
+- value: LINEA D
+- value: Línea B
+- value: PREMETRO
+- value: F
+  valid: false
+  description: line F is planned, not built
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Buenos_Aires_Underground
+- type: doc
+  url: https://data.buenosaires.gob.ar/dataset/subte-estaciones
+translations:
+  es:
+    name: Línea del Subte de Buenos Aires

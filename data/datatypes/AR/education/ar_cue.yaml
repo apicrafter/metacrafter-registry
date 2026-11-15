@@ -1,0 +1,34 @@
+id: ar_cue
+name: Argentine school establishment code (CUE)
+status: draft
+doc: 'Clave Única de Establecimiento: the seven-digit code of an educational establishment in the national
+  register of the Argentine Ministry of Education. The first two digits are the jurisdiction (02 the City
+  of Buenos Aires, 06 Buenos Aires Province, 14 Córdoba) and the other five number the establishment.
+  Tables that store it as a number drop the leading zero (201845 for 0201845). With the two-digit number
+  of a site it is the CUE-Anexo (ar_cue_anexo).'
+categories:
+- education
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{6,7}$
+examples:
+- value: 0201845
+  description: an establishment of the City of Buenos Aires
+- value: '201845'
+  description: the same code stored as a number
+- value: 020184500
+  valid: false
+  description: 'a CUE with the site number: ar_cue_anexo'
+links:
+- type: doc
+  url: https://www.argentina.gob.ar/educacion/evaluacion-e-informacion-educativa/padron-oficial-de-establecimientos-educativos
+- type: doc
+  url: https://data.buenosaires.gob.ar/dataset/establecimientos-educativos
+translations:
+  es:
+    name: Clave Única de Establecimiento (CUE)

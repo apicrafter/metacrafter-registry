@@ -1,0 +1,36 @@
+id: ar_identity_document_type
+name: Argentine identity document type
+status: draft
+doc: 'Kind of document that identifies a person in an Argentine register, as an abbreviation: DNI (Documento
+  Nacional de Identidad, also DU, documento único), LE (Libreta de Enrolamiento, given to men until 1968)
+  and LC (Libreta Cívica, given to women), both still found for older people, CI (Cédula de Identidad
+  of the Federal Police or a province) and PAS (passport). Columns named tipo_documento hold it beside
+  the document number; registers that also list companies add CUIT or CUIL to the same column.'
+parent: category
+categories:
+- persons
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^(?:DNI|D\.N\.I\.|DU|LE|L\.E\.|LC|L\.C\.|CI|C\.I\.|PAS|PASAPORTE|Pasaporte|CUIT|CUIL|CDI)$
+examples:
+- value: DNI
+- value: LE
+  description: Libreta de Enrolamiento
+- value: LC
+  description: Libreta Cívica
+- value: CI
+- value: DU
+- value: NIE
+  valid: false
+  description: a Spanish document
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Documento_Nacional_de_Identidad_(Argentina)
+translations:
+  es:
+    name: Tipo de documento de identidad (Argentina)

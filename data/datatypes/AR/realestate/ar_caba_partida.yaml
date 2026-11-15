@@ -1,0 +1,29 @@
+id: ar_caba_partida
+name: Buenos Aires property tax account number (partida inmobiliaria)
+status: draft
+doc: 'Number of a property in the real estate register of the City of Buenos Aires, under which the city
+  revenue agency (AGIP) bills the property tax and the ABL service charge: a number of up to seven digits,
+  six for most properties. A building divided into units has a partida matriz for the whole parcel and
+  a partida for each unit. The parcel map, the planning code and the business licence data of the city
+  carry it beside the cadastral designation (ar_caba_smp); 0 stands for a parcel without one.'
+categories:
+- realestate
+- finances
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+examples:
+- value: '223539'
+  description: partida of a parcel in the planning code parcel file
+- value: '211685'
+- value: '98577'
+  description: a five-digit partida matriz
+links:
+- type: doc
+  url: https://data.buenosaires.gob.ar/dataset/parcelas
+translations:
+  es:
+    name: Partida inmobiliaria de la Ciudad de Buenos Aires
