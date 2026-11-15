@@ -1,0 +1,36 @@
+id: co_sisben_group
+name: Sisbén IV group
+status: draft
+doc: 'Group of a household in Sisbén IV, the register the Colombian planning department DNP uses to find
+  the people entitled to social programmes: a letter for the group and a number for the subgroup. A1 to
+  A5 is extreme poverty, B1 to B7 moderate poverty, C1 to C18 vulnerable and D1 to D21 neither poor nor
+  vulnerable; within a group a lower number means less capacity to generate income. The groups replaced
+  the 0 to 100 score of Sisbén III, which is a number and not this type. Registers of beneficiaries name
+  the column SISBEN, grupo_sisben or Clasificación Sisbén.'
+parent: socioeconomic_level
+categories:
+- persons
+- government
+country:
+- CO
+langs:
+- es
+is_pii: true
+classification: categorical
+regexp: ^(?:A[1-5]|B[1-7]|C(?:1[0-8]|[1-9])|D(?:2[01]|1\d|[1-9]))$
+examples:
+- value: A5
+- value: B4
+- value: C18
+- value: D21
+- value: A6
+  valid: false
+  description: group A has five subgroups
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/SISBEN
+translations:
+  es:
+    name: Grupo del Sisbén IV
+  ru:
+    name: Группа Sisbén IV (Колумбия)
