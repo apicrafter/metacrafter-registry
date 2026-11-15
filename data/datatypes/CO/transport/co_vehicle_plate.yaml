@@ -1,0 +1,35 @@
+id: co_vehicle_plate
+name: Colombian vehicle registration plate
+status: draft
+doc: Registration number on Colombian vehicle plates. Cars have three letters and three digits (ABC 123,
+  since 1988; two letters and four digits before), motorcycles three letters, two digits and a letter
+  (ABC 12D; older ones three letters and two digits), motor tricycles used as taxis (motocarros) three
+  digits and three letters (123 ABC), trailers R and five digits. Diplomatic, police and air force plates
+  have their own forms and are not covered. Registers write the plate with a hyphen, a space or nothing
+  between letters and digits, sometimes in lower case.
+categories:
+- transport
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:[A-Z]{3}[ -]?\d{3}|[A-Z]{3}[ -]?\d{2}[A-Z]?|\d{3}[ -]?[A-Z]{3}|[A-Z]{2}[ -]?\d{4}|R[ -]?\d{5})$
+examples:
+- value: CAN732
+  description: car plate shown in Wikipedia
+- value: DCZ84B
+  description: motorcycle plate shown in Wikipedia
+- value: EYY-710
+  description: written with a hyphen
+- value: AB12CD
+  valid: false
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Matrículas_automovilísticas_de_Colombia
+translations:
+  es:
+    name: Placa de vehículo (Colombia)
+  ru:
+    name: Регистрационный номер автомобиля (Колумбия)

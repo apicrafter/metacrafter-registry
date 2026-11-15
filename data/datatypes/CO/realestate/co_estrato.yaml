@@ -1,0 +1,37 @@
+id: co_estrato
+name: Colombian socioeconomic stratum (estrato)
+status: draft
+doc: 'Stratum of a dwelling in the socioeconomic stratification of Colombia (Ley 142 de 1994): the mayor
+  of each municipality classes residential properties from 1 to 6 (1 bajo-bajo, 2 bajo, 3 medio-bajo,
+  4 medio, 5 medio-alto, 6 alto), and the stratum sets the tariff of public utilities, with subsidies
+  for strata 1 to 3 and a surcharge for 5 and 6. Registers of students, patients, beneficiaries and utility
+  subscribers carry it as a number or with the word (ESTRATO 2); it describes the dwelling, and by extension
+  the household.'
+parent: category
+categories:
+- realestate
+- persons
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^(?:(?:ESTRATO|Estrato|estrato) )?[1-6]$
+examples:
+- value: '1'
+  description: bajo-bajo
+- value: '6'
+  description: alto
+- value: ESTRATO 2
+- value: '7'
+  valid: false
+  description: there are six strata
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Estratificación_socioeconómica_en_Colombia
+translations:
+  es:
+    name: Estrato socioeconómico (Colombia)
+  ru:
+    name: Социально-экономическая страта жилья (Колумбия)

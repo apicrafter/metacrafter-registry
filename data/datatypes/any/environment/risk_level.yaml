@@ -1,0 +1,30 @@
+id: risk_level
+name: Hazard, vulnerability or risk level (in words)
+status: draft
+doc: 'Qualitative class of a natural hazard, of the vulnerability of what is exposed to it, or of the
+  risk that combines them, on a scale of three to five steps in words: Baja, Media, Alta, with Muy baja
+  and Muy alta, in Spanish risk maps (amenaza por inundación, remoción en masa, avenida torrencial, incendio
+  forestal); Low, Moderate or Medium, High, Very high in English ones. Risk management plans and land-use
+  plans give every polygon of a zoning layer such a class, in columns named AMENAZA, VULNERABILIDAD, RIESGO,
+  CAT_VULNER or hazard_level. The index the class is cut from is a number and not this type.'
+parent: category
+categories:
+- environment
+- geo
+langs:
+- es
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Alta
+- value: Media
+- value: Baja
+- value: Muy Alta
+- value: High
+- value: Moderate
+translations:
+  es:
+    name: Nivel de amenaza, vulnerabilidad o riesgo
+  ru:
+    name: Уровень опасности, уязвимости или риска (словами)

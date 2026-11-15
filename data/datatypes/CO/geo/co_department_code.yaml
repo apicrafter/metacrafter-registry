@@ -1,0 +1,42 @@
+id: co_department_code
+name: Colombian department code (DIVIPOLA)
+status: draft
+doc: 'Two-digit code of a Colombian department, or of the capital district, in DIVIPOLA, the coding of
+  the political and administrative division kept by the national statistics office DANE: 05 Antioquia,
+  11 Bogotá D.C., 25 Cundinamarca, 76 Valle del Cauca, 99 Vichada. It begins the five-digit municipality
+  code (co_divipola). Tables name it Código Departamento, COD_DEPTO, COD_DPTO, CodigoDaneDepartamento
+  or ID_DEPARTAMENTO, and spreadsheets drop the leading zero of 05 and 08.'
+parent: id
+categories:
+- geo
+- government
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^(?:05|08|11|13|15|17|18|19|20|23|25|27|41|44|47|50|52|54|63|66|68|70|73|76|81|85|86|88|91|94|95|97|99)$
+examples:
+- value: '05'
+  description: Antioquia
+- value: '11'
+  description: Bogotá D.C.
+- value: '25'
+  description: Cundinamarca
+- value: '76'
+  description: Valle del Cauca
+- value: '12'
+  valid: false
+  description: not assigned
+- value: '05001'
+  valid: false
+  description: a municipality code (co_divipola)
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Departamentos_de_Colombia
+translations:
+  es:
+    name: Código DIVIPOLA de departamento
+  ru:
+    name: Код департамента Колумбии (DIVIPOLA)

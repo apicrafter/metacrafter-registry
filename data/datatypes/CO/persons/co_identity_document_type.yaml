@@ -1,0 +1,40 @@
+id: co_identity_document_type
+name: Colombian identity document type
+status: draft
+doc: 'Kind of document that identifies a person in a Colombian register, as an abbreviation: RC (registro
+  civil de nacimiento, for young children), TI (tarjeta de identidad, minors from 7 to 17), CC (cédula
+  de ciudadanía, adults), CE (cédula de extranjería, resident foreigners), PA (passport), and the permits
+  of Venezuelan migrants PEP and PPT. Health records add codes for people without a document, AS (adult)
+  and MS (minor); registers that also list companies put NIT in the same column. Written with or without
+  dots (C.C., T.I.), sometimes spelled out, in columns named TIPODOC, Tipo de identificación or tipo_documento,
+  beside the document number.'
+parent: category
+categories:
+- persons
+- government
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^(?:CC|C\.C\.?|TI|T\.I\.?|RC|R\.C\.?|CE|C\.E\.?|PA|PEP|PPT|NUIP|NIT|AS|MS)$
+examples:
+- value: CC
+  description: cédula de ciudadanía
+- value: TI
+  description: tarjeta de identidad
+- value: RC
+  description: registro civil
+- value: C.C.
+- value: DNI
+  valid: false
+  description: not a Colombian document
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Cédula_de_ciudadanía_(Colombia)
+translations:
+  es:
+    name: Tipo de documento de identidad (Colombia)
+  ru:
+    name: Тип документа, удостоверяющего личность (Колумбия)

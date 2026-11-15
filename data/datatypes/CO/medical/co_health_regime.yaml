@@ -1,0 +1,33 @@
+id: co_health_regime
+name: Colombian health insurance regime (régimen de salud)
+status: draft
+doc: 'Regime under which a person belongs to the Colombian health system set up by Ley 100 de 1993: Contributivo
+  (employees, pensioners and the self-employed who pay contributions), Subsidiado (poor and vulnerable
+  people whose affiliation the State pays), Especial or Excepción (the armed forces, the police, teachers,
+  Ecopetrol), and for people outside both, No asegurado, Vinculado or población pobre no asegurada. Hospital,
+  vaccination and vital statistics tables name the column Régimen, Regimen Seguridad Social or tipo_regimen;
+  billing tables add payers that are not regimes (SOAT, Particular).'
+parent: category
+categories:
+- medical
+- persons
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Contributivo
+- value: Subsidiado
+- value: Excepción
+- value: No asegurado
+- value: Vinculado
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Sistema_de_salud_en_Colombia
+translations:
+  es:
+    name: Régimen de afiliación en salud (Colombia)
+  ru:
+    name: Режим медицинского страхования (Колумбия)
