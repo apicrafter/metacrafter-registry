@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "53e4d7e5f3c407fc5d1da62259485920347ed0b6"
+  "ref": "96d7a762d9c184c5519987b2d2e27d5c842bdc12"
  },
  "rules": [
   {
@@ -4765,9 +4765,209 @@
    "country_code": "cn"
   },
   {
+   "rule": "cociiubyname",
+   "key": "co_ciiu",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "cociiuvalue",
+   "key": "co_ciiu",
+   "type": "data",
+   "match": "func",
+   "file": "co/co_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "coestratobyname",
+   "key": "co_estrato",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "cohealthregimebyname",
+   "key": "co_health_regime",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "coidentitydocumenttypebyname",
+   "key": "co_identity_document_type",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "comatriculainmobiliariabyname",
+   "key": "co_matricula_inmobiliaria",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "conitbyname",
+   "key": "co_nit",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "copredialnumberbyname",
+   "key": "co_predial_number",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "copredialnumbervalue",
+   "key": "co_predial_number",
+   "type": "data",
+   "match": "func",
+   "file": "co/co_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "coschooldanecodebyname",
+   "key": "co_school_dane_code",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "cosisbengroupbyname",
+   "key": "co_sisben_group",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "covehicleplatebyname",
+   "key": "co_vehicle_plate",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "covehicleplatevalue",
+   "key": "co_vehicle_plate",
+   "type": "data",
+   "match": "func",
+   "file": "co/co_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "cocomunabyname",
+   "key": "co_comuna",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "cocomunavalue",
+   "key": "co_comuna",
+   "type": "data",
+   "match": "func",
+   "file": "co/co_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "cocorregimientobyname",
+   "key": "co_corregimiento",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "codepartmentbyname",
+   "key": "co_department",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "codepartmentcodebyname",
+   "key": "co_department_code",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "codivipolabyname",
+   "key": "co_divipola",
+   "type": "field",
+   "match": "regex",
+   "file": "co/co_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
    "rule": "codivipolavalue",
    "key": "co_divipola",
    "type": "data",
+   "match": "regex",
+   "file": "co/co_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "co"
+  },
+  {
+   "rule": "coveredabyname",
+   "key": "co_vereda",
+   "type": "field",
    "match": "regex",
    "file": "co/co_geo.yaml",
    "context": "geo",
@@ -9760,6 +9960,56 @@
    "file": "common/redlist.yaml",
    "context": "science",
    "lang": "common"
+  },
+  {
+   "rule": "budgetyearbyname",
+   "key": "year",
+   "type": "field",
+   "match": "regex",
+   "file": "common/registers.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "languagenamebyspanishname",
+   "key": "language",
+   "type": "field",
+   "match": "regex",
+   "file": "common/registers.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "recordmediumbyname",
+   "key": "record_medium",
+   "type": "field",
+   "match": "regex",
+   "file": "common/registers.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "risklevelbyname",
+   "key": "risk_level",
+   "type": "field",
+   "match": "regex",
+   "file": "common/registers.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "schoolshiftbyname",
+   "key": "school_shift",
+   "type": "field",
+   "match": "regex",
+   "file": "common/registers.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
   },
   {
    "rule": "abstractbyname",

@@ -1,0 +1,28 @@
+id: record_medium
+name: Medium of a record (paper, electronic, digital)
+status: draft
+doc: 'Medium or carrier on which a document or an information asset is kept, in words: paper or physical,
+  electronic, digital, analogue, or both. Records schedules and the registers of information assets that
+  Colombian public bodies publish under the transparency law (Ley 1712 de 2014) have it as medio de conservación
+  y/o soporte: Físico, Electrónico, Digital, Físico / Electrónico, Análogo, Papel; English inventories
+  write Paper, Electronic, Digital, Hard copy. The file format of an electronic record (PDF, XLS) is file_format.'
+parent: category
+categories:
+- texts
+- government
+langs:
+- es
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Físico
+- value: Electrónico
+- value: Digital
+- value: Físico / Electrónico
+- value: Paper
+translations:
+  es:
+    name: Medio de conservación o soporte
+  ru:
+    name: Носитель документа (бумажный, электронный, цифровой)

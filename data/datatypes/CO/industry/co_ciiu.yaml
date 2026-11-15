@@ -1,0 +1,38 @@
+id: co_ciiu
+name: Colombian economic activity code (CIIU Rev. 4 A.C.)
+status: draft
+doc: 'Class of economic activity in CIIU Rev. 4 A.C., the adaptation for Colombia of the International
+  Standard Industrial Classification that DANE maintains: four digits (4711, 0112), the first two being
+  the division. The tax register RUT and the chambers of commerce record up to four activities per business;
+  the business registers of the chambers put the letter of the section before the class (G4512, A0112,
+  I5511), often followed by the title of the class. Columns are named CIIU, Cod_CIIU, CIIU-1 to CIIU-4
+  or actividad económica.'
+parent: isicrev4
+categories:
+- industry
+- finances
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^[A-U]?\d{4}$
+examples:
+- value: G4512
+  description: trade in used motor vehicles, as a chamber of commerce writes it
+- value: '4711'
+  description: retail sale in non-specialised stores
+- value: A0112
+  description: growing of rice
+- value: G45
+  valid: false
+  description: a division, not a class
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Clasificación_Internacional_Industrial_Uniforme
+translations:
+  es:
+    name: Código CIIU Rev. 4 A.C. (Colombia)
+  ru:
+    name: Код вида экономической деятельности CIIU (Колумбия)

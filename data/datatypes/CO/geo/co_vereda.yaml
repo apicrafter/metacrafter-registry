@@ -1,0 +1,29 @@
+id: co_vereda
+name: Vereda (rural settlement area of Colombia)
+status: draft
+doc: 'Name of a vereda, the smallest rural division of a Colombian municipality: a stretch of countryside
+  with scattered farms and sometimes a small centre, grouped into corregimientos (co_corregimiento). Rural
+  registers (wells, schools, beneficiaries of rural programmes, land parcels) locate a record by its vereda:
+  El Diamante, Chorro Claro, Popoa Sur, Bajo Cantano. Columns are named VEREDA, nombre_vereda or, for
+  mixed urban and rural tables, barrio o vereda.'
+parent: admin_area_3
+categories:
+- geo
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: El Diamante
+- value: Popoa Sur
+- value: Bajo Cantano
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Vereda_(Colombia)
+translations:
+  es:
+    name: Vereda (Colombia)
+  ru:
+    name: Вереда (сельская местность муниципалитета Колумбии)

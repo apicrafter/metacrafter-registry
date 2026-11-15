@@ -1,0 +1,37 @@
+id: co_predial_number
+name: Colombian national parcel number (número predial nacional)
+status: draft
+doc: Número predial nacional (NPN), the 30-digit number that identifies a parcel in the Colombian cadastre
+  (Resolución 70 de 2011 of the Instituto Geográfico Agustín Codazzi, changed by Resolución 829 de 2013;
+  mandatory since 2014). It starts with the DIVIPOLA codes of the department and the municipality, then
+  gives the zone, sector, comuna, barrio, block or vereda and the parcel, and ends with the part for horizontal
+  property (the last four digits number the unit). The cadastral number it replaced had 20 digits; municipal
+  tables also give the part after the municipality code alone, with or without hyphens (01-02-0218-0001-000),
+  which is not this type. Columns are named NPN, numero_predial, Cédula Catastral or código predial.
+parent: cadastralnumber
+categories:
+- realestate
+- geo
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{30}|\d{20})$
+examples:
+- value: '700010101000006900002000000000'
+  description: a parcel of Sincelejo (70001), from an open data table of the municipality
+- value: '70001010100690002000'
+  description: 20 digits, the length of the cadastral number used before
+- value: '000100010005000'
+  valid: false
+  description: the 15 digits after the municipality code
+links:
+- type: doc
+  url: https://barranquilla.gov.co/documento/resolucion-del-igac-no-70-de-2011/
+translations:
+  es:
+    name: Número predial nacional (NPN)
+  ru:
+    name: Национальный кадастровый номер участка (Колумбия)

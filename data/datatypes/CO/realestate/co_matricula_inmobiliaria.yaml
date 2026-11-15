@@ -1,0 +1,36 @@
+id: co_matricula_inmobiliaria
+name: Colombian real estate registration number (matrícula inmobiliaria)
+status: draft
+doc: 'Number of the folio de matrícula inmobiliaria, the page of the Colombian land register that holds
+  the legal history of one property (Ley 1579 de 2012). The registry offices answer to the Superintendencia
+  de Notariado y Registro; the number is written as the three-digit code of the office (círculo registral),
+  a hyphen and the number of the folio in that office: 001-948136, 294-25763, 060-26027. Inventories of
+  public property, cadastral tables and court records name the column Matrícula Inmobiliaria or Folio
+  de Matrícula.'
+parent: id
+categories:
+- realestate
+- legal
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{3}-\d{1,8}$
+examples:
+- value: 001-948136
+  description: from an inventory of municipal property published on datos.gov.co
+- value: 294-25763
+  description: from an inventory of municipal property published on datos.gov.co
+- value: '948136'
+  valid: false
+  description: the folio number without the office code
+links:
+- type: doc
+  url: https://www.cancilleria.gov.co/sites/default/files/Normograma/docs/pdf/ley_1579_2012.pdf
+translations:
+  es:
+    name: Matrícula inmobiliaria
+  ru:
+    name: Номер записи о недвижимости в реестре Колумбии (matrícula inmobiliaria)

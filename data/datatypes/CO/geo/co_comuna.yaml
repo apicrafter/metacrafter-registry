@@ -1,0 +1,32 @@
+id: co_comuna
+name: Comuna of a Colombian municipality
+status: draft
+doc: 'Urban subdivision of a Colombian municipality, created by the municipal council under Ley 136 de
+  1994 and made of neighbourhoods (barrios): Cali has 22 comunas, Medellín 16, Bucaramanga 17. Municipal
+  tables give it as a number (4, 21), with the word (Comuna 5, COMUNA 11), as number and name (17. MUTIS,
+  01. NORTE), as a name alone (Cumanday, La Fuente) or as a number in words (SEIS). The rural counterpart
+  is the corregimiento (co_corregimiento), and some columns hold both (Comuna/Corregimiento).'
+parent: admin_area_3
+categories:
+- geo
+- government
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: '21'
+  description: a comuna of Cali by number
+- value: Comuna 5
+- value: 17. MUTIS
+  description: number and name, Bucaramanga
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Comunas_de_Colombia
+translations:
+  es:
+    name: Comuna (Colombia)
+  ru:
+    name: Коммуна (городской район) муниципалитета Колумбии

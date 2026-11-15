@@ -1,0 +1,30 @@
+id: co_corregimiento
+name: Corregimiento of a Colombian municipality
+status: draft
+doc: 'Rural subdivision of a Colombian municipality by name: the municipal council may divide the area
+  outside the municipal seat into corregimientos (Ley 136 de 1994), each covering populated centres and
+  veredas (co_vereda). Tables of municipalities name it Corregimiento, Nombre Corregimiento or, together
+  with the urban comunas, Comuna/Corregimiento: La Habana, Zanjón Hondo, Puerto Caldas, Tribunas Córcega.'
+parent: admin_area_3
+categories:
+- geo
+- government
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Puerto Caldas
+  description: Pereira
+- value: Zanjón Hondo
+  description: Guadalajara de Buga
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Corregimientos_de_Colombia
+translations:
+  es:
+    name: Corregimiento (Colombia)
+  ru:
+    name: Коррехимьенто (сельский район) муниципалитета Колумбии

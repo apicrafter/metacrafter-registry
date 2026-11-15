@@ -1,0 +1,30 @@
+id: school_shift
+name: School shift (session of the day)
+status: draft
+doc: 'Part of the day or of the week in which a school, a programme or a class works, in words: morning,
+  afternoon, evening or full day. Latin American school and university registers call it jornada or turno:
+  Mañana, Tarde, Diurna, Nocturna, Completa, Única, Fin de semana, Sabatina in Spanish; Matutino, Vespertino,
+  Noturno, Integral in Portuguese. A school that runs two shifts has a record for each. How people attend
+  (in person or online) is attendance_mode.'
+parent: category
+categories:
+- education
+langs:
+- es
+- pt
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Diurna
+- value: Nocturna
+- value: Mañana
+- value: Fin de semana
+- value: Noturno
+translations:
+  es:
+    name: Jornada escolar (turno)
+  pt:
+    name: Turno escolar
+  ru:
+    name: Смена обучения (утренняя, дневная, вечерняя)

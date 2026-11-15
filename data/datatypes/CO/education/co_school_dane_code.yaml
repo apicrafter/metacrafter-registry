@@ -1,0 +1,36 @@
+id: co_school_dane_code
+name: Colombian school code (código DANE)
+status: draft
+doc: 'Twelve-digit code that the national statistics office DANE gives once to every school and to each
+  of its sites (sedes): the key of the school census EDUC (form C600), of the school directory DUE and
+  of the enrolment system SIMAT of the education ministry. In the published tables the first digit is
+  1 to 4 and the next five are the DIVIPOLA code of the municipality (176001004973 in Cali, 76001). Columns
+  are named Código DANE, CODIGO_DANE_SEDE, CodigoDane_EE or CodigoSede_EE; spreadsheets that read it as
+  a number round it (213430000000).'
+parent: id
+categories:
+- education
+- government
+country:
+- CO
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^[1-4]\d{11}$
+examples:
+- value: '176001004973'
+  description: a school of Cali, from the open data of the municipality
+- value: '205579800021'
+  description: a school site of Puerto Berrío
+- value: '76001004973'
+  valid: false
+  description: eleven digits
+links:
+- type: doc
+  url: https://www.dane.gov.co/files/operaciones/EDUC/Formulario-C600-2024.pdf
+translations:
+  es:
+    name: Código DANE de establecimiento o sede educativa
+  ru:
+    name: Код школы Колумбии (DANE)
