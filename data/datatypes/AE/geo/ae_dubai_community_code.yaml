@@ -1,0 +1,37 @@
+id: ae_dubai_community_code
+name: Dubai community number
+status: draft
+doc: Three-digit number of a community of the emirate of Dubai in the coding of the Dubai Statistics Center
+  and Dubai Municipality, used by the RTA and DEWA files (community, community_num); the first digit is
+  the sector (1 to 9), as in 123 Al Muteena, 312 Al Souq Al Kabeer and 621 Al Khawaneej. The bulletin
+  of 2021 lists 226 numbers from 101 to 991; spreadsheets write them as floats (124.0) and give -1 to
+  an unknown community.
+parent: id
+categories:
+- geo
+- government
+country:
+- AE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{2}$
+examples:
+- value: '123'
+  description: Al Muteena
+- value: '312'
+  description: Al Souq Al Kabeer
+- value: '621'
+  description: Al Khawaneej
+- value: '-1'
+  valid: false
+  description: unknown community
+links:
+- type: doc
+  url: https://www.dsc.gov.ae/Publication/Population%20Bulletin%20Emirate%20of%20Dubai%20%20-%202021.pdf
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_communities_in_Dubai
+translations:
+  ar:
+    name: رقم المجتمع في دبي

@@ -1,0 +1,34 @@
+id: google_place_id
+name: Google Maps place ID
+status: draft
+doc: 'Identifier of a place in the Google Maps Platform (Places API, Geocoding API, Maps URLs): a URL-safe
+  base64 text of letters, digits, - and _. Place IDs of establishments, cities and regions start with
+  ChIJ and have 27 characters, as in ChIJN1t_tDeuEmsRUsoyG83frY4 (Google Sydney, the example of the Places
+  API documentation); place IDs of street addresses and other places are longer and start otherwise (Ei,
+  Eh, GhIJ). The COVID-19 Community Mobility Reports of Google give the place_id of each country and region.
+  Google may change the ID of a place over time.'
+categories:
+- geo
+- objectids
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^ChIJ[A-Za-z0-9_-]{23}$
+examples:
+- value: ChIJN1t_tDeuEmsRUsoyG83frY4
+  description: Google Sydney (Places API documentation)
+- value: ChIJvRKrsd9IXj4RpwoIwFYv0zM
+  description: United Arab Emirates (COVID-19 Community Mobility Report)
+- value: ChIJN1t_tDeuEmsRUsoy
+  valid: false
+  description: too short
+links:
+- type: doc
+  url: https://developers.google.com/maps/documentation/places/web-service/place-id
+- type: doc
+  url: https://www.google.com/covid19/mobility/
+translations:
+  ru:
+    name: Идентификатор места Google Maps (place ID)
+    doc: Идентификатор места в Google Maps Platform, например ChIJN1t_tDeuEmsRUsoyG83frY4.

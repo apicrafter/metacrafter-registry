@@ -1,0 +1,39 @@
+id: who_region_code
+name: WHO region code
+status: draft
+doc: 'Code of one of the six regions of the World Health Organization, as the Global Health Observatory
+  writes it in ParentLocationCode: AFR (African Region), AMR (Region of the Americas), SEAR (South-East
+  Asia Region), EUR (European Region), EMR (Eastern Mediterranean Region) and WPR (Western Pacific Region).
+  The regional offices have acronyms of their own (AFRO, PAHO, SEARO, EURO, EMRO, WPRO), and the regions
+  do not follow the continents: Algeria is in AFR, Egypt and Morocco in EMR.'
+categories:
+- geo
+- medical
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:AFR|AMR|SEAR|EUR|EMR|WPR)$
+examples:
+- value: AFR
+  description: African Region
+- value: AMR
+  description: Region of the Americas
+- value: SEAR
+  description: South-East Asia Region
+- value: WPR
+  description: Western Pacific Region
+- value: AFRO
+  valid: false
+  description: acronym of the WHO Regional Office for Africa
+- value: EUR
+  description: European Region (also the ISO 4217 code of the euro, so the field name decides)
+links:
+- type: doc
+  url: https://www.who.int/about/who-we-are/regional-offices
+- type: doc
+  url: https://ghoapi.azureedge.net/api/DIMENSION/REGION/DimensionValues
+translations:
+  ru:
+    name: Код региона ВОЗ
+    doc: Код одного из шести регионов ВОЗ (AFR, AMR, SEAR, EUR, EMR, WPR), как его пишет GHO в ParentLocationCode.

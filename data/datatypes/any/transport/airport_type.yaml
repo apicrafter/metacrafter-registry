@@ -1,0 +1,25 @@
+id: airport_type
+name: OurAirports aerodrome type
+status: draft
+doc: Type of an aerodrome in OurAirports, the open data set of airports that many portals republish (the
+  type column of airports.csv), one of small_airport, medium_airport, large_airport, heliport, seaplane_base,
+  balloonport and closed.
+parent: category
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:small_airport|medium_airport|large_airport|heliport|seaplane_base|balloonport|closed)$
+examples:
+- value: medium_airport
+  description: Lungi International Airport, Sierra Leone
+- value: heliport
+- value: airport
+  valid: false
+links:
+- type: doc
+  url: https://ourairports.com/help/data-dictionary.html
+- type: doc
+  url: https://open.africa/dataset/airports-in-sierra-leone

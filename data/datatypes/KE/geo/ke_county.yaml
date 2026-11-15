@@ -1,0 +1,35 @@
+id: ke_county
+name: Kenyan county
+status: draft
+doc: Name of one of the 47 counties of Kenya, the first-level divisions created by the 2010 Constitution,
+  such as Mombasa, Tana River, Taita Taveta, Elgeyo Marakwet or Nairobi City. Tables of the Kenya National
+  Bureau of Statistics and of the Council of Governors write them with spaces, hyphens or slashes (Taita/Taveta,
+  Tharaka-Nithi, Murang'a, Muranga) and sometimes with the word County or City; the old provinces (Coast,
+  Rift Valley) are not counties.
+parent: admin_area_1
+categories:
+- geo
+- government
+country:
+- KE
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Mombasa
+  description: county 001
+- value: Taita/Taveta
+  description: Taita Taveta, county 006, as the Council of Governors writes it
+- value: Nairobi City
+  description: county 047
+- value: Rift Valley
+  valid: false
+  description: a former province
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Counties_of_Kenya
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q15731452
+- type: doc
+  url: https://open.africa/dataset/kenya-subcounties

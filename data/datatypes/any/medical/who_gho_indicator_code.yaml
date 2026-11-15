@@ -1,0 +1,39 @@
+id: who_gho_indicator_code
+name: WHO Global Health Observatory indicator code
+status: draft
+doc: 'Code of an indicator of the Global Health Observatory (GHO) of the World Health Organization, the
+  IndicatorCode of its OData API and of the CSV exports of the GHO data portal, beside the Indicator name,
+  ParentLocationCode (who_region_code), SpatialDimValueCode (an ISO 3166-1 alpha-3 code) and the FactValue
+  columns. Codes are letters, digits and underscores, mostly capitals: MALARIA_EST_DEATHS (estimated number
+  of malaria deaths), WHOSIS_000001 (life expectancy at birth), MDG_0000000001 (infant mortality rate),
+  NCD_BMI_30A (prevalence of obesity among adults); some older codes mix cases (M_Est_cig_curr). The shape
+  says little: only the field name tells the code apart from other identifiers in capitals.'
+categories:
+- medical
+- government
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Za-z][A-Za-z0-9]*(?:_[A-Za-z0-9]+)*$
+examples:
+- value: MALARIA_EST_DEATHS
+  description: Estimated number of malaria deaths (GHO export on the Africa Data Hub portal)
+- value: MALARIA_EST_CASES
+  description: Estimated number of malaria cases
+- value: WHOSIS_000001
+  description: Life expectancy at birth (years)
+- value: MDG_0000000001
+  description: Infant mortality rate
+- value: MALARIA EST DEATHS
+  valid: false
+  description: spaces are not used
+links:
+- type: doc
+  url: https://www.who.int/data/gho/info/gho-odata-api
+- type: doc
+  url: https://ghoapi.azureedge.net/api/Indicator
+translations:
+  ru:
+    name: Код показателя Глобальной обсерватории здравоохранения ВОЗ
+    doc: Код показателя GHO ВОЗ (IndicatorCode), например MALARIA_EST_DEATHS или WHOSIS_000001.

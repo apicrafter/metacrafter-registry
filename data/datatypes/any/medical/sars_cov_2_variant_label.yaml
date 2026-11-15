@@ -1,0 +1,34 @@
+id: sars_cov_2_variant_label
+name: WHO label of a SARS-CoV-2 variant
+status: draft
+doc: 'Greek letter that the World Health Organization gave on 31 May 2021 and later to a variant of concern
+  or of interest of SARS-CoV-2: Alpha (B.1.1.7), Beta (B.1.351), Gamma (P.1), Delta (B.1.617.2), Epsilon,
+  Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu and Omicron (B.1.1.529); WHO skipped Nu and Xi. Tables of
+  variant reports by country keep it beside the Pango lineage (pango_lineage). The words are common in
+  other data (software releases, fraternities, the NATO alphabet), so the field name decides.'
+categories:
+- medical
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:Alpha|Beta|Gamma|Delta|Epsilon|Zeta|Eta|Theta|Iota|Kappa|Lambda|Mu|Omicron)$
+examples:
+- value: Alpha
+  description: B.1.1.7, first reported in the United Kingdom
+- value: Beta
+  description: B.1.351, first reported in South Africa
+- value: Delta
+  description: B.1.617.2
+- value: Omicron
+  description: B.1.1.529
+- value: Nu
+  valid: false
+  description: skipped by WHO
+links:
+- type: doc
+  url: https://www.who.int/activities/tracking-SARS-CoV-2-variants
+translations:
+  ru:
+    name: Обозначение варианта SARS-CoV-2 по ВОЗ
+    doc: Буква греческого алфавита, которой ВОЗ обозначает вариант SARS-CoV-2 (Alpha, Beta, Delta, Omicron).

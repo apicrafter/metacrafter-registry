@@ -1,0 +1,29 @@
+id: sl_chiefdom
+name: Sierra Leonean chiefdom
+status: draft
+doc: Name of a chiefdom of Sierra Leone, the third-level division under the districts in the provinces,
+  headed by a paramount chief, such as Kpeje Bongre, Penguia, Barri or Panga Kabonde; urban areas such
+  as Freetown are wards instead. The chiefdoms are the admin 3 units of the OCHA common operational datasets
+  (Adm3_Name) and are split into sections.
+parent: admin_area_3
+categories:
+- geo
+- government
+country:
+- SL
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Kpeje Bongre
+  description: Kailahun District
+- value: Panga Kabonde
+  description: Pujehun District
+- value: Kpanga - Kabonde
+  description: the same chiefdom as written in another source
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Chiefdoms_of_Sierra_Leone
+- type: doc
+  url: https://open.africa/dataset/sierra-leone-water-points

@@ -1,0 +1,43 @@
+id: covid19_vaccine
+name: COVID-19 vaccine name
+status: draft
+doc: 'Common or brand name of a vaccine against COVID-19, as vaccination and delivery tables write it:
+  the developer pair (Pfizer-BioNTech or Pfizer/BioNTech, Oxford-AstraZeneca, Johnson & Johnson or Janssen,
+  Moderna, Sinopharm, Sinovac, CanSino, Novavax) or the product name (Comirnaty, Spikevax, Vaxzevria,
+  Covishield, Sputnik V, Sputnik Light, Covaxin, Nuvaxovid, Covovax, Abdala, Soberana 02, EpiVacCorona,
+  QazVac, ZF2001, ZyCoV-D). Our World in Data names the vaccine column vaccine, the WHO and Media Hack
+  tables common_name. One vaccine has several names (Oxford-AstraZeneca, Vaxzevria, Covishield), and the
+  tables write unknown or leave the cell empty for doses of no known make.'
+parent: medication_brand_name
+categories:
+- medical
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Pfizer-BioNTech
+  description: BNT162b2, Comirnaty (Africa Data Hub vaccination rollouts)
+- value: Oxford-AstraZeneca
+  description: ChAdOx1-S, Vaxzevria / Covishield
+- value: Johnson & Johnson
+  description: Ad26.COV2.S, Janssen
+- value: Sputnik V
+  description: Gam-COVID-Vac, Gamaleya Research Institute
+- value: Covaxin
+  description: BBV152, Bharat Biotech
+- value: Pfizer/BioNTech
+  description: the Our World in Data spelling
+- value: BNT162 (3 LNP-mRNAs )
+  valid: false
+  description: the vaccine candidate and its platform, not its name
+links:
+- type: doc
+  url: https://covid19.trackvaccines.org/vaccines/approved/
+- type: doc
+  url: https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations
+translations:
+  ru:
+    name: Название вакцины от COVID-19
+    doc: Общепринятое или торговое название вакцины от COVID-19 (Pfizer-BioNTech, Oxford-AstraZeneca,
+      Спутник V).

@@ -1,0 +1,44 @@
+id: hxl_hashtag
+name: HXL hashtag
+status: draft
+doc: 'Tag of the Humanitarian Exchange Language (HXL), the standard of UN OCHA and the Humanitarian Data
+  Exchange (HDX) for marking the columns of a spreadsheet: a hash sign, a hashtag from the HXL dictionary
+  (#date, #country, #adm1, #geo, #affected, #org, #sector) and optional attributes, each after a plus
+  sign (+code, +name, +lat, +infected, +f for women). A row of tags sits right below the header of an
+  HXL table (#country+code under ISO_3, #affected+infected under CONTAMINES) or takes its place; HXL data
+  dictionaries and HDX schemas list the tags in a column. Tags are case-insensitive and written in lowercase
+  by convention; a social media hashtag (#COVID19) has the same shape, so the HXL dictionary decides.'
+categories:
+- common
+- government
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^#[A-Za-z][A-Za-z0-9_]*(?:\s*\+[A-Za-z][A-Za-z0-9_]*)*$
+examples:
+- value: '#country+code'
+  description: an ISO 3166-1 country code column (HDX COVID-19 data of Ghana)
+- value: '#adm1+name'
+  description: name of a first-level administrative division
+- value: '#affected+infected'
+  description: number of people infected
+- value: '#geo+lat'
+  description: latitude
+- value: '#date'
+  description: a date column
+- value: country+code
+  valid: false
+  description: no hash sign
+- value: '#country code'
+  valid: false
+  description: an attribute needs a plus sign
+links:
+- type: doc
+  url: https://hxlstandard.org/standard/1-1final/
+- type: doc
+  url: https://hxlstandard.org/standard/1-1final/dictionary/
+translations:
+  ru:
+    name: Хэштег HXL
+    doc: Тег стандарта Humanitarian Exchange Language (HXL) для разметки столбцов таблицы, например

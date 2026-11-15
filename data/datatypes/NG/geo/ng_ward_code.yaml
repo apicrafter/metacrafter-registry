@@ -1,0 +1,32 @@
+id: ng_ward_code
+name: Nigerian ward code
+status: draft
+doc: Code of a political ward of a Nigerian local government area in the settlement data of eHealth Africa
+  and GRID3 for the electricity distribution companies, the two-letter state code (the ISO 3166-2:NG code
+  without the country), the number of the LGA within the state and the number of the ward, two digits
+  each, such as KD0101 for Gayam ward of Birnin Gwari, Kaduna State. Settlement ids add a settlement type
+  and a number (BUA_KD0101_89495).
+parent: id
+categories:
+- geo
+- government
+country:
+- NG
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:AB|AD|AK|AN|BA|BY|BE|BO|CR|DE|EB|ED|EK|EN|FC|GO|IM|JI|KD|KN|KT|KE|KO|KW|LA|NA|NI|OG|ON|OS|OY|PL|RI|SO|TA|YO|ZA)\d{4}$
+examples:
+- value: KD0101
+  description: Gayam, Birnin Gwari LGA, Kaduna State
+- value: KD0201
+  description: Chikun ward, Chikun LGA (19002), Kaduna State
+- value: E05000026
+  valid: false
+  description: a ward code of the United Kingdom (ukwardcode)
+links:
+- type: doc
+  url: https://energydata.info/dataset/nigeria-kaduna-electricity-distribution-company-service-area-settlements-dataset-2016
+- type: doc
+  url: https://grid3.org/
