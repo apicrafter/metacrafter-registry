@@ -1,0 +1,33 @@
+id: electrical_conductivity
+name: Electrical conductivity
+status: draft
+doc: 'Electrical conductivity of water or of a soil extract, a measure of dissolved salts: in microsiemens
+  per centimetre (µS/cm; fresh water is up to about 1 500), millisiemens per centimetre, or decisiemens
+  per metre (dS/m) in soil science, often corrected to 25 °C (specific conductance). Water quality sensors
+  report it next to the temperature, the pH and the turbidity (Lake Wendouree, City of Ballarat); soil
+  surveys give it per horizon (TERN, conductivity_deciSiemensPerMetre).'
+parent: numeric
+categories:
+- environment
+- chemistry
+- values
+langs:
+- common
+is_pii: false
+regexp: ^[-+]?\d+(?:[.,]\d+)?\s?(?:µS/cm|μS/cm|uS/cm|mS/cm|dS/m|S/m)?$
+examples:
+- value: '1309.0'
+  description: µS/cm, a lake
+- value: 0.45 dS/m
+  description: soil extract
+- value: 1250 µS/cm
+  description: with the unit
+- value: high
+  valid: false
+  description: a class in words
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Conductivity_(electrolytic)
+translations:
+  ru:
+    name: Удельная электропроводность

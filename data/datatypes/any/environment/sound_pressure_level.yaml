@@ -1,0 +1,31 @@
+id: sound_pressure_level
+name: Sound pressure level
+status: draft
+doc: 'Sound pressure level in decibels, usually A-weighted (dB(A)): noise monitors report the equivalent
+  continuous level of an interval (LAeq), the maximum (LAmax) and the peak; environmental noise maps give
+  day-evening-night levels (Lden, Lnight). Street noise is 50 to 80 dB(A).'
+parent: numeric
+categories:
+- environment
+- science
+- values
+langs:
+- common
+is_pii: false
+regexp: ^[-+]?\d+(?:[.,]\d+)?\s?(?:dB\(A\)|dBA|dB)?$
+examples:
+- value: '53.0'
+  description: average level of an interval
+- value: 72 dB(A)
+  description: A-weighted
+- value: 65 dBA
+  description: A-weighted, short unit
+- value: loud
+  valid: false
+  description: a word
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Sound_pressure
+translations:
+  ru:
+    name: Уровень звукового давления

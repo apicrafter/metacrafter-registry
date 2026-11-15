@@ -4,9 +4,10 @@ status: draft
 doc: '64-bit Extended Unique Identifier of the IEEE: an OUI or a longer company identifier followed by
   an extension that the organization assigns. IEEE 802.15.4 networks such as Zigbee and Thread, FireWire
   and InfiniBand use it as a hardware address, and IPv6 can derive interface identifiers from it. It is
-  written as eight pairs of hexadecimal digits separated by hyphens or colons; a MAC address (EUI-48)
-  has six pairs and is described by mac_address. RFC 9542 reserves 00-00-5E-EF-10-00-00-00 to 00-00-5E-EF-10-00-00-FF
-  for documentation.'
+  written as eight pairs of hexadecimal digits separated by hyphens or colons, or as sixteen digits without
+  separators, as LoRaWAN networks write the EUIs of devices, join servers and gateways (dev_eui 8CF95720000D3E07
+  of the people counters of the City of Ballarat); a MAC address (EUI-48) has six pairs and is described
+  by mac_address. RFC 9542 reserves 00-00-5E-EF-10-00-00-00 to 00-00-5E-EF-10-00-00-FF for documentation.'
 categories:
 - internet
 - identifiers
@@ -14,7 +15,7 @@ langs:
 - common
 is_pii: true
 classification: identifier
-regexp: ^(?:[0-9A-Fa-f]{2}(?:-[0-9A-Fa-f]{2}){7}|[0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){7})$
+regexp: ^(?:[0-9A-Fa-f]{2}(?:-[0-9A-Fa-f]{2}){7}|[0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){7}|[0-9A-Fa-f]{16})$
 examples:
 - value: 00-00-5E-EF-10-00-00-01
   description: Documentation value of RFC 9542
@@ -22,6 +23,8 @@ examples:
   description: Documentation value of RFC 9542 with colons
 - value: 00-00-5E-FF-FE-00-53-01
   description: EUI-48-derived documentation value of RFC 9542
+- value: 8CF95720000D3E07
+  description: LoRaWAN device EUI without separators (The Things Network, end_device_ids.dev_eui)
 - value: 00-00-5E-00-53-01
   valid: false
   description: 'Six octets: a MAC address (EUI-48)'

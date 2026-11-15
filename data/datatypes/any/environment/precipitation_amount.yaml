@@ -1,0 +1,32 @@
+id: precipitation_amount
+name: Precipitation amount
+status: draft
+doc: Depth of rain, snow or other precipitation that fell in a period (a reading interval, an hour, a
+  day, a month), in millimetres (0.2, 12.4) or inches, as rain gauges and weather stations report it;
+  a cumulative column adds the readings since a start time. Weather tables name it precipitation, rainfall,
+  rain, prcp (GHCN-Daily). Most readings are 0.0.
+parent: numeric
+categories:
+- environment
+- science
+- values
+langs:
+- common
+is_pii: false
+regexp: ^[-+]?\d+(?:[.,]\d+)?\s?(?:mm|in)?$
+examples:
+- value: '0.0'
+  description: no rain in the interval
+- value: '0.2'
+  description: one tip of a tipping-bucket gauge
+- value: 12.4 mm
+  description: with the unit
+- value: light
+  valid: false
+  description: an intensity in words
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Precipitation
+translations:
+  ru:
+    name: Количество осадков

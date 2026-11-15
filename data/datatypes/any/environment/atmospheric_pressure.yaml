@@ -1,0 +1,35 @@
+id: atmospheric_pressure
+name: Atmospheric pressure
+status: draft
+doc: Pressure of the air at a weather station or reduced to mean sea level, in hectopascals or millibars
+  (1013.25 hPa at sea level, about 960 hPa at Ballarat, 435 m up), kilopascals (96.22) or pascals (101325);
+  older and US data give inches of mercury. Weather tables name it atmospheric, barometric, station or
+  mean sea level pressure (MSLP, QNH, QFE). The City of Ballarat publishes the same readings in kPa and
+  in hPa in two columns.
+parent: numeric
+categories:
+- environment
+- science
+- values
+langs:
+- common
+is_pii: false
+regexp: ^[-+]?\d+(?:[.,]\d+)?\s?(?:hPa|mbar|mb|kPa|Pa|inHg)?$
+examples:
+- value: '962.2'
+  description: hectopascals
+- value: '96.22'
+  description: kilopascals
+- value: 1013.25 hPa
+  description: with the unit
+- value: '101325'
+  description: pascals
+- value: 120/80 mmHg
+  valid: false
+  description: a blood pressure
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Atmospheric_pressure
+translations:
+  ru:
+    name: Атмосферное давление

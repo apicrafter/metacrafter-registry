@@ -1,0 +1,36 @@
+id: wkt_crs
+name: Coordinate reference system in well-known text (WKT CRS)
+status: draft
+doc: 'Definition of a coordinate reference system in the well-known text of OGC 01-009 (WKT1, as in ESRI
+  .prj files: GEOGCS[...], PROJCS[...]) or of ISO 19162 (WKT2: GEOGCRS[...], PROJCRS[...]), with the datum,
+  the ellipsoid, the prime meridian, the units and the projection. Opendatasoft keeps the CRS of shapefile
+  imports in a json_ogc_wkt_crs column next to the geometry (asset registers of the City of Ballarat).
+  The code of a CRS is epsg_code; a geometry in WKT is wkt.'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+regexp: ^(?:GEOGCS|PROJCS|GEOCCS|COMPD_CS|VERT_CS|LOCAL_CS|GEOGCRS|GEODCRS|PROJCRS|VERTCRS|COMPOUNDCRS|BOUNDCRS|ENGCRS)\[\".+\]$
+examples:
+- value: GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433]]
+  description: WKT1 geographic CRS
+- value: PROJCS["GDA94 / MGA zone 54",GEOGCS["GDA94",DATUM["Geocentric_Datum_of_Australia_1994",SPHEROID["GRS
+    1980",6378137,298.257222101]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],UNIT["metre",1]]
+  description: WKT1 projected CRS
+- value: GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563]],CS[ellipsoidal,2],AXIS["latitude",north],AXIS["longitude",east],ANGLEUNIT["degree",0.0174532925199433]]
+  description: WKT2
+- value: POINT (143.82 -37.55)
+  valid: false
+  description: a geometry (wkt)
+- value: EPSG:4326
+  valid: false
+  description: a CRS code (epsg_code)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Well-known_text_representation_of_coordinate_reference_systems
+- type: doc
+  url: https://docs.ogc.org/is/18-010r7/18-010r7.html
+translations:
+  ru:
+    name: Система координат в формате WKT
