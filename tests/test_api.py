@@ -43,6 +43,13 @@ def test_openapi_document_is_valid(spec):
     validate_openapi(spec)
     assert "/api/v1/datatypes/{id}.json" in spec["paths"]
     assert "/registry.json" in spec["paths"]
+    for path in (
+        "/search-index.json",
+        "/datatype/{id}.md",
+        "/api/v1/rag/corpus.jsonl",
+        "/llms.txt",
+    ):
+        assert path in spec["paths"]
 
 
 def test_every_record_matches_its_schema(built_site, schema_validator):

@@ -10,12 +10,12 @@
   <script type="application/ld+json">{{ jsonld|tojson }}</script>
 {% endblock %}
 {% block content %}
-<p class="small muted"><a href="{{ base }}/datatype/">Datatypes</a>{% if object.semantic_type %} › <a href="{{ base }}/datatype/{{ object.semantic_type }}">{{ object.semantic_type }}</a>{% endif %}</p>
+<p class="small muted"><a href="{{ base }}/datatype/">Datatypes</a>{% for c in object.country or [] %} › <a href="{{ base }}/country/{{ c }}">{{ reg.countries[c].name }}</a>{% endfor %}{% if object.categories %} › <a href="{{ base }}/category/{{ object.categories[0] }}">{{ reg.categories[object.categories[0]].name }}</a>{% endif %}{% if object.semantic_type %} › <a href="{{ base }}/datatype/{{ object.semantic_type }}">{{ object.semantic_type }}</a>{% endif %}</p>
 <h1>{{ object.name }}</h1>
 <p class="id-line">ID <code>{{ object.id }}</code> <button type="button" class="copy-btn" data-copy="{{ object.id }}" hidden>Copy</button></p>
 <div class="badges">
   {% if object.kind == 'pattern' %}<span class="badge neutral">Pattern of {{ object.semantic_type }}</span>{% else %}<span class="badge">Datatype</span>{% endif %}
-  {% if object.is_pii %}<span class="badge pii">Personal data (PII)</span>{% else %}<span class="badge ok">Not PII</span>{% endif %}
+  {% if object.is_pii %}<span class="badge pii">Personal data (PII)</span>{% else %}<span class="badge neutral">Not PII</span>{% endif %}
   {% if object.classification %}<span class="badge neutral">{{ object.classification }}</span>{% endif %}
   {% if object.status == 'draft' %}<span class="badge draft">Draft</span>{% elif object.status == 'deprecated' %}<span class="badge neutral">Deprecated</span>{% endif %}
 </div>
@@ -74,7 +74,7 @@
   <dt>Check digit</dt>
   <dd><code>{{ object.checksum }}</code></dd>
   {% endif %}
-  <dt>Quality</dt>
+  <dt><a href="{{ base }}/quality">Quality</a></dt>
   <dd>{{ object.quality.score }}/100{% if object.quality.missing %} <span class="muted small">· missing: {{ object.quality.missing|join(', ') }}</span>{% endif %}</dd>
   <dt>Metacrafter rules</dt>
   <dd>{% set rules = (object.detected_by or {}).get('metacrafter_rules', []) %}{% if rules %}{{ rules|length }} rule{{ '' if rules|length == 1 else 's' }} ({{ rules|selectattr('type', 'equalto', 'field')|list|length }} by field name, {{ rules|selectattr('type', 'equalto', 'data')|list|length }} by value)
@@ -85,7 +85,7 @@
 </dl>
 
 {% if object.regexp %}
-<h2>Regular expression</h2>
+<h2>Regular expression <button type="button" class="copy-btn" data-copy="{{ object.regexp }}" hidden>Copy</button></h2>
 <pre><code>{{ object.regexp }}</code></pre>
 <p class="small muted">Python <code>re</code> syntax.{% if not (object.regexp.startswith('^') and object.regexp.endswith('$')) %} Not anchored: it can match inside longer text.{% endif %}</p>
 {% endif %}
@@ -97,7 +97,7 @@
   <thead><tr><th scope="col">Value</th><th scope="col">Description</th></tr></thead>
   <tbody>
   {% for e in object.examples %}
-    <tr><td class="id">{{ e.value }}{% if not e.valid %} <span class="badge pii">invalid</span>{% endif %}</td><td>{{ e.description }}</td></tr>
+    <tr><td class="id">{{ e.value }}{% if not e.valid %} <span class="badge pii">invalid</span>{% endif %} <button type="button" class="copy-btn" data-copy="{{ e.value }}" aria-label="Copy example {{ e.value }}" hidden>Copy</button></td><td>{{ e.description }}</td></tr>
   {% endfor %}
   </tbody>
 </table>
