@@ -1,0 +1,41 @@
+id: bh_block
+name: Bahrain address block number
+status: draft
+doc: Number of a block (مجمع), the area unit of the Bahraini address system. An address is a building
+  number, a road number and a block number (Building 1234, Road 4567, Block 345), and the block number
+  is also the postal code of the address (bh_postcode). Blocks have three or four digits, from 101 to
+  1216 with gaps; the first digit of a three-digit block and the first two of a four-digit one name one
+  of the twelve municipalities (3xx Manama). Directories of places give the block of each place in a field
+  of its own (Block), often as a float (305.0).
+parent: bh_postcode
+categories:
+- geo
+- realestate
+country:
+- BH
+langs:
+- ar
+- en
+is_pii: false
+classification: identifier
+regexp: ^(?:1[0-2]|[1-9])\d{2}(?:\.0)?$
+examples:
+- value: '305'
+  description: a block of Manama
+- value: '1203'
+  description: a block of Hamad Town
+- value: '317.0'
+  description: the same number written as a float
+- value: '1300'
+  valid: false
+  description: above the range of blocks
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_postal_codes
+- type: other
+  url: https://chromium-i18n.appspot.com/ssl-address/data/BH
+translations:
+  ar:
+    name: رقم المجمع
+  ru:
+    name: Номер квартала (block) адреса в Бахрейне

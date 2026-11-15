@@ -1,0 +1,33 @@
+id: arnationality
+name: Person nationality in Arabic
+status: draft
+doc: Nationality written in Arabic as an adjective of the country, masculine or feminine (بحريني, بحرينية,
+  سعودي, هندي, فلبينية), as the statistics of Arab countries label rows by nationality. Tables also use
+  the negated form of their own nationality (غير بحريني, non-Bahraini) and groups (خليجي, GCC national;
+  عربي آخر, other Arab; آسيوي, Asian; أخرى, others). Spellings vary in hamza forms, ة and ه, and the stretching
+  tatweel (بحرينـي). The English form is ennationality; a country name in Arabic is arcountryname.
+semantic_type: nationality
+categories:
+- persons
+langs:
+- ar
+examples:
+- value: بحريني
+  description: Bahraini
+- value: غير بحريني
+  description: non-Bahraini
+- value: إماراتي
+  description: Emirati
+- value: فلبينية
+  description: Filipino, feminine
+- value: البحرين
+  valid: false
+  description: the country name (arcountryname)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Nationality
+translations:
+  ar:
+    name: الجنسية
+  ru:
+    name: Гражданство (по-арабски)

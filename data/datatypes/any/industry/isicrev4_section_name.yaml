@@ -1,0 +1,39 @@
+id: isicrev4_section_name
+name: ISIC Rev. 4 section title
+status: draft
+doc: Title of a section of ISIC Rev. 4, the International Standard Industrial Classification of All Economic
+  Activities (A Agriculture, forestry and fishing to U Activities of extraterritorial organizations and
+  bodies), in English or Arabic (الصناعة التحويلية, Manufacturing), as statistics name the industries
+  of employment, investment and national accounts tables. Publishers shorten and reword the titles (Mining
+  & Quarrying, Wholesale and Retail Trade Repair of Motor Vehicles and Motorcycles, Manufacturing Industry).
+  NACE Rev. 2 (eu_nace) has the same sections. The section letter or class code is isicrev4.
+parent: category
+categories:
+- industry
+langs:
+- ar
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Manufacturing
+  description: section C
+- value: Electricity, Gas, Steam and Air Conditioning Supply
+  description: section D
+- value: Wholesale and Retail Trade; Repair of Motor Vehicles and Motorcycles
+  description: section G
+- value: الأنشطة العقارية
+  description: Real estate activities (L), in Arabic
+- value: Crude Petroleum & Natural Gas
+  valid: false
+  description: a national accounts activity, not an ISIC section
+links:
+- type: doc
+  url: https://unstats.un.org/unsd/classifications/Econ/isic
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Standard_Industrial_Classification
+translations:
+  ar:
+    name: باب التصنيف الصناعي الدولي الموحد
+  ru:
+    name: Название секции ISIC (ред. 4)
