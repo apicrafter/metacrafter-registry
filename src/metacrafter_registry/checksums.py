@@ -874,6 +874,19 @@ def _nl_elfproef(digits: list[int]) -> int:
     return (sum((9 - i) * d for i, d in enumerate(digits[:8])) - digits[8]) % 11
 
 
+def ch_egrid(value: str) -> bool:
+    """Swiss federal property identifier (E-GRID): CH and 12 digits.
+
+    The last two digits are 97 minus the remainder of the ten digits before
+    them divided by 97 (eGRIS key field specification), so they run from 01
+    to 97.
+    """
+    compact = _compact(value).upper()
+    if not re.fullmatch(r"CH\d{12}", compact):
+        return False
+    return 97 - int(compact[2:12]) % 97 == int(compact[12:])
+
+
 def nl_bsn(value: str) -> bool:
     """Dutch citizen service number (BSN): 9 digits that pass the 11-proef.
 
@@ -968,6 +981,7 @@ ALGORITHMS: dict[str, Callable[[str], bool]] = {
     "nl_bsn": nl_bsn,
     "nl_onderwijsnummer": nl_onderwijsnummer,
     "nl_btw": nl_btw,
+    "ch_egrid": ch_egrid,
 }
 
 

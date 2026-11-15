@@ -168,7 +168,6 @@ def _write_agent_files(out: Path, reg: RegistryModel, site_url: str, info: Build
         out / "identify-index.json",
         _dump(agents.identify_index(records, runtime._broadness)),
     )
-    _write(out / "llms.txt", agents.llms_txt(site_url, counts, categories, countries))
     _write(out / "llms-full.txt", agents.llms_full_txt(records, site_url))
     _write(
         out / "registry.ttl",
@@ -177,6 +176,15 @@ def _write_agent_files(out: Path, reg: RegistryModel, site_url: str, info: Build
         ),
     )
     _write(out / "vocab.ttl", agents.vocab_turtle(site_url))
+    bulk = (
+        "search-index.json",
+        "llms-full.txt",
+        "api/v1/datatypes.jsonl",
+        "api/v1/rag/corpus.jsonl",
+        "registry.ttl",
+    )
+    sizes = {path: (out / path).stat().st_size for path in bulk if (out / path).is_file()}
+    _write(out / "llms.txt", agents.llms_txt(site_url, counts, categories, countries, sizes))
     _write(
         out / "datahub-glossary.yml",
         datahub.dump_glossary(datahub.business_glossary(reg, site_url)),

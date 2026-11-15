@@ -221,6 +221,21 @@ SCHEMAS: dict[str, Any] = {
             "files": {"type": "object", "additionalProperties": _ref("FileInfo")},
         },
     },
+    "SearchEntry": {
+        "type": "object",
+        "description": "Short keys keep the index small.",
+        "required": ["id", "n", "d", "k", "p", "s", "c", "t"],
+        "properties": {
+            "id": {"type": "string"},
+            "n": {"type": "string", "description": "Name"},
+            "d": {"type": "string", "description": "Description, cut to 160 characters"},
+            "k": {"type": "string", "enum": ["datatype", "pattern"], "description": "Kind"},
+            "p": {"type": "boolean", "description": "Personal data (PII)"},
+            "s": {"type": "string", "enum": ["draft", "stable", "deprecated"]},
+            "c": {"type": "string", "description": "Category ids and country codes, by spaces"},
+            "t": {"type": "string", "description": "Former ids and translated names, by spaces"},
+        },
+    },
     "LegacyRecord": {
         "type": "object",
         "description": "Release 1.02 shape: categories, country and langs are {id, name} "
@@ -331,6 +346,82 @@ def build_openapi(site_url: str, version: str) -> dict[str, Any]:
             "responses": _json_response("Legacy record", _ref("LegacyRecord")),
         }
     }
+    paths["/search-index.json"] = {
+        "get": {
+            "operationId": "getSearchIndex",
+            "summary": "Compact index of all records for client-side keyword search",
+            "responses": _json_response(
+                "Array of index entries", {"type": "array", "items": _ref("SearchEntry")}
+            ),
+        }
+    }
+    for path, operation, media, summary, by_id in (
+        (
+            "/datatype/{id}.md",
+            "getDatatypeMarkdown",
+            "text/markdown",
+            "One record as Markdown with YAML front matter (for LLMs)",
+            True,
+        ),
+        (
+            "/datatype/{id}.ttl",
+            "getDatatypeTurtle",
+            "text/turtle",
+            "One record as a SKOS concept (Turtle)",
+            True,
+        ),
+        (
+            "/api/v1/datatypes.jsonl",
+            "listDatatypesJsonl",
+            "application/x-ndjson",
+            "All datatypes and patterns, one JSON record per line",
+            False,
+        ),
+        (
+            "/api/v1/datatypes.csv",
+            "listDatatypesCsv",
+            "text/csv",
+            "All datatypes and patterns as a flat table",
+            False,
+        ),
+        (
+            "/api/v1/rag/corpus.jsonl",
+            "getRagCorpus",
+            "application/x-ndjson",
+            "One embedding text with metadata per record, one JSON object per line",
+            False,
+        ),
+        (
+            "/llms.txt",
+            "getLlmsTxt",
+            "text/plain",
+            "Index for LLMs in the llms.txt format: how to find a datatype, links to the data",
+            False,
+        ),
+        (
+            "/llms-full.txt",
+            "getLlmsFullTxt",
+            "text/plain",
+            "Every record in one Markdown file (large)",
+            False,
+        ),
+        (
+            "/registry.ttl",
+            "getSkosScheme",
+            "text/turtle",
+            "The whole registry as a SKOS concept scheme (large)",
+            False,
+        ),
+    ):
+        responses: dict[str, Any] = {
+            "200": {"description": summary, "content": {media: {"schema": {"type": "string"}}}}
+        }
+        get: dict[str, Any] = {"operationId": operation, "summary": summary}
+        if by_id:
+            get["parameters"] = [_id_param("Datatype or pattern id, e.g. email")]
+            responses["404"] = {"description": "No such record"}
+        get["responses"] = responses
+        paths[path] = {"get": get}
     return {
         "openapi": "3.1.0",
         "info": {

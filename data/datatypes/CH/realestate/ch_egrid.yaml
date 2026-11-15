@@ -1,0 +1,40 @@
+id: ch_egrid
+name: Swiss federal property identifier (E-GRID)
+status: draft
+doc: 'Identifier of a land register property (a parcel, a building right, a condominium unit) in Switzerland,
+  the same in the land register and in the cadastral survey. It has 14 characters: CH and 12 digits. The
+  last two digits check the ten before them: they are 97 minus the remainder of that ten-digit number
+  divided by 97. CH says that the number comes from the Swiss number pool, not where the property lies.'
+parent: id
+categories:
+- realestate
+- government
+country:
+- CH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^CH\d{12}$
+checksum: ch_egrid
+examples:
+- value: CH787701897777
+  description: the example of the eGRIS key field specification
+- value: CH352961700877
+  description: a property in the canton of Basel-Landschaft (open data of data.bl.ch)
+- value: CH787701897778
+  valid: false
+  description: wrong check digits
+- value: '787701897777'
+  valid: false
+  description: no CH prefix
+links:
+- type: doc
+  url: https://www.egris.admin.ch/dam/fr/sd-web/2HMfNQ7CRfOR/schluesselfelder-spezifikation-d.pdf
+translations:
+  de:
+    name: Eidgenössische Grundstücksidentifikation (E-GRID)
+  fr:
+    name: Identificateur fédéral des immeubles (E-GRID)
+  ru:
+    name: Федеральный идентификатор земельного участка Швейцарии (E-GRID)

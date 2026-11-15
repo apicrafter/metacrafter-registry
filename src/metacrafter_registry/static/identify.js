@@ -98,8 +98,20 @@
   });
 
   status.textContent = "Loading the datatype index…";
-  fetch(base + "/identify-index.json")
-    .then(function (response) { return response.json(); })
+  // site.js (deferred, after this file) defines registryFetchJson; it exists
+  // by DOMContentLoaded.
+  var load = function () {
+    return window.registryFetchJson
+      ? window.registryFetchJson(base + "/identify-index.json", function (bytes) {
+          status.textContent = "Loading the datatype index… " + (bytes / 1048576).toFixed(1) + " MB";
+        })
+      : fetch(base + "/identify-index.json").then(function (response) { return response.json(); });
+  };
+  new Promise(function (resolve) {
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", resolve);
+    else resolve();
+  })
+    .then(load)
     .then(function (data) {
       index = data;
       status.textContent = "Ready: " + index.length + " datatypes with a regexp or a check digit.";

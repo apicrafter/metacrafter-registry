@@ -2,6 +2,7 @@ id: ch_bfs_gemeinde
 name: Swiss municipality number (BFS-Nr.)
 status: draft
 doc: Number of one to four digits that the Swiss Federal Statistical Office assigns to each municipality.
+parent: id
 categories:
 - geo
 country:
