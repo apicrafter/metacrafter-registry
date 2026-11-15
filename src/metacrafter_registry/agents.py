@@ -287,6 +287,7 @@ def llms_txt(
         f"- [RAG corpus]({s}/api/v1/rag/corpus.jsonl): one embedding text per record"
         + size("api/v1/rag/corpus.jsonl"),
         f"- [Aliases]({s}/api/v1/aliases.json): retired ids and the record each resolves to",
+        f"- [Changes]({s}/api/v1/changes.json): records added, changed and retired per release",
         f"- [SKOS concept scheme]({s}/registry.ttl): linked-data export (Turtle)"
         + size("registry.ttl")
         + "; one record: `/datatype/<id>.ttl`",

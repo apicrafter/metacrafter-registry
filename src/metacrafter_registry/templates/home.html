@@ -11,6 +11,8 @@
   <button type="submit">Search</button>
 </form>
 
+<p><a class="cta" href="{{ base }}/identify">Identify values</a> <span class="muted">Paste sample values of a column and see which datatypes match. Runs in your browser.</span></p>
+
 <div class="stats">
   <div class="stat"><strong>{{ reg.kind_count('datatype') }}</strong><span>datatypes</span></div>
   <div class="stat"><strong>{{ reg.kind_count('pattern') }}</strong><span>patterns</span></div>
@@ -29,8 +31,9 @@
 </div>
 
 <h2>Countries and regions</h2>
+<p class="muted">The {{ [countries|length, 24]|min }} with the most datatypes. <a href="{{ base }}/country/">All {{ countries|length }} countries and regions</a></p>
 <ul class="inline-list">
-{% for c in countries %}
+{% for c in (countries|sort(attribute='count', reverse=true))[:24] %}
   <li><a href="{{ base }}/country/{{ c.id }}">{{ c.name }}</a> <span class="muted small">{{ c.count }}</span></li>
 {% endfor %}
 </ul>

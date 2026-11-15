@@ -45,6 +45,7 @@ def test_openapi_document_is_valid(spec):
     assert "/registry.json" in spec["paths"]
     for path in (
         "/search-index.json",
+        "/api/v1/changes.json",
         "/datatype/{id}.md",
         "/api/v1/rag/corpus.jsonl",
         "/llms.txt",

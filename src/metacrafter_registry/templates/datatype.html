@@ -132,7 +132,7 @@
 {% if object.links %}
 <h2>Sources</h2>
 <ul class="plain">
-  {% for link in object.links %}<li><span class="muted">{{ link.type }}</span>: <a href="{{ link.url }}" rel="noopener">{{ link.url }}</a></li>{% endfor %}
+  {% for link in object.links %}<li><span class="muted">{{ link.type }}</span>: <a href="{{ link.url }}" rel="noopener">{{ link.url|link_label }}</a></li>{% endfor %}
 </ul>
 {% endif %}
 
