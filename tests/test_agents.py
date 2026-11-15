@@ -11,6 +11,8 @@ def test_llms_txt(built_site):
     for link in ("/agents.md", "/api/v1/openapi.json", "/api/v1/index.json", "/llms-full.txt"):
         assert f"https://registry.apicrafter.io{link}" in text
     assert "Draft records have not been reviewed" in text
+    assert "## How to find a datatype" in text
+    assert "/search-index.json) (" in text and " MB)" in text
     full = (built_site / "llms-full.txt").read_text("utf-8")
     assert "## Email address" in full and "id `email`" in full
 
@@ -19,6 +21,12 @@ def test_markdown_twins(built_site):
     md = (built_site / "datatype/email.md").read_text("utf-8")
     assert md.startswith('---\nid: "email"\nkind: "datatype"\nstatus: "stable"\nis_pii: true\n')
     assert "## Detection" in md and "Regular expression" in md
+    assert '\nname: "Email address"\n' in md and "\nregexp: " in md.split("---")[1]
+    inn = (built_site / "datatype/inn.md").read_text("utf-8")
+    assert (
+        "[`ru_inn_le_padded`](https://registry.apicrafter.io/datatype/ru_inn_le_padded.md)" in inn
+    )
+    assert "[`metacrafter`](https://registry.apicrafter.io/tool/metacrafter.md)" in inn
     assert (built_site / "tool/presidio.md").is_file()
     assert (built_site / "category/pii.md").is_file()
     html = (built_site / "datatype/email.html").read_text("utf-8")

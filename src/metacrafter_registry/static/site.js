@@ -8,6 +8,28 @@
     return (value || "").toString().toLowerCase();
   }
 
+  // JSON download that reports the bytes received so far, so that a large
+  // index on a slow connection does not look stuck.
+  window.registryFetchJson = function (url, onProgress) {
+    return fetch(url).then(function (response) {
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      if (!response.body || !window.TextDecoder) return response.json();
+      var reader = response.body.getReader();
+      var decoder = new TextDecoder("utf-8");
+      var text = "", received = 0;
+      var pump = function () {
+        return reader.read().then(function (chunk) {
+          if (chunk.done) return JSON.parse(text + decoder.decode());
+          received += chunk.value.length;
+          text += decoder.decode(chunk.value, { stream: true });
+          onProgress(received);
+          return pump();
+        });
+      };
+      return pump();
+    });
+  };
+
   // Copy-to-clipboard buttons: <button data-copy="text">
   document.querySelectorAll("[data-copy]").forEach(function (button) {
     button.hidden = false;
@@ -127,8 +149,9 @@
     var params = new URLSearchParams(window.location.search);
     input.value = params.get("q") || "";
     status.textContent = "Loading index…";
-    fetch(base + "/search-index.json")
-      .then(function (response) { return response.json(); })
+    window.registryFetchJson(base + "/search-index.json", function (bytes) {
+      status.textContent = "Loading index… " + (bytes / 1048576).toFixed(1) + " MB";
+    })
       .then(function (data) {
         index = data;
         render();
