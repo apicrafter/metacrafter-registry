@@ -1,0 +1,41 @@
+id: isced2011_programme_code
+name: ISCED 2011 three-digit programme or attainment code
+status: draft
+doc: 'Three-digit code of the International Standard Classification of Education 2011 of UNESCO for a
+  programme (ISCED-P) or a level of attainment (ISCED-A). The first digit is the level (0 to 8, isced2011_level),
+  the second the category (for levels 2 to 5 general 4 or vocational 5, for levels 6 to 8 academic 4,
+  professional 5 or not specified 6) and the third the sub-category: completion of the level, a first
+  degree of three to four years, a long first degree, a second or further degree. 645 is an academic Bachelor''s
+  degree, 747 an academic Master''s degree following a first degree, 844 a doctorate. French sources call
+  the classification CITE (code_grade_generique_cite of the ARES list of studies).'
+parent: education_level
+categories:
+- education
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:0[12]0|100|[2-4][45][1-4]|5[45][0-4]|[67][456][0-8]|8[456][0-4])$
+examples:
+- value: '645'
+  description: Bachelor's or equivalent, academic, first degree (3-4 years)
+- value: '747'
+  description: Master's or equivalent, academic, second or further degree
+- value: '655'
+  description: Bachelor's or equivalent, professional, first degree
+- value: '844'
+  description: Doctoral or equivalent, academic
+- value: '6'
+  valid: false
+  description: the level alone (isced2011_level)
+- value: '0413'
+  valid: false
+  description: an ISCED-F 2013 field of education (isced_f_2013)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Standard_Classification_of_Education
+translations:
+  fr:
+    name: Code CITE 2011 à trois chiffres (programme ou niveau atteint)
+  ru:
+    name: Трёхзначный код МСКО 2011 (программа или достигнутый уровень)

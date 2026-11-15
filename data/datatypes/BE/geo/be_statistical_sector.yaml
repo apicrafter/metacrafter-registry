@@ -1,0 +1,46 @@
+id: be_statistical_sector
+name: Belgian statistical sector code (Statbel)
+status: draft
+doc: 'Code of a statistical sector (secteur statistique, statistische sector), the smallest territorial
+  unit of Statbel, the Belgian statistical office, drawn for the 1970 census: Belgium has about 19,800
+  of them, and population, income and housing statistics are published by sector. The code has nine characters:
+  the five-digit NIS code of the municipality (be_nis_code), a letter for the former municipality (A for
+  the first one, B for the second), and three characters that number the sector, digits or letters, with
+  a hyphen filling the last place (21004A00-, 62063A012, 61072F3MN). Statbel writes ZZZZ after the municipality
+  code for an unknown sector.'
+parent: admin_area_3
+categories:
+- geo
+- government
+country:
+- BE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d[01]\d{2}[0-9A-Z]{3}[0-9A-Z-]$
+examples:
+- value: 21004A00-
+  description: a sector of the City of Brussels (NIS 21004)
+- value: 62063A012
+  description: a sector of Liège (NIS 62063), population by statistical sector 2020
+- value: 61072F3MN
+  description: a sector of Wanze (NIS 61072), income by statistical sector 2020
+- value: '62063'
+  valid: false
+  description: the NIS code of the municipality alone
+- value: 62063A01
+  valid: false
+  description: eight characters
+links:
+- type: doc
+  url: https://statbel.fgov.be/fr/open-data/secteurs-statistiques
+- type: wikipedia
+  url: https://nl.wikipedia.org/wiki/Statistische_sector
+translations:
+  fr:
+    name: Code de secteur statistique (Statbel)
+  nl:
+    name: Code van de statistische sector (Statbel)
+  ru:
+    name: Код статистического сектора Бельгии (Statbel)

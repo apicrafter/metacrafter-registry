@@ -1,0 +1,30 @@
+id: protein_sequence
+name: Amino-acid sequence (protein or peptide)
+status: draft
+doc: Sequence of amino acids of a protein or peptide in the one-letter IUPAC code (A, C, D, E, F, G, H,
+  I, K, L, M, N, P, Q, R, S, T, V, W, Y; X for an unknown residue, U and O for selenocysteine and pyrrolysine),
+  as tables of predicted peptides, signal peptides or proteomics results store it; a translated reading
+  frame often ends with * or a full stop for the stop codon (MSGLKISRVPVLLAALIYINISKRRISLVIV*). Words
+  in capitals use the same letters, so a short value is a sequence only in a field named after it (Peptide,
+  Peptide sequence, proprotein).
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[ACDEFGHIKLMNPQRSTVWYXUOBZ]{8,}[*.]?$
+examples:
+- value: MSGLKISRVPVLLAALIYINISKRRISLVIV*
+  description: a small ORF-encoded peptide of Arabidopsis (ARA-PEPs, KU Leuven)
+- value: MFGHLLSFLLLCGNVCS
+  description: a predicted signal peptide
+- value: msglkisrvp
+  valid: false
+  description: lowercase
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Protein_primary_structure
+translations:
+  ru:
+    name: Аминокислотная последовательность (белок или пептид)

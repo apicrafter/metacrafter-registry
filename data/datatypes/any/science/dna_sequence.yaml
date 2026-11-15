@@ -1,0 +1,31 @@
+id: dna_sequence
+name: Nucleotide sequence (DNA or RNA)
+status: draft
+doc: 'Sequence of nucleotides in the one-letter IUPAC code, as a table of genes, probes, reads or open
+  reading frames stores it in a cell: A, C, G and T (U for RNA), N for an unknown base and the other IUPAC
+  codes for ambiguous bases (R, Y, K, M, S, W, B, D, H, V). Sequences of tables are usually tens to thousands
+  of letters long; a short run of the four letters is also a word or a code, so a short value is a sequence
+  only in a field named after it (nucleotide, sequence, Nucleotide).'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[ACGTUNRYKMSWBDHVacgtunrykmswbdhv]{8,}$
+examples:
+- value: ATGTTTGGACATTTATTGTCATTCTTACTCCTTTGTGGAAATGTTTGTTCTATCAATTTATC
+  description: start of a small open reading frame of Arabidopsis (ARA-PEPs, KU Leuven)
+- value: CGACATTCAATATTTTCCCGCCAAAAAGATTTCACATTTTCC
+  description: a transcriptionally active region of a tiling array
+- value: MFGHLLSFLLLCGNVCS
+  valid: false
+  description: an amino-acid sequence (protein_sequence)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Nucleic_acid_sequence
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q863908
+translations:
+  ru:
+    name: Нуклеотидная последовательность (ДНК или РНК)
