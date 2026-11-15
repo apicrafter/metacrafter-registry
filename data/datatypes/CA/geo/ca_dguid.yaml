@@ -1,0 +1,48 @@
+id: ca_dguid
+name: Statistics Canada Dissemination Geography Unique Identifier (DGUID)
+status: draft
+doc: 'Identifier Statistics Canada gives every geographic area it publishes data for, so that an area
+  of one type and one year is unique across its products. It has 10 to 21 characters: the four-digit vintage
+  (the reference year of the geography), the type (A for administrative areas, S for statistical areas),
+  a four-digit schema that names the kind of area (0000 Canada, 0002 province or territory, 0003 census
+  division, 0500 economic region, 0011 forward sortation area) and the identifier of the area in that
+  geography, 1 to 12 characters (the SGC code of casgc for provinces, census divisions and subdivisions).
+  Census profiles, boundary files and the tables of the Common Output Data Repository carry it in a field
+  named DGUID.'
+parent: id
+categories:
+- geo
+- government
+country:
+- CA
+langs:
+- en
+- fr
+is_pii: false
+classification: identifier
+regexp: ^(?:19|20)\d{2}[AS]\d{4}[0-9A-Z.]{1,12}$
+examples:
+- value: 2011A000011124
+  description: Canada, 2011
+- value: 2011A000224
+  description: Quebec, 2011
+- value: 2011A00033520
+  description: census division of Toronto, 2011
+- value: 2011S05003530
+  description: economic region of Toronto, 2011
+- value: 2011A0011K1J
+  description: forward sortation area K1J, 2011
+- value: '3520'
+  valid: false
+  description: the SGC code alone (casgc)
+- value: 2011X000224
+  valid: false
+  description: the type is A or S
+links:
+- type: doc
+  url: https://www150.statcan.gc.ca/n1/pub/92f0138m/92f0138m2019001-eng.htm
+translations:
+  fr:
+    name: Identificateur unique des géographies de diffusion (IDUGD) de Statistique Canada
+  ru:
+    name: Уникальный идентификатор географии распространения Статистики Канады (DGUID)

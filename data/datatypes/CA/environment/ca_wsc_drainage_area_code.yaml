@@ -1,0 +1,46 @@
+id: ca_wsc_drainage_area_code
+name: Canadian drainage area code (Water Survey of Canada, SDAC)
+status: draft
+doc: 'Code of a drainage area of Canada in the hierarchy of the Water Survey of Canada, which Statistics
+  Canada publishes as the Standard Drainage Area Classification (SDAC 2003): two digits for one of the
+  11 major drainage areas (05 Nelson River, 08 Pacific), a letter added for one of the 164 sub-drainage
+  areas (05L) and a second letter for one of the 974 sub-sub-drainage areas (05LJ). Hydrometric station
+  numbers begin with the sub-sub-drainage area code (ca_wsc_station_number). The National Hydro Network
+  and the watershed layers of Agriculture and Agri-Food Canada hold it in fields named WSCMDA, WSCSDA,
+  WSCSSDA, FDA, SUB_EC or SUBSUBBASI.'
+parent: id
+categories:
+- environment
+- geo
+country:
+- CA
+langs:
+- en
+- fr
+is_pii: false
+classification: categorical
+regexp: ^(?:0[1-9]|1[01])(?:[A-Z]{1,2})?$
+examples:
+- value: 05LJ
+  description: a sub-sub-drainage area of the Nelson River drainage area
+- value: 05L
+  description: sub-drainage area Lake Winnipegosis and Lake Manitoba
+- value: '05'
+  description: major drainage area Nelson River
+- value: 08MF
+- value: '12'
+  valid: false
+  description: there are eleven major drainage areas
+- value: 5LJ
+  valid: false
+  description: the major drainage area has two digits
+links:
+- type: doc
+  url: https://www.statcan.gc.ca/en/subjects/standard/sdac/sdacinfo1
+- type: doc
+  url: https://wateroffice.ec.gc.ca/station_metadata/station_list_help_e.html
+translations:
+  fr:
+    name: Code d'aire de drainage du Canada (CTAD)
+  ru:
+    name: Код водосборного бассейна Канады (WSC, SDAC)

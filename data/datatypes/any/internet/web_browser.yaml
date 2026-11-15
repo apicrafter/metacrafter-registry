@@ -1,0 +1,30 @@
+id: web_browser
+name: Web browser name
+status: draft
+doc: 'Name of the web browser a visitor or respondent used: Google Chrome (or Chrome), Safari, Firefox,
+  Microsoft Edge, Internet Explorer, Opera, Samsung Internet. Web analytics and survey platforms read
+  it from the user agent (user_agent) and keep it in fields named BrowserType, browser or browser_name,
+  beside the device type (device_type) and the operating system (operating_system). The version is a separate
+  field in most exports.'
+parent: category
+categories:
+- internet
+- software
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Google Chrome
+- value: Safari
+- value: Firefox
+- value: Internet Explorer
+- value: Microsoft Edge
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Web_browser
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_web_browsers
+translations:
+  ru:
+    name: Название веб-браузера

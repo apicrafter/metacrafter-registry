@@ -1,0 +1,44 @@
+id: ca_dls_land_description
+name: Dominion Land Survey legal land description
+status: draft
+doc: 'Location of a parcel in the Dominion Land Survey, the grid that divides Manitoba, Saskatchewan,
+  Alberta and parts of British Columbia into townships of 36 sections: the quarter of the section (NE,
+  NW, SE, SW), the section (1 to 36), the township, the range and the meridian the range is counted from
+  (W1 to W7 west of the First to Seventh Meridians, E1 east of the First), as in NE-20-52-25-W4, the north-east
+  quarter of section 20, township 52, range 25 west of the Fourth Meridian. Land titles, well and water
+  licences and monitoring sites give it with hyphens or spaces (SE28 21 30 W1); the Alberta Township Survey
+  uses the same grid. A lot, block and plan description of an urban parcel is not this type.'
+categories:
+- geo
+- realestate
+country:
+- CA
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^(?:(?:NE|NW|SE|SW)[ -]?)?(?:0?[1-9]|[12]\d|3[0-6])[ -](?:0?[1-9]|[1-9]\d|1[0-2]\d)[ -](?:0?[1-9]|[1-3]\d)[
+  -]?[WE][ -]?[1-7]$
+examples:
+- value: NE-20-52-25-W4
+  description: north-east quarter of section 20, township 52, range 25 west of the Fourth Meridian
+- value: SE28 21 30 W1
+  description: location of a Manitoba water sampling site (CanWIN, 2024)
+- value: SE03 37 12 W2
+  description: section and township padded with a zero
+- value: 20-52-25-W4
+  description: the whole section
+- value: NE-40-52-25-W4
+  valid: false
+  description: a township has 36 sections
+- value: Plan 6042KS Blk 2 Lot 5
+  valid: false
+  description: a plan, block and lot description
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Dominion_Land_Survey
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Alberta_Township_System
+translations:
+  ru:
+    name: Описание земельного участка по канадской системе Dominion Land Survey

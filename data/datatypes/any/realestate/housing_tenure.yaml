@@ -1,0 +1,30 @@
+id: housing_tenure
+name: Housing tenure (own or rent)
+status: draft
+doc: 'Arrangement under which a household occupies its dwelling: owned (Own, Owner, Owner-occupied, with
+  or without a mortgage) or rented (Rent, Renter, Tenant, social or private rental), and in some classifications
+  other forms such as band housing, a housing co-operative or living rent-free. Censuses and household
+  surveys ask it as one question (Do you own or rent your home?) and publish dwelling counts by tenure;
+  the fields are named tenure, housing_tenure, own_rent or tenure_type.'
+parent: category
+categories:
+- realestate
+- common
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Own
+- value: Rent
+- value: Owner
+- value: Renter
+- value: Owner-occupied
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Housing_tenure
+translations:
+  ru:
+    name: Форма владения жильём (собственность или аренда)
+  fr:
+    name: Mode d'occupation du logement

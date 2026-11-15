@@ -1,0 +1,33 @@
+id: municipal_ward
+name: Municipal ward
+status: draft
+doc: 'Ward of a city or other municipality: a subdivision that elects its own councillors, and by which
+  the municipality reports services, permits and census counts. It is written as a number (Ward 14, WARD
+  7, or 14 alone in a field named ward), as a letter (Ward A) or as a name with the word Ward (North Ward,
+  papastew Ward of the City of Edmonton). National ward types refine it: au_council_ward for Australian
+  councils. The coded and named electoral wards of the United Kingdom (ukwardcode, ukwardname) and the
+  ward codes of Nigeria (ng_ward_code) have types of their own.'
+parent: admin_area_3
+categories:
+- government
+- geo
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Ward 14
+- value: WARD 7
+  description: City of Calgary ward boundaries
+- value: papastew Ward
+  description: City of Edmonton, wards of 2021
+- value: North Ward
+- value: Ward A
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Ward_(electoral_subdivision)
+translations:
+  ru:
+    name: Городской избирательный округ (ward)
+  fr:
+    name: Quartier électoral municipal
