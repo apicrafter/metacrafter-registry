@@ -1,0 +1,33 @@
+id: pm25_concentration
+name: PM2.5 concentration
+status: draft
+doc: Mass concentration of particulate matter with a diameter of 2.5 micrometres or less (PM2.5) in air,
+  in micrograms per cubic metre (µg/m³), as air quality stations and low-cost sensors report it every
+  few minutes or as hourly and daily means. The number is usually bare, with the unit in the column name
+  (pm25, pm2_5, PM2.5 (µg/m³)) or in the metadata. Uncalibrated sensors report small negative readings
+  around zero. A number alone does not tell this measure from another, so a value is one only in a field
+  named after it (air quality observations of the City of Ballarat, Victoria).
+parent: numeric
+categories:
+- environment
+- values
+langs:
+- common
+is_pii: false
+regexp: ^[-+]?\d+(?:[.,]\d+)?\s?(?:µg/m³|µg/m3|μg/m³|ug/m3|mg/m³|mg/m3|ppb|ppm)?$
+examples:
+- value: '12'
+  description: hourly mean, µg/m³
+- value: '8.4'
+  description: one decimal
+- value: 35 µg/m³
+  description: with the unit
+- value: Good
+  valid: false
+  description: an air quality category, not a concentration
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Particulates
+translations:
+  ru:
+    name: Концентрация PM2.5

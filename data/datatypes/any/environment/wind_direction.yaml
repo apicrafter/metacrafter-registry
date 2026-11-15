@@ -1,0 +1,35 @@
+id: wind_direction
+name: Wind direction (degrees)
+status: draft
+doc: 'Direction the wind blows from, in degrees clockwise from true north: 0 or 360 is a north wind, 90
+  an east wind. Weather stations report it with the wind speed, often next to a compass point (compass_point)
+  of the same reading. A number from 0 to 360 alone can be any angle, so a value is a wind direction only
+  in a field named after it.'
+parent: numeric
+categories:
+- environment
+- science
+- values
+langs:
+- common
+is_pii: false
+regexp: ^(?:360(?:[.,]0+)?|3[0-5]\d(?:[.,]\d+)?|[12]?\d{1,2}(?:[.,]\d+)?)\s?(?:°|deg)?$
+examples:
+- value: '105.2'
+  description: east-southeast
+- value: '270'
+  description: a west wind
+- value: 45°
+  description: with the degree sign
+- value: NNE
+  valid: false
+  description: a compass point
+- value: '361'
+  valid: false
+  description: above 360 degrees
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Wind_direction
+translations:
+  ru:
+    name: Направление ветра (градусы)

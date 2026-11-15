@@ -1,0 +1,38 @@
+id: accommodation_type
+name: Type of tourist accommodation
+status: draft
+doc: 'Class of an establishment that lodges tourists, as registers of tourist accommodation and statistics
+  of tourism classify them: hotel, apart-hotel, motel, hostel, bed and breakfast, guest house, camping,
+  holiday cottages or cabins, refuge, holiday rental, in the language of the register: Hotel, Apart-Hotel,
+  Hostería, Hospedaje, Cabañas, Hostel, Camping, Refugio in Argentina and Spain; hôtel, camping, gîte,
+  chambre d''hôtes, résidence de tourisme in France; Hotel, Pension, Ferienwohnung, Campingplatz in Germany.
+  The star rating is accommodation_star_rating.'
+parent: category
+categories:
+- common
+- realestate
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: APART-HOTEL
+  description: clase of the register of tourist accommodation of Mendoza
+- value: CABAÑAS
+  description: same register
+- value: Hostería
+- value: chambre d'hôtes
+  description: French guest house
+- value: RESTAURANTE
+  valid: false
+  description: a kind of food business, not of accommodation
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Lodging
+- type: doc
+  url: https://datosabiertos.mendoza.gov.ar/dataset/alojamientos-turisticos-habilitados
+translations:
+  es:
+    name: Clase de alojamiento turístico
+  fr:
+    name: Type d'hébergement touristique

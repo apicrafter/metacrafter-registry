@@ -1,0 +1,32 @@
+id: solar_radiation
+name: Solar radiation
+status: draft
+doc: Solar irradiance on a horizontal surface (global horizontal irradiance, GHI) in watts per square
+  metre, from 0 at night to about 1 400 W/m² at noon in summer, as pyranometers of weather stations report
+  it; daily totals are given as exposure in megajoules per square metre (MJ/m²). Pyranometers read slightly
+  below zero at night.
+parent: numeric
+categories:
+- environment
+- science
+- values
+langs:
+- common
+is_pii: false
+regexp: ^[-+]?\d+(?:[.,]\d+)?\s?(?:W/m²|W/m2|MJ/m²|MJ/m2)?$
+examples:
+- value: '412'
+  description: watts per square metre
+- value: '0.0'
+  description: night
+- value: 21.4 MJ/m2
+  description: daily exposure
+- value: sunny
+  valid: false
+  description: a sky condition
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Solar_irradiance
+translations:
+  ru:
+    name: Солнечная радиация
