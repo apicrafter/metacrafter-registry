@@ -1,0 +1,36 @@
+id: br_inep_school_code
+name: INEP school code (Brazil)
+status: draft
+doc: 'The eight-digit code INEP, the Brazilian institute of educational research, gives each school in
+  the school census (Censo Escolar): the first two digits are the IBGE code of the state (26 Pernambuco,
+  35 São Paulo; br_state_ibge_code). The school census calls it CO_ENTIDADE; the education departments
+  of states and cities write it as inep_escola, codigo_inep or cod_inep. Higher education institutions
+  have e-MEC codes instead (br_emec_institution_code).'
+parent: id
+categories:
+- education
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: identifier
+regexp: ^(1[1-7]|2[1-9]|3[1-35]|4[1-3]|5[0-3])\d{6}$
+examples:
+- value: '26175347'
+  description: a municipal school of Recife
+- value: '26121972'
+  description: another municipal school of Recife
+- value: '2617534'
+  valid: false
+  description: seven digits
+links:
+- type: doc
+  url: https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-escolar
+- type: doc
+  url: https://inepdata.inep.gov.br/
+translations:
+  pt:
+    name: Código INEP da escola
+  ru:
+    name: Код школы INEP (Бразилия)

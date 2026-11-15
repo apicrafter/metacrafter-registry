@@ -1,0 +1,37 @@
+id: br_census_tract_code
+name: IBGE census tract code (setor censitário, Brazil)
+status: draft
+doc: 'The 15-digit code of a census tract (setor censitário), the smallest area of the Brazilian census:
+  the seven-digit IBGE code of the municipality with its check digit (br_municipality_code), two digits
+  of the district, two of the subdistrict and four of the tract (355030801000001: São Paulo, district
+  01, subdistrict 00, tract 0001). Census tables give it as Cod_setor, CD_SETOR or CD_GEOCODI; tables
+  saved through a spreadsheet hold it as a float (3.55030801000001E14).'
+parent: id
+categories:
+- geo
+- government
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: identifier
+regexp: ^(1[1-7]|2[1-9]|3[1-35]|4[1-3]|5[0-3])\d{13}$
+examples:
+- value: '355030801000001'
+  description: São Paulo, district 01, subdistrict 00, tract 0001
+- value: '355670105000001'
+  description: a tract of the municipality 3556701, from a SciELO study of day-care centres
+- value: '3550308010000'
+  valid: false
+  description: thirteen digits
+links:
+- type: doc
+  url: https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/26565-malhas-de-setores-censitarios-divisoes-intramunicipais.html
+- type: wikipedia
+  url: https://pt.wikipedia.org/wiki/Setor_censit%C3%A1rio
+translations:
+  pt:
+    name: Código do setor censitário (IBGE)
+  ru:
+    name: Код переписного участка Бразилии (IBGE)

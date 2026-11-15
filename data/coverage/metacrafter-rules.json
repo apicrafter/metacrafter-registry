@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "724f3d17d7961fbd2403b74f735bf70148cf1892"
+  "ref": "2cabfde2a654820807a4850ac05c10567676ec51"
  },
  "rules": [
   {
@@ -3555,6 +3555,26 @@
    "country_code": "br"
   },
   {
+   "rule": "brinepschoolcodebyname",
+   "key": "br_inep_school_code",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_education.yaml",
+   "context": "education",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brinepschoolcodevalue",
+   "key": "br_inep_school_code",
+   "type": "data",
+   "match": "func",
+   "file": "br/br_education.yaml",
+   "context": "education",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
    "rule": "brbankaccountknown",
    "key": "bankaccount",
    "type": "field",
@@ -3615,6 +3635,26 @@
    "country_code": "br"
   },
   {
+   "rule": "brcensustractcodebyname",
+   "key": "br_census_tract_code",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_geo.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brcensustractcodevalue",
+   "key": "br_census_tract_code",
+   "type": "data",
+   "match": "func",
+   "file": "br/br_geo.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
    "rule": "brcepbyname",
    "key": "br_postcode",
    "type": "field",
@@ -3649,6 +3689,16 @@
    "key": "city",
    "type": "field",
    "match": "text",
+   "file": "br/br_geo.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brmunicipalitycode6byname",
+   "key": "br_municipality_code_6",
+   "type": "field",
+   "match": "regex",
    "file": "br/br_geo.yaml",
    "context": "geo",
    "lang": "pt",
@@ -3717,6 +3767,16 @@
   {
    "rule": "brstatecodebyname",
    "key": "br_state_code",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_geo.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brstateibgecodebyname",
+   "key": "br_state_ibge_code",
    "type": "field",
    "match": "regex",
    "file": "br/br_geo.yaml",
@@ -3805,6 +3865,26 @@
    "country_code": "br"
   },
   {
+   "rule": "brcnesbyname",
+   "key": "br_cnes",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_health.yaml",
+   "context": "medical",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "bricd10byname",
+   "key": "icd10code",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_health.yaml",
+   "context": "medical",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
    "rule": "branpauthorizationvalue",
    "key": "br_anp_authorization",
    "type": "data",
@@ -3849,6 +3929,16 @@
    "key": "person_fullname",
    "type": "field",
    "match": "text",
+   "file": "br/br_persons.yaml",
+   "context": "persons",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brracecolourbyname",
+   "key": "race_ethnicity",
+   "type": "field",
+   "match": "regex",
    "file": "br/br_persons.yaml",
    "context": "persons",
    "lang": "pt",
@@ -4566,6 +4656,16 @@
   },
   {
    "rule": "booleanjanein",
+   "key": "boolean",
+   "type": "data",
+   "match": "text",
+   "file": "common/boolean.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "booleansimnao",
    "key": "boolean",
    "type": "data",
    "match": "text",

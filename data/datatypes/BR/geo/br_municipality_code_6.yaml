@@ -1,0 +1,40 @@
+id: br_municipality_code_6
+name: Brazilian municipality code without the check digit (IBGE, six digits)
+status: draft
+doc: 'The first six digits of the IBGE code of a Brazilian municipality (br_municipality_code), without
+  its check digit: the IBGE code of the state (35 São Paulo, 31 Minas Gerais) and four digits (355030
+  São Paulo, 310620 Belo Horizonte). The health information systems of DATASUS (SIM, SINASC, SINAN) and
+  the tables built from them write the six-digit form (CODMUNRES, codmunocor), as do the crime statistics
+  of Minas Gerais (municipio_cod) and many research datasets (codmun6, Cod6d). Exports through a spreadsheet
+  or a statistics package add a decimal part (355030.0). Any six digits after a state code pass, so a
+  value fits only in a field named for a municipality code.'
+semantic_type: br_municipality
+country:
+- BR
+langs:
+- pt
+classification: identifier
+regexp: ^(1[1-7]|2[1-9]|3[1-35]|4[1-3]|5[0-3])\d{4}$
+examples:
+- value: '355030'
+  description: São Paulo (IBGE 3550308)
+- value: '310620'
+  description: Belo Horizonte (IBGE 3106200)
+- value: '530010'
+  description: Brasília (IBGE 5300108)
+- value: '3550308'
+  valid: false
+  description: the seven-digit code with its check digit (br_municipality_code)
+- value: '995030'
+  valid: false
+  description: 99 is no state code
+links:
+- type: doc
+  url: https://www.ibge.gov.br/explica/codigos-dos-municipios.php
+- type: doc
+  url: https://datasus.saude.gov.br/
+translations:
+  pt:
+    name: Código do município sem o dígito verificador (IBGE, seis dígitos)
+  ru:
+    name: Код муниципалитета Бразилии без контрольной цифры (IBGE, шесть цифр)
