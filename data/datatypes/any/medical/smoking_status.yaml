@@ -1,0 +1,33 @@
+id: smoking_status
+name: Smoking status
+status: draft
+doc: 'Whether a person smokes tobacco, as health surveys and clinical records class it: never smoker,
+  former smoker and current smoker, the current smokers often split into daily and occasional (every day,
+  some days). Questionnaires word the options as sentences (I smoke regularly, I used to smoke but quit,
+  I have never smoked; fumo habitualmente, antes fumaba pero lo dejé, nunca he fumado), and data files
+  hold them as words, as codes of a form (nunca_he_fumado) or as numbers with a codebook. A yes or no
+  answer to Do you smoke? is a boolean, and the number of cigarettes a day is a count.'
+parent: category
+categories:
+- medical
+- persons
+langs:
+- en
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Never smoker
+- value: Former smoker
+- value: Current smoker
+- value: Ex-smoker
+- value: nunca_he_fumado
+  description: 'Spanish option of a survey form: I have never smoked'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Tobacco_smoking
+translations:
+  es:
+    name: Hábito tabáquico
+  ru:
+    name: Статус курения

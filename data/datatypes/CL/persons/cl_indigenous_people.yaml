@@ -1,0 +1,41 @@
+id: cl_indigenous_people
+name: Indigenous people of Chile (pueblo originario)
+status: draft
+doc: 'Indigenous people a person says they belong to, as Chilean censuses, the CASEN household survey
+  and health and research questionnaires ask it (¿Se considera perteneciente a algún pueblo indígena u
+  originario?). The answers are the peoples that the Indigenous Law 19.253 of 1993 and its amendments
+  recognise: Mapuche, Aymara, Rapa Nui, Atacameño or Lickanantay, Quechua, Colla, Kawésqar, Yagán, Diaguita
+  (since 2006), Chango (since 2020) and Selk''nam (since 2023), with None and Other. Survey exports write
+  them in lower case, in the plural or as codes (mapuche, diaguitas, ninguna_no_sabe), and a free-text
+  answer may name a Mapuche group (Huilliche, Pehuenche, Lafkenche). Ethnic origin is a special category
+  of personal data.'
+parent: race_ethnicity
+categories:
+- persons
+- pii
+country:
+- CL
+langs:
+- es
+is_pii: true
+classification: categorical
+examples:
+- value: Mapuche
+- value: Aymara
+- value: Rapa Nui
+- value: diaguitas
+  description: lower case and plural, as a survey form exports the option
+- value: Lickanantay
+  description: the Atacameño people
+- value: Guaraní
+  valid: false
+  description: an indigenous people of Paraguay, Bolivia, Argentina and Brazil, not one of the peoples
+    recognised in Chile
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Indigenous_peoples_in_Chile
+translations:
+  es:
+    name: Pueblo indígena u originario de Chile
+  ru:
+    name: Коренной народ Чили
