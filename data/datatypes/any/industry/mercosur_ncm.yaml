@@ -1,0 +1,44 @@
+id: mercosur_ncm
+name: Mercosur Common Nomenclature (NCM) code
+status: draft
+doc: 'Eight-digit goods code of the Nomenclatura Comum do Mercosul, the common customs nomenclature of
+  Argentina, Brazil, Paraguay and Uruguay since 1995: the six digits of the HS subheading (hs_code) and
+  two Mercosur digits (item and subitem). Brazilian invoices, trade statistics and the FINAME accreditation
+  list of the BNDES give it with or without dots (8432.80.00, 84328000).'
+parent: national_tariff_code
+categories:
+- industry
+- shipping
+country:
+- AR
+- BR
+- PY
+- UY
+langs:
+- pt
+- es
+is_pii: false
+classification: categorical
+regexp: ^\d{4}\.?\d{2}\.?\d{2}$
+examples:
+- value: '84328000'
+  description: other agricultural machinery for soil preparation, BNDES FINAME list
+- value: 8432.80.00
+  description: the same code with dots
+- value: '87162000'
+  description: self-loading agricultural trailers
+- value: '843280'
+  valid: false
+  description: an HS subheading (hs_code)
+links:
+- type: wikipedia
+  url: https://pt.wikipedia.org/wiki/Nomenclatura_Comum_do_Mercosul
+- type: doc
+  url: https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/classificacao-fiscal-de-mercadorias/ncm
+translations:
+  pt:
+    name: Código NCM (Nomenclatura Comum do Mercosul)
+  es:
+    name: Código NCM (Nomenclatura Común del Mercosur)
+  ru:
+    name: Код NCM (общая номенклатура МЕРКОСУР)

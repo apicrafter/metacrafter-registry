@@ -1,0 +1,37 @@
+id: br_compe_code
+name: COMPE bank number (Brazil)
+status: draft
+doc: The three-digit number of a bank in COMPE, the Brazilian clearing house of cheques and bank slips,
+  printed on cheques and used in transfers to name the bank (001 Banco do Brasil, 033 Santander, 104 Caixa,
+  237 Bradesco, 341 Itaú). The list of participants of the STR of the Banco Central do Brasil gives it
+  as Número_Código, n/a for participants that are not banks.
+parent: id
+categories:
+- finances
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: identifier
+regexp: ^\d{3}$
+examples:
+- value: '001'
+  description: Banco do Brasil
+- value: '237'
+  description: Banco Bradesco
+- value: '070'
+  description: BRB - Banco de Brasília
+- value: 00000208
+  valid: false
+  description: an ISPB code (br_ispb)
+links:
+- type: doc
+  url: https://www.bcb.gov.br/estabilidadefinanceira/participantesstr
+- type: wikipedia
+  url: https://pt.wikipedia.org/wiki/Compensa%C3%A7%C3%A3o_banc%C3%A1ria
+translations:
+  pt:
+    name: Código COMPE do banco
+  ru:
+    name: Номер банка в COMPE (Бразилия)

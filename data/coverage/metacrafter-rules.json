@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "af02ce2e930eeba2a340130b501e5e7bb1cf71a2"
+  "ref": "3de12c89b3405c10cb52659f41bcfdb7b5e12b2e"
  },
  "rules": [
   {
@@ -3295,6 +3295,156 @@
    "country_code": "bh"
   },
   {
+   "rule": "brcnaebyname",
+   "key": "br_cnae",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_codes.yaml",
+   "context": "finances",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brcnpjbyname",
+   "key": "cnpj",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_codes.yaml",
+   "context": "finances",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brcnpjformattedvalue",
+   "key": "cnpj",
+   "type": "data",
+   "match": "func",
+   "file": "br/br_codes.yaml",
+   "context": "finances",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brcnpjrootbyname",
+   "key": "br_cnpj_root",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_codes.yaml",
+   "context": "finances",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brcompanysizebyname",
+   "key": "br_company_size",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_codes.yaml",
+   "context": "finances",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brcompecodebyname",
+   "key": "br_compe_code",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_codes.yaml",
+   "context": "finances",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brispbbyname",
+   "key": "br_ispb",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_codes.yaml",
+   "context": "finances",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "mercosurncmbyname",
+   "key": "mercosur_ncm",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_codes.yaml",
+   "context": "finances",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brbiomebyname",
+   "key": "br_biome",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_ecology.yaml",
+   "context": "science",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brcapesevaluationareabyname",
+   "key": "br_capes_evaluation_area",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_education.yaml",
+   "context": "education",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brcapesgradebyname",
+   "key": "br_capes_grade",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_education.yaml",
+   "context": "education",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brcapesinstitutioncodebyname",
+   "key": "br_capes_institution_code",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_education.yaml",
+   "context": "education",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brcapesinstitutioncodevalue",
+   "key": "br_capes_institution_code",
+   "type": "data",
+   "match": "func",
+   "file": "br/br_education.yaml",
+   "context": "education",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brcapesprogramcodevalue",
+   "key": "br_capes_program_code",
+   "type": "data",
+   "match": "func",
+   "file": "br/br_education.yaml",
+   "context": "education",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "bremecinstitutioncodebyname",
+   "key": "br_emec_institution_code",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_education.yaml",
+   "context": "education",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
    "rule": "brbankaccountknown",
    "key": "bankaccount",
    "type": "field",
@@ -3355,10 +3505,30 @@
    "country_code": "br"
   },
   {
+   "rule": "brcepbyname",
+   "key": "br_postcode",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_geo.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
    "rule": "brcepknown",
    "key": "postcode",
    "type": "field",
    "match": "text",
+   "file": "br/br_geo.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brcepvalue",
+   "key": "br_postcode",
+   "type": "data",
+   "match": "func",
    "file": "br/br_geo.yaml",
    "context": "geo",
    "lang": "pt",
@@ -3375,9 +3545,69 @@
    "country_code": "br"
   },
   {
+   "rule": "brmunicipalitycodebyname",
+   "key": "br_municipality_code",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_geo.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brphonebyname",
+   "key": "br_phone",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_geo.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brphonevalue",
+   "key": "br_phone",
+   "type": "data",
+   "match": "func",
+   "file": "br/br_geo.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brregionbyname",
+   "key": "br_region",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_geo.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
    "rule": "brsiafimunicipalityvalue",
    "key": "br_siafi_municipality_code",
    "type": "data",
+   "match": "regex",
+   "file": "br/br_geo.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brstatebyname",
+   "key": "br_state",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_geo.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brstatecodebyname",
+   "key": "br_state_code",
+   "type": "field",
    "match": "regex",
    "file": "br/br_geo.yaml",
    "context": "geo",
@@ -3391,6 +3621,76 @@
    "match": "text",
    "file": "br/br_geo.yaml",
    "context": "geo",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brstatevalue",
+   "key": "br_state",
+   "type": "data",
+   "match": "func",
+   "file": "br/br_geo.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brnupbyname",
+   "key": "br_nup",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_government.yaml",
+   "context": "government",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brnupdigitsvalue",
+   "key": "br_nup",
+   "type": "data",
+   "match": "func",
+   "file": "br/br_government.yaml",
+   "context": "government",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brnupvalue",
+   "key": "br_nup",
+   "type": "data",
+   "match": "func",
+   "file": "br/br_government.yaml",
+   "context": "government",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brtcuprocessbyname",
+   "key": "br_tcu_process_number",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_government.yaml",
+   "context": "government",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brtcuprocessvalue",
+   "key": "br_tcu_process_number",
+   "type": "data",
+   "match": "func",
+   "file": "br/br_government.yaml",
+   "context": "government",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
+   "rule": "brtcurulingvalue",
+   "key": "br_tcu_ruling",
+   "type": "data",
+   "match": "func",
+   "file": "br/br_government.yaml",
+   "context": "government",
    "lang": "pt",
    "country_code": "br"
   },
@@ -8723,6 +9023,33 @@
    "context": "realestate",
    "lang": "common",
    "country_code": "xx"
+  },
+  {
+   "rule": "iucnredlistcategorybyname",
+   "key": "iucn_red_list_category",
+   "type": "field",
+   "match": "regex",
+   "file": "common/redlist.yaml",
+   "context": "science",
+   "lang": "common"
+  },
+  {
+   "rule": "iucnredlistcriteriabyname",
+   "key": "iucn_red_list_criteria",
+   "type": "field",
+   "match": "regex",
+   "file": "common/redlist.yaml",
+   "context": "science",
+   "lang": "common"
+  },
+  {
+   "rule": "iucnredlistcriteriavalue",
+   "key": "iucn_red_list_criteria",
+   "type": "data",
+   "match": "func",
+   "file": "common/redlist.yaml",
+   "context": "science",
+   "lang": "common"
   },
   {
    "rule": "abstractbyname",
@@ -18615,6 +18942,16 @@
    "country_code": "pt"
   },
   {
+   "rule": "ptlanguagenamevalue",
+   "key": "language",
+   "type": "data",
+   "match": "text",
+   "file": "pt/pt_common.yaml",
+   "context": "common",
+   "lang": "pt",
+   "country_code": "pt"
+  },
+  {
    "rule": "ptdateknown",
    "key": "date",
    "type": "field",
@@ -18705,6 +19042,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "ptcountrynamebyname",
+   "key": "ptcountryname",
+   "type": "field",
+   "match": "regex",
+   "file": "pt/pt_geo.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "xx"
+  },
+  {
    "rule": "ptinegeocodevalue",
    "key": "pt_ine_geocode",
    "type": "data",
@@ -18763,6 +19110,60 @@
    "context": "persons",
    "lang": "pt",
    "country_code": "xx"
+  },
+  {
+   "rule": "ptauthorshipbyfield",
+   "key": "dwc_scientific_name_authorship",
+   "type": "field",
+   "match": "regex",
+   "file": "pt/pt_taxa.yaml",
+   "context": "science",
+   "lang": "pt"
+  },
+  {
+   "rule": "ptspeciesbyfield",
+   "key": "species",
+   "type": "field",
+   "match": "regex",
+   "file": "pt/pt_taxa.yaml",
+   "context": "science",
+   "lang": "pt"
+  },
+  {
+   "rule": "pttaxonnamebyfield",
+   "key": "taxon_name",
+   "type": "field",
+   "match": "text",
+   "file": "pt/pt_taxa.yaml",
+   "context": "science",
+   "lang": "pt"
+  },
+  {
+   "rule": "pttaxonomicstatusvalue",
+   "key": "dwc_taxonomic_status",
+   "type": "data",
+   "match": "text",
+   "file": "pt/pt_taxa.yaml",
+   "context": "science",
+   "lang": "pt"
+  },
+  {
+   "rule": "pttaxonrankvalue",
+   "key": "dwc_taxon_rank",
+   "type": "data",
+   "match": "text",
+   "file": "pt/pt_taxa.yaml",
+   "context": "science",
+   "lang": "pt"
+  },
+  {
+   "rule": "ptvernacularnamebyfield",
+   "key": "vernacular_name",
+   "type": "field",
+   "match": "regex",
+   "file": "pt/pt_taxa.yaml",
+   "context": "science",
+   "lang": "pt"
   },
   {
    "rule": "qabusinessactivityvalue",

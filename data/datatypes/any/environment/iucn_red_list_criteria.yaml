@@ -1,0 +1,35 @@
+id: iucn_red_list_criteria
+name: IUCN Red List criteria
+status: draft
+doc: 'The criteria under which a taxon was assessed in an IUCN Red List category (iucn_red_list_category):
+  the letters A (population reduction), B (geographic range: B1 extent of occurrence, B2 area of occupancy),
+  C (small declining population), D (very small population) and E (quantitative analysis) with their subcriteria
+  (a, b, c) and the conditions in parentheses, joined by + or ; (B1ab(iii)+2ab(iii), D2, A2c). National
+  assessments such as those of the CNCFlora in Brazil use the same notation.'
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: B1ab(iii)+2ab(iii)
+  description: a restricted range with a continuing decline of habitat quality
+- value: D2
+  description: a very small area of occupancy
+- value: A2c
+  description: a population reduction by habitat loss
+- value: EN
+  valid: false
+  description: a category (iucn_red_list_category)
+links:
+- type: doc
+  url: https://www.iucnredlist.org/resources/categories-and-criteria
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/IUCN_Red_List
+translations:
+  pt:
+    name: Critérios da Lista Vermelha da IUCN
+  ru:
+    name: Критерии Красного списка МСОП

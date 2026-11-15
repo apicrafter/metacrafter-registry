@@ -1,0 +1,33 @@
+id: br_capes_evaluation_area
+name: CAPES evaluation area (Brazil)
+status: draft
+doc: One of the 49 evaluation areas into which CAPES groups the graduate programmes of Brazil for their
+  evaluation every four years (ENGENHARIAS III, CIÊNCIAS BIOLÓGICAS I, ASTRONOMIA / FÍSICA, INTERDISCIPLINAR),
+  each with a number (CD_AREA_AVALIACAO 1 to 50). Older data use earlier names (LETRAS / LINGUÍSTICA).
+parent: academic_discipline
+categories:
+- education
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: categorical
+examples:
+- value: ENGENHARIAS III
+  description: area 13
+- value: ASTRONOMIA / FÍSICA
+  description: area 3
+- value: INTERDISCIPLINAR
+  description: area 45
+- value: CIÊNCIAS HUMANAS
+  valid: false
+  description: a great area of knowledge, not an evaluation area
+links:
+- type: doc
+  url: https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/avaliacao/sobre-a-avaliacao/areas-avaliacao
+translations:
+  pt:
+    name: Área de avaliação da CAPES
+  ru:
+    name: Область оценки CAPES (Бразилия)

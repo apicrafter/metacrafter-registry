@@ -6,6 +6,7 @@ doc: Abbreviation of the extinction-risk category of a taxon in the IUCN Red Lis
   categories), NT (near threatened), LC (least concern), DD (data deficient) and NE (not evaluated). Taxa
   not reassessed since version 2.3 (1994) can still carry the Lower Risk subcategories LR/cd, LR/nt or
   LR/lc.
+parent: category
 categories:
 - environment
 - science

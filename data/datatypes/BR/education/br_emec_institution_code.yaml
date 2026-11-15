@@ -1,0 +1,32 @@
+id: br_emec_institution_code
+name: e-MEC higher education institution code (Brazil)
+status: draft
+doc: 'The number of a higher education institution in e-MEC, the register of the Brazilian Ministry of
+  Education, also used by the higher education census of INEP (CO_IES): one to six digits (699 Universidade
+  Federal de Rondônia). CAPES gives it beside its own code as CD_ENTIDADE_EMEC.'
+parent: id
+categories:
+- education
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,5}$
+examples:
+- value: '699'
+  description: Universidade Federal de Rondônia
+- value: '1'
+  description: Universidade Federal de Mato Grosso
+- value: '10001018'
+  valid: false
+  description: a CAPES code (br_capes_institution_code)
+links:
+- type: doc
+  url: https://emec.mec.gov.br/
+translations:
+  pt:
+    name: Código e-MEC da instituição de educação superior
+  ru:
+    name: Код вуза в реестре e-MEC (Бразилия)

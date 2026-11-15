@@ -1,0 +1,35 @@
+id: br_capes_program_code
+name: CAPES graduate programme code (Brazil)
+status: draft
+doc: 'The code of a graduate (stricto sensu) programme in the CAPES evaluation system: the eight-digit
+  CAPES code of the institution (br_capes_institution_code), a three-digit number of the programme, the
+  letter P and a check digit (33003017040P8). The open data of CAPES on programmes, intellectual production
+  and scholarships give it as CD_PROGRAMA_IES or CD_PROGRAMA_PPG.'
+parent: id
+categories:
+- education
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: identifier
+regexp: ^[1-5]\d{10}P\d$
+examples:
+- value: 33003017040P8
+  description: a programme of the Universidade Estadual de Campinas
+- value: 10001018016P2
+  description: Educação Escolar, Universidade Federal de Rondônia
+- value: '33003017'
+  valid: false
+  description: an institution code (br_capes_institution_code)
+links:
+- type: doc
+  url: https://dadosabertos.capes.gov.br/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/CAPES
+translations:
+  pt:
+    name: Código de programa de pós-graduação da CAPES
+  ru:
+    name: Код программы аспирантуры CAPES (Бразилия)
