@@ -1,0 +1,35 @@
+id: icd10_chapter
+name: ICD-10 chapter
+status: draft
+doc: Chapter of ICD-10, the International Classification of Diseases, 10th revision, given by its code
+  range (A00-B99, C00-D48, D50-D89) or its title (Neoplasms, Diseases of the circulatory system), as mortality
+  and morbidity statistics group the underlying causes of death and diagnoses. ICD-10 has 22 chapters,
+  from I Certain infectious and parasitic diseases (A00-B99) to XXII Codes for special purposes (U00-U85).
+  National tables round the ranges (E00-E99, H60-H99, S00-T99), put spaces around the dash and shorten
+  or misspell the titles. A single code or a block of codes is icd10.
+parent: category
+categories:
+- medical
+langs:
+- common
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: A00-B99
+  description: Chapter I, Certain infectious and parasitic diseases
+- value: C00 - D49
+  description: Chapter II, Neoplasms, with the range of a national table
+- value: Diseases of the Circulatory System
+  description: Chapter IX
+- value: J11
+  valid: false
+  description: a single code (icd10)
+links:
+- type: doc
+  url: https://icd.who.int/browse10/2019/en
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ICD-10
+translations:
+  ru:
+    name: Класс МКБ-10

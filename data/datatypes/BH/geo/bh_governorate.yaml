@@ -1,0 +1,42 @@
+id: bh_governorate
+name: Bahrain governorate
+status: draft
+doc: Name of a governorate (محافظة) of the Kingdom of Bahrain, in English or Arabic, as the census, vital
+  and labour statistics label their tables by governorate. Since September 2014 there are four, Capital
+  (العاصمة), Muharraq (المحرق), Northern (الشمالية) and Southern (الجنوبية); the Central governorate (الوسطى)
+  was then divided among them, and tables of earlier years still list it. Names come with or without the
+  word Governorate and in transliterations (Al Asimah, Al Muharraq, Ash Shamaliyah, Al Janubiyah). The
+  ISO 3166-2 codes are BH-13, BH-15, BH-17 and BH-14.
+parent: admin_area_1
+categories:
+- geo
+- government
+country:
+- BH
+langs:
+- ar
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Capital
+  description: Capital Governorate (Manama)
+- value: Muharraq
+- value: Northern Governorate
+- value: الجنوبية
+  description: Southern, in Arabic
+- value: الوسطى
+  description: Central, divided in 2014
+- value: Manama
+  valid: false
+  description: a city, the seat of the Capital governorate
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Governorates_of_Bahrain
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_3166-2:BH
+translations:
+  ar:
+    name: محافظة البحرين
+  ru:
+    name: Мухафаза Бахрейна

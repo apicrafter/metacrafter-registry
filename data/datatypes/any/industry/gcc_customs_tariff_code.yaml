@@ -1,0 +1,42 @@
+id: gcc_customs_tariff_code
+name: GCC Common Customs Tariff code
+status: draft
+doc: Eight-digit goods code of the Common Customs Tariff of the Gulf Cooperation Council, which Bahrain,
+  Kuwait, Oman, Qatar, Saudi Arabia and the United Arab Emirates apply since the GCC customs union of
+  2003. The first six digits are the HS subheading (hs_code) and the last two are GCC subdivisions. The
+  foreign trade statistics of the member states list goods by it (Commodity No 95030090 in the Bahrain
+  imports and exports, with the goods description in English and Arabic).
+parent: national_tariff_code
+categories:
+- industry
+- shipping
+country:
+- AE
+- BH
+- KW
+- OM
+- QA
+- SA
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{8}$
+examples:
+- value: '95030090'
+  description: other toys, Bahrain imports 2023
+- value: 04090000
+  description: natural honey
+- value: 0409
+  valid: false
+  description: an HS heading
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Gulf_Cooperation_Council
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Harmonized_System
+translations:
+  ar:
+    name: رمز التعرفة الجمركية الموحدة لدول مجلس التعاون
+  ru:
+    name: Код единого таможенного тарифа ССАГПЗ
