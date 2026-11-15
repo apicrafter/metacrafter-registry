@@ -1,0 +1,39 @@
+id: au_nsw_land_zone
+name: NSW land use zone (Standard Instrument LEP)
+status: draft
+doc: 'Land use zone of a Local Environmental Plan in New South Wales, in the codes of the Standard Instrument
+  (Local Environmental Plans) Order 2006: RU1 to RU6 rural, R1 to R5 residential, B1 to B8 business (replaced
+  in 2023 by E1 to E5 employment and MU1 mixed use), IN1 to IN4 industrial, SP1 to SP5 special purpose,
+  RE1 and RE2 recreation, C1 to C4 conservation (E1 to E4 environment before 2022), W1 to W4 waterways,
+  with UL unzoned land and DM deferred matter. The Land Zoning Map of the NSW Planning Portal gives the
+  code in SYM_CODE and the title (General Residential) in LAY_CLASS.'
+parent: category
+categories:
+- geo
+- government
+- realestate
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:RU[1-6]|R[1-5]|B[1-8]|E[1-5]|MU1|IN[1-4]|SP[1-5]|RE[12]|C[1-4]|W[1-4]|UL|DM)$
+examples:
+- value: R2
+  description: Low Density Residential, EPI Primary Planning Layers
+- value: RU1
+  description: Primary Production
+- value: SP2
+  description: Infrastructure
+- value: MU1
+  description: Mixed Use (2023)
+- value: GRZ1
+  valid: false
+  description: a Victorian zone, au_vic_planning_zone
+links:
+- type: doc
+  url: https://legislation.nsw.gov.au/view/html/inforce/current/epi-2006-0155
+translations:
+  ru:
+    name: Зона землепользования Нового Южного Уэльса (LEP)

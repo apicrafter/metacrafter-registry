@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "187111d38418af4ef4f59aebe7223ae49ddb446a"
+  "ref": "fd24249c230f58f13b0a184c70da57ff630040e8"
  },
  "rules": [
   {
@@ -1805,6 +1805,156 @@
    "country_code": "au"
   },
   {
+   "rule": "auanzsicdivisionnamebyname",
+   "key": "au_anzsic_division_name",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aucluesmallareabyname",
+   "key": "au_clue_small_area",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "audcacodebyname",
+   "key": "au_dca_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "augeoscapepidbyname",
+   "key": "au_geoscape_pid",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "augeoscapepidvalue",
+   "key": "au_geoscape_pid",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aunswlandzonebyname",
+   "key": "au_nsw_land_zone",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aunswlotidbyname",
+   "key": "au_nsw_lot_id",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aunswlotidvalue",
+   "key": "au_nsw_lot_id",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auparkingrestrictionbyname",
+   "key": "au_parking_restriction",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auplanningapplicationnumberbyname",
+   "key": "au_planning_application_number",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auplanningapplicationnumbervalue",
+   "key": "au_planning_application_number",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "austatenamebyname",
+   "key": "au_state",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "ausurveyplannumberbyname",
+   "key": "au_survey_plan_number",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auvbataxonidbyname",
+   "key": "au_vba_taxon_id",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auvicplanningzonebyname",
+   "key": "au_vic_planning_zone",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_council.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
    "rule": "aurtocodebyname",
    "key": "au_rto_code",
    "type": "field",
@@ -2145,6 +2295,16 @@
    "country_code": "au"
   },
   {
+   "rule": "aulgacodebarebyname",
+   "key": "au_lga_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
    "rule": "aulgacodebyname",
    "key": "au_lga_code",
    "type": "field",
@@ -2165,10 +2325,40 @@
    "country_code": "au"
   },
   {
+   "rule": "aulganamecouncilbyname",
+   "key": "au_lga_name",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
    "rule": "aulganamevalue",
    "key": "au_lga_name",
    "type": "data",
    "match": "func",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aulocalitybyname",
+   "key": "au_suburb",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aupostalareabyname",
+   "key": "au_postcode",
+   "type": "field",
+   "match": "regex",
    "file": "au/au_geo.yaml",
    "context": "geo",
    "lang": "en",
@@ -2456,6 +2646,16 @@
   },
   {
    "rule": "auroadsigncodebyname",
+   "key": "au_road_sign_code",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_transport.yaml",
+   "context": "transport",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auroadsigncodeshortbyname",
    "key": "au_road_sign_code",
    "type": "field",
    "match": "regex",
@@ -3591,6 +3791,76 @@
    "match": "func",
    "file": "common/admin_areas.yaml",
    "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "crashseveritybyname",
+   "key": "crash_severity",
+   "type": "field",
+   "match": "regex",
+   "file": "common/assets.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "electricpowerbyname",
+   "key": "electric_power",
+   "type": "field",
+   "match": "regex",
+   "file": "common/assets.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "electricpowervalue",
+   "key": "electric_power",
+   "type": "data",
+   "match": "func",
+   "file": "common/assets.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "iso8601repeatingintervalvalue",
+   "key": "iso8601_repeating_interval",
+   "type": "data",
+   "match": "func",
+   "file": "common/assets.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "pipematerialbyname",
+   "key": "pipe_material",
+   "type": "field",
+   "match": "regex",
+   "file": "common/assets.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "treeageclassbyname",
+   "key": "tree_age_class",
+   "type": "field",
+   "match": "regex",
+   "file": "common/assets.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "treeusefullifeexpectancybyname",
+   "key": "tree_useful_life_expectancy",
+   "type": "field",
+   "match": "regex",
+   "file": "common/assets.yaml",
+   "context": "common",
    "lang": "common",
    "country_code": "xx"
   },
@@ -5445,6 +5715,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "addressbyplacename",
+   "key": "address",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "addressknown",
    "key": "address",
    "type": "field",
@@ -5709,6 +5989,16 @@
    "key": "geopoint",
    "type": "field",
    "match": "text",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "geopointcoordinatesbyname",
+   "key": "geopoint",
+   "type": "field",
+   "match": "regex",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -6029,6 +6319,16 @@
    "key": "street_address",
    "type": "field",
    "match": "text",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "streetbyname",
+   "key": "street",
+   "type": "field",
+   "match": "regex",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -7725,6 +8025,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "tradingnamebyname",
+   "key": "orgname",
+   "type": "field",
+   "match": "regex",
+   "file": "common/orgs.yaml",
+   "context": "companies",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "fiscalyearbyname",
    "key": "fiscal_year",
    "type": "field",
@@ -8495,6 +8805,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "speciesscientificbyname",
+   "key": "species",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "taxonclassorderbyfield",
    "key": "taxon_name",
    "type": "field",
@@ -8526,6 +8846,16 @@
   },
   {
    "rule": "vernacularnamebyname",
+   "key": "vernacular_name",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "vernacularnamecommonnamebyname",
    "key": "vernacular_name",
    "type": "field",
    "match": "regex",
@@ -9991,6 +10321,16 @@
    "match": "regex",
    "file": "common/transport.yaml",
    "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "twitterusernamebyname",
+   "key": "twitter_username",
+   "type": "field",
+   "match": "regex",
+   "file": "common/useraccounts.yaml",
+   "context": "useraccounts",
    "lang": "common",
    "country_code": "xx"
   },
@@ -15709,6 +16049,16 @@
    "key": "birthday",
    "type": "field",
    "match": "text",
+   "file": "pii/au/au_pii.yaml",
+   "context": "pii",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auphonebyname",
+   "key": "phone",
+   "type": "field",
+   "match": "regex",
    "file": "pii/au/au_pii.yaml",
    "context": "pii",
    "lang": "en",

@@ -1,0 +1,32 @@
+id: au_vba_taxon_id
+name: Victorian Biodiversity Atlas taxon id
+status: draft
+doc: 'Taxon identifier of the Victorian Biodiversity Atlas (VBA) of the Victorian Department of Energy,
+  Environment and Climate Action: a number of up to six digits that species records, bird surveys and
+  the Flora and Fauna Guarantee lists of Victoria give beside the scientific name (10705 a bird of the
+  City of Melbourne bird survey). A number alone can be any id, so a value is a VBA taxon id in a field
+  named after the atlas.'
+parent: id
+categories:
+- environment
+- science
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,6}$
+examples:
+- value: '10705'
+  description: Victorian Biodiversity Atlas code, bird survey of the City of Melbourne
+- value: '10179'
+- value: '501234'
+- value: A10705
+  valid: false
+links:
+- type: doc
+  url: https://www.environment.vic.gov.au/biodiversity/victorian-biodiversity-atlas
+translations:
+  ru:
+    name: Идентификатор таксона Атласа биоразнообразия Виктории (VBA)

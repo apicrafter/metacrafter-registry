@@ -1,0 +1,40 @@
+id: au_vic_planning_zone
+name: Victorian planning scheme zone (VPP)
+status: draft
+doc: 'Zone of a Victorian planning scheme in the codes of the Victoria Planning Provisions, often with
+  the number of a schedule: GRZ1 General Residential Zone schedule 1, NRZ Neighbourhood Residential, RGZ
+  Residential Growth, LDRZ Low Density Residential, MUZ Mixed Use, TZ Township, C1Z and C2Z Commercial,
+  IN1Z to IN3Z Industrial, FZ Farming, RLZ Rural Living, RCZ Rural Conservation, PPRZ and PCRZ public
+  park and conservation, PUZ1 to PUZ7 public use, SUZ Special Use, CDZ Comprehensive Development, UGZ
+  Urban Growth, ACZ Activity Centre, RDZ1 and RDZ2 road zones. Council and Vicmap Planning layers give
+  it in ZONE_CODE.'
+parent: category
+categories:
+- geo
+- government
+- realestate
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:GRZ|NRZ|RGZ|LDRZ|MUZ|TZ|RLZ|RAZ|RCZ|GWZ|GWAZ|FZ|PPRZ|PCRZ|PUZ|SUZ|CDZ|UGZ|UFZ|PDZ|DZ|ACZ|CCZ|C1Z|C2Z|C3Z|IN1Z|IN2Z|IN3Z|RDZ|PZ|CA|R1Z|R2Z|R3Z|B1Z|B2Z|B3Z|B4Z|B5Z|ERZ|MAZ)\d{0,2}$
+examples:
+- value: GRZ1
+  description: General Residential Zone schedule 1, Greater Geelong housing development data
+- value: UGZ3
+  description: Urban Growth Zone schedule 3
+- value: IN1Z
+  description: Industrial 1 Zone
+- value: PCRZ
+  description: Public Conservation and Resource Zone
+- value: R2
+  valid: false
+  description: an NSW zone, au_nsw_land_zone
+links:
+- type: doc
+  url: https://www.planning.vic.gov.au/guides-and-resources/guides/all-guides/planning-zones
+translations:
+  ru:
+    name: Зона планировочной схемы штата Виктория (VPP)

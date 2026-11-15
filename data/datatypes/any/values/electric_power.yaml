@@ -1,0 +1,30 @@
+id: electric_power
+name: Electric power (W, kW, MW)
+status: draft
+doc: 'Electric power or a power rating with its unit: watts, kilowatts, megawatts or gigawatts (80W a
+  street light, 350 kW a fast EV charger, 50 - 350 kW a range of chargers, 1.5 MW a generator). Energy
+  is power over time, in kWh or MWh (energy_amount); a field of numbers without a unit is a power when
+  its name says so (nominal_rating_watts, capacity_kw).'
+parent: numeric
+categories:
+- values
+langs:
+- common
+is_pii: false
+regexp: ^\d+(?:[.,]\d+)?\s*(?:(?:-|–|to)\s*\d+(?:[.,]\d+)?\s*)?(?:W|kW|KW|kw|MW|GW|watts?|Watts?)$
+examples:
+- value: 80W
+  description: nominal rating of a Powercor public light, City of Greater Geelong
+- value: 350 kW
+  description: EV charging stations
+- value: 50 - 350 kW
+- value: 1.5 MW
+- value: 350 kWh
+  valid: false
+  description: an amount of energy, energy_amount
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Electric_power
+translations:
+  ru:
+    name: Электрическая мощность (Вт, кВт, МВт)

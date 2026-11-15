@@ -1,0 +1,36 @@
+id: au_parking_restriction
+name: Australian parking restriction (sign code)
+status: draft
+doc: 'Restriction of a parking bay or zone as Australian parking signs and council parking registers write
+  it: the time limit in hours before P (1P, 2P, 1/2P, 1/4P), or P and minutes (P 10 Min, P5), with Meter,
+  Ticket or Disabled Only for paid and reserved bays, the days and hours it applies (2P MTR M-SAT 7:30-18:30),
+  and the zones Loading Zone (LZ 15), Clearway, No Stopping and No Parking. The City of Melbourne abbreviates
+  half and quarter hour parking as HP and QP and its meter and ticket bays as MP2P and FP2P.'
+parent: category
+categories:
+- transport
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: 2P
+  description: two hour parking, City of Melbourne sign plates
+- value: 1/2P Meter
+  description: On-street Car Park Bay Restrictions, City of Melbourne
+- value: 2P MTR M-SAT 7:30-18:30
+- value: Loading Zone 15M
+- value: 3P Ticket
+  description: Greater Geelong parking lots
+- value: P 10 Mins
+- value: 2 Hours
+  valid: false
+  description: a duration without a sign code
+links:
+- type: doc
+  url: https://www.transport.nsw.gov.au/operations/roads-and-waterways/traffic-signs
+translations:
+  ru:
+    name: Ограничение парковки (код знака, Австралия)

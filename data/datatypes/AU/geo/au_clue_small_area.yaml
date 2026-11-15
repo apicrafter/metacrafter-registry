@@ -1,0 +1,36 @@
+id: au_clue_small_area
+name: CLUE small area of the City of Melbourne
+status: draft
+doc: 'Small area of the Census of Land Use and Employment (CLUE) of the City of Melbourne, the 13 areas
+  into which the council divides its municipality for the census, its forecasts and many of its open data
+  tables: Carlton, Docklands, East Melbourne, Kensington, Melbourne (CBD), Melbourne (Remainder), North
+  Melbourne, Parkville, Port Melbourne, South Yarra, Southbank, West Melbourne (Industrial) and West Melbourne
+  (Residential), with City of Melbourne (total) for the whole. Most names are also suburbs, so a value
+  is a CLUE small area in a field named after it (clue_small_area, clue_area, small_area); CLUE blocks
+  are numbered inside them.'
+parent: admin_area_3
+categories:
+- geo
+- government
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Melbourne (CBD)
+  description: CLUE small area, City of Melbourne open data
+- value: West Melbourne (Residential)
+- value: Docklands
+- value: City of Melbourne (total)
+  description: the whole municipality in CLUE tables
+- value: Fitzroy
+  valid: false
+  description: a suburb of the City of Yarra, not a CLUE area
+links:
+- type: doc
+  url: https://www.melbourne.vic.gov.au/census-land-use-and-employment-clue
+translations:
+  ru:
+    name: Малый район переписи CLUE (Мельбурн)

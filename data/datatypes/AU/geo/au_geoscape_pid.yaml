@@ -1,0 +1,35 @@
+id: au_geoscape_pid
+name: Geoscape (PSMA) persistent identifier
+status: draft
+doc: 'Persistent identifier of a feature of the national datasets of Geoscape Australia, formerly PSMA
+  Australia: G-NAF addresses (GANSW704411427, GAVIC411711441: GA, the state and digits) and the Administrative
+  Boundaries, whose PIDs are a three-letter prefix of the theme and twelve characters (lga94484cf6e0e2
+  a local government area, lgp... its polygon, loc... a locality, sa... ABS areas, wad... a ward). They
+  stay the same across releases, so state and council layers keep them beside their own ids (LGA_PID,
+  LG_PLY_PID, ADDRESS_DETAIL_PID).'
+parent: id
+categories:
+- geo
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:GA(?:NSW|VIC|QLD|SA|WA|TAS|NT|ACT|OT)\d{9,10}|[a-z]{3}[0-9A-Za-z_-]{12})$
+examples:
+- value: lga94484cf6e0e2
+  description: LGA_PID, NSW LGA boundaries
+- value: lgpa9f1f9d86a5e
+  description: LG_PLY_PID, the polygon of an LGA
+- value: GANSW704411427
+  description: G-NAF address detail PID
+- value: lga94484cf6
+  valid: false
+  description: too short
+links:
+- type: doc
+  url: https://docs.geoscape.com.au/
+translations:
+  ru:
+    name: Постоянный идентификатор Geoscape (PSMA)

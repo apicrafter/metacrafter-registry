@@ -1,0 +1,37 @@
+id: au_planning_application_number
+name: Australian planning or building application number
+status: draft
+doc: 'Number of an application to a council or a planning authority in Australia: a development application
+  in New South Wales (DA-404/2015 of Liverpool City Council, D/2008/940 of the City of Sydney), a planning
+  permit in Victoria (TP-2014-43/A, TPM-2010-31 of the City of Melbourne), a building permit (BP-2014-1813/1)
+  or a complying development certificate (CDC-123/2019). The prefix names the kind of application, then
+  a serial and a year in either order, and a letter or number after a slash marks an amendment or a stage.'
+parent: id
+categories:
+- government
+- realestate
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{4}_)?(?:DA|D|TP|TPM|BP|CDC|PA|PP|MOD|DEV|SUB|PLN|PLP|CC|OC)[-/ ]?(?:\d{1,6}[-/]\d{2,4}|\d{4}[-/]\d{1,6})(?:[-/][A-Z0-9]{1,3})?$
+examples:
+- value: DA-404/2015
+  description: DA approved in last 5 years, Liverpool City Council
+- value: D/2008/940
+  description: City of Sydney development application
+- value: TP-2014-43/A
+  description: town planning application, City of Melbourne development activity monitor
+- value: BP-2014-1813/1
+  description: building permit, City of Melbourne
+- value: 1501/2014/005613/2
+  valid: false
+  description: the permit number of a private building surveyor
+links:
+- type: doc
+  url: https://www.planningportal.nsw.gov.au/development-applications
+translations:
+  ru:
+    name: Номер заявки на застройку или строительство (Австралия)

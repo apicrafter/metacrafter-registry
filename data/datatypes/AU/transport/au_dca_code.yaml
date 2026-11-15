@@ -1,0 +1,31 @@
+id: au_dca_code
+name: Road crash DCA code (Definitions for Classifying Accidents)
+status: draft
+doc: 'Code of the Definitions for Classifying Accidents (DCA) of a road crash, the classification of Victoria,
+  Tasmania and other Australian states: three digits from 100 to 199 for the movements of the road users
+  involved (110 Cross traffic, 130 Vehicles in same lane / rear end, 171 left off carriageway into object),
+  often written with its description. New South Wales codes the same with the two-digit RUM codes.'
+parent: category
+categories:
+- transport
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^1\d{2}(?:\s+\S.*)?$
+examples:
+- value: 132 Vehicles in same lane/ right rear
+  description: Tasmanian road crash data
+- value: '110'
+  description: Cross traffic
+- value: 171 Left off carriageway into object or parked vehicle
+- value: '250'
+  valid: false
+links:
+- type: doc
+  url: https://www.transport.vic.gov.au/-/media/tfv-documents/safety-and-road-rules/dca-chart.pdf
+translations:
+  ru:
+    name: Код ДТП по классификации DCA (Австралия)
