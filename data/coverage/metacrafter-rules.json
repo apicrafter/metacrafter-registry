@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "ab28b39e64e50f73fe4cb453248d1c585a27da5f"
+  "ref": "cc62652a3f23204414843be01fb4651d043b6b96"
  },
  "rules": [
   {
@@ -10013,6 +10013,36 @@
    "context": "industry",
    "lang": "en",
    "country_code": "eu"
+  },
+  {
+   "rule": "esbudgetstageamountbyname",
+   "key": "money",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_budget.yaml",
+   "context": "finances",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esejercicioyearbyname",
+   "key": "year",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_budget.yaml",
+   "context": "finances",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esmarkedamountvalue",
+   "key": "money",
+   "type": "data",
+   "match": "func",
+   "file": "es/es_budget.yaml",
+   "context": "finances",
+   "lang": "es",
+   "country_code": "es"
   },
   {
    "rule": "esaplicacionpresupuestariabyfield",
