@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "41e5340bd427dad11cd4498154ee7fcff02e1b46"
+  "ref": "230c37d6474e3194d3d313991be336ac7a0690e6"
  },
  "rules": [
   {
@@ -4255,6 +4255,146 @@
    "country_code": "ca"
   },
   {
+   "rule": "chdidoknumberbyname",
+   "key": "ch_didok_number",
+   "type": "field",
+   "match": "regex",
+   "file": "ch/ch_codes.yaml",
+   "context": "identifiers",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chedidbyname",
+   "key": "ch_edid",
+   "type": "field",
+   "match": "regex",
+   "file": "ch/ch_codes.yaml",
+   "context": "identifiers",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chegidbyname",
+   "key": "ch_egid",
+   "type": "field",
+   "match": "regex",
+   "file": "ch/ch_codes.yaml",
+   "context": "identifiers",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chegridbyname",
+   "key": "ch_egrid",
+   "type": "field",
+   "match": "regex",
+   "file": "ch/ch_codes.yaml",
+   "context": "identifiers",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chegridvalue",
+   "key": "ch_egrid",
+   "type": "data",
+   "match": "func",
+   "file": "ch/ch_codes.yaml",
+   "context": "identifiers",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chesidbyname",
+   "key": "ch_esid",
+   "type": "field",
+   "match": "regex",
+   "file": "ch/ch_codes.yaml",
+   "context": "identifiers",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chewidbyname",
+   "key": "ch_ewid",
+   "type": "field",
+   "match": "regex",
+   "file": "ch/ch_codes.yaml",
+   "context": "identifiers",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chhrm2accountbyname",
+   "key": "ch_hrm2_account",
+   "type": "field",
+   "match": "regex",
+   "file": "ch/ch_codes.yaml",
+   "context": "identifiers",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chnogabyname",
+   "key": "ch_noga",
+   "type": "field",
+   "match": "regex",
+   "file": "ch/ch_codes.yaml",
+   "context": "identifiers",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chpoliticalpartybyname",
+   "key": "political_party",
+   "type": "field",
+   "match": "regex",
+   "file": "ch/ch_codes.yaml",
+   "context": "identifiers",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chsboidvalue",
+   "key": "ch_sboid",
+   "type": "data",
+   "match": "func",
+   "file": "ch/ch_codes.yaml",
+   "context": "identifiers",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chsloidvalue",
+   "key": "ch_sloid",
+   "type": "data",
+   "match": "func",
+   "file": "ch/ch_codes.yaml",
+   "context": "identifiers",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chuidbyname",
+   "key": "chuid",
+   "type": "field",
+   "match": "regex",
+   "file": "ch/ch_codes.yaml",
+   "context": "identifiers",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chuidcheckedvalue",
+   "key": "chuid",
+   "type": "data",
+   "match": "func",
+   "file": "ch/ch_codes.yaml",
+   "context": "identifiers",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
    "rule": "chbankaccountfield",
    "key": "chbankaccount",
    "type": "field",
@@ -4325,10 +4465,60 @@
    "country_code": "ch"
   },
   {
+   "rule": "chbfsgemeindebyname",
+   "key": "ch_bfs_gemeinde",
+   "type": "field",
+   "match": "regex",
+   "file": "ch/ch_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
    "rule": "chbfsgemeindeknown",
    "key": "ch_bfs_gemeinde",
    "type": "field",
    "match": "text",
+   "file": "ch/ch_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chcantoncodebyname",
+   "key": "ch_canton_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ch/ch_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chcantonnamebyname",
+   "key": "ch_canton",
+   "type": "field",
+   "match": "regex",
+   "file": "ch/ch_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chlv95eastingbyname",
+   "key": "easting",
+   "type": "field",
+   "match": "regex",
+   "file": "ch/ch_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "ch"
+  },
+  {
+   "rule": "chlv95northingbyname",
+   "key": "northing",
+   "type": "field",
+   "match": "regex",
    "file": "ch/ch_geo.yaml",
    "context": "geo",
    "lang": "de",
@@ -12082,6 +12272,16 @@
    "country_code": "de"
   },
   {
+   "rule": "degeopointbyname",
+   "key": "geopoint",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
    "rule": "dekreisknown",
    "key": "de_kreisschluessel",
    "type": "field",
@@ -12168,6 +12368,86 @@
    "match": "ppr",
    "file": "de/de_med.yaml",
    "context": "medical",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "deanredebyname",
+   "key": "honorificprefix",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_persons.yaml",
+   "context": "persons",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "dedatedmyyvalue",
+   "key": "date",
+   "type": "data",
+   "match": "func",
+   "file": "de/de_persons.yaml",
+   "context": "persons",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "defullnamebyname",
+   "key": "person_fullname",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_persons.yaml",
+   "context": "persons",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "dejahrgangbyname",
+   "key": "birth_year",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_persons.yaml",
+   "context": "persons",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "denachnamebyname",
+   "key": "person_surname",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_persons.yaml",
+   "context": "persons",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "destreetaddressbyname",
+   "key": "street_address",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_persons.yaml",
+   "context": "persons",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "devornamebyname",
+   "key": "person_firstname",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_persons.yaml",
+   "context": "persons",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "dewochentagbyname",
+   "key": "dayofweek",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_persons.yaml",
+   "context": "persons",
    "lang": "de",
    "country_code": "de"
   },

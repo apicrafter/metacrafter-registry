@@ -1,0 +1,36 @@
+id: ch_ewid
+name: Swiss federal dwelling identifier (EWID)
+status: draft
+doc: Number of a dwelling inside its building in the Swiss Federal Register of Buildings and Dwellings
+  (GWR). It is a whole number from 1 to 900 and identifies a dwelling only together with the EGID of the
+  building, so tables carry both columns.
+parent: id
+categories:
+- realestate
+- government
+country:
+- CH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[1-9]\d?|[1-8]\d{2}|900)$
+examples:
+- value: '1'
+  description: the first dwelling of a building
+- value: '12'
+- value: '901'
+  valid: false
+  description: above the range of the register
+- value: '0'
+  valid: false
+links:
+- type: doc
+  url: https://dam-api.bfs.admin.ch/hub/api/dam/assets/7008785/master
+translations:
+  de:
+    name: Eidgenössischer Wohnungsidentifikator (EWID)
+  fr:
+    name: Identificateur fédéral de logement (EWID)
+  ru:
+    name: Федеральный идентификатор жилища Швейцарии (EWID)
