@@ -105,7 +105,9 @@ def mini_data(tmp_path) -> Path:
     data.mkdir(parents=True)
     shutil.copytree(REPO / "schema", tmp_path / "schema")
     (data / "countries.yaml").write_text("- id: US\n  name: United States\n")
-    (data / "categories.yaml").write_text("- id: pii\n  name: PII\n")
+    (data / "categories.yaml").write_text(
+        "- id: pii\n  name: PII\n  kind: sensitivity\n  description: Personal data\n"
+    )
     (data / "langs.yaml").write_text("- id: en\n  name: English\n- id: common\n  name: Common\n")
     write_record(
         data / "datatypes/any/pii/email.yaml",

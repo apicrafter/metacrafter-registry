@@ -225,6 +225,10 @@ def build_registry(sources: RegistrySources, site_url: str) -> RegistryModel:
             entry = {"id": key, "name": str(entries[key]["name"]).strip()}
             if entries[key].get("kind"):
                 entry["kind"] = str(entries[key]["kind"])
+            if entries[key].get("description"):
+                entry["description"] = " ".join(str(entries[key]["description"]).split())
+            if entries[key].get("aliases"):
+                entry["aliases"] = sorted(str(a) for a in entries[key]["aliases"])
             entry["count"] = counts.get(key, 0)
             if path:
                 entry["url"] = f"{site_url}/{path}/{key}"

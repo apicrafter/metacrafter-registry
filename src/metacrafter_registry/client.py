@@ -258,6 +258,10 @@ class Registry:
         self.aliases = dict(aliases or {})
         self.manifest = dict(manifest or {})
         self.categories = {c["id"]: c for c in categories}
+        #: Retired category ids, each with the id of the category that replaces it.
+        self.category_aliases = {
+            alias: c["id"] for c in self.categories.values() for alias in c.get("aliases", [])
+        }
         self.countries = {c["id"]: c for c in countries}
         self.languages = {c["id"]: c for c in languages}
         self.source = source
@@ -436,6 +440,8 @@ class Registry:
         if query and query.strip() and not tokens:
             return []  # only punctuation: nothing to match, not "everything"
         country = country.upper() if country else None
+        if category:
+            category = self.category_aliases.get(category, category)
         hits = []
         for record in self.datatypes.values():
             if category and category not in record.get("categories", []):

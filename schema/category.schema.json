@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://registry.apicrafter.io/schema/category.schema.json",
+  "title": "Category",
+  "description": "One entry of data/categories.yaml: a group of datatypes that answers one question about a value.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "kind"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "description": "Unique among all category ids and aliases."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": ["topic", "form", "sensitivity", "standard"],
+      "description": "topic: the subject area of the value. form: the general form of a value that has no subject. sensitivity: the value needs protection. standard: the standard that defines the value."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "What belongs in the category, and what belongs elsewhere. Required when a record uses the category."
+    },
+    "aliases": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+      "description": "Former category ids that this category replaces. They keep resolving."
+    }
+  }
+}

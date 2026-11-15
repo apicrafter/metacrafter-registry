@@ -1,74 +1,227 @@
+# Categories of datatypes. The contract is schema/category.schema.json.
+# kind: topic (subject area), form (general form of a value without a subject),
+# sensitivity (the value needs protection), standard (the defining standard).
 - id: common
   name: Common
+  kind: form
+  description: >-
+    General values that many datasets have and that belong to no single
+    subject, such as a name, a color or a boolean. Use a topic category when
+    one fits.
 - id: pii
   name: Personally identifiable information
+  kind: sensitivity
+  description: >-
+    Values that identify a natural person, alone or together with other
+    values. Every record in this category has is_pii set to true.
 - id: geo
   name: Geographic identifiers
+  kind: topic
+  description: >-
+    Places and positions: coordinates, geometries, grid cells, addresses,
+    postal codes, and codes and names of countries, regions, municipalities
+    and statistical areas.
 - id: medical
   name: Medical/pharma identifiers
+  kind: topic
+  description: >-
+    Health care and pharmacy: patient and insurance numbers, provider and
+    facility codes, diagnosis and procedure classifications, and drug
+    identifiers.
 - id: finances
   name: Finances and banking
+  kind: topic
+  description: >-
+    Money and its institutions: bank accounts and bank codes, payment cards,
+    tax and VAT numbers, securities identifiers, currencies, and budget and
+    accounting codes.
 - id: datetime
   name: Date and time
+  kind: form
+  description: >-
+    Dates, times, durations, periods and time zones, in any notation.
 - id: government
   name: Government related
+  kind: topic
+  description: >-
+    Values that public bodies issue or use: codes of public bodies, budget
+    classifications, procurement and grant numbers, official registers and
+    document numbers, and administrative divisions.
 - id: science
   name: Scientific
+  kind: topic
+  description: >-
+    Research and its objects: identifiers of researchers, research
+    organizations, publications and grants, biological and genomic
+    databases, taxonomies and scientific classifications.
 - id: companies
   name: Companies/business/organizations
+  kind: topic
+  description: >-
+    Legal entities: registration numbers of companies, charities and other
+    organizations, legal forms, and names and parts of organizations.
 - id: internet
   name: Internet
+  kind: topic
+  description: >-
+    Network and web values: IP addresses, domain names, URLs, email
+    addresses, and identifiers used by internet protocols and services.
 - id: identifiers
   name: Universal unique identifiers
+  kind: form
+  description: >-
+    Identifiers that can name any kind of object, such as UUID and ULID,
+    and identifier schemes that are not tied to one subject.
 - id: objectids
   name: Objects identifiers
+  kind: form
+  description: >-
+    Identifiers of things that are catalogued, such as books, products,
+    works and authority records.
 - id: cryptography
   name: Cryptographic identifiers
+  kind: topic
+  description: >-
+    Values that cryptography produces: hashes, keys, certificates and
+    fingerprints. A key that gives access also belongs in secrets.
 - id: persons
   name: Person related
+  kind: topic
+  description: >-
+    Natural persons: names and parts of names, personal identity numbers
+    and documents, titles, occupations and demographic attributes.
 - id: cryptocurrency
   name: Cryptocurrency
+  kind: topic
+  description: >-
+    Blockchains and crypto assets: wallet addresses, transaction hashes,
+    asset tickers and chain identifiers.
 - id: transport
   name: Transportation
+  kind: topic
+  description: >-
+    Vehicles and travel: vehicle, vessel and aircraft identifiers, licence
+    plates, stations, airports, routes and flight numbers.
 - id: values
   name: All measurable values (percentage, amount and e.t.c)
+  kind: form
+  description: >-
+    Quantities and measurements: amounts, percentages, dimensions, physical
+    measurements and units of measure.
 - id: chemistry
   name: Chemistry
+  kind: topic
+  description: >-
+    Chemical substances and their notations: registry numbers, structure
+    notations, formulas and hazard classifications.
 - id: industry
   name: Industry
+  kind: topic
+  description: >-
+    Economic activity and production: classifications of industries,
+    products and occupations, and codes of industrial products.
 - id: gs1
   name: GS1 standards
+  kind: standard
+  description: >-
+    Identification keys and application identifiers that the GS1 standards
+    define, such as GTIN, GLN and SSCC.
 - id: software
   name: Software development
+  kind: topic
+  description: >-
+    Software, its development and its security: versions, package names,
+    file formats and file hashes, and identifiers of vulnerabilities and
+    attack techniques.
 - id: media
   name: Media and entertainment
+  kind: topic
+  description: >-
+    Films, music, video and mass media: identifiers of works and their
+    contributors, genres and ratings.
 - id: texts
-  name: Texts and  articles
+  name: Texts and articles
+  kind: topic
+  description: >-
+    Text content and its parts: titles, headlines, abstracts, comments and
+    keywords, identifiers of articles, and character encodings.
 - id: useraccounts
   name: User accounts in products and services
+  kind: topic
+  description: >-
+    Accounts in online products and services: user names, handles and user
+    identifiers.
 - id: telecom
   name: Telecommunications
+  kind: topic
+  description: >-
+    Telephone and mobile networks: phone numbers and their parts, device
+    and subscriber identifiers, network codes and radio call signs.
 - id: shipping
   name: Shipping and delivery
+  kind: topic
+  description: >-
+    Movement of goods: tracking and container numbers, customs and tariff
+    codes, ports and delivery terms.
 - id: dublincore
   name: Dublin Core
-
-# Added to support categories referenced in datatype definitions
+  kind: standard
+  description: >-
+    The fifteen elements of the Dublin Core Metadata Element Set and the
+    DCMI terms that refine them.
 - id: education
   name: Education
+  kind: topic
+  description: >-
+    Schools, universities and learning: identifiers of institutions,
+    programmes, qualifications, students and teachers.
 - id: environment
   name: Environment (protected areas, biodiversity, water, weather, emissions, waste)
+  kind: topic
+  description: >-
+    The natural environment and its monitoring: protected areas, species
+    observations, water bodies, weather and air quality measurements,
+    emissions and waste.
 - id: legal
   name: Legal and compliance
+  kind: topic
+  description: >-
+    Law and its application: identifiers of legislation, court cases,
+    licences, patents and trademarks.
 - id: ecommerce
   name: E-commerce
+  kind: topic
+  description: >-
+    Online trade: order, cart and transaction numbers, product codes and
+    product classifications.
 - id: realestate
   name: Real estate
+  kind: topic
+  description: >-
+    Land and buildings: cadastral and parcel numbers, building and dwelling
+    identifiers, planning zones and applications, and property
+    classifications.
 - id: publishing
   name: Publishing and print
+  kind: topic
+  description: >-
+    Published works and their makers: identifiers of books, serials,
+    articles, publishers and library authority records.
 - id: secrets
   name: Secrets and credentials (passwords, keys, tokens)
+  kind: topic
+  description: >-
+    Values that give access and must not be disclosed: passwords, API keys,
+    access tokens and private keys.
 - id: energy
   name: Energy (electricity, gas, metering)
+  kind: topic
+  description: >-
+    Production, supply and use of energy: power plants, grid nodes,
+    metering points, and energy performance certificates.
 - id: agriculture
   name: Agriculture, livestock and food
+  kind: topic
+  description: >-
+    Farming and food: holdings, animals, crops and plant varieties, and
+    food products and their safety.
