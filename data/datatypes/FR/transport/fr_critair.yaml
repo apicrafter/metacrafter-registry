@@ -1,0 +1,36 @@
+id: fr_critair
+name: French Crit'Air vehicle class
+status: draft
+doc: 'Class of the Crit''Air air quality certificate (certificat qualité de l''air) of a road vehicle
+  in France, introduced in 2016: E (zero emission, electric or hydrogen) and 1 to 5 by falling Euro emission
+  standard and age; older vehicles are not classified. Low-emission zones (zones à faibles émissions,
+  ZFE) and pollution episodes restrict traffic by class. The data of the Strasbourg low-emission zone
+  write the least clean class still allowed for each kind of vehicle as V2 to V5 (vp_critair, pl_critair),
+  other sources as Crit''Air 3 or a digit. A digit alone is a class only in a field named after it.'
+parent: category
+categories:
+- transport
+- environment
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+examples:
+- value: V3
+  description: Crit'Air 3 as the data of the Strasbourg low-emission zone write it
+- value: Crit'Air 2
+- value: E
+  description: zero-emission vehicle
+- value: V6
+  valid: false
+  description: no class 6
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Certificat_qualit%C3%A9_de_l%27air
+translations:
+  fr:
+    name: Classe Crit'Air
+  ru:
+    name: Класс Crit'Air (Франция)

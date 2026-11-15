@@ -1,0 +1,27 @@
+id: genomic_region
+name: Genomic region (chromosome:start-end)
+status: draft
+doc: Region of a genome written as the chromosome or sequence name, a colon and the first and last positions
+  joined by a hyphen, the notation of genome browsers and of tools such as samtools (1:78181-78321, chrX:155000000-155100000);
+  a strand or more digits may follow (chr1:100-200:+). The positions are 1-based in this notation, and
+  the start is not after the end.
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:chr)?[0-9A-Za-z_.]{1,12}:\d{1,10}-\d{1,10}(?::[+-])?$
+examples:
+- value: 1:78181-78321
+  description: a small ORF on chromosome 1 of Arabidopsis (ARA-PEPs, KU Leuven)
+- value: chrX:155000000-155100000
+- value: '10:30'
+  valid: false
+  description: a time of day
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Locus_(genetics)
+translations:
+  ru:
+    name: Участок генома (хромосома:начало-конец)

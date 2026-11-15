@@ -1,0 +1,33 @@
+id: be_icar_address_id
+name: ICAR address identifier (Wallonia)
+status: draft
+doc: Identifier of an address (a house number of a street) in ICAR, the Inventaire centralisé des adresses
+  et des rues of the Service public de Wallonie, the reference address register of the Walloon Region
+  and its part of BeST Address. Municipal open data of Wallonia give it beside the street identifier (be_icar_street_id)
+  for the address of a point (icar_address_id 1108066 of the City of Liège); a point between addresses
+  has 0. The identifiers are integers of up to eight digits, so a value is an ICAR address identifier
+  in a field named after it.
+parent: id
+categories:
+- geo
+- government
+country:
+- BE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,7}$
+examples:
+- value: '1108066'
+  description: an address of Liège (drinking water points)
+- value: '1873476'
+  description: an address of Liège (defibrillators)
+- value: '0'
+  valid: false
+  description: placeholder of a point between addresses
+translations:
+  fr:
+    name: Identifiant d'adresse ICAR (Wallonie)
+  ru:
+    name: Идентификатор адреса ICAR (Валлония)

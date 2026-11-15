@@ -1,0 +1,31 @@
+id: chromosome
+name: Chromosome (name or number)
+status: draft
+doc: 'Name of a chromosome or organelle genome in a table of genes, variants or features: a number (1
+  to 22 and X, Y for humans, 1 to 5 for Arabidopsis), with or without the prefix chr (chr7, chrX), MT
+  or M for the mitochondrial and Pt or C for the chloroplast genome. Small numbers and single letters
+  are also other things, so a value is a chromosome in a field named after it (Chr, chrom, chromosome,
+  seqname).'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:chr)?(?:[1-9]\d?|[XYWZ]|MT?|Mt|Pt|C|Un)$
+examples:
+- value: '1'
+  description: chromosome 1 of Arabidopsis (ARA-PEPs, KU Leuven)
+- value: Mt
+  description: the mitochondrial genome of Arabidopsis
+- value: chrX
+- value: chromosome one
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Chromosome
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q37748
+translations:
+  ru:
+    name: Хромосома (номер или название)

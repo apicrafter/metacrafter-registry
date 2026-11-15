@@ -1,0 +1,35 @@
+id: tair_locus_id
+name: Arabidopsis AGI locus identifier (TAIR)
+status: draft
+doc: 'Arabidopsis Genome Initiative (AGI) code of a locus of Arabidopsis thaliana, as The Arabidopsis
+  Information Resource (TAIR) and Araport use it: AT, the chromosome (1 to 5, C for the chloroplast, M
+  for the mitochondrion), G and five digits numbered along the chromosome (AT1G01115); a gene model adds
+  a dot and its number (AT1G01115.1). Annotation tables list several matches in one cell, separated by
+  commas (AT1G12672.1, AT1G12663.1).'
+parent: id
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^AT[1-5CM]G\d{5}(?:\.\d{1,2})?$
+examples:
+- value: AT1G01115.1
+  description: gene model of a locus matched by a small ORF (ARA-PEPs, KU Leuven)
+- value: AT3G57157
+  description: a locus of chromosome 3, TAIR10 annotation of a transcriptionally active region
+- value: ATCG00490
+  description: a chloroplast locus (rbcL)
+- value: AT6G01115
+  valid: false
+  description: Arabidopsis has five nuclear chromosomes
+- value: AT1G0111
+  valid: false
+  description: four digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/The_Arabidopsis_Information_Resource
+translations:
+  ru:
+    name: Идентификатор локуса AGI (Arabidopsis, TAIR)

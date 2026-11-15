@@ -1,0 +1,43 @@
+id: be_judicial_arrondissement
+name: Belgian judicial arrondissement (name)
+status: draft
+doc: 'Name of a judicial arrondissement (arrondissement judiciaire, gerechtelijk arrondissement), the
+  territory of a court of first instance. Since the reform of 1 April 2014 there are twelve: Antwerpen,
+  Limburg, Oost-Vlaanderen, West-Vlaanderen, Leuven, Brussel/Bruxelles, Brabant wallon, Hainaut, Liège,
+  Luxembourg, Namur and Eupen; Halle-Vilvoorde is a part of the arrondissement of Brussels. Most of them
+  cover a province, so the names are also province names: a value is a judicial arrondissement in a field
+  named after it. They differ from the 43 administrative arrondissements (be_arrondissement).'
+parent: district
+categories:
+- government
+- legal
+country:
+- BE
+langs:
+- fr
+- nl
+- de
+is_pii: false
+classification: categorical
+examples:
+- value: Hainaut
+  description: the judicial arrondissement of the province of Hainaut (Mons and Charleroi divisions)
+- value: Bruxelles
+  description: the judicial arrondissement of Brussels
+- value: Oost-Vlaanderen
+  description: in Dutch, as the ARES list of higher education sites writes it
+- value: Eupen
+  description: the German-speaking judicial arrondissement
+- value: Charleroi
+  valid: false
+  description: a judicial arrondissement until 2014, now a division of the court of Hainaut
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Arrondissement_judiciaire_(Belgique)
+translations:
+  fr:
+    name: Arrondissement judiciaire belge
+  nl:
+    name: Gerechtelijk arrondissement (België)
+  ru:
+    name: Судебный округ Бельгии (название)

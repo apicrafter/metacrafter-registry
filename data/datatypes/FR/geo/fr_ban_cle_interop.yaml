@@ -1,0 +1,43 @@
+id: fr_ban_cle_interop
+name: French BAN address interoperability key (clé d'interopérabilité)
+status: draft
+doc: 'Key of an address of the Base Adresse Nationale (BAN) and of the local address bases (Base Adresse
+  Locale, BAL) of French municipalities: the INSEE code of the commune, the FANTOIR code of the street
+  (fr_rivoli, four characters without the check letter) and the house number in five digits, joined by
+  underscores, with the suffix of a number (bis, ter, a) at the end, all in lowercase: 67482_3379_00019
+  is number 19 of a street of Strasbourg, 67519_0940_00015_bis would be 15 bis. A key of the street alone
+  has two parts (67482_0241). The BAL format calls it cle_interop.'
+parent: id
+categories:
+- geo
+- government
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{5}|2[ab]\d{3})_[0-9a-z]{4}(?:_\d{5}(?:_[0-9a-z]+)?)?$
+examples:
+- value: '67519_0940_00015'
+  description: an address of the Base Adresse Locale of the Eurométropole de Strasbourg
+- value: '67482_3379_00019'
+  description: an address of Strasbourg, digital mediation places
+- value: '67482_0241'
+  description: a street of Strasbourg without a number
+- value: 67482_3086F_00019
+  valid: false
+  description: RIVOLI code with its check letter
+- value: 67482-3379-00019
+  valid: false
+  description: hyphens instead of underscores
+links:
+- type: doc
+  url: https://doc.adresse.data.gouv.fr/
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Base_adresse_nationale
+translations:
+  fr:
+    name: Clé d'interopérabilité d'une adresse (BAN, BAL)
+  ru:
+    name: Ключ интероперабельности адреса BAN (Франция)
