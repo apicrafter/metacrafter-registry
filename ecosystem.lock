@@ -2,4 +2,4 @@
 # Update with: metacrafter-registry coverage update --rules-dir <checkout>
 metacrafter-rules:
   repo: apicrafter/metacrafter-rules
-  ref: 4d6d86400819e5a1015e99cf43f5793dd02d50ed
+  ref: 3ab2edfff266f82ca620cb0f054a28e995716f00
