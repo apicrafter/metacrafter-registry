@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "d22a41debcd2f57d5dfe7b7ed59badcc92076e8d"
+  "ref": "0c0bb07f1ca4dd1d9a78d19486683439cf07dae2"
  },
  "rules": [
   {
@@ -1315,6 +1315,56 @@
    "country_code": "ar"
   },
   {
+   "rule": "arlicitacionnumberbyname",
+   "key": "ar_licitacion_number",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_pba.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arlicitacionnumbervalue",
+   "key": "ar_licitacion_number",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_pba.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arpbadipregepbyname",
+   "key": "ar_pba_dipregep_number",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_pba.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arpbaschoolservicebyname",
+   "key": "ar_pba_school_service",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_pba.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arpbaschoolservicevalue",
+   "key": "ar_pba_school_service",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_pba.yaml",
+   "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
    "rule": "aranpcytfundvalue",
    "key": "ar_anpcyt_fund",
    "type": "data",
@@ -1705,6 +1755,26 @@
    "country_code": "au"
   },
   {
+   "rule": "aualgaealertcolourbyname",
+   "key": "au_algae_alert_level",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_environment.yaml",
+   "context": "environment",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "aualgaealertlevelbyname",
+   "key": "au_algae_alert_level",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_environment.yaml",
+   "context": "environment",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
    "rule": "auausplotssiteidbyname",
    "key": "au_ausplots_site_id",
    "type": "field",
@@ -1915,6 +1985,16 @@
    "country_code": "au"
   },
   {
+   "rule": "aucouncilwardbyname",
+   "key": "au_council_ward",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
    "rule": "aufederalelectoraldivisionbyname",
    "key": "au_federal_electoral_division",
    "type": "field",
@@ -2115,6 +2195,16 @@
    "country_code": "au"
   },
   {
+   "rule": "auheritagesignificancebyname",
+   "key": "au_heritage_significance",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_legal.yaml",
+   "context": "legal",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
    "rule": "aupatentapplicationbyname",
    "key": "au_patent_application_number",
    "type": "field",
@@ -2127,6 +2217,56 @@
   {
    "rule": "aupbrapplicationbyname",
    "key": "au_pbr_application_number",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_legal.yaml",
+   "context": "legal",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "ausnwdcpbyname",
+   "key": "au_nsw_dcp",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_legal.yaml",
+   "context": "legal",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "ausnwdcpvalue",
+   "key": "au_nsw_dcp",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_legal.yaml",
+   "context": "legal",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "ausnwepibyname",
+   "key": "au_nsw_epi",
+   "type": "field",
+   "match": "regex",
+   "file": "au/au_legal.yaml",
+   "context": "legal",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "ausnwepivalue",
+   "key": "au_nsw_epi",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_legal.yaml",
+   "context": "legal",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "ausnwheritageitemnumberbyname",
+   "key": "au_nsw_heritage_item_number",
    "type": "field",
    "match": "regex",
    "file": "au/au_legal.yaml",
@@ -4935,6 +5075,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "conductivitybysensorname",
+   "key": "electrical_conductivity",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "dissolvedoxygenbyname",
+   "key": "dissolved_oxygen",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "eeaeoistationcodevalue",
    "key": "eea_eoi_station_code",
    "type": "data",
@@ -4995,6 +5155,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "phbysensorname",
+   "key": "ph_value",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "polymertypebyfield",
    "key": "polymer_type",
    "type": "field",
@@ -5015,6 +5185,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "salinitybysensorname",
+   "key": "salinity",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "sensorcommunityvaluetypebyname",
    "key": "sensor_community_value_type",
    "type": "field",
@@ -5027,6 +5207,26 @@
   {
    "rule": "soilhorizonbyname",
    "key": "soil_horizon",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "totaldissolvedsolidsbysensorname",
+   "key": "total_dissolved_solids",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "turbiditybysensorname",
+   "key": "turbidity",
    "type": "field",
    "match": "regex",
    "file": "common/environment.yaml",
@@ -5135,6 +5335,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "cardinaldirectionbyname",
+   "key": "cardinal_direction",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "cityknown",
    "key": "city",
    "type": "field",
@@ -5219,6 +5429,16 @@
    "key": "easting",
    "type": "field",
    "match": "text",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "eastingbyxcoordname",
+   "key": "easting",
+   "type": "field",
+   "match": "regex",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -5349,6 +5569,16 @@
    "key": "geopoint",
    "type": "field",
    "match": "text",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "geopointgeolocationbyname",
+   "key": "geopoint",
+   "type": "field",
+   "match": "regex",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -5585,6 +5815,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "northingbyycoordname",
+   "key": "northing",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "pluscodevalue",
    "key": "plus_code",
    "type": "data",
@@ -5770,6 +6010,16 @@
    "type": "data",
    "match": "func",
    "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "geojsongeometrylongtext",
+   "key": "geojson",
+   "type": "data",
+   "match": "func",
+   "file": "common/geo_text.yaml",
    "context": "geo",
    "lang": "common",
    "country_code": "xx"
@@ -8105,6 +8355,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "vernacularnamebyname",
+   "key": "vernacular_name",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "vernacularnamewithscientificbyspecies",
+   "key": "vernacular_name",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "awbnumberfield",
    "key": "awbnumber",
    "type": "field",
@@ -9575,6 +9845,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "energyamountbyname",
+   "key": "energy_amount",
+   "type": "field",
+   "match": "regex",
+   "file": "common/values.yaml",
+   "context": "values",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "moneyamountbyfield",
    "key": "money",
    "type": "field",
@@ -9606,6 +9886,16 @@
   },
   {
    "rule": "temperaturebyname",
+   "key": "temperature",
+   "type": "field",
+   "match": "regex",
+   "file": "common/values.yaml",
+   "context": "values",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "temperaturebysensorname",
    "key": "temperature",
    "type": "field",
    "match": "regex",
@@ -9655,6 +9945,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "eschassisnumberbyname",
+   "key": "chassis_number",
+   "type": "field",
+   "match": "regex",
+   "file": "common/vehicles.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "esenginenumberbyname",
+   "key": "engine_number",
+   "type": "field",
+   "match": "regex",
+   "file": "common/vehicles.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "vehiclenumberbyfieldname",
    "key": "vehiclenumber",
    "type": "field",
@@ -9669,6 +9979,16 @@
    "key": "vehiclenumber",
    "type": "data",
    "match": "ppr",
+   "file": "common/vehicles.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "vehicletypebyname",
+   "key": "vehicle_type",
+   "type": "field",
+   "match": "regex",
    "file": "common/vehicles.yaml",
    "context": "transport",
    "lang": "common",
@@ -10525,6 +10845,26 @@
    "country_code": "es"
   },
   {
+   "rule": "esbrandbyname",
+   "key": "brand",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_common.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esmodelyearbyname",
+   "key": "year",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_common.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esphonebyname",
    "key": "phone",
    "type": "field",
@@ -10539,6 +10879,26 @@
    "key": "phone",
    "type": "field",
    "match": "text",
+   "file": "es/es_common.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "estreespeciesbyname",
+   "key": "species",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_common.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "estreespeciesvalue",
+   "key": "species",
+   "type": "data",
+   "match": "func",
    "file": "es/es_common.yaml",
    "context": "common",
    "lang": "es",
@@ -10875,8 +11235,38 @@
    "country_code": "es"
   },
   {
+   "rule": "esmedicalspecialtybyname",
+   "key": "medical_specialty",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_med.yaml",
+   "context": "medical",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esmedicalspecialtyvalue",
+   "key": "medical_specialty",
+   "type": "data",
+   "match": "func",
+   "file": "es/es_med.yaml",
+   "context": "medical",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esfullnamebyname",
    "key": "person_fullname",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_persons.yaml",
+   "context": "persons",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esjobtitlebyname",
+   "key": "jobtitle",
    "type": "field",
    "match": "regex",
    "file": "es/es_persons.yaml",
@@ -10919,6 +11309,16 @@
    "key": "esnif",
    "type": "data",
    "match": "ppr",
+   "file": "es/es_persons.yaml",
+   "context": "persons",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esofficialfullnamebyname",
+   "key": "person_fullname",
+   "type": "field",
+   "match": "regex",
    "file": "es/es_persons.yaml",
    "context": "persons",
    "lang": "es",

@@ -1,0 +1,34 @@
+id: energy_amount
+name: Amount of energy
+status: draft
+doc: 'A quantity of energy, most often electricity generated, consumed or exported over a period: in watt-hours
+  and their multiples (Wh, kWh, MWh, GWh), in joules (kJ, MJ, GJ, PJ) or, for food, in kilocalories. Meter
+  readings, solar generation logs and energy statistics write it as a number with the unit in the column
+  name (energy_generated in kWh of the solar systems of Camden Council, New South Wales; consumption_kwh)
+  or in the value. Power (kW) is a rate, not an amount of energy. The regular expression recognizes values
+  that carry the unit.'
+parent: numeric
+categories:
+- energy
+- values
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^-?\d+(?:[.,]\d+)?\s?(?:[kMGT]?Wh|[kMGTP]?J|kcal)$
+examples:
+- value: 9.059 kWh
+  description: hourly output of a council building's solar system
+- value: 1200 MWh
+- value: 35 GJ
+- value: 5 kW
+  valid: false
+  description: a power, not an amount of energy
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Kilowatt-hour
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q11379
+translations:
+  ru:
+    name: Количество энергии

@@ -1,0 +1,34 @@
+id: au_nsw_dcp
+name: NSW development control plan
+status: draft
+doc: 'Title of a development control plan (DCP) of New South Wales, Australia: the detailed planning and
+  design guidelines a council adopts under section 3.42 of the Environmental Planning and Assessment Act
+  1979 to support its local environmental plan, for its whole area or for a precinct or estate (Camden
+  DCP 2019, Camden Growth Centre Precincts DCP, Oran Park DCP, Turner Road DCP; Hornsby Development Control
+  Plan 2013). A DCP guides but does not bind, and an environmental planning instrument (au_nsw_epi) prevails
+  over it. Councils publish their DCPs on the NSW Planning Portal; the dcp1 to dcp4 fields of the Camden
+  planning instruments map name them.'
+categories:
+- legal
+- realestate
+- government
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Camden DCP 2019
+- value: Camden Growth Centre Precincts DCP
+- value: Oran Park DCP
+- value: Hornsby Development Control Plan 2013
+- value: Camden LEP 2010
+  valid: false
+  description: an environmental planning instrument
+links:
+- type: doc
+  url: https://www.planningportal.nsw.gov.au/DCP
+translations:
+  ru:
+    name: План контроля застройки Нового Южного Уэльса (DCP)

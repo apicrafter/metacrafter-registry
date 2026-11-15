@@ -1,0 +1,36 @@
+id: au_algae_alert_level
+name: Australian blue-green algae alert level
+status: draft
+doc: 'Alert level for blue-green algae (cyanobacteria) in a recreational water body or a water supply
+  in Australia, after the alert levels framework of the NHMRC Guidelines for Managing Risks in Recreational
+  Water: Green (low numbers, surveillance), Amber (algae multiplying, take care) and Red (a bloom, avoid
+  contact). WaterNSW, councils and the water authorities of other states publish the level of each site
+  with the sample date (current_new_alert_status and previous_alert_status of the Camden Council algae
+  alerts: Green alert, Amber alert, Red alert, No alert). Other alert colours (yellow and amber weather
+  warnings, an AMBER child abduction alert) are not algae alert levels.'
+parent: category
+categories:
+- environment
+- medical
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Green alert
+- value: Amber alert
+- value: Red alert
+- value: No alert
+- value: Yellow warning
+  valid: false
+  description: a weather warning level
+links:
+- type: doc
+  url: https://www.nhmrc.gov.au/about-us/publications/guidelines-managing-risks-recreational-water
+- type: doc
+  url: https://www.waternsw.com.au/water-services/water-quality/algae-alerts
+translations:
+  ru:
+    name: Уровень тревоги по сине-зелёным водорослям (Австралия)

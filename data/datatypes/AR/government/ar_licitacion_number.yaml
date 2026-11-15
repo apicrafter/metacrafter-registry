@@ -1,0 +1,36 @@
+id: ar_licitacion_number
+name: Argentine tender number (licitación)
+status: draft
+doc: 'Number of a procurement procedure of an Argentine municipality, province or public body that does
+  not use COMPR.AR: the kind of procedure, a sequence number and the year, as in Licitación Pública N°
+  12/2021, Licitación Privada Nº 29/2018, Concurso de Precios N° 3/2019 or Contratación Directa N° 45/20.
+  Lists of works, purchases and their certificates abbreviate the kind (LPub Nº 03/2018, Lpriv Nº 29/2018,
+  LP 5/2020, CP 7/2019). The numbers of COMPR.AR, CONTRAT.AR and BAC are ar_compras_procedure_number.'
+categories:
+- government
+- finances
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:[Ll]icitaci[oó]n\s+(?:[Pp][uú]blica|[Pp]rivada)|LICITACI[OÓ]N\s+(?:P[UÚ]BLICA|PRIVADA)|[Cc]oncurso\s+de\s+[Pp]recios|CONCURSO\s+DE\s+PRECIOS|[Cc]ontrataci[oó]n\s+[Dd]irecta|CONTRATACI[OÓ]N\s+DIRECTA|L[Pp]ub|L[Pp]riv|LPUB|LPRIV|LPR|LP|CP|CD|L\.\s?P\.)\s*(?:[Nn][°ºo.]?|[Nn]ro\.?|NRO\.?)?\s*\d{1,5}\s*/\s*(?:\d{2}|\d{4})$
+examples:
+- value: LPub Nº 03/2018
+  description: a public tender of the municipality of Mercedes (Buenos Aires)
+- value: Lpriv Nº 29/2018
+  description: a private tender of the same list
+- value: Licitación Pública N° 12/2021
+- value: Concurso de Precios N° 3/2019
+- value: 452-0001-LPU17
+  valid: false
+  description: 'a COMPR.AR process number: ar_compras_procedure_number'
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Licitaci%C3%B3n_p%C3%BAblica
+- type: doc
+  url: https://datosabiertos.mercedes.gob.ar/dataset/listado-general-de-obras-2018
+translations:
+  es:
+    name: Número de licitación
