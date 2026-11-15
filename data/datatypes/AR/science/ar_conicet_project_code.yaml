@@ -1,0 +1,35 @@
+id: ar_conicet_project_code
+name: Argentine CONICET project code
+status: draft
+doc: 'Sixteen-character code of a research project funded by the Consejo Nacional de Investigaciones Científicas
+  y Técnicas (CONICET) of Argentina: three digits for the call (112 and 114 for the Proyectos de Investigación
+  Plurianuales, PIP; 229 for the Proyectos de Unidades Ejecutoras, P-UE; others for the Proyectos de Investigación
+  Orientada), the four-digit year of the call, 01, a five-digit number and the suffix CO. The SICYTAR
+  projects list gives it as codigo_identificacion.'
+parent: grant_number
+categories:
+- science
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{3}(?:19|20)\d{2}01\d{5}CO$
+examples:
+- value: 11220150100433CO
+  description: a PIP of the 2015 call
+- value: 22920160100012CO
+  description: a P-UE of the 2016 call
+- value: '11220150100433'
+  valid: false
+  description: without the CO suffix
+links:
+- type: doc
+  url: https://convocatorias.conicet.gov.ar/proyectos-de-investigacion-plurianuales/
+- type: doc
+  url: https://datasets.datos.mincyt.gob.ar/dataset/proyectos-de-ciencia-tecnologia-e-innovacion
+translations:
+  es:
+    name: Código de proyecto del CONICET

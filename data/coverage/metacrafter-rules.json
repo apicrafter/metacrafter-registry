@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "cc62652a3f23204414843be01fb4651d043b6b96"
+  "ref": "4d6d86400819e5a1015e99cf43f5793dd02d50ed"
  },
  "rules": [
   {
@@ -995,6 +995,26 @@
    "country_code": "ar"
   },
   {
+   "rule": "arbahracodebyname",
+   "key": "ar_bahra_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arbahradepartmentpartbyname",
+   "key": "ar_indec_department_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_geo.yaml",
+   "context": "geo",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
    "rule": "arcentroidlatitudebyname",
    "key": "latitude",
    "type": "field",
@@ -1291,6 +1311,76 @@
    "match": "regex",
    "file": "ar_country/ar_mendoza.yaml",
    "context": "government",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "aranpcytfundvalue",
+   "key": "ar_anpcyt_fund",
+   "type": "data",
+   "match": "text",
+   "file": "ar_country/ar_science.yaml",
+   "context": "science",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "aranpcytprojectcodevalue",
+   "key": "ar_anpcyt_project_code",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_science.yaml",
+   "context": "science",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arconicetcategorybyname",
+   "key": "ar_conicet_category",
+   "type": "field",
+   "match": "regex",
+   "file": "ar_country/ar_science.yaml",
+   "context": "science",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arconicetcategoryvalue",
+   "key": "ar_conicet_category",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_science.yaml",
+   "context": "science",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arconicetprojectcodevalue",
+   "key": "ar_conicet_project_code",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_science.yaml",
+   "context": "science",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "arcytprojectcodevalue",
+   "key": "grant_number",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_science.yaml",
+   "context": "science",
+   "lang": "es",
+   "country_code": "ar"
+  },
+  {
+   "rule": "armincytequipmentidvalue",
+   "key": "ar_mincyt_equipment_id",
+   "type": "data",
+   "match": "func",
+   "file": "ar_country/ar_science.yaml",
+   "context": "science",
    "lang": "es",
    "country_code": "ar"
   },
@@ -4755,6 +4845,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "publisherbyname",
+   "key": "dc_publisher",
+   "type": "field",
+   "match": "regex",
+   "file": "common/dublincore.yaml",
+   "context": "dublincore",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "cartidknown",
    "key": "cart_id",
    "type": "field",
@@ -7261,6 +7361,116 @@
    "match": "ppr",
    "file": "common/realestate.yaml",
    "context": "realestate",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "abstractbyname",
+   "key": "abstract",
+   "type": "field",
+   "match": "regex",
+   "file": "common/research.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "grantnumberbyname",
+   "key": "grant_number",
+   "type": "field",
+   "match": "regex",
+   "file": "common/research.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "isicrev4byname",
+   "key": "isicrev4",
+   "type": "field",
+   "match": "regex",
+   "file": "common/research.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "journalquartilevalue",
+   "key": "journal_quartile",
+   "type": "data",
+   "match": "func",
+   "file": "common/research.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "journaltitlebyname",
+   "key": "journal_title",
+   "type": "field",
+   "match": "regex",
+   "file": "common/research.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "journalvolumebyname",
+   "key": "journal_volume",
+   "type": "field",
+   "match": "regex",
+   "file": "common/research.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "keywordbyname",
+   "key": "keyword",
+   "type": "field",
+   "match": "regex",
+   "file": "common/research.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "oecdfordcodebyname",
+   "key": "oecd_ford_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/research.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "oecdfordcodevalue",
+   "key": "oecd_ford_code",
+   "type": "data",
+   "match": "func",
+   "file": "common/research.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "pagenumberbyname",
+   "key": "page_number",
+   "type": "field",
+   "match": "regex",
+   "file": "common/research.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "worktitlebyname",
+   "key": "title",
+   "type": "field",
+   "match": "regex",
+   "file": "common/research.yaml",
+   "context": "science",
    "lang": "common",
    "country_code": "xx"
   },
