@@ -1,0 +1,31 @@
+id: journal_quartile
+name: Journal quartile (SJR, JCR)
+status: draft
+doc: 'Quartile of a journal among the journals of its subject category in a citation index, ranked by
+  an impact indicator: Q1 for the top quarter to Q4 for the bottom one. SCImago Journal Rank (SJR, from
+  Scopus) and Journal Citation Reports (JCR, from Web of Science) publish them per category and year;
+  research information systems copy the best quartile of the journal of each article, as the revista_sjr
+  column of the Argentine SICYTAR, which writes NO INDEXADO for a journal outside the index.'
+parent: category
+categories:
+- publishing
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[Qq][1-4]$
+examples:
+- value: Q1
+- value: Q4
+- value: Q5
+  valid: false
+  description: there are four quartiles
+links:
+- type: doc
+  url: https://www.scimagojr.com/help.php
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/SCImago_Journal_Rank
+translations:
+  es:
+    name: Cuartil de la revista (SJR, JCR)

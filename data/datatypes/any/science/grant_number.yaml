@@ -1,0 +1,32 @@
+id: grant_number
+name: Research grant or award number
+status: draft
+doc: 'Number or code that a funder gives to a research, development or innovation project it funds: the
+  award number of a grant agreement, cited in the acknowledgements of articles and in the funding metadata
+  of Crossref and DataCite (award_number) beside the funder (crossref_funder_id). Every funder has its
+  own scheme: R01GM123456 of the US National Institutes of Health, 2023456 of the National Science Foundation,
+  the project numbers of the EU framework programmes (eu_grant_agreement_number), PICT-2015-1234 of the
+  Argentine ANPCyT (ar_anpcyt_project_code), 11220150100433CO of CONICET (ar_conicet_project_code).'
+parent: id
+categories:
+- science
+- identifiers
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: R01GM123456
+  description: a National Institutes of Health grant
+- value: PICT-2015-1234
+  description: an ANPCyT project
+- value: 11220150100433CO
+  description: a CONICET project
+links:
+- type: doc
+  url: https://www.crossref.org/documentation/funder-registry/
+- type: doc
+  url: https://datacite-metadata-schema.readthedocs.io/en/4.5/properties/fundingreference/
+translations:
+  es:
+    name: Código de proyecto o subsidio de investigación

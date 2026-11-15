@@ -1,0 +1,37 @@
+id: ar_mincyt_equipment_id
+name: Argentine national system equipment code (MINCYT Sistemas Nacionales)
+status: draft
+doc: 'Code of a large scientific instrument registered in one of the Sistemas Nacionales of the Argentine
+  science ministry (MINCYT), which share equipment among institutions: the acronym of the system, a hyphen
+  and a number. SNM is microscopy, SNEM mass spectrometry, SNRX X-rays, SNRM magnetic resonance, SNB animal
+  facilities (bioterios), SNCAD high-performance computing, SNCF flow cytometry, SNMAG magnetometry and
+  SINALA lasers; the equipment list of SICYTAR gives it as equipo_id (SNM-826, SNCAD-483).'
+parent: id
+categories:
+- science
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:SNM|SNEM|SNRX|SNRM|SNB|SNCAD|SNCF|SNMAG|SINALA|SNDB|SNG|SNBD)-\d{1,5}$
+examples:
+- value: SNM-826
+  description: an electron microscope
+- value: SNCAD-483
+  description: a high-performance computer
+- value: SINALA-1021
+  description: a laser
+- value: SNX-12
+  valid: false
+  description: not a national system
+links:
+- type: doc
+  url: https://www.argentina.gob.ar/ciencia/sistemasnacionales
+- type: doc
+  url: https://datasets.datos.mincyt.gob.ar/dataset/equipamiento-cientifico-tecnologico
+translations:
+  es:
+    name: Código de equipo de los Sistemas Nacionales (MINCYT)

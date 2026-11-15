@@ -1,0 +1,26 @@
+id: journal_title
+name: Journal title
+status: draft
+doc: 'Title of the journal, magazine or other serial in which an article appeared, as bibliographic records
+  give it beside the article: the container title of Crossref, the source title of Scopus, SO of Web of
+  Science, the revista of a Spanish-language research information system. It is the full or abbreviated
+  title, often in capitals (FOOD CHEMISTRY, J. Biol. Chem.); the serial is identified by its issn.'
+parent: title
+categories:
+- publishing
+- texts
+langs:
+- common
+is_pii: false
+examples:
+- value: FOOD CHEMISTRY
+- value: Veterinary Anaesthesia and Analgesia
+- value: J. Biol. Chem.
+  description: an abbreviated title
+- value: Revista Argentina de Microbiología
+links:
+- type: doc
+  url: https://www.issn.org/understanding-the-issn/what-is-an-issn/
+translations:
+  es:
+    name: Título de la revista
