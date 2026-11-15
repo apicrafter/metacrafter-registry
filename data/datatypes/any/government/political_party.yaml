@@ -1,0 +1,27 @@
+id: political_party
+name: Political party (name)
+status: draft
+doc: Name of a political party or of a registered group of candidates, as election results, candidate
+  lists and lists of office holders give it (Australian Labor Party, Canberra Liberals, The Greens). Results
+  tables add rows for independents and ungrouped candidates (Independent, Ungrouped) in the same field.
+  The names are free text, so a value is a party in a field named after it (Party, Party/Group, party_name).
+parent: orgname
+categories:
+- government
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Australian Labor Party
+  description: party of a Chief Minister of the ACT (ACT Legislative Assembly)
+- value: Liberal Party
+- value: The Greens
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Political_party
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q7278
+translations:
+  ru:
+    name: Политическая партия (название)

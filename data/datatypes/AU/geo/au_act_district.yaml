@@ -1,0 +1,38 @@
+id: au_act_district
+name: District of the Australian Capital Territory
+status: draft
+doc: 'Name of one of the nineteen districts of the ACT, the largest units of land division administered
+  under the Districts Act 2002: Belconnen, Booth, Canberra Central, Coree, Cotter River, Gungahlin, Hall,
+  Jerrabomberra, Kowen, Majura, Molonglo Valley, Mount Clear, Paddys River, Rendezvous Creek, Stromlo,
+  Tennent, Tuggeranong, Weston Creek and Woden Valley. Districts are divided into divisions (suburbs,
+  au_suburb), sections (au_act_section) and blocks (au_act_block). ACT registers also write a district
+  in four capitals (BELC, CANB, GUNG, MOLO, TUGG); North Canberra and South Canberra are statistical areas
+  of Canberra Central, not districts.'
+parent: district
+categories:
+- geo
+- government
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Canberra Central
+  description: District of a site of the ACT register of contaminated sites
+- value: Woden Valley
+- value: Paddys River
+- value: TUGG
+  description: Tuggeranong in a college priority placement area of the ACT Education Directorate
+- value: North Canberra
+  valid: false
+  description: an SA3, part of Canberra Central
+links:
+- type: doc
+  url: https://www.legislation.act.gov.au/a/2002-39/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Suburbs_of_Canberra
+translations:
+  ru:
+    name: Округ Австралийской столичной территории

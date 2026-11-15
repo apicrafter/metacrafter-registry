@@ -1,0 +1,27 @@
+id: gtfs_rt_vehicle_stop_status
+name: GTFS Realtime vehicle stop status
+status: draft
+doc: 'Value of the current_status field of a vehicle position in a GTFS Realtime feed (the VehicleStopStatus
+  enumeration), the state of a vehicle towards its current stop: INCOMING_AT (about to arrive), STOPPED_AT
+  (standing at the stop) or IN_TRANSIT_TO (departed the previous stop and on the way). Archives of realtime
+  feeds export the enumeration names as text.'
+parent: category
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:INCOMING_AT|STOPPED_AT|IN_TRANSIT_TO)$
+examples:
+- value: STOPPED_AT
+  description: Canberra Metro light rail vehicle updates
+- value: IN_TRANSIT_TO
+- value: STOPPED
+  valid: false
+links:
+- type: doc
+  url: https://gtfs.org/documentation/realtime/reference/
+translations:
+  ru:
+    name: Статус транспортного средства у остановки (GTFS Realtime)

@@ -1,0 +1,29 @@
+id: gtfs_rt_schedule_relationship
+name: GTFS Realtime schedule relationship
+status: draft
+doc: 'Value of a schedule_relationship field of a GTFS Realtime feed, how a realtime trip or stop time
+  relates to the static schedule. For a trip (TripDescriptor.ScheduleRelationship): SCHEDULED, ADDED (deprecated),
+  UNSCHEDULED, CANCELED, REPLACEMENT, DUPLICATED, NEW or DELETED; for a stop time update: SCHEDULED, SKIPPED,
+  NO_DATA or UNSCHEDULED.'
+parent: category
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:SCHEDULED|ADDED|UNSCHEDULED|CANCELED|CANCELLED|REPLACEMENT|DUPLICATED|NEW|DELETED|SKIPPED|NO_DATA)$
+examples:
+- value: SCHEDULED
+  description: Canberra Metro light rail trip updates
+- value: ADDED
+- value: SKIPPED
+  description: a stop time update
+- value: DELAYED
+  valid: false
+links:
+- type: doc
+  url: https://gtfs.org/documentation/realtime/reference/
+translations:
+  ru:
+    name: Отношение к расписанию (GTFS Realtime)
