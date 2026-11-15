@@ -1,0 +1,36 @@
+id: ar_mendoza_financing_source
+name: Financing source of the budget of Mendoza
+status: draft
+doc: 'Code and name of a financing source (financiamiento, fuente de financiamiento) of the budget of
+  the province of Mendoza, Argentina: 0 Rentas Generales for general revenue and up to three digits for
+  the funds earmarked by a law or an agreement, as 21 Tasa de Justicia, 18 Aranceles por Servicios de
+  Salud, 230 Programa plan nacer or 999 No controla cuota. The budget execution of the provincial administration
+  writes the code and the name separated by a space (0 Rentas Generales), that of the Fondo para la Transformación
+  y el Crecimiento with three digits and a hyphen (000 - Rentas Generales). The national sources (11 Tesoro
+  Nacional, 12 Recursos Propios) are another list.'
+parent: category
+categories:
+- finances
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^\d{1,3}(?:\s*-\s*|\s+)\S.*$
+examples:
+- value: 0 Rentas Generales
+  description: general revenue, in Financiamiento of the budget execution
+- value: 000 - Rentas Generales
+  description: as the Fondo para la Transformación y el Crecimiento writes it
+- value: 21 Tasa de Justicia
+- value: Rentas Generales
+  valid: false
+  description: the name without the code
+links:
+- type: doc
+  url: https://datosabiertos.mendoza.gov.ar/dataset/ejecucion-presupuestaria-de-gastos-de-la-administracion-publica-provincial-2018
+translations:
+  es:
+    name: Financiamiento del presupuesto de Mendoza

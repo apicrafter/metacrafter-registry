@@ -1,0 +1,33 @@
+id: accommodation_star_rating
+name: Star rating of a tourist accommodation
+status: draft
+doc: 'Official category of a hotel or another tourist accommodation in stars, as registers of tourist
+  accommodation give it: 1 ESTRELLA to 5 ESTRELLAS, Sin categorizar in Argentina and Spain, 3 étoiles
+  in France, 4 Sterne Superior in Germany, 4 stars or *** in English, with Superior or S for the upper
+  level of a category. A count of rooms or a review score is not a rating; the class of the establishment
+  is accommodation_type.'
+parent: category
+categories:
+- common
+- realestate
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: 3 ESTRELLAS
+  description: categoria of the register of tourist accommodation of Mendoza
+- value: 1 ESTRELLA
+- value: 4 étoiles
+- value: '****'
+- value: '4.5'
+  valid: false
+  description: a review score
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Hotel_rating
+- type: doc
+  url: https://datosabiertos.mendoza.gov.ar/dataset/alojamientos-turisticos-habilitados
+translations:
+  es:
+    name: Categoría en estrellas de un alojamiento turístico

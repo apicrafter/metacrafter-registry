@@ -1,0 +1,38 @@
+id: ar_electricity_distributor
+name: Argentine electricity distribution company
+status: draft
+doc: 'Name of a company or cooperative that distributes electricity to users in Argentina, as the regulators
+  of the provinces (EPRE Mendoza) and the national ENRE list them in tables of users, tariffs, quality
+  of service, networks and transformer stations: the provincial concessionaires and companies EDENOR,
+  EDESUR, EDELAP, EPEC, EPE, EDEMSA, EDESTE, EDET, EJESA and the electricity cooperatives of smaller towns
+  (Cooperativa Eléctrica de Godoy Cruz, CECSAGAL, Coop. Popular Rivadavia). Tables write them as acronyms
+  (EDEMSA, E.D.E.M.S.A.), with Coop. or Cooperativa or by the town of the cooperative alone (GODOY CRUZ,
+  ALTO VERDE, MONTE COMAN).'
+parent: orgname
+categories:
+- energy
+- companies
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: EDEMSA
+  description: Empresa Distribuidora de Electricidad de Mendoza
+- value: Coop. Godoy Cruz
+  description: Cooperativa Eléctrica de Godoy Cruz, Mendoza
+- value: EDENOR
+  description: the northern half of Greater Buenos Aires
+- value: CAMMESA
+  valid: false
+  description: 'the wholesale market administrator, not a distributor: ar_cammesa_agent_code'
+links:
+- type: doc
+  url: https://www.epremendoza.gov.ar/
+- type: doc
+  url: https://datosabiertos.mendoza.gov.ar/organization/ente-provincial-regulador-electrico
+translations:
+  es:
+    name: Distribuidora de energía eléctrica de la Argentina

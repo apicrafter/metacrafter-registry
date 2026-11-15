@@ -1,0 +1,34 @@
+id: ar_mendoza_cuc
+name: Accounting unit code (CUC) of the public sector of Mendoza
+status: draft
+doc: 'Código de Unidad Contable (CUC): the three-digit code of an accounting unit of the public sector
+  of the province of Mendoza, Argentina, an organism that keeps its own budget accounts, followed by its
+  name in the budget execution and travel allowance tables: 906-Administración Central, 504-Instituto
+  Pcial.de Juegos y Casinos, 259-Hospital Central, 218-Dcción. Gral. de Escuelas. As a bare number it
+  is any code of three digits, so use the field name.'
+parent: orgunit
+categories:
+- government
+- finances
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^\d{3}(?:\s*-\s*\S.*)?$
+examples:
+- value: 906-Administración Central
+  description: CUC of the resources of the provincial administration
+- value: 259-Hospital Central
+- value: '906'
+  description: the code alone, in the travel allowances of officials
+- value: 0 Rentas Generales
+  valid: false
+  description: 'a financing source: ar_mendoza_financing_source'
+links:
+- type: doc
+  url: https://datosabiertos.mendoza.gov.ar/dataset/ejecucion-presupuestaria-de-recursos-de-la-administracion-publica-provincial-2018
+translations:
+  es:
+    name: Código de Unidad Contable (CUC) del sector público de Mendoza

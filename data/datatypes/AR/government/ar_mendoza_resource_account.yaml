@@ -1,0 +1,36 @@
+id: ar_mendoza_resource_account
+name: Resource account of the budget of Mendoza
+status: draft
+doc: 'Ten-digit account of the classification of resources (cuenta contable, partida de recursos) of the
+  budget of the province of Mendoza, Argentina, with its name: the first digit is current (1) or capital
+  (2) resources, the next ones origin, kind and item, as 1000000000-RECURSOS CORRIENTES, 1110000000-TRIBUTARIOS,
+  1110100000-IMPUESTO SOBRE LAS ACTIVIDADES ECONOMICAS and 1120202000 - INT. GANADOS PRESTAMOS. The plan
+  of accounts of the budget execution puts the five-digit code of the accounting unit before it (90604
+  1110101000-Impuesto sobre los ingresos brutos).'
+parent: category
+categories:
+- finances
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^(?:\d{5}\s+)?[1-3]\d{9}\s*-\s*\S.*$
+examples:
+- value: 1110100000-IMPUESTO SOBRE LAS ACTIVIDADES ECONOMICAS
+  description: Cuenta Contable Nivel 4 of the resources of the provincial administration
+- value: 1120202000 - INT. GANADOS PRESTAMOS
+  description: presupuesto_partidas of the Fondo para la Transformación y el Crecimiento
+- value: 90604 1110101000-Impuesto sobre los ingresos brutos
+  description: Plan de cuentas, with the accounting unit
+- value: 41101 PERSONAL PERMANENTE
+  valid: false
+  description: 'an item of expenditure: ar_mendoza_economic_classification'
+links:
+- type: doc
+  url: https://datosabiertos.mendoza.gov.ar/dataset/ejecucion-presupuestaria-de-recursos-de-la-administracion-publica-provincial-2018
+translations:
+  es:
+    name: Cuenta de recursos del presupuesto de Mendoza

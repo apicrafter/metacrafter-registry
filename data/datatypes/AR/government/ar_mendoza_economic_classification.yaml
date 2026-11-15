@@ -1,0 +1,38 @@
+id: ar_mendoza_economic_classification
+name: Economic classification of expenditure of the budget of Mendoza
+status: draft
+doc: 'Item of the economic classification of expenditure (clasificación económica de las erogaciones)
+  of the budget of the province of Mendoza, Argentina, as the Contaduría General de la Provincia publishes
+  the budget execution: five digits and the name of the item, from the section (4 current expenditure,
+  5 capital expenditure, 6 and 7 financing and the amortisation of debt) down to the partial item: 41101
+  PERSONAL PERMANENTE, 41201 BIENES CORRIENTES, 51101 BIENES DE CAPITAL, 74102 AMORTIZACION DEUDA ACREEDORES
+  VARIOS; the main items end in 00 (41100 - PERSONAL, 41300 - SERVICIOS). It is not the national classification
+  by object of expenditure (incisos 1 to 9).'
+parent: category
+categories:
+- finances
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^[4-7]\d{4}(?:\s*-\s*|\s+)\S.*$
+examples:
+- value: 41101 PERSONAL PERMANENTE
+  description: Clasificación Económica of the budget execution of the provincial administration
+- value: 41100 - PERSONAL
+  description: partida de gasto of the Fondo para la Transformación y el Crecimiento
+- value: 51101 BIENES DE CAPITAL
+- value: 1110100000-IMPUESTO SOBRE LAS ACTIVIDADES ECONOMICAS
+  valid: false
+  description: 'an account of the resources: ar_mendoza_resource_account'
+links:
+- type: doc
+  url: https://datosabiertos.mendoza.gov.ar/dataset/ejecucion-presupuestaria-de-gastos-de-la-administracion-publica-provincial-2018
+- type: doc
+  url: https://www.mendoza.gov.ar/contaduria/
+translations:
+  es:
+    name: Clasificación económica de las erogaciones del presupuesto de Mendoza
