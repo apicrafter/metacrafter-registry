@@ -17,7 +17,7 @@ examples:
   description: Brasília
 - value: '355030'
   valid: false
-  description: the older six-digit form without the check digit
+  description: the six-digit form without the check digit (br_municipality_code_6)
 mappings:
   wikidata: P1585
   fta: STATE_PROVINCE.MUNICIPALITY_CODE_BR

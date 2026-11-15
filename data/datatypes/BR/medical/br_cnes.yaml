@@ -1,0 +1,37 @@
+id: br_cnes
+name: Brazilian health establishment code (CNES)
+status: draft
+doc: The seven-digit number of a health establishment (a hospital, clinic, laboratory or primary care
+  unit) in the Cadastro Nacional de Estabelecimentos de Saúde of the Ministry of Health (2446480, 0000957).
+  DATASUS, the SUS programmes and the surveys of primary care units (PMAQ) identify the units by it (CNES,
+  CO_CNES, CNESFINAL); spreadsheets drop the leading zeros (957) and statistics packages add a decimal
+  part (2446480.0). The number has no check digit.
+parent: id
+categories:
+- medical
+- government
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: identifier
+regexp: ^\d{7}$
+examples:
+- value: '2446480'
+  description: a primary care unit of the PMAQ survey (Bom Jesus do Norte)
+- value: 0000957
+  description: a primary care unit of the PMAQ survey, with its leading zeros
+- value: '24464800'
+  valid: false
+  description: eight digits
+links:
+- type: doc
+  url: https://cnes.datasus.gov.br/
+- type: wikipedia
+  url: https://pt.wikipedia.org/wiki/Cadastro_Nacional_de_Estabelecimentos_de_Sa%C3%BAde
+translations:
+  pt:
+    name: Código CNES do estabelecimento de saúde
+  ru:
+    name: Код медицинского учреждения Бразилии (CNES)
