@@ -1,0 +1,32 @@
+id: dissolved_oxygen
+name: Dissolved oxygen
+status: draft
+doc: 'Amount of oxygen dissolved in water, the main measure of whether a river, lake or pond can support
+  aquatic life: a concentration in milligrams per litre (the same number in parts per million) or the
+  saturation in percent of what the water holds at its temperature. Water quality probes and monitoring
+  tables report it next to temperature, pH, conductivity and turbidity (DO, DO_mg_L, DO_sat; the optode
+  readings oxygen_mg, oxygen_percent and oxygen_ppm of the stormwater sensors of Camden Council, New South
+  Wales). A number alone does not tell it from other measures, so a value is dissolved oxygen only in
+  a field named after it.'
+parent: numeric
+categories:
+- environment
+- chemistry
+- values
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: '4.9'
+  description: milligrams per litre, a stormwater pond
+- value: '55.49'
+  description: saturation in percent
+- value: 8.2 mg/L
+  description: with its unit
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Oxygen_saturation
+translations:
+  ru:
+    name: Растворённый кислород
