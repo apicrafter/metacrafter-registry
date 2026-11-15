@@ -1,0 +1,42 @@
+id: au_nsw_epi
+name: NSW environmental planning instrument
+status: draft
+doc: 'Title of an environmental planning instrument (EPI) of New South Wales, Australia, made under the
+  Environmental Planning and Assessment Act 1979: a local environmental plan of a council area (Camden
+  Local Environmental Plan 2010, Camden LEP 2010), a state environmental planning policy (State Environmental
+  Planning Policy (Precincts—Western Parkland City) 2021, SEPP (Precincts—Western Parkland City) 2021),
+  and the older regional environmental plans and interim development orders. The title ends with the year
+  of the instrument; abbreviations of planning datasets drop the spaces (CLEP2010, SEPP2021). The EPI_NAME
+  field of the NSW Planning Portal spatial layers and the epi and iteminst fields of the Camden planning
+  and heritage data hold it. Development control plans are not EPIs (au_nsw_dcp).'
+categories:
+- legal
+- realestate
+- government
+country:
+- AU
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Camden Local Environmental Plan 2010
+  description: EPI_NAME of the NSW Planning Portal layers
+- value: Camden LEP 2010
+- value: SEPP (Precincts—Western Parkland City) 2021
+- value: State Environmental Planning Policy (Biodiversity and Conservation) 2021
+- value: CLEP2010
+  description: abbreviation of a heritage register
+- value: Camden DCP 2019
+  valid: false
+  description: a development control plan
+links:
+- type: doc
+  url: https://www.planning.nsw.gov.au/plans-for-your-area/local-planning-and-zoning
+- type: doc
+  url: https://www.planning.nsw.gov.au/policy-and-legislation/state-environmental-planning-policies
+- type: doc
+  url: https://mapprod3.environment.nsw.gov.au/arcgis/rest/services/Planning/Principal_Planning_Layers/MapServer/8
+translations:
+  ru:
+    name: Документ территориального планирования Нового Южного Уэльса (EPI)

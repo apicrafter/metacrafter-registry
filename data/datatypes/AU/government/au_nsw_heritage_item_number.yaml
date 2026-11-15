@@ -1,0 +1,38 @@
+id: au_nsw_heritage_item_number
+name: NSW LEP heritage item number
+status: draft
+doc: 'Number of a heritage item in Schedule 5 (Environmental heritage) of a New South Wales local environmental
+  plan or in the heritage schedule of a state environmental planning policy: a letter and a serial, I
+  for an item (I38, I122, with a letter for a split item, I90A), A for an archaeological site and C for
+  a heritage conservation area in many plans. The numbers restart in every instrument, so an item is identified
+  by its number together with the instrument (au_nsw_epi). The H_ID field (Item Number) of the Heritage
+  layer of the NSW Planning Portal and the item_no field of the Camden heritage items hold it; a few items
+  of a SEPP schedule are plain numbers.'
+parent: id
+categories:
+- government
+- realestate
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[IAC]\d{1,4}[A-Z]?$
+examples:
+- value: I38
+  description: Camden Local Environmental Plan 2010
+- value: I122
+- value: I90A
+  description: Cobbitty Public School, a split item
+- value: C12
+  description: a heritage conservation area
+- value: '38'
+  valid: false
+  description: a number without its letter (some SEPP schedules)
+links:
+- type: doc
+  url: https://mapprod3.environment.nsw.gov.au/arcgis/rest/services/Planning/Principal_Planning_Layers/MapServer/8
+translations:
+  ru:
+    name: Номер объекта наследия в плане LEP Нового Южного Уэльса
