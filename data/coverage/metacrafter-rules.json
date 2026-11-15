@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "187111d38418af4ef4f59aebe7223ae49ddb446a"
+  "ref": "f9af4df3678c6a5ea40ff527d966515ea7888d29"
  },
  "rules": [
   {
@@ -2795,6 +2795,106 @@
    "country_code": "xx"
   },
   {
+   "rule": "beenterprisenumberbyname",
+   "key": "be_vat",
+   "type": "field",
+   "match": "regex",
+   "file": "be/be_companies.yaml",
+   "context": "companies",
+   "lang": "common",
+   "country_code": "be"
+  },
+  {
+   "rule": "beestablishmentunitnumberbyname",
+   "key": "be_establishment_unit_number",
+   "type": "field",
+   "match": "regex",
+   "file": "be/be_companies.yaml",
+   "context": "companies",
+   "lang": "common",
+   "country_code": "be"
+  },
+  {
+   "rule": "befasenumberbyname",
+   "key": "be_fase_number",
+   "type": "field",
+   "match": "regex",
+   "file": "be/be_education.yaml",
+   "context": "education",
+   "lang": "fr",
+   "country_code": "be"
+  },
+  {
+   "rule": "bearrondissementbyname",
+   "key": "be_arrondissement",
+   "type": "field",
+   "match": "regex",
+   "file": "be/be_geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "be"
+  },
+  {
+   "rule": "beicaraddressidbyname",
+   "key": "be_icar_address_id",
+   "type": "field",
+   "match": "regex",
+   "file": "be/be_geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "be"
+  },
+  {
+   "rule": "beicarstreetidbyname",
+   "key": "be_icar_street_id",
+   "type": "field",
+   "match": "regex",
+   "file": "be/be_geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "be"
+  },
+  {
+   "rule": "bejudicialarrondissementbyname",
+   "key": "be_judicial_arrondissement",
+   "type": "field",
+   "match": "regex",
+   "file": "be/be_geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "be"
+  },
+  {
+   "rule": "benisbyname",
+   "key": "be_nis_code",
+   "type": "field",
+   "match": "regex",
+   "file": "be/be_geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "be"
+  },
+  {
+   "rule": "bestatisticalsectorbyname",
+   "key": "be_statistical_sector",
+   "type": "field",
+   "match": "regex",
+   "file": "be/be_geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "be"
+  },
+  {
+   "rule": "bestatisticalsectorvalue",
+   "key": "be_statistical_sector",
+   "type": "data",
+   "match": "func",
+   "file": "be/be_geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "be"
+  },
+  {
    "rule": "bgkmetstvocodevalue",
    "key": "bg_nsi_kmetstvo_code",
    "type": "data",
@@ -3591,6 +3691,16 @@
    "match": "func",
    "file": "common/admin_areas.yaml",
    "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "manuscriptfoliobyname",
+   "key": "manuscript_folio",
+   "type": "field",
+   "match": "regex",
+   "file": "common/archives.yaml",
+   "context": "publishing",
    "lang": "common",
    "country_code": "xx"
   },
@@ -5195,6 +5305,36 @@
    "country_code": "xx"
   },
   {
+   "rule": "eteridbyname",
+   "key": "eter_id",
+   "type": "field",
+   "match": "regex",
+   "file": "common/education.yaml",
+   "context": "education",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "isced2011programmecodebyname",
+   "key": "isced2011_programme_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/education.yaml",
+   "context": "education",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "iscedf2013byname",
+   "key": "isced_f_2013",
+   "type": "field",
+   "match": "regex",
+   "file": "common/education.yaml",
+   "context": "education",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "airsensormodelbyname",
    "key": "air_sensor_model",
    "type": "field",
@@ -5709,6 +5849,16 @@
    "key": "geopoint",
    "type": "field",
    "match": "text",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "geopointfrenchbyname",
+   "key": "geopoint",
+   "type": "field",
+   "match": "regex",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -8155,10 +8305,40 @@
    "country_code": "xx"
   },
   {
+   "rule": "chromosomebyname",
+   "key": "chromosome",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "conservationstatusbyname",
    "key": "conservation_status",
    "type": "field",
    "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "dnasequencebyname",
+   "key": "dna_sequence",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "dnasequencevalue",
+   "key": "dna_sequence",
+   "type": "data",
+   "match": "func",
    "file": "common/science.yaml",
    "context": "science",
    "lang": "common",
@@ -8285,6 +8465,36 @@
    "country_code": "xx"
   },
   {
+   "rule": "ensemblgeneidvalue",
+   "key": "ensemblgeneid",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "genomicregionbyname",
+   "key": "genomic_region",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "genomicregionvalue",
+   "key": "genomic_region",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "gridbyfieldname",
    "key": "grid",
    "type": "field",
@@ -8405,6 +8615,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "proteinsequencebyname",
+   "key": "protein_sequence",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "proteinsequencevalue",
+   "key": "protein_sequence",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "researcheridbyfieldname",
    "key": "researcherid",
    "type": "field",
@@ -8487,6 +8717,26 @@
   {
    "rule": "speciesnamewithauthorshipvalue",
    "key": "species",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "tairlocusidbyname",
+   "key": "tair_locus_id",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "tairlocusidvalue",
+   "key": "tair_locus_id",
    "type": "data",
    "match": "func",
    "file": "common/science.yaml",
@@ -12455,6 +12705,26 @@
    "country_code": "fr"
   },
   {
+   "rule": "frbancleinteropbyname",
+   "key": "fr_ban_cle_interop",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frbancleinteropvalue",
+   "key": "fr_ban_cle_interop",
+   "type": "data",
+   "match": "func",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frbassinviebyname",
    "key": "fr_bassin_vie_code",
    "type": "field",
@@ -12627,6 +12897,16 @@
   {
    "rule": "frregionnamebyname",
    "key": "fr_region",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frrivolibyname",
+   "key": "fr_rivoli",
    "type": "field",
    "match": "regex",
    "file": "fr/fr_geo.yaml",
@@ -12845,6 +13125,16 @@
    "country_code": "fr"
   },
   {
+   "rule": "frparcelidbyname",
+   "key": "frcadastral",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_realestate.yaml",
+   "context": "realestate",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frpropertynumberfield",
    "key": "frpropertynumber",
    "type": "field",
@@ -12951,6 +13241,16 @@
    "match": "regex",
    "file": "fr/fr_telecom.yaml",
    "context": "telecom",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frcritairbyname",
+   "key": "fr_critair",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_transport.yaml",
+   "context": "transport",
    "lang": "fr",
    "country_code": "fr"
   },
@@ -15723,6 +16023,16 @@
    "context": "pii",
    "lang": "en",
    "country_code": "au"
+  },
+  {
+   "rule": "bephonebyname",
+   "key": "phone",
+   "type": "field",
+   "match": "regex",
+   "file": "pii/be/be_pii.yaml",
+   "context": "pii",
+   "lang": "common",
+   "country_code": "be"
   },
   {
    "rule": "br_pii_brcpfknown",
