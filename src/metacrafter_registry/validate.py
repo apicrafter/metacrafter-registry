@@ -84,13 +84,13 @@ def default_schema_dir(data_dir: Path) -> Path:
 
 
 def load_schema_validators(schema_dir: Path) -> dict[str, Any]:
-    """JSON Schema (2020-12) validators for 'datatype', 'pattern' and 'tool' records."""
+    """JSON Schema (2020-12) validators for 'datatype', 'pattern', 'tool' and 'category'."""
     from jsonschema import Draft202012Validator
     from referencing import Registry, Resource
 
     schemas = {}
     registry = Registry()
-    for name in ("datatype", "pattern", "tool"):
+    for name in ("datatype", "pattern", "tool", "category"):
         with open(Path(schema_dir) / f"{name}.schema.json", encoding="utf-8") as handle:
             schema = json.load(handle)
         schemas[name] = schema
@@ -115,8 +115,44 @@ def _schema_issues(sources: RegistrySources, schema_dir: Path) -> list[Issue]:
     return issues
 
 
+def category_aliases(categories: dict[str, dict]) -> dict[str, str]:
+    """Former category ids, each with the id of the category that replaces it."""
+    return {
+        str(alias): cid
+        for cid, entry in sorted(categories.items())
+        for alias in entry.get("aliases") or []
+    }
+
+
+def _category_issues(sources: RegistrySources, schema_dir: Path) -> list[Issue]:
+    """Gates of the category reference list: schema, unique ids and aliases, descriptions."""
+    path = "categories.yaml"
+    validator = load_schema_validators(schema_dir)["category"]
+    issues = []
+    owners: dict[str, list[str]] = defaultdict(list)
+    for cid, entry in sources.categories.items():
+        for error in sorted(validator.iter_errors(entry), key=lambda e: list(e.path)):
+            where = ".".join(str(p) for p in error.absolute_path) or "(entry)"
+            issues.append(Issue(ERROR, path, cid, f"schema: {where}: {error.message}"))
+        owners[cid].append(cid)
+        for alias in entry.get("aliases") or []:
+            owners[str(alias)].append(cid)
+    for name, cids in sorted(owners.items()):
+        if len(cids) > 1:
+            issues.append(
+                Issue(ERROR, path, name, f"category id or alias '{name}' is used by {cids}")
+            )
+    used = {str(c).strip() for rec in sources.datatypes for c in rec.data.get("categories") or []}
+    for cid in sorted(used & set(sources.categories)):
+        if not sources.categories[cid].get("description"):
+            message = "a category that has records needs a description"
+            issues.append(Issue(ERROR, path, cid, message))
+    return issues
+
+
 def _ref_issues(sources: RegistrySources) -> list[Issue]:
     issues = []
+    retired = category_aliases(sources.categories)
     references = (
         ("categories", sources.categories),
         ("country", sources.countries),
@@ -125,7 +161,17 @@ def _ref_issues(sources: RegistrySources) -> list[Issue]:
     for rec in sources.datatypes:
         for field_name, reference in references:
             for raw in rec.data.get(field_name) or []:
-                if str(raw).strip() not in reference:
+                value = str(raw).strip()
+                if field_name == "categories" and value not in reference and value in retired:
+                    issues.append(
+                        Issue(
+                            ERROR,
+                            rec.relpath,
+                            rec.id,
+                            f"category '{value}' is retired: use '{retired[value]}'",
+                        )
+                    )
+                elif value not in reference:
                     issues.append(
                         Issue(ERROR, rec.relpath, rec.id, f"unknown {field_name} id '{raw}'")
                     )
@@ -380,6 +426,7 @@ def validate(sources: RegistrySources, schema_dir: Path | None = None) -> Valida
     schema_dir = schema_dir or default_schema_dir(sources.data_dir)
     issues = [Issue(ERROR, path, "-", message) for path, message in sources.load_errors]
     issues += _schema_issues(sources, schema_dir)
+    issues += _category_issues(sources, schema_dir)
     issues += _ref_issues(sources)
     issues += _id_issues(sources)
     issues += _location_issues(sources)

@@ -300,7 +300,9 @@ def llms_txt(
         "",
     ]
     lines += [
-        f"- [{c['name']}]({s}/category/{c['id']}.md): {c['count']} records" for c in categories
+        f"- [{c['name']}]({s}/category/{c['id']}.md): {c['count']} records"
+        + (f". {c['description']}" if c.get("description") else "")
+        for c in categories
     ]
     lines += ["", "## Optional", ""]
     lines += [f"- [{c['name']}]({s}/country/{c['id']}.md): {c['count']} records" for c in countries]
@@ -346,11 +348,23 @@ def llms_full_txt(records: Iterable[Mapping[str, Any]], site_url: str) -> str:
 def category_markdown(
     category: Mapping[str, Any], records: Iterable[Mapping[str, Any]], site_url: str
 ) -> str:
-    lines = [f"# {category['name']} (`{category['id']}`)", "", f"{category['count']} records.", ""]
+    lines = [f"# {category['name']} (`{category['id']}`)", ""]
+    if category.get("description"):
+        lines += [category["description"], ""]
+    lines += [f"{category['count']} records.", ""]
     for r in records:
         status = "" if r["status"] == "stable" else f" [{r['status']}]"
         lines.append(f"- [{r['name']}]({site_url}/datatype/{r['id']}.md) `{r['id']}`{status}")
     return "\n".join(lines) + "\n"
+
+
+def category_alias_markdown(alias: str, category: Mapping[str, Any], site_url: str) -> str:
+    """The Markdown page of a retired category id: it names the category that replaces it."""
+    return (
+        f"# Moved: `{alias}`\n\n"
+        f"`{alias}` is a former category id. The category is now "
+        f"[{category['name']}]({site_url}/category/{category['id']}.md) (`{category['id']}`).\n"
+    )
 
 
 # --- RDF (Turtle) ----------------------------------------------------------

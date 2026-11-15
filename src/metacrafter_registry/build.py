@@ -135,7 +135,9 @@ def _write_api_v1(out: Path, reg: RegistryModel, site_url: str, info: BuildInfo)
         for gid, group in groups.items():
             if group["count"]:
                 members = [r for r in records if gid in r.get(key, [])]
-                _write(api / folder / f"{gid}.json", _dump(members))
+                # a retired category id keeps its members file
+                for name in (gid, *group.get("aliases", [])):
+                    _write(api / folder / f"{name}.json", _dump(members))
 
     _write(api / "categories.json", _dump(list(reg.categories.values()), indent=2))
     _write(api / "countries.json", _dump(list(reg.countries.values()), indent=2))
@@ -170,6 +172,11 @@ def _write_agent_files(out: Path, reg: RegistryModel, site_url: str, info: Build
             out / "category" / f"{category['id']}.md",
             agents.category_markdown(category, members, site_url),
         )
+        for alias in category.get("aliases", []):
+            _write(
+                out / "category" / f"{alias}.md",
+                agents.category_alias_markdown(alias, category, site_url),
+            )
     for country in countries:
         members = [r for r in records if country["id"] in r.get("country", [])]
         _write(
@@ -267,6 +274,15 @@ def _search_index(reg: RegistryModel) -> list[dict[str, Any]]:
             }
         )
     return index
+
+
+#: Category kinds in page order: (kind, heading, the question the kind answers).
+CATEGORY_KINDS = (
+    ("topic", "Topics", "The subject area of a value."),
+    ("form", "General forms", "The form of a value that belongs to no single subject."),
+    ("sensitivity", "Sensitivity", "Values that need protection."),
+    ("standard", "Standards", "The standard that defines a value."),
+)
 
 
 def _jsonld(record: dict[str, Any], site_url: str) -> dict[str, Any]:
@@ -380,7 +396,27 @@ def _render_site(
             canonical=f"/datatype/{canonical}",
         )
 
-    render("category_list.html", "category/index.html", "/category/", section="categories")
+    render(
+        "category_list.html",
+        "category/index.html",
+        "/category/",
+        section="categories",
+        kinds=[
+            (title, lead, [c for c in by_count if c.get("kind") == kind])
+            for kind, title, lead in CATEGORY_KINDS
+        ],
+    )
+    for category in by_count:
+        for alias in category.get("aliases", []):
+            render(
+                "category_alias.html",
+                f"category/{alias}.html",
+                None,
+                section="categories",
+                alias=alias,
+                group=category,
+                canonical=f"/category/{category['id']}",
+            )
     for category in by_count:
         members = [r for r in records if category["id"] in r.get("categories", [])]
         render(

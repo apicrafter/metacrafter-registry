@@ -192,7 +192,17 @@ SCHEMAS: dict[str, Any] = {
             "count": {"type": "integer", "description": "Datatypes and patterns that use it"},
             "kind": {
                 "type": "string",
-                "description": "country or region; language or special ('common' = any language)",
+                "description": "country or region; language or special ('common' = any language); "
+                "for a category: topic, form, sensitivity or standard",
+            },
+            "description": {
+                "type": "string",
+                "description": "Categories only: what belongs in the category",
+            },
+            "aliases": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "Categories only: retired ids that this category replaces",
             },
             "url": {"type": "string", "format": "uri"},
         },

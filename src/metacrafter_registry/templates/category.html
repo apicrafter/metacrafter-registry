@@ -7,5 +7,6 @@
 <p class="small muted"><a href="{{ base }}/category/">Categories</a></p>
 <h1>{{ group.name }}</h1>
 <p class="id-line">Category ID <code>{{ group.id }}</code> · {{ group.count }} types</p>
+{% if group.description %}<p class="lead">{{ group.description }}</p>{% endif %}
 {{ datatype_table(records) }}
 {% endblock %}

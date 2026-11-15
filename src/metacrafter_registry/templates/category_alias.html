@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ alias }} → {{ group.id }}{% endblock %}
+{% block description %}{{ alias }} is a former ID of the category {{ group.name }} ({{ group.id }}).{% endblock %}
+{% block head %}
+  <meta http-equiv="refresh" content="0; url={{ base }}/category/{{ group.id }}">
+  <meta name="robots" content="noindex">
+{% endblock %}
+{% block content %}
+<h1>Moved: <code>{{ alias }}</code></h1>
+<p><code>{{ alias }}</code> is a former category ID. The category is now <a href="{{ base }}/category/{{ group.id }}">{{ group.name }} (<code>{{ group.id }}</code>)</a>.</p>
+<p class="small muted">Records list only the current ID; see <a href="{{ base }}/api/v1/categories.json">categories.json</a> for the former IDs of each category.</p>
+{% endblock %}

@@ -8,13 +8,13 @@ Nothing in this group changes the build or `main`.
 
 ## 2. Reference records: description, kind, aliases (no record changes)
 
-- [ ] 2.1 Add `schema/category.schema.json` (D1) and publish it under `/schema/`.
-- [ ] 2.2 Add `kind` and `description` to every entry of `data/categories.yaml`. No category is added or retired yet.
-- [ ] 2.3 Read the new fields in `loader.py`. Add the gates of the requirement "Category reference records" to `validate.py`.
-- [ ] 2.4 Resolve aliases (D5): `model.py`, `client.py` (`Registry.search`), `mcp_server.py` (`search_datatypes`), redirect pages in `build.py`, the alias gate for source records in `validate.py`.
-- [ ] 2.5 Add `kind`, `description` and `aliases` to `/api/v1/categories.json` and to `openapi.py`.
-- [ ] 2.6 Group `/category/` by kind and show descriptions. Add descriptions to the category section of `llms.txt` and to `category_markdown`.
-- [ ] 2.7 Add tests with a fixture alias: reference gates, redirect pages, search by alias. Run `validate`, `build`, `check-links`, `pytest -q`.
+- [x] 2.1 Add `schema/category.schema.json` (D1) and publish it under `/schema/`.
+- [x] 2.2 Add `kind` and `description` to every entry of `data/categories.yaml`. No category is added or retired yet.
+- [x] 2.3 Read the new fields in `loader.py`. Add the gates of the requirement "Category reference records" to `validate.py`.
+- [x] 2.4 Resolve aliases (D5): `model.py`, `client.py` (`Registry.search`), `mcp_server.py` (`search_datatypes`), redirect pages in `build.py`, the alias gate for source records in `validate.py`.
+- [x] 2.5 Add `kind`, `description` and `aliases` to `/api/v1/categories.json` and to `openapi.py`.
+- [x] 2.6 Group `/category/` by kind and show descriptions. Add descriptions to the category section of `llms.txt` and to `category_markdown`.
+- [x] 2.7 Add tests with a fixture alias: reference gates, redirect pages, search by alias. Run `validate`, `build`, `check-links`, `pytest -q`.
 
 ## 3. Derived `pii`
 

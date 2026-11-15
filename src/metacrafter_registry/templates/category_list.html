@@ -4,9 +4,13 @@
 {% block content %}
 <h1>Categories</h1>
 <p class="lead">A category is a context of use. Metacrafter uses categories to choose which rules to apply to a dataset.</p>
+{% for title, lead, members in kinds if members %}
+<h2>{{ title }}</h2>
+<p class="muted">{{ lead }}</p>
 <div class="grid">
-{% for c in categories %}
-  <a class="card" href="{{ base }}/category/{{ c.id }}">{{ c.name }}<br><span class="count">{{ c.count }} types · <code>{{ c.id }}</code></span></a>
+{% for c in members %}
+  <a class="card" href="{{ base }}/category/{{ c.id }}">{{ c.name }}<br><span class="count">{{ c.count }} types · <code>{{ c.id }}</code></span>{% if c.description %}<br><span class="count">{{ c.description }}</span>{% endif %}</a>
 {% endfor %}
 </div>
+{% endfor %}
 {% endblock %}
