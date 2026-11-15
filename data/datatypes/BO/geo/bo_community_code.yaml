@@ -1,0 +1,33 @@
+id: bo_community_code
+name: Bolivian community code (INE)
+status: draft
+doc: 'Eleven-digit code of a Bolivian community or locality (comunidad, localidad) in the census cartography
+  of the INE: the municipality code, two digits for the canton and three for the locality, as in 02010501001
+  and 03020101001. The community layers of the Censo 2012 in the GeoNode of SIARH (COD_COM) give it next
+  to the municipality code; some add three digits for a part of a dispersed community (01010105005001),
+  and spreadsheets drop the leading zero.'
+parent: id
+categories:
+- geo
+- government
+country:
+- BO
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^0?[1-9](?:0[1-9]|1[0-9]|20)0[1-9]\d{5}(?:\d{3})?$
+examples:
+- value: '03020101001'
+  description: a community of Aiquile, Cochabamba
+- value: '02010501001'
+  description: a community of El Alto, La Paz
+- value: '020105'
+  valid: false
+  description: 'a municipality code: bo_municipality_code'
+links:
+- type: doc
+  url: https://www.ine.gob.bo/
+translations:
+  es:
+    name: Código de comunidad (INE)

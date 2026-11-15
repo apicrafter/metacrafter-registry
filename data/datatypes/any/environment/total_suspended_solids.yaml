@@ -1,0 +1,30 @@
+id: total_suspended_solids
+name: Total suspended solids (TSS)
+status: draft
+doc: 'Total suspended solids of water: the dry mass of the particles a filter retains from a sample, in
+  milligrams per litre (TSS; SST, sólidos suspendidos totales, in Spanish). The dissolved part is total_dissolved_solids;
+  turbidity estimates the suspended part optically.'
+parent: numeric
+categories:
+- environment
+- chemistry
+- values
+langs:
+- common
+is_pii: false
+regexp: ^<?\s?\d+(?:[.,]\d+)?\s?(?:mg/L|mg/l|ppm)?$
+examples:
+- value: '25'
+  description: mg/L
+- value: '0.5'
+- value: N/D
+  valid: false
+  description: not a number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Total_suspended_solids
+translations:
+  es:
+    name: Sólidos suspendidos totales (SST)
+  ru:
+    name: Взвешенные вещества

@@ -1,0 +1,38 @@
+id: pfafstetter_code
+name: Pfafstetter basin code
+status: draft
+doc: 'Code of a river basin in the Pfafstetter coding of Otto Pfafstetter: at every level the four largest
+  tributary basins are numbered 2, 4, 6 and 8, the interbasins between them 1, 3, 5, 7 and 9 and a closed
+  basin 0, so a code of n digits is a basin of level n inside the basin named by its first n-1 digits.
+  South American hydrographic units are coded this way (in Bolivia 4 the Amazon, 8 La Plata and 0 the
+  closed Altiplano basin; 85899 a unit of the Guadalquivir in Tarija), as are the ottobacias of the Brazilian
+  water agency ANA and the PFAF_ID of the global HydroBASINS. Leading zeros are part of the code (015).'
+parent: id
+categories:
+- environment
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,12}$
+examples:
+- value: '85899'
+  description: level 5, Río Guadalquivir (Tarija, Bolivia)
+- value: '8589929'
+  description: level 7, inside 85899
+- value: 01592
+  description: level 5 of the closed Altiplano basin (Katari, La Paz)
+- value: 8a
+  valid: false
+  description: digits only
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Pfafstetter_Coding_System
+- type: other
+  url: https://www.hydrosheds.org/products/hydrobasins
+translations:
+  es:
+    name: Código Pfafstetter de cuenca
+  pt:
+    name: Código de Pfafstetter (ottobacia)

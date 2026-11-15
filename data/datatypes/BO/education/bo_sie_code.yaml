@@ -1,0 +1,31 @@
+id: bo_sie_code
+name: Bolivian school code (SIE)
+status: draft
+doc: 'Eight-digit code of a Bolivian school (unidad educativa) in the SIE (Sistema de Información Educativa)
+  of the Ministry of Education: 50710004, 80660071, 81980107. Enrolment forms (RUDE) and school directories
+  carry it, and a school keeps it when it passes to another educational district.'
+parent: id
+categories:
+- education
+- government
+country:
+- BO
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{7}$
+examples:
+- value: '50710004'
+  description: a school of the Katari basin, La Paz
+- value: '80660071'
+  description: a school of the Katari basin, La Paz
+- value: '5071000'
+  valid: false
+  description: seven digits
+links:
+- type: other
+  url: https://www.minedu.gob.bo/
+translations:
+  es:
+    name: Código SIE de unidad educativa

@@ -1,0 +1,36 @@
+id: bo_municipality
+name: Bolivian municipality
+status: draft
+doc: Name of a Bolivian municipality (municipio, sección municipal de provincia), the third-level division
+  and the level of local government; the Censo 2012 of the INE counts 339 of them, such as La Paz, El
+  Alto, Santa Cruz de la Sierra, Sacaba or Villa Tunari. Names are often those of the seat or written
+  another way (Nuestra Señora de La Paz, Muyupampa or Villa Vaca Guzmán, Soracachi or Paria, Colcha "K"),
+  several repeat in other departments (San Pedro, Santa Rosa, Entre Ríos), and the INE code is bo_municipality_code.
+parent: city
+categories:
+- geo
+- government
+country:
+- BO
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: El Alto
+- value: Santa Cruz de la Sierra
+- value: VILLA TUNARI
+  description: in capitals
+- value: Nuestra Señora de La Paz
+  description: the official name of La Paz
+- value: Murillo
+  valid: false
+  description: 'a province: bo_province'
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Municipalities_of_Bolivia
+translations:
+  es:
+    name: Municipio de Bolivia
+  ru:
+    name: Муниципалитет Боливии
