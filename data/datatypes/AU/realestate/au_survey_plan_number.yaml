@@ -1,0 +1,38 @@
+id: au_survey_plan_number
+name: Australian land survey plan number (DP, SP, PS, RP)
+status: draft
+doc: 'Number of a survey plan registered with a land titles office in Australia, a prefix of the plan
+  type and the number: in New South Wales DP (Deposited Plan) and SP (Strata Plan), in Victoria PS (Plan
+  of Subdivision), LP (Lodged Plan), TP (Title Plan) and PC, in Queensland RP (Registered Plan), SP (Survey
+  Plan) and CP (Crown Plan), FP (Filed Plan) in South Australia. Lots are numbered within a plan, so the
+  plan number with the lot number identifies a parcel (Lot 1 DP225807); cadastre layers give it in planlabel
+  and the digits alone in plannumber.'
+parent: id
+categories:
+- geo
+- realestate
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:DP|SP|CP|PP|LP|PS|TP|PC|RP|FP|CS|AP|BUP|GTP|SSP)\s?\d{1,7}[A-Z]?$
+examples:
+- value: DP1417
+  description: NSW Land Parcel and Property Theme, planlabel
+- value: SP37549
+  description: NSW strata plan
+- value: PS612345R
+  description: Victorian plan of subdivision
+- value: RP123456
+  description: Queensland registered plan
+- value: '1417'
+  valid: false
+  description: the plan number without its type
+links:
+- type: doc
+  url: https://www.nswlrs.com.au/Surveying-and-Spatial/Plan-Lodgement
+translations:
+  ru:
+    name: Номер межевого плана земли Австралии (DP, SP, PS, RP)

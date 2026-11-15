@@ -1,0 +1,38 @@
+id: au_anzsic_division_name
+name: ANZSIC division title (Australia and New Zealand)
+status: draft
+doc: 'Title of one of the 19 divisions of the Australian and New Zealand Standard Industrial Classification
+  (ANZSIC 2006) without its letter: Agriculture, Forestry and Fishing; Mining; Manufacturing; Electricity,
+  Gas, Water and Waste Services; Construction; Wholesale Trade; Retail Trade; Accommodation and Food Services;
+  Transport, Postal and Warehousing; Information Media and Telecommunications; Financial and Insurance
+  Services; Rental, Hiring and Real Estate Services; Professional, Scientific and Technical Services;
+  Administrative and Support Services; Public Administration and Safety; Education and Training; Health
+  Care and Social Assistance; Arts and Recreation Services; Other Services. ABS counts of businesses,
+  council economic profiles and the CLUE tables write them, in any case and with & for and; the letter
+  or a code with its title is au_anzsic_code.'
+parent: category
+categories:
+- industry
+country:
+- AU
+- NZ
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Agriculture, Forestry and Fishing
+  description: ANZSIC division A, ABS counts of Australian businesses by LGA
+- value: Transport, Postal and Warehousing
+- value: Health Care and Social Assistance
+- value: ELECTRICITY, GAS, WATER AND WASTE SERVICES
+  description: upper case, ANZSIC hierarchy table
+- value: Business Services
+  valid: false
+  description: an industry group of a council profile, not an ANZSIC division
+links:
+- type: doc
+  url: https://www.abs.gov.au/statistics/classifications/australian-and-new-zealand-standard-industrial-classification-anzsic/2006-revision-2-0
+translations:
+  ru:
+    name: Название раздела ANZSIC (Австралия и Новая Зеландия)

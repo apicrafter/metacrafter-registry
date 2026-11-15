@@ -1,0 +1,29 @@
+id: tree_age_class
+name: Age class of a tree
+status: draft
+doc: 'Age class of a tree in an urban tree register or a forest inventory, in words: New, Young, Juvenile,
+  Semi-mature, Early mature, Mature, Over-mature, Senescent (City of Melbourne Urban Forest, City of Greater
+  Geelong trees). A year of planting or an age in years is another field.'
+parent: category
+categories:
+- environment
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Semi-Mature
+  description: Trees, with species and dimensions (Urban Forest), City of Melbourne
+- value: Mature
+- value: Over-mature
+- value: Juvenile
+  description: Trees, City of Greater Geelong
+- value: '35'
+  valid: false
+  description: an age in years
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Tree_measurement
+translations:
+  ru:
+    name: Возрастной класс дерева

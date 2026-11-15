@@ -1,0 +1,34 @@
+id: pipe_material
+name: Pipe material
+status: draft
+doc: 'Material of a water, sewer, stormwater or gas pipe or fitting in the asset register of a utility
+  or a council, in words or in the abbreviations of the water industry (WSAA codes): Asbestos Cement (AC),
+  Cast Iron Cement Lined (CICL), Ductile Iron Cement Lined (DICL), Mild Steel Cement Lined (MSCL), Polyvinyl
+  Chloride (PVC, uPVC, mPVC, oPVC), Polyethylene (PE, HDPE), Polypropylene (PP), Vitreous Clay (VC), Reinforced
+  Concrete (RC, RCP), Glass Reinforced Plastic (GRP), Copper, Galvanised Iron, Stainless Steel, Brick,
+  Earthenware. A plastic alone is not a polymer type of a microplastic sample.'
+parent: category
+categories:
+- common
+- environment
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Ductile Iron Concrete Lined
+  description: Barwon Water water pipes
+- value: Vitreous Clay
+  description: Barwon Water gravity sewer pipes
+- value: Poly Vinyl Chloride (PVC)
+- value: RCP
+  description: reinforced concrete pipe, Greater Geelong drainage pipes
+- value: DICL
+- value: Fair
+  valid: false
+links:
+- type: doc
+  url: https://www.wsaa.asn.au/publication/water-supply-code-australia
+translations:
+  ru:
+    name: Материал трубы

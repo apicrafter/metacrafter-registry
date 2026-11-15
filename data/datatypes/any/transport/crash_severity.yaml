@@ -1,0 +1,30 @@
+id: crash_severity
+name: Road crash severity
+status: draft
+doc: 'Severity of a road crash by its worst outcome, in the words of police and road authority crash data:
+  Fatal, Serious (injury, hospitalisation), Minor (other) injury, First Aid, Medical treatment, Injury,
+  Property Damage Only (non-injury, tow-away), Not known (Tasmanian crash data, ACT crash data, KSI statistics).
+  The injury of each person in the crash is a separate field.'
+parent: category
+categories:
+- transport
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Property Damage Only
+  description: Tasmanian road crash data
+- value: Fatal
+- value: Serious
+- value: First Aid
+- value: Serious Injury
+- value: Daylight
+  valid: false
+  description: a light condition
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Traffic_collision
+translations:
+  ru:
+    name: Тяжесть дорожно-транспортного происшествия

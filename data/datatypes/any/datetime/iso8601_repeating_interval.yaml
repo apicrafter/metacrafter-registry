@@ -1,0 +1,29 @@
+id: iso8601_repeating_interval
+name: ISO 8601 repeating interval
+status: draft
+doc: 'Repeating time interval of ISO 8601: R, the number of repetitions if they are limited, then the
+  interval as start and duration, start and end, or a duration alone, parts separated by slashes (R/2015-01-02/P2W
+  every two weeks from 2 January 2015, R5/2008-03-01T13:00:00Z/P1Y2M10DT2H30M, R/P1Y). Waste collection
+  schedules, recurring events and DCAT accrual periodicity write it; a single duration is iso8601duration,
+  a frequency in words periodicity.'
+categories:
+- datetime
+langs:
+- common
+is_pii: false
+regexp: ^R\d*/(?:[0-9T:.+\-Z]{4,}/)?(?:P[0-9YMWDTHS.]+|[0-9T:.+\-Z]{4,})$
+examples:
+- value: R/2015-01-02/P2W
+  description: fortnightly rubbish collection, Greater Geelong waste collection areas
+- value: R5/2008-03-01T13:00:00Z/P1Y2M10DT2H30M
+  description: ISO 8601 example
+- value: R/P1Y
+- value: P2W
+  valid: false
+  description: a duration, iso8601duration
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_8601#Repeating_intervals
+translations:
+  ru:
+    name: Повторяющийся интервал ISO 8601

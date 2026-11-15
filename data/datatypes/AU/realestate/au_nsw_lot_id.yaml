@@ -1,0 +1,35 @@
+id: au_nsw_lot_id
+name: NSW lot identifier (lot/section/plan)
+status: draft
+doc: 'Identifier of a lot of land in New South Wales as the NSW Spatial Services cadastre writes it (lotidstring):
+  the lot number, the section number and the plan label joined with slashes, with an empty part where
+  a plan has no sections or a strata plan has no lots (23/O/DP1417 lot 23 of section O of Deposited Plan
+  1417, 1//DP225807, //SP37549 the common property of a strata plan). Titles and planning certificates
+  write the same as Lot 23 Sec O DP1417.'
+parent: cadastralnumber
+categories:
+- geo
+- realestate
+country:
+- AU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z0-9]{0,6}/[A-Z0-9]{0,4}/(?:DP|SP|CP|PP)\d{1,7}$
+examples:
+- value: 23/O/DP1417
+  description: NSW Land Parcel and Property Theme, Lot
+- value: 1//DP225807
+- value: 9/16/DP758477
+- value: //SP37549
+  description: a strata plan
+- value: DP1417
+  valid: false
+  description: a plan label alone is au_survey_plan_number
+links:
+- type: doc
+  url: https://www.spatial.nsw.gov.au/products_and_services/nsw_foundation_spatial_data_framework
+translations:
+  ru:
+    name: Идентификатор участка земли Нового Южного Уэльса (lot/section/plan)
