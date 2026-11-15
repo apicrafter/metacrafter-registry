@@ -29,7 +29,7 @@
         return "<tr><td>" + r.score + "</td>" +
           '<td><a href="' + base + "/datatype/" + encodeURIComponent(r.id) + '">' + escapeHtml(r.name) + "</a> <code>" +
           escapeHtml(r.id) + "</code>" + (r.is_pii ? ' <span class="badge pii">PII</span>' : "") +
-          (r.status === "draft" ? ' <span class="badge draft">draft</span>' : "") + "</td>" +
+          (r.status === "stable" ? ' <span class="badge ok">stable</span>' : "") + "</td>" +
           "<td>" + pct(r.regexp_hit_rate) + "</td>" +
           "<td>" + (r.checksum ? escapeHtml(r.checksum.algorithm) + " " + pct(r.checksum.pass_rate) : "–") + "</td>" +
           "<td>" + (r.field_name_similarity ? pct(r.field_name_similarity) : "–") + "</td></tr>";

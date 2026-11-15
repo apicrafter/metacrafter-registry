@@ -8,6 +8,49 @@
     return (value || "").toString().toLowerCase();
   }
 
+  // Narrow screens: the main menu collapses behind a button.
+  var navToggle = document.querySelector(".nav-toggle");
+  var nav = document.getElementById("site-nav");
+  if (navToggle && nav) {
+    document.querySelector(".site-header").classList.add("nav-collapsible");
+    navToggle.addEventListener("click", function () {
+      var open = nav.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
+
+  // Sortable tables: <table data-sortable>; a click on a column header sorts
+  // by that column, a second click reverses the order.
+  document.querySelectorAll("table[data-sortable]").forEach(function (table) {
+    var body = table.tBodies[0];
+    var headers = Array.prototype.slice.call(table.querySelectorAll("thead th"));
+    headers.forEach(function (th, column) {
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "sort-btn";
+      button.textContent = th.textContent;
+      th.textContent = "";
+      th.appendChild(button);
+      button.addEventListener("click", function () {
+        var descending = th.getAttribute("aria-sort") === "ascending";
+        var rows = Array.prototype.slice.call(body.rows).map(function (row) {
+          return { row: row, key: norm(row.cells[column].textContent).trim() };
+        });
+        rows.sort(function (a, b) {
+          // Empty cells go last in both directions.
+          if (!a.key || !b.key) return a.key ? -1 : b.key ? 1 : 0;
+          var order = a.key.localeCompare(b.key, undefined, { numeric: true });
+          return descending ? -order : order;
+        });
+        var fragment = document.createDocumentFragment();
+        rows.forEach(function (item) { fragment.appendChild(item.row); });
+        body.appendChild(fragment);
+        headers.forEach(function (other) { other.removeAttribute("aria-sort"); });
+        th.setAttribute("aria-sort", descending ? "descending" : "ascending");
+      });
+    });
+  });
+
   // JSON download that reports the bytes received so far, so that a large
   // index on a slow connection does not look stuck.
   window.registryFetchJson = function (url, onProgress) {
@@ -140,7 +183,7 @@
           '<code>' + escapeHtml(e.id) + "</code>" +
           (e.p ? ' <span class="badge pii">PII</span>' : "") +
           (e.k === "pattern" ? ' <span class="badge neutral">pattern</span>' : "") +
-          (e.s === "draft" ? ' <span class="badge draft">draft</span>' : "") +
+          (e.s === "stable" ? ' <span class="badge ok">stable</span>' : "") +
           '<div class="meta">' + escapeHtml(e.d) + "</div>";
         results.appendChild(li);
       });

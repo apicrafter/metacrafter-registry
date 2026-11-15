@@ -191,3 +191,17 @@ def test_relative_links_are_normalized(tmp_path):
     checked, broken = check_links(tmp_path)
     assert checked == 2
     assert sorted(b.link for b in broken) == ["../../outside", "../x"]
+
+
+def test_link_label():
+    from metacrafter_registry.build import _link_label
+
+    assert (
+        _link_label("https://en.wikipedia.org/wiki/VAT_identification_number")
+        == "VAT identification number (en.wikipedia.org)"
+    )
+    assert (
+        _link_label("https://ru.wikipedia.org/wiki/%D0%98%D0%9D%D0%9D") == "ИНН (ru.wikipedia.org)"
+    )
+    assert _link_label("https://www.iso.org/standard/1234.html") == "iso.org/standard/1234.html"
+    assert _link_label("https://schema.org") == "schema.org"

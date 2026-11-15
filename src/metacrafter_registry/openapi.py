@@ -328,6 +328,15 @@ def build_openapi(site_url: str, version: str) -> dict[str, Any]:
             "responses": _json_response("Coverage report", {"type": "object"}),
         }
     }
+    paths["/api/v1/changes.json"] = {
+        "get": {
+            "operationId": "listChanges",
+            "summary": "Changelog: records added, changed and retired in each release",
+            "responses": _json_response(
+                "Array of releases, newest first", {"type": "array", "items": {"type": "object"}}
+            ),
+        }
+    }
     paths["/registry.json"] = {
         "get": {
             "operationId": "getLegacyRegistry",

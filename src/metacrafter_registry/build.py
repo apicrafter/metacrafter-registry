@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 from importlib import resources
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import unquote, urlparse
 from xml.sax.saxutils import escape as xml_escape
 
 from jinja2 import Environment, PackageLoader, select_autoescape
@@ -248,6 +248,16 @@ def _jsonld(record: dict[str, Any], site_url: str) -> dict[str, Any]:
     return data
 
 
+def _link_label(url: str) -> str:
+    """Readable text for a source link: the article title for Wikipedia, else host and path."""
+    parts = urlparse(url)
+    host = parts.netloc.removeprefix("www.")
+    path = unquote(parts.path).strip("/")
+    if host.endswith("wikipedia.org") and path.startswith("wiki/"):
+        return f"{path[5:].replace('_', ' ')} ({host})"
+    return f"{host}/{path}" if path else host
+
+
 def _render_site(
     out: Path,
     reg: RegistryModel,
@@ -263,6 +273,7 @@ def _render_site(
         trim_blocks=True,
         lstrip_blocks=True,
     )
+    env.filters["link_label"] = _link_label
     by_count = sorted(
         (c for c in reg.categories.values() if c["count"]), key=lambda c: (-c["count"], c["id"])
     )
