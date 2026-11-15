@@ -19,10 +19,15 @@
     });
   }
 
-  // Sortable tables: <table data-sortable>; a click on a column header sorts
-  // by that column, a second click reverses the order.
-  document.querySelectorAll("table[data-sortable]").forEach(function (table) {
-    var body = table.tBodies[0];
+  var escapeHtml = function (text) {
+    var div = document.createElement("div");
+    div.textContent = text == null ? "" : String(text);
+    return div.innerHTML;
+  };
+
+  // Column headers become sort buttons; a second click reverses the order.
+  // onSort(column, descending) does the sorting.
+  var makeSortable = function (table, onSort) {
     var headers = Array.prototype.slice.call(table.querySelectorAll("thead th"));
     headers.forEach(function (th, column) {
       var button = document.createElement("button");
@@ -33,21 +38,31 @@
       th.appendChild(button);
       button.addEventListener("click", function () {
         var descending = th.getAttribute("aria-sort") === "ascending";
-        var rows = Array.prototype.slice.call(body.rows).map(function (row) {
-          return { row: row, key: norm(row.cells[column].textContent).trim() };
-        });
-        rows.sort(function (a, b) {
-          // Empty cells go last in both directions.
-          if (!a.key || !b.key) return a.key ? -1 : b.key ? 1 : 0;
-          var order = a.key.localeCompare(b.key, undefined, { numeric: true });
-          return descending ? -order : order;
-        });
-        var fragment = document.createDocumentFragment();
-        rows.forEach(function (item) { fragment.appendChild(item.row); });
-        body.appendChild(fragment);
+        onSort(column, descending);
         headers.forEach(function (other) { other.removeAttribute("aria-sort"); });
         th.setAttribute("aria-sort", descending ? "descending" : "ascending");
       });
+    });
+  };
+
+  // Empty keys go last in both directions.
+  var compareKeys = function (a, b, descending) {
+    if (!a || !b) return a ? -1 : b ? 1 : 0;
+    var order = a.localeCompare(b, undefined, { numeric: true });
+    return descending ? -order : order;
+  };
+
+  // Sortable tables: <table data-sortable> sorts its own rows.
+  document.querySelectorAll("table[data-sortable]").forEach(function (table) {
+    var body = table.tBodies[0];
+    makeSortable(table, function (column, descending) {
+      var rows = Array.prototype.slice.call(body.rows).map(function (row) {
+        return { row: row, key: norm(row.cells[column].textContent).trim() };
+      });
+      rows.sort(function (a, b) { return compareKeys(a.key, b.key, descending); });
+      var fragment = document.createDocumentFragment();
+      rows.forEach(function (item) { fragment.appendChild(item.row); });
+      body.appendChild(fragment);
     });
   });
 
@@ -87,54 +102,151 @@
     });
   });
 
-  // Datatype list filters: rows carry data-* attributes, the form drives them.
+  // Datatype list. The page has the first records as HTML rows; the compact
+  // index brings all of them. Until it arrives the filters work on the HTML
+  // rows; after that the table is rendered from the index, one page at a time.
   var filterForm = document.getElementById("filters");
   if (filterForm) {
-    var rows = Array.prototype.slice.call(document.querySelectorAll("#datatype-table tbody tr"));
+    var FIELDS = ["q", "category", "country", "kind", "status", "rules", "pii"];
+    var PAGE_SIZE = 100;
+    var listTable = document.getElementById("datatype-table");
+    var listBody = listTable.tBodies[0];
     var counter = document.getElementById("result-count");
-    var params = new URLSearchParams(window.location.search);
-    ["q", "category", "country", "kind", "status", "rules", "pii"].forEach(function (name) {
-      var field = filterForm.elements[name];
-      if (field && params.get(name)) field.value = params.get(name);
+    var pager = document.getElementById("pager");
+    var pagerStatus = document.getElementById("pager-status");
+    var words = function (value) { return (value || "").split(" ").filter(Boolean); };
+    var htmlRows = Array.prototype.slice.call(listBody.rows);
+    var htmlEntries = htmlRows.map(function (row) {
+      return {
+        text: row.getAttribute("data-text"),
+        categories: words(row.getAttribute("data-categories")),
+        country: words(row.getAttribute("data-country")).filter(function (c) { return c !== "any"; }),
+        kind: row.getAttribute("data-kind"),
+        status: row.getAttribute("data-status"),
+        has_rules: row.getAttribute("data-rules") === "yes",
+        is_pii: row.getAttribute("data-pii") === "yes"
+      };
     });
+    var entries = null, loadFailed = false, page = 0, sortColumn = -1, sortDescending = false;
+    var SORT_KEYS = [
+      function (e) { return e.id; },
+      function (e) { return norm(e.name); },
+      function (e) { return e.categories.join(" "); },
+      function (e) { return e.country.join(" "); },
+      function (e) { return norm(e.doc); }
+    ];
+
+    var listParams = new URLSearchParams(window.location.search);
+    FIELDS.forEach(function (name) {
+      var field = filterForm.elements[name];
+      if (field && listParams.get(name)) field.value = listParams.get(name);
+    });
+    page = Math.max(0, (parseInt(listParams.get("page"), 10) || 1) - 1);
+
+    var matches = function (e, f) {
+      return (!f.q || e.text.indexOf(f.q) !== -1) &&
+        (!f.category || e.categories.indexOf(f.category) !== -1) &&
+        (!f.country || (f.country === "any" ? !e.country.length : e.country.indexOf(f.country) !== -1)) &&
+        (!f.kind || e.kind === f.kind) &&
+        (!f.status || e.status === f.status) &&
+        (!f.rules || e.has_rules === (f.rules === "yes")) &&
+        (!f.pii || e.is_pii === (f.pii === "yes"));
+    };
+
+    var links = function (ids, folder) {
+      return ids.map(function (id) {
+        return '<a href="' + base + "/" + folder + "/" + encodeURIComponent(id) + '">' + escapeHtml(id) + "</a>";
+      }).join(", ");
+    };
+
+    var rowHtml = function (e) {
+      var href = base + "/datatype/" + encodeURIComponent(e.id);
+      return '<tr><td class="id"><a href="' + href + '">' + escapeHtml(e.id) + "</a></td>" +
+        '<td><a href="' + href + '">' + escapeHtml(e.name) + "</a>" +
+        (e.is_pii ? ' <span class="badge pii">PII</span>' : "") +
+        (e.kind === "pattern" ? ' <span class="badge neutral">pattern</span>' : "") +
+        (e.status === "stable" ? ' <span class="badge ok" title="Reviewed">stable</span>' : "") +
+        (e.status === "deprecated" ? ' <span class="badge neutral">deprecated</span>' : "") + "</td>" +
+        "<td>" + links(e.categories, "category") + "</td>" +
+        "<td>" + (e.country.length ? links(e.country, "country") : '<span class="muted">global</span>') + "</td>" +
+        '<td class="doc">' + escapeHtml(e.doc) + "</td></tr>";
+    };
 
     var apply = function () {
-      var q = norm(filterForm.elements.q.value).trim();
-      var category = filterForm.elements.category.value;
-      var country = filterForm.elements.country.value;
-      var kind = filterForm.elements.kind.value;
-      var pii = filterForm.elements.pii.value;
-      var status = filterForm.elements.status.value;
-      var rulesFilter = filterForm.elements.rules.value;
-      var shown = 0;
-      rows.forEach(function (row) {
-        var ok =
-          (!q || row.getAttribute("data-text").indexOf(q) !== -1) &&
-          (!category || (" " + row.getAttribute("data-categories") + " ").indexOf(" " + category + " ") !== -1) &&
-          (!country || (" " + row.getAttribute("data-country") + " ").indexOf(" " + country + " ") !== -1) &&
-          (!kind || row.getAttribute("data-kind") === kind) &&
-          (!status || row.getAttribute("data-status") === status) &&
-          (!rulesFilter || row.getAttribute("data-rules") === rulesFilter) &&
-          (!pii || row.getAttribute("data-pii") === pii);
-        row.hidden = !ok;
-        if (ok) shown += 1;
-      });
-      counter.textContent = "Showing " + shown + " of " + rows.length;
+      var f = {};
+      FIELDS.forEach(function (name) { f[name] = filterForm.elements[name].value; });
+      f.q = norm(f.q).trim();
+      if (!entries) {
+        var shown = 0;
+        htmlEntries.forEach(function (e, i) {
+          var ok = matches(e, f);
+          htmlRows[i].hidden = !ok;
+          if (ok) shown += 1;
+        });
+        counter.textContent = "Showing " + shown + " of the first " + htmlRows.length + " records. " +
+          (loadFailed ? "Could not load the full list." : "Loading all records…");
+      } else {
+        var hits = entries.filter(function (e) { return matches(e, f); });
+        if (sortColumn >= 0) {
+          var key = SORT_KEYS[sortColumn];
+          hits.sort(function (a, b) { return compareKeys(key(a), key(b), sortDescending); });
+        }
+        var pages = Math.max(1, Math.ceil(hits.length / PAGE_SIZE));
+        page = Math.min(page, pages - 1);
+        var first = page * PAGE_SIZE;
+        var slice = hits.slice(first, first + PAGE_SIZE);
+        listBody.innerHTML = slice.map(rowHtml).join("");
+        counter.textContent = hits.length
+          ? "Showing " + (first + 1) + "–" + (first + slice.length) + " of " + hits.length +
+            (hits.length < entries.length ? " (filtered from " + entries.length + ")" : "")
+          : "No records match these filters.";
+        pager.hidden = pages < 2;
+        pagerStatus.textContent = "Page " + (page + 1) + " of " + pages;
+        pager.querySelector('[data-step="-1"]').disabled = page === 0;
+        pager.querySelector('[data-step="1"]').disabled = page >= pages - 1;
+      }
       var state = new URLSearchParams();
-      ["q", "category", "country", "kind", "status", "rules", "pii"].forEach(function (name) {
+      FIELDS.forEach(function (name) {
         var value = filterForm.elements[name].value;
         if (value) state.set(name, value);
       });
+      if (page > 0) state.set("page", String(page + 1));
       var query = state.toString();
       history.replaceState(null, "", window.location.pathname + (query ? "?" + query : ""));
     };
-    filterForm.addEventListener("input", apply);
+
+    var requestedPage = page;
+    filterForm.addEventListener("input", function () { page = 0; requestedPage = 0; apply(); });
     filterForm.addEventListener("submit", function (event) { event.preventDefault(); apply(); });
+    pager.addEventListener("click", function (event) {
+      var step = parseInt(event.target.getAttribute("data-step"), 10);
+      if (!step) return;
+      page += step;
+      apply();
+      listTable.scrollIntoView();
+    });
     filterForm.hidden = false;
     apply();
+
+    window.registryFetchJson(base + "/api/v1/datatypes-index.json", function () {})
+      .then(function (data) {
+        data.forEach(function (e) {
+          e.text = norm([e.id, e.name].concat(e.names || [], [e.doc]).join(" "));
+        });
+        entries = data;
+        page = requestedPage;
+        makeSortable(listTable, function (column, descending) {
+          sortColumn = column;
+          sortDescending = descending;
+          page = 0;
+          apply();
+        });
+        apply();
+      })
+      .catch(function () { loadFailed = true; apply(); });
   }
 
-  // Search page: ranks records from search-index.json; nothing leaves the browser.
+  // Search page: ranks records from the compact index; nothing leaves the browser.
   var results = document.getElementById("search-results");
   if (results) {
     var input = document.getElementById("search-q");
@@ -149,20 +261,14 @@
         if (entry.id === t) s = 100;
         else if (entry.id.indexOf(t) === 0) s = 60;
         else if (entry.id.indexOf(t) !== -1) s = 40;
-        if (norm(entry.n).indexOf(t) !== -1) s = Math.max(s, 35);
-        if (norm(entry.t).indexOf(t) !== -1) s = Math.max(s, 25);
-        if (norm(entry.c).indexOf(t) !== -1) s = Math.max(s, 10);
-        if (norm(entry.d).indexOf(t) !== -1) s = Math.max(s, 8);
+        if (entry.nameText.indexOf(t) !== -1) s = Math.max(s, 35);
+        if (entry.namesText.indexOf(t) !== -1) s = Math.max(s, 25);
+        if (entry.groupText.indexOf(t) !== -1) s = Math.max(s, 10);
+        if (entry.docText.indexOf(t) !== -1) s = Math.max(s, 8);
         if (!s) return 0;
         total += s;
       }
       return total;
-    };
-
-    var escapeHtml = function (text) {
-      var div = document.createElement("div");
-      div.textContent = text || "";
-      return div.innerHTML;
     };
 
     var render = function () {
@@ -179,12 +285,12 @@
         var e = hit.entry;
         var li = document.createElement("li");
         li.innerHTML =
-          '<a href="' + base + "/datatype/" + encodeURIComponent(e.id) + '"><strong>' + escapeHtml(e.n) + "</strong></a> " +
+          '<a href="' + base + "/datatype/" + encodeURIComponent(e.id) + '"><strong>' + escapeHtml(e.name) + "</strong></a> " +
           '<code>' + escapeHtml(e.id) + "</code>" +
-          (e.p ? ' <span class="badge pii">PII</span>' : "") +
-          (e.k === "pattern" ? ' <span class="badge neutral">pattern</span>' : "") +
-          (e.s === "stable" ? ' <span class="badge ok">stable</span>' : "") +
-          '<div class="meta">' + escapeHtml(e.d) + "</div>";
+          (e.is_pii ? ' <span class="badge pii">PII</span>' : "") +
+          (e.kind === "pattern" ? ' <span class="badge neutral">pattern</span>' : "") +
+          (e.status === "stable" ? ' <span class="badge ok">stable</span>' : "") +
+          '<div class="meta">' + escapeHtml(e.doc) + "</div>";
         results.appendChild(li);
       });
     };
@@ -192,10 +298,16 @@
     var params = new URLSearchParams(window.location.search);
     input.value = params.get("q") || "";
     status.textContent = "Loading index…";
-    window.registryFetchJson(base + "/search-index.json", function (bytes) {
+    window.registryFetchJson(base + "/api/v1/datatypes-index.json", function (bytes) {
       status.textContent = "Loading index… " + (bytes / 1048576).toFixed(1) + " MB";
     })
       .then(function (data) {
+        data.forEach(function (e) {
+          e.nameText = norm(e.name);
+          e.namesText = norm((e.names || []).join(" "));
+          e.groupText = norm(e.categories.concat(e.country).join(" "));
+          e.docText = norm(e.doc);
+        });
         index = data;
         render();
         input.addEventListener("input", function () {

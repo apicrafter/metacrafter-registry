@@ -10,6 +10,8 @@ Each record has a `status`. Draft records have not been reviewed yet and may be 
 - Markdown twin of any record: append `.md`, e.g. {{ site_url }}/datatype/email.md
 - JSON API (OpenAPI 3.1): {{ site_url }}/api/v1/openapi.json
 - One record: {{ site_url }}/api/v1/datatypes/<id>.json; former ids: {{ site_url }}/api/v1/aliases.json
+- Compact index of all records: {{ site_url }}/api/v1/datatypes-index.json
+- Full records of one country or category: {{ site_url }}/api/v1/countries/<CC>.json, {{ site_url }}/api/v1/categories/<id>.json
 - RAG corpus: {{ site_url }}/api/v1/rag/corpus.jsonl
 
 ## MCP server (local, offline)

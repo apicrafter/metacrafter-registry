@@ -127,6 +127,16 @@ def _write_api_v1(out: Path, reg: RegistryModel, site_url: str, info: BuildInfo)
     _write(api / "tools.json", _dump(tools))
     _write(api / "tools.jsonl", _jsonl(tools))
 
+    _write(api / "datatypes-index.json", _dump(_datatypes_index(reg)))
+    for key, folder, groups in (
+        ("categories", "categories", reg.categories),
+        ("country", "countries", reg.countries),
+    ):
+        for gid, group in groups.items():
+            if group["count"]:
+                members = [r for r in records if gid in r.get(key, [])]
+                _write(api / folder / f"{gid}.json", _dump(members))
+
     _write(api / "categories.json", _dump(list(reg.categories.values()), indent=2))
     _write(api / "countries.json", _dump(list(reg.countries.values()), indent=2))
     _write(api / "languages.json", _dump(list(reg.langs.values()), indent=2))
@@ -160,6 +170,12 @@ def _write_agent_files(out: Path, reg: RegistryModel, site_url: str, info: Build
             out / "category" / f"{category['id']}.md",
             agents.category_markdown(category, members, site_url),
         )
+    for country in countries:
+        members = [r for r in records if country["id"] in r.get("country", [])]
+        _write(
+            out / "country" / f"{country['id']}.md",
+            agents.category_markdown(country, members, site_url),
+        )
     counts = {"datatypes": reg.kind_count("datatype"), "patterns": reg.kind_count("pattern")}
     from .client import Registry
 
@@ -177,7 +193,7 @@ def _write_agent_files(out: Path, reg: RegistryModel, site_url: str, info: Build
     )
     _write(out / "vocab.ttl", agents.vocab_turtle(site_url))
     bulk = (
-        "search-index.json",
+        "api/v1/datatypes-index.json",
         "llms-full.txt",
         "api/v1/datatypes.jsonl",
         "api/v1/rag/corpus.jsonl",
@@ -189,6 +205,40 @@ def _write_agent_files(out: Path, reg: RegistryModel, site_url: str, info: Build
         out / "datahub-glossary.yml",
         datahub.dump_glossary(datahub.business_glossary(reg, site_url)),
     )
+
+
+#: Records that /datatype/ renders as HTML; the page loads the others from
+#: the compact index.
+LIST_PAGE_SIZE = 100
+
+
+def _short_doc(doc: str) -> str:
+    return doc if len(doc) <= 160 else doc[:157].rstrip() + "…"
+
+
+def _datatypes_index(reg: RegistryModel) -> list[dict[str, Any]]:
+    """Compact index of all records: the list page, the search page and agents read it."""
+    index = []
+    for record in reg.datatypes.values():
+        entry: dict[str, Any] = {
+            "id": record["id"],
+            "name": record["name"],
+            "kind": record["kind"],
+            "status": record["status"],
+            "is_pii": record["is_pii"],
+            "categories": record.get("categories", []),
+            "country": record.get("country", []),
+            "quality": record["quality"]["score"],
+            "has_regexp": bool(record.get("regexp")),
+            "has_rules": bool(record.get("detected_by", {}).get("metacrafter_rules")),
+            "doc": _short_doc(record["doc"]),
+        }
+        names = [*record.get("aliases", [])]
+        names += [t["name"] for t in record.get("translations", {}).values() if t.get("name")]
+        if names:
+            entry["names"] = names
+        index.append(entry)
+    return index
 
 
 def _search_text(record: dict[str, Any]) -> str:
@@ -205,7 +255,7 @@ def _search_index(reg: RegistryModel) -> list[dict[str, Any]]:
             {
                 "id": record["id"],
                 "n": record["name"],
-                "d": doc if len(doc) <= 160 else doc[:157].rstrip() + "…",
+                "d": _short_doc(doc),
                 "k": record["kind"],
                 "p": record["is_pii"],
                 "s": record["status"],
@@ -304,7 +354,8 @@ def _render_site(
         "datatype/index.html",
         "/datatype/",
         section="datatypes",
-        records=records,
+        records=records[:LIST_PAGE_SIZE],
+        total=len(records),
     )
     for rid, record in reg.datatypes.items():
         render(
@@ -316,6 +367,7 @@ def _render_site(
             patterns=[reg.datatypes[p] for p in record.get("patterns", [])],
             children=[reg.datatypes[c] for c in record.get("children", [])],
             jsonld=_jsonld(record, site_url),
+            js_pattern=agents.js_regexp(record["regexp"]) if record.get("regexp") else None,
         )
 
     for alias, canonical in reg.aliases.items():
@@ -449,6 +501,7 @@ def _write_manifest(
         "api/v1/datatypes.json",
         "api/v1/datatypes.jsonl",
         "api/v1/datatypes.csv",
+        "api/v1/datatypes-index.json",
         "api/v1/tools.json",
         "api/v1/tools.jsonl",
         "api/v1/openapi.json",

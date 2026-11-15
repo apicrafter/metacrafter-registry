@@ -35,6 +35,8 @@
     <tr><td class="id"><a href="{{ base }}/api/v1/datatypes.json">/api/v1/datatypes.json</a></td><td>All datatypes and patterns (array); also <a href="{{ base }}/api/v1/datatypes.jsonl">.jsonl</a> and <a href="{{ base }}/api/v1/datatypes.csv">.csv</a></td></tr>
     <tr><td class="id">/api/v1/tools/&lt;id&gt;.json</td><td>One tool; all tools in <a href="{{ base }}/api/v1/tools.json">/api/v1/tools.json</a></td></tr>
     <tr><td class="id"><a href="{{ base }}/api/v1/categories.json">/api/v1/categories.json</a></td><td>Categories with counts; also <a href="{{ base }}/api/v1/countries.json">countries.json</a>, <a href="{{ base }}/api/v1/languages.json">languages.json</a></td></tr>
+    <tr><td class="id"><a href="{{ base }}/api/v1/datatypes-index.json">/api/v1/datatypes-index.json</a></td><td>Compact index of all records: id, name, kind, status, PII flag, categories, countries, quality score</td></tr>
+    <tr><td class="id">/api/v1/categories/&lt;id&gt;.json<br>/api/v1/countries/&lt;CC&gt;.json</td><td>Full records of one category or one country, for example <code>/api/v1/countries/RU.json</code></td></tr>
     <tr><td class="id"><a href="{{ base }}/api/v1/aliases.json">/api/v1/aliases.json</a></td><td>Retired IDs and the record each one now resolves to</td></tr>
     <tr><td class="id"><a href="{{ base }}/registry.ttl">/registry.ttl</a></td><td>RDF: SKOS concept scheme of all datatypes and patterns, with mappings, regexps, examples and tools (Turtle)</td></tr>
     <tr><td class="id">/datatype/&lt;id&gt;.ttl</td><td>RDF: one datatype or pattern, the same triples as in <code>registry.ttl</code></td></tr>

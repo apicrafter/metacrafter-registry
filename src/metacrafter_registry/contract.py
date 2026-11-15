@@ -59,7 +59,7 @@ def _json_check(predicate: Callable[[object], bool], what: str) -> Callable[[byt
 
 CHECKS: list[tuple[str, str, Callable[[bytes], str | None]]] = [
     ("/", "text/html", _html_mentions("Metacrafter Registry")),
-    ("/datatype/", "text/html", _html_mentions("/datatype/email")),
+    ("/datatype/", "text/html", _html_mentions('id="datatype-table"')),
     ("/datatype/email", "text/html", _html_mentions("email")),
     (
         "/api/v1/datatypes/email.json",
@@ -81,6 +81,22 @@ CHECKS: list[tuple[str, str, Callable[[bytes], str | None]]] = [
         "/api/v1/coverage.json",
         "application/json",
         _json_check(lambda d: "orphan_rule_keys" in d, "coverage report"),
+    ),
+    (
+        "/api/v1/datatypes-index.json",
+        "application/json",
+        _json_check(
+            lambda d: any(e.get("id") == "email" and "categories" in e for e in d),
+            "index has email with categories",
+        ),
+    ),
+    (
+        "/api/v1/categories/pii.json",
+        "application/json",
+        _json_check(
+            lambda d: bool(d) and all("pii" in r.get("categories", []) for r in d),
+            "every record is in the category pii",
+        ),
     ),
     ("/datatype/email.md", "text/markdown", _html_mentions('id: "email"')),
     ("/datatype/email.ttl", "text/turtle", _html_mentions("dt:email a skos:Concept")),

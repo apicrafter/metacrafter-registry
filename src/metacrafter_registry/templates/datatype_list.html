@@ -53,7 +53,13 @@
   </label>
 </form>
 <script>document.getElementById("filters").hidden = false;</script>
-<p id="result-count" class="result-count" aria-live="polite">{{ records|length }} records</p>
+<p id="result-count" class="result-count" aria-live="polite">The first {{ records|length }} of {{ total }} records</p>
+<noscript><p class="notice">This page shows the first {{ records|length }} records; the others load with JavaScript. Without it, every record is listed on the <a href="{{ base }}/category/">category</a> and <a href="{{ base }}/country/">country</a> pages.</p></noscript>
 
 {{ datatype_table(records, 'datatype-table') }}
+<nav id="pager" class="pager" aria-label="Pages" hidden>
+  <button type="button" data-step="-1">Previous</button>
+  <span id="pager-status"></span>
+  <button type="button" data-step="1">Next</button>
+</nav>
 {% endblock %}

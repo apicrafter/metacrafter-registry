@@ -221,6 +221,36 @@ SCHEMAS: dict[str, Any] = {
             "files": {"type": "object", "additionalProperties": _ref("FileInfo")},
         },
     },
+    "IndexEntry": {
+        "type": "object",
+        "required": [
+            "id",
+            "name",
+            "kind",
+            "status",
+            "is_pii",
+            "categories",
+            "country",
+            "quality",
+            "has_regexp",
+            "has_rules",
+            "doc",
+        ],
+        "properties": {
+            "id": {"type": "string"},
+            "name": {"type": "string"},
+            "kind": {"type": "string", "enum": ["datatype", "pattern"]},
+            "status": {"type": "string", "enum": ["draft", "stable", "deprecated"]},
+            "is_pii": {"type": "boolean"},
+            "categories": ID_LIST,
+            "country": {**ID_LIST, "description": "Empty for a global datatype"},
+            "quality": {"type": "integer", "minimum": 0, "maximum": 100},
+            "has_regexp": {"type": "boolean"},
+            "has_rules": {"type": "boolean", "description": "A metacrafter rule detects it"},
+            "doc": {"type": "string", "description": "Description, cut to 160 characters"},
+            "names": {**ID_LIST, "description": "Former ids and translated names"},
+        },
+    },
     "SearchEntry": {
         "type": "object",
         "description": "Short keys keep the index small.",
@@ -328,6 +358,38 @@ def build_openapi(site_url: str, version: str) -> dict[str, Any]:
             "responses": _json_response("Coverage report", {"type": "object"}),
         }
     }
+    paths["/api/v1/datatypes-index.json"] = {
+        "get": {
+            "operationId": "getDatatypesIndex",
+            "summary": "Compact index of all datatypes and patterns: filter it, then read "
+            "the records you need",
+            "responses": _json_response(
+                "Array of index entries", {"type": "array", "items": _ref("IndexEntry")}
+            ),
+        }
+    }
+    for folder, operation, summary, example in (
+        ("categories", "listDatatypesOfCategory", "Full records of one category", "pii"),
+        ("countries", "listDatatypesOfCountry", "Full records of one country or region", "RU"),
+    ):
+        paths[f"/api/v1/{folder}/{{id}}.json"] = {
+            "get": {
+                "operationId": operation,
+                "summary": summary,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": True,
+                        "description": f"Id from /api/v1/{folder}.json, e.g. {example}",
+                        "schema": {"type": "string"},
+                    }
+                ],
+                "responses": _json_response(
+                    "Array of records", {"type": "array", "items": _ref("Datatype")}
+                ),
+            }
+        }
     paths["/api/v1/changes.json"] = {
         "get": {
             "operationId": "listChanges",
@@ -358,7 +420,8 @@ def build_openapi(site_url: str, version: str) -> dict[str, Any]:
     paths["/search-index.json"] = {
         "get": {
             "operationId": "getSearchIndex",
-            "summary": "Compact index of all records for client-side keyword search",
+            "deprecated": True,
+            "summary": "Older index with one-letter keys; use /api/v1/datatypes-index.json",
             "responses": _json_response(
                 "Array of index entries", {"type": "array", "items": _ref("SearchEntry")}
             ),
