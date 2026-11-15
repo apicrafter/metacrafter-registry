@@ -1,0 +1,44 @@
+id: oecd_ford_code
+name: OECD field of research and development code (FORD)
+status: draft
+doc: 'Code of a field in the OECD classification of Fields of Research and Development (FORD) of the Frascati
+  Manual 2015, which revised the Fields of Science and Technology (FOS) of 2007. The six broad fields
+  are one digit (1 Natural sciences, 2 Engineering and technology, 3 Medical and health sciences, 4 Agricultural
+  and veterinary sciences, 5 Social sciences, 6 Humanities and the arts) and the 42 fields add a number
+  after a dot (1.1 Mathematics to 6.5 Other humanities). Research information systems number the disciplines
+  inside a field with a third part: the Argentine SICYTAR has 1.1.1 Pure mathematics and 1.5.10 Climate
+  research, with 1.1.0 or 1.0 for a field or broad field without a more detailed one. Names of the fields
+  are academic_discipline.'
+parent: category
+categories:
+- science
+- education
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-6](?:\.\d{1,2}(?:\.\d{1,2})?)?$
+examples:
+- value: '1.1'
+  description: Mathematics
+- value: '2.11'
+  description: Other engineering and technologies
+- value: 1.1.1
+  description: Pure mathematics, a discipline of SICYTAR
+- value: 1.5.10
+  description: Climate research, a discipline of SICYTAR
+- value: '1.0'
+  description: Natural sciences without a field (SICYTAR)
+- value: '7.1'
+  valid: false
+  description: there is no broad field 7
+links:
+- type: doc
+  url: https://www.oecd.org/en/publications/frascati-manual-2015_9789264239012-en.html
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Fields_of_Science_and_Technology
+- type: doc
+  url: https://datasets.datos.mincyt.gob.ar/dataset/personal-de-ciencia-y-tecnologia
+translations:
+  es:
+    name: Código de campo de investigación y desarrollo de la OCDE (FORD)

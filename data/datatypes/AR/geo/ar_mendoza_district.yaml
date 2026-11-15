@@ -1,0 +1,41 @@
+id: ar_mendoza_district
+name: District of a department of Mendoza
+status: draft
+doc: 'Name of a distrito, the division of a department of the province of Mendoza, Argentina, below the
+  18 departments: Villa Nueva, Rodeo de la Cruz and Dorrego in Guaymallén, El Challao and Uspallata in
+  Las Heras, Chacras de Coria in Luján de Cuyo, Cuadro Benegas in San Rafael, the twelve numbered sections
+  of the Capital (Segunda Sección, 4ª Sección Área Fundacional). The head town of a department is the
+  district Ciudad (Ciudad de San Martín). Provincial and municipal tables of schools, health centres,
+  offices and addresses have a distrito column; names are written in capitals without accents (RODEO DE
+  LA CRUZ), abbreviated (Va. Hipódromo, Gdor. Benegas) or with the initial of the department where two
+  departments have a district of the same name (San José (G), La Primavera (T)).'
+parent: admin_area_3
+categories:
+- geo
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Rodeo de la Cruz
+  description: Guaymallén
+- value: EL PLUMERILLO
+  description: Las Heras, in capitals
+- value: Segunda Sección
+  description: one of the sections of the Capital
+- value: San José (G)
+  description: the San José district of Guaymallén
+- value: Guaymallén
+  valid: false
+  description: 'a department: ar_department'
+links:
+- type: wikipedia
+  url: https://es.wikipedia.org/wiki/Anexo:Distritos_de_la_provincia_de_Mendoza
+- type: doc
+  url: https://datosabiertos.mendoza.gov.ar/dataset/localidades-de-la-provincia-de-mendoza
+translations:
+  es:
+    name: Distrito de un departamento de Mendoza

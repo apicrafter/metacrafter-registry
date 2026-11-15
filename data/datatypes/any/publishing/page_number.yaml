@@ -1,0 +1,32 @@
+id: page_number
+name: Page number (first or last page)
+status: draft
+doc: 'Number of the first or the last page of an article, a chapter or another part of a publication,
+  as bibliographic records give the page range in two fields: start_page and end_page, BP and EP of Web
+  of Science, spage and epage of OpenURL, pagina_inicial and pagina_final. Mostly a positive integer;
+  some journals number pages with a letter prefix (S12 in a supplement, e0123 for an article number) and
+  front matter has Roman numerals. The count of pages of a book is number_of_pages.'
+categories:
+- publishing
+langs:
+- common
+is_pii: false
+regexp: ^(?:[A-Za-z]{0,2}\d{1,8}|[ivxlcdmIVXLCDM]{1,8})$
+examples:
+- value: '195'
+  description: first page
+- value: '1101'
+  description: last page
+- value: S12
+  description: a supplement page
+- value: xiv
+  description: a front matter page
+- value: 195-198
+  valid: false
+  description: a page range
+links:
+- type: doc
+  url: https://www.crossref.org/documentation/schema-library/markup-guide-metadata-segments/pages/
+translations:
+  es:
+    name: Número de página (inicial o final)

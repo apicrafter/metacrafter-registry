@@ -1,0 +1,29 @@
+id: journal_volume
+name: Journal volume
+status: draft
+doc: 'Volume of a journal or another serial in which an article appeared: mostly a number counted from
+  the first year of the journal (43, 190), sometimes with a letter or a part (12A, 5 Suppl), in Roman
+  numerals (XXXV) or a year. With the issue and the page range (page_number) it locates the article; bibliographic
+  records name it volume, VL (RIS and Web of Science) or volumen.'
+categories:
+- publishing
+langs:
+- common
+is_pii: false
+regexp: ^(?:\d{1,5}[A-Za-z]?(?:\s?\(?(?:[Ss]uppl\.?|[Pp]t\.?)\s?\d*\)?)?|[IVXLCDM]{1,8})$
+examples:
+- value: '43'
+- value: '190'
+- value: 12A
+- value: 5 Suppl
+- value: XXXV
+  description: a volume in Roman numerals
+- value: Q1
+  valid: false
+  description: a journal quartile
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Volume_(bibliography)
+translations:
+  es:
+    name: Volumen de la revista

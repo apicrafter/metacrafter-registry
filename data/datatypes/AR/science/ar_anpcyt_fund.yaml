@@ -1,0 +1,33 @@
+id: ar_anpcyt_fund
+name: Argentine ANPCyT fund
+status: draft
+doc: 'Fund of the Agencia Nacional de Promoción Científica y Tecnológica (ANPCyT, now Agencia I+D+i) of
+  Argentina that finances a project: FONCYT (Fondo para la Investigación Científica y Tecnológica, research
+  projects such as PICT), FONTAR (Fondo Tecnológico Argentino, innovation in companies), FONSOFT (Fondo
+  Fiduciario de Promoción de la Industria del Software) and FONARSEC (Fondo Argentino Sectorial). The
+  SICYTAR projects list gives it as fondo_anpcyt.'
+parent: category
+categories:
+- science
+- government
+country:
+- AR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^(?:FONCYT|FONCyT|FONTAR|FONSOFT|FONARSEC)$
+examples:
+- value: FONCYT
+- value: FONTAR
+- value: FONSOFT
+- value: FONARSEC
+- value: FONDECYT
+  valid: false
+  description: a Chilean fund
+links:
+- type: doc
+  url: https://www.argentina.gob.ar/ciencia/agencia
+translations:
+  es:
+    name: Fondo de la ANPCyT
