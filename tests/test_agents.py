@@ -12,7 +12,13 @@ def test_llms_txt(built_site):
         assert f"https://registry.apicrafter.io{link}" in text
     assert "Draft records have not been reviewed" in text
     assert "## How to find a datatype" in text
-    assert "/search-index.json) (" in text and " MB)" in text
+    assert "/api/v1/datatypes-index.json) (" in text and " MB)" in text
+    assert "(https://registry.apicrafter.io/country/RU.md)" in text
+    country = (built_site / "country/RU.md").read_text("utf-8")
+    assert country.startswith("# Russian Federation (`RU`)")
+    assert "(https://registry.apicrafter.io/datatype/inn.md)" in country
+    page = (built_site / "country/RU.html").read_text("utf-8")
+    assert '<link rel="alternate" type="text/markdown" href="/country/RU.md"' in page
     full = (built_site / "llms-full.txt").read_text("utf-8")
     assert "## Email address" in full and "id `email`" in full
 

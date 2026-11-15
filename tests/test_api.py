@@ -45,6 +45,9 @@ def test_openapi_document_is_valid(spec):
     assert "/registry.json" in spec["paths"]
     for path in (
         "/search-index.json",
+        "/api/v1/datatypes-index.json",
+        "/api/v1/categories/{id}.json",
+        "/api/v1/countries/{id}.json",
         "/api/v1/changes.json",
         "/datatype/{id}.md",
         "/api/v1/rag/corpus.jsonl",
@@ -127,6 +130,36 @@ def test_search_index(built_site):
     email = next(e for e in index if e["id"] == "email")
     assert "электронной почты" in email["t"].lower()
     assert len(index) == len(load(built_site, "api/v1/datatypes.json"))
+
+
+def test_datatypes_index(built_site):
+    records = load(built_site, "api/v1/datatypes.json")
+    index = load(built_site, "api/v1/datatypes-index.json")
+    assert [e["id"] for e in index] == [r["id"] for r in records]
+    email = next(e for e in index if e["id"] == "email")
+    assert email["country"] == [] and email["kind"] == "datatype" and email["has_regexp"]
+    assert any("электронной почты" in name.lower() for name in email["names"])
+    assert all(len(e["doc"]) <= 160 for e in index)
+    manifest = load(built_site, "api/v1/index.json")
+    assert "api/v1/datatypes-index.json" in manifest["files"]
+
+
+def test_slices_equal_the_filtered_bulk_file(built_site):
+    records = load(built_site, "api/v1/datatypes.json")
+    for key, folder, listing in (
+        ("country", "countries", "countries.json"),
+        ("categories", "categories", "categories.json"),
+    ):
+        for group in load(built_site, f"api/v1/{listing}"):
+            path = built_site / f"api/v1/{folder}/{group['id']}.json"
+            expected = [r for r in records if group["id"] in r.get(key, [])]
+            assert path.is_file() == bool(expected), path
+            if expected:
+                assert json.loads(path.read_text("utf-8")) == expected
+    several = next(r for r in records if len(r.get("country", [])) > 1)
+    for code in several["country"]:
+        slice_ids = [r["id"] for r in load(built_site, f"api/v1/countries/{code}.json")]
+        assert several["id"] in slice_ids
 
 
 def test_entity_page_structured_data(built_site):

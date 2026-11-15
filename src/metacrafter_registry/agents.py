@@ -263,10 +263,13 @@ def llms_txt(
         f"`{s}/api/v1/datatypes/<id>.json`. Former ids resolve.",
         "2. You know the topic: read one category list below (`/category/<id>.md`), "
         "then the records you need.",
-        f"3. You have keywords: download [the search index]({s}/search-index.json)"
-        f"{size('search-index.json')} and match `id`, `n` (name) and `t` (aliases and "
-        "translated names) yourself. The site has no server-side search.",
-        "4. You have sample values: use the MCP tool `identify_values` or "
+        f"3. You know the country: read `{s}/country/<CC>.md` for the list, or "
+        f"`{s}/api/v1/countries/<CC>.json` for the full records of that country. "
+        f"Categories have the same JSON: `{s}/api/v1/categories/<id>.json`.",
+        f"4. You have keywords: download [the compact index]({s}/api/v1/datatypes-index.json)"
+        f"{size('api/v1/datatypes-index.json')} and match `id`, `name` and `names` (aliases "
+        "and translated names) yourself. The site has no server-side search.",
+        "5. You have sample values: use the MCP tool `identify_values` or "
         "`Registry.identify()` from the Python package (see For AI agents).",
         "",
         "Do not load the bulk files below into a context window: use them for indexing.",
@@ -300,7 +303,7 @@ def llms_txt(
         f"- [{c['name']}]({s}/category/{c['id']}.md): {c['count']} records" for c in categories
     ]
     lines += ["", "## Optional", ""]
-    lines += [f"- [{c['name']}]({s}/country/{c['id']}): {c['count']} records" for c in countries]
+    lines += [f"- [{c['name']}]({s}/country/{c['id']}.md): {c['count']} records" for c in countries]
     return "\n".join(lines) + "\n"
 
 

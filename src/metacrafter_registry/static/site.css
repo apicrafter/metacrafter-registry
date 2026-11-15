@@ -209,6 +209,9 @@ a.cta {
 .filters input[type="search"] { min-width: 14rem; }
 .result-count { margin: .5rem 0; color: var(--fg-muted); font-size: .9rem; }
 
+.native-name { font-size: 1.15rem; color: var(--fg-muted); margin: -.5rem 0 .5rem; }
+.pager { display: flex; align-items: center; gap: .75rem; margin: 1rem 0; color: var(--fg-muted); font-size: .9rem; }
+.pager button:disabled { opacity: .5; cursor: default; }
 .id-line { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; color: var(--fg-muted); }
 .copy-btn { font-size: .8rem; padding: .1rem .5rem; }
 

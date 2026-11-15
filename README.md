@@ -291,6 +291,8 @@ JSON API (static files, described in `/api/v1/openapi.json`):
 | `/datatype/<id>.ttl` | One record in Turtle, the same triples as in `/registry.ttl` |
 | `/vocab`, `/vocab.ttl` | The registry's RDF vocabulary (`mcr:`): page and OWL declaration |
 | `/datahub-glossary.yml` | DataHub business glossary: one term per record, URN `urn:li:glossaryTerm:<id>` |
+| `/api/v1/datatypes-index.json` | Compact index of all records: id, name, kind, status, PII flag, categories, countries, quality |
+| `/api/v1/categories/<id>.json`, `/api/v1/countries/<CC>.json` | Full records of one category or one country |
 | `/api/v1/aliases.json` | Retired ids and the record each one resolves to |
 | `/api/v1/coverage.json` | metacrafter-rules coverage: orphan rule keys, records without rules |
 | `/api/v1/changes.json` | Changes per data release |

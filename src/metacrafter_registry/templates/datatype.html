@@ -8,10 +8,17 @@
   <link rel="alternate" type="application/json" href="{{ base }}/datatype/{{ object.id }}.json" title="Legacy record">
   <link rel="alternate" type="text/turtle" href="{{ base }}/datatype/{{ object.id }}.ttl" title="RDF (Turtle)">
   <script type="application/ld+json">{{ jsonld|tojson }}</script>
+  {% if js_pattern or object.checksum %}
+  <script src="{{ base }}/assets/identify-core.js" defer></script>
+  <script src="{{ base }}/assets/value-test.js" defer></script>
+  {% endif %}
 {% endblock %}
 {% block content %}
 <p class="small muted"><a href="{{ base }}/datatype/">Datatypes</a>{% for c in object.country or [] %} › <a href="{{ base }}/country/{{ c }}">{{ reg.countries[c].name }}</a>{% endfor %}{% if object.categories %} › <a href="{{ base }}/category/{{ object.categories[0] }}">{{ reg.categories[object.categories[0]].name }}</a>{% endif %}{% if object.semantic_type %} › <a href="{{ base }}/datatype/{{ object.semantic_type }}">{{ object.semantic_type }}</a>{% endif %}</p>
 <h1>{{ object.name }}</h1>
+{% for l in object.langs or [] %}{% set native = ((object.translations or {}).get(l) or {}).get('name') %}{% if native and native != object.name %}
+<p class="native-name" lang="{{ l }}">{{ native }}</p>
+{% endif %}{% endfor %}
 <p class="id-line">ID <code>{{ object.id }}</code> <button type="button" class="copy-btn" data-copy="{{ object.id }}" hidden>Copy</button></p>
 <div class="badges">
   {% if object.kind == 'pattern' %}<span class="badge neutral">Pattern of {{ object.semantic_type }}</span>{% else %}<span class="badge">Datatype</span>{% endif %}
@@ -88,6 +95,18 @@
 <h2>Regular expression <button type="button" class="copy-btn" data-copy="{{ object.regexp }}" hidden>Copy</button></h2>
 <pre><code>{{ object.regexp }}</code></pre>
 <p class="small muted">Python <code>re</code> syntax.{% if not (object.regexp.startswith('^') and object.regexp.endswith('$')) %} Not anchored: it can match inside longer text.{% endif %}</p>
+{% endif %}
+
+{% if js_pattern or object.checksum %}
+<h2>Test a value</h2>
+<form id="value-test" class="filters"{% if js_pattern %} data-re="{{ js_pattern[0] }}" data-flags="{{ js_pattern[1] }}"{% endif %}{% if object.checksum %} data-checksum="{{ object.checksum }}"{% endif %} hidden>
+  <label for="value-test-input">One value
+    <input id="value-test-input" type="text" name="value" size="32" autocomplete="off" spellcheck="false">
+  </label>
+  <button type="submit">Test</button>
+</form>
+<p id="value-test-result" class="result-count" aria-live="polite"></p>
+<noscript><p class="small muted">The test needs JavaScript.</p></noscript>
 {% endif %}
 
 {% if object.examples %}
