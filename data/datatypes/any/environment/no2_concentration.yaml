@@ -1,0 +1,32 @@
+id: no2_concentration
+name: Nitrogen dioxide concentration
+status: draft
+doc: 'Concentration of nitrogen dioxide (NO2) in air, as air quality stations and gas sensors report it:
+  in parts per billion (ppb) or micrograms per cubic metre. The number is usually bare, with the unit
+  in the column name or the metadata. A number alone does not tell this measure from another, so a value
+  is one only in a field named after the gas (air quality observations of the City of Ballarat, Victoria).'
+parent: numeric
+categories:
+- environment
+- chemistry
+- values
+langs:
+- common
+is_pii: false
+regexp: ^[-+]?\d+(?:[.,]\d+)?\s?(?:µg/m³|µg/m3|μg/m³|ug/m3|mg/m³|mg/m3|ppb|ppm)?$
+examples:
+- value: '41'
+  description: parts per billion
+- value: '37.5'
+  description: one decimal
+- value: 82 µg/m³
+  description: with the unit
+- value: NO2
+  valid: false
+  description: the notation of the pollutant (air_pollutant), not a concentration
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Nitrogen_dioxide
+translations:
+  ru:
+    name: Концентрация диоксида азота

@@ -1,0 +1,29 @@
+id: total_dissolved_solids
+name: Total dissolved solids
+status: draft
+doc: 'Total dissolved solids (TDS) of water: the mass of dissolved minerals, salts and organic matter
+  per volume, in milligrams per litre or parts per million (drinking water below about 600 mg/L), measured
+  by evaporation or estimated from the electrical conductivity.'
+parent: numeric
+categories:
+- environment
+- chemistry
+- values
+langs:
+- common
+is_pii: false
+regexp: ^[-+]?\d+(?:[.,]\d+)?\s?(?:mg/L|mg/l|ppm|g/L)?$
+examples:
+- value: '660.89'
+  description: mg/L
+- value: 250 mg/L
+  description: with the unit
+- value: abc
+  valid: false
+  description: not a number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Total_dissolved_solids
+translations:
+  ru:
+    name: Общая минерализация (сухой остаток)

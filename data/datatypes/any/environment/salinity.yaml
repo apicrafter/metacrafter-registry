@@ -1,0 +1,29 @@
+id: salinity
+name: Salinity
+status: draft
+doc: 'Salt content of water: in parts per thousand (ppt, ‰) or practical salinity units (PSU) in oceanography
+  (about 35 in sea water), or in grams or milligrams per litre; fresh water is below 0.5 ppt. Water quality
+  sensors usually derive it from the electrical conductivity.'
+parent: numeric
+categories:
+- environment
+- chemistry
+- values
+langs:
+- common
+is_pii: false
+regexp: ^[-+]?\d+(?:[.,]\d+)?\s?(?:ppt|PSU|psu|g/kg|g/L|g/l|mg/L|mg/l|‰)?$
+examples:
+- value: '0.702'
+  description: ppt, a freshwater lake
+- value: 35.1 PSU
+  description: sea water
+- value: fresh
+  valid: false
+  description: a class in words
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Salinity
+translations:
+  ru:
+    name: Солёность

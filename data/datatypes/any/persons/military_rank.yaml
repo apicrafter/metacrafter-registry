@@ -1,0 +1,37 @@
+id: military_rank
+name: Military rank
+status: draft
+doc: 'Rank of a member of the armed forces, abbreviated or in full: Pte, Cpl, Sgt, WO2, Lt, Capt, Maj,
+  Lt Col, Brig in Commonwealth armies; AB, PO, Lt Cdr, Cdre in navies; LAC, Flt Lt, Sqn Ldr, Wg Cdr in
+  air forces; PFC, SFC, CPT, LTC in the US Army. War memorials, honour rolls and service records write
+  it with full stops, with a trade (PTE. Driver) and with the post-nominals of decorations (CAPT. MC.,
+  LT COL. DSO.): the plaques of the Avenue of Honour of Ballarat (Victoria) name 3 757 soldiers of the
+  First World War with their rank and battalion.'
+categories:
+- persons
+- government
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: SGT.
+  description: sergeant, as the Avenue of Honour writes it
+- value: LT COL. DSO.
+  description: lieutenant colonel with the DSO
+- value: Flt Lt
+  description: flight lieutenant, air force
+- value: MM.
+  valid: false
+  description: a decoration (Military Medal) without a rank
+- value: species
+  valid: false
+  description: a taxon rank
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Military_rank
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Australian_Army_officer_rank_insignia
+translations:
+  ru:
+    name: Воинское звание

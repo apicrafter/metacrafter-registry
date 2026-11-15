@@ -1,0 +1,32 @@
+id: wind_speed
+name: Wind speed
+status: draft
+doc: 'Speed of the wind, as a mean over a reading interval or as the speed of the strongest gust: in metres
+  per second (5.6), kilometres per hour (20.16), knots or miles per hour, with the unit in the column
+  name or the metadata. The City of Ballarat publishes the mean and the gust in m/s and in km/h in four
+  columns. The direction is wind_direction (degrees) or compass_point (letters).'
+parent: numeric
+categories:
+- environment
+- science
+- values
+langs:
+- common
+is_pii: false
+regexp: ^[-+]?\d+(?:[.,]\d+)?\s?(?:m/s|km/h|kmh|kph|kn|kt|knots|mph)?$
+examples:
+- value: '5.6'
+  description: metres per second
+- value: '20.16'
+  description: kilometres per hour
+- value: 12 kn
+  description: knots
+- value: NW
+  valid: false
+  description: a direction
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Wind_speed
+translations:
+  ru:
+    name: Скорость ветра

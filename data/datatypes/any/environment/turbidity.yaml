@@ -1,0 +1,32 @@
+id: turbidity
+name: Turbidity
+status: draft
+doc: 'Cloudiness of water from suspended particles, measured by scattered light: in nephelometric turbidity
+  units (NTU) or formazin nephelometric units (FNU), which are numerically close, or as an estimate of
+  suspended solids in mg/L; drinking water is below 1 NTU. Water quality sondes report it every few minutes;
+  the City of Ballarat gives NTU, FNU and mg/L in three columns.'
+parent: numeric
+categories:
+- environment
+- science
+- values
+langs:
+- common
+is_pii: false
+regexp: ^[-+]?\d+(?:[.,]\d+)?\s?(?:NTU|FNU|FTU|JTU|mg/L|mg/l)?$
+examples:
+- value: '0.796'
+  description: NTU
+- value: 12 NTU
+  description: with the unit
+- value: 1.6 FNU
+  description: formazin units
+- value: clear
+  valid: false
+  description: a word
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Turbidity
+translations:
+  ru:
+    name: Мутность воды

@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "ea4edf031c842cd2dd45fb34a61235c1ff108f65"
+  "ref": "447ef5f92c7b1e30f90e87b5e6956139163e89e3"
  },
  "rules": [
   {
@@ -1651,6 +1651,16 @@
    "match": "text",
    "file": "au/au_finances.yaml",
    "context": "finances",
+   "lang": "en",
+   "country_code": "au"
+  },
+  {
+   "rule": "auaddressvalue",
+   "key": "address",
+   "type": "data",
+   "match": "func",
+   "file": "au/au_geo.yaml",
+   "context": "geo",
    "lang": "en",
    "country_code": "au"
   },
@@ -5105,6 +5115,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "geopointpointbyname",
+   "key": "geopoint",
+   "type": "field",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "geopointtextbyname",
    "key": "geopoint",
    "type": "field",
@@ -6715,6 +6735,236 @@
    "country_code": "xx"
   },
   {
+   "rule": "atmosphericpressurebyname",
+   "key": "atmospheric_pressure",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "coconcentrationbyname",
+   "key": "co_concentration",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "electricalconductivitybyname",
+   "key": "electrical_conductivity",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "eui64byname",
+   "key": "eui64",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "militaryrankbyname",
+   "key": "military_rank",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "no2concentrationbyname",
+   "key": "no2_concentration",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "ozoneconcentrationbyname",
+   "key": "ozone_concentration",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "pm10concentrationbyname",
+   "key": "pm10_concentration",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "pm1concentrationbyname",
+   "key": "pm1_concentration",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "pm25concentrationbyname",
+   "key": "pm25_concentration",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "precipitationbyname",
+   "key": "precipitation_amount",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "relativehumiditybyname",
+   "key": "relative_humidity",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "salinitybyname",
+   "key": "salinity",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "solarradiationbyname",
+   "key": "solar_radiation",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "soundpressurelevelbyname",
+   "key": "sound_pressure_level",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "totaldissolvedsolidsbyname",
+   "key": "total_dissolved_solids",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "treedbhbyname",
+   "key": "tree_dbh",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "turbiditybyname",
+   "key": "turbidity",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "vapourpressurebyname",
+   "key": "vapour_pressure",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "winddirectionbyname",
+   "key": "wind_direction",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "windspeedbyname",
+   "key": "wind_speed",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "wktcrsbyname",
+   "key": "wkt_crs",
+   "type": "field",
+   "match": "regex",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "wktcrsvalue",
+   "key": "wkt_crs",
+   "type": "data",
+   "match": "func",
+   "file": "common/observations.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "companycompanybyknown",
    "key": "orgname",
    "type": "field",
@@ -7079,6 +7329,16 @@
    "key": "propertyid",
    "type": "data",
    "match": "ppr",
+   "file": "common/realestate.yaml",
+   "context": "realestate",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "propertynumberbyname",
+   "key": "propertyid",
+   "type": "field",
+   "match": "regex",
    "file": "common/realestate.yaml",
    "context": "realestate",
    "lang": "common",

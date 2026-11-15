@@ -1,0 +1,33 @@
+id: vapour_pressure
+name: Vapour pressure
+status: draft
+doc: Partial pressure of water vapour in the air, in hectopascals (about 10 hPa) or kilopascals (1.01
+  kPa), as weather stations report it next to the air pressure and the humidity; the Australian Bureau
+  of Meteorology gives the 9 am and 3 pm vapour pressure of each day. A small number alone does not tell
+  it from another measure, so a value is one only in a field named after it (air pressure observations
+  of the City of Ballarat, Victoria).
+parent: numeric
+categories:
+- environment
+- science
+- values
+langs:
+- common
+is_pii: false
+regexp: ^[-+]?\d+(?:[.,]\d+)?\s?(?:hPa|kPa|mbar|mb)?$
+examples:
+- value: '10.1'
+  description: hectopascals
+- value: '1.01'
+  description: kilopascals
+- value: 12 hPa
+  description: with the unit
+- value: humid
+  valid: false
+  description: a word
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vapour_pressure_of_water
+translations:
+  ru:
+    name: Парциальное давление водяного пара

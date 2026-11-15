@@ -1,0 +1,36 @@
+id: tree_dbh
+name: Tree diameter at breast height (DBH)
+status: draft
+doc: 'Diameter of a tree trunk at breast height, 1.3 m above the ground in most countries (1.37 m, 4.5
+  ft, in the United States): the standard size of a tree in forest inventories and urban tree registers.
+  It is a number in centimetres or inches (NYC Street Tree Census: tree_dbh in inches), or a size class
+  of the register: <15cm, 16cm - 30cm, 61cm-90cm, > 90cm (tree register and Exceptional Tree Register
+  of the City of Ballarat). A trunk circumference, as Paris and other French cities give it, is another
+  measure.'
+parent: numeric
+categories:
+- environment
+- science
+- values
+langs:
+- common
+is_pii: false
+regexp: ^(?:[<>≤≥]=?\s*)?\d{1,4}(?:[.,]\d+)?\s*(?:cm|mm|in|\")?(?:\s*(?:-|–|to)\s*\d{1,4}(?:[.,]\d+)?\s*(?:cm|mm|in|\")?|\s*\+)?$
+examples:
+- value: '45'
+  description: centimetres
+- value: 31cm - 60cm
+  description: a size class
+- value: '> 90cm'
+  description: the largest class
+- value: 12 in
+  description: inches
+- value: Not Assessed
+  valid: false
+  description: a missing value
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Diameter_at_breast_height
+translations:
+  ru:
+    name: Диаметр ствола на высоте груди
