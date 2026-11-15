@@ -187,7 +187,11 @@ def test_checksum_reference_values():
     assert nl_bsn("12345672") and nl_bsn("012345672")  # leading zero dropped
     # E-GRID: the example of the eGRIS key field specification, and open data of data.bl.ch
     assert ch_egrid("CH787701897777") and ch_egrid("CH352961700877") and ch_egrid("CH338972678603")
-    assert not ch_egrid("CH787701897778") and not ch_egrid("787701897777") and not ch_egrid("CH78770189777")
+    assert (
+        not ch_egrid("CH787701897778")
+        and not ch_egrid("787701897777")
+        and not ch_egrid("CH78770189777")
+    )
     assert nl_onderwijsnummer("1012.22.331") and not nl_onderwijsnummer("100252333")
     assert not nl_onderwijsnummer("111222333")  # a BSN, does not start with 10
     assert nl_btw("NL004495445B01") and nl_btw("004495445B01") and not nl_btw("123456789B90")
