@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "447ef5f92c7b1e30f90e87b5e6956139163e89e3"
+  "ref": "4182d6e6f2a1748eba7ee199cf69fc9eeaeaa548"
  },
  "rules": [
   {
@@ -6855,7 +6855,7 @@
    "country_code": "xx"
   },
   {
-   "rule": "salinitybyname",
+   "rule": "salinityreadingbyname",
    "key": "salinity",
    "type": "field",
    "match": "regex",
@@ -6885,7 +6885,7 @@
    "country_code": "xx"
   },
   {
-   "rule": "totaldissolvedsolidsbyname",
+   "rule": "totaldissolvedsolidsreadingbyname",
    "key": "total_dissolved_solids",
    "type": "field",
    "match": "regex",
@@ -6905,7 +6905,7 @@
    "country_code": "xx"
   },
   {
-   "rule": "turbiditybyname",
+   "rule": "turbidityreadingbyname",
    "key": "turbidity",
    "type": "field",
    "match": "regex",
