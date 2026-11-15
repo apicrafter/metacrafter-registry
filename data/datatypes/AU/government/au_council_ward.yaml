@@ -7,7 +7,7 @@ doc: 'Ward of an Australian local government area: an electoral subdivision of a
   Ward; Division 3 in Queensland). Councils without wards are undivided (unsubdivided). Council and electoral
   commission files hold it in fields named ward, ward_name or tag; a ward of another country (a UK electoral
   ward, a Kenyan county assembly ward) is not one.'
-parent: admin_area_3
+parent: municipal_ward
 categories:
 - government
 - geo

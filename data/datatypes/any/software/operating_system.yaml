@@ -1,0 +1,31 @@
+id: operating_system
+name: Operating system name
+status: draft
+doc: 'Name of the operating system of a computer or mobile device: Windows, macOS (Mac OS X in older exports),
+  Linux, Android, iOS, Chrome OS. Web analytics and survey platforms read it from the user agent (user_agent)
+  and keep it in fields named OSType, os, operating_system or platform, beside the browser (web_browser)
+  and the device type (device_type); IT asset inventories record it for every machine. A name with a version
+  (Windows 10, Android 13) is still this type.'
+parent: category
+categories:
+- software
+- internet
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Windows
+- value: iOS
+- value: Android
+- value: Mac (OS X)
+  description: as a survey platform writes macOS
+- value: Linux
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Operating_system
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_operating_systems
+translations:
+  ru:
+    name: Название операционной системы

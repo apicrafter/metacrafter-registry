@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "2cabfde2a654820807a4850ac05c10567676ec51"
+  "ref": "f2c705637d753da94121744aa0026efdcea268c0"
  },
  "rules": [
   {
@@ -3955,6 +3955,86 @@
    "country_code": "br"
   },
   {
+   "rule": "cadguidbyname",
+   "key": "ca_dguid",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_codes.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "cadguidvalue",
+   "key": "ca_dguid",
+   "type": "data",
+   "match": "func",
+   "file": "ca/ca_codes.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "cadlslanddescriptionvalue",
+   "key": "ca_dls_land_description",
+   "type": "data",
+   "match": "func",
+   "file": "ca/ca_codes.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "capostcodevalue",
+   "key": "ca_postcode",
+   "type": "data",
+   "match": "func",
+   "file": "ca/ca_codes.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "casgcbyname",
+   "key": "casgc",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_codes.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "cawscdrainageareacodebyname",
+   "key": "ca_wsc_drainage_area_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_codes.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "cawscstationnumberbyname",
+   "key": "ca_wsc_station_number",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_codes.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "cawscstationnumbervalue",
+   "key": "ca_wsc_station_number",
+   "type": "data",
+   "match": "func",
+   "file": "ca/ca_codes.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
    "rule": "catransitfield",
    "key": "catransit",
    "type": "field",
@@ -4539,6 +4619,16 @@
    "key": "hasc",
    "type": "data",
    "match": "func",
+   "file": "common/admin_areas.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "municipalwardbyname",
+   "key": "municipal_ward",
+   "type": "field",
+   "match": "regex",
    "file": "common/admin_areas.yaml",
    "context": "geo",
    "lang": "common",
@@ -10712,10 +10802,40 @@
    "country_code": "xx"
   },
   {
+   "rule": "devicetypebyname",
+   "key": "device_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/survey.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "housingtenurebyname",
+   "key": "housing_tenure",
+   "type": "field",
+   "match": "regex",
+   "file": "common/survey.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "likertresponsevalue",
    "key": "likert_response",
    "type": "data",
    "match": "func",
+   "file": "common/survey.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "operatingsystembyname",
+   "key": "operating_system",
+   "type": "field",
+   "match": "regex",
    "file": "common/survey.yaml",
    "context": "science",
    "lang": "common",
@@ -10745,6 +10865,16 @@
    "rule": "variablenamevalue",
    "key": "variable_name",
    "type": "data",
+   "match": "regex",
+   "file": "common/survey.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "webbrowserbyname",
+   "key": "web_browser",
+   "type": "field",
    "match": "regex",
    "file": "common/survey.yaml",
    "context": "science",
@@ -12386,6 +12516,36 @@
    "key": "name",
    "type": "field",
    "match": "text",
+   "file": "en/en_common.yaml",
+   "context": "common",
+   "lang": "en",
+   "country_code": "xx"
+  },
+  {
+   "rule": "enlanguagenamebyname",
+   "key": "language",
+   "type": "field",
+   "match": "regex",
+   "file": "en/en_common.yaml",
+   "context": "common",
+   "lang": "en",
+   "country_code": "xx"
+  },
+  {
+   "rule": "enlanguagenamevalue",
+   "key": "language",
+   "type": "data",
+   "match": "func",
+   "file": "en/en_common.yaml",
+   "context": "common",
+   "lang": "en",
+   "country_code": "xx"
+  },
+  {
+   "rule": "entransportmodebyname",
+   "key": "transport_mode",
+   "type": "field",
+   "match": "regex",
    "file": "en/en_common.yaml",
    "context": "common",
    "lang": "en",

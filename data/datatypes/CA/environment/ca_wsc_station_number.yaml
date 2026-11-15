@@ -1,0 +1,45 @@
+id: ca_wsc_station_number
+name: Water Survey of Canada hydrometric station number
+status: draft
+doc: 'The seven-character number the Water Survey of Canada gives a hydrometric station (a gauge of water
+  level or streamflow): two digits of the major drainage area (01 to 11), a letter of the sub-drainage
+  area, a letter of the sub-sub-drainage area and three digits of the station in it, so 05BH004 is a station
+  of sub-sub-drainage area 05BH (ca_wsc_drainage_area_code). HYDAT, the national archive of hydrometric
+  data, the real-time water office and provincial water files use it as the station key, in fields named
+  STATION_NUMBER, Station Number, STATION_NU or STATION_ID. Provincial networks write their own numbers
+  (MB05LDS002 of Manitoba), which are not this type.'
+parent: id
+categories:
+- environment
+- geo
+country:
+- CA
+langs:
+- en
+- fr
+is_pii: false
+classification: identifier
+regexp: ^(?:0[1-9]|1[01])[A-Z]{2}\d{3}$
+examples:
+- value: 05BH004
+  description: Bow River at Calgary
+- value: 08MF005
+  description: Fraser River at Hope
+- value: 05LJ021
+  description: Station Number of a Manitoba station list (CanWIN, 2024)
+- value: 12AB001
+  valid: false
+  description: there are eleven major drainage areas
+- value: MB05LDS002
+  valid: false
+  description: a station number of the Manitoba provincial network
+links:
+- type: doc
+  url: https://wateroffice.ec.gc.ca/station_metadata/station_list_help_e.html
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Water_Survey_of_Canada
+translations:
+  fr:
+    name: Numéro de station hydrométrique (Relevés hydrologiques du Canada)
+  ru:
+    name: Номер гидрометрического поста Водной службы Канады (WSC)

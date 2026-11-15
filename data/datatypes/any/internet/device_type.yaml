@@ -1,0 +1,29 @@
+id: device_type
+name: Device type (desktop, phone, tablet)
+status: draft
+doc: 'Class of the device a person used to open a web page, an application or a survey: Desktop, Phone
+  (or Mobile, Smartphone), Tablet, and sometimes TV, Console or Bot. Web analytics and survey platforms
+  derive it from the user agent (user_agent) and keep it beside the browser (web_browser) and the operating
+  system (operating_system), in fields named DeviceType, device_category or device. The model of the device
+  (iPhone 12) is not this type.'
+parent: category
+categories:
+- internet
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Desktop
+- value: Phone
+- value: Tablet
+- value: Mobile
+- value: iPhone 12
+  valid: false
+  description: a device model
+links:
+- type: doc
+  url: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Browser_detection_using_the_user_agent
+translations:
+  ru:
+    name: Тип устройства (компьютер, телефон, планшет)
