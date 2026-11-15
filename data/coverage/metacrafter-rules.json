@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "6c1db93160cbcbfe16bcc0b0905374e4162f37c9"
+  "ref": "59a212310b558818ae09871341558d6f5a6afdcd"
  },
  "rules": [
   {
@@ -375,6 +375,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "armonthbytransliteratedname",
+   "key": "ar_month",
+   "type": "field",
+   "match": "regex",
+   "file": "ar/ar_datetime.yaml",
+   "context": "datetime",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
    "rule": "armonthknown",
    "key": "month",
    "type": "field",
@@ -385,10 +395,30 @@
    "country_code": "xx"
   },
   {
+   "rule": "armonthnumberedvalue",
+   "key": "ar_month",
+   "type": "data",
+   "match": "regex",
+   "file": "ar/ar_datetime.yaml",
+   "context": "datetime",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
    "rule": "armonthvalue",
    "key": "ar_month",
    "type": "data",
    "match": "text",
+   "file": "ar/ar_datetime.yaml",
+   "context": "datetime",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
+   "rule": "arquarterbytransliteratedname",
+   "key": "quarter",
+   "type": "field",
+   "match": "regex",
    "file": "ar/ar_datetime.yaml",
    "context": "datetime",
    "lang": "ar",
@@ -485,10 +515,50 @@
    "country_code": "xx"
   },
   {
+   "rule": "aragerangebyname",
+   "key": "age_range",
+   "type": "field",
+   "match": "regex",
+   "file": "ar/ar_persons.yaml",
+   "context": "persons",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
+   "rule": "areducationlevelbyname",
+   "key": "education_level",
+   "type": "field",
+   "match": "regex",
+   "file": "ar/ar_persons.yaml",
+   "context": "persons",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
    "rule": "arfirstnameknown",
    "key": "person_firstname",
    "type": "field",
    "match": "text",
+   "file": "ar/ar_persons.yaml",
+   "context": "persons",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
+   "rule": "argenderbyname",
+   "key": "gender",
+   "type": "field",
+   "match": "regex",
+   "file": "ar/ar_persons.yaml",
+   "context": "persons",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
+   "rule": "argendervalue",
+   "key": "gender",
+   "type": "data",
+   "match": "func",
    "file": "ar/ar_persons.yaml",
    "context": "persons",
    "lang": "ar",
@@ -505,10 +575,60 @@
    "country_code": "xx"
   },
   {
+   "rule": "armaritalstatusbyname",
+   "key": "marital_status",
+   "type": "field",
+   "match": "regex",
+   "file": "ar/ar_persons.yaml",
+   "context": "persons",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
+   "rule": "armaritalstatusvalue",
+   "key": "marital_status",
+   "type": "data",
+   "match": "func",
+   "file": "ar/ar_persons.yaml",
+   "context": "persons",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
+   "rule": "arnationalitybyname",
+   "key": "arnationality",
+   "type": "field",
+   "match": "regex",
+   "file": "ar/ar_persons.yaml",
+   "context": "persons",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
+   "rule": "arnationalityvalue",
+   "key": "arnationality",
+   "type": "data",
+   "match": "func",
+   "file": "ar/ar_persons.yaml",
+   "context": "persons",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
    "rule": "arpersonnameknown",
    "key": "person_fullname",
    "type": "field",
    "match": "text",
+   "file": "ar/ar_persons.yaml",
+   "context": "persons",
+   "lang": "ar",
+   "country_code": "xx"
+  },
+  {
+   "rule": "religionbyarabicname",
+   "key": "religion",
+   "type": "field",
+   "match": "regex",
    "file": "ar/ar_persons.yaml",
    "context": "persons",
    "lang": "ar",
@@ -3125,6 +3245,46 @@
    "country_code": "bg"
   },
   {
+   "rule": "bhblockbyname",
+   "key": "bh_block",
+   "type": "field",
+   "match": "regex",
+   "file": "bh/bh_geo.yaml",
+   "context": "geo",
+   "lang": "ar",
+   "country_code": "bh"
+  },
+  {
+   "rule": "bhgovernoratebyname",
+   "key": "bh_governorate",
+   "type": "field",
+   "match": "regex",
+   "file": "bh/bh_geo.yaml",
+   "context": "geo",
+   "lang": "ar",
+   "country_code": "bh"
+  },
+  {
+   "rule": "bhgovernoratevalue",
+   "key": "bh_governorate",
+   "type": "data",
+   "match": "func",
+   "file": "bh/bh_geo.yaml",
+   "context": "geo",
+   "lang": "ar",
+   "country_code": "bh"
+  },
+  {
+   "rule": "gcccustomstariffcodebyname",
+   "key": "gcc_customs_tariff_code",
+   "type": "field",
+   "match": "regex",
+   "file": "bh/bh_trade.yaml",
+   "context": "trade",
+   "lang": "common",
+   "country_code": "bh"
+  },
+  {
    "rule": "brbankaccountknown",
    "key": "bankaccount",
    "type": "field",
@@ -4141,6 +4301,56 @@
    "match": "text",
    "file": "common/chemistry.yaml",
    "context": "chemistry",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "coicopbyname",
+   "key": "coicop",
+   "type": "field",
+   "match": "regex",
+   "file": "common/classifications.yaml",
+   "context": "stats",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "icd10chapterbyname",
+   "key": "icd10_chapter",
+   "type": "field",
+   "match": "regex",
+   "file": "common/classifications.yaml",
+   "context": "stats",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "icd10chaptervalue",
+   "key": "icd10_chapter",
+   "type": "data",
+   "match": "func",
+   "file": "common/classifications.yaml",
+   "context": "stats",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "isicsectionnamebyname",
+   "key": "isicrev4_section_name",
+   "type": "field",
+   "match": "regex",
+   "file": "common/classifications.yaml",
+   "context": "stats",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "isicsectionnamevalue",
+   "key": "isicrev4_section_name",
+   "type": "data",
+   "match": "func",
+   "file": "common/classifications.yaml",
+   "context": "stats",
    "lang": "common",
    "country_code": "xx"
   },
@@ -6906,6 +7116,16 @@
   },
   {
    "rule": "iso3166alpha2bylocalname",
+   "key": "countrycode_alpha2",
+   "type": "data",
+   "match": "text",
+   "file": "common/intcodes.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "iso3166alpha2byuncodefield",
    "key": "countrycode_alpha2",
    "type": "data",
    "match": "text",
@@ -10246,6 +10466,16 @@
   },
   {
    "rule": "unitofmeasurebyfield",
+   "key": "unit_of_measure",
+   "type": "field",
+   "match": "regex",
+   "file": "common/trade.yaml",
+   "context": "trade",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "unitofmeasurebyshortname",
    "key": "unit_of_measure",
    "type": "field",
    "match": "regex",
@@ -17399,6 +17629,16 @@
    "key": "password",
    "type": "field",
    "match": "text",
+   "file": "pii/pii.yaml",
+   "context": "pii",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "religionbyname",
+   "key": "religion",
+   "type": "field",
+   "match": "regex",
    "file": "pii/pii.yaml",
    "context": "pii",
    "lang": "common",
