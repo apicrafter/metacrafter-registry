@@ -1,0 +1,34 @@
+id: ch_edid
+name: Swiss federal entrance identifier (EDID)
+status: draft
+doc: Number of an entrance of a building in the Swiss Federal Register of Buildings and Dwellings (GWR).
+  It is a whole number from 0 to 90 and identifies an entrance, and so a building address, only together
+  with the EGID of the building.
+parent: id
+categories:
+- realestate
+- government
+country:
+- CH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d|[1-8]\d|90)$
+examples:
+- value: '0'
+  description: the first entrance of a building
+- value: '2'
+- value: '91'
+  valid: false
+  description: above the range of the register
+links:
+- type: doc
+  url: https://dam-api.bfs.admin.ch/hub/api/dam/assets/7008785/master
+translations:
+  de:
+    name: Eidgenössischer Eingangsidentifikator (EDID)
+  fr:
+    name: Identificateur fédéral d'entrée (EDID)
+  ru:
+    name: Федеральный идентификатор входа в здание Швейцарии (EDID)

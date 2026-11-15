@@ -1,0 +1,42 @@
+id: ch_egid
+name: Swiss federal building identifier (EGID)
+status: draft
+doc: Number that the Federal Register of Buildings and Dwellings (GWR) of the Swiss Federal Statistical
+  Office gives every building in Switzerland. It is a whole number from 1 to 900 000 000, is unique across
+  the country and does not change while the building stands. Cantonal and municipal registers, the cadastral
+  survey and energy and address datasets carry it in a field named EGID.
+parent: id
+categories:
+- realestate
+- government
+country:
+- CH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[1-9]\d{0,7}|[1-8]\d{8}|900000000)$
+examples:
+- value: '2347546'
+  description: a building in the canton of Basel-Landschaft (open data of data.bl.ch)
+- value: '245066895'
+  description: a nine-digit EGID of the same register
+- value: '900000001'
+  valid: false
+  description: above the range of the register
+- value: '0'
+  valid: false
+mappings:
+  wikidata: P9665
+links:
+- type: doc
+  url: https://dam-api.bfs.admin.ch/hub/api/dam/assets/7008785/master
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P9665
+translations:
+  de:
+    name: Eidgenössischer Gebäudeidentifikator (EGID)
+  fr:
+    name: Identificateur fédéral de bâtiment (EGID)
+  ru:
+    name: Федеральный идентификатор здания Швейцарии (EGID)

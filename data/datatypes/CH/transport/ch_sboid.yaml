@@ -1,0 +1,36 @@
+id: ch_sboid
+name: Swiss Business Organisation ID (SBOID)
+status: draft
+doc: 'Identifier of a business organisation of Swiss public transport, that is a transport company or
+  another organisation responsible for stops, lines or tariffs, defined by the Swiss public transport
+  information office (SKI) and kept in the DiDok directory. It is ch:1:sboid: and a number that DiDok
+  assigns and never reuses. The whole id has at most 32 characters. The older business organisation number
+  (GO-Nummer, up to five digits) is an attribute of the organisation, not part of the id.'
+parent: id
+categories:
+- transport
+- companies
+country:
+- CH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^ch:1:sboid:\d{1,20}$
+examples:
+- value: ch:1:sboid:100141
+  description: the example of the SBOID specification
+- value: ch:1:sboid:100619
+- value: ch:1:sloid:7000
+  valid: false
+  description: a location id (ch_sloid)
+- value: sboid:100141
+  valid: false
+links:
+- type: doc
+  url: https://www.tp-info.ch/sites/default/files/2023-04/swissbusinessorganisationid_de_1_2.pdf
+translations:
+  de:
+    name: Swiss Business Organisation ID (SBOID)
+  ru:
+    name: Швейцарский идентификатор транспортной организации (SBOID)

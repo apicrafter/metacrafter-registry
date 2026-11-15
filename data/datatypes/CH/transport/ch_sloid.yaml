@@ -1,0 +1,43 @@
+id: ch_sloid
+name: Swiss Location ID (SLOID)
+status: draft
+doc: 'Identifier of a public transport stop in Switzerland and of the places inside it, defined by the
+  Swiss public transport information office (SKI) and kept in the service point directory DiDok. It starts
+  with ch:1:sloid: and the DiDok number of the stop without the country code 85, at most five digits with
+  no leading zero in the specification (the directory also holds a few six-digit numbers). Up to three
+  more parts, separated by colons, name an area of the stop, a boarding edge and a position on it; a part
+  may be empty. The whole id has at most 128 characters. SLOID replaces the seven-digit BPUIC number in
+  timetable and stop data.'
+parent: id
+categories:
+- transport
+country:
+- CH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^ch:1:sloid:[1-9]\d{0,5}(?::[0-9A-Za-z_.\-]*){0,3}$
+examples:
+- value: ch:1:sloid:7000
+  description: a stop
+- value: ch:1:sloid:76193:1
+  description: an area of a stop
+- value: ch:1:sloid:76193:1:2
+  description: a boarding edge of that area
+- value: ch:1:sloid:7000::13AB
+  description: a boarding edge of a stop without areas
+- value: ch:1:sloid:07000
+  valid: false
+  description: leading zero in the DiDok number
+- value: ch:1:sboid:100141
+  valid: false
+  description: a business organisation id (ch_sboid)
+links:
+- type: doc
+  url: https://www.tp-info.ch/sites/default/files/2023-04/swisslocationid_de_1_2.pdf
+translations:
+  de:
+    name: Swiss Location ID (SLOID)
+  ru:
+    name: Швейцарский идентификатор остановки (SLOID)

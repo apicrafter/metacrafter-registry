@@ -1,0 +1,38 @@
+id: ch_didok_number
+name: Swiss service point number (DiDok number)
+status: draft
+doc: Number of a service point (a stop, a station, a depot or another operating point) in DiDok, the directory
+  of service points of Swiss public transport. It has at most five digits and no leading zero. With the
+  UIC country code 85 in front it is the seven-digit BPUIC station number (uiccode), and it is the location
+  part of the Swiss Location ID (ch_sloid).
+parent: id
+categories:
+- transport
+country:
+- CH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,4}$
+examples:
+- value: '7000'
+  description: the stop of the Swiss Location ID example ch:1:sloid:7000
+- value: '3000'
+  description: Zürich HB, BPUIC 8503000 (open data of data.sbb.ch)
+- value: '10'
+  description: Basel SBB, BPUIC 8500010
+- value: '07000'
+  valid: false
+  description: leading zero
+- value: '8507000'
+  valid: false
+  description: the BPUIC number with the country code (uiccode)
+links:
+- type: doc
+  url: https://www.tp-info.ch/sites/default/files/2023-04/swisslocationid_de_1_2.pdf
+translations:
+  de:
+    name: DiDok-Nummer (Dienststellennummer)
+  ru:
+    name: Номер пункта обслуживания DiDok (Швейцария)
