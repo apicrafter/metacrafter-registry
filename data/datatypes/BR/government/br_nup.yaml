@@ -1,0 +1,33 @@
+id: br_nup
+name: Brazilian NUP protocol number (Número Único de Protocolo)
+status: draft
+doc: 'The single protocol number of documents and processes of the Brazilian federal administration: the
+  five-digit code of the unit that registered it, a six-digit sequence number, the four-digit year and
+  two check digits computed modulo 11 (99903.000615/2016-03). Requests under the access to information
+  law (Fala.BR) carry it, often as 17 digits. Some tables leave out the code of the unit (029358/2019-39).'
+parent: id
+categories:
+- government
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: identifier
+regexp: ^\d{5}\.?\d{6}/?\d{4}-?\d{2}$
+examples:
+- value: 99903.000615/2016-03
+  description: a request to the BNDES under the access to information law
+- value: '99903000615201603'
+  description: the same number as digits
+- value: 99903.000615/16-03
+  valid: false
+  description: a two-digit year
+links:
+- type: doc
+  url: https://www.gov.br/economia/pt-br/assuntos/processo-eletronico-nacional/conteudo/numero-unico-de-protocolo-nup
+translations:
+  pt:
+    name: Número Único de Protocolo (NUP)
+  ru:
+    name: Единый номер протокола (NUP, Бразилия)

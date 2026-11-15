@@ -1,0 +1,40 @@
+id: br_cnae
+name: CNAE code (Brazilian classification of economic activities)
+status: draft
+doc: 'A code of the Classificação Nacional de Atividades Econômicas of IBGE, the Brazilian classification
+  derived from ISIC rev. 4 (isicrev4): a section letter (A to U), a two-digit division, a group, a four-digit
+  class with a check digit (4711-3) and, in CNAE-Subclasses 2.3 used by the tax and company registers,
+  a two-digit subclass (4711-3/02). The BNDES writes the subclass after the section letter without separators
+  (C1011200); registers write 4711302 or 4711-3/02.'
+categories:
+- industry
+- companies
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: categorical
+regexp: ^[A-U]?\d{2}(?:\.?\d(?:\d-?\d(?:/?\d{2})?)?)?$
+examples:
+- value: 4711-3/02
+  description: retail trade in supermarkets
+- value: '4711302'
+  description: the same subclass without separators
+- value: C1011200
+  description: slaughter of cattle, section C, as the BNDES writes it
+- value: 47.11-3
+  description: class of retail trade with food predominance
+- value: Z9999
+  valid: false
+  description: no section Z
+links:
+- type: doc
+  url: https://concla.ibge.gov.br/classificacoes/por-tema/atividades-economicas.html
+- type: wikipedia
+  url: https://pt.wikipedia.org/wiki/Classifica%C3%A7%C3%A3o_Nacional_de_Atividades_Econ%C3%B4micas
+translations:
+  pt:
+    name: Código CNAE
+  ru:
+    name: Код CNAE (бразильский классификатор видов деятельности)

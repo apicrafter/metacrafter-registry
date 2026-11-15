@@ -1,0 +1,34 @@
+id: br_region
+name: Region of Brazil
+status: draft
+doc: 'One of the five regions into which IBGE groups the 27 federative units of Brazil: Norte, Nordeste,
+  Sudeste, Sul and Centro-Oeste. Statistics and registers give the region of a place or institution by
+  name (NM_REGIAO: SUDESTE).'
+parent: category
+categories:
+- geo
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: categorical
+regexp: ^(?i:norte|nordeste|sudeste|sul|centro-oeste)$
+examples:
+- value: Sudeste
+  description: São Paulo, Rio de Janeiro, Minas Gerais, Espírito Santo
+- value: CENTRO-OESTE
+  description: upper case
+- value: Nordeste
+  description: nine states from Maranhão to Bahia
+- value: São Paulo
+  valid: false
+  description: a state (br_state)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Regions_of_Brazil
+translations:
+  pt:
+    name: Região do Brasil
+  ru:
+    name: Регион Бразилии

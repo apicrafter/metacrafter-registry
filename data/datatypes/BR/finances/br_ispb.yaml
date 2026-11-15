@@ -1,0 +1,37 @@
+id: br_ispb
+name: ISPB code of the Brazilian payment system
+status: draft
+doc: 'Identificador do Sistema de Pagamentos Brasileiro: the eight-digit code of a participant of the
+  Brazilian payment system (STR, PIX, SPI), equal to the CNPJ root of the institution (br_cnpj_root).
+  The Banco Central do Brasil publishes the list of participants of the STR with the ISPB and the COMPE
+  number (br_compe_code) of each bank. Spreadsheets drop the leading zeros (360305 for 00360305).'
+parent: br_cnpj_root
+categories:
+- finances
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: identifier
+regexp: ^\d{8}$
+examples:
+- value: '00000000'
+  description: Banco do Brasil S.A.
+- value: '00360305'
+  description: Caixa Econômica Federal
+- value: 00038166
+  description: Selic, the settlement system of federal bonds
+- value: '001'
+  valid: false
+  description: a COMPE number
+links:
+- type: doc
+  url: https://www.bcb.gov.br/estabilidadefinanceira/participantesstr
+- type: wikipedia
+  url: https://pt.wikipedia.org/wiki/Sistema_de_Pagamentos_Brasileiro
+translations:
+  pt:
+    name: Código ISPB
+  ru:
+    name: Код ISPB бразильской платёжной системы

@@ -1,0 +1,34 @@
+id: ptcountryname
+name: Country name in Portuguese
+status: draft
+doc: Name of a country written in Portuguese (Alemanha, Estados Unidos, Países Baixos, Coreia do Sul),
+  as Brazilian and Portuguese statistics write the partner countries of trade tables and the countries
+  of events and people. Brazilian and European Portuguese spell some names differently (Armênia, Arménia;
+  Irã, Irão), and registers keep older names (Holanda, Iugoslávia) and upper case without accents (REPUBLICA
+  DOMINICANA). Unicode CLDR has Portuguese names of all countries.
+semantic_type: country
+langs:
+- pt
+classification: identifier
+examples:
+- value: Estados Unidos
+  description: United States
+- value: Alemanha
+  description: Germany
+- value: EQUADOR
+  description: Ecuador, BNDES export credits
+- value: Japão
+  description: Japan
+- value: Ecuador
+  valid: false
+  description: written in Spanish or English
+links:
+- type: doc
+  url: https://cldr.unicode.org/
+- type: wikipedia
+  url: https://pt.wikipedia.org/wiki/ISO_3166-1
+translations:
+  pt:
+    name: Nome de país em português
+  ru:
+    name: Название страны на португальском

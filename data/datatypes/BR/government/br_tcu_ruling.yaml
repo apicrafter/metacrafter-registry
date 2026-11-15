@@ -1,0 +1,36 @@
+id: br_tcu_ruling
+name: TCU ruling number (acórdão, Brazil)
+status: draft
+doc: 'The number of a ruling (acórdão) of the Tribunal de Contas da União: its number, the year and the
+  body that gave it, the plenary or one of the two chambers (2726/2023-Plenário, 13262/2023-1ª Câmara).'
+parent: case_number
+categories:
+- government
+- legal
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: identifier
+regexp: ^\d{1,5}/\d{4}\s*-\s*(?:Plenário|[12]ª Câmara)$
+examples:
+- value: 2726/2023-Plenário
+  description: a ruling of the plenary
+- value: 13262/2023-1ª Câmara
+  description: a ruling of the first chamber
+- value: 10384/2023-2ª Câmara
+  description: a ruling of the second chamber
+- value: TC 005.291/2021-6
+  valid: false
+  description: a process (br_tcu_process_number)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Federal_Court_of_Accounts
+- type: doc
+  url: https://pesquisa.apps.tcu.gov.br/
+translations:
+  pt:
+    name: Número de acórdão do TCU
+  ru:
+    name: Номер решения (acórdão) Федеральной счётной палаты Бразилии

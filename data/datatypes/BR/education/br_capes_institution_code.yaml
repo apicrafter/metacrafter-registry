@@ -1,0 +1,38 @@
+id: br_capes_institution_code
+name: CAPES institution code (Brazil)
+status: draft
+doc: 'The eight-digit code of a higher education institution in the CAPES evaluation system: the first
+  digit is the region (1 Norte, 2 Nordeste, 3 Sudeste, 4 Sul, 5 Centro-Oeste) and the second the state
+  in it (33003017 Universidade Estadual de Campinas, 10001018 Universidade Federal de Rondônia). It begins
+  the codes of the programmes of the institution (br_capes_program_code). CAPES gives it as CD_ENTIDADE_CAPES
+  or CD_IES_ESTUDO.'
+parent: id
+categories:
+- education
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: identifier
+regexp: ^[1-5]\d{7}$
+examples:
+- value: '33003017'
+  description: Universidade Estadual de Campinas
+- value: '10001018'
+  description: Universidade Federal de Rondônia
+- value: '40001016'
+  description: Universidade Federal do Paraná
+- value: '699'
+  valid: false
+  description: an e-MEC code (br_emec_institution_code)
+links:
+- type: doc
+  url: https://dadosabertos.capes.gov.br/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/CAPES
+translations:
+  pt:
+    name: Código CAPES da instituição de ensino
+  ru:
+    name: Код вуза в системе CAPES (Бразилия)

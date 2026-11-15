@@ -1,0 +1,35 @@
+id: br_tcu_process_number
+name: TCU process number (Brazil)
+status: draft
+doc: 'The number of a process of the Tribunal de Contas da União, the federal court of accounts of Brazil:
+  TC, three plus three digits, the year and a check digit (TC 005.291/2021-6). Rulings of the court (br_tcu_ruling)
+  are given in these processes.'
+parent: case_number
+categories:
+- government
+- legal
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: identifier
+regexp: ^(?:TC[ -]?)?\d{3}\.\d{3}/\d{4}-\d$
+examples:
+- value: TC 005.291/2021-6
+  description: a process about the BNDES
+- value: TC 036.817/2018-0
+  description: a process of 2018
+- value: 2726/2023-Plenário
+  valid: false
+  description: a ruling (br_tcu_ruling)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Federal_Court_of_Accounts
+- type: doc
+  url: https://pesquisa.apps.tcu.gov.br/
+translations:
+  pt:
+    name: Número de processo do TCU
+  ru:
+    name: Номер дела Федеральной счётной палаты Бразилии (TCU)

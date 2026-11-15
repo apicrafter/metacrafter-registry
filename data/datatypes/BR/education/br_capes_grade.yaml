@@ -1,0 +1,34 @@
+id: br_capes_grade
+name: CAPES grade of a graduate programme (Brazil)
+status: draft
+doc: 'The grade (conceito) that the CAPES evaluation gives a graduate programme, from 1 to 7: 3 is the
+  minimum to keep a programme running, 6 and 7 mark international excellence; A is a new programme not
+  yet graded (CD_CONCEITO_PROGRAMA, CONCEITO_ANO).'
+parent: category
+categories:
+- education
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: categorical
+regexp: ^[1-7A]$
+examples:
+- value: '5'
+  description: a programme of grade 5
+- value: '7'
+  description: the highest grade
+- value: A
+  description: a programme not yet graded
+- value: '8'
+  valid: false
+  description: above the scale
+links:
+- type: doc
+  url: https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/avaliacao
+translations:
+  pt:
+    name: Conceito CAPES do programa de pós-graduação
+  ru:
+    name: Оценка CAPES программы аспирантуры

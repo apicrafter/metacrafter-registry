@@ -1,0 +1,34 @@
+id: br_company_size
+name: Size class (porte) of a Brazilian company
+status: draft
+doc: 'The size class of a company in Brazilian registers and credit statistics: MICRO, PEQUENA, MÉDIA
+  and GRANDE in the BNDES classification by gross revenue, or the tax categories ME (microempresa), EPP
+  (empresa de pequeno porte), MEI (microempreendedor individual) and DEMAIS of the company register. The
+  size classes of municipalities (Pequeno 1, Médio, Metrópole) are not company sizes.'
+parent: category
+categories:
+- companies
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: categorical
+examples:
+- value: GRANDE
+  description: a large company, BNDES
+- value: MICRO
+  description: a microenterprise, BNDES
+- value: EPP
+  description: empresa de pequeno porte
+- value: Pequeno 1
+  valid: false
+  description: a municipality of up to 20 000 inhabitants
+links:
+- type: doc
+  url: https://www.bndes.gov.br/wps/portal/site/home/financiamento/guia/porte-de-empresa
+translations:
+  pt:
+    name: Porte da empresa
+  ru:
+    name: Размер (porte) бразильской компании

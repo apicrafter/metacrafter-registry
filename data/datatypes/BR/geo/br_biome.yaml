@@ -1,0 +1,36 @@
+id: br_biome
+name: Biome of Brazil
+status: draft
+doc: 'One of the six continental biomes of Brazil mapped by IBGE: Amazônia, Caatinga, Cerrado, Mata Atlântica,
+  Pampa and Pantanal. Flora and fauna assessments list the biomes or phytogeographic domains where a species
+  occurs, one or several in a cell (Amazônia, Mata Atlântica, Cerrado).'
+parent: category
+categories:
+- geo
+- environment
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: categorical
+examples:
+- value: Mata Atlântica
+  description: the Atlantic Forest
+- value: Cerrado
+  description: the tropical savanna of central Brazil
+- value: Amazônia, Mata Atlântica, Cerrado
+  description: a species of three biomes, CNCFlora
+- value: Floresta Ombrófila
+  valid: false
+  description: a vegetation type, not a biome
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_ecoregions_in_Brazil
+- type: doc
+  url: https://www.ibge.gov.br/geociencias/informacoes-ambientais/vegetacao/15842-biomas.html
+translations:
+  pt:
+    name: Bioma brasileiro
+  ru:
+    name: Биом Бразилии

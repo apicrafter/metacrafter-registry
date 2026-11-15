@@ -1,0 +1,37 @@
+id: br_cnpj_root
+name: Brazilian CNPJ root (CNPJ básico)
+status: draft
+doc: 'The first eight digits of a CNPJ, the number of a legal entity in the Brazilian register of companies
+  (cnpj). They are the same for every establishment of the entity; the next four digits number the establishment
+  (0001 for the head office) and the last two are check digits. Tables of the Banco Central do Brasil
+  identify banks and consortium administrators by the root alone (CNPJ IF, CNPJ AC: 23862762), and the
+  ISPB code of a bank in the payment system is its CNPJ root (br_ispb).'
+parent: id
+categories:
+- companies
+- finances
+country:
+- BR
+langs:
+- pt
+is_pii: false
+classification: identifier
+regexp: ^\d{8}$|^\d{2}\.\d{3}\.\d{3}$
+examples:
+- value: '23862762'
+  description: a bank of the complaints ranking of the Banco Central do Brasil, 2017
+- value: '00000000'
+  description: Banco do Brasil
+- value: 60.701.190
+  description: Itaú Unibanco, formatted
+- value: 60.701.190/0001-04
+  valid: false
+  description: a full CNPJ (cnpj)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Cadastro_Nacional_da_Pessoa_Jur%C3%ADdica
+translations:
+  pt:
+    name: Raiz do CNPJ (CNPJ básico)
+  ru:
+    name: Корень CNPJ (первые восемь цифр)
