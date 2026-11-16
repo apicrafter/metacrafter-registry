@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "0f08dfbd2232ace1919ae37430cbef6d1244e45d"
+  "ref": "38fa91c19faa88707e53cdf96602aeb4e9341169"
  },
  "rules": [
   {
@@ -5835,6 +5835,96 @@
    "country_code": "xx"
   },
   {
+   "rule": "csquarescodebyname",
+   "key": "csquares_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/conservation.yaml",
+   "context": "environment",
+   "lang": "common"
+  },
+  {
+   "rule": "csquarescodevalue",
+   "key": "csquares_code",
+   "type": "data",
+   "match": "func",
+   "file": "common/conservation.yaml",
+   "context": "environment",
+   "lang": "common"
+  },
+  {
+   "rule": "ibtracsbasinbyname",
+   "key": "ibtracs_basin",
+   "type": "field",
+   "match": "regex",
+   "file": "common/conservation.yaml",
+   "context": "environment",
+   "lang": "common"
+  },
+  {
+   "rule": "ibtracsnaturebyname",
+   "key": "ibtracs_nature",
+   "type": "field",
+   "match": "regex",
+   "file": "common/conservation.yaml",
+   "context": "environment",
+   "lang": "common"
+  },
+  {
+   "rule": "wdpadesignationtypebyname",
+   "key": "wdpa_designation_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/conservation.yaml",
+   "context": "environment",
+   "lang": "common"
+  },
+  {
+   "rule": "wdpagovernancetypebyname",
+   "key": "wdpa_governance_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/conservation.yaml",
+   "context": "environment",
+   "lang": "common"
+  },
+  {
+   "rule": "wdpaidbyname",
+   "key": "wdpa_id",
+   "type": "field",
+   "match": "regex",
+   "file": "common/conservation.yaml",
+   "context": "environment",
+   "lang": "common"
+  },
+  {
+   "rule": "wdpanotakebyname",
+   "key": "wdpa_no_take",
+   "type": "field",
+   "match": "regex",
+   "file": "common/conservation.yaml",
+   "context": "environment",
+   "lang": "common"
+  },
+  {
+   "rule": "wdpaownershiptypebyname",
+   "key": "wdpa_ownership_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/conservation.yaml",
+   "context": "environment",
+   "lang": "common"
+  },
+  {
+   "rule": "wdpaverificationbyname",
+   "key": "wdpa_verification",
+   "type": "field",
+   "match": "regex",
+   "file": "common/conservation.yaml",
+   "context": "environment",
+   "lang": "common"
+  },
+  {
    "rule": "balanceamountbyknown",
    "key": "money",
    "type": "field",
@@ -9165,6 +9255,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "caseclassificationbyname",
+   "key": "case_classification",
+   "type": "field",
+   "match": "regex",
+   "file": "common/medical.yaml",
+   "context": "medical",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "covid19vaccinevalue",
    "key": "covid19_vaccine",
    "type": "data",
@@ -9785,6 +9885,33 @@
    "country_code": "xx"
   },
   {
+   "rule": "hiscobyname",
+   "key": "hisco",
+   "type": "field",
+   "match": "regex",
+   "file": "common/occupations.yaml",
+   "context": "industry",
+   "lang": "common"
+  },
+  {
+   "rule": "isco08surveybyname",
+   "key": "isco08",
+   "type": "field",
+   "match": "regex",
+   "file": "common/occupations.yaml",
+   "context": "industry",
+   "lang": "common"
+  },
+  {
+   "rule": "isco88byname",
+   "key": "isco88",
+   "type": "field",
+   "match": "regex",
+   "file": "common/occupations.yaml",
+   "context": "industry",
+   "lang": "common"
+  },
+  {
    "rule": "companycompanybyknown",
    "key": "orgname",
    "type": "field",
@@ -9917,6 +10044,16 @@
   {
    "rule": "isoweekbyname",
    "key": "iso_week",
+   "type": "field",
+   "match": "regex",
+   "file": "common/periods.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "seasonbyname",
+   "key": "season",
    "type": "field",
    "match": "regex",
    "file": "common/periods.yaml",
@@ -10263,6 +10400,15 @@
    "context": "realestate",
    "lang": "common",
    "country_code": "xx"
+  },
+  {
+   "rule": "iucnpopulationtrendbyname",
+   "key": "iucn_population_trend",
+   "type": "field",
+   "match": "regex",
+   "file": "common/redlist.yaml",
+   "context": "science",
+   "lang": "common"
   },
   {
    "rule": "iucnredlistcategorybyname",
@@ -11082,10 +11228,30 @@
    "country_code": "xx"
   },
   {
+   "rule": "taxongenusnamebyfield",
+   "key": "taxon_name",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "taxonnamebyfield",
    "key": "taxon_name",
    "type": "field",
    "match": "text",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "taxonranknamebyfield",
+   "key": "taxon_name",
+   "type": "field",
+   "match": "regex",
    "file": "common/science.yaml",
    "context": "science",
    "lang": "common",
@@ -19872,6 +20038,176 @@
    "country_code": "lv"
   },
   {
+   "rule": "mkcitybyname",
+   "key": "city",
+   "type": "field",
+   "match": "regex",
+   "file": "mk/mk_common.yaml",
+   "context": "common",
+   "lang": "mk",
+   "country_code": "mk"
+  },
+  {
+   "rule": "mkcommentbyname",
+   "key": "comment",
+   "type": "field",
+   "match": "regex",
+   "file": "mk/mk_common.yaml",
+   "context": "common",
+   "lang": "mk",
+   "country_code": "mk"
+  },
+  {
+   "rule": "mkdescriptionbyname",
+   "key": "description",
+   "type": "field",
+   "match": "regex",
+   "file": "mk/mk_common.yaml",
+   "context": "common",
+   "lang": "mk",
+   "country_code": "mk"
+  },
+  {
+   "rule": "mkfirstnamebyname",
+   "key": "person_firstname",
+   "type": "field",
+   "match": "regex",
+   "file": "mk/mk_common.yaml",
+   "context": "common",
+   "lang": "mk",
+   "country_code": "mk"
+  },
+  {
+   "rule": "mklatitudebyname",
+   "key": "latitude",
+   "type": "field",
+   "match": "regex",
+   "file": "mk/mk_common.yaml",
+   "context": "common",
+   "lang": "mk",
+   "country_code": "mk"
+  },
+  {
+   "rule": "mklongitudebyname",
+   "key": "longitude",
+   "type": "field",
+   "match": "regex",
+   "file": "mk/mk_common.yaml",
+   "context": "common",
+   "lang": "mk",
+   "country_code": "mk"
+  },
+  {
+   "rule": "mkmonthbyname",
+   "key": "month",
+   "type": "field",
+   "match": "regex",
+   "file": "mk/mk_common.yaml",
+   "context": "common",
+   "lang": "mk",
+   "country_code": "mk"
+  },
+  {
+   "rule": "mkmunicipalitybyname",
+   "key": "mk_municipality",
+   "type": "field",
+   "match": "regex",
+   "file": "mk/mk_common.yaml",
+   "context": "common",
+   "lang": "mk",
+   "country_code": "mk"
+  },
+  {
+   "rule": "mknamebyname",
+   "key": "name",
+   "type": "field",
+   "match": "regex",
+   "file": "mk/mk_common.yaml",
+   "context": "common",
+   "lang": "mk",
+   "country_code": "mk"
+  },
+  {
+   "rule": "mkphonebyname",
+   "key": "phone",
+   "type": "field",
+   "match": "regex",
+   "file": "mk/mk_common.yaml",
+   "context": "common",
+   "lang": "mk",
+   "country_code": "mk"
+  },
+  {
+   "rule": "mksurnamebyname",
+   "key": "person_surname",
+   "type": "field",
+   "match": "regex",
+   "file": "mk/mk_common.yaml",
+   "context": "common",
+   "lang": "mk",
+   "country_code": "mk"
+  },
+  {
+   "rule": "mkyearbyname",
+   "key": "year",
+   "type": "field",
+   "match": "regex",
+   "file": "mk/mk_common.yaml",
+   "context": "common",
+   "lang": "mk",
+   "country_code": "mk"
+  },
+  {
+   "rule": "mndayofweekvalue",
+   "key": "mn_dayofweek",
+   "type": "data",
+   "match": "func",
+   "file": "mn/mn_common.yaml",
+   "context": "common",
+   "lang": "mn",
+   "country_code": "mn"
+  },
+  {
+   "rule": "mnnamebyname",
+   "key": "name",
+   "type": "field",
+   "match": "regex",
+   "file": "mn/mn_common.yaml",
+   "context": "common",
+   "lang": "mn",
+   "country_code": "mn"
+  },
+  {
+   "rule": "mnschoolyearbyname",
+   "key": "school_year",
+   "type": "field",
+   "match": "regex",
+   "file": "mn/mn_common.yaml",
+   "context": "common",
+   "lang": "mn",
+   "country_code": "mn"
+  },
+  {
+   "rule": "mnsexbyname",
+   "key": "gender",
+   "type": "field",
+   "match": "regex",
+   "file": "mn/mn_common.yaml",
+   "context": "common",
+   "lang": "mn",
+   "country_code": "mn"
+  },
+  {
+   "rule": "mnyearbyname",
+   "key": "year",
+   "type": "field",
+   "match": "regex",
+   "file": "mn/mn_common.yaml",
+   "context": "common",
+   "lang": "mn",
+   "country_code": "mn"
+  },
+  {
    "rule": "clabefield",
    "key": "clabe",
    "type": "field",
@@ -20102,6 +20438,16 @@
    "country_code": "nl"
   },
   {
+   "rule": "nlamcobyname",
+   "key": "nl_amco",
+   "type": "field",
+   "match": "regex",
+   "file": "nl/nl_geo.yaml",
+   "context": "geo",
+   "lang": "nl",
+   "country_code": "nl"
+  },
+  {
    "rule": "nlcbsregionyearvalue",
    "key": "nl_cbs_region_code_year",
    "type": "data",
@@ -20272,6 +20618,16 @@
    "country_code": "nl"
   },
   {
+   "rule": "nosupremecourtreferencevalue",
+   "key": "no_supreme_court_reference",
+   "type": "data",
+   "match": "func",
+   "file": "no/no_legal.yaml",
+   "context": "legal",
+   "lang": "nb",
+   "country_code": "no"
+  },
+  {
    "rule": "noorgnrbyfield",
    "key": "no_orgnr",
    "type": "field",
@@ -20290,6 +20646,16 @@
    "context": "companies",
    "lang": "nb",
    "country_code": "no"
+  },
+  {
+   "rule": "nzregionbyname",
+   "key": "nz_region",
+   "type": "field",
+   "match": "regex",
+   "file": "nz/nz_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "nz"
   },
   {
    "rule": "nzcompanynumbervalue",
@@ -22428,6 +22794,96 @@
    "match": "ppr",
    "file": "pl/pl_persons.yaml",
    "context": "persons",
+   "lang": "pl",
+   "country_code": "pl"
+  },
+  {
+   "rule": "plagegroupbyname",
+   "key": "age_range",
+   "type": "field",
+   "match": "regex",
+   "file": "pl/pl_statistics.yaml",
+   "context": "geo",
+   "lang": "pl",
+   "country_code": "pl"
+  },
+  {
+   "rule": "plbooleanvalue",
+   "key": "boolean",
+   "type": "data",
+   "match": "func",
+   "file": "pl/pl_statistics.yaml",
+   "context": "geo",
+   "lang": "pl",
+   "country_code": "pl"
+  },
+  {
+   "rule": "pldiseasebyname",
+   "key": "medical_condition",
+   "type": "field",
+   "match": "regex",
+   "file": "pl/pl_statistics.yaml",
+   "context": "geo",
+   "lang": "pl",
+   "country_code": "pl"
+  },
+  {
+   "rule": "plmonthbyname",
+   "key": "month",
+   "type": "field",
+   "match": "regex",
+   "file": "pl/pl_statistics.yaml",
+   "context": "geo",
+   "lang": "pl",
+   "country_code": "pl"
+  },
+  {
+   "rule": "plresidencebyname",
+   "key": "urban_rural_class",
+   "type": "field",
+   "match": "regex",
+   "file": "pl/pl_statistics.yaml",
+   "context": "geo",
+   "lang": "pl",
+   "country_code": "pl"
+  },
+  {
+   "rule": "plsexbyname",
+   "key": "gender",
+   "type": "field",
+   "match": "regex",
+   "file": "pl/pl_statistics.yaml",
+   "context": "geo",
+   "lang": "pl",
+   "country_code": "pl"
+  },
+  {
+   "rule": "plvoivodeshipbyname",
+   "key": "pl_voivodeship",
+   "type": "field",
+   "match": "regex",
+   "file": "pl/pl_statistics.yaml",
+   "context": "geo",
+   "lang": "pl",
+   "country_code": "pl"
+  },
+  {
+   "rule": "plvoivodeshipvalue",
+   "key": "pl_voivodeship",
+   "type": "data",
+   "match": "func",
+   "file": "pl/pl_statistics.yaml",
+   "context": "geo",
+   "lang": "pl",
+   "country_code": "pl"
+  },
+  {
+   "rule": "plyearbyname",
+   "key": "year",
+   "type": "field",
+   "match": "regex",
+   "file": "pl/pl_statistics.yaml",
+   "context": "geo",
    "lang": "pl",
    "country_code": "pl"
   },

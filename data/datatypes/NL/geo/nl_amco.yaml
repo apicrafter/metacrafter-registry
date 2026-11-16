@@ -1,0 +1,45 @@
+id: nl_amco
+name: Amsterdamse code (AMCO)
+status: draft
+doc: 'Number of a Dutch municipality in the Amsterdamse code, which Ad van der Meer and Onno Boonstra
+  give to every municipality that has existed since 1812 in their Repertorium van Nederlandse gemeenten.
+  Unlike the CBS code (nl_municipality_code), which changes or is reused when municipalities merge, it
+  stays with one municipality for all its years, so historical statistics and boundary files (NLGIS) join
+  on it. Five digits; the codes in use begin with 10 or 11. The site gemeentegeschiedenis.nl resolves
+  them (https://www.gemeentegeschiedenis.nl/amco/10002). A bare number: recognize it only with column
+  context (amco, acode, amsterdamse_code).'
+parent: id
+categories:
+- geo
+- government
+country:
+- NL
+langs:
+- nl
+is_pii: false
+classification: identifier
+regexp: ^1[01]\d{3}$
+examples:
+- value: '10002'
+  description: Zuidlaren (Drenthe); gemeentegeschiedenis.nl
+- value: '10357'
+  description: Wikidata example of P6434
+- value: '10022'
+  description: Wikidata example of P6434
+- value: '0363'
+  valid: false
+  description: CBS code of Amsterdam, not an Amsterdamse code
+mappings:
+  wikidata: P6434
+links:
+- type: doc
+  url: https://www.gemeentegeschiedenis.nl/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P6434
+translations:
+  nl:
+    name: Amsterdamse code
+  ru:
+    name: Амстердамский код общины Нидерландов
+    doc: Постоянный пятизначный номер нидерландской общины, существовавшей с 1812 года, по справочнику
+      ван дер Меера и Боонстры.

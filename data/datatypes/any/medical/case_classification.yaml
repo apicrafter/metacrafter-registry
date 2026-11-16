@@ -1,0 +1,38 @@
+id: case_classification
+name: Case classification (surveillance)
+status: draft
+doc: 'How certain a reported case of a notifiable disease is under the case definition used in surveillance:
+  confirmed (laboratory evidence), probable (clinical picture and an epidemiological link) or possible
+  (clinical picture only). The EU case definitions for communicable diseases use these three classes;
+  US surveillance says suspect for the weakest one. Polish registers of infectious diseases write potwierdzony,
+  prawdopodobny and możliwy, also as przypadek potwierdzony, in the column klasyfikacja.'
+parent: category
+categories:
+- medical
+langs:
+- en
+- pl
+is_pii: false
+classification: categorical
+regexp: ^(?i:confirmed|probable|possible|suspect(?:ed)?|(?:przypadek )?(?:potwierdzony|prawdopodobny|możliwy))$
+examples:
+- value: confirmed
+- value: Probable
+- value: potwierdzony
+  description: 'Polish: confirmed'
+- value: przypadek możliwy
+  description: 'Polish: possible case; register of the National Institute of Public Health (epibaza.pzh.gov.pl),
+    a 2024 snapshot'
+- value: hospitalised
+  valid: false
+  description: An outcome, not a classification
+links:
+- type: doc
+  url: https://www.ecdc.europa.eu/en/all-topics/eu-case-definitions
+translations:
+  pl:
+    name: Klasyfikacja przypadku
+  ru:
+    name: Классификация случая заболевания
+    doc: 'Степень достоверности случая инфекционной болезни по определению случая: подтверждённый, вероятный
+      или возможный.'

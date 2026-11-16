@@ -1,0 +1,30 @@
+id: iucn_population_trend
+name: IUCN Red List population trend
+status: draft
+doc: 'Direction in which the population of a species changes, as an assessment of the IUCN Red List states
+  it: Increasing, Decreasing, Stable or Unknown. Exports of Red List assessments carry it in the column
+  populationTrend, beside the category (iucn_red_list_category) and the criteria (iucn_red_list_criteria).'
+parent: category
+categories:
+- environment
+- science
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?i:Increasing|Decreasing|Stable|Unknown)$
+examples:
+- value: Decreasing
+- value: Stable
+- value: Unknown
+- value: Vulnerable
+  valid: false
+  description: A Red List category
+links:
+- type: doc
+  url: https://www.iucnredlist.org/resources/categories-and-criteria
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/IUCN_Red_List
+translations:
+  ru:
+    name: Тенденция численности популяции (Красный список МСОП)

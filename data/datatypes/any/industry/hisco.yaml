@@ -1,0 +1,38 @@
+id: hisco
+name: HISCO occupation code
+status: draft
+doc: 'Code of an occupation in the Historical International Standard Classification of Occupations (HISCO),
+  which Marco van Leeuwen, Ineke Maas and Andrew Miles published in 2002 to code the occupational titles
+  of historical sources of many countries and languages in one scheme. It builds on ISCO-68 of the International
+  Labour Organization and is a tree of major, minor and unit groups and occupations; datasets of historical
+  demography write the code as five digits. Spreadsheets drop a leading zero (2000 for 02000). Further
+  variables beside the code (status, relation, product) hold what the code does not say. A bare number:
+  recognize it only with column context (hisco, occupation_hisco_1, hiscocode1).'
+categories:
+- industry
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{5}$
+examples:
+- value: '41025'
+  description: Table of the IISH Dataverse (datasets.iisg.amsterdam), a 2024 snapshot
+- value: '62490'
+  description: Table of the IISH Dataverse, a 2024 snapshot
+- value: '02120'
+  description: With a leading zero; IISH Dataverse, a 2024 snapshot
+- value: '641'
+  valid: false
+  description: Three digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/HISCO
+- type: doc
+  url: https://iisg.amsterdam/en/data/data-websites/history-of-work
+translations:
+  ru:
+    name: Код профессии HISCO
+    doc: Код профессии по исторической международной классификации занятий HISCO (2002), построенной на
+      ISCO-68; в наборах данных пишется пятью цифрами.
