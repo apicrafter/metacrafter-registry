@@ -1,0 +1,37 @@
+id: glyma_gene_id
+name: Soybean gene model identifier (Glyma)
+status: draft
+doc: Identifier of a gene model of the soybean (Glycine max) reference genome of the cultivar Williams
+  82, as SoyBase and Phytozome give it. Since the second assembly (Wm82.a2) it is Glyma, a point, the
+  two-digit chromosome (01 to 20), G and six digits (Glyma.10G039300); a point and a number name a transcript
+  (Glyma.10G039300.1). The first assembly wrote it without the point and with five digits (Glyma10g34560).
+  Tables of expression, microRNA targets and gene annotations of soybean carry it.
+parent: id
+categories:
+- agriculture
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^Glyma(?:\.(?:0[1-9]|1\d|20)[Gg]\d{6}|(?:0[1-9]|1\d|20)[Gg]\d{5})(?:\.\d+)?$
+examples:
+- value: Glyma.10G039300
+  description: a gene of chromosome 10, Wm82.a2
+- value: Glyma.18G243100.2
+  description: the second transcript of a gene
+- value: Glyma.01g000100
+- value: Glyma10g34560
+  description: the form of the first assembly
+- value: Glyma.21G039300
+  valid: false
+  description: soybean has 20 chromosomes
+- value: AT1G01010
+  valid: false
+  description: an Arabidopsis locus (tair_locus_id)
+links:
+- type: doc
+  url: https://www.soybase.org/about/genome_nomenclature
+translations:
+  ru:
+    name: Идентификатор генной модели сои (Glyma)

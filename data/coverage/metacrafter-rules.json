@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "96d7a762d9c184c5519987b2d2e27d5c842bdc12"
+  "ref": "bd636e287ce3899ee128d32e9514072c7bf8a94a"
  },
  "rules": [
   {
@@ -4152,6 +4152,116 @@
    "file": "ca/ca_orgs.yaml",
    "context": "companies",
    "lang": "ca",
+   "country_code": "ca"
+  },
+  {
+   "rule": "cacmauidbyname",
+   "key": "ca_cmauid",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "cactuidbyname",
+   "key": "ca_ctuid",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "caecozonebyname",
+   "key": "ca_ecozone",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "caeruidbyname",
+   "key": "ca_eruid",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "cafeduidbyname",
+   "key": "ca_feduid",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "canoccodebyname",
+   "key": "ca_noc_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "caprovincenamebyname",
+   "key": "caprovince",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "casgcprovincebyname",
+   "key": "casgc",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "castatcanvectorbyname",
+   "key": "ca_statcan_vector",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "castatcanvectorvalue",
+   "key": "ca_statcan_vector",
+   "type": "data",
+   "match": "func",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "catcpuidbyname",
+   "key": "ca_tcp_uid",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
    "country_code": "ca"
   },
   {
@@ -10152,6 +10262,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "boldbinvalue",
+   "key": "bold_bin",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "chromosomebyname",
    "key": "chromosome",
    "type": "field",
@@ -10362,6 +10482,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "glymageneidvalue",
+   "key": "glyma_gene_id",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "gridbyfieldname",
    "key": "grid",
    "type": "field",
@@ -10386,6 +10516,16 @@
    "key": "taxon_name",
    "type": "data",
    "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "hydrolakesidbyname",
+   "key": "hydrolakes_id",
+   "type": "field",
+   "match": "regex",
    "file": "common/science.yaml",
    "context": "science",
    "lang": "common",
@@ -10444,6 +10584,36 @@
   {
    "rule": "log2foldchangebyname",
    "key": "log2_fold_change",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "mirbasematureidvalue",
+   "key": "mirbase_mature_id",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "mirnanamevalue",
+   "key": "mirna_name",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "natureserverankbyname",
+   "key": "natureserve_rank",
    "type": "field",
    "match": "regex",
    "file": "common/science.yaml",

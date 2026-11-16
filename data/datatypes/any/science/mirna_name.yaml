@@ -1,0 +1,38 @@
+id: mirna_name
+name: microRNA name (miRBase nomenclature)
+status: draft
+doc: 'Name of a microRNA in the nomenclature of miRBase: a three- or four-letter code of the species (hsa
+  human, mmu mouse, gma soybean), then miR for a mature sequence or mir for the precursor hairpin (let,
+  lin and bantam for the genes named before the scheme), a number with an optional letter for close family
+  members and an optional number for separate loci, and the arm of the hairpin the mature sequence comes
+  from (-5p, -3p; an asterisk marked the minor strand in older releases). Plant names have no hyphen before
+  the number (gma-miR10418). Target prediction and expression tables name the field miRNA.'
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[a-z]{3,4}-(?:miR|mir|let|lin|bantam|lsy|iab)-?[0-9A-Za-z]*(?:-\d+)?(?:-[35]p|\*)?$
+examples:
+- value: hsa-miR-34a-5p
+  description: a human mature microRNA, 5' arm
+- value: hsa-let-7b-5p
+- value: hsa-mir-194-1
+  description: a precursor, first of two loci
+- value: gma-miR10418
+  description: a soybean microRNA
+- value: MIMAT0041661
+  valid: false
+  description: a miRBase accession (mirbase_mature_id)
+- value: miR-34a
+  valid: false
+  description: without the species code
+links:
+- type: doc
+  url: https://www.mirbase.org/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/MicroRNA
+translations:
+  ru:
+    name: Название микроРНК (номенклатура miRBase)

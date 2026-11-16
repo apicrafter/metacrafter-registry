@@ -1,0 +1,44 @@
+id: natureserve_rank
+name: NatureServe conservation status rank
+status: draft
+doc: 'Conservation status rank of a species or ecosystem in the system of NatureServe and the natural
+  heritage programmes and conservation data centres of the Americas. A letter gives the scale: G global,
+  N national, S subnational (a state or province), T a subspecies or variety. A number from 1 (critically
+  imperilled) to 5 (secure) or a code follows: X presumed extinct, H possibly extinct, U unrankable, NR
+  not ranked, NA not applicable. A range joins two ranks (G2G3, S1S2), a T rank follows the rank of the
+  species (G5T3), and qualifiers mark doubt (?), questionable taxonomy (Q), captive populations (C) and
+  the breeding, non-breeding and migrant populations (B, N, M). Species lists name the fields G_RANK,
+  N_RANK, S_RANK, GRANK or ROUNDEDGRANK.'
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[GTNS](?:[1-5](?:[GTNS]?[1-5])?|[XHU]|NR|NA)[?QCBNM]{0,2}(?:T(?:[1-5](?:T?[1-5])?|[XHU]|NR|NA)[?QC]{0,2})?(?:,[NS](?:[1-5](?:[NS]?[1-5])?|[XHU]|NR|NA)[?BNM]{0,2})*$
+examples:
+- value: G5
+  description: globally secure
+- value: N4
+  description: apparently secure in a nation
+- value: G2G3
+  description: a range of ranks
+- value: G5T4
+  description: a subspecies ranked under its species
+- value: NNR
+  description: not ranked at the national level
+- value: S3B,S5N
+  description: breeding and non-breeding populations of a province
+- value: LC
+  valid: false
+  description: an IUCN Red List category (iucn_red_list_category)
+- value: G6
+  valid: false
+  description: ranks run from 1 to 5
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/NatureServe_conservation_status
+translations:
+  ru:
+    name: Ранг природоохранного статуса NatureServe

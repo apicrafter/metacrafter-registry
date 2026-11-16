@@ -1,0 +1,31 @@
+id: bold_bin
+name: BOLD Barcode Index Number (BIN)
+status: draft
+doc: 'Identifier of a Barcode Index Number in the Barcode of Life Data System (BOLD): a cluster of DNA
+  barcode sequences, mostly of the COI gene of animals, that stands for a species or an operational taxonomic
+  unit. It is written BOLD, a colon, three letters and four digits (BOLD:AAA5125). Barcoding and environmental
+  DNA studies give it for every sequence cluster in a field named BIN, bin_uri or BIN/Taxon ID.'
+parent: id
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^BOLD:[A-Z]{3}\d{4}$
+examples:
+- value: BOLD:AAY6600
+- value: BOLD:AAC1842
+- value: BOLD:AAB0529
+- value: AAY6600
+  valid: false
+  description: without the BOLD prefix
+- value: TAX:12439
+  valid: false
+  description: a taxon identifier in the same field
+links:
+- type: doc
+  url: https://doi.org/10.1371/journal.pone.0066213
+translations:
+  ru:
+    name: Индексный номер штрихкода BOLD (BIN)
