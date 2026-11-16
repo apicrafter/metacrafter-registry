@@ -1,0 +1,29 @@
+id: id_month
+name: Month name (Indonesian)
+status: draft
+doc: 'Name of a month in Indonesian: Januari, Februari, Maret, April, Mei, Juni, Juli, Agustus, September,
+  Oktober, November, Desember, capitalised or in capitals (JANUARI). Tables also abbreviate the month:
+  Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agu (also Agt and Ags), Sep, Okt, Nov, Des. Monthly statistics of
+  Indonesian regencies and ministries give the month of a row this way, in columns named bulan.'
+semantic_type: month
+langs:
+- id
+regexp: ^(?i:januari|februari|maret|april|mei|juni|juli|agustus|september|oktober|november|desember|jan|feb|mar|apr|jun|jul|agu|agt|ags|sep|okt|nov|des)$
+examples:
+- value: Januari
+- value: MARET
+  description: in capitals, monthly tables of the open data portal of Tangerang Regency
+- value: Agustus
+- value: Okt
+  description: CLDR abbreviation of Oktober
+- value: Senin
+  valid: false
+  description: a day of the week
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/id/ca-gregorian.json
+translations:
+  id:
+    name: Nama bulan
+  ru:
+    name: Название месяца (на индонезийском)

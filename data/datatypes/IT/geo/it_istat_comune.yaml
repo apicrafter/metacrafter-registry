@@ -7,7 +7,9 @@ doc: Statistical code of an Italian municipality (six digits), province or metro
   as 015146 for Milan in province 015. A metropolitan city has the code of the province it replaced plus
   200, so Milan is 215. On 1 January 2026 the reform of Sardinia gave its provinces the codes 112 to 119
   and its metropolitan cities 312 (Sassari) and 318 (Cagliari, formerly 292), and the Sardinian comuni
-  got new codes.
+  got new codes. Spreadsheets often lose the leading zero of a municipality code (45003 for 045003), and
+  registers of public contracts put the three-digit code of the region in front (012058091 for Rome in
+  Lazio); both are spellings found in files, not forms of the code.
 categories:
 - geo
 country:

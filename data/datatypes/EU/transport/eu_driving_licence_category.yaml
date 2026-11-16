@@ -1,0 +1,40 @@
+id: eu_driving_licence_category
+name: EU driving licence category
+status: draft
+doc: 'Category of vehicles that a driving licence of the European Union entitles its holder to drive,
+  as harmonised by Directive 2006/126/EC: AM for mopeds, A1, A2 and A for motorcycles, B1 for quadricycles,
+  B for cars, C1 and C for goods vehicles, D1 and D for buses, and BE, C1E, CE, D1E and DE for the same
+  with a heavy trailer. Member states add national categories (T for tractors, for example) that are valid
+  only at home. Licence statistics and registers of licences give the category of each licence this way.'
+parent: category
+categories:
+- transport
+- government
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:AM|A1|A2|A|B1|BE|B|C1E|C1|CE|C|D1E|D1|DE|D)$
+examples:
+- value: B
+  description: Cars up to 3500 kg
+- value: CE
+  description: Goods vehicle with a trailer over 750 kg
+- value: A2
+  description: Motorcycles up to 35 kW
+- value: D1E
+- value: E
+  valid: false
+  description: Trailer categories are written with the towing category (BE, CE)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/European_driving_licence
+- type: doc
+  url: https://eur-lex.europa.eu/eli/dir/2006/126/oj
+translations:
+  it:
+    name: Categoria della patente di guida
+  ru:
+    name: Категория водительского удостоверения ЕС

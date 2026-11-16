@@ -1,0 +1,42 @@
+id: it_soa_category
+name: Italian public works qualification category (SOA category)
+status: draft
+doc: 'Code of a category of public works in which an Italian contractor is qualified by an SOA attestation:
+  OG with a number from 1 to 13 for general works (OG1, buildings; OG3, roads and bridges) and OS with
+  a number from 1 to 35 for specialised works (OS30, electrical systems). Five specialised categories
+  are split with a letter: OS2-A, OS2-B, OS12-A, OS12-B, OS18-A, OS18-B, OS20-A, OS20-B. The list is annex
+  A of presidential decree 207 of 2010. Tender notices and contract registers give the main category of
+  a works contract this way, written OG1, OG 1, OS12A or OS 12-A.'
+parent: category
+categories:
+- government
+- industry
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: '^O(?:G ?(?:[1-9]|1[0-3])|S ?(?:[1-9]|[12]\d|3[0-5])(?: ?-? ?[AB])?)$'
+examples:
+- value: OG1
+  description: Civil and industrial buildings
+- value: OG 3
+  description: Roads, motorways, bridges, railways
+- value: OS12A
+  description: Road safety barriers, as contract registers of the transport ministry write it
+- value: OS 18-A
+  description: Structural steel components
+- value: OG14
+  valid: false
+  description: There are 13 general categories
+links:
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Attestazione_SOA
+- type: doc
+  url: https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.del.presidente.della.repubblica:2010-10-05;207
+translations:
+  it:
+    name: Categoria SOA
+  ru:
+    name: Категория квалификации подрядчика общественных работ Италии (SOA)

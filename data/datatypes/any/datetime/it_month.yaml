@@ -1,0 +1,30 @@
+id: it_month
+name: Month name (Italian)
+status: draft
+doc: 'Name of a month in Italian: gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre,
+  ottobre, novembre, dicembre, capitalised or not; files also write them in capitals (GENNAIO). Tables
+  also abbreviate the month to three letters: gen, feb, mar, apr, mag, giu, lug, ago, set, ott, nov, dic.
+  Monthly statistics of Italian municipalities and agencies give the month of a row this way, in columns
+  named mese. A date with the abbreviation inside (01-GEN-13) is date_italian.'
+semantic_type: month
+langs:
+- it
+regexp: ^(?i:gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre|gen|feb|mar|apr|mag|giu|lug|ago|set|ott|nov|dic)$
+examples:
+- value: gennaio
+- value: Dicembre
+- value: MAGGIO
+  description: in capitals
+- value: lug
+  description: CLDR abbreviation of luglio
+- value: lunedì
+  valid: false
+  description: a day of the week
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/it/ca-gregorian.json
+translations:
+  it:
+    name: Nome del mese
+  ru:
+    name: Название месяца (на итальянском)

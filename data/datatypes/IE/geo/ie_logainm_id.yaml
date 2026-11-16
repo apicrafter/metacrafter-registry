@@ -1,0 +1,38 @@
+id: ie_logainm_id
+name: Logainm ID (Placenames Database of Ireland)
+status: draft
+doc: Number of a place in Logainm, the Placenames Database of Ireland, which records the official Irish
+  and English names of townlands, parishes, baronies, counties, towns and streets. The number is the last
+  part of the address of the page of the place, https://www.logainm.ie/<number>.aspx, and metadata of
+  Irish archives and repositories give the place a record is about as that address, in fields such as
+  dc:coverage.
+parent: id
+categories:
+- geo
+country:
+- IE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:https?://(?:www\.)?logainm\.ie/(?:(?:en|ga)/)?)?[1-9]\d{0,7}(?:\.aspx)?$
+examples:
+- value: '132307'
+  description: Clogherhead
+- value: '100013'
+  description: County Donegal
+- value: https://www.logainm.ie/100013.aspx
+  description: As the address of the page
+- value: https://www.logainm.ie/
+  valid: false
+  description: The site without a place
+mappings:
+  wikidata: P5097
+links:
+- type: doc
+  url: https://www.logainm.ie/en/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P5097
+translations:
+  ru:
+    name: Идентификатор Logainm (база географических названий Ирландии)
