@@ -1,0 +1,43 @@
+id: ca_feduid
+name: Canadian federal electoral district code (FEDUID)
+status: draft
+doc: 'Five-digit code of a federal electoral district (riding) of Canada: the two-digit Standard Geographical
+  Classification code of the province or territory (35 Ontario, 59 British Columbia) and a three-digit
+  number of the district within it. Elections Canada and Statistics Canada use the same codes; a code
+  belongs to one representation order (2003, 2013, 2023), so the same number can name different districts
+  in files of different years. Boundary files and census profiles name the field FEDUID, election studies
+  feduid, FED or riding.'
+categories:
+- geo
+- government
+country:
+- CA
+langs:
+- en
+- fr
+is_pii: false
+classification: identifier
+regexp: ^(?:1[0-3]|24|35|4[6-8]|59|6[0-2])\d{3}$
+examples:
+- value: '35076'
+  description: Orléans, Ontario, 2013 representation order
+- value: '59034'
+  description: a district of British Columbia
+- value: '10002'
+  description: a district of Newfoundland and Labrador
+- value: '99001'
+  valid: false
+  description: 99 is not a province code
+- value: '3507'
+  valid: false
+  description: four digits
+links:
+- type: doc
+  url: https://www150.statcan.gc.ca/n1/pub/92f0138m/92f0138m2019001-eng.htm
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Electoral_district_(Canada)
+translations:
+  fr:
+    name: Code de circonscription électorale fédérale du Canada (CEFIDU)
+  ru:
+    name: Код федерального избирательного округа Канады (FEDUID)

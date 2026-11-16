@@ -1,0 +1,41 @@
+id: ca_cmauid
+name: Canadian census metropolitan area or census agglomeration code (CMAUID)
+status: draft
+doc: Three-digit code that Statistics Canada gives every census metropolitan area (CMA) and census agglomeration
+  (CA); it is unique in Canada, and its first digit is the second digit of the code of the province where
+  the area lies (535 Toronto in Ontario, 35). Census files name the field CMAUID or CMACA; public use
+  microdata files of surveys carry it as CMA with 000, 996 or 999 for the rest of a province. The code
+  is also the first three digits of a census tract identifier (ca_ctuid).
+categories:
+- geo
+- government
+country:
+- CA
+langs:
+- en
+- fr
+is_pii: false
+classification: identifier
+regexp: ^\d{3}$
+examples:
+- value: '535'
+  description: Toronto, census metropolitan area
+- value: '527'
+  description: Cobourg, census agglomeration
+- value: '825'
+  description: Calgary
+- value: '205'
+  description: Halifax
+- value: '5350'
+  valid: false
+  description: four digits
+links:
+- type: doc
+  url: https://www150.statcan.gc.ca/n1/pub/92f0138m/92f0138m2019001-eng.htm
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Census_geographic_units_of_Canada
+translations:
+  fr:
+    name: Code de région métropolitaine de recensement ou d'agglomération de recensement du Canada (RMRIDU)
+  ru:
+    name: Код переписной метрополии или агломерации Канады (CMAUID)

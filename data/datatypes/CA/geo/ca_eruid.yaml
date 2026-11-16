@@ -1,0 +1,40 @@
+id: ca_eruid
+name: Canadian economic region code (ERUID)
+status: draft
+doc: 'Four-digit code of an economic region of Statistics Canada, a group of whole census divisions used
+  for regional economic statistics such as the Labour Force Survey: the two-digit code of the province
+  or territory and the two-digit code of the region within it (3530 Toronto, 1210 Cape Breton). A census
+  division code (casgc) has the same four digits, so the field name (ERUID, ER, economic region) tells
+  them apart.'
+categories:
+- geo
+- government
+country:
+- CA
+langs:
+- en
+- fr
+is_pii: false
+classification: identifier
+regexp: ^(?:1[0-3]|24|35|4[6-8]|59|6[0-2])\d{2}$
+examples:
+- value: '3530'
+  description: Toronto, Ontario
+- value: '1210'
+  description: Cape Breton, Nova Scotia
+- value: '9930'
+  valid: false
+  description: 99 is not a province code
+- value: '35300'
+  valid: false
+  description: five digits
+links:
+- type: doc
+  url: https://www150.statcan.gc.ca/n1/pub/92f0138m/92f0138m2019001-eng.htm
+- type: doc
+  url: https://www.statcan.gc.ca/en/subjects/standard/sgc/2021/index
+translations:
+  fr:
+    name: Code de région économique du Canada (REIDU)
+  ru:
+    name: Код экономического региона Канады (ERUID)

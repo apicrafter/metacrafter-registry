@@ -1,0 +1,46 @@
+id: ca_noc_code
+name: Canadian National Occupational Classification (NOC) code
+status: draft
+doc: Code of an occupation in the National Occupational Classification of Canada, maintained by Employment
+  and Social Development Canada and Statistics Canada. A unit group has four digits in NOC 2006, 2011
+  and 2016 (3112, 0111) and five digits in NOC 2021 (21100), where the first digit is the broad occupational
+  category and the second the TEER category (training, education, experience and responsibilities). Surveys,
+  job postings and immigration data name the field NOC, NOC2011, NOC_2021 or noc_code; a spreadsheet drops
+  the leading zero of the management occupations.
+categories:
+- government
+- industry
+country:
+- CA
+langs:
+- en
+- fr
+is_pii: false
+classification: categorical
+regexp: ^\d{4,5}$
+examples:
+- value: '21100'
+  description: Physicists and astronomers, NOC 2021
+- value: '10010'
+  description: Financial managers, NOC 2021
+- value: '00010'
+  description: Legislators, NOC 2021
+- value: '3112'
+  description: a four-digit unit group of NOC 2011
+- value: '311'
+  valid: false
+  description: a minor group of three digits
+mappings:
+  wikidata: P918
+links:
+- type: doc
+  url: https://noc.esdc.gc.ca/Structure/Hierarchy
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P918
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_Occupational_Classification
+translations:
+  fr:
+    name: Code de la Classification nationale des professions (CNP) du Canada
+  ru:
+    name: Код Национальной классификации профессий Канады (NOC)
