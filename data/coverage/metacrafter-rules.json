@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "bd636e287ce3899ee128d32e9514072c7bf8a94a"
+  "ref": "cd75c0b095828048c1549226a0c97420d0b864de"
  },
  "rules": [
   {
@@ -6975,6 +6975,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "airpollutantbyname",
+   "key": "air_pollutant",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "airsensormodelbyname",
    "key": "air_sensor_model",
    "type": "field",
@@ -9035,6 +9045,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "medicationgenericnamebyname",
+   "key": "medication_generic_name",
+   "type": "field",
+   "match": "regex",
+   "file": "common/medical.yaml",
+   "context": "medical",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "medicationroutebyname",
+   "key": "medication_route",
+   "type": "field",
+   "match": "regex",
+   "file": "common/medical.yaml",
+   "context": "medical",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "pangolineagevalue",
    "key": "pango_lineage",
    "type": "data",
@@ -9755,8 +9785,28 @@
    "country_code": "xx"
   },
   {
+   "rule": "isoweekbyname",
+   "key": "iso_week",
+   "type": "field",
+   "match": "regex",
+   "file": "common/periods.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "yearbyperiodoname",
    "key": "year",
+   "type": "field",
+   "match": "regex",
+   "file": "common/periods.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "yearmonthbymonthname",
+   "key": "yearmonth",
    "type": "field",
    "match": "regex",
    "file": "common/periods.yaml",
@@ -9905,6 +9955,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "pollingstationbyname",
+   "key": "polling_station",
+   "type": "field",
+   "match": "regex",
+   "file": "common/politics.yaml",
+   "context": "government",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "ocdsocidvalue",
    "key": "ocds_ocid",
    "type": "data",
@@ -9929,6 +9989,36 @@
    "key": "procurement_method",
    "type": "data",
    "match": "func",
+   "file": "common/procurement.yaml",
+   "context": "government",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "procurementstatusbyname",
+   "key": "procurement_status",
+   "type": "field",
+   "match": "regex",
+   "file": "common/procurement.yaml",
+   "context": "government",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "procurementstatusocds",
+   "key": "procurement_status",
+   "type": "field",
+   "match": "regex",
+   "file": "common/procurement.yaml",
+   "context": "government",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "suppliernamebyname",
+   "key": "orgname",
+   "type": "field",
+   "match": "regex",
    "file": "common/procurement.yaml",
    "context": "government",
    "lang": "common",
@@ -10972,6 +11062,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "imoportfacilitynumbervalue",
+   "key": "imo_port_facility_number",
+   "type": "data",
+   "match": "func",
+   "file": "common/shipping.yaml",
+   "context": "shipping",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "trackingnumberfield",
    "key": "trackingnumber",
    "type": "field",
@@ -11736,6 +11836,16 @@
    "key": "imsi",
    "type": "data",
    "match": "ppr",
+   "file": "common/telecom.yaml",
+   "context": "telecom",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "mobilenetworkbandvalue",
+   "key": "mobile_network_band",
+   "type": "data",
+   "match": "func",
    "file": "common/telecom.yaml",
    "context": "telecom",
    "lang": "common",
@@ -12700,6 +12810,146 @@
    "context": "transport",
    "lang": "common",
    "country_code": "xx"
+  },
+  {
+   "rule": "crbudgetincomecodevalue",
+   "key": "cr_budget_income_code",
+   "type": "data",
+   "match": "func",
+   "file": "cr/cr_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "cr"
+  },
+  {
+   "rule": "crbudgetobjectcodebyname",
+   "key": "cr_budget_object_code",
+   "type": "field",
+   "match": "regex",
+   "file": "cr/cr_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "cr"
+  },
+  {
+   "rule": "crbudgetobjectcodevalue",
+   "key": "cr_budget_object_code",
+   "type": "data",
+   "match": "func",
+   "file": "cr/cr_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "cr"
+  },
+  {
+   "rule": "crsicopcontractnumberbyname",
+   "key": "cr_sicop_contract_number",
+   "type": "field",
+   "match": "regex",
+   "file": "cr/cr_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "cr"
+  },
+  {
+   "rule": "crsicopcontractnumbervalue",
+   "key": "cr_sicop_contract_number",
+   "type": "data",
+   "match": "func",
+   "file": "cr/cr_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "cr"
+  },
+  {
+   "rule": "crsicopgoodscodebyname",
+   "key": "cr_sicop_goods_code",
+   "type": "field",
+   "match": "regex",
+   "file": "cr/cr_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "cr"
+  },
+  {
+   "rule": "crsicopprocedurenumbervalue",
+   "key": "cr_sicop_procedure_number",
+   "type": "data",
+   "match": "func",
+   "file": "cr/cr_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "cr"
+  },
+  {
+   "rule": "cyphonebyname",
+   "key": "cy_phone",
+   "type": "field",
+   "match": "regex",
+   "file": "cy/cy_codes.yaml",
+   "context": "common",
+   "lang": "el",
+   "country_code": "cy"
+  },
+  {
+   "rule": "cypoliticalpartybyname",
+   "key": "political_party",
+   "type": "field",
+   "match": "regex",
+   "file": "cy/cy_codes.yaml",
+   "context": "common",
+   "lang": "el",
+   "country_code": "cy"
+  },
+  {
+   "rule": "cypostcodebyname",
+   "key": "cy_postcode",
+   "type": "field",
+   "match": "regex",
+   "file": "cy/cy_codes.yaml",
+   "context": "common",
+   "lang": "el",
+   "country_code": "cy"
+  },
+  {
+   "rule": "cysalaryscalebyname",
+   "key": "cy_salary_scale",
+   "type": "field",
+   "match": "regex",
+   "file": "cy/cy_codes.yaml",
+   "context": "common",
+   "lang": "el",
+   "country_code": "cy"
+  },
+  {
+   "rule": "cyvehicleplatebyname",
+   "key": "cy_vehicle_plate",
+   "type": "field",
+   "match": "regex",
+   "file": "cy/cy_codes.yaml",
+   "context": "common",
+   "lang": "el",
+   "country_code": "cy"
+  },
+  {
+   "rule": "cydistrictbyname",
+   "key": "cy_district",
+   "type": "field",
+   "match": "regex",
+   "file": "cy/cy_geo.yaml",
+   "context": "geo",
+   "lang": "el",
+   "country_code": "cy"
+  },
+  {
+   "rule": "cymunicipalitybyname",
+   "key": "cy_municipality",
+   "type": "field",
+   "match": "regex",
+   "file": "cy/cy_geo.yaml",
+   "context": "geo",
+   "lang": "el",
+   "country_code": "cy"
   },
   {
    "rule": "czlibraryregnumvalue",
@@ -14072,6 +14322,16 @@
    "country_code": "es"
   },
   {
+   "rule": "esinchargefullnamebyname",
+   "key": "person_fullname",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_persons.yaml",
+   "context": "persons",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
    "rule": "esjobtitlebyname",
    "key": "jobtitle",
    "type": "field",
@@ -14408,6 +14668,66 @@
    "match": "ppr",
    "file": "eu/eu_procurement.yaml",
    "context": "government",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
+   "rule": "easaapprovalnumbervalue",
+   "key": "easa_approval_number",
+   "type": "data",
+   "match": "func",
+   "file": "eu/eu_registers.yaml",
+   "context": "common",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
+   "rule": "eumarketingauthorisationnumbervalue",
+   "key": "eu_marketing_authorisation_number",
+   "type": "data",
+   "match": "func",
+   "file": "eu/eu_registers.yaml",
+   "context": "common",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
+   "rule": "euwastecodebyname",
+   "key": "eu_waste_code",
+   "type": "field",
+   "match": "regex",
+   "file": "eu/eu_registers.yaml",
+   "context": "common",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
+   "rule": "eurostatageclassbyname",
+   "key": "eurostat_age_class",
+   "type": "field",
+   "match": "regex",
+   "file": "eu/eu_statistics.yaml",
+   "context": "common",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
+   "rule": "eurostatageclassvalue",
+   "key": "eurostat_age_class",
+   "type": "data",
+   "match": "func",
+   "file": "eu/eu_statistics.yaml",
+   "context": "common",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
+   "rule": "eurostatgeocodebyname",
+   "key": "eurostat_geo_code",
+   "type": "field",
+   "match": "regex",
+   "file": "eu/eu_statistics.yaml",
+   "context": "common",
    "lang": "en",
    "country_code": "eu"
   },
@@ -16488,6 +16808,46 @@
    "match": "regex",
    "file": "gr/gr_common.yaml",
    "context": "common",
+   "lang": "el",
+   "country_code": "gr"
+  },
+  {
+   "rule": "elbooleanvalue",
+   "key": "boolean",
+   "type": "data",
+   "match": "func",
+   "file": "gr/gr_datetime.yaml",
+   "context": "datetime",
+   "lang": "el",
+   "country_code": "gr"
+  },
+  {
+   "rule": "eldayofweekvalue",
+   "key": "el_dayofweek",
+   "type": "data",
+   "match": "func",
+   "file": "gr/gr_datetime.yaml",
+   "context": "datetime",
+   "lang": "el",
+   "country_code": "gr"
+  },
+  {
+   "rule": "elmonthnamevalue",
+   "key": "el_month",
+   "type": "data",
+   "match": "func",
+   "file": "gr/gr_datetime.yaml",
+   "context": "datetime",
+   "lang": "el",
+   "country_code": "gr"
+  },
+  {
+   "rule": "elschoolyearbyname",
+   "key": "school_year",
+   "type": "field",
+   "match": "regex",
+   "file": "gr/gr_datetime.yaml",
+   "context": "datetime",
    "lang": "el",
    "country_code": "gr"
   },

@@ -1,0 +1,45 @@
+id: cr_budget_object_code
+name: Costa Rican budget code by object of expenditure (partida, grupo, subpartida)
+status: draft
+doc: 'Code of the Clasificador por objeto del gasto del sector público, the classification by nature of
+  the expenditure that the Ministerio de Hacienda sets for every public body of Costa Rica. It has five
+  digits in three levels, written with dots: one digit for the partida (0 remuneraciones, 1 servicios,
+  2 materiales y suministros, 3 intereses y comisiones, 4 activos financieros, 5 bienes duraderos, 6 transferencias
+  corrientes, 7 transferencias de capital, 8 amortización, 9 cuentas especiales), two for the group of
+  subpartidas (1.04 servicios de gestión y apoyo) and two for the subpartida (1.04.04 servicios en ciencias
+  económicas y sociales). Budgets, budget execution reports and procurement reports give the code at any
+  of the three levels.'
+categories:
+- government
+- finances
+country:
+- CR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^\d(?:\.\d{2}){0,2}$
+examples:
+- value: 1.04.04
+  description: 'Subpartida: services in economic and social sciences'
+- value: 0.01.01
+  description: 'Subpartida: salaries of permanent posts'
+- value: '1.04'
+  description: 'Group: management and support services'
+- value: '5'
+  description: 'Partida: durable goods'
+- value: 1.3.1.2.09.09.0.0.000
+  valid: false
+  description: 'a code of the income classification: cr_budget_income_code'
+- value: 1.4.4
+  valid: false
+  description: one digit at a level of two
+links:
+- type: doc
+  url: https://www.conare.ac.cr/wp-content/uploads/fondo_sistema/Formulacion/Clasificador por Objeto del
+    Gasto Decreto-2018.pdf
+translations:
+  es:
+    name: Código del clasificador por objeto del gasto (partida, grupo, subpartida)
+  ru:
+    name: Код классификации расходов бюджета по объектам (Коста-Рика)

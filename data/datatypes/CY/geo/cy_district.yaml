@@ -1,0 +1,37 @@
+id: cy_district
+name: District of Cyprus
+status: draft
+doc: 'Name of one of the six districts (επαρχίες) of the Republic of Cyprus: Lefkosia (Nicosia), Lemesos
+  (Limassol), Larnaka (Larnaca), Pafos (Paphos), Ammochostos (Famagusta) and Keryneia (Kyrenia). Tables
+  give it in Greek (Λευκωσία, ΛΕΜΕΣΟΣ), in the official transliteration (Lefkosia, Lemesos, Larnaka) or
+  under the English exonym (Nicosia, Limassol), and court, police and forest tables in the genitive (Λευκωσίας,
+  Αμμοχώστου). Election and police districts carry the same names. The number of a district in the statistical
+  codes of municipalities and communities (1 to 6) is not this type.'
+parent: admin_area_1
+categories:
+- geo
+- government
+country:
+- CY
+langs:
+- el
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Λευκωσία
+- value: ΛΕΜΕΣΟΣ
+  description: in capitals without the accent
+- value: Larnaka
+  description: the official transliteration
+- value: Paphos
+  description: the English exonym
+- value: Αμμόχωστος
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Districts_of_Cyprus
+translations:
+  el:
+    name: Επαρχία της Κύπρου
+  ru:
+    name: Район Кипра

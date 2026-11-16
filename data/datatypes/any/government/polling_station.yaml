@@ -1,0 +1,28 @@
+id: polling_station
+name: Polling station
+status: draft
+doc: 'Name of the place where the voters of an area cast their ballots, as election results by polling
+  station give it: most often the school or public building that hosts it (Γ ΔΗΜ. ΣΧΟΛΕΙΟ ΚΑΙΜΑΚΛΙΟΥ,
+  ΔΗΜΟΤΙΚΟ ΣΧΟΛΕΙΟ ΑΓΙΟΥ ΑΝΔΡΕΟΥ in the results of the Cyprus elections), in columns named Election Centre,
+  Polling Station or Polling Place. The number or letter of a ballot box inside it and the electoral district
+  are other columns.'
+parent: location
+categories:
+- government
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Γ ΔΗΜ. ΣΧΟΛΕΙΟ ΚΑΙΜΑΚΛΙΟΥ
+  description: an election centre in the results of the presidential election of Cyprus
+- value: ΔΗΜΟΤΙΚΟ ΣΧΟΛΕΙΟ ΑΓΙΟΥ ΑΝΔΡΕΟΥ
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Polling_place
+translations:
+  el:
+    name: Εκλογικό κέντρο
+  ru:
+    name: Избирательный участок

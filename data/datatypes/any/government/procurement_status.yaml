@@ -1,0 +1,48 @@
+id: procurement_status
+name: Procurement procedure status
+status: draft
+doc: 'Stage or outcome of a public procurement procedure, of its award or of its contract, as a procurement
+  system shows it: open for bids, under evaluation, awarded, award final, contract signed, cancelled,
+  or closed without an award because no bid came in or none was acceptable (desierto, infructuoso in Spanish
+  procurement law). Registers write it in the words of their system (Contrato, Adjudicación en firme,
+  En recepción de ofertas, En evaluación, Desierto/Infructuoso, Sin efecto in the reports of the Costa
+  Rican SICOP). The Open Contracting Data Standard has a code list for each of the three: tender status
+  (planning, planned, active, cancelled, unsuccessful, complete, withdrawn), award status (pending, active,
+  cancelled, unsuccessful) and contract status (pending, active, cancelled, terminated). The kind of procedure
+  is procurement_method.'
+parent: category
+categories:
+- government
+- finances
+langs:
+- common
+- es
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Adjudicación en firme
+  description: the award is final (SICOP, Costa Rica)
+- value: En recepción de ofertas
+  description: open for bids (SICOP)
+- value: Desierto/Infructuoso
+  description: closed without an award (SICOP)
+- value: Contrato
+  description: a contract was made (SICOP)
+- value: unsuccessful
+  description: OCDS tender status
+- value: terminated
+  description: OCDS contract status
+- value: Licitación Abreviada
+  valid: false
+  description: 'a kind of procedure: procurement_method'
+links:
+- type: doc
+  url: https://standard.open-contracting.org/latest/en/schema/codelists/#tender-status
+- type: doc
+  url: https://standard.open-contracting.org/latest/en/schema/codelists/#contract-status
+translations:
+  es:
+    name: Estado del procedimiento de contratación
+  ru:
+    name: Статус закупочной процедуры

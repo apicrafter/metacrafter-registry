@@ -1,0 +1,27 @@
+id: el_month
+name: Month name (Greek)
+status: draft
+doc: 'Name of a month in Greek in the nominative: Ιανουάριος, Φεβρουάριος, Μάρτιος, Απρίλιος, Μάιος (also
+  Μάϊος), Ιούνιος, Ιούλιος, Αύγουστος, Σεπτέμβριος, Οκτώβριος, Νοέμβριος, Δεκέμβριος. Files in capitals
+  drop the accents (ΙΑΝΟΥΑΡΙΟΣ, ΜΑΙΟΣ). Monthly statistics of Cyprus and Greece give the month of a row
+  this way, in columns named Μήνας, Περίοδος or Month. The genitive of dates (3 Οκτωβρίου 2024) is date_greek.'
+semantic_type: month
+langs:
+- el
+regexp: ^(?:Ιανουάριος|ΙΑΝΟΥΑΡΙΟΣ|Φεβρουάριος|ΦΕΒΡΟΥΑΡΙΟΣ|Μάρτιος|ΜΑΡΤΙΟΣ|Απρίλιος|ΑΠΡΙΛΙΟΣ|Μά[ιϊ]ος|ΜΑ[ΙΪ]ΟΣ|Ιούνιος|ΙΟΥΝΙΟΣ|Ιούλιος|ΙΟΥΛΙΟΣ|Αύγουστος|ΑΥΓΟΥΣΤΟΣ|Σεπτέμβριος|ΣΕΠΤΕΜΒΡΙΟΣ|Οκτώβριος|ΟΚΤΩΒΡΙΟΣ|Νοέμβριος|ΝΟΕΜΒΡΙΟΣ|Δεκέμβριος|ΔΕΚΕΜΒΡΙΟΣ)$
+examples:
+- value: Ιανουάριος
+- value: Μάιος
+- value: ΦΕΒΡΟΥΑΡΙΟΣ
+  description: in capitals without the accent
+- value: Δευτέρα
+  valid: false
+  description: a day of the week
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/el/ca-gregorian.json
+translations:
+  el:
+    name: Όνομα μήνα
+  ru:
+    name: Название месяца (на греческом)
