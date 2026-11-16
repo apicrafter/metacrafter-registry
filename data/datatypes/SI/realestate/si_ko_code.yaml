@@ -1,0 +1,32 @@
+id: si_ko_code
+name: Slovenian cadastral municipality code (šifra k.o.)
+status: draft
+doc: 'Code of a cadastral municipality (katastrska občina, k.o.) of Slovenia in the real estate cadastre
+  of the Surveying and Mapping Authority: a number of up to four digits, as in 1961 for Trzin. A parcel
+  is named by this code and its parcel number (si_parcel_number). Municipal property lists give it in
+  columns named k.o. or šifra k.o., some with the name after it (1961 - Trzin).'
+categories:
+- realestate
+- geo
+country:
+- SI
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,4}$
+examples:
+- value: '1961'
+  description: Trzin
+- value: '2304'
+- value: '19610'
+  valid: false
+  description: five digits
+links:
+- type: wikipedia
+  url: https://sl.wikipedia.org/wiki/Katastrska_občina
+translations:
+  sl:
+    name: Šifra katastrske občine
+  ru:
+    name: Код кадастровой общины Словении

@@ -1,0 +1,38 @@
+id: se_diarienummer
+name: Swedish registry number (diarienummer)
+status: draft
+doc: 'Number under which a Swedish public authority registers a case in its diary (diarium): in most authorities
+  letters of the board or unit, the year and a running number, as in BN 2018-01115 (building committee
+  of Umeå) or KS 2020/123. The order and the separators differ between authorities: the Swedish Environmental
+  Protection Agency writes NV-01017-13, with the year last. Public registers of decisions and permits
+  give it in columns named diarienr or diarienummer.'
+categories:
+- government
+- legal
+country:
+- SE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Za-zÅÄÖåäö]{1,6}[ -]?\d{2,6}[-/:]\d{2,6}$
+examples:
+- value: BN 2018-01115
+  description: building committee, year and number
+- value: NV-01017-13
+  description: Environmental Protection Agency, number and year
+- value: KS 2020/123
+  description: municipal executive board
+- value: Ks-2021/00154
+  description: municipal executive board of Umeå, as its land register writes it
+- value: 2018-01115
+  valid: false
+  description: without the letters
+links:
+- type: wikipedia
+  url: https://sv.wikipedia.org/wiki/Diarienummer
+translations:
+  sv:
+    name: Diarienummer
+  ru:
+    name: Регистрационный номер дела (Швеция, diarienummer)

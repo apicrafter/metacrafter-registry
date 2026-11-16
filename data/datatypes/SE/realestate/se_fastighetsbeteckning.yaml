@@ -1,0 +1,37 @@
+id: se_fastighetsbeteckning
+name: Swedish property designation (fastighetsbeteckning)
+status: draft
+doc: 'Designation of a real property unit in the Swedish real property register: the municipality, the
+  district or block name (trakt, kvarter) and the unit number, which is a block and a unit joined by a
+  colon in rural districts (Umeå Holmsund 5:141, Tavelsjö 41:1) or one number after a block name in towns
+  (Umeå Kikaren 7). A joint property unit has S before the number (S:50). Building permit and planning
+  registers of municipalities give it in columns named fastighet or fastighetsbeteckning, often without
+  the municipality.'
+categories:
+- realestate
+- geo
+country:
+- SE
+langs:
+- sv
+is_pii: false
+classification: identifier
+regexp: '^[A-ZÅÄÖa-zåäö][A-ZÅÄÖa-zåäöéü.-]*(?: [A-ZÅÄÖa-zåäö][A-ZÅÄÖa-zåäöéü.-]*){0,3} (?:\d{1,4}:\d{1,4}|[Ss]:\d{1,4}|\d{1,4})$'
+examples:
+- value: Umeå Holmsund 5:141
+  description: municipality, district, block and unit
+- value: TAVELSJÖ 41:1
+  description: without the municipality, in capitals
+- value: Umeå Kikaren 7
+  description: a block name and a unit number
+- value: Storgatan 5A
+  valid: false
+  description: a street address
+links:
+- type: wikipedia
+  url: https://sv.wikipedia.org/wiki/Fastighetsbeteckning
+translations:
+  sv:
+    name: Fastighetsbeteckning
+  ru:
+    name: Обозначение объекта недвижимости Швеции (fastighetsbeteckning)

@@ -1,0 +1,37 @@
+id: th_province_code
+name: Thai province code
+status: draft
+doc: 'Two-digit code of a province of Thailand in the administrative area codes of the Department of Provincial
+  Administration, the same digits as in ISO 3166-2 (TH-10 is Bangkok, TH-83 Phuket). The first digit is
+  the region group: 1 and 2 the centre and east, 3 and 4 the north-east, 5 and 6 the north, 7 the west,
+  8 and 9 the south. There are 77 codes; 28, 29, 59, 68, 69, 78, 79 and 87 to 89 are not used. The code
+  starts the district code (th_district_code), the subdistrict code (th_subdistrict_code) and the postal
+  code area.'
+categories:
+- geo
+- government
+country:
+- TH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:1[0-9]|2[0-7]|[34][0-9]|5[0-8]|6[0-7]|7[0-7]|8[0-6]|9[0-6])$
+examples:
+- value: '10'
+  description: Bangkok
+- value: '83'
+  description: Phuket
+- value: '55'
+  description: Nan
+- value: '28'
+  valid: false
+  description: not assigned
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_3166-2:TH
+translations:
+  th:
+    name: รหัสจังหวัด
+  ru:
+    name: Код провинции Таиланда

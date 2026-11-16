@@ -1,0 +1,33 @@
+id: pt_bgri_code
+name: Portuguese census subsection code (BGRI)
+status: draft
+doc: 'Eleven-digit code of a statistical subsection in the Base Geográfica de Referenciação de Informação
+  (BGRI) of Statistics Portugal, the smallest area of the census: the six-digit parish code (pt_dicofre),
+  three digits of the statistical section and two of the subsection, as in 17032100111. Census layers
+  of 2011 carry it in columns named BGRI11 or GEO_COD, with the parts in DTMN11, FR11, SEC11 and SS11.'
+categories:
+- geo
+- government
+country:
+- PT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:0[1-9]|1[0-8]|3[12]|4[1-9])\d{9}$
+examples:
+- value: '17032100111'
+  description: a subsection in Chaves
+- value: '17090200112'
+  description: a subsection in Ribeira de Pena
+- value: '170321001'
+  valid: false
+  description: without the subsection
+links:
+- type: doc
+  url: https://mapas.ine.pt/
+translations:
+  pt:
+    name: Código da subsecção estatística (BGRI)
+  ru:
+    name: Код статистической подсекции переписи Португалии (BGRI)

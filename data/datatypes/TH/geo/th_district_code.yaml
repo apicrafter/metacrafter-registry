@@ -1,0 +1,35 @@
+id: th_district_code
+name: Thai district code (amphoe, khet)
+status: draft
+doc: 'Four-digit code of a district of Thailand (amphoe, or khet in Bangkok): the two-digit province code
+  (th_province_code) and two digits of the district, as in 1001 for Phra Nakhon and 1030 for Chatuchak
+  in Bangkok. The open data of the Bangkok Metropolitan Administration carries it in a column named dcode
+  beside the district name.'
+categories:
+- geo
+- government
+country:
+- TH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:1[0-9]|2[0-7]|[34][0-9]|5[0-8]|6[0-7]|7[0-7]|8[0-6]|9[0-6])\d{2}$
+examples:
+- value: '1001'
+  description: Phra Nakhon district, Bangkok
+- value: '1030'
+  description: Chatuchak district, Bangkok
+- value: '8301'
+  description: Mueang Phuket district
+- value: '2801'
+  valid: false
+  description: 28 is not a province code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_districts_of_Bangkok
+translations:
+  th:
+    name: รหัสอำเภอ
+  ru:
+    name: Код района Таиланда (ампхе, кхет)

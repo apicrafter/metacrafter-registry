@@ -1,0 +1,36 @@
+id: si_skd_code
+name: Slovenian activity code (SKD)
+status: draft
+doc: 'Code of an economic activity in the Standard Classification of Activities of Slovenia (Standardna
+  klasifikacija dejavnosti, SKD 2008), the national version of NACE Rev. 2: two digits of the division,
+  a dot and three digits, of which the first two are the NACE group and class and the last is the national
+  subclass, as in 56.300 (serving of beverages). Registers write the letter of the section before it (I56.300,
+  R93.190).'
+categories:
+- industry
+- companies
+country:
+- SI
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[A-U] ?)?\d{2}\.\d{3}$
+examples:
+- value: I56.300
+  description: serving of beverages, with the section letter
+- value: R93.190
+  description: other sports activities
+- value: '56.101'
+  description: restaurants and inns, without the letter
+- value: I56.30
+  valid: false
+  description: a NACE class with four digits
+links:
+- type: doc
+  url: https://www.stat.si/Klasje/Klasje/Tabela/5531
+translations:
+  sl:
+    name: Šifra dejavnosti (SKD)
+  ru:
+    name: Код вида деятельности Словении (SKD)

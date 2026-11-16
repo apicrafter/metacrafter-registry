@@ -1,0 +1,40 @@
+id: th_bond_symbol
+name: Thai bond symbol (ThaiBMA)
+status: draft
+doc: 'Symbol of a bond on the Thai bond market, as the Thai Bond Market Association and the Public Debt
+  Management Office list it: letters of the issuer or bond type (LB government loan bond, LBA amortising
+  bond, ESGLB sustainability bond, SRT State Railway, EGAT, PEA, MEA, PWA, NHA, BMTA state enterprises,
+  TL term loans), two digits of the year of maturity, one character of the month of maturity (1 to 9,
+  O, N, D) and a series letter. LB436A matures in June 2043 and LB27NA in November 2027. The ISIN of the
+  bond is a separate identifier (isin).'
+categories:
+- finances
+country:
+- TH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2,6}\d{2}[1-9OND][A-Z]$
+examples:
+- value: LB436A
+  description: government loan bond maturing in June 2043
+- value: LB27NA
+  description: government loan bond maturing in November 2027
+- value: ESGLB376A
+  description: sustainability bond maturing in June 2037
+- value: SRT33DA
+  description: State Railway of Thailand bond maturing in December 2033
+- value: TH0623037304
+  valid: false
+  description: an ISIN
+links:
+- type: doc
+  url: https://www.thaibma.or.th/
+- type: doc
+  url: https://www.pdmo.go.th/
+translations:
+  th:
+    name: สัญลักษณ์ตราสารหนี้
+  ru:
+    name: Обозначение облигации Таиланда (ThaiBMA)
