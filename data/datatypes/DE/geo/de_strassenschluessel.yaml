@@ -1,0 +1,32 @@
+id: de_strassenschluessel
+name: German street key (Straßenschlüssel)
+status: draft
+doc: Number of a street inside a German municipality, from the street register of the city. It has up
+  to five digits and is unique only together with the municipality key (AGS); files give it with leading
+  zeros (00063, 03703) or without them (1002). Street directories, registers of polling districts and
+  tables by street carry it in columns named Straßenschlüssel, Strassenschluessel or STRSCHL next to the
+  street name.
+parent: id
+categories:
+- geo
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: identifier
+regexp: ^\d{1,5}$
+examples:
+- value: '00063'
+  description: in the street directory of Cologne
+- value: '03703'
+- value: '1002'
+  description: without leading zeros
+- value: '0006300'
+  valid: false
+  description: seven digits
+translations:
+  de:
+    name: Straßenschlüssel
+  ru:
+    name: Ключ улицы (Германия)

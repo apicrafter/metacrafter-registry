@@ -1,0 +1,39 @@
+id: de_wz2008
+name: German classification of economic activities code (WZ 2008)
+status: draft
+doc: Code of the Klassifikation der Wirtschaftszweige, Ausgabe 2008 (WZ 2008) of the Federal Statistical
+  Office of Germany. The first four digits are those of NACE Rev. 2 (division, group, class); WZ 2008
+  adds a fifth digit for national subclasses, written after a second dot (46.18.2, 74.10.1). Sections
+  are single letters. Business and employment statistics of German cities give it in columns named WZ
+  2008 or Wirtschaftszweig.
+parent: eu_nace
+categories:
+- industry
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: categorical
+regexp: ^(?:[A-U]|\d{2}(?:\.\d{1,2}(?:\.\d)?)?)$
+examples:
+- value: '47.71'
+  description: a class, the same as in NACE Rev. 2
+- value: 46.18.2
+  description: a national subclass
+- value: 74.10.1
+- value: '14'
+  description: a division
+- value: 46.18.25
+  valid: false
+  description: two digits after the second dot
+links:
+- type: doc
+  url: https://www.destatis.de/DE/Methoden/Klassifikationen/Gueter-Wirtschaftsklassifikationen/klassifikation-wz-2008.html
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Klassifikation_der_Wirtschaftszweige
+translations:
+  de:
+    name: Klassifikation der Wirtschaftszweige (WZ 2008)
+  ru:
+    name: Код вида экономической деятельности WZ 2008 (Германия)

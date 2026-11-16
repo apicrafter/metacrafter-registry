@@ -1,0 +1,35 @@
+id: de_stadtteil
+name: German city quarter (Stadtteil, Ortsteil)
+status: draft
+doc: 'Name or number of a Stadtteil or Ortsteil, a part of a German city or municipality below the Stadtbezirk:
+  Pempelfort and Carlstadt in Düsseldorf, Bahnhofsviertel in Frankfurt, Golzheim in Merzenich. Cities
+  number their quarters for statistics, so tables give the name, the number (014, 101) or both (014 Pempelfort,
+  101 / Altstadt/Süd) in columns named Stadtteil, Ortsteil, Stadtteilname or Stadtteilnummer. Population,
+  election and facility tables of city portals are broken down by it.'
+parent: admin_area_3
+categories:
+- geo
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: categorical
+examples:
+- value: Pempelfort
+  description: a Stadtteil of Düsseldorf
+- value: Bahnhofsviertel
+- value: 014 Pempelfort
+  description: number and name
+- value: 101 / Altstadt/Süd
+  description: as in the tables of Cologne
+- value: '036'
+  description: the number alone
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Stadtteil
+translations:
+  de:
+    name: Stadtteil
+  ru:
+    name: Район города (Германия)

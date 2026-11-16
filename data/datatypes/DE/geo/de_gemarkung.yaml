@@ -1,0 +1,33 @@
+id: de_gemarkung
+name: German cadastral district (Gemarkung)
+status: draft
+doc: Name of a Gemarkung, the unit of the German land cadastre that groups the parcels of an area. It
+  usually carries the name of a village or former municipality, so a city has several of them (Beuel,
+  Oberkassel and Endenich in Bonn). A parcel is addressed by Gemarkung, Flur and Flurstück. Registers
+  of municipal land, building plots and monuments give the name in a column named Gemarkung. The numeric
+  Gemarkungsschlüssel is not this type.
+parent: admin_area_3
+categories:
+- geo
+- realestate
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: categorical
+examples:
+- value: Beuel
+  description: a Gemarkung of Bonn
+- value: Oberkassel
+- value: Endenich
+- value: Osterath
+  description: a Gemarkung of Meerbusch
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Gemarkung
+translations:
+  de:
+    name: Gemarkung
+  ru:
+    name: Кадастровый округ (Германия)

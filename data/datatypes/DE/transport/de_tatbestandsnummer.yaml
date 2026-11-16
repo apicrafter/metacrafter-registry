@@ -1,0 +1,37 @@
+id: de_tatbestandsnummer
+name: German traffic offence number (Tatbestandsnummer, TBNR)
+status: draft
+doc: Six-digit number of an offence in the federal catalogue of road traffic offences (Bundeseinheitlicher
+  Tatbestandskatalog) that the Kraftfahrt-Bundesamt publishes. The first digit points to the regulation
+  that holds the offence; 1 stands for the road traffic regulations (StVO), so parking and speeding offences
+  start with 11 or 14. Police and municipal fine offices write it in every warning and fine notice, and
+  the open data of German cities on fines gives it in columns named Tatbestand, Tatb-Nr., TBNR or Tatbestandsnummer
+  (113140, 141312). Some cities append a letter for a local variant (142278.A); the regexp covers the
+  plain number.
+parent: id
+categories:
+- transport
+- legal
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: categorical
+regexp: ^\d{6}$
+examples:
+- value: '113140'
+  description: a parking offence in the fine tables of Cologne, Bonn and the KDVZ municipalities
+- value: '141312'
+- value: '103202'
+- value: '11314'
+  valid: false
+  description: five digits
+links:
+- type: doc
+  url: https://www.kba.de/DE/Themen/ZentraleRegister/FAER/BT_KAT_OWI/btkat_node.html
+translations:
+  de:
+    name: Tatbestandsnummer
+  ru:
+    name: Номер состава нарушения ПДД (Германия)

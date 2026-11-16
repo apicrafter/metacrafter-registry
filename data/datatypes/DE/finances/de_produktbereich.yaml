@@ -1,0 +1,39 @@
+id: de_produktbereich
+name: Product area of a German municipal budget (Produktbereich)
+status: draft
+doc: 'Top level of the product structure of a municipal budget in double-entry accounting (in North Rhine-Westphalia
+  the Neues Kommunales Finanzmanagement, NKF). A state fixes the product areas for all its municipalities:
+  in North Rhine-Westphalia 01 Innere Verwaltung, 02 Sicherheit und Ordnung, 03 Schulträgeraufgaben, 05
+  Soziale Leistungen, 07 Gesundheitsdienste and so on. Budget tables give the two-digit number, the name,
+  often shortened, or both, in columns named Produktbereich. Some cities number the areas as the municipal
+  finance statistics do (11 Innere Verwaltung, 12 Sicherheit und Ordnung, 21 Schulträgeraufgaben), and
+  other states have their own frameworks. Product groups (Produktgruppe) and products below it are defined
+  by each municipality and are not this type.'
+parent: category
+categories:
+- finances
+- government
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: categorical
+examples:
+- value: Innere Verwaltung
+- value: 02 - Sicherheit und Ordnung
+  description: number and name
+- value: Schulträgeraufgaben
+- value: '01'
+  description: the number alone
+- value: Kinder-, Jugend- und Familienhilfe
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Neues_Kommunales_Finanzmanagement
+- type: other
+  url: https://kommunalwiki.boell.de/index.php/Produktrahmenplan
+translations:
+  de:
+    name: Produktbereich
+  ru:
+    name: Продуктовая область муниципального бюджета (Германия)

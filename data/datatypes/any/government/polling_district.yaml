@@ -1,0 +1,36 @@
+id: polling_district
+name: Polling district
+status: draft
+doc: 'Number or name of the smallest area of an election, whose voters cast their ballots in one polling
+  station: the German Stimmbezirk or Wahlbezirk (10405, 2203, 371/377 for two merged districts, 412 Fliegerviertel),
+  a polling district in the United Kingdom, a precinct in the United States. Results by polling district
+  and the directories that assign streets to districts carry it in columns named Stimmbezirk, Wahlbezirk,
+  Briefwahlbezirk or Polling District. In municipal elections of North Rhine-Westphalia a Wahlbezirk is
+  the ward that elects a councillor and the polling district is the Stimmbezirk. The name of the polling
+  station is polling_station; a constituency that elects a member is not this type.'
+parent: category
+categories:
+- government
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: '10405'
+  description: a Stimmbezirk of Cologne
+- value: '2203'
+- value: 371/377
+  description: two districts counted together, in the results of Bonn
+- value: 412 Fliegerviertel
+  description: number and name
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Precinct
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Stimmbezirk
+translations:
+  de:
+    name: Stimmbezirk
+  ru:
+    name: Избирательный участок (территория)

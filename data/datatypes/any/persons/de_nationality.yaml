@@ -1,0 +1,23 @@
+id: de_nationality
+name: Person nationality in German
+status: draft
+doc: 'Nationality of a person written as a German adjective: deutsch, türkisch, italienisch, afghanisch,
+  ägyptisch, bosnisch-herzegowinisch. German population registers print the citizenship this way, and
+  the tables of residents by nationality of city portals carry it in columns named Nationalität, Nationalitaet
+  or Staatsangehörigkeit, with entries for dependent territories and for stateless or unknown (staatenlos,
+  ungeklärt). The name of the country (Türkei) is decountryname.'
+semantic_type: nationality
+langs:
+- de
+examples:
+- value: afghanisch
+- value: ägyptisch
+- value: türkisch
+- value: bosnisch-herzegowinisch
+- value: staatenlos
+  description: stateless
+translations:
+  de:
+    name: Staatsangehörigkeit (als Adjektiv)
+  ru:
+    name: Гражданство человека (на немецком)
