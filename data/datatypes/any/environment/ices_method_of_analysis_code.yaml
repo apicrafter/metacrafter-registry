@@ -1,0 +1,30 @@
+id: ices_method_of_analysis_code
+name: ICES method of analysis code (METOA)
+status: draft
+doc: 'Code of the method of analysis or type of assay in the METOA vocabulary of ICES, about 200 codes
+  of up to 14 characters: GC-MS gas chromatography with mass spectrometry, ICP-MS inductively coupled
+  plasma mass spectrometry, AAS atomic absorption spectrometry.'
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: GC-MS
+  description: Gas chromatography - mass spectrometry
+- value: ICP-MS
+  description: Inductively coupled plasma mass spectrometry
+- value: GC-ECD
+  description: Gas chromatography with electron capture detection
+- value: AAS
+  description: Atomic absorption spectrometry
+- value: gas chromatography
+  valid: false
+  description: The name of the method
+links:
+- type: doc
+  url: https://vocab.ices.dk/?ref=63ccb8bc-45c8-43e8-933c-601f428b4884
+- type: doc
+  url: https://www.ices.dk/data/Documents/ENV/Environment_Formats.zip

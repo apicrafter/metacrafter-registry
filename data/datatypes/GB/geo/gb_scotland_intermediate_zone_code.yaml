@@ -1,0 +1,28 @@
+id: gb_scotland_intermediate_zone_code
+name: Scottish intermediate zone code (GSS)
+status: draft
+doc: GSS code of an intermediate zone, the statistical geography of Scotland built from data zones, of
+  2500 to 6000 household residents, entity code S02. Stirling has 24 of them, from S02002436 (Blane Valley).
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^S02\d{6}$
+examples:
+- value: S02002436
+  description: Blane Valley, Stirling
+- value: S02002445
+  description: Broomridge, Stirling
+- value: S01013001
+  valid: false
+  description: A data zone code (S01)
+links:
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd
+- type: doc
+  url: https://www.gov.scot/publications/small-area-statistics-reference-materials/

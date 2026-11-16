@@ -1,33 +1,29 @@
 id: gb_usrn
-name: Unique Street Reference Number (USRN)
+name: UK Unique Street Reference Number (USRN)
 status: draft
-doc: Eight-digit number that identifies a street in Great Britain. GeoPlace allocates ranges of numbers
-  to the local authorities, which hold the statutory responsibility for the streets of the National Street
-  Gazetteer of England and Wales; the Improvement Service manages the numbers of Scotland. Council tables
-  of streets, road works and gritting routes give it in a USRN column.
-parent: id
+doc: 'Eight-digit number of a street in the street gazetteers of Great Britain: the National Street Gazetteer
+  of England and Wales and the Street Gazetteer of Scotland. Local authorities assign the numbers from
+  ranges allocated to them, so the streets of one authority share the first digits (380 in Stirling).'
 categories:
 - geo
 - transport
 country:
 - GB
 langs:
-- common
+- en
 is_pii: false
 classification: identifier
-regexp: ^[1-9]\d{7}$
+regexp: ^\d{8}$
 examples:
-- value: '44100754'
-  description: USRN in a street table of data.gov.uk
-- value: '20001350'
-  description: USRN in a street table of data.gov.uk
-- value: '4410075'
+- value: '47901305'
+  description: Royal Crescent, Bath; example of Wikipedia
+- value: '38002160'
+  description: A street of Stirling
+- value: '122046218'
   valid: false
-  description: Seven digits
-mappings:
-  wikidata: P8447
+  description: A UPRN, the number of a property
 links:
 - type: wikipedia
   url: https://en.wikipedia.org/wiki/Unique_Street_Reference_Number
-- type: wikidata
-  url: https://www.wikidata.org/wiki/Property:P8447
+- type: doc
+  url: https://www.gov.uk/government/publications/open-standards-for-government/identifying-property-and-street-information

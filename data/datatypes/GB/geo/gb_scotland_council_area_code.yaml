@@ -1,0 +1,28 @@
+id: gb_scotland_council_area_code
+name: Scottish council area code (GSS)
+status: draft
+doc: GSS code of one of the 32 council areas of Scotland, the unitary local authorities, entity code S12.
+  Tables name the column local authority, council area or LA code.
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^S12\d{6}$
+examples:
+- value: S12000030
+  description: Stirling
+- value: S12000036
+  description: City of Edinburgh
+- value: S92000003
+  valid: false
+  description: The code of Scotland, a country (S92)
+links:
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Subdivisions_of_Scotland

@@ -1,0 +1,28 @@
+id: gb_scotland_electoral_ward_code
+name: Scottish electoral ward code (GSS)
+status: draft
+doc: GSS code of a multi-member electoral ward of a Scottish council, entity code S13. Stirling has seven
+  wards, S13003115 to S13003121.
+parent: ukwardcode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^S13\d{6}$
+examples:
+- value: S13003118
+  description: Stirling North
+- value: S13003117
+  description: Dunblane and Bridge of Allan
+- value: S16000144
+  valid: false
+  description: A Scottish Parliament constituency code (S16)
+links:
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Wards_and_electoral_divisions_of_the_United_Kingdom

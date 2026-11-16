@@ -1,0 +1,31 @@
+id: ices_qualifier_flag
+name: ICES qualifier flag (QFLAG)
+status: draft
+doc: 'Qualifier of a measured value in the ICES environmental reporting format: < less than, > greater
+  than, D the value is below the limit of detection, Q the value is below the limit of quantification.
+  The field is empty for an ordinary value.'
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[<>DQ]$
+examples:
+- value: <
+  description: less than
+- value: D
+  description: below the detection limit
+- value: Q
+  description: below the limit of quantification
+- value: '>'
+  description: greater than
+- value: N
+  valid: false
+  description: Not a qualifier flag
+links:
+- type: doc
+  url: https://vocab.ices.dk/?ref=6cda004a-6dfe-4bb8-85d0-9f76cd4ac101
+- type: doc
+  url: https://www.ices.dk/data/Documents/ENV/Environment_Formats.zip

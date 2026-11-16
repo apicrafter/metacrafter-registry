@@ -1,0 +1,29 @@
+id: gb_scotland_urban_rural_classification
+name: Scottish Government urban rural classification
+status: draft
+doc: Class of a place in the urban rural classification of the Scottish Government, by the population
+  of its settlement and the drive time to a settlement of 10,000 people or more. The 6-fold classification
+  has the codes 1 Large Urban Areas, 2 Other Urban Areas, 3 Accessible Small Towns, 4 Remote Small Towns,
+  5 Accessible Rural and 6 Remote Rural; the 8-fold one splits the remote classes into remote and very
+  remote. Tables hold the code, the name or both.
+parent: urban_rural_class
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: '2'
+  description: Other Urban Areas
+- value: Accessible Small Towns
+  description: Code 3
+- value: Remote Rural
+  description: Code 6 of the 6-fold classification
+- value: Accessible Rural
+  description: Code 5
+links:
+- type: doc
+  url: https://www.gov.scot/publications/scottish-government-urban-rural-classification-2020/
