@@ -1,0 +1,48 @@
+id: cr_sicop_procedure_number
+name: Costa Rican public procurement procedure number (SICOP)
+status: draft
+doc: 'Number of a procurement procedure in SICOP (Sistema Integrado de Compras Públicas), the procurement
+  system of the Costa Rican public sector: the year, two letters for the type of procedure, a six-digit
+  sequence number and the ten-digit SICOP code of the buying institution, as in 2022CD-000001-0014400001,
+  the first direct award of 2022 of the Instituto Nacional de Estadística y Censos. In the procurement
+  reports that institutions publish the letters go with the procedure type of the same row: CD contratación
+  directa, LA licitación abreviada, LN licitación pública nacional and, for procedures under the Ley General
+  de Contratación Pública in force since December 2022, LD licitación reducida, LE licitación menor and
+  PX procedimiento por excepción.'
+categories:
+- government
+- finances
+country:
+- CR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{4}[A-Z]{2}-\d{6}-\d{10}$
+examples:
+- value: 2022CD-000001-0014400001
+  description: a direct award of 2022 of the INEC
+- value: 2023LD-000013-0014400001
+  description: a licitación reducida of 2023 of the INEC
+- value: 2021LN-000001-0014400001
+  description: a national public tender of 2021
+- value: 2022CD-000013-0006400001
+  description: a direct award of CONAPE
+- value: 452-0001-LPU17
+  valid: false
+  description: 'an Argentine process number: ar_compras_procedure_number'
+- value: 2022CD-000001
+  valid: false
+  description: the institution code is missing
+links:
+- type: doc
+  url: https://www.sicop.go.cr/
+- type: doc
+  url: https://www.conape.go.cr/wp-content/uploads/2022/09/ESTADO-CONTRATACIONES-SICOP-AGOSTO-2022.pdf
+- type: doc
+  url: https://datosabiertos.inec.cr/
+translations:
+  es:
+    name: Número de procedimiento de contratación (SICOP)
+  ru:
+    name: Номер закупочной процедуры SICOP (Коста-Рика)

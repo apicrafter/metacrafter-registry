@@ -1,0 +1,39 @@
+id: cr_sicop_contract_number
+name: Costa Rican public procurement contract number (SICOP)
+status: draft
+doc: 'Number that SICOP, the procurement system of the Costa Rican public sector, gives to a contract
+  awarded in a procedure. In the procurement reports of the Instituto Nacional de Estadística y Censos
+  it is sixteen digits: 043, the year of the contract and nine more digits that end with a sequence number,
+  as in 0432023010900006; a contract that was modified carries a two-digit suffix after a hyphen (0432023010900090-00).
+  No public document describes the parts, so the pattern only fixes the length. Spreadsheet exports drop
+  the leading zero.'
+categories:
+- government
+- finances
+country:
+- CR
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^\d{16}(?:-\d{2})?$
+examples:
+- value: 0432023010900006
+  description: a contract of 2023 of the INEC
+- value: 0432022010900001
+  description: a contract of 2022 of the INEC
+- value: 0432023010900090-00
+  description: a contract number with its suffix
+- value: 2023LD-000001-0014400001
+  valid: false
+  description: 'the number of the procedure: cr_sicop_procedure_number'
+links:
+- type: doc
+  url: https://www.sicop.go.cr/
+- type: doc
+  url: https://datosabiertos.inec.cr/
+translations:
+  es:
+    name: Número de contrato (SICOP)
+  ru:
+    name: Номер контракта SICOP (Коста-Рика)

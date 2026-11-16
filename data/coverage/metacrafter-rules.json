@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "96d7a762d9c184c5519987b2d2e27d5c842bdc12"
+  "ref": "5d04829df02c7701779c6df7d08abff110fce485"
  },
  "rules": [
   {
@@ -9825,6 +9825,36 @@
    "country_code": "xx"
   },
   {
+   "rule": "procurementstatusbyname",
+   "key": "procurement_status",
+   "type": "field",
+   "match": "regex",
+   "file": "common/procurement.yaml",
+   "context": "government",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "procurementstatusocds",
+   "key": "procurement_status",
+   "type": "field",
+   "match": "regex",
+   "file": "common/procurement.yaml",
+   "context": "government",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "suppliernamebyname",
+   "key": "orgname",
+   "type": "field",
+   "match": "regex",
+   "file": "common/procurement.yaml",
+   "context": "government",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "interestratebyname",
    "key": "interest_rate",
    "type": "field",
@@ -12532,6 +12562,76 @@
    "country_code": "xx"
   },
   {
+   "rule": "crbudgetincomecodevalue",
+   "key": "cr_budget_income_code",
+   "type": "data",
+   "match": "func",
+   "file": "cr/cr_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "cr"
+  },
+  {
+   "rule": "crbudgetobjectcodebyname",
+   "key": "cr_budget_object_code",
+   "type": "field",
+   "match": "regex",
+   "file": "cr/cr_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "cr"
+  },
+  {
+   "rule": "crbudgetobjectcodevalue",
+   "key": "cr_budget_object_code",
+   "type": "data",
+   "match": "func",
+   "file": "cr/cr_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "cr"
+  },
+  {
+   "rule": "crsicopcontractnumberbyname",
+   "key": "cr_sicop_contract_number",
+   "type": "field",
+   "match": "regex",
+   "file": "cr/cr_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "cr"
+  },
+  {
+   "rule": "crsicopcontractnumbervalue",
+   "key": "cr_sicop_contract_number",
+   "type": "data",
+   "match": "func",
+   "file": "cr/cr_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "cr"
+  },
+  {
+   "rule": "crsicopgoodscodebyname",
+   "key": "cr_sicop_goods_code",
+   "type": "field",
+   "match": "regex",
+   "file": "cr/cr_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "cr"
+  },
+  {
+   "rule": "crsicopprocedurenumbervalue",
+   "key": "cr_sicop_procedure_number",
+   "type": "data",
+   "match": "func",
+   "file": "cr/cr_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "cr"
+  },
+  {
    "rule": "czlibraryregnumvalue",
    "key": "cz_library_registration_number",
    "type": "data",
@@ -13893,6 +13993,16 @@
   },
   {
    "rule": "esfullnamebyname",
+   "key": "person_fullname",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_persons.yaml",
+   "context": "persons",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esinchargefullnamebyname",
    "key": "person_fullname",
    "type": "field",
    "match": "regex",

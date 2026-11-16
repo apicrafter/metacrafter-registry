@@ -1,0 +1,45 @@
+id: cr_budget_income_code
+name: Costa Rican budget income classification code
+status: draft
+doc: 'Code of the Clasificador de los ingresos del sector público, the classification of public revenue
+  that the Ministerio de Hacienda sets for every public body of Costa Rica (Decreto 41.100-H, in force
+  until the budgets of 2027). It has thirteen digits in nine levels separated by dots: class (1 ingresos
+  corrientes, 2 ingresos de capital, 3 financiamiento), subclass, group and subgroup of one digit each,
+  partida and subpartida of two digits, renglón and subrenglón of one digit and a source of financing
+  of three digits, as in 1.3.1.2.09.09.0.0.000 (sale of other services). Unused lower levels are zeros.
+  Spreadsheets of income budgets may drop the leading zeros of a level (1.3.1.2.9.9.0.0.0).'
+categories:
+- government
+- finances
+country:
+- CR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^[1-3]\.\d\.\d\.\d\.\d{2}\.\d{2}\.\d\.\d\.\d{3}$
+examples:
+- value: 1.3.1.2.09.09.0.0.000
+  description: Sale of other services
+- value: 1.0.0.0.00.00.0.0.000
+  description: 'Class: current income'
+- value: 1.4.1.1.00.00.0.0.000
+  description: Current transfers from the central government
+- value: 3.0.0.0.00.00.0.0.000
+  description: 'Class: financing'
+- value: 1.04.04
+  valid: false
+  description: 'a code of the classification by object of expenditure: cr_budget_object_code'
+- value: 4.0.0.0.00.00.0.0.000
+  valid: false
+  description: there is no class 4
+links:
+- type: doc
+  url: https://www.hacienda.go.cr/docs/DE41100_Clasificador_Ingresos.pdf
+- type: doc
+  url: https://www.hacienda.go.cr/docs/Clasificador_Ingresos.pdf
+translations:
+  es:
+    name: Código del clasificador de los ingresos del sector público
+  ru:
+    name: Код классификации доходов бюджета (Коста-Рика)
