@@ -1,0 +1,35 @@
+id: si_statistical_region
+name: Slovenian statistical region
+status: draft
+doc: 'Name of one of the 12 statistical regions of Slovenia, its NUTS 3 units: Pomurska, Podravska, Koroška,
+  Savinjska, Zasavska, Posavska, Jugovzhodna Slovenija, Osrednjeslovenska, Gorenjska, Primorsko-notranjska,
+  Goriška, Obalno-kraška. Tables write the names in capitals as well (OBALNO-KRAŠKA) and Osrednjeslovenska
+  in two words.'
+parent: admin_area_1
+categories:
+- geo
+- government
+country:
+- SI
+langs:
+- sl
+is_pii: false
+classification: categorical
+regexp: '^(?i:Pomurska|Podravska|Koroška|Savinjska|Zasavska|Posavska|Jugovzhodna Slovenija|Osrednje ?slovenska|Gorenjska|Primorsko-notranjska|Goriška|Obalno-kraška)(?:
+  (?:statistična )?regija)?$'
+examples:
+- value: Savinjska
+- value: Jugovzhodna Slovenija
+- value: OBALNO-KRAŠKA
+  description: in capitals
+- value: Štajerska
+  valid: false
+  description: a traditional region, not a statistical one
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Statistical_regions_of_Slovenia
+translations:
+  sl:
+    name: Statistična regija
+  ru:
+    name: Статистический регион Словении

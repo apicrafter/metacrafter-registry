@@ -1,0 +1,29 @@
+id: si_esd
+name: Slovenian heritage register number (EŠD)
+status: draft
+doc: 'Record number of a unit of immovable cultural heritage in the register of cultural heritage of Slovenia
+  (Register nepremične kulturne dediščine), called EŠD (evidenčna številka dediščine): a running number
+  of one to five digits, as in 828. Municipal lists of monuments give it in a column named EŠD.'
+categories:
+- government
+country:
+- SI
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,5}$
+examples:
+- value: '828'
+- value: '23361'
+- value: EŠD
+  valid: false
+  description: the column name, not a number
+links:
+- type: doc
+  url: https://www.gov.si/teme/register-kulturne-dediscine/
+translations:
+  sl:
+    name: Evidenčna številka dediščine (EŠD)
+  ru:
+    name: Номер объекта в реестре культурного наследия Словении (EŠD)

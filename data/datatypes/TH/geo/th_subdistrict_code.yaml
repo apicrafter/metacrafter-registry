@@ -1,0 +1,33 @@
+id: th_subdistrict_code
+name: Thai subdistrict code (tambon, khwaeng)
+status: draft
+doc: 'Six-digit code of a subdistrict of Thailand (tambon, or khwaeng in Bangkok): the four-digit district
+  code (th_district_code) and two digits of the subdistrict, as in 100101 for Phra Borom Maha Ratchawang
+  in the Phra Nakhon district of Bangkok. The open data of the Bangkok Metropolitan Administration carries
+  it in a column named scode.'
+categories:
+- geo
+- government
+country:
+- TH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:1[0-9]|2[0-7]|[34][0-9]|5[0-8]|6[0-7]|7[0-7]|8[0-6]|9[0-6])\d{4}$
+examples:
+- value: '100101'
+  description: Phra Borom Maha Ratchawang, Phra Nakhon, Bangkok
+- value: '100501'
+  description: Anusawari, Bang Khen, Bangkok
+- value: '290101'
+  valid: false
+  description: 29 is not a province code
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Tambon
+translations:
+  th:
+    name: รหัสตำบล
+  ru:
+    name: Код подрайона Таиланда (тамбон, кхвэнг)

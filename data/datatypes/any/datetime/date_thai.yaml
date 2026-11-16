@@ -1,0 +1,29 @@
+id: date_thai
+name: Date with a Thai month name
+status: draft
+doc: 'Calendar date written with the day, the Thai name or abbreviation of the month and the year, which
+  is in the Buddhist era and has four or two digits: 24 กรกฎาคม 2566, 17 มิ.ย. 2556, 1-พ.ย.-65. Spreadsheets
+  exported with a Thai locale write the short form with hyphens.'
+semantic_type: date
+langs:
+- th
+regexp: ^(?:0?[1-9]|[12]\d|3[01])[ -]?(?:มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม|ม\.?ค\.?|ก\.?พ\.?|มี\.?ค\.?|เม\.?ย\.?|พ\.?ค\.?|มิ\.?ย\.?|ก\.?ค\.?|ส\.?ค\.?|ก\.?ย\.?|ต\.?ค\.?|พ\.?ย\.?|ธ\.?ค\.?)[
+  -]?(?:\d{2}|2[4-6]\d{2})$
+examples:
+- value: 24 กรกฎาคม 2566
+  description: 24 July 2023
+- value: 17 มิ.ย.2556
+  description: 17 June 2013
+- value: 1-พ.ย.-65
+  description: 1 November 2022 (2565), the short form of spreadsheets
+- value: 24 July 2023
+  valid: false
+  description: an English month name
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Thai_solar_calendar
+translations:
+  th:
+    name: วันที่ (ชื่อเดือนภาษาไทย)
+  ru:
+    name: Дата с тайским названием месяца

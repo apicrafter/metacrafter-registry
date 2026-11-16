@@ -1,0 +1,36 @@
+id: th_hcode
+name: Thai health facility code (hcode)
+status: draft
+doc: Code of a health facility of Thailand (hospital, health promoting hospital, clinic) issued by the
+  Strategy and Planning Division of the Office of the Permanent Secretary of the Ministry of Public Health.
+  It has a five-digit form (10741) and a nine-digit form; in the facility lists of the City Data Platform
+  the nine-digit form holds the five digits between two pairs of zeros (001074100). Health records and
+  claims name the facility by it, in columns named hcode, hospcode or รหัส5หลัก and รหัส9หลัก.
+categories:
+- medical
+- government
+country:
+- TH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d{5}|\d{9})$
+examples:
+- value: '10741'
+  description: Vachira Phuket Hospital
+- value: '001074100'
+  description: the same hospital in the nine-digit form
+- value: 09137
+  description: a health promoting hospital
+- value: '1074'
+  valid: false
+  description: four digits
+links:
+- type: doc
+  url: https://hcode.moph.go.th/
+translations:
+  th:
+    name: รหัสสถานบริการสุขภาพ
+  ru:
+    name: Код медицинского учреждения Таиланда (hcode)

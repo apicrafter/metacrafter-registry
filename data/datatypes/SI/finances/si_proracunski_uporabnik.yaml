@@ -1,0 +1,36 @@
+id: si_proracunski_uporabnik
+name: Slovenian budget user code (šifra PU)
+status: draft
+doc: 'Five-digit code of a budget user (proračunski uporabnik, PU) in the register of direct and indirect
+  users of the state and municipal budgets, which the Public Payments Administration of Slovenia (UJP)
+  keeps: four digits and a check digit computed modulo 11. Ministries, municipalities, schools and hospitals
+  have one, as in 12130. Salary, budget and payment tables give it in columns named Šifra PU, SIFRA_PU
+  or proračunski uporabnik; leading zeros are kept (00078).'
+categories:
+- finances
+- government
+country:
+- SI
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{5}$
+examples:
+- value: '12130'
+  description: a budget user of the state budget
+- value: '72699'
+  description: an indirect budget user
+- value: 00078
+  description: with leading zeros
+- value: '1213'
+  valid: false
+  description: four digits
+links:
+- type: doc
+  url: https://www.gov.si/teme/register-proracunskih-uporabnikov/
+translations:
+  sl:
+    name: Šifra proračunskega uporabnika
+  ru:
+    name: Код бюджетного пользователя Словении (šifra PU)

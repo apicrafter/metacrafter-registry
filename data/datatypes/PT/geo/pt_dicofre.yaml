@@ -1,0 +1,37 @@
+id: pt_dicofre
+name: Portuguese DICOFRE code
+status: draft
+doc: 'Code of an administrative unit of Portugal in the Carta Administrativa Oficial de Portugal (CAOP):
+  two digits of the district or island (DI: 01 Aveiro to 18 Viseu, 31 and 32 Madeira, 41 to 49 the Azores),
+  two of the municipality (CO) and two of the civil parish (FRE). The four-digit form (DICO, called DTMN
+  in census files) names a municipality, as in 1703 for Chaves, and the six-digit form a parish, as in
+  170301. Municipal geoportals carry it in columns named DICOFRE, DTMN11 or COD_INE. The subsection code
+  of the census (pt_bgri_code) starts with it.'
+categories:
+- geo
+- government
+country:
+- PT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:0[1-9]|1[0-8]|3[12]|4[1-9])\d{2}(?:\d{2})?$
+examples:
+- value: '170301'
+  description: a parish of Chaves, district of Vila Real
+- value: '010121'
+  description: a parish of Águeda, district of Aveiro
+- value: '1703'
+  description: Chaves, the four-digit municipality code
+- value: '190101'
+  valid: false
+  description: 19 is not a district
+links:
+- type: doc
+  url: https://www.dgterritorio.gov.pt/cartografia/cartografia-tematica/caop
+translations:
+  pt:
+    name: Código DICOFRE
+  ru:
+    name: Код DICOFRE (Португалия)

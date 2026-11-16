@@ -1,0 +1,33 @@
+id: se_nvr_id
+name: Swedish protected area ID (NVRID)
+status: draft
+doc: Seven-digit identifier of a protected area (nature reserve, national park, habitat protection area)
+  in Naturvårdsregistret, the register of protected nature of the Swedish Environmental Protection Agency,
+  as in 2001670. Layers of protected areas published by municipalities and county boards carry it in a
+  column named NVRID.
+categories:
+- environment
+- geo
+country:
+- SE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{7}$
+examples:
+- value: '2001670'
+  description: a nature reserve in Umeå
+- value: '2014076'
+  description: a nature reserve in Umeå
+- value: '200167'
+  valid: false
+  description: six digits
+links:
+- type: doc
+  url: https://skyddadnatur.naturvardsverket.se/
+translations:
+  sv:
+    name: NVR-id
+  ru:
+    name: Идентификатор охраняемой территории Швеции (NVRID)

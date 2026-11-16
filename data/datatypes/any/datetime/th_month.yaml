@@ -1,0 +1,29 @@
+id: th_month
+name: Month name (Thai)
+status: draft
+doc: 'Name of a month in Thai: มกราคม, กุมภาพันธ์, มีนาคม, เมษายน, พฤษภาคม, มิถุนายน, กรกฎาคม, สิงหาคม,
+  กันยายน, ตุลาคม, พฤศจิกายน, ธันวาคม, or its abbreviation with dots: ม.ค., ก.พ., มี.ค., เม.ย., พ.ค.,
+  มิ.ย., ก.ค., ส.ค., ก.ย., ต.ค., พ.ย., ธ.ค. Monthly statistics of Thai agencies give the month of a row
+  this way, in columns named เดือน, often in the order of the fiscal year, which starts in October.'
+semantic_type: month
+langs:
+- th
+regexp: ^(?:มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม|ม\.ค\.|ก\.พ\.|มี\.ค\.|เม\.ย\.|พ\.ค\.|มิ\.ย\.|ก\.ค\.|ส\.ค\.|ก\.ย\.|ต\.ค\.|พ\.ย\.|ธ\.ค\.)$
+examples:
+- value: มกราคม
+  description: January
+- value: ตุลาคม
+  description: October, the first month of the fiscal year
+- value: พ.ย.
+  description: abbreviation of November
+- value: จันทร์
+  valid: false
+  description: Monday, a day of the week
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/th/ca-gregorian.json
+translations:
+  th:
+    name: ชื่อเดือน
+  ru:
+    name: Название месяца (на тайском)
