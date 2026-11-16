@@ -1,0 +1,33 @@
+id: fr_rfn_line_code
+name: French railway line code (code ligne RFN)
+status: draft
+doc: 'Six-digit code of a line of the French national rail network (réseau ferré national) in the datasets
+  of SNCF Réseau: 830000 Paris-Lyon à Marseille-St-Charles, 420000 Paris-Montparnasse à Brest, 570000
+  Paris-Austerlitz à Bordeaux-St-Jean, 005000 Paris à Strasbourg (LGV). A position on the line is given
+  by the code and a kilometre point. Files that store it as a number lose the leading zeros (5000).'
+parent: id
+categories:
+- transport
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{6}$
+examples:
+- value: '830000'
+  description: Ligne de Paris-Lyon à Marseille-St-Charles
+- value: '420000'
+  description: Ligne de Paris-Montparnasse à Brest
+- value: '005000'
+  description: Ligne de Paris à Strasbourg (LGV)
+- value: '87543207'
+  valid: false
+  description: A UIC station code (uiccode)
+links:
+- type: doc
+  url: https://ressources.data.sncf.com/explore/dataset/lignes-par-statut/
+translations:
+  fr:
+    name: Code ligne du réseau ferré national

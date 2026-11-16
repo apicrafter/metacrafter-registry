@@ -1,0 +1,39 @@
+id: fr_rnsr
+name: French national research structure number (RNSR)
+status: draft
+doc: 'Number of a research structure (laboratory, research unit, federation) in the Répertoire national
+  des structures de recherche kept by the French Ministry of Higher Education and Research: ten characters,
+  nine digits that start with the year the structure was registered, and a final letter (200012199P).
+  Open data of the ministry name the field numero_national_de_structure.'
+parent: id
+categories:
+- education
+- science
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:19|20)\d{7}[A-Z]$
+examples:
+- value: 200012199P
+  description: A structure registered in 2000
+- value: 201420835R
+  description: A structure registered in 2014
+- value: 0750671X
+  valid: false
+  description: A UAI number (fr_uai)
+- value: '200012199'
+  valid: false
+  description: no final letter
+mappings:
+  wikidata: P3016
+links:
+- type: doc
+  url: https://appliweb.dgri.education.fr/rnsr/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P3016
+translations:
+  fr:
+    name: Numéro national de structure de recherche (RNSR)

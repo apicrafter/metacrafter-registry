@@ -1,0 +1,37 @@
+id: fr_budget_chapitre_code
+name: French local budget chapter code
+status: draft
+doc: 'Code of a chapter of the budget of a French local authority in the M14, M52, M57, M71 or M4 instruction.
+  In a budget voted by nature it is two or three digits that group accounts: 011 Charges à caractère général,
+  012 Charges de personnel et frais assimilés, 65 Autres charges de gestion courante, 21 Immobilisations
+  corporelles, 040 Opérations d''ordre de transfert entre sections. In a budget voted by function it is
+  three digits starting with 90 (investment) or 93 (operating). The SCDL budget schema of data.gouv.fr
+  gives it in BGT_NATURE.'
+categories:
+- finances
+- government
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{2,3}$
+examples:
+- value: '011'
+  description: Charges à caractère général
+- value: '65'
+  description: Autres charges de gestion courante
+- value: '930'
+  description: A chapter of a budget voted by function
+- value: '64111'
+  valid: false
+  description: An article (fr_budget_nature_code)
+links:
+- type: doc
+  url: https://schema.data.gouv.fr/scdl/budget/
+- type: doc
+  url: https://www.collectivites-locales.gouv.fr/finances-locales/instructions-budgetaires-et-comptables
+translations:
+  fr:
+    name: Code de chapitre budgétaire

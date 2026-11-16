@@ -1,0 +1,31 @@
+id: fr_indice_repetition
+name: French house number suffix (indice de répétition)
+status: draft
+doc: 'Suffix that follows a house number in a French address to tell apart buildings that share the number:
+  bis, ter, quater, quinquies, or a letter (12 bis, 4 B). Address files keep it in its own field (rep
+  in the Base Adresse Nationale, rep_loc), in full or shortened to its first letter (B, T, Q).'
+categories:
+- geo
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^(?:[Bb][Ii][Ss]|[Tt][Ee][Rr]|[Qq][Uu][Aa][Tt][Ee][Rr]|[Qq][Uu][Ii][Nn][Qq][Uu][Ii][Ee][Ss]|[A-Za-z])$
+examples:
+- value: bis
+  description: Second building at the number
+- value: TER
+  description: Third building, upper case
+- value: B
+  description: A letter
+- value: '12'
+  valid: false
+  description: a house number
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Num%C3%A9rotation_des_voies
+translations:
+  fr:
+    name: Indice de répétition
