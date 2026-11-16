@@ -1,0 +1,28 @@
+id: gb_scottish_parliament_constituency_code
+name: Scottish Parliament constituency code (GSS)
+status: draft
+doc: GSS code of one of the 73 constituencies of the Scottish Parliament, entity code S16. Constituencies
+  of the UK Parliament in Scotland have the entity code S14.
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^S16\d{6}$
+examples:
+- value: S16000144
+  description: Stirling
+- value: S16000088
+  description: Clackmannanshire and Dunblane
+- value: S14000057
+  valid: false
+  description: A UK Parliament constituency code (S14)
+links:
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Scottish_Parliament_constituencies_and_electoral_regions

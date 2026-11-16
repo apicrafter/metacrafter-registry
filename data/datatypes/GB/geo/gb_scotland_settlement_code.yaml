@@ -1,0 +1,29 @@
+id: gb_scotland_settlement_code
+name: Scottish settlement code (GSS)
+status: draft
+doc: GSS code of a settlement of the National Records of Scotland, entity code S20. A settlement is a
+  built-up area of neighbouring postcodes of high density with 500 or more residents; it may hold several
+  localities.
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^S20\d{6}$
+examples:
+- value: S20001477
+  description: A settlement of the Stirling council area
+- value: S20001992
+  description: A settlement of the Stirling council area
+- value: S19001277
+  valid: false
+  description: A locality code (S19)
+links:
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd
+- type: doc
+  url: https://www.nrscotland.gov.uk/publications/population-estimates-for-settlements-and-localities-in-scotland-mid-2020/

@@ -1,0 +1,32 @@
+id: ices_parameter_code
+name: ICES parameter code (PARAM)
+status: draft
+doc: 'Code of the measured parameter, or determinand, in the PARAM vocabulary of the International Council
+  for the Exploration of the Sea (ICES): contaminants, nutrients and biological effects reported to the
+  ICES environmental database and by the monitoring programmes that use its format, as the Clean Seas
+  Environment Monitoring Programme of the United Kingdom. Codes are up to 13 characters: capitals, digits
+  and a few signs. The vocabulary has about 2000 of them.'
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: CD
+  description: cadmium
+- value: HG
+  description: mercury
+- value: CB118
+  description: 2,3',4,4',5-pentachlorobiphenyl
+- value: '%DNAtail'
+  description: '% DNA in tail'
+- value: cadmium
+  valid: false
+  description: The name of the parameter
+links:
+- type: doc
+  url: https://vocab.ices.dk/?ref=eb4d2bd4-3faf-4c58-a384-d2d21913c8e2
+- type: doc
+  url: https://www.ices.dk/data/Documents/ENV/Environment_Formats.zip

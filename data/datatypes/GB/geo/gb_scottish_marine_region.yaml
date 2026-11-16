@@ -1,0 +1,26 @@
+id: gb_scottish_marine_region
+name: Scottish Marine Region
+status: draft
+doc: 'Name of one of the eleven Scottish Marine Regions, the inshore areas out to 12 nautical miles set
+  by the Scottish Marine Regions Order 2015 for regional marine planning: Argyll, Clyde, Forth and Tay,
+  Moray Firth, North Coast, North East, Orkney Islands, Outer Hebrides, Shetland Isles, Solway and West
+  Highlands. Statistics of Marine Scotland also report sums of two regions (West Highlands & North Coast)
+  and of all Scotland.'
+categories:
+- geo
+- environment
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Outer Hebrides
+- value: Shetland Isles
+- value: Forth and Tay
+- value: West Highlands & North Coast
+  description: Two regions reported together in the aquaculture statistics
+links:
+- type: doc
+  url: https://www.legislation.gov.uk/ssi/2015/193/contents/made

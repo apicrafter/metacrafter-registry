@@ -4,16 +4,22 @@ status: draft
 doc: 'Name of a month in Greek in the nominative: Ιανουάριος, Φεβρουάριος, Μάρτιος, Απρίλιος, Μάιος (also
   Μάϊος), Ιούνιος, Ιούλιος, Αύγουστος, Σεπτέμβριος, Οκτώβριος, Νοέμβριος, Δεκέμβριος. Files in capitals
   drop the accents (ΙΑΝΟΥΑΡΙΟΣ, ΜΑΙΟΣ). Monthly statistics of Cyprus and Greece give the month of a row
-  this way, in columns named Μήνας, Περίοδος or Month. The genitive of dates (3 Οκτωβρίου 2024) is date_greek.'
+  this way, in columns named Μήνας, Περίοδος or Month. Tables also abbreviate the month: Ιαν, Φεβ, Μαρ,
+  Απρ, Μαΐ, Ιουν, Ιουλ, Αυγ, Σεπ, Οκτ, Νοε, Δεκ in CLDR, and ΙΟΝ and ΙΟΛ for June and July in tables of
+  the city of Thessaloniki. The genitive of dates (3 Οκτωβρίου 2024) is date_greek.'
 semantic_type: month
 langs:
 - el
-regexp: ^(?:Ιανουάριος|ΙΑΝΟΥΑΡΙΟΣ|Φεβρουάριος|ΦΕΒΡΟΥΑΡΙΟΣ|Μάρτιος|ΜΑΡΤΙΟΣ|Απρίλιος|ΑΠΡΙΛΙΟΣ|Μά[ιϊ]ος|ΜΑ[ΙΪ]ΟΣ|Ιούνιος|ΙΟΥΝΙΟΣ|Ιούλιος|ΙΟΥΛΙΟΣ|Αύγουστος|ΑΥΓΟΥΣΤΟΣ|Σεπτέμβριος|ΣΕΠΤΕΜΒΡΙΟΣ|Οκτώβριος|ΟΚΤΩΒΡΙΟΣ|Νοέμβριος|ΝΟΕΜΒΡΙΟΣ|Δεκέμβριος|ΔΕΚΕΜΒΡΙΟΣ)$
+regexp: ^(?:Ιανουάριος|ΙΑΝΟΥΑΡΙΟΣ|Φεβρουάριος|ΦΕΒΡΟΥΑΡΙΟΣ|Μάρτιος|ΜΑΡΤΙΟΣ|Απρίλιος|ΑΠΡΙΛΙΟΣ|Μά[ιϊ]ος|ΜΑ[ΙΪ]ΟΣ|Ιούνιος|ΙΟΥΝΙΟΣ|Ιούλιος|ΙΟΥΛΙΟΣ|Αύγουστος|ΑΥΓΟΥΣΤΟΣ|Σεπτέμβριος|ΣΕΠΤΕΜΒΡΙΟΣ|Οκτώβριος|ΟΚΤΩΒΡΙΟΣ|Νοέμβριος|ΝΟΕΜΒΡΙΟΣ|Δεκέμβριος|ΔΕΚΕΜΒΡΙΟΣ|Ιαν|ΙΑΝ|Φεβ|ΦΕΒ|Μαρ|ΜΑΡ|Απρ|ΑΠΡ|Μα[ιϊΐ]|ΜΑ[ΙΪ]|Ιουν|ΙΟΥΝ|ΙΟΝ|Ιουλ|ΙΟΥΛ|ΙΟΛ|Αυγ|ΑΥΓ|Σεπ|ΣΕΠ|Οκτ|ΟΚΤ|Νοε|ΝΟΕ|Δεκ|ΔΕΚ)$
 examples:
 - value: Ιανουάριος
 - value: Μάιος
 - value: ΦΕΒΡΟΥΑΡΙΟΣ
   description: in capitals without the accent
+- value: ΙΑΝ
+  description: abbreviation in capitals, monthly tables of Thessaloniki
+- value: Ιουλ
+  description: CLDR abbreviation
 - value: Δευτέρα
   valid: false
   description: a day of the week

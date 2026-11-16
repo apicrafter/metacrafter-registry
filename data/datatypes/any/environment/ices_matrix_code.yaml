@@ -1,0 +1,30 @@
+id: ices_matrix_code
+name: ICES matrix code (MATRX)
+status: draft
+doc: 'Code of the sampled matrix in the MATRX vocabulary of ICES: the tissue of an animal (LI liver, MU
+  muscle, SB soft body), a sediment fraction (SED63, sediment below 63 micrometres) or a kind of water
+  sample. It tells in what a contaminant was measured.'
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: LI
+  description: Liver
+- value: MU
+  description: Muscle
+- value: SED63
+  description: Sediment, fraction below 63 micrometres
+- value: BI
+  description: Bile
+- value: Liver
+  valid: false
+  description: The name of the matrix
+links:
+- type: doc
+  url: https://vocab.ices.dk/?ref=d5735331-b24e-4141-b691-279efbbf3974
+- type: doc
+  url: https://www.ices.dk/data/Documents/ENV/Environment_Formats.zip

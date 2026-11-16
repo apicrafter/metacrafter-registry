@@ -1,0 +1,29 @@
+id: ices_station_type
+name: ICES type of monitoring station (MSTAT)
+status: draft
+doc: 'Code of the type of a monitoring station in the MSTAT vocabulary of ICES, with the station types
+  of the Water Framework Directive: B baseline or reference station, RH representative of general conditions
+  for hazardous substances, IH impacted directly by discharges of hazardous substances, and IH with a
+  letter for the kind of source (IH-A, IH-C).'
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: B
+  description: Baseline or reference station
+- value: RH
+  description: Representative of general conditions, hazardous substances
+- value: IH
+  description: Impacted by discharges of hazardous substances
+- value: Coast
+  valid: false
+  description: A water body type
+links:
+- type: doc
+  url: https://vocab.ices.dk/?ref=358203dc-6df5-4bc0-9da5-328f98fd618a
+- type: doc
+  url: https://www.ices.dk/data/Documents/ENV/Environment_Formats.zip
