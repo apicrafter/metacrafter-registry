@@ -1,0 +1,35 @@
+id: gb_lsoa_name
+name: Lower layer Super Output Area name (England and Wales)
+status: draft
+doc: Name of a lower layer Super Output Area (LSOA), a census geography of England and Wales with 400
+  to 1,200 households. The name is the name of the middle layer area it belongs to, which is the name
+  of the local authority district and three digits, followed by a letter (Cambridge 001A, City of London
+  001C). The Office for National Statistics publishes the names next to the nine-character codes (E01,
+  W01) in columns such as LSOA11NM and LSOA21NM. The area code itself is the type uksloa.
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: '^[A-Z][A-Za-z''’.,-]*(?: [A-Za-z''’.,&-]+){0,6} \d{3}[A-Z]$'
+examples:
+- value: Cambridge 001A
+  description: LSOA of Cambridge, as in Cambridgeshire Insight tables
+- value: City of London 001C
+  description: LSOA of the City of London
+- value: Barking and Dagenham 001B
+  description: A district name of three words
+- value: Leicester 003
+  valid: false
+  description: A middle layer area name, without the letter
+- value: E01000001
+  valid: false
+  description: The code of an LSOA, not its name
+links:
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/ukgeographies/censusgeographies/census2021geographies
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system

@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "dd65de2d9c5e7793147cbf6f81150c0a607b7c14"
+  "ref": "b07ba4ec914635785f5cbabba83ed0ad1d84343b"
  },
  "rules": [
   {
@@ -6975,6 +6975,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "schoolnamebyname",
+   "key": "school_name",
+   "type": "field",
+   "match": "regex",
+   "file": "common/education.yaml",
+   "context": "education",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "airpollutantbyname",
    "key": "air_pollutant",
    "type": "field",
@@ -12862,6 +12872,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "moneywithsignvalue",
+   "key": "money",
+   "type": "data",
+   "match": "func",
+   "file": "common/values.yaml",
+   "context": "values",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "percentagebyfield",
    "key": "percentage",
    "type": "field",
@@ -15232,9 +15252,39 @@
    "country_code": "eu"
   },
   {
+   "rule": "euhabitattypecodebyname",
+   "key": "eu_habitat_type_code",
+   "type": "field",
+   "match": "regex",
+   "file": "eu/eu_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
    "rule": "eulaucodevalue",
    "key": "eu_lau_code",
    "type": "data",
+   "match": "regex",
+   "file": "eu/eu_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
+   "rule": "eunatura2000sitebyname",
+   "key": "eu_natura2000_site",
+   "type": "field",
+   "match": "regex",
+   "file": "eu/eu_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
+   "rule": "eunishabitatcodebyname",
+   "key": "eunis_habitat_code",
+   "type": "field",
    "match": "regex",
    "file": "eu/eu_geo.yaml",
    "context": "geo",
@@ -15742,6 +15792,26 @@
    "country_code": "fr"
   },
   {
+   "rule": "frbudgetsectionbyname",
+   "key": "fr_budget_section",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_budget.yaml",
+   "context": "finances",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frbudgetsensbyname",
+   "key": "fr_budget_sens",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_budget.yaml",
+   "context": "finances",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frlolfprogrammecodebyname",
    "key": "fr_lolf_programme_code",
    "type": "field",
@@ -16112,6 +16182,36 @@
    "country_code": "fr"
   },
   {
+   "rule": "freleccombustiblecodebyname",
+   "key": "fr_elec_combustible_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_environment.yaml",
+   "context": "environment",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frelecfilierecodebyname",
+   "key": "fr_elec_filiere_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_environment.yaml",
+   "context": "environment",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frelectechnologiecodebyname",
+   "key": "fr_elec_technologie_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_environment.yaml",
+   "context": "environment",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frgasparbyname",
    "key": "fr_gaspar_id",
    "type": "field",
@@ -16134,6 +16234,26 @@
   {
    "rule": "frhydrostationbyname",
    "key": "fr_hydro_station_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_environment.yaml",
+   "context": "environment",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frpacagebyname",
+   "key": "fr_pacage",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_environment.yaml",
+   "context": "environment",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frsandrecourseaubyhydroname",
+   "key": "fr_sandre_cours_eau_code",
    "type": "field",
    "match": "regex",
    "file": "fr/fr_environment.yaml",
@@ -16962,6 +17082,56 @@
    "country_code": "gb"
   },
   {
+   "rule": "gb360givingidvalue",
+   "key": "gb_360giving_id",
+   "type": "data",
+   "match": "regex",
+   "file": "gb/gb_finances.yaml",
+   "context": "finances",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gb360givingorgidbyname",
+   "key": "org_id",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_finances.yaml",
+   "context": "finances",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbproclasscodebyname",
+   "key": "gb_proclass_code",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_finances.yaml",
+   "context": "finances",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbspendbodybyname",
+   "key": "orgname",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_finances.yaml",
+   "context": "finances",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbspendexpenseareabyname",
+   "key": "orgunit",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_finances.yaml",
+   "context": "finances",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
    "rule": "gbvatfield",
    "key": "gb_vat",
    "type": "field",
@@ -17112,6 +17282,46 @@
    "country_code": "gb"
   },
   {
+   "rule": "gblocalauthoritynamebyname",
+   "key": "gb_local_authority_name",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gblsoanamebyname",
+   "key": "gb_lsoa_name",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gblsoanamevalue",
+   "key": "gb_lsoa_name",
+   "type": "data",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbmsoanamebyname",
+   "key": "gb_msoa_name",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
    "rule": "gbnideacodevalue",
    "key": "gb_ni_dea_code",
    "type": "data",
@@ -17145,6 +17355,16 @@
    "rule": "gbosgridreferencevalue",
    "key": "gb_os_grid_reference",
    "type": "data",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbparliamentaryconstituencybyname",
+   "key": "gb_parliamentary_constituency",
+   "type": "field",
    "match": "regex",
    "file": "gb/gb_geo.yaml",
    "context": "geo",
@@ -17376,6 +17596,16 @@
    "key": "ukgsscode",
    "type": "field",
    "match": "text",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "ukgsscodeundercode",
+   "key": "ukgsscode",
+   "type": "field",
+   "match": "regex",
    "file": "gb/gb_geo.yaml",
    "context": "geo",
    "lang": "en",
@@ -17622,6 +17852,26 @@
    "country_code": "gb"
   },
   {
+   "rule": "gbesdserviceurivalue",
+   "key": "gb_esd_service_uri",
+   "type": "data",
+   "match": "regex",
+   "file": "gb/gb_orgs.yaml",
+   "context": "companies",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbsiccodebyname",
+   "key": "gb_sic_code",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_orgs.yaml",
+   "context": "companies",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
    "rule": "enniivalue",
    "key": "ninumber",
    "type": "data",
@@ -17732,6 +17982,56 @@
    "country_code": "gb"
   },
   {
+   "rule": "gbbrownfieldownershipstatusbyname",
+   "key": "gb_brownfield_ownership_status",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_realestate.yaml",
+   "context": "realestate",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbbrownfieldownershipstatusvalue",
+   "key": "gb_brownfield_ownership_status",
+   "type": "data",
+   "match": "text",
+   "file": "gb/gb_realestate.yaml",
+   "context": "realestate",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbbrownfieldpermissiontypebyname",
+   "key": "gb_brownfield_permission_type",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_realestate.yaml",
+   "context": "realestate",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbbrownfieldplanningstatusbyname",
+   "key": "gb_brownfield_planning_status",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_realestate.yaml",
+   "context": "realestate",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbcounciltaxbandbyname",
+   "key": "gb_council_tax_band",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_realestate.yaml",
+   "context": "realestate",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
    "rule": "gbepcratingfield",
    "key": "gb_epc_rating",
    "type": "field",
@@ -17808,6 +18108,16 @@
    "match": "text",
    "file": "gb/gb_realestate.yaml",
    "context": "realestate",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbcrscodebyname",
+   "key": "gb_crs_code",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_transport.yaml",
+   "context": "transport",
    "lang": "en",
    "country_code": "gb"
   },

@@ -1,0 +1,21 @@
+id: school_name
+name: School name
+status: draft
+doc: Name of a school as a table of schools, pupils or school results writes it (Abbey Park Academy, St
+  Malachy's Catholic Primary School). It is a free name, not a code; the registers of each country identify
+  the school by a number, such as the URN of England (ukurn) or the UAI of France (fr_uai).
+parent: orgname
+categories:
+- education
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: Abbey Park Academy
+  description: School in Calderdale, as in Calderdale Data Works tables
+- value: St Malachy's Catholic Primary School
+  description: Primary school in Calderdale
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/School

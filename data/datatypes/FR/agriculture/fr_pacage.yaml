@@ -1,0 +1,34 @@
+id: fr_pacage
+name: French PACAGE number of a farm
+status: draft
+doc: Number that identifies a farm for the aids of the common agricultural policy in France. The departmental
+  office of the Ministry of Agriculture (DDT, DDTM or DAAF) of the department where the farm has its seat
+  assigns it, and the farmer uses it to file aid applications on Telepac. It has nine characters, the
+  number of the department written in three (014, 02B for Haute-Corse) and an order number of six digits.
+  A farm that moves its seat to another department gets a new number. The number of a farm run by one
+  person identifies that person.
+parent: id
+categories:
+- agriculture
+- identifiers
+country:
+- FR
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^(?:0(?:0[1-9]|[1-9]\d|2[AB])|97[1-6])\d{6}$
+examples:
+- value: 02B000000
+  description: The form of a number of Haute-Corse, with a made-up order number
+- value: '014000000'
+  description: The form of a number of Calvados, with a made-up order number
+- value: 2B0000000
+  valid: false
+  description: The department must be written in three characters
+links:
+- type: doc
+  url: https://www.telepac.agriculture.gouv.fr/telepac/pdf/tde/Exploitation_demande-attribution-numero-pacage.pdf
+translations:
+  fr:
+    name: Numéro PACAGE

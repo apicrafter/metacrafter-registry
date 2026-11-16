@@ -1,0 +1,33 @@
+id: gb_msoa_name
+name: Middle layer Super Output Area name (England and Wales)
+status: draft
+doc: Name of a middle layer Super Output Area (MSOA), a census geography of England and Wales with 2,000
+  to 6,000 households that fits within a local authority. The name is the name of the local authority
+  district and three digits (Leicester 003, Barking and Dagenham 001); the Office for National Statistics
+  publishes it next to the code (E02, W02) in columns such as MSOA11NM. The names that the House of Commons
+  Library gave to the same areas (Belgrave South) are another list. The area code itself is the type ukmsoa.
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: '^[A-Z][A-Za-z''’.,-]*(?: [A-Za-z''’.,&-]+){0,6} \d{3}$'
+examples:
+- value: Leicester 003
+  description: MSOA of Leicester, as in Open Leicester tables
+- value: City of London 001
+  description: The one MSOA of the City of London
+- value: Cambridge 001A
+  valid: false
+  description: A lower layer area name, with a letter
+- value: Belgrave South
+  valid: false
+  description: A House of Commons Library name of an MSOA
+links:
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/ukgeographies/censusgeographies/census2021geographies
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ONS_coding_system

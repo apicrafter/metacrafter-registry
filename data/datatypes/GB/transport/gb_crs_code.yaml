@@ -1,0 +1,31 @@
+id: gb_crs_code
+name: UK railway station code (CRS code)
+status: draft
+doc: Three-letter code of a railway station of the United Kingdom, known as the CRS code after the Computer
+  Reservation System, also called the National Reservation System code or three-letter code (TLC). National
+  Rail uses it in timetables and ticketing (BHM for Birmingham New Street, PAD for London Paddington);
+  the station usage tables of the Office of Rail and Road give it in a TLC column.
+categories:
+- transport
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{3}$
+examples:
+- value: BHM
+  description: Birmingham New Street; Wikidata example
+- value: PAD
+  description: London Paddington; Wikidata example
+- value: HFX
+  description: Halifax, as in the station usage tables of Calderdale Data Works
+- value: Hfx
+  valid: false
+  description: Lower case letters
+mappings:
+  wikidata: P4755
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P4755

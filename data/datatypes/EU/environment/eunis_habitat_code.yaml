@@ -1,0 +1,35 @@
+id: eunis_habitat_code
+name: EUNIS habitat classification code
+status: draft
+doc: Code of a habitat type in the EUNIS habitat classification of the European Environment Agency, a
+  hierarchical list of the habitats of Europe from natural to artificial and from terrestrial to marine.
+  In the version in use before the revision of 2021 a letter names the broad group (A is marine), a digit
+  the second level, and each further digit or letter after a full stop one level more, so A5.535 (Posidonia
+  beds) is under A5.53 (sublittoral seagrass beds), A5.5 and A5. Habitat maps of Natura 2000 sites give
+  the code next to the Annex I habitat type code (eu_habitat_type_code). The revised classification writes
+  its codes in another form, which this pattern does not cover.
+categories:
+- environment
+- science
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-J]\d?(?:\.[0-9A-Z]{1,5})?$
+examples:
+- value: A5.535
+  description: Posidonia beds; EUNIS vocabulary of the Eionet Data Dictionary
+- value: A5.53
+  description: Sublittoral seagrass beds; EUNIS vocabulary
+- value: A5
+  description: Sublittoral sediment; EUNIS vocabulary
+- value: '1170'
+  valid: false
+  description: A habitat type code of Annex I of the Habitats Directive
+links:
+- type: doc
+  url: https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/view
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/European_Nature_Information_System

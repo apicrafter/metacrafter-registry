@@ -1,0 +1,30 @@
+id: gb_brownfield_planning_status
+name: Planning status of a brownfield land register site
+status: draft
+doc: Planning status of a site in a brownfield land register of an English local planning authority, the
+  PlanningStatus field of the data standard for these registers. It takes one of three phrases, permissioned,
+  not permissioned or pending decision. Registers write them in lower case or with capitals.
+parent: category
+categories:
+- realestate
+- government
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?i:permissioned|not permissioned|pending decision)$
+examples:
+- value: permissioned
+  description: The site has planning permission
+- value: not permissioned
+  description: The site has no planning permission
+- value: pending decision
+  description: An application waits for a decision
+- value: Expired
+  valid: false
+  description: A status that a register added outside the standard
+links:
+- type: doc
+  url: https://www.gov.uk/government/publications/brownfield-land-registers-data-standard/publish-your-brownfield-land-data

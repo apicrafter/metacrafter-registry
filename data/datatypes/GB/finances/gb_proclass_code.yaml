@@ -1,0 +1,29 @@
+id: gb_proclass_code
+name: ProClass procurement classification code
+status: draft
+doc: Code of ProClass, a procurement classification for the supplies, services and works that English
+  local authorities buy. It was launched in 2006 and is owned by local government; Coding International
+  Ltd has maintained it since October 2007. In the spend and contract files of councils the code has six
+  digits (271501, 321000), often followed by its label (271501-Information Communication Technology).
+  No official description of the digits was found, so the pattern only fixes their number.
+categories:
+- finances
+- government
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-9]\d{5}$
+examples:
+- value: '271501'
+  description: Information Communication Technology, services; council spend file of data.gov.uk
+- value: '321000'
+  description: Social Community Care Supplies & Services; council spend file of data.gov.uk
+- value: '27150'
+  valid: false
+  description: Five digits
+links:
+- type: other
+  url: https://www.designingbuildings.co.uk/wiki/ProClass

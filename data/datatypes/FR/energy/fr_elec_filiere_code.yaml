@@ -1,0 +1,35 @@
+id: fr_elec_filiere_code
+name: Generation sector code of the French register of electricity installations (codeFiliere)
+status: draft
+doc: Five-letter code of the generation sector of an installation in the national register of electricity
+  production and storage installations, which RTE compiles under article L142-9-1 of the Energy Code from
+  the data of the network operators. The files give it in the codeFiliere column next to the label in
+  filiere. The 2024 files read for this record hold SOLAI (Solaire), EOLIE (Eolien), HYDLQ (Hydraulique),
+  THERM (Thermique non renouvelable), NUCLE (Nucléaire) and BIOEN (Bioénergies); the list may have more
+  codes.
+parent: category
+categories:
+- energy
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{5}$
+examples:
+- value: SOLAI
+  description: Solaire; register file of 2024
+- value: EOLIE
+  description: Eolien; register file of 2024
+- value: HYDLQ
+  description: Hydraulique; register file of 2024
+- value: Solaire
+  valid: false
+  description: The label, not the code
+links:
+- type: doc
+  url: https://www.data.gouv.fr/datasets/registre-national-des-installations-de-production-et-de-stockage-delectricite-au-31-12-2024
+translations:
+  fr:
+    name: Code de filière du registre national des installations de production et de stockage d'électricité

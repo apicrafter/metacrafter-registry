@@ -1,0 +1,33 @@
+id: fr_budget_sens
+name: Side of a French local budget line (dépense, recette)
+status: draft
+doc: Side of a line of the budget of a French local authority or local public body, an expenditure (dépense)
+  or a revenue (recette). Budget files give it in a sens column, BGT_CODRD in the files that follow the
+  budget schema of the essential data of local authorities, in the singular or the plural.
+parent: category
+categories:
+- finances
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^(?i:d[ée]penses?|recettes?)$
+examples:
+- value: Dépenses
+  description: Expenditure; budget of the City of Paris
+- value: Recettes
+  description: Revenue; budget of the City of Paris
+- value: recette
+  description: Singular, as in the budgets of the communes of Grand Paris Seine et Oise
+- value: Fonctionnement
+  valid: false
+  description: The section of the line, not its side
+links:
+- type: doc
+  url: https://schema.data.gouv.fr/scdl/budget/
+translations:
+  fr:
+    name: Sens d'une ligne budgétaire (dépense, recette)

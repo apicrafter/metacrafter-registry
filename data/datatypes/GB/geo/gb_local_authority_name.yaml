@@ -1,0 +1,28 @@
+id: gb_local_authority_name
+name: Local authority name (United Kingdom)
+status: draft
+doc: Name of a local authority of the United Kingdom, a council area such as a district, a unitary authority,
+  a London borough or a county, as statistical tables and council registers write it. Tables of the Office
+  for National Statistics give the name of the district next to its code in columns such as LAD11NM (Hartlepool,
+  City of London); registers also write the name of the council (Hampshire County Council). The value
+  is a name, not a code; the codes are the types uklacode and gb_local_authority_code.
+parent: admin_area_2
+categories:
+- geo
+- government
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Calderdale
+  description: A metropolitan district of West Yorkshire
+- value: Barking and Dagenham
+  description: A London borough
+- value: Hampshire County Council
+  description: The name of the council, as registers of contracts write it
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Local_government_in_the_United_Kingdom

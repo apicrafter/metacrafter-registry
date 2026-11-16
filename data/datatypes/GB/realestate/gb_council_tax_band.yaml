@@ -1,0 +1,35 @@
+id: gb_council_tax_band
+name: Council tax band
+status: draft
+doc: Valuation band of a dwelling for council tax, a letter. England has eight bands, A (up to 40,000
+  pounds at the values of 1 April 1991) to H (more than 320,000 pounds); Wales has nine, A to I, at the
+  values of 1 April 2003. The Valuation Office assesses the dwellings of England and Wales. Council tables
+  of dwellings and of empty homes give the band in a Council Tax Band column.
+parent: category
+categories:
+- realestate
+- finances
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^[A-I]$
+examples:
+- value: A
+  description: The lowest band
+- value: D
+  description: The band that council tax rates are quoted for
+- value: H
+  description: The highest band of England
+- value: I
+  description: The highest band of Wales
+- value: J
+  valid: false
+  description: No such band
+links:
+- type: doc
+  url: https://www.gov.uk/guidance/understand-how-council-tax-bands-are-assessed
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Council_Tax
