@@ -1,0 +1,34 @@
+id: fr_road_number
+name: French road number
+status: draft
+doc: 'Number of a French road: a letter for its class and a number. A for motorways (A6), N for national
+  roads (N20), D for departmental roads (D121, D1083), M for roads handed over to a metropolis, C for
+  communal roads. Files also write RN and RD and put a space after the letters (RD 121). A departmental
+  number is unique only inside its department.'
+parent: id
+categories:
+- transport
+- geo
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:A|N|D|M|C|RN|RD|RM) ?\d{1,4}[A-Z]?\d{0,2}$
+examples:
+- value: D121
+  description: A departmental road
+- value: A6
+  description: Autoroute du Soleil
+- value: RD 1083
+  description: With RD and a space
+- value: E15
+  valid: false
+  description: A European route number (e_road_number)
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/R%C3%A9seau_routier_fran%C3%A7ais
+translations:
+  fr:
+    name: Numéro de route

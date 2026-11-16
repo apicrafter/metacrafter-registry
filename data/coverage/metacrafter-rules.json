@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "79804ef22477f35fc51418dbb08a8e8d6dc13513"
+  "ref": "93e2981c53c5d2ee628bfdb42a7cd899dcb6e096"
  },
  "rules": [
   {
@@ -4155,6 +4155,116 @@
    "country_code": "ca"
   },
   {
+   "rule": "cacmauidbyname",
+   "key": "ca_cmauid",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "cactuidbyname",
+   "key": "ca_ctuid",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "caecozonebyname",
+   "key": "ca_ecozone",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "caeruidbyname",
+   "key": "ca_eruid",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "cafeduidbyname",
+   "key": "ca_feduid",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "canoccodebyname",
+   "key": "ca_noc_code",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "caprovincenamebyname",
+   "key": "caprovince",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "casgcprovincebyname",
+   "key": "casgc",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "castatcanvectorbyname",
+   "key": "ca_statcan_vector",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "castatcanvectorvalue",
+   "key": "ca_statcan_vector",
+   "type": "data",
+   "match": "func",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
+   "rule": "catcpuidbyname",
+   "key": "ca_tcp_uid",
+   "type": "field",
+   "match": "regex",
+   "file": "ca/ca_stats.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ca"
+  },
+  {
    "rule": "cabnfield",
    "key": "cabn",
    "type": "field",
@@ -7575,6 +7685,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "inspiregridcellcodevalue",
+   "key": "inspire_grid_cell_code",
+   "type": "data",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "latgeobyknown",
    "key": "latitude",
    "type": "field",
@@ -10242,6 +10362,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "boldbinvalue",
+   "key": "bold_bin",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "chromosomebyname",
    "key": "chromosome",
    "type": "field",
@@ -10452,6 +10582,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "glymageneidvalue",
+   "key": "glyma_gene_id",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "gridbyfieldname",
    "key": "grid",
    "type": "field",
@@ -10476,6 +10616,16 @@
    "key": "taxon_name",
    "type": "data",
    "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "hydrolakesidbyname",
+   "key": "hydrolakes_id",
+   "type": "field",
+   "match": "regex",
    "file": "common/science.yaml",
    "context": "science",
    "lang": "common",
@@ -10534,6 +10684,36 @@
   {
    "rule": "log2foldchangebyname",
    "key": "log2_fold_change",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "mirbasematureidvalue",
+   "key": "mirbase_mature_id",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "mirnanamevalue",
+   "key": "mirna_name",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "natureserverankbyname",
+   "key": "natureserve_rank",
    "type": "field",
    "match": "regex",
    "file": "common/science.yaml",
@@ -15332,6 +15512,76 @@
    "country_code": "fi"
   },
   {
+   "rule": "fikuntanumerobyname",
+   "key": "fi_kuntanumero",
+   "type": "field",
+   "match": "regex",
+   "file": "fi/fi_geo.yaml",
+   "context": "geo",
+   "lang": "fi",
+   "country_code": "fi"
+  },
+  {
+   "rule": "fimaakuntacodebyname",
+   "key": "fi_maakunta_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fi/fi_geo.yaml",
+   "context": "geo",
+   "lang": "fi",
+   "country_code": "fi"
+  },
+  {
+   "rule": "finamebyname",
+   "key": "name",
+   "type": "field",
+   "match": "text",
+   "file": "fi/fi_geo.yaml",
+   "context": "geo",
+   "lang": "fi",
+   "country_code": "fi"
+  },
+  {
+   "rule": "fiorgnamebyname",
+   "key": "orgname",
+   "type": "field",
+   "match": "regex",
+   "file": "fi/fi_geo.yaml",
+   "context": "geo",
+   "lang": "fi",
+   "country_code": "fi"
+  },
+  {
+   "rule": "fipostcodebyname",
+   "key": "fi_postcode",
+   "type": "field",
+   "match": "regex",
+   "file": "fi/fi_geo.yaml",
+   "context": "geo",
+   "lang": "fi",
+   "country_code": "fi"
+  },
+  {
+   "rule": "fiseutukuntacodebyname",
+   "key": "fi_seutukunta_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fi/fi_geo.yaml",
+   "context": "geo",
+   "lang": "fi",
+   "country_code": "fi"
+  },
+  {
+   "rule": "fivaalipiiricodebyname",
+   "key": "fi_vaalipiiri_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fi/fi_geo.yaml",
+   "context": "geo",
+   "lang": "fi",
+   "country_code": "fi"
+  },
+  {
    "rule": "fiwellbeingcountyvalue",
    "key": "fi_wellbeing_services_county",
    "type": "data",
@@ -15340,6 +15590,56 @@
    "context": "geo",
    "lang": "fi",
    "country_code": "fi"
+  },
+  {
+   "rule": "frbudgetchapitrecodebyname",
+   "key": "fr_budget_chapitre_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_budget.yaml",
+   "context": "finances",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frbudgetfonctioncodebyname",
+   "key": "fr_budget_fonction_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_budget.yaml",
+   "context": "finances",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frbudgetnaturecodebyname",
+   "key": "fr_budget_nature_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_budget.yaml",
+   "context": "finances",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frbudgetnomenclaturebyname",
+   "key": "fr_budget_nomenclature",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_budget.yaml",
+   "context": "finances",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frlolfprogrammecodebyname",
+   "key": "fr_lolf_programme_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_budget.yaml",
+   "context": "finances",
+   "lang": "fr",
+   "country_code": "fr"
   },
   {
    "rule": "frcategoryknown",
@@ -15632,6 +15932,56 @@
    "country_code": "fr"
   },
   {
+   "rule": "frcnusectioncodebyname",
+   "key": "fr_cnu_section_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_education.yaml",
+   "context": "education",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "fridrefidbyname",
+   "key": "fr_idref_id",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_education.yaml",
+   "context": "education",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frnatureuaicodebyname",
+   "key": "fr_nature_uai_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_education.yaml",
+   "context": "education",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frrnsrbyfieldname",
+   "key": "fr_rnsr",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_education.yaml",
+   "context": "education",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frrnsrvalue",
+   "key": "fr_rnsr",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_education.yaml",
+   "context": "education",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "fruaibyname",
    "key": "fr_uai",
    "type": "field",
@@ -15852,6 +16202,26 @@
    "country_code": "fr"
   },
   {
+   "rule": "fridurbavalue",
+   "key": "fr_idurba",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frindicerepetitionbyname",
+   "key": "fr_indice_repetition",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frinseecodebyknown",
    "key": "inseecode",
    "type": "field",
@@ -16015,7 +16385,7 @@
    "rule": "frccamvalue",
    "key": "ccamcode",
    "type": "data",
-   "match": "ppr",
+   "match": "regex",
    "file": "fr/fr_med.yaml",
    "context": "medical",
    "lang": "fr",
@@ -16272,6 +16642,16 @@
    "country_code": "fr"
   },
   {
+   "rule": "frbaacaccidentnumberbyname",
+   "key": "fr_baac_accident_number",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_transport.yaml",
+   "context": "transport",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frcritairbyname",
    "key": "fr_critair",
    "type": "field",
@@ -16282,9 +16662,59 @@
    "country_code": "fr"
   },
   {
+   "rule": "fridfmlineidbyfieldname",
+   "key": "fr_idfm_line_id",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_transport.yaml",
+   "context": "transport",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "fridfmlineidvalue",
+   "key": "fr_idfm_line_id",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_transport.yaml",
+   "context": "transport",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frirveidvalue",
    "key": "fr_irve_id",
    "type": "data",
+   "match": "regex",
+   "file": "fr/fr_transport.yaml",
+   "context": "transport",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frrailpkvalue",
+   "key": "fr_rail_pk",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_transport.yaml",
+   "context": "transport",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frrfnlinecodebyname",
+   "key": "fr_rfn_line_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_transport.yaml",
+   "context": "transport",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frroadnumberbyname",
+   "key": "fr_road_number",
+   "type": "field",
    "match": "regex",
    "file": "fr/fr_transport.yaml",
    "context": "transport",

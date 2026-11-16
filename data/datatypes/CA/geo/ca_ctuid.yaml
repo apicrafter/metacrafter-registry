@@ -1,0 +1,40 @@
+id: ca_ctuid
+name: Canadian census tract identifier (CTUID)
+status: draft
+doc: 'Ten-character identifier of a census tract of Statistics Canada: the three-digit code of the census
+  metropolitan area or census agglomeration (ca_cmauid) and the census tract name, four digits, a point
+  and two digits (0002.00; the two decimals number the parts of a tract that was split). Census profiles,
+  boundary files and tract-level research data name the field CTUID; a spreadsheet that reads the value
+  as a number drops the leading zeros and the trailing zeros of the decimals.'
+categories:
+- geo
+- government
+country:
+- CA
+langs:
+- en
+- fr
+is_pii: false
+classification: identifier
+regexp: ^\d{7}\.\d{2}$
+examples:
+- value: '3050002.00'
+  description: census tract 0002.00 of Moncton
+- value: '0010003.01'
+  description: a split tract of the census metropolitan area 001
+- value: '0002.00'
+  valid: false
+  description: the census tract name without the code of the metropolitan area
+- value: '3050002'
+  valid: false
+  description: no decimals
+links:
+- type: doc
+  url: https://www150.statcan.gc.ca/n1/pub/92f0138m/92f0138m2019001-eng.htm
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Census_geographic_units_of_Canada
+translations:
+  fr:
+    name: Identificateur de secteur de recensement du Canada (SRIDU)
+  ru:
+    name: Идентификатор переписного участка Канады (CTUID)

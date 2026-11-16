@@ -1,0 +1,40 @@
+id: ca_tcp_uid
+name: Canadian Historical GIS census unit identifier (TCPUID)
+status: draft
+doc: 'Identifier of a census division or census subdivision of a historical census of Canada (1851 to
+  1921) in the Canadian Historical GIS, built to join the boundary layers with the census tables and the
+  microdata of The Canadian Peoples / Les populations canadiennes project. A census division is the two-letter
+  abbreviation of the province and a three-digit number (ON001, BC004); a census subdivision adds its
+  three-digit number within the division (ON001001). The fields are named after the level and the census
+  year: TCPUID_CD_1891, TCPUID_CSD_1891. The numbering is made anew for every census year.'
+parent: id
+categories:
+- geo
+country:
+- CA
+langs:
+- en
+- fr
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}\d{3}(?:\d{3})?$
+examples:
+- value: ON001
+  description: a census division of Ontario
+- value: BC001004
+  description: a census subdivision of the first census division of British Columbia, 1891
+- value: PE003
+- value: ON0010
+  valid: false
+  description: four digits
+- value: '3501005'
+  valid: false
+  description: a census subdivision code of today (casgc)
+links:
+- type: doc
+  url: https://hgiscanada.usask.ca/about
+- type: other
+  url: https://doi.org/10.5683/SP3/QA4AKE
+translations:
+  ru:
+    name: Идентификатор переписной единицы Исторической ГИС Канады (TCPUID)

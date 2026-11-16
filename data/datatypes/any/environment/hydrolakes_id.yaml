@@ -1,0 +1,31 @@
+id: hydrolakes_id
+name: HydroLAKES lake identifier (Hylak_id)
+status: draft
+doc: 'Number of a lake or reservoir in HydroLAKES, the global database of the shoreline polygons of lakes
+  of at least 10 hectares of the HydroSHEDS project: an integer from 1 to 1 427 688 in version 1.0. Lake
+  temperature, ice, depth and water quality datasets keep the field Hylak_id to join their records with
+  the HydroLAKES attributes.'
+parent: id
+categories:
+- environment
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,6}$
+examples:
+- value: '552548'
+- value: '3097'
+- value: '0'
+  valid: false
+  description: identifiers start at 1
+- value: '14276880'
+  valid: false
+  description: eight digits
+links:
+- type: doc
+  url: https://www.hydrosheds.org/products/hydrolakes
+translations:
+  ru:
+    name: Идентификатор озера HydroLAKES (Hylak_id)

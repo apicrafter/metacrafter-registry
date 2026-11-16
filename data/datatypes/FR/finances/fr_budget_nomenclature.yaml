@@ -1,0 +1,37 @@
+id: fr_budget_nomenclature
+name: French local budget accounting instruction (M14, M57)
+status: draft
+doc: 'Name of the budgetary and accounting instruction that a French local authority or local public body
+  follows, a letter M and a number, with a letter for a variant in some files: M14 for communes, M52 for
+  departments, M71 for regions, M57 for metropolises and since 2024 for all local authorities, M4 and
+  its variants M41, M43 and M49 for industrial and commercial public services, M22 for social and medico-social
+  institutions. It tells which chart of accounts the chapter, article and function codes of a budget line
+  come from.'
+categories:
+- finances
+- government
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^M(?:14|4|4[1-49]|4x|52|57|61|71|832|2[12]|9[1-9]?)[A-Z]?$
+examples:
+- value: M14
+  description: Communes
+- value: M57
+  description: Metropolises and, since 2024, all local authorities
+- value: M49
+  description: Water and sanitation services
+- value: M14V
+  description: A variant of M14 as a budget file writes it
+- value: M1
+  valid: false
+  description: not an instruction
+links:
+- type: doc
+  url: https://www.collectivites-locales.gouv.fr/finances-locales/instructions-budgetaires-et-comptables
+translations:
+  fr:
+    name: Instruction budgétaire et comptable (nomenclature M14, M57)

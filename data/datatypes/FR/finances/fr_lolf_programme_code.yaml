@@ -1,0 +1,35 @@
+id: fr_lolf_programme_code
+name: French State budget programme number (LOLF)
+status: draft
+doc: 'Three-digit number of a programme of the French State budget under the organic law on finance laws
+  (LOLF): 150 Formations supérieures et recherche universitaire, 172 Recherches scientifiques et technologiques
+  pluridisciplinaires, 141 Enseignement scolaire public du second degré, 166 Justice judiciaire. Programmes
+  belong to missions and split into actions. Some files write it with a P (P172).'
+categories:
+- finances
+- government
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^P?\d{3}$
+examples:
+- value: '150'
+  description: Formations supérieures et recherche universitaire
+- value: '172'
+  description: Recherches scientifiques et technologiques pluridisciplinaires
+- value: P172
+  description: With the letter P
+- value: '1720'
+  valid: false
+  description: four digits
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Loi_organique_relative_aux_lois_de_finances
+- type: doc
+  url: https://www.budget.gouv.fr/budget-etat
+translations:
+  fr:
+    name: Numéro de programme LOLF

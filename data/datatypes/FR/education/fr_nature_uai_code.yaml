@@ -1,0 +1,33 @@
+id: fr_nature_uai_code
+name: French nature code of an education unit (nature UAI)
+status: draft
+doc: 'Three-digit code of the kind of an education unit (unité administrative immatriculée) in the N_NATURE_UAI
+  table of the central nomenclatures (BCN) of the French Ministry of Education. The directories of schools
+  give it next to the UAI number: 101 école maternelle, 151 école de niveau élémentaire, 300 lycée d''enseignement
+  général et technologique, 306 lycée polyvalent, 320 lycée professionnel, 340 collège, 390 section d''enseignement
+  général et professionnel adapté, 600 centre de formation d''apprentis.'
+categories:
+- education
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^\d{3}$
+examples:
+- value: '340'
+  description: Collège
+- value: '151'
+  description: Ecole de niveau élémentaire
+- value: '306'
+  description: Lycée polyvalent
+- value: 0750671X
+  valid: false
+  description: A UAI number (fr_uai)
+links:
+- type: doc
+  url: https://data.education.gouv.fr/explore/dataset/fr-en-annuaire-education/information/
+translations:
+  fr:
+    name: Code nature UAI

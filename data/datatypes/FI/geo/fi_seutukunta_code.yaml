@@ -1,0 +1,33 @@
+id: fi_seutukunta_code
+name: Finnish sub-region code (seutukunta)
+status: draft
+doc: 'Three-digit code of a sub-region (seutukunta) of Finland in the classification of Statistics Finland;
+  sub-regions group municipalities inside a region: 011 Helsinki, 014 Raasepori, 015 Porvoo, 016 Loviisa,
+  022 Salo, 023 Turku.'
+categories:
+- geo
+country:
+- FI
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{3}$
+examples:
+- value: '011'
+  description: Helsinki
+- value: '023'
+  description: Turku
+- value: '014'
+  description: Raasepori
+- value: '11'
+  valid: false
+  description: two digits
+links:
+- type: doc
+  url: https://stat.fi/en/luokitukset/seutukunta/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Sub-regions_of_Finland
+translations:
+  fi:
+    name: Seutukunnan koodi

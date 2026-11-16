@@ -1,0 +1,35 @@
+id: fi_vaalipiiri_code
+name: Finnish electoral district number (vaalipiiri)
+status: draft
+doc: 'Two-digit number of an electoral district (vaalipiiri) of Finnish parliamentary elections in the
+  classification of Statistics Finland. Thirteen districts since 2015: 01 Helsinki, 02 Uusimaa, 03 Varsinais-Suomi,
+  04 Satakunta, 05 Ahvenanmaa, 06 Häme, 07 Pirkanmaa, 08 Kaakkois-Suomi, 09 Savo-Karjala, 10 Vaasa, 11
+  Keski-Suomi, 12 Oulu and 13 Lappi; there were fifteen before.'
+categories:
+- government
+- geo
+country:
+- FI
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:0[1-9]|1[0-5])$
+examples:
+- value: '01'
+  description: Helsingin vaalipiiri
+- value: '07'
+  description: Pirkanmaan vaalipiiri
+- value: '12'
+  description: Oulun vaalipiiri
+- value: '16'
+  valid: false
+  description: no such district
+links:
+- type: doc
+  url: https://stat.fi/en/luokitukset/vaalipiiri/
+- type: wikipedia
+  url: https://fi.wikipedia.org/wiki/Vaalipiiri
+translations:
+  fi:
+    name: Vaalipiirin numero

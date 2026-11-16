@@ -1,0 +1,36 @@
+id: fr_budget_fonction_code
+name: French local budget function code
+status: draft
+doc: 'Code of the function of a budget line of a French local authority, the purpose of the expenditure
+  or revenue in the functional classification of its instruction: one digit for a function, more digits
+  for its subdivisions. In M14: 020 Administration générale de la collectivité, 01 Opérations non ventilables,
+  251 Hébergement et restauration scolaire, 322 Musées, 822 Voirie communale et routes. M57 uses up to
+  four or five digits. The SCDL budget schema of data.gouv.fr gives it in BGT_FONCTION.'
+categories:
+- finances
+- government
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{1,5}$
+examples:
+- value: '020'
+  description: Administration générale de la collectivité
+- value: '822'
+  description: Voirie communale et routes
+- value: '01'
+  description: Opérations non ventilables
+- value: 82-2
+  valid: false
+  description: a hyphen
+links:
+- type: doc
+  url: https://schema.data.gouv.fr/scdl/budget/
+- type: doc
+  url: https://www.collectivites-locales.gouv.fr/finances-locales/instructions-budgetaires-et-comptables
+translations:
+  fr:
+    name: Code fonction budgétaire

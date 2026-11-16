@@ -1,0 +1,32 @@
+id: fr_rail_pk
+name: French railway kilometre point (PK)
+status: draft
+doc: 'Position on a French railway line as a kilometre point (point kilométrique): the kilometres from
+  the origin of the line on three digits, a plus sign and the metres on three digits (055+368 is 55.368
+  km). SNCF Réseau datasets give the start and end of a section in pkd and pkf next to the line code.'
+categories:
+- transport
+- geo
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{3}\+\d{3}$
+examples:
+- value: 055+368
+  description: 55.368 km from the origin of the line
+- value: 000+000
+  description: The origin of a line
+- value: '55.368'
+  valid: false
+  description: decimal kilometres
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Point_kilom%C3%A9trique
+- type: doc
+  url: https://ressources.data.sncf.com/explore/dataset/lignes-par-statut/
+translations:
+  fr:
+    name: Point kilométrique ferroviaire (PK)
