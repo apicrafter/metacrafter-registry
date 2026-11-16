@@ -1,0 +1,38 @@
+id: ca_statcan_vector
+name: Statistics Canada vector (time series identifier)
+status: draft
+doc: 'Reference code of one time series in the data tables of Statistics Canada (formerly CANSIM): the
+  letter V and up to ten digits. The CSV downloads of a table carry it in the VECTOR column beside the
+  DGUID and the coordinate of the series; the Web Data Service takes the number with or without the letter.
+  Replication packages of economic papers list the vectors of the series they use.'
+parent: id
+categories:
+- government
+country:
+- CA
+langs:
+- en
+- fr
+is_pii: false
+classification: identifier
+regexp: ^[Vv]\d{1,10}$
+examples:
+- value: v65201210
+  description: lower case, as the table downloads write it
+- value: v1212389364
+  description: a ten-digit vector of a job vacancy table
+- value: V107646543
+- value: '65201210'
+  valid: false
+  description: the number without the letter
+- value: v12345678901
+  valid: false
+  description: more than ten digits
+links:
+- type: doc
+  url: https://www.statcan.gc.ca/en/developers/wds/user-guide
+translations:
+  fr:
+    name: Vecteur de Statistique Canada (identificateur de série chronologique)
+  ru:
+    name: Вектор Статистики Канады (идентификатор временного ряда)

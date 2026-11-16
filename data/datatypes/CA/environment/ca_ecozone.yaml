@@ -1,0 +1,38 @@
+id: ca_ecozone
+name: Terrestrial ecozone of Canada
+status: draft
+doc: Name of one of the fifteen terrestrial ecozones of Canada, the top level of the Ecological Land Classification
+  of Statistics Canada and of the National Ecological Framework for Canada (ecozones, ecoprovinces, ecoregions,
+  ecodistricts). Field studies of lakes, soils, forests and wildlife give the ecozone of a sampling site
+  in a field named Ecozone.
+parent: category
+categories:
+- environment
+- geo
+country:
+- CA
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:Arctic Cordillera|Northern Arctic|Southern Arctic|Taiga Plains|Taiga Shield|Boreal Shield|Atlantic
+  Maritime|Mixedwood Plains|Boreal Plains|Prairies|Taiga Cordillera|Boreal Cordillera|Pacific Maritime|Montane
+  Cordillera|Hudson Plains)$
+examples:
+- value: Boreal Shield
+- value: Mixedwood Plains
+- value: Atlantic Maritime
+- value: Hudson Plains
+- value: Great Lakes
+  valid: false
+  description: not an ecozone of the classification
+links:
+- type: doc
+  url: https://www.statcan.gc.ca/en/subjects/standard/environment/elc/2017-1
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Ecozones_of_Canada
+translations:
+  fr:
+    name: Écozone terrestre du Canada
+  ru:
+    name: Наземная экозона Канады

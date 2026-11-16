@@ -1,0 +1,38 @@
+id: mirbase_mature_id
+name: miRBase mature microRNA accession
+status: draft
+doc: 'Stable accession of a mature microRNA sequence in miRBase: MIMAT and seven digits. Unlike the name
+  of a microRNA (mirna_name), it does not change when the sequence is renamed. Tables of microRNA targets
+  give it beside the name.'
+parent: id
+categories:
+- science
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^MIMAT\d{7}$
+examples:
+- value: MIMAT0046872
+  description: Bioregistry example
+- value: MIMAT0041661
+  description: gma-miR10418
+- value: MI0026471
+  valid: false
+  description: an accession of a precursor (MI and seven digits)
+- value: MIMAT004166
+  valid: false
+  description: six digits
+mappings:
+  wikidata: P2871
+  bioregistry: mirbase.mature
+links:
+- type: doc
+  url: https://www.mirbase.org/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P2871
+- type: other
+  url: https://bioregistry.io/registry/mirbase.mature
+translations:
+  ru:
+    name: Идентификатор зрелой микроРНК в miRBase
