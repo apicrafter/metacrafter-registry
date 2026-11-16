@@ -1,0 +1,40 @@
+id: cr_sicop_goods_code
+name: Costa Rican procurement catalogue code of a good or service (SICOP)
+status: draft
+doc: Code of a good or service in the catalogue of SICOP, the procurement system of the Costa Rican public
+  sector. Its first eight digits are the classification code, a UNSPSC commodity (39101605, fluorescent
+  lamps); the next eight are the identification code of the item within that class (92074333). Buyers
+  ask for an item by these sixteen digits; a product code of eight more digits, added when a supplier
+  registers its product, makes the full code of twenty-four digits. Procurement reports give the sixteen
+  digits in one column (COD_BIEN_SERVICIO), which a spreadsheet may turn into a number.
+categories:
+- industry
+- government
+country:
+- CR
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^[1-9]\d{15}(?:\d{8})?$
+examples:
+- value: '3910160592074333'
+  description: classification 39101605 (fluorescent lamps) and identification 92074333
+- value: '4010160492001000'
+  description: a line of a 2016 purchase of the INEC
+- value: '39101605'
+  valid: false
+  description: 'the classification code alone: unspsc'
+- value: '391016059207433'
+  valid: false
+  description: fifteen digits
+links:
+- type: doc
+  url: https://www.uned.ac.cr/ejecutiva/images/Tabla_1_Fichas_Luminarias_Refrigeradores_Domésticos_y_Congeladores.pdf
+- type: doc
+  url: https://www.sicop.go.cr/
+translations:
+  es:
+    name: Código de bien o servicio del catálogo de SICOP
+  ru:
+    name: Код товара или услуги каталога SICOP (Коста-Рика)
