@@ -12,6 +12,7 @@ langs:
 - en
 is_pii: false
 classification: identifier
+regexp: ^\d{7}$
 examples:
 - value: '8212627'
   description: example from ORG-ID.guide

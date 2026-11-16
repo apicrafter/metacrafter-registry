@@ -1,0 +1,25 @@
+id: gb_scotland_health_board_code
+name: Scottish health board code (GSS)
+status: draft
+doc: GSS code of one of the 14 territorial health boards of NHS Scotland, entity code S08.
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^S08\d{6}$
+examples:
+- value: S08000019
+  description: Forth Valley
+- value: S12000030
+  valid: false
+  description: A council area code (S12)
+links:
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/NHS_Scotland

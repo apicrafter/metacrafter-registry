@@ -1,0 +1,28 @@
+id: ices_basis_code
+name: ICES basis of determination (BASIS)
+status: draft
+doc: 'Basis on which a concentration is reported in the ICES environmental reporting format: W wet weight,
+  D dry weight, L lipid weight.'
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[WDL]$
+examples:
+- value: W
+  description: Wet weight
+- value: D
+  description: Dry weight
+- value: L
+  description: Lipid weight
+- value: F
+  valid: false
+  description: Not a basis code
+links:
+- type: doc
+  url: https://vocab.ices.dk/?ref=4f6ea40b-6769-4094-95e8-535ae7f3d92f
+- type: doc
+  url: https://www.ices.dk/data/Documents/ENV/Environment_Formats.zip

@@ -1,0 +1,28 @@
+id: gb_scotland_locality_code
+name: Scottish locality code (GSS)
+status: draft
+doc: GSS code of a locality of the National Records of Scotland, entity code S19. Localities are the named
+  towns and villages inside a settlement, drawn around groups of postcodes of high density.
+parent: ukgsscode
+categories:
+- geo
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^S19\d{6}$
+examples:
+- value: S19001277
+  description: A locality of the Stirling council area
+- value: S19001315
+  description: A locality of the Stirling council area
+- value: S20001477
+  valid: false
+  description: A settlement code (S20)
+links:
+- type: doc
+  url: https://www.ons.gov.uk/methodology/geography/geographicalproducts/namescodesandlookups/codehistorydatabasechd
+- type: doc
+  url: https://www.nrscotland.gov.uk/publications/population-estimates-for-settlements-and-localities-in-scotland-mid-2020/

@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "7a1e01525c5e475b6e08368029754f6cff0a69be"
+  "ref": "dd65de2d9c5e7793147cbf6f81150c0a607b7c14"
  },
  "rules": [
   {
@@ -8895,6 +8895,106 @@
    "country_code": "xx"
   },
   {
+   "rule": "faoasfiscodebyname",
+   "key": "fao_asfis_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/marine.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "icesbasiscodebyname",
+   "key": "ices_basis_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/marine.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "icesgearcodebyname",
+   "key": "ices_gear_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/marine.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "icesmatrixcodebyname",
+   "key": "ices_matrix_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/marine.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "icesmethodofanalysiscodebyname",
+   "key": "ices_method_of_analysis_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/marine.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "icesparametercodebyname",
+   "key": "ices_parameter_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/marine.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "icesqualifierflagbyname",
+   "key": "ices_qualifier_flag",
+   "type": "field",
+   "match": "regex",
+   "file": "common/marine.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "icesstationtypebyname",
+   "key": "ices_station_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/marine.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "icesstatisticalrectanglebyname",
+   "key": "ices_statistical_rectangle",
+   "type": "field",
+   "match": "regex",
+   "file": "common/marine.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "wormsaphiaidbyname",
+   "key": "worms_aphia_id",
+   "type": "field",
+   "match": "regex",
+   "file": "common/marine.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "doifield",
    "key": "doi",
    "type": "field",
@@ -10883,6 +10983,16 @@
   },
   {
    "rule": "speciesbyfieldname",
+   "key": "species",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "speciesbylatinfieldname",
    "key": "species",
    "type": "field",
    "match": "regex",
@@ -16832,6 +16942,16 @@
    "country_code": "gb"
   },
   {
+   "rule": "gbscottishseedcodebyname",
+   "key": "gb_scottish_seed_code",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_education.yaml",
+   "context": "education",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
    "rule": "ukestablishmentnumberfield",
    "key": "ukestablishmentnumber",
    "type": "field",
@@ -16962,6 +17082,16 @@
    "country_code": "gb"
   },
   {
+   "rule": "gbeastingbyprefixedname",
+   "key": "easting",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
    "rule": "gbgeoxlongitudefield",
    "key": "longitude",
    "type": "field",
@@ -16985,6 +17115,16 @@
    "rule": "gbnideacodevalue",
    "key": "gb_ni_dea_code",
    "type": "data",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbnorthingbyprefixedname",
+   "key": "northing",
+   "type": "field",
    "match": "regex",
    "file": "gb/gb_geo.yaml",
    "context": "geo",
@@ -17042,9 +17182,119 @@
    "country_code": "gb"
   },
   {
+   "rule": "gbscotlandcouncilareacodevalue",
+   "key": "gb_scotland_council_area_code",
+   "type": "data",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
    "rule": "gbscotlanddatazonecodevalue",
    "key": "gb_scotland_data_zone_code",
    "type": "data",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbscotlandelectoralwardcodevalue",
+   "key": "gb_scotland_electoral_ward_code",
+   "type": "data",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbscotlandhealthboardcodevalue",
+   "key": "gb_scotland_health_board_code",
+   "type": "data",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbscotlandintermediatezonecodevalue",
+   "key": "gb_scotland_intermediate_zone_code",
+   "type": "data",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbscotlandlocalitycodevalue",
+   "key": "gb_scotland_locality_code",
+   "type": "data",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbscotlandsettlementcodevalue",
+   "key": "gb_scotland_settlement_code",
+   "type": "data",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbscotlandurbanruralclassificationbyname",
+   "key": "gb_scotland_urban_rural_classification",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbscottishmarineregionbyname",
+   "key": "gb_scottish_marine_region",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbscottishparliamentconstituencycodevalue",
+   "key": "gb_scottish_parliament_constituency_code",
+   "type": "data",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbuprnbynamewithvalues",
+   "key": "uprn",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbusrnbyname",
+   "key": "gb_usrn",
+   "type": "field",
    "match": "regex",
    "file": "gb/gb_geo.yaml",
    "context": "geo",
@@ -17592,6 +17842,16 @@
    "country_code": "gb"
   },
   {
+   "rule": "gbparkingcontraventioncodebyname",
+   "key": "gb_parking_contravention_code",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_transport.yaml",
+   "context": "transport",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
    "rule": "gbvehicleplatefield",
    "key": "gb_vehicle_plate",
    "type": "field",
@@ -17646,6 +17906,16 @@
    "key": "el_dayofweek",
    "type": "data",
    "match": "func",
+   "file": "gr/gr_datetime.yaml",
+   "context": "datetime",
+   "lang": "el",
+   "country_code": "gr"
+  },
+  {
+   "rule": "elmonthabbreviationbyname",
+   "key": "el_month",
+   "type": "field",
+   "match": "regex",
    "file": "gr/gr_datetime.yaml",
    "context": "datetime",
    "lang": "el",

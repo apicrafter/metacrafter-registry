@@ -1,0 +1,30 @@
+id: ices_gear_code
+name: ICES gear type code
+status: draft
+doc: 'Code of the fishing gear of a trawl survey in the Gear vocabulary of ICES, used in the DATRAS database
+  of trawl surveys: GOV the GOV trawl, ROT a rockhopper otter trawl, BT4A a four-metre beam trawl towed
+  from the stern, NCT the Norwegian Campelen trawl. The vocabulary has about 100 codes of up to 9 characters.'
+categories:
+- agriculture
+- environment
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: GOV
+  description: GOV trawl
+- value: ROT
+  description: Rock hopper otter trawl
+- value: BT4A
+  description: Four-metre beam trawl, aft
+- value: NCT
+  description: Norwegian Campelen trawl 1800/96
+- value: Otter trawl
+  valid: false
+  description: The name of the gear
+links:
+- type: doc
+  url: https://vocab.ices.dk/?ref=e0fbe0a9-50c7-4dfd-b8d4-6f0efb29dd90
+- type: doc
+  url: https://www.ices.dk/data/data-portals/Pages/DATRAS.aspx

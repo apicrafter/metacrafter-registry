@@ -1,0 +1,27 @@
+id: gb_parking_contravention_code
+name: UK parking contravention code
+status: draft
+doc: 'Two-digit code of the contravention on a penalty charge notice for parking in the United Kingdom,
+  from the standard list that councils with civil parking enforcement share: 01 parked in a restricted
+  street, 06 no valid pay and display ticket, 16 parked in a permit space without a permit, 40 parked
+  in a disabled bay without a badge. Open data of councils often write the code with a short description
+  after a hyphen.'
+categories:
+- transport
+- legal
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: '01'
+  description: Parked in a restricted street during prescribed hours
+- value: '16'
+  description: Parked in a permit space without a valid permit
+- value: 40 - Parked in disabled bay without badge
+  description: Code with its description, parking fines of Stirling Council
+links:
+- type: doc
+  url: https://www.patrol-uk.info/contravention-codes/
