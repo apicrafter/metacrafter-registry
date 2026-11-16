@@ -1,0 +1,27 @@
+id: mobile_network_band
+name: Mobile network technology and frequency band
+status: draft
+doc: 'Radio access technology of a mobile network with the frequency band in MHz it runs on: GSM900, GSM1800,
+  UMTS900, UMTS2100, LTE800, LTE1800, LTE2600, NR700, NR3500 (also written 5G-NR 700). Registers of base
+  stations and the reports of electromagnetic field measurements list the services of a site this way,
+  several in one cell (GSM900, UMTS2100, LTE1800), in columns named Services, Technology or Bands. The
+  number of a 3GPP band (B20, n78) is not this type.'
+categories:
+- telecom
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:(?:GSM|DCS|UMTS|LTE|(?:5G-)?NR) ?\d{3,4})(?:(?:, ?|-| )(?:GSM|DCS|UMTS|LTE|(?:5G-)?NR) ?\d{3,4})*$
+examples:
+- value: GSM900
+- value: LTE1800
+- value: GSM900, UMTS2100, LTE1800
+  description: the services of one base station
+- value: 5G-NR 700
+- value: 900 MHz
+  valid: false
+  description: a frequency without the technology
+translations:
+  ru:
+    name: Технология мобильной сети и диапазон частот

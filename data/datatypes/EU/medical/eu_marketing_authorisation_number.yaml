@@ -1,0 +1,31 @@
+id: eu_marketing_authorisation_number
+name: EU marketing authorisation number of a medicine
+status: draft
+doc: 'Number of a medicine authorised by the European Commission through the centralised procedure, as
+  the Union Register of medicinal products lists it: EU, 1 for a medicine for human use or 2 for a veterinary
+  one, the two-digit year of the first authorisation, the number of the product and the number of the
+  presentation (strength, form and pack size), separated by slashes: EU/2/10/118/011. National registers
+  of medicines carry it in the column of the licence or authorisation number beside national numbers.'
+parent: id
+categories:
+- medical
+- government
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^EU/[12]/\d{2}/\d{3,4}/\d{3}$
+examples:
+- value: EU/2/10/118/011
+  description: a presentation of a veterinary medicine in the register of the Veterinary Services of Cyprus
+- value: EU/2/10/118
+  valid: false
+  description: without the number of the presentation
+links:
+- type: doc
+  url: https://ec.europa.eu/health/documents/community-register/html/index_en.htm
+translations:
+  ru:
+    name: Номер регистрационного удостоверения лекарства в ЕС

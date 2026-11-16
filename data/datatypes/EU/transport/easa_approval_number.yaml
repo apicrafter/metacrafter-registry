@@ -1,0 +1,31 @@
+id: easa_approval_number
+name: EASA organisation approval reference
+status: draft
+doc: 'Reference of the approval certificate of an aviation organisation under the rules of the European
+  Union Aviation Safety Agency: the two-letter code of the state whose authority issued it, the kind of
+  approval and a serial number, joined by dots. ATO is an approved training organisation for pilots (CY.ATO.002),
+  145 a maintenance organisation (Part-145), 147 a maintenance training organisation (Part-147), 21G and
+  21J production and design organisations, CAMO and MG continuing airworthiness management. Approvals
+  that the Agency issues itself outside the member states start with EASA. Authorities publish the reference
+  in their lists of approved organisations.'
+parent: id
+categories:
+- transport
+- government
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:[A-Z]{2}|EASA)\.(?:ATO|CCTO|FSTD|AeMC|145|147|21[GJ]|CAMO|CAO|MG|MF)\.\d{3,5}$
+examples:
+- value: CY.ATO.002
+  description: an approved training organisation in the list of the Department of Civil Aviation of Cyprus
+- value: CY.147.001
+  description: a Part-147 maintenance training organisation, the same list
+- value: CY-ATO-002
+  valid: false
+translations:
+  ru:
+    name: Номер сертификата организации EASA

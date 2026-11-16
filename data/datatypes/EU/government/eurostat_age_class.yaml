@@ -1,0 +1,35 @@
+id: eurostat_age_class
+name: Eurostat age class code
+status: draft
+doc: 'Code of an age or an age class in the AGE code list of Eurostat, as the datasets of the Eurostat
+  database and the national tables sent to it give it: Y and the age in years (Y15), two ages joined by
+  a hyphen for a class (Y14-17, Y18-34, Y35-64), Y_LT and Y_GE for an open class (Y_LT14 less than 14
+  years, Y_GE65 65 years or over), TOTAL for all ages and UNK for an unknown age. Asylum and residence
+  permit tables of Cyprus have it in a column AGE beside CITIZEN and SEX.'
+parent: age_range
+categories:
+- government
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:TOTAL|UNK|Y_(?:LT|GE)\d{1,3}|Y\d{1,3}(?:-\d{1,3})?)$
+examples:
+- value: Y18-34
+  description: from 18 to 34 years
+- value: Y_LT14
+  description: less than 14 years
+- value: Y_GE65
+  description: 65 years or over
+- value: TOTAL
+- value: 18-34
+  valid: false
+  description: without the letter Y
+links:
+- type: doc
+  url: https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/codelist/ESTAT/AGE
+translations:
+  ru:
+    name: Код возрастной группы Евростата

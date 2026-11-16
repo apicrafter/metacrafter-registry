@@ -1,0 +1,30 @@
+id: cy_vehicle_plate
+name: Cyprus vehicle registration plate
+status: draft
+doc: Registration number on the plates of vehicles registered in the Republic of Cyprus. Since 1990 a
+  plate has three letters and three digits (ABC 123); the series before it had two letters and three digits.
+  Registers and police lists write the number without the space. Plates of taxis, hire cars, diplomats
+  and the forces have their own forms and are not covered.
+categories:
+- transport
+country:
+- CY
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2,3} ?\d{3}$
+examples:
+- value: AB12CD
+  valid: false
+- value: ABC1234
+  valid: false
+  description: four digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Cyprus
+translations:
+  el:
+    name: Αριθμός εγγραφής οχήματος (Κύπρος)
+  ru:
+    name: Регистрационный номер автомобиля (Кипр)
