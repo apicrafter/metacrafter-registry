@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "b1745faba4a8de278cc5ca4659a498390a8f6adb"
+  "ref": "a1a885cba281fec5b8d7c754927816ee796b4500"
  },
  "rules": [
   {
@@ -12872,6 +12872,26 @@
    "country_code": "de"
   },
   {
+   "rule": "defahrzeugartbyname",
+   "key": "vehicle_type",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "dekommunalwahlbezirkbyname",
+   "key": "municipal_ward",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
    "rule": "denationalitybyname",
    "key": "de_nationality",
    "type": "field",
@@ -13112,6 +13132,16 @@
    "country_code": "de"
   },
   {
+   "rule": "deflurstueckbyname",
+   "key": "parcelnumber",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
    "rule": "degemarkungbyname",
    "key": "de_gemarkung",
    "type": "field",
@@ -13134,6 +13164,16 @@
   {
    "rule": "dehousenumberbyname",
    "key": "buildingnumber",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "dekommunebyname",
+   "key": "city",
    "type": "field",
    "match": "regex",
    "file": "de/de_geo.yaml",
