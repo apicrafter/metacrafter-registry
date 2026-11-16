@@ -1,0 +1,35 @@
+id: de_staatsangehoerigkeitsschluessel
+name: German nationality and area key (Staatsangehörigkeits- und Gebietsschlüssel)
+status: draft
+doc: Three-digit key of a state or territory in the Staats- und Gebietssystematik of the Federal Statistical
+  Office of Germany. The first digit gives the continent where most of the state lies (1 Europe, 2 Africa,
+  3 America, 4 Asia, 5 Australia and Oceania) and the last two digits the state. Population registers
+  and the statistics of residents by citizenship use it, in columns named Staatenkey, Staatsangehörigkeitsschlüssel
+  or Staatsschlüssel next to the name of the nationality. It is not an ISO 3166-1 numeric code.
+parent: id
+categories:
+- government
+- geo
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: categorical
+regexp: ^\d{3}$
+examples:
+- value: '423'
+  description: Afghanistan
+- value: '287'
+  description: in the tables of residents by nationality of the KDVZ municipalities
+- value: AF
+  valid: false
+  description: an ISO 3166-1 alpha-2 code
+links:
+- type: doc
+  url: https://statistik.arbeitsagentur.de/DE/Navigation/Grundlagen/Klassifikationen/Staats-und-Gebietssystematik/Staats-und-Gebietssystematik-Nav.html
+translations:
+  de:
+    name: Staatsangehörigkeits- und Gebietsschlüssel
+  ru:
+    name: Код гражданства и территории (Германия)

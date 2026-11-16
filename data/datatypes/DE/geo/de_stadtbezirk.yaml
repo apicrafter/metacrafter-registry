@@ -1,0 +1,34 @@
+id: de_stadtbezirk
+name: German city district (Stadtbezirk)
+status: draft
+doc: 'Name or number of a Stadtbezirk, the administrative district of a large German city, with its own
+  district council in most states: Bad Godesberg, Beuel and Hardtberg in Bonn, Rodenkirchen and Lindenthal
+  in Cologne, Stadtbezirk 1 to 10 in Düsseldorf. Tables give the name, the number (1, 03) or both (2 /
+  Rodenkirchen) in columns named Stadtbezirk or Bezirk. The smaller Stadtteil is de_stadtteil.'
+parent: admin_area_3
+categories:
+- geo
+- government
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: categorical
+examples:
+- value: Bad Godesberg
+  description: a Stadtbezirk of Bonn
+- value: Hardtberg
+- value: 2 / Rodenkirchen
+  description: number and name, as in the tables of Cologne
+- value: Stadtbezirk 1
+  description: Düsseldorf numbers its districts
+- value: '03'
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Stadtbezirk
+translations:
+  de:
+    name: Stadtbezirk
+  ru:
+    name: Городской округ (Германия)

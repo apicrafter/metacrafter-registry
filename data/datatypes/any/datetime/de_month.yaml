@@ -1,0 +1,30 @@
+id: de_month
+name: Month name (German)
+status: draft
+doc: 'Name of a month in German: Januar (Jänner in Austria), Februar, März, April, Mai, Juni, Juli, August,
+  September, Oktober, November, Dezember, or its abbreviation with or without a full stop (Jan, Feb, Mrz
+  or Mär, Apr, Jun, Jul, Aug, Sep or Sept, Okt, Nov, Dez). Monthly statistics of German, Austrian and
+  Swiss portals give the month of a row this way, in columns named Monat. A date with the month name (18.
+  November 1827) is date_german.'
+semantic_type: month
+langs:
+- de
+regexp: ^(?:Januar|Jänner|Februar|März|Maerz|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember|(?:Jan|Jän|Feb|Mrz|Mär|Apr|Jun|Jul|Aug|Sept?|Okt|Nov|Dez)\.?)$
+examples:
+- value: Januar
+- value: März
+- value: Dezember
+- value: Mrz
+  description: an abbreviation
+- value: Okt.
+- value: Montag
+  valid: false
+  description: a day of the week
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/de/ca-gregorian.json
+translations:
+  de:
+    name: Monatsname
+  ru:
+    name: Название месяца (на немецком)

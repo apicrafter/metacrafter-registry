@@ -1,0 +1,36 @@
+id: de_unfalltyp
+name: German road accident type (Unfalltyp)
+status: draft
+doc: 'Type of a road accident in German accident statistics: the traffic conflict that led to it. The
+  Unfallatlas of the statistical offices gives it as a digit in the column UTYP1: 1 Fahrunfall (loss of
+  control), 2 Abbiegeunfall (turning off), 3 Einbiegen/Kreuzen (turning in or crossing), 4 Überschreiten
+  (a pedestrian crossing), 5 an accident with parked vehicles, 6 Unfall im Längsverkehr (between vehicles
+  moving along the road), 7 another accident. Police data also uses the three-digit types of the accident
+  type catalogue, whose first digit is this type (211, 601). The kind of collision is de_unfallart.'
+parent: category
+categories:
+- transport
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: categorical
+examples:
+- value: '6'
+  description: an accident between vehicles moving along the road
+- value: Unfall im Längsverkehr
+- value: Abbiegeunfall
+- value: Fahrunfall
+- value: '601'
+  description: a three-digit type of the accident type catalogue
+links:
+- type: doc
+  url: https://www.opengeodata.nrw.de/produkte/transport_verkehr/unfallatlas/DSB_Unfallatlas_EN.pdf
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Unfalltyp
+translations:
+  de:
+    name: Unfalltyp
+  ru:
+    name: Тип ДТП (Германия)

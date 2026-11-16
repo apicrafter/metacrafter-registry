@@ -1,0 +1,33 @@
+id: de_schulform
+name: German school type (Schulform)
+status: draft
+doc: 'Type of a school in the German school system: Grundschule, Hauptschule, Realschule, Gymnasium, Gesamtschule,
+  Sekundarschule, Förderschule, Berufskolleg, Weiterbildungskolleg, Freie Waldorfschule. The types and
+  their names differ between the states (Oberschule, Gemeinschaftsschule, Stadtteilschule). School registers
+  of cities give it in columns named Schulform or Schulart, often with the school authority in front (Städt.
+  Gymnasium, Städt. Katholische Grundschule) or as an abbreviation of the state (G, GY, GE, BK).'
+parent: category
+categories:
+- education
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: categorical
+examples:
+- value: Grundschule
+- value: Gymnasium
+- value: Gesamtschule
+- value: Förderschule
+- value: Berufskolleg
+- value: Städt. Realschule
+  description: with the school authority, as in the school register of Düsseldorf
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Schulform
+translations:
+  de:
+    name: Schulform
+  ru:
+    name: Тип школы (Германия)

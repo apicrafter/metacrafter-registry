@@ -1,0 +1,35 @@
+id: de_kfz_unterscheidungszeichen
+name: German vehicle registration district code (Unterscheidungszeichen)
+status: draft
+doc: 'The one to three letters that open a German vehicle plate and name the district or city of registration:
+  K for Cologne, BN for Bonn, HA for Hagen. The federal transport ministry sets the codes at the request
+  of the states. Tables of traffic fines and parking offences give the code alone, without the rest of
+  the plate, in columns named Kennzeichen, so that a vehicle cannot be identified. The full plate is de_vehicle_plate.'
+parent: category
+categories:
+- transport
+- geo
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: categorical
+regexp: ^[A-ZÄÖÜ]{1,3}$
+examples:
+- value: K
+  description: Cologne
+- value: BN
+  description: Bonn
+- value: LEV
+- value: K-AB 1234
+  valid: false
+  description: a full plate
+links:
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Liste_der_Kfz-Kennzeichen_in_Deutschland
+translations:
+  de:
+    name: Unterscheidungszeichen des Kfz-Kennzeichens
+  ru:
+    name: Код региона регистрации автомобиля (Германия)
