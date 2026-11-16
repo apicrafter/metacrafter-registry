@@ -1,0 +1,38 @@
+id: cy_municipality
+name: Municipality or community of Cyprus
+status: draft
+doc: 'Name of a municipality (δήμος) or a community (κοινότητα) of Cyprus, the two kinds of local authority
+  below the district: Στρόβολος, Λακατάμεια, Αγλαντζιά, Παραλίμνι among the municipalities, Τσέρι or Κακοπετριά
+  among the communities. Registers of pharmacies, post offices, waste collectors and polling stations
+  give it in Greek, often in capitals without accents (ΑΓΙΟΣ ΑΘΑΝΑΣΙΟΣ), or in the official transliteration
+  (Strovolos, Lakatameia), in columns named Municipality/Community, Δήμος or Κοινότητα; some write the
+  kind before the name (Δήμος Λεμεσού). The towns that give the districts their names (Λευκωσία, Λεμεσός,
+  Λάρνακα, Πάφος) are municipalities too.'
+parent: admin_area_2
+categories:
+- geo
+- government
+country:
+- CY
+langs:
+- el
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Στρόβολος
+- value: Λακατάμεια
+- value: ΑΓΙΟΣ ΑΘΑΝΑΣΙΟΣ
+  description: in capitals without accents
+- value: Strovolos
+  description: the official transliteration
+- value: Δήμος Λεμεσού
+  description: with the kind of authority before the name
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Municipalities_and_communities_of_Cyprus
+translations:
+  el:
+    name: Δήμος ή κοινότητα της Κύπρου
+  ru:
+    name: Муниципалитет или община Кипра

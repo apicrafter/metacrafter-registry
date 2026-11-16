@@ -1,0 +1,28 @@
+id: imo_port_facility_number
+name: IMO port facility number
+status: draft
+doc: 'Number of a port facility in the maritime security module of GISIS, the database of the International
+  Maritime Organization where states list the facilities that fall under the ISPS Code: the UN/LOCODE
+  of the port, a hyphen and a four-digit serial number (CYLMS-0001 for a facility in the port of Limassol).
+  Lists of port facilities and of their security officers give it beside the name of the facility and
+  the UN/LOCODE.'
+parent: id
+categories:
+- transport
+- shipping
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2}[A-Z2-9]{3}-\d{4}$
+examples:
+- value: CYLMS-0001
+  description: a port facility of Limassol in the list of the Shipping Deputy Ministry of Cyprus
+- value: CYLCA-0001
+  description: Larnaca
+- value: CYLMS
+  valid: false
+  description: the UN/LOCODE alone
+translations:
+  ru:
+    name: Номер портового средства ИМО

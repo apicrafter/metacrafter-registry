@@ -1,0 +1,26 @@
+id: medication_route
+name: Route of administration of a medicine
+status: draft
+doc: 'The way a medicine is given: Oral, Parenteral, Topical, Ocular, Rectal, Inhalation, Transdermal,
+  Intravenous, Intramuscular, Subcutaneous in words, or the abbreviations of prescriptions and veterinary
+  registers (IV, IM, SC, PO). Price lists and registers of authorised medicines give it beside the active
+  substance and the pharmaceutical form (medication_dosage_form), in columns named Route of Administration.'
+parent: category
+categories:
+- medical
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Oral
+- value: Parenteral
+- value: Topical
+- value: IM
+  description: intramuscular, in a register of veterinary medicines
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Route_of_administration
+translations:
+  ru:
+    name: Путь введения лекарственного средства
