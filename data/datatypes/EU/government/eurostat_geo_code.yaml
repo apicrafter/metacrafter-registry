@@ -1,0 +1,40 @@
+id: eurostat_geo_code
+name: Eurostat country or aggregate code (GEO, CITIZEN)
+status: draft
+doc: Code of a country or a group of countries in the code lists of Eurostat for the reporting country
+  (GEO), the citizenship (CITIZEN), the country of birth or the partner. Countries have the two letters
+  of ISO 3166-1, except EL for Greece and UK for the United Kingdom; aggregates are written EU27_2020
+  (the European Union of 27 from 2020), EU28, EA19 or EFTA, and EXT_EU27_2020 for the countries outside
+  it. Citizenship lists add TOTAL, STLS (stateless), RNC (recognised non-citizens), UK_OCT (British overseas
+  countries and territories) and UNK (unknown). Regions have NUTS codes (nutsregion).
+parent: countrycode_alpha2
+categories:
+- geo
+- government
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[A-Z]{2}|E[UA]\d{2}(?:_\d{4})?|EXT_EU\d{2}(?:_\d{4})?|EFTA|UK_OCT|TOTAL|STLS|RNC|UNK)$
+examples:
+- value: EL
+  description: Greece
+- value: CY
+- value: EU27_2020
+- value: EXT_EU27_2020
+  description: countries outside the EU of 27
+- value: STLS
+  description: stateless
+- value: GRC
+  valid: false
+  description: an alpha-3 code
+links:
+- type: doc
+  url: https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/codelist/ESTAT/GEO
+- type: doc
+  url: https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/codelist/ESTAT/CITIZEN
+translations:
+  ru:
+    name: Код страны или группы стран Евростата (GEO, CITIZEN)

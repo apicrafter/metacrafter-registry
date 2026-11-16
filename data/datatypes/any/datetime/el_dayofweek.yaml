@@ -1,0 +1,26 @@
+id: el_dayofweek
+name: Day of week (in Greek)
+status: draft
+doc: 'Name of a day of the week in Greek: Δευτέρα, Τρίτη, Τετάρτη, Πέμπτη, Παρασκευή, Σάββατο, Κυριακή.
+  Files in capitals drop the accents (ΔΕΥΤΕΡΑ, ΠΑΡΑΣΚΕΥΗ). Timetables, counts of road accidents and of
+  visitors by day give the day this way.'
+semantic_type: dayofweek
+langs:
+- el
+regexp: ^(?:Δευτέρα|ΔΕΥΤΕΡΑ|Τρίτη|ΤΡΙΤΗ|Τετάρτη|ΤΕΤΑΡΤΗ|Πέμπτη|ΠΕΜΠΤΗ|Παρασκευή|ΠΑΡΑΣΚΕΥΗ|Σάββατο|ΣΑΒΒΑΤΟ|Κυριακή|ΚΥΡΙΑΚΗ)$
+examples:
+- value: Δευτέρα
+- value: Παρασκευή
+- value: ΚΥΡΙΑΚΗ
+  description: in capitals without the accent
+- value: Μάρτιος
+  valid: false
+  description: a month
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/el/ca-gregorian.json
+translations:
+  el:
+    name: Ημέρα της εβδομάδας
+  ru:
+    name: День недели (на греческом)

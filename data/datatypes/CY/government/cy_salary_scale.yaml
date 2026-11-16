@@ -1,0 +1,39 @@
+id: cy_salary_scale
+name: Salary scale of the Cyprus public service
+status: draft
+doc: 'Scale (κλίμακα) of a post in the public service of the Republic of Cyprus: the letter A and a number
+  from 1 to 16 (A1, A8, A13). A post that moves through several scales is written as a combined scale
+  (Α2-Α5-Α7, Α8-Α10-Α11), extra increments above the top of a scale as +1 or +2 (Α13+2), and the variants
+  of a scale as (i), (ii) or (iii). The budget and the lists of posts, appointments and retirements of
+  the Public Administration and Personnel Department give it in columns named SALARY_SCALE or Scale. The
+  letter is the Latin A or the Greek Α. Posts on a fixed salary have no scale.'
+categories:
+- government
+- finances
+country:
+- CY
+langs:
+- el
+- en
+is_pii: false
+classification: categorical
+regexp: ^[AΑ](?:[1-9]|1[0-6])(?:\([i]{1,3}\))?(?:-[AΑ](?:[1-9]|1[0-6])(?:\([i]{1,3}\))?){0,2}(?:\+[1-3])?$
+examples:
+- value: A8
+- value: Α13
+  description: with the Greek letter
+- value: Α2-Α5-Α7
+  description: a combined scale
+- value: Α13+2
+  description: two increments above the top of the scale
+- value: A10(ii)
+- value: A17
+  valid: false
+  description: the scales end at A16
+- value: B2
+  valid: false
+translations:
+  el:
+    name: Μισθολογική κλίμακα της δημόσιας υπηρεσίας της Κύπρου
+  ru:
+    name: Шкала заработной платы государственной службы Кипра
