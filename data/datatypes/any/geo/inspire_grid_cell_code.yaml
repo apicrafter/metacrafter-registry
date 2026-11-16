@@ -1,0 +1,32 @@
+id: inspire_grid_cell_code
+name: Statistical grid cell code (INSPIRE form)
+status: draft
+doc: 'Code of a cell of a square statistical grid in the form of the INSPIRE specification on geographical
+  grid systems: the size of the cell with its unit (1km, 250m, 5km), N and the northing, E and the easting
+  of the lower left corner, in units of the cell size (1kmN2599E4695). INSPIRE defines it on the ETRS89-LAEA
+  grid, and Eurostat population grids use it as GRD_ID; national grids reuse the form on their own projection,
+  as Statistics Finland does on ETRS-TM35FIN (1kmN6638E0272).'
+parent: id
+categories:
+- geo
+country:
+- EU
+- FI
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,3}k?mN\d{2,7}E\d{2,7}$
+examples:
+- value: 1kmN2599E4695
+  description: A 1 km cell of the ETRS89-LAEA grid
+- value: 1kmN6638E0272
+  description: A 1 km cell of the Finnish grid
+- value: 250mN66380E02720
+  description: A 250 m cell
+- value: N6638E0272
+  valid: false
+  description: no cell size
+links:
+- type: doc
+  url: https://inspire.ec.europa.eu/id/document/tg/gg

@@ -1,0 +1,32 @@
+id: fr_idfm_line_id
+name: Île-de-France Mobilités line identifier
+status: draft
+doc: 'Identifier of a public transport line in the line register (référentiel des lignes) of Île-de-France
+  Mobilités, the transport authority of the Paris region: the letter C and five digits (C01742 is RER
+  A, C01727 RER C). The GTFS feed of the region writes it with the prefix IDFM: in route_id (IDFM:C01742).'
+parent: id
+categories:
+- transport
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:IDFM:)?C\d{5}$
+examples:
+- value: C01742
+  description: RER A
+- value: C01727
+  description: RER C
+- value: IDFM:C01742
+  description: As a GTFS route_id
+- value: A01840
+  valid: false
+  description: another kind of identifier of the register
+links:
+- type: doc
+  url: https://data.iledefrance-mobilites.fr/explore/dataset/referentiel-des-lignes/information/
+translations:
+  fr:
+    name: Identifiant de ligne Île-de-France Mobilités

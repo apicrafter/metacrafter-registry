@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "23b209bf3431c8ebba8cdb1bd17f2920e788a19d"
+  "ref": "0da89ce651681c12de40f5fe70aec742b006dba4"
  },
  "rules": [
   {
@@ -7575,6 +7575,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "inspiregridcellcodevalue",
+   "key": "inspire_grid_cell_code",
+   "type": "data",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "latgeobyknown",
    "key": "latitude",
    "type": "field",
@@ -15032,6 +15042,76 @@
    "country_code": "fi"
   },
   {
+   "rule": "fikuntanumerobyname",
+   "key": "fi_kuntanumero",
+   "type": "field",
+   "match": "regex",
+   "file": "fi/fi_geo.yaml",
+   "context": "geo",
+   "lang": "fi",
+   "country_code": "fi"
+  },
+  {
+   "rule": "fimaakuntacodebyname",
+   "key": "fi_maakunta_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fi/fi_geo.yaml",
+   "context": "geo",
+   "lang": "fi",
+   "country_code": "fi"
+  },
+  {
+   "rule": "finamebyname",
+   "key": "name",
+   "type": "field",
+   "match": "text",
+   "file": "fi/fi_geo.yaml",
+   "context": "geo",
+   "lang": "fi",
+   "country_code": "fi"
+  },
+  {
+   "rule": "fiorgnamebyname",
+   "key": "orgname",
+   "type": "field",
+   "match": "regex",
+   "file": "fi/fi_geo.yaml",
+   "context": "geo",
+   "lang": "fi",
+   "country_code": "fi"
+  },
+  {
+   "rule": "fipostcodebyname",
+   "key": "fi_postcode",
+   "type": "field",
+   "match": "regex",
+   "file": "fi/fi_geo.yaml",
+   "context": "geo",
+   "lang": "fi",
+   "country_code": "fi"
+  },
+  {
+   "rule": "fiseutukuntacodebyname",
+   "key": "fi_seutukunta_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fi/fi_geo.yaml",
+   "context": "geo",
+   "lang": "fi",
+   "country_code": "fi"
+  },
+  {
+   "rule": "fivaalipiiricodebyname",
+   "key": "fi_vaalipiiri_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fi/fi_geo.yaml",
+   "context": "geo",
+   "lang": "fi",
+   "country_code": "fi"
+  },
+  {
    "rule": "fiwellbeingcountyvalue",
    "key": "fi_wellbeing_services_county",
    "type": "data",
@@ -15040,6 +15120,56 @@
    "context": "geo",
    "lang": "fi",
    "country_code": "fi"
+  },
+  {
+   "rule": "frbudgetchapitrecodebyname",
+   "key": "fr_budget_chapitre_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_budget.yaml",
+   "context": "finances",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frbudgetfonctioncodebyname",
+   "key": "fr_budget_fonction_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_budget.yaml",
+   "context": "finances",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frbudgetnaturecodebyname",
+   "key": "fr_budget_nature_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_budget.yaml",
+   "context": "finances",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frbudgetnomenclaturebyname",
+   "key": "fr_budget_nomenclature",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_budget.yaml",
+   "context": "finances",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frlolfprogrammecodebyname",
+   "key": "fr_lolf_programme_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_budget.yaml",
+   "context": "finances",
+   "lang": "fr",
+   "country_code": "fr"
   },
   {
    "rule": "frcategoryknown",
@@ -15332,6 +15462,56 @@
    "country_code": "fr"
   },
   {
+   "rule": "frcnusectioncodebyname",
+   "key": "fr_cnu_section_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_education.yaml",
+   "context": "education",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "fridrefidbyname",
+   "key": "fr_idref_id",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_education.yaml",
+   "context": "education",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frnatureuaicodebyname",
+   "key": "fr_nature_uai_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_education.yaml",
+   "context": "education",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frrnsrbyfieldname",
+   "key": "fr_rnsr",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_education.yaml",
+   "context": "education",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frrnsrvalue",
+   "key": "fr_rnsr",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_education.yaml",
+   "context": "education",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "fruaibyname",
    "key": "fr_uai",
    "type": "field",
@@ -15552,6 +15732,26 @@
    "country_code": "fr"
   },
   {
+   "rule": "fridurbavalue",
+   "key": "fr_idurba",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frindicerepetitionbyname",
+   "key": "fr_indice_repetition",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_geo.yaml",
+   "context": "geo",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frinseecodebyknown",
    "key": "inseecode",
    "type": "field",
@@ -15715,7 +15915,7 @@
    "rule": "frccamvalue",
    "key": "ccamcode",
    "type": "data",
-   "match": "ppr",
+   "match": "regex",
    "file": "fr/fr_med.yaml",
    "context": "medical",
    "lang": "fr",
@@ -15972,6 +16172,16 @@
    "country_code": "fr"
   },
   {
+   "rule": "frbaacaccidentnumberbyname",
+   "key": "fr_baac_accident_number",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_transport.yaml",
+   "context": "transport",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frcritairbyname",
    "key": "fr_critair",
    "type": "field",
@@ -15982,9 +16192,59 @@
    "country_code": "fr"
   },
   {
+   "rule": "fridfmlineidbyfieldname",
+   "key": "fr_idfm_line_id",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_transport.yaml",
+   "context": "transport",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "fridfmlineidvalue",
+   "key": "fr_idfm_line_id",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_transport.yaml",
+   "context": "transport",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
    "rule": "frirveidvalue",
    "key": "fr_irve_id",
    "type": "data",
+   "match": "regex",
+   "file": "fr/fr_transport.yaml",
+   "context": "transport",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frrailpkvalue",
+   "key": "fr_rail_pk",
+   "type": "data",
+   "match": "regex",
+   "file": "fr/fr_transport.yaml",
+   "context": "transport",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frrfnlinecodebyname",
+   "key": "fr_rfn_line_code",
+   "type": "field",
+   "match": "regex",
+   "file": "fr/fr_transport.yaml",
+   "context": "transport",
+   "lang": "fr",
+   "country_code": "fr"
+  },
+  {
+   "rule": "frroadnumberbyname",
+   "key": "fr_road_number",
+   "type": "field",
    "match": "regex",
    "file": "fr/fr_transport.yaml",
    "context": "transport",

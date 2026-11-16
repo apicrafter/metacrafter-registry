@@ -1,0 +1,33 @@
+id: fr_idurba
+name: French urban planning document identifier (IDURBA)
+status: draft
+doc: 'Identifier of a local urban planning document in the CNIG standard for digitised planning documents,
+  which the Géoportail de l''urbanisme requires: the INSEE code of the commune or the SIREN of the intercommunal
+  body, the kind of document (PLU, PLUi, POS, CC, PSMV) and the date of approval as YYYYMMDD, joined by
+  underscores (64024_PLU_20201024). Since the 2017 edition a letter may follow when one territory has
+  several documents.'
+parent: id
+categories:
+- geo
+- government
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:\d[0-9AB]\d{3}|\d{9})_(?:PLU|PLUi|PLUI|POS|CC|PSMV)_\d{8}(?:_[A-Z])?$
+examples:
+- value: 64024_PLU_20201024
+  description: PLU of Anglet approved on 24 October 2020
+- value: 200067106_PLUi_20200222
+  description: A PLUi of an intercommunal body, by its SIREN
+- value: 64024_PLU
+  valid: false
+  description: no date
+links:
+- type: doc
+  url: https://cnig.gouv.fr/ressources-dematerialisation-documents-d-urbanisme-a2732.html
+translations:
+  fr:
+    name: Identifiant de document d'urbanisme (IDURBA)

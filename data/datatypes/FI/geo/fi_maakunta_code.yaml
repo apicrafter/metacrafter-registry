@@ -1,0 +1,35 @@
+id: fi_maakunta_code
+name: Finnish region code (maakunta)
+status: draft
+doc: 'Two-digit code of a region (maakunta) of Finland in the classification of Statistics Finland: 01
+  Uusimaa, 02 Varsinais-Suomi, 04 Satakunta, 05 Kanta-Häme, 06 Pirkanmaa, 07 Päijät-Häme, 08 Kymenlaakso,
+  09 Etelä-Karjala, 10 Etelä-Savo, 11 Pohjois-Savo, 12 Pohjois-Karjala, 13 Keski-Suomi, 14 Etelä-Pohjanmaa,
+  15 Pohjanmaa, 16 Keski-Pohjanmaa, 17 Pohjois-Pohjanmaa, 18 Kainuu, 19 Lappi and 21 Ahvenanmaa. Itä-Uusimaa
+  had 20 until it joined Uusimaa in 2011; 03 is not used.'
+categories:
+- geo
+country:
+- FI
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:0[1-9]|1\d|2[01])$
+examples:
+- value: '01'
+  description: Uusimaa
+- value: '06'
+  description: Pirkanmaa
+- value: '19'
+  description: Lappi
+- value: '22'
+  valid: false
+  description: no such region
+links:
+- type: doc
+  url: https://stat.fi/en/luokitukset/maakunta/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Regions_of_Finland
+translations:
+  fi:
+    name: Maakunnan koodi

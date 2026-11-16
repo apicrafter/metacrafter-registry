@@ -1,0 +1,36 @@
+id: fr_budget_nature_code
+name: French local budget article (account by nature)
+status: draft
+doc: 'Number of an article of the budget of a French local authority: an account of the chart of accounts
+  of its instruction (M14, M57 ...), three or more digits that start with the class of the account, 1
+  to 7: 6574 Subventions de fonctionnement aux associations, 64111 Personnel titulaire, rémunération principale,
+  611 Contrats de prestations de services, 2188 Autres immobilisations corporelles. The SCDL budget schema
+  of data.gouv.fr gives it in BGT_CONTNAT, at most nine characters.'
+categories:
+- finances
+- government
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-7]\d{2,8}$
+examples:
+- value: '64111'
+  description: Personnel titulaire, rémunération principale
+- value: '611'
+  description: Contrats de prestations de services
+- value: '60632'
+  description: Fournitures de petit équipement
+- value: '011'
+  valid: false
+  description: A chapter (fr_budget_chapitre_code)
+links:
+- type: doc
+  url: https://schema.data.gouv.fr/scdl/budget/
+- type: doc
+  url: https://www.collectivites-locales.gouv.fr/finances-locales/instructions-budgetaires-et-comptables
+translations:
+  fr:
+    name: Article budgétaire (compte par nature)

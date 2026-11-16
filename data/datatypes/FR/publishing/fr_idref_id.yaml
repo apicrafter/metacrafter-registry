@@ -5,6 +5,7 @@ doc: 'Identifier of an authority record (person, organisation, subject, work) in
   file of SUDOC, the union catalogue of French university libraries. It is the PPN of the record: eight
   digits and a check character, a digit or X. SUDOC bibliographic records have PPNs of the same form,
   so a column of PPNs can hold either.'
+parent: id
 categories:
 - publishing
 country:

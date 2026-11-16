@@ -1,0 +1,33 @@
+id: fr_cnu_section_code
+name: French CNU section number
+status: draft
+doc: 'Two-digit number of a section of the Conseil national des universités, the body that qualifies and
+  manages the careers of French university teaching staff; each section is a discipline: 01 Droit privé
+  et sciences criminelles, 06 Sciences de gestion et du management, 25 Mathématiques, 27 Informatique,
+  60 Mécanique, génie mécanique, génie civil. Staff statistics of the ministry also use 00 (no discipline)
+  and 99 (not specified).'
+categories:
+- education
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^\d{2}$
+examples:
+- value: '27'
+  description: Informatique
+- value: '01'
+  description: Droit privé et sciences criminelles
+- value: '60'
+  description: Mécanique, génie mécanique, génie civil
+- value: '270'
+  valid: false
+  description: three digits
+links:
+- type: wikipedia
+  url: https://fr.wikipedia.org/wiki/Conseil_national_des_universit%C3%A9s
+translations:
+  fr:
+    name: Section du CNU

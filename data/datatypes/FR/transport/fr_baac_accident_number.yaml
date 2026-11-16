@@ -1,0 +1,31 @@
+id: fr_baac_accident_number
+name: French road accident number (BAAC Num_Acc)
+status: draft
+doc: 'Identifier of a road traffic injury accident in the annual files of the French national road accident
+  register (fichier BAAC of the ONISR, published on data.gouv.fr since 2005). Twelve digits: the year
+  of the accident and a sequence number. It joins the four tables of a year: caractéristiques, lieux,
+  véhicules and usagers.'
+parent: id
+categories:
+- transport
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^20\d{10}$
+examples:
+- value: '201800000138'
+  description: An accident of 2018
+- value: '200500000001'
+  description: The first accident of the 2005 file
+- value: '20180000013'
+  valid: false
+  description: eleven digits
+links:
+- type: doc
+  url: https://www.data.gouv.fr/datasets/bases-de-donnees-annuelles-des-accidents-corporels-de-la-circulation-routiere-annees-de-2005-a-2023/
+translations:
+  fr:
+    name: Numéro d'accident (BAAC)
