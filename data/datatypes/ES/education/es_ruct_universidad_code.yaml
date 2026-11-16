@@ -1,0 +1,36 @@
+id: es_ruct_universidad_code
+name: Spanish university code (RUCT)
+status: draft
+doc: Three-digit code of a university in the Spanish register of universities, centres and degrees (Registro
+  de Universidades, Centros y Títulos, RUCT) of the ministry in charge of universities, as in 010 for
+  the Universidad Complutense de Madrid, 036 for the Universidad Carlos III de Madrid and 056 for the
+  Universidad Rey Juan Carlos. The open data of Spanish universities (UniversiDATA) give it in cod_universidad
+  next to the name of the university.
+parent: id
+categories:
+- education
+country:
+- ES
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{3}$
+examples:
+- value: '056'
+  description: Universidad Rey Juan Carlos
+- value: '036'
+  description: Universidad Carlos III de Madrid
+- value: '010'
+  description: Universidad Complutense de Madrid
+- value: '56'
+  valid: false
+  description: leading zero lost
+links:
+- type: doc
+  url: https://www.educacion.gob.es/ruct/home
+translations:
+  es:
+    name: Código de universidad (RUCT)
+  ru:
+    name: Код университета в реестре RUCT (Испания)

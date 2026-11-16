@@ -1,0 +1,40 @@
+id: es_budget_program_code
+name: Spanish local budget programme code
+status: draft
+doc: Code of the classification by programmes of the budget of a Spanish local entity, which says what
+  an expenditure is for. The order EHA/3565/2008 sets the levels, each a prefix of the next, the area
+  of expenditure (área de gasto, one digit, 1 for basic public services, 2 for social protection, 3 for
+  preferential public goods, 4 for economic actions, 9 for general actions and 0 for public debt), the
+  policy (política de gasto), the group of programmes (132 for public safety) and the programme (1521);
+  an entity may add subprogrammes, so municipal budgets also give five digits (91200). Budget tables give
+  it in columns named cod_programa, programa, cod_funcional or cod_areas_de_gasto.
+categories:
+- government
+- finances
+country:
+- ES
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[0-49]\d{0,4}$
+examples:
+- value: '1'
+  description: area of expenditure 1, Servicios públicos básicos
+- value: '132'
+  description: group of programmes Seguridad y Orden Público
+- value: '1521'
+  description: programme Promoción y gestión de vivienda de protección pública
+- value: '91200'
+  description: a subprogramme in a municipal budget
+- value: '5210'
+  valid: false
+  description: no area of expenditure 5
+links:
+- type: doc
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2008-19916
+translations:
+  es:
+    name: Código de la clasificación por programas del presupuesto local
+  ru:
+    name: Код программной классификации местного бюджета (Испания)

@@ -1,0 +1,34 @@
+id: es_bdns_code
+name: Spanish grant call code (BDNS)
+status: draft
+doc: Number of a call for grants in the Spanish national database of grants (Base de Datos Nacional de
+  Subvenciones, BDNS), where every public body must register its calls. It is a plain number given in
+  order of registration, six digits in the current series (604968 for a call of January 2022); the first
+  calls of 2014 have three digits. The number is the key of the page of the call (infosubvenciones.es/bdnstrans/GE/es/convocatorias/604968),
+  and municipalities publish it in their tables of grants (Código BDNS).
+parent: id
+categories:
+- government
+- finances
+country:
+- ES
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{3,7}$
+examples:
+- value: '604968'
+  description: a call of the Ayuntamiento de Arganda del Rey registered in January 2022
+- value: '302000'
+  description: a call registered in March 2016
+- value: BDNS604968
+  valid: false
+links:
+- type: doc
+  url: https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias
+translations:
+  es:
+    name: Código BDNS de convocatoria
+  ru:
+    name: Код конкурса субсидий в базе BDNS (Испания)

@@ -1,0 +1,42 @@
+id: dk_cor_id
+name: Danish Central Word Register identifier (COR)
+status: draft
+doc: Identifier of a lemma, a word form or a sense of a Danish word in the Central Word Register (Det
+  Centrale Ordregister, COR) that the Danish Language Council (Dansk Sprognævn) maintains as a common
+  key of Danish language resources. A lemma of the basic register is COR. and five digits (COR.72642),
+  and a word form adds an inflection index of three digits and a variant index of two (COR.99892.122.01).
+  Other series put a name after COR., as in COR.EXT.100002.300.01 for the extended vocabulary and COR.SEM.1000001.01
+  for a sense in the semantic register.
+parent: id
+categories:
+- texts
+- science
+country:
+- DK
+langs:
+- da
+is_pii: false
+classification: identifier
+regexp: ^COR\.(?:\d{5}(?:\.\d{3}\.\d{2})?|[A-Z0-9_]{3,}(?:\.\d+)+)$
+examples:
+- value: COR.72642
+  description: a lemma of the basic register
+- value: COR.99892.122.01
+  description: a word form
+- value: COR.EXT.100002.300.01
+  description: a word form of the extended register
+- value: COR.SEM.1000001.01
+  description: a sense of the semantic register, the entry 13-tal
+- value: COR.7264
+  valid: false
+  description: four digits
+links:
+- type: doc
+  url: https://ordregister.dk/files/COR-spec_v1.1.pdf
+- type: doc
+  url: https://ordregister.dk/doc/COR-README.html
+translations:
+  da:
+    name: COR-indeks (Det Centrale Ordregister)
+  ru:
+    name: Идентификатор Центрального регистра слов датского языка (COR)

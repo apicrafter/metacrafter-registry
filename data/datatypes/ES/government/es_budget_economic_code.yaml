@@ -1,0 +1,40 @@
+id: es_budget_economic_code
+name: Spanish budget economic classification code
+status: draft
+doc: Code of the economic classification of a Spanish public budget, which says what kind of expenditure
+  or revenue a budget line is. It has up to four levels, each a prefix of the next, the chapter (capítulo,
+  one digit, as in 1 for staff costs and 6 for investments), the article (artículo, two digits), the concept
+  (concepto, three digits) and the subconcept (subconcepto, five digits, written 10000 or 100.00). The
+  order EHA/3565/2008 sets the classification for local entities; the State, the autonomous communities
+  and universities use the same levels. Budget tables give the levels in columns named cod_capitulo, cod_articulo,
+  cod_concepto, cod_subconcepto, cod_economico or economica.
+categories:
+- government
+- finances
+country:
+- ES
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-9](?:\d(?:\d(?:\.?\d{2})?)?)?$
+examples:
+- value: '1'
+  description: chapter 1, Gastos de personal
+- value: '10'
+  description: article 10
+- value: '100.00'
+  description: subconcept 100.00
+- value: '22103'
+  description: a subconcept of chapter 2 without the dot
+- value: '1000'
+  valid: false
+  description: four digits are no level
+links:
+- type: doc
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2008-19916
+translations:
+  es:
+    name: Código de la clasificación económica del presupuesto
+  ru:
+    name: Код экономической классификации бюджета (Испания)

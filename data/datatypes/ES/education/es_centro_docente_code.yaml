@@ -1,0 +1,43 @@
+id: es_centro_docente_code
+name: Spanish school code (código de centro docente)
+status: draft
+doc: Eight-digit code of a school or other teaching centre in the Spanish state register of non- university
+  teaching centres (Registro Estatal de Centros Docentes no Universitarios). The order of 27 October 1977
+  that set it up gives the structure, two digits of the province, five digits of the order of assignment
+  and a control digit; the rule of the control digit is not published. Regional education departments
+  use the code as the key of their open data on schools, enrolment and staff (COD_CENTRO, codigo, cod_centro),
+  and the register of universities, centres and degrees (RUCT) numbers university centres with eight digits
+  that start with the province in the same way.
+parent: id
+categories:
+- education
+country:
+- ES
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:0[1-9]|[1-4]\d|5[0-2])\d{6}$
+examples:
+- value: '28051591'
+  description: Escuela de Ingeniería de Fuenlabrada, a centre of the Universidad Rey Juan Carlos in RUCT
+- value: '28053897'
+  description: Centro de Educación Superior CEDEU in RUCT
+- value: 03013698
+  description: a school in the province of Alicante in the enrolment tables of the Generalitat Valenciana
+- value: '99013698'
+  valid: false
+  description: no province 99
+- value: '2805159'
+  valid: false
+  description: seven digits
+links:
+- type: doc
+  url: https://www.boe.es/buscar/doc.php?id=BOE-A-1977-26715
+- type: doc
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2003-4927
+translations:
+  es:
+    name: Código de centro docente
+  ru:
+    name: Код учебного заведения (Испания)

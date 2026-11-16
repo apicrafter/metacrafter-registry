@@ -1,0 +1,35 @@
+id: es_vehicle_plate
+name: Spanish vehicle registration plate
+status: draft
+doc: Number of a Spanish vehicle registration plate in the national format in use since September 2000,
+  four digits from 0000 to 9999 and three letters from BBB to ZZZ. The letters leave out the five vowels
+  and Ñ and Q, so twenty consonants are used. Tables write it with a space, with a hyphen or without a
+  separator (3499 CDB, 3499CDB). Plates issued before 2000 start with the letters of the province (M 4617
+  YU) and are not covered by the regexp.
+categories:
+- transport
+country:
+- ES
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{4}[ -]?[BCDFGHJKLMNPRSTVWXYZ]{3}$
+examples:
+- value: 0000 BBB
+  description: the first number of the series
+- value: 9999ZZZ
+  description: the last number of the series, without a space
+- value: 0000 BAB
+  valid: false
+  description: a vowel
+links:
+- type: doc
+  url: https://www.boe.es/boe/dias/2000/09/16/pdfs/A31871-31876.pdf
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Spain
+translations:
+  es:
+    name: Matrícula de vehículo
+  ru:
+    name: Номерной знак автомобиля (Испания)

@@ -1,0 +1,35 @@
+id: es_ruct_titulo_code
+name: Spanish official degree code (RUCT)
+status: draft
+doc: Seven-digit code of an official university degree in the Spanish register of universities, centres
+  and degrees (RUCT), as in 2500089 for the bachelor's degree in journalism of the Universidad Rey Juan
+  Carlos and 4310001 for a master's degree. In the register the codes of bachelor's degrees (grados) start
+  with 25, those of master's degrees with 43 and those of doctoral programmes with 56; this is what the
+  published codes show, the register does not state it as a rule. Universities give the code in cod_titulacion
+  of their tables on degrees, enrolment and graduates.
+parent: id
+categories:
+- education
+country:
+- ES
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{7}$
+examples:
+- value: '2500089'
+  description: Graduado o Graduada en Periodismo por la Universidad Rey Juan Carlos
+- value: '4310001'
+  description: Máster Universitario en Gestión y Políticas Públicas
+- value: '250008'
+  valid: false
+  description: six digits
+links:
+- type: doc
+  url: https://www.educacion.gob.es/ruct/home
+translations:
+  es:
+    name: Código de titulación (RUCT)
+  ru:
+    name: Код образовательной программы в реестре RUCT (Испания)

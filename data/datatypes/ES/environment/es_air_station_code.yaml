@@ -1,0 +1,38 @@
+id: es_air_station_code
+name: Spanish air quality station national code
+status: draft
+doc: National code of a station of the Spanish air quality monitoring networks, built from the INE code
+  of the province (two digits), the INE code of the municipality (three digits) and the number of the
+  station within the municipality (three digits), as in 28079008 for station 8 of Madrid. A code of a
+  province below 10 is also written without its leading zero (4066003). The ministry for the ecological
+  transition and the regional networks use it as the key of their measurement tables (COD_ESTACION, codigo_nacional).
+  The European code of a station (ES1890A) is a different identifier.
+parent: id
+categories:
+- environment
+country:
+- ES
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:0?[1-9]|[1-4]\d|5[0-2])\d{6}$
+examples:
+- value: '4066003'
+  description: the example of the service sheet of the ministry (province 04, municipality 066, station
+    003)
+- value: '28079008'
+  description: a station in Madrid
+- value: 03009003
+  description: a station in Alcoi in the tables of the Generalitat Valenciana
+- value: ES1890A
+  valid: false
+  description: the European code
+links:
+- type: doc
+  url: https://web.archive.org/web/20240909091139/https://sig.mapama.gob.es/Docs/PDFServicios/CA_Estaciones.pdf
+translations:
+  es:
+    name: Código nacional de estación de calidad del aire
+  ru:
+    name: Национальный код станции контроля качества воздуха (Испания)
