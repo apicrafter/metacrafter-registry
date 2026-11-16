@@ -1,0 +1,39 @@
+id: sdmx_obs_status
+name: SDMX observation status code
+status: draft
+doc: Code of the SDMX cross-domain code list CL_OBS_STATUS, which tells the status of a statistical observation.
+  Version 2.3 has 23 codes, one capital letter each and _U for unknown, as in A for a normal value, E
+  for an estimated value, F for a forecast, P for a provisional value, B for a break in the time series,
+  M for a value that cannot exist and Q for a suppressed value. Statistical offices attach it to every
+  observation of their SDMX and CSV exports in a column named OBS_STATUS (ESTADO_OBSERVACION_CODE in the
+  exports of the statistics institute of the Canary Islands).
+categories:
+- government
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[ABDEFGHIJKLMNOPQRSUVWX]|_U)$
+examples:
+- value: A
+  description: Normal value
+- value: P
+  description: Provisional value
+- value: M
+  description: Missing value; data cannot exist
+- value: _U
+  description: Unknown
+- value: C
+  valid: false
+  description: C is a confidentiality status, not an observation status
+links:
+- type: doc
+  url: https://registry.sdmx.org/sdmx/v2/structure/codelist/SDMX/CL_OBS_STATUS/+
+- type: doc
+  url: https://sdmx.org/sdmx_cdcl/
+translations:
+  es:
+    name: Código de estado de la observación (SDMX)
+  ru:
+    name: Код статуса наблюдения SDMX

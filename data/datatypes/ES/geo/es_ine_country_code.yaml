@@ -1,0 +1,36 @@
+id: es_ine_country_code
+name: Spanish INE country code
+status: draft
+doc: Three-digit code of a country or territory in the standard list of countries of the Spanish National
+  Statistics Institute (INE, lista estándar de países y otros territorios), which the municipal register
+  of inhabitants uses for the nationality and the country of birth. The first digit is the continent,
+  1 for Europe, 2 for Africa, 3 for the Americas, 4 for Asia and 5 for Oceania, as in 108 for Spain, 110
+  for France, 125 for the United Kingdom and 340 for Argentina. The codes are not the numeric codes of
+  ISO 3166-1.
+categories:
+- geo
+country:
+- ES
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[1-5]\d{2}$
+examples:
+- value: '108'
+  description: España
+- value: '110'
+  description: Francia
+- value: '340'
+  description: Argentina
+- value: '724'
+  valid: false
+  description: Spain in ISO 3166-1 numeric
+links:
+- type: doc
+  url: https://www.ine.es/daco/daco42/clasificaciones/paises_estandar.xls
+translations:
+  es:
+    name: Código de país del INE
+  ru:
+    name: Код страны по классификации INE (Испания)

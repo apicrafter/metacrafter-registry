@@ -1,0 +1,42 @@
+id: eu_erasmus_code
+name: Erasmus institution code
+status: draft
+doc: Code of a higher education institution that holds the Erasmus Charter for Higher Education. It has
+  three parts, a country part of three characters (one letter and two spaces, two letters and one space,
+  or the three letters IRL or LUX), an abbreviation of the city in capital letters and hyphens, and a
+  number of two or three digits, as in E MADRID03 for the Universidad Complutense de Madrid and PL WARSZAW02
+  for the Warsaw University of Technology. The city part tells where the code was issued. Tables and web
+  pages often keep one space or none after the country letters (I MILANO03), and the regexp takes these
+  spellings too. Mobility tables of universities give it for the home or host institution of a student.
+parent: id
+categories:
+- education
+country:
+- EU
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^(?:IRL|LUX|[A-Z]{2} ?|[A-Z] {0,2})[A-Z][A-Z-]*[A-Z]\d{2,3}$
+examples:
+- value: E  MADRID03
+  description: Universidad Complutense de Madrid
+- value: PL WARSZAW02
+  description: Politechnika Warszawska
+- value: F  STRASBO48
+  description: Université de Strasbourg
+- value: I MILANO03
+  description: Università Cattolica del Sacro Cuore, written with one space
+- value: 03MADRID
+  valid: false
+  description: the number first
+links:
+- type: doc
+  url: https://eche-list.erasmuswithoutpaper.eu/docs/01_ECHE_DATA/02_ERASMUS.md
+- type: doc
+  url: https://wikis.ec.europa.eu/display/NAITDOC/ECHE+-+Erasmus+Charter+for+Higher+Education
+translations:
+  es:
+    name: Código Erasmus de institución
+  ru:
+    name: Код учреждения в программе Erasmus

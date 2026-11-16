@@ -1,0 +1,36 @@
+id: es_tipo_via
+name: Spanish street type abbreviation (sigla de vía pública)
+status: draft
+doc: Two-letter abbreviation of the kind of a public way in Spanish addresses, from the list of the Spanish
+  cadastre (Dirección General del Catastro, siglas de vía pública), as in CL for calle, AV for avenida,
+  PZ for plaza, PS for paseo, CM for camino and CR for carretera. The list has more than seventy abbreviations,
+  and some stand for two kinds (PJ for pasaje and pasadizo). Street directories and address tables of
+  Spanish municipalities keep it in a column of its own (TipoVia, tipo_via, VIAL) next to the name of
+  the street.
+categories:
+- geo
+country:
+- ES
+langs:
+- es
+is_pii: false
+classification: categorical
+regexp: ^(?:AG|AL|AR|AU|AV|AY|BJ|BO|BR|CA|CG|CH|CI|CJ|CL|CM|CN|CO|CP|CR|CS|CT|CU|CY|DE|DP|DS|ED|EM|EN|ER|ES|EX|FC|FN|GL|GR|GV|HT|JR|LD|LG|MC|ML|MN|MS|MT|MZ|PB|PD|PJ|PL|PM|PQ|PR|PS|PT|PZ|QT|RB|RC|RD|RM|RP|RR|RU|SA|SD|SL|SN|SU|TN|TO|TR|UR|VR)$
+examples:
+- value: CL
+  description: calle
+- value: AV
+  description: avenida
+- value: PZ
+  description: plaza
+- value: CALLE
+  valid: false
+  description: the word, not the abbreviation
+links:
+- type: doc
+  url: https://www.catastro.hacienda.gob.es/documentos/formatos_intercambio/formato_fxcc.pdf
+translations:
+  es:
+    name: Sigla de tipo de vía
+  ru:
+    name: Сокращение типа улицы (Испания)

@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "2ef21533872251ed8a31ccdd128c47ff0617fc63"
+  "ref": "7a1e01525c5e475b6e08368029754f6cff0a69be"
  },
  "rules": [
   {
@@ -10992,6 +10992,76 @@
    "country_code": "xx"
   },
   {
+   "rule": "erasmuscodebyname",
+   "key": "eu_erasmus_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sdmx.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "erasmuscodevalue",
+   "key": "eu_erasmus_code",
+   "type": "data",
+   "match": "func",
+   "file": "common/sdmx.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "sdmxagebandvalue",
+   "key": "sdmx_age",
+   "type": "data",
+   "match": "func",
+   "file": "common/sdmx.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "sdmxagebyname",
+   "key": "sdmx_age",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sdmx.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "sdmxobsstatusbyname",
+   "key": "sdmx_obs_status",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sdmx.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "sdmxreportingmonthvalue",
+   "key": "sdmx_reporting_period",
+   "type": "data",
+   "match": "func",
+   "file": "common/sdmx.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "sdmxreportingperiodbyname",
+   "key": "sdmx_reporting_period",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sdmx.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "awbnumberfield",
    "key": "awbnumber",
    "type": "field",
@@ -13652,6 +13722,16 @@
    "country_code": "de"
   },
   {
+   "rule": "dkcoridvalue",
+   "key": "dk_cor_id",
+   "type": "data",
+   "match": "regex",
+   "file": "dk/dk_texts.yaml",
+   "context": "texts",
+   "lang": "da",
+   "country_code": "dk"
+  },
+  {
    "rule": "eeadsadridvalue",
    "key": "ee_ads_adr_id",
    "type": "data",
@@ -14158,6 +14238,226 @@
    "match": "func",
    "file": "es/es_budget.yaml",
    "context": "finances",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esairstationcodebyname",
+   "key": "es_air_station_code",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esbdnscodebyname",
+   "key": "es_bdns_code",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esbudgeteconomiccodebyname",
+   "key": "es_budget_economic_code",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esbudgetprogramcodebyname",
+   "key": "es_budget_program_code",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esccaacodebyname",
+   "key": "es_ccaa_code",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "escentrodocentecodebyname",
+   "key": "es_centro_docente_code",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "escifbyrolename",
+   "key": "cif",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "escountrycodenumbyname",
+   "key": "countrycode_num",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "escpvcodebyname",
+   "key": "cpvcode",
+   "type": "field",
+   "match": "text",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esdir3byname",
+   "key": "es_dir3",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esdnimaskedvalue",
+   "key": "es_dni_masked",
+   "type": "data",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esinecountrycodebyname",
+   "key": "es_ine_country_code",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esinemunicipiocodebyname",
+   "key": "es_ine_municipio",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esineprovincecodebyname",
+   "key": "es_ine_municipio",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esnutsbyname",
+   "key": "nutsregion",
+   "type": "field",
+   "match": "text",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esructtitulocodebyname",
+   "key": "es_ruct_titulo_code",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esructuniversidadcodebyname",
+   "key": "es_ruct_universidad_code",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esschoolyearvalue",
+   "key": "school_year",
+   "type": "data",
+   "match": "func",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "estipoviabyname",
+   "key": "es_tipo_via",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esunm49byname",
+   "key": "unm49",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esvehicleplatebyname",
+   "key": "es_vehicle_plate",
+   "type": "field",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
+   "lang": "es",
+   "country_code": "es"
+  },
+  {
+   "rule": "esvehicleplatevalue",
+   "key": "es_vehicle_plate",
+   "type": "data",
+   "match": "regex",
+   "file": "es/es_codes.yaml",
+   "context": "common",
    "lang": "es",
    "country_code": "es"
   },

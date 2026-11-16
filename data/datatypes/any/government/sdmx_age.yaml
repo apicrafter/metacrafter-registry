@@ -1,0 +1,38 @@
+id: sdmx_age
+name: SDMX age code
+status: draft
+doc: Code of an age or an age band written with the syntax of the SDMX guidelines for code lists. Y stands
+  for years, a number after it is an age (Y15), T joins the ends of a band (Y15T24 for 15 to 24 years)
+  and the operators GE, GT, LE and LT after an underscore give an open band (Y_GE65 for 65 years or more,
+  Y_LT5 for under 5). The guidelines allow the syntax and do not impose it; statistical offices that follow
+  it, such as the statistics institute of the Canary Islands, give these codes in the age dimension of
+  their tables (EDAD_CODE). Eurostat writes its bands with a hyphen (Y15-24), see eurostat_age_class.
+  The regexp covers ages in years; the total _T and codes in months or days are left out.
+categories:
+- government
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^Y(?:\d{1,3}(?:T\d{1,3})?|_(?:GE|GT|LE|LT)\d{1,3})$
+examples:
+- value: Y15T24
+  description: 15 to 24 years
+- value: Y_GE65
+  description: 65 years or more
+- value: Y_LT5
+  description: under 5 years
+- value: Y15-24
+  valid: false
+  description: the Eurostat spelling
+links:
+- type: doc
+  url: https://sdmx.org/wp-content/uploads/SDMX_Guidelines_for_CDCL-1.docx
+- type: doc
+  url: https://registry.sdmx.org/sdmx/v2/structure/codelist/SDMX/CL_AGE/+
+translations:
+  es:
+    name: Código de edad (SDMX)
+  ru:
+    name: Код возраста по синтаксису SDMX

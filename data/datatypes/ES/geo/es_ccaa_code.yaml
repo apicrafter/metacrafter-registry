@@ -1,0 +1,34 @@
+id: es_ccaa_code
+name: Spanish autonomous community code (INE)
+status: draft
+doc: Two-digit code of an autonomous community or autonomous city of Spain in the list of the National
+  Statistics Institute (INE), from 01 for Andalucía to 17 for La Rioja, 18 for Ceuta and 19 for Melilla;
+  13 is the Comunidad de Madrid and 10 the Comunitat Valenciana. Statistical and administrative tables
+  give it in columns named cod_comunidad, codigo_de_ca, cod_ccaa or cod_autonomia, often without the leading
+  zero.
+categories:
+- geo
+country:
+- ES
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:0[1-9]|1[0-9])$
+examples:
+- value: '13'
+  description: Madrid, Comunidad de
+- value: '07'
+  description: Castilla y León
+- value: '19'
+  description: Melilla
+- value: '20'
+  valid: false
+links:
+- type: doc
+  url: https://www.ine.es/daco/daco42/codmun/cod_ccaa.htm
+translations:
+  es:
+    name: Código de comunidad autónoma (INE)
+  ru:
+    name: Код автономного сообщества Испании (INE)

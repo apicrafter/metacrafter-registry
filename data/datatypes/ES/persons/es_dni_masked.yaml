@@ -1,0 +1,38 @@
+id: es_dni_masked
+name: Spanish identity document number, masked for publication
+status: draft
+doc: Number of a Spanish identity document (DNI or NIE) with all but four digits replaced by asterisks,
+  as public bodies publish it next to the name of a person. The data protection law (Ley Orgánica 3/2018,
+  seventh additional provision) asks for four digits of the document, and the guidance of the Spanish
+  data protection authorities picks the digits in positions four to seven, so the DNI 12345678X is written
+  ***4567** and the NIE L1234567X is written ****4567*. The guidance is a recommendation, and registers
+  of contracts and grants also show other positions.
+parent: es_dni
+categories:
+- persons
+- pii
+country:
+- ES
+langs:
+- common
+is_pii: true
+classification: identifier
+regexp: ^(?:\*{3}\d{4}\*{2}|\*{4}\d{4}\*)$
+examples:
+- value: '***4567**'
+  description: the DNI 12345678X of the guidance
+- value: '****4567*'
+  description: the NIE L1234567X of the guidance
+- value: 12345678X
+  valid: false
+  description: not masked
+links:
+- type: doc
+  url: https://www.aepd.es/documento/orientaciones-da7.pdf
+- type: doc
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673
+translations:
+  es:
+    name: DNI o NIE anonimizado para su publicación
+  ru:
+    name: Номер документа DNI/NIE
