@@ -1,0 +1,33 @@
+id: gb_360giving_id
+name: 360Giving identifier (grant or organisation)
+status: draft
+doc: Identifier of a grant, or of an organisation without an official registration number, in a file of
+  the 360Giving Data Standard, which UK funders use to publish their grants. It is the prefix of the publisher,
+  which starts with 360G- and is registered with 360Giving, and an identifier that is unique within the
+  publisher, joined by a hyphen (360G-xyztrust-123). The standard asks for underscores in place of spaces
+  and advises against slashes. Organisations with a registration number get an identifier of org-id.guide
+  instead (GB-CHC-1164883), the type org_id.
+parent: id
+categories:
+- finances
+- identifiers
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^360G-[A-Za-z0-9][A-Za-z0-9_.:-]*$
+examples:
+- value: 360G-xyztrust-123
+  description: Grant identifier; example of the 360Giving guidance
+- value: 360G-xyztrust-123_ABC
+  description: An internal identifier with a space replaced by an underscore; 360Giving guidance
+- value: 360G-XYZFunder-123456
+  description: Identifier of a recipient without a registration number; 360Giving guidance
+- value: GB-CHC-1164883
+  valid: false
+  description: An org-id.guide identifier of a charity
+links:
+- type: doc
+  url: https://standard.threesixtygiving.org/en/latest/technical/identifiers/

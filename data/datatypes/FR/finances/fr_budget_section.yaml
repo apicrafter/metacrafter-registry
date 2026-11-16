@@ -1,0 +1,34 @@
+id: fr_budget_section
+name: Section of a French local budget (fonctionnement, investissement)
+status: draft
+doc: Section of a line of the budget of a French local authority or local public body. A local budget
+  has two sections, fonctionnement for the running of the services and investissement for the operations
+  that change the assets. Budget files give it in a section column, BGT_SECTION in the files that follow
+  the budget schema of the essential data of local authorities, in words or by the first letter.
+parent: category
+categories:
+- finances
+- government
+country:
+- FR
+langs:
+- fr
+is_pii: false
+classification: categorical
+regexp: ^(?i:fonctionnement|investissement)$
+examples:
+- value: Fonctionnement
+  description: Running section; budget of the City of Paris
+- value: Investissement
+  description: Investment section; budget of the City of Paris
+- value: Recettes
+  valid: false
+  description: The side of the line, not its section
+links:
+- type: doc
+  url: https://schema.data.gouv.fr/scdl/budget/
+- type: doc
+  url: https://www.collectivites-locales.gouv.fr/finances-locales/instructions-budgetaires-et-comptables
+translations:
+  fr:
+    name: Section budgétaire (fonctionnement, investissement)

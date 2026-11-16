@@ -1,0 +1,34 @@
+id: gb_brownfield_permission_type
+name: Permission type of a brownfield land register site
+status: draft
+doc: Kind of planning permission of a site in a brownfield land register of an English local planning
+  authority, the PermissionType field of the data standard for these registers. It takes one of seven
+  phrases, full planning permission, outline planning permission, reserved matters approval, permission
+  in principle, technical details consent, planning permission granted under an order or other.
+parent: category
+categories:
+- realestate
+- government
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?i:full planning permission|outline planning permission|reserved matters approval|permission
+  in principle|technical details consent|planning permission granted under an order|other)$
+examples:
+- value: full planning permission
+  description: The commonest value of the registers
+- value: outline planning permission
+  description: Permission in outline
+- value: reserved matters approval
+  description: Approval of the matters reserved by an outline permission
+- value: permission in principle
+  description: Permission in principle
+- value: Prior Approval
+  valid: false
+  description: Not a phrase of the standard
+links:
+- type: doc
+  url: https://www.gov.uk/government/publications/brownfield-land-registers-data-standard/publish-your-brownfield-land-data

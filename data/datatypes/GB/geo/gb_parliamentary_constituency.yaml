@@ -1,0 +1,26 @@
+id: gb_parliamentary_constituency
+name: UK Parliament constituency name
+status: draft
+doc: Name of a constituency of the House of Commons of the United Kingdom, the area that elects one member
+  of Parliament (Calder Valley, Holborn and St Pancras, Glasgow North West). Council tables give it in
+  a column named Parliamentary constituency or UK constituency, and tables of the Office for National
+  Statistics in columns such as PCON17NM next to the GSS code of the constituency (E14, W07, S14, N06).
+categories:
+- geo
+- government
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Calder Valley
+  description: Constituency in West Yorkshire, as in Calderdale Data Works tables
+- value: Holborn and St Pancras
+  description: Constituency in London
+- value: Glasgow North West
+  description: Constituency in Scotland
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Constituencies_of_the_Parliament_of_the_United_Kingdom

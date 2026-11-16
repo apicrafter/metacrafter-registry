@@ -1,0 +1,30 @@
+id: gb_esd_service_uri
+name: Local Government Service List service URI (esd.org.uk)
+status: draft
+doc: URI of a service that English and Welsh councils provide, from the list of services of the LG Inform
+  Plus standards site (standards.esd.org.uk), known as the Local Government Service List. Each service
+  has a number, and its URI is http://id.esd.org.uk/service/ followed by that number (1601 for Bookstart).
+  The transparency files of councils that follow the local government schemas give it in the ServiceTypeURI
+  and ServiceCategoryURI columns of spend, contract and land registers.
+parent: url
+categories:
+- government
+- identifiers
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^https?://id\.esd\.org\.uk/service/\d{1,5}$
+examples:
+- value: http://id.esd.org.uk/service/1601
+  description: Bookstart; standards.esd.org.uk list of services
+- value: http://id.esd.org.uk/service/646
+  description: ServiceTypeURI of a council register of data.gov.uk
+- value: http://id.esd.org.uk/list/services
+  valid: false
+  description: The URI of the list, not of a service
+links:
+- type: doc
+  url: https://standards.esd.org.uk/?uri=list%2Fservices

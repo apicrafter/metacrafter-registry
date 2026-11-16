@@ -1,0 +1,33 @@
+id: gb_brownfield_ownership_status
+name: Ownership status of a brownfield land register site
+status: draft
+doc: Ownership of a site in a brownfield land register of an English local planning authority, the OwnershipStatus
+  field of the data standard for these registers. It takes one of four phrases, owned by a public authority,
+  not owned by a public authority, mixed ownership or unknown ownership. Registers write them in lower
+  case or with capitals.
+parent: category
+categories:
+- realestate
+- government
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?i:owned by a public authority|not owned by a public authority|mixed ownership|unknown ownership)$
+examples:
+- value: not owned by a public authority
+  description: The commonest value of the registers
+- value: owned by a public authority
+  description: A site of a council or another public body
+- value: mixed ownership
+  description: Public and private owners
+- value: unknown ownership
+  description: The owner is unknown or partly unknown
+- value: Private
+  valid: false
+  description: Not a phrase of the standard
+links:
+- type: doc
+  url: https://www.gov.uk/government/publications/brownfield-land-registers-data-standard/publish-your-brownfield-land-data

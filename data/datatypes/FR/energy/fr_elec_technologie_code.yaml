@@ -1,0 +1,36 @@
+id: fr_elec_technologie_code
+name: Technology code of the French register of electricity installations (codeTechnologie)
+status: draft
+doc: Code of the technology of an installation in the national register of electricity production and
+  storage installations compiled by RTE, three to five capital letters with a full stop for an abbreviation.
+  The files give it in the codeTechnologie column next to the label in technologie. The 2024 files read
+  for this record hold PHOTV (Photovoltaïque), FIL.E (Fil de l'eau), LAC (Lac), FSSIO (Fission nucléaire),
+  COG.V (Cogénération à vapeur), COG.C (Cogénération à combustion), T.COM (Turbine à combustion), T.VAP
+  (Turbine à vapeur), M.PIS (Moteur à piston) and AUTRE (Autre), and the codes ECLUS, C.COM and PPG.T
+  without a label; the list may have more codes.
+parent: category
+categories:
+- energy
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z][A-Z.]{1,3}[A-Z]$
+examples:
+- value: PHOTV
+  description: Photovoltaïque; register file of 2024
+- value: FIL.E
+  description: Fil de l'eau; register file of 2024
+- value: LAC
+  description: Lac; register file of 2024
+- value: Photovoltaïque
+  valid: false
+  description: The label, not the code
+links:
+- type: doc
+  url: https://www.data.gouv.fr/datasets/registre-national-des-installations-de-production-et-de-stockage-delectricite-au-31-12-2024
+translations:
+  fr:
+    name: Code de technologie du registre national des installations de production et de stockage d'électricité

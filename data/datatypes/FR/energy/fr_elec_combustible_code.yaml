@@ -1,0 +1,35 @@
+id: fr_elec_combustible_code
+name: Fuel code of the French register of electricity installations (codeCombustible)
+status: draft
+doc: Code of the fuel of a thermal or nuclear installation in the national register of electricity production
+  and storage installations compiled by RTE, three to five capital letters with a full stop for an abbreviation.
+  The files give it in the codeCombustible column next to the label in combustible, and the secondary
+  fuels, separated by commas, in codesCombustiblesSecondaires. The 2024 files read for this record hold
+  GAZ (Gaz), FIOUL (Fioul), CHARB (Charbon), URANI (Uranium), BOIS (Bois), D.MEN (Déchets ménagers), D.PAP
+  (Déchets papeterie) and D.IND (Déchets industriels); the list may have more codes.
+parent: category
+categories:
+- energy
+country:
+- FR
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z][A-Z.]{1,3}[A-Z]$
+examples:
+- value: GAZ
+  description: Gaz; register file of 2024
+- value: FIOUL
+  description: Fioul; register file of 2024
+- value: D.MEN
+  description: Déchets ménagers; register file of 2024
+- value: Gaz
+  valid: false
+  description: The label, not the code
+links:
+- type: doc
+  url: https://www.data.gouv.fr/datasets/registre-national-des-installations-de-production-et-de-stockage-delectricite-au-31-12-2024
+translations:
+  fr:
+    name: Code de combustible du registre national des installations de production et de stockage d'électricité

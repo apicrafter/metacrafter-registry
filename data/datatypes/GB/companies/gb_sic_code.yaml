@@ -1,0 +1,34 @@
+id: gb_sic_code
+name: UK Standard Industrial Classification code (SIC 2007)
+status: draft
+doc: Code of an economic activity in the UK Standard Industrial Classification of 2007. Companies House
+  records the nature of business of a company with five-digit codes from a condensed version of the list
+  of the Office for National Statistics, 01110 (growing of cereals) to 99000, with 99999 for a dormant
+  company and 74990 for a non-trading company; its bulk data writes the code with its label (62020 - Information
+  technology consultancy activities). Statistical tables also write a class or a subclass with a full
+  stop and a slash (25.62, 74.90/9).
+categories:
+- companies
+- industry
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{5}$
+examples:
+- value: '01110'
+  description: Growing of cereals (except rice), leguminous crops and oil seeds; Companies House list
+- value: '74990'
+  description: Non-trading company; Companies House list
+- value: '62020'
+  description: Information technology consultancy activities; Companies House bulk data
+- value: '6202'
+  valid: false
+  description: Four digits, a class without the last digit
+links:
+- type: doc
+  url: https://resources.companieshouse.gov.uk/sic/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Standard_Industrial_Classification
