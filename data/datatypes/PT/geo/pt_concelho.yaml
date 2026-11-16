@@ -1,0 +1,31 @@
+id: pt_concelho
+name: Portuguese municipality (concelho)
+status: draft
+doc: Name of one of the 308 municipalities (concelhos, municípios) of Portugal, such as Abrantes, Águeda,
+  Chaves or Vila Pouca de Aguiar; 278 are on the mainland, 19 in the Azores and 11 in Madeira. Tables
+  give it in columns named concelho or município, in capitals in many geoportal layers (VILA POUCA DE
+  AGUIAR). Its code is the four-digit form of pt_dicofre.
+parent: admin_area_2
+categories:
+- geo
+- government
+country:
+- PT
+langs:
+- pt
+is_pii: false
+classification: categorical
+examples:
+- value: Abrantes
+- value: Águeda
+- value: Vila Pouca de Aguiar
+- value: CHAVES
+  description: in capitals
+links:
+- type: wikipedia
+  url: https://pt.wikipedia.org/wiki/Lista_de_municípios_de_Portugal
+translations:
+  pt:
+    name: Concelho
+  ru:
+    name: Муниципалитет Португалии (конселью)

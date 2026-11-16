@@ -1,0 +1,30 @@
+id: th_school_code
+name: Thai school code (10 digits)
+status: draft
+doc: Ten-digit code of a school or college in the registers of the Thai Ministry of Education, as in 1310016101.
+  The lists of colleges of the Office of the Vocational Education Commission give it in columns named
+  รหัสสถานศึกษา (institution code) and รหัสโรงเรียน (school code); in them the codes start with 13 and
+  the province code (th_province_code).
+categories:
+- education
+- government
+country:
+- TH
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{10}$
+examples:
+- value: '1310016101'
+  description: a public vocational college in Bangkok
+- value: '1310100545'
+  description: a private vocational college in Bangkok
+- value: '131001610'
+  valid: false
+  description: nine digits
+translations:
+  th:
+    name: รหัสสถานศึกษา
+  ru:
+    name: Код учебного заведения Таиланда

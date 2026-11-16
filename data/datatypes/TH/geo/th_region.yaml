@@ -1,0 +1,34 @@
+id: th_region
+name: Thai region
+status: draft
+doc: 'Name of a region of Thailand in Thai, with or without the word ภาค: เหนือ (north), กลาง (centre),
+  ตะวันออกเฉียงเหนือ or อีสาน (north-east), ใต้ (south), ตะวันออก (east) and ตะวันตก (west). The National
+  Statistical Office uses four regions beside Bangkok, other agencies six. Statistical tables give it
+  in columns named REGION or ภาค.'
+categories:
+- geo
+country:
+- TH
+langs:
+- th
+is_pii: false
+classification: categorical
+regexp: ^(?:ภาค)?(?:เหนือ|กลาง|ตะวันออกเฉียงเหนือ|อีสาน|ใต้|ตะวันออก|ตะวันตก)$
+examples:
+- value: ภาคเหนือ
+  description: the north
+- value: ตะวันออกเฉียงเหนือ
+  description: the north-east, without the word ภาค
+- value: ภาคใต้
+  description: the south
+- value: กรุงเทพมหานคร
+  valid: false
+  description: Bangkok, a province
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Regions_of_Thailand
+translations:
+  th:
+    name: ภาค
+  ru:
+    name: Регион Таиланда

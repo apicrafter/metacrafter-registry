@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "0f08dfbd2232ace1919ae37430cbef6d1244e45d"
+  "ref": "191ee5118cc9cf520dc6e390ca58818b838d8cfa"
  },
  "rules": [
   {
@@ -22432,6 +22432,66 @@
    "country_code": "pl"
   },
   {
+   "rule": "ptbgribyname",
+   "key": "pt_bgri_code",
+   "type": "field",
+   "match": "regex",
+   "file": "pt/pt_codes.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "pt"
+  },
+  {
+   "rule": "ptconcelhobyname",
+   "key": "pt_concelho",
+   "type": "field",
+   "match": "regex",
+   "file": "pt/pt_codes.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "pt"
+  },
+  {
+   "rule": "ptdicofrebyname",
+   "key": "pt_dicofre",
+   "type": "field",
+   "match": "regex",
+   "file": "pt/pt_codes.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "pt"
+  },
+  {
+   "rule": "ptdistrictbyname",
+   "key": "pt_district",
+   "type": "field",
+   "match": "regex",
+   "file": "pt/pt_codes.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "pt"
+  },
+  {
+   "rule": "ptpostcodebyname",
+   "key": "pt_postcode",
+   "type": "field",
+   "match": "regex",
+   "file": "pt/pt_codes.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "pt"
+  },
+  {
+   "rule": "ptquartervalue",
+   "key": "pt_quarter",
+   "type": "data",
+   "match": "regex",
+   "file": "pt/pt_codes.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "pt"
+  },
+  {
    "rule": "ptdescriptionknown",
    "key": "description",
    "type": "field",
@@ -24346,6 +24406,46 @@
    "country_code": "sa"
   },
   {
+   "rule": "sediarienummerbyname",
+   "key": "se_diarienummer",
+   "type": "field",
+   "match": "regex",
+   "file": "se/se_codes.yaml",
+   "context": "government",
+   "lang": "sv",
+   "country_code": "se"
+  },
+  {
+   "rule": "sefastighetsbeteckningbyname",
+   "key": "se_fastighetsbeteckning",
+   "type": "field",
+   "match": "regex",
+   "file": "se/se_codes.yaml",
+   "context": "government",
+   "lang": "sv",
+   "country_code": "se"
+  },
+  {
+   "rule": "senvridbyname",
+   "key": "se_nvr_id",
+   "type": "field",
+   "match": "regex",
+   "file": "se/se_codes.yaml",
+   "context": "government",
+   "lang": "sv",
+   "country_code": "se"
+  },
+  {
+   "rule": "senykobyname",
+   "key": "se_nyko",
+   "type": "field",
+   "match": "regex",
+   "file": "se/se_codes.yaml",
+   "context": "government",
+   "lang": "sv",
+   "country_code": "se"
+  },
+  {
    "rule": "selibrisidvalue",
    "key": "libris_id",
    "type": "data",
@@ -24506,6 +24606,116 @@
    "country_code": "sg"
   },
   {
+   "rule": "siesdbyname",
+   "key": "si_esd",
+   "type": "field",
+   "match": "regex",
+   "file": "si/si_codes.yaml",
+   "context": "government",
+   "lang": "sl",
+   "country_code": "si"
+  },
+  {
+   "rule": "sikocodebyname",
+   "key": "si_ko_code",
+   "type": "field",
+   "match": "regex",
+   "file": "si/si_codes.yaml",
+   "context": "government",
+   "lang": "sl",
+   "country_code": "si"
+  },
+  {
+   "rule": "simaticnastevilkabyname",
+   "key": "si_maticna_stevilka",
+   "type": "field",
+   "match": "regex",
+   "file": "si/si_codes.yaml",
+   "context": "government",
+   "lang": "sl",
+   "country_code": "si"
+  },
+  {
+   "rule": "siparcelnumberbyname",
+   "key": "si_parcel_number",
+   "type": "field",
+   "match": "regex",
+   "file": "si/si_codes.yaml",
+   "context": "government",
+   "lang": "sl",
+   "country_code": "si"
+  },
+  {
+   "rule": "siplacnapodskupinabyname",
+   "key": "si_placna_podskupina",
+   "type": "field",
+   "match": "regex",
+   "file": "si/si_codes.yaml",
+   "context": "government",
+   "lang": "sl",
+   "country_code": "si"
+  },
+  {
+   "rule": "sipostcodebyname",
+   "key": "si_postcode",
+   "type": "field",
+   "match": "regex",
+   "file": "si/si_codes.yaml",
+   "context": "government",
+   "lang": "sl",
+   "country_code": "si"
+  },
+  {
+   "rule": "siproracunskiuporabnikbyname",
+   "key": "si_proracunski_uporabnik",
+   "type": "field",
+   "match": "regex",
+   "file": "si/si_codes.yaml",
+   "context": "government",
+   "lang": "sl",
+   "country_code": "si"
+  },
+  {
+   "rule": "siskdbyname",
+   "key": "si_skd_code",
+   "type": "field",
+   "match": "regex",
+   "file": "si/si_codes.yaml",
+   "context": "government",
+   "lang": "sl",
+   "country_code": "si"
+  },
+  {
+   "rule": "siskdvalue",
+   "key": "si_skd_code",
+   "type": "data",
+   "match": "regex",
+   "file": "si/si_codes.yaml",
+   "context": "government",
+   "lang": "sl",
+   "country_code": "si"
+  },
+  {
+   "rule": "sistatisticalregionbyname",
+   "key": "si_statistical_region",
+   "type": "field",
+   "match": "regex",
+   "file": "si/si_codes.yaml",
+   "context": "government",
+   "lang": "sl",
+   "country_code": "si"
+  },
+  {
+   "rule": "sitaxnumberbyname",
+   "key": "si_tin",
+   "type": "field",
+   "match": "regex",
+   "file": "si/si_codes.yaml",
+   "context": "government",
+   "lang": "sl",
+   "country_code": "si"
+  },
+  {
    "rule": "slchiefdombyname",
    "key": "sl_chiefdom",
    "type": "field",
@@ -24514,6 +24724,166 @@
    "context": "geo",
    "lang": "en",
    "country_code": "sl"
+  },
+  {
+   "rule": "thbangkokdistrictbyname",
+   "key": "th_bangkok_district",
+   "type": "field",
+   "match": "regex",
+   "file": "th/th_codes.yaml",
+   "context": "government",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thbondsymbolbyname",
+   "key": "th_bond_symbol",
+   "type": "field",
+   "match": "regex",
+   "file": "th/th_codes.yaml",
+   "context": "government",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thcivilservicelevelbyname",
+   "key": "th_civil_service_position_level",
+   "type": "field",
+   "match": "regex",
+   "file": "th/th_codes.yaml",
+   "context": "government",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thdistrictcodebyname",
+   "key": "th_district_code",
+   "type": "field",
+   "match": "regex",
+   "file": "th/th_codes.yaml",
+   "context": "government",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thhcodebyname",
+   "key": "th_hcode",
+   "type": "field",
+   "match": "regex",
+   "file": "th/th_codes.yaml",
+   "context": "government",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thnameprefixbyname",
+   "key": "honorificprefix",
+   "type": "field",
+   "match": "regex",
+   "file": "th/th_codes.yaml",
+   "context": "government",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thprovincecodebyname",
+   "key": "th_province_code",
+   "type": "field",
+   "match": "regex",
+   "file": "th/th_codes.yaml",
+   "context": "government",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thregionbyname",
+   "key": "th_region",
+   "type": "field",
+   "match": "regex",
+   "file": "th/th_codes.yaml",
+   "context": "government",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thschoolcodebyname",
+   "key": "th_school_code",
+   "type": "field",
+   "match": "regex",
+   "file": "th/th_codes.yaml",
+   "context": "government",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thsexbyname",
+   "key": "gender",
+   "type": "field",
+   "match": "regex",
+   "file": "th/th_codes.yaml",
+   "context": "government",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thsexvalue",
+   "key": "gender",
+   "type": "data",
+   "match": "func",
+   "file": "th/th_codes.yaml",
+   "context": "government",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thsubdistrictcodebyname",
+   "key": "th_subdistrict_code",
+   "type": "field",
+   "match": "regex",
+   "file": "th/th_codes.yaml",
+   "context": "government",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thdatebevalue",
+   "key": "date_th_be",
+   "type": "data",
+   "match": "regex",
+   "file": "th/th_datetime.yaml",
+   "context": "datetime",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thdatethaivalue",
+   "key": "date_thai",
+   "type": "data",
+   "match": "func",
+   "file": "th/th_datetime.yaml",
+   "context": "datetime",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thmonthbyname",
+   "key": "th_month",
+   "type": "field",
+   "match": "regex",
+   "file": "th/th_datetime.yaml",
+   "context": "datetime",
+   "lang": "th",
+   "country_code": "th"
+  },
+  {
+   "rule": "thmonthnamevalue",
+   "key": "th_month",
+   "type": "data",
+   "match": "func",
+   "file": "th/th_datetime.yaml",
+   "context": "datetime",
+   "lang": "th",
+   "country_code": "th"
   },
   {
    "rule": "thyearbevalue",

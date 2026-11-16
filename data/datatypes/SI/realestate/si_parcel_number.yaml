@@ -1,0 +1,35 @@
+id: si_parcel_number
+name: Slovenian parcel number (parcelna številka)
+status: draft
+doc: 'Number of a land parcel within a cadastral municipality of Slovenia (si_ko_code): a number, or a
+  number and a subdivision after a slash, as in 637/4. Building parcels of the older cadastre have an
+  asterisk before the number (*137/3). Municipal property lists give it in columns named parcelna številka
+  or parc. št.'
+parent: parcelnumber
+categories:
+- realestate
+- geo
+country:
+- SI
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\*?\d{1,5}(?:/\d{1,4})?$
+examples:
+- value: 637/4
+- value: '2455'
+  description: without a subdivision
+- value: '*137/3'
+  description: a building parcel
+- value: 637/4 in 637/5
+  valid: false
+  description: two parcels
+links:
+- type: doc
+  url: https://www.gov.si/drzavni-organi/organi-v-sestavi/geodetska-uprava/
+translations:
+  sl:
+    name: Parcelna številka
+  ru:
+    name: Номер земельного участка Словении

@@ -1,0 +1,37 @@
+id: si_placna_podskupina
+name: Slovenian public sector salary subgroup
+status: draft
+doc: 'Code of a salary subgroup (plačna podskupina) of the Slovenian public sector under the Public Sector
+  Salary System Act: the letter of the salary group, from A (functionaries) to K (social insurance), and
+  the number of the subgroup, as in A1 (the president and functionaries of the executive), C3 (police
+  officers) or E1 (doctors and dentists). The salary statistics of the Ministry of Public Administration
+  write the number with two digits (A01, J03).'
+parent: category
+categories:
+- government
+- finances
+country:
+- SI
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-K]0?[1-7]$
+examples:
+- value: A01
+  description: functionaries of the executive, as in the salary statistics
+- value: C3
+  description: police officers
+- value: J03
+  description: other support staff
+- value: L01
+  valid: false
+  description: there is no group L
+links:
+- type: doc
+  url: https://www.gov.si/teme/placni-sistem/
+translations:
+  sl:
+    name: Plačna podskupina
+  ru:
+    name: Подгруппа оплаты труда в публичном секторе Словении

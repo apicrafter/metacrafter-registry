@@ -1,0 +1,40 @@
+id: th_civil_service_position_level
+name: Thai civil service position level
+status: draft
+doc: 'Level of a position in the Thai civil service under the Civil Service Act of 2008, which has four
+  position types: general (ทั่วไป) with the levels ปฏิบัติงาน, ชำนาญงาน, อาวุโส and ทักษะพิเศษ; knowledge
+  worker (วิชาการ) with ปฏิบัติการ, ชำนาญการ, ชำนาญการพิเศษ, เชี่ยวชาญ and ทรงคุณวุฒิ; managerial (อำนวยการ)
+  and executive (บริหาร), each with ต้น (primary) and สูง (higher). Staff statistics of the Office of
+  the Civil Service Commission count civil servants by it, in columns named ระดับตำแหน่ง, and write the
+  managerial and executive levels as อำนวยการต้น or ประเภทบริหาร ระดับสูง.'
+parent: category
+categories:
+- government
+country:
+- TH
+langs:
+- th
+is_pii: false
+classification: categorical
+regexp: ^(?:ปฏิบัติงาน|ชำนาญงาน|อาวุโส|ทักษะพิเศษ|ปฏิบัติการ|ชำนาญการ|ชำนาญการพิเศษ|เชี่ยวชาญ|ทรงคุณวุฒิ|(?:ประเภท)?(?:อำนวยการ|บริหาร)
+  ?(?:ระดับ)?(?:ต้น|สูง)|ประเภท(?:ทั่วไป|วิชาการ) ระดับ(?:ปฏิบัติงาน|ชำนาญงาน|อาวุโส|ทักษะพิเศษ|ปฏิบัติการ|ชำนาญการ|ชำนาญการพิเศษ|เชี่ยวชาญ|ทรงคุณวุฒิ))$
+examples:
+- value: ชำนาญการพิเศษ
+  description: senior professional level of the knowledge worker type
+- value: ปฏิบัติงาน
+  description: operational level of the general type
+- value: อำนวยการสูง
+  description: higher managerial level
+- value: ประเภทบริหาร ระดับต้น
+  description: primary executive level, with the type
+- value: ปริญญาตรี
+  valid: false
+  description: a bachelor's degree
+links:
+- type: doc
+  url: https://www.ocsc.go.th/
+translations:
+  th:
+    name: ระดับตำแหน่งข้าราชการพลเรือน
+  ru:
+    name: Уровень должности государственной службы Таиланда

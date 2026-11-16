@@ -1,0 +1,30 @@
+id: date_th_be
+name: Date with a Thai Buddhist era year
+status: draft
+doc: Calendar date written as day, month and year with the year in the Buddhist era (พ.ศ., the Gregorian
+  year plus 543), as in 17/06/2567 for 17 June 2024. Thai government tables write dates of auctions, contracts
+  and licences this way; a maturity date of a bond can lie decades ahead (17/06/2586).
+semantic_type: date
+country:
+- TH
+langs:
+- th
+regexp: ^(?:0?[1-9]|[12]\d|3[01])[/.-](?:0?[1-9]|1[0-2])[/.-]2[4-6]\d{2}$
+examples:
+- value: 17/06/2567
+  description: 17 June 2024
+- value: 19/2/2563
+  description: 19 February 2020, without leading zeros
+- value: 17/06/2586
+  description: 17 June 2043, a bond maturity
+- value: 17/06/2024
+  valid: false
+  description: a Gregorian year
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Thai_solar_calendar
+translations:
+  th:
+    name: วันที่ (พ.ศ.)
+  ru:
+    name: Дата с годом буддийской эры (Таиланд)

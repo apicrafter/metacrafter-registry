@@ -1,0 +1,33 @@
+id: se_nyko
+name: Swedish key code area (NYKO)
+status: draft
+doc: Code of a sub-area of a Swedish municipality in the key code system (nyckelkodsystemet, NYKO) of
+  Statistics Sweden. Each municipality divides itself into areas on up to six levels and the code grows
+  with the level; the finest level has six digits, as in 010104. Statistics Sweden delivers population
+  statistics by these areas, and municipal open data carries the code in columns named nyckelkod or nyko.
+categories:
+- geo
+- government
+country:
+- SE
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,6}$
+examples:
+- value: '010104'
+  description: a level 6 area of Umeå
+- value: '174908'
+  description: a level 6 area of Umeå
+- value: '0101045'
+  valid: false
+  description: seven digits
+links:
+- type: doc
+  url: https://www.scb.se/vara-tjanster/bestall-data-och-statistik/regionala-statistikprodukter/statistikpaket/nyckelkodsystemet-nyko/
+translations:
+  sv:
+    name: Nyckelkod (NYKO)
+  ru:
+    name: Код статистического района муниципалитета Швеции (NYKO)

@@ -1,0 +1,25 @@
+id: pt_quarter
+name: 'Quarter of the year (Portuguese: trimestre)'
+status: draft
+doc: Calendar quarter written in Portuguese with an ordinal number and the word trimestre, optionally
+  followed by the year, as in "4º Trimestre" or "1.º trimestre de 2023". The justice statistics of Portugal
+  give the quarter of a row this way; Spanish and Italian tables write the same words.
+semantic_type: quarter
+langs:
+- pt
+- es
+- it
+regexp: '^[1-4]\.?[ºo°]? ?[Tt]rimestre(?: (?:de )?\d{4})?$'
+examples:
+- value: 4º Trimestre
+  description: fourth quarter
+- value: 1.º trimestre de 2023
+  description: first quarter of 2023
+- value: 5º Trimestre
+  valid: false
+  description: not a quarter
+translations:
+  pt:
+    name: Trimestre
+  ru:
+    name: Квартал (на португальском)

@@ -1,0 +1,35 @@
+id: th_bangkok_district
+name: Bangkok district (khet)
+status: draft
+doc: Name of one of the 50 districts (khet) of Bangkok in Thai, such as พระนคร (Phra Nakhon), จตุจักร
+  (Chatuchak) or บางรัก (Bang Rak), with or without the word เขต before it. Tables of the Bangkok Metropolitan
+  Administration give it in columns named dname or district beside the district code (th_district_code).
+parent: district
+categories:
+- geo
+- government
+country:
+- TH
+langs:
+- th
+is_pii: false
+classification: categorical
+regexp: ^(?:เขต ?)?(?:พระนคร|ดุสิต|หนองจอก|บางรัก|บางเขน|บางกะปิ|ปทุมวัน|ป้อมปราบศัตรูพ่าย|พระโขนง|มีนบุรี|ลาดกระบัง|ยานนาวา|สัมพันธวงศ์|พญาไท|ธนบุรี|บางกอกใหญ่|ห้วยขวาง|คลองสาน|ตลิ่งชัน|บางกอกน้อย|บางขุนเทียน|ภาษีเจริญ|หนองแขม|ราษฎร์บูรณะ|บางพลัด|ดินแดง|บึงกุ่ม|สาทร|บางซื่อ|จตุจักร|บางคอแหลม|ประเวศ|คลองเตย|สวนหลวง|จอมทอง|ดอนเมือง|ราชเทวี|ลาดพร้าว|วัฒนา|บางแค|หลักสี่|สายไหม|คันนายาว|สะพานสูง|วังทองหลาง|คลองสามวา|บางนา|ทวีวัฒนา|ทุ่งครุ|บางบอน)$
+examples:
+- value: พระนคร
+  description: Phra Nakhon
+- value: เขตจตุจักร
+  description: Chatuchak, with the word khet
+- value: บางรัก
+  description: Bang Rak
+- value: เชียงใหม่
+  valid: false
+  description: Chiang Mai, a province
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_districts_of_Bangkok
+translations:
+  th:
+    name: เขตของกรุงเทพมหานคร
+  ru:
+    name: Район Бангкока (кхет)
