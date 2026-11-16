@@ -154,6 +154,13 @@ th { background: var(--bg-soft); font-weight: 600; white-space: nowrap; }
 tbody tr:last-child td { border-bottom: 0; }
 td.id { font-family: var(--mono); font-size: .88rem; white-space: nowrap; }
 td.doc { color: var(--fg-muted); min-width: 16rem; }
+th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; }
+/* Category list: one table per kind, with the same column widths in each. */
+.category-table { table-layout: fixed; }
+.category-table th:first-child { width: 17rem; }
+.category-table th.num { width: 5.5rem; }
+.category-table td.doc { min-width: 0; }
+.category-table code { font-size: .82rem; }
 th .sort-btn { font: inherit; font-weight: 600; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
 th .sort-btn::after { content: " ↕"; color: var(--fg-muted); font-weight: 400; }
 th[aria-sort="ascending"] .sort-btn::after { content: " ↑"; color: var(--accent); }
@@ -164,6 +171,16 @@ th[aria-sort="descending"] .sort-btn::after { content: " ↓"; color: var(--acce
 .facts dt { color: var(--fg-muted); }
 .facts dd { margin: 0; overflow-wrap: anywhere; }
 @media (max-width: 640px) {
+  /* Category list on a narrow screen: the description goes under the name. */
+  .category-table, .category-table thead, .category-table tbody { display: block; }
+  .category-table tr { display: grid; grid-template-columns: 1fr auto; border-bottom: 1px solid var(--border); }
+  .category-table tbody tr:last-child { border-bottom: 0; }
+  .category-table th, .category-table td { border-bottom: 0; }
+  .category-table th:first-child, .category-table th.num { width: auto; }
+  .category-table th:nth-child(2) { display: none; }
+  .category-table td:first-child { grid-area: 1 / 1; }
+  .category-table td.num { grid-area: 1 / 2; }
+  .category-table td.doc { grid-area: 2 / 1 / 3 / 3; padding-top: 0; }
   .facts { grid-template-columns: 1fr; gap: .1rem; }
   .facts dd { margin-bottom: .6rem; }
   .header-search { margin-left: 0; width: 100%; }

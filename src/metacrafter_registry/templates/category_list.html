@@ -7,10 +7,21 @@
 {% for title, lead, members in kinds if members %}
 <h2>{{ title }}</h2>
 <p class="muted">{{ lead }}</p>
-<div class="grid">
-{% for c in members %}
-  <a class="card" href="{{ base }}/category/{{ c.id }}">{{ c.name }}<br><span class="count">{{ c.count }} types · <code>{{ c.id }}</code></span>{% if c.description %}<br><span class="count">{{ c.description }}</span>{% endif %}</a>
-{% endfor %}
+<div class="table-wrap">
+<table class="category-table" data-sortable>
+  <thead>
+    <tr><th scope="col">Category</th><th scope="col">Description</th><th scope="col" class="num">Types</th></tr>
+  </thead>
+  <tbody>
+  {% for c in members %}
+    <tr>
+      <td><a href="{{ base }}/category/{{ c.id }}">{{ c.name }}</a><br><code>{{ c.id }}</code></td>
+      <td class="doc">{{ c.description }}</td>
+      <td class="num">{{ c.count }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
 </div>
 {% endfor %}
 {% endblock %}
