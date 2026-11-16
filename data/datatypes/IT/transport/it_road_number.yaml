@@ -1,0 +1,41 @@
+id: it_road_number
+name: Italian road number
+status: draft
+doc: 'Number of an Italian road: letters for its class and a number. A for motorways (A1, A 04), SS for
+  state roads (SS 36), SR for regional and SP for provincial roads, SC for municipal roads, RA for motorway
+  link roads and T for the Alpine tunnels (T1, Mont Blanc). A suffix may follow the number: bis, ter,
+  quater, dir (branch), var (variant), racc (link) or radd. Files pad the number with zeros (SS 011) and
+  put the road name after it (SS 011 - Padana Superiore). A provincial number is unique only inside its
+  province.'
+parent: id
+categories:
+- transport
+- geo
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: '^(?:A|SS|SR|SP|SC|RA|T) ?\d{1,4}(?: ?(?:bis|ter|quater|dir|var|racc|radd))*$'
+examples:
+- value: A1
+  description: Autostrada del Sole
+- value: SS 36
+  description: Strada statale del Lago di Como e dello Spluga
+- value: SS 031 bis
+  description: With a zero-padded number and a suffix, as the road tables of the transport ministry write
+    it
+- value: T1
+  description: Mont Blanc tunnel
+- value: E35
+  valid: false
+  description: A European route number (e_road_number)
+links:
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Classificazioni_delle_strade_in_Italia
+translations:
+  it:
+    name: Numero di strada
+  ru:
+    name: Номер автомобильной дороги Италии

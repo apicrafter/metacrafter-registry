@@ -1,0 +1,34 @@
+id: scopus_eid
+name: Scopus EID
+status: draft
+doc: 'Identifier of a publication record in the Scopus bibliographic database of Elsevier: the prefix
+  2-s2.0- and a number. Exports of Scopus search results carry it in the column EID, beside the title,
+  the authors and the DOI.'
+parent: id
+categories:
+- science
+- publishing
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^2-s2\.0-\d{8,12}$
+examples:
+- value: 2-s2.0-41049112855
+  description: The dynamics of contractual and relational governance, the example of Wikidata property
+    P1154
+- value: 2-s2.0-0027725873
+  description: A record of the 1990s, from a Scopus export in the repository of BRIN, Indonesia
+- value: '41049112855'
+  valid: false
+  description: Without the prefix
+mappings:
+  wikidata: P1154
+links:
+- type: doc
+  url: https://www.scopus.com/
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P1154
+translations:
+  ru:
+    name: Идентификатор публикации Scopus (EID)

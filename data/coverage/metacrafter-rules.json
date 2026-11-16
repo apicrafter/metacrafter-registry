@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "b07ba4ec914635785f5cbabba83ed0ad1d84343b"
+  "ref": "0f08dfbd2232ace1919ae37430cbef6d1244e45d"
  },
  "rules": [
   {
@@ -7075,6 +7075,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "eubathingwateridbyname",
+   "key": "eu_bathing_water_id",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "glidenumbervalue",
    "key": "glide_number",
    "type": "data",
@@ -10986,6 +10996,16 @@
    "key": "scopusauthoirid",
    "type": "field",
    "match": "text",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "scopuseidvalue",
+   "key": "scopus_eid",
+   "type": "data",
+   "match": "regex",
    "file": "common/science.yaml",
    "context": "science",
    "lang": "common",
@@ -15332,6 +15352,16 @@
    "country_code": "eu"
   },
   {
+   "rule": "nutscodebylongname",
+   "key": "nutsregion",
+   "type": "field",
+   "match": "regex",
+   "file": "eu/eu_procurement.yaml",
+   "context": "government",
+   "lang": "en",
+   "country_code": "eu"
+  },
+  {
    "rule": "nutsfield",
    "key": "nutsregion",
    "type": "field",
@@ -15519,6 +15549,16 @@
    "file": "eu/eu_tax.yaml",
    "context": "finances",
    "lang": "en",
+   "country_code": "eu"
+  },
+  {
+   "rule": "eudrivinglicencecategorybyname",
+   "key": "eu_driving_licence_category",
+   "type": "field",
+   "match": "regex",
+   "file": "eu/eu_transport.yaml",
+   "context": "transport",
+   "lang": "common",
    "country_code": "eu"
   },
   {
@@ -18362,6 +18402,26 @@
    "country_code": "hu"
   },
   {
+   "rule": "idmonthbyname",
+   "key": "id_month",
+   "type": "field",
+   "match": "regex",
+   "file": "id/id_datetime.yaml",
+   "context": "datetime",
+   "lang": "id",
+   "country_code": "id"
+  },
+  {
+   "rule": "idmonthnamevalue",
+   "key": "id_month",
+   "type": "data",
+   "match": "func",
+   "file": "id/id_datetime.yaml",
+   "context": "datetime",
+   "lang": "id",
+   "country_code": "id"
+  },
+  {
    "rule": "idnpsnvalue",
    "key": "id_npsn",
    "type": "data",
@@ -18416,6 +18476,16 @@
    "key": "idcity",
    "type": "field",
    "match": "text",
+   "file": "id/id_geo.yaml",
+   "context": "geo",
+   "lang": "id",
+   "country_code": "id"
+  },
+  {
+   "rule": "idkodewilayahbyname",
+   "key": "id_kode_wilayah",
+   "type": "field",
+   "match": "regex",
    "file": "id/id_geo.yaml",
    "context": "geo",
    "lang": "id",
@@ -18482,6 +18552,26 @@
    "country_code": "id"
   },
   {
+   "rule": "ideducationlevelbyname",
+   "key": "education_level",
+   "type": "field",
+   "match": "regex",
+   "file": "id/id_persons.yaml",
+   "context": "persons",
+   "lang": "id",
+   "country_code": "id"
+  },
+  {
+   "rule": "idgenderbyname",
+   "key": "gender",
+   "type": "field",
+   "match": "regex",
+   "file": "id/id_persons.yaml",
+   "context": "persons",
+   "lang": "id",
+   "country_code": "id"
+  },
+  {
    "rule": "idnikfield",
    "key": "idnik",
    "type": "field",
@@ -18522,6 +18612,26 @@
    "country_code": "id"
   },
   {
+   "rule": "idpnsgolonganbyname",
+   "key": "id_pns_golongan",
+   "type": "field",
+   "match": "regex",
+   "file": "id/id_persons.yaml",
+   "context": "persons",
+   "lang": "id",
+   "country_code": "id"
+  },
+  {
+   "rule": "idreligionbyname",
+   "key": "religion",
+   "type": "field",
+   "match": "regex",
+   "file": "id/id_persons.yaml",
+   "context": "persons",
+   "lang": "id",
+   "country_code": "id"
+  },
+  {
    "rule": "ieeircodeknown",
    "key": "ie_postcode",
    "type": "field",
@@ -18534,6 +18644,26 @@
   {
    "rule": "ieeircodevalue",
    "key": "ie_postcode",
+   "type": "data",
+   "match": "regex",
+   "file": "ie/ie_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ie"
+  },
+  {
+   "rule": "ielogainmidbyname",
+   "key": "ie_logainm_id",
+   "type": "field",
+   "match": "regex",
+   "file": "ie/ie_geo.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "ie"
+  },
+  {
+   "rule": "ielogainmidvalue",
+   "key": "ie_logainm_id",
    "type": "data",
    "match": "regex",
    "file": "ie/ie_geo.yaml",
@@ -18702,10 +18832,190 @@
    "country_code": "in"
   },
   {
+   "rule": "itairpollutantbyname",
+   "key": "air_pollutant",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_codes.yaml",
+   "context": "government",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itatecobyname",
+   "key": "it_ateco",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_codes.yaml",
+   "context": "government",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itcatastocategorybyname",
+   "key": "it_catasto_category",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_codes.yaml",
+   "context": "government",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itcodicefiscalebyname",
+   "key": "it_codicefiscale",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_codes.yaml",
+   "context": "government",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itcupbyname",
+   "key": "it_cup",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_codes.yaml",
+   "context": "government",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itcupvalue",
+   "key": "it_cup",
+   "type": "data",
+   "match": "regex",
+   "file": "it/it_codes.yaml",
+   "context": "government",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "iteoistationcodebyname",
+   "key": "eea_eoi_station_code",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_codes.yaml",
+   "context": "government",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itistatcomunebyname",
+   "key": "it_istat_comune",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_codes.yaml",
+   "context": "government",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itprovinceabbreviationbyname",
+   "key": "it_province_code",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_codes.yaml",
+   "context": "government",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itroadnumberbyname",
+   "key": "it_road_number",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_codes.yaml",
+   "context": "government",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itrupbyname",
+   "key": "person_fullname",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_codes.yaml",
+   "context": "government",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itsoacategorybyname",
+   "key": "it_soa_category",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_codes.yaml",
+   "context": "government",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itsoaclassificabyname",
+   "key": "it_soa_classifica",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_codes.yaml",
+   "context": "government",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itunitofmeasurebyname",
+   "key": "unit_of_measure",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_codes.yaml",
+   "context": "government",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itbirthyearbyname",
+   "key": "birth_year",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_datetime.yaml",
+   "context": "datetime",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
    "rule": "itdeathdayname",
    "key": "deathday",
    "type": "field",
    "match": "text",
+   "file": "it/it_datetime.yaml",
+   "context": "datetime",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itmonthbyname",
+   "key": "it_month",
+   "type": "field",
+   "match": "regex",
+   "file": "it/it_datetime.yaml",
+   "context": "datetime",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itmonthnamevalue",
+   "key": "it_month",
+   "type": "data",
+   "match": "func",
+   "file": "it/it_datetime.yaml",
+   "context": "datetime",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "ityearbylongname",
+   "key": "year",
+   "type": "field",
+   "match": "regex",
    "file": "it/it_datetime.yaml",
    "context": "datetime",
    "lang": "it",
@@ -18756,6 +19066,16 @@
    "key": "city",
    "type": "field",
    "match": "text",
+   "file": "it/it_geo.yaml",
+   "context": "geo",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itcomunebyname",
+   "key": "it_comune",
+   "type": "field",
+   "match": "regex",
    "file": "it/it_geo.yaml",
    "context": "geo",
    "lang": "it",
@@ -18816,6 +19136,16 @@
    "key": "province",
    "type": "field",
    "match": "text",
+   "file": "it/it_geo.yaml",
+   "context": "geo",
+   "lang": "it",
+   "country_code": "it"
+  },
+  {
+   "rule": "itregionbyname",
+   "key": "it_region",
+   "type": "field",
+   "match": "regex",
    "file": "it/it_geo.yaml",
    "context": "geo",
    "lang": "it",

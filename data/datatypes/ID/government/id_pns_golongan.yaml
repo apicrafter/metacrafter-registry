@@ -1,0 +1,36 @@
+id: id_pns_golongan
+name: Indonesian civil servant grade (golongan ruang)
+status: draft
+doc: 'Grade of an Indonesian civil servant (pegawai negeri sipil, PNS): a group in Roman numerals from
+  I to IV and a step letter, from I/a (Juru Muda) to IV/e (Pembina Utama). Groups I to III have the steps
+  a to d and group IV has a to e, 17 grades in all. Files write the grade with a slash (III/a), a dot
+  (III.a) or neither (IIIa). Staff statistics of Indonesian ministries and local governments count employees
+  by it, in columns named golongan.'
+parent: category
+categories:
+- government
+country:
+- ID
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:I{1,3}[/. ]?[a-dA-D]|IV[/. ]?[a-eA-E])$
+examples:
+- value: III/a
+  description: Penata Muda
+- value: IV/e
+  description: Pembina Utama, the highest grade
+- value: II.c
+  description: Pengatur, written with a dot
+- value: I/e
+  valid: false
+  description: Only group IV has the step e
+links:
+- type: wikipedia
+  url: https://id.wikipedia.org/wiki/Pegawai_negeri_sipil_di_Indonesia
+translations:
+  id:
+    name: Golongan ruang PNS
+  ru:
+    name: Ранг государственного служащего Индонезии (golongan)

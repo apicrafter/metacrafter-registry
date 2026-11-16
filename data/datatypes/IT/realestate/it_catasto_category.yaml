@@ -1,0 +1,38 @@
+id: it_catasto_category
+name: Italian cadastral category (categoria catastale)
+status: draft
+doc: 'Category of a building unit in the Italian building cadastre: a group letter, a slash and a number.
+  Group A is housing and offices (A/1 to A/11; A/2 is ordinary housing), B is collective use (B/1 to B/8),
+  C is shops, storerooms and garages (C/1 to C/7; C/6 is a garage), D is special-purpose property (D/1
+  to D/10), E is particular-purpose property (E/1 to E/9) and F is units without income (F/1 to F/7).
+  Property inventories of municipalities and tax records give the category beside the sheet (foglio),
+  parcel (particella) and unit (subalterno).'
+parent: category
+categories:
+- realestate
+- government
+country:
+- IT
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:A/(?:[1-9]|1[01])|B/[1-8]|C/[1-7]|D/(?:[1-9]|10)|E/[1-9]|F/[1-7])$
+examples:
+- value: A/3
+  description: Economy housing
+- value: C/6
+  description: Garages and stables
+- value: D/10
+  description: Buildings for farming
+- value: A/12
+  valid: false
+  description: Group A ends at A/11
+links:
+- type: wikipedia
+  url: https://it.wikipedia.org/wiki/Categoria_catastale
+translations:
+  it:
+    name: Categoria catastale
+  ru:
+    name: Кадастровая категория недвижимости Италии
