@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "cd75c0b095828048c1549226a0c97420d0b864de"
+  "ref": "f77ac9e7e75b61994b700f47c3a887d3d3980a8d"
  },
  "rules": [
   {
@@ -13022,6 +13022,166 @@
    "country_code": "cz"
   },
   {
+   "rule": "deavvbyname",
+   "key": "eu_waste_code",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "deelectiontypebyname",
+   "key": "election_type",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "defahrzeugartbyname",
+   "key": "vehicle_type",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "dekommunalwahlbezirkbyname",
+   "key": "municipal_ward",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "denationalitybyname",
+   "key": "de_nationality",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "depoliticalpartybyname",
+   "key": "political_party",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "deproduktbereichbyname",
+   "key": "de_produktbereich",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "deschulformbyname",
+   "key": "de_schulform",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "destaatenkeybyname",
+   "key": "de_staatsangehoerigkeitsschluessel",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "destimmbezirkbyname",
+   "key": "polling_district",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "detatbestandsnummerbyname",
+   "key": "de_tatbestandsnummer",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "deunfallartbyname",
+   "key": "de_unfallart",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "deunfallkategoriebyname",
+   "key": "crash_severity",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "deunfalltypbyname",
+   "key": "de_unfalltyp",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "deunterscheidungszeichenbyname",
+   "key": "de_kfz_unterscheidungszeichen",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "dewz2008byname",
+   "key": "de_wz2008",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_codes.yaml",
+   "context": "government",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
    "rule": "dedatetimename",
    "key": "datetime",
    "type": "field",
@@ -13036,6 +13196,26 @@
    "key": "date_german",
    "type": "data",
    "match": "regex",
+   "file": "de/de_datetime.yaml",
+   "context": "datetime",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "demonthbyname",
+   "key": "de_month",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_datetime.yaml",
+   "context": "datetime",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "demonthnamevalue",
+   "key": "de_month",
+   "type": "data",
+   "match": "text",
    "file": "de/de_datetime.yaml",
    "context": "datetime",
    "lang": "de",
@@ -13122,8 +13302,48 @@
    "country_code": "de"
   },
   {
+   "rule": "deflurstueckbyname",
+   "key": "parcelnumber",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "degemarkungbyname",
+   "key": "de_gemarkung",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
    "rule": "degeopointbyname",
    "key": "geopoint",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "dehousenumberbyname",
+   "key": "buildingnumber",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "dekommunebyname",
+   "key": "city",
    "type": "field",
    "match": "regex",
    "file": "de/de_geo.yaml",
@@ -13146,6 +13366,46 @@
    "key": "postindex",
    "type": "field",
    "match": "text",
+   "file": "de/de_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "destadtbezirkbyname",
+   "key": "de_stadtbezirk",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "destadtteilbyname",
+   "key": "de_stadtteil",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "destrassenschluesselbyname",
+   "key": "de_strassenschluessel",
+   "type": "field",
+   "match": "regex",
+   "file": "de/de_geo.yaml",
+   "context": "geo",
+   "lang": "de",
+   "country_code": "de"
+  },
+  {
+   "rule": "destreetbyname",
+   "key": "street",
+   "type": "field",
+   "match": "regex",
    "file": "de/de_geo.yaml",
    "context": "geo",
    "lang": "de",

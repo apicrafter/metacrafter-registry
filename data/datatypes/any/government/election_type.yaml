@@ -1,0 +1,31 @@
+id: election_type
+name: Election type
+status: draft
+doc: 'The kind of election a row of results belongs to: which body or office is elected. German result
+  files of municipal election software name it in a column Wahl: Europawahl, Bundestagswahl, Landtagswahl,
+  Kreistagswahl, Ratswahl, Bezirksvertretungswahl, Integrationsratswahl, Wahl des Bürgermeisters, and
+  the run-off as Stichwahl des Oberbürgermeisters. In English: general, parliamentary, presidential, local,
+  European election, by-election, referendum. The date or year of the election is another column.'
+parent: category
+categories:
+- government
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Europawahl
+- value: Ratswahl
+  description: the election of a municipal council in North Rhine-Westphalia
+- value: Landtagswahl
+- value: Stichwahl des Oberbürgermeisters
+  description: a run-off
+- value: Parliamentary election
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Election
+translations:
+  de:
+    name: Wahlart
+  ru:
+    name: Вид выборов

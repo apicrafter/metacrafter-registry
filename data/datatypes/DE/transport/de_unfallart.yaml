@@ -1,0 +1,35 @@
+id: de_unfallart
+name: German road accident kind (Unfallart)
+status: draft
+doc: 'Kind of a road accident in German accident statistics: how the collision happened. The Unfallatlas
+  of the statistical offices gives it as a digit in the column UART: 1 collision with a vehicle that starts,
+  stops or stands, 2 with a vehicle ahead or waiting, 3 with a vehicle moving sideways in the same direction,
+  4 with an oncoming vehicle, 5 with a vehicle that turns or crosses, 6 between a vehicle and a pedestrian,
+  7 with an obstacle on the road, 8 leaving the road to the right, 9 to the left, 0 another kind. City
+  portals publish the same column with the words (Abkommen von Fahrbahn nach rechts). The accident type
+  (the conflict that led to it) is de_unfalltyp.'
+parent: category
+categories:
+- transport
+country:
+- DE
+langs:
+- de
+is_pii: false
+classification: categorical
+examples:
+- value: '2'
+  description: collision with a vehicle ahead or waiting
+- value: Abkommen von Fahrbahn nach rechts
+- value: Zusammenstoß mit entgegenkommendem Fahrzeug
+- value: Unfall anderer Art
+links:
+- type: doc
+  url: https://www.opengeodata.nrw.de/produkte/transport_verkehr/unfallatlas/DSB_Unfallatlas_EN.pdf
+- type: wikipedia
+  url: https://de.wikipedia.org/wiki/Unfallart
+translations:
+  de:
+    name: Unfallart
+  ru:
+    name: Вид ДТП (Германия)
