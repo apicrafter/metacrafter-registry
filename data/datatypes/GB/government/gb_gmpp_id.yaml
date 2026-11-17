@@ -1,0 +1,34 @@
+id: gb_gmpp_id
+name: UK Government Major Projects Portfolio ID
+status: draft
+doc: 'Identifier of a project in the Government Major Projects Portfolio data that UK departments publish
+  each year: the abbreviation of the department, a four-digit number and the financial year and quarter
+  in which the project joined the portfolio, such as MOD_0101_1516-Q1.'
+parent: id
+categories:
+- government
+- identifiers
+country:
+- GB
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[A-Za-z]{2,6}_\d{4}_\d{4}-Q[1-4]$
+examples:
+- value: MOD_0101_1516-Q1
+  description: Ministry of Defence, joined in the first quarter of 2015-16
+- value: BEIS_0001_1617-Q2
+- value: DECC_0010_1112-Q1
+- value: MOD_0101
+  valid: false
+  description: Without the year and quarter
+- value: MOD_0101_1516-Q5
+  valid: false
+  description: No fifth quarter
+links:
+- type: doc
+  url: https://www.gov.uk/government/collections/major-projects-data
+translations:
+  ru:
+    name: Идентификатор проекта GMPP (Великобритания)

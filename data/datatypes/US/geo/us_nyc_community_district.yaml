@@ -1,0 +1,36 @@
+id: us_nyc_community_district
+name: New York City community district number
+status: draft
+doc: 'Three-digit number of one of the 59 community districts of New York City: the borough code (1 to
+  5) and the number of the community board in the borough, such as 310 for Brooklyn Community District
+  10. Numbers such as 164, 226 to 228, 355, 356, 480 to 484 and 595 mark parks and airports outside any
+  district. Tables with a borough column write the board number alone (1 to 18).'
+categories:
+- geo
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^(?:1(?:0[1-9]|1[0-2]|64)|2(?:0[1-9]|1[0-2]|2[6-8])|3(?:0[1-9]|1[0-8]|5[56])|4(?:0[1-9]|1[0-4]|8[0-4])|5(?:0[1-3]|95))$
+examples:
+- value: '310'
+  description: Brooklyn Community District 10
+- value: '101'
+  description: Manhattan Community District 1
+- value: '164'
+  description: Central Park
+- value: '319'
+  valid: false
+  description: Brooklyn has 18 districts
+- value: '601'
+  valid: false
+  description: No borough 6
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Community_boards_of_New_York_City
+translations:
+  ru:
+    name: Номер общинного округа Нью-Йорка

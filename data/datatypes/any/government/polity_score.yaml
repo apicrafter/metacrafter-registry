@@ -1,0 +1,33 @@
+id: polity_score
+name: Polity score
+status: draft
+doc: 'Regime score of the Polity project (Polity IV and 5): an integer from -10 (hereditary monarchy)
+  to 10 (consolidated democracy), the democracy score minus the autocracy score. The polity variable also
+  holds the special codes -66 (foreign interruption), -77 (interregnum) and -88 (transition); polity2
+  replaces them.'
+categories:
+- government
+- values
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:-?(?:10|\d)|-66|-77|-88)$
+examples:
+- value: '10'
+  description: Full democracy
+- value: '-7'
+  description: Autocracy
+- value: '-88'
+  description: Transition period
+- value: '11'
+  valid: false
+  description: The scale ends at 10
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Polity_data_series
+- type: doc
+  url: https://www.systemicpeace.org/polityproject.html
+translations:
+  ru:
+    name: Оценка политического режима Polity

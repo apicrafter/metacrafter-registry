@@ -1,0 +1,32 @@
+id: fi_vesistoalue
+name: Finnish drainage basin number (vesistöalue)
+status: draft
+doc: 'Number of a drainage basin in the Finnish catchment division of the environment administration:
+  the main basin (1 to 99, such as 35 for the Kokemäenjoki) and, after a dot, up to three digits for the
+  division into sub-basins, such as 35.141.'
+categories:
+- environment
+- geo
+country:
+- FI
+langs:
+- fi
+is_pii: false
+classification: identifier
+regexp: ^\d{1,2}(?:\.\d{1,3})?$
+examples:
+- value: '35.141'
+  description: Third-level sub-basin
+- value: '24.061'
+  description: Third-level sub-basin
+- value: '35'
+  description: A main basin
+- value: '35.1411'
+  valid: false
+  description: Four digits after the dot
+- value: '135.14'
+  valid: false
+  description: The main basin has at most two digits
+translations:
+  ru:
+    name: Номер водосборного бассейна (Финляндия)

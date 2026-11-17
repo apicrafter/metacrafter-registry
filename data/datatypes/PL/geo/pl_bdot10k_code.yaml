@@ -1,0 +1,34 @@
+id: pl_bdot10k_code
+name: Polish topographic object code (BDOT10k)
+status: draft
+doc: 'Code of an object class in the Polish Topographic Objects Database BDOT10k (the x_kod attribute):
+  four letters for the category and class and two digits for the kind of object, such as BUBD01 for a
+  building class or ADMS01 for a settlement. Derived datasets append a suffix after an underscore.'
+categories:
+- geo
+- identifiers
+country:
+- PL
+langs:
+- pl
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{4}\d{2}$
+examples:
+- value: BUBD11
+  description: A kind of building
+- value: ADMS14
+  description: A kind of settlement
+- value: BUIN03
+- value: BUBD
+  valid: false
+  description: The class without the object kind
+- value: bubd11
+  valid: false
+  description: Lower case
+links:
+- type: wikipedia
+  url: https://pl.wikipedia.org/wiki/Baza_Danych_Obiekt%C3%B3w_Topograficznych
+translations:
+  ru:
+    name: Код объекта BDOT10k (Польша)

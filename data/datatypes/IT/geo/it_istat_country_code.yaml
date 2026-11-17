@@ -1,0 +1,34 @@
+id: it_istat_country_code
+name: Italian ISTAT code of a foreign state
+status: draft
+doc: Three-digit code of a state in the ISTAT classification of foreign states, used for citizenship and
+  place of birth in Italian population registers and statistics; the first digit is the continent (2 Europe,
+  3 Asia, 4 Africa, 5 North and Central America, 6 South America, 7 Oceania). Registers write 100 for
+  Italy.
+categories:
+- geo
+- government
+country:
+- IT
+langs:
+- it
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{2}$
+examples:
+- value: '100'
+  description: Italy in population registers
+- value: '443'
+- value: '305'
+- value: IT
+  valid: false
+  description: A letter code
+- value: '44'
+  valid: false
+  description: Two digits
+links:
+- type: doc
+  url: https://www.istat.it/classificazione/classificazione-degli-stati-esteri/
+translations:
+  ru:
+    name: Код иностранного государства ISTAT (Италия)

@@ -1,0 +1,33 @@
+id: py_department_code
+name: Paraguayan department code
+status: draft
+doc: 'Two-digit code of a department of Paraguay in the classification of the national statistics institute:
+  00 Asunción, 01 Concepción, 02 San Pedro, 03 Cordillera, 04 Guairá, 05 Caaguazú, 06 Caazapá, 07 Itapúa,
+  08 Misiones, 09 Paraguarí, 10 Alto Paraná, 11 Central, 12 Ñeembucú, 13 Amambay, 14 Canindeyú, 15 Presidente
+  Hayes, 16 Boquerón, 17 Alto Paraguay. Tables drop the leading zero.'
+categories:
+- geo
+- government
+country:
+- PY
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:0?\d|1[0-7])$
+examples:
+- value: '11'
+  description: Central
+- value: '00'
+  description: Asunción
+- value: '7'
+  description: Itapúa without the leading zero
+- value: '18'
+  valid: false
+  description: Codes end at 17
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Departments_of_Paraguay
+translations:
+  ru:
+    name: Код департамента Парагвая

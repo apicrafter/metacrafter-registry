@@ -1,0 +1,31 @@
+id: ae_makani_number
+name: Makani number (UAE)
+status: draft
+doc: Ten-digit number of the Makani geographic addressing system of Dubai Municipality that names the
+  entrance of a building, written as two groups of five digits (42642 10565) or together. The trade licence
+  register of Ajman carries it as well.
+categories:
+- geo
+- identifiers
+country:
+- AE
+langs:
+- en
+- ar
+is_pii: false
+classification: identifier
+regexp: ^\d{5} ?\d{5}$
+examples:
+- value: 42642 10565
+  description: Two groups of five digits
+- value: '5009209779'
+  description: Written together
+- value: '426421056'
+  valid: false
+  description: Nine digits
+links:
+- type: doc
+  url: https://www.makani.ae/
+translations:
+  ru:
+    name: Номер Makani (ОАЭ)

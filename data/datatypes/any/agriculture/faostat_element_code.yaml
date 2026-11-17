@@ -1,0 +1,29 @@
+id: faostat_element_code
+name: FAOSTAT element code
+status: draft
+doc: 'Numeric code of the measured element in FAOSTAT (the Element Code column of its downloads): 5510
+  production, 5312 area harvested; older extracts use three-digit codes such as 551 and 561 for rural
+  and urban population.'
+categories:
+- agriculture
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{2,4}$
+examples:
+- value: '5510'
+  description: Production
+- value: '5312'
+  description: Area harvested
+- value: '551'
+  description: Rural population in an older extract
+- value: '55'
+  valid: false
+  description: Two digits
+links:
+- type: doc
+  url: https://www.fao.org/faostat/en/#definitions
+translations:
+  ru:
+    name: Код элемента FAOSTAT

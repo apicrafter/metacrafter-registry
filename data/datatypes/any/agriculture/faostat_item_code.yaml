@@ -1,0 +1,28 @@
+id: faostat_item_code
+name: FAOSTAT item code
+status: draft
+doc: 'Numeric code of a commodity or other item in FAOSTAT (the Item Code column of its downloads): 15
+  wheat, 56 maize, 3010 total population in the population domain.'
+categories:
+- agriculture
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,4}$
+examples:
+- value: '15'
+  description: Wheat
+- value: '56'
+  description: Maize
+- value: '3010'
+  description: Population
+- value: '0111'
+  valid: false
+  description: A CPC code with a leading zero
+links:
+- type: doc
+  url: https://www.fao.org/faostat/en/#definitions
+translations:
+  ru:
+    name: Код показателя (item) FAOSTAT

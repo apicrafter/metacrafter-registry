@@ -1,0 +1,32 @@
+id: za_medicine_schedule
+name: South African medicine schedule
+status: draft
+doc: 'Schedule of a medicine under the South African Medicines and Related Substances Act of 1965: S0
+  (general sale) to S8 (strictly controlled substances); S1 and S2 are pharmacy medicines and S3 and above
+  need a prescription.'
+categories:
+- medical
+- legal
+country:
+- ZA
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:S|Schedule )[0-8]$
+examples:
+- value: S4
+  description: Prescription medicine
+- value: S0
+  description: General sale
+- value: Schedule 6
+  description: Written in full
+- value: S9
+  valid: false
+  description: Schedules end at 8
+links:
+- type: doc
+  url: https://www.sahpra.org.za/
+translations:
+  ru:
+    name: Список (schedule) лекарства в ЮАР

@@ -1,0 +1,28 @@
+id: pl_prng_id
+name: Polish geographical names register identifier (PRNG)
+status: draft
+doc: Numeric identifier of a name in the Polish National Register of Geographical Names (Państwowy Rejestr
+  Nazw Geograficznych) of the Head Office of Geodesy and Cartography, such as 134542.
+parent: id
+categories:
+- geo
+- identifiers
+country:
+- PL
+langs:
+- pl
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,6}$
+examples:
+- value: '134542'
+- value: '4438'
+- value: '0'
+  valid: false
+  description: Identifiers start at 1
+links:
+- type: wikipedia
+  url: https://pl.wikipedia.org/wiki/Pa%C5%84stwowy_Rejestr_Nazw_Geograficznych
+translations:
+  ru:
+    name: Идентификатор PRNG (Польша)

@@ -1,0 +1,35 @@
+id: us_congress_number
+name: Number of the United States Congress
+status: draft
+doc: 'Ordinal number of a two-year term of the US Congress, counted from the 1st Congress of 1789: 111
+  for the Congress of 2009 to 2011. Roll-call and legislator datasets (Voteview, the congress and cong
+  variables) use it as the time key.'
+categories:
+- government
+- datetime
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^(?:[1-9]\d?|1[0-2]\d)(?:st|nd|rd|th)?$
+examples:
+- value: '111'
+  description: Congress of 2009 to 2011
+- value: '96'
+  description: Congress of 1979 to 1981
+- value: 117th
+  description: Written as an ordinal
+- value: '0'
+  valid: false
+  description: Counting starts at 1
+- value: '1995'
+  valid: false
+  description: A year, not a Congress number
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_United_States_Congresses
+translations:
+  ru:
+    name: Номер созыва Конгресса США

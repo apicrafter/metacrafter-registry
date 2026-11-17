@@ -1,0 +1,36 @@
+id: pe_ubigeo
+name: Peruvian UBIGEO code
+status: draft
+doc: 'Geographic location code of the Peruvian statistics institute (INEI): six digits, two each for the
+  department (01 to 25), the province and the district, such as 150101 for the district of Lima. Two-
+  and four-digit forms name a department or a province. Files that store it as a number lose the leading
+  zero.'
+categories:
+- geo
+- government
+country:
+- PE
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^(?:0[1-9]|1\d|2[0-5])(?:\d{2}){0,2}$
+examples:
+- value: '150101'
+  description: District of Lima
+- value: '010101'
+  description: District of Chachapoyas, Amazonas
+- value: 0801
+  description: Province of Cusco
+- value: '260101'
+  valid: false
+  description: There are 25 department codes
+- value: '15010'
+  valid: false
+  description: Five digits
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/UBIGEO
+translations:
+  ru:
+    name: Код UBIGEO (Перу)

@@ -1,0 +1,33 @@
+id: ps_postcode
+name: Palestinian postal code
+status: draft
+doc: 'Postal code of Palestine Post, introduced in 2021: the letter P and seven digits, written together
+  or as P999 9999, such as P6100154 in Ramallah.'
+parent: postindex
+categories:
+- geo
+country:
+- PS
+langs:
+- en
+- ar
+is_pii: false
+classification: identifier
+regexp: ^P\d{3} ?\d{4}$
+examples:
+- value: P6100154
+  description: Address in Ramallah, the sample of the UPU
+- value: P392 0463
+  description: Written with a space
+- value: '6100154'
+  valid: false
+  description: Without the letter P
+- value: P610015
+  valid: false
+  description: Six digits
+links:
+- type: doc
+  url: https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/PSEEn.pdf
+translations:
+  ru:
+    name: Почтовый индекс Палестины

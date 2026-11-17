@@ -1,0 +1,21 @@
+id: za_small_area_code
+name: South African census small area code (SAL)
+status: draft
+doc: Seven-digit code of a small area of the Small Area Layer of Statistics South Africa, the finest geography
+  of the 2011 census, such as 2610024.
+categories:
+- geo
+- government
+country:
+- ZA
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^\d{7}$
+examples:
+- value: '2610024'
+- value: '2610045'
+- value: '261002'
+  valid: false
+  description: Six digits

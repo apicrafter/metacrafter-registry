@@ -1,0 +1,31 @@
+id: vn_cchn_number
+name: Vietnamese medical practising certificate number (CCHN)
+status: draft
+doc: 'Number of a certificate to practise medicine or pharmacy in Vietnam (chứng chỉ hành nghề): a serial
+  number, a slash, the code of the issuing body (BYT for the Ministry of Health or a province code such
+  as HCM) and CCHN, such as 000019/HCM-CCHN.'
+categories:
+- medical
+- identifiers
+country:
+- VN
+langs:
+- vi
+is_pii: false
+classification: identifier
+regexp: ^\d{4,8}/[A-ZĐ]{2,5}- ?CCHN$
+examples:
+- value: 000019/HCM-CCHN
+  description: Issued in Ho Chi Minh City
+- value: 000017/BYT-CCHN
+  description: Issued by the Ministry of Health
+- value: 000058/ĐL-CCHN
+- value: 000019/HCM
+  valid: false
+  description: Without CCHN
+- value: HCM-CCHN
+  valid: false
+  description: Without the number
+translations:
+  ru:
+    name: Номер сертификата на медицинскую практику (Вьетнам)

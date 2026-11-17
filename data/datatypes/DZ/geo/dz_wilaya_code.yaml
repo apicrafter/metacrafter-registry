@@ -1,0 +1,36 @@
+id: dz_wilaya_code
+name: Algerian province code (code wilaya)
+status: draft
+doc: 'Number of an Algerian province: 01 Adrar to 48 Relizane in the alphabetical order of 1984, and 49
+  to 58 for the provinces created in 2019. It is 16 for Alger and 31 for Oran, and it starts postal codes
+  and vehicle registration numbers. Tables drop the leading zero.'
+categories:
+- geo
+- government
+country:
+- DZ
+langs:
+- fr
+- ar
+is_pii: false
+classification: identifier
+regexp: ^(?:0?[1-9]|[1-4]\d|5[0-8])$
+examples:
+- value: '16'
+  description: Alger
+- value: '31'
+  description: Oran
+- value: '06'
+  description: Béjaïa
+- value: '59'
+  valid: false
+  description: There are 58 provinces
+- value: '0'
+  valid: false
+  description: Numbers start at 1
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Provinces_of_Algeria
+translations:
+  ru:
+    name: Код вилайета Алжира
