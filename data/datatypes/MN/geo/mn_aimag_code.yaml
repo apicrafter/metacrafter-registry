@@ -1,0 +1,36 @@
+id: mn_aimag_code
+name: Mongolian province code (aimag code)
+status: draft
+doc: 'Three-digit code of a Mongolian province (aimag) or of Ulaanbaatar in the classification of administrative
+  units of the National Statistics Office: a zero and the two-digit statistical code of the province,
+  011 for Ulaanbaatar, 021 for Dornod, 084 for Khovd. The tens digit groups the provinces by region. The
+  codes of soums (mn_soum_code) and bags (mn_bag_code) start with it, and the humanitarian P-code adds
+  MN to the two digits (MN84).'
+categories:
+- geo
+- government
+country:
+- MN
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^0(?:11|2[123]|4[1-68]|6[1-57]|8[1-5])$
+examples:
+- value: '011'
+  description: Ulaanbaatar
+- value: '021'
+  description: Dornod
+- value: 084
+  description: Khovd
+- value: '012'
+  valid: false
+  description: Not a province code
+links:
+- type: other
+  url: https://rdrr.io/cran/mongolmaps/man/mn_codes.html
+translations:
+  mn:
+    name: Аймгийн код
+  ru:
+    name: Код аймака Монголии

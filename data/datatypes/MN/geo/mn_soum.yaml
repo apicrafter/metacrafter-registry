@@ -1,0 +1,29 @@
+id: mn_soum
+name: Mongolian district (soum)
+status: draft
+doc: Name of a district (soum, сум) of a Mongolian province or of a district (düüreg, дүүрэг) of Ulaanbaatar,
+  the second level of administrative units, such as Хэрлэн, Баянзүрх or Хан-Уул. Several provinces have
+  soums of the same name (Булган, Сүхбаатар), so a name needs its province. Its code is mn_soum_code.
+parent: admin_area_2
+categories:
+- geo
+- government
+country:
+- MN
+langs:
+- mn
+is_pii: false
+classification: categorical
+examples:
+- value: Хэрлэн
+- value: Баянзүрх
+  description: A district of Ulaanbaatar
+- value: Хан-Уул
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Sums_of_Mongolia
+translations:
+  mn:
+    name: Сум
+  ru:
+    name: Сомон Монголии

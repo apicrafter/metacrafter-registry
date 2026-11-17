@@ -1,0 +1,33 @@
+id: gb_addressbase_classification
+name: AddressBase classification code
+status: draft
+doc: 'Code of the use of an addressable object (BLPU) in the AddressBase classification scheme of Ordnance
+  Survey and GeoPlace: a letter for the primary class (R residential, C commercial, P parent shell), a
+  second letter (RD dwelling), two digits (RD02 detached house) and, for some codes, two more characters.
+  Local gazetteers give it in BLPU_CLASS or CLASSIFICATION_CODE.'
+categories:
+- realestate
+- geo
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[CLMOPRUXZ](?:[A-Z](?:\d{2}(?:[A-Z0-9]{2})?)?)?$
+examples:
+- value: RD02
+  description: Detached house
+- value: RI01
+  description: Care home
+- value: PP
+  description: Property shell
+- value: CR08
+- value: 12AB
+  valid: false
+links:
+- type: doc
+  url: https://docs.os.uk/os-downloads/addressing-and-location/addressbase-fundamentals/classification-scheme
+translations:
+  ru:
+    name: Код классификации AddressBase

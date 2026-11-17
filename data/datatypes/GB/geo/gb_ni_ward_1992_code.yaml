@@ -1,0 +1,31 @@
+id: gb_ni_ward_1992_code
+name: Northern Ireland 1992 ward code
+status: draft
+doc: Code of one of the 582 electoral wards of Northern Ireland of 1992, in the ONS coding system before
+  GSS codes, 95 for Northern Ireland, two letters for the district council (95AA Antrim) and two digits,
+  such as 95AA01 for Aldergrove. NISRA kept these wards for the 2001 and 2011 statistics, and the Super
+  Output Areas (gb_ni_soa_code) are built on them.
+parent: ukonscode
+categories:
+- geo
+- government
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^95([A-Z])\1\d{2}$
+examples:
+- value: 95AA01
+  description: Aldergrove
+- value: 95AA02
+- value: 95AB01
+  valid: false
+  description: The letters of a district are doubled
+links:
+- type: doc
+  url: https://admin.opendatani.gov.uk/dataset/population-estimates-for-super-output-areas-soas-and-electoral-wards-northern-ireland
+translations:
+  ru:
+    name: Код избирательного округа Северной Ирландии 1992 года

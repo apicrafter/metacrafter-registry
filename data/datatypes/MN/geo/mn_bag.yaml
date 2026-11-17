@@ -1,0 +1,34 @@
+id: mn_bag
+name: Mongolian subdistrict (bag or khoroo)
+status: draft
+doc: Name of a bag (баг), the smallest administrative unit of a Mongolian soum, or of a khoroo (хороо)
+  of a district of Ulaanbaatar. Most are numbered and written with the ordinal suffix -р (5-р баг, 3-р
+  хороо), some with a place name after the number (1-р баг Өндөрхошуу) or a name alone. Its code is mn_bag_code.
+parent: admin_area_3
+categories:
+- geo
+- government
+country:
+- MN
+langs:
+- mn
+is_pii: false
+classification: categorical
+regexp: ^\d{1,2}(?:-р)?[ -]?(?:баг|хороо)(?:,? [^\s,][^,]{0,28})?$
+examples:
+- value: 5-р баг
+- value: 3-р хороо
+  description: A khoroo of Ulaanbaatar
+- value: 1-р баг Өндөрхошуу
+- value: 20-хороо
+- value: Хан-Уул
+  valid: false
+  description: A district (mn_soum)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Subdivisions_of_Mongolia
+translations:
+  mn:
+    name: Баг, хороо
+  ru:
+    name: Баг (хороо) Монголии

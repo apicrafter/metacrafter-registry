@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "bec4c83be8a121c02f802dce44e6a515f108a188"
+  "ref": "5c4d4c0743b8a505f4b98750ee8bd17704f0648a"
  },
  "rules": [
   {
@@ -7293,6 +7293,15 @@
    "context": "environment",
    "lang": "common",
    "country_code": "xx"
+  },
+  {
+   "rule": "facccodebyname",
+   "key": "facc_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/feature_codes.yaml",
+   "context": "geo",
+   "lang": "common"
   },
   {
    "rule": "categorybyfield",
@@ -17318,6 +17327,66 @@
    "country_code": "gb"
   },
   {
+   "rule": "gbaddressbaseclassbyname",
+   "key": "gb_addressbase_classification",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_b14.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbhrgcodebyname",
+   "key": "gb_hrg_code",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_b14.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbnilgd1992value",
+   "key": "gb_ni_lgd_1992_code",
+   "type": "data",
+   "match": "regex",
+   "file": "gb/gb_b14.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbnisoavalue",
+   "key": "gb_ni_soa_code",
+   "type": "data",
+   "match": "regex",
+   "file": "gb/gb_b14.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbniward1992value",
+   "key": "gb_ni_ward_1992_code",
+   "type": "data",
+   "match": "regex",
+   "file": "gb/gb_b14.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
+   "rule": "gbroadnumberbyname",
+   "key": "gb_road_number",
+   "type": "field",
+   "match": "regex",
+   "file": "gb/gb_b14.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "gb"
+  },
+  {
    "rule": "enukprnfield",
    "key": "ukprn",
    "type": "field",
@@ -20348,6 +20417,86 @@
    "country_code": "mn"
   },
   {
+   "rule": "mnaimagbyname",
+   "key": "mn_aimag",
+   "type": "field",
+   "match": "regex",
+   "file": "mn/mn_geo.yaml",
+   "context": "geo",
+   "lang": "mn",
+   "country_code": "mn"
+  },
+  {
+   "rule": "mnaimagcodebyname",
+   "key": "mn_aimag_code",
+   "type": "field",
+   "match": "regex",
+   "file": "mn/mn_geo.yaml",
+   "context": "geo",
+   "lang": "mn",
+   "country_code": "mn"
+  },
+  {
+   "rule": "mnaimagvalue",
+   "key": "mn_aimag",
+   "type": "data",
+   "match": "func",
+   "file": "mn/mn_geo.yaml",
+   "context": "geo",
+   "lang": "mn",
+   "country_code": "mn"
+  },
+  {
+   "rule": "mnbagbyname",
+   "key": "mn_bag",
+   "type": "field",
+   "match": "regex",
+   "file": "mn/mn_geo.yaml",
+   "context": "geo",
+   "lang": "mn",
+   "country_code": "mn"
+  },
+  {
+   "rule": "mnbagcodebyname",
+   "key": "mn_bag_code",
+   "type": "field",
+   "match": "regex",
+   "file": "mn/mn_geo.yaml",
+   "context": "geo",
+   "lang": "mn",
+   "country_code": "mn"
+  },
+  {
+   "rule": "mnbagvalue",
+   "key": "mn_bag",
+   "type": "data",
+   "match": "func",
+   "file": "mn/mn_geo.yaml",
+   "context": "geo",
+   "lang": "mn",
+   "country_code": "mn"
+  },
+  {
+   "rule": "mnsoumbyname",
+   "key": "mn_soum",
+   "type": "field",
+   "match": "regex",
+   "file": "mn/mn_geo.yaml",
+   "context": "geo",
+   "lang": "mn",
+   "country_code": "mn"
+  },
+  {
+   "rule": "mnsoumcodebyname",
+   "key": "mn_soum_code",
+   "type": "field",
+   "match": "regex",
+   "file": "mn/mn_geo.yaml",
+   "context": "geo",
+   "lang": "mn",
+   "country_code": "mn"
+  },
+  {
    "rule": "clabefield",
    "key": "clabe",
    "type": "field",
@@ -23326,6 +23475,16 @@
    "context": "geo",
    "lang": "pt",
    "country_code": "xx"
+  },
+  {
+   "rule": "ptfreguesiabyname",
+   "key": "pt_freguesia",
+   "type": "field",
+   "match": "regex",
+   "file": "pt/pt_parish.yaml",
+   "context": "geo",
+   "lang": "pt",
+   "country_code": "pt"
   },
   {
    "rule": "ptfirstnameknown",

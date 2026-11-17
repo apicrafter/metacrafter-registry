@@ -1,0 +1,29 @@
+id: gb_ni_lgd_1992_code
+name: Northern Ireland 1992 district council code
+status: draft
+doc: Code of one of the 26 local government districts of Northern Ireland of 1973 to 2015 in the ONS coding
+  system before GSS codes, 95 and a doubled letter in alphabetical order of the districts, 95AA for Antrim
+  to 95ZZ for Strabane. The 11 districts of 2015 have GSS codes N09000001 to N09000011 (ukgsscode).
+parent: ukonscode
+categories:
+- geo
+- government
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^95([A-Z])\1$
+examples:
+- value: 95AA
+  description: Antrim
+- value: 95GG
+- value: 95AB
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Local_government_in_Northern_Ireland
+translations:
+  ru:
+    name: Код округа Северной Ирландии (1973-2015)
