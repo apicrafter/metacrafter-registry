@@ -1,0 +1,29 @@
+id: gb_hrg_code
+name: Healthcare Resource Group code (HRG4)
+status: draft
+doc: 'Code of a Healthcare Resource Group of the NHS, a group of hospital treatments that use similar
+  resources, used for payment and reference costs in England and in Northern Ireland statistics. An HRG4
+  code has five characters: two letters for the chapter and subchapter (AA for the nervous system), two
+  digits and a letter for the split by complexity, such as AA22G or AA26H. HRG4 is maintained by the National
+  Casemix Office of NHS England.'
+categories:
+- medical
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{2}\d{2}[A-Z]$
+examples:
+- value: AA22G
+  description: Cerebrovascular accident, nervous system infections or encephalopathy, CC score 0-4
+- value: AA26H
+- value: AA2G
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Healthcare_Resource_Group
+translations:
+  ru:
+    name: Код группы ресурсов здравоохранения (HRG)

@@ -1,0 +1,31 @@
+id: pt_freguesia
+name: Portuguese civil parish (freguesia)
+status: draft
+doc: Name of a civil parish (freguesia) of Portugal, the level below the municipality (pt_concelho), such
+  as Valongo do Vouga, Santa Maria Maior or Arroios. Parishes merged in 2013 carry names of the form União
+  das Freguesias de Águeda e Borralha, written UF Águeda e Borralha in many municipal geoportal layers.
+  Its code is the six-digit form of pt_dicofre.
+parent: admin_area_3
+categories:
+- geo
+- government
+country:
+- PT
+langs:
+- pt
+is_pii: false
+classification: categorical
+examples:
+- value: Valongo do Vouga
+- value: Santa Maria Maior
+- value: UF Águeda e Borralha
+  description: A union of parishes of 2013
+- value: Arroios
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Freguesia
+translations:
+  pt:
+    name: Freguesia
+  ru:
+    name: Фрегезия (приход) Португалии

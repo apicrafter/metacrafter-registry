@@ -1,0 +1,30 @@
+id: mn_aimag
+name: Mongolian province (aimag)
+status: draft
+doc: Name of one of the 21 provinces (aimag, аймаг) of Mongolia or of the capital Ulaanbaatar, which tables
+  list beside them, written in Cyrillic (Дорнод, Баян-Өлгий, Улаанбаатар) or in Latin script (Dornod,
+  Bayan-Ölgii). Its code is mn_aimag_code.
+parent: admin_area_1
+categories:
+- geo
+- government
+country:
+- MN
+langs:
+- mn
+is_pii: false
+classification: categorical
+examples:
+- value: Дорнод
+- value: Баян-Өлгий
+- value: Улаанбаатар
+  description: The capital, listed with the provinces
+- value: Khovd
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Provinces_of_Mongolia
+translations:
+  mn:
+    name: Аймаг
+  ru:
+    name: Аймак Монголии

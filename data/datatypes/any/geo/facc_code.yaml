@@ -1,0 +1,29 @@
+id: facc_code
+name: FACC feature code
+status: draft
+doc: 'Feature code of the Feature and Attribute Coding Catalogue (FACC) of DIGEST, the standard of the
+  Digital Geographic Information Working Group: a letter for the category (A culture, B hydrography, E
+  vegetation, F demarcation, G aeronautical), a letter for the subcategory and three digits, such as AL020
+  for a built-up area or AQ125 for a station. EuroRegionalMap and EuroGlobalMap of EuroGeographics and
+  many military and national maps give it in F_CODE.'
+categories:
+- geo
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-GISZ][A-Z]\d{3}$
+examples:
+- value: AL020
+  description: Built-up area
+- value: AQ125
+  description: Station
+- value: BH502
+- value: AL20
+  valid: false
+links:
+- type: doc
+  url: https://portal.dgiwg.org/files/3911
+translations:
+  ru:
+    name: Код объекта FACC

@@ -1,0 +1,31 @@
+id: mn_bag_code
+name: Mongolian subdistrict code (bag or khoroo code)
+status: draft
+doc: Seven-digit code of a Mongolian bag or of a khoroo of Ulaanbaatar in the classification of administrative
+  units of the National Statistics Office, the code of its soum or district (mn_soum_code) and two digits,
+  such as 0211353 in Dornod.
+categories:
+- geo
+- government
+country:
+- MN
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^0(?:11|2[123]|4[1-68]|6[1-57]|8[1-5])\d{4}$
+examples:
+- value: '0211353'
+- value: '0640151'
+- value: 0830175
+- value: '02113'
+  valid: false
+  description: A soum code (mn_soum_code)
+links:
+- type: other
+  url: https://rdrr.io/cran/mongolmaps/man/mn_codes.html
+translations:
+  mn:
+    name: Багийн код
+  ru:
+    name: Код бага Монголии

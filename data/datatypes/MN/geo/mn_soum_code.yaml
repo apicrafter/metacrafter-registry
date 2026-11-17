@@ -1,0 +1,33 @@
+id: mn_soum_code
+name: Mongolian district code (soum code)
+status: draft
+doc: Five-digit code of a Mongolian soum or of a district of Ulaanbaatar in the classification of administrative
+  units of the National Statistics Office, the code of its province (mn_aimag_code) and two digits, such
+  as 01122 for Khan-Uul in Ulaanbaatar or 02101 for Kherlen in Dornod.
+categories:
+- geo
+- government
+country:
+- MN
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^0(?:11|2[123]|4[1-68]|6[1-57]|8[1-5])\d{2}$
+examples:
+- value: '01122'
+  description: Khan-Uul district of Ulaanbaatar
+- value: '02101'
+  description: Kherlen soum of Dornod
+- value: '06401'
+- value: '01201'
+  valid: false
+  description: 012 is not a province code
+links:
+- type: other
+  url: https://rdrr.io/cran/mongolmaps/man/mn_codes.html
+translations:
+  mn:
+    name: Сумын код
+  ru:
+    name: Код сомона Монголии

@@ -1,0 +1,34 @@
+id: gb_road_number
+name: UK road number
+status: draft
+doc: 'Number of a classified road in Great Britain or Northern Ireland: M for motorways (M1), A for primary
+  and main roads (A2, A55) and B for secondary roads (B101), with up to four digits. A road upgraded to
+  motorway standard keeps its number with (M), as A1(M). Local councils also use C and U for unclassified
+  roads.'
+parent: id
+categories:
+- transport
+- geo
+country:
+- GB
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[ABM]\d{1,4}(?:\(M\))?$
+examples:
+- value: A2
+- value: M1
+- value: B101
+- value: A1(M)
+- value: D121
+  valid: false
+  description: A French road number (fr_road_number)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Great_Britain_road_numbering_scheme
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Roads_in_Northern_Ireland
+translations:
+  ru:
+    name: Номер дороги Великобритании
