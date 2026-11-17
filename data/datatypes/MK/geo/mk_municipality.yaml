@@ -1,0 +1,35 @@
+id: mk_municipality
+name: Municipality of North Macedonia
+status: draft
+doc: 'Name of one of the 80 municipalities (општини) of North Macedonia under the territorial organisation
+  of 2004, as amended in 2013, in Macedonian: Битола, Крушево, Демир Хисар, Маврово и Ростуша. Ten of
+  them make up the City of Skopje (Аеродром, Бутел, Гази Баба, Ѓорче Петров, Карпош, Кисела Вода, Сарај,
+  Центар, Чаир, Шуто Оризари). Tables of the national open data portal (data.gov.mk) give the municipality
+  of a school, a company or a public building in a column named општина, also in capitals.'
+parent: admin_area_2
+categories:
+- geo
+- government
+country:
+- MK
+langs:
+- mk
+is_pii: false
+classification: categorical
+examples:
+- value: Крушево
+- value: Демир Хисар
+- value: Кисела Вода
+  description: A municipality of the City of Skopje
+- value: Маврово и Ростуша
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Municipalities_of_North_Macedonia
+- type: wikipedia
+  url: https://mk.wikipedia.org/wiki/Општини_во_Македонија
+translations:
+  mk:
+    name: Општина
+  ru:
+    name: Община Северной Македонии
+    doc: Название одной из 80 общин Северной Македонии на македонском языке.

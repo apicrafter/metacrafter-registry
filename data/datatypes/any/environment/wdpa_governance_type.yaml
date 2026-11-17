@@ -1,0 +1,35 @@
+id: wdpa_governance_type
+name: WDPA governance type
+status: draft
+doc: 'Who decides about a protected area, in the words of the World Database on Protected Areas (field
+  GOV_TYPE): a federal or national ministry or agency, a sub-national ministry or agency, government-delegated
+  management, transboundary, collaborative or joint governance, individual landowners, non-profit or for-profit
+  organisations, indigenous peoples, local communities, or Not Reported. National extracts of the database
+  keep the field and its values.'
+parent: category
+categories:
+- environment
+- government
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?i:Federal or national ministry or agency|Sub-national ministry or agency|Government-delegated
+  management|Transboundary governance|Collaborative governance|Joint governance|Individual landowners|Non-profit
+  organi[sz]ations|For-profit organi[sz]ations|Indigenous peoples|Local communities|Not Reported)$
+examples:
+- value: Federal or national ministry or agency
+- value: Indigenous peoples
+- value: Collaborative governance
+- value: Not Reported
+- value: State
+  valid: false
+  description: An ownership type (OWN_TYPE)
+links:
+- type: doc
+  url: https://www.protectedplanet.net/en/resources/wdpa-manual
+- type: doc
+  url: https://developers.google.com/earth-engine/datasets/catalog/WCMC_WDPA_current_polygons
+translations:
+  ru:
+    name: Тип управления охраняемой территорией (WDPA)

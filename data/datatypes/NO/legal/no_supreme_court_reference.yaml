@@ -1,0 +1,39 @@
+id: no_supreme_court_reference
+name: Norwegian Supreme Court decision reference
+status: draft
+doc: 'Reference of a decision of the Supreme Court of Norway (Høyesterett). Since 2016 a decision is cited
+  by the number the court gives it: HR, the year, a running number and a letter for the body that decided,
+  A for a division (avdeling), U for the appeals selection committee (ankeutvalg), as in HR-2019-2420-A.
+  Older decisions are cited by the yearbook Norsk Retstidende, Rt, the year and the page (Rt-2015-353).
+  Lovdata and the court''s own site list decisions under these references.'
+parent: id
+categories:
+- legal
+- government
+country:
+- 'NO'
+langs:
+- 'no'
+is_pii: false
+classification: identifier
+regexp: ^(?:HR-(?:19|20)\d{2}-\d{1,5}-[A-Z]|Rt-(?:1[89]|20)\d{2}-\d{1,4})$
+examples:
+- value: HR-2019-2420-A
+  description: Judgment of a division; DataverseNO, a 2024 snapshot
+- value: HR-2019-1910-U
+  description: Decision of the appeals selection committee; domstol.no
+- value: Rt-2015-353
+  description: Norsk Retstidende 2015, page 353; DataverseNO, a 2024 snapshot
+- value: HR-2019-2420
+  valid: false
+  description: Without the letter of the deciding body
+links:
+- type: doc
+  url: https://www.domstol.no/no/hoyesterett/avgjorelser/
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Supreme_Court_of_Norway
+translations:
+  'no':
+    name: Referanse til høyesterettsavgjørelse
+  ru:
+    name: Ссылка на решение Верховного суда Норвегии

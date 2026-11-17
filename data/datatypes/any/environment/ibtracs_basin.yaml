@@ -1,0 +1,36 @@
+id: ibtracs_basin
+name: IBTrACS basin code
+status: draft
+doc: 'Two-letter code of the ocean basin of a tropical cyclone position in the International Best Track
+  Archive for Climate Stewardship (IBTrACS) of NOAA NCEI, column BASIN: NA North Atlantic, EP Eastern
+  North Pacific, WP Western North Pacific, NI North Indian, SI South Indian, SP Southern Pacific, SA South
+  Atlantic, and MM for a missing value. The column SUBBASIN narrows it (CS Caribbean Sea, GM Gulf of Mexico,
+  CP Central Pacific, BB Bay of Bengal, AS Arabian Sea, WA Western Australia, EA Eastern Australia). Read
+  as text, NA is often taken for an empty cell.'
+parent: category
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:NA|EP|WP|NI|SI|SP|SA|MM)$
+examples:
+- value: SP
+  description: Southern Pacific
+- value: NA
+  description: North Atlantic
+- value: WP
+  description: Western North Pacific
+- value: EA
+  valid: false
+  description: A subbasin, Eastern Australia
+links:
+- type: doc
+  url: https://www.ncei.noaa.gov/sites/default/files/2021-07/IBTrACS_v04_column_documentation.pdf
+- type: doc
+  url: https://www.ncei.noaa.gov/products/international-best-track-archive
+translations:
+  ru:
+    name: Код океанического бассейна IBTrACS
