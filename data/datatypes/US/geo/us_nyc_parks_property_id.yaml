@@ -1,0 +1,34 @@
+id: us_nyc_parks_property_id
+name: NYC Parks property number (GISPROPNUM)
+status: draft
+doc: 'Identifier of a property of the New York City Department of Parks and Recreation: a borough letter
+  (B Brooklyn, M Manhattan, Q Queens, R Staten Island, X Bronx) and a number, sometimes with a letter
+  suffix, such as B028 or X010A. The OMPPROPID of the same datasets adds a zone or part after a hyphen
+  (M042-ZN01, X010A-02).'
+categories:
+- geo
+- government
+- identifiers
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[BMQRX][A-Z]?\d{2,3}[A-Z]{0,2}(?:\d{2})?(?:-(?:ZN)?\d{2,3}[A-Z]?)?$
+examples:
+- value: B028
+  description: Park in Brooklyn
+- value: X010A
+  description: With a letter suffix
+- value: M042-ZN01
+  description: OMPPROPID with a zone
+- value: A028
+  valid: false
+  description: A is not a borough letter
+links:
+- type: doc
+  url: https://www.nycgovparks.org/
+translations:
+  ru:
+    name: Номер объекта Департамента парков Нью-Йорка

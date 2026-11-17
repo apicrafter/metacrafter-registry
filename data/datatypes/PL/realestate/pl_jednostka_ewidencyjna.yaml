@@ -1,0 +1,34 @@
+id: pl_jednostka_ewidencyjna
+name: Polish cadastral unit code (jednostka ewidencyjna)
+status: draft
+doc: 'Identifier of a unit of the Polish land and building register: the six-digit TERYT code of the gmina,
+  an underscore and the kind of unit (1 urban gmina, 2 rural gmina, 3 urban-rural gmina, 4 town and 5
+  rural area of an urban-rural gmina, 8 district of Warsaw, 9 district of another city), such as 186101_1.
+  It is the first part of a parcel identifier (186101_1.0001.393/2).'
+categories:
+- realestate
+- geo
+country:
+- PL
+langs:
+- pl
+is_pii: false
+classification: identifier
+regexp: ^\d{6}_[1-589]$
+examples:
+- value: '186101_1'
+  description: Urban gmina
+- value: '180902_5'
+  description: Rural area of an urban-rural gmina
+- value: '186101'
+  valid: false
+  description: Without the kind of unit
+- value: '186101_7'
+  valid: false
+  description: 7 is not a kind of unit
+links:
+- type: wikipedia
+  url: https://pl.wikipedia.org/wiki/Jednostka_ewidencyjna
+translations:
+  ru:
+    name: Код кадастровой единицы (Польша)

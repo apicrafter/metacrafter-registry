@@ -1,0 +1,34 @@
+id: vn_document_number
+name: Vietnamese official document number (số, ký hiệu văn bản)
+status: draft
+doc: 'Number and symbol of a document of a Vietnamese authority: the serial number in the year, a slash,
+  the abbreviation of the kind of document where there is one (QĐ decision, GP licence, TB notice) and
+  of the issuing body, joined with hyphens, such as 1753/QĐ-GDĐT-TC or 04211/SYT-GPHĐ. Legal normative
+  documents add the year (30/2020/NĐ-CP).'
+categories:
+- legal
+- government
+- identifiers
+country:
+- VN
+langs:
+- vi
+is_pii: false
+classification: identifier
+regexp: ^\d{1,6}(?:/(?:19|20)\d{2})?/[A-ZĐƯÂÊÔƠĂ]{1,8}(?:-[A-ZĐƯÂÊÔƠĂ0-9]{1,8}){0,4}$
+examples:
+- value: 1753/QĐ-GDĐT-TC
+  description: Decision of a department of education
+- value: 04211/SYT-GPHĐ
+  description: Operating licence of a health department
+- value: 30/2020/NĐ-CP
+  description: Government decree with the year
+- value: '1753'
+  valid: false
+  description: The number without the symbol
+- value: QĐ-GDĐT
+  valid: false
+  description: Without the number
+translations:
+  ru:
+    name: Номер официального документа (Вьетнам)

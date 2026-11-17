@@ -1,0 +1,34 @@
+id: us_party_identification
+name: US party identification of a survey respondent
+status: draft
+doc: Answer to the party identification question of US election surveys (ANES, CES/CCES, the pid3 and
+  pid7 variables). The 3-point form is Democrat, Republican, Independent, with Other and Not sure; the
+  7-point form runs from Strong Democrat (1) through Independent (4) to Strong Republican (7), with 8
+  for Not sure. Files hold the numeric codes or the labels.
+categories:
+- government
+- common
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?i:[1-8]|Strong Democrat|Not very strong Democrat|Weak Democrat|Lean Democrat|Democrat|Independent|Lean
+  Republican|Not very strong Republican|Weak Republican|Strong Republican|Republican|Other|Not sure)$
+examples:
+- value: Strong Democrat
+  description: pid7 label
+- value: Independent
+  description: pid3 and pid7 label
+- value: '7'
+  description: pid7 code of Strong Republican
+- value: Labour
+  valid: false
+  description: Not a US party identification answer
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Party_identification
+translations:
+  ru:
+    name: Партийная идентификация респондента (США)

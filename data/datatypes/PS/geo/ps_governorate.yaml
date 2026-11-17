@@ -1,0 +1,31 @@
+id: ps_governorate
+name: Palestinian governorate
+status: draft
+doc: 'Name of one of the 16 governorates of Palestine, in English or Arabic: Jenin, Tubas, Tulkarm, Nablus,
+  Qalqilya, Salfit, Ramallah and Al-Bireh, Jericho and Al Aghwar, Jerusalem, Bethlehem and Hebron in the
+  West Bank; North Gaza, Gaza, Deir al-Balah, Khan Yunis and Rafah in the Gaza Strip. Spellings vary (Qalqilia,
+  Tubas & Northern Valleys).'
+parent: admin_area_1
+categories:
+- geo
+- government
+country:
+- PS
+langs:
+- en
+- ar
+is_pii: false
+classification: categorical
+examples:
+- value: Hebron
+- value: Ramallah and Al-Bireh
+- value: رام الله والبيرة
+  description: Ramallah and Al-Bireh in Arabic
+- value: الخليل
+  description: Hebron in Arabic
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Governorates_of_Palestine
+translations:
+  ru:
+    name: Провинция Палестины

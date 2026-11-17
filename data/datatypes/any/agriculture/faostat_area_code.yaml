@@ -1,0 +1,30 @@
+id: faostat_area_code
+name: FAOSTAT area code
+status: draft
+doc: 'Numeric code of a country, territory or group of countries in FAOSTAT, the statistical database
+  of the Food and Agriculture Organization (the Area Code column of its downloads): 114 Kenya, 231 United
+  States, 5000 World. The codes are FAO''s own and differ from the M49 codes.'
+categories:
+- agriculture
+- geo
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{0,3}$
+examples:
+- value: '114'
+  description: Kenya
+- value: '231'
+  description: United States of America
+- value: '5000'
+  description: World
+- value: KEN
+  valid: false
+  description: An ISO code
+links:
+- type: doc
+  url: https://www.fao.org/faostat/en/#definitions
+translations:
+  ru:
+    name: Код территории FAOSTAT

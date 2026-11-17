@@ -1,0 +1,27 @@
+id: eu_wfd_ecological_status
+name: Ecological status class (EU Water Framework Directive)
+status: draft
+doc: 'Class of the ecological status of a surface water body under the EU Water Framework Directive: High,
+  Good, Moderate, Poor or Bad. National datasets translate the five classes.'
+parent: category
+categories:
+- environment
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?i:high|good|moderate|poor|bad)$
+examples:
+- value: Good
+- value: Moderate
+- value: HIGH
+  description: In capitals
+- value: Excellent
+  valid: false
+  description: A bathing water class, not an ecological status
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Water_Framework_Directive
+translations:
+  ru:
+    name: Класс экологического состояния (Водная рамочная директива ЕС)

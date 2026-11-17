@@ -1,0 +1,37 @@
+id: pl_znak_sprawy
+name: Polish case reference (znak sprawy)
+status: draft
+doc: 'Reference of a case file of a Polish public office under the office instruction of 2011: the symbol
+  of the organisational unit, the class of the uniform file classification (JRWA), the number of the case
+  in the year and the year, joined with dots, such as AB.6730.26.2016. Registers of decisions often drop
+  the unit symbol (6730.26.2016).'
+categories:
+- government
+- legal
+- identifiers
+country:
+- PL
+langs:
+- pl
+is_pii: false
+classification: identifier
+regexp: ^(?:[A-ZĄĆĘŁŃÓŚŹŻ]{1,8}(?:[.-][A-ZĄĆĘŁŃÓŚŹŻ]{1,8}){0,3}\.)?\d{3,4}\.\d{1,5}(?:\.\d{1,4})?\.(?:19|20)\d{2}(?:\.[A-ZĄĆĘŁŃÓŚŹŻ]{1,6})?$
+examples:
+- value: 6730.26.2016
+  description: Decision on development conditions, case 26 of 2016
+- value: AB.6730.26.2016
+  description: With the unit symbol
+- value: WGN.6840.1.12.2020.MK
+  description: With a sub-number and the initials of the clerk
+- value: 6730/26/2016
+  valid: false
+  description: Slashes instead of dots
+- value: '26.2016'
+  valid: false
+  description: No JRWA class
+links:
+- type: wikipedia
+  url: https://pl.wikipedia.org/wiki/Znak_sprawy
+translations:
+  ru:
+    name: Знак дела (Польша)

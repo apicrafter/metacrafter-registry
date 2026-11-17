@@ -1,0 +1,30 @@
+id: us_nyc_borough
+name: New York City borough
+status: draft
+doc: 'Name of one of the five boroughs of New York City: Manhattan, Bronx, Brooklyn, Queens, Staten Island.
+  City datasets also write the one-letter abbreviations M, X, K, Q and R (B for the Bronx in some tables).'
+parent: admin_area_2
+categories:
+- geo
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?i:Manhattan|(?:The )?Bronx|Brooklyn|Queens|Staten Island)$
+examples:
+- value: Manhattan
+- value: Staten Island
+- value: BROOKLYN
+  description: in capitals
+- value: Harlem
+  valid: false
+  description: A neighborhood, not a borough
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Boroughs_of_New_York_City
+translations:
+  ru:
+    name: Боро Нью-Йорка

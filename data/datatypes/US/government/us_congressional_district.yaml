@@ -1,0 +1,35 @@
+id: us_congressional_district
+name: US congressional district code
+status: draft
+doc: 'Code of a district of the US House of Representatives: the two-letter postal abbreviation of the
+  state and the two-digit district number, with or without a hyphen, such as NY10 or CA-12. States with
+  one representative are written AL (at large), 00 or 01.'
+categories:
+- government
+- geo
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^(?:A[KLRSZ]|C[AOT]|D[CE]|FL|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEINOPST]|N[CDEHJMVY]|O[HKR]|P[AR]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])-?(?:0?\d|[1-4]\d|5[0-3]|AL)$
+examples:
+- value: NY10
+  description: 10th district of New York
+- value: CA-12
+  description: With a hyphen
+- value: WY-AL
+  description: At-large district
+- value: XX10
+  valid: false
+  description: XX is not a state
+- value: NY99
+  valid: false
+  description: No state has 99 districts
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_United_States_congressional_districts
+translations:
+  ru:
+    name: Код избирательного округа Конгресса США

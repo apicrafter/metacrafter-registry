@@ -1,0 +1,32 @@
+id: cow_country_abbreviation
+name: Correlates of War country abbreviation
+status: draft
+doc: 'Three-letter abbreviation of a state in the Correlates of War state system list (the stateabb variable),
+  used beside the numeric COW code: USA, CAN, UKG for the United Kingdom, GMY for Germany, RUS. Many differ
+  from the ISO 3166-1 alpha-3 codes.'
+categories:
+- geo
+- government
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{3}$
+examples:
+- value: USA
+  description: United States
+- value: UKG
+  description: United Kingdom
+- value: GMY
+  description: Germany
+- value: US
+  valid: false
+  description: Two letters
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Correlates_of_War
+- type: doc
+  url: https://correlatesofwar.org/data-sets/state-system-membership/
+translations:
+  ru:
+    name: Сокращение страны в Correlates of War

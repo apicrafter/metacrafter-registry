@@ -1,0 +1,29 @@
+id: py_dncp_licitacion_id
+name: Paraguayan public procurement call ID (DNCP)
+status: draft
+doc: 'Number of a call for tenders (ID de licitación, id_llamado) in the public procurement system of
+  Paraguay, run by the Dirección Nacional de Contrataciones Públicas: six digits, such as 187326. It opens
+  the slug of the call in the portal (156600-construccion-pozo...).'
+parent: id
+categories:
+- government
+- identifiers
+country:
+- PY
+langs:
+- es
+is_pii: false
+classification: identifier
+regexp: ^[1-9]\d{5}$
+examples:
+- value: '187326'
+- value: '156600'
+- value: '18732'
+  valid: false
+  description: Five digits
+links:
+- type: doc
+  url: https://www.contrataciones.gov.py/datos/
+translations:
+  ru:
+    name: Номер закупки DNCP (Парагвай)

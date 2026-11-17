@@ -1,0 +1,29 @@
+id: us_nyc_borough_code
+name: New York City borough code
+status: draft
+doc: 'One-digit code of a borough of New York City used by city agencies: 1 Manhattan, 2 Bronx, 3 Brooklyn,
+  4 Queens, 5 Staten Island. It is the first digit of the BBL and of the BIN.'
+categories:
+- geo
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^[1-5]$
+examples:
+- value: '1'
+  description: Manhattan
+- value: '3'
+  description: Brooklyn
+- value: '6'
+  valid: false
+  description: There are five boroughs
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Borough,_Block_and_Lot
+translations:
+  ru:
+    name: Код боро Нью-Йорка

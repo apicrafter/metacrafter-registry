@@ -1,0 +1,29 @@
+id: dz_wilaya
+name: Algerian province (wilaya)
+status: draft
+doc: Name of one of the 58 provinces (wilayas) of Algeria, such as Alger, Oran, Constantine or Tizi Ouzou;
+  48 before the ten southern provinces were added in 2019. Tables write the names in French, with or without
+  accents and often in capitals.
+parent: admin_area_1
+categories:
+- geo
+- government
+country:
+- DZ
+langs:
+- fr
+- ar
+is_pii: false
+classification: categorical
+examples:
+- value: Alger
+- value: Tizi Ouzou
+- value: BEJAIA
+  description: In capitals, without the accents of Béjaïa
+- value: Oum El Bouaghi
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Provinces_of_Algeria
+translations:
+  ru:
+    name: Вилайет Алжира

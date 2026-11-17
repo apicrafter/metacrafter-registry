@@ -1,0 +1,30 @@
+id: gw_country_code
+name: Gleditsch-Ward country code
+status: draft
+doc: 'Numeric code of an independent state in the list of Kristian Skrede Gleditsch and Michael D. Ward,
+  a revision of the Correlates of War state numbers used in conflict datasets (UCDP/PRIO, the gwno and
+  gwcode variables): 2 United States, 200 United Kingdom, 710 China. Most numbers equal the COW ones.'
+categories:
+- geo
+- government
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^\d{1,3}$
+examples:
+- value: '2'
+  description: United States
+- value: '200'
+  description: United Kingdom
+- value: '710'
+  description: China
+- value: USA
+  valid: false
+  description: The letter abbreviation, not the number
+links:
+- type: doc
+  url: http://ksgleditsch.com/statelist.html
+translations:
+  ru:
+    name: Код страны по Гледичу и Уорду
