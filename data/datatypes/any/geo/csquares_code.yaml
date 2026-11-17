@@ -1,0 +1,41 @@
+id: csquares_code
+name: C-squares code
+status: draft
+doc: 'Code of a cell of the c-squares grid (Concise Spatial Query and Representation System), which Tony
+  Rees of CSIRO Marine Research published in 2002 to index marine data by latitude and longitude. The
+  first four digits name a ten-degree square as WMO squares do: the global quadrant (1 north-east, 3 south-east,
+  5 south-west, 7 north-west), the tens of the latitude and two digits for the tens of the longitude.
+  Each finer step adds a colon and a cycle of three digits, an intermediate quadrant from 1 to 4 and the
+  next digits of latitude and longitude; a last cycle of one digit halves the cell. 1212:121:2 is a half-degree
+  cell, the resolution of the species range tables of AquaMaps.'
+categories:
+- geo
+- environment
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[1357][0-8](?:0\d|1[0-7])(?::[1-4]\d{2})*(?::[1-4])?$
+examples:
+- value: 3112:360:4
+  description: Half-degree cell; example in Wikipedia
+- value: '3112'
+  description: Ten-degree cell; example in Wikipedia
+- value: 1000:100:100:1
+  description: Cell of 0.05 degrees; example in Wikipedia
+- value: 1212:121:2
+  description: Species count table of the Pacific Environment Data Portal (SPREP), a 2024 snapshot
+- value: 2112:360
+  valid: false
+  description: There is no global quadrant 2
+- value: 3112:560
+  valid: false
+  description: The intermediate quadrant is 1 to 4
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/C-squares
+translations:
+  ru:
+    name: Код ячейки c-squares
+    doc: 'Код ячейки географической сетки c-squares (CSIRO, 2002): четыре цифры десятиградусного квадрата
+      и уточняющие группы через двоеточие.'

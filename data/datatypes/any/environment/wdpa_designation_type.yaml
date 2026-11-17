@@ -1,0 +1,31 @@
+id: wdpa_designation_type
+name: WDPA designation type
+status: draft
+doc: 'Level at which a protected area was designated, in the World Database on Protected Areas (field
+  DESIG_TYPE): National, Regional (under a regional agreement, such as a Natura 2000 site), International
+  (a World Heritage or Ramsar site) or Not Applicable. The designation itself (National Park, Marine Sanctuary)
+  is in the fields DESIG and DESIG_ENG.'
+parent: category
+categories:
+- environment
+- government
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?i:National|Regional|International|Not Applicable)$
+examples:
+- value: National
+- value: International
+- value: Regional
+- value: Ramsar Site, Wetland of International Importance
+  valid: false
+  description: A designation (DESIG_ENG)
+links:
+- type: doc
+  url: https://www.protectedplanet.net/en/resources/wdpa-manual
+- type: doc
+  url: https://developers.google.com/earth-engine/datasets/catalog/WCMC_WDPA_current_polygons
+translations:
+  ru:
+    name: Уровень обозначения охраняемой территории (WDPA)

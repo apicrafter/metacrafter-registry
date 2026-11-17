@@ -1,0 +1,26 @@
+id: mn_dayofweek
+name: Day of week (in Mongolian)
+status: draft
+doc: 'Name of a day of the week in Mongolian, in the Tibetan-derived names of everyday use: Даваа (Monday),
+  Мягмар, Лхагва, Пүрэв, Баасан, Бямба and Ням (Sunday), capitalised or not. Timetables of the National
+  University of Mongolia give the day of a class this way, in a column named гараг.'
+semantic_type: dayofweek
+langs:
+- mn
+regexp: ^(?i:даваа|мягмар|лхагва|пүрэв|баасан|бямба|ням)$
+examples:
+- value: Даваа
+- value: Баасан
+- value: лхагва
+  description: in small letters, as CLDR writes it
+- value: Намрын улирал
+  valid: false
+  description: the autumn semester
+links:
+- type: other
+  url: https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/mn/ca-gregorian.json
+translations:
+  mn:
+    name: Гараг
+  ru:
+    name: День недели (на монгольском)

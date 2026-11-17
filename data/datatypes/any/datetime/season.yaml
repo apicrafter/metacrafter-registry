@@ -1,0 +1,30 @@
+id: season
+name: Season of the year
+status: draft
+doc: 'Name of one of the four seasons in English: spring, summer, autumn (fall in American English) and
+  winter. Field surveys, counts of animals and plants, and tourism and energy statistics give the season
+  of an observation or of a period instead of a date, sometimes with the year (2004_summer). A column
+  named season also holds other things: the year of a cyclone season or a sports season (1986/87).'
+categories:
+- datetime
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?i:spring|summer|autumn|fall|winter)$
+examples:
+- value: Summer
+- value: winter
+- value: Autumn
+- value: FALL
+  description: American English, in capitals
+- value: 1986/87
+  valid: false
+  description: A cyclone season
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Season
+translations:
+  ru:
+    name: Время года
+    doc: 'Название времени года на английском языке: spring, summer, autumn (fall), winter.'

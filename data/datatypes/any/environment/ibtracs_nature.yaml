@@ -1,0 +1,34 @@
+id: ibtracs_nature
+name: IBTrACS storm nature
+status: draft
+doc: 'Type of a storm at one position of its track in the International Best Track Archive for Climate
+  Stewardship (IBTrACS), column NATURE, combined from the reports of all agencies: DS disturbance, TS
+  tropical, ET extratropical, SS subtropical, NR not reported, MX mixture (the agencies contradict each
+  other).'
+parent: category
+categories:
+- environment
+- science
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:DS|TS|ET|SS|NR|MX)$
+examples:
+- value: TS
+  description: Tropical
+- value: ET
+  description: Extratropical
+- value: NR
+  description: Not reported
+- value: HU
+  valid: false
+  description: A status of the US agencies (USA_STATUS)
+links:
+- type: doc
+  url: https://www.ncei.noaa.gov/sites/default/files/2021-07/IBTrACS_v04_column_documentation.pdf
+- type: doc
+  url: https://www.ncei.noaa.gov/products/international-best-track-archive
+translations:
+  ru:
+    name: Тип шторма IBTrACS

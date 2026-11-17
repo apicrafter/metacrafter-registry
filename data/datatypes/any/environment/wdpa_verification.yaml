@@ -1,0 +1,29 @@
+id: wdpa_verification
+name: WDPA verification status
+status: draft
+doc: 'Who checked the record of a protected area in the World Database on Protected Areas (field VERIF,
+  set by UNEP-WCMC): State Verified (the national authority), Expert Verified (another expert source),
+  or Not Reported for records that were in the database before the field existed.'
+parent: category
+categories:
+- environment
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?i:State Verified|Expert Verified|Not Reported)$
+examples:
+- value: State Verified
+- value: Expert Verified
+- value: Not Reported
+- value: Designated
+  valid: false
+  description: A status of the area (STATUS)
+links:
+- type: doc
+  url: https://www.protectedplanet.net/en/resources/wdpa-manual
+- type: doc
+  url: https://developers.google.com/earth-engine/datasets/catalog/WCMC_WDPA_current_polygons
+translations:
+  ru:
+    name: Статус проверки записи WDPA

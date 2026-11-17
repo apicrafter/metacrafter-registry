@@ -1,0 +1,39 @@
+id: isco88
+name: ISCO-88 occupation code
+status: draft
+doc: 'Code of an occupation group in the International Standard Classification of Occupations of 1988
+  (ISCO-88) of the International Labour Organization, the version before ISCO-08 (isco08). It has the
+  same four levels: major group (one digit), sub-major group (two), minor group (three) and unit group
+  (four digits); major group 0 is the armed forces. Surveys that started before 2008 code the occupation
+  of the respondent and of the partner with it (the columns isco88 and spisco88 of the International Social
+  Survey Programme, iscoco of the European Social Survey). The codes of the two versions look alike: only
+  the column says which one it is.'
+categories:
+- industry
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^\d{1,4}$
+examples:
+- value: '2145'
+  description: 'Unit group: mechanical engineers'
+- value: '7245'
+  description: 'Unit group: electrical line installers, repairers and cable jointers'
+- value: '0110'
+  description: 'Unit group: armed forces'
+- value: '21451'
+  valid: false
+  description: Five digits
+mappings:
+  wikidata: P952
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/International_Standard_Classification_of_Occupations
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P952
+translations:
+  ru:
+    name: Код занятия ISCO-88
+    doc: 'Код группы занятий по Международной стандартной классификации занятий 1988 года (МСКЗ-88) МОТ:
+      от одной до четырёх цифр.'

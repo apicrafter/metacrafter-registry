@@ -1,0 +1,36 @@
+id: nz_region
+name: New Zealand region
+status: draft
+doc: 'Name of one of the 16 regions of New Zealand: Northland, Auckland, Waikato, Bay of Plenty, Gisborne,
+  Hawke''s Bay, Taranaki, Manawatū-Whanganui, Wellington, Tasman, Nelson, Marlborough, West Coast, Canterbury,
+  Otago and Southland. Eleven have a regional council; Auckland, Gisborne, Tasman, Nelson and Marlborough
+  are unitary authorities. Tables write Manawatu-Wanganui for the name before 2019 and add Region to the
+  name (Canterbury Region). Their ISO 3166-2 codes are NZ-CAN, NZ-AUK and so on.'
+parent: admin_area_1
+categories:
+- geo
+- government
+country:
+- NZ
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: '^(?i:(?:Northland|Auckland|Waikato|Bay of Plenty|Gisborne|Hawke''?s Bay|Taranaki|Manawat[uū]-W(?:h)?anganui|Wellington|Tasman|Nelson|Marlborough|West
+  Coast|Canterbury|Otago|Southland)(?: Region)?)$'
+examples:
+- value: Canterbury
+- value: Bay of Plenty
+- value: Manawatū-Whanganui
+- value: Manawatu-Wanganui
+  description: The spelling before 2019
+- value: Otago Region
+- value: Christchurch
+  valid: false
+  description: A city
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Regions_of_New_Zealand
+translations:
+  ru:
+    name: Регион Новой Зеландии

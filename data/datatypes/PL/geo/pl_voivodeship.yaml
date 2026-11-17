@@ -1,0 +1,39 @@
+id: pl_voivodeship
+name: Polish voivodeship
+status: draft
+doc: 'Name of one of the 16 voivodeships (województwa) of Poland since 1999, as Polish tables write it:
+  the adjective in small letters (mazowieckie, warmińsko-mazurskie), capitalised or in capitals (ŚLĄSKIE).
+  Statistics of the health, education and statistical offices give the voivodeship of a row this way,
+  in a column named województwo. Their two-digit TERYT codes are part of pl_teryt_terc.'
+parent: admin_area_1
+categories:
+- geo
+- government
+country:
+- PL
+langs:
+- pl
+is_pii: false
+classification: categorical
+regexp: ^(?i:dolnośląskie|kujawsko-pomorskie|lubelskie|lubuskie|łódzkie|małopolskie|mazowieckie|opolskie|podkarpackie|podlaskie|pomorskie|śląskie|świętokrzyskie|warmińsko-mazurskie|wielkopolskie|zachodniopomorskie)$
+examples:
+- value: mazowieckie
+- value: Warmińsko-mazurskie
+- value: ŚLĄSKIE
+  description: in capitals
+- value: łódzkie
+- value: warszawskie
+  valid: false
+  description: A voivodeship before 1999
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Voivodeships_of_Poland
+- type: wikipedia
+  url: https://pl.wikipedia.org/wiki/Podzia%C5%82_administracyjny_Polski
+translations:
+  pl:
+    name: Województwo
+  ru:
+    name: Воеводство Польши
+    doc: 'Название одного из 16 воеводств Польши (с 1999 года), как его пишут в польских таблицах: mazowieckie,
+      śląskie.'

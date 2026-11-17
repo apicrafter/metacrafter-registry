@@ -1,0 +1,33 @@
+id: wdpa_ownership_type
+name: WDPA ownership type
+status: draft
+doc: 'Who owns the land or water of a protected area, in the words of the World Database on Protected
+  Areas (field OWN_TYPE): State, Communal, Individual landowners, For-profit organisations, Non-profit
+  organisations, Joint ownership, Multiple ownership, Contested or Not Reported. Ownership and governance
+  (wdpa_governance_type) are told apart: a state-owned area can be run by a community.'
+parent: category
+categories:
+- environment
+- government
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?i:State|Communal|Individual landowners|For-profit organi[sz]ations|Non-profit organi[sz]ations|Joint
+  ownership|Multiple ownership|Contested|Not Reported)$
+examples:
+- value: State
+- value: Communal
+- value: Joint ownership
+- value: Not Reported
+- value: Joint governance
+  valid: false
+  description: A governance type (GOV_TYPE)
+links:
+- type: doc
+  url: https://www.protectedplanet.net/en/resources/wdpa-manual
+- type: doc
+  url: https://developers.google.com/earth-engine/datasets/catalog/WCMC_WDPA_current_polygons
+translations:
+  ru:
+    name: Тип собственности на охраняемую территорию (WDPA)

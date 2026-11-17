@@ -1,0 +1,31 @@
+id: wdpa_no_take
+name: WDPA no-take status
+status: draft
+doc: 'Whether the taking of living or dead natural resources (fishing, extraction, dumping, dredging,
+  construction) is forbidden in a marine protected area, in the World Database on Protected Areas (field
+  NO_TAKE): All of the area, Part of it, None, Not Reported, or Not Applicable for an area on land. The
+  size of the no-take part is in NO_TK_AREA.'
+parent: category
+categories:
+- environment
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?i:All|Part|None|Not Reported|Not Applicable)$
+examples:
+- value: All
+- value: Part
+- value: Not Reported
+- value: Not Applicable
+- value: 'Yes'
+  valid: false
+  description: Not a value of the field
+links:
+- type: doc
+  url: https://www.protectedplanet.net/en/resources/wdpa-manual
+- type: doc
+  url: https://developers.google.com/earth-engine/datasets/catalog/WCMC_WDPA_current_polygons
+translations:
+  ru:
+    name: Запрет изъятия ресурсов в морской охраняемой территории (WDPA)
