@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "cb393762ce8931fc387fcfa78c04adb39d3720d8"
+  "ref": "c0f04cdef2247a607f56c699c39d509e0498d192"
  },
  "rules": [
   {
@@ -5215,6 +5215,96 @@
    "country_code": "xx"
   },
   {
+   "rule": "emotionbyname",
+   "key": "emotion",
+   "type": "field",
+   "match": "regex",
+   "file": "common/analytics.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "emotionvalue",
+   "key": "emotion",
+   "type": "data",
+   "match": "func",
+   "file": "common/analytics.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "marketingchannelbyname",
+   "key": "marketing_channel",
+   "type": "field",
+   "match": "regex",
+   "file": "common/analytics.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "marketingchannelvalue",
+   "key": "marketing_channel",
+   "type": "data",
+   "match": "func",
+   "file": "common/analytics.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "operatingsystemvalue",
+   "key": "operating_system",
+   "type": "data",
+   "match": "func",
+   "file": "common/analytics.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "sentimentbyname",
+   "key": "sentiment",
+   "type": "field",
+   "match": "regex",
+   "file": "common/analytics.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "socialnetworkbyname",
+   "key": "social_network",
+   "type": "field",
+   "match": "regex",
+   "file": "common/analytics.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "socialnetworkvalue",
+   "key": "social_network",
+   "type": "data",
+   "match": "func",
+   "file": "common/analytics.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "webbrowservalue",
+   "key": "web_browser",
+   "type": "data",
+   "match": "func",
+   "file": "common/analytics.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "manuscriptfoliobyname",
    "key": "manuscript_folio",
    "type": "field",
@@ -5665,6 +5755,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "hexcolorvalue",
+   "key": "hexcolor",
+   "type": "data",
+   "match": "func",
+   "file": "common/common.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "hslcolorvalue",
+   "key": "hslcolor",
+   "type": "data",
+   "match": "func",
+   "file": "common/common.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "lengthfilebyknown",
    "key": "datasize",
    "type": "field",
@@ -5759,6 +5869,26 @@
    "key": "phone",
    "type": "field",
    "match": "ppr",
+   "file": "common/common.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "rgbacolorvalue",
+   "key": "rgbacolor",
+   "type": "data",
+   "match": "func",
+   "file": "common/common.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "rgbcolorvalue",
+   "key": "rgbcolor",
+   "type": "data",
+   "match": "func",
    "file": "common/common.yaml",
    "context": "common",
    "lang": "common",
@@ -5975,6 +6105,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "creditratingbyname",
+   "key": "credit_rating",
+   "type": "field",
+   "match": "regex",
+   "file": "common/crossborder_finance.yaml",
+   "context": "finances",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "creditratingvalue",
+   "key": "credit_rating",
+   "type": "data",
+   "match": "func",
+   "file": "common/crossborder_finance.yaml",
+   "context": "finances",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "figifield",
    "key": "figi",
    "type": "field",
@@ -5989,6 +6139,26 @@
    "key": "figi",
    "type": "data",
    "match": "ppr",
+   "file": "common/crossborder_finance.yaml",
+   "context": "finances",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "gicssectorbyname",
+   "key": "gics_sector",
+   "type": "field",
+   "match": "regex",
+   "file": "common/crossborder_finance.yaml",
+   "context": "finances",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "gicssectorvalue",
+   "key": "gics_sector",
+   "type": "data",
+   "match": "func",
    "file": "common/crossborder_finance.yaml",
    "context": "finances",
    "lang": "common",
@@ -6109,6 +6279,26 @@
    "key": "crypto_address",
    "type": "field",
    "match": "text",
+   "file": "common/cryptocurrency.yaml",
+   "context": "cryptocurrency",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "cryptoexchangebyname",
+   "key": "crypto_exchange",
+   "type": "field",
+   "match": "regex",
+   "file": "common/cryptocurrency.yaml",
+   "context": "cryptocurrency",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "cryptoexchangevalue",
+   "key": "crypto_exchange",
+   "type": "data",
+   "match": "func",
    "file": "common/cryptocurrency.yaml",
    "context": "cryptocurrency",
    "lang": "common",
@@ -7285,6 +7475,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "energysourcebyname",
+   "key": "energy_source",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "energysourcevalue",
+   "key": "energy_source",
+   "type": "data",
+   "match": "func",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "eubathingwateridbyname",
    "key": "eu_bathing_water_id",
    "type": "field",
@@ -7399,6 +7609,26 @@
    "key": "turbidity",
    "type": "field",
    "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "weatherconditionbyname",
+   "key": "weather_condition",
+   "type": "field",
+   "match": "regex",
+   "file": "common/environment.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "weatherconditionvalue",
+   "key": "weather_condition",
+   "type": "data",
+   "match": "func",
    "file": "common/environment.yaml",
    "context": "environment",
    "lang": "common",
@@ -11247,6 +11477,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "planetbyname",
+   "key": "planet",
+   "type": "field",
+   "match": "regex",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "planetvalue",
+   "key": "planet",
+   "type": "data",
+   "match": "func",
+   "file": "common/science.yaml",
+   "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "postagbyname",
    "key": "pos_tag",
    "type": "field",
@@ -11747,6 +11997,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "awsec2instancetypebyname",
+   "key": "aws_ec2_instance_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/software.yaml",
+   "context": "software",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "awsec2instancetypevalue",
+   "key": "aws_ec2_instance_type",
+   "type": "data",
+   "match": "func",
+   "file": "common/software.yaml",
+   "context": "software",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "buildnumberbyknown",
    "key": "build_number",
    "type": "field",
@@ -11891,6 +12161,26 @@
    "key": "software_license",
    "type": "field",
    "match": "text",
+   "file": "common/software.yaml",
+   "context": "software",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "loglevelbyname",
+   "key": "log_level",
+   "type": "field",
+   "match": "regex",
+   "file": "common/software.yaml",
+   "context": "software",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "loglevelvalue",
+   "key": "log_level",
+   "type": "data",
+   "match": "func",
    "file": "common/software.yaml",
    "context": "software",
    "lang": "common",
@@ -26667,6 +26957,26 @@
    "match": "regex",
    "file": "us/us_medical.yaml",
    "context": "medical",
+   "lang": "en",
+   "country_code": "us"
+  },
+  {
+   "rule": "usnyc311complainttypebyname",
+   "key": "us_nyc_311_complaint_type",
+   "type": "field",
+   "match": "regex",
+   "file": "us/us_nyc.yaml",
+   "context": "geo",
+   "lang": "en",
+   "country_code": "us"
+  },
+  {
+   "rule": "usnyc311complainttypevalue",
+   "key": "us_nyc_311_complaint_type",
+   "type": "data",
+   "match": "func",
+   "file": "us/us_nyc.yaml",
+   "context": "geo",
    "lang": "en",
    "country_code": "us"
   },

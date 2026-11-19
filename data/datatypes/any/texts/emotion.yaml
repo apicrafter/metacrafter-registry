@@ -1,0 +1,29 @@
+id: emotion
+name: Emotion (category)
+status: draft
+doc: 'Emotion that a text, a voice recording or a face expresses, as emotion classifiers and lexicons
+  label it: the six basic emotions of Paul Ekman (anger, disgust, fear, happiness, sadness, surprise),
+  the eight primary emotions of the wheel of Robert Plutchik (joy, trust, fear, surprise, sadness, disgust,
+  anger, anticipation), which the NRC Emotion Lexicon uses, and often a neutral class. Tables of tweets,
+  reviews and survey answers count or average them. The polarity of a text (positive, negative, neutral)
+  is sentiment.'
+parent: category
+categories:
+- texts
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: anger
+- value: joy
+- value: sadness
+- value: anticipation
+  description: one of the eight emotions of Plutchik
+- value: surprise
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Emotion_classification
+translations:
+  ru:
+    name: Эмоция (категория)

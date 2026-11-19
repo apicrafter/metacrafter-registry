@@ -1,0 +1,33 @@
+id: us_nyc_311_complaint_type
+name: NYC 311 complaint type
+status: draft
+doc: 'Topic of a service request made to 311, the non-emergency service line of New York City: the first
+  level of the hierarchy that NYC Open Data publishes for each request (Noise - Residential, HEAT/HOT
+  WATER, Illegal Parking, Blocked Driveway, Street Condition, Rodent). The descriptor of the request refines
+  it. Analyses of the 311 Service Requests dataset count requests by complaint type, borough and agency.
+  The portal renamed the column Problem (formerly Complaint Type) and kept the field name complaint_type.
+  Other cities with a 311 line use their own lists of request types.'
+parent: category
+categories:
+- government
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Noise - Residential
+- value: HEAT/HOT WATER
+  description: heating complaints of the Department of Housing Preservation and Development, in capitals
+- value: Illegal Parking
+- value: Blocked Driveway
+- value: Street Light Condition
+links:
+- type: other
+  url: https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/3-1-1
+translations:
+  ru:
+    name: Тип обращения в службу 311 Нью-Йорка

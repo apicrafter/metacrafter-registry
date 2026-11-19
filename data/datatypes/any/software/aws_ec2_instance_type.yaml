@@ -1,0 +1,32 @@
+id: aws_ec2_instance_type
+name: Amazon EC2 instance type
+status: draft
+doc: 'Type of a virtual server of Amazon Elastic Compute Cloud (EC2): the instance family, made of a series
+  (t, m, c, r, inf, mac), a generation number and option letters (t2, m5, c5n, r6g, c7gn), then a dot
+  and the size (nano, micro, small, medium, large, xlarge, 2xlarge and larger multiples, or metal for
+  bare metal): t2.micro, m4.large, c5.2xlarge. Cost and usage reports, reserved instance tables and inventory
+  exports give it per instance. The instance itself has an ID (aws_ec2_instance_id).'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[a-z][a-z0-9-]*\d[a-z0-9-]*\.(?:nano|micro|small|medium|large|\d{0,3}xlarge|metal(?:-\d{1,3}xl)?)$
+examples:
+- value: t2.micro
+- value: m4.large
+- value: c5.2xlarge
+- value: c7gn.xlarge
+  description: example of the AWS documentation on instance type names
+- value: m7i-flex.large
+  description: a flex instance
+- value: m4-large
+  valid: false
+  description: Hyphen instead of the dot
+links:
+- type: doc
+  url: https://docs.aws.amazon.com/ec2/latest/instancetypes/instance-type-names.html
+translations:
+  ru:
+    name: Тип инстанса Amazon EC2

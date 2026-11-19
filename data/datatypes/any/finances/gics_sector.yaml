@@ -1,0 +1,31 @@
+id: gics_sector
+name: GICS sector
+status: draft
+doc: 'Sector of the Global Industry Classification Standard (GICS) of MSCI and S&P Dow Jones Indices,
+  the top of its four levels: Energy (10), Materials (15), Industrials (20), Consumer Discretionary (25),
+  Consumer Staples (30), Health Care (35), Financials (40), Information Technology (45), Communication
+  Services (50, Telecommunication Services until 2018), Utilities (55) and Real Estate (60, a sector since
+  2016). Portfolio and index tables break holdings and weights down by sector. The sector lists of other
+  data providers (Basic Materials, Consumer Cyclical, Consumer Defensive, Financial Services at Morningstar)
+  appear in the same fields.'
+parent: industry
+categories:
+- finances
+- companies
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Information Technology
+- value: Health Care
+- value: Consumer Discretionary
+- value: Telecommunication Services
+  description: sector 50 before the 2018 revision
+- value: Real Estate
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard
+translations:
+  ru:
+    name: Сектор GICS

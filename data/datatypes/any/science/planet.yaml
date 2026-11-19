@@ -1,0 +1,31 @@
+id: planet
+name: Planet of the Solar System
+status: draft
+doc: 'Planet of the Solar System by name: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune.
+  Tables made before or apart from the 2006 decision of the International Astronomical Union still list
+  Pluto, now a dwarf planet. Teaching and astronomy tables give their mass, gravity, orbital period or
+  distance from the Sun. Names of exoplanets and of moons are other types.'
+parent: category
+categories:
+- science
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Mercury
+- value: Earth
+- value: Jupiter
+- value: Neptune
+- value: Pluto
+  description: a dwarf planet since 2006, listed in older tables
+mappings:
+  wikidata: Q634
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Planet
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Q634
+translations:
+  ru:
+    name: Планета Солнечной системы

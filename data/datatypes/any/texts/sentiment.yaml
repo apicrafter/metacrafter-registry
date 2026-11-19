@@ -1,0 +1,29 @@
+id: sentiment
+name: Sentiment (polarity label)
+status: draft
+doc: 'Polarity that sentiment analysis gives a text: positive, negative or neutral, sometimes with very
+  positive and very negative at the ends of a five-point scale, or the short forms pos, neg and neu of
+  the VADER tool and others. Tables of tweets, reviews and survey answers count them. A numeric score
+  of the same analysis (from -1 to 1) is a number, and the emotions of a text are emotion. Medical and
+  laboratory test results use the same words, so a column is sentiment only when its name or table says
+  so.'
+parent: category
+categories:
+- texts
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: positive
+- value: negative
+- value: neutral
+- value: very positive
+- value: neu
+  description: short form of VADER
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Sentiment_analysis
+translations:
+  ru:
+    name: Тональность (метка)
