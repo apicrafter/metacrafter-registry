@@ -1,0 +1,28 @@
+id: course_code
+name: Course code
+status: draft
+doc: 'Code of a course in the catalogue of a university, college or school: an abbreviation of the subject
+  or department followed by a number whose first digit usually gives the level, with or without a space
+  or hyphen: CSI 101, MUS 100, SI 505, ACTG3000, TP-100. Timetables, enrolment lists, course evaluations
+  and transcripts use it as the key of a course next to its title. Each institution sets its own scheme,
+  so the field name (course, course code, unit code, module code) tells it.'
+parent: id
+categories:
+- education
+langs:
+- common
+is_pii: false
+classification: identifier
+examples:
+- value: CSI 101
+- value: MUS 100
+- value: SI 505
+- value: ACTG3000
+mappings:
+  schema_org: courseCode
+links:
+- type: schema.org
+  url: https://schema.org/courseCode
+translations:
+  ru:
+    name: Код учебного курса

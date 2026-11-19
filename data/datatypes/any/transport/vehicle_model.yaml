@@ -1,0 +1,24 @@
+id: vehicle_model
+name: Vehicle model
+status: draft
+doc: 'Model of a motor vehicle within its make: Corolla, Focus, Golf, Hilux, F-150, often written together
+  with the make and a trim or engine (Ford Focus, Audi A6 3.0 Avant Quattro). Vehicle registers, recall,
+  sales, fuel economy and insurance tables have it next to the make (vehicle_make) and the model year,
+  under field names such as model, vehicle model, car model, car name and modelo. The values are free
+  names, so the field name tells the type; a model of another product (a phone, a sensor) is a different
+  type.'
+parent: name
+categories:
+- transport
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Corolla
+- value: Ford Focus
+- value: Hilux
+- value: Audi A6 3.0 Avant Quattro
+translations:
+  ru:
+    name: Модель транспортного средства

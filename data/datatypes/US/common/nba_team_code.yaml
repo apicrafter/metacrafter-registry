@@ -1,0 +1,35 @@
+id: nba_team_code
+name: NBA team abbreviation
+status: draft
+doc: 'Abbreviation of a team of the National Basketball Association, the professional basketball league
+  of the United States and Canada: LAL (Los Angeles Lakers), BOS, GSW, NYK, SAS, TOR (Toronto Raptors).
+  Box scores, standings, rosters and statistics tables use it for the team and the opponent. Sources differ
+  for some teams (BKN or BRK, CHA or CHO, PHX or PHO, GSW or GS) and older tables keep teams that moved
+  or were renamed (NJN for the New Jersey Nets, SEA for the Seattle SuperSonics, NOH for the New Orleans
+  Hornets). MLB and NFL abbreviations are separate types and share many codes.'
+parent: sports_team
+categories:
+- common
+country:
+- US
+- CA
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2,4}$
+examples:
+- value: LAL
+  description: Los Angeles Lakers
+- value: GSW
+  description: Golden State Warriors
+- value: NYK
+  description: New York Knicks
+- value: SAS
+  description: San Antonio Spurs
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_Basketball_Association
+translations:
+  ru:
+    name: Сокращение команды NBA

@@ -1,0 +1,32 @@
+id: letter_grade
+name: Letter grade
+status: draft
+doc: 'Grade of a student or of a piece of work as a letter: A (best) to D and F (fail), with + and - for
+  steps between (A-, B+), as in schools and universities of the United States and Canada; some scales
+  use E instead of or before F. Gradebooks, transcripts and grade distributions give it next to the course
+  and the score. A single letter column is often a class, group or category, so the field name (grade,
+  letter grade, final grade) and the + and - forms tell a grade. Numeric grades and grade levels of schools
+  (grade 1 to 12) are different types.'
+categories:
+- education
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[A-D][+-]?|[EF])$
+examples:
+- value: A
+- value: A-
+- value: B+
+- value: C
+- value: F
+- value: A++
+  valid: false
+- value: G
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Academic_grading_in_the_United_States
+translations:
+  ru:
+    name: Буквенная оценка

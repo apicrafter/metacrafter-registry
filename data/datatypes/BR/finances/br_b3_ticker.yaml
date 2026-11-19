@@ -1,0 +1,40 @@
+id: br_b3_ticker
+name: B3 ticker (Brazil)
+status: draft
+doc: 'Trading code of a security on B3 (Brasil, Bolsa, Balcão), the stock exchange of São Paulo: four
+  characters for the issuer (PETR for Petrobras, VALE, ITSA, B3SA) and a number for the kind of security:
+  3 for ordinary shares (ON), 4 for preferred shares (PN), 5 to 8 for classes of preferred shares (PNA
+  to PND) and 11 for units and funds. Quotes, portfolios and Ibovespa composition tables give it under
+  field names such as ativo, papel, código and ticker.'
+parent: tickersymbol
+categories:
+- finances
+country:
+- BR
+langs:
+- common
+is_pii: false
+classification: identifier
+regexp: ^[A-Z][A-Z0-9]{3}(?:[1-9]|1[01])$
+examples:
+- value: PETR4
+  description: Petrobras preferred shares
+- value: VALE3
+  description: Vale ordinary shares
+- value: CPLE6
+  description: Copel class B preferred shares
+- value: B3SA3
+  description: B3 ordinary shares
+- value: ALLL11
+  description: Units of América Latina Logística
+- value: AAPL
+  valid: false
+  description: A Nasdaq ticker (tickersymbol)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/B3_(stock_exchange)
+translations:
+  pt:
+    name: Código de negociação da B3
+  ru:
+    name: Тикер биржи B3 (Бразилия)
