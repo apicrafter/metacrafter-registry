@@ -1,0 +1,33 @@
+id: credit_rating
+name: Credit rating (letter grade of a rating agency)
+status: draft
+doc: Credit rating that an agency gives a borrower or a debt issue, on the long-term letter scales of
+  S&P Global Ratings and Fitch (AAA, AA+, AA, AA-, A+ down to BBB- for investment grade, then BB+ down
+  to CCC, CC, C and D for default) or of Moody's (Aaa, Aa1, Aa2, Aa3, A1 down to Baa3, then Ba1 down to
+  Caa3, Ca and C). Bond, sovereign and fund tables give it per issuer or holding. School letter grades
+  (letter_grade) use the single letters without the doubled forms.
+parent: category
+categories:
+- finances
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:AAA|AA[+-]?|A[+-]?|BBB[+-]?|BB[+-]?|B[+-]?|CCC[+-]?|CC|C|R?D|SD|Aaa|Aa[123]|A[123]|Baa[123]|Ba[123]|B[123]|Caa[123]|Ca)$
+examples:
+- value: AAA
+- value: BBB-
+  description: lowest investment grade at S&P and Fitch
+- value: Baa3
+  description: lowest investment grade at Moody's
+- value: Aa2
+- value: Aaa1
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Credit_rating
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Bond_credit_rating
+translations:
+  ru:
+    name: Кредитный рейтинг (буквенная оценка агентства)

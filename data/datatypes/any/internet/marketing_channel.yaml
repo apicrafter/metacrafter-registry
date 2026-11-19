@@ -1,0 +1,29 @@
+id: marketing_channel
+name: Marketing channel (channel grouping of web analytics)
+status: draft
+doc: 'Channel that brought a visit, a lead or a sale, as web analytics tools group traffic: the default
+  channel grouping of Google Analytics (Direct, Organic Search, Paid Search, Social, Email, Referral,
+  Display, Affiliates, Other Advertising, (Other)) and the similar lists of other tools (Paid Social,
+  Organic Social, Video). Dashboards report sessions, conversions and revenue by it. The source and medium
+  of a visit (google / organic) are finer fields.'
+parent: category
+categories:
+- internet
+- ecommerce
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Organic Search
+- value: Direct
+- value: Paid Search
+- value: Referral
+- value: (Other)
+  description: visits that fit no channel of the grouping
+links:
+- type: doc
+  url: https://support.google.com/analytics/answer/3297892
+translations:
+  ru:
+    name: Маркетинговый канал (группа каналов веб-аналитики)

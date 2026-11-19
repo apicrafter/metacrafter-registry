@@ -1,0 +1,30 @@
+id: log_level
+name: Log level (severity of a log message)
+status: draft
+doc: 'Severity of a message in an application or system log: TRACE, DEBUG, INFO, WARN, ERROR and FATAL
+  of Log4j and similar libraries, DEBUG, INFO, WARNING, ERROR and CRITICAL of the Python logging module,
+  SEVERE to FINEST of java.util.logging, and the eight severities of syslog (Emergency, Alert, Critical,
+  Error, Warning, Notice, Informational, Debug), numbered 0 to 7 in RFC 5424. Log exports and monitoring
+  dashboards count messages by it.'
+parent: category
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: INFO
+- value: WARN
+- value: ERROR
+- value: DEBUG
+- value: Informational
+  description: syslog severity 6
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Syslog
+- type: doc
+  url: https://datatracker.ietf.org/doc/html/rfc5424
+translations:
+  ru:
+    name: Уровень журналирования

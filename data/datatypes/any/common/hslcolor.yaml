@@ -3,12 +3,13 @@ name: HSL color
 status: draft
 doc: 'Color written as hue, saturation and lightness: a hue angle from 0 to 360 degrees and two percentages
   from 0% to 100%, separated by commas, either bare (0, 100%, 50%) or in the CSS functional notation hsl(0,
-  100%, 50%). The regexp accepts whole numbers only, without the deg unit, an alpha channel or the space-separated
-  syntax of CSS Color Level 4.'
+  100%, 50%). The regexp accepts whole and decimal numbers (hsl(51.4285714286,50%,50%), as the color scales
+  of Plotly charts write them), without the deg unit, an alpha channel or the space-separated syntax of
+  CSS Color Level 4.'
 semantic_type: color
 langs:
 - common
-regexp: ^(?:hsl\(\s*(?:360|3[0-5]\d|[12]\d\d|[1-9]?\d)\s*,\s*(?:100|[1-9]?\d)%\s*,\s*(?:100|[1-9]?\d)%\s*\)|(?:360|3[0-5]\d|[12]\d\d|[1-9]?\d)\s*,\s*(?:100|[1-9]?\d)%\s*,\s*(?:100|[1-9]?\d)%)$
+regexp: ^(?:hsl\(\s*(?:360(?:\.0+)?|(?:3[0-5]\d|[12]\d\d|[1-9]?\d)(?:\.\d+)?)\s*,\s*(?:100(?:\.0+)?|[1-9]?\d(?:\.\d+)?)%\s*,\s*(?:100(?:\.0+)?|[1-9]?\d(?:\.\d+)?)%\s*\)|(?:360(?:\.0+)?|(?:3[0-5]\d|[12]\d\d|[1-9]?\d)(?:\.\d+)?)\s*,\s*(?:100(?:\.0+)?|[1-9]?\d(?:\.\d+)?)%\s*,\s*(?:100(?:\.0+)?|[1-9]?\d(?:\.\d+)?)%)$
 examples:
 - value: hsl(0, 100%, 50%)
   description: Pure red
@@ -16,6 +17,8 @@ examples:
   description: Dark green
 - value: 0, 0%, 100%
   description: White
+- value: hsl(51.4285714286,50%,50%)
+  description: decimal hue, as Plotly color scales write it
 - value: 361, 50%, 50%
   valid: false
   description: Hue above 360

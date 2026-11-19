@@ -1,0 +1,29 @@
+id: weather_condition
+name: Weather condition
+status: draft
+doc: 'Weather at a place and time described in words: Clear, Clouds, Partly Cloudy, Overcast, Rain, Drizzle,
+  Snow, Thunderstorm, Fog, Mist, as weather services return it (the main groups of OpenWeatherMap are
+  Thunderstorm, Drizzle, Rain, Snow, Clear, Clouds and atmosphere conditions such as Mist, Fog and Haze)
+  and as weather stations and accident records note it. Tables of road accidents, sales, sports games
+  and social media posts join it as a factor. The numeric condition codes of each service are separate.'
+parent: category
+categories:
+- environment
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Clear
+- value: Partly Cloudy
+- value: Rain
+- value: Thunderstorm
+- value: Fog
+links:
+- type: doc
+  url: https://openweathermap.org/weather-conditions
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Weather
+translations:
+  ru:
+    name: Погодные условия

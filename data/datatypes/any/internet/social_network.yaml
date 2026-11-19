@@ -1,0 +1,27 @@
+id: social_network
+name: Social network name
+status: draft
+doc: 'Name of a social network or social media platform: Facebook, Twitter (X since 2023), Instagram,
+  LinkedIn, Pinterest, Reddit, Tumblr, Snapchat, VKontakte, Weibo. Surveys of media use, web analytics
+  reports of social referrals and marketing dashboards count users, visits or posts by it. An account
+  on the platform is a different type: each network has its own username and profile link types.'
+parent: category
+categories:
+- internet
+- media
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Facebook
+- value: Twitter
+- value: Instagram
+- value: LinkedIn
+- value: VKontakte
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Social_networking_service
+translations:
+  ru:
+    name: Название социальной сети

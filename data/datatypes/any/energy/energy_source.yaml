@@ -1,0 +1,29 @@
+id: energy_source
+name: Energy source (fuel or technology of energy production)
+status: draft
+doc: 'Primary energy source or fuel from which electricity or energy is produced: coal, natural gas, oil,
+  nuclear, hydro, wind, solar, biomass, geothermal, with the finer classes of grid operators (combined
+  cycle gas turbine, onshore and offshore wind, pumped storage). Energy balances, generation mixes, capacity
+  tables and emission factors break their figures down by it. The fuel of the heating of a building or
+  of a vehicle (Natural Gas, Oil, Grid Supplied Electricity, Diesel, Electric) is given in the same words.
+  Codes of national lists, such as the filière of French electricity data (fr_elec_filiere_code), are
+  separate types.'
+parent: category
+categories:
+- energy
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Coal
+- value: Natural Gas
+- value: Nuclear
+- value: Hydro
+- value: Wind Offshore
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Electricity_generation
+translations:
+  ru:
+    name: Источник энергии (вид топлива или генерации)

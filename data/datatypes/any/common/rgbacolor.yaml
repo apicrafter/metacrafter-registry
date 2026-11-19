@@ -1,0 +1,34 @@
+id: rgbacolor
+name: RGBA color (rgba() with an alpha channel)
+status: draft
+doc: 'Color in the CSS functional notation rgba(): red, green and blue from 0 to 255 and an opacity (alpha)
+  from 0 (transparent) to 1 (opaque), as rgba(179, 226, 205, 1) or rgba(222,45,38,0.8). Charting libraries
+  such as Plotly and Chart.js and stylesheets write colors with transparency this way, and chart exports
+  keep them in the color fields of traces and markers. The form without alpha is rgbcolor, the hexadecimal
+  one hexcolor. The regexp does not cover percentages or the space-separated syntax of CSS Color Level
+  4.'
+semantic_type: color
+langs:
+- common
+regexp: ^rgba ?\(\s*(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\s*,\s*(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\s*,\s*(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\s*,\s*(?:0|1|0?\.\d+|1\.0+)\s*\)$
+examples:
+- value: rgba(179,226,205,1)
+- value: rgba(222, 45, 38, 0.8)
+- value: rgba(0,0,0,0)
+  description: fully transparent
+- value: rgba (255, 0, 0, 1)
+  description: with a space after rgba, as older Plotly figures write it
+- value: rgba(256,0,0,1)
+  valid: false
+  description: A component above 255
+- value: rgb(255, 99, 71)
+  valid: false
+  description: Without alpha (rgbcolor)
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/RGBA_color_model
+- type: doc
+  url: https://www.w3.org/TR/css-color-4/#rgb-functions
+translations:
+  ru:
+    name: Цвет RGBA (rgba() с альфа-каналом)

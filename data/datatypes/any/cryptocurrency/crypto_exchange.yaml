@@ -1,0 +1,28 @@
+id: crypto_exchange
+name: Cryptocurrency exchange name
+status: draft
+doc: 'Name of an exchange where cryptocurrencies are traded: Binance, Coinbase (its trading platform was
+  GDAX until 2018), Kraken, Bitfinex, Bitstamp, Bittrex, Poloniex, Gemini, Bithumb, Huobi. Price and volume
+  tables compare exchanges for the same trading pair, and arbitrage charts show the spread between them.
+  Ticker symbols of the coins are cryptocurrency_ticker.'
+parent: orgname
+categories:
+- cryptocurrency
+- finances
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Binance
+- value: Coinbase
+- value: Kraken
+- value: Bitfinex
+- value: GDAX
+  description: name of the Coinbase trading platform until 2018
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Cryptocurrency_exchange
+translations:
+  ru:
+    name: Название криптовалютной биржи
