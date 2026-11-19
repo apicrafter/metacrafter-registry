@@ -1,0 +1,38 @@
+id: video_game_platform
+name: Video game platform
+status: draft
+doc: 'Console, handheld or computer system that a video game is released for: PlayStation 3, Xbox 360,
+  Wii, Nintendo DS, PSP, Game Boy Advance, PC. Sales charts, reviews and game catalogues give one platform
+  per row, often in the short forms of the trade (PS3, X360, DS, GBA, N64). The field name (platform,
+  console, system, plataforma, piattaforma) together with a known list of platforms tells it from other
+  meanings of platform (a mobile operating system, a social network).'
+parent: category
+categories:
+- media
+- software
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: PlayStation 3
+- value: Xbox 360
+- value: Wii
+- value: Nintendo DS
+- value: PS2
+  description: PlayStation 2
+- value: GBA
+  description: Game Boy Advance
+mappings:
+  wikidata: P400
+  schema_org: gamePlatform
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P400
+- type: schema.org
+  url: https://schema.org/gamePlatform
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Video_game_console
+translations:
+  ru:
+    name: Игровая платформа

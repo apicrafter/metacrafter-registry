@@ -1,0 +1,37 @@
+id: mlb_team_code
+name: Major League Baseball team abbreviation
+status: draft
+doc: 'Abbreviation of a team of Major League Baseball, the professional baseball league of the United
+  States and Canada: NYY (New York Yankees), BOS, LAD, CHC, TOR (Toronto Blue Jays). Box scores, standings,
+  rosters and statistics tables use it for the team and the opponent. Sources differ for some teams (CWS
+  or CHW, KC or KCR, SD or SDP, SF or SFG, TB or TBR, WSH or WSN) and older tables keep teams that moved
+  or were renamed (MON for the Montreal Expos, FLA for the Florida Marlins). NBA and NFL abbreviations
+  are separate types and share many codes (ATL, BOS, CHI).'
+parent: sports_team
+categories:
+- common
+country:
+- US
+- CA
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2,3}$
+examples:
+- value: NYY
+  description: New York Yankees
+- value: LAD
+  description: Los Angeles Dodgers
+- value: CWS
+  description: Chicago White Sox
+- value: TOR
+  description: Toronto Blue Jays
+- value: NewYork
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Major_League_Baseball
+translations:
+  ru:
+    name: Сокращение команды MLB

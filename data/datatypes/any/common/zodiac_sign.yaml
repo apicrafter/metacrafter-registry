@@ -1,0 +1,34 @@
+id: zodiac_sign
+name: Zodiac sign
+status: draft
+doc: 'Sign of the Western (tropical) zodiac: one of the twelve signs from Aries to Pisces, each covering
+  about a month of the year, so the sign of a person follows from the date of birth. Surveys, dating profiles
+  and entertainment tables give it in words in their language (Escorpio, Sagitario in Spanish; Steinbock,
+  Wassermann in German; Gêmeos in Portuguese). As it is derived from the date of birth, it is personal
+  data of the person it describes. The twelve animals of the Chinese zodiac are a different list.'
+categories:
+- common
+- persons
+langs:
+- en
+- es
+- pt
+- de
+- fr
+- it
+is_pii: true
+classification: categorical
+examples:
+- value: Aries
+- value: Leo
+- value: Capricorn
+- value: Escorpio
+  description: Scorpio in Spanish
+- value: Steinbock
+  description: Capricorn in German
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Astrological_sign
+translations:
+  ru:
+    name: Знак зодиака

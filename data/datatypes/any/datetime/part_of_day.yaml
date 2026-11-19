@@ -1,0 +1,31 @@
+id: part_of_day
+name: Part of the day
+status: draft
+doc: 'Part of the day in words: morning, afternoon, evening and night, sometimes with noon, midnight,
+  early morning or late night. Surveys of time use and media consumption, crime and traffic incident records
+  and schedules give it instead of a time (time of day, daypart; mañana, tarde, noche in Spanish; manhã,
+  tarde, noite in Portuguese). The session in which a school works is school_shift.'
+parent: category
+categories:
+- datetime
+langs:
+- en
+- es
+- pt
+- de
+- fr
+is_pii: false
+classification: categorical
+examples:
+- value: Morning
+- value: Afternoon
+- value: Evening
+- value: Night
+- value: Noche
+  description: Night in Spanish
+- value: '14:30'
+  valid: false
+  description: A time (time)
+translations:
+  ru:
+    name: Время суток

@@ -1,0 +1,43 @@
+id: sport
+name: Sport
+status: draft
+doc: 'Name of a sport or sporting discipline: basketball, tennis, swimming, archery. Tables of results,
+  facilities, clubs, athletes and surveys of leisure give it in the language of the publisher (Pallacanestro,
+  Baloncesto, Basquete, Leichtathletik) and often name the event within the sport separately (100 m freestyle
+  in swimming). The field name (sport, sports, deporte, esporte, sportart, disciplina) and a known list
+  of sports tell it from other categories.'
+parent: category
+categories:
+- common
+langs:
+- en
+- es
+- pt
+- it
+- de
+- fr
+is_pii: false
+classification: categorical
+examples:
+- value: Basketball
+- value: Tennis
+- value: Archery
+- value: Pallavolo
+  description: Volleyball in Italian
+- value: Fútbol
+  description: Football in Spanish
+- value: Leichtathletik
+  description: Athletics in German
+mappings:
+  wikidata: P641
+  schema_org: sport
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P641
+- type: schema.org
+  url: https://schema.org/sport
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Sport
+translations:
+  ru:
+    name: Вид спорта

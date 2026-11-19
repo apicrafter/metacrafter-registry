@@ -1,0 +1,28 @@
+id: bible_reference
+name: Bible reference
+status: draft
+doc: 'Reference to a passage of the Bible by book, chapter and verse: John 3:16, Genesis 1:1, 1 Samuel
+  15:2-3. The book is written in full or abbreviated (Gen, Mt, 1 Cor, 2_Co), chapter and verse are separated
+  by a colon or, in OSIS and some cross-reference lists, by a full stop (Matt.28.19, Mt_28.19), and a
+  range of verses follows a hyphen. Reading plans, sermon indexes, cross-reference tables and text analyses
+  of the Bible use it as the key of a verse.'
+categories:
+- texts
+langs:
+- en
+is_pii: false
+classification: identifier
+examples:
+- value: John 3:16
+- value: Genesis 1:1
+- value: 1 Samuel 15:2-3
+- value: Mt_28.19
+  description: Matthew 28:19 in a cross-reference list
+- value: 2_Co_13.14
+  description: 2 Corinthians 13:14 in a cross-reference list
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Chapters_and_verses_of_the_Bible
+translations:
+  ru:
+    name: Ссылка на место Библии

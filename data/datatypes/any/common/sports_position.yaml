@@ -1,0 +1,49 @@
+id: sports_position
+name: Position of a player in a team sport
+status: draft
+doc: 'Position or role in which a player plays in a team sport, written in full or as the abbreviation
+  of the sport: QB, RB, WR and TE in American football; P, C, 1B, SS, CF and DH in baseball; PG, SG, SF,
+  PF and C in basketball; goalkeeper, defender, midfielder and forward in association football (Torwart,
+  Zagueiro, Portiere in other languages); prop, hooker and flanker in rugby. Rosters, drafts, statistics
+  and fantasy league tables carry it next to the player and the team. The same letter means different
+  positions in different sports (C is a catcher in baseball and a centre in basketball), and a job position
+  in a staff list is a different type (jobtitle).'
+parent: category
+categories:
+- common
+langs:
+- en
+- es
+- pt
+- it
+- de
+- fr
+is_pii: false
+classification: categorical
+examples:
+- value: QB
+  description: Quarterback, American football
+- value: SS
+  description: Shortstop, baseball
+- value: PG
+  description: Point guard, basketball
+- value: Goalkeeper
+- value: Midfielder
+- value: Zagueiro
+  description: Central defender in Brazilian Portuguese
+- value: Flanker
+  description: Rugby union
+mappings:
+  wikidata: P413
+links:
+- type: wikidata
+  url: https://www.wikidata.org/wiki/Property:P413
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Baseball_positions
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Basketball_positions
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/American_football_positions
+translations:
+  ru:
+    name: Амплуа игрока

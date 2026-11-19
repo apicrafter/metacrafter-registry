@@ -1,0 +1,35 @@
+id: medal
+name: Medal (gold, silver, bronze)
+status: draft
+doc: 'Medal awarded for a place in a competition: gold for the first place, silver for the second and
+  bronze for the third, as at the Olympic Games and in most championships. Tables of medallists give it
+  in words in their language (Oro, Plata, Bronce; Ouro, Prata; Or, Argent) next to the athlete, the country
+  and the event; medal tables count medals per country in separate columns, which are numbers. Gold, silver
+  and bronze are also the names of membership and sponsorship tiers, so the field name (medal, medalla,
+  medalha, médaille) tells a medal.'
+parent: category
+categories:
+- common
+langs:
+- en
+- es
+- pt
+- it
+- fr
+- de
+is_pii: false
+classification: categorical
+examples:
+- value: Gold
+- value: Silver
+- value: Bronze
+- value: Oro
+  description: Gold in Spanish and Italian
+- value: Prata
+  description: Silver in Portuguese
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Olympic_medal
+translations:
+  ru:
+    name: Медаль (золото, серебро, бронза)

@@ -1,0 +1,34 @@
+id: nfl_team_code
+name: NFL team abbreviation
+status: draft
+doc: 'Abbreviation of a team of the National Football League, the professional American football league
+  of the United States: NE (New England Patriots), GB, KC, NYG, NYJ, SF, DAL. Game logs, standings, draft
+  and fantasy football tables use it for the team and the opponent. Sources differ for some teams (JAX
+  or JAC, WAS or WSH) and older tables keep teams that moved (OAK for the Oakland Raiders, SD for the
+  San Diego Chargers, STL for the St. Louis Rams). MLB and NBA abbreviations are separate types and share
+  many codes.'
+parent: sports_team
+categories:
+- common
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: identifier
+regexp: ^[A-Z]{2,3}$
+examples:
+- value: NE
+  description: New England Patriots
+- value: GB
+  description: Green Bay Packers
+- value: NYG
+  description: New York Giants
+- value: KC
+  description: Kansas City Chiefs
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/National_Football_League
+translations:
+  ru:
+    name: Сокращение команды NFL

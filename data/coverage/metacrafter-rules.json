@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "24ec4856ee83b89f8286b2dae2f20b4806c5e9ea"
+  "ref": "6aed2966db6f11105c7332f1f226b689ed0f82ed"
  },
  "rules": [
   {
@@ -3585,6 +3585,16 @@
    "country_code": "br"
   },
   {
+   "rule": "brb3tickerbyname",
+   "key": "br_b3_ticker",
+   "type": "field",
+   "match": "regex",
+   "file": "br/br_finances.yaml",
+   "context": "finances",
+   "lang": "pt",
+   "country_code": "br"
+  },
+  {
    "rule": "brbankaccountknown",
    "key": "bankaccount",
    "type": "field",
@@ -6055,6 +6065,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "tickersymbolbyname",
+   "key": "tickersymbol",
+   "type": "field",
+   "match": "regex",
+   "file": "common/crossborder_finance.yaml",
+   "context": "finances",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "bip32addr_by_field",
    "key": "bip32addr",
    "type": "field",
@@ -6469,6 +6489,16 @@
    "key": "month",
    "type": "field",
    "match": "ppr",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "partofdaybyname",
+   "key": "part_of_day",
+   "type": "field",
+   "match": "regex",
    "file": "common/dateandtime.yaml",
    "context": "datetime",
    "lang": "common",
@@ -7045,6 +7075,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "coursecodebyname",
+   "key": "course_code",
+   "type": "field",
+   "match": "regex",
+   "file": "common/education.yaml",
+   "context": "education",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "eteridbyname",
    "key": "eter_id",
    "type": "field",
@@ -7075,12 +7115,82 @@
    "country_code": "xx"
   },
   {
+   "rule": "lettergradebyname",
+   "key": "letter_grade",
+   "type": "field",
+   "match": "regex",
+   "file": "common/education.yaml",
+   "context": "education",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "schoolnamebyname",
    "key": "school_name",
    "type": "field",
    "match": "regex",
    "file": "common/education.yaml",
    "context": "education",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "biblereferencebyname",
+   "key": "bible_reference",
+   "type": "field",
+   "match": "regex",
+   "file": "common/entertainment.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "biblereferencevalue",
+   "key": "bible_reference",
+   "type": "data",
+   "match": "func",
+   "file": "common/entertainment.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "genrebyname",
+   "key": "genre",
+   "type": "field",
+   "match": "regex",
+   "file": "common/entertainment.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "videogameplatformbyname",
+   "key": "video_game_platform",
+   "type": "field",
+   "match": "regex",
+   "file": "common/entertainment.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "videogameplatformvalue",
+   "key": "video_game_platform",
+   "type": "data",
+   "match": "text",
+   "file": "common/entertainment.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "zodiacsignbyname",
+   "key": "zodiac_sign",
+   "type": "field",
+   "match": "regex",
+   "file": "common/entertainment.yaml",
+   "context": "common",
    "lang": "common",
    "country_code": "xx"
   },
@@ -7818,6 +7928,16 @@
    "key": "inspire_grid_cell_code",
    "type": "data",
    "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "iso6709dmsvalue",
+   "key": "iso6709",
+   "type": "data",
+   "match": "func",
    "file": "common/geo.yaml",
    "context": "geo",
    "lang": "common",
@@ -12127,6 +12247,36 @@
    "country_code": "xx"
   },
   {
+   "rule": "medalbyname",
+   "key": "medal",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "sportbyname",
+   "key": "sport",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "sportspositionbyname",
+   "key": "sports_position",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "cowcountrycodebyname",
    "key": "cow_country_code",
    "type": "field",
@@ -12243,6 +12393,16 @@
    "match": "regex",
    "file": "common/survey.yaml",
    "context": "science",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "callsignbyname",
+   "key": "call_sign",
+   "type": "field",
+   "match": "regex",
+   "file": "common/telecom.yaml",
+   "context": "telecom",
    "lang": "common",
    "country_code": "xx"
   },
@@ -13007,6 +13167,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "hashtagbyname",
+   "key": "hashtag",
+   "type": "field",
+   "match": "regex",
+   "file": "common/useraccounts.yaml",
+   "context": "useraccounts",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "hashtagvalue",
+   "key": "hashtag",
+   "type": "data",
+   "match": "regex",
+   "file": "common/useraccounts.yaml",
+   "context": "useraccounts",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "twitterusernamebyname",
    "key": "twitter_username",
    "type": "field",
@@ -13091,6 +13271,16 @@
    "key": "useruuid",
    "type": "data",
    "match": "ppr",
+   "file": "common/useraccounts.yaml",
+   "context": "useraccounts",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "xpostidbyname",
+   "key": "x_post_id",
+   "type": "field",
+   "match": "regex",
    "file": "common/useraccounts.yaml",
    "context": "useraccounts",
    "lang": "common",
@@ -13239,6 +13429,36 @@
   {
    "rule": "esenginenumberbyname",
    "key": "engine_number",
+   "type": "field",
+   "match": "regex",
+   "file": "common/vehicles.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "vehiclemakebyname",
+   "key": "vehicle_make",
+   "type": "field",
+   "match": "regex",
+   "file": "common/vehicles.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "vehiclemodelbyname",
+   "key": "vehicle_model",
+   "type": "field",
+   "match": "regex",
+   "file": "common/vehicles.yaml",
+   "context": "transport",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "vehiclemodelwithmakebyname",
+   "key": "vehicle_model",
    "type": "field",
    "match": "regex",
    "file": "common/vehicles.yaml",
@@ -26431,6 +26651,16 @@
    "country_code": "us"
   },
   {
+   "rule": "usmparatingbyname",
+   "key": "us_mpa_rating",
+   "type": "field",
+   "match": "regex",
+   "file": "us/us_media.yaml",
+   "context": "common",
+   "lang": "en",
+   "country_code": "us"
+  },
+  {
    "rule": "uscmsccnvalue",
    "key": "us_cms_ccn",
    "type": "data",
@@ -26867,6 +27097,36 @@
    "match": "ppr",
    "file": "us/us_realestate.yaml",
    "context": "realestate",
+   "lang": "en",
+   "country_code": "us"
+  },
+  {
+   "rule": "mlbteamcodebyname",
+   "key": "mlb_team_code",
+   "type": "field",
+   "match": "regex",
+   "file": "us/us_sports.yaml",
+   "context": "common",
+   "lang": "en",
+   "country_code": "us"
+  },
+  {
+   "rule": "nbateamcodebyname",
+   "key": "nba_team_code",
+   "type": "field",
+   "match": "regex",
+   "file": "us/us_sports.yaml",
+   "context": "common",
+   "lang": "en",
+   "country_code": "us"
+  },
+  {
+   "rule": "nflteamcodebyname",
+   "key": "nfl_team_code",
+   "type": "field",
+   "match": "regex",
+   "file": "us/us_sports.yaml",
+   "context": "common",
    "lang": "en",
    "country_code": "us"
   },

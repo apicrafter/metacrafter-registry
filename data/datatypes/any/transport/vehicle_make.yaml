@@ -1,0 +1,28 @@
+id: vehicle_make
+name: Vehicle make
+status: draft
+doc: 'Make of a motor vehicle: the brand under which its maker sells it, such as Toyota, Chevrolet, Volkswagen,
+  Peugeot or Harley-Davidson. Vehicle registers, crash and recall records, sales and fuel economy tables
+  have it next to the model (vehicle_model) and the model year, under field names such as make, vehicle
+  make, car make, marca and marque. A make can differ from the company that builds it (Lexus and Toyota),
+  and registers write it in their own way (CHEVROLET, Chevy, VW).'
+parent: brand
+categories:
+- transport
+- companies
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Toyota
+- value: Chevrolet
+- value: Volkswagen
+- value: Peugeot
+- value: Mercedes-Benz
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_car_brands
+translations:
+  ru:
+    name: Марка транспортного средства
