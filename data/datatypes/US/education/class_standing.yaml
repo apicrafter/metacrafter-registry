@@ -1,0 +1,39 @@
+id: class_standing
+name: Class standing of a student (Fr., So., Jr., Sr.)
+status: draft
+doc: 'Year of study of a student at a US college or high school, as rosters and statistics of college
+  teams write it next to the name of the athlete: Freshman, Sophomore, Junior and Senior, or Fr., So.,
+  Jr. and Sr., with Gr. for graduate students and R-Fr. or RS-So. for a redshirt athlete who sat out a
+  season and keeps a year of eligibility. Columns are named Yr., Cl., Class or Year. The academic year
+  of a calendar (2015-16) is school_year, and a school grade (9th grade) is another type.'
+parent: category
+categories:
+- education
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Fr.
+  description: freshman
+- value: So.
+  description: sophomore
+- value: Jr.
+  description: junior
+- value: Sr.
+  description: senior
+- value: R-Fr.
+  description: redshirt freshman
+- value: Senior
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Freshman
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Sophomore
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Redshirt_(college_sports)
+translations:
+  ru:
+    name: Курс студента (Fr., So., Jr., Sr.)

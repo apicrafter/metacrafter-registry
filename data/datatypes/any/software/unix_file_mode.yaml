@@ -1,0 +1,37 @@
+id: unix_file_mode
+name: Unix file mode (-rw-r--r--, 0644)
+status: draft
+doc: 'File type and permission bits of a file in a Unix file system, in the symbolic form of ls -l: ten
+  characters, the type (- for a file, d for a directory, l for a symbolic link) and the read, write and
+  execute rights of the owner, the group and others (-rw-r--r--, drwxr-xr-x), with s or t for the setuid,
+  setgid and sticky bits. The same bits are written in octal for chmod (0644, 755). The tree views of
+  repository browsers such as cgit and gitweb list it in a Mode column.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[-dlcbps][-r][-w][-xsS][-r][-w][-xsS][-r][-w][-xtT]$
+examples:
+- value: -rw-r--r--
+  description: a file readable by all
+- value: drwxr-xr-x
+  description: a directory
+- value: lrwxrwxrwx
+  description: a symbolic link
+- value: -rwsr-xr-x
+  description: setuid
+- value: rw-r--r--
+  valid: false
+  description: without the type
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/File-system_permissions
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Chmod
+- type: doc
+  url: https://pubs.opengroup.org/onlinepubs/9799919799/utilities/ls.html
+translations:
+  ru:
+    name: Права доступа к файлу Unix (-rw-r--r--, 0644)

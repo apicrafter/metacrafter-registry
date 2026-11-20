@@ -1,0 +1,32 @@
+id: game_result
+name: Result of a game with its score (W 3-2, L, 10-0)
+status: draft
+doc: 'Outcome of a game for one team or player with the final score, as the schedules and game logs of
+  teams write it: W or Won for a win, L or Lost for a loss, T or D for a tie or draw, then the points
+  of both sides (W, 3-2; L 31-28), sometimes with OT for overtime, the innings of an extended baseball
+  game or the set scores of a volleyball match in parentheses. A score without the outcome (3-2) and a
+  win-loss record (20-5) are other types.'
+parent: category
+categories:
+- common
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: W, 3-2
+- value: L 31-28
+- value: W 4-3 (OT)
+  description: in overtime
+- value: T 1-1
+  description: a tie
+- value: Loss 104-111
+- value: 3-2
+  valid: false
+  description: a score without the outcome
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Score_(sport)
+translations:
+  ru:
+    name: Результат игры со счётом (W 3-2, L 10-0)

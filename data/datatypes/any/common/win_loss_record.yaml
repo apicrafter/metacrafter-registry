@@ -1,0 +1,32 @@
+id: win_loss_record
+name: Win-loss record (20-5, 9-3-0)
+status: draft
+doc: 'Number of wins and losses of a team, coach or player over a season or a series of games, written
+  with hyphens: 20-5, or 9-3-0 and 11-8-13 when ties or draws count, and 3-0-0-0 in ice hockey standings
+  that count overtime wins and losses apart. Standings, schedules and team histories have one column for
+  the overall record and others for the conference, home and away records (Overall, Conf, Home, Away,
+  W-L-T). The digits alone do not tell it from a score or a range, so it is found by its field name.'
+categories:
+- common
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: 20-5
+- value: 9-3-0
+  description: wins, losses and ties
+- value: (10-0)
+- value: 3-0-0-0
+  description: ice hockey
+- value: W 3-2
+  valid: false
+  description: a game result
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Standings_(sports)
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Winning_percentage
+translations:
+  ru:
+    name: Баланс побед и поражений (20-5, 9-3-0)

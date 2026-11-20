@@ -1,0 +1,31 @@
+id: academic_term
+name: Academic term (Fall 2015, Spring Semester 2016)
+status: draft
+doc: 'Term of an academic year of a college or school with its year, as course lists, class schedules
+  and catalogs write it: Fall 2015, Spring Semester 2016, Summer Term 2015, Winter Quarter 2014, 2013
+  Fall, Fall ’10, the terms of Oxford and Cambridge (Michaelmas Term 2014) and numbered semesters (2nd
+  Semester 2014-15). Registrar systems also write it as a code (FA14, Sp 2011). The academic year alone
+  (2015-16) is school_year and a season of the year without a term is season.'
+categories:
+- education
+- datetime
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Fall 2015
+- value: Spring Semester 2016
+- value: Summer Term 2015
+- value: 2013 Fall
+- value: FA14
+  description: registrar code
+- value: Spring
+  valid: false
+  description: no year
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Academic_term
+translations:
+  ru:
+    name: Учебный семестр (осень 2015, весенний семестр 2016)

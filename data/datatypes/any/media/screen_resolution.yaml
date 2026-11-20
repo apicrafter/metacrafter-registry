@@ -1,0 +1,32 @@
+id: screen_resolution
+name: Display or image resolution in pixels (1920x1080)
+status: draft
+doc: 'Width and height in pixels of a screen, a display mode, a video stream or a photo, written with
+  an x or a multiplication sign between them: 1920x1080, 1024 × 768, 320 × 480 px, 3648x2736, sometimes
+  with the name of the standard (1920x1080 (Full HD)). Visitor statistics count the screen resolutions
+  of visitors, device and projector specifications list the native resolution, and camera tables the image
+  sizes. Sizes in millimetres or inches (210x297) are dimensions, not resolutions.'
+categories:
+- media
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: '^\d{2,5} ?[x×*] ?\d{2,5}(?: ?(?:px|pixels?|p))?$'
+examples:
+- value: 1920x1080
+- value: 1024 × 768
+- value: 320 × 480 px
+- value: 3648x2736
+  description: photo size
+- value: 94.2 x 55.0
+  valid: false
+  description: dimensions in feet
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Display_resolution
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Image_resolution
+translations:
+  ru:
+    name: Разрешение экрана или изображения в пикселях (1920x1080)

@@ -1,0 +1,43 @@
+id: item_condition
+name: Condition of an item for sale (New, Used, Refurbished)
+status: draft
+doc: 'Condition of a product, vehicle, part or collectible that is offered for sale: New, Used, Refurbished,
+  Like New, Pre-Owned, Open Box, NOS (new old stock), the grades of used goods of marketplaces (Used -
+  Good, For parts or not working) and the same in other languages (Gebraucht, Occasion, Usado). The values
+  of the schema.org enumeration OfferItemCondition (NewCondition, UsedCondition, RefurbishedCondition,
+  DamagedCondition) mark it up in product pages. Ratings of the state of an asset (Good, Fair, Poor) are
+  another type.'
+parent: category
+categories:
+- ecommerce
+langs:
+- en
+- de
+- fr
+- es
+- it
+- nl
+- pt
+- pl
+is_pii: false
+classification: categorical
+examples:
+- value: New
+- value: Used
+- value: Refurbished
+- value: Pre-Owned
+- value: NOS
+  description: new old stock
+- value: UsedCondition
+  description: schema.org
+- value: Fair
+  valid: false
+  description: a condition rating
+links:
+- type: schema.org
+  url: https://schema.org/OfferItemCondition
+- type: schema.org
+  url: https://schema.org/itemCondition
+translations:
+  ru:
+    name: Состояние товара (новый, б/у, восстановленный)

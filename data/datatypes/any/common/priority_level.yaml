@@ -1,0 +1,37 @@
+id: priority_level
+name: Priority level (High, Normal, Low, Critical, P1)
+status: draft
+doc: 'Priority of a task, ticket, bug report or request in an issue tracker or a task list: High, Medium,
+  Low, Normal, Urgent and Critical, the levels Blocker, Critical, Major, Minor and Trivial of Trac and
+  Jira, Highest and Lowest, the codes P1 to P5 of Bugzilla, the MoSCoW levels (Must Have, Should Have,
+  Could Have) and the same words in other languages (hoch, haute, alta). The words are common in other
+  columns (a risk level, a price level), so a column is a priority by its field name.'
+parent: category
+categories:
+- common
+langs:
+- en
+- de
+- fr
+- es
+- it
+- nl
+is_pii: false
+classification: categorical
+examples:
+- value: High
+- value: Normal
+- value: Low
+- value: Critical
+- value: Blocker
+  description: Trac and Jira
+- value: P1
+  description: Bugzilla
+- value: Must Have
+  description: MoSCoW
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Bug_tracking_system
+translations:
+  ru:
+    name: Приоритет (высокий, обычный, низкий, P1)

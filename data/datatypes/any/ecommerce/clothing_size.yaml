@@ -1,0 +1,39 @@
+id: clothing_size
+name: 'Clothing size (letter size: XS, S, M, L, XL)'
+status: draft
+doc: 'Letter size of a garment, cap, glove or helmet in a size chart or the options of a product: XXS,
+  XS, S, M, L, XL, XXL, 3XL, the forms 2X and 1X of plus sizes, X-Small and X-Large in words, combined
+  sizes such as S/M, tall sizes such as XLT, and One Size. Size charts put it beside the chest, waist
+  and hip measures and the numeric sizes of each country (US 4, EU 36), which are not letter sizes. A
+  letter alone (S, M, L) is a size only in a column named after the size, and Small, Medium and Large
+  in words alone are also the sizes of companies, drinks and parcels.'
+parent: category
+categories:
+- ecommerce
+langs:
+- common
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: XS
+- value: M
+- value: XL
+- value: XXL
+- value: 3XL
+- value: X-Large
+  description: in words
+- value: One Size
+- value: '36'
+  valid: false
+  description: a numeric size
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Clothing_sizes
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/US_standard_clothing_size
+- type: schema.org
+  url: https://schema.org/size
+translations:
+  ru:
+    name: 'Размер одежды (буквенный: XS, S, M, L, XL)'
