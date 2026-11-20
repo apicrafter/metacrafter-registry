@@ -1,0 +1,32 @@
+id: military_branch
+name: Branch of the armed forces (Army, Navy, Marine Corps)
+status: draft
+doc: 'The branch of the armed forces in which a person serves or served, as veteran records, casualty
+  lists, memorials, genealogy sites and recruitment tables give it: the services of the United States
+  (Army, Navy, Air Force, Marine Corps, Coast Guard, Space Force, with the abbreviations USA, USN, USAF,
+  USMC and USCG), their reserves and the National Guard, and the services of other countries such as the
+  Royal Navy, the Royal Air Force (RAF) and the Royal Canadian Air Force. Army, Navy and Air Force are
+  also the teams of the service academies in college sports, so they are matched only in a field named
+  Branch, Service or Branch of Service.'
+categories:
+- government
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Army
+- value: Marine Corps
+- value: Coast Guard
+- value: USAF
+- value: Army National Guard
+- value: Royal Navy
+- value: Infantry
+  valid: false
+  description: an arm of a service
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Military_branch
+translations:
+  ru:
+    name: Вид или род вооружённых сил (армия, флот, морская пехота)

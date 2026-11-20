@@ -1,0 +1,37 @@
+id: crime_type
+name: Type of crime (Burglary, Robbery, Aggravated Assault)
+status: draft
+doc: 'The type or category of a crime or an offence, as crime statistics, police logs, campus security
+  reports and open data of police forces give it: the offences of the Uniform Crime Reporting program
+  of the FBI (Murder and Nonnegligent Manslaughter, Rape, Robbery, Aggravated Assault, Burglary, Larceny-Theft,
+  Motor Vehicle Theft, Arson) and its other offences (Simple Assault, Vandalism, Fraud, Forgery, Drug
+  Abuse Violations, Liquor Law Violations, DUI, Disorderly Conduct), the categories of police.uk (Anti-social
+  behaviour, Criminal damage and arson, Violence and sexual offences, Shoplifting, Vehicle crime) and
+  the like. Assault, Battery, Theft and Drugs alone are also other words and are matched only in a field
+  named Crime, Offense or Primary Type.'
+categories:
+- legal
+- government
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Burglary
+- value: Robbery
+- value: Aggravated Assault
+- value: Larceny-Theft
+- value: Motor Vehicle Theft
+- value: Anti-social behaviour
+  description: a category of police.uk
+- value: Slashing
+  valid: false
+  description: a penalty of ice hockey
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Uniform_Crime_Reports
+- type: doc
+  url: https://data.police.uk/docs/method/crime-categories/
+translations:
+  ru:
+    name: Вид преступления (кража со взломом, грабёж, нападение)

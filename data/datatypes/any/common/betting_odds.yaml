@@ -1,0 +1,35 @@
+id: betting_odds
+name: Betting odds (9-2, 5/1, Evens, +150)
+status: draft
+doc: 'The odds offered or returned on a bet, as race cards, results of horse and greyhound races, morning
+  lines and the tables of bookmakers give them: fractional odds, the stake that wins the first number
+  for every second (9-2, 5/1, 100/30, 11/10, 2-5 odds-on), even money (Evs, Evens), often with a mark
+  for the favourite (9/4F, 5/2JF), and the American moneyline (+150 wins 150 for 100, -110 needs 110 to
+  win 100). Fractions with a hyphen are also scores and records, so the odds are matched only in a field
+  named Odds, SP, ML or Morning Line.'
+categories:
+- common
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: 9-2
+- value: 5/1
+- value: 100/30
+- value: Evs
+  description: even money
+- value: 9/4F
+  description: the favourite
+- value: '+150'
+  description: American moneyline
+- value: 2015-16
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Fixed-odds_betting
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Odds
+translations:
+  ru:
+    name: Коэффициент ставки (9-2, 5/1, +150)

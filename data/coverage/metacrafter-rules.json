@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "b853ca021658a1a848397e9d3f25602ad794daea"
+  "ref": "18216afd82a878281959bc63be319d5d08be7e64"
  },
  "rules": [
   {
@@ -6275,6 +6275,46 @@
    "country_code": "xx"
   },
   {
+   "rule": "stockexchangebyname",
+   "key": "stock_exchange",
+   "type": "field",
+   "match": "regex",
+   "file": "common/crossborder_finance.yaml",
+   "context": "finances",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "stockexchangevalue",
+   "key": "stock_exchange",
+   "type": "data",
+   "match": "func",
+   "file": "common/crossborder_finance.yaml",
+   "context": "finances",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "stockmarketindexbyname",
+   "key": "stock_market_index",
+   "type": "field",
+   "match": "regex",
+   "file": "common/crossborder_finance.yaml",
+   "context": "finances",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "stockmarketindexvalue",
+   "key": "stock_market_index",
+   "type": "data",
+   "match": "func",
+   "file": "common/crossborder_finance.yaml",
+   "context": "finances",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "tickersymbolbyname",
    "key": "tickersymbol",
    "type": "field",
@@ -6805,6 +6845,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "sportsseasonbyname",
+   "key": "sports_season",
+   "type": "field",
+   "match": "regex",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "timedatebyknown",
    "key": "time",
    "type": "field",
@@ -7279,6 +7329,16 @@
    "key": "dc_type",
    "type": "field",
    "match": "text",
+   "file": "common/dublincore.yaml",
+   "context": "dublincore",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "dublincoreelementvalue",
+   "key": "dublin_core_element",
+   "type": "data",
+   "match": "func",
    "file": "common/dublincore.yaml",
    "context": "dublincore",
    "lang": "common",
@@ -9584,6 +9644,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "crimetypebyname",
+   "key": "crime_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/legal.yaml",
+   "context": "legal",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "crimetypevalue",
+   "key": "crime_type",
+   "type": "data",
+   "match": "func",
+   "file": "common/legal.yaml",
+   "context": "legal",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "ipccodebyname",
    "key": "ipc_code",
    "type": "field",
@@ -9768,6 +9848,26 @@
    "key": "ean",
    "type": "data",
    "match": "ppr",
+   "file": "common/media.yaml",
+   "context": "media",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "exiftagbyname",
+   "key": "exif_tag",
+   "type": "field",
+   "match": "regex",
+   "file": "common/media.yaml",
+   "context": "media",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "exiftagvalue",
+   "key": "exif_tag",
+   "type": "data",
+   "match": "func",
    "file": "common/media.yaml",
    "context": "media",
    "lang": "common",
@@ -10891,6 +10991,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "militarybranchbyname",
+   "key": "military_branch",
+   "type": "field",
+   "match": "regex",
+   "file": "common/persons.yaml",
+   "context": "persons",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "militarybranchvalue",
+   "key": "military_branch",
+   "type": "data",
+   "match": "func",
+   "file": "common/persons.yaml",
+   "context": "persons",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "surname",
    "key": "person_surname",
    "type": "field",
@@ -11045,6 +11165,26 @@
    "key": "cadastralnumber",
    "type": "data",
    "match": "ppr",
+   "file": "common/realestate.yaml",
+   "context": "realestate",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "dwellingtypebyname",
+   "key": "dwelling_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/realestate.yaml",
+   "context": "realestate",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "dwellingtypevalue",
+   "key": "dwelling_type",
+   "type": "data",
+   "match": "func",
    "file": "common/realestate.yaml",
    "context": "realestate",
    "lang": "common",
@@ -12517,6 +12657,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "keyboardshortcutbyname",
+   "key": "keyboard_shortcut",
+   "type": "field",
+   "match": "regex",
+   "file": "common/software.yaml",
+   "context": "software",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "keyboardshortcutvalue",
+   "key": "keyboard_shortcut",
+   "type": "data",
+   "match": "func",
+   "file": "common/software.yaml",
+   "context": "software",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "licensebyknown",
    "key": "software_license",
    "type": "field",
@@ -12847,6 +13007,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "cropbyname",
+   "key": "crop",
+   "type": "field",
+   "match": "regex",
+   "file": "common/soils.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "cropvalue",
+   "key": "crop",
+   "type": "data",
+   "match": "func",
+   "file": "common/soils.yaml",
+   "context": "environment",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "landcoverbyname",
    "key": "land_cover_class",
    "type": "field",
@@ -12977,6 +13157,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "bettingoddsbyname",
+   "key": "betting_odds",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "gameresultvalue",
    "key": "game_result",
    "type": "data",
@@ -13021,6 +13211,26 @@
    "key": "sport",
    "type": "field",
    "match": "regex",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "sportsagegroupbyname",
+   "key": "sports_age_group",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "sportsagegroupvalue",
+   "key": "sports_age_group",
+   "type": "data",
+   "match": "func",
    "file": "common/sports.yaml",
    "context": "common",
    "lang": "common",
