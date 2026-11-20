@@ -1,0 +1,35 @@
+id: athletics_event
+name: Athletics event (100m, Long Jump, Marathon)
+status: draft
+doc: 'Event of athletics (track and field and road running) in results, records, rankings and meet schedules:
+  running events by distance (100m, 200 Meter Dash, 1500 m, Mile, 5K), hurdles and steeplechase (110m
+  Hurdles, 3000m Steeplechase), relays (4x400m Relay), jumps and throws (High Jump, Pole Vault, Long Jump,
+  Shot Put, Discus, Javelin, Hammer Throw), combined events (Decathlon, Heptathlon), race walking and
+  the marathon, often after the sex or age group (Men''s 100m, Boys Shot Put). A distance alone (100 m)
+  is an event only in a column named after the event, and swimming events are swimming_event.'
+parent: category
+categories:
+- common
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: 100m
+- value: 200 Meter Dash
+- value: 110m Hurdles
+- value: 4x400m Relay
+- value: Long Jump
+- value: Shot Put
+- value: Marathon
+- value: 100 Free
+  valid: false
+  description: a swimming event
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Track_and_field
+- type: doc
+  url: https://www.worldathletics.org/disciplines
+translations:
+  ru:
+    name: Дисциплина лёгкой атлетики (100 м, прыжок в длину, марафон)

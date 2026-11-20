@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "c0f04cdef2247a607f56c699c39d509e0498d192"
+  "ref": "ef95f5172561141182ad06c8c253a5c055c1b350"
  },
  "rules": [
   {
@@ -5875,6 +5875,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "prioritylevelbyname",
+   "key": "priority_level",
+   "type": "field",
+   "match": "regex",
+   "file": "common/common.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "rgbacolorvalue",
    "key": "rgbacolor",
    "type": "data",
@@ -7225,10 +7235,70 @@
    "country_code": "xx"
   },
   {
+   "rule": "clothingsizebyname",
+   "key": "clothing_size",
+   "type": "field",
+   "match": "regex",
+   "file": "common/ecommerce.yaml",
+   "context": "ecommerce",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "clothingsizevalue",
+   "key": "clothing_size",
+   "type": "data",
+   "match": "func",
+   "file": "common/ecommerce.yaml",
+   "context": "ecommerce",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "customerloyaltyknown",
    "key": "loyalty_number",
    "type": "field",
    "match": "text",
+   "file": "common/ecommerce.yaml",
+   "context": "ecommerce",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "itemavailabilitybyname",
+   "key": "item_availability",
+   "type": "field",
+   "match": "regex",
+   "file": "common/ecommerce.yaml",
+   "context": "ecommerce",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "itemavailabilityvalue",
+   "key": "item_availability",
+   "type": "data",
+   "match": "func",
+   "file": "common/ecommerce.yaml",
+   "context": "ecommerce",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "itemconditionbyname",
+   "key": "item_condition",
+   "type": "field",
+   "match": "regex",
+   "file": "common/ecommerce.yaml",
+   "context": "ecommerce",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "itemconditionvalue",
+   "key": "item_condition",
+   "type": "data",
+   "match": "func",
    "file": "common/ecommerce.yaml",
    "context": "ecommerce",
    "lang": "common",
@@ -7261,6 +7331,46 @@
    "match": "text",
    "file": "common/ecommerce.yaml",
    "context": "ecommerce",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "academictermbyname",
+   "key": "academic_term",
+   "type": "field",
+   "match": "regex",
+   "file": "common/education.yaml",
+   "context": "education",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "academictermvalue",
+   "key": "academic_term",
+   "type": "data",
+   "match": "func",
+   "file": "common/education.yaml",
+   "context": "education",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "classstandingbyname",
+   "key": "class_standing",
+   "type": "field",
+   "match": "regex",
+   "file": "common/education.yaml",
+   "context": "education",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "classstandingvalue",
+   "key": "class_standing",
+   "type": "data",
+   "match": "func",
+   "file": "common/education.yaml",
+   "context": "education",
    "lang": "common",
    "country_code": "xx"
   },
@@ -9004,6 +9114,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "dnsrecordtypebyname",
+   "key": "dns_record_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/internet.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "emailknown",
    "key": "email",
    "type": "field",
@@ -9038,6 +9158,26 @@
    "key": "fqdn",
    "type": "field",
    "match": "text",
+   "file": "common/internet.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "httpheadernamebyname",
+   "key": "http_header_name",
+   "type": "field",
+   "match": "regex",
+   "file": "common/internet.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "httpheadernamevalue",
+   "key": "http_header_name",
+   "type": "data",
+   "match": "func",
    "file": "common/internet.yaml",
    "context": "internet",
    "lang": "common",
@@ -9208,6 +9348,26 @@
    "key": "references",
    "type": "field",
    "match": "text",
+   "file": "common/internet.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "screenresolutionbyname",
+   "key": "screen_resolution",
+   "type": "field",
+   "match": "regex",
+   "file": "common/internet.yaml",
+   "context": "internet",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "screenresolutionvalue",
+   "key": "screen_resolution",
+   "type": "data",
+   "match": "func",
    "file": "common/internet.yaml",
    "context": "internet",
    "lang": "common",
@@ -12077,6 +12237,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "datatypebyname",
+   "key": "data_type",
+   "type": "field",
+   "match": "regex",
+   "file": "common/software.yaml",
+   "context": "software",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "datatypevalue",
+   "key": "data_type",
+   "type": "data",
+   "match": "func",
+   "file": "common/software.yaml",
+   "context": "software",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "dateversionbyvalue",
    "key": "version",
    "type": "data",
@@ -12397,6 +12577,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "unixfilemodebyname",
+   "key": "unix_file_mode",
+   "type": "field",
+   "match": "regex",
+   "file": "common/software.yaml",
+   "context": "software",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "unixfilemodevalue",
+   "key": "unix_file_mode",
+   "type": "data",
+   "match": "func",
+   "file": "common/software.yaml",
+   "context": "software",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "versionbyknown",
    "key": "version",
    "type": "field",
@@ -12537,6 +12737,36 @@
    "country_code": "xx"
   },
   {
+   "rule": "athleticseventbyname",
+   "key": "athletics_event",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "athleticseventvalue",
+   "key": "athletics_event",
+   "type": "data",
+   "match": "func",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "gameresultvalue",
+   "key": "game_result",
+   "type": "data",
+   "match": "func",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "medalbyname",
    "key": "medal",
    "type": "field",
@@ -12559,6 +12789,26 @@
   {
    "rule": "sportspositionbyname",
    "key": "sports_position",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "swimmingeventvalue",
+   "key": "swimming_event",
+   "type": "data",
+   "match": "func",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "winlossrecordbyname",
+   "key": "win_loss_record",
    "type": "field",
    "match": "regex",
    "file": "common/sports.yaml",
@@ -12991,6 +13241,26 @@
    "key": "iso4217curcode",
    "type": "data",
    "match": "text",
+   "file": "common/trade.yaml",
+   "context": "trade",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "currencypairbyname",
+   "key": "currency_pair",
+   "type": "field",
+   "match": "regex",
+   "file": "common/trade.yaml",
+   "context": "trade",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "currencypairvalue",
+   "key": "currency_pair",
+   "type": "data",
+   "match": "func",
    "file": "common/trade.yaml",
    "context": "trade",
    "lang": "common",
@@ -13629,6 +13899,16 @@
   {
    "rule": "moneywithsignvalue",
    "key": "money",
+   "type": "data",
+   "match": "func",
+   "file": "common/values.yaml",
+   "context": "values",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "ordinalnumbervalue",
+   "key": "ordinal_number",
    "type": "data",
    "match": "func",
    "file": "common/values.yaml",

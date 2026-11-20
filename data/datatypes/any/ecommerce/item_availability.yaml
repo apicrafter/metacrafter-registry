@@ -1,0 +1,40 @@
+id: item_availability
+name: Stock availability of an item (In Stock, Out of Stock, Pre-order)
+status: draft
+doc: 'Whether an item that a shop offers can be ordered and shipped: In Stock, Out of Stock, Sold Out,
+  Pre-order, Backordered, Discontinued, Special Order, the number left (Only 2 left!) and the same in
+  other languages (Auf Lager, En stock, Agotado, Op voorraad). Product lists, price comparisons and catalogs
+  show it next to the price. The values of the schema.org enumeration ItemAvailability (InStock, OutOfStock,
+  PreOrder, SoldOut) mark it up in product pages.'
+parent: category
+categories:
+- ecommerce
+langs:
+- en
+- de
+- fr
+- es
+- it
+- nl
+- pt
+- pl
+is_pii: false
+classification: categorical
+examples:
+- value: In Stock
+- value: Out of Stock
+- value: Sold Out
+- value: Pre-order
+- value: Only 2 left!
+- value: InStock
+  description: schema.org
+- value: Auf Lager
+  description: German
+links:
+- type: schema.org
+  url: https://schema.org/ItemAvailability
+- type: schema.org
+  url: https://schema.org/availability
+translations:
+  ru:
+    name: Наличие товара (в наличии, нет в наличии, предзаказ)

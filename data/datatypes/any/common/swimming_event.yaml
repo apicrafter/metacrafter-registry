@@ -1,0 +1,33 @@
+id: swimming_event
+name: Swimming event (100 Free, 200 IM)
+status: draft
+doc: 'Event of competitive swimming by distance and stroke, as meet results, top ten lists and records
+  write it: 50 Free, 100 Freestyle, 100 Back, 200 Breaststroke, 100 Fly, 200 IM (individual medley), 400
+  Free Relay, 200 Medley Relay, sometimes with the course (SCY for short course yards, LCM for long course
+  meters) or the sex and age group (Women 50 Yard Freestyle). The distance is in yards or meters after
+  the course of the pool. A stroke without a distance (Freestyle) is not an event.'
+parent: category
+categories:
+- common
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: 50 Free
+- value: 100 Freestyle
+- value: 200 IM
+  description: individual medley
+- value: 100 Back
+- value: 400 Free Relay
+- value: 100 SCY Free
+  description: short course yards
+- value: Freestyle
+  valid: false
+  description: no distance
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Swimming_(sport)
+translations:
+  ru:
+    name: Дисциплина плавания (100 вольный стиль, 200 комплекс)

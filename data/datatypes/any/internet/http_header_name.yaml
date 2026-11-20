@@ -1,8 +1,10 @@
 id: http_header_name
 name: HTTP header field name
 status: draft
-doc: Name of a field in the header of an HTTP request or response, such as Host or Content-Type. RFC 9110
-  defines it as a token of letters, digits and the characters !
+doc: Name of a field in the header of an HTTP request or response, such as Host, Content-Type, Cache-Control
+  or X-Powered-By. RFC 9110 defines it as a token of letters, digits and some punctuation characters such
+  as the hyphen, compared without regard to case, and IANA keeps the registry of the standard names. Website
+  statistics and server check pages list the response headers of a site as a table of names and values.
 categories:
 - internet
 langs:
@@ -23,6 +25,10 @@ examples:
 links:
 - type: doc
   url: https://www.rfc-editor.org/rfc/rfc9110
+- type: doc
+  url: https://www.iana.org/assignments/http-fields/http-fields.xhtml
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
 translations:
   ru:
     name: Имя заголовка HTTP

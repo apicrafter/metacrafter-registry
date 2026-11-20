@@ -1,0 +1,31 @@
+id: currency_pair
+name: Currency pair (EUR/USD)
+status: draft
+doc: 'Two currencies of an exchange rate, the base currency first and the quote currency second, as forex
+  quotes and tables of exchange rates write them: the ISO 4217 codes with a slash (EUR/USD, USD/JPY),
+  with a hyphen or joined (EURUSD, the form of trading platforms). The rate tells how many units of the
+  quote currency one unit of the base currency costs.'
+categories:
+- finances
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[A-Z]{3}[/-]?[A-Z]{3}$
+examples:
+- value: EUR/USD
+- value: USD/JPY
+- value: GBP/CHF
+- value: EURUSD
+  description: joined
+- value: EUR
+  valid: false
+  description: one currency
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Currency_pair
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/ISO_4217
+translations:
+  ru:
+    name: Валютная пара (EUR/USD)

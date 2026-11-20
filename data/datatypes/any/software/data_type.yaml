@@ -1,0 +1,36 @@
+id: data_type
+name: Data type name (int, String, boolean, VARCHAR(64))
+status: draft
+doc: 'Name of the data type of a field, column, parameter or return value in the documentation of an API,
+  a programming language, a file format or a database schema: int, String, boolean, void, double, List<String>,
+  java.lang.Integer, xs:date of XML Schema, VARCHAR(64), bigint(20) unsigned and Decimal(39,0) of SQL.
+  Javadoc tables name the column Modifier and Type, and data dictionaries Type or Data Type. Words such
+  as Text, Date and Number are types only in a column named after the type.'
+parent: category
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: int
+- value: String
+- value: boolean
+- value: VARCHAR(64)
+  description: SQL with its length
+- value: List<String>
+  description: Java generic
+- value: xs:date
+  description: XML Schema
+- value: Name
+  valid: false
+  description: not a type
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Data_type
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Primitive_data_type
+translations:
+  ru:
+    name: Тип данных (int, String, boolean, VARCHAR(64))
