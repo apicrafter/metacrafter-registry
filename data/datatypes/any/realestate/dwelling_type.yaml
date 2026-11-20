@@ -1,0 +1,33 @@
+id: dwelling_type
+name: Type of dwelling (Detached, Semi-detached, Condo)
+status: draft
+doc: 'The built form of a home or a residential property, as house price tables, estate agents, rental
+  listings and housing surveys classify it: houses by how they join their neighbours (detached, semi-detached,
+  terraced, end terrace), flats and maisonettes, bungalows, and the American forms single family home,
+  condominium, townhouse, duplex, multi-family and mobile or manufactured home. The price paid data of
+  HM Land Registry codes four of them as D, S, T and F. House, Flat, Apartment, Studio and Villa are also
+  other words (the House of a legislature, a flat finish), so they are matched only in a field named Property
+  Type, Dwelling Type or Home Type.'
+categories:
+- realestate
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Semi-detached
+- value: Terraced
+- value: Flat/Maisonette
+  description: one class of the house price tables of England and Wales
+- value: Single Family
+- value: Townhouse
+- value: Mobile Home
+- value: Commercial
+  valid: false
+  description: a land use, not a dwelling
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_house_types
+translations:
+  ru:
+    name: Тип жилья (отдельный дом, полуотдельный дом, кондоминиум)

@@ -1,0 +1,34 @@
+id: stock_exchange
+name: Stock exchange (NYSE, NASDAQ, London Stock Exchange)
+status: draft
+doc: 'The name or acronym of the stock, futures or options exchange on which a security is listed or traded,
+  as stock screeners, quote pages, company profiles and lists of listed companies give it: NYSE, NASDAQ
+  (and its tiers NasdaqGS, NasdaqGM, NasdaqCM), NYSE MKT (the former AMEX), NYSE Arca, the OTC markets
+  (OTCBB, OTCQB, OTCQX, Pink Sheets), the London Stock Exchange and its AIM, TSX and TSX Venture, ASX,
+  Xetra, Euronext Paris, CME, NYMEX and others. Acronyms that are also words, cards, schools, car models
+  or cities (OTC, AIM, ICE, BSE, AMEX, TSX, Frankfurt) are matched only in a field named Exchange. The
+  ISO 10383 code of an exchange is miccode.'
+categories:
+- finances
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: NYSE
+- value: NASDAQ
+- value: NYSE Arca
+- value: OTCBB
+- value: London Stock Exchange
+- value: TSX Venture
+- value: S&P 500
+  valid: false
+  description: an index
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Stock_exchange
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_stock_exchanges
+translations:
+  ru:
+    name: Фондовая биржа (NYSE, NASDAQ, Лондонская фондовая биржа)

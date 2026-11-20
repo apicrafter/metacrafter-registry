@@ -1,0 +1,30 @@
+id: dublin_core_element
+name: Name of a Dublin Core element (dc.title, dc.date.issued)
+status: draft
+doc: 'The name of a metadata element of Dublin Core, written with its namespace prefix and, in the dotted
+  notation of DSpace and other repository software, with a qualifier after the element: dc.title, dc.contributor.author,
+  dc.date.issued, dc.date.accessioned, dc.identifier.uri, dc.description.abstract, or dc:creator and dcterms:created
+  in XML and RDF. The full item records of institutional repositories list one element per row next to
+  its value and language. The element is one of the fifteen of the Dublin Core Metadata Element Set or
+  a term of the DCMI namespace.'
+categories:
+- dublincore
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:dc|DC|dcterms|dct)[.:][A-Za-z]+(?:\.[A-Za-z]+){0,2}$
+examples:
+- value: dc.title
+- value: dc.date.issued
+- value: dc.contributor.author
+- value: dc.identifier.uri
+- value: dcterms:created
+- value: dc_title
+  valid: false
+links:
+- type: doc
+  url: https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+translations:
+  ru:
+    name: Название элемента Dublin Core (dc.title, dc.date.issued)

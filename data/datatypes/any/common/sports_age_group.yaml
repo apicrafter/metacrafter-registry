@@ -1,0 +1,33 @@
+id: sports_age_group
+name: Age group of youth sports (U12, 12U, Under 16)
+status: draft
+doc: 'The age group in which young players compete in a league, a club or a tournament, named after the
+  age that the players must be under on a cut-off date: U12 or U-12 (under 12), 12U in American softball
+  and baseball, Under 16 or Under-16s, often with the sex of the team (U12 Boys, Girls U14, BU10). Youth
+  football, rugby, ice hockey, swimming and cycling use it. U6 to U9 are also lines of underground railways
+  and 22U or 42U the heights of racks, so the youngest groups and the forms with the U last above 19U
+  are matched only in a field named Age Group or Division.'
+parent: age_range
+categories:
+- common
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: '^(?:(?:Boys|Girls) )?(?:[UuBG]{1,2} ?-?\d{1,2}|\d{1,2}[Uu]|Under[- ]?\d{1,2}s?)(?: (?:Boys|Girls|Men|Women|Mixed|Coed))?$'
+examples:
+- value: U12
+- value: U-14
+- value: 12U
+  description: the form of American softball and baseball
+- value: U12 Boys
+- value: Under 16
+- value: 18-24
+  valid: false
+  description: an age band of a survey
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Youth_sports
+translations:
+  ru:
+    name: Возрастная группа в детском спорте (U12, до 16 лет)

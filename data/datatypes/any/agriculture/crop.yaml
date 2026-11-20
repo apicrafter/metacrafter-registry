@@ -1,0 +1,31 @@
+id: crop
+name: Crop (Corn, Wheat, Soybeans)
+status: draft
+doc: 'A plant grown on farms for food, feed, fibre, oil or fuel, as crop reports, agricultural statistics,
+  farm budgets and planting tables name it: cereals (Corn or Maize, Wheat, Winter Wheat, Barley, Oats,
+  Rice, Sorghum, Rye), oilseeds and pulses (Soybeans, Canola, Sunflower, Peanuts, Dry Beans, Lentils),
+  fibre and industrial crops (Cotton, Sugar Beets, Sugarcane, Tobacco), forage (Alfalfa, Hay) and root
+  crops (Potatoes, Cassava). Corn, Rice, Cotton, Hay and Potatoes are also foods, fabrics and a university,
+  so they are matched only in a field named Crop or Commodity.'
+categories:
+- agriculture
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Corn
+- value: Winter Wheat
+- value: Soybeans
+- value: Barley
+- value: Sugar Beets
+- value: Alfalfa
+- value: Gold
+  valid: false
+  description: a commodity, not a crop
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Crop
+translations:
+  ru:
+    name: Сельскохозяйственная культура (кукуруза, пшеница, соя)

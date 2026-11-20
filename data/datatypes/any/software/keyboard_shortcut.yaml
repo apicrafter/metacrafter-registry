@@ -1,0 +1,31 @@
+id: keyboard_shortcut
+name: Keyboard shortcut (Ctrl+C, Alt+F4)
+status: draft
+doc: 'A key or a combination of keys that runs a command of a program, as help pages, cheat sheets and
+  manuals list them: modifier keys joined to a key by a plus sign or a hyphen (Ctrl+C, Alt+F4, Shift+Tab,
+  Ctrl+Shift+N, Cmd-Option-I), the symbols of macOS (⌘S, ⌘⇧Z), a sequence of combinations (Ctrl+K, Ctrl+C)
+  and the C- and M- prefixes of Emacs (C-x C-f, M-x). Single keys (F1, Esc, Home) and the Emacs forms
+  are matched only in a field named Shortcut, Hotkey or Keystroke.'
+categories:
+- software
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: Ctrl+C
+- value: Alt+F4
+- value: Ctrl + Shift + N
+- value: ⌘⇧Z
+  description: macOS
+- value: C-x C-f
+  description: Emacs
+- value: Copy
+  valid: false
+  description: the name of the command
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Keyboard_shortcut
+translations:
+  ru:
+    name: Сочетание клавиш (Ctrl+C, Alt+F4)

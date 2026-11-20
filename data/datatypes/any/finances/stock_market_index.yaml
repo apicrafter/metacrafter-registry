@@ -1,0 +1,31 @@
+id: stock_market_index
+name: Stock market index (S&P 500, FTSE 100, Nikkei 225)
+status: draft
+doc: 'The name of a stock market index, a number computed from the prices of a basket of shares that financial
+  pages, market summaries and fund factsheets quote next to its level and change: S&P 500, Dow Jones Industrial
+  Average (DJIA, the Dow), Nasdaq Composite, Nasdaq-100, Russell 2000, FTSE 100, DAX, CAC 40, Euro Stoxx
+  50, Nikkei 225, TOPIX, Hang Seng, Shanghai Composite, Bovespa and the MSCI indexes. Short names that
+  are also exchanges, companies or words (Nasdaq, Dow, DAX, SMI, SET) are matched only in a field named
+  Index or Indices.'
+categories:
+- finances
+langs:
+- common
+is_pii: false
+classification: categorical
+examples:
+- value: S&P 500
+- value: Dow Jones Industrial Average
+- value: Nasdaq Composite
+- value: FTSE 100
+- value: Nikkei 225
+- value: Hang Seng
+- value: NYSE
+  valid: false
+  description: an exchange
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Stock_market_index
+translations:
+  ru:
+    name: Фондовый индекс (S&P 500, FTSE 100, Nikkei 225)

@@ -1,0 +1,32 @@
+id: sports_season
+name: Season of a sports league (2013-14, 2015)
+status: draft
+doc: The season of a league, a tour or another sports competition, as the career statistics of players,
+  the histories of teams and the standings of leagues name it. Seasons that run across the new year (ice
+  hockey, basketball, European football) are written as two consecutive years, the second often in two
+  digits (2013-14, 1999-00, 2013/14, 2013-2014); seasons within one calendar year (baseball, American
+  football, motor racing) are the year alone. The same shapes are also fiscal and school years, so a value
+  counts as a season only in a field named Season, Saison or Temporada.
+categories:
+- datetime
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:18|19|20)\d{2}(?:[-–/](?:(?:18|19|20)?\d{2}))?$
+examples:
+- value: 2013-14
+- value: 1999-00
+  description: the season that ended in 2000
+- value: 2013/2014
+- value: '2015'
+  description: a season within one calendar year
+- value: Summer
+  valid: false
+  description: a season of the year
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Season_(sports)
+translations:
+  ru:
+    name: Спортивный сезон (2013-14, 2015)

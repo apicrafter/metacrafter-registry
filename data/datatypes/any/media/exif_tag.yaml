@@ -1,0 +1,34 @@
+id: exif_tag
+name: Exif tag of a photo (Exposure Time, ISO Speed Ratings)
+status: draft
+doc: 'The name of a tag of the Exif metadata that a digital camera or a phone writes into a photo, as
+  photo pages, image galleries and metadata viewers list them next to their values: the camera (Make,
+  Model, Lens Model), the exposure (Exposure Time, F-Number, ISO Speed Ratings, Exposure Program, Exposure
+  Bias Value, Metering Mode, Flash, White Balance), the optics (Focal Length, Focal Length In 35mm Film),
+  the image (Color Space, X Resolution, Orientation) and the dates (Date/Time Original). Make, Model,
+  Flash, ISO and Software are also the names of other fields, so a list of tags is matched by the tags
+  of photography itself.'
+categories:
+- media
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Exposure Time
+- value: F-Number
+- value: ISO Speed Ratings
+- value: Metering Mode
+- value: Focal Length
+- value: Date/Time Original
+- value: 1/60 sec
+  valid: false
+  description: a value of the tag Exposure Time
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Exif
+- type: doc
+  url: https://exiv2.org/tags.html
+translations:
+  ru:
+    name: Тег Exif фотографии (выдержка, светочувствительность ISO)
