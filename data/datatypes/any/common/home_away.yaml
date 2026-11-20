@@ -1,0 +1,28 @@
+id: home_away
+name: Venue of a game (home, away, neutral)
+status: draft
+doc: 'Where a team played or will play a game in relation to its own ground: at home, away at the opponent''s
+  ground, or at a neutral site. Schedules, game logs and splits of college and professional teams give
+  it in a column of its own (H/A, Home/Away, Site, Location) as a word (Home, Away, Neutral), a letter
+  (H, A, N) or a sign before the opponent (@ or at for away games, vs. for home games). The letters alone
+  are also grades and answers, so they are matched only in a field named after the venue.'
+categories:
+- common
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Home
+- value: Away
+- value: Neutral
+- value: H
+  description: home game
+- value: '@'
+  description: away game, written before the opponent
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Home_advantage
+translations:
+  ru:
+    name: Место проведения игры (дома, в гостях, на нейтральном поле)

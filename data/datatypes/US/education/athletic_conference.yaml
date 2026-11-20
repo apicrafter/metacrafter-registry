@@ -1,0 +1,36 @@
+id: athletic_conference
+name: Athletic conference of US college sports (SEC, Big Ten)
+status: draft
+doc: 'A conference of college athletic programs in the United States, the league in which a school plays
+  most of its games: the Southeastern Conference (SEC), the Atlantic Coast Conference (ACC), the Big Ten,
+  the Big 12 and the Pac-12 in NCAA Division I, and smaller ones such as the GLIAC or the NESCAC in Divisions
+  II and III. Rosters, schedules and season tables of sports reference sites give it in a column named
+  Conference or Conf, often by its abbreviation. SEC, ACC, MAC and WAC are also abbreviations of other
+  things (tickers among them), so a column of abbreviations alone is matched by its field name.'
+categories:
+- education
+- common
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: SEC
+  description: Southeastern Conference
+- value: Big Ten
+- value: Pac-12
+- value: Mountain West
+- value: Ivy
+- value: 6-2
+  valid: false
+  description: a conference record
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/College_athletic_conference
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/List_of_NCAA_conferences
+translations:
+  ru:
+    name: Спортивная конференция университетов США (SEC, Big Ten)

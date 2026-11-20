@@ -1,0 +1,37 @@
+id: nutrient
+name: Nutrient (Protein, Total Fat, Sodium)
+status: draft
+doc: 'The name of a nutrient or of an energy value on a nutrition facts label or in a food composition
+  table: Calories, Total Fat, Saturated Fat, Cholesterol, Sodium, Total Carbohydrate, Dietary Fiber, Sugars,
+  Protein, vitamins and minerals. Shops, recipe sites and supplement labels give one nutrient per row
+  with its amount and percentage of the daily value; European labels write of which saturates and Salt,
+  and the USDA tables Carbohydrate, by difference. Minerals alone (Sodium, Calcium, Iron) are also analytes
+  of water and soil samples, so a column needs the names of the label itself.'
+categories:
+- medical
+- agriculture
+langs:
+- en
+- de
+- fr
+- it
+- es
+is_pii: false
+classification: categorical
+examples:
+- value: Protein
+- value: Total Fat
+- value: Saturated Fat
+- value: Dietary Fiber
+- value: of which sugars
+- value: Vitamin C
+- value: Nutrition Facts
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Nutrient
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Nutrition_facts_label
+translations:
+  ru:
+    name: Пищевое вещество (белки, жиры, натрий)

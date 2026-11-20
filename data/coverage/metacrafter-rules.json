@@ -1,7 +1,7 @@
 {
  "source": {
   "repo": "apicrafter/metacrafter-rules",
-  "ref": "280d9021a175c6ee3d10f4f3f92a2759e12053d8"
+  "ref": "5e70f964f754fb2a3dd389fbfc49e2834a24fd0f"
  },
  "rules": [
   {
@@ -5745,6 +5745,36 @@
    "country_code": "xx"
   },
   {
+   "rule": "heightfeetinchesbyname",
+   "key": "height_feet_inches",
+   "type": "field",
+   "match": "regex",
+   "file": "common/common.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "heightfeetinchesmarkedbyname",
+   "key": "height_feet_inches",
+   "type": "field",
+   "match": "regex",
+   "file": "common/common.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "heightfeetinchesvalue",
+   "key": "height_feet_inches",
+   "type": "data",
+   "match": "func",
+   "file": "common/common.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "heightmeasurementbyknown",
    "key": "height_measurement",
    "type": "field",
@@ -6655,6 +6685,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "holidaybyname",
+   "key": "holiday",
+   "type": "field",
+   "match": "regex",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "holidayvalue",
+   "key": "holiday",
+   "type": "data",
+   "match": "func",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "isodatevalue",
    "key": "date",
    "type": "data",
@@ -6725,6 +6775,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "relativetimevalue",
+   "key": "relative_time",
+   "type": "data",
+   "match": "func",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "sasdatetimevalue",
    "key": "datetime",
    "type": "data",
@@ -6749,6 +6809,16 @@
    "key": "time",
    "type": "field",
    "match": "text",
+   "file": "common/dateandtime.yaml",
+   "context": "datetime",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "timerangevalue",
+   "key": "timerange",
+   "type": "data",
+   "match": "func",
    "file": "common/dateandtime.yaml",
    "context": "datetime",
    "lang": "common",
@@ -7355,6 +7425,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "classmeetingdaysbyname",
+   "key": "class_meeting_days",
+   "type": "field",
+   "match": "regex",
+   "file": "common/education.yaml",
+   "context": "education",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "classstandingbyname",
    "key": "class_standing",
    "type": "field",
@@ -7389,6 +7469,26 @@
    "key": "eter_id",
    "type": "field",
    "match": "regex",
+   "file": "common/education.yaml",
+   "context": "education",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "gradespanbyname",
+   "key": "grade_span",
+   "type": "field",
+   "match": "regex",
+   "file": "common/education.yaml",
+   "context": "education",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "gradespanvalue",
+   "key": "grade_span",
+   "type": "data",
+   "match": "func",
    "file": "common/education.yaml",
    "context": "education",
    "lang": "common",
@@ -8267,6 +8367,16 @@
    "rule": "inspiregridcellcodevalue",
    "key": "inspire_grid_cell_code",
    "type": "data",
+   "match": "regex",
+   "file": "common/geo.yaml",
+   "context": "geo",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "ioccountrycodebyname",
+   "key": "ioc_country_code",
+   "type": "field",
    "match": "regex",
    "file": "common/geo.yaml",
    "context": "geo",
@@ -9734,6 +9844,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "tvnetworkbyname",
+   "key": "tv_network",
+   "type": "field",
+   "match": "regex",
+   "file": "common/media.yaml",
+   "context": "media",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "tvnetworkvalue",
+   "key": "tv_network",
+   "type": "data",
+   "match": "func",
+   "file": "common/media.yaml",
+   "context": "media",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "vimeovideoidfield",
    "key": "vimeovideoid",
    "type": "field",
@@ -9818,6 +9948,26 @@
    "key": "medication_route",
    "type": "field",
    "match": "regex",
+   "file": "common/medical.yaml",
+   "context": "medical",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "nutrientbyname",
+   "key": "nutrient",
+   "type": "field",
+   "match": "regex",
+   "file": "common/medical.yaml",
+   "context": "medical",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "nutrientvalue",
+   "key": "nutrient",
+   "type": "data",
+   "match": "func",
    "file": "common/medical.yaml",
    "context": "medical",
    "lang": "common",
@@ -10685,6 +10835,26 @@
    "key": "person_fullname",
    "type": "field",
    "match": "text",
+   "file": "common/persons.yaml",
+   "context": "persons",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "householdrelationshipbyname",
+   "key": "household_relationship",
+   "type": "field",
+   "match": "regex",
+   "file": "common/persons.yaml",
+   "context": "persons",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "householdrelationshipvalue",
+   "key": "household_relationship",
+   "type": "data",
+   "match": "func",
    "file": "common/persons.yaml",
    "context": "persons",
    "lang": "common",
@@ -12277,6 +12447,16 @@
    "country_code": "xx"
   },
   {
+   "rule": "errnonamevalue",
+   "key": "errno_name",
+   "type": "data",
+   "match": "func",
+   "file": "common/software.yaml",
+   "context": "software",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "fileformatbyfield",
    "key": "file_format",
    "type": "field",
@@ -12737,6 +12917,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "athleticconferencebyname",
+   "key": "athletic_conference",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "athleticconferencevalue",
+   "key": "athletic_conference",
+   "type": "data",
+   "match": "func",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "athleticseventbyname",
    "key": "athletics_event",
    "type": "field",
@@ -12757,8 +12957,48 @@
    "country_code": "xx"
   },
   {
+   "rule": "batsthrowsbyname",
+   "key": "bats_throws",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "batsthrowsvalue",
+   "key": "bats_throws",
+   "type": "data",
+   "match": "func",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "gameresultvalue",
    "key": "game_result",
+   "type": "data",
+   "match": "func",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "homeawaybyname",
+   "key": "home_away",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "homeawayvalue",
+   "key": "home_away",
    "type": "data",
    "match": "func",
    "file": "common/sports.yaml",
@@ -12787,6 +13027,26 @@
    "country_code": "xx"
   },
   {
+   "rule": "sportspenaltybyname",
+   "key": "sports_penalty",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "sportspenaltyvalue",
+   "key": "sports_penalty",
+   "type": "data",
+   "match": "func",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
    "rule": "sportspositionbyname",
    "key": "sports_position",
    "type": "field",
@@ -12809,6 +13069,16 @@
   {
    "rule": "winlossrecordbyname",
    "key": "win_loss_record",
+   "type": "field",
+   "match": "regex",
+   "file": "common/sports.yaml",
+   "context": "common",
+   "lang": "common",
+   "country_code": "xx"
+  },
+  {
+   "rule": "winlossstreakbyname",
+   "key": "win_loss_streak",
    "type": "field",
    "match": "regex",
    "file": "common/sports.yaml",

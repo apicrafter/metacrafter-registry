@@ -1,0 +1,29 @@
+id: win_loss_streak
+name: Winning or losing streak (W3, L1)
+status: draft
+doc: 'The run of consecutive results a team has at the moment, as standings tables show it in a column
+  named Streak, Strk or Stk: the letter of the result and the number of games, W3 for three wins in a
+  row, L1 for one loss, T1 for a tie, or the same in words (Won 3, Lost 1). The letter and number alone
+  are also codes of other things, so the streak is found by its field name.'
+categories:
+- common
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^(?:[WLTD] ?-? ?\d{1,3}|\d{1,3} ?[WLTD]|(?:Won|Lost|Tied|Drew) \d{1,3})$
+examples:
+- value: W3
+  description: three wins in a row
+- value: L1
+- value: Won 2
+- value: 1L
+- value: 3-2
+  valid: false
+  description: a score
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Standings_(sports)
+translations:
+  ru:
+    name: Серия побед или поражений (W3, L1)

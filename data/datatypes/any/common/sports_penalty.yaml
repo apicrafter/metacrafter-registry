@@ -1,0 +1,34 @@
+id: sports_penalty
+name: Penalty or foul in a game (Slashing, Holding, Yellow Card)
+status: draft
+doc: 'The infraction for which a referee penalised a player or a team, as the penalty summaries of box
+  scores list it: slashing, tripping, hooking, cross-checking and too many men in ice hockey; slashing,
+  pushing and illegal body check in lacrosse; holding, false start and pass interference in American football;
+  yellow and red cards in association football. Words such as Holding, Interference and Boarding are also
+  used in other columns, so a column needs the names that are only penalties, or a field named Offense,
+  Infraction or Penalty.'
+categories:
+- common
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: SLASHING
+- value: Tripping
+- value: Cross-Checking
+- value: Delay of Game
+- value: Yellow Card
+- value: '2:00'
+  valid: false
+  description: length of the penalty
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Penalty_(ice_hockey)
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Penalty_(gridiron_football)
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Fouls_and_misconduct_(association_football)
+translations:
+  ru:
+    name: Нарушение правил в игре (Slashing, Holding, жёлтая карточка)

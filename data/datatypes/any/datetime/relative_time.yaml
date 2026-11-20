@@ -1,0 +1,28 @@
+id: relative_time
+name: Time relative to now (2 days ago)
+status: draft
+doc: 'A moment in the past given as the time elapsed until the page was shown: 2 days ago, an hour ago,
+  3 years 23 weeks ago, 1h 35min ago. Forums, comment lists, file listings and activity feeds write the
+  time of the last post or update this way, and the value is only meaningful together with the date of
+  the page (the crawl date for archived pages).'
+categories:
+- datetime
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: 2 days ago
+- value: an hour ago
+- value: 2 years 38 weeks ago
+  description: Drupal
+- value: 1h 35min ago
+- value: 2 days
+  valid: false
+  description: a duration
+links:
+- type: doc
+  url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat
+translations:
+  ru:
+    name: Время относительно текущего момента (2 дня назад)

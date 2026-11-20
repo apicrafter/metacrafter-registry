@@ -1,0 +1,35 @@
+id: holiday
+name: Holiday name (Labor Day, Christmas Day)
+status: draft
+doc: 'The name of a public holiday or of an observance, as calendars, school and office schedules and
+  tables of holidays list them: New Year''s Day, Martin Luther King, Jr. Day, Memorial Day, Independence
+  Day, Labor Day, Thanksgiving Day and Christmas Day in the United States, Boxing Day and the bank holidays
+  in the United Kingdom, Victoria Day in Canada, Good Friday and Easter Monday in many countries, and
+  a few names in German, French, Spanish and Italian. Christmas, Easter and Halloween alone are also titles,
+  so they count only in a field named Holiday.'
+categories:
+- datetime
+langs:
+- en
+- de
+- fr
+- es
+- it
+is_pii: false
+classification: categorical
+examples:
+- value: Labor Day
+- value: Thanksgiving Day
+- value: New Year's Day
+- value: Boxing Day
+- value: Labor Day (observed)
+- value: Monday
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Public_holiday
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Federal_holidays_in_the_United_States
+translations:
+  ru:
+    name: Название праздника (День труда, Рождество)

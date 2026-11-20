@@ -1,0 +1,29 @@
+id: household_relationship
+name: Relationship to the head of a household (Head, Wife, Son)
+status: draft
+doc: 'The relationship of a person to the head of the household that a census or a household survey records:
+  Head, Wife, Son, Daughter (Dau), Mother-in-law, Nephew, and members who are no relatives such as Servant,
+  Boarder and Lodger. Transcriptions of historical census returns and family trees on genealogy sites
+  list it next to the name and age of each person. Head, Self and Partner are also used in other columns,
+  so a column of them alone is matched only in a field named Relationship or Relation.'
+categories:
+- persons
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: Head
+- value: Wife
+- value: Son
+- value: Dau
+  description: daughter, as census takers wrote it
+- value: Servant
+- value: Director
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Head_of_household
+translations:
+  ru:
+    name: Отношение к главе домохозяйства (глава, жена, сын)

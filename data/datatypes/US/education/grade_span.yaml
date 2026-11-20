@@ -1,0 +1,36 @@
+id: grade_span
+name: Grade span of a school (K-5, 9-12)
+status: draft
+doc: 'The range of grades a school in the United States teaches, from the lowest to the highest: K-5 for
+  an elementary school, 6-8 for a middle school, 9-12 for a high school, PK-8 or K-12 for others; PK is
+  pre-kindergarten and K or KG kindergarten. School directories and the school sections of real estate
+  listings give it in a column named Grades or Grade Span. A range of digits alone is also a score, so
+  it is matched by the field name; a span that starts with a kindergarten grade is matched by its value
+  too.'
+categories:
+- education
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:PK|Pre-?K|TK|KG|K|0?[1-9]|1[0-2]) ?[-–] ?(?:PK|KG|K|0?[1-9]|1[0-2])$
+examples:
+- value: K-5
+  description: elementary school
+- value: 6-8
+  description: middle school
+- value: 9-12
+  description: high school
+- value: PK - 08
+- value: A-F
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/K%E2%80%9312
+- type: other
+  url: https://nces.ed.gov/ccd/
+translations:
+  ru:
+    name: Диапазон классов школы (K-5, 9-12)
