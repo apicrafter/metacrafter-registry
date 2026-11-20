@@ -1,0 +1,28 @@
+id: tv_network
+name: Television network (ESPN, ABC, NBC)
+status: draft
+doc: 'The television network or channel that broadcasts a game or a programme, as schedules of teams and
+  TV listings give it: broadcast networks such as ABC, NBC, CBS and FOX, cable and sports networks such
+  as ESPN, ESPN2, NBCSN, TNT and the Big Ten Network, and channels of other countries such as BBC One
+  or TSN. A cell can name two networks (ESPN2/ESPN3). Names that are also words, countries or stock tickers
+  (USA, YES, History, ABC, CBS) are matched only in a field named Network, Net, TV or Channel.'
+categories:
+- media
+langs:
+- en
+is_pii: false
+classification: categorical
+examples:
+- value: ESPN
+- value: ABC
+- value: NBCSN
+- value: ESPN2/ESPN3
+  description: two networks
+- value: Channel 9
+  valid: false
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Television_network
+translations:
+  ru:
+    name: Телевизионная сеть (ESPN, ABC, NBC)

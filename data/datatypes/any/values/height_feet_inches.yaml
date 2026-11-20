@@ -1,0 +1,32 @@
+id: height_feet_inches
+name: Height of a person in feet and inches (6-2, 5'11")
+status: draft
+doc: 'Height of a person written in feet and inches, as rosters of US teams and profiles give it: with
+  a hyphen between the feet and the inches (6-2 is six feet two inches, 1.88 m), with the foot and inch
+  marks (5''11"), or in words (6 ft 2 in). The hyphen form is also a score, a record or a range of metres
+  (the height classes 3-6 and 6-10 of a tree register), so it is matched only in a field named Ht., Ht
+  or Hgt; a field named Height takes the marked forms only.'
+semantic_type: height
+langs:
+- common
+regexp: ^[3-8] ?(?:-|'|ft\.?) ?(?:(?:\d|1[01])(?:"|''| ?in\.?)?)?$
+examples:
+- value: 6-2
+  description: six feet two inches
+- value: 5-11
+- value: 5'11"
+- value: 6 ft 2 in
+- value: 2-1
+  valid: false
+  description: a score
+- value: 6-12
+  valid: false
+  description: no foot has twelve inches
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Foot_(unit)
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Human_height
+translations:
+  ru:
+    name: Рост человека в футах и дюймах (6-2, 5'11")

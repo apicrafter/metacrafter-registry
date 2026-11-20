@@ -1,0 +1,29 @@
+id: class_meeting_days
+name: Meeting days of a class (MWF, TR)
+status: draft
+doc: 'The days of the week on which a class meets, written in the one-letter or two-letter codes of course
+  schedules of US colleges: M, T (or Tu), W, R (or Th) for Thursday, F, S (or Sa) and U (or Su) for Sunday,
+  run together as MWF, TR, TTh, MW or MTWRF. Schedules of courses and of exams put them in a column named
+  Days. The codes alone are also other abbreviations (MW, TR), so they are matched only by the field name.'
+categories:
+- education
+country:
+- US
+langs:
+- en
+is_pii: false
+classification: categorical
+regexp: ^(?:M|Tu|TU|T|W|R|Th|TH|F|Sa|SA|Su|SU|S|U)(?:[ ,/]*(?:M|Tu|TU|T|W|R|Th|TH|F|Sa|SA|Su|SU|S|U)){0,6}$
+examples:
+- value: MWF
+  description: Monday, Wednesday and Friday
+- value: TR
+  description: Tuesday and Thursday
+- value: TTh
+- value: M W F
+- value: Monday
+  valid: false
+  description: a day of the week in full
+translations:
+  ru:
+    name: Дни занятий по расписанию (MWF, TR)

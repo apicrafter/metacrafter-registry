@@ -1,0 +1,31 @@
+id: bats_throws
+name: Bats and throws of a baseball player (R/R, L/R)
+status: draft
+doc: 'The hand a baseball or softball player bats with and the hand the player throws with, written as
+  two letters with a slash or a hyphen: R/R bats and throws right-handed, L/R bats left and throws right,
+  S/R is a switch hitter who throws right (some sites write B for both instead of S). Rosters and player
+  pages of college and professional teams have it in a column named B/T or Bats/Throws.'
+categories:
+- common
+langs:
+- common
+is_pii: false
+classification: categorical
+regexp: ^[LRSB] ?[/-] ?[LR]$
+examples:
+- value: R/R
+  description: bats right, throws right
+- value: L/R
+  description: bats left, throws right
+- value: S/R
+  description: switch hitter, throws right
+- value: R-L
+- value: L/XL
+  valid: false
+  description: clothing sizes
+links:
+- type: wikipedia
+  url: https://en.wikipedia.org/wiki/Switch_hitter
+translations:
+  ru:
+    name: Рука удара и броска бейсболиста (R/R, L/R)
